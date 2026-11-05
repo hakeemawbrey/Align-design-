@@ -1,0 +1,99 @@
+{
+  "id": "075-planet-words",
+  "series": "Fun facts",
+  "title": "Planet words you use every day",
+  "voice": {
+    "voice": "am_michael",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Jovial, mercurial, saturnine, lunatic, influenza: all named for the sky.",
+  "hashtags": [
+    "funfacts",
+    "etymology",
+    "wordnerd",
+    "planets",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WORD FACT",
+      "head": "Your *mood* words come from the planets.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "explode"
+      }
+    },
+    {
+      "head": "*Jovial:* born under Jupiter, the cheerful king of the gods.",
+      "vis": {
+        "k": "planet",
+        "p": "jupiter",
+        "label": "JOVIAL"
+      }
+    },
+    {
+      "head": "*Mercurial:* quick and changeable, like fast little Mercury.",
+      "vis": {
+        "k": "planet",
+        "p": "mercury",
+        "label": "MERCURIAL"
+      }
+    },
+    {
+      "head": "*Saturnine:* slow, serious, a little gloomy. Thanks, Saturn.",
+      "vis": {
+        "k": "planet",
+        "p": "saturn",
+        "rings": true,
+        "label": "SATURNINE"
+      }
+    },
+    {
+      "head": "*Lunatic* comes from luna, the Moon.",
+      "sub": "People once blamed odd behavior on its phases.",
+      "vis": {
+        "k": "word",
+        "word": "LUNATIC",
+        "parts": [
+          [
+            "luna",
+            "moon"
+          ]
+        ],
+        "lang": "Latin · lunaticus"
+      }
+    },
+    {
+      "head": "And *influenza* meant the stars' influence.",
+      "sub": "Italians once blamed outbreaks on the sky.",
+      "vis": {
+        "k": "word",
+        "word": "INFLUENZA",
+        "parts": [
+          [
+            "influenza",
+            "influence"
+          ]
+        ],
+        "lang": "Italian · of the stars"
+      }
+    },
+    {
+      "head": "Find someone who loves you *jovial* and saturnine.",
+      "sub": "Mercurial moods included. Send this to them.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "sagittarius",
+          "pose": "cheer"
+        },
+        "b": {
+          "sign": "capricorn",
+          "pose": "stand"
+        },
+        "link": "heart"
+      }
+    }
+  ]
+}

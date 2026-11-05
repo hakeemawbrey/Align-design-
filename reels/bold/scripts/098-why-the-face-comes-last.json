@@ -1,0 +1,99 @@
+{
+  "id": "098-why-the-face-comes-last",
+  "series": "Align ideas",
+  "title": "Why the face comes last",
+  "voice": {
+    "voice": "af_nicole",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "A photo answers one question. Everything else takes words.",
+  "hashtags": [
+    "blinddating",
+    "astrology",
+    "datingapp",
+    "mysterycard",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Why the face comes *last.*",
+      "vis": {
+        "k": "mystery",
+        "sign": "aquarius",
+        "name": "Rio, 30",
+        "lines": [
+          "Sun ♒ Aquarius",
+          "Moon ♍ Virgo",
+          "Rising ♈ Aries"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "A photo answers *one* question.",
+      "sub": "And it's rarely the important one.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "camera",
+            "label": "Cute?"
+          },
+          {
+            "i": "question",
+            "label": "Kind?"
+          },
+          {
+            "i": "question",
+            "label": "Curious?"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Your words answer the *rest.*",
+      "vis": {
+        "k": "talkcard",
+        "q": "What do you do when you have a free afternoon?",
+        "answers": [
+          "Fix my bike.",
+          "Call my grandma."
+        ]
+      }
+    },
+    {
+      "head": "By the reveal, you know their *laugh.*",
+      "sub": "Their stories. Their Sunday plans.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "haha that is so you",
+          "tell me the rest",
+          "okay Sunday plans?"
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "The face *still* matters.",
+      "sub": "It just isn't the whole introduction.",
+      "vis": {
+        "k": "mystery",
+        "sign": "aquarius",
+        "name": "Rio, 30",
+        "lines": [
+          "Sun ♒ Aquarius",
+          "Moon ♍ Virgo",
+          "Rising ♈ Aries"
+        ],
+        "reveal": 0.3
+      }
+    },
+    {
+      "head": "Send this to someone who's more than their *photos.*"
+    }
+  ]
+}

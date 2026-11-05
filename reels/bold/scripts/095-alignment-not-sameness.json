@@ -1,0 +1,99 @@
+{
+  "id": "095-alignment-not-sameness",
+  "series": "Align ideas",
+  "title": "Alignment is not sameness",
+  "footer": "auto",
+  "caption": "You can be different people facing the same direction.",
+  "hashtags": [
+    "astrology",
+    "relationships",
+    "alignment",
+    "zodiac",
+    "datingadvice"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Aligned doesn’t mean *the same.*",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "The same",
+          "icon": "mirror",
+          "col": "blue"
+        },
+        "b": {
+          "label": "Aligned",
+          "icon": "compass",
+          "col": "gold"
+        },
+        "verdict": "≠"
+      }
+    },
+    {
+      "head": "Two people can be *different* and still align.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries",
+          "label": "Aries"
+        },
+        "b": {
+          "sign": "cancer",
+          "label": "Cancer"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Alignment is *direction.*",
+      "sub": "Facing the same way, at your own pace.",
+      "vis": {
+        "k": "constellation",
+        "shape": "two",
+        "link": true
+      }
+    },
+    {
+      "head": "Values in the *same* place.",
+      "vis": {
+        "k": "checklist",
+        "title": "Same page",
+        "items": [
+          "Kids, someday",
+          "Honesty first",
+          "Family Sundays"
+        ]
+      }
+    },
+    {
+      "head": "Quirks in *different* places.",
+      "sub": "That's what keeps it interesting.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "mountain",
+            "label": "Early hikes"
+          },
+          {
+            "i": "bed",
+            "label": "Late mornings"
+          },
+          {
+            "i": "book",
+            "label": "Quiet nights"
+          },
+          {
+            "i": "music",
+            "label": "Loud ones"
+          }
+        ],
+        "layout": "grid"
+      }
+    },
+    {
+      "head": "Send this to your favorite *different* person."
+    }
+  ]
+}

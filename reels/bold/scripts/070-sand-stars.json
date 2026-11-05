@@ -1,0 +1,102 @@
+{
+  "id": "070-sand-stars",
+  "series": "Fun facts",
+  "title": "Shooting stars are sand",
+  "voice": {
+    "voice": "af_sarah",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Most shooting stars are specks of space dust, many no bigger than a grain of sand.",
+  "hashtags": [
+    "funfacts",
+    "shootingstar",
+    "meteorshower",
+    "space",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "FUN FACT",
+      "head": "Most shooting stars are the size of a *grain of sand*.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "WHAT YOU SEE",
+          "icon": "star",
+          "lines": [
+            "a streak of light"
+          ]
+        },
+        "b": {
+          "label": "WHAT IT IS",
+          "icon": "magnifier",
+          "lines": [
+            "a speck of dust"
+          ]
+        },
+        "verdict": "="
+      }
+    },
+    {
+      "head": "They're not stars. They're *space dust* hitting our air.",
+      "vis": {
+        "k": "planet",
+        "p": "earth",
+        "gag": "star"
+      }
+    },
+    {
+      "head": "They hit the air fast enough to *glow*.",
+      "sub": "Tens of kilometers per second, burning up high above you.",
+      "vis": {
+        "k": "fact",
+        "big": "11–72",
+        "unit": "km per second",
+        "note": "how fast meteors hit the air",
+        "tag": "SKY FACT"
+      }
+    },
+    {
+      "head": "Meteor showers happen when Earth crosses a *comet's* trail.",
+      "sub": "Same time every year, like a standing date.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "JAN",
+          "AUG",
+          "DEC"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "A speck of dust, and the whole sky *stops* for it.",
+      "vis": {
+        "k": "person",
+        "sign": "sagittarius",
+        "pose": "point"
+      }
+    },
+    {
+      "head": "Small things light people up *too*.",
+      "sub": "A good-morning text. Remembering their coffee order.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "good morning",
+          "saved you a seat",
+          "you remembered?"
+        ],
+        "float": true
+      }
+    },
+    {
+      "head": "Send this to someone you'd *wish* on a grain of sand for.",
+      "vis": {
+        "k": "constellation",
+        "shape": "heart"
+      }
+    }
+  ]
+}

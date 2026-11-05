@@ -1,0 +1,88 @@
+{
+  "id": "084-repair-after-a-fight",
+  "series": "Relationships",
+  "title": "Repair after a small fight",
+  "footer": "auto",
+  "caption": "Every couple argues. The ones who last know how to come back.",
+  "hashtags": [
+    "relationshipadvice",
+    "communication",
+    "healthyrelationships",
+    "love",
+    "couples"
+  ],
+  "beats": [
+    {
+      "eyebrow": "LOVE, HONESTLY",
+      "head": "Small fights happen. *Repair* is the skill.",
+      "vis": {
+        "k": "heart",
+        "mode": "crack",
+        "label": "small fight"
+      }
+    },
+    {
+      "head": "Cool off. Then *come back.*",
+      "sub": "A pause is not a punishment.",
+      "vis": {
+        "k": "clock",
+        "from": "8:10",
+        "to": "8:40",
+        "label": "cool off, then come back"
+      }
+    },
+    {
+      "head": "Lead with *your* part.",
+      "sub": "“I was short with you. I’m sorry.”",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "I was short with you.",
+          "I'm sorry.",
+          "Thank you for saying that."
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "Get curious, not *right.*",
+      "sub": "“What did that feel like for you?”",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "gemini",
+          "bubble": "What did that feel like?"
+        },
+        "b": {
+          "sign": "cancer",
+          "think": true,
+          "bubble": "Thanks for asking."
+        }
+      }
+    },
+    {
+      "head": "Then plan the *next* time.",
+      "sub": "“Next time, can we pause instead?”",
+      "vis": {
+        "k": "note",
+        "title": "Next time",
+        "lines": [
+          "say “pause”",
+          "take twenty minutes",
+          "come back and try again"
+        ]
+      }
+    },
+    {
+      "head": "Repair is how *trust* gets built.",
+      "vis": {
+        "k": "heart",
+        "mode": "heal",
+        "label": "repaired"
+      }
+    },
+    {
+      "head": "Send this to your favorite person to *make up* with."
+    }
+  ]
+}

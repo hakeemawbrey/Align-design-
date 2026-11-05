@@ -1,0 +1,85 @@
+{
+  "id": "091-both-answer-first",
+  "series": "Align ideas",
+  "title": "Both answer before either sees",
+  "footer": "auto",
+  "caption": "No copying the cool answer. Just two honest ones, flipped together.",
+  "hashtags": [
+    "talkcards",
+    "firstdate",
+    "datingapp",
+    "astrology",
+    "conversation"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "What if you both answered *before* either saw?",
+      "vis": {
+        "k": "talkcard",
+        "q": "What's your ideal Sunday?"
+      }
+    },
+    {
+      "head": "No shaping your answer around *theirs.*",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "haha same",
+          "totally agree",
+          "me too lol"
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "Just you, *honestly.*",
+      "vis": {
+        "k": "talkcard",
+        "q": "What's your ideal Sunday?",
+        "answers": [
+          "Market, then a nap.",
+          "Long run, big breakfast."
+        ],
+        "answersAt": 0.5
+      }
+    },
+    {
+      "head": "Then both flip, *together.*",
+      "sub": "Same moment. No head start.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "scorpio"
+        },
+        "b": {
+          "sign": "libra"
+        },
+        "link": "spark",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Sometimes you *match.*",
+      "sub": "Sometimes the difference is the conversation.",
+      "vis": {
+        "k": "talkcard",
+        "q": "Beach or mountains?",
+        "kind": "this or that",
+        "answers": [
+          "Mountains",
+          "Mountains"
+        ],
+        "answersAt": 0.45
+      }
+    },
+    {
+      "head": "Send this to your *“me too”* friend.",
+      "vis": {
+        "k": "stamp",
+        "text": "BOTH ANSWERED",
+        "col": "gold"
+      }
+    }
+  ]
+}

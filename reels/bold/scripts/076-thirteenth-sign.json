@@ -1,0 +1,105 @@
+{
+  "id": "076-thirteenth-sign",
+  "series": "Fun facts",
+  "title": "The 13th constellation",
+  "voice": {
+    "voice": "bf_isabella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "The Sun crosses 13 constellations. Astrology uses 12 equal signs. Both are true.",
+  "hashtags": [
+    "funfacts",
+    "ophiuchus",
+    "zodiac",
+    "astrology",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "The Sun passes through *thirteen* constellations, not twelve.",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 13
+      }
+    },
+    {
+      "head": "The thirteenth is *Ophiuchus*, the serpent bearer.",
+      "sub": "The Sun crosses it in late November and early December.",
+      "vis": {
+        "k": "fact",
+        "big": "13",
+        "unit": "constellations",
+        "note": "on the Sun's yearly path",
+        "tag": "SKY FACT"
+      }
+    },
+    {
+      "head": "So did your sign change? *Nope*.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "grid"
+      }
+    },
+    {
+      "head": "Astrology uses twelve *equal* signs, thirty degrees each.",
+      "vis": {
+        "k": "wheel",
+        "spin": true
+      }
+    },
+    {
+      "head": "They start at the *March equinox*, not the star shapes.",
+      "sub": "The signs are seasons of the sky, not constellations.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "MAR 18",
+          "MAR 19",
+          "MAR 20 · ARIES"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "The constellations are *uneven* sizes anyway.",
+      "sub": "The Sun spends over six weeks in Virgo, about one in Scorpius.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "VIRGO",
+          "icon": "star",
+          "lines": [
+            "~45 days"
+          ]
+        },
+        "b": {
+          "label": "SCORPIUS",
+          "icon": "star",
+          "lines": [
+            "~7 days"
+          ]
+        },
+        "verdict": "≠"
+      }
+    },
+    {
+      "head": "Maps get redrawn. Your *person* is still your person.",
+      "sub": "Send this to the friend who panicked about Ophiuchus.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "virgo",
+          "pose": "shrug"
+        },
+        "b": {
+          "sign": "scorpio",
+          "pose": "stand"
+        },
+        "link": "heart"
+      }
+    }
+  ]
+}

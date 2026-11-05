@@ -1,0 +1,107 @@
+{
+  "id": "081-boundaries-are-doors",
+  "series": "Relationships",
+  "title": "Boundaries are doors, not walls",
+  "voice": {
+    "voice": "am_michael",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "A boundary is directions, not a rejection. The right person reads the map.",
+  "hashtags": [
+    "boundaries",
+    "healthyrelationships",
+    "datingadvice",
+    "selfrespect",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "Boundaries are *doors,* not walls.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "door",
+            "label": "Door"
+          },
+          {
+            "i": "key",
+            "label": "Key"
+          },
+          {
+            "i": "house",
+            "label": "Home"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "A wall says *keep out.*",
+      "sub": "A boundary says, here's how to come in.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries"
+        },
+        "b": {
+          "sign": "libra"
+        },
+        "link": "wall"
+      }
+    },
+    {
+      "head": "“I’m slow on texts at work. *Call me after six.*”",
+      "vis": {
+        "k": "phone",
+        "name": "Sam",
+        "sign": "libra",
+        "time": "12:30 PM",
+        "msgs": [
+          [
+            "me",
+            "Heads up, I'm slow on texts at work. Call me after six?"
+          ],
+          [
+            "them",
+            "Got it. Six it is."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "The right person *hears* it as a map.",
+      "sub": "Not a rejection. Directions.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries"
+        },
+        "b": {
+          "sign": "libra",
+          "bubble": "Thanks for telling me."
+        },
+        "link": "heart",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "Name yours *early,* and kindly.",
+      "sub": "It saves you both a lot of guessing.",
+      "vis": {
+        "k": "checklist",
+        "title": "My doors",
+        "items": [
+          "Sleep comes first",
+          "No surprise drop-ins",
+          "Sundays are family"
+        ]
+      }
+    },
+    {
+      "head": "Send this to someone learning to say *no* kindly."
+    }
+  ]
+}

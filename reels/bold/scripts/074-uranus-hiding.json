@@ -1,0 +1,96 @@
+{
+  "id": "074-uranus-hiding",
+  "series": "Fun facts",
+  "title": "The planet hiding in plain sight",
+  "footer": "auto",
+  "caption": "Uranus was catalogued as a star in 1690, then found to be a planet in 1781.",
+  "hashtags": [
+    "funfacts",
+    "uranus",
+    "planets",
+    "astronomy",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "Uranus was logged as a *star* for nearly a century.",
+      "vis": {
+        "k": "planet",
+        "p": "uranus"
+      }
+    },
+    {
+      "head": "It's faintly visible to the *naked eye*.",
+      "sub": "Under very dark skies, if you know where to look.",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 12
+      }
+    },
+    {
+      "head": "In 1781, an astronomer spotted a strange little *disk*.",
+      "sub": "The first planet ever discovered with a telescope.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "1690 · logged as a star",
+          "1781 · a disk?",
+          "Planet no. 7"
+        ],
+        "icons": [
+          "star",
+          "telescope",
+          "sun"
+        ],
+        "ding": 2
+      }
+    },
+    {
+      "head": "It doubled the size of the known *solar system*.",
+      "vis": {
+        "k": "orbit",
+        "planets": [
+          "jupiter",
+          "saturn",
+          "uranus"
+        ],
+        "focus": "uranus"
+      }
+    },
+    {
+      "head": "And it rolls around the Sun on its *side*.",
+      "vis": {
+        "k": "planet",
+        "p": "uranus",
+        "rings": true,
+        "label": "TILTED ~98°"
+      }
+    },
+    {
+      "head": "Sometimes the one you want was there *all along*.",
+      "sub": "You just had to look twice.",
+      "vis": {
+        "k": "person",
+        "sign": "scorpio",
+        "pose": "think"
+      }
+    },
+    {
+      "head": "Send this to the one you *almost* missed.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "scorpio",
+          "pose": "wave"
+        },
+        "b": {
+          "sign": "cancer",
+          "pose": "wave"
+        },
+        "link": "gold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "097-release-quietly",
+  "series": "Align ideas",
+  "title": "Release, quietly",
+  "footer": "auto",
+  "caption": "Passing on someone does not have to sting. Let it be quiet.",
+  "hashtags": [
+    "datingapp",
+    "kindness",
+    "astrology",
+    "blinddating",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "What if passing on someone was *quiet?*",
+      "vis": {
+        "k": "deck",
+        "n": 5,
+        "glow": 1
+      }
+    },
+    {
+      "head": "You *release* a card.",
+      "sub": "No buzz. No sting. Just quiet.",
+      "vis": {
+        "k": "mystery",
+        "sign": "gemini",
+        "name": "Mira, 26",
+        "lines": [
+          "Sun ♊ Gemini",
+          "Moon ♎ Libra"
+        ]
+      }
+    },
+    {
+      "head": "They don’t get a *rejection.*",
+      "sub": "They just get tomorrow’s deck.",
+      "vis": {
+        "k": "stamp",
+        "text": "RELEASED",
+        "over": "QUIETLY",
+        "col": "blue"
+      }
+    },
+    {
+      "head": "Not for you isn’t *not good.*",
+      "sub": "It's just not your night together.",
+      "vis": {
+        "k": "person",
+        "sign": "gemini",
+        "pose": "wave",
+        "bubble": "Next deck!"
+      }
+    },
+    {
+      "head": "Kindness can be *built in.*",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "gemini"
+        },
+        "b": {
+          "sign": "virgo"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Send this to someone who hates saying *no.*"
+    }
+  ]
+}

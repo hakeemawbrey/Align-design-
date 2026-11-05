@@ -1,0 +1,109 @@
+{
+  "id": "087-chosen-not-picked",
+  "series": "Relationships",
+  "title": "Being chosen vs being picked",
+  "footer": "auto",
+  "caption": "Picked is convenient. Chosen is on purpose. You can feel it.",
+  "hashtags": [
+    "relationships",
+    "selfworth",
+    "datingadvice",
+    "love",
+    "houston"
+  ],
+  "beats": [
+    {
+      "eyebrow": "LOVE, HONESTLY",
+      "head": "Being picked isn't the same as being *chosen.*",
+      "vis": {
+        "k": "crowd",
+        "n": 9,
+        "pair": [
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "head": "Picked is *convenient.*",
+      "sub": "You were free, and so was their weekend.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "calendar",
+            "label": "Free?"
+          },
+          {
+            "i": "clock",
+            "label": "Last minute"
+          },
+          {
+            "i": "phone",
+            "label": "“u up”"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Chosen is *on purpose.*",
+      "sub": "They planned. They asked. They followed through.",
+      "vis": {
+        "k": "checklist",
+        "title": "Chosen",
+        "items": [
+          "Planned ahead",
+          "Asked what you like",
+          "Followed through"
+        ]
+      }
+    },
+    {
+      "head": "Picked asks, *what’s easy?*",
+      "sub": "Chosen asks, what would they love?",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "Picked",
+          "icon": "clock",
+          "col": "blue"
+        },
+        "b": {
+          "label": "Chosen",
+          "icon": "rose",
+          "col": "pink"
+        },
+        "verdict": "b"
+      }
+    },
+    {
+      "head": "Chosen looks like *small* things, remembered.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "leo",
+          "prop": "flower",
+          "bubble": "Your favorite, right?"
+        },
+        "b": {
+          "sign": "aquarius"
+        },
+        "link": "heart",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "You can *feel* the difference.",
+      "sub": "Trust that feeling.",
+      "vis": {
+        "k": "heart",
+        "mode": "fill",
+        "label": "chosen"
+      }
+    },
+    {
+      "head": "Send this to someone worth choosing *on purpose.*"
+    }
+  ]
+}

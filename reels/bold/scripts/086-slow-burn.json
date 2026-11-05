@@ -1,0 +1,105 @@
+{
+  "id": "086-slow-burn",
+  "series": "Relationships",
+  "title": "The slow burn is underrated",
+  "voice": {
+    "voice": "af_aoede",
+    "speed": 1.03
+  },
+  "footer": "auto",
+  "caption": "No fireworks on date one is not a verdict. Some people grow on you.",
+  "hashtags": [
+    "slowburn",
+    "datingadvice",
+    "firstdate",
+    "relationships",
+    "astrology"
+  ],
+  "beats": [
+    {
+      "eyebrow": "DATING, HONESTLY",
+      "head": "The *slow burn* is underrated.",
+      "vis": {
+        "k": "constellation",
+        "shape": "heart",
+        "n": 14
+      }
+    },
+    {
+      "head": "No fireworks on the first date? *That's okay.*",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "Fireworks",
+          "icon": "fire",
+          "col": "red"
+        },
+        "b": {
+          "label": "Slow burn",
+          "icon": "candle",
+          "col": "gold"
+        },
+        "verdict": "vs"
+      }
+    },
+    {
+      "head": "Some people take a *minute* to open up.",
+      "sub": "Nerves aren't the same as no spark.",
+      "vis": {
+        "k": "person",
+        "sign": "capricorn",
+        "pose": "think",
+        "think": "Do they like me?"
+      }
+    },
+    {
+      "head": "You notice you *laugh* more each time.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "Date 1",
+          "Date 2",
+          "Date 3",
+          "Date 4"
+        ],
+        "icons": [
+          "coffee",
+          "chat",
+          "music",
+          "heart"
+        ],
+        "ding": 3
+      }
+    },
+    {
+      "head": "It builds on *knowing,* not guessing.",
+      "vis": {
+        "k": "meter",
+        "label": "Warmth",
+        "to": 0.85,
+        "ticks": [
+          "polite",
+          "easy",
+          "warm"
+        ],
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Give it *a few* dates before you decide.",
+      "sub": "Unless your gut says something is off.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "Fri",
+          "Tue",
+          "Sat"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "Send this to someone who *grew* on you."
+    }
+  ]
+}

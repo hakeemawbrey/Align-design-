@@ -1,0 +1,112 @@
+{
+  "id": "078-consistency-is-attractive",
+  "series": "Relationships",
+  "title": "Consistency is attractive",
+  "footer": "auto",
+  "caption": "Same energy on a Tuesday as on a Saturday. That is the whole thing.",
+  "hashtags": [
+    "datingadvice",
+    "consistency",
+    "relationshipgoals",
+    "greenflags",
+    "houston"
+  ],
+  "beats": [
+    {
+      "eyebrow": "DATING, HONESTLY",
+      "head": "Consistency is *quietly* the most attractive thing.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "Mon",
+          "Wed",
+          "Fri",
+          "Sun"
+        ],
+        "icons": [
+          "chat",
+          "coffee",
+          "chat",
+          "heart"
+        ],
+        "ding": 3
+      }
+    },
+    {
+      "head": "Same energy on *Tuesday* as on Saturday.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "Saturday",
+          "icon": "star",
+          "col": "gold"
+        },
+        "b": {
+          "label": "Tuesday",
+          "icon": "coffee",
+          "col": "gold"
+        },
+        "verdict": "="
+      }
+    },
+    {
+      "head": "Hot and cold isn't *passion.*",
+      "sub": "It's just hard to read.",
+      "vis": {
+        "k": "meter",
+        "label": "Mixed signals",
+        "to": 0.9,
+        "ticks": [
+          "cold",
+          "warm",
+          "hot"
+        ],
+        "col": "red"
+      }
+    },
+    {
+      "head": "Consistency is a promise you keep *quietly.*",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "Week 1",
+          "Week 2",
+          "Week 3",
+          "Week 4"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "You stop *decoding.* You start relaxing.",
+      "vis": {
+        "k": "phone",
+        "name": "Noor",
+        "sign": "taurus",
+        "time": "8:40 AM",
+        "msgs": [
+          [
+            "them",
+            "Morning. Still on for tonight?"
+          ],
+          [
+            "me",
+            "Yes. Can’t wait."
+          ],
+          [
+            "them",
+            "Me neither."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Send this to the one who *always* shows up.",
+      "vis": {
+        "k": "heart",
+        "mode": "fill",
+        "label": "every time"
+      }
+    }
+  ]
+}

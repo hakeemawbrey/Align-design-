@@ -1,0 +1,97 @@
+{
+  "id": "073-blue-moon",
+  "series": "Fun facts",
+  "title": "Once in a blue moon",
+  "voice": {
+    "voice": "af_nicole",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "A blue moon is the second full moon in one calendar month. It isn't blue.",
+  "hashtags": [
+    "funfacts",
+    "bluemoon",
+    "moon",
+    "space",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "FUN FACT",
+      "head": "A *blue moon* isn't blue.",
+      "vis": {
+        "k": "moon",
+        "phase": "full"
+      }
+    },
+    {
+      "head": "It's the *second* full moon in one calendar month.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "FULL MOON · 1st",
+          "FULL MOON · 31st"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "A full moon cycle is about *twenty-nine and a half* days.",
+      "sub": "Most months run a little longer, so sometimes two fit.",
+      "vis": {
+        "k": "moon",
+        "strip": true
+      }
+    },
+    {
+      "head": "That happens about every *two to three* years.",
+      "vis": {
+        "k": "fact",
+        "big": "~2.7",
+        "unit": "years apart",
+        "note": "on average, between blue moons",
+        "tag": "BLUE MOON"
+      }
+    },
+    {
+      "head": "The name is about *rarity*, not color.",
+      "vis": {
+        "k": "checklist",
+        "title": "BLUE MOON",
+        "items": [
+          "Second full moon in a month",
+          "Actually blue",
+          "Rarer than most"
+        ],
+        "marks": [
+          "✓",
+          "✕",
+          "✓"
+        ]
+      }
+    },
+    {
+      "head": "Rare, but it *happens*.",
+      "sub": "Like meeting someone who laughs at your weird jokes.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "gemini",
+          "bubble": "is a hot dog a taco"
+        },
+        "b": {
+          "sign": "aquarius",
+          "bubble": "yes, obviously"
+        },
+        "link": "spark"
+      }
+    },
+    {
+      "head": "Send this to your *once in a blue moon*.",
+      "vis": {
+        "k": "constellation",
+        "shape": "heart"
+      }
+    }
+  ]
+}

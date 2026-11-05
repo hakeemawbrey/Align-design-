@@ -1,0 +1,66 @@
+{
+  "id": "100-founding-members-houston",
+  "series": "Align ideas",
+  "title": "Founding members, Houston",
+  "footer": "auto",
+  "caption": "The first charts in a city shape what it becomes. Houston goes first.",
+  "hashtags": [
+    "houston",
+    "houstondating",
+    "astrology",
+    "foundingmember",
+    "htx"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "The first charts in a city are its *founders.*",
+      "vis": {
+        "k": "skyline",
+        "time": "night",
+        "stars": true
+      }
+    },
+    {
+      "head": "Houston goes *first.*",
+      "sub": "Other cities vote to be next.",
+      "vis": {
+        "k": "map",
+        "pins": true
+      }
+    },
+    {
+      "head": "Founding members carry a *numbered* card.",
+      "vis": {
+        "k": "stamp",
+        "text": "FOUNDER",
+        "over": "HOUSTON · NUMBERED",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Being early means you help *shape* it.",
+      "sub": "What feels right. What doesn’t.",
+      "vis": {
+        "k": "checklist",
+        "title": "Founders get to say",
+        "items": [
+          "What feels right",
+          "What feels off",
+          "What comes next"
+        ]
+      }
+    },
+    {
+      "head": "Every new chart makes tonight’s deck *richer.*",
+      "vis": {
+        "k": "constellation",
+        "n": 14,
+        "link": true
+      }
+    },
+    {
+      "head": "Send this to a Houstonian who likes being *early.*"
+    }
+  ]
+}

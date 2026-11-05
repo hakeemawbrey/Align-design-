@@ -1,0 +1,88 @@
+{
+  "id": "092-hard-stuff-first",
+  "series": "Align ideas",
+  "title": "What if the hard stuff came first?",
+  "footer": "auto",
+  "caption": "Dealbreakers up front are not picky. They are kind to both of you.",
+  "hashtags": [
+    "dealbreakers",
+    "datingapp",
+    "datingadvice",
+    "astrology",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "What if the *hard* stuff came first?",
+      "vis": {
+        "k": "stamps",
+        "title": "DEALBREAKERS",
+        "items": [
+          "✕ DOESN’T WANT KIDS",
+          "✕ SMOKES",
+          "✓ WANTS SOMETHING REAL"
+        ]
+      }
+    },
+    {
+      "head": "Usually you find out *months* in.",
+      "sub": "After the feelings already showed up.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "May",
+          "June",
+          "July"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "Up front, it’s just *information.*",
+      "sub": "Nobody is hurt. Nobody loses a season.",
+      "vis": {
+        "k": "mystery",
+        "sign": "sagittarius",
+        "name": "Ivy, 31",
+        "lines": [
+          "Sun ♐ Sagittarius",
+          "Moon ♈ Aries"
+        ],
+        "labels": [
+          "✕ smoking",
+          "✕ no kids",
+          "✓ something real"
+        ]
+      }
+    },
+    {
+      "head": "It isn't *picky.*",
+      "sub": "It's honest about what you can't bend on.",
+      "vis": {
+        "k": "scale",
+        "a": "Picky",
+        "b": "Honest",
+        "tilt": 0.6
+      }
+    },
+    {
+      "head": "It leaves more room for the *fun* stuff.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "sagittarius",
+          "bubble": "So, tacos or pho?"
+        },
+        "b": {
+          "sign": "aries"
+        },
+        "link": "heart",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "Send this to the friend who *always* finds out late."
+    }
+  ]
+}

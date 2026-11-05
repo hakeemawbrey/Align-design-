@@ -1,0 +1,116 @@
+{
+  "id": "077-boring-green-flags",
+  "series": "Relationships",
+  "title": "Green flags that look boring",
+  "voice": {
+    "voice": "af_heart",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "Steady is not the same as dull. Give the calm one a real chance.",
+  "hashtags": [
+    "greenflags",
+    "datingadvice",
+    "healthyrelationships",
+    "houstondating",
+    "astrology"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "The best green flags look *boring.*",
+      "sub": "That's not a flaw. That's the point.",
+      "vis": {
+        "k": "flags",
+        "green": [
+          "Texts back",
+          "Shows up",
+          "Remembers"
+        ]
+      }
+    },
+    {
+      "head": "They text back at a *normal* hour.",
+      "sub": "No puzzle. No waiting game.",
+      "vis": {
+        "k": "phone",
+        "name": "Rio",
+        "sign": "cancer",
+        "time": "6:12 PM",
+        "msgs": [
+          [
+            "them",
+            "Home safe? Loved tonight."
+          ],
+          [
+            "me",
+            "Same. Thursday?"
+          ],
+          [
+            "them",
+            "Thursday. Seven?"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Plans come with a *day* and a time.",
+      "sub": "Not “we should hang sometime.”",
+      "vis": {
+        "k": "note",
+        "title": "Thursday",
+        "lines": [
+          "7:00 · taco truck",
+          "then a walk",
+          "home by ten"
+        ]
+      }
+    },
+    {
+      "head": "They remember the *small* thing you said.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "cancer",
+          "bubble": "How did the interview go?"
+        },
+        "b": {
+          "sign": "virgo"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Calm can feel *unfamiliar* at first.",
+      "sub": "If you're used to chaos, steady can read as dull.",
+      "vis": {
+        "k": "heart",
+        "mode": "beat",
+        "label": "steady"
+      }
+    },
+    {
+      "head": "Give boring a *second* date.",
+      "sub": "Steady is what lasting looks like up close.",
+      "vis": {
+        "k": "checklist",
+        "title": "Boring, actually",
+        "items": [
+          "Consistent",
+          "Kind",
+          "Clear",
+          "Shows up"
+        ]
+      }
+    },
+    {
+      "head": "Send this to your *steady* one.",
+      "vis": {
+        "k": "stamp",
+        "text": "GREEN FLAG",
+        "over": "BORING, IN THE BEST WAY",
+        "col": "green"
+      }
+    }
+  ]
+}

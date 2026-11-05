@@ -1,0 +1,112 @@
+{
+  "id": "083-dealbreakers-vs-preferences",
+  "series": "Relationships",
+  "title": "Dealbreakers vs preferences",
+  "voice": {
+    "voice": "af_kore",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Hold your values firmly and your taste loosely.",
+  "hashtags": [
+    "dealbreakers",
+    "datingadvice",
+    "standards",
+    "relationships",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "Not every *preference* is a dealbreaker.",
+      "vis": {
+        "k": "stamps",
+        "title": "MY LIST",
+        "items": [
+          "✕ UNKIND TO SERVERS",
+          "✕ DOESN’T WANT KIDS",
+          "? MUST BE 6 FT"
+        ]
+      }
+    },
+    {
+      "head": "A dealbreaker is about *values.*",
+      "sub": "Kids, honesty, how they treat people.",
+      "vis": {
+        "k": "checklist",
+        "title": "Values",
+        "items": [
+          "Wants kids, or not",
+          "Tells the truth",
+          "Kind to strangers"
+        ]
+      }
+    },
+    {
+      "head": "A preference is about *taste.*",
+      "sub": "Height, music, how they feel about cilantro.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "music",
+            "label": "Music"
+          },
+          {
+            "i": "taco",
+            "label": "Cilantro"
+          },
+          {
+            "i": "sneaker",
+            "label": "Style"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Hold dealbreakers *firmly.*",
+      "sub": "Hold preferences loosely.",
+      "vis": {
+        "k": "scale",
+        "a": "Values",
+        "b": "Taste",
+        "tilt": -0.7
+      }
+    },
+    {
+      "head": "Your person might hate *cilantro.*",
+      "sub": "And still be exactly right for you.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "taurus",
+          "think": true,
+          "bubble": "No cilantro?"
+        },
+        "b": {
+          "sign": "scorpio"
+        },
+        "table": [
+          "taco",
+          "taco"
+        ],
+        "link": "heart",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "Send this to the friend with a *forty-item* list.",
+      "vis": {
+        "k": "note",
+        "title": "Must haves (1 of 40)",
+        "lines": [
+          "tall",
+          "likes my playlist",
+          "owns a dog, but not a big one",
+          "reads, but not too much"
+        ]
+      }
+    }
+  ]
+}

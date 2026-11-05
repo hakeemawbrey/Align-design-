@@ -1,0 +1,100 @@
+{
+  "id": "079-one-honest-sentence",
+  "series": "Relationships",
+  "title": "You need one sentence, not a speech",
+  "voice": {
+    "voice": "bf_emma",
+    "speed": 1.03
+  },
+  "footer": "auto",
+  "caption": "Say what you want in one honest sentence. Then let them answer.",
+  "hashtags": [
+    "datingadvice",
+    "communication",
+    "honesty",
+    "relationships",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "You don't need a *speech.*",
+      "sub": "You need one honest sentence.",
+      "vis": {
+        "k": "note",
+        "title": "Draft 14",
+        "lines": [
+          "So I've been thinking…",
+          "and I know this is a lot",
+          "but also no pressure",
+          "and also…"
+        ]
+      }
+    },
+    {
+      "head": "*I like you,* and I want to see you again.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "I like you.",
+          "I want to see you again."
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "Or: *I'm looking* for something real.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "leo",
+          "bubble": "I'm looking for something real."
+        },
+        "b": {
+          "sign": "pisces",
+          "bubble": "Honestly? Same."
+        },
+        "link": "heart",
+        "linkAt": 0.7
+      }
+    },
+    {
+      "head": "Say it *plainly.* Then stop talking.",
+      "sub": "Let the quiet do its job.",
+      "vis": {
+        "k": "person",
+        "sign": "leo",
+        "pose": "think",
+        "think": "…"
+      }
+    },
+    {
+      "head": "Their answer is *information,* not a verdict.",
+      "sub": "Either way, you know where you stand.",
+      "vis": {
+        "k": "scale",
+        "a": "Yes",
+        "b": "Not for me",
+        "tilt": 0
+      }
+    },
+    {
+      "head": "Save this for the sentence you keep *rewriting.*",
+      "vis": {
+        "k": "phone",
+        "name": "Draft",
+        "sign": "leo",
+        "time": "9:02 PM",
+        "msgs": [
+          [
+            "me",
+            "I like you. Dinner Friday?"
+          ],
+          [
+            "typing"
+          ]
+        ]
+      }
+    }
+  ]
+}

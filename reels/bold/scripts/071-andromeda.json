@@ -1,0 +1,104 @@
+{
+  "id": "071-andromeda",
+  "series": "Fun facts",
+  "title": "The farthest thing you can see",
+  "voice": {
+    "voice": "bm_george",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "On a dark night you can see the Andromeda galaxy, about 2.5 million light-years away.",
+  "hashtags": [
+    "funfacts",
+    "andromeda",
+    "galaxy",
+    "stargazing",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "SKY FACT",
+      "head": "You can see *another galaxy* with your bare eyes.",
+      "vis": {
+        "k": "fact",
+        "big": "2.5M",
+        "unit": "light-years",
+        "note": "the Andromeda galaxy",
+        "tag": "NAKED EYE"
+      }
+    },
+    {
+      "head": "It's *Andromeda*: a faint, fuzzy smudge on dark nights.",
+      "sub": "Far from city lights, best in autumn.",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 10
+      }
+    },
+    {
+      "head": "It's about *two and a half million* light-years away.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "Light leaves",
+          "Still traveling",
+          "Your eyes, tonight"
+        ],
+        "icons": [
+          "star",
+          "hourglass",
+          "moon"
+        ],
+        "ding": 2
+      }
+    },
+    {
+      "head": "That light left before *modern humans* existed.",
+      "sub": "And it landed in your eyes tonight.",
+      "vis": {
+        "k": "person",
+        "sign": "aquarius",
+        "pose": "think"
+      }
+    },
+    {
+      "head": "Every other star you see is in our *own* galaxy.",
+      "sub": "Andromeda is a whole other one.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "EVERY STAR",
+          "icon": "star",
+          "lines": [
+            "our galaxy"
+          ]
+        },
+        "b": {
+          "label": "ANDROMEDA",
+          "icon": "telescope",
+          "lines": [
+            "a whole other one"
+          ]
+        },
+        "verdict": "≠"
+      }
+    },
+    {
+      "head": "If light can cross *that*, you can cross town.",
+      "sub": "Send this to someone you'd travel two and a half million light-years for.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "leo",
+          "pose": "walk"
+        },
+        "b": {
+          "sign": "virgo",
+          "pose": "wave"
+        },
+        "link": "heart"
+      }
+    }
+  ]
+}

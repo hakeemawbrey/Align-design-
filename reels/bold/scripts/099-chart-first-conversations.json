@@ -1,0 +1,86 @@
+{
+  "id": "099-chart-first-conversations",
+  "series": "Align ideas",
+  "title": "Start with the chart",
+  "footer": "auto",
+  "caption": "A Moon sign is a better opener than \"hey\". Ask about it.",
+  "hashtags": [
+    "astrology",
+    "conversationstarters",
+    "bigthree",
+    "datingapp",
+    "firstmessage"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Better first lines start with the *chart.*",
+      "vis": {
+        "k": "mystery",
+        "sign": "pisces",
+        "name": "Zena, 28",
+        "lines": [
+          "Sun ♓ Pisces",
+          "Moon ♑ Capricorn",
+          "Rising ♋ Cancer"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "Small talk *stalls.*",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "So… what do you do?",
+          "Busy week?",
+          "Crazy weather lol"
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "Capricorn Moon? Ask what helps her *unwind.*",
+      "vis": {
+        "k": "phone",
+        "name": "Zena",
+        "sign": "pisces",
+        "time": "8:05 PM",
+        "msgs": [
+          [
+            "me",
+            "Capricorn Moon. What actually helps you unwind?"
+          ],
+          [
+            "them",
+            "Honestly? A plan. And a long walk."
+          ],
+          [
+            "them",
+            "Okay, good question."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Your chart is a *prompt,* not a prophecy.",
+      "vis": {
+        "k": "bigthree",
+        "sun": "pisces",
+        "moon": "capricorn",
+        "rising": "cancer",
+        "labels": true
+      }
+    },
+    {
+      "head": "It hands you something *real* to ask.",
+      "vis": {
+        "k": "talkcard",
+        "q": "What's something your Rising gets wrong about you?"
+      }
+    },
+    {
+      "head": "Send this to someone who opens with *“hey.”*"
+    }
+  ]
+}

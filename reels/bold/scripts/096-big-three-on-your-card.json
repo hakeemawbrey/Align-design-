@@ -1,0 +1,67 @@
+{
+  "id": "096-big-three-on-your-card",
+  "series": "Align ideas",
+  "title": "Your big three, on your card",
+  "footer": "auto",
+  "caption": "Sun, Moon, Rising. Three lines that start better conversations than a bio.",
+  "hashtags": [
+    "bigthree",
+    "astrology",
+    "sunmoonrising",
+    "zodiac",
+    "datingapp"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Your card leads with your *big three.*",
+      "vis": {
+        "k": "bigthree",
+        "sun": "taurus",
+        "moon": "pisces",
+        "rising": "leo",
+        "labels": true
+      }
+    },
+    {
+      "head": "*Sun:* who you are.",
+      "vis": {
+        "k": "glyph",
+        "sign": "taurus",
+        "name": true
+      }
+    },
+    {
+      "head": "*Moon:* what you need.",
+      "vis": {
+        "k": "moon",
+        "phase": "crescent"
+      }
+    },
+    {
+      "head": "*Rising:* how you come across.",
+      "vis": {
+        "k": "horizon",
+        "sign": "leo",
+        "person": true
+      }
+    },
+    {
+      "head": "Three lines that say *more* than a bio.",
+      "sub": "And start better conversations.",
+      "vis": {
+        "k": "mystery",
+        "sign": "taurus",
+        "name": "You",
+        "lines": [
+          "Sun ♉ Taurus",
+          "Moon ♓ Pisces",
+          "Rising ♌ Leo"
+        ]
+      }
+    },
+    {
+      "head": "Tag someone and trade big *threes.*"
+    }
+  ]
+}

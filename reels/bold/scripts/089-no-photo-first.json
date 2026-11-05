@@ -1,0 +1,95 @@
+{
+  "id": "089-no-photo-first",
+  "series": "Align ideas",
+  "title": "What if you couldn't see them first?",
+  "footer": "auto",
+  "caption": "Chart, words, then the face. A different kind of first impression.",
+  "hashtags": [
+    "blinddating",
+    "astrology",
+    "datingapp",
+    "houstondating",
+    "mysterycard"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "What if you couldn't see their *photo* first?",
+      "vis": {
+        "k": "mystery",
+        "sign": "libra",
+        "name": "Noor, 29",
+        "lines": [
+          "Sun ♎ Libra",
+          "Moon ♋ Cancer",
+          "Rising ♐ Sagittarius"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "You'd read their *words* instead.",
+      "vis": {
+        "k": "mystery",
+        "keep": true,
+        "sign": "libra",
+        "name": "Noor, 29",
+        "lines": [
+          "Sun ♎ Libra",
+          "Moon ♋ Cancer",
+          "“Sundays are for soup”",
+          "Dealbreaker: rudeness"
+        ]
+      }
+    },
+    {
+      "head": "You'd notice *how* they answer.",
+      "vis": {
+        "k": "talkcard",
+        "q": "What's a small thing that makes your day?",
+        "answers": [
+          "Morning walks.",
+          "A long phone call."
+        ]
+      }
+    },
+    {
+      "head": "Your first impression would be *them.*",
+      "sub": "Not the angle. Not the filter.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "libra"
+        },
+        "b": {
+          "sign": "gemini"
+        },
+        "link": "spark"
+      }
+    },
+    {
+      "head": "The face still comes, *later.*",
+      "sub": "When you both say yes.",
+      "vis": {
+        "k": "mystery",
+        "sign": "libra",
+        "name": "Noor, 29",
+        "lines": [
+          "Sun ♎ Libra",
+          "Moon ♋ Cancer",
+          "Rising ♐ Sagittarius"
+        ],
+        "reveal": 0.35
+      }
+    },
+    {
+      "head": "Send this to someone who'd *love* a blind start.",
+      "vis": {
+        "k": "stamp",
+        "text": "BLIND START",
+        "over": "WORDS BEFORE LOOKS",
+        "col": "gold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "082-love-bombing-vs-real-interest",
+  "series": "Relationships",
+  "title": "Love-bombing vs real interest",
+  "footer": "auto",
+  "caption": "Fast and loud, or curious and steady. One of them sticks around.",
+  "hashtags": [
+    "lovebombing",
+    "redflags",
+    "greenflags",
+    "datingadvice",
+    "relationships"
+  ],
+  "beats": [
+    {
+      "eyebrow": "DATING, HONESTLY",
+      "head": "Love-bombing and real interest can look *alike.*",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "Love-bombing",
+          "icon": "bolt",
+          "col": "red"
+        },
+        "b": {
+          "label": "Real interest",
+          "icon": "plant",
+          "col": "green"
+        },
+        "verdict": "vs"
+      }
+    },
+    {
+      "head": "Love-bombing is *fast.*",
+      "sub": "“Forever” by the second date.",
+      "vis": {
+        "k": "phone",
+        "name": "Jay",
+        "sign": "aries",
+        "time": "11:48 PM",
+        "msgs": [
+          [
+            "them",
+            "I've never felt like this"
+          ],
+          [
+            "them",
+            "Let's take a trip together"
+          ],
+          [
+            "them",
+            "You are my everything"
+          ],
+          [
+            "status",
+            "Date 2"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Real interest is *curious.*",
+      "sub": "It asks questions and waits for the answers.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "virgo",
+          "bubble": "Tell me more about that?"
+        },
+        "b": {
+          "sign": "sagittarius"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "One rushes your *yes.*",
+      "sub": "The other is fine with “let's see.”",
+      "vis": {
+        "k": "scale",
+        "a": "Rush",
+        "b": "Pace",
+        "tilt": 0.6
+      }
+    },
+    {
+      "head": "Big words, tiny follow-through? *Slow down.*",
+      "vis": {
+        "k": "meter",
+        "label": "Follow-through",
+        "to": 0.15,
+        "ticks": [
+          "low",
+          "some",
+          "solid"
+        ],
+        "col": "red"
+      }
+    },
+    {
+      "head": "Steady words, steady actions? *That* lasts.",
+      "vis": {
+        "k": "flags",
+        "green": [
+          "Steady",
+          "Curious",
+          "Patient"
+        ]
+      }
+    },
+    {
+      "head": "Send this to someone being swept off their *feet.*",
+      "vis": {
+        "k": "heart",
+        "mode": "beat",
+        "label": "go slow"
+      }
+    }
+  ]
+}

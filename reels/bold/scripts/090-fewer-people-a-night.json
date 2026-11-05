@@ -1,0 +1,73 @@
+{
+  "id": "090-fewer-people-a-night",
+  "series": "Align ideas",
+  "title": "Fewer people, better nights",
+  "voice": {
+    "voice": "bm_george",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "Six cards read properly beat six hundred faces skimmed.",
+  "hashtags": [
+    "datingapp",
+    "slowdating",
+    "astrology",
+    "houstondating",
+    "tonightsdeck"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Fewer people a night is *better.*",
+      "vis": {
+        "k": "deck",
+        "n": 6
+      }
+    },
+    {
+      "head": "Endless options make *everyone* forgettable.",
+      "vis": {
+        "k": "crowd",
+        "n": 15,
+        "same": "violet"
+      }
+    },
+    {
+      "head": "A small deck makes each card *matter.*",
+      "sub": "You actually read them.",
+      "vis": {
+        "k": "deck",
+        "n": 6,
+        "glow": 2,
+        "glowAt": 0.4,
+        "label": "TONIGHT'S DECK"
+      }
+    },
+    {
+      "head": "And tomorrow, a *new* deck.",
+      "sub": "So nobody gets rushed tonight.",
+      "vis": {
+        "k": "deck",
+        "n": 6,
+        "label": "TOMORROW · NEW DECK"
+      }
+    },
+    {
+      "head": "Send this to someone tired of *endless* scrolling.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "pisces"
+        },
+        "b": {
+          "sign": "cancer"
+        },
+        "table": [
+          "cup",
+          "cup"
+        ],
+        "link": "gold"
+      }
+    }
+  ]
+}

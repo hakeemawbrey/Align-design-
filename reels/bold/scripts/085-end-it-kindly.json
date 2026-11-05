@@ -1,0 +1,100 @@
+{
+  "id": "085-end-it-kindly",
+  "series": "Relationships",
+  "title": "How to end it kindly",
+  "footer": "auto",
+  "caption": "Not feeling it is allowed. Disappearing is optional.",
+  "hashtags": [
+    "ghosting",
+    "datingadvice",
+    "kindness",
+    "datingetiquette",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "Not feeling it? You can still be *kind.*",
+      "vis": {
+        "k": "person",
+        "sign": "libra",
+        "pose": "phone",
+        "think": "How do I say this?"
+      }
+    },
+    {
+      "head": "Ghosting *feels* easier.",
+      "sub": "It just leaves them holding all the questions.",
+      "vis": {
+        "k": "ghost",
+        "label": "easy for one of you"
+      }
+    },
+    {
+      "head": "Try *three* sentences.",
+      "sub": "Thank them. Be clear. Wish them well.",
+      "vis": {
+        "k": "checklist",
+        "title": "The kind exit",
+        "items": [
+          "Thank them",
+          "Be clear",
+          "Wish them well"
+        ]
+      }
+    },
+    {
+      "head": "Short, *warm,* and clear.",
+      "vis": {
+        "k": "phone",
+        "name": "Dev",
+        "sign": "aries",
+        "time": "7:15 PM",
+        "msgs": [
+          [
+            "me",
+            "I really enjoyed meeting you."
+          ],
+          [
+            "me",
+            "I'm not feeling a romantic spark."
+          ],
+          [
+            "me",
+            "Wishing you the best, truly."
+          ],
+          [
+            "them",
+            "Thanks for telling me. You too."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Skip the *“maybe later”* if you mean no.",
+      "sub": "A soft maybe keeps them waiting.",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "“Maybe someday?”",
+          "“Let’s stay in touch!”",
+          "“I’m not feeling it. Thank you.”"
+        ],
+        "pick": 2,
+        "mark": "✓",
+        "stamp": "KIND"
+      }
+    },
+    {
+      "head": "Everyone deserves an *ending.*",
+      "vis": {
+        "k": "person",
+        "sign": "libra",
+        "pose": "wave"
+      }
+    },
+    {
+      "head": "Save this for the text you've been *avoiding.*"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "080-three-questions-date-three",
+  "series": "Relationships",
+  "title": "Three questions for date three",
+  "footer": "auto",
+  "caption": "Not an interview. Just three questions that get to the good part.",
+  "hashtags": [
+    "firstdate",
+    "datingadvice",
+    "datingtips",
+    "conversation",
+    "houston"
+  ],
+  "beats": [
+    {
+      "eyebrow": "DATE THREE",
+      "head": "Three questions worth asking by *date three.*",
+      "vis": {
+        "k": "icons",
+        "items": [
+          "question",
+          "question",
+          "question"
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "One: what does a *good week* look like for you?",
+      "sub": "You learn their rhythm, not their résumé.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "gemini",
+          "bubble": "What makes a good week?"
+        },
+        "b": {
+          "sign": "capricorn"
+        },
+        "table": [
+          "cup",
+          "cup"
+        ]
+      }
+    },
+    {
+      "head": "Two: who are you *closest* to?",
+      "sub": "How they talk about people tells you plenty.",
+      "vis": {
+        "k": "crowd",
+        "n": 5,
+        "pair": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "head": "Three: what are you *looking for* right now?",
+      "sub": "Ask it warmly. Then actually listen.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "Something real",
+          "Taking it slow",
+          "Not sure yet"
+        ],
+        "stack": true
+      }
+    },
+    {
+      "head": "Trade answers. No *interview* energy.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "Interview",
+          "icon": "briefcase",
+          "col": "red"
+        },
+        "b": {
+          "label": "Conversation",
+          "icon": "chat",
+          "col": "green"
+        },
+        "verdict": "b"
+      }
+    },
+    {
+      "head": "Save this for *date three.*",
+      "vis": {
+        "k": "checklist",
+        "title": "By date three",
+        "items": [
+          "A good week?",
+          "Closest people?",
+          "Looking for?"
+        ]
+      }
+    }
+  ]
+}

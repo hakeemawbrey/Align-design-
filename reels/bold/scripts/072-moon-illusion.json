@@ -1,0 +1,100 @@
+{
+  "id": "072-moon-illusion",
+  "series": "Fun facts",
+  "title": "The big moon is a trick",
+  "voice": {
+    "voice": "af_heart",
+    "speed": 1.06
+  },
+  "footer": "auto",
+  "caption": "The moon on the horizon isn't bigger. Your brain is just comparing.",
+  "hashtags": [
+    "funfacts",
+    "moon",
+    "moonillusion",
+    "space",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "The huge moon on the horizon is *not* bigger.",
+      "vis": {
+        "k": "moon",
+        "phase": "full"
+      }
+    },
+    {
+      "head": "It's the same size as when it's *high* overhead.",
+      "sub": "If anything, it's a hair farther away.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "ON THE HORIZON",
+          "icon": "moon"
+        },
+        "b": {
+          "label": "OVERHEAD",
+          "icon": "moon"
+        },
+        "verdict": "="
+      }
+    },
+    {
+      "head": "Try it: cover it with your *pinky* at arm's length.",
+      "sub": "Low or high, it fits the same.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "pose": "point"
+      }
+    },
+    {
+      "head": "It's called the *moon illusion*.",
+      "sub": "Scientists still argue over exactly why it happens.",
+      "vis": {
+        "k": "fact",
+        "big": "0.5°",
+        "unit": "wide, low or high",
+        "tag": "MOON ILLUSION"
+      }
+    },
+    {
+      "head": "One idea: your brain compares it to *trees* and rooftops.",
+      "sub": "Next to something familiar, it suddenly feels enormous.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "plant",
+            "label": "Trees"
+          },
+          {
+            "i": "moon",
+            "label": "Moon"
+          },
+          {
+            "i": "house",
+            "label": "Rooftops"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "The moon didn't change. *How you looked* did.",
+      "sub": "Worth a second look at someone you scrolled past.",
+      "vis": {
+        "k": "moon",
+        "wax": true
+      }
+    },
+    {
+      "head": "Send this to the one who's *huge* on your horizon.",
+      "vis": {
+        "k": "heart",
+        "mode": "fill"
+      }
+    }
+  ]
+}

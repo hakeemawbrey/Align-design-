@@ -1,0 +1,95 @@
+{
+  "id": "093-push-pull-align-explained",
+  "series": "Align ideas",
+  "title": "What pushes, what pulls, what aligns",
+  "footer": "auto",
+  "caption": "Every pair has all three. The mix is the interesting part.",
+  "hashtags": [
+    "astrology",
+    "synastry",
+    "zodiac",
+    "relationships",
+    "pushpullalign"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "Two charts. Three *forces.*",
+      "vis": {
+        "k": "ppa",
+        "a": "aries",
+        "b": "libra",
+        "show": []
+      }
+    },
+    {
+      "head": "*Push* is where you challenge each other.",
+      "sub": "Friction that can help you both grow.",
+      "vis": {
+        "k": "ppa",
+        "keep": true,
+        "a": "aries",
+        "b": "libra",
+        "show": [
+          "push"
+        ]
+      }
+    },
+    {
+      "head": "*Pull* is the draw.",
+      "sub": "What keeps you curious about each other.",
+      "vis": {
+        "k": "ppa",
+        "keep": true,
+        "a": "aries",
+        "b": "libra",
+        "show": [
+          "push",
+          "pull"
+        ]
+      }
+    },
+    {
+      "head": "*Align* is where you just get it.",
+      "sub": "The easy, quiet yes.",
+      "vis": {
+        "k": "ppa",
+        "keep": true,
+        "a": "aries",
+        "b": "libra",
+        "show": [
+          "push",
+          "pull",
+          "align"
+        ]
+      }
+    },
+    {
+      "head": "Every pair has *all three.*",
+      "sub": "The mix is the interesting part.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries"
+        },
+        "b": {
+          "sign": "libra"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "It's a *lens,* not a verdict.",
+      "sub": "You still decide who you are together.",
+      "vis": {
+        "k": "person",
+        "sign": "libra",
+        "pose": "think",
+        "think": "Interesting…"
+      }
+    },
+    {
+      "head": "Tag the person who pushes you to *grow.*"
+    }
+  ]
+}

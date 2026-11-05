@@ -1,0 +1,93 @@
+{
+  "id": "094-veil-lifts",
+  "series": "Align ideas",
+  "title": "The veil lifts when you both align",
+  "voice": {
+    "voice": "af_bella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Chart first, words next, the face when you both say yes.",
+  "hashtags": [
+    "blinddating",
+    "mysterycard",
+    "astrology",
+    "datingapp",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "THE IDEA",
+      "head": "The veil lifts when you *both* align.",
+      "vis": {
+        "k": "mystery",
+        "sign": "scorpio",
+        "name": "Juniper, 27",
+        "lines": [
+          "Sun ♏ Scorpio",
+          "Moon ♓ Pisces",
+          "Rising ♌ Leo"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "Your face isn't the *first* thing they get.",
+      "sub": "Your chart and your words are.",
+      "vis": {
+        "k": "mystery",
+        "sign": "scorpio",
+        "name": "Juniper, 27",
+        "lines": [
+          "Sun ♏ Scorpio",
+          "Moon ♓ Pisces",
+          "“Ask me about plants”"
+        ],
+        "labels": [
+          "✕ smoking",
+          "✓ honesty"
+        ]
+      }
+    },
+    {
+      "head": "You align. Then *they* align.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "taurus"
+        },
+        "b": {
+          "sign": "scorpio"
+        },
+        "link": "heart",
+        "linkAt": 0.55
+      }
+    },
+    {
+      "head": "Then the *veil* lifts.",
+      "vis": {
+        "k": "mystery",
+        "sign": "scorpio",
+        "name": "Juniper, 27",
+        "lines": [
+          "Sun ♏ Scorpio",
+          "Moon ♓ Pisces",
+          "Rising ♌ Leo"
+        ],
+        "reveal": 0.25
+      }
+    },
+    {
+      "head": "By then, you already *like* them.",
+      "sub": "The face just finishes the picture.",
+      "vis": {
+        "k": "stamp",
+        "text": "YOU BOTH ALIGNED",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Send this to someone who'd rather be *known* first."
+    }
+  ]
+}

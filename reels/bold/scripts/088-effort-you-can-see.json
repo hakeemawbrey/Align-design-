@@ -1,0 +1,125 @@
+{
+  "id": "088-effort-you-can-see",
+  "series": "Relationships",
+  "title": "Effort you can see",
+  "footer": "auto",
+  "caption": "Interest is easy to say. Effort is easy to see.",
+  "hashtags": [
+    "effort",
+    "greenflags",
+    "datingadvice",
+    "relationshipgoals",
+    "houstondating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "REAL TALK",
+      "head": "You shouldn't have to *guess* if they care.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          "question",
+          "heart",
+          "check"
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "They ask a *follow-up* question.",
+      "vis": {
+        "k": "phone",
+        "name": "Kofi",
+        "sign": "virgo",
+        "time": "5:20 PM",
+        "msgs": [
+          [
+            "me",
+            "Big presentation today"
+          ],
+          [
+            "them",
+            "How did it go? Did the second slide land?"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "They plan the *second* date.",
+      "sub": "With a day, a time, and a place.",
+      "vis": {
+        "k": "note",
+        "title": "Saturday",
+        "lines": [
+          "10:00 farmers market",
+          "you said you love peaches",
+          "I’ll bring coffee"
+        ]
+      }
+    },
+    {
+      "head": "They remember your *coffee* order.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "pose": "stand",
+        "prop": "coffee",
+        "bubble": "Oat milk, extra hot."
+      }
+    },
+    {
+      "head": "Small things, *often.*",
+      "sub": "Not grand gestures once a season.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "Mon",
+          "Tue",
+          "Thu",
+          "Sat"
+        ],
+        "icons": [
+          "chat",
+          "coffee",
+          "letter",
+          "flower"
+        ],
+        "ding": 3
+      }
+    },
+    {
+      "head": "Words are nice. *Effort* is proof.",
+      "vis": {
+        "k": "scale",
+        "a": "Words",
+        "b": "Effort",
+        "tilt": 0.7
+      }
+    },
+    {
+      "head": "And it goes *both* ways.",
+      "sub": "Show up the way you want to be shown up for.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "virgo"
+        },
+        "b": {
+          "sign": "pisces"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Tag someone whose effort you can *see.*",
+      "vis": {
+        "k": "flags",
+        "green": [
+          "Asks",
+          "Plans",
+          "Remembers"
+        ]
+      }
+    }
+  ]
+}
