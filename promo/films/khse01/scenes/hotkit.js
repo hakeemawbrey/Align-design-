@@ -363,7 +363,7 @@ function buildLast(root, { text, at, accent, cps = 30 }) {
 export function makeHotSeat(cfg) {
   const T = timeline(cfg)
   const HERO = signStar(cfg.seatPisces ? 'pisces' : cfg.sign), PIS = signStar('pisces')
-  const BOOTH = signStar(cfg.booth?.sign || 'pisces')
+  const boothSign = t => (typeof cfg.booth?.sign === 'function' ? cfg.booth.sign(t) : cfg.booth?.sign) || 'pisces'
   const accent = cfg.accent || HERO.color
   const CPS = 30
   const lastTimes = lineTimes([{ t: T.lastAt, speaker: 'THE STARS', text: cfg.last }], { cps: CPS })[0]
@@ -443,7 +443,7 @@ export function makeHotSeat(cfg) {
         const F = starFrame(heroOpts.x, heroOpts.y, heroOpts.s, t, { hops: heroOpts.hops, seed: 3 })
         if (cfg.seatPisces) inSprite(x, F, () => tearsCells(x, t, t >= T.fa ? 3 : 2))
         if (cfg.onHero) inSprite(x, F, () => cfg.onHero(x, t, S))
-        if (t >= T.fq + 0.3 && t < T.lastAt && !cfg.seatPisces) inSprite(x, F, () => sweatCells(x, t, 1))
+        if (t >= T.fq + 0.3 && t < T.lastAt && !cfg.seatPisces && !cfg.noSweat) inSprite(x, F, () => sweatCells(x, t, 1))
         x.restore()
       }
       if (!ch.off || !ch.off(t)) chair(x, cx, 1210, { spin, tip, part: 'front' })
@@ -474,8 +474,8 @@ export function makeHotSeat(cfg) {
       const pk = pressK(t)
       const sob = cfg.seatPisces ? 1 : t >= T.fa + 0.3 ? 3 : t >= T.fq ? 2 : 1
       const bx = 905, by = 1500
-      const bo = cfg.booth?.sign || 'pisces'
-      const opts = { color: BOOTH.color, glyph: null, mood: bo === 'pisces' ? (t >= T.fa + 0.3 ? 'sparkle' : 'wide') : (t >= T.fa + 0.3 ? 'happy' : 'neutral'), look: [-1, -0.6], seed: 6, glow: 0.8, hops: [...pressTimes.map(p => p - 0.08), T.fa + 0.3, T.fa + 0.9, T.lastAt + 0.6], tips: false }
+      const bo = boothSign(t)
+      const opts = { color: signStar(bo).color, glyph: null, mood: bo === 'pisces' ? (t >= T.fa + 0.3 ? 'sparkle' : 'wide') : (t >= T.fa + 0.3 ? 'happy' : 'neutral'), look: [-1, -0.6], seed: 6, glow: 0.8, hops: [...pressTimes.map(p => p - 0.08), T.fa + 0.3, T.fa + 0.9, T.lastAt + 0.6], tips: false }
       drawStarChar(x, bx, by, 210, t, opts)
       const F = starFrame(bx, by, 210, t, { hops: opts.hops, seed: 6 })
       if (bo === 'pisces') inSprite(x, F, () => tearsCells(x, t, sob))
