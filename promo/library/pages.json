@@ -1025,5 +1025,73 @@
    }
   ],
   "url": "https://claude.ai/artifact/WhfzxeMkQhktDwoNPvbG8H"
+ },
+ {
+  "n": 39,
+  "slug": "pl39",
+  "title": "Star Talk Planet Talk · 1",
+  "h1": "Planet <em>Talk</em> 1",
+  "sections": [
+   {
+    "key": "psun",
+    "name": "Planet Talk: The Sun",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "pmoon",
+    "name": "Planet Talk: The Moon",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "pmercury",
+    "name": "Planet Talk: Mercury",
+    "sub": "12 videos · one per sign · home signs long"
+   },
+   {
+    "key": "pvenus",
+    "name": "Planet Talk: Venus",
+    "sub": "12 videos · one per sign · home signs long"
+   },
+   {
+    "key": "pmars",
+    "name": "Planet Talk: Mars",
+    "sub": "12 videos · one per sign · home sign long"
+   }
+  ],
+  "url": "https://claude.ai/artifact/584HYQb7nKuzMJwkD5U8mV"
+ },
+ {
+  "n": 40,
+  "slug": "pl40",
+  "title": "Star Talk Planet Talk · 2",
+  "h1": "Planet <em>Talk</em> 2",
+  "sections": [
+   {
+    "key": "pjupiter",
+    "name": "Planet Talk: Jupiter",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "psaturn",
+    "name": "Planet Talk: Saturn",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "puranus",
+    "name": "Planet Talk: Uranus",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "pneptune",
+    "name": "Planet Talk: Neptune",
+    "sub": "12 videos · one per sign · home sign long"
+   },
+   {
+    "key": "ppluto",
+    "name": "Planet Talk: Pluto",
+    "sub": "12 videos · one per sign · home sign long"
+   }
+  ],
+  "url": "https://claude.ai/artifact/EfeUZqVR6Lj18jQsyUDsdR"
  }
 ]

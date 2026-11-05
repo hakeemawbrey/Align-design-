@@ -167,3 +167,22 @@ They follow the same new rules: no end card and no card transition.
   no border.
 - **Rough timing:** about 7–8 hours from "go" to everything in Drive and scheduled. The long videos take longer to
   render, and web copies of the 2-minute ones are encoded to stay under the 20 MB upload limit.
+
+---
+
+## Add-on: Planet Talk (120 more videos)
+
+The planets talk to the zodiac signs: **10 planets × 12 signs = 120 videos**, so every sign gets a message from every
+planet.
+- **Characters:** each planet has its own personality. The Sun is a loud hype coach, the Moon soft and moody,
+  Mercury the overthinker's coach, Venus a glamorous romantic, Mars all "just ask them out", Jupiter the generous
+  uncle, Saturn strict but secretly sweet, Uranus a chaotic genius, Neptune a dreamy movie romantic, and Pluto tiny,
+  intense and proud of it.
+- **Lengths:** 108 short (20–35 s) and 12 long (60–90 s). The long ones are each planet talking to the sign it rules
+  in astrology (the Sun to Leo, Venus to Taurus and Libra, and so on).
+- **Posting:** half on star_talk (funnier) and half on star_advice (warmer). That's 2 extra posts a day on each
+  account across days 26–55, so the combined schedule becomes **1,920 videos**.
+- **Same rules:** no end card, no card transition, crazy hooks, and Pisces cries in every one.
+
+Build guide: promo/films/PLANETS-BUILD.md. Series and batches: promo/library/planets/series.json (10 sessions, one
+per planet; the Sun's session builds the shared planet characters first).

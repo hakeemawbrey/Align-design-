@@ -1,0 +1,1008 @@
+{
+ "series": [
+  {
+   "key": "psun",
+   "planet": "sun",
+   "name": "Planet Talk: The Sun",
+   "prefix": "kpsu",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "leo"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 39,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pmoon",
+   "planet": "moon",
+   "name": "Planet Talk: The Moon",
+   "prefix": "kpmo",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "cancer"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 39,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": true,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pmercury",
+   "planet": "mercury",
+   "name": "Planet Talk: Mercury",
+   "prefix": "kpme",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "gemini",
+    "virgo"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 39,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": true,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pvenus",
+   "planet": "venus",
+   "name": "Planet Talk: Venus",
+   "prefix": "kpve",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "taurus",
+    "libra"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 39,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": true,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pmars",
+   "planet": "mars",
+   "name": "Planet Talk: Mars",
+   "prefix": "kpma",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "aries"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 39,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pjupiter",
+   "planet": "jupiter",
+   "name": "Planet Talk: Jupiter",
+   "prefix": "kpju",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "sagittarius"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 40,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "psaturn",
+   "planet": "saturn",
+   "name": "Planet Talk: Saturn",
+   "prefix": "kpsa",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "capricorn"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 40,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": true,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "puranus",
+   "planet": "uranus",
+   "name": "Planet Talk: Uranus",
+   "prefix": "kpur",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "aquarius"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 40,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": true,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "pneptune",
+   "planet": "neptune",
+   "name": "Planet Talk: Neptune",
+   "prefix": "kpne",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "pisces"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 40,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": true,
+     "account": "star_advice"
+    }
+   ]
+  },
+  {
+   "key": "ppluto",
+   "planet": "pluto",
+   "name": "Planet Talk: Pluto",
+   "prefix": "kppl",
+   "count": 12,
+   "kind": "post",
+   "account": "both",
+   "home": [
+    "scorpio"
+   ],
+   "short_len": "20-35 s",
+   "long_len": "60-90 s",
+   "page": 40,
+   "episodes": [
+    {
+     "episode": 1,
+     "sign": "aries",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 2,
+     "sign": "taurus",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 3,
+     "sign": "gemini",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 4,
+     "sign": "cancer",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 5,
+     "sign": "leo",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 6,
+     "sign": "virgo",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 7,
+     "sign": "libra",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 8,
+     "sign": "scorpio",
+     "long": true,
+     "account": "star_advice"
+    },
+    {
+     "episode": 9,
+     "sign": "sagittarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 10,
+     "sign": "capricorn",
+     "long": false,
+     "account": "star_advice"
+    },
+    {
+     "episode": 11,
+     "sign": "aquarius",
+     "long": false,
+     "account": "star_talk"
+    },
+    {
+     "episode": 12,
+     "sign": "pisces",
+     "long": false,
+     "account": "star_advice"
+    }
+   ]
+  }
+ ],
+ "batches": [
+  {
+   "id": "p01",
+   "parts": [
+    {
+     "series": "psun",
+     "first": 1,
+     "last": 12,
+     "page": 39
+    }
+   ]
+  },
+  {
+   "id": "p02",
+   "parts": [
+    {
+     "series": "pmoon",
+     "first": 1,
+     "last": 12,
+     "page": 39
+    }
+   ]
+  },
+  {
+   "id": "p03",
+   "parts": [
+    {
+     "series": "pmercury",
+     "first": 1,
+     "last": 12,
+     "page": 39
+    }
+   ]
+  },
+  {
+   "id": "p04",
+   "parts": [
+    {
+     "series": "pvenus",
+     "first": 1,
+     "last": 12,
+     "page": 39
+    }
+   ]
+  },
+  {
+   "id": "p05",
+   "parts": [
+    {
+     "series": "pmars",
+     "first": 1,
+     "last": 12,
+     "page": 39
+    }
+   ]
+  },
+  {
+   "id": "p06",
+   "parts": [
+    {
+     "series": "pjupiter",
+     "first": 1,
+     "last": 12,
+     "page": 40
+    }
+   ]
+  },
+  {
+   "id": "p07",
+   "parts": [
+    {
+     "series": "psaturn",
+     "first": 1,
+     "last": 12,
+     "page": 40
+    }
+   ]
+  },
+  {
+   "id": "p08",
+   "parts": [
+    {
+     "series": "puranus",
+     "first": 1,
+     "last": 12,
+     "page": 40
+    }
+   ]
+  },
+  {
+   "id": "p09",
+   "parts": [
+    {
+     "series": "pneptune",
+     "first": 1,
+     "last": 12,
+     "page": 40
+    }
+   ]
+  },
+  {
+   "id": "p10",
+   "parts": [
+    {
+     "series": "ppluto",
+     "first": 1,
+     "last": 12,
+     "page": 40
+    }
+   ]
+  }
+ ]
+}
