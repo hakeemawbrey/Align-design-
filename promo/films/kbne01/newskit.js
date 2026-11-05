@@ -627,7 +627,7 @@ export function livingRoom(x, t, R, { wall = '#3b2a6a', lamp = true } = {}) {
 }
 
 /** the long films' promise strip ("stay for the 11:59 update") under the headline, between a and b (real time) */
-export function promise(x, t, s, [a, b], { y = 432 } = {}) {
+export function promise(x, t, s, [a, b], { y = 456 } = {}) {
   const k = pop01(t, a, 0.35, 2.4) * outK(t, [b, b + 0.25])
   if (k <= 0.01) return
   const blink = Math.sin(t * 6) > -0.2
