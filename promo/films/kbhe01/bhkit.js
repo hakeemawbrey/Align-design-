@@ -24,11 +24,17 @@
 //   buildBug(root, { sign, at })         DOM bug: "BRAIN VS HEART" + "INSIDE: ♈ ARIES"
 //   bubbleCues(list)                     a pop + a little chirp per bubble (list of bubble opts)
 //   drawLever(x, t, { x, y, a, label })  a console lever (a = 0 up … 1 pulled down)
+//   makeBuild(cfg)                       the whole room as a scene builder: { sign, view(x, t, R), blinks, desk(t) → drawDesk opts,
+//                                        brain(t) / heart(t) → P (null = hidden), back(x, t) (behind the leads), front(x, t, B, H)
+//                                        (after the leads), bubbles, alarm(t), label }
+//   stepObj(t, [[t, {…}]…], base)        merged step schedule for poses
 //   step(t, [[t, v]…], v0)  key(t, [[t, v, ease?]…])   schedules: step value / tweened number
 //   drawBits, sparkles, starFrame, inSprite, tearsCells, pop01, outK, popOut (re-exported from the STAR MAIL kit)
 import { clamp, lerp, prog, ease, el, rng } from '../../src/lib.js'
 import { drawStarChar, signStar, STAR } from '../startalk.js'
-import { SIGNS, easeOutBack } from '../wheel.js'
+import { SIGNS, easeOutBack, GRAIN_H } from '../wheel.js'
+import { fill } from '../../src/scenes/common.js'
+import { drawGrain, layerCanvas } from '../sky.js'
 import { drawBits, sparkles, starFrame, inSprite, tearsCells, pop01, outK, popOut } from '../sxmail1/scenes/mail.js'
 export { drawBits, sparkles, starFrame, inSprite, tearsCells, pop01, outK, popOut, clamp, lerp, prog, ease, el, easeOutBack, drawStarChar, signStar, STAR }
 
@@ -613,4 +619,32 @@ export function drawLever(x, t, { x: lx, y: ly, a = 0, label = null, col = '#7fd
   if (label) { x.font = `800 22px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; R_(x, INK, lx - 46, ly + 18, 92, 34); x.fillStyle = col; x.fillText(label, lx, ly + 36) }
   x.restore()
   return { x: ex, y: ey }
+}
+
+export function stepObj(t, list, base = {}) { let o = { ...base }; for (const [a, v] of list) if (t >= a) o = { ...o, ...v }; return o }
+
+export function makeBuild(cfg) {
+  const { sign = 'aries', view = null, blinks = [], desk = () => ({}), brain = null, heart = null, back = null, front = null, bubbles = [], alarm = () => 0, label = 'LIVE VIEW', win = true, top = null } = cfg
+  return async stage => {
+    const root = fill(stage, { background: '#120826' })
+    const cv = layerCanvas(root), x = cv.getContext('2d')
+    const bug = buildBug(root, { sign })
+    const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
+    return {
+      start: 0, end: 1e4, root,
+      update(t) {
+        drawRoom(x, t, { sign, alarm: alarm(t) })
+        if (top) top(x, t)
+        if (win) drawWindow(x, t, view ? (c, R) => view(c, t, R) : null, { sign, blinks, label })
+        drawDesk(x, t, desk(t))
+        if (back) back(x, t)
+        const B = brain ? (P => P && drawBrain(x, t, P))(brain(t)) : null
+        const H = heart ? (P => P && drawHeart(x, t, P))(heart(t)) : null
+        if (front) front(x, t, B, H)
+        for (const b of bubbles) bubble(x, t, b)
+        bug.update(t)
+        drawGrain(gx, t)
+      },
+    }
+  }
 }
