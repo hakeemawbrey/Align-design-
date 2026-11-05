@@ -3,7 +3,7 @@
 import { makeFive, R, box, INK, BONE, GOLD, RED, PINK, MINT, SKYB, LAV, debris, speedLines, shadow, lerp, ease, clamp, prog, INTER, MONO, phone, bubble, label, icon, drawBits, HEART, inSprite, starFrame, tearsCells, shadesCells, tissues, hearts, sparkles } from '../../k5te01/fivekit.js'
 
 const EP = makeFive({
-  id: 'k5te12', sign: 'pisces', name: 'Pisces', D: 11, ending: 'loop', heroTears: true,
+  id: 'k5te12', sign: 'pisces', name: 'Pisces', D: 11, ending: 'loop', accent: '#9fd8f6', heroTears: true,
   brk: { type: 'scratch', at: 0.45, caption: 'yep. *a puppy video.*' },
   hookLine: "Pisces. Wipe your eyes. | *Five things.*",
   hook(x, th, S) {
