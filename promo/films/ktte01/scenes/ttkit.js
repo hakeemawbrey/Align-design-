@@ -435,6 +435,7 @@ export function makeTT(cfg) {
     }
     // VS spark (hidden once decided)
     const vsK = (r.i === 0 ? 1 : easeOutBack(prog(u, 0.1, 0.34), 2.2)) * (1 - ease.inQuad(prog(u, pa - 0.05, pa + 0.12)))
+      * (r.c ? 1 - prog(u, r.c.at ?? pa - 0.3, (r.c.at ?? pa - 0.3) + 0.15) : 1)
     drawVS(x, v, 540, CARD.y - 30, vsK)
     if (r.extra) r.extra(x, t, { ...S, u, v, r })
   }
@@ -528,7 +529,7 @@ export function makeTT(cfg) {
         // Pisces' tissue cam
         if (showCam && (cfg.camUntil == null || v < (typeof cfg.camUntil === 'function' ? cfg.camUntil(T) : cfg.camUntil))) {
           const camTears = typeof cfg.camTears === 'function' ? cfg.camTears(t, v) : v >= E - 0.6 ? 3 : r && r.i === rounds.length - 1 ? 2 : 1
-          drawTissueCam(x, t, { tears: camTears, mood: v >= E - 0.6 ? 'sparkle' : 'wide', cam: cfg.camAt || CAM, look: [-1, -0.6], extra: cfg.camExtra ? (cx, tt) => cfg.camExtra(cx, tt, v) : null })
+          drawTissueCam(x, t, { tears: camTears, mood: v >= E - 0.6 ? 'sparkle' : 'wide', cam: cfg.camAt || (mode === 'duel' ? { x: 385, y: 1470, w: 310, h: 290 } : CAM), look: [-1, -0.6], extra: cfg.camExtra ? (cx, tt) => cfg.camExtra(cx, tt, v) : null })
         }
         x.restore()
         // top layer
