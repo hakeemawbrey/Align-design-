@@ -290,7 +290,9 @@ function photoDefault(x, t, S, cfg) {
   // tiny pixel stars in the photo backdrop
   for (let i = 0; i < 14; i++) drawPixelStar(x, px + 40 + ((i * 137) % (w - 80)), py + 30 + ((i * 89) % (h - 120)), 10 + (i % 3) * 4, 1, i % 3 ? BONE : GOLD)
   const mood = cfg.mood ? cfg.mood(t, S) : (t >= S.T.glow ? 'sparkle' : t >= S.T.strike[0] ? 'wide' : 'neutral')
-  drawStarChar(x, px + w / 2, py + h * 0.56, cfg.starS || 250, t, { color: sg.color, glyph: sg.glyph, mood, seed: 3, glow: 1.05, hops: [S.T.glow + 0.05, S.T.glow + 0.4], ...(cfg.starOpts ? cfg.starOpts(t, S) : {}) })
+  if (cfg.photoUnder) cfg.photoUnder(x, t, S)
+  const [sx, sy] = cfg.starXY ? cfg.starXY(t, S) : [px + w / 2, py + h * 0.56]
+  drawStarChar(x, sx, sy, cfg.starS || 250, t, { color: sg.color, glyph: sg.glyph, mood, seed: 3, glow: 1.05, hops: [S.T.glow + 0.05, S.T.glow + 0.4], ...(cfg.starOpts ? cfg.starOpts(t, S) : {}) })
 }
 
 // ─────────────────────────────────────────────── the film
@@ -309,7 +311,8 @@ export function makeBio(cfg) {
   const LOOP = cfg.end === 'loop' ? (cfg.loopLen || 0.45) : 0
   const sg = signStar(cfg.sign)
 
-  const BS = cfg.bioSize || BIO.size, BLH = Math.round(BS * 1.31)
+  let BS = cfg.bioSize || BIO.size, BLH = Math.round(BS * 1.31), GS = cfg.goodSize || BIO.size, GLH = Math.round(GS * 1.31)
+  const BOXH = CARD.y + CARD.h - 22 - BIO.y
   async function build(stage) {
     try { await Promise.all(['800 96px Inter', '700 50px Inter', '600 50px Inter', '900 54px Inter', "italic 600 56px 'EB Garamond'", "italic 500 120px 'EB Garamond'", "700 30px 'Space Mono'"].map(f => document.fonts.load(f))) } catch (_) { /* fonts optional */ }
     const root = fill(stage, { background: '#05040c' })
@@ -321,11 +324,11 @@ export function makeBio(cfg) {
     const flashEl = el('div', { position: 'absolute', inset: 0, background: cfg.flashCol || '#fff', opacity: 0, pointerEvents: 'none' }, root)
 
     // layout of the bad bio (measured once fonts are in)
-    x.font = `600 ${BS}px ${INTER}`
-    const badLines = wrap(x, cfg.bad, BIO.w)
-    x.font = `700 ${BS}px ${INTER}`
-    const goodLines = wrap(x, cfg.good, BIO.w)
-    const bioY = i => BIO.y + BLH * (i + 0.5)
+    // shrink either bio until it fits the box
+    let badLines, goodLines
+    for (;;) { x.font = `600 ${BS}px ${INTER}`; badLines = wrap(x, cfg.bad, BIO.w); BLH = Math.round(BS * 1.31); if (badLines.length * BLH <= BOXH || BS < 30) break; BS -= 2 }
+    for (;;) { x.font = `700 ${GS}px ${INTER}`; goodLines = wrap(x, cfg.good, BIO.w); GLH = Math.round(GS * 1.31); if (goodLines.length * GLH <= BOXH || GS < 30) break; GS -= 2 }
+    const bioY = i => BIO.y + BLH * (i + 0.5), bioYG = i => BIO.y + GLH * (i + 0.5)
     // where the circled phrase sits
     let circ = null
     if (cfg.circle) {
@@ -371,7 +374,7 @@ export function makeBio(cfg) {
       x.restore()
       // narrator + judge sit outside the camera (they're our hosts)
       narrator(x, t)
-      judge(x, t, T, D, cfg)
+      if (!cfg.noJudge) judge(x, t, T, D, cfg)
       if (cfg.top) cfg.top(x, t, S)
     }
 
@@ -421,11 +424,11 @@ export function makeBio(cfg) {
         goodLines.forEach((l, i) => {
           if (left <= 0) return
           const n = plain(l).length
-          const r2 = richLine(x, l, BIO.x, bioY(i), { size: BS, weight: 700, fg: INKT, acc: ACC, chars: left })
-          if (left < n && Math.floor(t * 3) % 2 === 0) R(x, ACC, r2.end + 4, bioY(i) - 26, 5, 52)
+          const r2 = richLine(x, l, BIO.x, bioYG(i), { size: GS, weight: 700, fg: INKT, acc: ACC, chars: left })
+          if (left < n && Math.floor(t * 3) % 2 === 0) R(x, ACC, r2.end + 4, bioYG(i) - GS * 0.45, 5, GS * 0.9)
           left -= n
         })
-        if (t < T.swap + 0.15 + 0.01 || (left > 0 && t < T.glow && Math.floor(t * 3) % 2 === 0 && false)) R(x, ACC, BIO.x, bioY(0) - 26, 5, 52)
+        if (t < T.swap + 0.15 + 0.01 || (left > 0 && t < T.glow && Math.floor(t * 3) % 2 === 0 && false)) R(x, ACC, BIO.x, bioYG(0) - GS * 0.45, 5, GS * 0.9)
       }
       // the red pen: hovers, circles, strikes, then writes, then leaves
       penTrack(x, t)
@@ -456,10 +459,10 @@ export function makeBio(cfg) {
         let left = Math.max(0, Math.floor((t - T.swap - 0.15) * CPS)), li = 0
         for (; li < goodLines.length; li++) { const n = plain(goodLines[li]).length; if (left <= n) break; left -= n }
         li = Math.min(li, goodLines.length - 1)
-        x.save(); x.font = `700 ${BS}px ${INTER}`
+        x.save(); x.font = `700 ${GS}px ${INTER}`
         const w = x.measureText(plain(goodLines[li]).slice(0, left)).width; x.restore()
         const p = ease.outCubic(prog(t, T.strike[1], T.swap + 0.15))
-        tx = lerp(strikes[strikes.length - 1][3][0], BIO.x + w + 8, p); ty = lerp(strikes[strikes.length - 1][3][1], bioY(li) + 18, p) + Math.sin(t * 40) * 3
+        tx = lerp(strikes[strikes.length - 1][3][0], BIO.x + w + 8, p); ty = lerp(strikes[strikes.length - 1][3][1], bioYG(li) + 18, p) + Math.sin(t * 40) * 3
         rot = -0.45
       }
       if (t >= T.typeEnd + 0.1) { const p = ease.inCubic(prog(t, T.typeEnd + 0.1, T.typeEnd + 0.45)); tx = lerp(tx, 1250, p); ty = lerp(BIO.y + 100, 300, p); k = 1 - p * 0.2; rot = -0.55 - p * 0.6 }
@@ -530,4 +533,53 @@ export function makeBio(cfg) {
     ...(cfg.cues || []),
   ]
   return { DURATION: D, SCENES, CUES, T }
+}
+
+// ─────────────────────────────────────────────── props (shared by the episodes)
+export const ICONS = {
+  Q: { bm: ['.QQQQ.', 'QQ..QQ', '....QQ', '...QQ.', '..QQ..', '..QQ..', '......', '..QQ..'], cols: { Q: GOLD } },
+  TROPHY: { bm: ['GGGGGGG', 'GWGGGGG', '.GGGGG.', '..GGG..', '...G...', '..GGG..', '.BBBBB.'], cols: { G: GOLD, W: '#fff6c8', B: '#a07850' } },
+  SUITCASE: { bm: ['...BBBB...', '...B..B...', 'OOOOOOOOOO', 'OYOOOOOOYO', 'OYOOOOOOYO', 'OOOOOOOOOO', 'OYOOOOOOYO', 'OOOOOOOOOO'], cols: { B: '#5a4030', O: '#e0782f', Y: '#ffd28a' } },
+  PIN: { bm: ['.RRRR.', 'RRWWRR', 'RRWWRR', 'RRRRRR', '.RRRR.', '..RR..', '..RR..', '...R..'], cols: { R: RED, W: '#fff' } },
+  LOCK: { bm: ['..GGGG..', '.G....G.', '.G....G.', 'GGGGGGGG', 'GGGDDGGG', 'GGGDDGGG', 'GGGGDGGG', 'GGGGGGGG'], cols: { G: '#b9b4c8', D: INK } },
+  KEY: { bm: ['.GGG.....', 'G...G....', 'G...GGGGG', 'G...G.G.G', '.GGG.....'], cols: { G: GOLD } },
+  BREAD: { bm: ['..BBBBBB..', '.BLBBLBBB.', 'BBBLBBLBBB', 'BBBBBBBBBB', '.CCCCCCCC.'], cols: { B: '#d99a4e', L: '#f3cd8a', C: '#a96a2e' } },
+  MUG: { bm: ['MMMMMM..', 'MWMMMMMM', 'MMMMMM.M', 'MMHMMM.M', 'MMMMMMMM', 'MMMMMM..', '.MMMM...'], cols: { M: '#7fd0f0', W: '#e8f8ff', H: PINK } },
+  CANDLE: { bm: ['...F...', '..FYF..', '...W...', '.CCCC..', '.CCCCC.', '..CCCC.', '.CCCCC.', '.CCCCC.'], cols: { F: '#ff9a3a', Y: '#ffe27a', W: INK, C: '#f6b6d0' } },
+  CHAIR: { bm: ['BB....', 'BB....', 'BB....', 'BBBBBB', 'BBBBBB', 'B....B', 'B....B'], cols: { B: '#c98a52' } },
+  HEART: { bm: HEART, cols: { H: '#ff5a8a' } },
+  NOODLES: { bm: ['.Y.Y.Y.Y.', 'YYYYYYYYY', 'BBBBBBBBB', '.BBBBBBB.', '..BBBBB..'], cols: { Y: '#ffe27a', B: '#e2343f' } },
+  DUST: { bm: ['.DD.D', 'DDDDD', '.DDD.'], cols: { D: '#b9ad9c' } },
+}
+export function icon(x, name, cx, cy, cell, opts = {}) { const I = ICONS[name]; drawBits(x, I.bm, opts.cols || I.cols, cx, cy, cell, opts) }
+/** an icon that pops in at t0 (springy) and pops out at t1, bobbing */
+export function popIcon(x, t, name, cx, cy, cell, t0, t1 = 1e9, { rot = 0, bob = 6 } = {}) {
+  const k = pop01(t, t0, 0.3, 2.4) * outK(t, [t1, t1 + 0.18])
+  if (k <= 0.01 || t < t0) return
+  icon(x, name, cx, cy + Math.sin(t * 3 + cx) * bob, cell * k, { rot: rot + 0.05 * Math.sin(t * 2.4 + cy) })
+}
+/** props thrown in: each { name, x, y, cell, at (landing time), rot, from: [dx, dy] }; they fly in, land with a bounce,
+ *  and leave (fly off) during out = [a, b]. at < 0 → already mid-flight on frame 0. */
+export function thrown(x, t, items, out = [1e9, 1e9]) {
+  for (const it of items) {
+    const fl = 0.45, p = prog(t, it.at - fl, it.at)
+    if (t < it.at - fl) continue
+    const [fx, fy] = it.from || [0, -700]
+    let cx = lerp(it.x + fx, it.x, ease.inQuad(p)), cy = lerp(it.y + fy, it.y, ease.inQuad(p)), rot = (it.rot || 0) + (1 - p) * 2.5
+    const d = t - it.at
+    if (d > 0) cy -= 40 * Math.abs(Math.sin(d * 9)) * Math.exp(-d * 6)
+    const o = prog(t, out[0], out[1])
+    if (o >= 1) continue
+    if (o > 0) { cx += (it.x > 540 ? 1 : -1) * 900 * ease.inCubic(o); cy -= 200 * o; rot += 3 * o }
+    icon(x, it.name, cx, cy, it.cell || 8, { rot })
+  }
+}
+/** a word stamp (e.g. NO / YES) */
+export function word(x, text, cx, cy, size, col, rot = 0, alpha = 1) {
+  x.save(); x.translate(cx, cy); x.rotate(rot); x.globalAlpha *= alpha
+  x.font = `900 ${size}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+  const w = x.measureText(text).width + size * 0.6, h = size * 1.25
+  x.strokeStyle = col; x.lineWidth = Math.max(3, size * 0.1); x.strokeRect(-w / 2, -h / 2, w, h)
+  x.fillStyle = col; x.fillText(text, 0, size * 0.05)
+  x.restore()
 }
