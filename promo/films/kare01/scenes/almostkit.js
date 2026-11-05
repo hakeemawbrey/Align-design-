@@ -358,7 +358,9 @@ export function makeAlmost(cfg) {
   const main = wins.length ? HK.frozen(build, wins) : build
   const cueName = k => k === 'screenShake' ? 'shakeCues' : k + 'Cues'
   const SCENES = [main, HK.slamTitle(HOOK), ...FX.map(([k, o]) => HK[k](o))]
-  if (LOOP) SCENES.push(HK.loopBack([main, HK.slamTitle(HOOK)], { duration: D, len: LL }))
+  // the loop layer rebuilds frame 0: the story, the title and every kit overlay already up at t = 0
+  const at0 = FX.filter(([k, o]) => o.at <= 0 && k !== 'recordScratch' && k !== 'whipZoom' && k !== 'screenShake').map(([k, o]) => HK[k](o))
+  if (LOOP) SCENES.push(HK.loopBack([main, HK.slamTitle(HOOK), ...at0], { duration: D, len: LL }))
   const CUES = [
     ...(cfg.hookCues === false ? [] : [['boom', 0, 0.22], ['tick', 0, 0.06]]),
     ...FX.flatMap(([k, o]) => HK[cueName(k)](o)),
