@@ -59,6 +59,26 @@
   "episode": 6,
   "caption": "Aries took themself to Paris. Every bench had a couple on it.\nTwo croissants, one portrait and a window table later, the solo trip won. Ever taken yourself out?"
  },
+ "kxrce07": {
+  "video": "/_blob/45021909e2af99d93c51a0797e2f0791",
+  "poster": "/_blob/3b8fbe24707bf342e0db0395ae19bd00",
+  "title": "London: Are You Two Together?",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 7,
+  "caption": "Three months of just hanging out. Everyone in London asked the question except them.\nThe answer was waiting on the night bus. Who should ask first?"
+ },
+ "kxrce08": {
+  "video": "/_blob/814aa3a7675ff1bd2a97a318b74ad217",
+  "poster": "/_blob/970cde9492e0ddc6941566a2df33e7bd",
+  "title": "Seoul: The Karaoke Confession",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 8,
+  "caption": "Taurus planned to confess through a song. The song came out as \"I like yogurt.\"\nTurns out saying it plainly works better. Have you ever panic-sung a feeling?"
+ },
  "kxtve01": {
   "video": "/_blob/bac0da3c47244b48a4467de0d0dd1c44",
   "poster": "/_blob/5bd4d71a20d24c194a190e66a5d54da3",
@@ -118,5 +138,15 @@
   "series": "xthen",
   "episode": 6,
   "caption": "2016 Aries flipped the board. 2026 Aries took a deep breath and said good game.\nStill competitive, just a better sport. Who in your group can't lose quietly?"
+ },
+ "kxtve07": {
+  "video": "/_blob/46c417e23d1010edd588ce4d39c59023",
+  "poster": "/_blob/2f5bc8dce4b3d8d6e63e4ec75eeead76",
+  "title": "Date Night: One Month vs Ten Years",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 7,
+  "caption": "One month in: a cologne cloud, tiny plates and a teddy bigger than the car.\nTen years in: the usual order, a fixed cupboard and the same hand on the walk home."
  }
 }
