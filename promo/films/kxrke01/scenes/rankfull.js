@@ -316,7 +316,7 @@ export function drawGag(x, t, g, cx, cy, k, t0 = 0) {
     }
     case 'sign': {       // { text, col } a hand-held placard on a stick
       R(x, INK, cx - 8, cy, 16, 150); R(x, '#a0703f', cx - 4, cy, 8, 150)
-      card(x, cx, cy - 30, g.w || 300, 120, [g.text], { col: g.col || GOLD, size: 54, rot: 0.06 * Math.sin(u * 5), font: INTER, weight: 900 })
+      card(x, cx, cy - 30, g.w || 300, 120, [g.text], { col: g.col || GOLD, size: g.size || 54, rot: 0.06 * Math.sin(u * 5), font: INTER, weight: 900 })
       break
     }
     case 'charger': {    // phones asleep on chargers
