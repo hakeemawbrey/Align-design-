@@ -414,6 +414,7 @@ export function makeCaught(cfg) {
     // the camera: a whip zoom toward the circle in the cold open; a punch on each freeze; settles to 1 for the loop
     function camera(t, w) {
       const C0 = cfg.catches[0].circle(cfg.catches[0].c)
+      const B = cfg.frame || { z: 1, fx: 540, fy: 960 }
       let z = 1, fx = 540, fy = 960, jx = 0
       const s = segAt(t)
       if (s.mode === 'rewind' && !s.loopBack) { const p = ease.inOutCubic(prog(t, s.t0, s.t1)); jx = 14 * Math.sin(t * 90) * (1 - p) }
@@ -426,6 +427,7 @@ export function makeCaught(cfg) {
       if (s.mode === 'play' && s.t0 > P0 && t - s.t0 < 0.25 && !s.tail) { const p = 1 - ease.outCubic(prog(t, s.t0, s.t0 + 0.25)); z = 1 + 0.12 * p }       // whip into a new catch
       if (s.mode === 'play' && s.tail && t - s.t0 < 0.2) { const p = 1 - ease.outCubic(prog(t, s.t0, s.t0 + 0.2)); z = 1 + 0.08 * p }
       if (cfg.camera) ({ z, fx, fy } = cfg.camera(t, w, { z, fx, fy }) || { z, fx, fy })
+      z *= B.z; fx = B.fx + (fx - 540); fy = B.fy + (fy - 960)
       return { z, fx, fy, jx }
     }
 
