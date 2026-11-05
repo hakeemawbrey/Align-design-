@@ -106,7 +106,8 @@ function half(x, t, side, min, set, city, wx, opts = {}) {
     if (n) { x.save(); x.globalCompositeOperation = 'lighter'; const gl = x.createRadialGradient(X0 + 100, 1100, 10, X0 + 100, 1100, 380); gl.addColorStop(0, 'rgba(255,200,120,0.22)'); gl.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gl; x.fillRect(X0, 700, W, 800); x.restore() }
   } else {
     R(x, '#2a2440', X0, 1260, W, 660); R(x, '#5a5478', X0, 1260, W, 14)
-    for (let i = 0; i < 4; i++) R(x, 'rgba(239,230,214,0.18)', X0 + i * 150 + 20, 1420, 90, 8)
+    const off = ((opts.walk || 0) % 150 + 150) % 150
+    for (let i = -1; i < 5; i++) R(x, 'rgba(239,230,214,0.18)', X0 + i * 150 + 20 - off, 1420, 90, 8)
     // a street lamp
     R(x, INK, X0 + 60, 860, 14, 400); R(x, INK, X0 + 40, 850, 60, 18); if (n) { x.save(); x.globalCompositeOperation = 'lighter'; const gl = x.createRadialGradient(X0 + 70, 880, 5, X0 + 70, 880, 260); gl.addColorStop(0, 'rgba(255,220,140,0.35)'); gl.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gl; x.fillRect(X0, 600, W, 700); x.restore() }
   }
@@ -176,8 +177,8 @@ export function makeLDN(cfg) {
       const S = { t, minL: mL, minR: mR, mg }
       // the two halves (clipped); while merging, the seam slides right and the left world grows
       const seam = lerp(540, 1110, mg)
-      x.save(); x.beginPath(); x.rect(0, 0, seam, 1920); x.clip(); half(x, t, 'L', mL, setL, cfg.L.city, cfg.L.weather, { bed: so.bedL, bedCol: so.bedColL }); x.restore()
-      if (seam < 1080) { x.save(); x.beginPath(); x.rect(seam, 0, 1080 - seam, 1920); x.clip(); x.translate(seam - 540, 0); half(x, t, 'R', mR, setR, cfg.R.city, cfg.R.weather, { bed: so.bedR, bedCol: so.bedColR }); x.restore() }
+      x.save(); x.beginPath(); x.rect(0, 0, seam, 1920); x.clip(); half(x, t, 'L', mL, setL, cfg.L.city, cfg.L.weather, { bed: so.bedL, bedCol: so.bedColL, walk: cfg.walkL ? cfg.walkL(t) : 0 }); x.restore()
+      if (seam < 1080) { x.save(); x.beginPath(); x.rect(seam, 0, 1080 - seam, 1920); x.clip(); x.translate(seam - 540, 0); half(x, t, 'R', mR, setR, cfg.R.city, cfg.R.weather, { bed: so.bedR, bedCol: so.bedColR, walk: cfg.walkR ? cfg.walkR(t) : 0 }); x.restore() }
       S.clip = (side, fn) => { x.save(); x.beginPath(); if (side === 'L') x.rect(0, 0, seam, 1920); else x.rect(seam, 0, 1080, 1920); x.clip(); fn(); x.restore() }
       if (cfg.under) cfg.under(x, t, S)
       // the couple
@@ -260,4 +261,16 @@ export function makeLDN(cfg) {
   return { DURATION: D, SCENES, CUES, music, minL, minR }
 }
 
+/** a wall clock (global coords) showing local minutes m, with a name plate */
+export function wallClock(x, cx, cy, m, name, k = 1) {
+  if (k <= 0.01) return
+  x.save(); x.translate(cx, cy); x.scale(k, k)
+  x.fillStyle = INK; x.beginPath(); x.arc(0, 0, 70, 0, 7); x.fill(); x.fillStyle = '#fff8e0'; x.beginPath(); x.arc(0, 0, 60, 0, 7); x.fill()
+  for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; R(x, INK, Math.cos(a) * 50 - 3, Math.sin(a) * 50 - 3, 6, 6) }
+  const hh = (m / 60) % 12, mm = m % 60
+  x.strokeStyle = INK; x.lineCap = 'round'; x.lineWidth = 8; x.beginPath(); x.moveTo(0, 0); x.lineTo(Math.sin(hh / 12 * 6.283) * 30, -Math.cos(hh / 12 * 6.283) * 30); x.stroke()
+  x.lineWidth = 5; x.beginPath(); x.moveTo(0, 0); x.lineTo(Math.sin(mm / 60 * 6.283) * 46, -Math.cos(mm / 60 * 6.283) * 46); x.stroke()
+  if (name) { box(x, -80, 78, 160, 40, GOLD, { b: 5 }); label(x, name, 0, 98, { size: 22, col: INK, font: INTER, weight: 800, maxW: 150 }) }
+  x.restore()
+}
 export { GOLD, BONE, PINK, INK, RED, MINT, TEAR, INTER, MONO, r3, pop01, outK, hash, R, box, drawBits, sparkles, hearts, bubble, label, shadow, starFrame, inSprite, tearsCells, clamp, lerp, prog, ease, drawPixelStar, STAR, talkHops }
