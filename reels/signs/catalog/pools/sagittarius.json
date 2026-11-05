@@ -52,6 +52,76 @@
    ],
    "pin": true,
    "note": "Batoni, Diana and Cupid with the bow"
+  },
+  {
+   "id": "wc-146375867",
+   "source": "commons",
+   "title": "Diana the Huntress (c.1928), by Ettore Tito",
+   "creator": "Ettore Tito",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Diana_the_Huntress_(c.1928),_by_Ettore_Tito.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Diana_the_Huntress_%28c.1928%29%2C_by_Ettore_Tito.jpg/1920px-Diana_the_Huntress_%28c.1928%29%2C_by_Ettore_Tito.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Diana_the_Huntress_%28c.1928%29%2C_by_Ettore_Tito.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1632,
+   "h": 2400,
+   "file": "wc-146375867.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Tito, Diana the Huntress on a rearing horse"
+  },
+  {
+   "id": "wc-126119500",
+   "source": "commons",
+   "title": "Böcklin - Centaur Watching Fish, 1878, Kunsthaus Zürich",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:B%C3%B6cklin_-_Centaur_Watching_Fish,_1878,_Kunsthaus_Z%C3%BCrich.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/B%C3%B6cklin_-_Centaur_Watching_Fish%2C_1878%2C_Kunsthaus_Z%C3%BCrich.jpg/1920px-B%C3%B6cklin_-_Centaur_Watching_Fish%2C_1878%2C_Kunsthaus_Z%C3%BCrich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/B%C3%B6cklin_-_Centaur_Watching_Fish%2C_1878%2C_Kunsthaus_Z%C3%BCrich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1165,
+   "file": "wc-126119500.jpg",
+   "focus": [
+    0.7,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-84182396",
+   "source": "commons",
+   "title": "Diana and her nymphs hunting",
+   "creator": "Workshop of Peter Paul Rubens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Diana_and_her_nymphs_hunting.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Diana_and_her_nymphs_hunting.jpg/1920px-Diana_and_her_nymphs_hunting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Diana_and_her_nymphs_hunting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 894,
+   "file": "wc-84182396.jpg",
+   "focus": [
+    0.8,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-52118853",
+   "source": "commons",
+   "title": "Three Riders at the Sea (Jean-Maxime Claude) - Nationalmuseum - 18600",
+   "creator": "Jean-Maxime Claude",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Three_Riders_at_the_Sea_(Jean-Maxime_Claude)_-_Nationalmuseum_-_18600.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Three_Riders_at_the_Sea_%28Jean-Maxime_Claude%29_-_Nationalmuseum_-_18600.tif/lossy-page1-1920px-Three_Riders_at_the_Sea_%28Jean-Maxime_Claude%29_-_Nationalmuseum_-_18600.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Three_Riders_at_the_Sea_%28Jean-Maxime_Claude%29_-_Nationalmuseum_-_18600.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1207,
+   "file": "wc-52118853.jpg",
+   "focus": [
+    0.55,
+    0.55
+   ]
   }
  ]
 }

@@ -155,6 +155,144 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "wc-93729955",
+   "source": "commons",
+   "title": "Edgar Degas - Ballet (L'Étoile)",
+   "creator": "Edgar Degas",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_-_Ballet_(L%27%C3%89toile).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Edgar_Degas_-_Ballet_%28L%27%C3%89toile%29.jpg/1920px-Edgar_Degas_-_Ballet_%28L%27%C3%89toile%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Edgar_Degas_-_Ballet_%28L%27%C3%89toile%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1649,
+   "h": 2400,
+   "file": "wc-93729955.jpg",
+   "focus": [
+    0.7,
+    0.6
+   ],
+   "pin": true,
+   "note": "Degas, L'Etoile"
+  },
+  {
+   "id": "wc-22173974",
+   "source": "commons",
+   "title": "Edgar Degas - Four Dancers - Google Art Project",
+   "creator": "Edgar Degas",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_-_Four_Dancers_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Edgar_Degas_-_Four_Dancers_-_Google_Art_Project.jpg/1920px-Edgar_Degas_-_Four_Dancers_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Edgar_Degas_-_Four_Dancers_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1600,
+   "file": "wc-22173974.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-22007211",
+   "source": "commons",
+   "title": "Edgar Degas - Dancers - Google Art Project",
+   "creator": "Edgar Degas",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_-_Dancers_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Edgar_Degas_-_Dancers_-_Google_Art_Project.jpg/1920px-Edgar_Degas_-_Dancers_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Edgar_Degas_-_Dancers_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1818,
+   "file": "wc-22007211.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-80499",
+   "source": "aic",
+   "title": "Dorothea and Francesca",
+   "creator": "Cecilia Beaux (American, 1855–1942)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/80499",
+   "url": "https://www.artic.edu/iiif/2/ed1b3063-8ce3-d4bc-50cb-b96f13f015e2/full/1686,/0/default.jpg",
+   "w": 1359,
+   "h": 2400,
+   "file": "aic-80499.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436140",
+   "source": "met",
+   "title": "Dancers, Pink and Green",
+   "creator": "Edgar Degas",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436140",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-033.jpg",
+   "w": 2178,
+   "h": 2400,
+   "file": "met-436140.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-53026356",
+   "source": "commons",
+   "title": "Léopold Schmutzler - The Flamenco Dancer",
+   "creator": "Leopold Schmutzler",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:L%C3%A9opold_Schmutzler_-_The_Flamenco_Dancer.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/L%C3%A9opold_Schmutzler_-_The_Flamenco_Dancer.jpg/1920px-L%C3%A9opold_Schmutzler_-_The_Flamenco_Dancer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/L%C3%A9opold_Schmutzler_-_The_Flamenco_Dancer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1435,
+   "h": 2400,
+   "file": "wc-53026356.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "pin": true,
+   "note": "Schmutzler, The Flamenco Dancer"
+  },
+  {
+   "id": "wc-153387027",
+   "source": "commons",
+   "title": "Tablao flamenco, José Rico Cejudo",
+   "creator": "José Rico Cejudo",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Tablao_flamenco,_Jos%C3%A9_Rico_Cejudo.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Tablao_flamenco%2C_Jos%C3%A9_Rico_Cejudo.jpg/1920px-Tablao_flamenco%2C_Jos%C3%A9_Rico_Cejudo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Tablao_flamenco%2C_Jos%C3%A9_Rico_Cejudo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1476,
+   "h": 2400,
+   "file": "wc-153387027.jpg",
+   "focus": [
+    0.35,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-41059532",
+   "source": "commons",
+   "title": "Dancer with Castanets - Late 18th-Early 19th Century Persian Painting Museum of Georgia - Tbilisi - Georgia (18899050625)",
+   "creator": "Adam Jones from Kelowna, BC, Canada",
+   "license": "CC BY-SA 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Dancer_with_Castanets_-_Late_18th-Early_19th_Century_Persian_Painting_Museum_of_Georgia_-_Tbilisi_-_Georgia_(18899050625).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Dancer_with_Castanets_-_Late_18th-Early_19th_Century_Persian_Painting_Museum_of_Georgia_-_Tbilisi_-_Georgia_%2818899050625%29.jpg/1920px-Dancer_with_Castanets_-_Late_18th-Early_19th_Century_Persian_Painting_Museum_of_Georgia_-_Tbilisi_-_Georgia_%2818899050625%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Dancer_with_Castanets_-_Late_18th-Early_19th_Century_Persian_Painting_Museum_of_Georgia_-_Tbilisi_-_Georgia_%2818899050625%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1440,
+   "file": "wc-41059532.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
   }
  ]
 }

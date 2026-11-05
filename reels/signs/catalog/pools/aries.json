@@ -124,6 +124,90 @@
     0.4,
     0.6
    ]
+  },
+  {
+   "id": "wc-31702695",
+   "source": "commons",
+   "title": "Erasmus Quellinus (II)- Jason with the Golden Fleece, 1630",
+   "creator": "Erasmus Quellinus II",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_(II)-_Jason_with_the_Golden_Fleece,_1630.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg/1920px-Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1782,
+   "file": "wc-31702695.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-10739380",
+   "source": "commons",
+   "title": "Herbert James Draper, The Golden Fleece",
+   "creator": "Herbert James Draper",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Herbert_James_Draper,_The_Golden_Fleece.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Herbert_James_Draper%2C_The_Golden_Fleece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Herbert_James_Draper%2C_The_Golden_Fleece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1200,
+   "h": 732,
+   "file": "wc-10739380.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "id": "met-435713",
+   "source": "met",
+   "title": "The Disillusioned Medea",
+   "creator": "Paulus Bor",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435713",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP120565.jpg",
+   "w": 1743,
+   "h": 2400,
+   "file": "met-435713.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "met-435621",
+   "source": "met",
+   "title": "Joan of Arc",
+   "creator": "Jules Bastien-Lepage",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435621",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-049.jpg",
+   "w": 2400,
+   "h": 2173,
+   "file": "met-435621.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "pin": true,
+   "note": "Bastien-Lepage, Joan of Arc hearing the voices"
+  },
+  {
+   "id": "aic-110663",
+   "source": "aic",
+   "title": "The Combat of the Giaour and Hassan",
+   "creator": "Eugène Delacroix (French, 1798–1863)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110663",
+   "url": "https://www.artic.edu/iiif/2/ae0793ac-8ace-6c4a-84d4-a33162ae6832/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1370,
+   "file": "aic-110663.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
   }
  ]
 }

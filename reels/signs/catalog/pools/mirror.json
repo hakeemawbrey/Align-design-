@@ -169,6 +169,58 @@
     0.55,
     0.45
    ]
+  },
+  {
+   "id": "wc-22530161",
+   "source": "commons",
+   "title": "Girl at a mirror, by Paulus Moreelse",
+   "creator": "Paulus Moreelse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Girl_at_a_mirror,_by_Paulus_Moreelse.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Girl_at_a_mirror%2C_by_Paulus_Moreelse.jpg/1920px-Girl_at_a_mirror%2C_by_Paulus_Moreelse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Girl_at_a_mirror%2C_by_Paulus_Moreelse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2291,
+   "file": "wc-22530161.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "pin": true,
+   "note": "Moreelse, girl at a mirror"
+  },
+  {
+   "id": "aic-16539",
+   "source": "aic",
+   "title": "Girl Standing before a Mirror",
+   "creator": "Caspar Netscher (Dutch, 1639–1684)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16539",
+   "url": "https://www.artic.edu/iiif/2/98d8c11a-21be-6ece-ad42-c34aaa4f8005/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2174,
+   "file": "aic-16539.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-15464540",
+   "source": "commons",
+   "title": "Peter Paul Rubens - Woman with a Mirror - WGA20336",
+   "creator": "Peter Paul Rubens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Woman_with_a_Mirror_-_WGA20336.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Peter_Paul_Rubens_-_Woman_with_a_Mirror_-_WGA20336.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Peter_Paul_Rubens_-_Woman_with_a_Mirror_-_WGA20336.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 770,
+   "h": 960,
+   "file": "wc-15464540.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
   }
  ]
 }

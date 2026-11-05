@@ -1,4 +1,59 @@
-{"keep": [4, 16, 36, 37, 41],
- "focus": {"4": [0.5, 0.4], "16": [0.34, 0.4], "37": [0.45, 0.46]},
- "pin": [4, 37],
- "notes": {"4": "Waterhouse, A Mermaid combing her hair", "37": "Rothaug, water nymph on a rock in turquoise sea"}}
+{
+ "keep": [
+  4,
+  16,
+  36,
+  37,
+  41,
+  50,
+  71,
+  74,
+  75,
+  76
+ ],
+ "focus": {
+  "4": [
+   0.5,
+   0.4
+  ],
+  "16": [
+   0.34,
+   0.4
+  ],
+  "37": [
+   0.45,
+   0.46
+  ],
+  "50": [
+   0.45,
+   0.4
+  ],
+  "71": [
+   0.35,
+   0.4
+  ],
+  "74": [
+   0.45,
+   0.6
+  ],
+  "75": [
+   0.45,
+   0.35
+  ],
+  "76": [
+   0.3,
+   0.4
+  ]
+ },
+ "pin": [
+  4,
+  37,
+  76
+ ],
+ "notes": {
+  "4": "Waterhouse, A Mermaid combing her hair",
+  "37": "Rothaug, water nymph on a rock in turquoise sea",
+  "76": "Waterhouse, The Lady of Shalott in her boat",
+  "50": "Waterhouse, Ondine"
+ }
+}

@@ -186,6 +186,108 @@
     0.4,
     0.4
    ]
+  },
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-23611369",
+   "source": "commons",
+   "title": "Edouard Manet - At the Café - Google Art Project",
+   "creator": "Édouard Manet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edouard_Manet_-_At_the_Caf%C3%A9_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Edouard_Manet_-_At_the_Caf%C3%A9_-_Google_Art_Project.jpg/1920px-Edouard_Manet_-_At_the_Caf%C3%A9_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Edouard_Manet_-_At_the_Caf%C3%A9_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2357,
+   "file": "wc-23611369.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Manet, At the Cafe"
+  },
+  {
+   "id": "wc-42835120",
+   "source": "commons",
+   "title": "Corner of a Café-Concert",
+   "creator": "Joseolgon",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Corner_of_a_Caf%C3%A9-Concert.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Corner_of_a_Caf%C3%A9-Concert.jpg/1920px-Corner_of_a_Caf%C3%A9-Concert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Corner_of_a_Caf%C3%A9-Concert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1594,
+   "h": 2400,
+   "file": "wc-42835120.jpg",
+   "focus": [
+    0.6,
+    0.3
+   ]
+  },
+  {
+   "id": "aic-84076",
+   "source": "aic",
+   "title": "Café Singer",
+   "creator": "Edgar Degas (French, 1834–1917)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/84076",
+   "url": "https://www.artic.edu/iiif/2/a867af78-9a29-c75b-33ab-2f21a2d92b3f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2212,
+   "file": "aic-84076.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-30332923",
+   "source": "commons",
+   "title": "Braquemond Afternoon Tea",
+   "creator": "Marie Bracquemond",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Braquemond_Afternoon_Tea.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Braquemond_Afternoon_Tea.jpg/1920px-Braquemond_Afternoon_Tea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Braquemond_Afternoon_Tea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1796,
+   "h": 2400,
+   "file": "wc-30332923.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-85068562",
+   "source": "commons",
+   "title": "Eva Gonzalès - Afternoon Tea - 2018.5.McD - Dallas Museum of Art",
+   "creator": "Eva Gonzalès",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Eva_Gonzal%C3%A8s_-_Afternoon_Tea_-_2018.5.McD_-_Dallas_Museum_of_Art.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Eva_Gonzal%C3%A8s_-_Afternoon_Tea_-_2018.5.McD_-_Dallas_Museum_of_Art.jpg/1920px-Eva_Gonzal%C3%A8s_-_Afternoon_Tea_-_2018.5.McD_-_Dallas_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Eva_Gonzal%C3%A8s_-_Afternoon_Tea_-_2018.5.McD_-_Dallas_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1579,
+   "h": 2400,
+   "file": "wc-85068562.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
   }
  ]
 }

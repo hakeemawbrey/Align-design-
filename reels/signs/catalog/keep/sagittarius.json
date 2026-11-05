@@ -1,4 +1,47 @@
-{"keep": [4, 20, 21],
- "focus": {"21": [0.43, 0.4], "4": [0.5, 0.35]},
- "pin": [21, 4],
- "notes": {"21": "Batoni, Diana and Cupid with the bow", "4": "Botticelli, Pallas and the Centaur (detail)"}}
+{
+ "keep": [
+  4,
+  20,
+  21,
+  45,
+  47,
+  55,
+  62
+ ],
+ "focus": {
+  "21": [
+   0.43,
+   0.4
+  ],
+  "4": [
+   0.5,
+   0.35
+  ],
+  "45": [
+   0.5,
+   0.35
+  ],
+  "47": [
+   0.7,
+   0.5
+  ],
+  "55": [
+   0.8,
+   0.35
+  ],
+  "62": [
+   0.55,
+   0.55
+  ]
+ },
+ "pin": [
+  21,
+  4,
+  45
+ ],
+ "notes": {
+  "21": "Batoni, Diana and Cupid with the bow",
+  "4": "Botticelli, Pallas and the Centaur (detail)",
+  "45": "Tito, Diana the Huntress on a rearing horse"
+ }
+}

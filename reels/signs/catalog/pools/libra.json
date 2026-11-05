@@ -103,6 +103,60 @@
    ],
    "pin": true,
    "note": "La Hyre, Allegory of Music, harmony"
+  },
+  {
+   "id": "wc-22490886",
+   "source": "commons",
+   "title": "Giaquinto, Corrado - Allegory of Peace and Justice - Google Art Project",
+   "creator": "Giaquinto, Corrado (1703 - 1766) – Artist (Italian) Details on Google Art Project",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Giaquinto,_Corrado_-_Allegory_of_Peace_and_Justice_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Giaquinto%2C_Corrado_-_Allegory_of_Peace_and_Justice_-_Google_Art_Project.jpg/1920px-Giaquinto%2C_Corrado_-_Allegory_of_Peace_and_Justice_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Giaquinto%2C_Corrado_-_Allegory_of_Peace_and_Justice_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1145,
+   "file": "wc-22490886.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "id": "wc-99637001",
+   "source": "commons",
+   "title": "Bernardino Mei - Allegory of Justice",
+   "creator": "Bernardino Mei",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bernardino_Mei_-_Allegory_of_Justice.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Bernardino_Mei_-_Allegory_of_Justice.jpg/1920px-Bernardino_Mei_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bernardino_Mei_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1400,
+   "file": "wc-99637001.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Mei, Justice in red with scales and sword"
+  },
+  {
+   "id": "wc-47827675",
+   "source": "commons",
+   "title": "1530 van Hemessen Die Goldwägerin anagoria",
+   "creator": "Jan Sanders van Hemessen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:1530_van_Hemessen_Die_Goldw%C3%A4gerin_anagoria.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/1530_van_Hemessen_Die_Goldw%C3%A4gerin_anagoria.JPG/1920px-1530_van_Hemessen_Die_Goldw%C3%A4gerin_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/1530_van_Hemessen_Die_Goldw%C3%A4gerin_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1696,
+   "h": 2400,
+   "file": "wc-47827675.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ],
+   "note": "van Hemessen, woman weighing gold"
   }
  ]
 }

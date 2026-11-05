@@ -152,6 +152,92 @@
    ],
    "pin": true,
    "note": "de Troy, The Declaration of Love"
+  },
+  {
+   "id": "wc-1728636",
+   "source": "commons",
+   "title": "Psyche-Waterhouse",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Psyche-Waterhouse.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Psyche-Waterhouse.jpg/1920px-Psyche-Waterhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Psyche-Waterhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1535,
+   "h": 2400,
+   "file": "wc-1728636.jpg",
+   "focus": [
+    0.55,
+    0.3
+   ],
+   "pin": true,
+   "note": "Waterhouse, Psyche opening the golden box"
+  },
+  {
+   "id": "wc-160929660",
+   "source": "commons",
+   "title": "(Venice) Due putti con un delfino - Giuseppe Bezzuoli - Pinacoteca Egidio Martini",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:(Venice)_Due_putti_con_un_delfino_-_Giuseppe_Bezzuoli_-_Pinacoteca_Egidio_Martini.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/%28Venice%29_Due_putti_con_un_delfino_-_Giuseppe_Bezzuoli_-_Pinacoteca_Egidio_Martini.jpg/1920px-%28Venice%29_Due_putti_con_un_delfino_-_Giuseppe_Bezzuoli_-_Pinacoteca_Egidio_Martini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/%28Venice%29_Due_putti_con_un_delfino_-_Giuseppe_Bezzuoli_-_Pinacoteca_Egidio_Martini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1892,
+   "h": 2400,
+   "file": "wc-160929660.jpg",
+   "focus": [
+    0.45,
+    0.55
+   ]
+  },
+  {
+   "id": "aic-25753",
+   "source": "aic",
+   "title": "Two Putti",
+   "creator": "Matteo di Giovanni (Italian, c. 1430–1495)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/25753",
+   "url": "https://www.artic.edu/iiif/2/79a40120-87bf-ff0f-4a97-fdda3a26743c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2137,
+   "file": "aic-25753.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-22152014",
+   "source": "commons",
+   "title": "Italian (Venetian) - Sleeping Cupid - Google Art Project",
+   "creator": "Italian (Venetian)  – School Details on Google Art Project",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Italian_(Venetian)_-_Sleeping_Cupid_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Italian_%28Venetian%29_-_Sleeping_Cupid_-_Google_Art_Project.jpg/1920px-Italian_%28Venetian%29_-_Sleeping_Cupid_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Italian_%28Venetian%29_-_Sleeping_Cupid_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1813,
+   "file": "wc-22152014.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-92149440",
+   "source": "commons",
+   "title": "Italian School, Venetian, early 18th century - Psyche Discovering the Sleeping Cupid - RCIN 402783 - Royal Collection",
+   "creator": "anonymous",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Italian_School,_Venetian,_early_18th_century_-_Psyche_Discovering_the_Sleeping_Cupid_-_RCIN_402783_-_Royal_Collection.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Italian_School%2C_Venetian%2C_early_18th_century_-_Psyche_Discovering_the_Sleeping_Cupid_-_RCIN_402783_-_Royal_Collection.jpg/1920px-Italian_School%2C_Venetian%2C_early_18th_century_-_Psyche_Discovering_the_Sleeping_Cupid_-_RCIN_402783_-_Royal_Collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Italian_School%2C_Venetian%2C_early_18th_century_-_Psyche_Discovering_the_Sleeping_Cupid_-_RCIN_402783_-_Royal_Collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1636,
+   "file": "wc-92149440.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
   }
  ]
 }

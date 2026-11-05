@@ -68,6 +68,124 @@
     0.45,
     0.4
    ]
+  },
+  {
+   "id": "met-12446",
+   "source": "met",
+   "title": "Two Girls on a Lawn",
+   "creator": "John Singer Sargent",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12446",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DP161224.jpg",
+   "w": 2400,
+   "h": 1966,
+   "file": "met-12446.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-81304471",
+   "source": "commons",
+   "title": "American 19th Century, Sisters, c. 1840, NGA 59931",
+   "creator": "American 19th Century",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:American_19th_Century,_Sisters,_c._1840,_NGA_59931.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/American_19th_Century%2C_Sisters%2C_c._1840%2C_NGA_59931.jpg/1920px-American_19th_Century%2C_Sisters%2C_c._1840%2C_NGA_59931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/American_19th_Century%2C_Sisters%2C_c._1840%2C_NGA_59931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1424,
+   "file": "wc-81304471.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-21853983",
+   "source": "commons",
+   "title": "Karl Brullov - Portrait of the Shishmareva Sisters - Google Art Project",
+   "creator": "Karl Bryullov",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Brullov_-_Portrait_of_the_Shishmareva_Sisters_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Karl_Brullov_-_Portrait_of_the_Shishmareva_Sisters_-_Google_Art_Project.jpg/1920px-Karl_Brullov_-_Portrait_of_the_Shishmareva_Sisters_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Karl_Brullov_-_Portrait_of_the_Shishmareva_Sisters_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1817,
+   "h": 2400,
+   "file": "wc-21853983.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-50313760",
+   "source": "commons",
+   "title": "The Sisters A18307",
+   "creator": "Berthe Morisot",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Sisters_A18307.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/The_Sisters_A18307.jpg/1920px-The_Sisters_A18307.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/The_Sisters_A18307.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1215,
+   "file": "wc-50313760.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436871",
+   "source": "met",
+   "title": "Mary Capel (1630–1715), Later Duchess of Beaufort, and Her Sister Elizabeth (1633–1678), Countess of Carnarvon",
+   "creator": "Sir Peter Lely (Pieter van der Faes)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436871",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP169633.jpg",
+   "w": 2400,
+   "h": 1850,
+   "file": "met-436871.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-29657338",
+   "source": "commons",
+   "title": "Augustus Leopold Egg - The Travelling Companions - Google Art Project",
+   "creator": "Augustus Egg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Augustus_Leopold_Egg_-_The_Travelling_Companions_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Augustus_Leopold_Egg_-_The_Travelling_Companions_-_Google_Art_Project.jpg/1920px-Augustus_Leopold_Egg_-_The_Travelling_Companions_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Augustus_Leopold_Egg_-_The_Travelling_Companions_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1595,
+   "file": "wc-29657338.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "pin": true,
+   "note": "Egg, The Travelling Companions, mirrored sisters"
+  },
+  {
+   "id": "aic-81558",
+   "source": "aic",
+   "title": "Acrobats at the Cirque Fernando (Francisca and Angelina Wartenberg)",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81558",
+   "url": "https://www.artic.edu/iiif/2/321c45f5-22a3-84a2-44cc-cf66642d4cf2/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2254,
+   "file": "aic-81558.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
   }
  ]
 }

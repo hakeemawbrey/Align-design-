@@ -87,6 +87,94 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "wc-49194700",
+   "source": "commons",
+   "title": "Ondine (Waterhouse)",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ondine_(Waterhouse).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Ondine_%28Waterhouse%29.jpg/1920px-Ondine_%28Waterhouse%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Ondine_%28Waterhouse%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1829,
+   "h": 2400,
+   "file": "wc-49194700.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Waterhouse, Ondine"
+  },
+  {
+   "id": "wc-1170865",
+   "source": "commons",
+   "title": "John William Waterhouse - I am half-sick of shadows, said the lady of shalott",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_I_am_half-sick_of_shadows,_said_the_lady_of_shalott.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/John_William_Waterhouse_-_I_am_half-sick_of_shadows%2C_said_the_lady_of_shalott.JPG/1920px-John_William_Waterhouse_-_I_am_half-sick_of_shadows%2C_said_the_lady_of_shalott.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/John_William_Waterhouse_-_I_am_half-sick_of_shadows%2C_said_the_lady_of_shalott.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1757,
+   "h": 2400,
+   "file": "wc-1170865.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-21974938",
+   "source": "commons",
+   "title": "John Atkinson Grimshaw - \"The Lady of Shalott\" - Google Art Project",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg/1920px-John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1276,
+   "file": "wc-21974938.jpg",
+   "focus": [
+    0.45,
+    0.6
+   ]
+  },
+  {
+   "id": "wc-1064193",
+   "source": "commons",
+   "title": "The Lady of Shalott Looking at Lancelot",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Lady_of_Shalott_Looking_at_Lancelot.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/The_Lady_of_Shalott_Looking_at_Lancelot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/The_Lady_of_Shalott_Looking_at_Lancelot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1093,
+   "h": 1859,
+   "file": "wc-1064193.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-22414821",
+   "source": "commons",
+   "title": "John William Waterhouse The Lady of Shalott",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_The_Lady_of_Shalott.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/John_William_Waterhouse_The_Lady_of_Shalott.jpg/1920px-John_William_Waterhouse_The_Lady_of_Shalott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/John_William_Waterhouse_The_Lady_of_Shalott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1446,
+   "file": "wc-22414821.jpg",
+   "focus": [
+    0.3,
+    0.4
+   ],
+   "pin": true,
+   "note": "Waterhouse, The Lady of Shalott in her boat"
   }
  ]
 }

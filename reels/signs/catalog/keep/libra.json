@@ -1,4 +1,64 @@
-{"keep": [8, 22, 25, 30, 36, 38],
- "focus": {"8": [0.6, 0.35], "22": [0.5, 0.45], "25": [0.55, 0.35], "30": [0.6, 0.4], "36": [0.68, 0.35], "38": [0.45, 0.35]},
- "pin": [22, 38, 8],
- "notes": {"22": "Burne-Jones, The Mirror of Venus", "38": "La Hyre, Allegory of Music, harmony", "8": "Batoni, Allegory of Peace and War, Mars and Peace"}}
+{
+ "keep": [
+  8,
+  22,
+  25,
+  30,
+  36,
+  38,
+  45,
+  46,
+  49
+ ],
+ "focus": {
+  "8": [
+   0.6,
+   0.35
+  ],
+  "22": [
+   0.5,
+   0.45
+  ],
+  "25": [
+   0.55,
+   0.35
+  ],
+  "30": [
+   0.6,
+   0.4
+  ],
+  "36": [
+   0.68,
+   0.35
+  ],
+  "38": [
+   0.45,
+   0.35
+  ],
+  "45": [
+   0.5,
+   0.3
+  ],
+  "46": [
+   0.45,
+   0.4
+  ],
+  "49": [
+   0.4,
+   0.35
+  ]
+ },
+ "pin": [
+  22,
+  38,
+  8,
+  46
+ ],
+ "notes": {
+  "22": "Burne-Jones, The Mirror of Venus",
+  "38": "La Hyre, Allegory of Music, harmony",
+  "8": "Batoni, Allegory of Peace and War, Mars and Peace",
+  "46": "Mei, Justice in red with scales and sword",
+  "49": "van Hemessen, woman weighing gold"
+ }
+}
