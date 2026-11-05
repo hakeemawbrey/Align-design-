@@ -573,3 +573,52 @@ export function makeBX(cfg) {
 
 /** Pisces' tears on a schedule: [[t, level]…] → the level at t */
 export const tearsAt = (t, sched) => { let k = 0; for (const [a, v] of sched) if (t >= a) k = v; return k }
+
+/** the standard short: draft + STOP (0 → DE), the three-question check (QL s each), the instead, the last line.
+ *  c: { id, sign, duration, ending, hook, rec, room(x,t,S), checkRoom, contact, sub, clock, draft, old, typed, hero,
+ *       stop, phone, back, stars: [line1, line2], qs: [{ q, a, mood, look }], head (instead headline), lines (instead
+ *       box lines, relative to I0), instead(x, t, S, I), pisRole, pisDraft, last, cues, kit, DE = 5.2, QL = 2.7, extra }
+ *  I = the computed times { stop, flip, C0, q: [..], I0, last, land, D } (handed to instead() and returned as T). */
+export function shortBX(c) {
+  const D = c.duration, DE = c.DE ?? 5.2, QL = c.QL ?? 2.7
+  const stop = 0.35, flip = c.flip ?? DE - 2.3
+  const q = [0, 1, 2].map(i => +(DE + 0.2 + i * QL).toFixed(2))
+  const I0 = +(DE + 0.2 + 3 * QL - 0.1).toFixed(2)
+  const last = +(D - 2.0).toFixed(2), land = +(D - 0.95).toFixed(2)
+  const I = { stop, flip, C0: DE, q, I0, last, land, D, ...(c.T || {}) }
+  const tick = Math.min(1.9, QL - 0.75)
+  const pis = (x, t, S) => {
+    if (t < DE) {
+      const P = c.pisDraft || { x: 985, y: 760, s: 150 }
+      if (c.pisDoor !== false) { box(x, P.x - 85, P.y - 200, 200, 560, '#120d26', { b: 8 }); glowAt(x, P.x + 15, P.y, 200, '255,214,150', 0.16) }
+      pisces(x, t, { ...P, tears: t < stop ? 1 : 2, mood: t < stop ? 'sparkle' : 'wide', look: [-1, 0.2], role: c.pisRole })
+    } else if (t < I0) {
+      pisces(x, t, { x: 960, y: 1440, s: 130, tears: tearsAt(t, [[0, 1], [q[1] + 1, 2], [q[2] + 1.2, 3]]), mood: 'sparkle', look: [-1, -0.6], pop: pop01(t, DE + 0.3, 0.3, 2) })
+    }
+    if (c.pis) c.pis(x, t, S, I)
+  }
+  return makeBX({
+    id: c.id, sign: c.sign, duration: D, T: I, ending: c.ending, loopLen: c.loopLen,
+    hook: c.hook, whip: c.whip,
+    shakes: [{ at: stop, len: 0.5, amp: 30 }],
+    recs: [{ at: stop + 0.07, len: 1.25, ...c.rec }],
+    segments: [
+      { kind: 'draft', t0: 0, t1: DE, stopAt: stop, flipAt: flip, room: c.room, contact: c.contact, sub: c.sub, clock: c.clock, draft: c.draft, old: c.old, typed: c.typed, back: c.back, stop: c.stop, phone: c.phone, avatar: c.avatar,
+        hero: { x: 175, y: 1250, s: 220, mood0: 'squint', mood: 'wide', ...(c.hero || {}) }, extra: c.draftExtra },
+      { kind: 'check', t0: DE, t1: I0, room: c.checkRoom || ((x, t, S) => c.room && c.room(x, t, S, 0.7)), hero: { x: 380, y: 1230, s: 250, bx: 540, by: 960 }, extra: c.checkExtra,
+        qs: c.qs.map((o, i) => ({ ...o, at: q[i], tick })) },
+      { kind: 'scene', t0: I0, t1: D + 0.1, draw: (x, t, S) => c.instead(x, t, S, I) },
+    ],
+    heads: [
+      { text: c.checkHead || 'Before you send: | *three* questions.', at: DE + 0.05, out: [I0 - 0.25, I0 - 0.05], size: 88 },
+      { text: c.head, at: I0 + 0.05, out: [last - 0.25, last - 0.05], size: 92 },
+      { text: c.last, at: last, late: c.lastLate ?? 1, lateAt: land, size: 100, accent: c.lastAccent || GOLD },
+    ],
+    boxes: [
+      { lines: [{ t: 1.9, speaker: 'THE STARS', text: c.stars[0] }, { t: +(flip + 0.5).toFixed(2), speaker: 'THE STARS', text: c.stars[1] }], open: 1.75, close: DE - 0.2 },
+      ...(c.lines && c.lines.length ? [{ lines: c.lines.map(l => ({ speaker: 'THE STARS', ...l, t: +(I0 + l.t).toFixed(2) })), open: +(I0 + c.lines[0].t - 0.15).toFixed(2), close: last - 0.1 }] : []),
+    ],
+    pis, kit: c.kit, flashes: c.flashes, fx: c.fx, over: c.over,
+    cues: typeof c.cues === 'function' ? c.cues(I) : (c.cues || []),
+  })
+}
