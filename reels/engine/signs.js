@@ -62,5 +62,5 @@ export function captionFor(item) {
   const topic = TAGS[item.topic] || TAGS.self
   const tags = [item.sign, `${item.sign}season`, 'zodiac', 'astrology', 'aura', topic[0], topic[1], vibe[0], vibe[1]]
   const aura = AURA[item.sign]
-  return `${item.caption || 'break the loop'} 👁\n${item.sign} · ${aura.name.toLowerCase()} aura ✦\n-\n${tags.map((t) => '#' + t).join(' ')}`
+  return `${item.caption || 'break the loop'} 👁\n${item.sign} · ${aura.name.toLowerCase()} aura ✦\ncome align. join the beta, link in bio\n-\n${tags.map((t) => '#' + t).join(' ')}`
 }

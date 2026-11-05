@@ -250,11 +250,30 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     octx.shadowBlur = width * 0.012
     octx.fillText('come align', cx, yy)
     octx.letterSpacing = '0px'
-    octx.font = `700 ${Math.round(size * 0.42)}px "ZSymbols", sans-serif`
+    // under it, a Windows-98 button like the popups': "join the beta"
+    const label = 'join the beta'
+    const fs = Math.round(width * 0.046)
+    octx.font = `700 ${fs}px "ZPoppins", sans-serif`
+    const bw = octx.measureText(label).width + fs * 1.6
+    const bh = fs * 1.9
+    const bx = cx - bw / 2
+    const by = yy + size * 0.36
+    const u = Math.max(2, Math.round(fs * 0.09))
     octx.shadowColor = aura.color
-    octx.shadowBlur = width * 0.03
-    octx.fillStyle = aura.light
-    octx.fillText('✦', cx, yy + size * 0.62)
+    octx.shadowBlur = width * 0.04
+    octx.fillStyle = '#d9dde6'
+    octx.fillRect(bx, by, bw, bh)
+    octx.shadowBlur = 0
+    octx.shadowColor = 'transparent'
+    octx.fillStyle = '#ffffff'
+    octx.fillRect(bx, by, bw, u)
+    octx.fillRect(bx, by, u, bh)
+    octx.fillStyle = '#5b6478'
+    octx.fillRect(bx, by + bh - u, bw, u)
+    octx.fillRect(bx + bw - u, by, u, bh)
+    octx.fillStyle = '#1b1b22'
+    octx.textBaseline = 'middle'
+    octx.fillText(label, cx, by + bh / 2 + fs * 0.06)
     octx.restore()
   }
 
