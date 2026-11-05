@@ -62,6 +62,30 @@ Each reel gives you `<id>.mp4` (to post), `<id>.web.mp4` (a light 720p
 copy), `<id>.cover.jpg` (the grid cover: the first pair, the question and the
 shrug, the way the format's thumbnails look) and `<id>.caption.txt`.
 
+## The batch: 100 single-pair reels
+
+`batch.mjs` holds a bank of 100 pairs (69 love and dating, 31 astrology),
+one pair per reel, about 25 s each, like most of the format's own posts. It
+writes `scripts/batch/NNN-a-vs-b.json` and refuses any spoken line with
+"compatibility", an exclamation mark, a digit or a hyphen.
+
+```bash
+node reels/difference/batch.mjs                                  # write the 100 scripts
+node reels/difference/render.mjs --dir batch --stills --jobs 3   # covers + contact sheets, ~9 min
+node reels/difference/render.mjs --dir batch --jobs 3 --skip     # the videos, ~45 min; --skip resumes
+```
+
+Renders land in `reels/out/difference/batch/`. Batch pairs pick their art
+from the kit: `solo:<motif>:<colour>` (heart, flame, butterflies, knot,
+alone, crowd, door, wall, storm, mask, star, chain, phone, seed, mirror,
+clock, thoughts, shield, flag), `duo:<pose>:<colour>:<colour>` (close,
+apart, away, ghost, three, wall, lead), `planet:<glyph>:<colour>:<moons>`,
+`sign:<glyph>:<colour>`, `wheels:overlay|merge`,
+`aspect:conjunction|opposition|trine|square|sextile`,
+`moon:new|full|waxing|waning`, `eclipse:solar|lunar`,
+`glyphs:<glyphs>:<colour>` and `orbs:<LABELS>:<colours>`, alongside the
+named arts below.
+
 ## Script contract
 
 ```json
