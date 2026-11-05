@@ -1,4 +1,1 @@
-{"keep": [4, 6, 7, 8, 9, 10, 11, 12, 13, 16, 18, 22, 24, 26, 32, 34, 40, 41, 42],
- "focus": {"22": [0.35, 0.5], "41": [0.65, 0.45], "34": [0.6, 0.5], "9": [0.45, 0.55], "16": [0.45, 0.5]},
- "pin": [41, 10, 11, 4],
- "notes": {"41": "Grimshaw, woman in white among lilies", "10": "Frith, The Lovers in the garden", "11": "Morisot, woman in a garden", "4": "Dewing, moody rose garden"}}
+{"keep": [4, 6, 7, 8, 9, 10, 11, 12, 13, 16, 18, 22, 24, 26, 32, 34, 40, 41, 42, 43, 46, 49, 56, 67, 71, 73, 74], "focus": {"22": [0.35, 0.5], "41": [0.65, 0.45], "34": [0.6, 0.5], "9": [0.45, 0.55], "16": [0.45, 0.5], "43": [0.4, 0.55], "49": [0.6, 0.45], "56": [0.45, 0.5], "67": [0.4, 0.4], "71": [0.6, 0.5], "73": [0.4, 0.45], "74": [0.3, 0.5]}, "pin": [41, 10, 11, 4, 56], "notes": {"41": "Grimshaw, woman in white among lilies", "10": "Frith, The Lovers in the garden", "11": "Morisot, woman in a garden", "4": "Dewing, moody rose garden", "56": "Sargent, Carnation, Lily, Lily, Rose"}}

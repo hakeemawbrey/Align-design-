@@ -1,4 +1,1 @@
-{"keep": [0, 9, 10, 13, 17, 19, 26],
- "focus": {"19": [0.45, 0.4], "26": [0.45, 0.5], "0": [0.5, 0.35]},
- "pin": [0, 9, 19],
- "notes": {"0": "Redon, the abduction of Ganymede", "9": "Goya, the water carrier", "19": "Vermeer, young woman with a water pitcher"}}
+{"keep": [0, 9, 10, 13, 17, 19, 26, 49, 59, 53, 55, 40, 36], "focus": {"19": [0.45, 0.4], "26": [0.45, 0.5], "0": [0.5, 0.35], "49": [0.45, 0.35], "59": [0.4, 0.4], "53": [0.45, 0.35], "55": [0.6, 0.5], "40": [0.65, 0.4], "36": [0.35, 0.4]}, "pin": [0, 9, 19, 49, 59], "notes": {"0": "Redon, the abduction of Ganymede", "9": "Goya, the water carrier", "19": "Vermeer, young woman with a water pitcher", "49": "Vigee-Lebrun, Anna Pitt as Hebe with the ewer", "59": "Roman girl drinking at a fountain"}}

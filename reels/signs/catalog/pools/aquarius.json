@@ -120,6 +120,111 @@
     0.45,
     0.5
    ]
+  },
+  {
+   "id": "wc-15502466",
+   "source": "commons",
+   "title": "Elisabeth Vigée-Lebrun - Portrait of Anna Pitt as Hebe - WGA25079",
+   "creator": "Élisabeth Louise Vigée Le Brun",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Elisabeth_Vig%C3%A9e-Lebrun_-_Portrait_of_Anna_Pitt_as_Hebe_-_WGA25079.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Elisabeth_Vig%C3%A9e-Lebrun_-_Portrait_of_Anna_Pitt_as_Hebe_-_WGA25079.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Elisabeth_Vig%C3%A9e-Lebrun_-_Portrait_of_Anna_Pitt_as_Hebe_-_WGA25079.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 891,
+   "h": 1253,
+   "file": "wc-15502466.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Vigee-Lebrun, Anna Pitt as Hebe with the ewer"
+  },
+  {
+   "id": "met-435708",
+   "source": "met",
+   "title": "Roman Girl at a Fountain",
+   "creator": "Léon Bonnat",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435708",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1507.jpg",
+   "w": 1437,
+   "h": 2400,
+   "file": "met-435708.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Roman girl drinking at a fountain"
+  },
+  {
+   "id": "wc-29982085",
+   "source": "commons",
+   "title": "Frances Wyndham, later Lady Burrell, as Hebe – William Beechey (1804)",
+   "creator": "William Beechey",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frances_Wyndham,_later_Lady_Burrell,_as_Hebe_%E2%80%93_William_Beechey_(1804).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Frances_Wyndham%2C_later_Lady_Burrell%2C_as_Hebe_%E2%80%93_William_Beechey_%281804%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Frances_Wyndham%2C_later_Lady_Burrell%2C_as_Hebe_%E2%80%93_William_Beechey_%281804%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 661,
+   "h": 800,
+   "file": "wc-29982085.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-126111935",
+   "source": "commons",
+   "title": "Jeune fille à la fontaine by Fleury François Richard",
+   "creator": "",
+   "license": "CC BY 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jeune_fille_%C3%A0_la_fontaine_by_Fleury_Fran%C3%A7ois_Richard.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Jeune_fille_%C3%A0_la_fontaine_by_Fleury_Fran%C3%A7ois_Richard.jpg/1920px-Jeune_fille_%C3%A0_la_fontaine_by_Fleury_Fran%C3%A7ois_Richard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Jeune_fille_%C3%A0_la_fontaine_by_Fleury_Fran%C3%A7ois_Richard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2285,
+   "file": "wc-126111935.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-15496244",
+   "source": "commons",
+   "title": "Guercino - Jesus and the Samaritan Woman at the Well - WGA10946",
+   "creator": "Guercino",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Guercino_-_Jesus_and_the_Samaritan_Woman_at_the_Well_-_WGA10946.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Guercino_-_Jesus_and_the_Samaritan_Woman_at_the_Well_-_WGA10946.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Guercino_-_Jesus_and_the_Samaritan_Woman_at_the_Well_-_WGA10946.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1061,
+   "h": 800,
+   "file": "wc-15496244.jpg",
+   "focus": [
+    0.65,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-11767411",
+   "source": "commons",
+   "title": "Egyptian fellah woman (1872 painting)",
+   "creator": "Elisabeth Baumann",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Egyptian_fellah_woman_(1872_painting).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Egyptian_fellah_woman_%281872_painting%29.jpg/1920px-Egyptian_fellah_woman_%281872_painting%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Egyptian_fellah_woman_%281872_painting%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1473,
+   "file": "wc-11767411.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
   }
  ]
 }

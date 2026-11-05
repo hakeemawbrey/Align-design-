@@ -418,6 +418,143 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "wc-45571146",
+   "source": "commons",
+   "title": "1880 Boudin Normannische Landschaft anagoria",
+   "creator": "Eugène Louis Boudin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:1880_Boudin_Normannische_Landschaft_anagoria.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/1880_Boudin_Normannische_Landschaft_anagoria.JPG/1920px-1880_Boudin_Normannische_Landschaft_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/1880_Boudin_Normannische_Landschaft_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1344,
+   "file": "wc-45571146.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-125095761",
+   "source": "commons",
+   "title": "(Barcelona) Sea and Sky - William Turner in Tate Britain",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:(Barcelona)_Sea_and_Sky_-_William_Turner_in_Tate_Britain.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%28Barcelona%29_Sea_and_Sky_-_William_Turner_in_Tate_Britain.jpg/1920px-%28Barcelona%29_Sea_and_Sky_-_William_Turner_in_Tate_Britain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/%28Barcelona%29_Sea_and_Sky_-_William_Turner_in_Tate_Britain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1542,
+   "file": "wc-125095761.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-889",
+   "source": "aic",
+   "title": "Barks Fleeing Before the Storm",
+   "creator": "Jules Dupré (French, 1811–1889)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/889",
+   "url": "https://www.artic.edu/iiif/2/80df29cd-493f-23c0-3e51-4ddc38b3f34f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1091,
+   "file": "aic-889.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-52115591",
+   "source": "commons",
+   "title": "Storm Clouds over the Sea (Jacob Isaackszoon van Ruisdael) - Nationalmuseum - 21087",
+   "creator": "Jacob van Ruisdael",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Storm_Clouds_over_the_Sea_(Jacob_Isaackszoon_van_Ruisdael)_-_Nationalmuseum_-_21087.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Storm_Clouds_over_the_Sea_%28Jacob_Isaackszoon_van_Ruisdael%29_-_Nationalmuseum_-_21087.tif/lossy-page1-1920px-Storm_Clouds_over_the_Sea_%28Jacob_Isaackszoon_van_Ruisdael%29_-_Nationalmuseum_-_21087.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Storm_Clouds_over_the_Sea_%28Jacob_Isaackszoon_van_Ruisdael%29_-_Nationalmuseum_-_21087.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1431,
+   "file": "wc-52115591.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Ruisdael, storm clouds over the sea"
+  },
+  {
+   "id": "wc-8645048",
+   "source": "commons",
+   "title": "Jacob Isaacksz. van Ruisdael - Le Moulin de Wijk-bij-Duurstede",
+   "creator": "Jacob van Ruisdael",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jacob_Isaacksz._van_Ruisdael_-_Le_Moulin_de_Wijk-bij-Duurstede.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Jacob_Isaacksz._van_Ruisdael_-_Le_Moulin_de_Wijk-bij-Duurstede.jpg/1920px-Jacob_Isaacksz._van_Ruisdael_-_Le_Moulin_de_Wijk-bij-Duurstede.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Jacob_Isaacksz._van_Ruisdael_-_Le_Moulin_de_Wijk-bij-Duurstede.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1557,
+   "file": "wc-8645048.jpg",
+   "focus": [
+    0.68,
+    0.4
+   ],
+   "pin": true,
+   "note": "Ruisdael, the windmill at Wijk bij Duurstede"
+  },
+  {
+   "id": "wc-96775850",
+   "source": "commons",
+   "title": "Winter Landscape near Haarlem with a Lamppost (SM 1109)",
+   "creator": "Jacob van Ruisdael",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Winter_Landscape_near_Haarlem_with_a_Lamppost_(SM_1109).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Winter_Landscape_near_Haarlem_with_a_Lamppost_%28SM_1109%29.png/1920px-Winter_Landscape_near_Haarlem_with_a_Lamppost_%28SM_1109%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Winter_Landscape_near_Haarlem_with_a_Lamppost_%28SM_1109%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2232,
+   "file": "wc-96775850.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ]
+  },
+  {
+   "id": "met-437549",
+   "source": "met",
+   "title": "Wheat Fields",
+   "creator": "Jacob van Ruisdael",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437549",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145911.jpg",
+   "w": 2400,
+   "h": 1858,
+   "file": "met-437549.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "id": "met-436833",
+   "source": "met",
+   "title": "Red Sunset",
+   "creator": "Arkhyp Kuindzhi (Arkhip Ivanovich Kuindzhi)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436833",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2557.jpg",
+   "w": 2400,
+   "h": 1741,
+   "file": "met-436833.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
   }
  ]
 }
