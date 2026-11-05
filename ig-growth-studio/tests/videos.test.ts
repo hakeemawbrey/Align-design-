@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { type Account, openDb, topVideos } from "../src/lib/db";
+import { type Account, openDb, topVideos, totalVideoViews } from "../src/lib/db";
 import { snapshotAccountVideos } from "../src/lib/jobs";
 import { fakeGraph } from "./helpers";
 
@@ -35,5 +35,9 @@ describe("video progress", () => {
     expect(top[0].history.map((h) => h.views)).toEqual([10, 200]);
     expect(top[0].reach).toBe(8);
     expect(await topVideos(db, { since: new Date("2026-11-01T00:00:00Z"), igUserId: "other" })).toEqual([]);
+    // Uses each video's latest count only, not every hourly count.
+    expect(await totalVideoViews(db)).toEqual({ views: 260, videos: 2 });
+    expect(await totalVideoViews(db, "9")).toEqual({ views: 260, videos: 2 });
+    expect(await totalVideoViews(db, "other")).toEqual({ views: 0, videos: 0 });
   });
 });

@@ -7,7 +7,7 @@ import { Sparkline } from "@/components/Sparkline";
 import { FbPage } from "@/components/FbPage";
 import { TopVideos } from "@/components/TopVideos";
 import { facebookPages } from "@/lib/pages";
-import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos } from "@/lib/db";
+import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos, totalVideoViews } from "@/lib/db";
 import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
 import { GraphClient } from "@/lib/graph";
 import { hasFacebookPage } from "@/lib/posts";
@@ -100,7 +100,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       ),
     ),
   );
-  const [totals, fbPages] = await Promise.all([Promise.all(accounts.map(todayTotals)), facebookPages(accounts)]);
+  const [totals, fbPages, tracked] = await Promise.all([Promise.all(accounts.map(todayTotals)), facebookPages(accounts), totalVideoViews(db)]);
   const allPosts = await listPosts(db);
   const queued = allPosts.filter((p) => p.status === "scheduled" || p.status === "processing");
   const history = await Promise.all(accounts.map((a) => listSnapshots(db, a.igUserId, 30)));
@@ -131,6 +131,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
     <>
       <div className="stats">
         <Stat label="Views today" value={totals.some(Boolean) ? fmt.format(sum((r) => r.today?.views)) : "—"} />
+        <Stat label="Total views (tracked Reels)" value={tracked.videos ? fmt.format(tracked.views) : "—"} />
         <Stat label="Reached today" value={totals.some(Boolean) ? fmt.format(sum((r) => r.today?.reach)) : "—"} />
         <Stat label="Total followers" value={fmt.format(sum((r) => r.profile?.followers_count))} />
         <Stat label="Follower change (7 days)" value={changes.length ? signed(changes.reduce((t, c) => t + c, 0)) : "—"} />
@@ -234,6 +235,7 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
   }
 
   const todayStats = await todayTotals(account);
+  const tracked = await totalVideoViews(db, account.igUserId);
   const snapshots = await listSnapshots(db, account.igUserId);
   const first = snapshots[0];
   const last = snapshots[snapshots.length - 1];
@@ -246,6 +248,7 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
       {profile && (
         <div className="stats">
           <Stat label="Views today" value={todayStats ? fmt.format(todayStats.views ?? 0) : "—"} />
+          <Stat label="Total views (tracked Reels)" value={tracked.videos ? fmt.format(tracked.views) : "—"} />
           <Stat label="Reached today" value={todayStats ? fmt.format(todayStats.reach ?? 0) : "—"} />
           <Stat label="Followers" value={fmt.format(profile.followers_count ?? 0)} />
           <Stat label="Following" value={fmt.format(profile.follows_count ?? 0)} />

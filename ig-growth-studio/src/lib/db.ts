@@ -646,6 +646,19 @@ export interface TopVideo {
 }
 
 /** Videos posted since `since`, ranked by their latest view count. */
+/** Sum of each tracked video's latest saved view count, optionally for one account. */
+export async function totalVideoViews(db: DB, igUserId?: string): Promise<{ views: number; videos: number }> {
+  const [row] = await all<{ views: number | null; videos: number }>(
+    db,
+    `SELECT SUM(s.views) AS views, COUNT(*) AS videos FROM media_info i
+     JOIN media_snapshots s ON s.media_id = i.media_id
+       AND s.at = (SELECT MAX(at) FROM media_snapshots WHERE media_id = i.media_id)
+     ${igUserId ? "WHERE i.ig_user_id = ?" : ""}`,
+    igUserId ? [igUserId] : [],
+  );
+  return { views: Number(row?.views ?? 0), videos: Number(row?.videos ?? 0) };
+}
+
 export async function topVideos(db: DB, opts: { since: Date; igUserId?: string; limit?: number }): Promise<TopVideo[]> {
   const args: Arg[] = [opts.since.toISOString()];
   let where = "i.posted_at >= ?";
