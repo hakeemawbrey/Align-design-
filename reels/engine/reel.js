@@ -170,8 +170,8 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     const shots = {
       a0: { pos: at(hero, [dir, -4.6], [side, -1.7 * s], [up, 2.7]), look: stageLook },
       a1: { pos: at(hero, [dir, rng.range(-1.2, 0.2)], [side, -1.9 * s], [up, 2.1]), look: at(stageLook, [side, 0.3 * s], [up, -0.2]) },
-      b0: { pos: at(hero, [dir, -4.4], [side, 1.7 * s], [up, 1.9]), look: at(hero, [up, 1.55], [dir, 1.6], [side, 0.3 * s]) },
-      b1: { pos: at(hero, [dir, -3.7], [side, 1.45 * s], [up, 1.8]), look: at(hero, [up, 1.6], [dir, 1.6], [side, 0.25 * s]) },
+      b0: { pos: at(hero, [dir, -4.6], [side, 1.7 * s], [up, 1.9]), look: at(hero, [up, 1.4], [dir, 0.6]) },
+      b1: { pos: at(hero, [dir, -4.1], [side, 1.5 * s], [up, 1.8]), look: at(hero, [up, 1.4], [dir, 0.6]) },
     }
     const camYawToFigure = (pos) => Math.atan2(pos.x - hero.x, pos.z - hero.z)
     const turnYaw = camYawToFigure(shots.b1.pos)
@@ -304,6 +304,37 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     overlayTex.needsUpdate = true
   }
 
+  // The sign must never leave the frame or run into the "come align" line at
+  // the top: if it would, turn the camera just enough to bring it back. The
+  // turn grows smoothly with the overflow, so it never jumps.
+  const SAFE_X = 0.72
+  const SAFE_TOP = 0.42
+  const corner = new THREE.Vector3()
+  function keepGlyphInFrame() {
+    const g = state.glyph.object
+    if (!g.visible) return
+    const { camera } = state
+    camera.updateMatrixWorld(true)
+    const half = g.scale.x / 2
+    let over = { x: 0, y: 0 }
+    for (const [dx, dy] of [[-half, half], [half, half], [-half, -half], [half, -half]]) {
+      // sprite corners in camera space: offset along the camera's own axes
+      corner.copy(g.position)
+      corner.addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0), dx)
+      corner.addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1), dy)
+      corner.project(camera)
+      if (corner.x > SAFE_X) over.x = Math.max(over.x, corner.x - SAFE_X)
+      if (corner.x < -SAFE_X) over.x = Math.min(over.x, corner.x + SAFE_X)
+      if (corner.y > SAFE_TOP) over.y = Math.max(over.y, corner.y - SAFE_TOP)
+    }
+    if (!over.x && !over.y) return
+    const tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
+    const tanH = tanV * camera.aspect
+    camera.rotateY(-Math.atan(over.x * tanH))
+    camera.rotateX(Math.atan(over.y * tanV))
+    camera.updateMatrixWorld(true)
+  }
+
   function renderAt(t) {
     if (!state) return
     const { world, figure, crowd, glyph, tl, camera, hero, baseYaw, turn } = state
@@ -329,6 +360,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     crowd.forEach((c, i) => c.update(t, { mode: c.mode, look: lookAt, alert, talk: i === state.speaker ? talk : 0 }))
     figure.object.updateMatrixWorld(true)
     glyph.update(t - tl.tGlyph, figure.headTop())
+    keepGlyphInFrame()
 
     renderer.setRenderTarget(rt)
     renderer.render(state.scene, camera)
