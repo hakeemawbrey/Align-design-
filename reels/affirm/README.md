@@ -162,9 +162,9 @@ line. End every reel with a keyword whose DM reply exists in PROFILE.md.
 **Pronunciation.** The voice reads phonemes from espeak, which gets a few
 astrology words wrong. `LEXICON` in `voice.py` fixes them for every voice:
 Libra is LEE-bruh (not LYE-bruh), Leos is LEE-ohz, Antares is an-TAIR-eez.
-British voices (`bf_…`, `bm_…`) get British pronunciation. To check a word,
-phonemize it (see the snippet at the top of `voice.py`); to fix one, add it to
-`LEXICON` with its US and UK sounds. "Astrologer" is banned outright: the voice
+British voices (`bf_…`, `bm_…`) get British pronunciation. To check a word, run
+`reels/affirm/.voice/venv/bin/python reels/affirm/voice.py --phonemes "Dear Libra"`;
+to fix one, add it to `LEXICON` with its US and UK sounds. "Astrologer" is banned outright: the voice
 says "astro-LOW-jer".
 
 **Align in every reel, lightly.** The wordmark sits small at the top of every

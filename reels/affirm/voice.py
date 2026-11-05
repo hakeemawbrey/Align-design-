@@ -146,6 +146,13 @@ def spread(words, start, end):
 
 
 def main():
+    if sys.argv[1] == '--phonemes':
+        # check how the voice will say something:  voice.py --phonemes "Dear Libra"
+        k = Kokoro(MODEL, VOICES)
+        text = ' '.join(sys.argv[2:])
+        for lang in ('en-us', 'en-gb'):
+            print(f'{lang}  {phonemize(k, text, lang)}')
+        return
     req = json.load(open(sys.argv[1]))
     out_dir = sys.argv[2]
     os.makedirs(out_dir, exist_ok=True)
