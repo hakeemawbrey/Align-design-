@@ -23,7 +23,7 @@
           "col": "pink"
         },
         "b": {
-          "label": "THE HEIGHTS",
+          "label": "HEIGHTS",
           "icon": "bike",
           "col": "blue"
         },
@@ -33,21 +33,20 @@
     {
       "head": "Montrose: murals, vintage racks, a *late* coffee.",
       "vis": {
-        "k": "map",
-        "hoods": [
-          "Montrose"
-        ]
+        "k": "icons",
+        "items": [
+          "paint",
+          "coffee",
+          "music"
+        ],
+        "layout": "row"
       }
     },
     {
       "head": "The Heights: porches, bungalows, a *long* walk.",
       "vis": {
-        "k": "map",
-        "keep": true,
-        "hoods": [
-          "Montrose",
-          "the Heights"
-        ]
+        "k": "bayou",
+        "walkers": 2
       }
     },
     {

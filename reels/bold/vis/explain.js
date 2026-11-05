@@ -663,7 +663,6 @@ const word = {
     const plusW = 70, total = ws.reduce((a, b) => a + b, 0) + plusW * Math.max(0, n - 1)
     const sc = Math.min(1, (s.w - 20) / total)
     const py = s.cy + (p.means ? -10 : 40)
-    let cx0 = s.cx - total * sc / 2
     x.save(); x.translate(s.cx, py); x.scale(sc, sc); x.translate(-s.cx, -py)
     let px = s.cx - total / 2
     parts.forEach(([a, b], i) => {
@@ -710,7 +709,7 @@ const versus = {
     const vt = at01(s, p.at, 0.55)
     const win = v === 'a' ? 0 : v === 'b' ? 1 : -1, wk = win >= 0 ? ease.outCubic(prog(s.lt, vt, vt + 0.4)) : 0
     ;[A, B].forEach((S, i) => {
-      const at = i ? 0.35 : 0.1, k = ease.outBack ? 0 : 0
+      const at = i ? 0.35 : 0.1
       const q = prog(s.lt, at, at + 0.45), e = easeOutBack(q, 1.6)
       if (q <= 0) return
       const col = color(S.col, i ? PINK : BLUE)
@@ -753,7 +752,7 @@ const versus = {
 const markOf = (p, i) => (Array.isArray(p.marks) ? p.marks[i] : typeof p.marks === 'string' ? p.marks : null) || '✓'
 const checklist = {
   min: p => 1.2 + (p.items || []).length * 0.55,
-  draw(x, p, s, ) {
+  draw(x, p, s) {
     const items = p.items || [], n = items.length
     const rowH = Math.min(140, (s.h - (p.title ? 150 : 70)) / Math.max(1, n))
     const w = Math.min(920, s.w), h = Math.min(s.h, (p.title ? 140 : 60) + n * rowH + 30)
@@ -1118,9 +1117,8 @@ const scaleK = {
       if (txt) { x.save(); popScale(x, hx, py - (ic ? 170 : 50), k); pill(x, txt, hx, py - (ic ? 170 : 50), { size: Math.min(46, fitFont(x, txt, 46, L / 2 - 40, { weight: 800 })), col, fg: BONE, weight: 800, glow: 18 }); x.restore() }
     })
   },
-  cues(p) { return [['pop', 0, 0, 0, 0]].slice(1) },
+  cues: (p, t0) => [['pop', t0 + 0.1, 740, 0.045, -0.4], ['pop', t0 + 0.3, 880, 0.045, 0.4], ['whoosh', t0 + 0.5, 0.5, 0.04], ['boom', t0 + 1.0, Math.abs(p.tilt ?? 0) > 0.2 ? 0.1 : 0.05]],
 }
-scaleK.cues = (p, t0) => [['pop', t0 + 0.1, 740, 0.045, -0.4], ['pop', t0 + 0.3, 880, 0.045, 0.4], ['whoosh', t0 + 0.5, 0.5, 0.04], ['boom', t0 + 1.0, Math.abs(p.tilt ?? 0) > 0.2 ? 0.1 : 0.05]]
 
 // ───────────────────────── bars: a jokey ranking (no axes, no numbers)
 const bars = {
@@ -1354,10 +1352,9 @@ const note = {
         left -= wl.length + 1
         y += lh
       })
-      if (shown === 0 && s.lt >= start - 0.3 && s.lt < start + 0.01 && i === lines.findIndex((_, k2) => true) - 0) caret = caret || null
       y += 16
     })
-    if (!caret) { const last = lines.length - 1; if (s.lt < 0.25) caret = [x0 + 70, y0 + head + 40 + lh * 0.5] }
+    if (!caret && s.lt < 0.25) caret = [x0 + 70, y0 + head + 40 + lh * 0.5]
     if (caret && Math.sin(s.t * 12) > -0.2) { x.beginPath(); x.moveTo(caret[0], caret[1] - FS * 0.55); x.lineTo(caret[0], caret[1] + FS * 0.5); line(x, col, 5, 12) }
     if (letter && p.sign && s.lt > tcur) { const k = clamp((s.lt - tcur) / 0.4); label(x, p.sign, x0 + w - 80, y0 + h - 70, { size: 56, weight: 500, family: 'serif', italic: true, align: 'right', color: col, alpha: k, glow: 12 }); heart(x, x0 + w - 60, y0 + h - 120, 22 * pop01(s.lt, tcur + 0.2, 0.4, 2.6), PINK) }
   },

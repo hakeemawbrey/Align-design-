@@ -223,12 +223,13 @@ const skyline = {
       }
       x.restore()
     }
-    if (time === 'sunset') stripedSun(x, s.cx + 40 * sc, base - 60 * sc, 260 * sc * pop01(s.clt, 0.05, 0.6, 1.6), base, intro)
+    if (time === 'sunset') stripedSun(x, s.cx + 30 * sc, base - 400 * sc, 270 * sc * pop01(s.clt, 0.05, 0.6, 1.6), base, intro)
     if (time === 'day') sunDisc(x, s.cx - s.w * 0.32, s.top + s.h * 0.17, Math.min(80, s.h * 0.08) * pop01(s.clt, 0.15, 0.45, 2), s.t)
     if (haze > 0) {
-      const g = x.createLinearGradient(0, base - s.h * 0.75, 0, base)
-      g.addColorStop(0, rgba(ORANGE, 0)); g.addColorStop(0.6, rgba(ORANGE, 0.22 * haze)); g.addColorStop(1, rgba('#ff9a5a', 0.5 * haze))
-      x.fillStyle = g; x.fillRect(s.cx - s.w / 2 - 40, base - s.h * 0.75, s.w + 80, s.h * 0.75)
+      x.save(); x.translate(s.cx, base); x.scale(1, 0.62)
+      const R0 = s.w * 0.75, g = x.createRadialGradient(0, 0, 0, 0, 0, R0)
+      g.addColorStop(0, rgba('#ff9a5a', 0.8 * haze)); g.addColorStop(0.5, rgba(ORANGE, 0.35 * haze)); g.addColorStop(1, rgba(ORANGE, 0))
+      x.fillStyle = g; x.beginPath(); x.arc(0, 0, R0, Math.PI, TAU); x.fill(); x.restore()
     }
     // the rocket climbs from behind the towers, trailing a soft plume
     if (p.rocket) {
@@ -238,11 +239,11 @@ const skyline = {
         x.save(); x.lineCap = 'round'
         for (let i = 0; i < 18; i++) {
           const u = q * i / 17, [tx, ty] = P(u), r = (14 + (1 - i / 17) * 30) * (0.8 + 0.2 * Math.sin(s.t * 3 + i))
-          x.globalAlpha = 0.18 + 0.2 * (i / 17); x.fillStyle = BONE; x.beginPath(); x.arc(tx + Math.sin(i * 1.7 + s.t) * 6, ty + 30, r, 0, TAU); x.fill()
+          x.globalAlpha = 0.1 + 0.16 * (i / 17); x.fillStyle = '#ffe9d0'; x.beginPath(); x.arc(tx + Math.sin(i * 1.7 + s.t) * 6, ty + 30, r, 0, TAU); x.fill()
         }
         x.restore()
         const [rx, ry] = P(q), [nx, ny] = P(Math.min(1, q + 0.02))
-        rocket(x, rx, ry, 0.9, Math.atan2(nx - rx, -(ny - ry)) || -0.1, s.t)
+        rocket(x, rx, ry, 1.15, Math.atan2(nx - rx, -(ny - ry)) || -0.1, s.t)
       }
     }
     towers(x, left, base, sc, s.t, j => easeBack(prog(s.clt, 0.04 + j * 0.055, 0.5 + j * 0.055)), { edge: pal.edge, winCol: pal.win, winA: pal.winA, heat, fillCol: pal.fillCol, fillA: pal.fillA })
@@ -261,10 +262,10 @@ const skyline = {
     if (heat) {
       x.save(); x.lineCap = 'round'
       for (let i = 0; i < 4; i++) {
-        const ph = (s.t * 0.45 + i / 4) % 1, y = base - 120 * sc - ph * s.h * 0.45
+        const ph = (s.t * 0.45 + i / 4) % 1, y = base - 640 * sc - ph * s.h * 0.22
         x.globalAlpha = Math.sin(Math.PI * ph) * 0.7
         x.beginPath()
-        for (let k = 0; k <= 30; k++) { const px = s.cx - s.w * 0.4 + k * s.w * 0.8 / 30, py = y + Math.sin(k * 0.9 + s.t * 5 + i) * 10; k ? x.lineTo(px, py) : x.moveTo(px, py) }
+        for (let k = 0; k <= 30; k++) { const px = s.cx - s.w * 0.12 + k * s.w * 0.55 / 30, py = y + Math.sin(k * 0.9 + s.t * 5 + i) * 10; k ? x.lineTo(px, py) : x.moveTo(px, py) }
         line(x, ORANGE, 6, 14)
       }
       x.restore()
@@ -314,7 +315,7 @@ const map = {
     const sAt = (p.spinAt ?? 0.5) * s.dur
     const sk = p.spin ? ease.inOutCubic(prog(s.lt, sAt, sAt + 1)) : 0
     const rot = p.spin ? Math.max(0, s.lt - sAt) * 0.28 * sk : 0
-    const irr = 1 - sk
+    const irr = 0.7 * (1 - sk)
     x.save(); x.translate(cx, cy); x.rotate(rot)
     // freeways (spokes)
     SPOKES.forEach((deg, i) => {
@@ -358,7 +359,7 @@ const map = {
       drawPixelStar(x, cx, cy, Math.round(40 * ck * (1 + 0.1 * Math.sin(s.t * 4)) / 4) * 4 || 4, 0, '#fff3d0')
     }
     // ring labels (fade away as it spins)
-    const LA = [0.62, -0.18, 0.2, -0.78]
+    const LA = [0.5, 0.5, 0.5, 0.5]
     radii.forEach((R, i) => {
       const txt = ringsL[i]
       if (!txt) return
@@ -375,8 +376,9 @@ const map = {
       const at = stagger(i, hoods.length, s.dur, 0.25, p.spin ? Math.min(0.45, p.spinAt ?? 0.5) : 0.65)
       const k = pop01(s.lt, at, 0.32, 2.4) * (1 - sk)
       if (k <= 0) return
-      const a = -Math.PI / 2 + (i + 0.5) * TAU / hoods.length + 0.35
-      const band = nR > 1 ? [(radii[0] + radii[1]) / 2, nR > 2 ? (radii[1] + radii[2]) / 2 : radii[1] * 1.05, radii[0] * 0.5][i % 3] : radii[0] * 0.6
+      // around the top (the bottom holds the ring labels; left and right the pins)
+      const a = Math.PI * (1.12 + 0.76 * (hoods.length > 1 ? i / (hoods.length - 1) : 0.5))
+      const band = nR > 1 ? [nR > 2 ? (radii[1] + radii[2]) / 2 : radii[1] * 1.05, (radii[0] + radii[1]) / 2][i % 2] : radii[0] * 0.6
       const px = cx + Math.cos(a) * band, py = cy + Math.sin(a) * band * 0.94 + Math.sin(s.t * 1.3 + i) * 4
       x.save(); x.translate(px, py); x.scale(k, k); x.translate(-px, -py)
       pillIn(x, h, px, py, s, { size: 38, col: [GOLD, PINK, BLUE, GREEN, VIOLET, ORANGE][i % 6], weight: 800 })
@@ -386,7 +388,8 @@ const map = {
     if (p.pins) {
       const names = Array.isArray(p.pins) ? p.pins : [null, null]
       const at = (p.pinsAt ?? 0.3) * s.dur, lat = (p.linkAt ?? 0.62) * s.dur
-      const spots = [[cx + Math.cos(Math.PI * 1.1) * radii[0] * 0.7, cy + Math.sin(Math.PI * 1.1) * radii[0] * 0.7], [cx + Math.cos(-0.12 * Math.PI) * R3 * 0.86, cy + Math.sin(-0.12 * Math.PI) * R3 * 0.86 + 60]]
+      const rA = nR > 1 ? (radii[0] + radii[1]) / 2 : radii[0] * 0.5, rB = nR > 2 ? (radii[nR - 2] + radii[nR - 1]) / 2 : R3 * 0.9
+      const spots = [[cx - rA, cy + 40], [cx + rB, cy + 40]]
       spots.forEach(([px, py], i) => {
         const t0 = at + i * 0.3, q = prog(s.lt, t0, t0 + 0.35)
         if (q <= 0) return
@@ -593,6 +596,7 @@ const FOOD = {
     for (const [cx, cy, r] of [[-58, -40, 15], [12, -50, 17], [72, -38, 14]]) { x.beginPath(); x.arc(cx, cy + Math.sin(t * 3 + cx) * 2, r, 0, TAU); ink(x, RED, { w: 6, fa: 0.8, glow: 12 }) }
     x.strokeStyle = '#ffe07a'; x.lineWidth = 7; x.lineCap = 'round'
     for (const [cx, cy, a] of [[-90, -22, -0.6], [-22, -30, 0.5], [40, -24, -0.4], [95, -20, 0.7]]) { x.beginPath(); x.moveTo(cx - 12 * Math.cos(a), cy - 12 * Math.sin(a)); x.lineTo(cx + 12 * Math.cos(a), cy + 12 * Math.sin(a)); x.stroke() }
+    x.beginPath(); x.ellipse(0, -6, 130, 86, 0, 0, Math.PI); x.closePath(); x.fillStyle = rgba('#7a3b22', 0.8); x.fill()
     x.beginPath(); x.ellipse(0, -6, 158, 112, 0, Math.PI, 0, true); x.ellipse(0, -6, 128, 84, 0, 0, Math.PI, false); x.closePath()
     ink(x, GOLD, { w: 9, fa: 0.5, glow: 22, fill: '#f2b84a' })
     x.fillStyle = rgba('#a5652a', 0.7)
@@ -613,7 +617,7 @@ const FOOD = {
     steam(x, t, 3, -110)
   },
   crawfish(x, t) {
-    x.rotate(-0.5); x.scale(0.56, 0.56); x.translate(0, -10)
+    x.rotate(-0.5); x.scale(0.64, 0.64); x.translate(0, -10)
     const snap = Math.max(0, Math.sin(t * 2.4)) ** 4
     for (const sd of [-1, 1]) {
       x.beginPath(); x.moveTo(sd * 10, -100); x.bezierCurveTo(sd * 30, -200, sd * (120 + 10 * Math.sin(t * 3 + sd)), -210, sd * (150 + 14 * Math.sin(t * 2.6 + sd)), -280)
@@ -704,7 +708,7 @@ const FOOD = {
     }
   },
   bbq(x, t) {
-    x.translate(0, 30)
+    x.scale(0.86, 0.86); x.translate(0, 40)
     rr(x, -160, 20, 320, 60, 22); ink(x, CRUST, { w: 8, fa: 0.45, glow: 14, fill: '#8a5523' })
     x.beginPath(); x.arc(150, 50, 10, 0, TAU); line(x, CRUST, 5, 6)
     for (let i = 0; i < 3; i++) {
@@ -721,7 +725,7 @@ const FOOD = {
     x.restore()
   },
   tamale(x, t) {
-    x.rotate(-0.12)
+    x.scale(0.84, 0.84); x.rotate(-0.12)
     for (const [dy, sc0] of [[40, 1], [-30, 0.94]]) {
       x.save(); x.translate(0, dy); x.scale(sc0, sc0)
       x.beginPath(); x.moveTo(-170, 0); x.quadraticCurveTo(-90, -62, 0, -58); x.quadraticCurveTo(90, -62, 170, 0); x.quadraticCurveTo(90, 62, 0, 58); x.quadraticCurveTo(-90, 62, -170, 0); x.closePath()
@@ -763,7 +767,7 @@ const food = {
     const cols = n <= 3 ? n : n === 4 ? 2 : 3, rows = Math.ceil(n / cols)
     const showL = p.labels !== false
     const cellW = s.w / cols, cellH = s.h / rows
-    const sc = Math.min(1.3, cellW / 330, (cellH - (showL ? 80 : 0)) / 330)
+    const sc = Math.min(n === 1 ? 1.7 : 1.3, cellW / 340, (cellH - (showL ? 80 : 0)) / 340)
     items.forEach((it, i) => {
       const row = Math.floor(i / cols), inRow = row === rows - 1 ? n - cols * (rows - 1) : cols, c = i - row * cols
       const px = s.cx + (c - (inRow - 1) / 2) * cellW
@@ -798,8 +802,8 @@ const food = {
 /** an umbrella in a person's local frame (feet at 0,0, person ≈ 270 tall): o = open 0..1 */
 function umbrella(x, o, col = PINK) {
   x.save()
-  x.beginPath(); x.moveTo(30, -150); x.lineTo(8, -200); line(x, BONE, 13, 8)
-  x.translate(4, -206)
+  x.beginPath(); x.moveTo(36, -150); x.lineTo(70, -176); line(x, BONE, 13, 8)
+  x.translate(74, -180); x.rotate(-0.24)
   x.beginPath(); x.moveTo(0, 34); x.lineTo(0, -150); line(x, BONE, 7, 8)
   x.beginPath(); x.arc(-14, 34, 14, 0, Math.PI); line(x, BONE, 7, 8)
   const hw = lerp(26, 200, o), hh = lerp(150, 172, o), lip = lerp(120, 40, o)
@@ -810,7 +814,7 @@ function umbrella(x, o, col = PINK) {
   x.beginPath(); x.moveTo(-hw * 0.6, lip - 8); x.quadraticCurveTo(-hw * 0.47, -hh * 0.7, 0, -hh); x.moveTo(hw * 0.6, lip - 8); x.quadraticCurveTo(hw * 0.47, -hh * 0.7, 0, -hh); line(x, col, 5, 6)
   x.beginPath(); x.moveTo(0, -hh); x.lineTo(0, -hh - 24); line(x, BONE, 7, 6)
   x.restore()
-  return { hw, top: -206 - 144 - hh, lip: -206 - 144 + lip }
+  return { hw, top: -180 - 144 - hh, lip: -180 - 144 + lip, dx: 74 - Math.sin(0.24) * (144 + hh * 0.6) }
 }
 function sweat(x, px, hy, sc, t, a) {
   if (a <= 0) return
@@ -892,8 +896,8 @@ const weather = {
         sweat(x, px, hy, sc, s.t, sunK * pk)
       }
       if (rainK > 0.05) {
-        const y0 = ey + 80 * csc, half = 165 * csc
-        const stop = U ? (rx, fl) => { const dx = rx - (px + 4 * sc); return Math.abs(dx) < U.hw * sc ? py + (U.top * sc) + (Math.abs(dx) / (U.hw * sc)) ** 2 * (U.lip - U.top) * sc * 0.9 : fl } : null
+        const y0 = ey + 80 * csc, half = 150 * csc
+        const stop = U ? (rx, fl) => { const dx = rx - (px + U.dx * sc); return Math.abs(dx) < U.hw * sc ? py + (U.top * sc) + (Math.abs(dx) / (U.hw * sc)) ** 2 * (U.lip - U.top) * sc * 0.9 : fl } : null
         rainIn(x, s.cx - half, s.cx + half, y0, py, s.t, clamp((rainK - 0.05) * 2), { slant: 0.05, stop })
       }
       if (sunK > 0.3 && mode !== 'rain') {
@@ -922,7 +926,6 @@ const weather = {
       // warm air ahead, cold air behind
       x.save()
       x.beginPath(); x.moveTo(s.cx - s.w / 2, fy0); for (let i = 0; i <= 20; i++) { const y = lerp(fy0, fy1, i / 20); x.lineTo(Math.max(s.cx - s.w / 2, FX(y)), y) } x.lineTo(s.cx - s.w / 2, fy1); x.closePath()
-      x.fillStyle = rgba(BLUE, 0.13); x.fill()
       x.clip()
       // wind streaks in the cold air
       x.lineCap = 'round'
@@ -1040,10 +1043,11 @@ const lovebugs = {
     for (let i = 0; i < n; i++) {
       const hero = i === 0
       const fx = 0.35 + r() * 0.3, fy = 0.5 + r() * 0.4, ph = r() * TAU, ph2 = r() * TAU
-      const Ax = s.w * (hero ? 0.12 : 0.34), Ay = s.h * (hero ? 0.08 : 0.32)
-      const ox = hero ? 0 : (r() - 0.5) * s.w * 0.1, oy = hero ? 0 : (r() - 0.5) * s.h * 0.1
+      const Ax = s.w * (hero ? 0.1 : 0.1), Ay = s.h * (hero ? 0.06 : 0.07)
+      const ha = n > 1 ? (i - 1) / (n - 1) * TAU + 0.6 : 0
+      const ox = hero ? 0 : Math.cos(ha) * s.w * 0.33, oy = hero ? 0 : Math.sin(ha) * s.h * 0.34
       const pos = t => [s.cx + ox + Math.sin(t * fx + ph) * Ax + Math.sin(t * fx * 2.3 + ph2) * Ax * 0.15, s.cy + oy + Math.sin(t * fy + ph2) * Ay + Math.sin(t * 3.1 + ph) * 6]
-      pairs.push({ hero, pos, sc: hero ? Math.min(2.1, s.h / 420) : 0.85 + r() * 0.45, ph, at: hero ? 0.1 : stagger(i - 1, n - 1, s.dur, 0.2, 0.55) })
+      pairs.push({ hero, pos, sc: hero ? Math.min(2.6, s.h / 420) : 1.0 + r() * 0.4, ph, at: hero ? 0.1 : stagger(i - 1, n - 1, s.dur, 0.2, 0.55) })
     }
     // back to front: small ones first
     pairs.slice().reverse().forEach((P, j) => {
@@ -1059,7 +1063,7 @@ const lovebugs = {
       // hearts float off the hero pair
       if (P.hero && p.hearts !== false) {
         for (let i = 0; i < 3; i++) {
-          const ph = (s.t * 0.55 + i / 3) % 1, hx = px + Math.sin(ph * 5 + i * 2) * 30 + (i - 1) * 40, hy = py - 90 * P.sc - ph * 160
+          const ph = (s.t * 0.55 + i / 3) % 1, hx = px + Math.sin(ph * 5 + i * 2) * 30 + (i - 1) * 40, hy = py - 50 * P.sc - ph * 150
           heart(x, hx, hy, (16 + 10 * (1 - ph)) * k, [PINK, ROSE, GOLD][i], { alpha: Math.sin(Math.PI * ph) * clamp(s.clt - 0.4), w: 5 })
         }
       }
@@ -1267,18 +1271,18 @@ const truck = {
     // people at the window
     const nP = clamp(p.people ?? 2, 1, 2)
     const cols = [BLUE, PINK]
-    const psc = 0.95 * sc
+    const psc = 0.88 * sc
     const wc = cx + (wx0 + ww / 2) * sc
-    const spots = nP === 1 ? [wc] : [wc - 95 * sc, wc + 95 * sc]
+    const spots = nP === 1 ? [wc - 40 * sc] : [wc - 120 * sc, wc + 70 * sc]
     spots.forEach((px, i) => {
       const k = pop01(s.clt, 0.55 + i * 0.25, 0.36, 2.3)
-      person(x, px, gy + 30 * sc, psc * k, cols[i], { t: s.t, pose: i ? 'phone' : 'stand', seed: i, flip: i === 1 })
+      person(x, px, gy + 60 * sc, psc * k, cols[i], { t: s.t, pose: i ? 'phone' : 'stand', seed: i, flip: i === 1 })
     })
     if (nP === 2 && p.heart !== false) {
       const at = (p.heartAt ?? 0.6) * s.dur, hk = pop01(s.lt, at, 0.4, 2.6)
-      const hy = gy + 30 * sc - 360 * psc
-      heart(x, wc, hy + Math.sin(s.t * 2.4) * 6, 40 * hk, PINK)
-      sparkle(x, wc, hy, s.lt, at + 0.1, { n: 10, R: 130, seed: 91 })
+      const hy = gy + 60 * sc - 330 * psc, wc2 = wc - 25 * sc
+      heart(x, wc2, hy + Math.sin(s.t * 2.4) * 6, 40 * hk, PINK)
+      sparkle(x, wc2, hy, s.lt, at + 0.1, { n: 10, R: 130, seed: 91 })
     }
     twinkles(x, s.cx + s.w * 0.3, s.top + 90, s.t, { n: 5, R: 140, seed: 7, size: 18 })
     boxLabel(x, p, s, Math.min(s.bottom - 30, gy + 90))

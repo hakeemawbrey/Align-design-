@@ -16,9 +16,18 @@
       "eyebrow": "HOUSTON, TX",
       "head": "'We should hang out *sometime*' in Houston means…",
       "vis": {
-        "k": "bubbles",
-        "items": [
-          "we should hang out sometime!"
+        "k": "phone",
+        "name": "them",
+        "time": "9:30 PM",
+        "msgs": [
+          [
+            "them",
+            "we should hang out sometime!"
+          ],
+          [
+            "me",
+            "yes!! for sure"
+          ]
         ]
       }
     },
@@ -26,11 +35,10 @@
       "head": "You live in *Cypress.* They live in Clear Lake.",
       "vis": {
         "k": "map",
-        "hoods": [
-          "Cypress",
-          "Clear Lake"
-        ],
-        "pins": true
+        "pins": [
+          "YOU",
+          "THEM"
+        ]
       }
     },
     {
