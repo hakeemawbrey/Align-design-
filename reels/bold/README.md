@@ -41,3 +41,8 @@ node reels/bold/render.mjs --jobs 3 --skip-existing
 
 Each reel gives `<id>.mp4` (to post), `<id>.web.mp4` (720p), `<id>.cover.jpg` (frame-0 hook), `<id>.caption.txt` and
 `<id>.json` (title, series, length, voice). A 30 s reel takes about a minute and a half on one core.
+
+## Gallery
+
+`gallery/build.py [assets.json]` writes `reels/out/gallery/index.html`, a browsable page of every rendered reel with its
+caption (the "Bold 100" artifact). `assets.json` maps each reel id to `{video, poster}` URLs for 540p previews.

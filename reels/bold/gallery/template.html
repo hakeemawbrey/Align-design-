@@ -1,0 +1,208 @@
+<title>The Bold 100</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500;1,600&family=Inter:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: the archive's night-sky screening room. Header with the batch counts, an RPG-menu filter by series and
+   voice, one poster grid per series (9:16), and a player that opens over it with the post caption ready to copy.
+   One deliberate dark look, same as the film archive. */
+:root {
+  --sky: #0b081d; --panel: #161036; --panel-2: #20184a;
+  --bone: #f3ecdc; --muted: #aaa0c9; --gold: #f2c75c; --gold-dim: rgba(242, 199, 92, 0.38); --pink: #ff9cc2; --blue: #8fd8f6;
+  --display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --accent: "EB Garamond", Georgia, "Times New Roman", serif;
+  --mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --notch: 6px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--sky); }
+body {
+  background:
+    radial-gradient(1100px 680px at 12% -8%, rgba(126, 64, 214, 0.34), transparent 62%),
+    radial-gradient(900px 620px at 104% 18%, rgba(255, 120, 180, 0.13), transparent 60%),
+    radial-gradient(1000px 800px at 50% 120%, rgba(70, 40, 160, 0.30), transparent 60%),
+    var(--sky);
+  color: var(--bone); font: 500 16px/1.5 var(--display); min-height: 100%;
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px; }
+.eyebrow { font: 700 12px/1.2 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 0; }
+em { font-family: var(--accent); font-style: italic; font-weight: 600; }
+.top { display: grid; gap: 14px; max-width: 780px; }
+h1 { margin: 0; font: 800 clamp(40px, 7.4vw, 84px)/0.98 var(--display); letter-spacing: -0.02em; text-wrap: balance; }
+h1 em { color: var(--gold); font-size: 1.12em; letter-spacing: 0; }
+.dek { margin: 0; color: var(--muted); font-size: 17px; max-width: 60ch; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 4px 0 0; padding: 0; list-style: none; font: 700 12px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.stats b { color: var(--gold); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.menus { display: grid; gap: 10px; }
+.menu { display: flex; flex-wrap: wrap; gap: 6px 4px; padding: 10px 12px; width: fit-content; max-width: 100%;
+  background: rgba(7, 5, 26, 0.86); box-shadow: 0 0 0 2px var(--gold), 0 0 0 4px #07051a; }
+.menu button { all: unset; cursor: pointer; font: 700 14px/1 var(--mono); letter-spacing: 0.06em; color: var(--muted); padding: 8px 10px 8px 22px; position: relative; }
+.menu button::before { content: "▶"; position: absolute; left: 6px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--gold); opacity: 0; }
+.menu button[aria-pressed="true"] { color: var(--bone); }
+.menu button[aria-pressed="true"]::before { opacity: 1; animation: blink 1.1s steps(2, start) infinite; }
+.menu button:hover { color: var(--bone); }
+.menu button:focus-visible { outline: 2px dashed var(--gold); outline-offset: 2px; }
+.menu .n { color: var(--gold); margin-left: 6px; font-variant-numeric: tabular-nums; }
+@keyframes blink { to { visibility: hidden; } }
+.season { display: grid; gap: 18px; }
+.season-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.season-head h2 { margin: 0; font: 800 clamp(26px, 3.6vw, 38px)/1.05 var(--display); }
+.season-head h2 .n { font: 700 14px/1 var(--mono); letter-spacing: 0.1em; color: var(--gold); margin-left: 10px; vertical-align: middle; }
+.season-head p { margin: 0; color: var(--muted); font-size: 15px; max-width: 62ch; }
+.grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px 16px; grid-template-columns: repeat(auto-fill, minmax(min(168px, 44vw), 1fr)); }
+.card { all: unset; box-sizing: border-box; display: grid; gap: 8px; width: 100%; cursor: pointer; min-width: 0; align-content: start; }
+.frame { position: relative; display: block; aspect-ratio: 9 / 16; max-width: 100%; background: var(--gold-dim); padding: 2px;
+  clip-path: polygon(var(--notch) 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, var(--notch) 100%, 0 calc(100% - var(--notch)), 0 var(--notch));
+  transition: background 0.18s, transform 0.18s; }
+.frame img, .frame .ph { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--panel);
+  clip-path: polygon(var(--notch) 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, var(--notch) 100%, 0 calc(100% - var(--notch)), 0 var(--notch)); }
+.frame .ph { display: grid; place-items: center; font: 700 11px/1.3 var(--mono); letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+.card:hover .frame, .card:focus-visible .frame { background: var(--gold); transform: translateY(-3px); }
+.card:focus-visible { outline: none; }
+.card:focus-visible .title { text-decoration: underline; text-decoration-color: var(--gold); }
+.len, .vo { position: absolute; top: 8px; font: 700 11px/1 var(--mono); letter-spacing: 0.08em; padding: 4px 6px; z-index: 2; }
+.len { left: 8px; color: var(--sky); background: var(--gold); }
+.vo { right: 8px; color: var(--sky); background: var(--blue); }
+.title { font: 700 16px/1.2 var(--display); color: var(--bone); text-wrap: balance; }
+.meta { font: 400 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.player { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(5, 3, 16, 0.88);
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+  backdrop-filter: blur(6px); }
+.player-in { position: relative; display: grid; grid-template-columns: auto minmax(0, 380px); gap: 28px; align-items: center; max-height: 100%; max-width: 100%; }
+.screen { background: #000; padding: 3px; box-shadow: 0 0 0 2px var(--gold), 0 0 0 5px #07051a, 0 18px 60px rgba(0, 0, 0, 0.6); line-height: 0; }
+.screen video { display: block; height: min(84vh, 820px); aspect-ratio: 9 / 16; width: auto; max-width: 100%; background: #000; }
+.info { display: grid; gap: 14px; min-width: 0; }
+.info h2 { margin: 0; font: 800 30px/1.08 var(--display); text-wrap: balance; }
+.mono { margin: 0; font: 400 12px/1.4 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.capbox { display: grid; gap: 10px; padding: 14px 16px; background: rgba(7, 5, 26, 0.9); box-shadow: 0 0 0 2px var(--gold-dim); }
+.capbox .lb { font: 700 12px/1 var(--mono); letter-spacing: 0.12em; color: var(--gold); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.capbox p { margin: 0; white-space: pre-wrap; font-size: 15px; color: var(--bone); max-height: 30vh; overflow: auto; user-select: text; }
+.pnav { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { all: unset; cursor: pointer; font: 700 13px/1 var(--mono); letter-spacing: 0.08em; color: var(--bone); padding: 11px 14px; background: rgba(7, 5, 26, 0.9); box-shadow: 0 0 0 2px var(--gold-dim); }
+.btn.sm { padding: 6px 9px; font-size: 11px; }
+.btn:hover, .btn:focus-visible { box-shadow: 0 0 0 2px var(--gold); color: var(--gold); }
+.close { position: absolute; top: -6px; right: -6px; width: 40px; height: 40px; padding: 0; display: grid; place-items: center; font-size: 16px; }
+.foot { color: var(--muted); font-size: 14px; max-width: 72ch; }
+.foot p { margin: 0 0 8px; }
+@media (max-width: 760px) {
+  .player { place-items: start center; overflow-y: auto; }
+  .player-in { grid-template-columns: minmax(0, 1fr); gap: 16px; width: min(100%, 460px); padding-top: 44px; }
+  .screen video { width: 100%; height: auto; max-height: 70vh; }
+  .close { top: 0; right: 0; }
+  .info h2 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .menu button[aria-pressed="true"]::before { animation: none; } .frame { transition: none; } }
+</style>
+
+<main class="wrap">
+  <header class="top">
+    <p class="eyebrow">Align · before Star Talk, again</p>
+    <h1>The bold <em>hundred</em></h1>
+    <p class="dek">A hundred new vertical reels in the original films' look: the night sky, bold type, neon line art. Scenarios, relatable moments, Houston, relationships, Align's ideas, zodiac explainers and sky facts. No logo at the end, just one quiet line about the Houston beta and voting for your city. Tap a poster to watch and copy its caption.</p>
+    <ul class="stats" id="stats"></ul>
+  </header>
+  <div class="menus">
+    <nav class="menu" id="menu" aria-label="Show reels from"></nav>
+    <nav class="menu" id="vmenu" aria-label="Sound"></nav>
+  </div>
+  <div id="seasons" style="display:grid;gap:44px"></div>
+  <footer class="foot">
+    <p>Shown here as 540p preview copies. The 1080 × 1920 masters, covers and captions come out of <span class="mono" style="display:inline">reels/bold/render.mjs</span> in the repo.</p>
+  </footer>
+</main>
+
+<div class="player" id="player" hidden role="dialog" aria-modal="true" aria-labelledby="ptitle">
+  <div class="player-in">
+    <div class="screen"><video id="pv" controls playsinline preload="metadata"></video></div>
+    <div class="info">
+      <p class="eyebrow" id="pseries"></p>
+      <h2 id="ptitle"></h2>
+      <p class="mono" id="pmeta"></p>
+      <div class="capbox">
+        <div class="lb"><span>CAPTION</span><button type="button" class="btn sm" id="copy">Copy</button></div>
+        <p id="pcap"></p>
+      </div>
+      <div class="pnav">
+        <button type="button" class="btn" id="prev">◀ Prev</button>
+        <button type="button" class="btn" id="next">Next ▶</button>
+      </div>
+    </div>
+    <button type="button" class="btn close" id="close" aria-label="Close player">✕</button>
+  </div>
+</div>
+
+<script>
+const FILMS = /*FILMS*/[];
+const SERIES = /*SERIES*/[];
+const $ = (id) => document.getElementById(id);
+const fmt = (s) => Math.round(s) + 's';
+let filter = 'all', voice = 'all', list = [], cur = -1;
+try { const h = decodeURIComponent(location.hash.slice(1)); if (h && /^[a-z0-9-]+$/.test(h)) filter = h } catch (e) {}
+const slug = (n) => n.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+const mins = FILMS.reduce((a, f) => a + f.duration, 0) / 60;
+$('stats').innerHTML = `<li><b>${FILMS.length}</b>reels</li><li><b>${FILMS.filter(f => f.voiced).length}</b>voiced</li><li><b>${SERIES.length}</b>series</li><li><b>${Math.round(mins)}</b>minutes</li>`;
+
+function menuBtn(label, n, pressed, on) {
+  const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', pressed)
+  b.innerHTML = `${label}<span class="n">${n}</span>`; b.addEventListener('click', on); return b
+}
+function drawMenus() {
+  const m = $('menu'); m.innerHTML = ''
+  m.append(menuBtn('ALL', FILMS.length, filter === 'all', () => { filter = 'all'; history.replaceState(null, '', ' '); render() }))
+  for (const s of SERIES) m.append(menuBtn(s.name.toUpperCase(), FILMS.filter(f => f.series === s.name).length, filter === slug(s.name), () => { filter = slug(s.name); location.hash = filter; render() }))
+  const v = $('vmenu'); v.innerHTML = ''
+  v.append(menuBtn('ANY SOUND', FILMS.length, voice === 'all', () => { voice = 'all'; render() }))
+  v.append(menuBtn('VOICED', FILMS.filter(f => f.voiced).length, voice === 'v', () => { voice = 'v'; render() }))
+  v.append(menuBtn('MUSIC ONLY', FILMS.filter(f => !f.voiced).length, voice === 'm', () => { voice = 'm'; render() }))
+}
+function render() {
+  drawMenus()
+  const root = $('seasons'); root.innerHTML = ''; list = []
+  for (const s of SERIES) {
+    if (filter !== 'all' && filter !== slug(s.name)) continue
+    const fs = FILMS.filter(f => f.series === s.name && (voice === 'all' || (voice === 'v') === !!f.voiced))
+    if (!fs.length) continue
+    const sec = document.createElement('section'); sec.className = 'season'
+    sec.innerHTML = `<div class="season-head"><h2>${s.name}<span class="n">${fs.length}</span></h2><p>${s.blurb}</p></div>`
+    const ul = document.createElement('ul'); ul.className = 'grid'
+    for (const f of fs) {
+      const i = list.push(f) - 1
+      const li = document.createElement('li')
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'card'
+      b.innerHTML = `<span class="frame">${f.poster ? `<img src="${f.poster}" alt="" loading="lazy">` : '<span class="ph">Rendering</span>'}<span class="len">${fmt(f.duration)}</span>${f.voiced ? '<span class="vo">VOICE</span>' : ''}</span><span class="title"></span><span class="meta">${f.id.slice(0, 3)} · ${f.voiced ? 'voiced' : 'music'}</span>`
+      b.querySelector('.title').textContent = f.title
+      b.addEventListener('click', () => open(i))
+      li.append(b); ul.append(li)
+    }
+    sec.append(ul); root.append(sec)
+  }
+}
+function open(i) {
+  cur = (i + list.length) % list.length; const f = list[cur]
+  $('pseries').textContent = f.series; $('ptitle').textContent = f.title
+  $('pmeta').textContent = `${f.id} · ${fmt(f.duration)} · ${f.voiced ? 'voice ' + (f.voice || '') : 'music only'}`
+  $('pcap').textContent = f.caption || ''
+  $('copy').textContent = 'Copy'
+  const v = $('pv'); v.poster = f.poster || ''; v.src = f.video || ''
+  $('player').hidden = false
+  v.play().catch(() => {})
+}
+function closeP() { const v = $('pv'); v.pause(); v.removeAttribute('src'); v.load(); $('player').hidden = true }
+$('close').addEventListener('click', closeP)
+$('prev').addEventListener('click', () => open(cur - 1))
+$('next').addEventListener('click', () => open(cur + 1))
+$('player').addEventListener('click', (e) => { if (e.target === $('player')) closeP() })
+document.addEventListener('keydown', (e) => { if ($('player').hidden) return; if (e.key === 'Escape') closeP(); if (e.key === 'ArrowRight') open(cur + 1); if (e.key === 'ArrowLeft') open(cur - 1) })
+$('copy').addEventListener('click', async () => {
+  const t = $('pcap').textContent
+  try { await navigator.clipboard.writeText(t); $('copy').textContent = 'Copied' }
+  catch (e) { const r = document.createRange(); r.selectNodeContents($('pcap')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copy').textContent = 'Selected' }
+})
+window.addEventListener('hashchange', () => { const h = location.hash.slice(1); filter = h || 'all'; render() })
+render()
+</script>
