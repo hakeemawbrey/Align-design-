@@ -67,7 +67,7 @@ node reels/affirm/render.mjs --dir reels/affirm/batch --jobs 4 --lean --skip-exi
 ```
 
 - **Endings, mixed:** 40% comment for a DM (the body's keyword), 25% "Align with
-  the right person", 20% "join the beta", 15% "vote your city".
+  the right person", 20% "join the beta", 15% "vote your city" (by joining the beta).
 - **Voices, rotated:** ten Kokoro voices (eight women, two men; US and UK), about
   fifty reels each, so you can see which one holds viewers. `manifest.csv` records
   each reel's family, ending, keyword and voice.
@@ -158,6 +158,14 @@ warm, astrology reads but never decides, no exclamation marks, no
 house really is opposite the rising sign, retrograde really is an
 illusion from two orbits passing, and an eclipse really needs all three in
 line. End every reel with a keyword whose DM reply exists in PROFILE.md.
+
+**Pronunciation.** The voice reads phonemes from espeak, which gets a few
+astrology words wrong. `LEXICON` in `voice.py` fixes them for every voice:
+Libra is LEE-bruh (not LYE-bruh), Leos is LEE-ohz, Antares is an-TAIR-eez.
+British voices (`bf_…`, `bm_…`) get British pronunciation. To check a word,
+phonemize it (see the snippet at the top of `voice.py`); to fix one, add it to
+`LEXICON` with its US and UK sounds. "Astrologer" is banned outright: the voice
+says "astro-LOW-jer".
 
 **Align in every reel, lightly.** The wordmark sits small at the top of every
 frame, and each script says the name once, in a line that ties the reel's idea

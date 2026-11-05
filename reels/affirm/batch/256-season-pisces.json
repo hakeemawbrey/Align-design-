@@ -4,7 +4,7 @@
   "cover": "*Pisces* season: let it go",
   "keyword": "CHART",
   "caption": "the last sign before the zodiac starts again. forgive, cry at the film, go in with empty hands",
-  "cta": "comment your city to vote where align opens next ✦",
+  "cta": "join the align beta to vote where it opens next ✦ link in bio",
   "hashtags": [
     "piscesseason",
     "pisces",
@@ -68,14 +68,15 @@
       "art": "cities",
       "header": "WHERE SHOULD ALIGN OPEN NEXT",
       "opts": {
-        "voteAt": 1
+        "voteAt": 2
       },
-      "pill": "COMMENT YOUR CITY",
+      "pill": "JOIN THE BETA · VOTE YOUR CITY",
       "pillAt": 1,
       "lines": [
         "The *Align* app is opening city by city.",
-        "Comment your *city*",
-        "to vote where it opens *next.*"
+        "Join the *beta*",
+        "to vote for your *city.*",
+        "Link in bio."
       ]
     }
   ]

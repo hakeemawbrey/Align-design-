@@ -200,7 +200,7 @@ reading) and once ending on a **direct Align call to action**.
 | Comment for a DM | `01`–`04` | Grows comments and DMs, which Instagram rewards, and every DM ends on the Align link | Most posts, especially early, to build reach |
 | **Align with the right person** | `01-the-other-half-align`, `04-venus-align` | "Stop swiping on faces. Align with the right person. The Align app. Link in bio." | You want installs straight from the reel |
 | **Join the beta** | `02-just-passing-beta` | "Ready for someone moving toward you? The Align app is in beta. Join it. Link in bio." | While the beta is actually open; point the bio link at TestFlight or the waitlist |
-| **Vote your city** | `03-one-line-city` | "The Align app is opening city by city. Comment your city to vote where it opens next." | You'll really use the votes; the comments are the tally, and announcing the winner is a follow-up post |
+| **Vote your city** | `03-one-line-city` and 75 batch reels | "The Align app is opening city by city. Join the beta to vote for your city. Link in bio." | People vote **inside the beta**, so it doubles as a beta sign-up. Point the bio link at the beta, make sure the beta asks for their city, and announce the winning city as a follow-up post |
 
 A good rhythm: two comment-for-a-DM reels for every direct Align ending. Or
 post both endings of one reel as trial reels (`instagram/`) and keep the one

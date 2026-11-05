@@ -2,7 +2,7 @@
 
 Each file in `bank/` is a JSON array of **bodies**. A body is a whole reel
 except its ending; `generate.mjs` adds the Align ending (comment for a DM,
-align with the right person, join the beta, or vote your city) and a voice.
+align with the right person, join the beta, or join the beta to vote your city) and a voice.
 
 Check a file with:
 

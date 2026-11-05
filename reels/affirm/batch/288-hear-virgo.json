@@ -4,7 +4,7 @@
   "cover": "Virgo, nobody's *grading* you",
   "keyword": "CHART",
   "caption": "nobody is grading you. put the red pen down",
-  "cta": "comment your city to vote where align opens next ✦",
+  "cta": "join the align beta to vote where it opens next ✦ link in bio",
   "hashtags": [
     "virgo",
     "zodiaclove",
@@ -62,14 +62,15 @@
       "art": "cities",
       "header": "WHERE SHOULD ALIGN OPEN NEXT",
       "opts": {
-        "voteAt": 1
+        "voteAt": 2
       },
-      "pill": "COMMENT YOUR CITY",
+      "pill": "JOIN THE BETA · VOTE YOUR CITY",
       "pillAt": 1,
       "lines": [
         "The *Align* app is opening city by city.",
-        "Comment your *city*",
-        "to vote where it opens *next.*"
+        "Join the *beta*",
+        "to vote for your *city.*",
+        "Link in bio."
       ]
     }
   ]

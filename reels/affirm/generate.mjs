@@ -165,10 +165,11 @@ function ending(kind, b, r) {
     }
   }
   return {
-    cta: 'comment your city to vote where align opens next ✦',
+    cta: 'join the align beta to vote where it opens next ✦ link in bio',
     scene: {
-      art: 'cities', header: 'WHERE SHOULD ALIGN OPEN NEXT', opts: { voteAt: 1 },
-      pill: 'COMMENT YOUR CITY', pillAt: 1, lines: ['The *Align* app is opening city by city.', 'Comment your *city*', 'to vote where it opens *next.*'],
+      art: 'cities', header: 'WHERE SHOULD ALIGN OPEN NEXT', opts: { voteAt: 2 },
+      pill: 'JOIN THE BETA · VOTE YOUR CITY', pillAt: 1,
+      lines: ['The *Align* app is opening city by city.', 'Join the *beta*', 'to vote for your *city.*', 'Link in bio.'],
     },
   }
 }

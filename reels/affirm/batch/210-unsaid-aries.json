@@ -4,7 +4,7 @@
   "cover": "How an *Aries* says I love you",
   "keyword": "VENUS",
   "caption": "an aries won't make a speech about it. they'll just be on their feet the second someone's rude to you",
-  "cta": "comment your city to vote where align opens next ✦",
+  "cta": "join the align beta to vote where it opens next ✦ link in bio",
   "hashtags": [
     "aries",
     "lovelanguage",
@@ -68,14 +68,15 @@
       "art": "cities",
       "header": "WHERE SHOULD ALIGN OPEN NEXT",
       "opts": {
-        "voteAt": 1
+        "voteAt": 2
       },
-      "pill": "COMMENT YOUR CITY",
+      "pill": "JOIN THE BETA · VOTE YOUR CITY",
       "pillAt": 1,
       "lines": [
         "The *Align* app is opening city by city.",
-        "Comment your *city*",
-        "to vote where it opens *next.*"
+        "Join the *beta*",
+        "to vote for your *city.*",
+        "Link in bio."
       ]
     }
   ]

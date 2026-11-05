@@ -26,6 +26,45 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 VOICE_DIR = os.environ.get('ALIGN_VOICE_DIR', os.path.join(HERE, '.voice'))
 MODEL = os.path.join(VOICE_DIR, 'kokoro-timestamped.onnx')
 VOICES = os.path.join(VOICE_DIR, 'voices-v1.0.bin')
+# Words the phonemizer says wrong, with the right sounds (US, UK).
+# Libra is LEE-bruh (not LYE-bruh), Leos is LEE-ohz, Antares is an-TAIR-eez.
+LEXICON = {
+    'libra': ('lˈiːbɹə', 'lˈiːbɹə'),
+    'libras': ('lˈiːbɹəz', 'lˈiːbɹəz'),
+    "libra's": ('lˈiːbɹəz', 'lˈiːbɹəz'),
+    'leos': ('lˈiːoʊz', 'lˈiːəʊz'),
+    'antares': ('æntˈɛɹiːz', 'antˈeəɹiːz'),
+}
+LEX_RE = re.compile(r"(?<![\w'])(%s)(?![\w'])" % '|'.join(re.escape(w) for w in sorted(LEXICON, key=len, reverse=True)), re.I)
+
+
+def phonemize(k, text, lang):
+    """Phonemize text, swapping in LEXICON pronunciations for listed words.
+    Each listed word becomes a stand-in word first, so the words around it
+    keep their natural pronunciation ("a Libra" stays "uh", not "AY")."""
+    gb = lang == 'en-gb'
+    subs = []
+
+    def stand_in(m):
+        subs.append(LEXICON[m.group(1).lower()][1 if gb else 0])
+        return 'Blork'
+    ph = k.tokenizer.phonemize(LEX_RE.sub(stand_in, text), lang)
+    if not subs:
+        return ph
+    # the stand-in's sounds, with stress marks optional
+    mark = k.tokenizer.phonemize('Blork', lang).strip()
+    pat = re.compile(''.join(re.escape(c) + ('?' if c in 'ˈˌ' else '') for c in mark))
+    it = iter(subs)
+    out = pat.sub(lambda m: next(it, m.group(0)), ph)
+    if pat.search(out) or len(pat.findall(ph)) != len(subs):
+        raise RuntimeError(f'lexicon swap failed for: {text}')
+    return out
+
+
+def lang_for(voice):
+    return 'en-gb' if voice.startswith('b') else 'en-us'
+
+
 TARGET_RMS = 0.11  # voiced level every reel's narration is brought to
 PUNCT = set(',.!?;:—–-…"“”()\'')
 
@@ -56,12 +95,12 @@ def strip(ph):
     return ''.join(c for c in ph if c not in PUNCT and c not in 'ˈˌː ')
 
 
-def align(groups, words, k):
+def align(groups, words, k, lang='en-us'):
     """Match spoken groups to caption words. The phonemizer sometimes runs two
     small words together ("of a" → əvə, "to be" → təbi), so one group may
     cover up to three words; a merged group's time is shared by each word's
     own phoneme count. Returns None when no sensible alignment exists."""
-    lens = [max(1, len(strip(k.tokenizer.phonemize(w, 'en-us')))) for w in words]
+    lens = [max(1, len(strip(phonemize(k, w, lang)))) for w in words]
     G, N = len(groups), len(words)
     INF = float('inf')
     cost = [[INF] * (N + 1) for _ in range(G + 1)]
@@ -119,8 +158,9 @@ def main():
     res = []
     clips = []
     for i, sc in enumerate(req['scenes']):
+        lang = lang_for(voice)
         audio, sr, timings = k.create_timed(
-            sc['text'], voice, speed=speed, lang='en-us',
+            phonemize(k, sc['text'], lang), voice, speed=speed, lang=lang, is_phonemes=True,
             sentence_pause=float(sc.get('pause', 0.3)), clause_pause=0.12)
         # a short fade at both ends so joins never click
         f = int(0.012 * sr)
@@ -131,7 +171,7 @@ def main():
         clips.append((wav, audio, sr))
         groups = word_groups(timings)
         words = sc['words']
-        spans = [g[:2] for g in groups] if len(groups) == len(words) else align(groups, words, k)
+        spans = [g[:2] for g in groups] if len(groups) == len(words) else align(groups, words, k, lang)
         if spans is None:
             print(f'voice: scene {i}: {len(groups)} spoken words for {len(words)} caption words, spreading evenly',
                   file=sys.stderr)
