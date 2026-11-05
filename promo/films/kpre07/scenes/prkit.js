@@ -33,7 +33,7 @@ export function person(x, cx, cy, cell, { col = '#e8a87c', shirt = '#5a7be0', wa
 
 export function buildReact(spec) {
   const { duration: DURATION, ending = 'cut' } = spec
-  const HOOK = { at: -1, text: spec.hook, top: 132, size: 84, accentColor: '#bcb6ff', width: 980, shake: 8 }
+  const HOOK = { at: -1, text: spec.hook, top: 132, size: 84, accentColor: '#bcb6ff', width: 980, shake: 8, out: spec.hookOut || null }
   const WHIP = { at: -0.2, from: 1.35 }
   const LOOP = ending === 'loop'
 
