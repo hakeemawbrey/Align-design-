@@ -8,7 +8,8 @@
 // flashes at 1). The hook line (≤ 7 words) is slammed on top from frame 0 and stays; the bug PISCES REACTS top-left.
 //   const R = buildReact({ id, duration, ending: 'loop' | 'cut', hook: 'A kid waved. The *DRIVER* waved back.',
 //     clip(x, t, H), tears: t => 0…3, meter: t => 0…1, mood: t => 'wide' | 'sparkle' | …, last: { at, text },
-//     playing: 'NOW PLAYING: bus stop, 8:02 AM', extra: [hookkit scene builders], cues: [...] })
+//     playing: 'NOW PLAYING: bus stop, 8:02 AM', extra: [hookkit scene builders], cues: [...],
+//     freeze: [REC] (optional: hookkit freeze windows applied to the whole picture, for a recordScratch) })
 //   export const { DURATION, SCENES, CUES } = R
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
@@ -17,7 +18,7 @@ import { SKY_H, GRAIN_H } from '../../wheel.js'
 import { drawStarChar, STAR } from '../../startalk.js'
 import { drawSign, drawBubble, sparkles, loadFonts } from '../../mlpilot/scenes/mlkit.js'
 import { bits, pix, PIX, PAL, label, panel, stamp, meter, talkCard, GOLD, BONE, INK, PINK, CYAN, MINT, LAV, MONO, INTER, SERIF, rgba, mixHex, r3, pop01, outK, bump, YOU_C } from '../../kdde07/scenes/ddkit.js'
-import { whipZoom, whipZoomCues, slamTitle, slamTitleCues, loopBack, loopCues } from '../../hookkit.js'
+import { whipZoom, whipZoomCues, slamTitle, slamTitleCues, loopBack, loopCues, frozen } from '../../hookkit.js'
 
 export { bits, pix, PIX, PAL, label, panel, stamp, meter, talkCard, GOLD, BONE, INK, PINK, CYAN, MINT, LAV, MONO, INTER, SERIF, rgba, mixHex, r3, pop01, outK, bump, YOU_C }
 export const WIN = { x: 60, y: 330, w: 960, h: 600 }
@@ -116,7 +117,7 @@ export function buildReact(spec) {
   }
 
   const extra = spec.extra || []
-  const SCENES = [build, whipZoom(WHIP), ...extra, slamTitle(HOOK)]
+  const SCENES = [spec.freeze ? frozen(build, spec.freeze) : build, whipZoom(WHIP), ...extra, slamTitle(HOOK)]
   if (LOOP) SCENES.push(loopBack([build, whipZoom(WHIP), slamTitle(HOOK)], { duration: DURATION }))
   const CUES = [
     ...whipZoomCues(WHIP), ...slamTitleCues(HOOK),
