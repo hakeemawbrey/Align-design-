@@ -772,7 +772,7 @@ const checklist = {
       const tsz = fitFont(x, it, 50, w - 200, { weight: 800 })
       const dim = mk === '✕' && p.strike !== false && mt >= 1
       label(x, it, bx + bs / 2 + 34, y + 2, { size: tsz, weight: 800, align: 'left', color: dim ? rgba(BONE, 0.55) : BONE })
-      if (dim) { x.font = font(tsz, { weight: 800 }); const tw = x.measureText(it).width; const sk = clamp((s.lt - at - 0.55) / 0.25) || (at < 0 ? 1 : 0); x.beginPath(); x.moveTo(bx + bs / 2 + 30, y + 2); x.lineTo(bx + bs / 2 + 34 + (tw + 8) * sk, y + 2); line(x, RED, 6, 12) }
+      if (dim) { x.font = font(tsz, { weight: 800 }); const tw = x.measureText(it).width; const sk = clamp((s.lt - at - 0.45) / 0.2) || (at < 0 ? 1 : 0); x.beginPath(); x.moveTo(bx + bs / 2 + 30, y + 2); x.lineTo(bx + bs / 2 + 34 + (tw + 8) * sk, y + 2); line(x, RED, 6, 12) }
       x.restore()
       if (mk === '✕') crossMark(x, bx, y, bs * 1.25, mcol, mt)
       else if (mk === '?') { if (mt > 0) label(x, '?', bx, y + 2, { size: bs * 1.1 * easeOutBack(clamp(mt), 2.6), weight: 900, color: mcol, glow: 20 }) }
@@ -840,12 +840,12 @@ const flags = {
   min: p => 1.2 + ((p.red || []).length + (p.green || []).length) * 0.5,
   draw(x, p, s) {
     const items = [...(p.red || []).map(t => ['flag-red', t, RED]), ...(p.green || []).map(t => ['flag-green', t, GREEN])]
-    const n = items.length, rowH = Math.min(190, s.h / Math.max(1, n))
-    const fs = Math.min(150, rowH * 0.85)
-    x.font = font(50, { weight: 800 })
+    const n = items.length, rowH = Math.min(240, s.h / Math.max(1, n))
+    const fs = Math.min(190, rowH * 0.82)
+    x.font = font(58, { weight: 800 })
     const maxT = Math.max(0, ...items.map(([, t]) => x.measureText(t).width))
-    const tsz = Math.min(50, 50 * (s.w - fs - 60) / Math.max(1, maxT))
-    const blockW = fs + 30 + Math.min(maxT * tsz / 50, s.w - fs - 60), left = s.cx - blockW / 2
+    const tsz = Math.min(58, 58 * (s.w - fs - 60) / Math.max(1, maxT))
+    const blockW = fs + 30 + Math.min(maxT * tsz / 58, s.w - fs - 60), left = s.cx - blockW / 2
     const split = (p.red || []).length && (p.green || []).length ? 30 : 0
     items.forEach(([nm, t, col], i) => {
       const at = stagger(i, n, s.dur, 0.12, 0.66), k = prog(s.lt, at, at + 0.4)
@@ -857,9 +857,8 @@ const flags = {
       x.restore()
       const kt = clamp((s.lt - at - 0.15) / 0.3)
       x.save(); x.translate((1 - ease.outCubic(kt)) * 40, 0)
-      label(x, t, left + fs + 30, y + 4, { size: tsz, weight: 800, align: 'left', color: BONE, alpha: kt })
+      label(x, t, left + fs + 30, y + 4, { size: tsz, weight: 800, align: 'left', color: BONE, alpha: kt, glow: 0 })
       x.restore()
-      x.beginPath(); x.moveTo(left + fs + 30, y + tsz * 0.75); x.lineTo(left + fs + 30 + Math.min(maxT * tsz / 50, 260) * ease.outCubic(kt) * 0.4, y + tsz * 0.75); line(x, col, 5, 12)
     })
   },
   cues(p, t0, dur) { const n = (p.red || []).length + (p.green || []).length, nr = (p.red || []).length; return Array.from({ length: n }, (_, i) => ['pluck', t0 + stagger(i, n, dur, 0.12, 0.66) + 0.1, i < nr ? 392 + i * 30 : 784 + (i - nr) * 60, 0.05, 0.45, 0]) },
@@ -887,7 +886,7 @@ const iconsK = {
     }
     if (layout === 'orbit') {
       const Rr = Math.min(s.w * 0.36, s.h * 0.36), size = p.size || Math.min(170, Rr * 0.6)
-      if (p.center) { const kc = pop01(s.lt, 0.05, 0.4, 2.2); if (ICONS[p.center] || ALIAS[p.center]) icon(x, p.center, s.cx, s.cy, size * 1.3 * kc, null, s.t); else label(x, p.center, s.cx, s.cy, { size: fitFont(x, p.center, 70, Rr * 1.1, { weight: 900 }) * kc, weight: 900, color: GOLD, glow: 20 }) }
+      if (p.center) { const kc = pop01(s.lt, 0.05, 0.4, 2.2); if (ICONS[p.center] || ALIAS[p.center]) icon(x, p.center, s.cx, s.cy, size * 1.3 * kc, null, s.t); else label(x, p.center, s.cx, s.cy, { size: fitFont(x, p.center, 120, Rr * 1.1, { weight: 900 }) * kc, weight: 900, color: GOLD, glow: 20 }) }
       x.save(); x.globalAlpha *= 0.4; C(x, s.cx, s.cy, Rr); x.setLineDash([4, 14]); line(x, VIOLET, 3, 8); x.restore()
       items.forEach((it, i) => { const a = -PI / 2 + (i / n) * TAU + s.t * 0.25; drawOne(it, i, s.cx + Math.cos(a) * Rr, s.cy + Math.sin(a) * Rr + (anyL ? 20 : 0), size) })
       return
@@ -895,7 +894,7 @@ const iconsK = {
     const cols = layout === 'row' ? Math.min(n, 4) : n <= 4 ? 2 : n <= 9 ? 3 : 4
     const rows = Math.ceil(n / cols)
     const cw = s.w / cols, ch = s.h / rows
-    const size = p.size || Math.min(220, cw * 0.62, (ch - (anyL ? 80 : 10)) * 0.85)
+    const size = p.size || Math.min(240, cw * 0.7, (ch - (anyL ? 80 : 10)) * 0.85)
     items.forEach((it, i) => {
       const r = Math.floor(i / cols), inRow = r === rows - 1 ? n - cols * (rows - 1) : cols, c = i - r * cols
       const px = s.cx + (c - (inRow - 1) / 2) * cw, py = s.cy + (r - (rows - 1) / 2) * ch
@@ -915,8 +914,8 @@ const timeline = {
     const t0 = 0.12 * s.dur, t1 = 0.82 * s.dur
     const markT = i => n === 1 ? t0 : lerp(t0, t1, i / (n - 1))
     const pos = []
-    if (row) { const span = s.w * 0.8; for (let i = 0; i < n; i++) pos.push([s.cx - span / 2 + (n === 1 ? span / 2 : span * i / (n - 1)), s.cy]) }
-    else { const span = Math.min(s.h - 120, n * 190), lx = s.cx - s.w / 2 + 230; for (let i = 0; i < n; i++) pos.push([lx, s.cy - span / 2 + (n === 1 ? span / 2 : span * i / (n - 1))]) }
+    if (row) { const span = s.w * 0.8; for (let i = 0; i < n; i++) pos.push([s.cx - span / 2 + (n === 1 ? span / 2 : span * i / (n - 1)), s.cy + 50]) }
+    else { x.font = font(52, { weight: 800 }); const mw = Math.min(s.w - 300, Math.max(...marks.map(m => x.measureText(m).width))); const span = Math.min(s.h - 120, n * 200), lx = Math.max(s.cx - s.w / 2 + 230, s.cx - (240 + mw) / 2 + 180); for (let i = 0; i < n; i++) pos.push([lx, s.cy - span / 2 + (n === 1 ? span / 2 : span * i / (n - 1))]) }
     // the strip
     const [a0, a1] = [pos[0], pos[n - 1]]
     x.save(); x.beginPath(); x.moveTo(...a0); x.lineTo(...a1); x.lineCap = 'round'; x.lineWidth = 16; x.strokeStyle = 'rgba(16,10,40,0.9)'; x.stroke(); line(x, rgba(BONE, 0.35), 4, 6); x.restore()
@@ -931,17 +930,17 @@ const timeline = {
       const nc = ding && lit ? GOLD : lit ? col : MUTED
       C(x, px, py, (ding ? 28 : 20) * dk); ink(x, nc, { w: 7, fa: lit ? 0.7 : 0.2, glow: lit ? (ding ? 40 : 20) : 6 })
       if (ding && lit) { const rk = prog(s.lt, mt, mt + 0.7); x.save(); x.globalAlpha *= 1 - rk; C(x, px, py, 30 + rk * 90); line(x, GOLD, 6, 20); x.restore(); sparkle(x, px, py, s.lt, mt + 0.05, { n: 12, R: 200, seed: 70 + i }) }
-      const isz = row ? Math.min(150, s.w * 0.8 / n * 0.75) : Math.min(130, (s.h / n) * 0.75)
+      const isz = row ? Math.min(170, s.w * 0.8 / n * 0.75) : Math.min(140, (s.h / n) * 0.75)
       const ic = ics[i]
       if (row) {
-        if (ic) icon(x, ic, px, py - 120 - (lit ? 6 : 0), isz * k * (ding && lit ? 1.15 : 1), lit ? null : MUTED, s.t + i)
+        if (ic) icon(x, ic, px, py - 140 - (lit ? 6 : 0), isz * k * (ding && lit ? 1.15 : 1), lit ? null : MUTED, s.t + i)
         x.save(); x.globalAlpha *= 0.3 + 0.7 * kl
-        para(x, m, px, py + 90, { size: 40, weight: 800, color: lit ? BONE : MUTED, maxW: s.w * 0.8 / n + 40 })
+        para(x, m, px, py + 100, { size: 48, weight: 800, color: lit ? BONE : MUTED, maxW: s.w * 0.8 / n + 40 })
         x.restore()
       } else {
         if (ic) icon(x, ic, px - 120, py, isz * Math.max(0.6, k) * (ding && lit ? 1.15 : 1), lit ? null : MUTED, s.t + i, { alpha: 0.35 + 0.65 * kl })
         x.save(); x.translate((1 - ease.outCubic(kl)) * 30, 0)
-        label(x, m, px + 60, py + 2, { size: fitFont(x, m, 50, s.cx + s.w / 2 - px - 70, { weight: 800 }), weight: 800, align: 'left', color: ding && lit ? GOLD : lit ? BONE : MUTED, alpha: 0.35 + 0.65 * kl, glow: ding && lit ? 16 : 0 })
+        label(x, m, px + 60, py + 2, { size: fitFont(x, m, 52, s.cx + s.w / 2 - px - 70, { weight: 800 }), weight: 800, align: 'left', color: ding && lit ? GOLD : lit ? BONE : MUTED, alpha: 0.35 + 0.65 * kl, glow: ding && lit ? 16 : 0 })
         x.restore()
       }
     })
@@ -1028,7 +1027,7 @@ const heartK = {
   min: p => p.mode === 'beat' || !p.mode ? 2.2 : 2.8,
   draw(x, p, s) {
     const mode = p.mode || 'beat', col = color(p.col, mode === 'lock' || mode === 'open' ? GOLD : PINK)
-    const S = Math.min(s.h * 0.3, s.w * 0.3, 300), cx = s.cx, cy = s.cy - (p.label ? 50 : 0) + (mode === 'lock' || mode === 'open' ? S * 0.3 : 0)
+    const S = Math.min(s.h * 0.34, s.w * 0.38, 360), cx = s.cx, cy = s.cy - (p.label ? 60 : 0) + (mode === 'lock' || mode === 'open' ? S * 0.3 : 0)
     const at = at01(s, p.at, mode === 'fill' ? 0.15 : 0.4)
     if (mode === 'beat') {
       // ECG line behind
@@ -1060,7 +1059,8 @@ const heartK = {
       heartPath(x, cx, cy, S); x.fillStyle = 'rgba(16,10,40,0.85)'; x.fill()
       x.save(); heartPath(x, cx, cy, S); x.clip()
       x.beginPath(); x.moveTo(cx - S * 1.3, bot + 10); for (let i = 0; i <= 40; i++) { const px = cx - S * 1.3 + i * S * 2.6 / 40; x.lineTo(px, ly + Math.sin(i * 0.6 + s.t * 5) * 10 * Math.min(1, lv * 8) * (1 - lv * 0.6)) } x.lineTo(cx + S * 1.3, bot + 10); x.closePath()
-      const gr = x.createLinearGradient(0, bot, 0, top); gr.addColorStop(0, rgba(col, 0.9)); gr.addColorStop(1, rgba(GOLD, 0.8)); x.fillStyle = gr; x.fill()
+      const gr = x.createLinearGradient(0, bot, 0, top); gr.addColorStop(0, rgba(col, 0.95)); gr.addColorStop(1, rgba('#ffc2d6', 0.75)); x.fillStyle = gr; x.fill()
+      x.beginPath(); x.arc(cx - S * 0.42, cy - S * 0.22, S * 0.22, PI * 1.05, PI * 1.5); line(x, rgba('#fff3e0', 0.6), 8, 6)
       for (let i = 0; i < 6; i++) { const r = rng(i + 11), bk = (s.t * (0.5 + r()) + r()) % 1, by = lerp(bot, ly, bk); if (by > ly) { C(x, cx + (r() - 0.5) * S, by, 6 + r() * 6); line(x, rgba(BONE, 0.6), 3, 6) } }
       x.restore()
       heartPath(x, cx, cy, S); ink(x, col, { w: 10, fa: 0, glow: 30 })
@@ -1076,12 +1076,13 @@ const heartK = {
       x.restore()
       const thud = open ? 0 : wob(s.lt, at + 0.35, 24, 6) * 0.04
       x.save(); popScale(x, cx, cy, 1 + thud)
+      heartPath(x, cx, cy, S); x.fillStyle = '#160d36'; x.fill()
       heart(x, cx, cy, S, col, { fa: open ? 0.3 + 0.3 * kk : 0.42, w: 10 })
       C(x, cx, cy - S * 0.12, S * 0.12); x.fillStyle = DARK; x.fill(); P(x, [[cx - S * 0.06, cy - S * 0.08], [cx + S * 0.06, cy - S * 0.08], [cx + S * 0.09, cy + S * 0.24], [cx - S * 0.09, cy + S * 0.24]]); x.fill()
       x.restore()
       if (open) { sparkle(x, cx, cy - S * 0.4, s.lt, at + 0.35, { n: 14, R: S * 1.6, seed: 95 }); x.save(); x.globalAlpha *= kk * (0.5 + 0.2 * Math.sin(s.t * 4)); heartPath(x, cx, cy, S * 1.25); line(x, PINK, 4, 30); x.restore() }
     }
-    if (p.label) { const kl = clamp((s.lt - 0.3) / 0.3); label(x, p.label, s.cx, s.cy + s.h / 2 - 40, { size: fitFont(x, p.label, 58, s.w - 40, { weight: 900 }), weight: 900, color: BONE, alpha: kl }) }
+    if (p.label) { const kl = clamp((s.lt - 0.3) / 0.3); label(x, p.label, s.cx, Math.min(s.cy + s.h / 2 - 40, cy + S * 0.95 + 90), { size: fitFont(x, p.label, 58, s.w - 40, { weight: 900 }), weight: 900, color: BONE, alpha: kl }) }
   },
   cues(p, t0, dur) {
     const mode = p.mode || 'beat', at = t0 + (p.at ?? (mode === 'fill' ? 0.15 : 0.4)) * dur
@@ -1098,7 +1099,7 @@ const heartK = {
 const scaleK = {
   min: () => 2.6,
   draw(x, p, s) {
-    const L = Math.min(s.w * 0.84, 800), pivY = s.cy - s.h * 0.2, baseY = s.cy + s.h * 0.4
+    const L = Math.min(s.w - 300, 680), pivY = s.cy - s.h * 0.22, baseY = s.cy + s.h * 0.4
     const tilt = clamp(p.tilt ?? 0, -1, 1)
     const ang = tilt * 0.3 * easeOutBack(prog(s.lt, 0.5, 1.3), 1.8) + 0.03 * wob(s.lt, 1.3, 8, 2) + 0.012 * Math.sin(s.t * 1.7)
     // post + base
@@ -1112,10 +1113,10 @@ const scaleK = {
     ;[[p.a, p.ia, -1, BLUE], [p.b, p.ib, 1, PINK]].forEach(([txt, ic, d, col], i) => {
       const hx = s.cx + d * ex, hy = pivY + d * ey, sl = Math.min(220, s.h * 0.24), py = hy + sl
       x.beginPath(); x.moveTo(hx, hy); x.lineTo(hx - 110, py); x.moveTo(hx, hy); x.lineTo(hx + 110, py); line(x, rgba(BONE, 0.7), 4, 6)
-      x.beginPath(); x.moveTo(hx - 150, py); x.quadraticCurveTo(hx, py + 90, hx + 150, py); x.closePath(); ink(x, col, { w: 8, fa: 0.3, glow: 22 })
+      if (ic) icon(x, ic, hx, py - 62, 150 * pop01(s.lt, 0.1 + i * 0.2, 0.4, 2.4), null, s.t + i)
+      x.beginPath(); x.moveTo(hx - 140, py); x.quadraticCurveTo(hx, py + 90, hx + 140, py); x.closePath(); ink(x, col, { w: 8, fa: 0.3, glow: 22 })
       const k = pop01(s.lt, 0.1 + i * 0.2, 0.4, 2.4)
-      if (ic) icon(x, ic, hx, py - 80, 130 * k, null, s.t + i)
-      if (txt) { x.save(); popScale(x, hx, py - (ic ? 170 : 50), k); pill(x, txt, hx, py - (ic ? 170 : 50), { size: Math.min(46, fitFont(x, txt, 46, L / 2 - 40, { weight: 800 })), col, fg: BONE, weight: 800, glow: 18 }); x.restore() }
+      if (txt) { x.save(); popScale(x, hx, py + 110, k); pill(x, txt, hx, py + 110, { size: Math.min(50, fitFont(x, txt, 50, 230, { weight: 800 })), col, fg: BONE, weight: 800, glow: 18 }); x.restore() }
     })
   },
   cues: (p, t0) => [['pop', t0 + 0.1, 740, 0.045, -0.4], ['pop', t0 + 0.3, 880, 0.045, 0.4], ['whoosh', t0 + 0.5, 0.5, 0.04], ['boom', t0 + 1.0, Math.abs(p.tilt ?? 0) > 0.2 ? 0.1 : 0.05]],
@@ -1126,24 +1127,24 @@ const bars = {
   min: p => 1.4 + (p.items || []).length * 0.45,
   draw(x, p, s) {
     const items = p.items || [], n = items.length
-    const titleH = p.title ? 110 : 0
-    const rowH = Math.min(170, (s.h - titleH) / Math.max(1, n)), x0 = s.cx - s.w / 2 + 10, bw = s.w - 20
+    const titleH = p.title ? 130 : 0
+    const rowH = Math.min(210, (s.h - titleH) / Math.max(1, n)), x0 = s.cx - s.w / 2 + 10, bw = s.w - 20
     const y0 = s.cy - (n * rowH + titleH) / 2
-    if (p.title) label(x, p.title, s.cx, y0 + 40, { size: fitFont(x, p.title, 56, s.w - 20, { weight: 900 }), weight: 900, color: GOLD, glow: 14 })
+    if (p.title) label(x, p.title, s.cx, y0 + 40, { size: fitFont(x, p.title, 66, s.w - 20, { weight: 900 }), weight: 900, color: GOLD, glow: 14 })
     const maxV = Math.max(...items.map(r => r[1] ?? 0.5))
     const arr = arrivals(p, s.prev, 'items', n, s.dur, 0.12, 0.6)
     items.forEach(([name, v = 0.5, ic], i) => {
       const at = arr(i), q = prog(s.lt, at, at + 0.7), k = easeOutBack(q, 1.5)
       if (q <= 0) return
       const y = y0 + titleH + rowH * (i + 0.5), col = color((p.cols || [])[i], PAL[i % PAL.length])
-      label(x, name, x0 + 6, y - rowH * 0.22, { size: fitFont(x, name, 44, bw * 0.9, { weight: 800 }), weight: 800, align: 'left', color: BONE, alpha: clamp(q * 4) })
-      const by = y + rowH * 0.14, bh = Math.min(50, rowH * 0.3), full = (bw - (ic ? 90 : 20)) * clamp(v, 0.04, 1)
-      rr(x, x0, by - bh / 2, bw - (ic ? 90 : 0), bh, bh / 2); x.fillStyle = 'rgba(16,10,40,0.85)'; x.fill()
+      label(x, name, x0 + 6, y - rowH * 0.22, { size: fitFont(x, name, 52, bw * 0.9, { weight: 800 }), weight: 800, align: 'left', color: BONE, alpha: clamp(q * 4) })
+      const by = y + rowH * 0.16, bh = Math.min(64, rowH * 0.32), full = (bw - (ic ? 120 : 20)) * clamp(v, 0.04, 1)
+      rr(x, x0, by - bh / 2, bw - (ic ? 120 : 0), bh, bh / 2); x.fillStyle = 'rgba(16,10,40,0.85)'; x.fill()
       const ww = Math.max(bh, full * k)
       rr(x, x0, by - bh / 2, ww, bh, bh / 2); ink(x, col, { w: 6, fa: 0.55, glow: 22 })
       const top = v === maxV && p.crown !== false
-      if (ic) icon(x, ic, x0 + ww + 50, by, 80 * clamp(q * 2), null, s.t + i)
-      if (top && q >= 1) { const kc = pop01(s.lt, at + 0.7, 0.4, 2.6); icon(x, 'crown', x0 + ww - 30, by - bh / 2 - 34, 80 * kc, null, s.t); sparkle(x, x0 + ww, by, s.lt, at + 0.75, { n: 10, R: 160, seed: 101 }) }
+      if (ic) icon(x, ic, x0 + ww + 62, by, 104 * clamp(q * 2), null, s.t + i)
+      if (top && q >= 1) { const kc = pop01(s.lt, at + 0.7, 0.4, 2.6); icon(x, 'crown', x0 + ww - 44, by - bh / 2 - 40, 90 * kc, null, s.t); sparkle(x, x0 + ww, by, s.lt, at + 0.75, { n: 10, R: 160, seed: 101 }) }
     })
   },
   cues(p, t0, dur, ctx = {}) { const items = p.items || [], arr = arrivals(p, ctx.prev, 'items', items.length, dur, 0.12, 0.6), c = []; items.forEach(([, v = 0.5], i) => { const at = arr(i); if (at >= 0) c.push(['riser', t0 + at, t0 + at + 0.5, 0.025], ['pop', t0 + at + 0.5, 600 + v * 700, 0.045, 0]) }); return c },
@@ -1155,7 +1156,7 @@ const calendar = {
   draw(x, p, s) {
     const pages = p.pages?.length ? p.pages : ['MON', 'TUE', 'WED', 'THU', 'FRI'], n = pages.length
     const col = color(p.col, PINK)
-    const w = Math.min(600, s.w * 0.66, s.h * 0.62), h = Math.min(w * 1.05, s.h - 120), x0 = s.cx - w / 2, y0 = s.cy - h / 2 - (typeof p.mark === 'string' ? 40 : 0)
+    const w = Math.min(660, s.w * 0.72, s.h * 0.62), h = Math.min(w * 1.05, s.h - 120), x0 = s.cx - w / 2, y0 = s.cy - h / 2 - (typeof p.mark === 'string' ? 40 : 0)
     const head = h * 0.2, flipAt = i => stagger(i, Math.max(1, n - 1), s.dur, 0.12, 0.62)
     // back board
     x.save(); x.shadowColor = 'rgba(0,0,0,0.5)'; x.shadowBlur = 40; rr(x, x0, y0, w, h, 34); x.fillStyle = '#120a2c'; x.fill(); x.restore()
@@ -1194,7 +1195,7 @@ const calendar = {
 const ghostK = {
   min: () => 2.4,
   draw(x, p, s) {
-    const pw = Math.min(330, s.w * 0.36), ph = Math.min(pw * 1.7, s.h * 0.55)
+    const pw = Math.min(380, s.w * 0.4), ph = Math.min(pw * 1.7, s.h * 0.55)
     const px = s.cx, pyB = s.cy + s.h / 2 - (p.label ? 100 : 20), py0 = pyB - ph
     const at = at01(s, p.at, 0.25), q = prog(s.lt, at, at + 1.6), e = ease.outCubic(q)
     // phone
@@ -1209,7 +1210,7 @@ const ghostK = {
     // glow seeping from the screen
     if (q > 0) { x.save(); const gr = x.createRadialGradient(px, py0 + ph * 0.55, 0, px, py0 + ph * 0.55, pw * 0.7); gr.addColorStop(0, rgba('#efe6ff', 0.3 * (1 - q * 0.5))); gr.addColorStop(1, rgba('#efe6ff', 0)); x.fillStyle = gr; rr(x, px - pw / 2 + 10, py0 + 10, pw - 20, ph - 20, 36); x.fill(); x.restore() }
     // the ghost
-    const gs = Math.min(280, s.h * 0.32), gy0 = py0 + ph * 0.55, gy1 = s.cy - s.h / 2 + gs * 0.62
+    const gs = Math.min(330, s.h * 0.34), gy0 = py0 + ph * 0.55, gy1 = s.cy - s.h / 2 + gs * 0.62
     const gx = px + Math.sin(s.t * 1.4) * 40 * e + e * 30, gy = lerp(gy0, gy1, e) + Math.sin(s.t * 2) * 10 * e
     if (q > 0) {
       for (let i = 0; i < 4; i++) { const u = (i + 1) / 5; x.save(); x.globalAlpha *= 0.35 * (1 - u) * clamp(q * 3); C(x, lerp(gx, px, u), lerp(gy + gs * 0.4, gy0, u), gs * 0.1 * (1 - u * 0.6)); x.fillStyle = '#efe6ff'; x.fill(); x.restore() }
@@ -1241,18 +1242,18 @@ const butterflies = {
     const sx = s.cx, sy = s.cy + s.h * 0.24, bt = at01(s, p.at, 0.25)
     const burst = s.lt >= bt
     if (jar) {
-      const jw = Math.min(260, s.w * 0.3), jh = jw * 1.15, lift = ease.outCubic(prog(s.lt, bt - 0.15, bt + 0.25))
-      rr(x, sx - jw / 2, sy - jh / 2 + 30, jw, jh, 40); ink(x, BLUE, { w: 8, fa: 0.12, glow: 24 })
+      const jw = Math.min(340, s.w * 0.36), jh = jw * 1.1, lift = ease.outCubic(prog(s.lt, bt - 0.15, bt + 0.25))
+      x.beginPath(); x.moveTo(sx - jw * 0.32, sy - jh / 2 + 10); x.lineTo(sx - jw * 0.32, sy - jh / 2 + 40); x.quadraticCurveTo(sx - jw / 2, sy - jh / 2 + 50, sx - jw / 2, sy - jh / 2 + 110); x.lineTo(sx - jw / 2, sy + jh / 2 - 20); x.quadraticCurveTo(sx - jw / 2, sy + jh / 2 + 20, sx - jw / 2 + 50, sy + jh / 2 + 20); x.lineTo(sx + jw / 2 - 50, sy + jh / 2 + 20); x.quadraticCurveTo(sx + jw / 2, sy + jh / 2 + 20, sx + jw / 2, sy + jh / 2 - 20); x.lineTo(sx + jw / 2, sy - jh / 2 + 110); x.quadraticCurveTo(sx + jw / 2, sy - jh / 2 + 50, sx + jw * 0.32, sy - jh / 2 + 40); x.lineTo(sx + jw * 0.32, sy - jh / 2 + 10); ink(x, BLUE, { w: 8, fa: 0.12, glow: 24 })
       x.beginPath(); x.moveTo(sx - jw * 0.3, sy - jh * 0.1); x.quadraticCurveTo(sx - jw * 0.36, sy + jh * 0.2, sx - jw * 0.28, sy + jh * 0.4); line(x, rgba(BONE, 0.5), 5, 6)
-      x.save(); x.translate(sx + lift * 120, sy - jh / 2 + 10 - lift * 160); x.rotate(lift * 0.9); rr(x, -jw * 0.42, -24, jw * 0.84, 40, 10); ink(x, GOLD, { w: 7, fa: 0.4, glow: 20 }); x.restore()
+      x.save(); x.translate(sx + lift * 150, sy - jh / 2 - 8 - lift * 170); x.rotate(lift * 0.9); rr(x, -jw * 0.4, -22, jw * 0.8, 40, 10); ink(x, GOLD, { w: 7, fa: 0.4, glow: 20 }); x.restore()
     } else {
       const pulse = burst ? 1 + 0.12 * wob(s.lt, bt, 12, 3) : 1 + 0.06 * Math.abs(Math.sin(s.t * 9))
-      heart(x, sx, sy, Math.min(180, s.h * 0.2) * pulse, PINK, { fa: 0.45, w: 10 })
+      heart(x, sx, sy, Math.min(230, s.h * 0.24) * pulse, PINK, { fa: 0.45, w: 10 })
     }
     if (burst) sparkle(x, sx, sy - 40, s.lt, bt, { n: 14, R: 260, seed: 121 })
     const r = rng(p.seed ?? 77)
     for (let i = 0; i < n; i++) {
-      const tx = s.cx + (r() - 0.5) * s.w * 0.9, ty = s.cy - s.h * 0.42 + r() * s.h * 0.5, ph = r() * 10, col = PAL[(i + 1) % PAL.length], dl = r() * 0.5, sz = 46 + r() * 26
+      const tx = s.cx + (((i * 5) % n + 0.5) / n - 0.5) * s.w * 0.86 + (r() - 0.5) * 40, ty = s.cy - s.h * 0.42 + ((i % 3) / 2) * s.h * 0.4 + r() * 50, ph = r() * 10, col = PAL[(i + 1) % PAL.length], dl = r() * 0.5, sz = 72 + r() * 36
       const q = prog(s.lt, bt + dl, bt + dl + 1.3)
       if (q <= 0) continue
       const e = ease.outCubic(q), cx1 = lerp(sx, tx, 0.2) + (r() - 0.5) * 300
@@ -1276,39 +1277,39 @@ const gridK = {
     if (p.title) label(x, p.title.toUpperCase(), s.cx, y0 - 58, { size: fitFont(x, p.title.toUpperCase(), 60, s.w - 20, { weight: 900 }), weight: 900, color: GOLD, glow: 16, spacing: 0.04 })
     panel(x, x0 - 12, y0 - 12, gw + 24, gw + 24, { col: VIOLET, r: 30 })
     for (let i = 1; i < 3; i++) { x.beginPath(); x.moveTo(x0 + c * i, y0 + 10); x.lineTo(x0 + c * i, y0 + gw - 10); x.moveTo(x0 + 10, y0 + c * i); x.lineTo(x0 + gw - 10, y0 + c * i); line(x, rgba(VIOLET, 0.8), 4, 8) }
-    const mk = p.mark || 'dot', at = j => stagger(j, order.length, s.dur, 0.15, 0.72)
+    const mk = p.mark || 'dot', at = j => stagger(j, order.length, s.dur, 0.15, 0.66)
     const stampedAt = {}; order.forEach((ci, j) => { stampedAt[ci] = at(j) })
     for (let i = 0; i < 9; i++) {
       const cx = x0 + c * (i % 3 + 0.5), cy = y0 + c * (Math.floor(i / 3) + 0.5)
       const st = stampedAt[i], on = st != null && s.lt >= st
-      x.save(); x.globalAlpha *= on ? 0.75 : 1
-      if (cells[i] != null) para(x, String(cells[i]), cx, cy, { size: 36, weight: 800, maxW: c - 30, lh: 1.08, color: BONE })
-      x.restore()
       if (on) {
         const j = order.indexOf(i), k = prog(s.lt, st, st + 0.18), sc = lerp(1.8, 1, ease.outCubic(k)) * (1 + 0.05 * wob(s.lt, st + 0.18, 30, 9))
         const r = rng(i + 5), col = mk === 'xo' ? (j % 2 ? PINK : BLUE) : mk === 'x' ? RED : PINK
         x.save(); x.translate(cx + (r() - 0.5) * 16, cy + (r() - 0.5) * 16); x.rotate((r() - 0.5) * 0.5); x.scale(sc, sc); x.globalAlpha *= clamp(k * 3)
-        if (mk === 'dot') { C(x, 0, 0, c * 0.36); ink(x, col, { w: 7, fa: 0.32, glow: 20 }) }
+        if (mk === 'dot') { C(x, 0, 0, c * 0.44); ink(x, col, { w: 8, fa: 0.3, glow: 24 }) }
         else if (mk === 'x' || (mk === 'xo' && j % 2 === 0)) { const h = c * 0.3; x.beginPath(); x.moveTo(-h, -h); x.lineTo(h, h); x.moveTo(h, -h); x.lineTo(-h, h); line(x, col, 14, 24) }
         else { C(x, 0, 0, c * 0.3); line(x, col, 14, 24) }
         x.restore()
       }
+      if (cells[i] != null && String(cells[i])) para(x, String(cells[i]), cx, cy, { size: 40, weight: 800, maxW: c - 34, lh: 1.08, color: BONE })
     }
     // a completed line → gold strike + BINGO stamp
-    const done = LINES3.map(L => ({ L, t: Math.max(...L.map(i => stampedAt[i] ?? Infinity)) })).filter(o => o.t < Infinity).sort((a, b) => a.t - b.t)[0]
-    if (done && s.lt > done.t + 0.25) {
-      const k = ease.outCubic(prog(s.lt, done.t + 0.25, done.t + 0.6)), [a, , b] = done.L
+    const who = i => mk === 'xo' ? order.indexOf(i) % 2 : 0
+    const done = LINES3.filter(L => L.every(i => who(i) === who(L[0]))).map(L => ({ L, t: Math.max(...L.map(i => stampedAt[i] ?? Infinity)) })).filter(o => o.t < Infinity).sort((a, b) => a.t - b.t)[0]
+    if (done && s.lt > done.t + 0.2) {
+      const k = ease.outCubic(prog(s.lt, done.t + 0.2, done.t + 0.5)), [a, , b] = done.L
       const A = [x0 + c * (a % 3 + 0.5), y0 + c * (Math.floor(a / 3) + 0.5)], B = [x0 + c * (b % 3 + 0.5), y0 + c * (Math.floor(b / 3) + 0.5)]
-      const ext = 0.32, Ax = lerp(A[0], B[0], -ext), Ay = lerp(A[1], B[1], -ext), Bx = lerp(A[0], B[0], 1 + ext), By = lerp(A[1], B[1], 1 + ext)
+      const ext = 0.18, Ax = lerp(A[0], B[0], -ext), Ay = lerp(A[1], B[1], -ext), Bx = lerp(A[0], B[0], 1 + ext), By = lerp(A[1], B[1], 1 + ext)
       x.beginPath(); x.moveTo(Ax, Ay); x.lineTo(lerp(Ax, Bx, k), lerp(Ay, By, k)); line(x, GOLD, 14, 30)
-      if (p.bingo !== false) stampAt(x, p.bingo || (mk === 'xo' ? 'WINNER' : 'BINGO!'), s.cx, s.cy + titleH / 2, s.lt, done.t + 0.65, GOLD, { size: 96, rot: -0.12 })
+      if (p.bingo !== false) stampAt(x, p.bingo || (mk === 'xo' ? 'WINNER' : 'BINGO!'), s.cx, y0 + gw / 2, s.lt, done.t + 0.45, GOLD, { size: 88, rot: -0.12 })
     }
   },
   cues(p, t0, dur) {
-    const cells = p.cells || [], order = p.order || cells.map((_, i) => i), c = order.map((_, j) => ['boom', t0 + stagger(j, order.length, dur, 0.15, 0.72), 0.07])
-    const st = {}; order.forEach((ci, j) => { st[ci] = stagger(j, order.length, dur, 0.15, 0.72) })
-    const done = LINES3.map(L => Math.max(...L.map(i => st[i] ?? Infinity))).filter(t => t < Infinity).sort((a, b) => a - b)[0]
-    if (done != null) { c.push(['bell', t0 + done + 0.3, 1318, 0.05, 2, 0]); if (p.bingo !== false) c.push(['boom', t0 + done + 0.65, 0.15]) }
+    const cells = p.cells || [], order = p.order || cells.map((_, i) => i), c = order.map((_, j) => ['boom', t0 + stagger(j, order.length, dur, 0.15, 0.66), 0.07])
+    const st = {}; order.forEach((ci, j) => { st[ci] = stagger(j, order.length, dur, 0.15, 0.66) })
+    const who = i => p.mark === 'xo' ? order.indexOf(i) % 2 : 0
+    const done = LINES3.filter(L => L.every(i => who(i) === who(L[0]))).map(L => Math.max(...L.map(i => st[i] ?? Infinity))).filter(t => t < Infinity).sort((a, b) => a - b)[0]
+    if (done != null) { c.push(['bell', t0 + done + 0.25, 1318, 0.05, 2, 0]); if (p.bingo !== false) c.push(['boom', t0 + done + 0.45, 0.15]) }
     return c
   },
 }
@@ -1318,18 +1319,18 @@ const note = {
   min: p => 1.4 + (p.lines || []).join(' ').length / 26,
   draw(x, p, s) {
     const letter = p.style === 'letter', lines = p.lines || []
-    const FS = letter ? 50 : 46, fam = letter ? 'serif' : 'inter', it = letter, wt = letter ? 500 : 700
+    const FS = letter ? 64 : 52, fam = letter ? 'serif' : 'inter', it = letter, wt = letter ? 500 : 700
     const w = Math.min(880, s.w), innerW = w - 140
     x.font = font(FS, { weight: wt, family: fam, italic: it })
     const wrapped = lines.map(l => wrap(x, l.replace(/^- /, ''), innerW - (/^- /.test(l) ? 40 : 0)))
     const lh = FS * 1.45, bodyH = wrapped.reduce((a, b) => a + b.length, 0) * lh + Math.max(0, lines.length - 1) * 16
-    const head = p.title ? 130 : 50, h = Math.min(s.h, head + bodyH + 90 + (letter && p.sign ? 80 : 0)), x0 = s.cx - w / 2, y0 = s.cy - h / 2
+    const head = p.title ? 140 : 50, h = Math.min(s.h, head + bodyH + 90 + (letter && p.sign ? 80 : 0)), x0 = s.cx - w / 2, y0 = s.cy - h / 2
     const col = letter ? ROSE : GOLD
     if (letter) { x.save(); x.shadowColor = 'rgba(0,0,0,0.5)'; x.shadowBlur = 40; rr(x, x0, y0, w, h, 20); x.fillStyle = '#211543'; x.fill(); x.restore(); rr(x, x0, y0, w, h, 20); ink(x, col, { w: 6, fa: 0, glow: 22 }); rr(x, x0 + 16, y0 + 16, w - 32, h - 32, 12); x.strokeStyle = rgba(col, 0.35); x.lineWidth = 2; x.stroke() }
     else { panel(x, x0, y0, w, h, { col, r: 40 }); rr(x, x0, y0, w, 18, [40, 40, 0, 0]) }
     if (p.title) {
       if (!letter) { label(x, '‹ Notes', x0 + 50, y0 + 58, { size: 36, weight: 700, color: col, align: 'left', shadow: false }); label(x, '•••', x0 + w - 50, y0 + 56, { size: 36, weight: 900, color: col, align: 'right', shadow: false }) }
-      label(x, p.title, letter ? x0 + 70 : x0 + 50, y0 + (letter ? 80 : 118), { size: letter ? 58 : 54, weight: letter ? 500 : 900, family: fam, italic: it, align: 'left', color: BONE, maxW: w - 100 })
+      label(x, p.title, letter ? x0 + 70 : x0 + 50, y0 + (letter ? 80 : 118), { size: letter ? 74 : 62, weight: letter ? 500 : 900, family: fam, italic: it, align: 'left', color: BONE, maxW: w - 100 })
     }
     // rule lines
     let y = y0 + head + 40
@@ -1357,7 +1358,7 @@ const note = {
     })
     if (!caret && s.lt < 0.25) caret = [x0 + 70, y0 + head + 40 + lh * 0.5]
     if (caret && Math.sin(s.t * 12) > -0.2) { x.beginPath(); x.moveTo(caret[0], caret[1] - FS * 0.55); x.lineTo(caret[0], caret[1] + FS * 0.5); line(x, col, 5, 12) }
-    if (letter && p.sign && s.lt > tcur) { const k = clamp((s.lt - tcur) / 0.4); label(x, p.sign, x0 + w - 80, y0 + h - 70, { size: 56, weight: 500, family: 'serif', italic: true, align: 'right', color: col, alpha: k, glow: 12 }); heart(x, x0 + w - 60, y0 + h - 120, 22 * pop01(s.lt, tcur + 0.2, 0.4, 2.6), PINK) }
+    if (letter && p.sign && s.lt > tcur) { const k = clamp((s.lt - tcur) / 0.4); label(x, p.sign, x0 + w - 80, y0 + h - 70, { size: 66, weight: 500, family: 'serif', italic: true, align: 'right', color: col, alpha: k, glow: 12 }); heart(x, x0 + w - 60, y0 + h - 120, 22 * pop01(s.lt, tcur + 0.2, 0.4, 2.6), PINK) }
   },
   cues(p, t0, dur) {
     const lines = p.lines || [], total = lines.reduce((a, l) => a + l.length, 0) || 1, span = Math.max(0.6, dur * 0.72 - 0.25), cps = Math.max(16, total / span), c = []
@@ -1380,8 +1381,8 @@ const notif = {
     const gr = x.createLinearGradient(0, y0, 0, y0 + ph); gr.addColorStop(0, '#2a1760'); gr.addColorStop(1, '#120a2c'); x.fillStyle = gr; x.fillRect(x0, y0, pw, ph)
     twinkles(x, s.cx, y0 + ph * 0.6, s.t, { n: 8, R: pw * 0.5, seed: 141, size: 18 })
     // time
-    label(x, p.date || 'Friday, June 13', s.cx, y0 + 120, { size: 36, weight: 700, color: rgba(BONE, 0.85) })
-    label(x, p.time || '7:12', s.cx, y0 + 230, { size: 170, weight: 800, color: BONE })
+    label(x, p.date || 'Friday', s.cx, y0 + 120, { size: 36, weight: 700, color: rgba(BONE, 0.85) })
+    label(x, p.time || '9:41', s.cx, y0 + 230, { size: 170, weight: 800, color: BONE })
     // notifications: newest on top, older ones get pushed down
     const arr = arrivals(p, s.prev, 'items', n, s.dur, 0.15, 0.7)
     const cardW = pw - 56, gap = 18
