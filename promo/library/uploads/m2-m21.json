@@ -178,5 +178,25 @@
   "series": "mirror",
   "episode": 18,
   "caption": "Screaming into a pillow because you like your best friend.\nIt's scary because it matters. Say one honest sentence, stay kind either way, and you'll be okay."
+ },
+ "kmte19": {
+  "video": "/_blob/472efc590551613c7e2e6bb71cba7ea1",
+  "poster": "/_blob/ff2e1187c4cc87085fa11a41c1b943cb",
+  "title": "The night before the \"what are we\" talk",
+  "len": 75,
+  "long": true,
+  "series": "mirror",
+  "episode": 19,
+  "caption": "Months of hanging out, five drafts, and still no idea what this is.\nKnowing is kinder than guessing. Ask clearly, then listen all the way to the end."
+ },
+ "kmte20": {
+  "video": "/_blob/8171ca0bae4953fb8c23f72a9de688cd",
+  "poster": "/_blob/1a733bbf7e717c00f2c849a899ad333b",
+  "title": "The first New Year's without them",
+  "len": 90,
+  "long": true,
+  "series": "mirror",
+  "episode": 20,
+  "caption": "The first New Year's without them, and you're not sure you even want to go out.\nGo for an hour, text the friend who'll be there, and start next year gently."
  }
 }
