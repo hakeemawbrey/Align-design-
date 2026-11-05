@@ -1,0 +1,133 @@
+{
+  "id": "02-chart-words",
+  "title": "Eight astrology words",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.15,
+  "caption": "eight astrology words people mix up, even people who know their sign 🌙\nsun vs rising · venus vs mars · horoscope vs birth chart · sign vs constellation\nthe first pair is why your birth time matters. the last one surprises everyone",
+  "cta": "send this to the friend who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "risingsign",
+    "birthchart",
+    "venussign",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sun sign",
+        "art": "sun"
+      },
+      "b": {
+        "label": "Rising sign",
+        "art": "rising"
+      },
+      "ask": [
+        "Eight astrology words",
+        "most people mix up.",
+        "*Sun sign* versus *rising sign.*"
+      ],
+      "explainA": [
+        "Your *sun sign* is where the sun was",
+        "the day you were born.",
+        "It's who you are."
+      ],
+      "explainB": [
+        "Your *rising sign* was coming up in the east",
+        "the minute you were born.",
+        "It's how you come across."
+      ],
+      "diff": [
+        "The sun changes sign once a month.",
+        "Your rising changes about every *two hours.*"
+      ]
+    },
+    {
+      "a": {
+        "label": "Venus",
+        "art": "venus"
+      },
+      "b": {
+        "label": "Mars",
+        "art": "mars"
+      },
+      "ask": [
+        "*Venus* versus *Mars.*"
+      ],
+      "explainA": [
+        "*Venus* is how you love,",
+        "and what you find beautiful."
+      ],
+      "explainB": [
+        "*Mars* is how you go after it.",
+        "Desire, nerve, and how you fight."
+      ],
+      "diff": [
+        "Venus is what you *want.*",
+        "Mars is how you *get it.*"
+      ]
+    },
+    {
+      "a": {
+        "label": "Horoscope",
+        "art": "horoscope"
+      },
+      "b": {
+        "label": "Birth chart",
+        "art": "chart"
+      },
+      "ask": [
+        "*Horoscope* versus *birth chart.*"
+      ],
+      "explainA": [
+        "A *horoscope* is written for your sun sign.",
+        "You share it with one in twelve people."
+      ],
+      "explainB": [
+        "A *birth chart* is the whole sky",
+        "at your exact minute and place."
+      ],
+      "diff": [
+        "A horoscope is a *forecast.*",
+        "A birth chart is a *map.*"
+      ]
+    },
+    {
+      "a": {
+        "label": "Sign",
+        "art": "slices"
+      },
+      "b": {
+        "label": "Constellation",
+        "art": "constellation"
+      },
+      "ask": [
+        "And the one that surprises everyone.",
+        "*Sign* versus *constellation.*"
+      ],
+      "explainA": [
+        "A *sign* is a season.",
+        "Twelve equal slices of the sun's path,",
+        "counted from the spring equinox."
+      ],
+      "explainB": [
+        "A *constellation* is a real group of stars.",
+        "The sun crosses *thirteen* of them."
+      ],
+      "diff": [
+        "In two thousand years, the stars drifted",
+        "almost a whole sign.",
+        "Your sign stayed with the *seasons.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

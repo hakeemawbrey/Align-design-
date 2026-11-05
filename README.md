@@ -101,6 +101,8 @@ For Align Town reels (a walk through a 3D astrology town, one card per line), se
 
 For spoken love-and-zodiac affirmation reels (line art that draws itself in, word-by-word captions, a "Comment WORD" ending) and the Instagram page that posts them, see [reels/affirm/README.md](reels/affirm/README.md) and [reels/affirm/PROFILE.md](reels/affirm/PROFILE.md).
 
+For "What's the difference?" reels (two words people mix up, two framed Align cards, Star Talk's pixel star shrugging until the answer lands), see [reels/difference/README.md](reels/difference/README.md).
+
 To post reels to one or more Instagram accounts as trial reels and see how they did, see [instagram/README.md](instagram/README.md).
 
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.
