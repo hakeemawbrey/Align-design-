@@ -178,5 +178,45 @@
   "series": "bio",
   "episode": 18,
   "caption": "On your forty-seventh draft of a three-line bio?\nGood enough is ready. Post the sweet one."
+ },
+ "kbge19": {
+  "video": "/_blob/22cba92b79a8870eb1ea0aad7f5a2402",
+  "poster": "/_blob/9592029e4def6fb2389ecd2e4d313fe7",
+  "title": "The group chat wrote it",
+  "len": 11,
+  "long": false,
+  "series": "bio",
+  "episode": 19,
+  "caption": "When your friends wrote your bio by committee.\nTake their help, then write it in your own voice."
+ },
+ "kbge20": {
+  "video": "/_blob/66d1c91d8933ea0791222117ac549302",
+  "poster": "/_blob/f8b19ed5e2f0d7a245287d8edee8f929",
+  "title": "\"Don't lie to me. I'll know.\"",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 20,
+  "caption": "Does your bio sound like an interrogation?\nSay what you value, not what you're afraid of."
+ },
+ "kbge21": {
+  "video": "/_blob/fd3898e7cb66033db40ad8ccf33be18a",
+  "poster": "/_blob/0c48fd7a9dc3726db898f4f5a02fde0c",
+  "title": "\"Brutally honest. Deal with it.\"",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 21,
+  "caption": "Brutally honest, or just brutal?\nKeep the honest. Be kind about it."
+ },
+ "kbge22": {
+  "video": "/_blob/827335edb30be99d530f0d6273727b74",
+  "poster": "/_blob/41f7408c88c14eb5830463c60a5e7b23",
+  "title": "\"Nothing serious\" (it's serious)",
+  "len": 11,
+  "long": false,
+  "series": "bio",
+  "episode": 22,
+  "caption": "Bio says nothing serious, heart says otherwise?\nWrite what you actually want. Slowly is allowed."
  }
 }
