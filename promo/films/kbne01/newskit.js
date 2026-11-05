@@ -587,3 +587,38 @@ export function windowFrame(x, cx, cy, w, h, draw, { col = 'rgba(255,214,150,0.9
   x.restore()
   px(x, cx - 4, cy - h / 2, 8, h, '#5a4f88'); px(x, cx - w / 2, cy - 4, w, 8, '#5a4f88')
 }
+
+/** the whole desk shot in one call.
+ *  o: { monitor, a: anchor opts, p: co-anchor opts, chyron: chyron opts | null, slam: slam opts | null, papers: t0 | null, plaque, label } */
+export function deskShot(x, t, o = {}) {
+  studio(x, t, { monitor: o.monitor, label: o.label })
+  anchor(x, t, o.a || {})
+  coanchor(x, t, o.p || {})
+  desk(x, t, { plaque: o.plaque })
+  if (o.papers != null) papers(x, t, o.papers)
+  if (o.chyron) chyron(x, t, o.chyron)
+  if (o.slam) slam(x, t, o.slam)
+}
+/** fill a monitor / LIVE rect with a soft room gradient */
+export function room(x, R, { top = '#2a1d5c', bot = '#3d2a6e', floor = null } = {}) {
+  const g = x.createLinearGradient(0, R.y0, 0, R.y1); g.addColorStop(0, top); g.addColorStop(1, bot); x.fillStyle = g; x.fillRect(R.x0, R.y0, R.x1 - R.x0, R.y1 - R.y0)
+  if (floor) { const fy = R.y0 + (R.y1 - R.y0) * 0.78; px(x, R.x0, fy, R.x1 - R.x0, R.y1 - fy, floor); px(x, R.x0, fy, R.x1 - R.x0, 6, 'rgba(255,255,255,0.12)') }
+}
+/** a cosy living room inside R (sofa, lamp, plant, framed picture) */
+export function livingRoom(x, t, R, { wall = '#3b2a6a', lamp = true } = {}) {
+  room(x, R, { top: wall, bot: '#2a1d55', floor: '#4a3470' })
+  const fy = R.y0 + (R.y1 - R.y0) * 0.78
+  // picture frame + window
+  px(x, R.x0 + 90, R.y0 + 120, 170, 130, INK); px(x, R.x0 + 98, R.y0 + 128, 154, 114, '#7a5fb8'); px(x, R.x0 + 120, R.y0 + 190, 110, 40, '#3f9a6a')
+  // sofa
+  px(x, R.x0 + 60, fy - 170, 560, 60, INK); px(x, R.x0 + 66, fy - 164, 548, 50, '#c45a7a'); px(x, R.x0 + 40, fy - 120, 600, 130, INK); px(x, R.x0 + 46, fy - 114, 588, 118, '#d86a8a')
+  // lamp
+  if (lamp) {
+    const lx = R.x1 - 150
+    px(x, lx - 6, fy - 320, 12, 320, INK); px(x, lx - 60, fy - 400, 120, 90, INK); px(x, lx - 54, fy - 394, 108, 78, '#ffe6a0')
+    x.save(); x.globalCompositeOperation = 'lighter'; const g = x.createRadialGradient(lx, fy - 360, 10, lx, fy - 360, 300); g.addColorStop(0, 'rgba(255,230,160,0.22)'); g.addColorStop(1, 'rgba(255,230,160,0)'); x.fillStyle = g; x.fillRect(lx - 300, fy - 660, 600, 600); x.restore()
+  }
+  // plant
+  px(x, R.x0 + 700, fy - 70, 70, 70, INK); px(x, R.x0 + 706, fy - 64, 58, 58, '#c4703a')
+  for (let i = 0; i < 5; i++) { const a = -1.2 + i * 0.6 + 0.05 * Math.sin(t * 2 + i); x.save(); x.translate(R.x0 + 735, fy - 70); x.rotate(a); px(x, -8, -110, 16, 110, '#3f9a6a'); x.restore() }
+}
