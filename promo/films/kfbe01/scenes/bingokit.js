@@ -117,7 +117,7 @@ function cardGeom(cfg) {
 export function cellCenter(cfg, i) { const g = cardGeom(cfg); return { x: g.x0 + (i % g.n + 0.5) * g.cw, y: g.y0 + (Math.floor(i / g.n) + 0.5) * g.ch, w: g.cw, h: g.ch } }
 
 /** wraps the cell text: '|' = forced break; returns lines */
-function cellLines(x, text, maxW, size) {
+export function cellLines(x, text, maxW, size) {
   const out = []
   for (const part of text.split('|')) {
     let cur = ''
@@ -127,7 +127,7 @@ function cellLines(x, text, maxW, size) {
   return out
 }
 /** a dauber blot (round pixel ink splat) */
-function blot(x, cx, cy, r, col, k, seed) {
+export function blot(x, cx, cy, r, col, k, seed) {
   if (k <= 0) return
   x.save(); x.globalAlpha *= 0.62
   x.fillStyle = col
