@@ -49,7 +49,7 @@ export function makeHealLong(cfg) {
   const lastAt = L - 1.9
   const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 170, size: cfg.hookSize || 100, accentColor: accent, out: [ch1 - 0.25, ch1] }
   const WHIP0 = { at: -0.14, len: 0.5, from: 1.35, blur: 6, cx: (cfg.whip || {}).x ?? 540, cy: (cfg.whip || {}).y ?? 1150, flash: 0 }
-  const REC = { at: 0.6, len: 1.3, top: 1500, ...(cfg.brk || {}), caption: (cfg.brk || {}).text }
+  const REC = cfg.brk === false ? null : { at: 0.6, len: 1.3, top: 1500, ...(cfg.brk || {}), caption: (cfg.brk || {}).text }
   const CHAPS = CH.map((c, i) => ({ at: c.at, out: [(CH[i + 1] ? CH[i + 1].at : finAt) - 0.3, (CH[i + 1] ? CH[i + 1].at : finAt) - 0.1], n: c.n ?? i + 1, title: c.title, x: 70, y: 150 }))
   const BUBBLES = cfg.bubbles || []
   const SPEAK = 'THE STARS'
@@ -119,11 +119,11 @@ export function makeHealLong(cfg) {
   }
   const bugScene = async stage => { const root = fill(stage, { pointerEvents: 'none' }); root.dataset.hookcam = 'off'; buildBug(root); return { start: 0, end: DURATION + 1, root, update() {} } }
   const frame0 = [build, whipZoom(WHIP0), slamTitle(HOOK), bugScene]
-  const SCENES = [frozen(build, [REC]), whipZoom(WHIP0), slamTitle(HOOK), recordScratch(REC), ...CHAPS.map(c => chapter(c)), ...(cfg.kit || []), bugScene, loopBack(frame0, { duration: DURATION, len: 0.42 })]
+  const SCENES = [REC ? frozen(build, [REC]) : build, whipZoom(WHIP0), slamTitle(HOOK), ...(REC ? [recordScratch(REC)] : []), ...CHAPS.map(c => chapter(c)), ...(cfg.kit || []), bugScene, loopBack(frame0, { duration: DURATION, len: 0.42 })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
-    ...whipZoomCues(WHIP0), ...slamTitleCues(HOOK), ...recordScratchCues(REC),
+    ...whipZoomCues(WHIP0), ...slamTitleCues(HOOK), ...(REC ? recordScratchCues(REC) : []),
     ['pop', r3(cfg.promiseAt ?? 2.0), 1174.66, 0.05, 0], ['tick', r3((cfg.promiseAt ?? 2.0) + 0.02), 0.06],
     ...CHAPS.flatMap(c => chapterCues(c)),
     ...segs.slice(1).flatMap(s => [['whoosh', r3(s.at - 0.12), 0.3, 0.035], ['tick', r3(s.at), 0.05]]),
