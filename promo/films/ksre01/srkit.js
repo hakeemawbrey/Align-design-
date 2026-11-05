@@ -282,7 +282,7 @@ function drawCategory(x, cfg, k) {
 }
 const SPL = { x: 40, y: 196, w: 600, rh: 50 }
 function drawSplits(x, t, cfg, k) {
-  const rows = cfg.splits || []
+  const rows = (typeof cfg.splits === 'function' ? cfg.splits(t) : cfg.splits) || []
   if (!rows.length || k <= 0.01) return
   const n = rows.length, h = 20 + n * SPL.rh + 10
   x.save(); x.globalAlpha = clamp(k)
