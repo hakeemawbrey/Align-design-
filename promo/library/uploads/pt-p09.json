@@ -1,0 +1,38 @@
+{
+ "kpnee01": {
+  "video": "/_blob/bec632b4a0578ad5a3268b0c8ad25479",
+  "poster": "/_blob/ef1d67755ca19fa2e8056c84af0fcab3",
+  "title": "Neptune to Aries: The Two-Day Soulmate",
+  "len": 24,
+  "long": false,
+  "series": "pneptune",
+  "episode": 1,
+  "caption": "Met them Tuesday, picking venues by Thursday. Neptune loves a whirlwind, but even the best films have a middle.\nWhich sign skips straight to the ending in your group chat?",
+  "sign": "aries",
+  "account": "star_talk"
+ },
+ "kpnee02": {
+  "video": "/_blob/52669ba1dd9c761eb56dac16790f661f",
+  "poster": "/_blob/242674a065e3619327db86cd32b2aa94",
+  "title": "Neptune to Taurus: The Memory Filter",
+  "len": 26,
+  "long": false,
+  "series": "pneptune",
+  "episode": 2,
+  "caption": "Missing an ex can make the old photos glow pinker than they were. The good parts were real, and so were the reasons it ended.\nKeep the warmth, not the plan to go back.",
+  "sign": "taurus",
+  "account": "star_advice"
+ },
+ "kpnee03": {
+  "video": "/_blob/c0bc5358af58aab91694bf12766332d7",
+  "poster": "/_blob/0d61edf920100ca038e5ce753ff27480",
+  "title": "Neptune to Gemini: The Stranger on Platform 2",
+  "len": 25,
+  "long": false,
+  "series": "pneptune",
+  "episode": 3,
+  "caption": "Gemini built a whole cottage life for a stranger in two train stops, dog included. Then said one word out loud.\nWho else has a full daydream going on their commute?",
+  "sign": "gemini",
+  "account": "star_talk"
+ }
+}
