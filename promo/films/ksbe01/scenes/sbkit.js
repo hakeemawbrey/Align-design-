@@ -368,9 +368,9 @@ export function drawSay(x, w, B) {
 const NUM = ['x', 'y', 's', 'rot', 'red', 'steam', 'alpha', 'squash', 'tears', 'shrink']
 function actorState(keys, w) {
   const st = { x: 540, y: 1080, s: 280, rot: 0, red: 0, steam: 0, alpha: 1, squash: 0, tears: 0, shrink: 0, mood: 'neutral', look: undefined }
-  let first = true
+  const t0 = keys.length ? keys[0][0] : 0
   for (const [t, k] of keys) {
-    if (first) { for (const p of NUM) if (k[p] != null) st[p] = k[p]; if (k.mood) st.mood = k.mood; if ('look' in k) st.look = k.look; first = false; continue }
+    if (t <= t0) { for (const p of NUM) if (k[p] != null) st[p] = k[p]; if (k.mood) st.mood = k.mood; if ('look' in k) st.look = k.look; continue }
     if (w < t) break
     const d = k.d ?? 0.32, e = (k.e ?? ease.inOutCubic)(prog(w, t, t + d))
     for (const p of NUM) if (k[p] != null) st[p] = lerp(st[p], k[p], e)
