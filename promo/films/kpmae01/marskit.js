@@ -12,6 +12,7 @@
 //   over(x, t, K)   painted after the bubbles (flashes, stamps on top of everything).
 //   overlays   extra hookkit scenes [builder…] (whip zoom, shake, chapter stickers…); their cues go in `cues`.
 //   last       { text, at, top, size } → the punchline slam (hookkit slamTitle, stays to the end).
+//   freeze     hookkit recordScratch opts [REC…]: the picture (draw + bubbles) holds during each freeze window.
 //   end        'cut' = hard cut on the punchline; 'loop' = hookkit loopBack into the frame-0 composition.
 // The series bug "PLANET TALK: MARS" sits top-left the whole film. No end card, no card cut, no logo.
 //
@@ -21,7 +22,7 @@ import { clamp, lerp, prog, ease } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawGrain, layerCanvas } from '../sky.js'
 import { GRAIN_H, easeOutBack } from '../wheel.js'
-import { slamTitle, slamTitleCues, loopBack, loopCues, drawRich } from '../hookkit.js'
+import { slamTitle, slamTitleCues, loopBack, loopCues, drawRich, freezeTime } from '../hookkit.js'
 import { drawPlanet, drawSign, drawSpace, speech, speechCues, entrance, drawEntranceFx, entranceCues, planetSize, colorOf } from '../planetkit.js'
 
 export { drawPlanet, drawSign, drawSpace, speech, entrance, drawEntranceFx, entranceCues, planetSize, colorOf, clamp, lerp, prog, ease, easeOutBack }
@@ -236,7 +237,7 @@ function bug() {
 
 // ─────────────────────────────────────────────── the episode engine
 export function makeEpisode(cfg) {
-  const { id, duration: D, end = 'cut', hook, bubbles = [], draw, over, overlays = [], cues = [], last = null } = cfg
+  const { id, duration: D, end = 'cut', hook, bubbles = [], draw, over, overlays = [], cues = [], last = null, freeze = [] } = cfg
   const LINES = bubbles.map(b => ({ t: b.t0 + 0.08, who: b.who, text: b.text }))
   async function build(stage) {
     const root = fill(stage, { background: '#07041a' })
@@ -245,7 +246,8 @@ export function makeEpisode(cfg) {
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     return {
       start: 0, end: D + 1, root,
-      update(t) {
+      update(t0) {
+        const t = freeze.length ? freezeTime(t0, freeze) : t0
         x.setTransform(1, 0, 0, 1, 0, 0); x.globalAlpha = 1; x.clearRect(0, 0, 1080, 1920)
         const K = { t, lines: LINES, mars: (X, Y, size, o = {}) => drawMars(x, t, X, Y, size, { lines: LINES, cps: 32, ...o }) }
         draw(x, t, K)
