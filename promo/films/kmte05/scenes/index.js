@@ -36,7 +36,7 @@ const F = makeMirror({
   hook: { text: 'Great at advice. | *Terrible* at taking it.', accentColor: '#f39a3a', out: [2.65, 2.9] },
   fx: [
     { k: 'whipZoom', at: T.dm - 0.06, from: 1.3 },
-    { k: 'caught', at: T.shot + 0.5, x: 640, y: 770, r: 180, ry: 110, label: 'YOU SAID THIS', arrow: 'bl', rec: true, out: [11.3, 11.5] },
+    { k: 'caught', at: T.shot + 0.5, x: 640, y: 770, r: 180, ry: 110, label: 'YOU!!', arrow: 'bl', rec: true, out: [11.3, 11.5] },
     { k: 'screenShake', at: T.s2 + 0.05, amp: 12, len: 0.4 },
     { k: 'whipZoom', at: T.m2 - 0.06, from: 1.25 },
     { k: 'whipZoom', at: T.reply - 0.06, from: 1.2 },
