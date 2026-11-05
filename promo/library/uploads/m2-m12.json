@@ -1,4 +1,14 @@
 {
+ "ktre01": {
+  "video": "/_blob/2969ea18e8e7830352831a07dcbe3e66",
+  "poster": "/_blob/3a780b62f3eafee633218759546d2d7a",
+  "title": "Left on read for two days",
+  "len": 22,
+  "long": false,
+  "series": "rescue",
+  "episode": 1,
+  "caption": "Two days of silence after \"see you friday?\" is a lot to sit with.\nAsk once, kindly, and give them room to answer. Three question marks can wait."
+ },
  "ktre02": {
   "video": "/_blob/dceaadd1fa2c5cfe583fc012ae31f0b9",
   "poster": "/_blob/7aebe6c5ee6ff3428ea595247b14a136",
@@ -138,5 +148,55 @@
   "series": "rescue",
   "episode": 15,
   "caption": "Underselling a great date to look cool can leave the other person guessing.\nTell them you had a good time and ask to see them again. It's a nice thing to hear."
+ },
+ "ktre16": {
+  "video": "/_blob/89bd01f8f400a5cbc88554b382718473",
+  "poster": "/_blob/023f5848e55e88f6e5227848379f51c1",
+  "title": "From \"hey\" to Saturday",
+  "len": 72,
+  "long": true,
+  "series": "rescue",
+  "episode": 16,
+  "caption": "Starting a new chat can feel like a test. It isn't.\nAsk about them, answer honestly, let quiet moments be quiet, and when it's going well, make a clear plan."
+ },
+ "ktre17": {
+  "video": "/_blob/556ab65387a763ca3d8d27970e8d1d48",
+  "poster": "/_blob/30797dbe3b2d2eb9de42a1eed3dbc5f0",
+  "title": "The cancel that became a plan",
+  "len": 66,
+  "long": true,
+  "series": "rescue",
+  "episode": 17,
+  "caption": "Cancelling doesn't have to end anything. Say why, own that they might be disappointed, and offer a real new night.\nThat's how a cancel turns into a better plan."
+ },
+ "ktre18": {
+  "video": "/_blob/d1b9a2c34d35cbf800a267156708a314",
+  "poster": "/_blob/20c169927ca6589271d41c394589a93c",
+  "title": "Texting an old friend after a year",
+  "len": 70,
+  "long": true,
+  "series": "rescue",
+  "episode": 18,
+  "caption": "Haven't talked to a friend in a year? You don't need the perfect reason to reach out.\n\"I miss you\" is enough. Keep the apology kind, to them and to you, then make a plan."
+ },
+ "ktre19": {
+  "video": "/_blob/297d6651e714229787d05adee8e775ce",
+  "poster": "/_blob/c84045c7bd3892f668bb19d898cb4023",
+  "title": "The mixed signals night",
+  "len": 78,
+  "long": true,
+  "series": "rescue",
+  "episode": 19,
+  "caption": "Slow replies and one-word answers can send your mind spinning.\nInstead of guessing, say where you're at and ask gently. Sometimes the answer is just \"I like you, and I'm nervous.\""
+ },
+ "ktre20": {
+  "video": "/_blob/00ba3e90b01ac6c0e2d7022401978c87",
+  "poster": "/_blob/69ce3a974defae9f28f48f5df2b985e3",
+  "title": "The first \"I like you\"",
+  "len": 84,
+  "long": true,
+  "series": "rescue",
+  "episode": 20,
+  "caption": "Saying \"I like you\" first is scary, so the temptation is to take it back in the same breath.\nSay it honestly, let it stand, and give them time. Watch to the end."
  }
 }
