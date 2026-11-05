@@ -223,7 +223,7 @@ export function drawChairFront(x, cx = 540, cy = 1010, s = 1) {
 }
 
 // ── Pisces on the boom mic (top right), crying
-export function boomOp(x, t, { k = 1, tears = 2, mood = 'sparkle', mic = [560, 720], op = [890, 610], sway = 1, look = [-1, 1], size = 170 } = {}) {
+export function boomOp(x, t, { k = 1, tears = 2, mood = 'sparkle', mic = [560, 720], op = [890, 610], sway = 1, look = [-1, 1], size = 170, who = 'pisces', glyph = true } = {}) {
   if (k <= 0.01) return
   const sx = Math.sin(t * 1.3) * 10 * sway, sy = Math.sin(t * 1.9 + 1) * 6 * sway
   const ox = lerp(1300, op[0], k), oy = op[1]
@@ -239,7 +239,7 @@ export function boomOp(x, t, { k = 1, tears = 2, mood = 'sparkle', mic = [560, 7
   x.fillStyle = '#6f7388'; rr(x, -72, -30, 144, 60, 30); x.fill()
   x.fillStyle = '#8b90a8'; for (let i = 0; i < 18; i++) { const a = i * 0.9 + t * 0.4; x.fillRect(-66 + (i * 37) % 132, -26 + (i * 13) % 44, 8 + 4 * Math.sin(a), 6) }
   x.restore()
-  seat(x, t, 'pisces', { x: ox, y: oy, s: size }, { mood, look, tears, seed: 6, glow: 0.9 })
+  seat(x, t, who, { x: ox, y: oy, s: size }, { mood, look, tears, seed: who === 'pisces' ? 6 : 21, glow: 0.9, glyph })
 }
 
 // ── a generic B-roll room (the film draws its own props on top)
