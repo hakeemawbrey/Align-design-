@@ -659,8 +659,8 @@ const word = {
     const at = i => stagger(i, n, s.dur, 0.3, p.means ? 0.6 : 0.72)
     // the parts row
     x.font = font(84, { weight: 500, family: 'serif', italic: true })
-    const ws = parts.map(([a, b]) => { x.font = font(84, { weight: 500, family: 'serif', italic: true }); const wa = x.measureText(a).width; x.font = font(40, { weight: 700 }); const wb = x.measureText(`“${b}”`).width; return Math.max(wa, wb) + 70 })
-    const plusW = 70, total = ws.reduce((a, b) => a + b, 0) + plusW * Math.max(0, n - 1)
+    const ws = parts.map(([a, b]) => { x.font = font(120, { weight: 500, family: 'serif', italic: true }); const wa = x.measureText(a).width; x.font = font(48, { weight: 700 }); const wb = x.measureText(`“${b}”`).width; return Math.max(wa, wb, 150) + 80 })
+    const plusW = 80, total = ws.reduce((a, b) => a + b, 0) + plusW * Math.max(0, n - 1)
     const sc = Math.min(1, (s.w - 20) / total)
     const py = s.cy + (p.means ? -10 : 40)
     x.save(); x.translate(s.cx, py); x.scale(sc, sc); x.translate(-s.cx, -py)
@@ -671,22 +671,22 @@ const word = {
       if (kc > 0) {
         // a thread from the word to the part
         x.save(); x.globalAlpha *= clamp(kc * 2) * 0.8; x.setLineDash([6, 12]); x.lineDashOffset = -s.t * 30
-        x.beginPath(); x.moveTo(lerp(s.cx - wsz * 1.2, s.cx + wsz * 1.2, n > 1 ? i / (n - 1) : 0.5) / 1, wy + wsz * 0.55); x.lineTo(cx, py - 110); line(x, col, 5, 10); x.restore()
+        x.beginPath(); x.moveTo(lerp(s.cx - wsz * 1.2, s.cx + wsz * 1.2, n > 1 ? i / (n - 1) : 0.5) / 1, wy + wsz * 0.55); x.lineTo(cx, py - 140); line(x, col, 5, 10); x.restore()
         x.save(); popScale(x, cx, py, kc); x.rotate(0)
-        rr(x, cx - ws[i] / 2 + 6, py - 100, ws[i] - 12, 200, 30); x.fillStyle = 'rgba(16,10,40,0.9)'; x.fill()
-        rr(x, cx - ws[i] / 2 + 6, py - 100, ws[i] - 12, 200, 30); ink(x, col, { w: 6, fa: 0.12, glow: 22 })
-        label(x, a, cx, py - 28, { size: 84, weight: 500, family: 'serif', italic: true, color: col, glow: 14 })
-        label(x, `“${b}”`, cx, py + 52, { size: 40, weight: 700, color: BONE })
+        rr(x, cx - ws[i] / 2 + 6, py - 130, ws[i] - 12, 260, 34); x.fillStyle = 'rgba(16,10,40,0.9)'; x.fill()
+        rr(x, cx - ws[i] / 2 + 6, py - 130, ws[i] - 12, 260, 34); ink(x, col, { w: 6, fa: 0.12, glow: 22 })
+        label(x, a, cx, py - 36, { size: 120, weight: 500, family: 'serif', italic: true, color: col, glow: 14 })
+        label(x, `“${b}”`, cx, py + 72, { size: 48, weight: 700, color: BONE })
         x.restore()
       }
       px += ws[i]
-      if (i < n - 1) { const kp = pop01(s.lt, at(i) + 0.2, 0.3, 2.6); label(x, '+', px + plusW / 2, py, { size: 80 * kp, weight: 900, color: MUTED }); px += plusW }
+      if (i < n - 1) { const kp = pop01(s.lt, at(i) + 0.2, 0.3, 2.6); label(x, '+', px + plusW / 2, py, { size: 96 * kp, weight: 900, color: MUTED }); px += plusW }
     })
     x.restore()
     if (p.means) {
       const km = pop01(s.lt, at01(s, 0.7), 0.45, 2.3)
       x.save(); popScale(x, s.cx, s.cy + s.h * 0.24, km)
-      label(x, `= ${p.means}`, s.cx, s.cy + s.h * 0.24, { size: fitFont(x, `= ${p.means}`, 76, s.w - 60, { weight: 500, family: 'serif', italic: true }), weight: 500, family: 'serif', italic: true, color: color(p.col, GOLD), glow: 18 })
+      label(x, `= ${p.means}`, s.cx, s.cy + s.h * 0.24, { size: fitFont(x, `= ${p.means}`, 96, s.w - 60, { weight: 500, family: 'serif', italic: true }), weight: 500, family: 'serif', italic: true, color: color(p.col, GOLD), glow: 18 })
       x.restore()
       sparkle(x, s.cx, s.cy + s.h * 0.24, s.lt, at01(s, 0.7) + 0.2, { n: 10, R: 260, seed: 41 })
     }
@@ -705,7 +705,7 @@ const versus = {
   min: () => 2.8,
   draw(x, p, s) {
     const A = p.a || {}, B = p.b || {}, v = p.verdict || 'vs'
-    const gap = 60, pw = (Math.min(s.w, 940) - gap) / 2, ph = Math.min(s.h - 20, 780)
+    const gap = 50, pw = (Math.min(s.w, 940) - gap) / 2, ph = Math.min(s.h - 40, 700)
     const vt = at01(s, p.at, 0.55)
     const win = v === 'a' ? 0 : v === 'b' ? 1 : -1, wk = win >= 0 ? ease.outCubic(prog(s.lt, vt, vt + 0.4)) : 0
     ;[A, B].forEach((S, i) => {
@@ -720,12 +720,12 @@ const versus = {
       if (lose) { x.translate(cx, cy); x.rotate((i ? 1 : -1) * 0.05 * wk); x.scale(1 - 0.06 * wk, 1 - 0.06 * wk); x.translate(-cx, -cy) }
       if (isW) { x.translate(cx, cy); x.scale(1 + 0.05 * wk, 1 + 0.05 * wk); x.translate(-cx, -cy) }
       panel(x, cx - pw / 2, cy - ph / 2, pw, ph, { col, r: 40, w: isW ? 8 : 6, glow: isW ? 40 : 22 })
-      const iy = cy - ph / 2 + (S.lines ? 170 : 250)
+      const iy = cy - ph / 2 + (S.lines ? 150 : 190)
       icon(x, S.icon || (i ? 'heart' : 'star'), cx, iy, Math.min(210, pw * 0.5), S.icon ? S.col || null : col, s.t + i * 1.3)
-      const ly = iy + 175
+      const ly = cy + (S.lines ? 100 : 160)
       const lsz = fitFont(x, S.label || '', 60, pw - 50, { weight: 900 })
       label(x, S.label || (i ? 'B' : 'A'), cx, ly, { size: lsz, weight: 900, color: BONE })
-      ;(S.lines || []).slice(0, 4).forEach((l, j) => { const kj = clamp((s.lt - at - 0.3 - j * 0.15) / 0.3); label(x, l, cx, ly + 84 + j * 62, { size: 38, weight: 700, color: col, maxW: pw - 50, alpha: kj }) })
+      ;(S.lines || []).slice(0, 4).forEach((l, j) => { const kj = clamp((s.lt - at - 0.3 - j * 0.15) / 0.3); label(x, l, cx, ly + 80 + j * 60, { size: 42, weight: 700, color: col, maxW: pw - 50, alpha: kj }) })
       x.restore()
       if (isW && wk > 0) icon(x, 'crown', cx, cy - ph / 2 - 10 - 20 * (1 - wk), 130 * easeOutBack(wk, 2.4), null, s.t)
     })
@@ -733,9 +733,10 @@ const versus = {
     const kb = pop01(s.lt, win >= 0 ? 0.55 : vt, 0.4, 2.6)
     if (kb > 0) {
       const txt = v === 'a' || v === 'b' || v === 'vs' ? 'VS' : v, col = v === '=' || v === '≈' ? GREEN : v === '≠' ? RED : GOLD
-      x.save(); popScale(x, s.cx, s.cy, kb); x.rotate(Math.sin(s.t * 2) * 0.06)
-      C(x, s.cx, s.cy, 74); x.fillStyle = '#140a2e'; x.fill(); C(x, s.cx, s.cy, 74); ink(x, col, { w: 8, fa: 0.2, glow: 30 })
-      label(x, txt, s.cx, s.cy + 4, { size: txt.length > 1 ? 58 : 96, weight: 900, color: col, shadow: false })
+      const by = s.cy - ph * 0.08
+      x.save(); popScale(x, s.cx, by, kb); x.translate(s.cx, by); x.rotate(Math.sin(s.t * 2) * 0.06); x.translate(-s.cx, -by)
+      C(x, s.cx, by, 74); x.fillStyle = '#140a2e'; x.fill(); C(x, s.cx, by, 74); ink(x, col, { w: 8, fa: 0.2, glow: 30 })
+      label(x, txt, s.cx, by + 4, { size: txt.length > 1 ? 58 : 96, weight: 900, color: col, shadow: false })
       x.restore()
     }
     if (win >= 0) sparkle(x, s.cx + (win ? 1 : -1) * (pw / 2 + gap / 2), s.cy - ph / 2, s.lt, vt + 0.1, { n: 12, R: 240, seed: 52 })

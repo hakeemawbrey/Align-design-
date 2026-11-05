@@ -22,7 +22,8 @@ const person1 = {
     const P = who(p, { col: p.col }), sc = Math.min(1.9, s.h / 470) * (p.scale || 1)
     const py = s.cy + 190 * sc
     personAt(x, P, s.cx, py, sc, s, 1)
-    if (p.bubble) bubbleOver(x, p, p.bubble, s.cx + (p.bubbleX || 0), py - 360 * sc - (P.sign ? 70 * sc : 0), s, 0.35, { think: !!p.think })
+    const bt = p.bubble || (typeof p.think === 'string' ? p.think : null)
+    if (bt) bubbleOver(x, p, bt, s.cx + (p.bubbleX || 0), py - 360 * sc - (P.sign ? 70 * sc : 0), s, 0.35, { think: !!p.think })
     if (p.label) label(x, p.label, s.cx, py + 50, { size: 40, weight: 800, color: color(p.labelCol, GOLD) })
     if (p.heart) heart(x, s.cx + 120 * sc, py - 300 * sc, 34 * pop01(s.lt, 0.6), PINK)
   },
@@ -73,6 +74,7 @@ const duo = {
       }
     }
     const btop = headY - (A.sign || B.sign ? 200 : 130) * sc
+    for (const q of [p.a, p.b]) if (q && !q.bubble && typeof q.think === 'string') q.bubble = q.think
     if (p.a?.bubble) bubbleOver(x, p.a, p.a.bubble, Math.max(s.cx - s.w / 2 + 200, ax + 40), btop, s, p.a.at ?? 0.25, { think: !!p.a.think, side: 'l', maxW: 360, size: 44 })
     if (p.b?.bubble) bubbleOver(x, p.b, p.b.bubble, Math.min(s.cx + s.w / 2 - 200, bx - 40), btop - (p.a?.bubble ? 150 : 0), s, p.b.at ?? (p.a?.bubble ? 0.9 : 0.25), { think: !!p.b.think, side: 'r', maxW: 360, size: 44 })
     if (p.a?.label) label(x, p.a.label, ax, py + 50, { size: 46, weight: 800, color: A.col })
@@ -222,8 +224,8 @@ const bubbles = {
       const at = stagger(i, items.length, s.dur, 0.08, p.spread ?? 0.6)
       const k = pop01(s.lt, at, 0.34, 2.3)
       if (k <= 0) return
-      const cols = 3, row = Math.floor(i / cols), col = i % cols
-      const px = p.stack ? s.cx + (i % 2 ? 110 : -110) : s.cx + (col - 1) * s.w * 0.31 + (r() - 0.5) * 60
+      const long = items.some(t => t.length > 9), cols = long ? 1 : 3, row = Math.floor(i / cols), col = i % cols
+      const px = p.stack || long ? s.cx + (i % 2 ? 110 : -110) : s.cx + (col - 1) * s.w * 0.31 + (r() - 0.5) * 60
       const rowsN = Math.ceil(items.length / cols)
       const py = p.stack ? s.cy - s.h * 0.4 + i * (s.h * 0.8 / Math.max(1, items.length - 1 || 1)) : s.cy + (row - (rowsN - 1) / 2) * Math.min(220, s.h / rowsN) + (r() - 0.5) * 40
       const fl = p.float ? -Math.max(0, s.lt - at) * 60 : Math.sin(s.t * 1.5 + i) * 8
@@ -336,7 +338,7 @@ const talkcard = {
       p.answers.slice(0, 2).forEach((a, i) => {
         const k = pop01(s.lt, at, 0.4, 2.2)
         x.save(); x.translate(s.cx + (i ? 1 : -1) * w * 0.36, cy + h / 2 + 90); x.rotate((i ? 1 : -1) * 0.05); x.scale(k, k)
-        bubble(x, a, 0, 0, { size: 34, maxW: w * 0.62, col: i ? PINK : BLUE })
+        bubble(x, a, 0, 0, { size: 44, maxW: w * 0.7, col: i ? PINK : BLUE })
         x.restore()
       })
     }
