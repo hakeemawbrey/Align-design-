@@ -81,7 +81,7 @@ export function fridge(x, t, X = 40, top = 600, w = 300, floorY = 1420, { note =
   const M = [[X + 40, top + 40, PINK], [X + 110, top + 70, GOLD], [X + 60, top + 320, MINT], [X + 170, top + 520, SKYB]]
   for (const [mx, my, c] of M) { R(x, INK, mx - 4, my - 4, 36, 36); R(x, c, mx, my, 28, 28) }
   if (note && noteK > 0.01) {
-    x.save(); x.translate(X + w / 2 - 10, top + 420); x.rotate(-0.05); x.scale(noteK, noteK)
+    x.save(); x.translate(X + w / 2 + 40, top + 420); x.rotate(-0.05); x.scale(noteK, noteK)
     box(x, -110, -80, 220, 160, '#fff1a6', { b: 5 })
     const L = note.split('|')
     L.forEach((l, i) => ink(x, l, 0, (i - (L.length - 1) / 2) * 34, { size: 26, font: INTER, weight: 800 }))
