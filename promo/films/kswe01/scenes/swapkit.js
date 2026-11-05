@@ -323,7 +323,7 @@ export function room(x, t, kind, { dark = 0, warm = 0, snow = 0, lamps = true } 
     for (let i = 0; i < 6; i++) {
       const bx = i * 200 - 40, bh = 520 + (i * 137 % 260)
       box(x, bx, 1180 - bh, 190, bh, i % 2 ? '#2a2246' : '#231c3c', { b: 5 })
-      for (let j = 0; j < 6; j++) for (let k = 0; k < 2; k++) { const on = ((i * 7 + j * 3 + k) % 4) !== 0; R(x, on ? '#ffd98a' : '#3a3260', bx + 30 + k * 80, 1180 - bh + 40 + j * 80, 46, 46) }
+      for (let j = 0; j < 6; j++) for (let k = 0; k < 2; k++) { const on = ((i * 7 + j * 3 + k) % 3) === 0; R(x, on ? '#e8c47a' : '#332c58', bx + 30 + k * 80, 1180 - bh + 40 + j * 80, 46, 46) }
     }
     R(x, INK, 0, 1180, 1080, 14); R(x, '#3a3456', 0, 1194, 1080, 726)
     for (let i = 0; i < 8; i++) R(x, '#2c2848', i * 150, 1194, 6, 726)
