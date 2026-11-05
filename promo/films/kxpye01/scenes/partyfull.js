@@ -30,7 +30,7 @@ import { GRAIN_H, easeOutBack } from '../../wheel.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { drawRoom, hatCells, scarfCells, starFrame, inSprite, tearsCells, tissues, cookie, plate, mug, mic, giftBox, clock } from '../../npye01/scenes/kit.js'
 import { drawGag, bubble, label, R, box, drawBits, HEART } from '../../kxrke01/scenes/rankfull.js'
-import { slamTitle, slamTitleCues, whipZoom, whipZoomCues, chapter, chapterCues, drawRich, loopBack, loopCues } from '../../hookkit.js'
+import { slamTitle, slamTitleCues, whipZoom, whipZoomCues, chapter, chapterCues, drawRich, loopBack, loopCues, frozen } from '../../hookkit.js'
 
 export const GOLD = '#f2c75c', BONE = '#efe6d6', PINK = '#ff8fb1', INK = '#1b1236', RED = '#e8344e', MINT = '#9fe6b0', SKYB = '#8fd3ff', LAV = '#c9a6ff'
 export const BUG_PINK = '#ff7eb6'
@@ -196,14 +196,14 @@ export function makeParty(cfg) {
       return F
     }
     const crewHatCols = [MINT, GOLD, SKYB, PINK, LAV, '#ff9a5a']
-    function crowd(t, exclude, react) {
+    function crowd(t, exclude, react, stare = 0) {
       const others = SIGN_IDS.filter(s => !exclude.includes(s))
       others.forEach((s, i) => {
         const [X, Y] = CREW[i % CREW.length], c = signStar(s)
         const per = 1.3 + (i % 4) * 0.25, ph = i * 0.41
         const hops = react && t > react ? [react + i * 0.05, react + 0.5 + i * 0.05] : [Math.floor((t + ph) / per) * per - ph]
         shadow(X, Y + 50, 90, 0.25)
-        star(t, { x: X + Math.sin(t * 0.7 + i) * 10, y: Y, s: 104, color: c.color, mood: react && t > react ? 'happy' : ['happy', 'neutral', 'wink', 'happy', 'squint'][i % 5], seed: 40 + i, glow: 0.5, hatCol: crewHatCols[i % 6], hops, look: [Math.sin(t * 0.5 + i) > 0 ? 0.6 : -0.6, 0] })
+        star(t, { x: X + Math.sin(t * 0.7 + i) * 10, y: Y, s: 104, color: c.color, mood: t < stare ? 'wide' : react && t > react ? 'happy' : ['happy', 'neutral', 'wink', 'happy', 'squint'][i % 5], seed: 40 + i, glow: 0.5, hatCol: crewHatCols[i % 6], hops, look: t < stare ? [X < 540 ? 1 : -1, -0.2] : [Math.sin(t * 0.5 + i) > 0 ? 0.6 : -0.6, 0] })
       })
     }
     function pisCorner(t, k = 1, tears = 2) {
@@ -252,7 +252,7 @@ export function makeParty(cfg) {
       const X = g.side === 'l' ? 210 : 870, Y = 1010, s = g.s || 200
       const col = g.sign ? signStar(g.sign).color : g.color
       shadow(X, Y + s * 0.5, s * 0.8 * k)
-      star(t, { x: X, y: Y, s, color: col, glyph: g.sign ? signStar(g.sign).glyph : null, mood: lt >= 3 && g.mood2 ? g.mood2 : (g.mood || 'happy'), look: [g.side === 'l' ? 1 : -1, 0], seed: 9, pop: k, hops: [t - lt + show, t - lt + 3.05], hatCol: g.hat === false ? undefined : LAV, hat: g.hat !== false, dress: g.dress, sw: g.sw, tears: g.sign === 'pisces' ? 3 : 0 })
+      star(t, { x: X, y: Y, s, color: col, glyph: g.sign ? signStar(g.sign).glyph : null, mood: lt >= 3 && g.mood2 ? g.mood2 : (g.mood || 'happy'), look: [g.side === 'l' ? 1 : -1, 0], seed: 9, pop: k, hops: [t - lt + show, t - lt + 3.05], hatCol: g.hat === false ? undefined : LAV, hat: g.hat !== false, dress: g.dress, sw: g.sw, tears: g.sign === 'pisces' ? 3 : (g.tears || 0) })
       return { X, Y, s, k }
     }
     function propAt(t, g, lt, t0) {
@@ -269,13 +269,14 @@ export function makeParty(cfg) {
       const G = guest(t, m, lt)
       propAt(t, m.prop, lt, m.t0)
       if (m.prop2) propAt(t, { from: 3.0, ...m.prop2 }, lt, m.t0)
-      // bubbles
+      // bubbles: say (hero unless sayBy: 'guest'), say2 (the guest if there is one, unless say2By: 'hero')
+      const spk = by => by === 'guest' && G ? { x: clamp(G.X, 300, 780), who: m.guest.name, col: m.guest.sign ? signStar(m.guest.sign).color : m.guest.color, bg: '#ffe1ea' } : { x: clamp(H.X, 300, 780), who: m.name, col: m.color, bg: BONE }
       const b1 = pop01(lt, 0.45, 0.25, 2.4) * (1 - ease.inQuad(prog(lt, (m.say2 ? 3.0 : ML - 0.4), (m.say2 ? 3.2 : ML - 0.25))))
-      if (m.say) bubble(x, clamp(H.X, 300, 780), 760, m.say, b1, { size: 40, who: m.name, whoCol: m.color })
+      if (m.say) { const S1 = spk(m.sayBy || 'hero'); bubble(x, S1.x, 760, m.say, b1, { size: 40, who: m.who1 || S1.who, whoCol: S1.col, col: S1.bg }) }
       if (m.say2) {
         const b2 = pop01(lt, 3.2, 0.25, 2.4) * (1 - ease.inQuad(prog(lt, ML - 0.4, ML - 0.25)))
-        const gx = G ? G.X : clamp(H.X, 300, 780)
-        bubble(x, clamp(gx, 300, 780), G ? 760 : 760, m.say2, b2, { size: 40, who: m.who2 || (G ? m.guest.name : m.name), whoCol: G ? (m.guest.sign ? signStar(m.guest.sign).color : m.guest.color) : m.color, col: G ? '#ffe1ea' : BONE })
+        const S2 = spk(m.say2By || (G ? 'guest' : 'hero'))
+        bubble(x, S2.x, 760, m.say2, b2, { size: 40, who: m.who2 || S2.who, whoCol: S2.col, col: S2.bg })
       }
       if (m.confetti) confetti(t, m.t0 + 3.0, 540, 700)
       if (m.hearts) hearts(t, m.t0 + 3.1, H.X, H.Y - 120)
@@ -354,11 +355,11 @@ export function makeParty(cfg) {
         if (room.wallSign) partyProp(x, t, { kind: 'sign', text: room.wallSign, w: room.wallW || 300, size: room.wallSize || 40, col: room.wallCol || PINK }, 830, 640, 0.9, 0)
         if (room.decor) room.decor(x, t)
         if (t < M0) {
-          crowd(t, ['pisces', cfg.hook.sign], cfg.hook.react)
+          crowd(t, ['pisces', cfg.hook.sign, ...(cfg.hook.guest?.sign ? [cfg.hook.guest.sign] : [])], cfg.hook.react, cfg.hook.stare || 0)
           pisCorner(t, 1, cfg.hook.sign === 'pisces' ? 0 : 3)
           const H = hero(t, { ...cfg.hook, ...signStar(cfg.hook.sign), i: 0 }, t, false)
-          propAt(t, cfg.hook.prop, t, 0)
-          if (cfg.hook.guest) guest(t, { guest: cfg.hook.guest }, t)
+          if (cfg.hook.prop) propAt(t, { ...cfg.hook.prop, from: -0.4 }, t, 0)          // already landed on frame 0
+          if (cfg.hook.guest) guest(t, { guest: { ...cfg.hook.guest, from: -0.4 } }, t)
           if (cfg.hook.say) bubble(x, clamp(H.X, 300, 780), 760, cfg.hook.say, pop01(t, cfg.hook.sayAt ?? 1.1, 0.25, 2.4) * (1 - ease.inQuad(prog(t, 3.6, 3.85))), { size: 40, who: cfg.hook.sign.toUpperCase(), whoCol: signStar(cfg.hook.sign).color })
           if (cfg.hook.draw) cfg.hook.draw(x, t)
         } else if (m) {
@@ -402,7 +403,7 @@ export function makeParty(cfg) {
     ...(cfg.loop ? loopCues({ duration: DURATION }) : []),
     ...(cfg.extraCues || []),
   ]
-  const SCENES = [build, whipZoom(WHIP), slamTitle(HOOK), ...CHAPS.map(c => chapter(c)), ...(cfg.scenes || [])]
+  const SCENES = [cfg.freeze ? frozen(build, cfg.freeze) : build, whipZoom(WHIP), slamTitle(HOOK), ...CHAPS.map(c => chapter(c)), ...(cfg.scenes || [])]
   if (cfg.loop) SCENES.push(loopBack([build, slamTitle(HOOK)], { duration: DURATION }))
   return { DURATION, SCENES, CUES, T, HOOK }
 }
