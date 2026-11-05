@@ -108,5 +108,45 @@
   "series": "normal",
   "episode": 11,
   "caption": "Scared to say \"I love you\" first? That fear just means it matters.\nSay it with no deadline on theirs. Going first is brave, not needy."
+ },
+ "kine12": {
+  "video": "/_blob/075d99216c94334c5ef628dd2cc35033",
+  "poster": "/_blob/771d5066151ac5ecabc20fe8cffd5a95",
+  "title": "I give great advice. I never take it.",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 12,
+  "caption": "Great at advice for everyone else, terrible at taking your own? It's easier to see clearly from the outside.\nNext time, ask yourself what you'd tell your best friend."
+ },
+ "kine13": {
+  "video": "/_blob/6dc58f424457d7262b622041ead63910",
+  "poster": "/_blob/df133247ca568fe63c56b07f14d2d1c6",
+  "title": "Dreading the \"what are we\" talk",
+  "len": 19,
+  "long": false,
+  "series": "normal",
+  "episode": 13,
+  "caption": "Six months in, no label, and dreading the talk. Wanting to know where you stand is fair.\nAsk with curiosity, not a deadline, and really listen to the answer."
+ },
+ "kine14": {
+  "video": "/_blob/177b31a377f90e0cfb586ba4098df962",
+  "poster": "/_blob/1916f25e367e8e2209c546c5959e3acd",
+  "title": "Left on read and my whole day's ruined",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 14,
+  "caption": "Left on read and suddenly the whole day feels ruined? Your brain fills silence with the worst story.\nPut the phone down and do the next thing. Silence is a blank, not a verdict."
+ },
+ "kine15": {
+  "video": "/_blob/546d12c4e8e5c6c575d797bdc4ef2ffd",
+  "poster": "/_blob/df098578dd10272223b7284d42fa7c6e",
+  "title": "Single at the holiday dinner",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 15,
+  "caption": "Single at the holiday table again, and here comes the question. You're allowed a ready, kind answer.\n\"Just me, and I'm good. How's your garden?\" Save this for the next family dinner."
  }
 }
