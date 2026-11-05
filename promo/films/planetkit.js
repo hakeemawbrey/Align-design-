@@ -233,10 +233,10 @@ function heartPath(c, x, y, r) {
 }
 function drawBrows(c, ex, ey, er, mood, side, { thick = 0.32, lift = 0, color = INK } = {}) {
   let tilt = 0, dy = -er * 1.65 - lift * er
-  if (mood === 'angry') { tilt = 0.42; dy += er * 0.25 }
-  else if (mood === 'sad' || mood === 'cry') { tilt = -0.38 }
+  if (mood === 'angry') { tilt = -0.42; dy += er * 0.25 }
+  else if (mood === 'sad' || mood === 'cry') { tilt = 0.38 }
   else if (mood === 'wide') { dy -= er * 0.45 }
-  else if (mood === 'sly') { tilt = side > 0 ? -0.25 : 0.2 }
+  else if (mood === 'sly') { tilt = side > 0 ? 0.25 : -0.2 }
   else if (mood === 'proud') { dy -= er * 0.3; tilt = -0.15 }
   c.save(); c.translate(ex, ey + dy); c.rotate(side * tilt)
   c.strokeStyle = color; c.lineWidth = er * thick; c.lineCap = 'round'
@@ -338,8 +338,8 @@ const BODY = {
     }
     ball(c, '#ffb431', '#fff1a8', '#f06a12')
     // surface swirls
-    c.strokeStyle = 'rgba(255,240,170,0.55)'; c.lineWidth = 0.05; c.lineCap = 'round'
-    for (let k = 0; k < 4; k++) { const a = t * 0.4 + k * 1.6; c.beginPath(); c.arc(Math.cos(a) * 0.45, Math.sin(a * 1.3) * 0.4, 0.18, a, a + 2.2); c.stroke() }
+    c.strokeStyle = 'rgba(255,240,170,0.4)'; c.lineWidth = 0.045; c.lineCap = 'round'
+    for (let k = 0; k < 5; k++) { const a = t * 0.25 + k * 1.26; c.beginPath(); c.arc(0, 0, 0.84, a, a + 0.55); c.stroke() }
     outline(c)
     c.__skin = '#ffb431'
   },
