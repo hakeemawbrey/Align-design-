@@ -1,4 +1,74 @@
 {
+ "kpte01": {
+  "video": "/_blob/b0ec39cc896852ec4527e1acc5a26277",
+  "poster": "/_blob/067bdbfeb69a5ab49513f692b57f7959",
+  "title": "Cancer, you're not too much",
+  "len": 17,
+  "long": false,
+  "series": "pep",
+  "episode": 1,
+  "caption": "If you've ever said sorry for a long voice note, this one's for you. Your feelings aren't a burden, and the right people ask follow-up questions."
+ },
+ "kpte02": {
+  "video": "/_blob/e04236d55f70e1319f37ec508be9ae32",
+  "poster": "/_blob/ce52018a44842ea2d93d894d1aa42d02",
+  "title": "Virgo, about that unanswered text",
+  "len": 18,
+  "long": false,
+  "series": "pep",
+  "episode": 2,
+  "caption": "Rereading your own text for the tenth time? You said it kindly, so your part is done. One quiet phone is not a verdict on you. Go live your evening."
+ },
+ "kpte03": {
+  "video": "/_blob/dfd011d74eed211017493f3b7e88a3f1",
+  "poster": "/_blob/55f2d846db61c219c15f8d933e5de869",
+  "title": "Aries, you shot your shot",
+  "len": 17,
+  "long": false,
+  "series": "pep",
+  "episode": 3,
+  "caption": "They said no, and it stings. A no is information, not a judgement on who you are. Asking was brave, and brave is the win. Send this to the friend who just asked."
+ },
+ "kpte04": {
+  "video": "/_blob/cf058d7356f46d1d7cefdcb19b60be65",
+  "poster": "/_blob/44bed8a9ae895d766e508561d53c14c4",
+  "title": "Taurus, step away from the old photos",
+  "len": 18,
+  "long": false,
+  "series": "pep",
+  "episode": 4,
+  "caption": "2 a.m., the old album, the ache. Missing them doesn't mean you should go back. It means it mattered, and that's allowed. Now water, sleep, and breakfast tomorrow."
+ },
+ "kpte05": {
+  "video": "/_blob/f6214064ff294ce45c946f73559a4c12",
+  "poster": "/_blob/12a62ea23c626b6882734c40802e3f1d",
+  "title": "Gemini, close some tabs",
+  "len": 17,
+  "long": false,
+  "series": "pep",
+  "episode": 5,
+  "caption": "First-date nerves the night before? You don't need a script. Curiosity is your best outfit, so bring one real question and let the rest of the tabs close."
+ },
+ "kpte06": {
+  "video": "/_blob/441bc1451ec9ca6a38e90e6a48eb1456",
+  "poster": "/_blob/44fe5f3c4e09eee8eb2a23adda1d5d05",
+  "title": "Leo, you shine with no applause",
+  "len": 17,
+  "long": false,
+  "series": "pep",
+  "episode": 6,
+  "caption": "Feeling invisible to your crush hurts. You don't have to perform to matter, and the right person notices the quiet you too. Notice yourself first."
+ },
+ "kpte07": {
+  "video": "/_blob/e7a6b47fdab32acb991d619306573c31",
+  "poster": "/_blob/8f69af2d9fb6bf41273e0c8fc192723f",
+  "title": "Libra, a kind no is allowed",
+  "len": 18,
+  "long": false,
+  "series": "pep",
+  "episode": 7,
+  "caption": "Saying yes to a date you don't want helps no one. 'No, thank you' is a full sentence, and kind and honest fit in one text. Save this for the next invite."
+ },
  "kpte08": {
   "video": "/_blob/6c25309031e5635ed41912e0383444ef",
   "poster": "/_blob/6b93812f18537ac908a7f7b00004e018",
@@ -78,5 +148,15 @@
   "series": "pep",
   "episode": 15,
   "caption": "Stuck on 'we'll see'? That isn't an answer. Ask once, clearly, then believe what they tell you. You're allowed to want something sure."
+ },
+ "kpte16": {
+  "video": "/_blob/cd52384f32a3002c14fa3bdcd1314260",
+  "poster": "/_blob/30dc77adc93b87ec50073e423d6ce04b",
+  "title": "The full pep talk: the 2 a.m. breakup call",
+  "len": 73,
+  "long": true,
+  "series": "pep",
+  "episode": 16,
+  "caption": "The 2 a.m. call after a breakup, start to finish. Breaking up isn't failing; it's two people being honest. Stay for the last line, and send it to whoever needs it tonight."
  }
 }
