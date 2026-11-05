@@ -21,7 +21,7 @@ const T = {
   starsIn: 9.05, l1: 9.3, l2: 12.0, boxClose: 14.9, ticket: 11.0, cross: 11.5,
   last: 15.0,
 }
-const ACH = { at: T.ach, out: [3.15, 3.3], text: 'slept *diagonally.*', y: 1300 }
+const ACH = { at: T.ach, out: [3.15, 3.3], text: 'slept *diagonally.*', y: 1520 }
 const REC = { at: T.rec, len: 1.3, caption: 'then: “so… anyone *special?*”', top: 1600 }
 
 function bedroom(x, t) {
@@ -101,7 +101,7 @@ const EP = makeNormal({
         drawStarChar(x, 880, 900, 210, t, { color: '#e9b24a', mood: 'sparkle', look: [-1, 0.3], pop: k, seed: 9, glyph: null })
         bubble(x, t, 760, 720, T.rec + 0.05, T.meter - 0.2, 'so… anyone special?', { size: 32, tail: 0.5 })
       }
-      S.pis(x, t, { x: 900, y: 1640, s: 170, pop: pop01(t, T.pisIn, 0.35, 2.2), tears: 3, mood: 'sparkle', look: [-1, -0.6], tissues: 'left', say: [T.pisIn + 0.4, T.rec, 'it’s so peaceful'], sayDx: -120, saySize: 28 })
+      S.pis(x, t, { x: 900, y: 1790, s: 150, pop: pop01(t, T.pisIn, 0.35, 2.2), tears: 3, mood: 'sparkle', look: [-1, -0.6], tissues: 'left', say: [T.pisIn + 0.4, T.rec, 'it’s so peaceful'], sayDx: -120, saySize: 28 })
       return
     }
     if (t < T.mOut[1]) {
