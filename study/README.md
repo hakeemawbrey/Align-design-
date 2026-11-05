@@ -69,7 +69,7 @@ npm test
 Options worth knowing:
 
 - `download --reels-tab` also gets reels that were never shared to the grid. It costs one extra request per reel, so it's off by default.
-- `numbers` uses **Meta's official API** instead of yt-dlp when `IG_ACCESS_TOKEN` and `IG_USER_ID` are set (the same two as `founder/` and `inspo/`). It's one request per 50 posts, and the numbers are exact. It only works if the page is a Business or Creator account.
+- `numbers` uses **Meta's official API** instead of yt-dlp when `IG_ACCESS_TOKEN` and `IG_USER_ID` are set (the same two as `founder/` and `inspo/`). It's one request per 50 posts, and the numbers are exact. It only works if the page is a Business or Creator account. Without it, yt-dlp may not get reel views (Instagram reports reel plays in a field yt-dlp doesn't read). Reels are then ranked by likes, and the report says how many reels have views.
 - `process` skips whatever it can't do (no whisper.cpp, not a Mac) and fills it in on a later run once it can.
 
 Scripted downloading isn't Meta's API and is against Instagram's terms of

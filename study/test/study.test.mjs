@@ -13,9 +13,9 @@ process.env.STUDY_HOME = path.join(TMP, 'home')
 
 const { handleOf } = await import('../src/paths.mjs')
 const { readPosts, isoDate, hashtagsOf, mergeNumbers } = await import('../src/posts.mjs')
-const { galleryArgs, parseProfile, classify } = await import('../src/download.mjs')
+const { galleryArgs, parseProfile, classify, cursorOf } = await import('../src/download.mjs')
 const { fromYtdlp, fromMeta, ytdlpArgs } = await import('../src/numbers.mjs')
-const { frameTimes, cleanTranscript, parseOcr, uniqueLines, processPost, sheetLayout } = await import('../src/process.mjs')
+const { frameTimes, cleanTranscript, parseOcr, uniqueLines, processPost, sheetLayout, makeSheet } = await import('../src/process.mjs')
 const { buildRecords, buildReport, repeatedOpeners, toCsv, median, fmt, firstSentence, captionHook, writePack } = await import('../src/report.mjs')
 
 const HAS_FFMPEG = spawnSync('ffmpeg', ['-version'], { stdio: 'ignore' }).status === 0
@@ -28,6 +28,7 @@ function meta(code, num, { type = 'post', video = false, count = 1, caption = ''
     post_date: date, date, type, post_url: `https://www.instagram.com/${type === 'reel' ? 'reel' : 'p'}/${code}/`,
     num, count, media_id: `${code}${num}`, shortcode: code, display_url: 'https://cdn/x.jpg',
     video_url: video ? 'https://cdn/x.mp4' : null, width: 1080, height: video ? 1920 : 1350, extension: video ? 'mp4' : 'jpg',
+    ...(type === 'post' && count > 1 ? { sidecar_shortcode: code } : {}),
   }
 }
 
@@ -42,7 +43,8 @@ function fixture(dir, { real = false } = {}) {
     } else writeFileSync(file, 'x')
     writeFileSync(file + '.json', JSON.stringify(m))
   }
-  put('REEL1.01.mp4', meta('REEL1', 1, { type: 'reel', video: true, caption: '3 red flags she\'s not the one 🚩\n\nComment "PROTOCOL" and I\'ll send you the guide #dating #relationships', likes: 5400, date: '2026-10-20 23:10:00', pinned: ['123'] }))
+  // count 2: gallery-dl counts the reel's music track, which isn't downloaded.
+  put('REEL1.01.mp4', meta('REEL1', 1, { type: 'reel', video: true, count: 2, caption: '3 red flags she\'s not the one 🚩\n\nComment "PROTOCOL" and I\'ll send you the guide #dating #relationships', likes: 5400, date: '2026-10-20 23:10:00', pinned: ['123'] }))
   put('CARO1.01.jpg', meta('CARO1', 1, { count: 3, caption: 'How to plan a first date she remembers. Save this for later.', likes: 900, date: '2026-10-10 14:00:00' }))
   put('CARO1.02.jpg', meta('CARO1', 2, { count: 3 }))
   put('CARO1.03.mp4', meta('CARO1', 3, { count: 3, video: true }))
@@ -105,6 +107,14 @@ test('a stopped download says why', () => {
   assert.equal(classify(4, 'AbortExtraction: HTTP redirect to login page (https://www.instagram.com/accounts/login/)'), 'login')
   assert.equal(classify(8, 'NotFoundError: Requested user could not be found'), 'missing')
   assert.equal(classify(1, 'something odd'), 'failed')
+  // Info lines and file names don't count: a cookie note isn't a login problem, a shortcode with 404 isn't a missing user.
+  const noisy = '[cookies][info] Extracted 41 cookies from chrome\n[download][error] Failed to download DAb404xQ.01.jpg\n'
+  assert.equal(classify(4, noisy), 'failed')
+  assert.equal(classify(4, '[cookies][info] Extracted 41 cookies from chrome\n[instagram][error] HttpError: \'429 Too Many Requests\''), 'slowDown')
+  assert.equal(cursorOf("[instagram][info] Use '-o cursor=QVFE_abc-12' to continue downloading from the current position"), 'QVFE_abc-12')
+  assert.equal(cursorOf('nothing'), null)
+  assert.match(galleryArgs('x', '/d', { cursor: 'QVFE' }).join(' '), /-o cursor=QVFE/)
+  assert.match(galleryArgs('x', '/d', {}).join(' '), /--sleep-request 8-16/)
 })
 
 test('numbers from yt-dlp and from Meta', () => {
@@ -123,6 +133,20 @@ test('stills lean on the hook', () => {
   assert.equal(frameTimes(100).length, 6)
   assert.deepEqual(sheetLayout('reel', 6), { cols: 3, w: 240 })
   assert.deepEqual(sheetLayout('carousel', 8), { cols: 5, w: 360 })
+})
+
+test('a sheet keeps every slide even when slides differ in size', { skip: !HAS_FFMPEG && 'ffmpeg not installed' }, async () => {
+  const dir = path.join(TMP, 'mixed'); mkdirSync(dir, { recursive: true })
+  const sizes = ['720x900', '720x1280', '540x900']
+  const colors = ['red', 'blue', 'green']
+  sizes.forEach((sz, i) => spawnSync('ffmpeg', ['-v', 'error', '-y', '-f', 'lavfi', '-i', `color=c=${colors[i]}:size=${sz}`, '-frames:v', '1', path.join(dir, `0${i + 1}.jpg`)]))
+  const out = path.join(dir, 'sheet.jpg')
+  assert.ok(await makeSheet(dir, 3, out, { cols: 3, w: 120 }))
+  // Sample the middle of each cell: none may be white.
+  for (const x of [66, 192, 318]) {
+    const px = spawnSync('ffmpeg', ['-v', 'error', '-i', out, '-vf', `crop=2:2:${x}:70`, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], { encoding: 'buffer' }).stdout
+    assert.ok(px.length === 12 && Math.min(...px) < 200, `cell at x=${x} is blank: ${[...px]}`)
+  }
 })
 
 test('transcripts drop music tags and keep timings', () => {
@@ -221,6 +245,7 @@ for (const f of process.argv.slice(2)) console.log(JSON.stringify({ file: f, lin
   for (const p of readPosts(mdir)) await processPost(p, mdir, wdir, t)
   const reel = JSON.parse(readFileSync(path.join(wdir, 'REEL1.json'), 'utf8'))
   assert.equal(reel.duration, 9)
+  assert.equal(reel.type, 'reel')   // not a carousel, despite count 2
   assert.deepEqual(reel.frames.map((f) => f.t), [0.2, 1.2, 2.5, 3.6, 5.9, 8.1])
   assert.ok(existsSync(path.join(wdir, 'REEL1', 'sheet.jpg')))
   assert.equal(reel.transcript.text, 'Three red flags she is not the one. Number one, she never asks about you.')

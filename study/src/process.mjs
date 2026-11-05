@@ -133,14 +133,22 @@ async function still(input, t, out) {
   return r.code === 0 && existsSync(out)
 }
 
-/** Stills named 01.jpg, 02.jpg… in `dir` → one tiled sheet. */
+/**
+ * Stills named 01.jpg, 02.jpg… in `dir` → one tiled sheet. Each still is
+ * fitted into the same w×h cell first: if sizes change mid-sequence, ffmpeg
+ * rebuilds its filters and the tile loses the cells before the change.
+ */
 export async function makeSheet(dir, n, out, { cols, w }) {
   const first = await probe(path.join(dir, '01.jpg'))
   const h = Math.round((w * (first.height || 16)) / (first.width || 9) / 2) * 2
+  const cells = ensureDir(path.join(dir, '_cells'))
+  for (let i = 1; i <= n; i++) {
+    const name = `${String(i).padStart(2, '0')}.jpg`
+    await ff(['-i', path.join(dir, name), '-vf', `scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=white`, '-q:v', '3', path.join(cells, name)])
+  }
   const rows = Math.ceil(n / cols)
-  const r = await ff(['-start_number', '1', '-i', path.join(dir, '%02d.jpg'), '-vf',
-    `scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=white,tile=${cols}x${rows}:padding=6:margin=6:color=white`,
-    '-frames:v', '1', '-q:v', '5', out])
+  const r = await ff(['-start_number', '1', '-i', path.join(cells, '%02d.jpg'), '-vf', `tile=${cols}x${rows}:padding=6:margin=6:color=white`, '-frames:v', '1', '-q:v', '5', out])
+  rmSync(cells, { recursive: true, force: true })
   return r.code === 0 && existsSync(out)
 }
 

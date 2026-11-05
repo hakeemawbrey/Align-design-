@@ -59,7 +59,8 @@ export function readPosts(dir) {
         coauthors: (meta.coauthors ?? []).map((c) => c?.username).filter(Boolean),
         likes: Number.isFinite(meta.likes) && meta.likes > 0 ? meta.likes : null,
         location: meta.location_name || null,
-        count: meta.count ?? null,
+        // gallery-dl's "count" also counts a reel's music, so only sidecar_shortcode marks a carousel.
+        sidecar: Boolean(meta.sidecar_shortcode),
         files: [],
       }
       byCode.set(code, post)
@@ -69,8 +70,8 @@ export function readPosts(dir) {
   const posts = [...byCode.values()]
   for (const p of posts) {
     p.files.sort((a, b) => a.num - b.num)
-    p.type = p.files.length > 1 || (p.count ?? 1) > 1 ? 'carousel' : p.files[0].kind === 'video' ? 'reel' : 'photo'
-    delete p.count
+    p.type = p.files.length > 1 || p.sidecar ? 'carousel' : p.files[0].kind === 'video' ? 'reel' : 'photo'
+    delete p.sidecar
   }
   return posts.sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
 }

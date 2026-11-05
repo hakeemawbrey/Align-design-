@@ -58,7 +58,11 @@ if [ "$1" = "send" ]; then
   fi
   [ -d "$DATA_DIR/.git" ] || git clone -q "https://github.com/$LOGIN/$DATA_REPO.git" "$DATA_DIR" 2>/dev/null || { say "Couldn't download $LOGIN/$DATA_REPO."; pause_close; exit 1; }
   cd "$DATA_DIR" || exit 1
-  git ls-remote --exit-code origin main >/dev/null 2>&1 && git pull --rebase -q origin main
+  if git ls-remote --exit-code origin main >/dev/null 2>&1 && ! git pull --rebase -q origin main; then
+    git rebase --abort >/dev/null 2>&1
+    say "Your private repo has changes this Mac doesn't, and they clash. Delete the folder $DATA_DIR and double-click \"Send Study to Claude\" again."
+    pause_close; exit 1
+  fi
   mkdir -p "$HANDLE" && rsync -a --delete "$PACK/" "$HANDLE/"
   git add -A "$HANDLE"
   if git diff --cached --quiet; then
@@ -80,6 +84,7 @@ fi
 # ---------- Study a page ----------
 ask_handle "$1"
 say "Align Study: @$HANDLE"
+caffeinate -i -w $$ &   # keep the Mac awake until this window closes
 git -C "$REPO_DIR" pull --ff-only --autostash -q 2>/dev/null && note "Up to date." || note "Couldn't check for updates; carrying on."
 note "Updating the downloaders (Instagram changes often)..."
 brew upgrade gallery-dl yt-dlp >/dev/null 2>&1 || true
@@ -104,7 +109,7 @@ login_until_ok() {
     case $? in
       0) break ;;
       75) [ $waits -ge 6 ] && { say "Instagram is still saying slow down. Try again in a few hours."; pause_close; exit 1; }
-          waits=$((waits + 1)); say "Instagram wants a break. Waiting 30 minutes, then trying again."; caffeinate -i sleep 1800 ;;
+          waits=$((waits + 1)); say "Instagram wants a break. Waiting 30 minutes, then trying again."; sleep 1800 ;;
       77) say "Log into Instagram in $(app_for "$BROWSER"), then come back here and press Enter."
           [ "$BROWSER" = "safari" ] && note "Safari also needs: System Settings > Privacy & Security > Full Disk Access > turn on Terminal."
           open -a "$(app_for "$BROWSER")" "https://www.instagram.com/accounts/login/"
@@ -119,15 +124,15 @@ login_until_ok
 
 # Run a step; when Instagram asks for a break (exit 75), wait 30 minutes and carry on.
 patiently() {
-  local waits=0 code
+  local waits=0 logins=0 code
   while true; do
-    caffeinate -i "$@"; code=$?
+    "$@"; code=$?
     if [ $code -eq 75 ] && [ $waits -lt 24 ]; then
       waits=$((waits + 1))
       say "Instagram wants a break. Waiting 30 minutes, then carrying on by itself (round $waits). Progress is kept."
-      caffeinate -i sleep 1800; continue
+      sleep 1800; continue
     fi
-    if [ $code -eq 77 ]; then login_until_ok; continue; fi
+    if [ $code -eq 77 ] && [ $logins -lt 3 ]; then logins=$((logins + 1)); login_until_ok; continue; fi
     return $code
   done
 }
@@ -141,7 +146,7 @@ if [ -z "$STUDY_SKIP_NUMBERS" ]; then
 fi
 
 say "3/4  Working out what's in each post on this Mac: what's said, what's on screen, stills"
-caffeinate -i node src/process.mjs "$HANDLE" || { say "Something went wrong working through the posts (see above)."; pause_close; exit 1; }
+node src/process.mjs "$HANDLE" || { say "Something went wrong working through the posts (see above)."; pause_close; exit 1; }
 
 say "4/4  Packing it up"
 node src/report.mjs "$HANDLE" || { pause_close; exit 1; }

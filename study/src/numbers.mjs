@@ -79,8 +79,11 @@ async function main() {
 
   const o = { cookiesFromBrowser: flag(argv, 'cookies-from-browser'), cookies: flag(argv, 'cookies') }
   const pause = Number(flag(argv, 'sleep') ?? 3) * 1000
-  const todo = posts.filter((p) => !numbers[p.shortcode])
-  if (!todo.length) { console.log(`All ${posts.length} posts have numbers.`); process.exit(EXIT.ok) }
+  // A post that failed twice (deleted, restricted) stops being asked for, so it can't block the rest.
+  const done = (n) => n && n.from
+  const todo = posts.filter((p) => !done(numbers[p.shortcode]) && (numbers[p.shortcode]?.failed ?? 0) < 2)
+    .sort((a, b) => (numbers[a.shortcode]?.failed ?? 0) - (numbers[b.shortcode]?.failed ?? 0))
+  if (!todo.length) { console.log(`Numbers for ${posts.filter((p) => done(numbers[p.shortcode])).length} of ${posts.length} posts; nothing left to try.`); process.exit(EXIT.ok) }
   console.log(`${posts.length - todo.length} of ${posts.length} posts already have numbers. Reading ${todo.length} more with yt-dlp.`)
   let streak = 0, ok = 0
   for (const [i, p] of todo.entries()) {
@@ -92,6 +95,7 @@ async function main() {
       numbers[p.shortcode] = n; ok++; streak = 0
       console.log(`  [${i + 1}/${todo.length}] ${p.shortcode}  ${n.views ?? '–'} views · ${n.likes ?? '–'} likes · ${n.comments ?? '–'} comments`)
     } else {
+      numbers[p.shortcode] = { failed: (numbers[p.shortcode]?.failed ?? 0) + 1, at: new Date().toISOString() }
       streak++
       console.log(`  [${i + 1}/${todo.length}] ${p.shortcode}  ✗ ${r.err.trim().split('\n').pop() || 'no numbers'}`)
       if (streak >= STREAK) {
@@ -104,7 +108,7 @@ async function main() {
     if (pause && i < todo.length - 1) await sleep(pause)
   }
   writeJson(file, numbers)
-  console.log(`Done: numbers for ${Object.keys(numbers).length} of ${posts.length} posts.`)
+  console.log(`Done: numbers for ${Object.values(numbers).filter(done).length} of ${posts.length} posts.`)
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main()

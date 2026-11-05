@@ -13,7 +13,7 @@
 // the Mac button waits 30 minutes and does it for you) · 77 not logged in ·
 // 1 anything else.
 import { spawn } from 'node:child_process'
-import { readdirSync } from 'node:fs'
+import { readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ensureDir, flag, handlesFromArgs, mediaDir, writeJson } from './paths.mjs'
@@ -28,7 +28,8 @@ function cookieArgs(o) {
 
 /** gallery-dl arguments for a whole profile. */
 export function galleryArgs(handle, dir, o = {}) {
-  const sleep = o.sleep ?? 4
+  // Slower than gallery-dl's own Instagram default (6-12s between requests).
+  const sleep = o.sleep ?? 8
   const args = [
     '--sleep-request', `${sleep}-${sleep * 2}`, '--sleep', '0.5-1.5',
     '--download-archive', path.join(dir, '_archive.sqlite3'),
@@ -37,6 +38,7 @@ export function galleryArgs(handle, dir, o = {}) {
     '-o', `include=${o.reelsTab ? 'posts,reels' : 'posts'}`,
   ]
   if (Number.isFinite(o.limit)) args.push('-o', `max-posts=${o.limit}`)
+  if (o.cursor && !o.check) args.push('-o', `cursor=${o.cursor}`)
   if (o.check) args.push('--simulate', '-o', 'max-posts=1')
   args.push(...cookieArgs(o), `https://www.instagram.com/${handle}/`)
   return args
@@ -56,24 +58,34 @@ export function parseProfile(stdout) {
     category: user.category_name || user.category || null,
     link: user.external_url || null,
     links: (user.bio_links ?? []).map((l) => ({ title: l.title || null, url: l.url || l.lynx_url || null })).filter((l) => l.url),
-    followers: count('follower_count', 'edge_followed_by.count'),
-    following: count('following_count', 'edge_follow.count'),
-    posts: count('media_count', 'edge_owner_to_timeline_media.count'),
+    followers: count('follower_count', 'count_followed', 'edge_followed_by.count'),
+    following: count('following_count', 'count_follow', 'edge_follow.count'),
+    posts: count('media_count', 'count_media', 'edge_owner_to_timeline_media.count'),
     verified: Boolean(user.is_verified),
     professional: Boolean(user.is_professional_account || user.is_business_account),
     private: Boolean(user.is_private),
   }
 }
 
-/** Why a gallery-dl run stopped, from its exit code and last words. */
+/**
+ * Why a gallery-dl run stopped, from its exit code and its error lines.
+ * Only "[error]"/"[warning]" lines count: info lines ("Extracted 40 cookies…")
+ * and file names (a shortcode can contain "404") would mislead.
+ */
 export function classify(code, stderr) {
   if (code === 0) return 'ok'
-  const s = String(stderr)
-  if (/429|too many requests|wait a few minutes|rate.?limit|try again later/i.test(s)) return 'slowDown'
-  if (/login page|login required|authrequired|not logged in|401|checkpoint|challenge|cookies/i.test(s)) return 'login'
+  const lines = String(stderr).split('\n').filter((l) => /\]\[(error|warning)\]|error:|exception/i.test(l))
+  const s = lines.length ? lines.join('\n') : String(stderr).split('\n').filter((l) => !/\]\[(info|debug)\]/.test(l)).slice(-3).join('\n')
+  if (/\b429\b|too many requests|wait a few minutes|rate.?limit|try again later/i.test(s)) return 'slowDown'
+  if (/login page|login required|authrequired|not logged in|\b401\b|checkpoint|challenge page/i.test(s)) return 'login'
   if (/is private|private profile|private account/i.test(s)) return 'private'
-  if (/not found|notfounderror|could not be found|404|no user|does not exist/i.test(s)) return 'missing'
+  if (/user could not be found|notfounderror|user not found|no user|does not exist/i.test(s)) return 'missing'
   return 'failed'
+}
+
+/** gallery-dl says "Use '-o cursor=…' to continue" when it stops partway. */
+export function cursorOf(stderr) {
+  return [...String(stderr).matchAll(/-o cursor=([^'"\s]+)/g)].at(-1)?.[1] ?? null
 }
 
 export function countPosts(dir) {
@@ -130,20 +142,30 @@ async function main() {
     if (profile.private) console.log('This account is private: only works if you follow it from the logged-in browser.')
   }
 
+  // Pick up the feed where the last stopped run left it, instead of paging from the top again.
+  const cursorFile = path.join(dir, '_cursor.txt')
+  try { o.cursor = readFileSync(cursorFile, 'utf8').trim() || null } catch {}
+  if (o.cursor) console.log('Carrying on from where the last run stopped.')
   const before = countPosts(dir)
   console.log(`${before} posts already here. Downloading the rest (each line is a file; "#" means already had it).`)
   const r = await run('gallery-dl', galleryArgs(handle, dir, o))
   const after = countPosts(dir)
   const why = classify(r.code, r.err)
   console.log(`\n${after} posts on disk (${after - before} new this run).`)
-  if (why === 'ok') process.exit(EXIT.ok)
+  const cursor = cursorOf(r.err)
+  if (why === 'ok') { rmSync(cursorFile, { force: true }); process.exit(EXIT.ok) }
+  if (cursor) writeFileSync(cursorFile, cursor)
   if (r.code === 127) { console.error(`${r.err}. Install it: brew install gallery-dl (or pip install -U gallery-dl).`); process.exit(EXIT.failed) }
   if (why === 'login') { console.error(LOGIN_HELP); process.exit(EXIT.login) }
   if (why === 'private') { console.error(`@${handle} is private. Follow it from the logged-in account, or ask them for their posts.`); process.exit(EXIT.failed) }
   if (why === 'missing') { console.error(`Instagram says @${handle} doesn't exist. Check the spelling.`); process.exit(EXIT.failed) }
-  // Stopped partway for any other reason: treat it as a pause, not a failure. A rerun resumes.
-  console.error('Instagram stopped answering partway. Run again later and it picks up where it left off.')
-  process.exit(EXIT.slowDown)
+  if (why === 'slowDown') {
+    console.error('Instagram asked us to slow down. Run again later and it picks up where it left off.')
+    process.exit(EXIT.slowDown)
+  }
+  // Anything else (a file or two that wouldn't download, say) isn't worth waiting on.
+  console.error(`gallery-dl finished with some errors (above). ${after ? 'Carrying on with what downloaded.' : ''}`)
+  process.exit(after ? EXIT.ok : EXIT.failed)
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main()
