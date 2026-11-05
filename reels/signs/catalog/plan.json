@@ -1,37 +1,343 @@
 {
-  "_about": "Search plan for the Signs catalogue. Each pool gets these queries on Wikimedia Commons, the Art Institute of Chicago and the Met (public domain / CC0 / CC BY / CC BY-SA only). tools/fetch_all.py runs it; tools/curate.py turns candidates into catalog/pools/<pool>.json.",
-  "pools": {
-    "letters":   ["woman reading a letter painting", "love letter painting 19th century", "girl writing a letter painting", "the letter painting oil", "reading letter by window painting"],
-    "window":    ["woman at the window painting", "figure looking out of window painting", "waiting at the window painting 19th century", "interior window light painting woman"],
-    "garden":    ["rose garden painting", "woman in garden painting impressionist", "flower garden painting 19th century", "garden at dusk painting", "lilies garden painting"],
-    "dance":     ["couple dancing painting", "the dance painting 19th century", "ballroom painting", "waltz painting", "dance at the country painting"],
-    "sunset":    ["sunset painting landscape", "golden hour painting", "sunset over the sea painting", "evening glow painting 19th century", "twilight landscape painting"],
-    "portrait-her": ["pensive woman portrait painting", "melancholy woman painting 19th century", "woman portrait looking away painting", "dreaming woman painting", "pre-raphaelite portrait woman"],
-    "portrait-him": ["young man portrait painting romantic", "pensive man portrait painting", "man portrait 19th century melancholy", "self-portrait young man painting"],
-    "couple":    ["couple embracing painting", "lovers painting 19th century", "the kiss painting", "courtship painting", "couple walking painting", "the proposal painting"],
-    "beach":     ["beach painting women walking", "seaside promenade painting", "Sorolla beach", "couple by the sea painting", "children beach painting sunlight"],
-    "flowers":   ["roses still life painting", "peonies painting", "bouquet painting 19th century", "flowers in vase painting", "violets painting"],
-    "cupid":     ["Cupid painting", "Venus painting", "Eros and Psyche painting", "Amor painting", "Venus and Adonis painting"],
-    "city-night":["city at night painting", "street lamps rain painting", "Grimshaw docks night", "Paris night painting", "lamplit street painting"],
-    "clouds":    ["clouds study painting", "Constable clouds", "sky painting clouds 19th century", "cloudy sky landscape painting"],
-    "cafe":      ["cafe painting 19th century", "woman at a cafe table painting", "tea time painting", "couple at table painting"],
-    "music":     ["woman playing piano painting", "serenade painting", "lute player painting", "musician painting 19th century", "violinist painting"],
-    "mirror":    ["woman at the mirror painting", "reflection mirror painting", "vanity mirror painting 19th century", "toilette painting"],
-    "rain":      ["rain painting umbrella", "rainy day painting", "storm painting landscape", "wet street painting"],
-    "boat":      ["couple in a boat painting", "rowing boat lake painting", "boating painting impressionist", "gondola painting Venice night"],
-    "space":     ["nebula", "galaxy hubble", "milky way", "aurora from space", "star cluster"],
-    "aries":     ["golden fleece painting", "ram painting", "Mars god painting", "Phrixus ram", "warrior painting fire"],
-    "taurus":    ["Europa and the bull painting", "bull painting", "pastoral meadow cattle painting", "Venus garden painting"],
-    "gemini":    ["Castor and Pollux painting", "twins painting", "two sisters painting", "Mercury god painting"],
-    "cancer":    ["mother and child painting", "moonlit shore painting", "crab painting", "family by the sea painting"],
-    "leo":       ["lion painting", "sun god painting", "Apollo painting", "golden sunrise painting"],
-    "virgo":     ["Astraea painting", "harvest maiden painting", "wheat field woman painting", "Ceres painting"],
-    "libra":     ["Justice allegory scales painting", "scales painting allegory", "Venus mirror painting", "harmony allegory painting"],
-    "scorpio":   ["Pluto Proserpina painting", "Orion painting", "Persephone painting", "night mystery woman painting"],
-    "sagittarius":["centaur painting", "Diana huntress painting", "archer painting", "Jupiter god painting"],
-    "capricorn": ["mountain goat painting", "Saturn god painting", "alpine mountain painting", "Pan god painting"],
-    "aquarius":  ["Ganymede painting", "water bearer painting", "woman with water jug painting", "Uranus allegory painting"],
-    "pisces":    ["mermaid painting", "Neptune painting", "fish painting still life sea", "Ophelia painting", "water nymph painting"]
-  },
-  "space_sources": ["nasa"]
+ "_about": "Search plan for the Signs catalogue. Each pool gets these queries on Wikimedia Commons, the Art Institute of Chicago and the Met (public domain / CC0 / CC BY / CC BY-SA only). tools/fetch_all.py runs it; tools/curate.py turns candidates into catalog/pools/<pool>.json. 'more' holds a second round of searches for pools that came back thin (python3 tools/fetch_all.py --more).",
+ "pools": {
+  "letters": [
+   "woman reading a letter painting",
+   "love letter painting 19th century",
+   "girl writing a letter painting",
+   "the letter painting oil",
+   "reading letter by window painting"
+  ],
+  "window": [
+   "woman at the window painting",
+   "figure looking out of window painting",
+   "waiting at the window painting 19th century",
+   "interior window light painting woman"
+  ],
+  "garden": [
+   "rose garden painting",
+   "woman in garden painting impressionist",
+   "flower garden painting 19th century",
+   "garden at dusk painting",
+   "lilies garden painting"
+  ],
+  "dance": [
+   "couple dancing painting",
+   "the dance painting 19th century",
+   "ballroom painting",
+   "waltz painting",
+   "dance at the country painting"
+  ],
+  "sunset": [
+   "sunset painting landscape",
+   "golden hour painting",
+   "sunset over the sea painting",
+   "evening glow painting 19th century",
+   "twilight landscape painting"
+  ],
+  "portrait-her": [
+   "pensive woman portrait painting",
+   "melancholy woman painting 19th century",
+   "woman portrait looking away painting",
+   "dreaming woman painting",
+   "pre-raphaelite portrait woman"
+  ],
+  "portrait-him": [
+   "young man portrait painting romantic",
+   "pensive man portrait painting",
+   "man portrait 19th century melancholy",
+   "self-portrait young man painting"
+  ],
+  "couple": [
+   "couple embracing painting",
+   "lovers painting 19th century",
+   "the kiss painting",
+   "courtship painting",
+   "couple walking painting",
+   "the proposal painting"
+  ],
+  "beach": [
+   "beach painting women walking",
+   "seaside promenade painting",
+   "Sorolla beach",
+   "couple by the sea painting",
+   "children beach painting sunlight"
+  ],
+  "flowers": [
+   "roses still life painting",
+   "peonies painting",
+   "bouquet painting 19th century",
+   "flowers in vase painting",
+   "violets painting"
+  ],
+  "cupid": [
+   "Cupid painting",
+   "Venus painting",
+   "Eros and Psyche painting",
+   "Amor painting",
+   "Venus and Adonis painting"
+  ],
+  "city-night": [
+   "city at night painting",
+   "street lamps rain painting",
+   "Grimshaw docks night",
+   "Paris night painting",
+   "lamplit street painting"
+  ],
+  "clouds": [
+   "clouds study painting",
+   "Constable clouds",
+   "sky painting clouds 19th century",
+   "cloudy sky landscape painting"
+  ],
+  "cafe": [
+   "cafe painting 19th century",
+   "woman at a cafe table painting",
+   "tea time painting",
+   "couple at table painting"
+  ],
+  "music": [
+   "woman playing piano painting",
+   "serenade painting",
+   "lute player painting",
+   "musician painting 19th century",
+   "violinist painting"
+  ],
+  "mirror": [
+   "woman at the mirror painting",
+   "reflection mirror painting",
+   "vanity mirror painting 19th century",
+   "toilette painting"
+  ],
+  "rain": [
+   "rain painting umbrella",
+   "rainy day painting",
+   "storm painting landscape",
+   "wet street painting"
+  ],
+  "boat": [
+   "couple in a boat painting",
+   "rowing boat lake painting",
+   "boating painting impressionist",
+   "gondola painting Venice night"
+  ],
+  "space": [
+   "nebula",
+   "galaxy hubble",
+   "milky way",
+   "aurora from space",
+   "star cluster"
+  ],
+  "aries": [
+   "golden fleece painting",
+   "ram painting",
+   "Mars god painting",
+   "Phrixus ram",
+   "warrior painting fire"
+  ],
+  "taurus": [
+   "Europa and the bull painting",
+   "bull painting",
+   "pastoral meadow cattle painting",
+   "Venus garden painting"
+  ],
+  "gemini": [
+   "Castor and Pollux painting",
+   "twins painting",
+   "two sisters painting",
+   "Mercury god painting"
+  ],
+  "cancer": [
+   "mother and child painting",
+   "moonlit shore painting",
+   "crab painting",
+   "family by the sea painting"
+  ],
+  "leo": [
+   "lion painting",
+   "sun god painting",
+   "Apollo painting",
+   "golden sunrise painting"
+  ],
+  "virgo": [
+   "Astraea painting",
+   "harvest maiden painting",
+   "wheat field woman painting",
+   "Ceres painting"
+  ],
+  "libra": [
+   "Justice allegory scales painting",
+   "scales painting allegory",
+   "Venus mirror painting",
+   "harmony allegory painting"
+  ],
+  "scorpio": [
+   "Pluto Proserpina painting",
+   "Orion painting",
+   "Persephone painting",
+   "night mystery woman painting"
+  ],
+  "sagittarius": [
+   "centaur painting",
+   "Diana huntress painting",
+   "archer painting",
+   "Jupiter god painting"
+  ],
+  "capricorn": [
+   "mountain goat painting",
+   "Saturn god painting",
+   "alpine mountain painting",
+   "Pan god painting"
+  ],
+  "aquarius": [
+   "Ganymede painting",
+   "water bearer painting",
+   "woman with water jug painting",
+   "Uranus allegory painting"
+  ],
+  "pisces": [
+   "mermaid painting",
+   "Neptune painting",
+   "fish painting still life sea",
+   "Ophelia painting",
+   "water nymph painting"
+  ]
+ },
+ "space_sources": [
+  "nasa"
+ ],
+ "more": {
+  "aries": [
+   "Jason golden fleece painting",
+   "Phrixus and Helle painting",
+   "Joan of Arc painting",
+   "knight on horseback painting sunset"
+  ],
+  "libra": [
+   "Justitia painting",
+   "allegory of justice painting",
+   "woman holding scales painting",
+   "harmony allegory women painting"
+  ],
+  "cupid": [
+   "Cupid and Psyche Bouguereau",
+   "Psyche painting Waterhouse",
+   "putti painting",
+   "sleeping Cupid painting"
+  ],
+  "cafe": [
+   "cafe terrace at night painting",
+   "cafe concert painting",
+   "afternoon tea painting",
+   "two women having tea painting"
+  ],
+  "gemini": [
+   "two friends painting",
+   "sisters portrait painting 19th century",
+   "Hermes painting",
+   "twin girls portrait painting"
+  ],
+  "sagittarius": [
+   "huntress painting",
+   "Bocklin centaur",
+   "Diana hunting painting",
+   "rider at sunset painting"
+  ],
+  "pisces": [
+   "Ondine painting",
+   "Hylas and the nymphs",
+   "mermaid Waterhouse",
+   "Lady of Shalott painting"
+  ],
+  "dance": [
+   "Degas dancers painting",
+   "flamenco painting",
+   "dancer painting 19th century",
+   "Renoir dance"
+  ],
+  "mirror": [
+   "girl with a mirror painting",
+   "woman looking in mirror portrait painting",
+   "hand mirror painting woman"
+  ],
+  "city-night": [
+   "Grimshaw moonlight street",
+   "nocturne city painting",
+   "Whistler nocturne",
+   "Venice night painting",
+   "lantern night street painting"
+  ],
+  "leo": [
+   "lion painting Rosa Bonheur",
+   "sunflower field painting",
+   "Apollo sun chariot painting",
+   "golden light portrait woman painting"
+  ],
+  "scorpio": [
+   "Persephone painting Rossetti",
+   "Proserpine painting",
+   "Hades painting",
+   "moonlit woman painting mysterious"
+  ],
+  "aquarius": [
+   "water carrier painting woman",
+   "woman at the well painting",
+   "Hebe painting",
+   "fountain painting woman"
+  ],
+  "letters": [
+   "Toulmouche letter painting",
+   "Metsu letter painting",
+   "woman writing at desk painting",
+   "reading in the garden painting"
+  ],
+  "flowers": [
+   "Fantin-Latour roses",
+   "Redon flowers vase",
+   "lilacs painting",
+   "Monet water lilies"
+  ],
+  "sunset": [
+   "Kuindzhi sunset",
+   "Aivazovsky sunset sea",
+   "Turner sunset painting",
+   "Church sunset painting"
+  ],
+  "beach": [
+   "Sorolla painting sea",
+   "Kroyer Skagen beach",
+   "Boudin beach painting",
+   "Monet beach Trouville"
+  ],
+  "garden": [
+   "Monet garden Giverny",
+   "Sargent Carnation Lily Lily Rose",
+   "Atkinson Grimshaw garden",
+   "woman with parasol garden painting"
+  ],
+  "portrait-her": [
+   "Sargent portrait woman",
+   "Leighton Flaming June",
+   "Waterhouse portrait",
+   "Alfred Stevens woman painting"
+  ],
+  "portrait-him": [
+   "Sargent portrait man",
+   "young man reading painting",
+   "dandy portrait painting",
+   "man in hat portrait 19th century painting"
+  ],
+  "couple": [
+   "Leighton lovers painting",
+   "Hayez The Kiss",
+   "Romeo and Juliet painting",
+   "couple under umbrella painting"
+  ],
+  "clouds": [
+   "Boudin sky painting",
+   "Turner sky painting",
+   "Ruisdael clouds",
+   "Kuindzhi clouds"
+  ]
+ }
 }

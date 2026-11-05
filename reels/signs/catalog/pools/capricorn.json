@@ -1,0 +1,225 @@
+{
+ "images": [
+  {
+   "id": "aic-45829",
+   "source": "aic",
+   "title": "Landscape with a Herdsman and Goats",
+   "creator": "Gaspard Dughet (French, 1615-1675)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/45829",
+   "url": "https://www.artic.edu/iiif/2/91f56173-2f20-70fa-c0ac-f00bed4268d0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 937,
+   "file": "aic-45829.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-76571",
+   "source": "aic",
+   "title": "View of Cotopaxi",
+   "creator": "Frederic Edwin Church (American, 1826–1900)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/76571",
+   "url": "https://www.artic.edu/iiif/2/33fc29fc-097b-576b-c9e6-c3352d9d3f15/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1119,
+   "file": "aic-76571.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-81546",
+   "source": "aic",
+   "title": "The Petite Creuse River",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81546",
+   "url": "https://www.artic.edu/iiif/2/ec1f6262-09c2-8f7e-baa9-9c0b267337ff/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1186,
+   "file": "aic-81546.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-10496",
+   "source": "met",
+   "title": "The Mountain Ford",
+   "creator": "Thomas Cole",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10496",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT216681.jpg",
+   "w": 2400,
+   "h": 1697,
+   "file": "met-10496.jpg",
+   "focus": [
+    0.62,
+    0.4
+   ],
+   "pin": true,
+   "note": "Cole, The Mountain Ford"
+  },
+  {
+   "id": "met-10151",
+   "source": "met",
+   "title": "Mountain Scene",
+   "creator": "Albert Bierstadt",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10151",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT9506.jpg",
+   "w": 2400,
+   "h": 1655,
+   "file": "met-10151.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "pin": true,
+   "note": "Bierstadt, Mountain Scene with lake"
+  },
+  {
+   "id": "wc-25242516",
+   "source": "commons",
+   "title": "Alwin Arnegger - Alpine Gebirgsszene",
+   "creator": "Alwin Arnegger",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alwin_Arnegger_-_Alpine_Gebirgsszene.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Alwin_Arnegger_-_Alpine_Gebirgsszene.jpg/1920px-Alwin_Arnegger_-_Alpine_Gebirgsszene.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Alwin_Arnegger_-_Alpine_Gebirgsszene.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1347,
+   "file": "wc-25242516.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Arnegger, alpine peaks at alpenglow"
+  },
+  {
+   "id": "wc-77763435",
+   "source": "commons",
+   "title": "Alpine Mountain Scene by Alexandre Calame",
+   "creator": "Alexandre Calame",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alpine_Mountain_Scene_by_Alexandre_Calame.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Alpine_Mountain_Scene_by_Alexandre_Calame.jpg/1920px-Alpine_Mountain_Scene_by_Alexandre_Calame.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Alpine_Mountain_Scene_by_Alexandre_Calame.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1381,
+   "file": "wc-77763435.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-65851944",
+   "source": "commons",
+   "title": "Andreas Lach (att.) - Alpine Rose on a Mountain Slope",
+   "creator": "Attributed to Andreas Lach",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Andreas_Lach_(att.)_-_Alpine_Rose_on_a_Mountain_Slope.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Andreas_Lach_%28att.%29_-_Alpine_Rose_on_a_Mountain_Slope.jpg/1920px-Andreas_Lach_%28att.%29_-_Alpine_Rose_on_a_Mountain_Slope.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Andreas_Lach_%28att.%29_-_Alpine_Rose_on_a_Mountain_Slope.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1726,
+   "h": 2400,
+   "file": "wc-65851944.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-31121449",
+   "source": "commons",
+   "title": "August Wilhelm Leu - Alpiner Berggipfel (1896)",
+   "creator": "August Wilhelm Leu",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:August_Wilhelm_Leu_-_Alpiner_Berggipfel_(1896).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/August_Wilhelm_Leu_-_Alpiner_Berggipfel_%281896%29.jpg/1920px-August_Wilhelm_Leu_-_Alpiner_Berggipfel_%281896%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/August_Wilhelm_Leu_-_Alpiner_Berggipfel_%281896%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1478,
+   "file": "wc-31121449.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "pin": true,
+   "note": "Leu, alpine summit in golden light"
+  },
+  {
+   "id": "wc-17730140",
+   "source": "commons",
+   "title": "Adolf Mosengel Dorf in den Berner Alpen",
+   "creator": "Adolf Mosengel",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Adolf_Mosengel_Dorf_in_den_Berner_Alpen.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Adolf_Mosengel_Dorf_in_den_Berner_Alpen.jpg/1920px-Adolf_Mosengel_Dorf_in_den_Berner_Alpen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Adolf_Mosengel_Dorf_in_den_Berner_Alpen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1770,
+   "h": 2400,
+   "file": "wc-17730140.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "aic-28146",
+   "source": "aic",
+   "title": "Alpine Scene",
+   "creator": "Gustave Doré (French, 1832–1883)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/28146",
+   "url": "https://www.artic.edu/iiif/2/07bdc94a-7d44-fde8-c0e1-f19fefce359d/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1261,
+   "file": "aic-28146.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-27027",
+   "source": "aic",
+   "title": "The Rock of Hautepierre",
+   "creator": "Gustave Courbet (French, 1819–1877)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/27027",
+   "url": "https://www.artic.edu/iiif/2/e0f47937-a1ee-76b4-6505-35a33119a634/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1352,
+   "file": "aic-27027.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "met-12028",
+   "source": "met",
+   "title": "Alpine Pool",
+   "creator": "John Singer Sargent",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12028",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT5585.jpg",
+   "w": 2400,
+   "h": 1722,
+   "file": "met-12028.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

@@ -11,11 +11,12 @@ plan = json.load(open(os.path.join(HERE, "catalog", "plan.json")))
 ap = argparse.ArgumentParser()
 ap.add_argument("pools", nargs="*")
 ap.add_argument("--again", action="store_true")
+ap.add_argument("--more", action="store_true", help="run the second-round queries in plan[\"more\"]")
 a = ap.parse_args()
-for pool, queries in plan["pools"].items():
+for pool, queries in (plan["more"] if a.more else plan["pools"]).items():
     if a.pools and pool not in a.pools:
         continue
-    if not a.again and os.path.exists(os.path.join(HERE, "cache", pool, "candidates.json")):
+    if not (a.again or a.more) and os.path.exists(os.path.join(HERE, "cache", pool, "candidates.json")):
         print(f"[{pool}] already fetched, skipping")
         continue
     src = ",".join(plan["space_sources"]) if pool == "space" else "commons,aic,met"

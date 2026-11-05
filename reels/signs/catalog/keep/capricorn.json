@@ -1,0 +1,4 @@
+{"keep": [1, 3, 4, 6, 8, 23, 24, 25, 26, 27, 28, 30, 31],
+ "focus": {"6": [0.62, 0.4], "8": [0.6, 0.4], "24": [0.4, 0.4], "26": [0.55, 0.4], "27": [0.45, 0.5], "30": [0.4, 0.4], "3": [0.45, 0.45]},
+ "pin": [8, 23, 26, 6],
+ "notes": {"8": "Bierstadt, Mountain Scene with lake", "23": "Arnegger, alpine peaks at alpenglow", "26": "Leu, alpine summit in golden light", "6": "Cole, The Mountain Ford"}}

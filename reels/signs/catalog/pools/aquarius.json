@@ -1,0 +1,125 @@
+{
+ "images": [
+  {
+   "id": "wc-78015591",
+   "source": "commons",
+   "title": "Bemberg Fondation Toulouse - L'enlèvement de Ganymède - Odilon Redon 41x32.5 Inv.2148",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bemberg_Fondation_Toulouse_-_L%27enl%C3%A8vement_de_Ganym%C3%A8de_-_Odilon_Redon_41x32.5_Inv.2148.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Bemberg_Fondation_Toulouse_-_L%27enl%C3%A8vement_de_Ganym%C3%A8de_-_Odilon_Redon_41x32.5_Inv.2148.jpg/1920px-Bemberg_Fondation_Toulouse_-_L%27enl%C3%A8vement_de_Ganym%C3%A8de_-_Odilon_Redon_41x32.5_Inv.2148.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Bemberg_Fondation_Toulouse_-_L%27enl%C3%A8vement_de_Ganym%C3%A8de_-_Odilon_Redon_41x32.5_Inv.2148.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2333,
+   "file": "wc-78015591.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Redon, the abduction of Ganymede"
+  },
+  {
+   "id": "wc-21977833",
+   "source": "commons",
+   "title": "Francisco de Goya y Lucientes - The Water Carrier - Google Art Project",
+   "creator": "Francisco Goya",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_y_Lucientes_-_The_Water_Carrier_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Francisco_de_Goya_y_Lucientes_-_The_Water_Carrier_-_Google_Art_Project.jpg/1920px-Francisco_de_Goya_y_Lucientes_-_The_Water_Carrier_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Francisco_de_Goya_y_Lucientes_-_The_Water_Carrier_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1770,
+   "h": 2400,
+   "file": "wc-21977833.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Goya, the water carrier"
+  },
+  {
+   "id": "aic-87088",
+   "source": "aic",
+   "title": "Water Lily Pond",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87088",
+   "url": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1499,
+   "file": "aic-87088.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-152747",
+   "source": "aic",
+   "title": "York Harbor, Coast of Maine",
+   "creator": "Martin Johnson Heade (American, 1819–1904)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/152747",
+   "url": "https://www.artic.edu/iiif/2/3192ae4d-ffca-fe91-af12-2ca681f43e13/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 842,
+   "file": "aic-152747.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-11229",
+   "source": "met",
+   "title": "Delaware Water Gap",
+   "creator": "George Inness",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11229",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT2892.jpg",
+   "w": 2400,
+   "h": 1722,
+   "file": "met-11229.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57673096",
+   "source": "commons",
+   "title": "Young Woman with a Water Pitcher MET DP353257",
+   "creator": "Johannes Vermeer",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Young_Woman_with_a_Water_Pitcher_MET_DP353257.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Young_Woman_with_a_Water_Pitcher_MET_DP353257.jpg/1920px-Young_Woman_with_a_Water_Pitcher_MET_DP353257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Young_Woman_with_a_Water_Pitcher_MET_DP353257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2160,
+   "file": "wc-57673096.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Vermeer, young woman with a water pitcher"
+  },
+  {
+   "id": "aic-81552",
+   "source": "aic",
+   "title": "Woman and Child at the Well",
+   "creator": "Camille Pissarro (French, 1830–1903)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81552",
+   "url": "https://www.artic.edu/iiif/2/a2ddbd89-d864-8877-37bc-cd3dce12c37c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2109,
+   "file": "aic-81552.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  }
+ ]
+}
