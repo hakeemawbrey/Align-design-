@@ -524,7 +524,7 @@ export function makeGlitch(cfg) {
   const title = cfg.win?.title ?? `${NAME}.EXE`
   const hits = cfg.hits ?? []
   const caps = cfg.caps ?? [], pis = cfg.pis ?? [], lines = (cfg.stars ?? []).map(l => ({ speaker: 'THE STARS', ...l }))
-  const boxCfg = { open: lines.length ? lines[0].t - 0.25 : 0, close: lines.length ? typeTimes(lines).at(-1).done + 1.8 : 0, ...cfg.box }
+  const boxCfg = { open: lines.length ? lines[0].t - 0.25 : 0, close: lines.length ? typeTimes(lines).at(-1).done + 1.8 : 0, ...(Array.isArray(cfg.box) ? {} : cfg.box) }
   const chapters = cfg.chapters ?? []
   const nrK = t => (cfg.notResp ?? [[-1, 2.6]]).reduce((a, [p, q]) => Math.max(a, prog(t, p, p + 0.05) * (1 - prog(t, q, q + 0.12))), 0)
 
@@ -580,7 +580,8 @@ export function makeGlitch(cfg) {
     if (cfg.patch) installer(x, t, cfg.patch, SIGN)
     if (cfg.notes) patchNotes(x, t, cfg.notes)
     for (const p of pis) pisPopup(x, t, p)
-    starsBox(x, t, lines, boxCfg)
+    if (Array.isArray(cfg.box)) for (const B of cfg.box) starsBox(x, t, lines.filter(l => l.t >= B.open && l.t < B.close), B)
+    else starsBox(x, t, lines, boxCfg)
     x.restore()
     // freeze-frame chrome (record scratch): tint, red circle, label
     for (const f of freezes) {
@@ -665,7 +666,7 @@ export function makeGlitch(cfg) {
     ...(cfg.errs ?? []).flatMap(e => errDing(e.at)),
     ...caps.map(c => ['pop', r3(c.at), 659.25, 0.03, 0]),
     ...pis.flatMap(p => [['whoosh', r3(p.at), 0.3, 0.04], ['pluck', r3(p.at + 0.3), 587.33, 0.05, 0.6], ['pluck', r3(p.at + 0.5), 554.37, 0.05, 0.6], ['pluck', r3(p.at + 0.7), 523.25, 0.05, 0.8]]),
-    ...(lines.length ? [['pop', r3(boxCfg.open), 739.99, 0.035, 0], ...starsCues(lines)] : []),
+    ...(lines.length ? [...(Array.isArray(cfg.box) ? cfg.box.map(B => ['pop', r3(B.open), 739.99, 0.035, 0]) : [['pop', r3(boxCfg.open), 739.99, 0.035, 0]]), ...starsCues(lines)] : []),
     ...(cfg.patch ? [['pop', r3(cfg.patch.at), 880, 0.04, 0], ['riser', r3(cfg.patch.at + 0.3), r3(cfg.patch.at + 0.3 + cfg.patch.dur), 0.05], ['bell', r3(cfg.patch.at + 0.3 + cfg.patch.dur), 1567.98, 0.05, 1.2, 0], ['glitter', r3(cfg.patch.at + 0.3 + cfg.patch.dur), r3(cfg.patch.at + 1.2 + cfg.patch.dur)]] : []),
     ...(cfg.notes ? cfg.notes.items.flatMap((_, i) => [['pop', r3(cfg.notes.at + 0.6 + i * (cfg.notes.gap ?? 1.6)), [659.25, 783.99, 880, 1046.5][i % 4], 0.045, 0]]) : []),
     ...chapters.flatMap(C => [['whoosh', r3(C.at - 0.05), 0.25, 0.05], ['pop', r3(C.at + 0.05), 523.25, 0.05, 0], ['pop', r3(C.at + 0.15), 783.99, 0.05, 0]]),
