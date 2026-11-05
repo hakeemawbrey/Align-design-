@@ -68,5 +68,65 @@
   "series": "liedet",
   "episode": 7,
   "caption": "Sagittarius is so ready to settle down. The suitcase by the door disagrees.\nTonight's date is in a new city. Tag the friend who calls that romance."
+ },
+ "klde08": {
+  "video": "/_blob/57dbe3bb5ba72ef927ec724a09b57b29",
+  "poster": "/_blob/f0b7e63077a23f21f172f05e962f03a0",
+  "title": "Off the Clock",
+  "len": 15,
+  "long": false,
+  "series": "liedet",
+  "episode": 8,
+  "caption": "Capricorn swears there's no work on date night. There's a laptop under the tablecloth.\nTo be fair, they also took notes on the date's order. Sweet or a little too much?"
+ },
+ "klde09": {
+  "video": "/_blob/d2002aa9abbda2088a117ab72a8ad43e",
+  "poster": "/_blob/5cbd8745bf9f9589a97f78c1b21d99c0",
+  "title": "Their \"ok\" Means Ok",
+  "len": 16,
+  "long": false,
+  "series": "liedet",
+  "episode": 9,
+  "caption": "Aquarius is totally calm about the \"ok.\" Ignore the theory board with red string.\nPlot twist: it meant ok. How long do you stare at a one-word reply?"
+ },
+ "klde10": {
+  "video": "/_blob/08c9eee3c81034147aedd43e8fad0493",
+  "poster": "/_blob/7aa280456b22a460aecfc4902efa5500",
+  "title": "Ten Questions, Zero Secrets",
+  "len": 60,
+  "long": true,
+  "series": "liedet",
+  "episode": 10,
+  "caption": "Scorpio says they have no secrets. Ten questions later the machine is begging for a break.\nStay for the last answer. Which lie got you?"
+ },
+ "klde11": {
+  "video": "/_blob/710fc3d035497473e5d17a5d9c8f899f",
+  "poster": "/_blob/c49e167a983ca57798f2cf94fe675970",
+  "title": "Doesn't Care What People Think",
+  "len": 60,
+  "long": true,
+  "series": "liedet",
+  "episode": 11,
+  "caption": "Leo doesn't care what anyone thinks. Ten questions, seven outfits and one spoon say otherwise.\nThe verdict is kind of sweet, though. Which answer was the most Leo?"
+ },
+ "klde12": {
+  "video": "/_blob/4bbe0b72b2424e0a7534c4e78aadd286",
+  "poster": "/_blob/45ec4d6fc46fe1a611676b109f043591",
+  "title": "I Won't Cry This Time",
+  "len": 60,
+  "long": true,
+  "series": "liedet",
+  "episode": 12,
+  "caption": "Pisces promised not to cry this time. The tissues ran out by question two.\nEven the machine got emotional. What's the last thing that made you happy-cry?"
+ },
+ "klne01": {
+  "video": "/_blob/691e3986af645f46fb77f14011451a03",
+  "poster": "/_blob/2b57c2f8e15bbfc869751edfabe9a0cc",
+  "title": "Good Morning, Recorded at Midnight",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 1,
+  "caption": "When your goodnight lands in the middle of their night, it can feel like you keep missing each other.\nLeave a voice note for their morning instead. It's waiting when they wake up."
  }
 }
