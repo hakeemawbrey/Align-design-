@@ -12,6 +12,7 @@
 //   cfg.shots   [{ a, b, draw(ctx, t, S) }]  the canvas story, back to front. S = { u: t - a, a, b, D }.
 //               A shot draws the WHOLE frame (its set + cast). Shot 0 at t = 0 is the thumbnail.
 //   cfg.cam(t)  → { z, fx, fy, dx, dy, rot } optional camera on the story canvas (zoom about fx, fy).
+//   cfg.hookPlate [y0, y1] optional dark band behind the hook title (busy sets); fades with hookOut.
 //   cfg.ui(ctx, t)  optional: drawn on the top canvas above the story (phones, HUDs, stamps, hook-kit effects).
 //   cfg.captions  [{ text, at, out, top, kicker, size }] mid-film captions (popText + an optional mono kicker pill)
 //   cfg.lines   dialogue box lines [{ t, speaker, text }] (THE STARS etc.); cfg.box { open, close, y }
@@ -326,7 +327,12 @@ export function makeAlmost(cfg) {
       for (const s of cfg.shots) if (t >= s.a && t < s.b) s.draw(c, t, { u: t - s.a, a: s.a, b: s.b, D })
       c.restore()
     }
-    function paintUI(c, t) { c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, 1080, 1920); if (cfg.ui) { c.save(); cfg.ui(c, t); c.restore() } }
+    function paintUI(c, t) {
+      c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, 1080, 1920)
+      // cfg.hookPlate: a dark glass plate behind the hook title over busy sets ([y0, y1] screen px)
+      if (cfg.hookPlate) { const a = outK(t, hookOut); if (a > 0) { c.save(); c.globalAlpha = a; c.fillStyle = 'rgba(10,6,30,0.72)'; c.fillRect(0, cfg.hookPlate[0], 1080, cfg.hookPlate[1] - cfg.hookPlate[0]); c.restore() } }
+      if (cfg.ui) { c.save(); cfg.ui(c, t); c.restore() }
+    }
 
     return {
       start: 0, end: D + 0.01, root,
