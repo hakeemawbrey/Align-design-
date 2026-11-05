@@ -8,7 +8,8 @@
 //     hook: 'ARIES. YOU TEXTED BACK | *INSTANTLY.* AGAIN.',          // frame-0 slam line ('|' break, *accent*)
 //     hookScene: K => ({ draw(x, t) {…}, front(x, t) {…}, shake: t => [dx, dy], cues: [],   // mid-chaos opening (0…HOOK_END)
 //                        fx: [{ scene: HK.caught(o), cues: HK.caughtCues(o), frame0: false }] }), // hookkit effects; frame0:
-//                        true = it is visible at t = 0, so loopBack rebuilds it too
+//                        true = it is visible at t = 0, so loopBack rebuilds it too. freeze: [REC] → frozen(build, [REC])
+//                        for HK.recordScratch(REC) (pass its scene + cues in fx too)
 //     promise: 'STAY FOR CHAPTER 4',                                 // the up-front payoff promise sticker
 //     chip: 'ARIES: CARDINAL FIRE,|RULED BY MARS', chipCh: 0,        // ★ ASTROLOGY SAYS (shown in that chapter)
 //     chapters: [ { lines: ['…', '…'], gag: (C, K) => ({ draw(x, t) {…}, front, cues }) }, ×4 ],
@@ -311,11 +312,12 @@ export function guideXFilm(spec) {
   }
 
   const HOOKO = { at: -1, text: hook, top: 250, size: hookSize, accentColor: ME.color, out: [HOOK_END - 0.45, HOOK_END - 0.1] }
-  const PROM = { at: 1.15, out: [HOOK_END - 0.4, HOOK_END - 0.05], n: '★', title: promise, x: 160, y: 820, color: '#ff8fb1' }
+  const PROM = { at: 1.15, out: [HOOK_END - 0.4, HOOK_END - 0.05], n: '★', title: promise, x: 170, y: 1690, color: '#ff8fb1' }
   const CHAPS = CHS.map(c => ({ at: c.C, out: c.i === 3 ? [E - 0.3, E] : [c.C + CH - 0.4, c.C + CH - 0.05], n: c.i + 1, title: CH_NAMES[c.i], x: 70, y: 128, color: c.i === 3 ? '#ff8fb1' : GOLD }))
   const FX = HS.fx || []
-  const SCENES = [build, ...FX.map(f => f.scene), HK.slamTitle(HOOKO), HK.chapter(PROM), ...CHAPS.map(o => HK.chapter(o)),
-    ...(T.loop ? [HK.loopBack([build, ...FX.filter(f => f.frame0).map(f => f.scene), HK.slamTitle(HOOKO)], { duration: DURATION, len: 0.45 })] : [])]
+  const B0 = HS.freeze ? HK.frozen(build, HS.freeze) : build
+  const SCENES = [B0, ...FX.map(f => f.scene), HK.slamTitle(HOOKO), HK.chapter(PROM), ...CHAPS.map(o => HK.chapter(o)),
+    ...(T.loop ? [HK.loopBack([B0, ...FX.filter(f => f.frame0).map(f => f.scene), HK.slamTitle(HOOKO)], { duration: DURATION, len: 0.45 })] : [])]
   const nWords = last.split(' ').filter(w => w !== '|').length
   const CUES = [
     ...(HS.cues || []), ...FX.flatMap(f => f.cues || []), ...HK.slamTitleCues(HOOKO), ...HK.chapterCues(PROM),
