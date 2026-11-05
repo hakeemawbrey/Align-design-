@@ -152,7 +152,7 @@ export function rescue(S) {
     // chapter stickers + promise (long films)
     const stick = (txt, col, top) => el('div', { position: 'absolute', right: '54px', top: top + 'px', padding: '10px 18px', font: `700 30px ${MONO}`, letterSpacing: '0.12em', color: INK, background: col, border: `5px solid ${INK}`, boxShadow: `6px 6px 0 ${INK}`, display: 'none', transformOrigin: '100% 0%', whiteSpace: 'nowrap' }, world, txt)
     const CH = []
-    const PR = S.promise ? { e: stick(S.promise, GOLD, 120), on: 0.9, off: Math.min(7.5, R[0].e) } : null
+    const PR = S.promise ? { e: stick(S.promise, GOLD, 404), on: 0.9, off: Math.min(7.5, R[0].e) } : null
     // the bug
     const bug = el('div', { position: 'absolute', left: '56px', top: '58px', display: 'flex', alignItems: 'center', gap: '14px', pointerEvents: 'none' }, root)
     const ic = el('canvas', { width: '48px', height: '48px', imageRendering: 'pixelated' }, bug); ic.width = 48; ic.height = 48
