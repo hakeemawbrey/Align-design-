@@ -250,7 +250,7 @@ export function makeThenNowX(spec) {
   }
 
   const HOOK = { at: -1, top: 856, size: 96, out: T.hookOut, ...spec.hook }
-  const WHIP0 = { at: -0.26, len: 0.55, from: 1.6 }
+  const WHIP0 = { at: -0.3, len: 0.55, from: 1.6, blur: 9 }
   const FREEZE = spec.freeze || []
   const CHAPS = spec.chapters.map((c, i) => ({ at: T.ch[i] + 0.1, out: [T.ch[i] + 3.9, T.ch[i] + 4.1], n: i + 1, title: c.title, x: 60, y: SEAM - 48, color: GOLD }))
   const WHIPS = T.ch.map(at => ({ at, len: 0.4, from: 1.3, flash: 0.25 }))

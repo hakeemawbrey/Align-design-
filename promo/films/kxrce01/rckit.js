@@ -317,7 +317,7 @@ export function cityFilm(spec) {
 
   // hookkit layers: frame-0 whip + slam title, freezes, chapter stickers per stop, whips on stop changes, extras
   const HOOK = { at: -1, top: 300, size: 104, ...spec.hook }
-  const WHIP0 = { at: -0.26, len: 0.55, from: 1.7, ...(spec.whip0 || {}) }
+  const WHIP0 = { at: -0.3, len: 0.55, from: 1.6, blur: 9, ...(spec.whip0 || {}) }
   const FREEZE = spec.freeze || []
   const CHAPS = stops.filter(s => s.n > 0).map((s, i, arr) => ({ at: s.at + 0.12, out: [Math.min((arr[i + 1]?.at ?? DURATION) - 0.35, s.at + 5.2), Math.min((arr[i + 1]?.at ?? DURATION) - 0.2, s.at + 5.4)], n: s.n, title: `${s.name}`, x: 64, y: 236, color: s.color || GOLD }))
   const WHIPS = [...stops.slice(1).map(s => s.at), ...(spec.whips || [])].map(at => ({ at, len: 0.42, from: 1.45, flash: 0.28 }))
