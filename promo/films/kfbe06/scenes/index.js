@@ -30,8 +30,8 @@ function clipboard(x, t, cx, cy, s, rot) {
 const EP = makeBingo({
   id: 'kfbe06', D, n: 3, ink: '#38b070', cardTag: '♍ × ♉',
   squares: [
-    { text: 'WIPES THE TABLE', at: T.s1 }, { text: 'SPOTS THE MENU TYPO', at: T.typo }, { text: 'BROUGHT ITS OWN CARD', at: -0.04 },
-    { text: 'ALIGNS THE CUTLERY' }, { free: true }, { text: 'READS THE REVIEWS FIRST' },
+    { text: 'WIPES THE TABLE', at: T.s1 }, { text: 'READS THE REVIEWS FIRST' }, { text: 'BROUGHT ITS OWN CARD', at: -0.04 },
+    { text: 'ALIGNS THE CUTLERY' }, { free: true }, { text: 'SPOTS THE MENU TYPO', at: T.typo },
     { text: 'RATES THE DATE IN ITS HEAD', at: T.s3 }, { text: 'ASKS IF THE SOUP IS GLUTEN-FREE' }, { text: 'NAPKIN FOLDED INTO A SWAN' },
   ],
   win: [2, 4, 6], bingoAt: T.bingo,

@@ -347,6 +347,11 @@ export function makeBingo(cfg) {
   const SCENES = [main, ...(cfg.layers || []), ...(WHIP ? [whipZoom(WHIP)] : []), ...(HOOK ? [slamTitle(HOOK)] : []), ...RECS.map(r => recordScratch(r)), ...effects.map(([f, , o]) => f(o))]
   if (cfg.ending === 'loop') SCENES.push(loopBack([main, ...(HOOK ? [slamTitle(HOOK)] : [])], { duration: D, len: cfg.loopLen || 0.4 }))
   const KITCUES = [...(WHIP ? whipZoomCues(WHIP) : []), ...(HOOK ? slamTitleCues(HOOK) : []), ...RECS.flatMap(r => recordScratchCues(r)), ...effects.flatMap(([, c, o]) => c ? c(o) : []), ...(cfg.ending === 'loop' ? loopCues({ duration: D, len: cfg.loopLen || 0.4 }) : [])]
+  // guard: no line may complete before the planned BINGO
+  { const n = cfg.n || 3, at = i => cfg.squares[i]?.free ? -1e9 : (cfg.squares[i]?.at ?? 1e9), lines = []
+    for (let r = 0; r < n; r++) { lines.push([...Array(n)].map((_, c) => r * n + c)); lines.push([...Array(n)].map((_, c) => c * n + r)) }
+    lines.push([...Array(n)].map((_, i) => i * n + i)); lines.push([...Array(n)].map((_, i) => i * n + n - 1 - i))
+    for (const L of lines) { const done = Math.max(...L.map(at)); if (cfg.bingoAt != null && done < cfg.bingoAt - 0.3 && L.join() !== (cfg.win || []).join()) { if (typeof console !== 'undefined') console.warn(`[${cfg.id}] line ${L} completes at ${done} before BINGO ${cfg.bingoAt}`) } } }
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
     ...stamps.filter(s => s.at >= 0).flatMap((s, k) => [['whoosh', r3(Math.max(0, s.at - 0.14)), 0.2, 0.025], ['tom', r3(s.at), 110 + 8 * k, { gain: 0.26, decay: 0.18 }], ['tick', r3(s.at), 0.06], ['pop', r3(s.at + 0.02), NOTE[(k * 2) % 7], 0.04, 0]]),

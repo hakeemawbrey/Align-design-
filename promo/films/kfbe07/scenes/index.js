@@ -16,8 +16,8 @@ const EP = makeBingo({
   id: 'kfbe07', D, n: 3, ink: '#e85a8a', cardTag: '♎ × ♏', ending: 'loop',
   squares: [
     { text: '"I DON’T MIND, YOU PICK"', at: -0.04 }, { text: 'ASKS THE TABLE NEXT DOOR' }, { text: 'LIKES BOTH OPTIONS' },
-    { text: '"I DON’T MIND" (AGAIN)', at: T.again }, { free: true }, { text: 'THE SERVER FELL ASLEEP', at: T.asleep },
-    { text: 'FLIPS A COIN, IGNORES IT' }, { text: 'ORDERS WHAT YOU ORDER' }, { text: 'SAID WHAT THEY WANTED', at: T.s3 },
+    { text: '"I DON’T MIND" (AGAIN)', at: T.again }, { free: true }, { text: 'ORDERS WHAT YOU ORDER' },
+    { text: 'FLIPS A COIN, IGNORES IT' }, { text: 'THE SERVER FELL ASLEEP', at: T.asleep }, { text: 'SAID WHAT THEY WANTED', at: T.s3 },
   ],
   win: [0, 4, 8], bingoAt: T.bingo,
   hook: { text: '“I don’t mind. | *You* pick.”', out: [2.3, 2.5], accentColor: '#ff9ac4' },
