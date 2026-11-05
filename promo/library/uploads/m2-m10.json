@@ -49,6 +49,26 @@
   "episode": 5,
   "caption": "Leo brought a 40-slide show about Leo. One sweet sentence from the date and the room went quiet.\nWhat is the compliment that would get you?"
  },
+ "kfbe06": {
+  "video": "/_blob/d831e2248fde0f040dc5c6346054d72d",
+  "poster": "/_blob/1a2ae54529933df5b58fa558df0417be",
+  "title": "Virgo made a bingo card about the date",
+  "len": 13,
+  "long": false,
+  "series": "bingo",
+  "episode": 6,
+  "caption": "Virgo came with its own clipboard to grade the date. The host's card was grading Virgo the whole time.\nWho needs to put the clipboard down?"
+ },
+ "kfbe07": {
+  "video": "/_blob/1ca0a6eace560111a4918c8abd46bdcc",
+  "poster": "/_blob/4c2d965e15f9baeb0da2a8321d561b11",
+  "title": "Libra says \"I don't mind, you pick\"",
+  "len": 12,
+  "long": false,
+  "series": "bingo",
+  "episode": 7,
+  "caption": "Round three of menus, a server asleep standing up, and then Libra finally said the word: pasta.\nHow many rounds of you-pick do you usually last?"
+ },
  "kfbe08": {
   "video": "/_blob/6108e4485b42924c9c0c52a63055408c",
   "poster": "/_blob/7e0a9e63c81219260dabf562d06bf743",
@@ -88,5 +108,45 @@
   "series": "bingo",
   "episode": 11,
   "caption": "One giant duck or ten tiny dogs, as pets. Aquarius asked it on a first date and got a real answer with tiny jobs.\nDuck or dogs? Go."
+ },
+ "kfbe12": {
+  "video": "/_blob/1e174638ac94741b901629e558f5f4d2",
+  "poster": "/_blob/e441e19cdf0763ffe3b15c7021b9ba6e",
+  "title": "Pisces goes on a first date",
+  "len": 12,
+  "long": false,
+  "series": "bingo",
+  "episode": 12,
+  "caption": "The host left the booth to go on a date and cried at the menu, the candle and the kindness. The date cried too.\nWho else cries at the nice parts?"
+ },
+ "kfbe13": {
+  "video": "/_blob/9a8e9b0518c3b3d0f07a8c796bdd4bb8",
+  "poster": "/_blob/adb1eebf441eb865583810911caa0f25",
+  "title": "Green flag bingo",
+  "len": 12,
+  "long": false,
+  "series": "bingo",
+  "episode": 13,
+  "caption": "Nobody plays this card: follow-up questions, kindness to the server, laughing at a moon pun, a text that says home safe.\nWhat is your favourite quiet green flag?"
+ },
+ "kfbe14": {
+  "video": "/_blob/859953f37db2fb3d1bea08e4afbdd061",
+  "poster": "/_blob/92d9d404702e60d2379198338d0f5e71",
+  "title": "Nervous bingo",
+  "len": 12,
+  "long": false,
+  "series": "bingo",
+  "episode": 14,
+  "caption": "Waved at the wrong person, said you too to the server, forgot a name for one whole second. Then the date admitted it too.\nWhich square have you hit?"
+ },
+ "kfbe15": {
+  "video": "/_blob/24f303511df8938d0256aee531245285",
+  "poster": "/_blob/f06738b3c0d200b7099398c04c8c8c6e",
+  "title": "Video call first date",
+  "len": 12,
+  "long": false,
+  "series": "bingo",
+  "episode": 15,
+  "caption": "Frozen mid-laugh, you are on mute, a cat on the keyboard and one bar of signal. They laughed through all of it.\nVideo first date: yes or no?"
  }
 }
