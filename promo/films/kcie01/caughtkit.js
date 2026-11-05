@@ -421,7 +421,7 @@ export function makeCaught(cfg) {
       if (s.mode === 'freeze' && !s.open) {
         const c = cfg.catches[s.ci].circle(s.w0), p = ease.outCubic(prog(t, s.t0, s.t0 + 0.14))
         let k = p
-        if (s.final && cfg.ending === 'loop' && cfg.catches.length === 1) k = p * (1 - ease.inOutCubic(prog(t, settleAt, DURATION - 0.04)))
+        if (s.final && cfg.ending === 'loop' && cfg.catches.length === 1) k = p * (1 - ease.inOutCubic(prog(t, settleAt - 0.4, settleAt)))
         z = lerp(1, 1.08, k); fx = lerp(540, c.x, 0.5 * k); fy = lerp(960, c.y, 0.5 * k)
       }
       if (s.mode === 'play' && s.t0 > P0 && t - s.t0 < 0.25 && !s.tail) { const p = 1 - ease.outCubic(prog(t, s.t0, s.t0 + 0.25)); z = 1 + 0.12 * p }       // whip into a new catch
