@@ -15,6 +15,7 @@
 //   cfg.hookPlate [y0, y1] optional dark band behind the hook title (busy sets); fades with hookOut.
 //   cfg.ui(ctx, t)  optional: drawn on the top canvas above the story (phones, HUDs, stamps, hook-kit effects).
 //   cfg.captions  [{ text, at, out, top, kicker, size }] mid-film captions (popText + an optional mono kicker pill)
+//   cfg.boxes   [{ lines, open, close, y }] extra dialogue boxes (one per advice moment in long films)
 //   cfg.lines   dialogue box lines [{ t, speaker, text }] (THE STARS etc.); cfg.box { open, close, y }
 //   cfg.dom(root) optional → { update(t, loopK) } for film-only DOM (chapter stickers, etc.)
 //   cfg.cues    extra sound cues; cfg.hookCues = false to drop the default frame-0 hit.
@@ -312,6 +313,8 @@ export function makeAlmost(cfg) {
     const top = layerCanvas(root), tx = top.getContext('2d')
     const caps = (cfg.captions || []).map(c => buildCaption(root, { size: 76, accentColor: cfg.hookColor || BUG_COL, ...c }))
     const dbox = lines.length ? dialogueBox(root, { lines, y: cfg.box?.y ?? 1450, cps: CPS, open: cfg.box?.open, close: cfg.box?.close ?? (cfg.ending === 'cut' ? D + 5 : undefined) }) : null
+    // cfg.boxes: extra dialogue boxes [{ lines, open, close, y }] (long films: one box per advice moment)
+    const xboxes = (cfg.boxes || []).map(b => dialogueBox(root, { lines: b.lines, y: b.y ?? 1450, cps: CPS, open: b.open, close: b.close ?? (cfg.ending === 'cut' ? D + 5 : undefined) }))
     const extra = cfg.dom ? cfg.dom(root) : null
     const bug = buildBug(root)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
@@ -342,6 +345,7 @@ export function makeAlmost(cfg) {
         paintUI(tx, t)
         caps.forEach(c => { c.update(t) })
         if (dbox) { dbox.update(t); dbox.root.style.opacity = String(1 - lk) }
+        xboxes.forEach(b => { b.update(t); b.root.style.opacity = String(1 - lk) })
         if (extra) extra.update(t, lk)
         bug.update(1)
         const fl = cfg.flash ? cfg.flash(t) : 0
@@ -367,6 +371,7 @@ export function makeAlmost(cfg) {
     ...(LOOP ? HK.loopCues({ duration: D, len: LL }) : []),
     ...(cfg.captions || []).flatMap(c => captionCues({ size: 76, ...c })),
     ...talkCues(lines, { cps: CPS }),
+    ...(cfg.boxes || []).flatMap(b => talkCues(b.lines, { cps: CPS })),
     ...(cfg.cues || []),
   ].map(c => [c[0], r3(c[1]), ...c.slice(2)])
   return { DURATION: D, SCENES, CUES }
