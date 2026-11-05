@@ -192,15 +192,26 @@ export function makeUnsent(cfg) {
   const DRAFTS = cfg.drafts.map(draftSchedule)
   const MSGS = (cfg.msgs || []).map(m => ({ from: 'them', ...m }))
   // sent drafts become my bubbles
-  DRAFTS.forEach(d => { if (d.send != null) MSGS.push({ from: 'me', text: d.text, at: d.send + 0.18, sent: true }) })
+  DRAFTS.forEach(d => { if (d.send != null) MSGS.push({ from: 'me', text: d.text, at: d.send + 0.18, sent: true, until: d.until }) })
   MSGS.sort((a, b) => a.at - b.at)
-  const LINES = (cfg.lines || []).map(l => ({ speaker: 'THE STARS', ...l }))
+  const LOOP_L = cfg.loopLen || 0.45
+  const SEGS0 = cfg.segs || ((cfg.lines || []).length ? [{ lines: cfg.lines, close: null }] : [])
+  const LINES = SEGS0.flatMap(g => g.lines).map(l => ({ speaker: 'THE STARS', ...l }))
   const CPS = cfg.cps || 30
   const LT = lineTimes(LINES, { cps: CPS })
   const lastDone = LT.length ? LT[LT.length - 1].done : DURATION
   const boxClose = cfg.boxClose ?? (cfg.ending === 'loop' ? DURATION - 0.5 : DURATION + 1)
   const LIFT = cfg.lift || (LINES.length ? [LINES[LINES.length - 1].t - 0.5, LINES[LINES.length - 1].t - 0.1] : null)
-  const LOOP_L = cfg.loopLen || 0.45
+  const SEGS = SEGS0.map((g, i) => {
+    const lines = g.lines.map(l => ({ speaker: 'THE STARS', ...l }))
+    const close = g.close ?? boxClose, t0 = lines[0].t
+    const last = i === SEGS0.length - 1
+    const up = i === SEGS0.length - 1 && cfg.lift ? cfg.lift : [t0 - 0.5, t0 - 0.1]
+    return { lines, close, up, down: last && cfg.ending !== 'loop' ? null : last ? [close - 0.1, DURATION - LOOP_L] : [close - 0.05, close + 0.35] }
+  })
+  const liftAt = t => Math.max(0, ...SEGS.map(g => ease.inOutCubic(prog(t, g.up[0], g.up[1])) * (g.down ? 1 - ease.inOutCubic(prog(t, g.down[0], g.down[1])) : 1)))
+  const starsK = t => Math.max(0, ...SEGS.map(g => g.lines.some(l => l.speaker === 'THE STARS') ? pop01(t, g.lines[0].t - 0.35, 0.36, 2.1) * outK(t, [g.close - 0.2, g.close]) : 0))
+  const head = t => ({ to: cfg.to, status: cfg.status, avatar: cfg.avatar, statusCol: cfg.statusCol, ...(cfg.header ? cfg.header(t) : {}) })
   const heroPos = { x: 175, y: 1250, s: 310, ...(cfg.hero || {}) }
   const pisPos = cfg.pis === false ? null : { x: 958, y: 655, s: 235, ...(cfg.pis || {}) }
   const STARS_HOPS = LINES.flatMap(l => [l.t - 0.3, ...talkHops([l], l.speaker, { cps: CPS })])
@@ -257,7 +268,7 @@ export function makeUnsent(cfg) {
     const FONT = `700 ${FONT_PX}px ${INTER}`
     const LAY = DRAFTS.map(d => layoutText(x, d.text, FONT, FIELD_W, LINE_H))
     const MLAY = MSGS.map(m => layoutText(x, m.text, `600 38px ${INTER}`, SCR.w * 0.7 - 44, 48))
-    const box1 = LINES.length ? dialogueBox(root, { lines: LINES, y: 1490, open: LINES[0].t - 0.22, close: boxClose, cps: CPS }) : null
+    const boxes = SEGS.map(g => dialogueBox(root, { lines: g.lines, y: 1490, open: g.lines[0].t - 0.22, close: g.close, cps: CPS }))
     const bug = buildBug(root)
     const top = layerCanvas(root), tx = top.getContext('2d')
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
@@ -272,11 +283,12 @@ export function makeUnsent(cfg) {
       // header: avatar + name
       R(c, '#1a1434', SCR.x, SCR.y, SCR.w, HEAD_H)
       R(c, 'rgba(239,230,214,0.12)', SCR.x, SCR.y + HEAD_H - 3, SCR.w, 3)
-      R(c, '#4a3d78', SCR.x + 28, SCR.y + 26, 66, 66); R(c, cfg.avatar || LAV, SCR.x + 34, SCR.y + 32, 54, 54)
-      c.save(); c.font = `800 30px ${INTER}`; c.fillStyle = INK; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText((cfg.to || '?')[0].toUpperCase(), SCR.x + 61, SCR.y + 61); c.restore()
+      const hd = head(t)
+      R(c, '#4a3d78', SCR.x + 28, SCR.y + 26, 66, 66); R(c, hd.avatar || LAV, SCR.x + 34, SCR.y + 32, 54, 54)
+      c.save(); c.font = `800 30px ${INTER}`; c.fillStyle = INK; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText((hd.to || '?')[0].toUpperCase(), SCR.x + 61, SCR.y + 61); c.restore()
       c.save(); c.textBaseline = 'middle'; c.textAlign = 'left'
-      c.font = `800 34px ${INTER}`; c.fillStyle = BONE; c.fillText(cfg.to || '', SCR.x + 114, SCR.y + 46)
-      c.font = `700 22px ${MONO}`; c.fillStyle = cfg.statusCol || '#9fe6b0'; c.fillText(cfg.status || 'online', SCR.x + 114, SCR.y + 82)
+      c.font = `800 34px ${INTER}`; c.fillStyle = BONE; c.fillText(hd.to || '', SCR.x + 114, SCR.y + 46)
+      c.font = `700 22px ${MONO}`; c.fillStyle = hd.statusCol || '#9fe6b0'; c.fillText(hd.status || 'online', SCR.x + 114, SCR.y + 82)
       c.restore()
       void t
     }
@@ -311,6 +323,7 @@ export function makeUnsent(cfg) {
         let vis = 0
         for (let i = 0; i < d.n; i++) if (d.tChar[i] <= t && d.tDel[i] > t) vis = i + 1
         if (d.del != null && t >= d.delEnd + 0.02) { if (k === DRAFTS.length - 1) return { k, d, vis: 0, gone: true }; continue }
+        if (d.hide != null && t >= d.hide) { if (k === DRAFTS.length - 1) return { k, d, vis: 0, gone: true }; continue }
         if (d.send != null && t >= d.send) return { k, d, vis: 0, sentAt: d.send }
         return { k, d, vis }
       }
@@ -379,7 +392,7 @@ export function makeUnsent(cfg) {
     }
     // chat bubbles stacked above the field (newest at the bottom)
     function chat(c, t, fieldTop) {
-      const vis = MSGS.map((m, i) => ({ m, i })).filter(({ m }) => t >= (m.typing ? m.typing[0] : m.at))
+      const vis = MSGS.map((m, i) => ({ m, i })).filter(({ m }) => t >= (m.typing ? m.typing[0] : m.at) && !(m.until != null && t >= m.until))
       let y = fieldTop - 26
       c.save(); c.beginPath(); c.rect(SCR.x, SCR.y + HEAD_H, SCR.w, fieldTop - SCR.y - HEAD_H - 6); c.clip()
       for (let n = vis.length - 1; n >= 0; n--) {
@@ -410,11 +423,11 @@ export function makeUnsent(cfg) {
       const cam = camera(t)
       const tv = cam.freezeAt != null ? cam.freezeAt : t
       const ss = ease.inOutCubic(prog(t, -0.6, 2.2))
-      drawSky(c, tv, { ...SKY_H, zoom: lerp(1.75, SKY_H.zoom, ss), dim: (cfg.dim ?? SKY_H.dim) })
+      drawSky(c, tv, { ...SKY_H, zoom: lerp(1.75, SKY_H.zoom, ss), dim: (typeof cfg.dim === 'function' ? cfg.dim(tv) : cfg.dim ?? SKY_H.dim) })
       c.save()
       c.translate(cam.cx + cam.dx, cam.cy + cam.dy); c.scale(cam.zoom, cam.zoom); c.translate(-cam.cx, -cam.cy)
       // the phone lifts out of the box's way for the last line (and comes back for a loop)
-      const lift = LIFT ? ease.inOutCubic(prog(tv, LIFT[0], LIFT[1])) * (cfg.ending === 'loop' ? 1 - ease.inOutCubic(prog(tv, boxClose - 0.1, DURATION - LOOP_L)) : 1) : 0
+      const lift = liftAt(tv)
       const sc = 1 - 0.13 * lift
       if (cfg.back) cfg.back(c, tv, S)
       // Pisces over the shoulder (behind the phone)
@@ -447,7 +460,7 @@ export function makeUnsent(cfg) {
       if (cfg.front) cfg.front(c, tv, { ...S, lift })
       // THE STARS pop in beside the box for the lines
       if (LINES.length) {
-        const k = pop01(tv, LINES[0].t - 0.35, 0.36, 2.1) * outK(tv, [boxClose - 0.2, boxClose])
+        const k = starsK(tv)
         if (k > 0.01) drawStarChar(c, 950, 1418, 140, tv, { color: STAR.sky, mood: tv > lastDone ? 'happy' : 'neutral', look: [-1, 0.4], hops: STARS_HOPS, pop: k, seed: 2, glow: 1.05 })
       }
       c.restore()
@@ -477,7 +490,7 @@ export function makeUnsent(cfg) {
         }
         tx.clearRect(0, 0, 1080, 1920)
         if (cfg.top) cfg.top(tx, t, S)
-        if (box1) box1.update(t)
+        boxes.forEach(b => b.update(t))
         bug.update(t)
         flashEl.style.opacity = String(cam.flash * (1 - lk))
         drawGrain(gx, t)
@@ -486,7 +499,7 @@ export function makeUnsent(cfg) {
   }
 
   // the hook line (hookkit slamTitle, landed at frame 0, stays up: it is the premise) + the pattern breaks
-  const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 168, size: cfg.hookSize || 92, accentColor: cfg.accent || HERO.color, width: 960 }
+  const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 168, size: cfg.hookSize || 92, accentColor: cfg.accent || HERO.color, width: 960, out: cfg.hookOut || null }
   const RECS = breaks.filter(b => b.kind === 'scratch').map(b => ({ at: b.at, len: b.len || 0.9, caption: b.caption || 'yep. *again.*', sub: b.sub || null, top: b.top || 1440 }))
   const WHIPS = breaks.filter(b => b.kind === 'whip').map(b => ({ at: b.at, len: b.len || 0.45, from: b.from || 1.7, to: 1, cx: b.cx || 600, cy: b.cy || 1150 }))
   const SHAKES = breaks.filter(b => b.kind === 'shake').map(b => ({ at: b.at, len: b.len || 0.5, amp: b.amp || 28 }))
