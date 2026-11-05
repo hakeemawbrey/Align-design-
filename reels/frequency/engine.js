@@ -610,7 +610,7 @@ function Gates(S) {
       c.push({ kind: 'chime', t: LAST + 1.2, hz: chimeHz(HZ.sun) * 2, gain: 0.25, decay: 4 })
       return c
     },
-    poster(variant) { return variant ? passAt(SIGNS.indexOf(variant)) - 0.9 : 24 },
+    poster(variant) { return variant ? passAt(SIGNS.indexOf(variant)) - 1.6 : 24 },
     full(sec, variant) {
       if (variant) {
         // one sign: the year tone underneath and its ruler held, with a bell now and then
