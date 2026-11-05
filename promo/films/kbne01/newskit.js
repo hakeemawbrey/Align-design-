@@ -469,7 +469,6 @@ export function makeNews(spec) {
     const root = fill(stage, { background: '#05040c' })
     const cv = layerCanvas(root), x = cv.getContext('2d')
     const boxes = (spec.boxes || (spec.lines ? [{ lines: spec.lines, ...(spec.box || {}) }] : [])).map(b => dialogueBox(root, { lines: b.lines, y: b.y ?? 1490, height: b.height ?? 250, width: 960, open: b.open, close: b.close, cps: CPS, size: b.size ?? 46 }))
-    const bug = buildBug(root)
     const K = { D, x, root }
     const extra = spec.dom ? spec.dom(root, K) : null
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
@@ -489,14 +488,18 @@ export function makeNews(spec) {
         x.restore()
         if (spec.over) spec.over(x, t, K)
         for (const b of boxes) b.update(t)
-        bug.update(t)
         if (extra) extra.update(t)
         drawGrain(gx, t)
       },
     }
   }
-  const frame0 = [build, ...HEADS.filter(h => h.at <= 0).map(h => slamTitle(h))]
-  const SCENES = [build, ...WHIPS.map(w => whipZoom(w)), ...RECS.map(r => recordScratch(r)), ...(spec.fx || []), ...HEADS.map(h => slamTitle(h))]
+  async function bugScene(stage) {
+    const w = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', pointerEvents: 'none' }, stage); w.dataset.hookcam = 'off'
+    const bug = buildBug(w)
+    return { start: -1e9, end: 1e9, root: w, update(t) { bug.update(t) } }
+  }
+  const frame0 = [build, whipZoom(WHIPS[0]), bugScene, ...HEADS.filter(h => h.at <= 0).map(h => slamTitle(h))]
+  const SCENES = [build, ...WHIPS.map(w => whipZoom(w)), ...RECS.map(r => recordScratch(r)), ...(spec.fx || []), ...HEADS.map(h => slamTitle(h)), bugScene]
   if (spec.end === 'loop') SCENES.push(loopBack(frame0, { duration: D, len: loopLen }))
   const cues = [
     ...(spec.lines ? talkCues(spec.lines, { cps: CPS }) : []), ...(spec.boxes ? spec.boxes.flatMap(b => talkCues(b.lines, { cps: CPS })) : []),
