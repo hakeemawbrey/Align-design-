@@ -252,3 +252,46 @@ export function blanket(x, cx, cy, w, h, { col = '#7c74f0', col2 = '#9a92ff' } =
   for (let i = 0; i < w; i += 60) R(x, col2, cx - w / 2 + i, cy - h / 2, 30, h)
 }
 export { HEART, drawBits, easeOutBack }
+
+/** a big phone held in the scene. mode: 'chat' (bubbles scrolling by `scroll` px), 'notes' (typed lines), 'profile'
+ *  (a photo grid), 'camera' (a selfie preview of the sign colour), 'blank'. glowK lights the face in front of it. */
+export function bigPhone(x, t, cx, cy, { w = 300, h = 520, rot = 0, mode = 'chat', scroll = 0, blurK = 0, title = '', lines = [], typed = 1, col = '#5fa8ff', k = 1, badge = null } = {}) {
+  if (k <= 0.01) return
+  x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(k, k)
+  box(x, -w / 2, -h / 2, w, h, '#2a2148', { b: 8 })
+  const sx = -w / 2 + 14, sy = -h / 2 + 46, sw = w - 28, sh = h - 70
+  R(x, '#120e28', sx, sy, sw, sh)
+  R(x, INK, -36, -h / 2 + 16, 72, 12)
+  x.save(); x.beginPath(); x.rect(sx, sy, sw, sh); x.clip()
+  if (title) { R(x, '#1e1844', sx, sy, sw, 44); ink(x, title, 0, sy + 23, { size: 22, col: BONE, font: MONO, weight: 700 }) }
+  if (mode === 'chat') {
+    const rowH = 64, n = Math.ceil(sh / rowH) + 2, off = ((scroll % rowH) + rowH) % rowH
+    for (let i = -1; i < n; i++) {
+      const idx = Math.floor(scroll / rowH) + i, right = ((idx * 7 + 3) % 5) < 2
+      const bw = 90 + ((idx * 53) % 4) * 34, by = sy + 50 + i * rowH - off
+      R(x, INK, right ? sx + sw - 16 - bw - 3 : sx + 13, by - 3, bw + 6, 46); R(x, right ? col : '#efe6d6', right ? sx + sw - 16 - bw : sx + 16, by, bw, 40)
+      R(x, right ? 'rgba(255,255,255,0.5)' : 'rgba(27,18,54,0.35)', (right ? sx + sw - 16 - bw : sx + 16) + 12, by + 16, bw * 0.6, 8)
+    }
+    if (blurK > 0) { x.save(); x.globalAlpha = 0.5 * blurK; for (let j = 0; j < 6; j++) R(x, 'rgba(160,190,255,0.25)', sx, sy + ((t * 1800 + j * 97) % sh), sw, 18); x.restore() }
+    // the scroll bar
+    R(x, 'rgba(255,255,255,0.25)', sx + sw - 8, sy + 8 + ((scroll / 40) % (sh - 60)), 5, 48)
+  } else if (mode === 'notes') {
+    R(x, '#fff6d8', sx, sy + (title ? 44 : 0), sw, sh)
+    const all = lines.join('\n'), shown = Math.floor(all.length * clamp(typed))
+    let c = 0
+    lines.forEach((l, i) => { const part = l.slice(0, Math.max(0, shown - c)); c += l.length + 1; ink(x, part, sx + 18, sy + (title ? 80 : 36) + i * 40, { size: 24, align: 'left', col: INK }) })
+    if (Math.floor(t * 3) % 2 === 0) { const li = lines.length - 1; R(x, INK, sx + 22 + Math.min(sw - 40, (lines[li] || '').length * 13 * clamp(typed)), sy + (title ? 66 : 22) + li * 40, 4, 28) }
+  } else if (mode === 'profile') {
+    R(x, '#1e1844', sx, sy, sw, sh)
+    R(x, INK, -42, sy + 20, 84, 84); R(x, col, -38, sy + 24, 76, 76)
+    for (let i = 0; i < 9; i++) { const gx = sx + 10 + (i % 3) * (sw - 20) / 3, gy = sy + 130 + Math.floor(i / 3) * ((sw - 20) / 3) - scroll; R(x, INK, gx, gy, (sw - 20) / 3 - 6, (sw - 20) / 3 - 6); R(x, [PINK, GOLD, SKYB, MINT, LAV][(i * 3) % 5], gx + 4, gy + 4, (sw - 20) / 3 - 14, (sw - 20) / 3 - 14) }
+  } else if (mode === 'camera') {
+    for (let j = 0; j < 8; j++) R(x, mixHex('#3a2c6a', '#6a4a9a', j / 7), sx, sy + j * sh / 8, sw, sh / 8 + 1)
+    drawPixelStar(x, 0, sy + sh * 0.5, 150, 4, col)
+    R(x, INK, -32, sy + sh - 70, 64, 64); R(x, BONE, -26, sy + sh - 64, 52, 52)
+  } else R(x, '#1e1844', sx, sy, sw, sh)
+  x.restore()
+  if (badge) { R(x, INK, w / 2 - 44, -h / 2 - 16, 60, 44); R(x, RED, w / 2 - 40, -h / 2 - 12, 52, 36); ink(x, badge, w / 2 - 14, -h / 2 + 6, { size: 22, col: BONE }) }
+  x.restore()
+  if (mode === 'chat' && k > 0.5) { x.save(); x.globalCompositeOperation = 'lighter'; glow(x, cx, cy, w * 1.1, 0.18, '127,170,255'); x.restore() }
+}
