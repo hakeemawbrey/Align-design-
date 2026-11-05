@@ -80,6 +80,41 @@ export function spots(rng, stage, n, mode, radius, heightAt) {
   return out
 }
 
+// Soft round particles (snow, spray) that stay small and fade out right in
+// front of the lens, so a flake drifting past the camera never turns into a
+// big flat square.
+export function softParticles(color, { size = 0.05, opacity = 0.85, maxPx = 7 } = {}) {
+  return new THREE.ShaderMaterial({
+    uniforms: { uColor: { value: new THREE.Color(color) }, uSize: { value: size }, uOpacity: { value: opacity }, uMax: { value: maxPx } },
+    vertexShader: /* glsl */ `
+      uniform float uSize;
+      uniform float uMax;
+      varying float vFade;
+      void main() {
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        float dist = -mv.z;
+        gl_PointSize = min(uSize * 480.0 / max(dist, 0.001), uMax);
+        vFade = smoothstep(0.8, 2.2, dist);
+        gl_Position = projectionMatrix * mv;
+      }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform vec3 uColor;
+      uniform float uOpacity;
+      varying float vFade;
+      void main() {
+        float d = length(gl_PointCoord - 0.5);
+        float a = smoothstep(0.5, 0.15, d) * uOpacity * vFade;
+        if (a < 0.01) discard;
+        gl_FragColor = vec4(uColor, a);
+        #include <colorspace_fragment>
+      }
+    `,
+    transparent: true,
+    depthWrite: false,
+  })
+}
+
 export function rockMesh(rng, tex, r) {
   const g = new THREE.IcosahedronGeometry(r, 1)
   const p = g.attributes.position
@@ -389,7 +424,7 @@ const WORLDS = {
     }
     const base = fp.slice()
     flakes.setAttribute('position', new THREE.BufferAttribute(fp, 3))
-    const pts = new THREE.Points(flakes, new THREE.PointsMaterial({ color: '#ffffff', size: 0.05, transparent: true, opacity: 0.85 }))
+    const pts = new THREE.Points(flakes, softParticles('#ffffff', { size: 0.05, opacity: 0.85 }))
     scene.add(pts)
     const stage = new THREE.Vector3(0, H(0, -7), -7)
     return {

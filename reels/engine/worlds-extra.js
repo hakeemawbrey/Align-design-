@@ -2,7 +2,7 @@
 // { scene, rng, seed } and returns { stage, heightAt, skyTop, skyLow, hero, spots, update }.
 import * as THREE from 'three'
 import { makeNoise, smooth } from './rng.js'
-import { terrain, skyDome, sprite, lights, spots } from './worlds.js'
+import { terrain, skyDome, sprite, lights, spots, softParticles } from './worlds.js'
 import {
   waterTexture, grassTexture, sandTexture, tileTexture, skyTexture, glowTexture,
   wallpaperTexture, carpetTexture, moonDustTexture, mallTileTexture, storefrontTexture, earthTexture,
@@ -89,7 +89,7 @@ export const EXTRA_WORLDS = {
     for (let i = 0; i < NS; i++) spray.push({ a: rng.range(0, Math.PI * 2), v: rng.range(0.6, 1.2), up: rng.range(1.4, 2.1), ph: rng.next() })
     const sprayGeo = new THREE.BufferGeometry()
     sprayGeo.setAttribute('position', new THREE.BufferAttribute(sp, 3))
-    scene.add(new THREE.Points(sprayGeo, new THREE.PointsMaterial({ color: '#e8fbff', size: 0.05, transparent: true, opacity: 0.8 })))
+    scene.add(new THREE.Points(sprayGeo, softParticles('#e8fbff', { size: 0.05, opacity: 0.8 })))
 
     // shopfronts: a back wall with a balcony, and side walls running toward us
     const shops = (units) => new THREE.MeshLambertMaterial({ map: storefrontTexture(seed + 'u' + units, units) })
