@@ -1,0 +1,3 @@
+// kwme05 score: synthwave · C#m (style engine, promo/scripts/teaser-sound.mjs). No end card: the outro sits on the loop seam.
+import { DURATION, CUES, MUSIC } from './scenes/index.js'
+export default { id: 'kwme05', duration: DURATION, music: MUSIC, cues: CUES }
