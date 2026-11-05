@@ -290,6 +290,7 @@ export function makeLD(cfg) {
         bubble(x, tf, q.ax ?? 680, q.ay ?? 480, q.at, q.end, ans, { size: 40, tail: -0.7, maxW: 560 })
         if (q.a2) bubble(x, tf, q.a2x ?? 700, q.a2y ?? 380, q.a2t, q.end, q.a2, { size: 36, tail: -0.6, col: '#ffe9a8', maxW: 560 })
       }
+      if (cfg.pisLine) bubble(x, tf, cfg.pisLine.x ?? 800, cfg.pisLine.y ?? 880, cfg.pisLine.t, cfg.pisLine.end ?? D + 1, cfg.pisLine.text, { size: 34, tail: 0.45, col: '#cfeeff', maxW: 420 })
       if (cfg.extra) cfg.extra(x, tf, Sf)
       // frame-0 scream mark
       if (Sf.chaos) { label(x, 'AAAAA!!', SUBJ.x + 230, 720 + 6 * Math.sin(tf * 50), { size: 64, col: '#ffe27a', font: INTER, weight: 800, rot: -0.12 }) }
@@ -368,6 +369,7 @@ export function makeLD(cfg) {
     ...(cfg.last ? [['pop', cfg.last.t, 987.77, 0.04, 0], ['pluck', cfg.last.t + 0.5, 1318.51, 0.045, 0.6, 0], ['bell', cfg.last.t + 0.55, 1760, 0.03, 1.2, 0]] : []),
     ...(T.ending === 'loop' ? [...siren(T.loopAt + 0.1, LOOP_LEN - 0.1, 0.02), ...loopCues({ duration: D, len: LOOP_LEN })] : []),
     ...whipZoomCues(WHIP), ...slamTitleCues(HOOK), ...recordScratchCues(REC), ...CHAPS.flatMap(c => chapterCues(c)),
+    ...(cfg.pisLine ? [['pluck', cfg.pisLine.t, 659.25, 0.035, 0.5, 0.4], ['pluck', cfg.pisLine.t + 0.14, 587.33, 0.035, 0.5, 0.4]] : []),
     ...(cfg.cues || []),
   ]
   const sections = cfg.sections || { drop: T.calm, outroAt: cfg.last ? cfg.last.t + 0.5 : D - 1 }
