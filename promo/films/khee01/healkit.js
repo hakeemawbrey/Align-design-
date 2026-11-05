@@ -101,7 +101,7 @@ export function makeHeal(cfg) {
     const H1 = popText(root, cfg.h1, { top: 160, size: 80, accentSize: 116, at: T.h1, gap: 0.08, accentColor: GOLD, fit: true })
     const H2 = popText(root, cfg.h2, { top: 160, size: 80, accentSize: 116, at: T.h2, gap: 0.08, accentColor: accent, fit: true })
     const nw = cfg.last.replace(/\|/g, ' ').trim().split(/\s+/).length
-    const H3 = popText(root, cfg.last, { top: cfg.lastTop || 230, size: 96, accentSize: 150, at: T.lastWords, gap: 0.09, late: cfg.late ?? 1, lateAt: T.lastAt, wobble: true, accentColor: BUG_COL, fit: true })
+    const H3 = popText(root, cfg.last, { top: cfg.lastTop || 230, size: 96, accentSize: 128, at: T.lastWords, gap: 0.09, late: cfg.late ?? 1, lateAt: T.lastAt, wobble: true, accentColor: BUG_COL, fit: true })
     const box1 = dialogueBox(root, { lines: LINES1, y: cfg.boxY || 1420, open: T.box1[0], close: T.box1[1], cps: CPS })
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)

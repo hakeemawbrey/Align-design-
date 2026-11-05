@@ -237,13 +237,13 @@ export function talkCard(x, cx, cy, { text = '', up = 1, s = 1, rot = 0, k = 1 }
   R(x, 'rgba(6,4,18,0.45)', -w / 2 + 12, -h / 2 + 16, w, h)
   if (up < 0.5) {
     box(x, -w / 2, -h / 2, w, h, '#2a1f5a', { b: 7 * s }); R(x, GOLD, -w / 2 + 18 * s, -h / 2 + 18 * s, w - 36 * s, 6 * s); R(x, GOLD, -w / 2 + 18 * s, h / 2 - 24 * s, w - 36 * s, 6 * s)
-    drawPixelStar(x, 0, 0, 80 * s, 3, GOLD)
+    drawPixelStar(x, -40 * s, -40 * s, 80 * s, 0, GOLD, BONE)
   } else {
     box(x, -w / 2, -h / 2, w, h, '#fff6e6', { b: 7 * s }); R(x, '#dcaaf2', -w / 2, -h / 2, w, 64 * s)
     ink(x, 'TALK CARD', 0, -h / 2 + 33 * s, { size: 24 * s, col: INK, font: MONO, weight: 700 })
     const L = text.split('|')
     L.forEach((l, i) => ink(x, l, 0, 10 * s + (i - (L.length - 1) / 2) * 40 * s, { size: 30 * s, col: INK }))
-    drawPixelStar(x, 0, h / 2 - 50 * s, 34 * s, 2, GOLD)
+    drawPixelStar(x, -17 * s, h / 2 - 67 * s, 34 * s, 1, GOLD, BONE)
   }
   x.restore()
 }
@@ -287,7 +287,7 @@ export function bigPhone(x, t, cx, cy, { w = 300, h = 520, rot = 0, mode = 'chat
     for (let i = 0; i < 9; i++) { const gx = sx + 10 + (i % 3) * (sw - 20) / 3, gy = sy + 130 + Math.floor(i / 3) * ((sw - 20) / 3) - scroll; R(x, INK, gx, gy, (sw - 20) / 3 - 6, (sw - 20) / 3 - 6); R(x, [PINK, GOLD, SKYB, MINT, LAV][(i * 3) % 5], gx + 4, gy + 4, (sw - 20) / 3 - 14, (sw - 20) / 3 - 14) }
   } else if (mode === 'camera') {
     for (let j = 0; j < 8; j++) R(x, mixHex('#3a2c6a', '#6a4a9a', j / 7), sx, sy + j * sh / 8, sw, sh / 8 + 1)
-    drawPixelStar(x, 0, sy + sh * 0.5, 150, 4, col)
+    drawPixelStar(x, -75, sy + sh * 0.5 - 75, 150, 0, col, '#ffffff')
     R(x, INK, -32, sy + sh - 70, 64, 64); R(x, BONE, -26, sy + sh - 64, 52, 52)
   } else R(x, '#1e1844', sx, sy, sw, sh)
   x.restore()
