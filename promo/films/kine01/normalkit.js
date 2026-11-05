@@ -20,6 +20,7 @@
 //     heads:  [{ text, at, out: [a, b], top, size, accent }]                                   later headlines (popText)
 //     meter:  { at, land: 'so' | 'normal', out: [a, b], cx, cy, s }                             the verdict gauge
 //     lines:  [{ t, text, speaker? }]  (THE STARS unless speaker), box: { y, open, close }
+//     boxes:  [{ lines, y, open, close }]  extra dialogue boxes (long films: one per chapter)
 //     stars:  { in, out: [a, b], x, y, s }                                                       THE STARS narrator pose
 //     last:   { text, at, top, size, accent }                                                   the takeaway (holds to D / loop)
 //     scene(x, t, S)  the film's world, drawn under the kit's overlays (S: helpers, see below)
@@ -337,7 +338,8 @@ export function makeNormal(cfg) {
   const HERO = signStar(cfg.hero), PIS = signStar('pisces')
   const SPEAK = 'THE STARS', CPS = cfg.cps || 30
   const LINES = (cfg.lines || []).map(l => ({ speaker: SPEAK, ...l }))
-  const STARS_HOPS = [(cfg.stars?.in ?? 0) + 0.3, ...talkHops(LINES, SPEAK, { cps: CPS })]
+  const ALL_LINES = [...LINES, ...(cfg.boxes || []).flatMap(bx => bx.lines.map(l => ({ speaker: SPEAK, ...l })))]
+  const STARS_HOPS = [(cfg.stars?.in ?? 0) + 0.3, ...talkHops(ALL_LINES, SPEAK, { cps: CPS })]
   const RECS = cfg.rec ? [].concat(cfg.rec) : []
 
   const hero = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: HERO.color, glyph: o.s >= 150 ? HERO.glyph : null, seed: 3, glow: 1.1, ...o })
@@ -373,6 +375,7 @@ export function makeNormal(cfg) {
       ...(cfg.stickers || []).map(s2 => buildSticker(root, s2)),
     ]
     const box1 = LINES.length ? dialogueBox(root, { lines: LINES, y: cfg.box?.y ?? 1420, open: cfg.box?.open, close: cfg.box?.close, cps: CPS }) : null
+    const boxN = (cfg.boxes || []).map(bx => dialogueBox(root, { lines: bx.lines.map(l => ({ speaker: SPEAK, ...l })), y: bx.y ?? 1420, open: bx.open, close: bx.close, cps: CPS }))
     buildBug(root)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
@@ -408,6 +411,7 @@ export function makeNormal(cfg) {
         if (lastP) lastP.update(t, cfg.last.out ? outK(t, cfg.last.out) : 1)
         stickers.forEach(s2 => s2.update(t))
         if (box1) box1.update(t)
+        for (const bx of boxN) bx.update(t)
         let fl = 0, fcol = '#fff6ea'
         for (const f of cfg.flashes || []) { const d = t - f.t; if (d >= 0 && d < (f.d || 0.14)) { const v = (f.a || 0.6) * (1 - d / (f.d || 0.14)); if (v > fl) { fl = v; fcol = f.col || '#fff6ea' } } }
         flash.style.opacity = String(fl); flash.style.background = fcol
@@ -453,7 +457,7 @@ export function makeNormal(cfg) {
       ['bell', r3(cfg.meter.at + METER.land + 0.06), 1760, 0.03, 1.2, 0], ['glitter', r3(cfg.meter.at + METER.land + 0.04), r3(cfg.meter.at + METER.land + 0.5)],
     ] : []),
     ...(cfg.stars ? [['pop', r3(cfg.stars.in + 0.05), 739.99, 0.035, -0.4]] : []),
-    ...talkCues(LINES, { cps: CPS }),
+    ...talkCues(ALL_LINES, { cps: CPS }),
     ...(cfg.promise ? [['pop', r3(cfg.promise.at + 0.05), 1318.51, 0.04, 0.2], ['pluck', r3(cfg.promise.at + 0.1), 1567.98, 0.035, 0.4, 0.2]] : []),
     ...(cfg.last ? [...wordPops(cfg.last.at, Math.min(8, nWords(cfg.last.text)), 0.09, 2), ['bell', r3((cfg.last.lateAt ?? cfg.last.at + 0.09 * (nWords(cfg.last.text) - 1)) + 0.05), 2349.32, 0.025, 1.0, 0]] : []),
     ...(LOOPED ? loopCues({ duration: D }) : []),
