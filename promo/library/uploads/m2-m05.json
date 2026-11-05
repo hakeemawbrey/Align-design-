@@ -158,5 +158,25 @@
   "series": "news",
   "episode": 16,
   "caption": "Left on read for four hours: a live report from outside the window, a feelings forecast and an expert panel.\nStay for the 11:59 update. Which sign rereads the text the most?"
+ },
+ "kbne17": {
+  "video": "/_blob/048662f44a602a8642a6660feebf2a94",
+  "poster": "/_blob/04ef0a1f4dfc574e7cda85bb2c57c48d",
+  "title": "Special Report: The Ex Said \"hey\"",
+  "len": 72,
+  "long": true,
+  "series": "news",
+  "episode": 17,
+  "caption": "2:07 a.m. Three letters. No question mark. Tonight's special report has a field reporter, a nostalgia front and a verdict.\nSpoiler: breakfast with your best friend wins."
+ },
+ "kbne18": {
+  "video": "/_blob/ea08c348da274cc8e2f7a4a844937467",
+  "poster": "/_blob/ef69c86c163ff79474dd10a201fcb625",
+  "title": "Decision Desk: Who Texts First",
+  "len": 80,
+  "long": true,
+  "series": "news",
+  "episode": 18,
+  "caption": "The first date ended at 10. The decision desk tracked every draft and every deleted \"had fun.\"\nResults at the end. Are you the one who texts first?"
  }
 }
