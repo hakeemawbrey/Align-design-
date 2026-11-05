@@ -32,7 +32,7 @@ import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
-import { whipZoom, whipZoomCues, slamTitle, slamTitleCues, chapter, chapterCues } from '../../hookkit.js'
+import { whipZoom, whipZoomCues, slamTitle, slamTitleCues, chapter, chapterCues, recordScratch, recordScratchCues, frozen } from '../../hookkit.js'
 import { pop01, outK, drawBits, sparkles, starFrame, inSprite, tearsCells, INTER, MONO } from '../../sxmail1/scenes/mail.js'
 
 export const GOLD = '#f2c75c', BONE = '#efe6d6', INK = '#1b1236', PINK = '#ff8fb1', RED = '#ff4a5a', GREEN = '#5fd38a', TEAR = '#8fe3ff'
@@ -599,5 +599,9 @@ export function makeDive(cfg) {
   const HOOK = { at: -1, text: cfg.hook, top: 150, size: 112, accentColor: cfg.accent || S.color, out: [HOOK_END - 0.4, HOOK_END - 0.1] }
   const CH = CHAPTERS.map((c, i) => ({ at: C0(i) + 0.35, out: [C0(i + 1) - 0.3, C0(i + 1) - 0.05], n: c.n, title: c.topic, x: 54, y: 120, color: cfg.accent || GOLD }))
   CUES.push(...whipZoomCues(WHIP), ...slamTitleCues(HOOK), ...CH.flatMap(c => chapterCues(c)))
-  return { DURATION: D, SCENES: [build, whipZoom(WHIP), slamTitle(HOOK), ...CH.map(c => chapter(c))], CUES, T, C0, beats }
+  // optional record-scratch freeze mid-fall (before the splash)
+  const REC = cfg.rec ? { at: 0.28, len: 0.5, caption: cfg.rec, top: 1560 } : null
+  if (REC) CUES.push(...recordScratchCues(REC))
+  const SC = [REC ? frozen(build, [REC]) : build, whipZoom(WHIP), slamTitle(HOOK), ...CH.map(c => chapter(c)), ...(REC ? [recordScratch(REC)] : [])]
+  return { DURATION: D, SCENES: SC, CUES, T, C0, beats }
 }
