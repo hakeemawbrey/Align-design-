@@ -103,8 +103,11 @@ export function bubble(x, t, cx, cy, t0, t1, s, { size = 36, col = BONE, ink = I
   if (k <= 0.01) return
   x.save(); x.font = `800 ${size}px ${INTER}`; x.letterSpacing = '0px'
   const lines = []; let cur = ''
-  for (const wd of s.split(' ')) { const tr = cur ? cur + ' ' + wd : wd; if (x.measureText(tr).width > maxW - 50 && cur) { lines.push(cur); cur = wd } else cur = tr }
-  lines.push(cur)
+  for (const para of s.split('|')) {
+    cur = ''
+    for (const wd of para.trim().split(' ')) { const tr = cur ? cur + ' ' + wd : wd; if (x.measureText(tr).width > maxW - 50 && cur) { lines.push(cur); cur = wd } else cur = tr }
+    lines.push(cur)
+  }
   const w = Math.max(...lines.map(l => x.measureText(l).width)) + 50, h = lines.length * size * 1.18 + 30
   x.translate(cx, cy); x.scale(k, k)
   pbox(x, -w / 2, -h / 2, w, h, col, { b: 6, edge: ink })
