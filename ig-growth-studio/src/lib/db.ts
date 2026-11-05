@@ -33,9 +33,19 @@ export interface PostRow {
   permalink: string | null;
   error: string | null;
   attempts: number;
+  /** Facebook Reel on the linked Page: null = not posting to Facebook; pending → processing → published | failed. */
+  fb_status: FbStatus | null;
+  fb_video_id: string | null;
+  fb_permalink: string | null;
+  fb_error: string | null;
+  fb_attempts: number;
+  /** When the Facebook upload started (for the 30-per-24-hours Page limit). */
+  fb_started_at: string | null;
   created_at: string;
   updated_at: string;
 }
+
+export type FbStatus = "pending" | "processing" | "published" | "failed";
 
 export interface Account {
   igUserId: string;
@@ -213,6 +223,15 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
     )`,
     "CREATE INDEX media_info_account ON media_info (ig_user_id, posted_at)",
   ],
+  // v4: cross-posting Reels to the linked Facebook Page.
+  async () => [
+    "ALTER TABLE posts ADD COLUMN fb_status TEXT",
+    "ALTER TABLE posts ADD COLUMN fb_video_id TEXT",
+    "ALTER TABLE posts ADD COLUMN fb_permalink TEXT",
+    "ALTER TABLE posts ADD COLUMN fb_error TEXT",
+    "ALTER TABLE posts ADD COLUMN fb_attempts INTEGER NOT NULL DEFAULT 0",
+    "ALTER TABLE posts ADD COLUMN fb_started_at TEXT",
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -373,14 +392,16 @@ export interface NewPost {
   scheduledAt: Date;
   trial?: TrialStrategy | null;
   coverOffsetMs?: number | null;
+  /** Reels only: also post to the linked Facebook Page. */
+  facebook?: boolean;
   source?: PostSource;
 }
 
 export async function createPost(db: DB, p: NewPost): Promise<number> {
   const res = await run(
     db,
-    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, cover_offset_ms, source, scheduled_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, cover_offset_ms, source, scheduled_at, fb_status)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       p.igUserId,
       p.type,
@@ -391,6 +412,7 @@ export async function createPost(db: DB, p: NewPost): Promise<number> {
       p.type === "REELS" ? (p.coverOffsetMs ?? null) : null,
       p.source ?? "you",
       p.scheduledAt.toISOString(),
+      p.type === "REELS" && p.facebook ? "pending" : null,
     ],
   );
   return Number(res.lastInsertRowid);
@@ -444,13 +466,28 @@ export async function claimPost(db: DB, id: number, now: Date): Promise<boolean>
  * Edits a post that has not started publishing. A failed or cancelled post goes back in the queue when given a time.
  * The status check is part of the UPDATE, so it cannot race the publisher claiming the post.
  */
-export async function editQueuedPost(db: DB, id: number, fields: { caption?: string; scheduledAt?: Date; coverOffsetMs?: number | null }, now: Date) {
+export async function editQueuedPost(
+  db: DB,
+  id: number,
+  fields: { caption?: string; scheduledAt?: Date; coverOffsetMs?: number | null; facebook?: boolean },
+  now: Date,
+) {
   const sets: string[] = [];
   const args: Arg[] = [];
+  // Facebook can be switched on or off until its upload starts.
+  if (fields.facebook !== undefined) {
+    sets.push(
+      fields.facebook
+        ? "fb_status = CASE WHEN type <> 'REELS' OR fb_status IN ('processing', 'published') THEN fb_status ELSE 'pending' END, fb_error = NULL"
+        : "fb_status = CASE WHEN fb_status IN ('processing', 'published') THEN fb_status ELSE NULL END",
+    );
+  }
   if (fields.caption !== undefined) sets.push("caption = ?"), args.push(fields.caption);
   if (fields.coverOffsetMs !== undefined) sets.push("cover_offset_ms = CASE WHEN type = 'REELS' THEN ? END"), args.push(fields.coverOffsetMs);
   if (fields.scheduledAt) {
     sets.push("scheduled_at = ?", "status = 'scheduled'", "container_id = NULL", "error = NULL", "attempts = 0");
+    // Requeueing also retries a failed Facebook upload.
+    if (fields.facebook === undefined) sets.push("fb_status = CASE WHEN fb_status = 'failed' THEN 'pending' ELSE fb_status END");
     args.push(fields.scheduledAt.toISOString());
   }
   if (sets.length === 0) return false;
@@ -468,6 +505,39 @@ export async function updatePost(db: DB, id: number, fields: Partial<Omit<PostRo
   if (entries.length === 0) return;
   const sets = entries.map(([k]) => `${k} = ?`).join(", ");
   await run(db, `UPDATE posts SET ${sets}, updated_at = ${NOW_SQL} WHERE id = ?`, [...entries.map(([, v]) => v), id]);
+}
+
+// ---- Facebook cross-posting ----
+
+/** Facebook uploads that are due, or started and still processing. Skips posts cancelled on Instagram. */
+export async function dueFacebookPosts(db: DB, now: Date): Promise<PostRow[]> {
+  return all<PostRow>(
+    db,
+    `SELECT * FROM posts
+     WHERE ((fb_status = 'pending' AND scheduled_at <= ?) OR fb_status = 'processing') AND status <> 'cancelled'
+     ORDER BY scheduled_at ASC`,
+    [now.toISOString()],
+  );
+}
+
+/** Marks a Facebook upload as started. Returns false if another runner claimed it first. */
+export async function claimFacebook(db: DB, id: number, now: Date): Promise<boolean> {
+  const res = await run(
+    db,
+    "UPDATE posts SET fb_status = 'processing', fb_attempts = fb_attempts + 1, fb_error = NULL, fb_started_at = ? WHERE id = ? AND fb_status = 'pending'",
+    [now.toISOString(), id],
+  );
+  return res.rowsAffected === 1;
+}
+
+/** Facebook uploads started for one account's Page in the 24 hours before `now`. */
+export async function facebookStartsSince(db: DB, igUserId: string, since: Date): Promise<number> {
+  const row = await one<{ n: number }>(
+    db,
+    "SELECT COUNT(*) AS n FROM posts WHERE ig_user_id = ? AND fb_started_at >= ? AND fb_status IN ('processing', 'published')",
+    [igUserId, since.toISOString()],
+  );
+  return Number(row?.n ?? 0);
 }
 
 // ---- niche accounts ----

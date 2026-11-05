@@ -1,4 +1,5 @@
 import { type Account, type DB, getSetting, hasSnapshot, listAccounts, saveMediaSnapshots, saveSnapshot, setSetting } from "./db";
+import { type FbRunResult, publishFacebookDue } from "./facebook";
 import { GraphClient } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
 
@@ -10,10 +11,18 @@ export async function runScheduledWork(
   db: DB,
   now = new Date(),
   source = "worker",
-): Promise<RunResult & { snapshots: string[]; videos?: number }> {
+): Promise<RunResult & { snapshots: string[]; videos?: number; facebook?: FbRunResult }> {
   // Shown on Settings, so it is easy to see that the scheduler is alive.
   await setSetting(db, "last_run", JSON.stringify({ at: now.toISOString(), source }));
   const result = await publishDuePosts(db, { now });
+  // Facebook runs separately so a Facebook problem never holds up Instagram.
+  let facebook: FbRunResult | undefined;
+  try {
+    const fb = await publishFacebookDue(db, { now });
+    if (fb.started.length + fb.published.length + fb.failed.length) facebook = fb;
+  } catch (err) {
+    console.error("facebook:", err instanceof Error ? err.message : err);
+  }
   const day = now.toISOString().slice(0, 10);
   const snapshots: string[] = [];
   for (const account of await listAccounts(db)) {
@@ -29,7 +38,7 @@ export async function runScheduledWork(
     }
   }
   const videos = await snapshotVideosIfDue(db, now);
-  return { ...result, snapshots, ...(videos ? { videos } : {}) };
+  return { ...result, snapshots, ...(videos ? { videos } : {}), ...(facebook ? { facebook } : {}) };
 }
 
 const VIDEO_SNAPSHOT_EVERY_MS = 60 * 60_000;

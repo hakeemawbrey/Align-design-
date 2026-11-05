@@ -13,6 +13,8 @@ export const PostFields = z.object({
   trial: z.enum(["MANUAL", "SS_PERFORMANCE"]).nullable(),
   /** Reels: cover frame, in ms from the start of the video. */
   coverOffsetMs: z.number().int().min(0).max(15 * 60_000).nullable().optional(),
+  /** Reels: also post to the Facebook Page linked to the account. */
+  facebook: z.boolean().optional(),
 });
 export type PostFields = z.infer<typeof PostFields>;
 
@@ -31,6 +33,8 @@ export async function queuePost(
   if (Number.isNaN(scheduledAt.getTime())) return { error: "Invalid date" };
   if (countHashtags(fields.caption) > MAX_HASHTAGS) return { error: "Instagram allows at most 30 hashtags per post" };
   if (fields.trial && fields.type !== "REELS") return { error: "Only Reels can be Trial Reels" };
+  if (fields.facebook && fields.type !== "REELS") return { error: "Only Reels can be cross-posted to Facebook" };
+  if (fields.facebook && !hasFacebookPage(account)) return { error: `@${account.username} has no Facebook Page linked` };
   const id = await createPost(db, {
     igUserId: account.igUserId,
     type: fields.type,
@@ -40,10 +44,16 @@ export async function queuePost(
     shareToFeed: fields.shareToFeed,
     trial: fields.trial,
     coverOffsetMs: fields.coverOffsetMs ?? null,
+    facebook: fields.facebook ?? false,
     scheduledAt,
     source,
   });
   return { id };
+}
+
+/** Accounts connected through a business portfolio have no Facebook Page to post to. */
+export function hasFacebookPage(account: Account) {
+  return !account.pageName.endsWith("(business portfolio)");
 }
 
 export const TRIAL_LABEL: Record<string, string> = {
@@ -67,5 +77,6 @@ export function publicPost(p: PostRow, accounts: Map<string, Account>) {
     source: p.source,
     permalink: p.permalink,
     error: p.error,
+    facebook: p.fb_status ? { status: p.fb_status, permalink: p.fb_permalink, error: p.fb_error } : null,
   };
 }

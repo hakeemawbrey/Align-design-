@@ -60,5 +60,8 @@ export const META_SCOPES = [
   "instagram_manage_engagement",
   "pages_show_list",
   "pages_read_engagement",
+  // Facebook Reels on the linked Page, and their play counts.
+  "pages_manage_posts",
+  "read_insights",
   "business_management",
 ];

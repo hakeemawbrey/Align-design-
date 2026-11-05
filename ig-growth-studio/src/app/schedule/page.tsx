@@ -6,7 +6,7 @@ import { ScheduleCalendar } from "@/components/ScheduleCalendar";
 import { ScheduleForm } from "@/components/ScheduleForm";
 import { getAccount, getDb, listAccounts, listPosts } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
-import { TRIAL_LABEL } from "@/lib/posts";
+import { TRIAL_LABEL, hasFacebookPage } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +55,7 @@ export default async function SchedulePage({
             publishes each post to its account.{quota && ` ${quota}.`}
           </p>
           <ScheduleForm
-            accounts={accounts.map(({ igUserId, username }) => ({ igUserId, username }))}
+            accounts={accounts.map((a) => ({ igUserId: a.igUserId, username: a.username, facebookPage: hasFacebookPage(a) ? a.pageName : null }))}
             defaultAccount={active.igUserId}
             defaultDate={date}
           />
@@ -146,6 +146,22 @@ export default async function SchedulePage({
                         <a href={p.permalink} target="_blank" rel="noreferrer">
                           View
                         </a>
+                      </div>
+                    )}
+                    {p.fb_status && (
+                      <div className="small" style={{ marginTop: 4 }}>
+                        <span className={`badge ${p.fb_status === "pending" ? "scheduled" : p.fb_status}`} title={p.fb_error ?? undefined}>
+                          Facebook: {p.fb_status}
+                        </span>
+                        {p.fb_permalink && (
+                          <>
+                            {" "}
+                            <a href={p.fb_permalink} target="_blank" rel="noreferrer">
+                              View
+                            </a>
+                          </>
+                        )}
+                        {p.fb_error && p.fb_status !== "published" && <div className="muted">{p.fb_error}</div>}
                       </div>
                     )}
                   </td>

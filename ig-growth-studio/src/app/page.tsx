@@ -8,6 +8,7 @@ import { TopVideos } from "@/components/TopVideos";
 import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos } from "@/lib/db";
 import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
 import { GraphClient } from "@/lib/graph";
+import { hasFacebookPage } from "@/lib/posts";
 import { type PostStats, type Profile, accountStats } from "@/lib/insights";
 
 export const dynamic = "force-dynamic";
@@ -272,6 +273,8 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
       <h2>Top videos, last 7 days</h2>
       <TopVideos videos={await topVideos(db, { igUserId: account.igUserId, since: new Date(Date.now() - 7 * 86_400_000) })} />
 
+      {hasFacebookPage(account) && <FacebookSection account={account} />}
+
       <AccountCharts account={account} posts={posts} colorIndex={colorIndex} />
 
       <h2>Recent posts</h2>
@@ -437,6 +440,18 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
                 ]}
               />
             </ChartCard>
+            {posts.some((p) => p.fb_status) && (
+              <ChartCard title="Facebook cross-posts" sub="Reels also going to the linked Facebook Pages.">
+                <SegmentedBar
+                  label="Facebook cross-posts by status"
+                  parts={[
+                    { name: "Published", value: count((p) => p.fb_status === "published"), color: "var(--status-good)" },
+                    { name: "Queued", value: count((p) => p.fb_status === "pending" || p.fb_status === "processing"), color: "var(--status-warning)", dark: true },
+                    { name: "Failed", value: count((p) => p.fb_status === "failed"), color: "var(--status-critical)" },
+                  ]}
+                />
+              </ChartCard>
+            )}
             <ChartCard title="All posts by status">
               <SegmentedBar
                 label="Posts by status"
@@ -539,6 +554,51 @@ async function AccountCharts({ account, posts, colorIndex }: { account: Account;
             />
           </div>
         </>
+      )}
+    </>
+  );
+}
+
+/** The linked Facebook Page: followers and plays of the latest cross-posted Reels. */
+async function FacebookSection({ account }: { account: Account }) {
+  const db = await getDb();
+  const crossPosts = (await listPosts(db, { igUserId: account.igUserId })).filter((p) => p.fb_status);
+  const published = crossPosts.filter((p) => p.fb_status === "published" && p.fb_video_id).slice(0, 10);
+  let followers: number | null = null;
+  let plays: (number | null)[] = [];
+  let problem: string | null = null;
+  try {
+    const page = await new GraphClient({ token: account.token }).pageForInstagram(account.igUserId);
+    if (page) {
+      const pc = new GraphClient({ token: page.token });
+      followers = await pc.pageFollowers(page.id).catch(() => null);
+      plays = await Promise.all(published.map((p) => pc.pageReelPlays(p.fb_video_id!).catch(() => null)));
+    }
+  } catch (err) {
+    problem = err instanceof Error ? err.message : "Could not reach Facebook";
+  }
+  const n = (s: string) => crossPosts.filter((p) => p.fb_status === s).length;
+  return (
+    <>
+      <h2>Facebook: {account.pageName}</h2>
+      {problem && <p className="error small">{problem}</p>}
+      <div className="stats">
+        <Stat label="Page followers" value={followers === null ? "—" : fmt.format(followers)} />
+        <Stat label="Reels posted to Facebook" value={fmt.format(n("published"))} />
+        <Stat label="Queued for Facebook" value={fmt.format(n("pending") + n("processing"))} />
+        <Stat label="Failed on Facebook" value={fmt.format(n("failed"))} />
+      </div>
+      {published.length > 0 && (
+        <div className="card" style={{ marginTop: 12 }}>
+          <h3>Plays on recent Facebook Reels</h3>
+          <p className="sub">Latest {published.length}, newest first.</p>
+          <BarList
+            items={published.map((p, i) => ({
+              label: `${new Date(p.scheduled_at).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}`,
+              value: plays[i] ?? null,
+            }))}
+          />
+        </div>
       )}
     </>
   );

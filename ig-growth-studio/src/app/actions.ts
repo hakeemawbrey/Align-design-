@@ -36,6 +36,7 @@ export async function schedulePost(_: unknown, form: FormData): Promise<{ error?
     caption: String(form.get("caption") ?? ""),
     shareToFeed: form.get("shareToFeed") === "on",
     trial: type === "REELS" && (trial === "MANUAL" || trial === "SS_PERFORMANCE") ? trial : null,
+    facebook: type === "REELS" && form.get("facebook") === "on",
   });
   if (!fields.success) return { error: fields.error.issues[0]?.message ?? "Invalid input" };
   const when = When.safeParse({ scheduledAt: form.get("scheduledAt"), tzOffset: form.get("tzOffset") ?? 0 });

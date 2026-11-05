@@ -3,6 +3,8 @@ import { ChooseAccounts } from "@/components/ChooseAccounts";
 import { LocalTime } from "@/components/LocalTime";
 import { config } from "@/lib/config";
 import { getAccount, getDb, getPendingLogin, getSetting, listAccounts } from "@/lib/db";
+import { GraphClient } from "@/lib/graph";
+import { hasFacebookPage } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +21,16 @@ export default async function SettingsPage({
   const lastRun = JSON.parse((await getSetting(db, "last_run")) ?? "null") as { at: string; source: string } | null;
   const lastRunAgoMin = lastRun ? Math.round((Date.now() - new Date(lastRun.at).getTime()) / 60_000) : null;
   const appReady = Boolean(config.appId && config.appSecret);
+  // Facebook Page posting needs two extra permissions; older logins don't have them until reconnected.
+  let fbAllowed: boolean | null = null;
+  if (active) {
+    try {
+      const granted = await new GraphClient({ token: active.token }).grantedPermissions();
+      fbAllowed = granted.has("pages_manage_posts") && granted.has("read_insights");
+    } catch {
+      fbAllowed = null;
+    }
+  }
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
   return (
@@ -135,6 +147,36 @@ export default async function SettingsPage({
             </form>
           )}
         </div>
+      </div>
+
+      <h2>Facebook Pages</h2>
+      <div className="card stack">
+        <p className="small" style={{ margin: 0 }}>
+          {fbAllowed === null ? (
+            <span className="muted">Could not check Facebook permissions right now.</span>
+          ) : fbAllowed ? (
+            <span className="ok">Posting Reels to your Facebook Pages is allowed.</span>
+          ) : (
+            <span className="error">
+              Facebook posting isn&apos;t allowed yet. Click &ldquo;Add or refresh accounts&rdquo; above and accept the new
+              permissions (manage posts and read insights). Your accounts and queue stay as they are.
+            </span>
+          )}
+        </p>
+        <table>
+          <tbody>
+            {accounts.map((a) => (
+              <tr key={a.igUserId}>
+                <td>@{a.username}</td>
+                <td className="small">{hasFacebookPage(a) ? a.pageName : <span className="muted">No Facebook Page linked</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="muted small" style={{ margin: 0 }}>
+          Tick &ldquo;Also post to the Facebook Page&rdquo; on a Reel to post it there at the same time. Facebook takes
+          videos of 3 to 90 seconds and allows 30 Reels per Page in any 24 hours.
+        </p>
       </div>
 
       <h2>Claude automation</h2>

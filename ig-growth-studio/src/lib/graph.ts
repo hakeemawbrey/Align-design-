@@ -267,6 +267,75 @@ export class GraphClient {
     return out;
   }
 
+  // ---------- Facebook Pages ----------
+
+  /** The Facebook Page linked to an Instagram account, with a Page token (needs pages_show_list). */
+  async pageForInstagram(igUserId: string): Promise<{ id: string; name: string; token: string } | null> {
+    const pages = await this.all<{ id: string; name: string; access_token?: string; instagram_business_account?: { id: string } }>(
+      "me/accounts",
+      { fields: "id,name,access_token,instagram_business_account{id}", limit: 100 },
+    );
+    const p = pages.find((x) => x.instagram_business_account?.id === igUserId && x.access_token);
+    return p ? { id: p.id, name: p.name, token: p.access_token! } : null;
+  }
+
+  /**
+   * Starts a Facebook Reel on a Page from a public video URL and publishes it (call on a client holding the Page token).
+   * Facebook keeps processing afterwards; poll pageVideoStatus. Needs pages_manage_posts.
+   */
+  async publishPageReel(pageId: string, videoUrl: string, description: string, state: "PUBLISHED" | "DRAFT" = "PUBLISHED") {
+    const start = await this.request<{ video_id: string }>("POST", `${pageId}/video_reels`, { upload_phase: "start" });
+    const res = await this.fetchImpl(`https://rupload.facebook.com/video-upload/${this.version}/${start.video_id}`, {
+      method: "POST",
+      headers: { authorization: `OAuth ${this.token}`, file_url: videoUrl },
+      cache: "no-store",
+    });
+    const up = (await res.json().catch(() => ({}))) as { success?: boolean; debug_info?: { message?: string }; error?: { message?: string } };
+    if (!res.ok || !up.success) {
+      throw new GraphError(`Facebook could not fetch the video: ${up.debug_info?.message ?? up.error?.message ?? `HTTP ${res.status}`}`, res.status);
+    }
+    await this.request("POST", `${pageId}/video_reels`, {
+      upload_phase: "finish",
+      video_id: start.video_id,
+      video_state: state,
+      description,
+    });
+    return { videoId: start.video_id };
+  }
+
+  /** Processing/publishing state of a Page video, plus its link once live. */
+  async pageVideoStatus(videoId: string) {
+    return this.request<{
+      status?: {
+        video_status?: string;
+        processing_phase?: { status?: string; errors?: { message?: string }[] };
+        publishing_phase?: { status?: string; errors?: { message?: string }[] };
+        uploading_phase?: { status?: string; errors?: { message?: string }[] };
+      };
+      permalink_url?: string;
+    }>("GET", videoId, { fields: "status,permalink_url" });
+  }
+
+  /** Plays of a published Facebook Reel (needs read_insights). */
+  async pageReelPlays(videoId: string): Promise<number | null> {
+    const res = await this.request<{ data: { name: string; values?: { value: number }[] }[] }>("GET", `${videoId}/video_insights`, {
+      metric: "blue_reels_play_count",
+    });
+    return res.data[0]?.values?.[0]?.value ?? null;
+  }
+
+  /** Followers of a Page. */
+  async pageFollowers(pageId: string): Promise<number | null> {
+    const r = await this.request<{ followers_count?: number }>("GET", pageId, { fields: "followers_count" });
+    return r.followers_count ?? null;
+  }
+
+  /** Permissions the user has granted this app. */
+  async grantedPermissions(): Promise<Set<string>> {
+    const r = await this.request<{ data: { permission: string; status: string }[] }>("GET", "me/permissions");
+    return new Set(r.data.filter((p) => p.status === "granted").map((p) => p.permission));
+  }
+
   // ---------- engagement ----------
 
   /** Recent posts from another Business/Creator account (Business Discovery). */

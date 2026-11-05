@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { agentAuth } from "@/lib/agent";
 import { editQueuedPost, getAccount, getDb, getPost, listAccounts, updatePost } from "@/lib/db";
-import { MAX_HASHTAGS, PostFields, countHashtags, publicPost } from "@/lib/posts";
+import { MAX_HASHTAGS, PostFields, countHashtags, hasFacebookPage, publicPost } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
 
@@ -12,10 +12,11 @@ const Patch = z
   .object({
     caption: PostFields.shape.caption.optional(),
     coverOffsetMs: PostFields.shape.coverOffsetMs,
+    facebook: z.boolean().optional(),
     scheduledAt: z.iso.datetime({ offset: true, message: "scheduledAt must be ISO 8601 with a time zone" }).optional(),
   })
-  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined || b.coverOffsetMs !== undefined, {
-    message: "Send caption, scheduledAt and/or coverOffsetMs",
+  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined || b.coverOffsetMs !== undefined || b.facebook !== undefined, {
+    message: "Send caption, scheduledAt, coverOffsetMs and/or facebook",
   });
 
 async function load(req: NextRequest, params: Promise<{ id: string }>) {
@@ -38,7 +39,14 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const issue = parsed.error.issues[0];
     return NextResponse.json({ error: `${issue?.path.join(".") || "body"}: ${issue?.message ?? "invalid"}` }, { status: 400 });
   }
-  const { caption, scheduledAt, coverOffsetMs } = parsed.data;
+  const { caption, scheduledAt, coverOffsetMs, facebook } = parsed.data;
+  if (facebook && post.type !== "REELS") {
+    return NextResponse.json({ error: "Only Reels can be cross-posted to Facebook" }, { status: 400 });
+  }
+  if (facebook) {
+    const acct = await getAccount(db, post.ig_user_id);
+    if (acct && !hasFacebookPage(acct)) return NextResponse.json({ error: `@${acct.username} has no Facebook Page linked` }, { status: 400 });
+  }
   if (coverOffsetMs != null && post.type !== "REELS") {
     return NextResponse.json({ error: "Only Reels have a cover frame" }, { status: 400 });
   }
@@ -52,7 +60,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (when && !(await getAccount(db, post.ig_user_id))) {
     return NextResponse.json({ error: "This post's account is no longer connected" }, { status: 409 });
   }
-  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when, coverOffsetMs }, new Date()))) {
+  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when, coverOffsetMs, facebook }, new Date()))) {
     const allowed = when ? "scheduled, failed or cancelled" : "scheduled";
     return NextResponse.json({ error: `Only ${allowed} posts can be changed (this one is ${post.status})` }, { status: 409 });
   }

@@ -10,7 +10,7 @@ export function ScheduleForm({
   defaultAccount,
   defaultDate,
 }: {
-  accounts: { igUserId: string; username: string }[];
+  accounts: { igUserId: string; username: string; facebookPage: string | null }[];
   defaultAccount: string;
   /** YYYY-MM-DD picked from the calendar; the time defaults to 9:00. */
   defaultDate?: string;
@@ -19,6 +19,8 @@ export function ScheduleForm({
   const [type, setType] = useState<"IMAGE" | "REELS">("IMAGE");
   const [trial, setTrial] = useState<Trial>("");
   const [caption, setCaption] = useState("");
+  const [account, setAccount] = useState(defaultAccount);
+  const page = accounts.find((a) => a.igUserId === account)?.facebookPage ?? null;
   const [tzOffset, setTzOffset] = useState(0);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -40,7 +42,7 @@ export function ScheduleForm({
       <div className="row">
         <label style={{ flex: "1 1 160px" }}>
           Account
-          <select name="account" defaultValue={defaultAccount} key={defaultAccount}>
+          <select name="account" value={account} onChange={(e) => setAccount(e.target.value)}>
             {accounts.map((a) => (
               <option key={a.igUserId} value={a.igUserId}>
                 @{a.username}
@@ -97,6 +99,12 @@ export function ScheduleForm({
         <label className="row" style={{ display: "flex" }}>
           <input type="checkbox" name="shareToFeed" defaultChecked style={{ width: "auto" }} />
           Also show the Reel in the main feed grid
+        </label>
+      )}
+      {type === "REELS" && page && (
+        <label className="row" style={{ display: "flex" }}>
+          <input type="checkbox" name="facebook" style={{ width: "auto" }} />
+          Also post to the Facebook Page &ldquo;{page}&rdquo; at the same time (videos 3&ndash;90 seconds)
         </label>
       )}
       <div className="row">
