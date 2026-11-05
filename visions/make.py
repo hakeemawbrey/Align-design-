@@ -60,8 +60,8 @@ def queue(lines, st, theme=None, sign=None):
 
 
 def one(job):
-    ln, seed, preview = job
-    return render.render(ln, seed, preview)
+    ln, seed, preview, cta = job
+    return render.render(ln, seed, preview, cta=cta)
 
 
 def main():
@@ -71,6 +71,7 @@ def main():
     ap.add_argument("--sign")
     ap.add_argument("--forever", action="store_true")
     ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--cta", help='call to action on the end card and in the caption, e.g. "Join the beta"')
     ap.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) // 2))
     a = ap.parse_args()
     lines = render.load_lines()["lines"]
@@ -82,8 +83,8 @@ def main():
             if total is not None and batch_start >= total:
                 break
             n = a.jobs * 2 if total is None else min(a.jobs * 2, total - batch_start)
-            jobs = [(ln, seed, a.preview) for ln, seed in itertools.islice(q, n)]
-            for (ln, seed, _), path in zip(jobs, ex.map(one, jobs)):
+            jobs = [(ln, seed, a.preview, a.cta) for ln, seed in itertools.islice(q, n)]
+            for (ln, seed, _, _), path in zip(jobs, ex.map(one, jobs)):
                 st["made"].append({"id": ln["id"], "seed": seed, "file": os.path.relpath(path, render.HERE)})
                 print("done", path)
             save_state(st)

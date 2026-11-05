@@ -48,6 +48,8 @@ STYLE = {
     "tag_y": 0.752,           # centre / frame height: low in the picture window (window ends 0.781)
     "tag_alpha": 0.62,
     "tag_alpha_end": 0.9,     # a little brighter under the wordmark
+    "cta_size": 0.075,        # end-card call to action under the wordmark (font px / frame width)
+    "cta_gap": 0.012,         # gap below the wordmark / frame height
     "end": 1.5,               # seconds of wordmark at the end
     # the grade (see grade()): exposure targets measured off the reference frames
     "median": 0.23,           # median luminance after levels
@@ -376,9 +378,10 @@ def tag_layer(W, H, ss=2):
     return np.asarray(img, np.float32) / 255
 
 
-def wordmark_layer(W, H, ss=2):
+def wordmark_layer(W, H, ss=2, cta=None):
     """'Align' in the app's wordmark face (EB Garamond italic), white with a heavy
-    black outline, the way the reference stamps its name over the last cuts."""
+    black outline, the way the reference stamps its name over the last cuts.
+    With cta (e.g. "Join the beta"), a line in the statement's type sits under it."""
     px = int(W * STYLE["word_size"] * ss)
     f = font("EBGaramond-Italic.ttf", px, b"ExtraBold Italic")
     stroke = round(W * STYLE["word_stroke"] * ss)
@@ -391,6 +394,14 @@ def wordmark_layer(W, H, ss=2):
     ImageDraw.Draw(shadow).text((x + stroke * 0.5, y + stroke * 1.2), text, font=f, fill=235, stroke_width=stroke)
     ImageDraw.Draw(img).text((x, y), text, font=f, fill=(255, 255, 255, 255), stroke_width=stroke,
                              stroke_fill=(0, 0, 0, 255))
+    if cta:
+        cf = font("SofiaSansCondensed.ttf", int(W * STYLE["cta_size"] * ss), b"Bold")
+        cs = max(1, round(W * STYLE["text_stroke"] * ss))
+        cw = cf.getlength(cta)
+        cx, cy = (W * ss - cw) / 2, y + box[3] + H * STYLE["cta_gap"] * ss
+        ImageDraw.Draw(shadow).text((cx, cy + cs), cta, font=cf, fill=150, stroke_width=cs * 2)
+        ImageDraw.Draw(img).text((cx, cy), cta, font=cf, fill=(255, 255, 255, 255), stroke_width=cs,
+                                 stroke_fill=(0, 0, 0, 255))
     base = Image.new("RGBA", img.size, (0, 0, 0, 0))
     base.putalpha(shadow.filter(ImageFilter.GaussianBlur(max(1, stroke * 0.3))))
     base.alpha_composite(img)
@@ -447,7 +458,7 @@ def pop(shot):
     return float(np.percentile(top @ W, 97) - np.median(a[::4, ::4] @ W) + 0.5 * (top.max(2) - top.min(2)).mean())
 
 
-def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, silent=False, n_imgs=12):
+def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, silent=False, n_imgs=12, cta=None):
     W, H = (540, 960) if preview else (1080, 1920)
     rng = np.random.default_rng([seed, zlib.crc32(line["id"].encode())])
     total = plan_length(line["text"])
@@ -473,7 +484,7 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     seq = [k % len(shots) for k in range(n_shots)]  # the reference loops one fixed order
 
     txt, lines = text_layer(line["text"], W, H)
-    mark = wordmark_layer(W, H)
+    mark = wordmark_layer(W, H, cta=cta)
     tag = tag_layer(W, H)
     end_shot = n_shots - int(round(STYLE["end"] / CUT))
     a_txt = txt[y0:y0 + S, :, 3].max(1)
@@ -482,7 +493,8 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     g = np.clip(1 - (np.abs(np.arange(S) - c) - half) / (S * STYLE["guard_fade"]), 0, 1)
     guard = STYLE.get("guard", 0) * g * g * (3 - 2 * g)  # smoothstep: no visible band edge
 
-    out = out or os.path.join(HERE, "out", f"{line['id']}-s{seed}{'-preview' if preview else ''}.mp4")
+    suffix = "-" + re.sub(r"[^a-z0-9]+", "-", cta.lower()).strip("-").split("-")[-1] if cta else ""
+    out = out or os.path.join(HERE, "out", f"{line['id']}-s{seed}{suffix}{'-preview' if preview else ''}.mp4")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     wav = None
     if not silent:
@@ -524,7 +536,7 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     if wav:
         os.remove(wav)
 
-    write_caption(out.replace(".mp4", ".txt"), line, used, rng)
+    write_caption(out.replace(".mp4", ".txt"), line, used, rng, cta)
     print(out)
     return out
 
@@ -550,7 +562,7 @@ def _clean(text, n):
     return text if len(text) <= n else text[:n - 1].rstrip(" ,;-") + "\u2026"
 
 
-def write_caption(path, line, used, rng):
+def write_caption(path, line, used, rng, cta_override=None):
     """The sidecar: a postable caption (always <= CAPTION_MAX chars, <= TAG_LIMIT tags),
     then a cut line and the full source list, which is not meant to be posted.
 
@@ -579,7 +591,8 @@ def write_caption(path, line, used, rng):
     parts = [line["text"]]
     if line.get("caption"):
         parts.append(line["caption"].strip())
-    parts.append(cta[int(rng.integers(len(cta)))])
+    pick = cta[int(rng.integers(len(cta)))]
+    parts.append(f"{cta_override.rstrip('.')} on Align. Link in bio." if cta_override else pick)
     if credits:
         parts.append("Image credits: " + "; ".join(credits) + ". Other images public domain.")
     parts.append(" ".join("#" + t for t in tags))
@@ -616,6 +629,7 @@ if __name__ == "__main__":
     ap.add_argument("--audio", help="your own track (mp3/wav/m4a)")
     ap.add_argument("--audio-start", type=float, default=0.0)
     ap.add_argument("--silent", action="store_true", help="no sound; add a trending one in the app")
+    ap.add_argument("--cta", help='call to action on the end card and in the caption, e.g. "Join the beta"')
     a = ap.parse_args()
     if a.text:
         ln = {"id": "custom-" + re.sub(r"[^a-z0-9]+", "-", a.text.lower())[:32].strip("-"), "text": a.text,
@@ -624,4 +638,4 @@ if __name__ == "__main__":
         ln = find_line(a.line)
     else:
         raise SystemExit("give a line id or --text")
-    render(ln, a.seed, a.preview, a.out, a.audio, a.audio_start, a.silent)
+    render(ln, a.seed, a.preview, a.out, a.audio, a.audio_start, a.silent, cta=a.cta)
