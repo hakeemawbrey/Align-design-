@@ -19,6 +19,16 @@
   "episode": 2,
   "caption": "Cancer typed \"rain check?\" for the fourth time. The friends were already at the door.\nTag the friend who needs an umbrella for three."
  },
+ "kxrce03": {
+  "video": "/_blob/ca96ae587e923e2895ab36d7cb97f38b",
+  "poster": "/_blob/7403306d473aaccf2e700f9d05d72a5c",
+  "title": "Washington, DC: The Fifth Seat",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 3,
+  "caption": "Two couples, one booth, and Capricorn holding the map.\nTurns out the fifth seat planned the best night of everyone's year. Who's the fifth seat in your friend group?"
+ },
  "kxtve01": {
   "video": "/_blob/bac0da3c47244b48a4467de0d0dd1c44",
   "poster": "/_blob/5bd4d71a20d24c194a190e66a5d54da3",
@@ -28,5 +38,25 @@
   "series": "xthen",
   "episode": 1,
   "caption": "2016 Sagittarius: three parties and pancakes at 2 a.m.\n2026 Sagittarius: in bed by nine, breakfast for the same crew. Which Friday are you living right now?"
+ },
+ "kxtve02": {
+  "video": "/_blob/ff051de13c0ed4088767967a373da470",
+  "poster": "/_blob/b1a7aeebeab47f39d0a596db2aa16561",
+  "title": "Waiting Up for Their Reply",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 2,
+  "caption": "Sent \"had fun today!\" at 7. In 2016 that meant refreshing until 1 a.m.\nIn 2026 Gemini made dinner, went out and read the reply at breakfast. Which era are you in?"
+ },
+ "kxtve03": {
+  "video": "/_blob/c49714c334a98bf4119019276d536338",
+  "poster": "/_blob/09ba6a7f19634ac95dd5781aa250a132",
+  "title": "Two Hours Picking a Film",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 3,
+  "caption": "Ten years of couch nights. Two hours choosing, four minutes awake. Every single time.\nThe movie was never the point. Who falls asleep first in your house?"
  }
 }
