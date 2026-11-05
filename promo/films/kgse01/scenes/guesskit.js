@@ -483,8 +483,9 @@ export function makeGuess(cfg) {
     return { start: 0, end: D + 1, root, update(t) { frame(x, t, sil); drawGrain(gx, t) } }
   }
 
-  const SCENES = [PB.wins.length ? frozen(build, PB.wins) : build, slamTitle(HOOK), ...PB.scenes, countdown(CD),
-    ...(LOOP ? [loopBack([build, slamTitle(HOOK)], { duration: D, len: LOOP_LEN })] : [])]
+  // cfg.scenes: extra hook-kit overlays (e.g. caught()); cfg.scenes0: the ones visible at t = 0 (copied for the loop)
+  const SCENES = [PB.wins.length ? frozen(build, PB.wins) : build, ...(cfg.scenes || []), slamTitle(HOOK), ...PB.scenes, countdown(CD),
+    ...(LOOP ? [loopBack([build, ...(cfg.scenes0 || []), slamTitle(HOOK)], { duration: D, len: LOOP_LEN })] : [])]
   const CUES = [
     ['crash', 0, { gain: 0.06, len: 1.2 }], ['whoosh', 0, 0.3, 0.04],
     ...slamTitleCues({ ...HOOK, at: 0 }).filter(c => c[1] < 0.6).slice(0, 4),
