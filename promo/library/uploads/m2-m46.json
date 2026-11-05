@@ -58,5 +58,35 @@
   "series": "xexplain",
   "episode": 6,
   "caption": "Wished on every shooting star that they'd text me.\nEach December Earth crosses the same trail of space dust. A wish is a lovely start; the brave, kind part is texting first."
+ },
+ "kxsse01": {
+  "video": "/_blob/5cd2a2af703c849b6a3a3ff84ef98027",
+  "poster": "/_blob/3bac717c418c9b34411555615eb3b7c4",
+  "title": "Aries × Scorpio: left on read.",
+  "len": 90,
+  "long": true,
+  "series": "xsxs",
+  "episode": 1,
+  "caption": "Read at 9:02. Reply at midnight.\nAries, send one and go live your life. Scorpio, a quick 'busy, smiling, call at nine' beats the perfect paragraph. Then agree on a rhythm, out loud."
+ },
+ "kxsse02": {
+  "video": "/_blob/32168ab472a17718dc07fc721cb045a2",
+  "poster": "/_blob/c53b7c270cb42415ed8c82e3d31b0191",
+  "title": "Taurus × Cancer: six weeks on the couch.",
+  "len": 90,
+  "long": true,
+  "series": "xsxs",
+  "episode": 2,
+  "caption": "Six weeks of staying in, and both of you a little bored.\nBored isn't a breakup. Say it kindly, ask instead of hinting, and pick one night a month to leave the house together."
+ },
+ "kxsse03": {
+  "video": "/_blob/a27731714696cefad37c906f83ce749f",
+  "poster": "/_blob/69f73e9083838bfc1b0f1aa8b4718c4a",
+  "title": "Gemini × Sagittarius: so… what are we?",
+  "len": 90,
+  "long": true,
+  "series": "xsxs",
+  "episode": 3,
+  "caption": "Four months of hanging out and nobody's asked the question.\nAsk it once, plainly. Freedom and commitment can live in the same relationship if you define it your way."
  }
 }
