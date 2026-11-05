@@ -122,11 +122,13 @@ export function makeDate(cfg) {
   }
   const stars = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: STAR.sky, mood: 'happy', seed: 2, glow: 1.05, ...o, hops: [...(o.hops || []), ...starsHops] })
 
+  const npc = (x, t, o = {}) => { const c = signStar(o.sign || 'libra'); return drawStarChar(x, o.x, o.y, o.s, t, { color: c.color, glyph: o.s >= 150 && o.badge !== false ? c.glyph : null, seed: o.seed ?? 11, glow: 0.8, tips: false, ...o }) }
+
   function drawWorld(x, t) {
-    if (t < firstA) { cfg.opener(x, t, { u: t, hero, pis, stars }); return }
+    if (t < firstA) { cfg.opener(x, t, { u: t, a: 0, b: firstA, hero, pis, stars, npc }); return }
     for (let i = 0; i < stops.length; i++) {
       const s = stops[i]
-      if (t >= s.a && (t < s.b || i === stops.length - 1)) { s.draw(x, t, { u: t - s.a, a: s.a, b: s.b, hero, pis, stars }); return }
+      if (t >= s.a && (t < s.b || i === stops.length - 1)) { s.draw(x, t, { u: t - s.a, a: s.a, b: s.b, hero, pis, stars, npc }); return }
     }
   }
 
