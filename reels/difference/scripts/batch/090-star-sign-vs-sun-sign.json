@@ -1,0 +1,50 @@
+{
+  "id": "090-star-sign-vs-sun-sign",
+  "title": "Star sign vs Sun sign",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "star sign vs sun sign: what's the difference? 🌙\nTrick question. But your moon sign is a different story.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Star sign",
+        "art": "constellation"
+      },
+      "b": {
+        "label": "Sun sign",
+        "art": "sun"
+      },
+      "ask": [
+        "This one is a trick question.",
+        "*Star sign* versus *sun sign.*"
+      ],
+      "explainA": [
+        "*Star sign* is what most people call it."
+      ],
+      "explainB": [
+        "*Sun sign* is the astrologer's word.",
+        "They're the same thing."
+      ],
+      "diff": [
+        "Trick question.",
+        "But your *moon sign* is a different story."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

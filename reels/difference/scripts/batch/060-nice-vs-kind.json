@@ -1,0 +1,51 @@
+{
+  "id": "060-nice-vs-kind",
+  "title": "Nice vs Kind",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "nice vs kind: what's the difference? 💭\nNice avoids the conflict. Kind walks through it with you.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Nice",
+        "art": "solo:mask:rose"
+      },
+      "b": {
+        "label": "Kind",
+        "art": "duo:close:gold:gold"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Nice* versus *kind.*"
+      ],
+      "explainA": [
+        "*Nice* is pleasant,",
+        "so things stay smooth."
+      ],
+      "explainB": [
+        "*Kind* is caring enough",
+        "to say the hard thing."
+      ],
+      "diff": [
+        "Nice *avoids* the conflict.",
+        "Kind walks *through* it with you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "048-shy-vs-introvert",
+  "title": "Shy vs Introvert",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "shy vs introvert: what's the difference? 💭\nA shy person wants to join. An introvert wants to rest.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Shy",
+        "art": "solo:knot:rose"
+      },
+      "b": {
+        "label": "Introvert",
+        "art": "solo:alone:blue"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Shy* versus *introverted.*"
+      ],
+      "explainA": [
+        "*Shy* is nerves around people."
+      ],
+      "explainB": [
+        "An *introvert* needs quiet",
+        "to recharge."
+      ],
+      "diff": [
+        "A shy person wants to *join.*",
+        "An introvert wants to *rest.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

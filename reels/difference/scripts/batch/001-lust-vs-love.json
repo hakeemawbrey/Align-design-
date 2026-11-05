@@ -1,0 +1,51 @@
+{
+  "id": "001-lust-vs-love",
+  "title": "Lust vs Love",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "lust vs love: what's the difference? 💭\nLust burns fast. Love keeps the lights on.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Lust",
+        "art": "solo:flame:rose"
+      },
+      "b": {
+        "label": "Love",
+        "art": "halo"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Lust* versus *love.*"
+      ],
+      "explainA": [
+        "*Lust* wants someone,",
+        "right now, tonight."
+      ],
+      "explainB": [
+        "*Love* wants their whole life to go well,",
+        "even the boring parts."
+      ],
+      "diff": [
+        "Lust burns fast.",
+        "Love keeps the lights *on.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

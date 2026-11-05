@@ -1,0 +1,50 @@
+{
+  "id": "049-confidence-vs-arrogance",
+  "title": "Confidence vs Arrogance",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "confidence vs arrogance: what's the difference? 💭\nConfidence lifts the room. Arrogance takes it.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Confidence",
+        "art": "solo:star:gold"
+      },
+      "b": {
+        "label": "Arrogance",
+        "art": "solo:mirror:mars"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Confidence* versus *arrogance.*"
+      ],
+      "explainA": [
+        "*Confidence* doesn't need you to agree."
+      ],
+      "explainB": [
+        "*Arrogance* needs you to admit",
+        "it's better."
+      ],
+      "diff": [
+        "Confidence *lifts* the room.",
+        "Arrogance *takes* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

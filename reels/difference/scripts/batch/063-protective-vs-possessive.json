@@ -1,0 +1,50 @@
+{
+  "id": "063-protective-vs-possessive",
+  "title": "Protective vs Possessive",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "protective vs possessive: what's the difference? 💭\nProtective trusts you. Possessive tracks you.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Protective",
+        "art": "solo:shield:blue"
+      },
+      "b": {
+        "label": "Possessive",
+        "art": "solo:chain:mars"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Protective* versus *possessive.*"
+      ],
+      "explainA": [
+        "*Protective* wants you safe."
+      ],
+      "explainB": [
+        "*Possessive* wants you theirs,",
+        "and nobody else's."
+      ],
+      "diff": [
+        "Protective *trusts* you.",
+        "Possessive *tracks* you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "094-aries-vs-leo",
+  "title": "Aries vs Leo",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries vs leo: what's the difference? 🌙\nAries races. Leo performs.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*Aries* versus *leo.*"
+      ],
+      "explainA": [
+        "*Aries* wants to be first."
+      ],
+      "explainB": [
+        "*Leo* wants to be seen."
+      ],
+      "diff": [
+        "Aries *races.*",
+        "Leo *performs.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

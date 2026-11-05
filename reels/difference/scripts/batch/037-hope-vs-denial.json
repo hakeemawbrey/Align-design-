@@ -1,0 +1,51 @@
+{
+  "id": "037-hope-vs-denial",
+  "title": "Hope vs Denial",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "hope vs denial: what's the difference? 💭\nHope keeps its eyes open. Denial closes them.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Hope",
+        "art": "solo:star:gold"
+      },
+      "b": {
+        "label": "Denial",
+        "art": "solo:mask:lilac"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Hope* versus *denial.*"
+      ],
+      "explainA": [
+        "*Hope* sees what could be,",
+        "and checks the facts."
+      ],
+      "explainB": [
+        "*Denial* sees what could be,",
+        "and ignores the facts."
+      ],
+      "diff": [
+        "Hope keeps its eyes *open.*",
+        "Denial *closes* them."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "a card only flips when you *both* align."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

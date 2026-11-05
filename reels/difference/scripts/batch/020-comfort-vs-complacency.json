@@ -1,0 +1,51 @@
+{
+  "id": "020-comfort-vs-complacency",
+  "title": "Comfort vs Complacency",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "comfort vs complacency: what's the difference? 💭\nComfort is a soft place. Complacency is a dead end.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Comfort",
+        "art": "solo:heart:gold"
+      },
+      "b": {
+        "label": "Complacency",
+        "art": "loop"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Comfort* versus *complacency.*"
+      ],
+      "explainA": [
+        "*Comfort* is feeling safe enough",
+        "to be yourself."
+      ],
+      "explainB": [
+        "*Complacency* is feeling so safe",
+        "you stop trying."
+      ],
+      "diff": [
+        "Comfort is a *soft place.*",
+        "Complacency is a *dead end.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

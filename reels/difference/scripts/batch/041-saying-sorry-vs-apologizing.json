@@ -1,0 +1,50 @@
+{
+  "id": "041-saying-sorry-vs-apologizing",
+  "title": "Saying sorry vs Apologizing",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "saying sorry vs apologizing: what's the difference? 💭\nSorry is a start. Change is the apology.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Saying sorry",
+        "art": "solo:heart:lilac"
+      },
+      "b": {
+        "label": "Apologizing",
+        "art": "solo:seed:mint"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Saying sorry* versus *apologizing.*"
+      ],
+      "explainA": [
+        "*Saying sorry* is the word."
+      ],
+      "explainB": [
+        "*Apologizing* is the word,",
+        "plus changing what you did."
+      ],
+      "diff": [
+        "Sorry is a *start.*",
+        "Change is the *apology.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

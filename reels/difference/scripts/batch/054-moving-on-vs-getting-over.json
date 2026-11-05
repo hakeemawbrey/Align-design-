@@ -1,0 +1,49 @@
+{
+  "id": "054-moving-on-vs-getting-over",
+  "title": "Moving on vs Getting over",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "moving on vs getting over: what's the difference? 💭\nYou can move on before you're over it. That's normal.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Moving on",
+        "art": "road"
+      },
+      "b": {
+        "label": "Getting over",
+        "art": "solo:heart:rose"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Moving on* versus *getting over.*"
+      ],
+      "explainA": [
+        "*Moving on* is what you do."
+      ],
+      "explainB": [
+        "*Getting over* is what you feel."
+      ],
+      "diff": [
+        "You can move on before you're over it.",
+        "That's *normal.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

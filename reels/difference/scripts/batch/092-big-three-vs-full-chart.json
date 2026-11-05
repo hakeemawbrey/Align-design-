@@ -1,0 +1,51 @@
+{
+  "id": "092-big-three-vs-full-chart",
+  "title": "Big three vs Full chart",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "big three vs full chart: what's the difference? 🌙\nThe big three is the headline. The chart is the whole story.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Big three",
+        "art": "glyphs:☉☽✦:gold"
+      },
+      "b": {
+        "label": "Full chart",
+        "art": "chart"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*Your big three* versus *your full chart.*"
+      ],
+      "explainA": [
+        "Your *big three* is your sun,",
+        "your moon, and your rising."
+      ],
+      "explainB": [
+        "Your *full chart* adds every planet,",
+        "and all twelve houses."
+      ],
+      "diff": [
+        "The big three is the *headline.*",
+        "The chart is the *whole story.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

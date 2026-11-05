@@ -1,0 +1,51 @@
+{
+  "id": "072-direct-vs-retrograde",
+  "title": "Direct vs Retrograde",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "direct vs retrograde: what's the difference? 🌙\nNothing really goes backward. Earth is just passing it.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Direct",
+        "art": "planet:☿:mint:0"
+      },
+      "b": {
+        "label": "Retrograde",
+        "art": "loop"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*Direct* versus *retrograde.*"
+      ],
+      "explainA": [
+        "A planet is *direct*",
+        "when it moves forward through the signs."
+      ],
+      "explainB": [
+        "*Retrograde* is when it seems to move backward.",
+        "It's an illusion from our own orbit."
+      ],
+      "diff": [
+        "Nothing really goes *backward.*",
+        "Earth is just *passing* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who only knows their sun sign."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

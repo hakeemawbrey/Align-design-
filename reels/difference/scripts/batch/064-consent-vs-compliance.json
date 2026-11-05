@@ -1,0 +1,50 @@
+{
+  "id": "064-consent-vs-compliance",
+  "title": "Consent vs Compliance",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "consent vs compliance: what's the difference? 💭\nIf no wasn't an option, yes doesn't count.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Consent",
+        "art": "duo:close:mint:mint"
+      },
+      "b": {
+        "label": "Compliance",
+        "art": "solo:chain:lilac"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Consent* versus *compliance.*"
+      ],
+      "explainA": [
+        "*Consent* is a free yes."
+      ],
+      "explainB": [
+        "*Compliance* is a yes",
+        "because no didn't feel safe."
+      ],
+      "diff": [
+        "If no wasn't an option,",
+        "yes doesn't *count.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

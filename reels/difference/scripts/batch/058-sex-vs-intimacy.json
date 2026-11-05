@@ -1,0 +1,50 @@
+{
+  "id": "058-sex-vs-intimacy",
+  "title": "Sex vs Intimacy",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sex vs intimacy: what's the difference? 💭\nSex can happen with a stranger. Intimacy can't.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sex",
+        "art": "spark"
+      },
+      "b": {
+        "label": "Intimacy",
+        "art": "halo"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Sex* versus *intimacy.*"
+      ],
+      "explainA": [
+        "*Sex* is physical."
+      ],
+      "explainB": [
+        "*Intimacy* is being known,",
+        "and it can happen fully dressed."
+      ],
+      "diff": [
+        "Sex can happen with a *stranger.*",
+        "Intimacy *can't.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

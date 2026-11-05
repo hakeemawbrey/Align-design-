@@ -1,0 +1,51 @@
+{
+  "id": "042-wanted-vs-chosen",
+  "title": "Wanted vs Chosen",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "wanted vs chosen: what's the difference? 💭\nAnyone can want you tonight. Choosing shows up tomorrow.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Wanted",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Chosen",
+        "art": "align"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Being wanted* versus *being chosen.*"
+      ],
+      "explainA": [
+        "Being *wanted* is a feeling",
+        "in the moment."
+      ],
+      "explainB": [
+        "Being *chosen* is someone picking you,",
+        "on purpose, again."
+      ],
+      "diff": [
+        "Anyone can want you *tonight.*",
+        "Choosing shows up *tomorrow.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

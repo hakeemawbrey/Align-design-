@@ -1,0 +1,51 @@
+{
+  "id": "096-cancer-vs-scorpio",
+  "title": "Cancer vs Scorpio",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer vs scorpio: what's the difference? 🌙\nCancer hides to stay safe. Scorpio watches.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "Most people never learn this one.",
+        "*Cancer* versus *scorpio.*"
+      ],
+      "explainA": [
+        "*Cancer* protects its feelings",
+        "with a shell."
+      ],
+      "explainB": [
+        "*Scorpio* protects them",
+        "with a sting."
+      ],
+      "diff": [
+        "Cancer *hides* to stay safe.",
+        "Scorpio *watches.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Your full chart is free",
+      "on the Align app."
+    ],
+    "pill": "YOUR CHART · LINK IN BIO"
+  }
+}

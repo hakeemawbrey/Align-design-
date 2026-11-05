@@ -1,0 +1,51 @@
+{
+  "id": "079-western-vs-vedic",
+  "title": "Western vs Vedic",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "western vs vedic: what's the difference? 🌙\nThat's why your Vedic sign is often the one before.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Western",
+        "art": "slices"
+      },
+      "b": {
+        "label": "Vedic",
+        "art": "constellation"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*Western astrology* versus *Vedic astrology.*"
+      ],
+      "explainA": [
+        "*Western* astrology ties the signs",
+        "to the seasons."
+      ],
+      "explainB": [
+        "*Vedic* astrology ties them to the stars,",
+        "about twenty four degrees away."
+      ],
+      "diff": [
+        "That's why your Vedic sign",
+        "is often the one *before.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

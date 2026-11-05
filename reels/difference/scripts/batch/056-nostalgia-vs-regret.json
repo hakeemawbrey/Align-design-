@@ -1,0 +1,49 @@
+{
+  "id": "056-nostalgia-vs-regret",
+  "title": "Nostalgia vs Regret",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "nostalgia vs regret: what's the difference? 💭\nNostalgia smiles. Regret winces.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Nostalgia",
+        "art": "solo:star:lilac"
+      },
+      "b": {
+        "label": "Regret",
+        "art": "solo:storm:blue"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Nostalgia* versus *regret.*"
+      ],
+      "explainA": [
+        "*Nostalgia* misses the good parts."
+      ],
+      "explainB": [
+        "*Regret* wishes you'd done it differently."
+      ],
+      "diff": [
+        "Nostalgia *smiles.*",
+        "Regret *winces.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

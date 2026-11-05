@@ -1,0 +1,49 @@
+{
+  "id": "004-envy-vs-jealousy",
+  "title": "Envy vs Jealousy",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "envy vs jealousy: what's the difference? 💭\nEnvy needs two people. Jealousy needs three.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Envy",
+        "art": "solo:star:lilac"
+      },
+      "b": {
+        "label": "Jealousy",
+        "art": "duo:three:gold:rose"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Envy* versus *jealousy.*"
+      ],
+      "explainA": [
+        "*Envy* is wanting what someone else has."
+      ],
+      "explainB": [
+        "*Jealousy* is fearing you'll lose what you have."
+      ],
+      "diff": [
+        "Envy needs *two* people.",
+        "Jealousy needs *three.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

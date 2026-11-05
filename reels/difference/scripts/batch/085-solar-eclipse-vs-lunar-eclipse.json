@@ -1,0 +1,51 @@
+{
+  "id": "085-solar-eclipse-vs-lunar-eclipse",
+  "title": "Solar eclipse vs Lunar eclipse",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "solar eclipse vs lunar eclipse: what's the difference? 🌙\nSolar eclipses come at a new moon. Lunar ones at a full moon.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Solar eclipse",
+        "art": "eclipse:solar"
+      },
+      "b": {
+        "label": "Lunar eclipse",
+        "art": "eclipse:lunar"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*A solar eclipse* versus *a lunar eclipse.*"
+      ],
+      "explainA": [
+        "A *solar eclipse* is the moon",
+        "blocking the sun."
+      ],
+      "explainB": [
+        "A *lunar eclipse* is the earth's shadow",
+        "falling on the moon."
+      ],
+      "diff": [
+        "Solar eclipses come at a *new moon.*",
+        "Lunar ones at a *full moon.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

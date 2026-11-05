@@ -1,0 +1,51 @@
+{
+  "id": "080-ascendant-vs-descendant",
+  "title": "Ascendant vs Descendant",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "ascendant vs descendant: what's the difference? 🌙\nOne is how you show up. The other is what you look for in a partner.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Ascendant",
+        "art": "rising"
+      },
+      "b": {
+        "label": "Descendant",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*Ascendant* versus *descendant.*"
+      ],
+      "explainA": [
+        "Your *ascendant* was rising in the east",
+        "when you were born."
+      ],
+      "explainB": [
+        "Your *descendant* was setting in the west,",
+        "exactly opposite."
+      ],
+      "diff": [
+        "One is how you *show up.*",
+        "The other is what you look for in a *partner.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

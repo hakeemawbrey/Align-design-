@@ -1,0 +1,51 @@
+{
+  "id": "078-on-the-cusp-vs-your-sign",
+  "title": "On the cusp vs Your sign",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "on the cusp vs your sign: what's the difference? 🌙\nYou can feel like both. Your chart still picks one.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "On the cusp",
+        "art": "slices"
+      },
+      "b": {
+        "label": "Your sign",
+        "art": "sign:♉:gold"
+      },
+      "ask": [
+        "Two astrology words, one big difference.",
+        "*Being on the cusp* versus *your sign.*"
+      ],
+      "explainA": [
+        "Being *on the cusp* means",
+        "you were born near the edge of two signs."
+      ],
+      "explainB": [
+        "But the sun is always in *one* of them.",
+        "Your birth time decides which."
+      ],
+      "diff": [
+        "You can feel like *both.*",
+        "Your chart still picks *one.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

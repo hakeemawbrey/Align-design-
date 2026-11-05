@@ -1,0 +1,51 @@
+{
+  "id": "088-cardinal-vs-fixed",
+  "title": "Cardinal vs Fixed",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cardinal vs fixed: what's the difference? 🌙\nCardinal opens the door. Fixed won't let it close.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cardinal",
+        "art": "glyphs:♈♋♎♑:gold"
+      },
+      "b": {
+        "label": "Fixed",
+        "art": "glyphs:♉♌♏♒:rose"
+      },
+      "ask": [
+        "Two astrology words, one big difference.",
+        "*Cardinal signs* versus *fixed signs.*"
+      ],
+      "explainA": [
+        "*Cardinal* signs start things.",
+        "Aries, Cancer, Libra, Capricorn."
+      ],
+      "explainB": [
+        "*Fixed* signs keep things going.",
+        "Taurus, Leo, Scorpio, Aquarius."
+      ],
+      "diff": [
+        "Cardinal opens the *door.*",
+        "Fixed won't let it *close.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

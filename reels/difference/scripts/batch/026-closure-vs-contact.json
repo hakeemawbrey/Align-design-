@@ -1,0 +1,51 @@
+{
+  "id": "026-closure-vs-contact",
+  "title": "Closure vs Contact",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "closure vs contact: what's the difference? 💭\nClosure ends the story. Contact reopens it.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Closure",
+        "art": "solo:door:gold"
+      },
+      "b": {
+        "label": "Contact",
+        "art": "solo:phone:blue"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Closure* versus *contact.*"
+      ],
+      "explainA": [
+        "*Closure* is something",
+        "you give yourself."
+      ],
+      "explainB": [
+        "*Contact* is hoping",
+        "they'll give it to you."
+      ],
+      "diff": [
+        "Closure *ends* the story.",
+        "Contact *reopens* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

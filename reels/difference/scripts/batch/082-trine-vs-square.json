@@ -1,0 +1,51 @@
+{
+  "id": "082-trine-vs-square",
+  "title": "Trine vs Square",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "trine vs square: what's the difference? 🌙\nTrines are gifts. Squares are growth.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Trine",
+        "art": "aspect:trine"
+      },
+      "b": {
+        "label": "Square",
+        "art": "aspect:square"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*A trine* versus *a square.*"
+      ],
+      "explainA": [
+        "A *trine* is planets a third of the sky apart.",
+        "Easy and flowing."
+      ],
+      "explainB": [
+        "A *square* is a quarter apart.",
+        "Friction that pushes you."
+      ],
+      "diff": [
+        "Trines are *gifts.*",
+        "Squares are *growth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who only knows their sun sign."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "019-space-vs-distance",
+  "title": "Space vs Distance",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "space vs distance: what's the difference? 💭\nSpace is asked for. Distance just happens.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Space",
+        "art": "duo:apart:gold:gold"
+      },
+      "b": {
+        "label": "Distance",
+        "art": "duo:away:blue:blue"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Space* versus *distance.*"
+      ],
+      "explainA": [
+        "*Space* is time apart",
+        "that brings you back fuller."
+      ],
+      "explainB": [
+        "*Distance* is time apart",
+        "that brings you back colder."
+      ],
+      "diff": [
+        "Space is *asked* for.",
+        "Distance just *happens.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app shows you",
+      "someone's sky before their face."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

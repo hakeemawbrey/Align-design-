@@ -1,0 +1,51 @@
+{
+  "id": "075-rising-vs-moon",
+  "title": "Rising vs Moon",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "rising vs moon: what's the difference? 🌙\nRising is the front door. The moon is the living room.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Rising",
+        "art": "rising"
+      },
+      "b": {
+        "label": "Moon",
+        "art": "planet:☽:lilac:0"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*Your rising* versus *your moon.*"
+      ],
+      "explainA": [
+        "Your *rising* is how you come across",
+        "before people know you."
+      ],
+      "explainB": [
+        "Your *moon* is who they meet",
+        "once they do."
+      ],
+      "diff": [
+        "Rising is the *front door.*",
+        "The moon is the *living room.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

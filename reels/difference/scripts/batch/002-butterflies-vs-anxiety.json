@@ -1,0 +1,51 @@
+{
+  "id": "002-butterflies-vs-anxiety",
+  "title": "Butterflies vs Anxiety",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "butterflies vs anxiety: what's the difference? 💭\nYour body makes almost the same feeling for both. Excitement pulls you closer. Anxiety tells you to brace.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Butterflies",
+        "art": "solo:butterflies:gold"
+      },
+      "b": {
+        "label": "Anxiety",
+        "art": "solo:knot:lilac"
+      },
+      "ask": [
+        "Your body can barely tell these apart.",
+        "*Butterflies* versus *anxiety.*"
+      ],
+      "explainA": [
+        "*Butterflies* feel light.",
+        "You want more of them."
+      ],
+      "explainB": [
+        "*Anxiety* feels heavy.",
+        "You want it to stop."
+      ],
+      "diff": [
+        "Your body makes almost the same feeling for both.",
+        "Excitement pulls you *closer.* Anxiety tells you to *brace.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

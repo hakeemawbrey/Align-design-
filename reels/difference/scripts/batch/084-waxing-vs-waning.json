@@ -1,0 +1,51 @@
+{
+  "id": "084-waxing-vs-waning",
+  "title": "Waxing vs Waning",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "waxing vs waning: what's the difference? 🌙\nWaxing builds. Waning lets go.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Waxing",
+        "art": "moon:waxing"
+      },
+      "b": {
+        "label": "Waning",
+        "art": "moon:waning"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*Waxing* versus *waning.*"
+      ],
+      "explainA": [
+        "*Waxing* is the moon",
+        "growing brighter each night."
+      ],
+      "explainB": [
+        "*Waning* is the moon",
+        "shrinking back toward dark."
+      ],
+      "diff": [
+        "Waxing *builds.*",
+        "Waning *lets go.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

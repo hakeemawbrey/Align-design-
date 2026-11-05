@@ -1,0 +1,50 @@
+{
+  "id": "061-reassurance-vs-validation",
+  "title": "Reassurance vs Validation",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "reassurance vs validation: what's the difference? 💭\nReassurance says it's okay. Validation says you're okay.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Reassurance",
+        "art": "duo:close:blue:blue"
+      },
+      "b": {
+        "label": "Validation",
+        "art": "solo:heart:rose"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Reassurance* versus *validation.*"
+      ],
+      "explainA": [
+        "*Reassurance* calms a fear."
+      ],
+      "explainB": [
+        "*Validation* says your feeling",
+        "makes sense."
+      ],
+      "diff": [
+        "Reassurance says *it's okay.*",
+        "Validation says *you're okay.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "a card only flips when you *both* align."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

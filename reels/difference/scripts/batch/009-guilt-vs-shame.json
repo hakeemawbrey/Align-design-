@@ -1,0 +1,51 @@
+{
+  "id": "009-guilt-vs-shame",
+  "title": "Guilt vs Shame",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "guilt vs shame: what's the difference? 💭\nGuilt can be fixed with an apology. Shame needs kindness.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Guilt",
+        "art": "solo:storm:blue"
+      },
+      "b": {
+        "label": "Shame",
+        "art": "solo:mask:lilac"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Guilt* versus *shame.*"
+      ],
+      "explainA": [
+        "*Guilt* says,",
+        "I did something bad."
+      ],
+      "explainB": [
+        "*Shame* says,",
+        "I am bad."
+      ],
+      "diff": [
+        "Guilt can be fixed with an *apology.*",
+        "Shame needs *kindness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

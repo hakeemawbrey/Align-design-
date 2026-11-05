@@ -1,0 +1,51 @@
+{
+  "id": "081-conjunction-vs-opposition",
+  "title": "Conjunction vs Opposition",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "conjunction vs opposition: what's the difference? 🌙\nOne merges. One balances.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Conjunction",
+        "art": "aspect:conjunction"
+      },
+      "b": {
+        "label": "Opposition",
+        "art": "aspect:opposition"
+      },
+      "ask": [
+        "Most people never learn this one.",
+        "*A conjunction* versus *an opposition.*"
+      ],
+      "explainA": [
+        "A *conjunction* is two planets",
+        "in the same place, blending."
+      ],
+      "explainB": [
+        "An *opposition* is two planets",
+        "across the sky, pulling."
+      ],
+      "diff": [
+        "One *merges.*",
+        "One *balances.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Your full chart is free",
+      "on the Align app."
+    ],
+    "pill": "YOUR CHART · LINK IN BIO"
+  }
+}

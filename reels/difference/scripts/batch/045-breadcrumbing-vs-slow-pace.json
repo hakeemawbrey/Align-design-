@@ -1,0 +1,51 @@
+{
+  "id": "045-breadcrumbing-vs-slow-pace",
+  "title": "Breadcrumbing vs Slow pace",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "breadcrumbing vs slow pace: what's the difference? 💭\nSlow builds. Breadcrumbs never become a meal.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Breadcrumbing",
+        "art": "solo:phone:lilac"
+      },
+      "b": {
+        "label": "Slow pace",
+        "art": "road"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Breadcrumbing* versus *a slow pace.*"
+      ],
+      "explainA": [
+        "*Breadcrumbing* is just enough attention",
+        "to keep you there."
+      ],
+      "explainB": [
+        "A *slow pace* is less attention,",
+        "but it always goes somewhere."
+      ],
+      "diff": [
+        "Slow *builds.*",
+        "Breadcrumbs never become a *meal.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "a card only flips when you *both* align."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

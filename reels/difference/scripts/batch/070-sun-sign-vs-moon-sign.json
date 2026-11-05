@@ -1,0 +1,51 @@
+{
+  "id": "070-sun-sign-vs-moon-sign",
+  "title": "Sun sign vs Moon sign",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sun sign vs moon sign: what's the difference? 🌙\nThe sun is who you are in daylight. The moon is who you are at home.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sun sign",
+        "art": "sun"
+      },
+      "b": {
+        "label": "Moon sign",
+        "art": "planet:☽:blue:0"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*Sun sign* versus *moon sign.*"
+      ],
+      "explainA": [
+        "Your *sun sign* is your core.",
+        "Who you're becoming."
+      ],
+      "explainB": [
+        "Your *moon sign* is your feelings.",
+        "What you need to feel safe."
+      ],
+      "diff": [
+        "The sun is who you are in *daylight.*",
+        "The moon is who you are at *home.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

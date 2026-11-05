@@ -1,0 +1,51 @@
+{
+  "id": "014-red-flag-vs-dealbreaker",
+  "title": "Red flag vs Dealbreaker",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "red flag vs dealbreaker: what's the difference? 💭\nRed flags ask questions. Dealbreakers already answered them.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Red flag",
+        "art": "solo:flag:rose"
+      },
+      "b": {
+        "label": "Dealbreaker",
+        "art": "solo:shield:gold"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*A red flag* versus *a dealbreaker.*"
+      ],
+      "explainA": [
+        "A *red flag* is a warning.",
+        "Something to watch."
+      ],
+      "explainB": [
+        "A *dealbreaker* is a line.",
+        "Something you won't stay for."
+      ],
+      "diff": [
+        "Red flags ask *questions.*",
+        "Dealbreakers already *answered* them."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

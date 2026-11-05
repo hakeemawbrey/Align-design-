@@ -1,0 +1,51 @@
+{
+  "id": "032-admiration-vs-attraction",
+  "title": "Admiration vs Attraction",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "admiration vs attraction: what's the difference? 💭\nAdmiration looks up. Attraction leans in.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Admiration",
+        "art": "solo:star:gold"
+      },
+      "b": {
+        "label": "Attraction",
+        "art": "beam"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Admiration* versus *attraction.*"
+      ],
+      "explainA": [
+        "*Admiration* is wanting",
+        "to be like them."
+      ],
+      "explainB": [
+        "*Attraction* is wanting",
+        "to be with them."
+      ],
+      "diff": [
+        "Admiration *looks up.*",
+        "Attraction *leans in.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

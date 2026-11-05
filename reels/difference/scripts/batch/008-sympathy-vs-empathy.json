@@ -1,0 +1,49 @@
+{
+  "id": "008-sympathy-vs-empathy",
+  "title": "Sympathy vs Empathy",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sympathy vs empathy: what's the difference? 💭\nSympathy says I'm sorry. Empathy says me too.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sympathy",
+        "art": "duo:apart:lilac:lilac"
+      },
+      "b": {
+        "label": "Empathy",
+        "art": "duo:close:rose:rose"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Sympathy* versus *empathy.*"
+      ],
+      "explainA": [
+        "*Sympathy* is feeling sorry for someone."
+      ],
+      "explainB": [
+        "*Empathy* is feeling it with them."
+      ],
+      "diff": [
+        "Sympathy says *I'm sorry.*",
+        "Empathy says *me too.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

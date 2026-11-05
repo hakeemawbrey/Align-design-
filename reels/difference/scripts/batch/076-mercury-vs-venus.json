@@ -1,0 +1,50 @@
+{
+  "id": "076-mercury-vs-venus",
+  "title": "Mercury vs Venus",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mercury vs venus: what's the difference? 🌙\nMercury writes the text. Venus decides who gets it.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mercury",
+        "art": "planet:☿:mint:0"
+      },
+      "b": {
+        "label": "Venus",
+        "art": "venus"
+      },
+      "ask": [
+        "Most people never learn this one.",
+        "*Mercury* versus *venus.*"
+      ],
+      "explainA": [
+        "*Mercury* is how you talk and think."
+      ],
+      "explainB": [
+        "*Venus* is how you love,",
+        "and what you value."
+      ],
+      "diff": [
+        "Mercury writes the *text.*",
+        "Venus decides who *gets* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Your full chart is free",
+      "on the Align app."
+    ],
+    "pill": "YOUR CHART · LINK IN BIO"
+  }
+}

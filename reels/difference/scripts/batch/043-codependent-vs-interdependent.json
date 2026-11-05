@@ -1,0 +1,51 @@
+{
+  "id": "043-codependent-vs-interdependent",
+  "title": "Codependent vs Interdependent",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "codependent vs interdependent: what's the difference? 💭\nOne needs you to shrink. The other lets you both grow.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Codependent",
+        "art": "solo:chain:rose"
+      },
+      "b": {
+        "label": "Interdependent",
+        "art": "duo:close:mint:gold"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Codependency* versus *interdependence.*"
+      ],
+      "explainA": [
+        "*Codependency* is losing yourself",
+        "to hold someone else up."
+      ],
+      "explainB": [
+        "*Interdependence* is two whole people",
+        "leaning on each other."
+      ],
+      "diff": [
+        "One needs you to *shrink.*",
+        "The other lets you both *grow.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app shows you",
+      "someone's sky before their face."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

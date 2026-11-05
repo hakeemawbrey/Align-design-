@@ -1,0 +1,51 @@
+{
+  "id": "010-insecurity-vs-intuition",
+  "title": "Insecurity vs Intuition",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "insecurity vs intuition: what's the difference? 💭\nIf it panics, it's insecurity. If it's calm, listen.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Insecurity",
+        "art": "solo:knot:lilac"
+      },
+      "b": {
+        "label": "Intuition",
+        "art": "solo:star:gold"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Insecurity* versus *intuition.*"
+      ],
+      "explainA": [
+        "*Insecurity* is loud,",
+        "and its story keeps changing."
+      ],
+      "explainB": [
+        "*Intuition* is quiet,",
+        "and it says the same thing every time."
+      ],
+      "diff": [
+        "If it panics, it's *insecurity.*",
+        "If it's calm, *listen.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

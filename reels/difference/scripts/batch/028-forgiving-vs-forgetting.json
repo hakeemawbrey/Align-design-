@@ -1,0 +1,49 @@
+{
+  "id": "028-forgiving-vs-forgetting",
+  "title": "Forgiving vs Forgetting",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "forgiving vs forgetting: what's the difference? 💭\nYou can forgive someone and still remember why.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Forgiving",
+        "art": "solo:heart:rose"
+      },
+      "b": {
+        "label": "Forgetting",
+        "art": "solo:storm:blue"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Forgiving* versus *forgetting.*"
+      ],
+      "explainA": [
+        "*Forgiving* is letting go of the debt."
+      ],
+      "explainB": [
+        "*Forgetting* is losing the lesson."
+      ],
+      "diff": [
+        "You can forgive someone",
+        "and still remember *why.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

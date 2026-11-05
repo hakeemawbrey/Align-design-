@@ -1,0 +1,51 @@
+{
+  "id": "071-synastry-vs-composite",
+  "title": "Synastry vs Composite",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "synastry vs composite: what's the difference? 🌙\nSynastry is the two of you. A composite is the us.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Synastry",
+        "art": "wheels:overlay"
+      },
+      "b": {
+        "label": "Composite",
+        "art": "wheels:merge"
+      },
+      "ask": [
+        "Most people never learn this one.",
+        "*Synastry* versus *a composite chart.*"
+      ],
+      "explainA": [
+        "*Synastry* lays your chart over theirs,",
+        "to see how you affect each other."
+      ],
+      "explainB": [
+        "A *composite* blends both charts into one,",
+        "the chart of the relationship itself."
+      ],
+      "diff": [
+        "Synastry is the *two of you.*",
+        "A composite is the *us.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Your full chart is free",
+      "on the Align app."
+    ],
+    "pill": "YOUR CHART · LINK IN BIO"
+  }
+}

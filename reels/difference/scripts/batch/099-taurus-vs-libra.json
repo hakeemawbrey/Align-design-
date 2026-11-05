@@ -1,0 +1,51 @@
+{
+  "id": "099-taurus-vs-libra",
+  "title": "Taurus vs Libra",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus vs libra: what's the difference? 🌙\nSame ruling planet. Taurus feels it. Libra shares it.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*Taurus* versus *libra.*"
+      ],
+      "explainA": [
+        "*Taurus* is Venus through the senses.",
+        "Food, touch, comfort."
+      ],
+      "explainB": [
+        "*Libra* is Venus through people.",
+        "Beauty, balance, fairness."
+      ],
+      "diff": [
+        "Same ruling planet.",
+        "Taurus *feels* it. Libra *shares* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

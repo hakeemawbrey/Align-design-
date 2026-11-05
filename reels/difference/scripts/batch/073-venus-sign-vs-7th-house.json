@@ -1,0 +1,50 @@
+{
+  "id": "073-venus-sign-vs-7th-house",
+  "title": "Venus sign vs 7th house",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus sign vs 7th house: what's the difference? 🌙\nVenus is your style. The seventh house is your type.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus sign",
+        "art": "venus"
+      },
+      "b": {
+        "label": "7th house",
+        "art": "chart"
+      },
+      "ask": [
+        "Two astrology words, one big difference.",
+        "*Your Venus sign* versus *your seventh house.*"
+      ],
+      "explainA": [
+        "Your *Venus sign* is how you love."
+      ],
+      "explainB": [
+        "Your *seventh house* is the kind of partner",
+        "you're drawn to."
+      ],
+      "diff": [
+        "Venus is your *style.*",
+        "The seventh house is your *type.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

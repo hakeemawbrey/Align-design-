@@ -1,0 +1,50 @@
+{
+  "id": "057-priority-vs-option",
+  "title": "Priority vs Option",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "priority vs option: what's the difference? 💭\nYou know which one you are by the calendar.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Priority",
+        "art": "align"
+      },
+      "b": {
+        "label": "Option",
+        "art": "solo:clock:lilac"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*A priority* versus *an option.*"
+      ],
+      "explainA": [
+        "A *priority* gets planned around."
+      ],
+      "explainB": [
+        "An *option* gets fit in",
+        "when there's time."
+      ],
+      "diff": [
+        "You know which one you are",
+        "by the *calendar.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

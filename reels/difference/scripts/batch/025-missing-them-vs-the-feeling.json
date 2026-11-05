@@ -1,0 +1,51 @@
+{
+  "id": "025-missing-them-vs-the-feeling",
+  "title": "Missing them vs The feeling",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "missing them vs the feeling: what's the difference? 💭\nAsk yourself if you'd want them back exactly as they were.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Missing them",
+        "art": "solo:heart:rose"
+      },
+      "b": {
+        "label": "The feeling",
+        "art": "solo:flame:lilac"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Missing them* versus *missing the feeling.*"
+      ],
+      "explainA": [
+        "*Missing them* is missing the person,",
+        "as they really were."
+      ],
+      "explainB": [
+        "Missing *the feeling* is missing being wanted,",
+        "by anyone."
+      ],
+      "diff": [
+        "Ask yourself if you'd want them back",
+        "exactly as they *were.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

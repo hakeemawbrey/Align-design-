@@ -1,0 +1,50 @@
+{
+  "id": "012-infatuation-vs-love",
+  "title": "Infatuation vs Love",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "infatuation vs love: what's the difference? 💭\nInfatuation needs a mystery. Love needs the truth.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Infatuation",
+        "art": "solo:thoughts:rose"
+      },
+      "b": {
+        "label": "Love",
+        "art": "halo"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Infatuation* versus *love.*"
+      ],
+      "explainA": [
+        "*Infatuation* loves who you think they are."
+      ],
+      "explainB": [
+        "*Love* knows who they are,",
+        "and stays."
+      ],
+      "diff": [
+        "Infatuation needs a *mystery.*",
+        "Love needs the *truth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

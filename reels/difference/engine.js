@@ -892,6 +892,575 @@ function halftoneStar(g, c, st) {
   g.restore()
 }
 
+// ---------- the kit: arts built from a short spec, for the batch ----------
+// "solo:heart:rose"  "duo:close:gold:rose"  "planet:☽:blue:0"  "sign:♏:rose"
+// "wheels:overlay"  "aspect:trine"  "moon:full"  "eclipse:solar"
+// "glyphs:♈♋♎♑:gold"  "orbs:FIRE,EARTH,AIR,WATER:mars,gold,mint,blue"
+
+const colOf = (n) => (n && n.startsWith('#') ? n : COL[n] ?? COL.gold)
+const KIT = {}
+function drawArt(g, spec, t) {
+  if (ARTS[spec]) return ARTS[spec](g, t)
+  const [kind, ...args] = spec.split(':')
+  if (!KIT[kind]) throw new Error(`unknown art ${spec}`)
+  KIT[kind](g, t, args, spec)
+}
+
+function cloud(g, x, y, s, col, a = 1) {
+  g.save()
+  g.globalAlpha *= a
+  g.globalCompositeOperation = 'lighter'
+  g.shadowColor = col
+  g.shadowBlur = 18
+  g.fillStyle = rgba(col, 0.35)
+  g.beginPath()
+  for (const [dx, dy, r] of [[-0.9, 0.1, 0.55], [-0.35, -0.3, 0.7], [0.35, -0.2, 0.62], [0.9, 0.12, 0.5], [0, 0.2, 0.6]]) {
+    g.moveTo(x + dx * s + r * s, y + dy * s)
+    g.arc(x + dx * s, y + dy * s, r * s, 0, TAU)
+  }
+  g.fill()
+  g.restore()
+}
+
+const MOTIFS = {
+  heart: {
+    front(g, t, f, c) {
+      // a big heart floating over the head, beating
+      const s = 30 * (1 + 0.08 * Math.abs(Math.sin(t * 4))), y = f.head[1] - f.hr - 64 + 4 * Math.sin(t * 1.6)
+      orb(g, f.x, y, 30, COL.rose, { halo: 2.4, a: 0.6 })
+      heart(g, f.x, y, s, COL.rose)
+    },
+  },
+  flame: {
+    front(g, t, f, c) {
+      const x = f.x, y = f.head[1] - f.hr - 46
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      for (const [k, col, a] of [[1.25, c, 0.45], [1, '#ffd98a', 0.75], [0.55, '#fffbe8', 0.95]]) {
+        const fl = 1 + 0.08 * Math.sin(t * 13 + k * 3)
+        g.shadowColor = c
+        g.shadowBlur = 24
+        g.fillStyle = rgba(col, a)
+        g.beginPath()
+        g.moveTo(x, y - 44 * k * fl)
+        g.bezierCurveTo(x + 26 * k, y - 10 * k, x + 22 * k, y + 22 * k, x, y + 26 * k)
+        g.bezierCurveTo(x - 22 * k, y + 22 * k, x - 26 * k, y - 10 * k, x, y - 44 * k * fl)
+        g.fill()
+      }
+      g.restore()
+    },
+  },
+  butterflies: {
+    front(g, t, f, c) {
+      const r = rng(41)
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      for (let i = 0; i < 9; i++) {
+        const ph = r() * TAU, rad = 40 + r() * 80
+        const x = f.x + Math.cos(t * (0.7 + r() * 0.6) + ph) * rad, y = f.gy - f.h * 0.42 + Math.sin(t * (0.9 + r()) + ph) * rad * 0.6
+        const flap = 0.35 + 0.65 * Math.abs(Math.sin(t * 9 + ph))
+        g.fillStyle = rgba(i % 2 ? c : COL.glow, 0.85)
+        g.shadowColor = c
+        g.shadowBlur = 10
+        for (const s of [-1, 1]) {
+          g.beginPath()
+          g.moveTo(x, y)
+          g.lineTo(x + s * 12 * flap, y - 9)
+          g.lineTo(x + s * 9 * flap, y + 7)
+          g.closePath()
+          g.fill()
+        }
+      }
+      g.restore()
+    },
+  },
+  knot: {
+    front(g, t, f, c) {
+      const x = f.x, y = f.gy - f.h * 0.5
+      const pts = Array.from({ length: 160 }, (_, i) => {
+        const u = (i / 159) * TAU * 3
+        return [x + Math.sin(u * 1.5 + t * 0.8) * 34 + Math.sin(u * 3.1) * 10, y + Math.cos(u * 1.1) * 30 + Math.sin(u * 2.3 + t) * 8]
+      })
+      glowLine(g, pts, c, { w: 1.2, blur: 10, a: 0.9 })
+    },
+  },
+  alone: {
+    fig: { h: 230 },
+    back(g, t, f, c) { orb(g, 300, 120, 34, COL.bone, { halo: 2.4, core: '#ffffff' }) },
+  },
+  crowd: {
+    back(g, t, f, c) {
+      for (const [x, gy, h] of [[44, 420, 150], [96, 400, 120], [330, 410, 140], [376, 430, 160], [150, 380, 90], [270, 384, 96]]) glowFigure(g, x, gy, h, COL.lilac2, { ghost: true, a: 0.5 })
+    },
+  },
+  door: {
+    fig: { x: 250, h: 240 },
+    back(g, t, f, c) {
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      const x = 120, y = 150, w = 110, h = 310
+      const gr = g.createLinearGradient(x, 0, x + w, 0)
+      gr.addColorStop(0, rgba(COL.glow, 0.85))
+      gr.addColorStop(1, rgba(c, 0.6))
+      g.shadowColor = c
+      g.shadowBlur = 40
+      g.fillStyle = gr
+      g.beginPath()
+      g.moveTo(x, y + h)
+      g.lineTo(x, y + w / 2)
+      g.arc(x + w / 2, y + w / 2, w / 2, Math.PI, 0)
+      g.lineTo(x + w, y + h)
+      g.closePath()
+      g.fill()
+      // light spilling onto the floor
+      g.fillStyle = rgba(c, 0.18)
+      g.beginPath()
+      g.moveTo(x, y + h)
+      g.lineTo(x + w, y + h)
+      g.lineTo(x + w + 160, AH)
+      g.lineTo(x - 60, AH)
+      g.closePath()
+      g.fill()
+      g.restore()
+    },
+  },
+  wall: {
+    fig: { h: 300 },
+    front(g, t, f, c) {
+      const y0 = 300, x0 = 30, x1 = AW - 30
+      g.save()
+      g.fillStyle = '#0e0930'
+      g.fillRect(x0, y0, x1 - x0, AH - y0)
+      g.restore()
+      const lines = []
+      for (let y = y0; y < AH; y += 32) {
+        lines.push([[x0, y], [x1, y]])
+        const off = ((y - y0) / 32) % 2 ? 0 : 36
+        for (let x = x0 + off; x < x1; x += 72) lines.push([[x, y], [x, Math.min(AH, y + 32)]])
+      }
+      for (const l of lines) glowLine(g, l, c, { w: 1, blur: 6, a: 0.6 })
+    },
+  },
+  storm: {
+    front(g, t, f, c) {
+      const y = f.head[1] - f.hr - 60
+      cloud(g, f.x, y, 52, c)
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      g.strokeStyle = rgba(COL.blue, 0.7)
+      g.lineWidth = 2
+      const r = rng(5)
+      for (let i = 0; i < 16; i++) {
+        const x = f.x - 70 + r() * 140, ph = (t * 1.6 + r()) % 1
+        const yy = y + 24 + ph * 140
+        g.globalAlpha = 1 - ph
+        g.beginPath()
+        g.moveTo(x, yy)
+        g.lineTo(x - 4, yy + 14)
+        g.stroke()
+      }
+      g.restore()
+    },
+  },
+  mask: {
+    front(g, t, f, c) {
+      const [hx, hy] = f.head
+      const x = hx + 6, y = hy + 4 + 3 * Math.sin(t * 1.5)
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      g.shadowColor = c
+      g.shadowBlur = 20
+      g.fillStyle = rgba(COL.glow, 0.9)
+      g.beginPath()
+      g.ellipse(x, y, 38, 46, 0, 0, TAU)
+      g.fill()
+      g.restore()
+      g.save()
+      g.fillStyle = '#140a2e'
+      for (const s of [-1, 1]) { g.beginPath(); g.ellipse(x + s * 14, y - 6, 8, 5, 0, 0, TAU); g.fill() }
+      g.strokeStyle = '#140a2e'
+      g.lineWidth = 3
+      g.beginPath()
+      g.arc(x, y + 10, 14, 0.2, Math.PI - 0.2)
+      g.stroke()
+      g.restore()
+    },
+  },
+  star: {
+    fig: { reach: 1, target: (f) => [f.x + 70, f.gy - f.h * 0.95] },
+    back(g, t, f, c) { orb(g, 300, 96, 16 + 2 * Math.sin(t * 3), c, { halo: 3.4 }); glowLine(g, starPts(300, 96, 30, 8).concat([starPts(300, 96, 30, 8)[0]]), c, { w: 1.2, blur: 12, a: 0.8 }) },
+  },
+  chain: {
+    front(g, t, f, c) {
+      const sx = f.x + f.h * 0.32, sy = f.gy - f.h * 0.33
+      const ex = AW - 40, ey = f.gy - 8
+      for (let i = 0; i <= 7; i++) {
+        const k = i / 7
+        const x = lerp(sx, ex, k), y = lerp(sy, ey, k) + Math.sin(k * Math.PI) * 22
+        g.save()
+        g.globalCompositeOperation = 'lighter'
+        g.strokeStyle = rgba(c, 0.9)
+        g.shadowColor = c
+        g.shadowBlur = 10
+        g.lineWidth = 4.5
+        g.beginPath()
+        g.ellipse(x, y, i % 2 ? 14 : 6, i % 2 ? 8 : 12, Math.atan2(ey - sy, ex - sx), 0, TAU)
+        g.stroke()
+        g.restore()
+      }
+      glowLine(g, [[ex - 14, ey + 6], [ex + 14, ey + 6]], c, { w: 3, blur: 8 })
+    },
+    fig: { reach: 1 },
+  },
+  phone: {
+    fig: { reach: 1, reach2: 1, target: (f) => [f.x + 18, f.gy - f.h * 0.42], target2: (f) => [f.x - 18, f.gy - f.h * 0.42] },
+    front(g, t, f, c) {
+      const x = f.x, y = f.gy - f.h * 0.44
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      g.shadowColor = COL.blue
+      g.shadowBlur = 30
+      g.fillStyle = rgba('#e8f2ff', 0.95)
+      g.beginPath()
+      g.roundRect(x - 15, y - 24, 30, 44, 6)
+      g.fill()
+      g.restore()
+      g.save()
+      g.strokeStyle = '#140a2e'
+      g.lineWidth = 4
+      g.beginPath()
+      g.roundRect(x - 17, y - 26, 34, 48, 7)
+      g.stroke()
+      g.restore()
+      // a typing bubble that comes and goes
+      const on = Math.sin(t * 2.2) > -0.7
+      if (on) {
+        g.save()
+        g.globalCompositeOperation = 'lighter'
+        g.fillStyle = rgba(c, 0.5)
+        g.beginPath()
+        g.roundRect(x + 30, y - 120, 70, 34, 17)
+        g.fill()
+        for (let i = 0; i < 3; i++) { g.fillStyle = rgba(COL.glow, 0.5 + 0.5 * Math.sin(t * 8 - i)); g.beginPath(); g.arc(x + 50 + i * 15, y - 103, 4, 0, TAU); g.fill() }
+        g.restore()
+      }
+    },
+  },
+  seed: {
+    fig: { x: 130, h: 240 },
+    back(g, t, f, c) {
+      const x = 300, gy = 462
+      const grow = 0.8 + 0.2 * Math.sin(t * 0.8)
+      const top = gy - 210 * grow
+      glowLine(g, bez([x, gy], [x - 10, gy - 70], [x + 12, gy - 140], [x, top], 30), COL.mint, { w: 2, blur: 12 })
+      for (const [k, s] of [[0.35, -1], [0.55, 1], [0.75, -1]]) {
+        const y = lerp(gy, top, k), sw = Math.sin(t * 1.4 + k * 5) * 0.15
+        const lp = bez([x, y], [x + s * 30, y - 30], [x + s * 60, y - 10 + sw * 40], [x + s * 70, y - 26], 16)
+        const back = bez([x + s * 70, y - 26], [x + s * 50, y + 8], [x + s * 20, y + 6], [x, y], 16)
+        glowLine(g, [...lp, ...back], COL.mint, { w: 1.4, blur: 10 })
+      }
+      orb(g, x, top, 6, '#c9ffe9', { halo: 3 })
+    },
+  },
+  mirror: {
+    fig: { gy: 300, h: 230 },
+    back(g, t, f, c) {
+      glowLine(g, [[20, 304], [AW - 20, 304]], c, { w: 1.4, blur: 12 })
+      g.save()
+      g.translate(0, 608)
+      g.scale(1, -1)
+      g.globalAlpha = 0.35 + 0.08 * Math.sin(t * 2)
+      glowFigure(g, f.x, 300, 230, c, {})
+      g.restore()
+    },
+  },
+  clock: {
+    fig: { h: 250 },
+    back(g, t, f, c) {
+      const x = cx, y = 200, r = 118
+      glowLine(g, Array.from({ length: 97 }, (_, i) => [x + Math.cos((i / 96) * TAU) * r, y + Math.sin((i / 96) * TAU) * r]), c, { w: 1.6, blur: 12, a: 0.8 })
+      for (let i = 0; i < 12; i++) { const a = (i / 12) * TAU; glowLine(g, [[x + Math.cos(a) * (r - 12), y + Math.sin(a) * (r - 12)], [x + Math.cos(a) * (r - 4), y + Math.sin(a) * (r - 4)]], c, { w: 1.2, blur: 4 }) }
+      const m = t * 0.9, hh = t * 0.075
+      glowLine(g, [[x, y], [x + Math.sin(m) * (r - 22), y - Math.cos(m) * (r - 22)]], c, { w: 1.6, blur: 8 })
+      glowLine(g, [[x, y], [x + Math.sin(hh) * (r - 50), y - Math.cos(hh) * (r - 50)]], c, { w: 2.4, blur: 8 })
+    },
+  },
+  thoughts: {
+    front(g, t, f, c) {
+      const [hx, hy] = f.head
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      for (let i = 0; i < 14; i++) {
+        const ang = t * 2.6 + (i / 14) * TAU
+        const front = Math.sin(ang) > 0
+        g.fillStyle = rgba(i % 3 ? c : COL.glow, front ? 0.95 : 0.4)
+        g.beginPath()
+        g.arc(hx + Math.cos(ang) * 84, hy - 14 + Math.sin(ang) * 30, front ? 5.5 : 3, 0, TAU)
+        g.fill()
+      }
+      g.restore()
+    },
+  },
+  shield: {
+    front(g, t, f, c) {
+      const x = f.x, y = f.gy - f.h * 0.38
+      const pts = [[x - 62, y - 70], [x, y - 92], [x + 62, y - 70], ...bez([x + 62, y - 70], [x + 64, y + 10], [x + 30, y + 52], [x, y + 74], 16).slice(1), ...bez([x, y + 74], [x - 30, y + 52], [x - 64, y + 10], [x - 62, y - 70], 16).slice(1)]
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      g.fillStyle = rgba(c, 0.16 + 0.05 * Math.sin(t * 2))
+      g.fill(poly(pts))
+      g.restore()
+      glowLine(g, pts, c, { w: 2, blur: 16 })
+      glyph(g, '✦', x, y + 12, 44, rgba(COL.glow, 0.9))
+    },
+  },
+  flag: {
+    fig: { x: 150, h: 280 },
+    front(g, t, f, c) {
+      const px = 300, top = 130, gy = 462
+      glowLine(g, [[px, gy], [px, top]], COL.bone, { w: 2, blur: 6 })
+      const pts = []
+      for (let i = 0; i <= 20; i++) { const k = i / 20; pts.push([px + k * 86, top + 4 + Math.sin(k * 5 - t * 5) * 7 * k]) }
+      for (let i = 20; i >= 0; i--) { const k = i / 20; pts.push([px + k * 86, top + 56 + Math.sin(k * 5 - t * 5) * 7 * k]) }
+      g.save()
+      g.globalCompositeOperation = 'lighter'
+      g.shadowColor = c
+      g.shadowBlur = 20
+      g.fillStyle = rgba(c, 0.75)
+      g.fill(poly(pts))
+      g.restore()
+    },
+  },
+}
+
+KIT.solo = (g, t, [motif, color], key) => {
+  const c = colOf(color)
+  const m = MOTIFS[motif]
+  g.drawImage(sky(key, c), 0, 0)
+  dust(g, hash(key), 28, c, t, { speed: 5 })
+  const o = m.fig ?? {}
+  const f = { x: o.x ?? cx, gy: o.gy ?? 462, h: o.h ?? 290 }
+  const shape = figShape(f.x, f.gy, f.h)
+  Object.assign(f, { head: shape.head, hr: shape.hr })
+  if (m.back) m.back(g, t, f, c)
+  floorGlow(g, f.x, f.gy - 2, f.h * 0.42, c)
+  const val = (v) => (typeof v === 'function' ? v(f) : v)
+  glowFigure(g, f.x, f.gy, f.h, c, { reach: o.reach, reach2: o.reach2, target: val(o.target), target2: val(o.target2) })
+  if (m.front) m.front(g, t, f, c)
+}
+
+KIT.duo = (g, t, [pose, c1n, c2n], key) => {
+  const c1 = colOf(c1n), c2 = colOf(c2n ?? c1n)
+  g.drawImage(sky(key, c1), 0, 0)
+  dust(g, hash(key), 30, c1, t, { speed: 5 })
+  const gy = 452
+  if (pose === 'close') {
+    floorGlow(g, cx, gy, 170, c1)
+    glowFigure(g, cx - 56, gy, 290, c1, { reach: 1, target: [cx, 314] })
+    glowFigure(g, cx + 56, gy, 290, c2, { reach2: 1, target2: [cx, 314] })
+    heart(g, cx, 262 + 5 * Math.sin(t * 2.4), 14, COL.rose)
+  } else if (pose === 'apart') {
+    floorGlow(g, 92, gy, 110, c1)
+    floorGlow(g, 320, gy, 110, c2)
+    const a = glowFigure(g, 92, gy, 270, c1, { reach: 1 })
+    const b = glowFigure(g, 320, gy, 270, c2, { reach2: 1 })
+    const mid = [(a.handR[0] + b.handL[0]) / 2, a.handR[1] + 34 + 6 * Math.sin(t * 1.5)]
+    glowLine(g, bez(a.handR, [lerp(a.handR[0], mid[0], 0.5), mid[1]], [lerp(b.handL[0], mid[0], 0.5), mid[1]], b.handL, 30), c1, { w: 1.2, blur: 10, dash: [5, 8], a: 0.85 })
+  } else if (pose === 'away') {
+    glowFigure(g, 70, gy, 240, c1, { a: 0.55 })
+    glowFigure(g, 342, gy, 240, c2, { a: 0.55 })
+    const r = rng(9)
+    const crack = [[cx, gy + 10]]
+    for (let i = 1; i <= 8; i++) crack.push([cx + (r() - 0.5) * 30, gy + 10 - i * 34])
+    glowLine(g, crack, COL.blue, { w: 1.4, blur: 10, a: 0.5 + 0.3 * Math.sin(t * 2) })
+  } else if (pose === 'ghost') {
+    floorGlow(g, 104, gy, 120, c1)
+    glowFigure(g, 104, gy, 290, c1, { reach: 1 })
+    glowFigure(g, 312, gy, 270, c2, { ghost: true, a: 0.35 + 0.3 * (0.5 + 0.5 * Math.sin(t * 1.3)) })
+  } else if (pose === 'three') {
+    floorGlow(g, 130, gy, 150, c1)
+    glowFigure(g, 90, gy, 270, c1, { reach: 1, target: [140, 330] })
+    glowFigure(g, 190, gy, 270, c2, { reach2: 1, target2: [140, 330] })
+    glowFigure(g, 340, gy - 30, 170, COL.lilac2, { ghost: true, a: 0.7 })
+    glowLine(g, [[310, 180], [250, 210], [200, 210]], COL.rose, { w: 1.2, blur: 8, dash: [4, 7], a: 0.6 + 0.3 * Math.sin(t * 3) })
+  } else if (pose === 'wall') {
+    floorGlow(g, 88, gy, 110, c1)
+    floorGlow(g, 324, gy, 110, c2)
+    glowFigure(g, 88, gy, 260, c1)
+    glowFigure(g, 324, gy, 260, c2)
+    g.save()
+    g.fillStyle = '#0e0930'
+    g.fillRect(cx - 26, 140, 52, gy - 136)
+    g.restore()
+    for (let y = 140; y < gy; y += 26) glowLine(g, [[cx - 26, y], [cx + 26, y]], COL.rose, { w: 1, blur: 6, a: 0.7 })
+    glowLine(g, [[cx - 26, gy], [cx - 26, 140], [cx + 26, 140], [cx + 26, gy]], COL.rose, { w: 1.4, blur: 12 })
+  } else if (pose === 'lead') {
+    glowFigure(g, 300, gy - 40, 170, c2, { a: 0.6 })
+    floorGlow(g, 140, gy, 150, c1)
+    glowFigure(g, 140, gy, 320, c1, { reach: 1, target: [250, 330] })
+  }
+}
+
+KIT.planet = (g, t, [ch, color, moons]) => planet(g, t, `planet-${ch}-${color}`, colOf(color), ch, Number(moons ?? 0))
+
+KIT.sign = (g, t, [ch, color], key) => {
+  const c = colOf(color)
+  g.drawImage(sky(key, c), 0, 0)
+  dust(g, hash(key), 34, c, t, { speed: 4 })
+  const y = 236
+  const R = 150
+  glowLine(g, Array.from({ length: 97 }, (_, i) => [cx + Math.cos((i / 96) * TAU) * R, y + Math.sin((i / 96) * TAU) * R]), c, { w: 1.6, blur: 14, a: 0.85 })
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * TAU + t * 0.1
+    orb(g, cx + Math.cos(a) * (R + 22), y + Math.sin(a) * (R + 22), i % 3 ? 2.2 : 3.6, COL.bone, { halo: 2.2, a: 0.8 })
+  }
+  orb(g, cx, y, 92, c, { halo: 1.6, a: 0.4 })
+  glyph(g, ch, cx, y + 62, 170, c, { glow: 34 })
+  glyph(g, ch, cx, y + 62, 170, rgba(COL.glow, 0.95))
+  floorGlow(g, cx, 470, 120, c, 0.7)
+}
+
+const wheelPts = (x, y, r) => Array.from({ length: 97 }, (_, i) => [x + Math.cos((i / 96) * TAU) * r, y + Math.sin((i / 96) * TAU) * r])
+function miniWheel(g, x, y, r, c, rot, a = 1) {
+  glowLine(g, wheelPts(x, y, r), c, { w: 1.4, blur: 10, a })
+  glowLine(g, wheelPts(x, y, r * 0.62), c, { w: 1, blur: 6, a: a * 0.6 })
+  for (let i = 0; i < 12; i++) {
+    const ang = rot + (i / 12) * TAU
+    glowLine(g, [[x + Math.cos(ang) * r * 0.62, y + Math.sin(ang) * r * 0.62], [x + Math.cos(ang) * r, y + Math.sin(ang) * r]], c, { w: 0.8, blur: 4, a: a * 0.5 })
+  }
+}
+KIT.wheels = (g, t, [mode], key) => {
+  g.drawImage(sky(key, COL.lilac), 0, 0)
+  dust(g, hash(key), 24, COL.gold, t, { speed: 3 })
+  if (mode === 'overlay') {
+    miniWheel(g, 150, 240, 120, COL.gold, 0.2)
+    miniWheel(g, 262, 240, 120, COL.rose, 0.5 + t * 0.05)
+    for (const [x, y, c] of [[110, 200, COL.gold], [180, 290, COL.gold], [290, 190, COL.rose], [240, 300, COL.rose]]) orb(g, x, y, 7, c, { halo: 2.2 })
+    glowLine(g, [[180, 290], [290, 190]], COL.glow, { w: 1, blur: 8, a: 0.6 + 0.3 * Math.sin(t * 2) })
+    glowLine(g, [[110, 200], [240, 300]], COL.glow, { w: 1, blur: 8, a: 0.6 + 0.3 * Math.cos(t * 2) })
+    mono(g, 'YOU + THEM', cx, 440, { size: 16, color: COL.gold })
+  } else {
+    miniWheel(g, cx, 240, 150, '#ffb38a', 0.35)
+    for (let i = 0; i < 7; i++) { const a = 0.4 + i * 0.83; orb(g, cx + Math.cos(a) * 110, 240 + Math.sin(a) * 110, 6, i % 2 ? COL.rose : COL.gold, { halo: 2.2 }) }
+    orb(g, cx, 240, 16 + 2 * Math.sin(t * 2), COL.glow, { halo: 3 })
+    mono(g, 'THE US', cx, 440, { size: 16, color: '#ffc9a8' })
+  }
+}
+
+KIT.aspect = (g, t, [type], key) => {
+  const ang = { conjunction: 0.12, opposition: Math.PI, trine: (TAU / 3), square: Math.PI / 2, sextile: Math.PI / 3 }[type]
+  const col = { conjunction: COL.gold, opposition: COL.rose, trine: COL.mint, square: COL.mars, sextile: COL.blue }[type]
+  const deg = { conjunction: '0°', opposition: '180°', trine: '120°', square: '90°', sextile: '60°' }[type]
+  g.drawImage(sky(key, col), 0, 0)
+  dust(g, hash(key), 24, col, t, { speed: 3 })
+  const c = [cx, 240], R = 150
+  glowLine(g, wheelPts(c[0], c[1], R), COL.bone, { w: 1.2, blur: 8, a: 0.6 })
+  const a0 = -Math.PI / 2 - ang / 2 + 0.05 * Math.sin(t * 0.7), a1 = a0 + ang
+  const p0 = [c[0] + Math.cos(a0) * R, c[1] + Math.sin(a0) * R], p1 = [c[0] + Math.cos(a1) * R, c[1] + Math.sin(a1) * R]
+  const arc = Array.from({ length: 40 }, (_, i) => { const a = lerp(a0, a1, i / 39); return [c[0] + Math.cos(a) * 46, c[1] + Math.sin(a) * 46] })
+  glowLine(g, [p0, c, p1], col, { w: 1, blur: 6, a: 0.45 })
+  glowLine(g, arc, col, { w: 1.4, blur: 8 })
+  if (type !== 'conjunction') glowLine(g, [p0, p1], col, { w: 2, blur: 16, a: 0.7 + 0.3 * Math.sin(t * 2.5) })
+  orb(g, p0[0], p0[1], 15, col, { halo: 2.4 })
+  orb(g, p1[0], p1[1], 15, COL.gold, { halo: 2.4 })
+  mono(g, deg, c[0], c[1] + 80, { size: 22, color: col })
+  mono(g, type.toUpperCase(), cx, 450, { size: 16, color: col })
+}
+
+KIT.moon = (g, t, [phase], key) => {
+  g.drawImage(sky(key, COL.blue), 0, 0)
+  dust(g, hash(key), 30, COL.bone, t, { speed: 3 })
+  const x = cx, y = 230, r = 120
+  const lit = { new: 0, full: 1, waxing: 0.5, waning: 0.5 }[phase]
+  if (lit > 0) orb(g, x, y, r, '#dfe8ff', { halo: 1.6, core: '#ffffff', a: lit === 1 ? 1 : 0.85 })
+  halftone(g, x, y, r, rgba(COL.glow, 0.35 * (lit || 0.3)))
+  g.save()
+  g.fillStyle = '#0a0626'
+  g.globalAlpha = 0.92
+  if (phase === 'new') { g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill() }
+  if (phase === 'waxing') { g.beginPath(); g.arc(x, y, r + 1, Math.PI / 2, -Math.PI / 2); g.ellipse(x, y, r * 0.25, r + 1, 0, -Math.PI / 2, Math.PI / 2); g.fill() }
+  if (phase === 'waning') { g.beginPath(); g.arc(x, y, r + 1, -Math.PI / 2, Math.PI / 2); g.ellipse(x, y, r * 0.25, r + 1, 0, Math.PI / 2, -Math.PI / 2); g.fill() }
+  g.restore()
+  glowLine(g, wheelPts(x, y, r), phase === 'new' ? COL.lilac2 : '#dfe8ff', { w: 1.4, blur: 14, a: phase === 'new' ? 0.7 : 0.4 })
+  // the phases in a row underneath
+  for (let i = 0; i < 8; i++) {
+    const px = 46 + i * 46, py = 420
+    const on = ['new', 'waxing', 'waxing', 'waxing', 'full', 'waning', 'waning', 'waning'][i] === phase
+    orb(g, px, py, 9, on ? '#dfe8ff' : COL.dim ?? '#7d6f94', { halo: on ? 2.6 : 1.2, a: on ? 1 : 0.35 })
+  }
+  mono(g, `${phase.toUpperCase()} MOON`, cx, 470, { size: 16, color: '#dfe8ff' })
+}
+
+KIT.eclipse = (g, t, [type], key) => {
+  g.drawImage(sky(key, type === 'solar' ? COL.gold : COL.mars), 0, 0)
+  dust(g, hash(key), 24, COL.bone, t, { speed: 3 })
+  const x = cx, y = 236, r = 100
+  if (type === 'solar') {
+    g.save()
+    g.globalCompositeOperation = 'lighter'
+    for (let i = 0; i < 36; i++) {
+      const a = (i / 36) * TAU + Math.sin(t * 0.5 + i) * 0.03, l = r + 30 + 40 * Math.abs(Math.sin(i * 2.3 + t * 0.6))
+      g.strokeStyle = rgba(COL.glow, 0.35)
+      g.lineWidth = 2
+      g.beginPath()
+      g.moveTo(x + Math.cos(a) * r, y + Math.sin(a) * r)
+      g.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l)
+      g.stroke()
+    }
+    g.restore()
+    orb(g, x, y, r, '#ffe7a8', { halo: 2.2 })
+    g.fillStyle = '#05031a'
+    g.beginPath()
+    g.arc(x + 3 * Math.sin(t * 0.4), y, r - 2, 0, TAU)
+    g.fill()
+    glowLine(g, wheelPts(x, y, r), COL.glow, { w: 2, blur: 20 })
+    mono(g, 'THE MOON COVERS THE SUN', cx, 450, { size: 15, color: COL.gold })
+  } else {
+    orb(g, x, y, r, '#ff7a4d', { halo: 1.7, core: '#ffb38a' })
+    halftone(g, x, y, r, rgba('#ffd0b0', 0.5))
+    g.save()
+    g.globalAlpha = 0.5
+    g.fillStyle = '#1a0710'
+    g.beginPath()
+    g.arc(x - 40 + 10 * Math.sin(t * 0.3), y - 10, r * 1.05, 0, TAU)
+    g.fill()
+    g.restore()
+    mono(g, 'EARTH\'S SHADOW ON THE MOON', cx, 450, { size: 15, color: '#ffb38a' })
+  }
+}
+
+KIT.glyphs = (g, t, [str, color], key) => {
+  const c = colOf(color)
+  const list = [...str]
+  g.drawImage(sky(key, c), 0, 0)
+  dust(g, hash(key), 28, c, t, { speed: 4 })
+  const n = list.length
+  const R = n <= 3 ? 110 : 130
+  list.forEach((ch, i) => {
+    const a = -Math.PI / 2 + (i / n) * TAU + t * 0.08
+    const x = cx + Math.cos(a) * R, y = 240 + Math.sin(a) * R
+    orb(g, x, y, 40, c, { halo: 1.6, a: 0.35 })
+    glyph(g, ch, x, y + 26, 72, c, { glow: 20 })
+    glyph(g, ch, x, y + 26, 72, rgba(COL.glow, 0.92))
+  })
+  glowLine(g, wheelPts(cx, 240, R), c, { w: 1, blur: 8, a: 0.4, dash: [4, 8] })
+}
+
+KIT.orbs = (g, t, [labels, colors], key) => {
+  const L2 = labels.split(','), C2 = colors.split(',').map(colOf)
+  g.drawImage(sky(key, C2[0]), 0, 0)
+  dust(g, hash(key), 24, COL.bone, t, { speed: 3 })
+  const n = L2.length
+  const cols = n === 4 ? 2 : 1
+  L2.forEach((lab, i) => {
+    const x = cols === 2 ? (i % 2 ? 290 : 122) : 120
+    const y = cols === 2 ? (i < 2 ? 150 : 330) : 110 + i * (320 / Math.max(1, n - 1))
+    const p = 1 + 0.05 * Math.sin(t * 2 + i)
+    orb(g, x, y, (cols === 2 ? 46 : 38) * p, C2[i % C2.length], { halo: 2 })
+    mono(g, lab, cols === 2 ? x : 186, y + (cols === 2 ? 78 : 0), { size: 18, color: COL.bone, a: 0.9, align: cols === 2 ? 'center' : 'left' })
+  })
+}
+
 // ---------- paper ----------
 
 let paper
@@ -1024,7 +1593,7 @@ function drawCard(t, side) {
   const g = cards[side].getContext('2d')
   g.save()
   g.clearRect(0, 0, AW, AH)
-  ARTS[art](g, t + side * 3.7)
+  drawArt(g, art, t + side * 3.7)
   g.restore()
   const x = side ? L.bx : L.ax, y = L.top + L.ch / 2
   ctx.save()
@@ -1249,6 +1818,7 @@ function drawHeader(t) {
   const b = BEATS[beatAt(t)]
   const cur = b.kind === 'end' ? PAIRS.length : b.pair
   const n = PAIRS.length, w = 58, gap = 14
+  if (n < 2) return
   const x0 = CX - (n * w + (n - 1) * gap) / 2
   for (let i = 0; i < n; i++) {
     ctx.fillStyle = i < cur ? rgba(COL.ink, 0.75) : i === cur ? COL.goldDeep : rgba(COL.ink, 0.13)

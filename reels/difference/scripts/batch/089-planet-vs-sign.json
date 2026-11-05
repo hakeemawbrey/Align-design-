@@ -1,0 +1,51 @@
+{
+  "id": "089-planet-vs-sign",
+  "title": "Planet vs Sign",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "planet vs sign: what's the difference? 🌙\nThe planet is the actor. The sign is the costume.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Planet",
+        "art": "venus"
+      },
+      "b": {
+        "label": "Sign",
+        "art": "sign:♌:gold"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*A planet* versus *a sign.*"
+      ],
+      "explainA": [
+        "A *planet* is the what.",
+        "Venus is love, Mars is drive."
+      ],
+      "explainB": [
+        "A *sign* is the how.",
+        "Venus in Leo loves out loud."
+      ],
+      "diff": [
+        "The planet is the *actor.*",
+        "The sign is the *costume.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

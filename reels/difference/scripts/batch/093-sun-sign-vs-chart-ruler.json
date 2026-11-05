@@ -1,0 +1,51 @@
+{
+  "id": "093-sun-sign-vs-chart-ruler",
+  "title": "Sun sign vs Chart ruler",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sun sign vs chart ruler: what's the difference? 🌙\nLeo rising? Then the sun runs your whole chart.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sun sign",
+        "art": "sun"
+      },
+      "b": {
+        "label": "Chart ruler",
+        "art": "planet:♃:gold:0"
+      },
+      "ask": [
+        "Two astrology words, one big difference.",
+        "*Your sun sign* versus *your chart ruler.*"
+      ],
+      "explainA": [
+        "Your *sun sign* is the sign",
+        "the sun was in."
+      ],
+      "explainB": [
+        "Your *chart ruler* is the planet",
+        "that rules your rising sign."
+      ],
+      "diff": [
+        "Leo rising?",
+        "Then the sun runs your *whole chart.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "097-gemini-vs-sagittarius",
+  "title": "Gemini vs Sagittarius",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini vs sagittarius: what's the difference? 🌙\nGemini asks what. Sagittarius asks why.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*Gemini* versus *sagittarius.*"
+      ],
+      "explainA": [
+        "*Gemini* wants to know",
+        "a little about everything."
+      ],
+      "explainB": [
+        "*Sagittarius* wants to know",
+        "what it all means."
+      ],
+      "diff": [
+        "Gemini asks *what.*",
+        "Sagittarius asks *why.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who only knows their sun sign."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

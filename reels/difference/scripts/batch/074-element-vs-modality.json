@@ -1,0 +1,51 @@
+{
+  "id": "074-element-vs-modality",
+  "title": "Element vs Modality",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "element vs modality: what's the difference? 🌙\nElement is the fuel. Modality is the driving style.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Element",
+        "art": "orbs:FIRE,EARTH,AIR,WATER:mars,gold,mint,blue"
+      },
+      "b": {
+        "label": "Modality",
+        "art": "orbs:START,HOLD,ADAPT:gold,rose,mint"
+      },
+      "ask": [
+        "Even people who know their sign mix these up.",
+        "*Element* versus *modality.*"
+      ],
+      "explainA": [
+        "Your *element* is what you're made of.",
+        "Fire, earth, air or water."
+      ],
+      "explainB": [
+        "Your *modality* is how you move.",
+        "Cardinal starts, fixed holds, mutable adapts."
+      ],
+      "diff": [
+        "Element is the *fuel.*",
+        "Modality is the *driving style.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Save this for the next time",
+      "you're not sure."
+    ],
+    "pill": "SAVE THIS FOR LATER"
+  }
+}

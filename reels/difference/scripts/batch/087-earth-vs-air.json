@@ -1,0 +1,51 @@
+{
+  "id": "087-earth-vs-air",
+  "title": "Earth vs Air",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "earth vs air: what's the difference? 🌙\nEarth builds it. Air explains it.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Earth",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Air",
+        "art": "sign:♊:mint"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*Earth signs* versus *air signs.*"
+      ],
+      "explainA": [
+        "*Earth* signs trust",
+        "what they can touch."
+      ],
+      "explainB": [
+        "*Air* signs trust",
+        "what they can talk through."
+      ],
+      "diff": [
+        "Earth *builds* it.",
+        "Air *explains* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who only knows their sun sign."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

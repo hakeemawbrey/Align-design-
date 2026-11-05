@@ -1,0 +1,51 @@
+{
+  "id": "055-a-break-vs-a-breakup",
+  "title": "A break vs A breakup",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a break vs a breakup: what's the difference? 💭\nA break has a date. A breakup has a goodbye.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A break",
+        "art": "duo:apart:gold:lilac"
+      },
+      "b": {
+        "label": "A breakup",
+        "art": "duo:away:rose:blue"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*A break* versus *a breakup.*"
+      ],
+      "explainA": [
+        "A *break* is a pause,",
+        "with a plan to talk again."
+      ],
+      "explainB": [
+        "A *breakup* is an end,",
+        "even if it hurts to say it."
+      ],
+      "diff": [
+        "A break has a *date.*",
+        "A breakup has a *goodbye.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "017-talking-vs-dating",
+  "title": "Talking vs Dating",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "talking vs dating: what's the difference? 💭\nTalking is a screen. Dating is a table for two.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Talking",
+        "art": "solo:phone:blue"
+      },
+      "b": {
+        "label": "Dating",
+        "art": "duo:close:gold:rose"
+      },
+      "ask": [
+        "Three months of texting. Is it dating?",
+        "*Talking* versus *dating.*"
+      ],
+      "explainA": [
+        "*Talking* is texts and maybes."
+      ],
+      "explainB": [
+        "*Dating* is plans,",
+        "in person, on purpose."
+      ],
+      "diff": [
+        "Talking is a *screen.*",
+        "Dating is a *table for two.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

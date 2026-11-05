@@ -1,0 +1,49 @@
+{
+  "id": "098-pisces-vs-aquarius",
+  "title": "Pisces vs Aquarius",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "pisces vs aquarius: what's the difference? 🌙\nPisces is the heart of the crowd. Aquarius is its mind.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "Two astrology words, one big difference.",
+        "*Pisces* versus *aquarius.*"
+      ],
+      "explainA": [
+        "*Pisces* feels everyone's feelings."
+      ],
+      "explainB": [
+        "*Aquarius* thinks about everyone's future."
+      ],
+      "diff": [
+        "Pisces is the *heart* of the crowd.",
+        "Aquarius is its *mind.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app reads your *big three,*",
+      "not just your sun."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

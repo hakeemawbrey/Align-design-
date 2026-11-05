@@ -1,0 +1,51 @@
+{
+  "id": "051-passion-vs-obsession",
+  "title": "Passion vs Obsession",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "passion vs obsession: what's the difference? 💭\nPassion adds to your life. Obsession becomes it.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Passion",
+        "art": "solo:flame:gold"
+      },
+      "b": {
+        "label": "Obsession",
+        "art": "limerence"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Passion* versus *obsession.*"
+      ],
+      "explainA": [
+        "*Passion* is wanting something",
+        "with your whole heart."
+      ],
+      "explainB": [
+        "*Obsession* is wanting it",
+        "more than your peace."
+      ],
+      "diff": [
+        "Passion *adds* to your life.",
+        "Obsession *becomes* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "It's why the Align app shows you",
+      "someone's sky before their face."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

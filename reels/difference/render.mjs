@@ -10,7 +10,7 @@
 import { createRequire } from 'node:module'
 import { spawn, execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -25,9 +25,12 @@ const args = process.argv.slice(2)
 const flag = (n) => args.includes(n)
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d }
 const stills = flag('--stills')
+const skip = flag('--skip') // leave reels that already have an .mp4
 const jobs = Number(opt('--jobs', 2))
-const outDir = path.resolve(opt('--out', path.join(REPO, 'reels/out/difference')))
-const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out'].includes(args[i - 1]))
+const dir = opt('--dir', '') // a subfolder of scripts/, e.g. batch
+const SCRIPTS = path.join(HERE, 'scripts', dir)
+const outDir = path.resolve(opt('--out', path.join(REPO, 'reels/out/difference', dir)))
+const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out', '--dir'].includes(args[i - 1]))
 
 // Seconds. A flip between pairs takes 0.62 s, so those beats lead longer.
 const LEAD_FIRST = 0.4
@@ -194,7 +197,8 @@ function mixAudio(script, tl, wav) {
 }
 
 async function renderOne(browser, file) {
-  const script = { handle: HANDLE, ...JSON.parse(readFileSync(path.join(HERE, 'scripts', file), 'utf8')) }
+  const script = { handle: HANDLE, ...JSON.parse(readFileSync(path.join(SCRIPTS, file), 'utf8')) }
+  if (skip && !stills && existsSync(path.join(outDir, `${script.id}.caption.txt`))) return
   const beats = beatsOf(script)
   const voice = speak(script, beats)
   const tl = timeline(beats, voice)
@@ -237,13 +241,15 @@ async function renderOne(browser, file) {
   execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-vf', 'scale=720:-2', '-c:v', 'libx264', '-preset', 'slow',
     '-crf', '24', '-maxrate', '2.5M', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
     '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
+  // the mixes are rebuilt on every render, so don't keep them
+  for (const f of [wav, wav.replace(/\.wav$/, '.bed.wav')]) rmSync(f, { force: true })
   writeFileSync(path.join(outDir, `${script.id}.caption.txt`), `${script.caption}\n\n${script.cta}\n\n${script.hashtags.map((h) => `#${h}`).join(' ')}\n`)
   await page.close()
   console.log(`${script.id}: ${tl.duration.toFixed(1)}s, ${frames} frames in ${((Date.now() - t0) / 1000).toFixed(0)}s → ${path.relative(REPO, mp4)}`)
 }
 
 const browser = await launch()
-let files = readdirSync(path.join(HERE, 'scripts')).filter((f) => f.endsWith('.json')).sort()
+let files = readdirSync(SCRIPTS).filter((f) => f.endsWith('.json')).sort()
 if (picks.length) files = files.filter((f) => picks.some((p) => f.includes(p)))
 const queue = [...files]
 await Promise.all(Array.from({ length: Math.min(jobs, queue.length) }, async () => {

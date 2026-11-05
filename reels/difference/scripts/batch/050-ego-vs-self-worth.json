@@ -1,0 +1,50 @@
+{
+  "id": "050-ego-vs-self-worth",
+  "title": "Ego vs Self-worth",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "ego vs self-worth: what's the difference? 💭\nEgo gets hurt. Self worth gets back up.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Ego",
+        "art": "solo:mirror:lilac"
+      },
+      "b": {
+        "label": "Self-worth",
+        "art": "solo:heart:gold"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Ego* versus *self worth.*"
+      ],
+      "explainA": [
+        "*Ego* needs to look good."
+      ],
+      "explainB": [
+        "*Self worth* knows it's good,",
+        "even when it doesn't look it."
+      ],
+      "diff": [
+        "Ego gets *hurt.*",
+        "Self worth gets back *up.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "015-love-bombing-vs-being-adored",
+  "title": "Love bombing vs Being adored",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "love bombing vs being adored: what's the difference? 💭\nLove bombing rushes you. Real love lets you breathe.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Love bombing",
+        "art": "solo:flame:rose"
+      },
+      "b": {
+        "label": "Being adored",
+        "art": "solo:heart:gold"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Love bombing* versus *being adored.*"
+      ],
+      "explainA": [
+        "*Love bombing* is too much, too fast,",
+        "to win you over."
+      ],
+      "explainB": [
+        "*Being adored* is steady,",
+        "and it's still there next month."
+      ],
+      "diff": [
+        "Love bombing *rushes* you.",
+        "Real love lets you *breathe.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

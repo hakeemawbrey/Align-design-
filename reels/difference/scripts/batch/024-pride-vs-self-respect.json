@@ -1,0 +1,50 @@
+{
+  "id": "024-pride-vs-self-respect",
+  "title": "Pride vs Self-respect",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "pride vs self-respect: what's the difference? 💭\nPride won't apologize. Self respect won't beg.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Pride",
+        "art": "solo:mirror:gold"
+      },
+      "b": {
+        "label": "Self-respect",
+        "art": "solo:shield:mint"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Pride* versus *self respect.*"
+      ],
+      "explainA": [
+        "*Pride* needs to win."
+      ],
+      "explainB": [
+        "*Self respect* only needs",
+        "to be treated well."
+      ],
+      "diff": [
+        "Pride won't *apologize.*",
+        "Self respect won't *beg.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

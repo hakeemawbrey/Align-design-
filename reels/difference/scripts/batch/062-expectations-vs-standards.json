@@ -1,0 +1,50 @@
+{
+  "id": "062-expectations-vs-standards",
+  "title": "Expectations vs Standards",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "expectations vs standards: what's the difference? 💭\nExpectations are about them. Standards are about you.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Expectations",
+        "art": "solo:thoughts:lilac"
+      },
+      "b": {
+        "label": "Standards",
+        "art": "solo:shield:gold"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*Expectations* versus *standards.*"
+      ],
+      "explainA": [
+        "*Expectations* are what you think",
+        "someone will do."
+      ],
+      "explainB": [
+        "*Standards* are what you'll accept."
+      ],
+      "diff": [
+        "Expectations are about *them.*",
+        "Standards are about *you.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

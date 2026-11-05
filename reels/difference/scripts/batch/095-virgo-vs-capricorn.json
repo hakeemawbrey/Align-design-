@@ -1,0 +1,49 @@
+{
+  "id": "095-virgo-vs-capricorn",
+  "title": "Virgo vs Capricorn",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo vs capricorn: what's the difference? 🌙\nVirgo asks, is it right. Capricorn asks, is it working.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*Virgo* versus *capricorn.*"
+      ],
+      "explainA": [
+        "*Virgo* perfects the details."
+      ],
+      "explainB": [
+        "*Capricorn* builds the empire."
+      ],
+      "diff": [
+        "Virgo asks, is it *right.*",
+        "Capricorn asks, is it *working.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who mixes them up."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

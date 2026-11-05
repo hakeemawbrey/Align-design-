@@ -1,0 +1,51 @@
+{
+  "id": "100-horoscope-vs-birth-chart",
+  "title": "Horoscope vs Birth chart",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "horoscope vs birth chart: what's the difference? 🌙\nA horoscope is a forecast. A birth chart is a map.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Horoscope",
+        "art": "horoscope"
+      },
+      "b": {
+        "label": "Birth chart",
+        "art": "chart"
+      },
+      "ask": [
+        "Ten seconds, and you'll read your chart better.",
+        "*A horoscope* versus *a birth chart.*"
+      ],
+      "explainA": [
+        "A *horoscope* is written for your sun sign.",
+        "You share it with one in twelve people."
+      ],
+      "explainB": [
+        "A *birth chart* is the whole sky",
+        "at your exact minute and place."
+      ],
+      "diff": [
+        "A horoscope is a *forecast.*",
+        "A birth chart is a *map.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Your full chart is free",
+      "on the Align app."
+    ],
+    "pill": "YOUR CHART · LINK IN BIO"
+  }
+}

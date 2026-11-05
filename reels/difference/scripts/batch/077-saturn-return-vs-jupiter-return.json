@@ -1,0 +1,50 @@
+{
+  "id": "077-saturn-return-vs-jupiter-return",
+  "title": "Saturn return vs Jupiter return",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "saturn return vs jupiter return: what's the difference? 🌙\nA Saturn return asks you to grow up. A Jupiter return asks you to grow.",
+  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "astrology",
+    "zodiacsigns",
+    "birthchart",
+    "astrologyfacts",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Saturn return",
+        "art": "planet:♄:blue:0"
+      },
+      "b": {
+        "label": "Jupiter return",
+        "art": "planet:♃:gold:0"
+      },
+      "ask": [
+        "Your chart has both. Do you know which is which?",
+        "*A Saturn return* versus *a Jupiter return.*"
+      ],
+      "explainA": [
+        "*Saturn* takes about twenty nine years",
+        "to come back to where it was when you were born."
+      ],
+      "explainB": [
+        "*Jupiter* takes about twelve."
+      ],
+      "diff": [
+        "A Saturn return asks you to *grow up.*",
+        "A Jupiter return asks you to *grow.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to someone",
+      "who only knows their sun sign."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

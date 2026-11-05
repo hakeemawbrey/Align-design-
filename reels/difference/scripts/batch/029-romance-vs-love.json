@@ -1,0 +1,51 @@
+{
+  "id": "029-romance-vs-love",
+  "title": "Romance vs Love",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "romance vs love: what's the difference? 💭\nRomance is a moment. Love is a habit.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Romance",
+        "art": "spark"
+      },
+      "b": {
+        "label": "Love",
+        "art": "road"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*Romance* versus *love.*"
+      ],
+      "explainA": [
+        "*Romance* is the candles",
+        "and the surprise."
+      ],
+      "explainB": [
+        "*Love* is the ride to the airport",
+        "at five in the morning."
+      ],
+      "diff": [
+        "Romance is a *moment.*",
+        "Love is a *habit.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "a card only flips when you *both* align."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}

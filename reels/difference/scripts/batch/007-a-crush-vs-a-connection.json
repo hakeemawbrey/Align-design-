@@ -1,0 +1,51 @@
+{
+  "id": "007-a-crush-vs-a-connection",
+  "title": "A crush vs A connection",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a crush vs a connection: what's the difference? 💭\nA crush is a guess. A connection is an answer.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:rose"
+      },
+      "b": {
+        "label": "A connection",
+        "art": "duo:close:gold:gold"
+      },
+      "ask": [
+        "Most people use these like they mean the same thing.",
+        "*A crush* versus *a connection.*"
+      ],
+      "explainA": [
+        "A *crush* lives mostly in your head.",
+        "You fill in the blanks."
+      ],
+      "explainB": [
+        "A *connection* lives between you.",
+        "They fill in the blanks themselves."
+      ],
+      "diff": [
+        "A crush is a *guess.*",
+        "A connection is an *answer.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Send this to the friend",
+      "who needs to hear it."
+    ],
+    "pill": "SEND THIS TO SOMEONE"
+  }
+}

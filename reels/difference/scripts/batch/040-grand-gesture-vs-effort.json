@@ -1,0 +1,50 @@
+{
+  "id": "040-grand-gesture-vs-effort",
+  "title": "Grand gesture vs Effort",
+  "cover": "What's the difference?",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "grand gesture vs effort: what's the difference? 💭\nGestures impress you. Effort keeps you.",
+  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "hashtags": [
+    "relationshipadvice",
+    "datingtips",
+    "psychologyfacts",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Grand gesture",
+        "art": "solo:flame:rose"
+      },
+      "b": {
+        "label": "Effort",
+        "art": "road"
+      },
+      "ask": [
+        "This one changes how you date.",
+        "*A grand gesture* versus *effort.*"
+      ],
+      "explainA": [
+        "A *grand gesture* is",
+        "one big moment."
+      ],
+      "explainB": [
+        "*Effort* is a thousand small ones."
+      ],
+      "diff": [
+        "Gestures *impress* you.",
+        "Effort *keeps* you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "On the Align app,",
+      "your dealbreakers go right on your card."
+    ],
+    "pill": "ALIGN · LINK IN BIO"
+  }
+}
