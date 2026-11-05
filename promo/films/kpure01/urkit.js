@@ -94,6 +94,26 @@ function buildBug(root) {
   }
 }
 
+
+/** a talk card (the app's talk cards, shown as an object only): face down, flips at flipAt to show `text` */
+export function talkCard(x, t, { X = 540, Y = 1000, w = 520, h = 700, rot = 0, pop = 1, flipAt = 1e9, text = '', size = 46, kicker = 'TALK CARD' } = {}) {
+  if (pop <= 0.01) return
+  const f = prog(t, flipAt, flipAt + 0.4), sx = Math.abs(Math.cos(f * Math.PI)) * (1 + 0.1 * Math.sin(f * Math.PI)), face = f >= 0.5
+  x.save(); x.translate(X, Y); x.rotate(rot); x.scale(pop * Math.max(0.02, sx), pop)
+  rrect(x, -w / 2 - 8, -h / 2 - 8, w + 16, h + 16, 36, INK)
+  if (!face) {
+    rrect(x, -w / 2, -h / 2, w, h, 30, '#3b2a6e')
+    x.strokeStyle = GOLD; x.lineWidth = 6; x.beginPath(); x.roundRect(-w / 2 + 24, -h / 2 + 24, w - 48, h - 48, 20); x.stroke()
+    for (let i = 0; i < 6; i++) { x.beginPath(); x.arc(0, 0, 40 + i * 26, 0, TAU); x.globalAlpha = 0.25; x.stroke(); x.globalAlpha = 1 }
+    txt(x, '?', 0, 6, { size: 120, font: SERIF, italic: true, weight: 600, color: GOLD })
+  } else {
+    rrect(x, -w / 2, -h / 2, w, h, 30, '#fffaf0')
+    txt(x, kicker, 0, -h / 2 + 60, { size: 26, color: '#7a5cc0' })
+    rich(x, text, 0, -h / 2 + 170, { size, accentSize: Math.round(size * 1.2), color: INK, accent: '#7a5cc0', stroke: null, lh: 1.25, maxW: w - 70 })
+  }
+  x.restore()
+}
+
 export function urFilm(cfg) {
   const D = cfg.dur, SIGN = cfg.sign, LOOP = cfg.ending === 'loop'
   const E = { kind: 'slide', at: -0.3, x: 540, y: 640, size: planetSize('uranus', 560), from: 'right', ...cfg.entry }
@@ -142,7 +162,7 @@ export function urFilm(cfg) {
     }
   }
 
-  const K = { D, SIGN, LAND, E, uranus, sign, pisces, planet, track, win, box, rect, rrect, txt, rich, phone, label, loading, pop01, outK, inOut, drawSpace, GOLD, BONE, INK, RED, PINK, CYAN, TEAL, MONO, INTER, SERIF, sparks }
+  const K = { talkCard, D, SIGN, LAND, E, uranus, sign, pisces, planet, track, win, box, rect, rrect, txt, rich, phone, label, loading, pop01, outK, inOut, drawSpace, GOLD, BONE, INK, RED, PINK, CYAN, TEAL, MONO, INTER, SERIF, sparks }
 
   async function build(stage) {
     try { await Promise.all(['800 60px Inter', '900 60px Inter', "italic 600 60px 'EB Garamond'", "700 30px 'Space Mono'"].map(f => document.fonts.load(f))) } catch (_) { /* fonts optional */ }
