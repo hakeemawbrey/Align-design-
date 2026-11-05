@@ -864,3 +864,38 @@ export function flyingDome(x, t, x0, y0, t0, t1, { height = 520, drift = 120, sp
   x.restore()
   for (let i = 0; i < 4; i++) { const a = i * 1.6 + t * 3; R(x, '#fff1c8', px - 50 + 26 * i + 8 * Math.sin(a), py + 50 + 10 * Math.cos(a), 8, 8) }
 }
+/** a big card slamming into the marquee (frame-0 chaos): at may be negative (already landing at frame 0), out = [a, b] */
+export function drawSlamCard(x, t, { at = -0.15, out = [5.6, 6.0], lines = [], col = RED, size = 92, sub = null, rot = -0.04, bg = BONE, ink = INK } = {}) {
+  if (t >= out[1]) return
+  const p = prog(t, at, at + 0.3), k = lerp(2.2, 1, ease.inCubic(p)), o = outK(t, out)
+  const after = t - at - 0.3, wob = after > 0 ? 0.05 * Math.exp(-after * 6) * Math.sin(after * 40) : 0
+  x.save(); x.translate(540 + (after > 0 ? 0 : 0), 512); x.rotate(rot + wob); x.scale(k * o, k * o); x.globalAlpha = clamp(p * 3)
+  const w = 930, h = 270
+  R(x, 'rgba(6,4,18,0.55)', -w / 2 + 16, -h / 2 + 20, w, h)
+  box(x, -w / 2, -h / 2, w, h, bg, { b: 9 }); R(x, col, -w / 2, -h / 2, w, 14)
+  x.textAlign = 'center'; x.textBaseline = 'middle'
+  if (sub) { x.font = `700 28px ${MONO}`; x.fillStyle = col; x.fillText(sub, 0, -h / 2 + 46) }
+  x.font = `800 ${size}px ${INTER}`; x.fillStyle = ink
+  const y0 = (sub ? 22 : 6) - (lines.length - 1) * size * 0.55
+  lines.forEach((l, i) => x.fillText(l, 0, y0 + i * size * 1.1))
+  x.restore()
+  // impact lines
+  if (after > -0.05 && after < 0.6) {
+    const a = 1 - prog(after, 0, 0.6)
+    x.save(); x.globalAlpha = a; x.strokeStyle = BONE; x.lineWidth = 8
+    for (let i = 0; i < 10; i++) { const ang = i / 10 * Math.PI * 2, r0 = 500 + 80 * prog(after, 0, 0.6), r1 = r0 + 70; x.beginPath(); x.moveTo(540 + Math.cos(ang) * r0, 512 + Math.sin(ang) * r0 * 0.4); x.lineTo(540 + Math.cos(ang) * r1, 512 + Math.sin(ang) * r1 * 0.4); x.stroke() }
+    x.restore()
+  }
+}
+/** scream / panic lines around a point (frame-0 chaos) until `until` */
+export function screamLines(x, t, cx, cy, until, { text = null, col = '#ffd23a', r = 170 } = {}) {
+  if (t >= until) return
+  const o = outK(t, [until - 0.3, until])
+  x.save(); x.globalAlpha = o; x.strokeStyle = col; x.lineWidth = 9; x.lineCap = 'square'
+  for (let i = 0; i < 7; i++) {
+    const ang = -Math.PI / 2 + (i - 3) * 0.32, j = 10 * Math.sin(t * 30 + i)
+    x.beginPath(); x.moveTo(cx + Math.cos(ang) * (r + j), cy + Math.sin(ang) * (r + j)); x.lineTo(cx + Math.cos(ang) * (r + 60 + j), cy + Math.sin(ang) * (r + 60 + j)); x.stroke()
+  }
+  x.restore()
+  if (text) label(x, text, cx, cy - r - 100, { size: 64, col, font: INTER, weight: 800, alpha: o, rot: 0.06 * Math.sin(t * 25) })
+}
