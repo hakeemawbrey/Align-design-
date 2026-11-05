@@ -1,0 +1,72 @@
+{
+ "kroe01": {
+  "video": "/_blob/a394101e8443b8e1dc8a5ab6f45921d2",
+  "poster": "/_blob/58c5ff49bdbbbcf174ecdbcb2d928d3c",
+  "title": "Opened With \"hey\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 1,
+  "caption": "You matched, you typed \"hey,\" you hit send. Now what?\nGive them something to answer, like a question about their photo."
+ },
+ "kroe02": {
+  "video": "/_blob/d3dae670035d395c0b0df38807673d41",
+  "poster": "/_blob/e6920162c8d69a7808c0d8a93a46af2c",
+  "title": "The 2 a.m. \"u up?\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 2,
+  "caption": "Is \"u up?\" at 2 a.m. ever the move?\nSend it in daylight with a real plan instead."
+ },
+ "kroe03": {
+  "video": "/_blob/28e7f0f841689307bf0a168ab905d89b",
+  "poster": "/_blob/a019f39f086c428ac06d613e79ccb0ee",
+  "title": "The Six-Paragraph Hello",
+  "len": 11,
+  "long": false,
+  "series": "opener",
+  "episode": 3,
+  "caption": "Six paragraphs before they even said hi?\nOne line and one question leaves room for them to talk."
+ },
+ "kroe04": {
+  "video": "/_blob/e85a310c424de168b133a3b21be62abe",
+  "poster": "/_blob/ba1923ac64175f377dabe25d2dc39d18",
+  "title": "The Cheesy Pickup Line",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 4,
+  "caption": "Pickup lines: cringe or brave?\nCorny is fine. Follow it with a real question so they can play along."
+ },
+ "kroe05": {
+  "video": "/_blob/51eb10ded2e9cfce273a020c399d9dd4",
+  "poster": "/_blob/d47b285153eba6d8ad299951ea755e34",
+  "title": "The Four-Minute Voice Note",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 5,
+  "caption": "A four-minute voice note as a first hello?\nKeep it short and curious. Ask about something they shared."
+ },
+ "kroe06": {
+  "video": "/_blob/b431d02f89f1f5f947305bdcfb8b58c6",
+  "poster": "/_blob/d83c7f87f11d0387d293d146aa6d3b8c",
+  "title": "\"I Hope This Message Finds You Well\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 6,
+  "caption": "Opened like a cover letter and wondered why it felt stiff?\nA plain \"hi\" and a fun question works better."
+ },
+ "kroe07": {
+  "video": "/_blob/0cce67331d95c9eea9d3e6cf6602a956",
+  "poster": "/_blob/997a1db0ed7e175523ba9beeea2d08b0",
+  "title": "\"You're Gorgeous\" (That's It)",
+  "len": 9,
+  "long": false,
+  "series": "opener",
+  "episode": 7,
+  "caption": "\"You're gorgeous\" and then nothing?\nCompliment something they chose, then ask about it."
+ }
+}
