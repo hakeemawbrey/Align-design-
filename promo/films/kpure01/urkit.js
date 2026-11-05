@@ -146,8 +146,9 @@ export function urFilm(cfg) {
   const pisces = (x, t, o = {}) => sign(x, t, 'pisces', { mood: 'sparkle', tears: 3, look: [0, -1], seed: 6, ...o })
   const planet = (x, t, id, o = {}) => { const { x: X, y: Y, size, ...r } = o; return drawPlanet(x, id, X, Y, size, t, r) }
 
-  function debris(x, t) {
+  function debris(x, t, front = false) {
     for (const [i, d] of (cfg.debris || []).entries()) {
+      if (!!d.front !== front) continue
       const dt = t - (d.t0 ?? -0.4)
       if (dt < 0 || dt > 2.6) continue
       const X = d.x + d.vx * dt, Y = d.y + d.vy * dt + 1600 * dt * dt
@@ -177,6 +178,7 @@ export function urFilm(cfg) {
         if (cfg.bg) cfg.bg(x, t, K); else drawSpace(x, t, { planet: 'uranus', seed: 8 })
         debris(x, t)
         cfg.paint(x, t, K)
+        debris(x, t, true)
         if (cfg.over) cfg.over(x, t, K)
         for (const l of lines) speech(x, t, { size: 44, maxW: 700, ...l })
         if (cfg.top) cfg.top(x, t, K)
