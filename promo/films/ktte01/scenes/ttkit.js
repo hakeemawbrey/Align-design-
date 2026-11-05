@@ -354,7 +354,7 @@ export function makeTT(cfg) {
   // heroes' home spots
   const homes = mode === 'solo' ? [{ x: 470, y: 1300, s: 320 }]
     : mode === 'duel' ? [{ x: 300, y: 1265, s: 250 }, { x: 780, y: 1265, s: 250 }]
-      : signs.map((id, i) => ({ x: 105 + (i % 6) * 174 + (Math.floor(i / 6) ? 87 : 0), y: Math.floor(i / 6) ? 1395 : 1255, s: 110 }))
+      : signs.map((id, i) => ({ x: 125 + (i % 6) * 166 + (Math.floor(i / 6) ? 40 : 0), y: Math.floor(i / 6) ? 1500 : 1300, s: 150 }))
   const pickOf = (r, j) => mode === 'solo' ? r.pick : Array.isArray(r.pick) ? r.pick[j] : r.pick
   const cardX = s => s === 'a' ? CARD.ax : s === 'b' ? CARD.bx : CARD.cx
   const cardY = s => s === 'c' ? CARD.cy : CARD.y
@@ -442,7 +442,7 @@ export function makeTT(cfg) {
 
   // ── the heroes in a round
   function heroPose(j, v, r) {
-    const H = homes[j], u = v - r.t0, pa = r.pickAt
+    const H = homes[j], u = v - r.t0, pa = r.pickAt + (mode === 'crowd' ? (r.stagger ?? 0.06) * ((j * 5) % 12) : 0)
     const pk = pickOf(r, j)
     let x = H.x, y = H.y, look = [0, -0.4], mood = 'neutral', squash = 0, sweat = false
     // think: glance left / right
@@ -455,8 +455,8 @@ export function makeTT(cfg) {
     }
     if (pk && u >= pa - 0.22 && !r.buzz && !r.both) {
       // lunge + slam into the chosen card, then spring back
-      const tx = mode === 'crowd' ? cardX(pk) + ((j % 4) - 1.5) * 70 : cardX(pk), ty = cardY(pk) + (mode === 'crowd' ? 340 + Math.floor(j / 4) * 40 : 250)
-      const go = ease.outCubic(prog(u, pa - 0.22, pa)), back = mode === 'crowd' ? 0 : ease.inOutCubic(prog(u, pa + 0.3, Math.min(r.d, pa + 0.75)))
+      const tx = mode === 'crowd' ? (pk === 'c' || r === LASTR ? 540 + ((j % 6) - 2.5) * 150 : cardX(pk) + ((j % 3) - 1) * 120) : cardX(pk), ty = mode === 'crowd' ? (pk === 'c' || r === LASTR ? 1250 + Math.floor(j / 6) * 150 : 1130 + Math.floor((j % 12) / 3) * 70) : cardY(pk) + 250
+      const go = ease.outCubic(prog(u, pa - 0.22, pa)), back = mode === 'crowd' ? (r === LASTR ? 0 : ease.inOutCubic(prog(u, r.d - 0.35, r.d))) : ease.inOutCubic(prog(u, pa + 0.3, Math.min(r.d, pa + 0.75)))
       const f = go * (1 - back)
       x = lerp(H.x, tx, f); y = lerp(H.y, ty, f) - 60 * Math.sin(Math.PI * go) * (1 - back)
       if (u >= pa && u < pa + 0.12) squash = 0.22 * Math.sin(Math.PI * (u - pa) / 0.12)
@@ -517,6 +517,7 @@ export function makeTT(cfg) {
           else if (v >= E) {
             const H = homes[j]
             P = { x: H.x, y: H.y, s: H.s, look: mode === 'crowd' ? [0, -1] : [0, 0], mood: 'happy', squash: 0 }
+            if (mode === 'crowd') { const Q = heroPose(j, LASTR.t1 - 1e-3, LASTR); P.x = Q.x; P.y = Q.y }
             if (mode !== 'solo' && cfg.finPose) Object.assign(P, cfg.finPose(j, t, v - E, H))
           } else P = { ...homes[j], look: [0, 0], mood: 'neutral' }
           if (cfg.pose) Object.assign(P, cfg.pose(j, t, v, P) || {})
