@@ -68,5 +68,85 @@
   "series": "saybetter",
   "episode": 7,
   "caption": "Walking out of a talk doesn't end it, it just moves it into your head for three days.\nPick a time to come back instead."
+ },
+ "ksbe08": {
+  "video": "/_blob/90d041ab46462f06fb25fb881b38a5c3",
+  "poster": "/_blob/9bf810ad5e463fc82b57c5cef3ccd85a",
+  "title": "\"You're overreacting\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 8,
+  "caption": "You don't have to agree with how they feel to understand it.\nAsk how it landed. Then apologise for the part that was yours."
+ },
+ "ksbe09": {
+  "video": "/_blob/5433d3911658d44cb8f0b74d13a0a700",
+  "poster": "/_blob/19c4a19e64331a75fc79262bcb030054",
+  "title": "\"It's not a big deal\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 9,
+  "caption": "Small to you can be huge to them.\nYou don't have to feel it to respect it. Say you see it, then ask how it went."
+ },
+ "ksbe10": {
+  "video": "/_blob/bb3cf11ba5f7cf68c8f43b5f496ecc91",
+  "poster": "/_blob/36e79f66da463d57d39e4b190b9a031e",
+  "title": "\"I'm not mad.\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 10,
+  "caption": "Saying \"I'm not mad\" while visibly steaming fools nobody.\nName the hurt while it's small, then ask for what you need next time."
+ },
+ "ksbe11": {
+  "video": "/_blob/68aaaf1acf3754b05352ad233365e255",
+  "poster": "/_blob/7eafb01d7030c5d74b0aa74ad975b754",
+  "title": "\"You care more about your friends\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 11,
+  "caption": "Jealous of the group chat? Underneath that is usually \"I miss you.\"\nSay that part, and ask for time that's just yours."
+ },
+ "ksbe12": {
+  "video": "/_blob/d2ffde5620080f4674b2339d0834777a",
+  "poster": "/_blob/0fe7a847d4efda1508fbc9382814e63d",
+  "title": "\"You don't even care\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 12,
+  "caption": "On a rough day it's easy to accuse instead of ask.\nSay what you need, plainly. Most people will happily scoot over."
+ },
+ "ksbe13": {
+  "video": "/_blob/201f28ee58e2d065798dfad553a67650",
+  "poster": "/_blob/213bb7b74859e0c5043dd569d0b96887",
+  "title": "\"Here we go again\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 13,
+  "caption": "An eye-roll tells someone not to bother next time.\nEven the tenth talk deserves an open door: \"Okay. I'm listening.\""
+ },
+ "ksbe14": {
+  "video": "/_blob/305f680be2172fc9bd95e76650b288a9",
+  "poster": "/_blob/1e01f79078802b98ca8b029e206d8348",
+  "title": "\"Do whatever you want\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 14,
+  "caption": "\"Do whatever you want\" is a test, and nobody passes tests they can't see.\nSay what you actually want. It's allowed."
+ },
+ "ksbe15": {
+  "video": "/_blob/481c0c15ee603de4a99b9323459e475f",
+  "poster": "/_blob/270aecdbe0b3cdb13ef75ab29ced9e49",
+  "title": "\"You're just like my ex\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 15,
+  "caption": "Old hurts get loud in new relationships.\nIf something stings from before, say it's old, take a breath, and let this person be new."
  }
 }
