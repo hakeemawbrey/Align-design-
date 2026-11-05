@@ -1,8 +1,11 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { LocalTime } from "@/components/LocalTime";
+import { BarList, ColumnChart, LineChart, SegmentedBar } from "@/components/Charts";
 import { Sparkline } from "@/components/Sparkline";
-import { type Account, type DB, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot } from "@/lib/db";
+import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot } from "@/lib/db";
+import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
 import { type PostStats, type Profile, accountStats } from "@/lib/insights";
 
 export const dynamic = "force-dynamic";
@@ -60,7 +63,7 @@ export default async function Dashboard({
           ))}
         </div>
       )}
-      {one ? <AccountDetail account={one} /> : <Overview accounts={accounts} />}
+      {one ? <AccountDetail account={one} colorIndex={Math.max(0, accounts.findIndex((a) => a.igUserId === one.igUserId))} /> : <Overview accounts={accounts} />}
     </>
   );
 }
@@ -81,7 +84,8 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       ),
     ),
   );
-  const queued = (await listPosts(db)).filter((p) => p.status === "scheduled" || p.status === "processing");
+  const allPosts = await listPosts(db);
+  const queued = allPosts.filter((p) => p.status === "scheduled" || p.status === "processing");
   const history = await Promise.all(accounts.map((a) => listSnapshots(db, a.igUserId, 30)));
   const rows = accounts.map((a, i) => {
     const r = results[i];
@@ -92,6 +96,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       a,
       profile: r.ok ? r.profile : null,
       avgRate: r.ok ? r.avgRate : null,
+      avgReach: r.ok && r.posts.length ? Math.round(r.posts.reduce((t, p) => t + p.reach, 0) / r.posts.length) : null,
       lastPost: r.ok ? (r.posts[0]?.media.timestamp ?? null) : null,
       error: r.ok ? null : r.error,
       snapshots,
@@ -113,6 +118,8 @@ async function Overview({ accounts }: { accounts: Account[] }) {
         <Stat label="Total posts" value={fmt.format(sum((r) => r.profile?.media_count))} />
         <Stat label="Queued posts" value={fmt.format(queued.length)} />
       </div>
+
+      <OverviewCharts accounts={accounts} rows={rows} posts={allPosts} now={now} />
 
       <h2>Accounts</h2>
       <div className="card scroll">
@@ -191,7 +198,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
   );
 }
 
-async function AccountDetail({ account }: { account: Account }) {
+async function AccountDetail({ account, colorIndex }: { account: Account; colorIndex: number }) {
   const db = await getDb();
 
   let profile: Profile | null = null;
@@ -229,14 +236,21 @@ async function AccountDetail({ account }: { account: Account }) {
 
       <h2>Followers over time</h2>
       <div className="card">
-        {snapshots.length > 1 ? (
-          <Sparkline values={snapshots.map((s) => s.followers)} label="Followers per day" />
+        {snapshots.length > 0 ? (
+          <LineChart
+            label={`@${account.username} followers per day`}
+            labels={snapshots.map((s) => dayLabel(s.day))}
+            series={[{ name: "Followers", color: seriesColor(colorIndex), values: snapshots.map((s) => s.followers) }]}
+          />
         ) : (
           <p className="muted small" style={{ margin: 0 }}>
-            One snapshot is saved each day you open the dashboard (or the worker runs). The chart appears after day two.
+            One snapshot is saved each day you open the dashboard (or the worker runs).
           </p>
         )}
+        {snapshots.length === 1 && <p className="muted small">The line starts tomorrow, after the second daily snapshot.</p>}
       </div>
+
+      <AccountCharts account={account} posts={posts} colorIndex={colorIndex} />
 
       <h2>Recent posts</h2>
       <div className="card scroll">
@@ -301,5 +315,193 @@ function Stat({ label, value }: { label: string; value: string }) {
       <div className="label">{label}</div>
       <div className="value">{value}</div>
     </div>
+  );
+}
+
+function ChartCard({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
+  return (
+    <div className="card">
+      <h3>{title}</h3>
+      {sub && <p className="sub">{sub}</p>}
+      {children}
+    </div>
+  );
+}
+
+type OverviewRow = {
+  a: Account;
+  profile: Profile | null;
+  avgRate: number | null;
+  avgReach: number | null;
+  snapshots: { day: string; followers: number }[];
+  change: number | null;
+};
+
+async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Account[]; rows: OverviewRow[]; posts: PostRow[]; now: Date }) {
+  const ids = accounts.map((a) => a.igUserId);
+  const color = new Map(ids.map((id, i) => [id, seriesColor(i)]));
+  const days = dayRange(now, -7, 21);
+  const perDay = postsPerDay(posts, days, (p) => p.ig_user_id, ids);
+  const perHour = postsPerHour(posts, now, (p) => p.ig_user_id, ids);
+  const scheduled = posts.filter((p) => p.status === "scheduled");
+  const count = (f: (p: PostRow) => boolean, list = posts) => list.filter(f).length;
+
+  return (
+    <>
+      <h2>Followers</h2>
+      <div className="chart-grid">
+        {rows.map((r) => (
+          <ChartCard key={r.a.igUserId} title={`@${r.a.username}`}>
+            <div className="headline">
+              <span className="big">{r.profile ? fmt.format(r.profile.followers_count ?? 0) : "—"}</span>
+              <span className={`small ${r.change !== null && r.change < 0 ? "error" : r.change ? "ok" : "muted"}`}>
+                {r.change === null ? "change shows from day two" : `${signed(r.change)} in 7 days`}
+              </span>
+            </div>
+            {r.snapshots.length > 0 ? (
+              <LineChart
+                height={140}
+                label={`@${r.a.username} followers per day`}
+                labels={r.snapshots.map((s) => dayLabel(s.day))}
+                series={[{ name: "Followers", color: color.get(r.a.igUserId)!, values: r.snapshots.map((s) => s.followers) }]}
+              />
+            ) : (
+              <p className="muted small">No snapshots yet.</p>
+            )}
+          </ChartCard>
+        ))}
+      </div>
+
+      <h2>Posting</h2>
+      <div className="stack">
+        <ChartCard title="Posts per day" sub="Last 7 days and the next 3 weeks, by account. Published before the Today line, scheduled after it.">
+          <ColumnChart
+            label="Posts per day by account"
+            labels={days.map(dayLabel)}
+            marker={{ index: 7, label: "Today" }}
+            series={accounts.map((a, i) => ({ name: `@${a.username}`, color: seriesColor(i), values: perDay[i] }))}
+          />
+        </ChartCard>
+        <div className="chart-grid">
+          <ChartCard title="Queued posts by time of day" sub="When the upcoming posts go out (this computer's time zone).">
+            <ColumnChart
+              height={180}
+              label="Upcoming posts by hour of day"
+              labels={HOUR_LABELS}
+              series={accounts.map((a, i) => ({ name: `@${a.username}`, color: seriesColor(i), values: perHour[i] }))}
+            />
+          </ChartCard>
+          <div className="stack">
+            <ChartCard title="Queue mix" sub={`${fmt.format(scheduled.length)} posts waiting to publish.`}>
+              <SegmentedBar
+                label="Queue mix"
+                parts={[
+                  { name: "Reels", value: count((p) => p.type === "REELS" && !p.trial_strategy, scheduled), color: "var(--series-1)" },
+                  { name: "Trial Reels", value: count((p) => !!p.trial_strategy, scheduled), color: "var(--series-2)" },
+                  { name: "Images", value: count((p) => p.type === "IMAGE", scheduled), color: "var(--series-3)" },
+                ]}
+              />
+            </ChartCard>
+            <ChartCard title="All posts by status">
+              <SegmentedBar
+                label="Posts by status"
+                parts={[
+                  { name: "Published", value: count((p) => p.status === "published"), color: "var(--status-good)" },
+                  { name: "Scheduled", value: count((p) => p.status === "scheduled" || p.status === "processing"), color: "var(--status-warning)", dark: true },
+                  { name: "Failed", value: count((p) => p.status === "failed"), color: "var(--status-critical)" },
+                  { name: "Cancelled", value: count((p) => p.status === "cancelled"), color: "var(--chart-ink)" },
+                ]}
+              />
+            </ChartCard>
+          </div>
+        </div>
+      </div>
+
+      <h2>Performance</h2>
+      <div className="chart-grid">
+        <ChartCard title="Engagement per reach" sub={`Average over each account's last ${OVERVIEW_POSTS} posts.`}>
+          <BarList
+            unit="percent"
+            items={rows.map((r) => ({ label: `@${r.a.username}`, value: r.avgRate, color: color.get(r.a.igUserId) }))}
+          />
+        </ChartCard>
+        <ChartCard title="Average reach per post" sub={`Accounts reached, last ${OVERVIEW_POSTS} posts.`}>
+          <BarList items={rows.map((r) => ({ label: `@${r.a.username}`, value: r.avgReach, color: color.get(r.a.igUserId) }))} />
+        </ChartCard>
+        <ChartCard title="Followers by account">
+          <BarList
+            items={rows.map((r) => ({ label: `@${r.a.username}`, value: r.profile?.followers_count ?? null, color: color.get(r.a.igUserId) }))}
+          />
+        </ChartCard>
+      </div>
+    </>
+  );
+}
+
+async function AccountCharts({ account, posts, colorIndex }: { account: Account; posts: PostStats[]; colorIndex: number }) {
+  const db = await getDb();
+  const now = new Date();
+  const mine = await listPosts(db, { igUserId: account.igUserId });
+  const days = dayRange(now, -7, 21);
+  const [published, upcoming] = postsPerDay(mine, days, (p) => (p.status === "published" ? "published" : "queued"), ["published", "queued"]);
+  const [perHour] = postsPerHour(mine, now, () => "all", ["all"]);
+  const recent = [...posts].reverse(); // oldest first
+  const labels = recent.map((p) => new Date(p.media.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+  const c = seriesColor(colorIndex);
+
+  return (
+    <>
+      <h2>Posting</h2>
+      <div className="stack">
+        <ChartCard title="Posts per day" sub="Last 7 days and the next 3 weeks.">
+          <ColumnChart
+            label={`@${account.username} posts per day`}
+            labels={days.map(dayLabel)}
+            marker={{ index: 7, label: "Today" }}
+            series={[
+              { name: "Published", color: "var(--series-3)", values: published },
+              { name: "Scheduled", color: "var(--series-1)", values: upcoming },
+            ]}
+          />
+        </ChartCard>
+        <ChartCard title="Queued posts by time of day" sub="This computer's time zone.">
+          <ColumnChart height={180} label="Upcoming posts by hour of day" labels={HOUR_LABELS} series={[{ name: "Posts", color: c, values: perHour }]} />
+        </ChartCard>
+      </div>
+
+      {recent.length > 0 && (
+        <>
+          <h2>Recent post performance</h2>
+          <div className="chart-grid">
+            <ChartCard title="Reach per post" sub={`Last ${recent.length} posts, oldest first.`}>
+              <ColumnChart height={200} label="Reach per post" labels={labels} series={[{ name: "Reach", color: c, values: recent.map((p) => p.reach) }]} />
+            </ChartCard>
+            <ChartCard title="Engagement per reach" sub="Interactions divided by accounts reached.">
+              <ColumnChart
+                height={200}
+                unit="percent"
+                label="Engagement rate per post"
+                labels={labels}
+                series={[{ name: "Engagement rate", color: c, values: recent.map((p) => p.rate) }]}
+              />
+            </ChartCard>
+          </div>
+          <div className="card" style={{ marginTop: 12 }}>
+            <h3>Interactions per post</h3>
+            <p className="sub">Likes, comments, saves and shares.</p>
+            <ColumnChart
+              label="Interactions per post"
+              labels={labels}
+              series={[
+                { name: "Likes", color: "var(--series-1)", values: recent.map((p) => p.media.like_count ?? 0) },
+                { name: "Comments", color: "var(--series-2)", values: recent.map((p) => p.media.comments_count ?? 0) },
+                { name: "Saves", color: "var(--series-3)", values: recent.map((p) => p.values.saved ?? 0) },
+                { name: "Shares", color: "var(--series-4)", values: recent.map((p) => p.values.shares ?? 0) },
+              ]}
+            />
+          </div>
+        </>
+      )}
+    </>
   );
 }
