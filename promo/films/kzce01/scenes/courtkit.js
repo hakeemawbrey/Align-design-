@@ -159,6 +159,7 @@ export function drawJuryBox(x, t, members, { mood, gasps = [], tears, allTears, 
   let gaspK = 0
   for (const g of gasps) { const d = t - g; if (d >= 0 && d < 0.9) gaspK = Math.max(gaspK, 1 - d / 0.9) }
   members.forEach((id, i) => {
+    if (!id) return
     const [px, py, ps] = JURY_POS[i] || JURY_POS[0]
     const m = (mood && mood(t, id)) || (gaspK > 0.15 ? 'wide' : id === 'pisces' ? 'sparkle' : 'neutral')
     const lift = gaspK > 0 ? -18 * Math.sin(Math.PI * Math.min(1, (1 - gaspK) * 2.2)) * (i % 2 ? 1 : 0.8) : 0
@@ -414,7 +415,7 @@ export function makeCourt(cfg) {
         }
       }
       // the jury
-      if (!hide.jury) drawJuryBox(x, t, cfg.jury || ['pisces'], { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears, allTears: cfg.juryTears })
+      if (!hide.jury) drawJuryBox(x, t, typeof cfg.jury === 'function' ? cfg.jury(t) : (cfg.jury || ['pisces']), { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears, allTears: cfg.juryTears })
       cfg.front && cfg.front(x, t, ctx)
       // exhibits
       for (const E of cfg.exhibits || []) {
