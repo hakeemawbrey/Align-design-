@@ -52,6 +52,20 @@ export function skyAt(min) {
   return { top: SKY[0][1], bot: SKY[0][2], h }
 }
 const isNight = h => h < 6 || h >= 19.5
+// approximate local sunrise / sunset (hours) in December, so each half's sky is true for its city and hour
+export const SUN = {
+  'Toronto': [7.7, 16.7], 'London': [8.0, 15.9], 'Cape Town': [5.5, 19.9], 'Sydney': [5.7, 20.0], 'Houston': [7.1, 17.4], 'Lagos': [6.8, 18.4],
+  'Berlin': [8.2, 15.9], 'Seoul': [7.4, 17.2], 'Mexico City': [7.0, 18.0], 'Madrid': [8.5, 17.9], 'Chicago': [7.2, 16.3], 'Mumbai': [7.0, 18.0],
+  'Dubai': [7.0, 17.6], 'Manila': [6.1, 17.5], 'Atlanta': [7.6, 17.5], 'Nairobi': [6.2, 18.6], 'Vancouver': [8.0, 16.3], 'Tokyo': [6.7, 16.5],
+  'Los Angeles': [6.9, 16.8], 'Paris': [8.6, 17.0], 'Montreal': [7.6, 16.2], 'Auckland': [6.0, 20.7], 'Edinburgh': [8.7, 15.7],
+}
+/** clock minutes → a "solar" minute on the sky table (sunrise ≈ 6:30, sunset ≈ 18:30) */
+export function solarMin(min, city) {
+  const sun = SUN[city]; if (!sun) return min
+  const [r, st] = sun, h = ((min / 60) % 24 + 24) % 24
+  const hs = h < r ? 6.5 * h / r : h < st ? 6.5 + (h - r) / (st - r) * 12 : 18.5 + (h - st) / (24 - st) * 5.5
+  return hs * 60
+}
 const isDay = h => h >= 7.5 && h < 17.5
 
 // a deterministic pixel skyline per city name
@@ -76,14 +90,14 @@ function weather(x, X0, W, t, kind, seed) {
 
 /** paint one half's world: sky (with sun / moon / stars), skyline, then a room or the street */
 function half(x, t, side, min, set, city, wx, opts = {}) {
-  const X0 = side === 'L' ? 0 : 540, W = 540, sk = skyAt(min), n = isNight(sk.h)
+  const X0 = opts.X0 ?? (side === 'L' ? 0 : 540), W = opts.W ?? 540, sk = skyAt(solarMin(min, city)), n = isNight(sk.h)
   const seed = [...city].reduce((a, c) => a + c.charCodeAt(0), 0)
   const g = x.createLinearGradient(0, 0, 0, 1300); g.addColorStop(0, sk.top); g.addColorStop(1, sk.bot)
   x.fillStyle = g; x.fillRect(X0, 0, W, 1920)
   if (n) for (let i = 0; i < 26; i++) { const tw = 0.5 + 0.5 * Math.sin(t * 2 + i * 1.7); x.globalAlpha = tw; R(x, '#fff6d8', X0 + hash(seed + i) * W, 120 + hash(seed + i * 5) * 800, 5, 5); x.globalAlpha = 1 }
   // sun or moon
   const hh = sk.h, cx = X0 + W * 0.72
-  if (!n && hh > 6 && hh < 19.5) { const arc = Math.sin(Math.PI * clamp((hh - 6) / 13.5)); const cy = 900 - arc * 560; x.fillStyle = 'rgba(255,230,150,0.3)'; x.beginPath(); x.arc(cx, cy, 90, 0, 7); x.fill(); x.fillStyle = '#ffe58a'; x.beginPath(); x.arc(cx, cy, 52, 0, 7); x.fill() }
+  if (hh > 6.5 && hh < 18.5) { const arc = Math.sin(Math.PI * clamp((hh - 6.5) / 12)); const cy = 900 - arc * 560; x.fillStyle = 'rgba(255,230,150,0.3)'; x.beginPath(); x.arc(cx, cy, 90, 0, 7); x.fill(); x.fillStyle = '#ffe58a'; x.beginPath(); x.arc(cx, cy, 52, 0, 7); x.fill() }
   else { const cy = 420; x.fillStyle = 'rgba(247,231,176,0.18)'; x.beginPath(); x.arc(cx, cy, 80, 0, 7); x.fill(); x.fillStyle = '#f7e7b0'; x.beginPath(); x.arc(cx, cy, 44, 0, 7); x.fill(); x.fillStyle = sk.top; x.beginPath(); x.arc(cx + 18, cy - 10, 38, 0, 7); x.fill() }
   skyline(x, X0, W, 1260, seed, n, t)
   weather(x, X0, W, t, wx, seed)
@@ -176,9 +190,11 @@ export function makeLDN(cfg) {
       const mL = minL(t), mR = minR(t)
       const S = { t, minL: mL, minR: mR, mg }
       // the two halves (clipped); while merging, the seam slides right and the left world grows
-      const seam = lerp(540, 1110, mg)
-      x.save(); x.beginPath(); x.rect(0, 0, seam, 1920); x.clip(); half(x, t, 'L', mL, setL, cfg.L.city, cfg.L.weather, { bed: so.bedL, bedCol: so.bedColL, walk: cfg.walkL ? cfg.walkL(t) : 0 }); x.restore()
-      if (seam < 1080) { x.save(); x.beginPath(); x.rect(seam, 0, 1080 - seam, 1920); x.clip(); x.translate(seam - 540, 0); half(x, t, 'R', mR, setR, cfg.R.city, cfg.R.weather, { bed: so.bedR, bedCol: so.bedColR, walk: cfg.walkR ? cfg.walkR(t) : 0 }); x.restore() }
+      const toR = cfg.long?.mergeTo === 'R'
+      const seam = lerp(540, toR ? -30 : 1110, mg)
+      S.seam = seam
+      if (seam > 0) { x.save(); x.beginPath(); x.rect(0, 0, seam, 1920); x.clip(); half(x, t, 'L', mL, setL, cfg.L.city, cfg.L.weather, { bed: so.bedL, bedCol: so.bedColL, walk: cfg.walkL ? cfg.walkL(t) : 0, X0: 0, W: Math.max(540, seam) }); x.restore() }
+      if (seam < 1080) { x.save(); x.beginPath(); x.rect(seam, 0, 1080 - seam, 1920); x.clip(); const W2 = Math.max(540, 1080 - seam); half(x, t, 'R', mR, setR, cfg.R.city, cfg.R.weather, { bed: so.bedR, bedCol: so.bedColR, walk: cfg.walkR ? cfg.walkR(t) : 0, X0: 1080 - W2, W: W2 }); x.restore() }
       S.clip = (side, fn) => { x.save(); x.beginPath(); if (side === 'L') x.rect(0, 0, seam, 1920); else x.rect(seam, 0, 1080, 1920); x.clip(); fn(); x.restore() }
       if (cfg.under) cfg.under(x, t, S)
       // the couple
@@ -207,7 +223,7 @@ export function makeLDN(cfg) {
       if (cfg.draw) cfg.draw(x, t, S)
       for (const b of cfg.bubbles || []) bubble(x, t, b.x, b.y, b.t, b.t1, b.text, { size: b.size || 34, tail: b.tail ?? 0, col: b.col || BONE, maxW: b.maxW || 470 })
       // the seam
-      if (mg < 1) {
+      if (mg < 1 && seam > 0 && seam < 1080) {
         R(x, INK, seam - 7, 0, 14, 1920); R(x, '#fff1c8', seam - 2, 0, 4, 1920)
         for (let i = 0; i < 8; i++) { const yy = ((t * 120 + i * 240) % 1920); x.save(); x.globalCompositeOperation = 'lighter'; x.fillStyle = 'rgba(255,241,200,0.5)'; x.fillRect(seam - 5, yy, 10, 26); x.restore() }
       }
@@ -254,7 +270,7 @@ export function makeLDN(cfg) {
     ...(ending === 'loop' ? loopCues({ duration: D, len: LOOP_LEN }) : []),
     ...(cfg.cues || []),
   ]
-  const SCENES = [build, whipZoom(WHIP), slamTitle(HOOK), ...CHAPS.map(c => chapter(c))]
+  const SCENES = [build, whipZoom(WHIP), slamTitle(HOOK), ...CHAPS.map(c => chapter(c)), ...(cfg.scenes || [])]
   if (ending === 'loop') SCENES.push(loopBack([build, slamTitle(HOOK)], { duration: D, len: LOOP_LEN }))
   const sections = cfg.sections || { drop: cfg.badgeAt ?? 0.6 }
   const music = { style: cfg.music.style, key: cfg.music.key, seed: cfg.music.seed, sections: { ...sections, outroAt: Math.min(sections.outroAt ?? (cfg.last ? cfg.last.t + 0.5 : D - 1), D - 0.6) }, hits: cfg.hits || [] }
