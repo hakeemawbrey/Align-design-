@@ -104,6 +104,93 @@
    ],
    "pin": true,
    "note": "Curran, Paris at night in the rain"
+  },
+  {
+   "id": "wc-46511654",
+   "source": "commons",
+   "title": "John Atkinson Grimshaw - Near Hackness, a moonlit scene with pine trees",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_Near_Hackness,_a_moonlit_scene_with_pine_trees.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/John_Atkinson_Grimshaw_-_Near_Hackness%2C_a_moonlit_scene_with_pine_trees.jpg/1920px-John_Atkinson_Grimshaw_-_Near_Hackness%2C_a_moonlit_scene_with_pine_trees.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/John_Atkinson_Grimshaw_-_Near_Hackness%2C_a_moonlit_scene_with_pine_trees.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1916,
+   "h": 2400,
+   "file": "wc-46511654.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-139025958",
+   "source": "commons",
+   "title": "A scene from Act II, Jane Shore by John Atkinson Grimshaw",
+   "creator": "John Atkinson Grimshaw (British, 1836–1893)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:A_scene_from_Act_II,_Jane_Shore_by_John_Atkinson_Grimshaw.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/A_scene_from_Act_II%2C_Jane_Shore_by_John_Atkinson_Grimshaw.jpg/1920px-A_scene_from_Act_II%2C_Jane_Shore_by_John_Atkinson_Grimshaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/A_scene_from_Act_II%2C_Jane_Shore_by_John_Atkinson_Grimshaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1279,
+   "file": "wc-139025958.jpg",
+   "focus": [
+    0.62,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-127417",
+   "source": "commons",
+   "title": "Whistler-Nocturne in black and gold",
+   "creator": "James McNeill Whistler",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Whistler-Nocturne_in_black_and_gold.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Whistler-Nocturne_in_black_and_gold.jpg/1920px-Whistler-Nocturne_in_black_and_gold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Whistler-Nocturne_in_black_and_gold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1806,
+   "h": 2400,
+   "file": "wc-127417.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-76365119",
+   "source": "commons",
+   "title": "Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the",
+   "creator": "Vincent van Gogh",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg/1920px-Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1875,
+   "h": 2400,
+   "file": "wc-76365119.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "pin": true,
+   "note": "Van Gogh, Cafe Terrace at Night"
+  },
+  {
+   "id": "wc-8831526",
+   "source": "commons",
+   "title": "Anquetin Avenue de Clichy",
+   "creator": "Louis Anquetin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Anquetin_Avenue_de_Clichy.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Anquetin_Avenue_de_Clichy.jpg/1920px-Anquetin_Avenue_de_Clichy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Anquetin_Avenue_de_Clichy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1875,
+   "h": 2400,
+   "file": "wc-8831526.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
   }
  ]
 }

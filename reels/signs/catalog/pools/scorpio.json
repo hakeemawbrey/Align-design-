@@ -87,6 +87,25 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "wc-90497915",
+   "source": "commons",
+   "title": "8th Rossetti Proserpine cropped",
+   "creator": "Dante Gabriel Rossetti",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:8th_Rossetti_Proserpine_cropped.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/8th_Rossetti_Proserpine_cropped.jpeg/1920px-8th_Rossetti_Proserpine_cropped.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/8th_Rossetti_Proserpine_cropped.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1181,
+   "h": 2400,
+   "file": "wc-90497915.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Rossetti, Proserpine with the pomegranate"
   }
  ]
 }

@@ -317,6 +317,140 @@
    ],
    "pin": true,
    "note": "Thayer, young woman in white"
+  },
+  {
+   "id": "aic-110879",
+   "source": "aic",
+   "title": "Mrs. Charles Gifford Dyer (Mary Anthony)",
+   "creator": "John Singer Sargent (American, 1856–1925)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110879",
+   "url": "https://www.artic.edu/iiif/2/59221fa2-45f9-5674-4fbd-9da3eb648d68/full/1686,/0/default.jpg",
+   "w": 1660,
+   "h": 2400,
+   "file": "aic-110879.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "met-12072",
+   "source": "met",
+   "title": "Egyptian Woman",
+   "creator": "John Singer Sargent",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12072",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT212007.jpg",
+   "w": 2019,
+   "h": 2400,
+   "file": "met-12072.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-127053464",
+   "source": "commons",
+   "title": "Frederic Leighton - Flaming June (1895) - Museo de Arte de Ponce",
+   "creator": "Frederic Leighton",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frederic_Leighton_-_Flaming_June_(1895)_-_Museo_de_Arte_de_Ponce.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Frederic_Leighton_-_Flaming_June_%281895%29_-_Museo_de_Arte_de_Ponce.jpg/1920px-Frederic_Leighton_-_Flaming_June_%281895%29_-_Museo_de_Arte_de_Ponce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Frederic_Leighton_-_Flaming_June_%281895%29_-_Museo_de_Arte_de_Ponce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1939,
+   "file": "wc-127053464.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Leighton, Flaming June"
+  },
+  {
+   "id": "wc-99711434",
+   "source": "commons",
+   "title": "Alfred Stevens - Woman in White - 1955.1028 - Clark Art Institute",
+   "creator": "Alfred Stevens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Stevens_-_Woman_in_White_-_1955.1028_-_Clark_Art_Institute.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Alfred_Stevens_-_Woman_in_White_-_1955.1028_-_Clark_Art_Institute.tiff/lossy-page1-1920px-Alfred_Stevens_-_Woman_in_White_-_1955.1028_-_Clark_Art_Institute.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Alfred_Stevens_-_Woman_in_White_-_1955.1028_-_Clark_Art_Institute.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1721,
+   "h": 2400,
+   "file": "wc-99711434.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-99712712",
+   "source": "commons",
+   "title": "Alfred Stevens - Young Woman by the Sea - 1955.866 - Clark Art Institute",
+   "creator": "Alfred Stevens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Stevens_-_Young_Woman_by_the_Sea_-_1955.866_-_Clark_Art_Institute.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Alfred_Stevens_-_Young_Woman_by_the_Sea_-_1955.866_-_Clark_Art_Institute.tiff/lossy-page1-1920px-Alfred_Stevens_-_Young_Woman_by_the_Sea_-_1955.866_-_Clark_Art_Institute.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Alfred_Stevens_-_Young_Woman_by_the_Sea_-_1955.866_-_Clark_Art_Institute.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1399,
+   "h": 2400,
+   "file": "wc-99712712.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-48302387",
+   "source": "commons",
+   "title": "Alfred Stevens Jeune fille italienne",
+   "creator": "Alfred Stevens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Stevens_Jeune_fille_italienne.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Alfred_Stevens_Jeune_fille_italienne.jpg/1920px-Alfred_Stevens_Jeune_fille_italienne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Alfred_Stevens_Jeune_fille_italienne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2359,
+   "file": "wc-48302387.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-16636",
+   "source": "aic",
+   "title": "Hesitation (Madame Monteaux?)",
+   "creator": "Alfred Stevens (Belgian, 1823–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16636",
+   "url": "https://www.artic.edu/iiif/2/46c9a3b9-b95e-5b99-005b-0fd3a2e93d88/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2143,
+   "file": "aic-16636.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "met-437756",
+   "source": "met",
+   "title": "The Japanese Robe",
+   "creator": "Alfred Stevens",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437756",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-42347-001.jpg",
+   "w": 1679,
+   "h": 2400,
+   "file": "met-437756.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
   }
  ]
 }

@@ -250,6 +250,106 @@
     0.65,
     0.35
    ]
+  },
+  {
+   "id": "wc-22543624",
+   "source": "commons",
+   "title": "Stom - A Young Man Reading at Candlelight",
+   "creator": "Matthias Stom",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Stom_-_A_Young_Man_Reading_at_Candlelight.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Stom_-_A_Young_Man_Reading_at_Candlelight.jpg/1920px-Stom_-_A_Young_Man_Reading_at_Candlelight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Stom_-_A_Young_Man_Reading_at_Candlelight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1529,
+   "file": "wc-22543624.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "pin": true,
+   "note": "Stom, young man reading by candlelight"
+  },
+  {
+   "id": "wc-163766990",
+   "source": "commons",
+   "title": "Young man reading with Vanitas still life",
+   "creator": "Sebastian Herndlhofer",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Young_man_reading_with_Vanitas_still_life.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Young_man_reading_with_Vanitas_still_life.png/1920px-Young_man_reading_with_Vanitas_still_life.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Young_man_reading_with_Vanitas_still_life.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1465,
+   "file": "wc-163766990.jpg",
+   "focus": [
+    0.3,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-87467",
+   "source": "aic",
+   "title": "Édouard Manet",
+   "creator": "Henri Fantin-Latour (French, 1836–1904)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87467",
+   "url": "https://www.artic.edu/iiif/2/dd4f9115-150c-2f1a-0f37-50899553d6b4/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2247,
+   "file": "aic-87467.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "id": "met-441115",
+   "source": "met",
+   "title": "Self-Portrait",
+   "creator": "Anton Raphael Mengs",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/441115",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP240926.jpg",
+   "w": 1748,
+   "h": 2400,
+   "file": "met-441115.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "met-435761",
+   "source": "met",
+   "title": "Portrait of a Man",
+   "creator": "Dieric Bouts",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435761",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14975-001.jpg",
+   "w": 1718,
+   "h": 2400,
+   "file": "met-435761.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "met-437728",
+   "source": "met",
+   "title": "Portrait of a Man",
+   "creator": "Spanish (Andalusian) Painter",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437728",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-22886-001.jpg",
+   "w": 2014,
+   "h": 2400,
+   "file": "met-437728.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
   }
  ]
 }

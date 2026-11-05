@@ -387,6 +387,126 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "wc-2627583",
+   "source": "commons",
+   "title": "Toulmouche Le Billet 1883",
+   "creator": "Auguste Toulmouche",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Toulmouche_Le_Billet_1883.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Toulmouche_Le_Billet_1883.jpg/1920px-Toulmouche_Le_Billet_1883.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Toulmouche_Le_Billet_1883.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1764,
+   "h": 2400,
+   "file": "wc-2627583.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-89212660",
+   "source": "commons",
+   "title": "The Love Letter - Johannes Vermeer",
+   "creator": "Johannes Vermeer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Love_Letter_-_Johannes_Vermeer.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/The_Love_Letter_-_Johannes_Vermeer.png/1920px-The_Love_Letter_-_Johannes_Vermeer.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/The_Love_Letter_-_Johannes_Vermeer.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2215,
+   "file": "wc-89212660.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-16636",
+   "source": "aic",
+   "title": "Hesitation (Madame Monteaux?)",
+   "creator": "Alfred Stevens (Belgian, 1823–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16636",
+   "url": "https://www.artic.edu/iiif/2/46c9a3b9-b95e-5b99-005b-0fd3a2e93d88/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2143,
+   "file": "aic-16636.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-19040749",
+   "source": "commons",
+   "title": "A Girl Receiving a Letter by Gabriel Metsu, Timken Museum of Art",
+   "creator": "Gabriel Metsu",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:A_Girl_Receiving_a_Letter_by_Gabriel_Metsu,_Timken_Museum_of_Art.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/A_Girl_Receiving_a_Letter_by_Gabriel_Metsu%2C_Timken_Museum_of_Art.JPG/1920px-A_Girl_Receiving_a_Letter_by_Gabriel_Metsu%2C_Timken_Museum_of_Art.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/A_Girl_Receiving_a_Letter_by_Gabriel_Metsu%2C_Timken_Museum_of_Art.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1916,
+   "file": "wc-19040749.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-1170237",
+   "source": "commons",
+   "title": "Gabriel Metsu - Man Writing a Letter",
+   "creator": "Gabriel Metsu",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gabriel_Metsu_-_Man_Writing_a_Letter.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 850,
+   "h": 1120,
+   "file": "wc-1170237.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-52132732",
+   "source": "commons",
+   "title": "Lady Writing a Letter (Albert Edelfelt) - Nationalmuseum - 19713",
+   "creator": "Albert Edelfelt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Lady_Writing_a_Letter_(Albert_Edelfelt)_-_Nationalmuseum_-_19713.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Lady_Writing_a_Letter_%28Albert_Edelfelt%29_-_Nationalmuseum_-_19713.tif/lossy-page1-1920px-Lady_Writing_a_Letter_%28Albert_Edelfelt%29_-_Nationalmuseum_-_19713.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lady_Writing_a_Letter_%28Albert_Edelfelt%29_-_Nationalmuseum_-_19713.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1514,
+   "file": "wc-52132732.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "pin": true,
+   "note": "Edelfelt, lady writing a letter"
+  },
+  {
+   "id": "wc-191864",
+   "source": "commons",
+   "title": "Portrait of a woman by Adélaïde Labille-Guiard - 1787",
+   "creator": "Adélaïde Labille-Guiard",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_woman_by_Ad%C3%A9la%C3%AFde_Labille-Guiard_-_1787.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Portrait_of_a_woman_by_Ad%C3%A9la%C3%AFde_Labille-Guiard_-_1787.jpg/1920px-Portrait_of_a_woman_by_Ad%C3%A9la%C3%AFde_Labille-Guiard_-_1787.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Portrait_of_a_woman_by_Ad%C3%A9la%C3%AFde_Labille-Guiard_-_1787.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2381,
+   "file": "wc-191864.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
   }
  ]
 }

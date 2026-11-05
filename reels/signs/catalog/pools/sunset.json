@@ -371,6 +371,124 @@
     0.5,
     0.42
    ]
+  },
+  {
+   "id": "aic-100191",
+   "source": "aic",
+   "title": "Stack of Wheat (Thaw, Sunset)",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/100191",
+   "url": "https://www.artic.edu/iiif/2/8bd40b36-43ea-8b02-d76a-b325962b86db/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1174,
+   "file": "aic-100191.jpg",
+   "focus": [
+    0.35,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-71971",
+   "source": "aic",
+   "title": "Mist Rising at Sunset in the Catskills",
+   "creator": "Sanford Robinson Gifford (American, 1823–1880)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/71971",
+   "url": "https://www.artic.edu/iiif/2/30491751-fb43-fc27-51fe-d068be7b6568/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1102,
+   "file": "aic-71971.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-126018032",
+   "source": "commons",
+   "title": "(Barcelona) The Lake, Petworth, Sunset; Sample Study - William Turner - Tate Britain",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:(Barcelona)_The_Lake,_Petworth,_Sunset;_Sample_Study_-_William_Turner_-_Tate_Britain.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/%28Barcelona%29_The_Lake%2C_Petworth%2C_Sunset%3B_Sample_Study_-_William_Turner_-_Tate_Britain.jpg/1920px-%28Barcelona%29_The_Lake%2C_Petworth%2C_Sunset%3B_Sample_Study_-_William_Turner_-_Tate_Britain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/%28Barcelona%29_The_Lake%2C_Petworth%2C_Sunset%3B_Sample_Study_-_William_Turner_-_Tate_Britain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 875,
+   "file": "wc-126018032.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "pin": true,
+   "note": "Turner, the lake at Petworth, sunset"
+  },
+  {
+   "id": "wc-73554738",
+   "source": "commons",
+   "title": "Frederic Edwin Church - Twilight (Sunset) 1856",
+   "creator": "Frederic Edwin Church",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Twilight_(Sunset)_1856.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Frederic_Edwin_Church_-_Twilight_%28Sunset%29_1856.jpg/1920px-Frederic_Edwin_Church_-_Twilight_%28Sunset%29_1856.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Frederic_Edwin_Church_-_Twilight_%28Sunset%29_1856.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1257,
+   "file": "wc-73554738.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-73594595",
+   "source": "commons",
+   "title": "Frederic Edwin Church - Sunset 1856",
+   "creator": "Frederic Edwin Church",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Sunset_1856.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Frederic_Edwin_Church_-_Sunset_1856.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Frederic_Edwin_Church_-_Sunset_1856.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1000,
+   "h": 668,
+   "file": "wc-73594595.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-93877406",
+   "source": "commons",
+   "title": "Church at Sunset, Hyde Park, Massachusetts by John Joseph Enneking, 1873",
+   "creator": "John Joseph Enneking",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Church_at_Sunset,_Hyde_Park,_Massachusetts_by_John_Joseph_Enneking,_1873.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Church_at_Sunset%2C_Hyde_Park%2C_Massachusetts_by_John_Joseph_Enneking%2C_1873.jpg/1920px-Church_at_Sunset%2C_Hyde_Park%2C_Massachusetts_by_John_Joseph_Enneking%2C_1873.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Church_at_Sunset%2C_Hyde_Park%2C_Massachusetts_by_John_Joseph_Enneking%2C_1873.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1879,
+   "h": 2400,
+   "file": "wc-93877406.jpg",
+   "focus": [
+    0.65,
+    0.5
+   ]
+  },
+  {
+   "id": "met-11020",
+   "source": "met",
+   "title": "Santa Maria della Salute, Sunset",
+   "creator": "William Stanley Haseltine",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11020",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT229630.jpg",
+   "w": 2400,
+   "h": 1510,
+   "file": "met-11020.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
   }
  ]
 }

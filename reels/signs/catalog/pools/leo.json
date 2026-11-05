@@ -153,6 +153,145 @@
    ],
    "pin": true,
    "note": "Bierstadt, golden sunrise on the Matterhorn"
+  },
+  {
+   "id": "wc-38646425",
+   "source": "commons",
+   "title": "Rosa Bonheur - Portrait of a Lion - Prado",
+   "creator": "Rosa Bonheur",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_-_Portrait_of_a_Lion_-_Prado.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Rosa_Bonheur_-_Portrait_of_a_Lion_-_Prado.jpg/1920px-Rosa_Bonheur_-_Portrait_of_a_Lion_-_Prado.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Rosa_Bonheur_-_Portrait_of_a_Lion_-_Prado.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1916,
+   "h": 2400,
+   "file": "wc-38646425.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "pin": true,
+   "note": "Rosa Bonheur, portrait of a lion"
+  },
+  {
+   "id": "wc-33818260",
+   "source": "commons",
+   "title": "Rosa Bonheur - Lion (The look out)",
+   "creator": "Rosa Bonheur",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_-_Lion_(The_look_out).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Rosa_Bonheur_-_Lion_%28The_look_out%29.jpg/1920px-Rosa_Bonheur_-_Lion_%28The_look_out%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Rosa_Bonheur_-_Lion_%28The_look_out%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1411,
+   "file": "wc-33818260.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-76437850",
+   "source": "commons",
+   "title": "2013 NYR 02739 0035 rosa bonheur study of a lion)",
+   "creator": "Rosa Bonheur",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:2013_NYR_02739_0035_rosa_bonheur_study_of_a_lion).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2013_NYR_02739_0035_rosa_bonheur_study_of_a_lion%29.jpg/1920px-2013_NYR_02739_0035_rosa_bonheur_study_of_a_lion%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/2013_NYR_02739_0035_rosa_bonheur_study_of_a_lion%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1350,
+   "file": "wc-76437850.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-144366418",
+   "source": "commons",
+   "title": "Lion cubs - Rosa Bonheur",
+   "creator": "Rosa Bonheur",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Lion_cubs_-_Rosa_Bonheur.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Lion_cubs_-_Rosa_Bonheur.jpg/1920px-Lion_cubs_-_Rosa_Bonheur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Lion_cubs_-_Rosa_Bonheur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1518,
+   "file": "wc-144366418.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-48271356",
+   "source": "commons",
+   "title": "Gustave Moreau - Chariot of Apollo or Phoebus Apollo (c.1880)",
+   "creator": "Gustave Moreau",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Chariot_of_Apollo_or_Phoebus_Apollo_(c.1880).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Gustave_Moreau_-_Chariot_of_Apollo_or_Phoebus_Apollo_%28c.1880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Gustave_Moreau_-_Chariot_of_Apollo_or_Phoebus_Apollo_%28c.1880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 813,
+   "h": 1024,
+   "file": "wc-48271356.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Moreau, chariot of Apollo"
+  },
+  {
+   "id": "wc-68629797",
+   "source": "commons",
+   "title": "Boeckhorst Phoebus",
+   "creator": "Jan Boeckhorst",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Boeckhorst_Phoebus.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Boeckhorst_Phoebus.jpg/1920px-Boeckhorst_Phoebus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Boeckhorst_Phoebus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1193,
+   "file": "wc-68629797.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-64754",
+   "source": "aic",
+   "title": "Moonrise",
+   "creator": "George Inness (American, 1825–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64754",
+   "url": "https://www.artic.edu/iiif/2/4425984b-e241-6413-1404-cdac0fb06518/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2021,
+   "file": "aic-64754.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-176689112",
+   "source": "commons",
+   "title": "Marie Egner Gemüsefelder in Schladming",
+   "creator": "Marie Egner",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Marie_Egner_Gem%C3%BCsefelder_in_Schladming.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Marie_Egner_Gem%C3%BCsefelder_in_Schladming.jpg/1920px-Marie_Egner_Gem%C3%BCsefelder_in_Schladming.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Marie_Egner_Gem%C3%BCsefelder_in_Schladming.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1417,
+   "file": "wc-176689112.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ]
   }
  ]
 }

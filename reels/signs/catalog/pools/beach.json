@@ -367,6 +367,123 @@
    ],
    "pin": true,
    "note": "Dahl, mother and child by moonlit sea"
+  },
+  {
+   "id": "wc-75618533",
+   "source": "commons",
+   "title": "Bois no mar Sorolla",
+   "creator": "Joaquín Sorolla",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bois_no_mar_Sorolla.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Bois_no_mar_Sorolla.jpg/1920px-Bois_no_mar_Sorolla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Bois_no_mar_Sorolla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1226,
+   "file": "wc-75618533.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "met-436021",
+   "source": "met",
+   "title": "The Sea",
+   "creator": "Gustave Courbet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436021",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-24650-001.jpg",
+   "w": 2400,
+   "h": 1960,
+   "file": "met-436021.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-11321",
+   "source": "met",
+   "title": "The Sea",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11321",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap74.35.jpg",
+   "w": 2400,
+   "h": 1147,
+   "file": "met-11321.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "met-437988",
+   "source": "met",
+   "title": "Princess Pauline Metternich (1836–1921) on the Beach",
+   "creator": "Eugène Boudin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437988",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT4425.jpg",
+   "w": 1918,
+   "h": 2400,
+   "file": "met-437988.jpg",
+   "focus": [
+    0.58,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-80548179",
+   "source": "commons",
+   "title": "Claude Monet - Camille on the Beach in Trouville - 1998.46.1 - Yale University Art Gallery",
+   "creator": "Claude Monet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg/1920px-Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1571,
+   "file": "wc-80548179.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ],
+   "pin": true,
+   "note": "Monet, Camille on the beach at Trouville"
+  },
+  {
+   "id": "wc-155829",
+   "source": "commons",
+   "title": "Claude Monet 002",
+   "creator": "Claude Monet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Claude_Monet_002.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Claude_Monet_002.jpg/1920px-Claude_Monet_002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Claude_Monet_002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1579,
+   "file": "wc-155829.jpg",
+   "focus": [
+    0.3,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436084",
+   "source": "met",
+   "title": "Boats on the Seacoast at Etaples",
+   "creator": "Charles-François Daubigny",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436084",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1981.jpg",
+   "w": 2400,
+   "h": 1406,
+   "file": "met-436084.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
   }
  ]
 }

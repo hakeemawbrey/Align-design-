@@ -240,6 +240,110 @@
    ],
    "pin": true,
    "note": "Bouguereau, The Proposal"
+  },
+  {
+   "id": "aic-180709",
+   "source": "aic",
+   "title": "The Lovers",
+   "creator": "William Powell Frith (English, 1819–1909)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/180709",
+   "url": "https://www.artic.edu/iiif/2/57e7455f-9c4f-7b6d-ffac-6d2269258265/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2048,
+   "file": "aic-180709.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-17614288",
+   "source": "commons",
+   "title": "El Beso (Pinacoteca de Brera, Milán, 1859)",
+   "creator": "Francesco Hayez",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:El_Beso_(Pinacoteca_de_Brera,_Mil%C3%A1n,_1859).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg/1920px-El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2392,
+   "file": "wc-17614288.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Hayez, The Kiss"
+  },
+  {
+   "id": "wc-112030",
+   "source": "commons",
+   "title": "Romeo and juliet brown",
+   "creator": "Ford Madox Brown",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Romeo_and_juliet_brown.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 768,
+   "h": 1119,
+   "file": "wc-112030.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-896519",
+   "source": "commons",
+   "title": "Frank Bernard Dicksee - Romeo and Juliet, 1884",
+   "creator": "Frank Bernard Dicksee",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frank_Bernard_Dicksee_-_Romeo_and_Juliet,_1884.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Frank_Bernard_Dicksee_-_Romeo_and_Juliet%2C_1884.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Frank_Bernard_Dicksee_-_Romeo_and_Juliet%2C_1884.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1000,
+   "h": 1449,
+   "file": "wc-896519.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-145796821",
+   "source": "commons",
+   "title": "Konstantin Makovsky – Romeo and Juliet (1890)",
+   "creator": "Konstantin Makovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Konstantin_Makovsky_%E2%80%93_Romeo_and_Juliet_(1890).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Konstantin_Makovsky_%E2%80%93_Romeo_and_Juliet_%281890%29.jpg/1920px-Konstantin_Makovsky_%E2%80%93_Romeo_and_Juliet_%281890%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Konstantin_Makovsky_%E2%80%93_Romeo_and_Juliet_%281890%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1401,
+   "file": "wc-145796821.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "met-435997",
+   "source": "met",
+   "title": "The Storm",
+   "creator": "Pierre-Auguste Cot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435997",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT11964.jpg",
+   "w": 1606,
+   "h": 2400,
+   "file": "met-435997.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Cot, The Storm"
   }
  ]
 }
