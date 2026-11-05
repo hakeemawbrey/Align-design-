@@ -12,9 +12,11 @@ export const PACK = process.env.STUDY_PACK_DIR ? path.resolve(process.env.STUDY_
 /** Per-computer things: the OCR helper, whisper models, which browser you use. */
 export const HOME = process.env.STUDY_HOME ? path.resolve(process.env.STUDY_HOME) : path.join(os.homedir(), '.align-study')
 
-/** "@TylerInTheMaking", "instagram.com/tylerinthemaking?x=1" → "tylerinthemaking". */
+/** "@TylerInTheMaking", "instagram.com/tylerinthemaking?x=1" → "tylerinthemaking"; "fb-astriva" stays as it is. */
 export function handleOf(s) {
   const raw = String(s ?? '').trim()
+  // Facebook pages are saved as fb-<page> (src/facebook.mjs works the name out from the link).
+  if (/^fb-[a-z0-9.-]{1,44}$/.test(raw)) return raw
   const fromUrl = raw.match(/instagram\.com\/([A-Za-z0-9._]+)/)?.[1]
   const h = (fromUrl ?? raw).replace(/^@/, '').replace(/[/?#].*$/, '').toLowerCase()
   if (!/^[a-z0-9._]{1,30}$/.test(h) || ['p', 'reel', 'reels', 'stories', 'explore'].includes(h)) return null
@@ -40,7 +42,7 @@ export const packDir = (handle) => path.join(PACK, handle)
 
 /** The handle(s) on the command line, or a friendly exit. */
 export function handlesFromArgs(argv, usage) {
-  const handles = argv.filter((a, i) => !a.startsWith('--') && !(argv[i - 1] ?? '').match(/^--(limit|sleep|cookies|cookies-from-browser|via|model|tz)$/)).map(handleOf)
+  const handles = argv.filter((a, i) => !a.startsWith('--') && !(argv[i - 1] ?? '').match(/^--(limit|sleep|cookies|cookies-from-browser|via|model|tz|handle-file)$/)).map(handleOf)
   if (!handles.length || handles.some((h) => !h)) { console.error(usage); process.exit(2) }
   return handles
 }

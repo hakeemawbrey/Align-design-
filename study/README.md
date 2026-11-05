@@ -52,6 +52,44 @@ and only your private repo gets it. Downloads stay on your Mac in
 `study/media/`. Nothing is reposted; it's reference for working out the
 structure, the same as `inspo/`.
 
+## Facebook pages
+
+The same study for a Facebook page's **reels and videos** (first up: **Astriva**).
+
+**On a Mac that already has Align Study:** double-click **Study Facebook Page**
+on your Desktop and paste the page's link. A share link like
+`facebook.com/share/…` is fine. If you only have the older two buttons, run
+the install line once more to get it.
+
+**First time on this Mac:** paste this into Terminal:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/study/mac/install.sh)" _ facebook "https://www.facebook.com/share/1KezBxmTFj/"
+```
+
+What happens:
+
+1. A Chrome window opens. It's a separate window with its own profile in
+   `~/.align-study/facebook-browser`, so it never touches your everyday Chrome.
+   The first time, you **log into Facebook in it**. It remembers you after that.
+2. It opens the page's Reels and Videos tabs and scrolls them slowly,
+   noting every link. Then the window closes.
+3. yt-dlp downloads each video with that login, 4–9 seconds apart, along with
+   its caption, date, views, reactions and comments.
+4. The rest is the same as Instagram: transcripts, on-screen text, contact
+   sheets, `report.md`, and an offer to send the pack to your private repo.
+
+The page is saved as `fb-<page>`, for example `fb-astriva`. Then tell Claude:
+**"Study fb-astriva from hakeemawbrey/align-study"**.
+
+In Terminal: `npm install`, then `npm run facebook -- "<link>" --limit 12` to
+try a few. Without `--limit` it gets everything, and you can re-run it to
+resume. Then run `npm run process -- fb-astriva` and
+`npm run report -- fb-astriva`. Add `--links-only` to only list what's there.
+If Facebook asks for a break, it exits with 75 and the Mac button waits 30
+minutes, the same as for Instagram. Scripted downloading is against Facebook's
+terms too, so it's your call, the same as for Instagram.
+
 ## Step by step (Terminal)
 
 Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
@@ -100,6 +138,7 @@ logged-in account follows them.
 | Path | What |
 | --- | --- |
 | `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
+| `src/facebook.mjs` | a Facebook page: its own Chrome window collects the reel and video links, yt-dlp downloads each with its numbers |
 | `src/numbers.mjs` | views, comments and length per post (yt-dlp, or Meta's API) |
 | `src/process.mjs` | stills, contact sheets, on-screen text, transcripts |
 | `src/ocr.swift` | the on-screen text reader (macOS Vision), compiled once to `~/.align-study/bin` |

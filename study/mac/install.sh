@@ -34,7 +34,8 @@ make_button() {  # name, command
   chmod +x "$f"
 }
 make_button "Study Instagram Page" ""
+make_button "Study Facebook Page" "facebook"
 make_button "Send Study to Claude" "send"
-say "Added two buttons to your Desktop: \"Study Instagram Page\" and \"Send Study to Claude\". Double-click them from now on."
+say "Added three buttons to your Desktop: \"Study Instagram Page\", \"Study Facebook Page\" and \"Send Study to Claude\". Double-click them from now on."
 
-exec "$DIR/study/mac/run.sh"
+exec "$DIR/study/mac/run.sh" "$@"
