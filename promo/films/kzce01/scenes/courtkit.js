@@ -154,7 +154,7 @@ export function drawBlock(x, bx, by) { box(x, bx - 34, by - 14, 68, 18, WOOD.d, 
 
 /** the jury box (right): back row then front row, then the rail */
 export const JURY_POS = [[725, 1010, 100], [860, 1000, 100], [990, 1010, 100], [712, 1105, 140], [860, 1112, 118], [995, 1112, 118]]
-export function drawJuryBox(x, t, members, { mood, gasps = [], tears, alpha = 1, dx = 0 } = {}) {
+export function drawJuryBox(x, t, members, { mood, gasps = [], tears, allTears, alpha = 1, dx = 0 } = {}) {
   x.save(); x.globalAlpha *= alpha
   let gaspK = 0
   for (const g of gasps) { const d = t - g; if (d >= 0 && d < 0.9) gaspK = Math.max(gaspK, 1 - d / 0.9) }
@@ -162,7 +162,7 @@ export function drawJuryBox(x, t, members, { mood, gasps = [], tears, alpha = 1,
     const [px, py, ps] = JURY_POS[i] || JURY_POS[0]
     const m = (mood && mood(t, id)) || (gaspK > 0.15 ? 'wide' : id === 'pisces' ? 'sparkle' : 'neutral')
     const lift = gaspK > 0 ? -18 * Math.sin(Math.PI * Math.min(1, (1 - gaspK) * 2.2)) * (i % 2 ? 1 : 0.8) : 0
-    star(x, t, { x: px + dx, y: py + lift, s: ps }, { who: id, mood: m, look: m === 'wide' ? [-1, -0.4] : undefined, seed: 11 + i * 3, glow: 0.8, tears: id === 'pisces' ? (tears ? tears(t) : 3) : 0, blink: m === 'wide' ? false : undefined })
+    star(x, t, { x: px + dx, y: py + lift, s: ps }, { who: id, mood: m, look: m === 'wide' ? [-1, -0.4] : undefined, seed: 11 + i * 3, glow: 0.8, tears: id === 'pisces' ? (tears ? tears(t) : 3) : (allTears ? allTears(t, id) : 0), blink: m === 'wide' ? false : undefined })
   })
   box(x, 630 + dx, 1180, 430, 120, WOOD.m, { b: 6 })
   for (let i = 0; i < 4; i++) R(x, WOOD.l, 650 + dx + i * 104, 1196, 84, 88)
@@ -392,7 +392,7 @@ export function makeCourt(cfg) {
       // the judge + bench + gavel
       if (!hide.judge) {
         const J = cfg.judge || {}
-        const F = star(x, t, { x: 540, y: 600, s: 210 }, { who: 'JUDGE', mood: J.mood ? J.mood(t) : 'neutral', look: J.look ? J.look(t) : [0, 0.2], hops: [...(J.hops || []), ...hopsFor('THE JUDGE')], seed: 2, glow: 1.1 })
+        const F = star(x, t, { x: 540, y: 600, s: 210 }, { who: 'JUDGE', mood: J.mood ? J.mood(t) : 'neutral', look: J.look ? J.look(t) : [0, 0.2], hops: [...(J.hops || []), ...hopsFor('THE JUDGE')], seed: 2, glow: 1.1, tears: J.tears ? J.tears(t) : 0 })
         if (F) wig(x, F)
         drawBench(x, t)
         drawBlock(x, 760, 690)
@@ -411,7 +411,7 @@ export function makeCourt(cfg) {
         }
       }
       // the jury
-      if (!hide.jury) drawJuryBox(x, t, cfg.jury || ['pisces'], { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears })
+      if (!hide.jury) drawJuryBox(x, t, cfg.jury || ['pisces'], { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears, allTears: cfg.juryTears })
       cfg.front && cfg.front(x, t, ctx)
       // exhibits
       for (const E of cfg.exhibits || []) {
