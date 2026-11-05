@@ -149,7 +149,8 @@ export function richText(x, t, text, cx, y, { size = 88, accentSize = null, maxW
   for (const raw of String(text).split(/(\*[^*]+\*)/)) {
     if (!raw) continue
     const isA = raw.startsWith('*') && raw.endsWith('*')
-    for (const w of (isA ? raw.slice(1, -1) : raw).split(/\s+/)) if (w) toks.push({ w, a: isA })
+    const body = isA ? raw.slice(1, -1) : raw
+    body.split(/\s+/).forEach((w, j) => { if (w) toks.push({ w, a: isA, glue: j === 0 && !isA && toks.length > 0 && !/^\s/.test(body) }) })
     void acc
   }
   x.save(); x.globalAlpha *= alpha; x.textBaseline = 'alphabetic'
@@ -157,7 +158,7 @@ export function richText(x, t, text, cx, y, { size = 88, accentSize = null, maxW
   const sp = size * 0.36
   for (const tk of toks) { x.font = fontOf(tk.a); tk.width = x.measureText(tk.w).width }
   const lines = []; let cur = [], cw = 0
-  for (const tk of toks) { const add = (cur.length ? sp : 0) + tk.width; if (cw + add > maxW && cur.length) { lines.push({ toks: cur, w: cw }); cur = [tk]; cw = tk.width } else { cur.push(tk); cw += add } }
+  for (const tk of toks) { const add = (cur.length && !tk.glue ? sp : 0) + tk.width; if (cw + add > maxW && cur.length) { lines.push({ toks: cur, w: cw }); cur = [tk]; cw = tk.width } else { cur.push(tk); cw += add } }
   if (cur.length) lines.push({ toks: cur, w: cw })
   let yy = y, i = 0
   for (const ln of lines) {
@@ -175,7 +176,7 @@ export function richText(x, t, text, cx, y, { size = 88, accentSize = null, maxW
         x.fillStyle = tk.a ? accent : col; x.fillText(tk.w, 0, big * 0.3)
         x.restore()
       }
-      xx += tk.width + sp; i++
+      xx += tk.width + (ln.toks[ln.toks.indexOf(tk) + 1]?.glue ? 0 : sp); i++
     }
     yy += big * lh * 0.24
   }
