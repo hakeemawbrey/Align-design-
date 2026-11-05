@@ -3,7 +3,7 @@
 // promise sticker, a colour flash, the VHS "EARLIER" rewind tag, a counter chip).
 //
 //   overlays: xfx({ len, scratch?, whip?, slam?, shake0?, promise?, rewind?, chapters?, loading?, notify?, shakes?,
-//                   flashes?, caught?, bubble0?, counter? })
+//                   flashes?, caught?, bubble0?, counter?, calls?: [incomingCall opts], countdowns?: [countdown opts] })
 // returns a function makeXThread calls with the story scene → { story, scenes, cues } (the story may come back wrapped in
 // the kit's frozen() for a record-scratch freeze).
 //
@@ -14,7 +14,7 @@
 import {
   whipZoom, whipZoomCues, recordScratch, recordScratchCues, frozen, screenShake, shakeCues, caught, caughtCues,
   notification, notificationCues, loadingBar, loadingBarCues, chapter, chapterCues, slamTitle, slamTitleCues,
-  glitch, glitchCues, drawRich, GOLD, BONE, INK,
+  glitch, glitchCues, incomingCall, incomingCallCues, countdown, countdownCues, drawRich, GOLD, BONE, INK,
 } from '../hookkit.js'
 import { clamp, prog, ease } from '../../src/lib.js'
 import { easeOutBack } from '../wheel.js'
@@ -161,12 +161,12 @@ export function xfx(spec) {
       scenes.push(glitch(G), rewindTag(spec.rewind)); cues.push(...glitchCues(G), ['tapeStop', r3(spec.rewind.at - 0.1), 0.25])
     }
     const ch = spec.chapters || []
-    ch.forEach(([a, title], i) => {
+    ch.forEach(([a, title, hold = 3.6], i) => {
       const at = Math.max(a, promiseEnd + 0.1)
       const next = i + 1 < ch.length ? ch[i + 1][0] : L
       const lab = `${i + 1} · ${title}`
       const w = lab.length * 33.5 + 80
-      const C = { at, out: [Math.min(at + 3.6, next - 0.3), Math.min(at + 3.9, next)], n: i + 1, title, x: Math.round(540 - w / 2), y: BAND, color: i === ch.length - 1 ? '#ff8fb1' : GOLD }
+      const C = { at, out: [Math.min(at + hold, next - 0.3), Math.min(at + hold + 0.3, next)], n: i + 1, title, x: Math.round(540 - w / 2), y: BAND, color: i === ch.length - 1 ? '#ff8fb1' : GOLD }
       if (at < next - 1) { scenes.push(chapter(C)); cues.push(...chapterCues(C)) }
     })
     if (spec.loading) {
@@ -181,6 +181,8 @@ export function xfx(spec) {
       const C = { at: c.at, x: c.x, y: c.y, r: c.rx, ry: c.ry, label: c.text, out: [c.at + 2.2, c.at + 2.5], rec: false, arrow: c.arrow || 'br' }
       scenes.push(caught(C)); cues.push(...caughtCues(C))
     }
+    for (const c of spec.calls || []) { scenes.push(incomingCall(c)); cues.push(...incomingCallCues(c)) }
+    for (const c of spec.countdowns || []) { scenes.push(countdown(c)); cues.push(...countdownCues(c)) }
     if (spec.counter) scenes.push(counterChip(spec.counter))
     if (spec.flashes) { scenes.push(flashes(spec.flashes)); for (const [a] of spec.flashes) if (a > 0) cues.push(['whoosh', r3(a - 0.03), 0.15, 0.04]) }
     return { story: s, scenes, cues: cues.filter(c => typeof c[1] !== 'number' || (c[1] >= 0 && c[1] < L - 0.05)) }
