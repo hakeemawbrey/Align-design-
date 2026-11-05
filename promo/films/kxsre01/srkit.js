@@ -288,6 +288,7 @@ export const FACES = {
   chew: (u) => ({ mood: 'squint', mouth: 'chew', brows: { l: 0.1, r: -0.2, sl: -0.3, sr: -0.2 } }),
   sob: () => ({ mood: 'sparkle', mouth: 'wobble', tears: 2, brows: { l: 0.4, r: 0.4, sl: 1, sr: 1 }, shake: 1.2 }),
   heart: () => ({ mood: 'heart', mouth: 'smile' }),
+  cheer: (u, P) => ({ mood: 'happy', mouth: 'grin', brows: { l: 0.7, r: 0.7, sl: 0.3, sr: 0.3 }, hops: Array.from({ length: 8 }, (_, k) => P.t0 + P.fu + k * 0.45) }),
   tilt: (u) => ({ tilt: ramp(u, 0, 0.3, 0, -0.16), look: [1, -0.2], brows: { l: 0.6, r: -0.1, sl: 0.2, sr: -0.4 } }),
 }
 
