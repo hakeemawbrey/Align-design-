@@ -483,7 +483,7 @@ export const EXTRA_WORLDS = {
     const fx = -lside * rng.range(3.4, 4.2), fz = rng.range(-11, -9.5)
     const fy = H(fx, fz)
     scene.add(rod(new THREE.Vector3(fx, fy, fz), new THREE.Vector3(fx, fy + 2, fz), 0.03, white))
-    const flag = box(0.9, 0.55, 0.02, lam(rng.pick(['#ff3a5a', '#ffffff', '#ff8ad0'])), fx + 0.45, fy + 1.7, fz)
+    const flag = box(0.9, 0.55, 0.02, lam(rng.pick(['#ff3a5a', '#4aa8ff', '#ff8ad0'])), fx + 0.45, fy + 1.7, fz)
     scene.add(flag)
     // a habitat dome far away with a lit window
     const dome = new THREE.Mesh(new THREE.SphereGeometry(2.6, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), white)

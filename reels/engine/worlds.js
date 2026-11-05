@@ -274,7 +274,7 @@ const WORLDS = {
       l.position.set(-0.6, 1.2, 0)
       r.position.set(0.6, 1.2, 0)
       top.position.set(0, 2.4, 0)
-      const inside = new THREE.Mesh(new THREE.PlaneGeometry(1.05, 2.3), new THREE.MeshBasicMaterial({ color: rng.pick(['#000000', '#ffffff', '#ff2b2b']) }))
+      const inside = new THREE.Mesh(new THREE.PlaneGeometry(1.05, 2.3), new THREE.MeshBasicMaterial({ color: rng.pick(['#000000', '#140c2e', '#ff2b2b']) }))
       inside.position.y = 1.15
       door.add(l, r, top, inside)
       const dx = -Math.sign(tx) * rng.range(3, 6), dz = rng.range(-13, -10)
@@ -312,7 +312,7 @@ const WORLDS = {
       () => new THREE.BoxGeometry(1.4, 1.4, 1.4),
     ]
     for (let i = 0; i < 6; i++) {
-      const m = new THREE.Mesh(rng.pick(shapes)(), new THREE.MeshPhongMaterial({ color: rng.pick(['#ffffff', pal[1], pal[3], '#ffe14a']), flatShading: true, shininess: 80 }))
+      const m = new THREE.Mesh(rng.pick(shapes)(), new THREE.MeshPhongMaterial({ color: rng.pick(['#9fd0ff', pal[1], pal[3], '#ffe14a']), flatShading: true, shininess: 80 }))
       m.position.set(rng.sign() * rng.range(4, 14), rng.range(2.5, 8), rng.range(-30, -8))
       m.userData.spin = rng.range(0.2, 0.7)
       m.userData.y = m.position.y
