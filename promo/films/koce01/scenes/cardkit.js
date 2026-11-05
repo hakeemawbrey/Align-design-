@@ -23,6 +23,7 @@
 //        back: behind the cast · cast: over the cast, under the table · mid: on the table · front: over the cards · over: screen space
 //     offset: { A: t => [dx, dy], B, P }           move a character (lunges, leaning in)
 //     chapters: [{ at, text }] (long films), stickers: [{ at, out, text, x, y, rot, col }]
+//     extraScenes: [hookkit scene builders] (e.g. caught), recAt / recLen / freezeText (brk 'scratch'), whipAt (brk 'whip')
 //     cam: [[t, zoom, cx, cy]] camera keys (eased), punch: [{ at, dur, z, x, y }], extraCues: [...]
 //     music: { style, key, seed, sections }
 //   }
@@ -257,6 +258,13 @@ export function sticker(x, t, { at, out, text, x: X = 540, y: Y = 300, rot = -0.
   R(x, ink, -w / 2 - 6, -h / 2 - 6, w + 12, h + 12); R(x, col, -w / 2, -h / 2, w, h)
   x.fillStyle = ink; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(text, 0, 3)
   x.restore()
+}
+
+/** a little pointing hand (dir 1 = points right, -1 = left; up = points up) at (X, Y) */
+const HAND = ['......XX....', '......XXXXXX', 'XXXXXXXXXXXX', 'XXXXXXXX....', 'XXXXXXX.....', '.XXXXX......']
+const HAND_UP = ['..XX....', '..XX....', '..XX....', '..XXXXX.', 'XXXXXXXX', 'XXXXXXXX', 'XXXXXXX.', '.XXXXX..']
+export function hand(x, X, Y, dir = 1, cell = 9, col = '#ffe3c8', { up = false, rot = 0, alpha = 1 } = {}) {
+  bits(x, up ? HAND_UP : HAND, { X: col }, X, Y, cell, { sx: up ? 1 : dir, rot, alpha })
 }
 
 // ─────────────────────────────────────────────── the talk card
@@ -616,6 +624,7 @@ export function makeFilm(cfg) {
   if (brk === 'scratch') SCENES.push(recordScratch(REC))
   if (brk === 'flash') SCENES.push(screenShake(SHAKE))
   for (const c of CHAPS) SCENES.push(kitChapter(c))
+  if (cfg.extraScenes) SCENES.push(...cfg.extraScenes)
   if (LOOP) SCENES.push(loopBack([main, whipZoom(WHIP), slamTitle(HOOK)], { duration: DUR, len: LOOP_LEN }))
   CUES.push(...whipZoomCues(WHIP), ...slamTitleCues(HOOK), ...(brk === 'whip' ? whipZoomCues(WHIP2) : []), ...(brk === 'scratch' ? recordScratchCues(REC) : []),
     ...(brk === 'flash' ? shakeCues(SHAKE) : []), ...CHAPS.flatMap(c => chapterCues(c)), ...(LOOP ? loopCues({ duration: DUR, len: LOOP_LEN }) : []))
