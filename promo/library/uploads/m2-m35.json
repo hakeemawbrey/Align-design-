@@ -1,4 +1,104 @@
 {
+ "khse01": {
+  "video": "/_blob/7f07e638865017017c0a77cef631b903",
+  "poster": "/_blob/640d63beec5960b8479bb237b625076c",
+  "title": "Aries buzzed in before the question",
+  "len": 9.4,
+  "long": false,
+  "series": "hotseat",
+  "episode": 1,
+  "caption": "Already texted first and now refreshing every ten seconds?\nA fast heart is a good heart. Give them room to catch up."
+ },
+ "khse02": {
+  "video": "/_blob/b85bcac351878228a27f2ac20f7450e7",
+  "poster": "/_blob/77dadaa2c6b95a12623408503b71281a",
+  "title": "Taurus made the hot seat cozy",
+  "len": 9,
+  "long": false,
+  "series": "hotseat",
+  "episode": 2,
+  "caption": "Ever stayed in something just because it felt familiar?\nComfortable and happy aren't always the same thing."
+ },
+ "khse03": {
+  "video": "/_blob/541731c6c856754d1e015b745e5c0fc5",
+  "poster": "/_blob/1ee5e066bef1b95fed10da6dcf6912c1",
+  "title": "Gemini gave two answers",
+  "len": 8.8,
+  "long": false,
+  "series": "hotseat",
+  "episode": 3,
+  "caption": "Forty drafts for one text, and none of them sound like you?\nThe real one is the one worth sending."
+ },
+ "khse04": {
+  "video": "/_blob/606918cac29e61d245ee88bb812c5760",
+  "poster": "/_blob/5757a1ba8b5dd7c6c786665dc2cb0354",
+  "title": "Cancer kept the voice note",
+  "len": 9.5,
+  "long": false,
+  "series": "hotseat",
+  "episode": 4,
+  "caption": "Still have the voice note you can't bring yourself to delete?\nThe love was real. You get to keep that part without the replay."
+ },
+ "khse05": {
+  "video": "/_blob/6a2b9340573e8e405b42926f3340e15e",
+  "poster": "/_blob/d62ca9eee7c68819ed87c5b7718e3825",
+  "title": "Leo took the microphone",
+  "len": 9.7,
+  "long": false,
+  "series": "hotseat",
+  "episode": 5,
+  "caption": "The loudest one in the room might be the one asking, are we okay?\nNeeding reassurance doesn't make you less of a star."
+ },
+ "khse06": {
+  "video": "/_blob/6af0bd6be0fd67906a003453aa589b5f",
+  "poster": "/_blob/092ccfb88ab7ad82fb7d96de4d8ca16f",
+  "title": "Virgo fact-checked the host",
+  "len": 9.3,
+  "long": false,
+  "series": "hotseat",
+  "episode": 6,
+  "caption": "You're everyone's fixer, but who checks on you?\nLet someone return the favour this week."
+ },
+ "khse07": {
+  "video": "/_blob/ae9b9360de248d674d1298c8e8058150",
+  "poster": "/_blob/5512a78083421ae1dca7e0e2fb0e7434",
+  "title": "Libra planned the trip for everyone",
+  "len": 9.3,
+  "long": false,
+  "series": "hotseat",
+  "episode": 7,
+  "caption": "Planned the whole group trip and forgot to ask what you wanted?\nYour wish belongs on the list too."
+ },
+ "khse08": {
+  "video": "/_blob/0b29ef9e429c15c502d16021f4119894",
+  "poster": "/_blob/3f74cc2260a5d873c4e1b56023ada427",
+  "title": "Scorpio flipped the spotlight",
+  "len": 9.5,
+  "long": false,
+  "series": "hotseat",
+  "episode": 8,
+  "caption": "Answering a question with a question again?\nBeing guarded is allowed. Just leave one window open."
+ },
+ "khse09": {
+  "video": "/_blob/6eb80e64f6bbf7760f4986549389eab9",
+  "poster": "/_blob/507780aa40bd7549d1874241a1bdf762",
+  "title": "Sagittarius left mid-question",
+  "len": 9.1,
+  "long": false,
+  "series": "hotseat",
+  "episode": 9,
+  "caption": "Always the first one out the door when things get serious?\nThe right person won't feel like a cage. They'll want to come along."
+ },
+ "khse10": {
+  "video": "/_blob/69fa21c219a7f17e73fdbe76de4a4451",
+  "poster": "/_blob/b70547ce9f934e8ccdb294f63925c2d0",
+  "title": "Capricorn booked the hot seat",
+  "len": 9.6,
+  "long": false,
+  "series": "hotseat",
+  "episode": 10,
+  "caption": "When did you last rest without feeling guilty about it?\nYou don't have to earn a day off."
+ },
  "khse11": {
   "video": "/_blob/c23dedbeb6f68956d731df39d345d938",
   "poster": "/_blob/ab5fa76bed6e24edc2b396ccf9f0c2e7",
@@ -88,5 +188,55 @@
   "series": "hotseat",
   "episode": 19,
   "caption": "Stayed friends with everyone after the breakup, including their mum?\nYou're allowed to say it hurt. That isn't making it weird."
+ },
+ "khse20": {
+  "video": "/_blob/042ea9718bafc8a0d37bafff4a3eee29",
+  "poster": "/_blob/3e6a181a159ef57a4cd41bb4b66bb3e7",
+  "title": "Missing your ex round: Scorpio",
+  "len": 9.5,
+  "long": false,
+  "series": "hotseat",
+  "episode": 20,
+  "caption": "Saved their number as DON'T?\nIt's okay to miss being known. You can find that feeling again."
+ },
+ "khse21": {
+  "video": "/_blob/0d7fa711ac1afd1aaf06d79d3cd80c0d",
+  "poster": "/_blob/b75c5ca177bfc1f142ffe02da228681e",
+  "title": "Flaky friend round: Sagittarius",
+  "len": 9.5,
+  "long": false,
+  "series": "hotseat",
+  "episode": 21,
+  "caption": "Cancelled on your friends for the third time this month?\nShow up for one small plan. It still counts."
+ },
+ "khse22": {
+  "video": "/_blob/e979a75b3b6b21eb2ddf484a5c15fc04",
+  "poster": "/_blob/3bb0ec7d4cf65a29a91346517c20d8fc",
+  "title": "New Year round: Capricorn",
+  "len": 9.4,
+  "long": false,
+  "series": "hotseat",
+  "episode": 22,
+  "caption": "Long list of resolutions and not one is about love?\nTry one soft goal this year: let someone in."
+ },
+ "khse23": {
+  "video": "/_blob/cd63917e604303b8a49991e29b4e0c5c",
+  "poster": "/_blob/1ccd0111fb038f9663fcdcc42ae82ef3",
+  "title": "The full hot seat: Aquarius",
+  "len": 60,
+  "long": true,
+  "series": "hotseat",
+  "episode": 23,
+  "caption": "Sixty seconds of rapid questions, and the last one gets real.\nEveryone needs one person who sees the whole thing."
+ },
+ "khse24": {
+  "video": "/_blob/a8c501c22caf33d82c2aa48058fc5e8c",
+  "poster": "/_blob/09bb62f173bef02428f549b24cb5d9f5",
+  "title": "Twelve signs, one hot seat",
+  "len": 60,
+  "long": true,
+  "series": "hotseat",
+  "episode": 24,
+  "caption": "Twelve signs, one chair, one question each. Wait for the last one.\nEven the bravest sign gets nervous in the hot seat."
  }
 }
