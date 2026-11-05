@@ -1,0 +1,227 @@
+{
+ "images": [
+  {
+   "id": "wc-123453364",
+   "source": "commons",
+   "title": "Sulho Sipilä Interior, woman playing the piano 1931",
+   "creator": "(Sulho Vilhelmi Sipilä) 1895 - 1949",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sulho_Sipil%C3%A4_Interior,_woman_playing_the_piano_1931.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Sulho_Sipil%C3%A4_Interior%2C_woman_playing_the_piano_1931.jpg/1920px-Sulho_Sipil%C3%A4_Interior%2C_woman_playing_the_piano_1931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Sulho_Sipil%C3%A4_Interior%2C_woman_playing_the_piano_1931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1583,
+   "file": "wc-123453364.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-127919441",
+   "source": "commons",
+   "title": "Woman at the piano (1870), by Giovanni Boldini",
+   "creator": "Giovanni Boldini",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Woman_at_the_piano_(1870),_by_Giovanni_Boldini.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Woman_at_the_piano_%281870%29%2C_by_Giovanni_Boldini.jpg/1920px-Woman_at_the_piano_%281870%29%2C_by_Giovanni_Boldini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Woman_at_the_piano_%281870%29%2C_by_Giovanni_Boldini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2112,
+   "file": "wc-127919441.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Boldini, woman at the piano"
+  },
+  {
+   "id": "aic-25825",
+   "source": "aic",
+   "title": "Woman at the Piano",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/25825",
+   "url": "https://www.artic.edu/iiif/2/8f06717c-9ede-f22b-d13b-327a50c22f9c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2098,
+   "file": "aic-25825.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Renoir, woman at the piano"
+  },
+  {
+   "id": "met-747607",
+   "source": "met",
+   "title": "Woman Playing a Guitar",
+   "creator": "Simon Vouet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/747607",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-12928-001.jpg",
+   "w": 1690,
+   "h": 2400,
+   "file": "met-747607.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Vouet, woman playing a guitar"
+  },
+  {
+   "id": "met-435717",
+   "source": "met",
+   "title": "A Woman Playing the Theorbo-Lute and a Cavalier",
+   "creator": "Gerard ter Borch the Younger",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435717",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145907.jpg",
+   "w": 2142,
+   "h": 2400,
+   "file": "met-435717.jpg",
+   "focus": [
+    0.35,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-34313968",
+   "source": "commons",
+   "title": "De serenade Rijksmuseum SK-A-2326",
+   "creator": "Judith Leyster",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:De_serenade_Rijksmuseum_SK-A-2326.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/De_serenade_Rijksmuseum_SK-A-2326.jpeg/1920px-De_serenade_Rijksmuseum_SK-A-2326.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/De_serenade_Rijksmuseum_SK-A-2326.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1738,
+   "h": 2400,
+   "file": "wc-34313968.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-108265614",
+   "source": "commons",
+   "title": "Marie Petiet - Sérénade 02",
+   "creator": "Marie Petiet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Marie_Petiet_-_S%C3%A9r%C3%A9nade_02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Marie_Petiet_-_S%C3%A9r%C3%A9nade_02.jpg/1920px-Marie_Petiet_-_S%C3%A9r%C3%A9nade_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Marie_Petiet_-_S%C3%A9r%C3%A9nade_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2338,
+   "file": "wc-108265614.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57394077",
+   "source": "commons",
+   "title": "Valentin de Boulogne - Lute Player MET DP168811",
+   "creator": "Valentin de Boulogne",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Valentin_de_Boulogne_-_Lute_Player_MET_DP168811.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Valentin_de_Boulogne_-_Lute_Player_MET_DP168811.jpg/1920px-Valentin_de_Boulogne_-_Lute_Player_MET_DP168811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Valentin_de_Boulogne_-_Lute_Player_MET_DP168811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1842,
+   "h": 2400,
+   "file": "wc-57394077.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437880",
+   "source": "met",
+   "title": "Young Woman with a Lute",
+   "creator": "Johannes Vermeer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437880",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP354965.jpg",
+   "w": 2092,
+   "h": 2400,
+   "file": "met-437880.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "met-436626",
+   "source": "met",
+   "title": "Boy with a Lute",
+   "creator": "Frans Hals",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436626",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145900.jpg",
+   "w": 1970,
+   "h": 2400,
+   "file": "met-436626.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-22002720",
+   "source": "commons",
+   "title": "Osman Hamdi Bey - Two Musician Girls - Google Art Project",
+   "creator": "Osman Hamdi Bey",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Osman_Hamdi_Bey_-_Two_Musician_Girls_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Osman_Hamdi_Bey_-_Two_Musician_Girls_-_Google_Art_Project.jpg/1920px-Osman_Hamdi_Bey_-_Two_Musician_Girls_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Osman_Hamdi_Bey_-_Two_Musician_Girls_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1646,
+   "h": 2400,
+   "file": "wc-22002720.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436642",
+   "source": "met",
+   "title": "The Musician",
+   "creator": "Bartholomeus van der Helst",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436642",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18251-001.jpg",
+   "w": 1940,
+   "h": 2400,
+   "file": "met-436642.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "van der Helst, woman with a theorbo"
+  },
+  {
+   "id": "wc-22318565",
+   "source": "commons",
+   "title": "'A Boy Violinist' painting by Hendrick Terbrugghen, Dayton Art Institute",
+   "creator": "Hendrick ter Brugghen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%27A_Boy_Violinist%27_painting_by_Hendrick_Terbrugghen,_Dayton_Art_Institute.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/%27A_Boy_Violinist%27_painting_by_Hendrick_Terbrugghen%2C_Dayton_Art_Institute.JPG/1920px-%27A_Boy_Violinist%27_painting_by_Hendrick_Terbrugghen%2C_Dayton_Art_Institute.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%27A_Boy_Violinist%27_painting_by_Hendrick_Terbrugghen%2C_Dayton_Art_Institute.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1778,
+   "h": 2400,
+   "file": "wc-22318565.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

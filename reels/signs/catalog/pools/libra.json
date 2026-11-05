@@ -1,0 +1,108 @@
+{
+ "images": [
+  {
+   "id": "aic-149778",
+   "source": "aic",
+   "title": "Allegory of Peace and War",
+   "creator": "Pompeo Girolamo Batoni (Italian, 1708–1787)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/149778",
+   "url": "https://www.artic.edu/iiif/2/92ad2a28-eac9-e358-6e3c-1c1cf39efd91/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2333,
+   "file": "aic-149778.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "pin": true,
+   "note": "Batoni, Allegory of Peace and War, Mars and Peace"
+  },
+  {
+   "id": "wc-6880111",
+   "source": "commons",
+   "title": "Burne-Jones, Edward - The Mirror of Venus - 1875 - hi res",
+   "creator": "Edward Burne-Jones",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Burne-Jones,_Edward_-_The_Mirror_of_Venus_-_1875_-_hi_res.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Burne-Jones%2C_Edward_-_The_Mirror_of_Venus_-_1875_-_hi_res.jpg/1920px-Burne-Jones%2C_Edward_-_The_Mirror_of_Venus_-_1875_-_hi_res.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Burne-Jones%2C_Edward_-_The_Mirror_of_Venus_-_1875_-_hi_res.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1165,
+   "file": "wc-6880111.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "Burne-Jones, The Mirror of Venus"
+  },
+  {
+   "id": "aic-11723",
+   "source": "aic",
+   "title": "Woman at Her Toilette",
+   "creator": "Berthe Morisot (French, 1841–1895)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/11723",
+   "url": "https://www.artic.edu/iiif/2/78c80988-6524-cec7-c661-a4c0a706d06f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1262,
+   "file": "aic-11723.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-4788",
+   "source": "aic",
+   "title": "Lady Sarah Bunbury Sacrificing to the Graces",
+   "creator": "Sir Joshua Reynolds (English, 1723–1792)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/4788",
+   "url": "https://www.artic.edu/iiif/2/5a047a1c-d36e-e88d-05e7-845d3936159b/full/1686,/0/default.jpg",
+   "w": 1453,
+   "h": 2400,
+   "file": "aic-4788.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-97504316",
+   "source": "commons",
+   "title": "Allegory of the Arts (SM 731)",
+   "creator": "Pompeo Batoni",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Allegory_of_the_Arts_(SM_731).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Allegory_of_the_Arts_%28SM_731%29.png/1920px-Allegory_of_the_Arts_%28SM_731%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Allegory_of_the_Arts_%28SM_731%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1889,
+   "h": 2400,
+   "file": "wc-97504316.jpg",
+   "focus": [
+    0.68,
+    0.35
+   ]
+  },
+  {
+   "id": "met-436836",
+   "source": "met",
+   "title": "Allegory of Music",
+   "creator": "Laurent de La Hyre",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436836",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1387.jpg",
+   "w": 2400,
+   "h": 1769,
+   "file": "met-436836.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "La Hyre, Allegory of Music, harmony"
+  }
+ ]
+}

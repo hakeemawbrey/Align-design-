@@ -1,0 +1,4 @@
+{"keep": [0, 6, 8, 10, 11, 17, 18, 20, 23, 24, 25, 26, 27, 28, 30],
+ "focus": {"6": [0.68, 0.45], "8": [0.25, 0.5], "10": [0.32, 0.5], "11": [0.4, 0.5], "26": [0.6, 0.5], "27": [0.4, 0.45], "30": [0.6, 0.4]},
+ "pin": [6, 8, 26, 27],
+ "notes": {"6": "Caillebotte, Paris Street; Rainy Day couple", "8": "Hassam, Rainy Day, Boston", "26": "Heade, Approaching Thunder Storm", "27": "Millet, Retreat from the Storm"}}

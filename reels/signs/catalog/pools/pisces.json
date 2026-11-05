@@ -1,0 +1,92 @@
+{
+ "images": [
+  {
+   "id": "wc-7715772",
+   "source": "commons",
+   "title": "John William Waterhouse A Mermaid",
+   "creator": "John William Waterhouse",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_A_Mermaid.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 825,
+   "h": 1200,
+   "file": "wc-7715772.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "pin": true,
+   "note": "Waterhouse, A Mermaid combing her hair"
+  },
+  {
+   "id": "wc-57364600",
+   "source": "commons",
+   "title": "The Return of Neptune MET DT201337",
+   "creator": "John Singleton Copley",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Return_of_Neptune_MET_DT201337.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/The_Return_of_Neptune_MET_DT201337.jpg/1920px-The_Return_of_Neptune_MET_DT201337.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/The_Return_of_Neptune_MET_DT201337.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1187,
+   "file": "wc-57364600.jpg",
+   "focus": [
+    0.34,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-99922801",
+   "source": "commons",
+   "title": "Marian Wawrzeniecki - Water nymph - MP 944 MNW - National Museum in Warsaw",
+   "creator": "Marian Wawrzeniecki",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Marian_Wawrzeniecki_-_Water_nymph_-_MP_944_MNW_-_National_Museum_in_Warsaw.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Marian_Wawrzeniecki_-_Water_nymph_-_MP_944_MNW_-_National_Museum_in_Warsaw.jpg/1920px-Marian_Wawrzeniecki_-_Water_nymph_-_MP_944_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Marian_Wawrzeniecki_-_Water_nymph_-_MP_944_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2267,
+   "file": "wc-99922801.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-116035939",
+   "source": "commons",
+   "title": "The Water Nymph by Alexander Rothaug",
+   "creator": "Alexander Rothaug",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Water_Nymph_by_Alexander_Rothaug.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Water_Nymph_by_Alexander_Rothaug.jpg/1920px-The_Water_Nymph_by_Alexander_Rothaug.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/The_Water_Nymph_by_Alexander_Rothaug.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1845,
+   "h": 2400,
+   "file": "wc-116035939.jpg",
+   "focus": [
+    0.45,
+    0.46
+   ],
+   "pin": true,
+   "note": "Rothaug, water nymph on a rock in turquoise sea"
+  },
+  {
+   "id": "aic-87088",
+   "source": "aic",
+   "title": "Water Lily Pond",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87088",
+   "url": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1499,
+   "file": "aic-87088.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

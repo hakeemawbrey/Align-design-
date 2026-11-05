@@ -1,0 +1,4 @@
+{"keep": [0, 1, 4, 6, 7, 8, 9, 10, 11, 13, 18, 23, 26, 27, 28, 29, 32, 33, 37, 38, 39, 41, 42],
+ "focus": {"1": [0.5, 0.5], "4": [0.5, 0.5], "10": [0.5, 0.5], "28": [0.47, 0.45], "32": [0.5, 0.55], "29": [0.4, 0.45], "42": [0.5, 0.4]},
+ "pin": [10, 4, 26, 42],
+ "notes": {"10": "Crab Nebula, most detailed view", "4": "Helix Nebula, the blue eye", "26": "green aurora from orbit", "42": "starburst cluster in violet clouds"}}

@@ -1,0 +1,174 @@
+{
+ "images": [
+  {
+   "id": "wc-15807684",
+   "source": "commons",
+   "title": "Portrait d'une Femme à sa Toilette, by Titian, from C2RMF retouched",
+   "creator": "Titian",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Portrait_d%27une_Femme_%C3%A0_sa_Toilette,_by_Titian,_from_C2RMF_retouched.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Portrait_d%27une_Femme_%C3%A0_sa_Toilette%2C_by_Titian%2C_from_C2RMF_retouched.jpg/1920px-Portrait_d%27une_Femme_%C3%A0_sa_Toilette%2C_by_Titian%2C_from_C2RMF_retouched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Portrait_d%27une_Femme_%C3%A0_sa_Toilette%2C_by_Titian%2C_from_C2RMF_retouched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2382,
+   "file": "wc-15807684.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ],
+   "pin": true,
+   "note": "Titian, woman at her toilet"
+  },
+  {
+   "id": "aic-16485",
+   "source": "aic",
+   "title": "Rinaldo and Armida in Her Garden",
+   "creator": "Giovanni Battista Tiepolo (Italian, 1696–1770)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16485",
+   "url": "https://www.artic.edu/iiif/2/1623c4af-9ac2-fd80-9e73-05f7d402c6bd/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1171,
+   "file": "aic-16485.jpg",
+   "focus": [
+    0.36,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-11723",
+   "source": "aic",
+   "title": "Woman at Her Toilette",
+   "creator": "Berthe Morisot (French, 1841–1895)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/11723",
+   "url": "https://www.artic.edu/iiif/2/78c80988-6524-cec7-c661-a4c0a706d06f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1262,
+   "file": "aic-11723.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-438132",
+   "source": "met",
+   "title": "Julie Le Brun (1780–1819) Looking in a Mirror",
+   "creator": "Elisabeth Louise Vigée Le Brun",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438132",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-26883-001.jpg",
+   "w": 1981,
+   "h": 2400,
+   "file": "met-438132.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Vigee Le Brun, Julie looking in a mirror"
+  },
+  {
+   "id": "wc-57365053",
+   "source": "commons",
+   "title": "Woman with a Mirror (Femme qui se mire) MET DP161210",
+   "creator": "Frederick Carl Frieseke",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Woman_with_a_Mirror_(Femme_qui_se_mire)_MET_DP161210.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Woman_with_a_Mirror_%28Femme_qui_se_mire%29_MET_DP161210.jpg/1920px-Woman_with_a_Mirror_%28Femme_qui_se_mire%29_MET_DP161210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Woman_with_a_Mirror_%28Femme_qui_se_mire%29_MET_DP161210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1921,
+   "file": "wc-57365053.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436519",
+   "source": "met",
+   "title": "Before the Mirror",
+   "creator": "Pierre-Paul-Léon Glaize",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436519",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-23348-001.jpg",
+   "w": 1841,
+   "h": 2400,
+   "file": "met-436519.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-24097010",
+   "source": "commons",
+   "title": "Auguste toulmouche-vanity",
+   "creator": "Auguste Toulmouche",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Auguste_toulmouche-vanity.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Auguste_toulmouche-vanity.jpg/1920px-Auguste_toulmouche-vanity.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Auguste_toulmouche-vanity.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1544,
+   "h": 2400,
+   "file": "wc-24097010.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Toulmouche, Vanity - kissing her reflection"
+  },
+  {
+   "id": "met-437181",
+   "source": "met",
+   "title": "Madame Marsollier and Her Daughter",
+   "creator": "Jean Marc Nattier",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437181",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP247889.jpg",
+   "w": 1878,
+   "h": 2400,
+   "file": "met-437181.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-107403308",
+   "source": "commons",
+   "title": "(Albi) A la toilette 1898 - Toulouse-Lautrec MTL.200",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:(Albi)_A_la_toilette_1898_-_Toulouse-Lautrec_MTL.200.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%28Albi%29_A_la_toilette_1898_-_Toulouse-Lautrec_MTL.200.jpg/1920px-%28Albi%29_A_la_toilette_1898_-_Toulouse-Lautrec_MTL.200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%28Albi%29_A_la_toilette_1898_-_Toulouse-Lautrec_MTL.200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2346,
+   "file": "wc-107403308.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-60627",
+   "source": "aic",
+   "title": "Lady at Her Toilette",
+   "creator": "Pietro Longhi (Italian, 1702–1785)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/60627",
+   "url": "https://www.artic.edu/iiif/2/1e20645b-8935-70b9-0e56-11de72066c35/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2188,
+   "file": "aic-60627.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  }
+ ]
+}

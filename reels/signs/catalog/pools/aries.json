@@ -1,0 +1,129 @@
+{
+ "images": [
+  {
+   "id": "aic-111559",
+   "source": "aic",
+   "title": "Boy on a Ram",
+   "creator": "Francisco José de Goya y Lucientes (Spanish, 1746–1828)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111559",
+   "url": "https://www.artic.edu/iiif/2/e54a695c-16df-cf45-9dd4-b517e8c32cc3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1902,
+   "file": "aic-111559.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "pin": true,
+   "note": "Goya, Boy on a Ram"
+  },
+  {
+   "id": "wc-149425560",
+   "source": "commons",
+   "title": "Peter Paul Rubens - Portrait of a Man as Mars",
+   "creator": "Peter Paul Rubens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Portrait_of_a_Man_as_Mars.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Peter_Paul_Rubens_-_Portrait_of_a_Man_as_Mars.jpg/1920px-Peter_Paul_Rubens_-_Portrait_of_a_Man_as_Mars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Peter_Paul_Rubens_-_Portrait_of_a_Man_as_Mars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1906,
+   "h": 2400,
+   "file": "wc-149425560.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "pin": true,
+   "note": "Rubens, portrait of a man as Mars"
+  },
+  {
+   "id": "wc-63466386",
+   "source": "commons",
+   "title": "Gerrit van honthorst, marte, dio della guerra, 1624-27, 02",
+   "creator": "Sailko",
+   "license": "CC BY 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gerrit_van_honthorst,_marte,_dio_della_guerra,_1624-27,_02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Gerrit_van_honthorst%2C_marte%2C_dio_della_guerra%2C_1624-27%2C_02.jpg/1920px-Gerrit_van_honthorst%2C_marte%2C_dio_della_guerra%2C_1624-27%2C_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Gerrit_van_honthorst%2C_marte%2C_dio_della_guerra%2C_1624-27%2C_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1661,
+   "h": 2400,
+   "file": "wc-63466386.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-128535051",
+   "source": "commons",
+   "title": "Fresco depicting Phrixus and Helle attempting to flee their hate-filled stepmother by crossing the sea between Europe and Asia on a flying golden ram, Exhibition Medea's Love and the Hunt for the Golden Fleece (2018-2019) 2",
+   "creator": "Carole Raddato from FRANKFURT, Germany",
+   "license": "CC BY-SA 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Fresco_depicting_Phrixus_and_Helle_attempting_to_flee_their_hate-filled_stepmother_by_crossing_the_sea_between_Europe_and_Asia_on_a_flying_golden_ram,_Exhibition_Medea%27s_Love_and_the_Hunt_for_the_Golden_Fleece_(2018-2019)_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Fresco_depicting_Phrixus_and_Helle_attempting_to_flee_their_hate-filled_stepmother_by_crossing_the_sea_between_Europe_and_Asia_on_a_flying_golden_ram%2C_Exhibition_Medea%27s_Love_and_the_Hunt_for_the_Golden_Fleece_%282018-2019%29_2.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Fresco_depicting_Phrixus_and_Helle_attempting_to_flee_their_hate-filled_stepmother_by_crossing_the_sea_between_Europe_and_Asia_on_a_flying_golden_ram%2C_Exhibition_Medea%27s_Love_and_the_Hunt_for_the_Golden_Fleece_%282018-2019%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1800,
+   "h": 2400,
+   "file": "wc-128535051.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "pin": true,
+   "note": "Roman fresco, Phrixus on the golden ram"
+  },
+  {
+   "id": "wc-1546313",
+   "source": "commons",
+   "title": "Phrixos und Helle",
+   "creator": "Uploaded by  --Immanuel Giel 14:24, 9 January 2007 (UTC)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Phrixos_und_Helle.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Phrixos_und_Helle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Phrixos_und_Helle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1165,
+   "h": 1512,
+   "file": "wc-1546313.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-97508146",
+   "source": "commons",
+   "title": "The War (SM 2000)",
+   "creator": "Hans Thoma",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_War_(SM_2000).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/The_War_%28SM_2000%29.png/1920px-The_War_%28SM_2000%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/The_War_%28SM_2000%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2171,
+   "file": "wc-97508146.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Thoma, The War, helmeted warrior in fire"
+  },
+  {
+   "id": "met-11112",
+   "source": "met",
+   "title": "Camp Fire",
+   "creator": "Winslow Homer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11112",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT2829.jpg",
+   "w": 2400,
+   "h": 1495,
+   "file": "met-11112.jpg",
+   "focus": [
+    0.4,
+    0.6
+   ]
+  }
+ ]
+}

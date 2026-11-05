@@ -1,0 +1,4 @@
+{"keep": [0, 8, 12, 16, 17, 19, 20, 22, 28, 29, 35],
+ "focus": {"0": [0.6, 0.4], "8": [0.5, 0.4], "16": [0.75, 0.4], "17": [0.42, 0.5], "19": [0.42, 0.45], "22": [0.6, 0.5], "29": [0.4, 0.5], "35": [0.4, 0.5]},
+ "pin": [8, 35, 17, 0],
+ "notes": {"8": "Breton, The Song of the Lark - maiden at sunrise", "35": "Schindler, Ceres resting in the wheat", "17": "Astete y Concha, woman in a wheat field", "0": "Salvator Rosa, the return of Astraea"}}

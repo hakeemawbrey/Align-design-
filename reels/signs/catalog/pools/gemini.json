@@ -1,0 +1,73 @@
+{
+ "images": [
+  {
+   "id": "wc-37796024",
+   "source": "commons",
+   "title": "Hélène délivrée par Castor et Pollux, Jean-Bruno Gassies, Prix de Rome 1817",
+   "creator": "Jean-Bruno Gassies",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:H%C3%A9l%C3%A8ne_d%C3%A9livr%C3%A9e_par_Castor_et_Pollux,_Jean-Bruno_Gassies,_Prix_de_Rome_1817.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/H%C3%A9l%C3%A8ne_d%C3%A9livr%C3%A9e_par_Castor_et_Pollux%2C_Jean-Bruno_Gassies%2C_Prix_de_Rome_1817.jpg/1920px-H%C3%A9l%C3%A8ne_d%C3%A9livr%C3%A9e_par_Castor_et_Pollux%2C_Jean-Bruno_Gassies%2C_Prix_de_Rome_1817.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/H%C3%A9l%C3%A8ne_d%C3%A9livr%C3%A9e_par_Castor_et_Pollux%2C_Jean-Bruno_Gassies%2C_Prix_de_Rome_1817.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1496,
+   "file": "wc-37796024.jpg",
+   "focus": [
+    0.58,
+    0.4
+   ],
+   "pin": true,
+   "note": "Gassies, Helen delivered by Castor and Pollux"
+  },
+  {
+   "id": "aic-14655",
+   "source": "aic",
+   "title": "Two Sisters (On the Terrace)",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14655",
+   "url": "https://www.artic.edu/iiif/2/3a608f55-d76e-fa96-d0b1-0789fbc48f1e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2092,
+   "file": "aic-14655.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436326",
+   "source": "met",
+   "title": "The Two Sisters",
+   "creator": "Jean Honoré Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436326",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1012-01.jpg",
+   "w": 1862,
+   "h": 2400,
+   "file": "met-436326.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Fragonard, The Two Sisters"
+  },
+  {
+   "id": "met-437596",
+   "source": "met",
+   "title": "The Two Sisters",
+   "creator": "Jean Claude Richard, Abbé de Saint-Non",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437596",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP231082.jpg",
+   "w": 1553,
+   "h": 1935,
+   "file": "met-437596.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  }
+ ]
+}

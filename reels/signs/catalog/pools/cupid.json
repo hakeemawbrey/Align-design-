@@ -1,0 +1,157 @@
+{
+ "images": [
+  {
+   "id": "wc-22151900",
+   "source": "commons",
+   "title": "Bourgeois, Sir Peter Francis - Cupid - Google Art Project",
+   "creator": "Francis Bourgeois",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bourgeois,_Sir_Peter_Francis_-_Cupid_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bourgeois%2C_Sir_Peter_Francis_-_Cupid_-_Google_Art_Project.jpg/1920px-Bourgeois%2C_Sir_Peter_Francis_-_Cupid_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Bourgeois%2C_Sir_Peter_Francis_-_Cupid_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1437,
+   "file": "wc-22151900.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-138550115",
+   "source": "commons",
+   "title": "(Venice) Cupid and Psyque, 1787-1794 - Museo Correr",
+   "creator": "Didier Descouens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:(Venice)_Cupid_and_Psyque,_1787-1794_-_Museo_Correr.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/%28Venice%29_Cupid_and_Psyque%2C_1787-1794_-_Museo_Correr.jpg/1920px-%28Venice%29_Cupid_and_Psyque%2C_1787-1794_-_Museo_Correr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/%28Venice%29_Cupid_and_Psyque%2C_1787-1794_-_Museo_Correr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1945,
+   "file": "wc-138550115.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Cupid and Psyche embracing, winged"
+  },
+  {
+   "id": "aic-16485",
+   "source": "aic",
+   "title": "Rinaldo and Armida in Her Garden",
+   "creator": "Giovanni Battista Tiepolo (Italian, 1696–1770)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16485",
+   "url": "https://www.artic.edu/iiif/2/1623c4af-9ac2-fd80-9e73-05f7d402c6bd/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1171,
+   "file": "aic-16485.jpg",
+   "focus": [
+    0.3,
+    0.55
+   ]
+  },
+  {
+   "id": "met-435622",
+   "source": "met",
+   "title": "Diana and Cupid",
+   "creator": "Pompeo Batoni",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435622",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-24221-001.jpg",
+   "w": 2400,
+   "h": 1756,
+   "file": "met-435622.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-21878516",
+   "source": "commons",
+   "title": "William Blake Richmond - Venus and Anchises - Google Art Project",
+   "creator": "William Blake Richmond",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:William_Blake_Richmond_-_Venus_and_Anchises_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/William_Blake_Richmond_-_Venus_and_Anchises_-_Google_Art_Project.jpg/1920px-William_Blake_Richmond_-_Venus_and_Anchises_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/William_Blake_Richmond_-_Venus_and_Anchises_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 964,
+   "file": "wc-21878516.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ],
+   "pin": true,
+   "note": "Richmond, Venus and Anchises among flowers"
+  },
+  {
+   "id": "aic-4788",
+   "source": "aic",
+   "title": "Lady Sarah Bunbury Sacrificing to the Graces",
+   "creator": "Sir Joshua Reynolds (English, 1723–1792)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/4788",
+   "url": "https://www.artic.edu/iiif/2/5a047a1c-d36e-e88d-05e7-845d3936159b/full/1686,/0/default.jpg",
+   "w": 1453,
+   "h": 2400,
+   "file": "aic-4788.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "met-12704",
+   "source": "met",
+   "title": "Child Asleep (The Rosebud)",
+   "creator": "Thomas Sully",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12704",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT275484.jpg",
+   "w": 2400,
+   "h": 1583,
+   "file": "met-12704.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ]
+  },
+  {
+   "id": "met-13202",
+   "source": "met",
+   "title": "Omnia Vincit Amor, or The Power of Love in the Three Elements",
+   "creator": "Benjamin West",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/13202",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT2075.jpg",
+   "w": 2400,
+   "h": 2113,
+   "file": "met-13202.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "met-438127",
+   "source": "met",
+   "title": "The Declaration of Love",
+   "creator": "Jean François de Troy",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438127",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-19651-001.jpg",
+   "w": 2000,
+   "h": 2400,
+   "file": "met-438127.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "pin": true,
+   "note": "de Troy, The Declaration of Love"
+  }
+ ]
+}

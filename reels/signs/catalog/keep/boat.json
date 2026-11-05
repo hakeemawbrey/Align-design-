@@ -1,0 +1,4 @@
+{"keep": [0, 2, 4, 6, 11, 12, 15, 19, 20, 21, 23, 24, 26, 30, 32, 33, 37, 38, 48],
+ "focus": {"0": [0.45, 0.45], "38": [0.45, 0.45], "2": [0.5, 0.55], "19": [0.42, 0.5], "26": [0.6, 0.5], "37": [0.5, 0.5], "11": [0.5, 0.5], "6": [0.5, 0.5], "48": [0.45, 0.6]},
+ "pin": [0, 38, 19, 20],
+ "notes": {"0": "van Beers, romantic couple in a rowing boat", "38": "Manet, Boating", "19": "De Nittis, on Lake Lucerne under the awning", "20": "Kielland, lake after sunset"}}

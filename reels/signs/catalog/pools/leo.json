@@ -1,0 +1,158 @@
+{
+ "images": [
+  {
+   "id": "met-438822",
+   "source": "met",
+   "title": "The Repast of the Lion",
+   "creator": "Henri Rousseau (le Douanier)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438822",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT50.jpg",
+   "w": 2400,
+   "h": 1690,
+   "file": "met-438822.jpg",
+   "focus": [
+    0.47,
+    0.7
+   ],
+   "pin": true,
+   "note": "Rousseau, the lion in the jungle under the moon"
+  },
+  {
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186,
+   "file": "aic-94841.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-100191",
+   "source": "aic",
+   "title": "Stack of Wheat (Thaw, Sunset)",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/100191",
+   "url": "https://www.artic.edu/iiif/2/8bd40b36-43ea-8b02-d76a-b325962b86db/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1174,
+   "file": "aic-100191.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-2303611",
+   "source": "commons",
+   "title": "Pollaiolo, Piero del - Apollo and Daphne",
+   "creator": "Piero del Pollaiuolo",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pollaiolo,_Piero_del_-_Apollo_and_Daphne.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Pollaiolo%2C_Piero_del_-_Apollo_and_Daphne.jpg/1920px-Pollaiolo%2C_Piero_del_-_Apollo_and_Daphne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Pollaiolo%2C_Piero_del_-_Apollo_and_Daphne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1624,
+   "h": 2400,
+   "file": "wc-2303611.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-76734036",
+   "source": "commons",
+   "title": "Apollo by Giovanni Antonio Pellegrini Mauritshuis 1135",
+   "creator": "Giovanni Antonio Pellegrini",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Apollo_by_Giovanni_Antonio_Pellegrini_Mauritshuis_1135.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Apollo_by_Giovanni_Antonio_Pellegrini_Mauritshuis_1135.jpg/1920px-Apollo_by_Giovanni_Antonio_Pellegrini_Mauritshuis_1135.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Apollo_by_Giovanni_Antonio_Pellegrini_Mauritshuis_1135.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1407,
+   "file": "wc-76734036.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Pellegrini, Apollo the sun god in golden clouds"
+  },
+  {
+   "id": "met-436843",
+   "source": "met",
+   "title": "Apollo and Aurora",
+   "creator": "Gerard de Lairesse",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436843",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145403.jpg",
+   "w": 2281,
+   "h": 2400,
+   "file": "met-436843.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Lairesse, Apollo and Aurora"
+  },
+  {
+   "id": "met-11235",
+   "source": "met",
+   "title": "Sunrise",
+   "creator": "George Inness",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11235",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DP232470.jpg",
+   "w": 2400,
+   "h": 1594,
+   "file": "met-11235.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435907",
+   "source": "met",
+   "title": "Sunrise",
+   "creator": "Claude Lorrain (Claude Gellée)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435907",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-013.jpg",
+   "w": 2400,
+   "h": 1832,
+   "file": "met-435907.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-10158",
+   "source": "met",
+   "title": "Sunrise on the Matterhorn",
+   "creator": "Albert Bierstadt",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10158",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT218107.jpg",
+   "w": 1755,
+   "h": 2400,
+   "file": "met-10158.jpg",
+   "focus": [
+    0.6,
+    0.3
+   ],
+   "pin": true,
+   "note": "Bierstadt, golden sunrise on the Matterhorn"
+  }
+ ]
+}

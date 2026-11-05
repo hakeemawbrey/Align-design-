@@ -1,0 +1,4 @@
+{"keep": [11, 15, 18, 31, 33, 35, 40],
+ "focus": {"11": [0.45, 0.45], "15": [0.6, 0.35], "18": [0.45, 0.35], "31": [0.6, 0.4], "33": [0.5, 0.4], "35": [0.4, 0.4], "40": [0.4, 0.6]},
+ "pin": [11, 15, 31, 35],
+ "notes": {"11": "Goya, Boy on a Ram", "15": "Rubens, portrait of a man as Mars", "31": "Roman fresco, Phrixus on the golden ram", "35": "Thoma, The War, helmeted warrior in fire"}}

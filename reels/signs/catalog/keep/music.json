@@ -1,0 +1,4 @@
+{"keep": [0, 1, 3, 10, 11, 14, 15, 24, 27, 28, 29, 37, 40],
+ "focus": {"3": [0.45, 0.4], "11": [0.35, 0.45], "29": [0.45, 0.4], "27": [0.45, 0.45]},
+ "pin": [3, 1, 37, 10],
+ "notes": {"3": "Renoir, woman at the piano", "1": "Boldini, woman at the piano", "37": "van der Helst, woman with a theorbo", "10": "Vouet, woman playing a guitar"}}

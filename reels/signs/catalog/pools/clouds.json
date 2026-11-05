@@ -1,0 +1,423 @@
+{
+ "images": [
+  {
+   "id": "wc-57394154",
+   "source": "commons",
+   "title": "Landscape Study with Clouds MET DP281416",
+   "creator": "Emile Loubon",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Landscape_Study_with_Clouds_MET_DP281416.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Landscape_Study_with_Clouds_MET_DP281416.jpg/1920px-Landscape_Study_with_Clouds_MET_DP281416.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Landscape_Study_with_Clouds_MET_DP281416.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1267,
+   "file": "wc-57394154.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-21693",
+   "source": "met",
+   "title": "Clouds",
+   "creator": "Thomas Cole",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/21693",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DP300700.jpg",
+   "w": 2400,
+   "h": 1953,
+   "file": "met-21693.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "pin": true,
+   "note": "Thomas Cole, towering clouds"
+  },
+  {
+   "id": "met-438642",
+   "source": "met",
+   "title": "Cloud Study (Early Evening)",
+   "creator": "Simon Denis",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438642",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP103066.jpg",
+   "w": 2400,
+   "h": 2124,
+   "file": "met-438642.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "Simon Denis, cloud study in early evening"
+  },
+  {
+   "id": "met-438643",
+   "source": "met",
+   "title": "Cloud Study (Distant Storm)",
+   "creator": "Simon Denis",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438643",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP169448.jpg",
+   "w": 1951,
+   "h": 1487,
+   "file": "met-438643.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "wc-117829485",
+   "source": "commons",
+   "title": "John Constable - Study of Clouds over a Landscape - 2007.8.35 - Clark Art Institute",
+   "creator": "John Constable",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Constable_-_Study_of_Clouds_over_a_Landscape_-_2007.8.35_-_Clark_Art_Institute.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/John_Constable_-_Study_of_Clouds_over_a_Landscape_-_2007.8.35_-_Clark_Art_Institute.tiff/lossy-page1-1920px-John_Constable_-_Study_of_Clouds_over_a_Landscape_-_2007.8.35_-_Clark_Art_Institute.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/John_Constable_-_Study_of_Clouds_over_a_Landscape_-_2007.8.35_-_Clark_Art_Institute.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1472,
+   "file": "wc-117829485.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-4758",
+   "source": "aic",
+   "title": "Stoke-by-Nayland",
+   "creator": "John Constable (English, 1776-1837)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/4758",
+   "url": "https://www.artic.edu/iiif/2/400ce9e8-2f67-44e2-dd68-e6c98880d27f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1241,
+   "file": "aic-4758.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-47582",
+   "source": "aic",
+   "title": "Hampstead, Stormy Sky",
+   "creator": "In the style of John Constable (English, 1776–1837)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/47582",
+   "url": "https://www.artic.edu/iiif/2/02bc3896-bc28-57bd-c829-cc4de184c7a8/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1257,
+   "file": "aic-47582.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "met-459099",
+   "source": "met",
+   "title": "Landscape with Cattle at Limousin",
+   "creator": "Jules Dupré",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459099",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DP-34474-001.jpg",
+   "w": 2400,
+   "h": 1513,
+   "file": "met-459099.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435793",
+   "source": "met",
+   "title": "Tottenham Church",
+   "creator": "British Painter",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435793",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP167130.jpg",
+   "w": 2126,
+   "h": 2400,
+   "file": "met-435793.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435922",
+   "source": "met",
+   "title": "Salisbury Cathedral from the Bishop's Grounds",
+   "creator": "John Constable",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435922",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP164837.jpg",
+   "w": 1955,
+   "h": 1541,
+   "file": "met-435922.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-48254626",
+   "source": "commons",
+   "title": "Josef Mánes - Clouds in the Mountains",
+   "creator": "Ablakok",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Josef_M%C3%A1nes_-_Clouds_in_the_Mountains.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Josef_M%C3%A1nes_-_Clouds_in_the_Mountains.jpg/1920px-Josef_M%C3%A1nes_-_Clouds_in_the_Mountains.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Josef_M%C3%A1nes_-_Clouds_in_the_Mountains.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1440,
+   "file": "wc-48254626.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97999315",
+   "source": "commons",
+   "title": "Joachim Frich - Landscape with stormy Sky - NG.M.03292 - National Museum of Art, Architecture and Design",
+   "creator": "Joachim Frich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joachim_Frich_-_Landscape_with_stormy_Sky_-_NG.M.03292_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Joachim_Frich_-_Landscape_with_stormy_Sky_-_NG.M.03292_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Joachim_Frich_-_Landscape_with_stormy_Sky_-_NG.M.03292_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Joachim_Frich_-_Landscape_with_stormy_Sky_-_NG.M.03292_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1341,
+   "file": "wc-97999315.jpg",
+   "focus": [
+    0.35,
+    0.35
+   ],
+   "pin": true,
+   "note": "Frich, landscape under a stormy sky"
+  },
+  {
+   "id": "wc-131422206",
+   "source": "commons",
+   "title": "Magnus Thulstrup Bagge - Painting - Vest-Telemark Museum - LB.02587 (cropped)",
+   "creator": "Possibly Magnus Thulstrup Bagge",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Magnus_Thulstrup_Bagge_-_Painting_-_Vest-Telemark_Museum_-_LB.02587_(cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Magnus_Thulstrup_Bagge_-_Painting_-_Vest-Telemark_Museum_-_LB.02587_%28cropped%29.jpg/1920px-Magnus_Thulstrup_Bagge_-_Painting_-_Vest-Telemark_Museum_-_LB.02587_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Magnus_Thulstrup_Bagge_-_Painting_-_Vest-Telemark_Museum_-_LB.02587_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1524,
+   "file": "wc-131422206.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97997205",
+   "source": "commons",
+   "title": "Carl Frederik (C.F.) Sørensen - Painting - NG.M.03440 - National Museum of Art, Architecture and Design",
+   "creator": "Carl Frederik Sørensen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Frederik_(C.F.)_S%C3%B8rensen_-_Painting_-_NG.M.03440_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.03440_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.03440_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.03440_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1312,
+   "file": "wc-97997205.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97994228",
+   "source": "commons",
+   "title": "Carl Frederik (C.F.) Sørensen - Painting - NG.M.00700 - National Museum of Art, Architecture and Design",
+   "creator": "Carl Frederik Sørensen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Frederik_(C.F.)_S%C3%B8rensen_-_Painting_-_NG.M.00700_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.00700_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.00700_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Carl_Frederik_%28C.F.%29_S%C3%B8rensen_-_Painting_-_NG.M.00700_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1483,
+   "file": "wc-97994228.jpg",
+   "focus": [
+    0.58,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436064",
+   "source": "met",
+   "title": "Young Herdsmen with Cows",
+   "creator": "Aelbert Cuyp",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436064",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146445.jpg",
+   "w": 2400,
+   "h": 2036,
+   "file": "met-436064.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-67543244",
+   "source": "commons",
+   "title": "Karol Marko st. - Hilly Landscape with Cloudy Skies - O 444 - Slovak National Gallery",
+   "creator": "Károly Markó",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karol_Marko_st._-_Hilly_Landscape_with_Cloudy_Skies_-_O_444_-_Slovak_National_Gallery.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Karol_Marko_st._-_Hilly_Landscape_with_Cloudy_Skies_-_O_444_-_Slovak_National_Gallery.jpg/1920px-Karol_Marko_st._-_Hilly_Landscape_with_Cloudy_Skies_-_O_444_-_Slovak_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Karol_Marko_st._-_Hilly_Landscape_with_Cloudy_Skies_-_O_444_-_Slovak_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1269,
+   "file": "wc-67543244.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97926830",
+   "source": "commons",
+   "title": "Landscape with Cottage and Stone Bridge under a Cloudy Sky by Jacob van Ruisdael",
+   "creator": "Jacob van Ruisdael",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Landscape_with_Cottage_and_Stone_Bridge_under_a_Cloudy_Sky_by_Jacob_van_Ruisdael.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Landscape_with_Cottage_and_Stone_Bridge_under_a_Cloudy_Sky_by_Jacob_van_Ruisdael.jpg/1920px-Landscape_with_Cottage_and_Stone_Bridge_under_a_Cloudy_Sky_by_Jacob_van_Ruisdael.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Landscape_with_Cottage_and_Stone_Bridge_under_a_Cloudy_Sky_by_Jacob_van_Ruisdael.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1366,
+   "file": "wc-97926830.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-179639574",
+   "source": "commons",
+   "title": "Harry Mitton Wilson - Cloudy sky over a small village",
+   "creator": "Harry Mitton Wilson",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Harry_Mitton_Wilson_-_Cloudy_sky_over_a_small_village.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Harry_Mitton_Wilson_-_Cloudy_sky_over_a_small_village.jpg/1920px-Harry_Mitton_Wilson_-_Cloudy_sky_over_a_small_village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Harry_Mitton_Wilson_-_Cloudy_sky_over_a_small_village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1656,
+   "file": "wc-179639574.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-22257629",
+   "source": "commons",
+   "title": "Trees by a River, Cloudy Sky - Google Art Project",
+   "creator": "Unknown authorUnknown author",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Trees_by_a_River,_Cloudy_Sky_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Trees_by_a_River%2C_Cloudy_Sky_-_Google_Art_Project.jpg/1920px-Trees_by_a_River%2C_Cloudy_Sky_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Trees_by_a_River%2C_Cloudy_Sky_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1571,
+   "file": "wc-22257629.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186,
+   "file": "aic-94841.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-438641",
+   "source": "met",
+   "title": "Mountainous Landscape at Tivoli",
+   "creator": "Simon Denis",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438641",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP169451.jpg",
+   "w": 1957,
+   "h": 1114,
+   "file": "met-438641.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436830",
+   "source": "met",
+   "title": "A Panoramic Landscape with a Country Estate",
+   "creator": "Philips Koninck",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436830",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145898.jpg",
+   "w": 2400,
+   "h": 1987,
+   "file": "met-436830.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "pin": true,
+   "note": "Koninck, panoramic sky over the plain"
+  },
+  {
+   "id": "met-459096",
+   "source": "met",
+   "title": "Landscape with Ducks",
+   "creator": "Charles-François Daubigny",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459096",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DP-34472-001.jpg",
+   "w": 2400,
+   "h": 1415,
+   "file": "met-459096.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-11253",
+   "source": "met",
+   "title": "Bayside, New Rochelle, New York",
+   "creator": "David Johnson",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11253",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap15.30.65.jpg",
+   "w": 2394,
+   "h": 1926,
+   "file": "met-11253.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

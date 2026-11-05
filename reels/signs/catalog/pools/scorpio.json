@@ -1,0 +1,92 @@
+{
+ "images": [
+  {
+   "id": "wc-112764673",
+   "source": "commons",
+   "title": "Joseph Heintz the Younger - Pluto and Proserpina",
+   "creator": "Jan Brueghel the Younger",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Heintz_the_Younger_-_Pluto_and_Proserpina.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Joseph_Heintz_the_Younger_-_Pluto_and_Proserpina.jpg/1920px-Joseph_Heintz_the_Younger_-_Pluto_and_Proserpina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Joseph_Heintz_the_Younger_-_Pluto_and_Proserpina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1449,
+   "file": "wc-112764673.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "pin": true,
+   "note": "Heintz, Pluto and Proserpina in the dark underworld"
+  },
+  {
+   "id": "met-437326",
+   "source": "met",
+   "title": "Blind Orion Searching for the Rising Sun",
+   "creator": "Nicolas Poussin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437326",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP148490.jpg",
+   "w": 2400,
+   "h": 1568,
+   "file": "met-437326.jpg",
+   "focus": [
+    0.65,
+    0.5
+   ],
+   "pin": true,
+   "note": "Poussin, Blind Orion searching for the sun"
+  },
+  {
+   "id": "wc-117408129",
+   "source": "commons",
+   "title": "The Return of Persephone - MET DP-21913-001",
+   "creator": "Frederic Leighton",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Return_of_Persephone_-_MET_DP-21913-001.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/The_Return_of_Persephone_-_MET_DP-21913-001.jpg/1920px-The_Return_of_Persephone_-_MET_DP-21913-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/The_Return_of_Persephone_-_MET_DP-21913-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1859,
+   "h": 2400,
+   "file": "wc-117408129.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Leighton, The Return of Persephone"
+  },
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-84076",
+   "source": "aic",
+   "title": "Café Singer",
+   "creator": "Edgar Degas (French, 1834–1917)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/84076",
+   "url": "https://www.artic.edu/iiif/2/a867af78-9a29-c75b-33ab-2f21a2d92b3f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2212,
+   "file": "aic-84076.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

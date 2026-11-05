@@ -1,0 +1,57 @@
+{
+ "images": [
+  {
+   "id": "wc-15255510",
+   "source": "commons",
+   "title": "Pallas and Centaur (Botticelli) detail 01",
+   "creator": "Sandro Botticelli",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pallas_and_Centaur_(Botticelli)_detail_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Pallas_and_Centaur_%28Botticelli%29_detail_01.jpg/1920px-Pallas_and_Centaur_%28Botticelli%29_detail_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Pallas_and_Centaur_%28Botticelli%29_detail_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1800,
+   "h": 2400,
+   "file": "wc-15255510.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Botticelli, Pallas and the Centaur (detail)"
+  },
+  {
+   "id": "met-459093",
+   "source": "met",
+   "title": "Diana and Actaeon (Diana Surprised in Her Bath)",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459093",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DT718.jpg",
+   "w": 1751,
+   "h": 2400,
+   "file": "met-459093.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435622",
+   "source": "met",
+   "title": "Diana and Cupid",
+   "creator": "Pompeo Batoni",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435622",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-24221-001.jpg",
+   "w": 2400,
+   "h": 1756,
+   "file": "met-435622.jpg",
+   "focus": [
+    0.43,
+    0.4
+   ],
+   "pin": true,
+   "note": "Batoni, Diana and Cupid with the bow"
+  }
+ ]
+}

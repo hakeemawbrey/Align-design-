@@ -1,0 +1,234 @@
+{
+ "images": [
+  {
+   "id": "aic-111647",
+   "source": "aic",
+   "title": "The Abduction of Europa",
+   "creator": "David Teniers the Younger (Flemish, 1610–1690)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111647",
+   "url": "https://www.artic.edu/iiif/2/ecc57db2-c119-fa97-9c40-f865607d0e9e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1127,
+   "file": "aic-111647.jpg",
+   "focus": [
+    0.74,
+    0.7
+   ]
+  },
+  {
+   "id": "aic-111645",
+   "source": "aic",
+   "title": "The Abduction of Europa",
+   "creator": "David Teniers the Younger (Flemish, 1610–1690)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111645",
+   "url": "https://www.artic.edu/iiif/2/9c2c809d-7637-84b0-747c-0520fa16e901/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1124,
+   "file": "aic-111645.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Teniers, Europa carried off by the white bull"
+  },
+  {
+   "id": "aic-23333",
+   "source": "aic",
+   "title": "Pastoral Scene",
+   "creator": "Giovanni Battista Piazzetta (Italian, 1682–1754)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/23333",
+   "url": "https://www.artic.edu/iiif/2/cd2ebc0d-eea7-d476-1a57-daf8a3976675/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2273,
+   "file": "aic-23333.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-39542",
+   "source": "aic",
+   "title": "Cattle at Rest on a Hillside in the Alps",
+   "creator": "Rosa Bonheur (French, 1822–1899)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/39542",
+   "url": "https://www.artic.edu/iiif/2/efdd5540-5579-8761-fd1d-af318f65a0a6/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1393,
+   "file": "aic-39542.jpg",
+   "focus": [
+    0.38,
+    0.55
+   ],
+   "pin": true,
+   "note": "Rosa Bonheur, cattle at rest in the Alps"
+  },
+  {
+   "id": "aic-4776",
+   "source": "aic",
+   "title": "The Keeper of the Flock",
+   "creator": "Jean-François Millet (French, 1814–1875)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/4776",
+   "url": "https://www.artic.edu/iiif/2/0ace29f2-7bc1-714a-c364-12b57bcf8a93/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1326,
+   "file": "aic-4776.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-69041",
+   "source": "aic",
+   "title": "Italian Landscape with Travelers",
+   "creator": "Jan Both (Dutch, c. 1618–1652)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/69041",
+   "url": "https://www.artic.edu/iiif/2/96458291-2c6c-76ba-4be9-dca201687edf/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1358,
+   "file": "aic-69041.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-863",
+   "source": "aic",
+   "title": "Pastoral Landscape with Ruins",
+   "creator": "Adriaen van de Velde (Dutch, 1636–1672)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/863",
+   "url": "https://www.artic.edu/iiif/2/a34d9d72-c4ec-0750-389e-a01215c9aab0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1428,
+   "file": "aic-863.jpg",
+   "focus": [
+    0.45,
+    0.6
+   ]
+  },
+  {
+   "id": "met-437095",
+   "source": "met",
+   "title": "Calling the Cows Home",
+   "creator": "Jean-François Millet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437095",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP345570.jpg",
+   "w": 1654,
+   "h": 2400,
+   "file": "met-437095.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Millet, calling the cows home at dusk"
+  },
+  {
+   "id": "met-14426",
+   "source": "met",
+   "title": "Hackensack Meadows",
+   "creator": "Jasper Francis Cropsey",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/14426",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap1992.97.jpg",
+   "w": 2280,
+   "h": 1312,
+   "file": "met-14426.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-10796",
+   "source": "met",
+   "title": "River Scene",
+   "creator": "Asher Brown Durand",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10796",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap1970.58.jpg",
+   "w": 2287,
+   "h": 1608,
+   "file": "met-10796.jpg",
+   "focus": [
+    0.55,
+    0.55
+   ]
+  },
+  {
+   "id": "met-10777",
+   "source": "met",
+   "title": "Landscape with Shepherd",
+   "creator": "Robert S. Duncanson",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10777",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DP-39817-001.jpg",
+   "w": 2400,
+   "h": 1642,
+   "file": "met-10777.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-87088",
+   "source": "aic",
+   "title": "Water Lily Pond",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87088",
+   "url": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1499,
+   "file": "aic-87088.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-14586",
+   "source": "aic",
+   "title": "The Poet's Garden",
+   "creator": "Vincent van Gogh (Dutch, 1853–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14586",
+   "url": "https://www.artic.edu/iiif/2/fa5aaa98-8095-07d6-3b7d-3dfccc518191/full/1686,/0/default.jpg",
+   "w": 1687,
+   "h": 1330,
+   "file": "aic-14586.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-153798",
+   "source": "aic",
+   "title": "Woman in a Garden",
+   "creator": "Berthe Morisot (French, 1841–1895)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/153798",
+   "url": "https://www.artic.edu/iiif/2/5edb357d-2e8f-8673-d9e8-4b1150af3895/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2256,
+   "file": "aic-153798.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

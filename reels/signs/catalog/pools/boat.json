@@ -1,0 +1,327 @@
+{
+ "images": [
+  {
+   "id": "wc-117824186",
+   "source": "commons",
+   "title": "Jan van Beers - Romantic couple in a boat",
+   "creator": "Jan van Beers",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jan_van_Beers_-_Romantic_couple_in_a_boat.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Jan_van_Beers_-_Romantic_couple_in_a_boat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Jan_van_Beers_-_Romantic_couple_in_a_boat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1496,
+   "h": 1079,
+   "file": "wc-117824186.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "pin": true,
+   "note": "van Beers, romantic couple in a rowing boat"
+  },
+  {
+   "id": "wc-18936650",
+   "source": "commons",
+   "title": "Riccardo Pellegrini Bootsfahrt in der Lagune 1883",
+   "creator": "Riccardo Pellegrini (1863–934)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Riccardo_Pellegrini_Bootsfahrt_in_der_Lagune_1883.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Riccardo_Pellegrini_Bootsfahrt_in_der_Lagune_1883.jpg/1920px-Riccardo_Pellegrini_Bootsfahrt_in_der_Lagune_1883.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Riccardo_Pellegrini_Bootsfahrt_in_der_Lagune_1883.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 963,
+   "file": "wc-18936650.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "id": "wc-18752436",
+   "source": "commons",
+   "title": "K. Korovin - In the boat",
+   "creator": "Konstantin Korovin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:K._Korovin_-_In_the_boat.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/K._Korovin_-_In_the_boat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/K._Korovin_-_In_the_boat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 767,
+   "h": 1000,
+   "file": "wc-18752436.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-62475324",
+   "source": "commons",
+   "title": "A Dutch Ferry Boat Before a Breeze RMG BHC0772",
+   "creator": "Simon de Vlieger",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:A_Dutch_Ferry_Boat_Before_a_Breeze_RMG_BHC0772.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/A_Dutch_Ferry_Boat_Before_a_Breeze_RMG_BHC0772.tiff/lossy-page1-1920px-A_Dutch_Ferry_Boat_Before_a_Breeze_RMG_BHC0772.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/A_Dutch_Ferry_Boat_Before_a_Breeze_RMG_BHC0772.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1990,
+   "file": "wc-62475324.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "aic-25865",
+   "source": "aic",
+   "title": "The Herring Net",
+   "creator": "Winslow Homer (American, 1836–1910)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/25865",
+   "url": "https://www.artic.edu/iiif/2/5dca7347-c6dc-24dd-d073-d705b9cdc575/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1037,
+   "file": "aic-25865.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "aic-889",
+   "source": "aic",
+   "title": "Barks Fleeing Before the Storm",
+   "creator": "Jules Dupré (French, 1811–1889)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/889",
+   "url": "https://www.artic.edu/iiif/2/80df29cd-493f-23c0-3e51-4ddc38b3f34f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1091,
+   "file": "aic-889.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436012",
+   "source": "met",
+   "title": "The Fishing Boat",
+   "creator": "Gustave Courbet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436012",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-031.jpg",
+   "w": 2400,
+   "h": 1800,
+   "file": "met-436012.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-169585329",
+   "source": "commons",
+   "title": "On Lake Lucerne (c.1881), by Giuseppe De Nittis",
+   "creator": "Giuseppe De Nittis",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:On_Lake_Lucerne_(c.1881),_by_Giuseppe_De_Nittis.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/On_Lake_Lucerne_%28c.1881%29%2C_by_Giuseppe_De_Nittis.jpg/1920px-On_Lake_Lucerne_%28c.1881%29%2C_by_Giuseppe_De_Nittis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/On_Lake_Lucerne_%28c.1881%29%2C_by_Giuseppe_De_Nittis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1362,
+   "file": "wc-169585329.jpg",
+   "focus": [
+    0.42,
+    0.5
+   ],
+   "pin": true,
+   "note": "De Nittis, on Lake Lucerne under the awning"
+  },
+  {
+   "id": "wc-76361742",
+   "source": "commons",
+   "title": "Kitty Kielland - Efter Solnedgang - Stavanger kunstmuseum - SG.0242",
+   "creator": "Kitty Lange Kielland",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Kitty_Kielland_-_Efter_Solnedgang_-_Stavanger_kunstmuseum_-_SG.0242.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Kitty_Kielland_-_Efter_Solnedgang_-_Stavanger_kunstmuseum_-_SG.0242.jpg/1920px-Kitty_Kielland_-_Efter_Solnedgang_-_Stavanger_kunstmuseum_-_SG.0242.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Kitty_Kielland_-_Efter_Solnedgang_-_Stavanger_kunstmuseum_-_SG.0242.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1331,
+   "file": "wc-76361742.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Kielland, lake after sunset"
+  },
+  {
+   "id": "wc-81093879",
+   "source": "commons",
+   "title": "Kahnfahrt des Malers Franz Steinfeld über den Gosausee",
+   "creator": "Franz Eybl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Kahnfahrt_des_Malers_Franz_Steinfeld_%C3%BCber_den_Gosausee.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Kahnfahrt_des_Malers_Franz_Steinfeld_%C3%BCber_den_Gosausee.jpg/1920px-Kahnfahrt_des_Malers_Franz_Steinfeld_%C3%BCber_den_Gosausee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Kahnfahrt_des_Malers_Franz_Steinfeld_%C3%BCber_den_Gosausee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1800,
+   "h": 2400,
+   "file": "wc-81093879.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-135029326",
+   "source": "commons",
+   "title": "Philipp Franck, Segelboote und Ruderboote am sommerlichen Wannsee, um 1920",
+   "creator": "Romillo2019",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Philipp_Franck,_Segelboote_und_Ruderboote_am_sommerlichen_Wannsee,_um_1920.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Philipp_Franck%2C_Segelboote_und_Ruderboote_am_sommerlichen_Wannsee%2C_um_1920.jpg/1920px-Philipp_Franck%2C_Segelboote_und_Ruderboote_am_sommerlichen_Wannsee%2C_um_1920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Philipp_Franck%2C_Segelboote_und_Ruderboote_am_sommerlichen_Wannsee%2C_um_1920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1402,
+   "file": "wc-135029326.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97495861",
+   "source": "commons",
+   "title": "Fishing and Sailing Boats under a Broad Sky (SM 1112)",
+   "creator": "Salomon van Ruysdael",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Fishing_and_Sailing_Boats_under_a_Broad_Sky_(SM_1112).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Fishing_and_Sailing_Boats_under_a_Broad_Sky_%28SM_1112%29.png/1920px-Fishing_and_Sailing_Boats_under_a_Broad_Sky_%28SM_1112%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Fishing_and_Sailing_Boats_under_a_Broad_Sky_%28SM_1112%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1272,
+   "file": "wc-97495861.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-95654",
+   "source": "aic",
+   "title": "Near the Lake",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/95654",
+   "url": "https://www.artic.edu/iiif/2/26e1c560-acca-3148-46dc-c144ac22bd3e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1412,
+   "file": "aic-95654.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "met-11323",
+   "source": "met",
+   "title": "Summer Day on Conesus Lake",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11323",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap25.110.5.jpg",
+   "w": 2400,
+   "h": 1577,
+   "file": "met-11323.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-151938728",
+   "source": "commons",
+   "title": "On the River - French Impressionist Oil, Boat on River Landscape - Henri Duhem 1933",
+   "creator": "Henri Duhem (1860 - 1941, French)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:On_the_River_-_French_Impressionist_Oil,_Boat_on_River_Landscape_-_Henri_Duhem_1933.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/On_the_River_-_French_Impressionist_Oil%2C_Boat_on_River_Landscape_-_Henri_Duhem_1933.jpg/1920px-On_the_River_-_French_Impressionist_Oil%2C_Boat_on_River_Landscape_-_Henri_Duhem_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/On_the_River_-_French_Impressionist_Oil%2C_Boat_on_River_Landscape_-_Henri_Duhem_1933.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1359,
+   "file": "wc-151938728.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-151947444",
+   "source": "commons",
+   "title": "Sur le lac - Impressionist Oil, Boat on Lake in Landscape by Henri Duhem, 1911",
+   "creator": "Henri Duhem (1860 - 1941, French)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sur_le_lac_-_Impressionist_Oil,_Boat_on_Lake_in_Landscape_by_Henri_Duhem,_1911.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Sur_le_lac_-_Impressionist_Oil%2C_Boat_on_Lake_in_Landscape_by_Henri_Duhem%2C_1911.jpg/1920px-Sur_le_lac_-_Impressionist_Oil%2C_Boat_on_Lake_in_Landscape_by_Henri_Duhem%2C_1911.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sur_le_lac_-_Impressionist_Oil%2C_Boat_on_Lake_in_Landscape_by_Henri_Duhem%2C_1911.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1355,
+   "file": "wc-151947444.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-81535",
+   "source": "aic",
+   "title": "Sea View, Calm Weather (Vue de mer, temps calme)",
+   "creator": "Édouard Manet (French, 1832–1883)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81535",
+   "url": "https://www.artic.edu/iiif/2/8be90e71-83c3-3f98-a972-4acb9ce0e773/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1328,
+   "file": "aic-81535.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "met-436947",
+   "source": "met",
+   "title": "Boating",
+   "creator": "Edouard Manet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436947",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-25466-001.jpg",
+   "w": 2400,
+   "h": 1831,
+   "file": "met-436947.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "pin": true,
+   "note": "Manet, Boating"
+  },
+  {
+   "id": "met-437853",
+   "source": "met",
+   "title": "Venice, from the Porch of Madonna della Salute",
+   "creator": "Joseph Mallord William Turner",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437853",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP169568.jpg",
+   "w": 1959,
+   "h": 1461,
+   "file": "met-437853.jpg",
+   "focus": [
+    0.45,
+    0.6
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{"keep": [1, 3, 10, 15, 17, 22, 34, 40, 43],
+ "focus": {"1": [0.35, 0.4], "3": [0.45, 0.4], "10": [0.3, 0.55], "15": [0.5, 0.35], "17": [0.4, 0.35], "22": [0.6, 0.4], "34": [0.35, 0.4], "40": [0.4, 0.45], "43": [0.45, 0.45]},
+ "pin": [17, 43, 3],
+ "notes": {"17": "Richmond, Venus and Anchises among flowers", "43": "de Troy, The Declaration of Love", "3": "Cupid and Psyche embracing, winged"}}

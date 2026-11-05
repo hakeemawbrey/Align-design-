@@ -1,0 +1,222 @@
+{
+ "images": [
+  {
+   "id": "wc-23593590",
+   "source": "commons",
+   "title": "Janis Rozentāls - Mother and Child - Google Art Project",
+   "creator": "Janis Rozentāls (1866 - 1916) – Creator (Latvian) Details on Google Art Project",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Janis_Rozent%C4%81ls_-_Mother_and_Child_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Janis_Rozent%C4%81ls_-_Mother_and_Child_-_Google_Art_Project.jpg/1920px-Janis_Rozent%C4%81ls_-_Mother_and_Child_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Janis_Rozent%C4%81ls_-_Mother_and_Child_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1437,
+   "file": "wc-23593590.jpg",
+   "focus": [
+    0.3,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-29840755",
+   "source": "commons",
+   "title": "Christian Krohg - Mother and Child - Google Art Project",
+   "creator": "Christian Krohg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Christian_Krohg_-_Mother_and_Child_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Christian_Krohg_-_Mother_and_Child_-_Google_Art_Project.jpg/1920px-Christian_Krohg_-_Mother_and_Child_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Christian_Krohg_-_Mother_and_Child_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2104,
+   "file": "wc-29840755.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Krohg, Mother and Child, sleeping by the cradle"
+  },
+  {
+   "id": "aic-23972",
+   "source": "aic",
+   "title": "Virgin and Child with the Young Saint John the Baptist",
+   "creator": "Correggio (Antonio Allegri; Italian, 1489–1534)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/23972",
+   "url": "https://www.artic.edu/iiif/2/d63b9402-c42b-cce3-aa63-6d213ad621cd/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2165,
+   "file": "aic-23972.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-80530",
+   "source": "aic",
+   "title": "Virgin and Child with an Angel",
+   "creator": "Sandro Botticelli (Italian, 1444/45–1510)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/80530",
+   "url": "https://www.artic.edu/iiif/2/b59cc3e9-a7c0-5aa1-1a22-bb472bb2e6d4/full/1686,/0/default.jpg",
+   "w": 1652,
+   "h": 2400,
+   "file": "aic-80530.jpg",
+   "focus": [
+    0.55,
+    0.3
+   ]
+  },
+  {
+   "id": "aic-86780",
+   "source": "aic",
+   "title": "Mother and Child",
+   "creator": "Julius Gari Melchers (American, 1860–1932)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86780",
+   "url": "https://www.artic.edu/iiif/2/49f45b42-b565-199f-6ef5-f09dea142205/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1969,
+   "file": "aic-86780.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Melchers, Mother and Child"
+  },
+  {
+   "id": "met-435977",
+   "source": "met",
+   "title": "Mother and Child",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435977",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2008.jpg",
+   "w": 1680,
+   "h": 2400,
+   "file": "met-435977.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Corot, Mother and Child"
+  },
+  {
+   "id": "met-438954",
+   "source": "met",
+   "title": "Mother and Child by the Sea",
+   "creator": "Johan Christian Dahl",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438954",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-34304-001.jpg",
+   "w": 2400,
+   "h": 1858,
+   "file": "met-438954.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "pin": true,
+   "note": "Dahl, Mother and Child by the Sea, moonlight"
+  },
+  {
+   "id": "met-459095",
+   "source": "met",
+   "title": "Pines Along the Shore",
+   "creator": "Henri-Edmond Cross (Henri-Edmond Delacroix)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459095",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DP-34471-001.jpg",
+   "w": 2400,
+   "h": 2003,
+   "file": "met-459095.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-80499",
+   "source": "aic",
+   "title": "Dorothea and Francesca",
+   "creator": "Cecilia Beaux (American, 1855–1942)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/80499",
+   "url": "https://www.artic.edu/iiif/2/ed1b3063-8ce3-d4bc-50cb-b96f13f015e2/full/1686,/0/default.jpg",
+   "w": 1359,
+   "h": 2400,
+   "file": "aic-80499.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-150054",
+   "source": "aic",
+   "title": "Elizabeth Grant Bankson Beatty (Mrs. James Beatty) and Her Daughter Susan",
+   "creator": "Joshua Johnson (American, c. 1763–after 1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/150054",
+   "url": "https://www.artic.edu/iiif/2/83802ee1-1682-6de0-7276-37c4ab3fa879/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1933,
+   "file": "aic-150054.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "met-11981",
+   "source": "met",
+   "title": "The Toilers of the Sea",
+   "creator": "Albert Pinkham Ryder",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11981",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT228023.jpg",
+   "w": 2400,
+   "h": 2270,
+   "file": "met-11981.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "met-10480",
+   "source": "met",
+   "title": "The Aegean Sea",
+   "creator": "Frederic Edwin Church",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10480",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap02.23.jpg",
+   "w": 2400,
+   "h": 1523,
+   "file": "met-10480.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437914",
+   "source": "met",
+   "title": "Calm Sea",
+   "creator": "Simon de Vlieger",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437914",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP147592.jpg",
+   "w": 2400,
+   "h": 2050,
+   "file": "met-437914.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}
