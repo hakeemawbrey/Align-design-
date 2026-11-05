@@ -30,7 +30,7 @@ export function makeLong(cfg) {
       const nxt = g.lines[i + 1]
       const who = L.who === 'both' ? BOTH : L.who
       const p = POS[typeof L.who === 'string' ? L.who : 'both']
-      BUB.push({ t0: g.at + L.dt, t1: L.t1 != null ? g.at + L.t1 : (nxt ? g.at + nxt.dt - 0.15 : g.end - 0.25), who, x: L.x ?? p.x, y: L.y ?? p.y, tail: L.tail ?? p.tail, text: L.text, size: L.size || 44, maxW: L.maxW || 560, shake: L.shake || 0 })
+      BUB.push({ t0: g.at + L.dt, t1: L.t1 != null ? g.at + L.t1 : (nxt ? g.at + nxt.dt - 0.15 : (g.call ? g.at + g.len - 2.55 : g.end - 0.25)), who, x: L.x ?? p.x, y: L.y ?? p.y, tail: L.tail ?? p.tail, text: L.text, size: L.size || 44, maxW: L.maxW || 560, shake: L.shake || 0 })
     })
     if (g.call) BUB.push({ t0: g.at + g.len - 2.4, t1: g.end - 0.3, who: 'stars', ...POS.stars, text: g.call, size: 46, maxW: 640 })
   }
