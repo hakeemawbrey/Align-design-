@@ -42,7 +42,7 @@ def sprites():
         sheet.save(os.path.join(OUT, "sprites", f"{name}.jpg"), quality=78, optimize=True, progressive=True)
         kind = "sign" if name in signs else "mood"
         data.append({"pool": name, "label": LABELS.get(name, name), "kind": kind,
-                     "glyph": scripts.SIGNS[name]["glyph"] if kind == "sign" else "",
+                     "glyph": scripts.SIGNS[name]["glyph"] + "\ufe0e" if kind == "sign" else "",
                      "rows": rows, "items": [{"t": (it.get("title") or "")[:90], "c": (it.get("creator") or "")[:70],
                                               "l": it.get("license") or "", "u": it.get("landing") or "",
                                               "s": it.get("source", "")} for it, _ in tiles]})
@@ -82,7 +82,7 @@ def main():
     rl = reels(a.reels)
     tpl = open(os.path.join(HERE, "tools", "site.html")).read()
     blob = json.dumps({"catalog": cat, "reels": rl, "tw": TW, "th": TH, "cols": COLS,
-                       "signs": {k: {"name": v["name"], "glyph": v["glyph"]} for k, v in scripts.SIGNS.items()},
+                       "signs": {k: {"name": v["name"], "glyph": v["glyph"] + "\ufe0e"} for k, v in scripts.SIGNS.items()},
                        "scripts": len(scripts.all_ids())}, ensure_ascii=False).replace("</", "<\\/")
     open(os.path.join(OUT, "index.html"), "w").write(tpl.replace("/*DATA*/null", blob))
     n = sum(len(p["items"]) for p in cat)

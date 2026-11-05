@@ -55,8 +55,14 @@ def local_file(it):
         cand = os.path.join(HERE, "cache", it.get("pool", ""), "cand", it.get("file", "-"))
         if it.get("file") and os.path.exists(cand):
             os.link(cand, p)
-        elif not sources.download(it, p):
-            raise RuntimeError(f"could not download {it['id']} ({it.get('url')})")
+        else:
+            bad = os.path.join(d, "failed.txt")
+            failed = set(open(bad).read().split()) if os.path.exists(bad) else set()
+            if it["id"] in failed and not os.environ.get("RETRY"):
+                raise RuntimeError(f"{it['id']} failed before (RETRY=1 to try again)")
+            if not sources.download(it, p):
+                open(bad, "a").write(it["id"] + "\n")
+                raise RuntimeError(f"could not download {it['id']} ({it.get('url')})")
     return p
 
 
