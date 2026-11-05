@@ -1,0 +1,10 @@
+{
+  "id": "000-test", "series": "Scenarios", "title": "Scenario: 'wyd' at 1 AM",
+  "beats": [
+    { "eyebrow": "SCENARIO", "head": "They text *'wyd'* at 1 AM.", "vis": { "k": "phone", "name": "Gemini", "sign": "gemini", "time": "1:04 AM", "msgs": [["them", "wyd"]] } },
+    { "head": "What do you *do?*", "vis": { "k": "quiz", "options": ["A) 'nm u'", "B) Leave it on read", "C) 'Call me at a normal hour'"], "pick": 2, "mark": "✓", "stamp": "GREEN FLAG" } },
+    { "head": "Meanwhile, the *right* person:", "vis": { "k": "duo", "a": { "sign": "leo", "bubble": "Coffee Saturday?" }, "b": { "sign": "sagittarius" }, "link": "heart" } },
+    { "head": "Card *first.* | Face last.", "sub": "Let them know you *before* they see you.", "vis": { "k": "mystery", "sign": "scorpio", "name": "Juniper, 27", "lines": ["Sun ♏ Scorpio", "Moon ♓ Pisces", "Rising ♌ Leo"], "flip": true } },
+    { "head": "Send this to your *1 AM* texter.", "vis": { "k": "stamps", "items": ["✕ 'WYD' AFTER MIDNIGHT", "✕ ONE-WORD TEXTS", "✓ REAL PLANS"] } }
+  ]
+}
