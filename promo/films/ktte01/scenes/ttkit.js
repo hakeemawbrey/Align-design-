@@ -332,6 +332,7 @@ export function makeTT(cfg) {
   const heroIsPisces = signs.includes('pisces') && mode !== 'crowd'
   const showCam = cfg.cam ?? (!heroIsPisces && mode !== 'crowd')
   const FIN = cfg.fin ?? 1.9
+  const FINY = cfg.finY ?? 820
   const LOOP = cfg.ending === 'loop'
   const TAIL = 0.45
 
@@ -403,12 +404,12 @@ export function makeTT(cfg) {
         const p = prog(u, pa, pa + 0.12)
         k = 1 + 0.1 * Math.exp(-(u - pa) * 6) * (p > 0 ? 1 : 0); glow = clamp(1 - (u - pa) * 0.8) * 0.9; chk = easeOutBack(prog(u, pa + 0.02, pa + 0.3), 2.6)
         if (isLast && !LOOP) { glow = Math.max(glow, 0.5) }
-        if (!isLast) { const f = ease.inCubic(leaving); cy -= 1100 * f }
+        if (!isLast) { const f = ease.inCubic(leaving); cy += 1300 * f; rot += 0.6 * f }
       }
       if (isLast && decided && win && !r.buzz) {
         // the winner card glides to centre for the finale
         const f = ease.inOutCubic(prog(u, pa + 0.35, d))
-        cx = lerp(cx, 540, f); cy = lerp(cy, 820, f); rot = lerp(rot, -0.03, f); k *= lerp(1, 1.12, f)
+        cx = lerp(cx, 540, f); cy = lerp(cy, FINY, f); rot = lerp(rot, -0.03, f); k *= lerp(1, 1.12, f)
       }
       const checked = mode === 'solo' ? chk : 0
       drawCard(x, t, { cx, cy, rot, k, side, text: side === 'a' ? r.a : r.b, ic: side === 'a' ? r.ia : r.ib, glow, checked })
@@ -427,8 +428,8 @@ export function makeTT(cfg) {
         let cy = lerp(-400, CARD.cy + 150, ease.outBack ? ease.outBack(p) : easeOutBack(p, 1.4)), k = 1.02, glow = 0, chk = 0
         if (u >= pa && win) { glow = clamp(1 - (u - pa) * 0.8) * 0.9; chk = mode === 'solo' ? easeOutBack(prog(u, pa + 0.02, pa + 0.3), 2.6) : 0 }
         let cx = 540, rot = 0.03 * Math.sin(v * 6)
-        if (isLast && win) { const f = ease.inOutCubic(prog(u, pa + 0.35, d)); cy = lerp(cy, 820, f); k *= lerp(1, 1.1, f) }
-        else if (!isLast) { cy -= 1100 * ease.inCubic(leaving) }
+        if (isLast && win) { const f = ease.inOutCubic(prog(u, pa + 0.35, d)); cy = lerp(cy, FINY, f); k *= lerp(1, 1.1, f) }
+        else if (!isLast) { cy += 1300 * ease.inCubic(leaving) }
         drawCard(x, t, { cx, cy, rot, k, side: 'c', text: r.c.text, ic: r.c.ic, glow, checked: chk, tag: r.c.tag })
       }
     }
@@ -504,7 +505,7 @@ export function makeTT(cfg) {
           // keep the winner card in place
           const wSide = mode === 'solo' ? LASTR.pick : (cfg.finSide || 'c')
           const wText = wSide === 'a' ? LASTR.a : wSide === 'b' ? LASTR.b : LASTR.c && LASTR.c.text
-          if (wText && !cfg.noFinCard) drawCard(x, t, { cx: 540, cy: 820 + 6 * Math.sin(t * 3), rot: -0.03, k: 1.12 * (mode === 'solo' ? 1 : 1), side: wSide, text: wText, ic: wSide === 'a' ? LASTR.ia : wSide === 'b' ? LASTR.ib : LASTR.c && LASTR.c.ic, glow: 0.45 + 0.1 * Math.sin(t * 6), checked: mode === 'solo' ? 1 : 0, tag: wSide === 'c' ? LASTR.c.tag : null })
+          if (wText && !cfg.noFinCard) drawCard(x, t, { cx: 540, cy: FINY + 6 * Math.sin(t * 3), rot: -0.03, k: 1.12 * (mode === 'solo' ? 1 : 1), side: wSide, text: wText, ic: wSide === 'a' ? LASTR.ia : wSide === 'b' ? LASTR.ib : LASTR.c && LASTR.c.ic, glow: 0.45 + 0.1 * Math.sin(t * 6), checked: mode === 'solo' ? 1 : 0, tag: wSide === 'c' ? LASTR.c.tag : null })
           if (cfg.finale) cfg.finale(x, t, { ...S, u: t - E })
           sparkles(x, t, 540, 800, E + 0.05, 12, 330, 1)
         }
@@ -525,7 +526,7 @@ export function makeTT(cfg) {
         })
         if (cfg.mid) cfg.mid(x, t, { ...S, v, r })
         // Pisces' tissue cam
-        if (showCam && (cfg.camUntil == null || v < cfg.camUntil)) {
+        if (showCam && (cfg.camUntil == null || v < (typeof cfg.camUntil === 'function' ? cfg.camUntil(T) : cfg.camUntil))) {
           const camTears = typeof cfg.camTears === 'function' ? cfg.camTears(t, v) : v >= E - 0.6 ? 3 : r && r.i === rounds.length - 1 ? 2 : 1
           drawTissueCam(x, t, { tears: camTears, mood: v >= E - 0.6 ? 'sparkle' : 'wide', cam: cfg.camAt || CAM, look: [-1, -0.6], extra: cfg.camExtra ? (cx, tt) => cfg.camExtra(cx, tt, v) : null })
         }
@@ -582,10 +583,11 @@ export function makeTT(cfg) {
   if (B.kind === 'glitch') { const W = { at: B.t, len: 0.5, dialog: false }; FX.push(glitch(W)); FXC.push(...glitchCues(W)) }
   for (const f of FREEZES) {
     const rr = rounds.find(r => r.freeze && Math.abs(r.t0 + r.freeze[0] - f.v) < 1e-6)
-    const W = { at: r3(realOf(f.v - 1e-6)), len: f.len, caption: (rr && rr.freezeCap) || (cfg.brk && cfg.brk.cap) || 'wait.', top: cfg.capTop ?? 370 }
+    const W = { at: r3(realOf(f.v - 1e-6)), len: f.len, caption: (rr && rr.freezeCap) || (cfg.brk && cfg.brk.cap) || 'wait.', top: rr ? (rr.capTop ?? 370) : (cfg.capTop ?? 1580) }
     FX.push(recordScratch(W)); FXC.push(...recordScratchCues(W))
   }
   CUES.push(...FXC)
+  if (cfg.fx) { const ex = cfg.fx(T); FX.push(...ex.scenes); CUES.push(...ex.cues) }
   const SCENES = [build, ...FX, slamTitle(HOOK)]
   if (LOOP) { SCENES.push(loopBack([build, slamTitle(HOOK)], { duration: DURATION, len: 0.4 })); CUES.push(...loopCues({ duration: DURATION, len: 0.4 })) }
   return { DURATION, SCENES, CUES, T, LOOP }
