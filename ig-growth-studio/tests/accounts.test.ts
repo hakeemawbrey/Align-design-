@@ -76,7 +76,7 @@ describe("migration from the single-account database", () => {
     old.close();
 
     const db = await openDb(`file:${file}`);
-    expect(await schemaVersion(db)).toBe(2);
+    expect(await schemaVersion(db)).toBe(3);
     expect((await listAccounts(db)).map((a) => a.username).sort()).toEqual(["bev", "comealign"]);
     expect((await getAccount(db))!.username).toBe("comealign");
     expect((await getAccount(db, "bev"))!.pageName).toBe("Bevbabes");

@@ -192,6 +192,27 @@ async function migrateToMultiAccount(db: DB): Promise<InStatement[]> {
 const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
   migrateToMultiAccount,
   async () => ["ALTER TABLE posts ADD COLUMN cover_offset_ms INTEGER"],
+  // v3: hourly view counts per published video, so the dashboard can show how each one grows.
+  async () => [
+    `CREATE TABLE media_info (
+      media_id TEXT PRIMARY KEY,
+      ig_user_id TEXT NOT NULL,
+      posted_at TEXT NOT NULL,
+      kind TEXT,
+      permalink TEXT,
+      thumbnail_url TEXT,
+      caption TEXT
+    )`,
+    `CREATE TABLE media_snapshots (
+      media_id TEXT NOT NULL,
+      at TEXT NOT NULL,
+      views INTEGER NOT NULL,
+      reach INTEGER,
+      interactions INTEGER,
+      PRIMARY KEY (media_id, at)
+    )`,
+    "CREATE INDEX media_info_account ON media_info (ig_user_id, posted_at)",
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -495,6 +516,106 @@ export async function listSnapshots(db: DB, igUserId: string, limit = 90): Promi
 
 export async function hasSnapshot(db: DB, igUserId: string, day: string): Promise<boolean> {
   return (await one(db, "SELECT 1 AS x FROM follower_snapshots WHERE ig_user_id = ? AND day = ?", [igUserId, day])) !== undefined;
+}
+
+// ---- video view history ----
+
+export interface MediaSnapshotInput {
+  mediaId: string;
+  igUserId: string;
+  postedAt: string;
+  kind: string | null;
+  permalink: string | null;
+  thumbnailUrl: string | null;
+  caption: string | null;
+  views: number;
+  reach: number | null;
+  interactions: number | null;
+}
+
+/** Saves the latest details and one view count per video, all stamped with the same time. */
+export async function saveMediaSnapshots(db: DB, at: Date, rows: MediaSnapshotInput[]) {
+  if (!rows.length) return;
+  const stamp = at.toISOString();
+  await db.batch(
+    rows.flatMap((r) => [
+      {
+        sql: `INSERT INTO media_info (media_id, ig_user_id, posted_at, kind, permalink, thumbnail_url, caption) VALUES (?, ?, ?, ?, ?, ?, ?)
+              ON CONFLICT(media_id) DO UPDATE SET kind = excluded.kind, permalink = excluded.permalink,
+                thumbnail_url = excluded.thumbnail_url, caption = excluded.caption`,
+        args: [r.mediaId, r.igUserId, r.postedAt, r.kind, r.permalink, r.thumbnailUrl, r.caption],
+      },
+      {
+        sql: "INSERT OR REPLACE INTO media_snapshots (media_id, at, views, reach, interactions) VALUES (?, ?, ?, ?, ?)",
+        args: [r.mediaId, stamp, r.views, r.reach, r.interactions],
+      },
+    ]),
+    "write",
+  );
+}
+
+export interface TopVideo {
+  mediaId: string;
+  igUserId: string;
+  postedAt: string;
+  kind: string | null;
+  permalink: string | null;
+  thumbnailUrl: string | null;
+  caption: string | null;
+  views: number;
+  reach: number | null;
+  interactions: number | null;
+  /** Every saved count, oldest first. */
+  history: { at: string; views: number }[];
+}
+
+/** Videos posted since `since`, ranked by their latest view count. */
+export async function topVideos(db: DB, opts: { since: Date; igUserId?: string; limit?: number }): Promise<TopVideo[]> {
+  const args: Arg[] = [opts.since.toISOString()];
+  let where = "i.posted_at >= ?";
+  if (opts.igUserId) {
+    where += " AND i.ig_user_id = ?";
+    args.push(opts.igUserId);
+  }
+  args.push(opts.limit ?? 10);
+  const top = await all<{
+    media_id: string;
+    ig_user_id: string;
+    posted_at: string;
+    kind: string | null;
+    permalink: string | null;
+    thumbnail_url: string | null;
+    caption: string | null;
+    views: number;
+    reach: number | null;
+    interactions: number | null;
+  }>(
+    db,
+    `SELECT i.*, s.views, s.reach, s.interactions FROM media_info i
+     JOIN media_snapshots s ON s.media_id = i.media_id
+       AND s.at = (SELECT MAX(at) FROM media_snapshots WHERE media_id = i.media_id)
+     WHERE ${where} ORDER BY s.views DESC LIMIT ?`,
+    args,
+  );
+  if (!top.length) return [];
+  const history = await all<{ media_id: string; at: string; views: number }>(
+    db,
+    `SELECT media_id, at, views FROM media_snapshots WHERE media_id IN (${top.map(() => "?").join(",")}) ORDER BY at`,
+    top.map((t) => t.media_id),
+  );
+  return top.map((t) => ({
+    mediaId: t.media_id,
+    igUserId: t.ig_user_id,
+    postedAt: t.posted_at,
+    kind: t.kind,
+    permalink: t.permalink,
+    thumbnailUrl: t.thumbnail_url,
+    caption: t.caption,
+    views: Number(t.views),
+    reach: t.reach,
+    interactions: t.interactions,
+    history: history.filter((h) => h.media_id === t.media_id).map((h) => ({ at: h.at, views: Number(h.views) })),
+  }));
 }
 
 // ---- likes ----

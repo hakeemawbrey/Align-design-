@@ -213,7 +213,7 @@ export function LineChart({ labels, series, unit = "count", height = 200, label 
           let d = "";
           let pen = false;
           s.values.forEach((v, i) => {
-            if (v === null) return void (pen = false);
+            if (v === null) return; // gaps are bridged: counts are saved at irregular hours
             d += `${pen ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`;
             pen = true;
           });

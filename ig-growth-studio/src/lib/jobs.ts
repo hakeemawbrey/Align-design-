@@ -1,4 +1,4 @@
-import { type DB, hasSnapshot, listAccounts, saveSnapshot, setSetting } from "./db";
+import { type Account, type DB, getSetting, hasSnapshot, listAccounts, saveMediaSnapshots, saveSnapshot, setSetting } from "./db";
 import { GraphClient } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
 
@@ -10,7 +10,7 @@ export async function runScheduledWork(
   db: DB,
   now = new Date(),
   source = "worker",
-): Promise<RunResult & { snapshots: string[] }> {
+): Promise<RunResult & { snapshots: string[]; videos?: number }> {
   // Shown on Settings, so it is easy to see that the scheduler is alive.
   await setSetting(db, "last_run", JSON.stringify({ at: now.toISOString(), source }));
   const result = await publishDuePosts(db, { now });
@@ -28,5 +28,57 @@ export async function runScheduledWork(
       console.error(`snapshot @${account.username}:`, err instanceof Error ? err.message : err);
     }
   }
-  return { ...result, snapshots };
+  const videos = await snapshotVideosIfDue(db, now);
+  return { ...result, snapshots, ...(videos ? { videos } : {}) };
+}
+
+const VIDEO_SNAPSHOT_EVERY_MS = 60 * 60_000;
+/** Videos younger than this keep getting hourly counts. */
+const VIDEO_TRACK_DAYS = 7;
+
+/** Once an hour: the view count of each account's recent videos, for the "Top videos" progress charts. */
+export async function snapshotVideosIfDue(db: DB, now = new Date()): Promise<number | null> {
+  const last = await getSetting(db, "video_snapshot_at");
+  if (last && now.getTime() - new Date(last).getTime() < VIDEO_SNAPSHOT_EVERY_MS - 30_000) return null;
+  await setSetting(db, "video_snapshot_at", now.toISOString());
+  let saved = 0;
+  for (const account of await listAccounts(db)) {
+    try {
+      saved += await snapshotAccountVideos(db, account, now);
+    } catch (err) {
+      console.error(`video snapshot @${account.username}:`, err instanceof Error ? err.message : err);
+    }
+  }
+  return saved;
+}
+
+export async function snapshotAccountVideos(db: DB, account: Account, now: Date, client = new GraphClient({ token: account.token })) {
+  const cutoff = now.getTime() - VIDEO_TRACK_DAYS * 86_400_000;
+  // Up to ~30 posts a day go out, so look far enough back to cover the newest ones.
+  const media = (await client.recentMedia(account.igUserId, 50)).data.filter(
+    (m) => m.media_type === "VIDEO" && new Date(m.timestamp).getTime() >= cutoff,
+  );
+  const results = await Promise.all(
+    media.map((m) =>
+      client.mediaInsights(m.id, ["views", "reach", "total_interactions"]).then(
+        (v) => ({
+          mediaId: m.id,
+          igUserId: account.igUserId,
+          postedAt: new Date(m.timestamp).toISOString(),
+          kind: m.media_product_type ?? m.media_type,
+          permalink: m.permalink ?? null,
+          thumbnailUrl: m.thumbnail_url ?? null,
+          caption: m.caption ?? null,
+          views: v.views ?? 0,
+          reach: v.reach ?? null,
+          interactions: v.total_interactions ?? null,
+        }),
+        // A video still processing has no insights yet; it is picked up next hour.
+        () => null,
+      ),
+    ),
+  );
+  const rows = results.filter((r) => r !== null);
+  await saveMediaSnapshots(db, now, rows);
+  return rows.length;
 }

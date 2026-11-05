@@ -4,7 +4,8 @@ import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { LocalTime } from "@/components/LocalTime";
 import { BarList, ColumnChart, LineChart, SegmentedBar } from "@/components/Charts";
 import { Sparkline } from "@/components/Sparkline";
-import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot } from "@/lib/db";
+import { TopVideos } from "@/components/TopVideos";
+import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos } from "@/lib/db";
 import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
 import { GraphClient } from "@/lib/graph";
 import { type PostStats, type Profile, accountStats } from "@/lib/insights";
@@ -268,6 +269,9 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
         {snapshots.length === 1 && <p className="muted small">The line starts tomorrow, after the second daily snapshot.</p>}
       </div>
 
+      <h2>Top videos, last 7 days</h2>
+      <TopVideos videos={await topVideos(db, { igUserId: account.igUserId, since: new Date(Date.now() - 7 * 86_400_000) })} />
+
       <AccountCharts account={account} posts={posts} colorIndex={colorIndex} />
 
       <h2>Recent posts</h2>
@@ -365,8 +369,13 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
   const scheduled = posts.filter((p) => p.status === "scheduled");
   const count = (f: (p: PostRow) => boolean, list = posts) => list.filter(f).length;
 
+  const top = await topVideos(await getDb(), { since: new Date(now.getTime() - 7 * 86_400_000) });
+
   return (
     <>
+      <h2>Top videos, last 7 days</h2>
+      <TopVideos videos={top} usernames={new Map(accounts.map((a) => [a.igUserId, a.username]))} />
+
       <h2>Followers</h2>
       <div className="chart-grid">
         {rows.map((r) => (
