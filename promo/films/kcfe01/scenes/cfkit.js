@@ -416,14 +416,14 @@ export function drawTalkCard(x, cx, cy, w, text, { rot = 0, alpha = 1, k = 1 } =
   x.fillStyle = INK; rr(x, -w / 2 - 6, -h / 2 - 6, w + 12, h + 12, 26); x.fill()
   x.fillStyle = '#2a1c55'; rr(x, -w / 2, -h / 2, w, h, 22); x.fill()
   x.strokeStyle = GOLD; x.lineWidth = 6; rr(x, -w / 2 + 16, -h / 2 + 16, w - 32, h - 32, 14); x.stroke()
-  drawPixelStar(x, 0, -h / 2 + 70, 34, 2, GOLD)
+  drawPixelStar(x, 0, -h * 0.34, Math.max(16, w * 0.1), 2, GOLD)
   x.font = `800 ${Math.round(w * 0.065)}px ${INTER}`; x.fillStyle = GOLD; x.textAlign = 'center'; x.textBaseline = 'middle'
-  x.fillText('TALK CARD', 0, -h / 2 + 124)
+  x.fillText('TALK CARD', 0, -h * 0.22)
   x.font = `italic 600 ${Math.round(w * 0.13)}px ${SERIF}`; x.fillStyle = BONE
   const words = text.split(' '), rows = []; let cur = ''
   for (const wd of words) { const tryS = cur ? cur + ' ' + wd : wd; if (x.measureText(tryS).width > w - 70 && cur) { rows.push(cur); cur = wd } else cur = tryS }
   rows.push(cur)
-  rows.forEach((r, i) => x.fillText(r, 0, (i - (rows.length - 1) / 2) * w * 0.15 + 20))
+  rows.forEach((r, i) => x.fillText(r, 0, (i - (rows.length - 1) / 2) * w * 0.15 + h * 0.1))
   x.restore()
 }
 
