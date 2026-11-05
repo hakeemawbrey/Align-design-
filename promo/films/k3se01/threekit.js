@@ -263,7 +263,7 @@ export function star(x, t, id, o = {}) {
 }
 
 // ── the bug: "3-SECOND ADVICE" in Inter 800 small caps, letter-spaced, top-left, with a tiny timer dial
-function buildBug(root) {
+export function buildBug(root) {
   const b = el('div', { position: 'absolute', left: '56px', top: '56px', height: '44px', display: 'flex', alignItems: 'center', gap: '14px', pointerEvents: 'none' }, root)
   el('div', { width: '22px', height: '22px', borderRadius: '50%', background: BUG_COL, boxShadow: `0 0 0 4px ${INK}, 0 0 16px rgba(255,211,77,0.7)` }, b)
   el('div', { font: `800 28px ${INTER}`, letterSpacing: '0.2em', color: BUG_COL, textShadow: '0 2px 12px rgba(6,4,18,0.9)', whiteSpace: 'nowrap', fontVariant: 'small-caps' }, b, '3-SECOND<span style="color:rgba(255,255,255,0.65)">&nbsp;ADVICE</span>')
