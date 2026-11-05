@@ -58,5 +58,55 @@
   "series": "normal",
   "episode": 6,
   "caption": "The whole bed, the whole pizza, the whole evening, and you love it. Nothing's wrong with that.\nLiking your own company is a skill. A full life isn't a waiting room."
+ },
+ "kine07": {
+  "video": "/_blob/809a9e259dbc4c4ff5fa8c7009d0543e",
+  "poster": "/_blob/b7773c61d1bc0a2d599a7cce405af3dc",
+  "title": "The ick, over a tiny thing",
+  "len": 19,
+  "long": false,
+  "series": "normal",
+  "episode": 7,
+  "caption": "One tiny thing and suddenly you can't. Sound familiar?\nSometimes the ick is a real no. Sometimes it's nerves looking for an exit. Ask yourself which one it is before you decide."
+ },
+ "kine08": {
+  "video": "/_blob/7460301984a3b0508bf97e190146997d",
+  "poster": "/_blob/d670addc504e86fd0a3d0168207f4759",
+  "title": "One great date, one whole day alone",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 8,
+  "caption": "Great date, and now you need a quiet day to recover. That's how some people refuel.\nTell them honestly: \"I had fun, I'm a slow recharger.\" The right person gets it."
+ },
+ "kine09": {
+  "video": "/_blob/afd498318982559d66bed4501ac2e437",
+  "poster": "/_blob/9c961f78d3c42d1f75b5ee32b8375e64",
+  "title": "Still thinking about a crush from years ago",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 9,
+  "caption": "Years later and they still cross your mind? Very normal.\nOften it's less about them and more about who you were back then. Keep the memory, and go make new ones."
+ },
+ "kine10": {
+  "video": "/_blob/038030e213e4075da77eecb471abf846",
+  "poster": "/_blob/396e84a450b1ee5d79f0f1606720cadf",
+  "title": "My ex moved on first",
+  "len": 19,
+  "long": false,
+  "series": "normal",
+  "episode": 10,
+  "caption": "Your ex is happy with someone new and it stings, even if you don't want them back.\nMute, don't compare, and do one kind thing for yourself today. Their timeline isn't your scoreboard."
+ },
+ "kine11": {
+  "video": "/_blob/c1c0b77c55b69a55fd7de2bd4b41f2de",
+  "poster": "/_blob/325bf81fd3d03c0c824a6df3fa9c3307",
+  "title": "Scared to say it first",
+  "len": 18,
+  "long": false,
+  "series": "normal",
+  "episode": 11,
+  "caption": "Scared to say \"I love you\" first? That fear just means it matters.\nSay it with no deadline on theirs. Going first is brave, not needy."
  }
 }
