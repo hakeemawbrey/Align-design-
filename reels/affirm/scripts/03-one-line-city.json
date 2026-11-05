@@ -1,0 +1,20 @@
+{
+  "id": "03-one-line-city",
+  "extends": "03-one-line",
+  "cta": "comment your city to vote where align opens next ✦",
+  "end": [
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": { "voteAt": 2 },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 2,
+      "lines": [
+        "Want people who move *toward* you?",
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

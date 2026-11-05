@@ -89,6 +89,23 @@ re-synthesise it.
 - `voice`: any Kokoro voice (`af_heart`, `af_bella`, `bf_emma`, `am_michael` …).
 - Aim for 90–100 words: about 37 seconds.
 
+### Variants: same reel, different ending
+
+A variant names its base reel and brings its own last scene, so you can test
+endings without copying the script:
+
+```json
+{
+  "id": "02-just-passing-beta",
+  "extends": "02-just-passing",
+  "cta": "the align beta is open ✦ link in bio",
+  "end": [{ "art": "card", "opts": { "face": "Align", "sub": "THE BETA IS OPEN" }, "pill": "JOIN THE BETA · LINK IN BIO", "lines": ["…"] }]
+}
+```
+
+`end` replaces the base's last scene. `cta` replaces the comment line in the
+post caption. Anything else (`caption`, `hashtags`, `voice`) overrides the base.
+
 ### Arts
 
 | art | what | opts |
@@ -101,6 +118,7 @@ re-synthesise it.
 | `eclipse` | a total solar eclipse: the moon slides over, the corona flares | anchors `moon` `sun` |
 | `syzygy` | sun, moon and earth on one line, side on | `offline` (moon out of line), `alignAt` · anchors `moon` `line` |
 | `venus` | the Venus glyph, halftone rose | `mirror`, `mirrorAt` · anchors `glass` `handle` |
+| `cities` | a constellation of cities around a "YOUR CITY?" star, pinging like votes coming in | `cities` (names), `voteAt` |
 | `mark` | Stardust's star head in orbit (profile picture) | `r` |
 
 ## Voice and astrology rules

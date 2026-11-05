@@ -1,0 +1,20 @@
+{
+  "id": "04-venus-align",
+  "extends": "04-venus",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "end": [
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": { "face": "Align", "sub": "VENUS RUNS YOUR HEART", "glyph": "♀", "revealAt": 1 },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

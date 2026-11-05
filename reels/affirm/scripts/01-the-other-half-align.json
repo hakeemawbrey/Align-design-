@@ -1,0 +1,21 @@
+{
+  "id": "01-the-other-half-align",
+  "extends": "01-the-other-half",
+  "caption": "the other half of your sky is already facing you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "end": [
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": { "face": "Align", "sub": "READ THE SKY BEFORE THE FACE", "revealAt": 1 },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

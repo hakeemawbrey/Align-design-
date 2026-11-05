@@ -1,0 +1,20 @@
+{
+  "id": "02-just-passing-beta",
+  "extends": "02-just-passing",
+  "cta": "the align beta is open ✦ link in bio",
+  "end": [
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": { "face": "Align", "sub": "THE BETA IS OPEN", "revealAt": 1 },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Ready for someone moving *toward* you?",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

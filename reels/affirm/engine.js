@@ -687,6 +687,53 @@ ARTS.mark = (s, o) => {
   for (const [x, y, z] of [[CX - R * 1.25, cy - R * 0.95, 70], [CX + R * 1.15, cy - R * 1.05, 46], [CX - R * 0.95, cy + R * 1.1, 40]]) s.glyph('✦', x, y, z, { color: COL.ink, glow: true })
 }
 
+// Where should Align open next: a constellation of cities around your own.
+ARTS.cities = (s, o, n) => {
+  const S = (i) => Math.min(i, n - 1)
+  const cities = o.cities ?? ['NEW YORK', 'LOS ANGELES', 'ATLANTA', 'CHICAGO', 'HOUSTON', 'MIAMI', 'DALLAS', 'LONDON']
+  const cy = CY - 10
+  const r = s.r
+  const pts = cities.map((name, i) => {
+    const a = -Math.PI / 2 + (i + 0.5) * (TAU / cities.length) + (r() - 0.5) * 0.25
+    const rr = 300 + (i % 2) * 70 + r() * 30
+    return { name, x: CX + rr * Math.cos(a) * 1.02, y: cy + rr * Math.sin(a) * 1.05 }
+  })
+  // you, in the middle: Stardust's star
+  const R = 92
+  const star = chaikin(starPoly(CX, cy, R, R * 0.5, -Math.PI / 2 + 0.08), 2)
+  s.at(0)
+  s.dots(halftone((x, y) => inPoly(x, y, star), [CX - R, cy - R, CX + R, cy + R], 9,
+    (x, y) => 0.35 + 0.65 * clamp(1 - Math.hypot(x - CX + R * 0.3, y - cy + R * 0.3) / (R * 1.5)), (x, y) => Math.hypot(x - CX, y - cy) / R), { color: COL.gold, dur: 0.8 })
+  s.stroke([...star, star[0]], { w: 3 })
+  s.text('YOUR CITY?', CX, cy + R + 44, { font: '700 24px "Space Mono"', color: COL.gold, spacing: 6 })
+  // each city: a dotted thread to you, a star, its name
+  for (const p of pts) {
+    const k = R + 30, d = Math.hypot(p.x - CX, p.y - cy)
+    s.stroke([[CX + ((p.x - CX) / d) * k, cy + ((p.y - cy) / d) * k], [p.x - ((p.x - CX) / d) * 26, p.y - ((p.y - cy) / d) * 26]], { color: COL.gold, second: null, w: 1.6, dash: [2, 9], alpha: 0.75, step: 0.12 })
+    s.glyph('✦', p.x, p.y, 36, { color: COL.ink, glow: true, step: 0.05 })
+    s.text(p.name, p.x, p.y + 42, { font: '400 20px "Space Mono"', color: rgba(COL.ink, 0.85), spacing: 4, dur: 0.4, step: 0.05 })
+  }
+  // votes coming in: each city pings in turn once the vote is asked for
+  s.at(S(o.voteAt ?? 2))
+  s.fn((g, k, t) => {
+    pts.forEach((p, i) => {
+      const f = ((t * 0.5 + i * 0.37) % 1.6) / 1.6
+      if (f > 1) return
+      g.strokeStyle = rgba([COL.rose, COL.mint, COL.lilac2, COL.gold][i % 4], (1 - f) * 0.9 * k)
+      g.lineWidth = 2
+      g.beginPath()
+      g.arc(p.x, p.y, 20 + f * 60, 0, TAU)
+      g.stroke()
+    })
+    const f = (t * 0.6) % 1
+    g.strokeStyle = rgba(COL.gold, (1 - f) * 0.8 * k)
+    g.lineWidth = 2.5
+    g.beginPath()
+    g.arc(CX, cy, R + 20 + f * 90, 0, TAU)
+    g.stroke()
+  }, { dur: 0.5 })
+}
+
 ARTS.loop = (s, o, n) => {
   const S = (i) => Math.min(i, n - 1)
   // the apparent path of a planet against the stars: forward, back, forward

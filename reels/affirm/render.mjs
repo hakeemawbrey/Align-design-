@@ -159,8 +159,18 @@ function mixAudio(script, tl, wav) {
   execFileSync('ffmpeg', ['-v', 'error', '-y', ...ins, '-filter_complex', filter, '-map', '[out]', '-ac', '2', wav])
 }
 
+// A variant names its base reel and brings its own ending: the base's last
+// scene is swapped for the variant's `end` scenes.
+function loadScript(file) {
+  const s = JSON.parse(readFileSync(path.join(HERE, 'scripts', file), 'utf8'))
+  if (!s.extends) return s
+  const base = loadScript(`${s.extends}.json`)
+  const { end, extends: _, ...own } = s
+  return { ...base, ...own, scenes: [...base.scenes.slice(0, -1), ...end] }
+}
+
 async function renderOne(browser, file) {
-  const script = JSON.parse(readFileSync(path.join(HERE, 'scripts', file), 'utf8'))
+  const script = loadScript(file)
   const voice = speak(script)
   const tl = timeline(script, voice)
   const page = await openEngine(browser, script, tl)
@@ -214,7 +224,7 @@ async function renderOne(browser, file) {
     '-crf', '24', '-maxrate', '2.5M', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
     '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
   // what to paste when posting
-  writeFileSync(path.join(outDir, `${script.id}.caption.txt`), `${script.caption}\n\ncomment ${script.keyword} and i'll send it to you ✦\nyour full chart is free on align, link in bio\n\n${script.hashtags.map((h) => `#${h}`).join(' ')}\n`)
+  writeFileSync(path.join(outDir, `${script.id}.caption.txt`), `${script.caption}\n\n${script.cta ?? `comment ${script.keyword} and i'll send it to you ✦\nyour full chart is free on align, link in bio`}\n\n${script.hashtags.map((h) => `#${h}`).join(' ')}\n`)
   await page.close()
   console.log(`${script.id}: ${tl.duration.toFixed(1)}s, ${frames} frames in ${((Date.now() - t0) / 1000).toFixed(0)}s → ${path.relative(REPO, mp4)}`)
 }
