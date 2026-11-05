@@ -403,7 +403,7 @@ export function makeFilm(F) {
   const BASE = F.base || {}
   /** screen time (already held by the kit's frozen()) → world time (rewinds scrub back) */
   function worldAt(t) {
-    if (REW && t >= REW.at && t < REW.at + REW.dur) return lerp(REW.at, REW.to, ease.inOutSine(prog(t, REW.at, REW.at + REW.dur)))
+    if (REW && t >= REW.at && t < REW.at + REW.dur) return lerp(REW.at, REW.to, ease.inOutCubic(prog(t, REW.at, REW.at + REW.dur)))
     return t
   }
   const roomAt = w => { if (typeof F.room === 'string') return F.room; let r = F.room[0][1]; for (const [t, rr] of F.room) if (w >= t) r = rr; return r }
