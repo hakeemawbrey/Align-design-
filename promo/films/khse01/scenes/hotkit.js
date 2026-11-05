@@ -82,12 +82,13 @@ export function hearts(x, t, t0, cx, cy, { n = 5, cell = 6, spread = 120, life =
   }
 }
 /** a pixel speech bubble. k = scale (0…1). tail: -1…1 along the bottom edge */
-export function bubbleK(x, cx, cy, k, text, { col = BONE, ink = INK, size = 44, tail = 0, font = INTER, weight = 800, maxW = 940 } = {}) {
+export function bubbleK(x, cx, cy, k, text, { col = BONE, ink = INK, size = 44, tail = 0, font = INTER, weight = 800, maxW = 940, fitText = null } = {}) {
   if (k <= 0.01 || !text) return
   x.save(); x.translate(cx, cy); x.scale(k, k)
   x.font = `${weight} ${size}px ${font}`
-  let fs = size, tw = x.measureText(text).width
-  if (tw + 44 > maxW) { fs = size * (maxW - 44) / tw; x.font = `${weight} ${fs}px ${font}`; tw = x.measureText(text).width }
+  let fs = size, tw = x.measureText(fitText || text).width
+  if (tw + 44 > maxW) { fs = size * (maxW - 44) / tw; x.font = `${weight} ${fs}px ${font}` }
+  tw = x.measureText(text).width
   const w = tw + 48, h = fs + 34
   x.fillStyle = INK; x.fillRect(-w / 2 - 6, -h / 2, w + 12, h); x.fillRect(-w / 2, -h / 2 - 6, w, h + 12)
   x.fillStyle = col; x.fillRect(-w / 2, -h / 2, w, h)
@@ -457,14 +458,14 @@ export function makeHotSeat(cfg) {
         if (q.draw) q.draw(x, t, { ...S, u: t - T.qs[i], t0: T.qs[i], t1: b, P })
         if (t < a || t >= b) return
         const k = pop01(t, a, 0.22, 2.6) * outK(t, [b - 0.12, b])
-        bubbleK(x, 540 + (q.bx || 0), 760, k, q.a, { size: q.size || 50, tail: q.tail ?? 0 })
+        bubbleK(x, 540 + (q.bx || 0), 760, k, q.a, { size: q.size || 50, tail: q.tail ?? 0, maxW: 740 })
       })
       // the final answer: typed slowly with a leading "…"
       if (cfg.final.draw) cfg.final.draw(x, t, { ...S, u: t - T.fq, t0: T.fq, P })
       if (t >= T.fa && t < T.lastAt + 0.25 && cfg.final.a) {
         const n = Math.max(1, Math.floor((t - T.fa) * 26)), txt = [...cfg.final.a].slice(0, n).join('')
         const k = pop01(t, T.fa - 0.05, 0.25, 2) * outK(t, [T.lastAt, T.lastAt + 0.25])
-        bubbleK(x, 540, 760, k, txt, { size: cfg.final.size || 50, col: '#fff3d6' })
+        bubbleK(x, 540, 760, k, txt, { size: cfg.final.size || 50, col: '#fff3d6', maxW: 740, fitText: cfg.final.a })
       }
       x.restore()
       // the booth (not zoomed, so it stays put)
