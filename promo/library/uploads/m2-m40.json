@@ -29,6 +29,26 @@
   "episode": 3,
   "caption": "Two couples, one booth, and Capricorn holding the map.\nTurns out the fifth seat planned the best night of everyone's year. Who's the fifth seat in your friend group?"
  },
+ "kxrce04": {
+  "video": "/_blob/3d90cdc88a45aa295a4ca98e2555a5a2",
+  "poster": "/_blob/389a7e661586d5a629f75423debb1a48",
+  "title": "Mexico City: My Ex Is at Every Stop",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 4,
+  "caption": "Tacos, mariachis, the big square: the ex was at every single one.\nScorpio ran out of places to hide and just said hi. Then churros. Would you hide or wave?"
+ },
+ "kxrce05": {
+  "video": "/_blob/9f8015e1f64b5b9c1fd7c5f2ea072f90",
+  "poster": "/_blob/628771d60ac06b25e1e187c8795bf953",
+  "title": "Tokyo: First Date vs the Last Train",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 5,
+  "caption": "First date, one hour until the last train, and they would not stop talking.\nCold noodles, one off-key song, zero regrets. Would you run for the train?"
+ },
  "kxtve01": {
   "video": "/_blob/bac0da3c47244b48a4467de0d0dd1c44",
   "poster": "/_blob/5bd4d71a20d24c194a190e66a5d54da3",
@@ -58,5 +78,15 @@
   "series": "xthen",
   "episode": 3,
   "caption": "Ten years of couch nights. Two hours choosing, four minutes awake. Every single time.\nThe movie was never the point. Who falls asleep first in your house?"
+ },
+ "kxtve04": {
+  "video": "/_blob/3467fbfc98e1bb36bb3eef0b9beaf920",
+  "poster": "/_blob/0e391f5ba0afd2f6d9587d95fff85238",
+  "title": "The Singles Table at the Wedding",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 4,
+  "caption": "2016: Virgo hid behind the flowers at the singles table.\n2026: Virgo made joke name cards and led the conga line. Same table, very different energy. Which seat are you?"
  }
 }
