@@ -140,7 +140,7 @@ export function xfx(spec) {
     }
     if (spec.whip != null) { const W = { at: spec.whip, from: 1.5 }; scenes.push(whipZoom(W)); cues.push(...whipZoomCues(W)) }
     if (spec.slam) { const W = { at: spec.slam.at, from: 1.45 }, S = { at: spec.slam.at + 0.3, len: 0.5, amp: 24 }; scenes.push(whipZoom(W), screenShake(S)); cues.push(...whipZoomCues(W), ...shakeCues(S)) }
-    if (spec.shake0) { const S = { at: -0.15, len: 0.8, amp: 30, seed: 4 }; scenes.push(screenShake(S)); cues.push(...shakeCues({ at: 0, len: 0.65 })) }
+    if (spec.shake0) { const S = { at: 0.05, len: 0.7, amp: 30, seed: 4 }; scenes.push(screenShake(S)); cues.push(...shakeCues({ at: 0, len: 0.65 })) }
     for (const a of spec.shakes || []) { if (a < 0 && spec.shake0) continue; const S = { at: a, len: 0.45, amp: 22, seed: Math.round(a * 7) }; scenes.push(screenShake(S)); if (a > 0) cues.push(...shakeCues(S)) }
     // a frame-0 slam bubble over the chat (ep 3: "SO, SEEING ANYONE?"), optionally slamming in again later
     if (spec.bubble0) {
