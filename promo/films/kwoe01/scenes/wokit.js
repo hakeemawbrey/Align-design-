@@ -490,6 +490,8 @@ export function makeWhich(cfg) {
     x.restore()
     // a scrim behind the headline (matters while the camera is zoomed in)
     { const g = x.createLinearGradient(0, 0, 0, 470); g.addColorStop(0, 'rgba(5,4,14,0.9)'); g.addColorStop(0.7, 'rgba(5,4,14,0.55)'); g.addColorStop(1, 'rgba(5,4,14,0)'); x.fillStyle = g; x.fillRect(0, 0, 1080, 470) }
+    // the film's own screen-space layer (frame-0 slams etc.), also painted into the loop plate
+    if (cfg.fx) cfg.fx(x, t, { T, forFrame0, cam })
     // whip streaks
     const ws = t < T.whip[1] ? 1 - prog(t, 0, T.whip[1]) : (LOOP && t > T.loop[0] ? prog(t, T.loop[0], T.loop[1]) * (forFrame0 ? 0 : 1) : 0)
     if (ws > 0.02) {
@@ -565,6 +567,12 @@ export function makeWhich(cfg) {
   ]
   const SCENES = [build, recordScratch(REC)]
   return { DURATION, SCENES, CUES, T, ptime }
+}
+
+/** a big slammed object for frame 0: scale from 1.5 → 1 over [0, 0.3], fades out over out = [a, b] */
+export function slam0(t, out = [0.85, 1.05]) {
+  const p = ease.outBack(prog(t, -0.05, 0.3)), o = 1 - ease.inQuad(prog(t, out[0], out[1]))
+  return { s: lerp(1.5, 1, p), a: o }
 }
 
 /** a record scratch: a fast pitched-down chirp pair + a tick, then the freeze tone */
