@@ -356,7 +356,7 @@ export function makeThree(cfg) {
     }
   }
 
-  const loopBuilders = [build, buildUI, slamTitle(HOOK)]
+  const loopBuilders = [build, buildUI, slamTitle(HOOK), ...(cfg.loopExtra || [])]
   const SCENES = [
     frozen(build, [FREEZE]),
     buildUI,
@@ -365,6 +365,7 @@ export function makeThree(cfg) {
     countdown(CD),
     whipZoom(PUNCH),
     ...(cfg.extra || []),
+    ...(cfg.loopExtra || []),
     ...(loop ? [loopBack(loopBuilders, { duration: DURATION, len: 0.45 })] : []),
   ]
   const CUES = [
