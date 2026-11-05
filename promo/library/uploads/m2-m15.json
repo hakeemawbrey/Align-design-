@@ -148,5 +148,35 @@
   "series": "healing",
   "episode": 15,
   "caption": "The first morning they aren't your first thought feels strange, then quiet, then good. Healing isn't a parade. Notice it, and make a plan."
+ },
+ "khee16": {
+  "video": "/_blob/99f7a961b1529b33683a4742de4d6819",
+  "poster": "/_blob/9543f84a9e86bcf56d212183e76dbae1",
+  "title": "Libra: 30 days in 60 seconds",
+  "len": 60,
+  "long": true,
+  "series": "healing",
+  "episode": 16,
+  "caption": "A whole month of healing in one minute: the bad days, the friend with the blanket, the party you left early, the first good morning. Let the bad days be bad, and let one friend in."
+ },
+ "khee17": {
+  "video": "/_blob/8c44a254852fe47b569b4d28886ec34f",
+  "poster": "/_blob/6b0e9ba7da9883c3d62495918cba0857",
+  "title": "Scorpio: the situationship, 30 days",
+  "len": 75,
+  "long": true,
+  "series": "healing",
+  "episode": 17,
+  "caption": "It was never official and it still hurts. That's allowed. Thirty days of muting, almost-texting and finally saying it out loud, because untitled still counts."
+ },
+ "khee18": {
+  "video": "/_blob/eb0a216e72c4b3b626e2f0945c0c8dba",
+  "poster": "/_blob/ed6c79d26e5b33f8579a6c2293663185",
+  "title": "Aquarius: 30 days of feelings, logged",
+  "len": 60,
+  "long": true,
+  "series": "healing",
+  "episode": 18,
+  "caption": "You can't debug a feeling, you have to feel it. Thirty days from \"not responding\" to the patch notes, with one friend who drags you outside to look up."
  }
 }
