@@ -504,3 +504,115 @@ export function guessMusic(id, { style, key, seed, D, T, ending }) {
   return { id, duration: D, music: { style, key, seed, sections: { drop: r3(T.BRK + (T.wins.length ? T.wins[0].len : 0.45) + 0.05), lift: [T.R], outroAt: r3(D - (ending === 'cut' ? 0.9 : 1.2)) }, hits: [T.R] } }
 }
 void [el, LAV, MONO, STAR]
+
+// ═══════════════════════════════════════════════════════════════════════════ the long episode (60 s, six rounds)
+//   makeGuessLong({ id, D = 60, hook, promise, ending, rounds: [{ sign, cap, clues: [a, b], last, draw(x, S), bg?, cues?, away? }] × 6,
+//                   final: { title, sub, last } })
+//   Round i runs [i·RL, (i+1)·RL) (RL = 9.5): chapter sticker "n · CHAPTER" at its start (a whip zoom into rounds 2–6), the
+//   round's caption on top, clues at 3.0 / 4.2, Pisces buzzes "PISCES?" at 4.8, the 3·2·1 at 5.6, the reveal at 6.5, the
+//   round's mini last line at 6.9. S.u is round-local time. 57–60: the final score card + the episode's last line.
+//   round.away: the contestant has left the podium (BRB) — use it for the round where the answer is Pisces.
+export function makeGuessLong(cfg) {
+  const D = cfg.D || 60, RL = 9.5, N = cfg.rounds.length, FIN = r3(N * RL), LOOP = cfg.ending === 'loop', LOOP_LEN = 0.42
+  const RT = cfg.rounds.map((rd, i) => { const t0 = r3(i * RL); return { ...rd, i, t0, C1: r3(t0 + 3.0), C2: r3(t0 + 4.2), BUZZ: r3(t0 + 4.8), R: r3(t0 + 6.5), LAST: r3(t0 + 6.9), t1: r3(t0 + RL), H: signStar(rd.sign) } })
+  const HOOK = { at: -1, text: cfg.hook, top: 165, size: 96, out: [2.8, 3.0] }
+  const CHAPS = RT.map(rd => ({ at: rd.i === 0 ? -1 : rd.t0, out: [r3(rd.t0 + 2.2), r3(rd.t0 + 2.4)], n: rd.i + 1, title: rd.chapter, x: 60, y: 440, color: rd.i === N - 1 ? PINK : GOLD }))
+  const WHIPS = RT.slice(1).map(rd => ({ at: r3(rd.t0 - 0.04), len: 0.4, from: 1.45 }))
+  const CDS = RT.map(rd => ({ at: r3(rd.R - 0.9), from: 3, gap: 0.3, go: null, y: 960, color: GOLD }))
+  const T = { D, RL, FIN, RT, LOOP }
+  const roundAt = t => RT[Math.min(N - 1, Math.max(0, Math.floor(t / RL)))]
+  const score = t => RT.filter(rd => t >= rd.R && rd.sign === 'pisces').length
+
+  function frame(x, t, sil) {
+    const fin = t >= FIN
+    const rd = roundAt(Math.min(t, FIN - 0.001)), u = t - rd.t0
+    const rv = ease.outCubic(prog(t, rd.R, rd.R + 0.28))
+    let shx = 0, shy = 0
+    const dR = t - rd.R; if (dR > 0 && dR < 0.5) { shx = 16 * Math.exp(-dR * 9) * Math.sin(dR * 70); shy = 12 * Math.exp(-dR * 9) * Math.cos(dR * 55) }
+    const ss = ease.inOutCubic(prog(t, 0, 2.5))
+    drawSky(x, t, { ...SKY_H, zoom: lerp(1.75, SKY_H.zoom, ss), dim: 0.5 })
+    x.save(); x.translate(shx, shy)
+    const S = {
+      t, u, rv, R: rd.R - rd.t0, rd, T, HERO: rd.H, D: RL,
+      sil: (o, opt = {}) => sil(x, u, o, rv, { color: rd.H.color, glyph: o.s >= 150 ? rd.H.glyph : null, ...opt }),
+      star: (sign, o) => { const s = signStar(sign); return drawStarChar(x, o.x, o.y, o.s, u, { color: s.color, glyph: o.s >= 150 ? s.glyph : null, ...o }) },
+    }
+    if (rd.bg) rd.bg(x, S); else drawStage(x, u, { spot: 1 })
+    if (t >= rd.R) {
+      const p = ease.outCubic(prog(t, rd.R, rd.R + 0.5))
+      x.save(); x.globalCompositeOperation = 'lighter'
+      const g = x.createRadialGradient(540, 980, 20, 540, 980, 200 + 520 * p); g.addColorStop(0, rd.H.color + 'aa'); g.addColorStop(1, rd.H.color + '00')
+      x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); x.restore()
+    }
+    rd.draw(x, S)
+    confetti(x, t, rd.R + 0.02, 540, 900)
+    x.restore()
+    if (fin) finalCard(x, t)
+    // the contestant
+    const away = rd.away && !fin
+    const pMood = fin ? 'sparkle' : t >= rd.R ? 'wide' : t >= rd.BUZZ ? 'squint' : 'wide'
+    const P = contestant(x, t, { tearsK: fin ? 3 : t >= rd.R ? 3 : 2, mood: pMood, hops: [rd.BUZZ, rd.R + 0.05, rd.R + 0.5, FIN + 0.2], buzzAt: away ? [] : [rd.BUZZ], away, look: t >= rd.R ? [-1, -1] : [-1, -0.6] })
+    if (!fin && P && !away) bubble(x, t, 860, 1250, rd.BUZZ + 0.04, rd.R, 'PISCES?', { size: 34, tail: 0.5, rot: 0.03 })
+    if (!fin && P && !away && t >= rd.R - 0.05 && t < rd.R + 0.9) label(x, '✗', 1010, 1240, { size: 74, col: RED, font: INTER, weight: 900, alpha: outK(t, [rd.R + 0.7, rd.R + 0.9]) })
+    // chrome
+    if (!fin) {
+      const capA = (rd.i === 0 ? clamp(prog(t, 2.9, 3.1)) : clamp(prog(u, 0.05, 0.2))) * outK(t, [rd.R - 0.16, rd.R])
+      if (capA > 0) richText(x, rd.cap, 540, 175, { size: 66, acc: 1.25, width: 960, alpha: capA, k: 1 + 0.08 * (1 - clamp(prog(u, 0.05, 0.25))) })
+      drawNameSlam(x, t, rd.R, rd.sign, { cy: 330 })
+      drawClue(x, t, rd.C1, rd.R - 0.1, 1, rd.clues[0], 0)
+      drawClue(x, t, rd.C2, rd.R - 0.1, 2, rd.clues[1], 1)
+      drawLast(x, t, rd.LAST, rd.last, { cy: 1400 })
+      drawTimer(x, t, rd.t0, rd.R)
+      if (t >= rd.R && t < rd.R + 0.14) { x.save(); x.globalAlpha = 0.8 * (1 - (t - rd.R) / 0.14); x.fillStyle = '#fff6ea'; x.fillRect(0, 0, 1080, 1920); x.restore() }
+      // the promise, under the hook
+      if (cfg.promise && t < 3.1) { const k = pop01(t, -1, 0.3, 2) * outK(t, [2.8, 3.05]); x.save(); x.translate(540, 600); x.rotate(0.04); x.scale(k, k); box(x, -300, -40, 600, 80, PINK, { b: 6 }); x.font = `800 38px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = INK; x.fillText(cfg.promise, 0, 3, 560); x.restore() }
+      // round dots
+      for (let i = 0; i < N; i++) { const on = i < rd.i || (i === rd.i && t >= rd.R); R(x, INK, 300 + i * 82 - 4, 120 - 4, 62, 20); R(x, on ? (RT[i].sign === 'pisces' ? MINT : RT[i].H.color) : i === rd.i ? BONE : 'rgba(239,230,214,0.25)', 300 + i * 82, 120, 54, 12) }
+    }
+    // Pisces' score
+    const sk = 1
+    x.save(); x.translate(250, 1640); x.rotate(-0.02)
+    box(x, -200, -40, 400, 80, '#14102a', { b: 6 })
+    x.font = `800 30px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = BONE
+    x.fillText(`♓ PISCES’ SCORE: ${score(t)} / ${Math.min(N, RT.filter(r2 => t >= r2.R).length)}`, 0, 3, 370)
+    x.restore(); void sk
+    drawBug(x)
+  }
+  function finalCard(x, t) {
+    const k = easeOutBack(prog(t, FIN, FIN + 0.35), 2)
+    x.save(); x.fillStyle = `rgba(6,4,18,${0.55 * clamp(k)})`; x.fillRect(0, 0, 1080, 1920); x.restore()
+    x.save(); x.translate(540, 760); x.rotate(-0.02); x.scale(k, k)
+    box(x, -440, -300, 880, 600, '#1d1640', { b: 8 })
+    x.font = `800 30px ${INTER}`; x.letterSpacing = '0.25em'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = CYAN; x.fillText('FINAL SCORE', 0, -240); x.letterSpacing = '0px'
+    RT.forEach((rd, i) => { const cx = -350 + i * 140; drawStarChar(x, cx, -110, 96, t, { color: rd.H.color, mood: 'happy', look: [0, 0], seed: 70 + i, hops: [FIN + 0.3 + i * 0.12] }); x.font = `800 20px ${INTER}`; x.fillStyle = BONE; x.fillText(NAMES[rd.sign].toUpperCase(), cx, -30, 130) })
+    richText(x, cfg.final.title, 0, 20, { size: 56, acc: 1.2, width: 800 })
+    if (cfg.final.sub) richText(x, cfg.final.sub, 0, 170, { size: 34, acc: 1.2, width: 780, col: '#c9c0e8' })
+    x.restore()
+    drawLast(x, t, r3(FIN + 0.5), cfg.final.last, { cy: 1400 })
+    drawTimer(x, t, 0, 0)
+  }
+
+  async function build(stage) {
+    try { await Promise.all(['800 82px Inter', '900 190px Inter', 'italic 600 105px "EB Garamond"', '700 30px "Space Mono"', '800 28px Inter'].map(f => document.fonts.load(f))) } catch (_) { /* optional */ }
+    const root = fill(stage, { background: '#05040c' })
+    const cv = layerCanvas(root), x = cv.getContext('2d')
+    const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
+    const sil = makeSil()
+    return { start: 0, end: D + 1, root, update(t) { frame(x, t, sil); drawGrain(gx, t) } }
+  }
+  const SCENES = [build, slamTitle(HOOK), ...CHAPS.map(c => chapter(c)), ...WHIPS.map(w => whipZoom(w)), ...CDS.map(c => countdown(c)),
+    ...(LOOP ? [loopBack([build, slamTitle(HOOK), chapter(CHAPS[0])], { duration: D, len: LOOP_LEN })] : [])]
+  const CUES = [
+    ['crash', 0, { gain: 0.06, len: 1.2 }], ['whoosh', 0, 0.3, 0.04],
+    ...slamTitleCues({ ...HOOK, at: 0 }).filter(c => c[1] < 0.6).slice(0, 4),
+    ...CHAPS.slice(1).flatMap(c => chapterCues(c)), ...WHIPS.flatMap(w => whipZoomCues(w)), ...CDS.flatMap(c => countdownCues(c)),
+    ...RT.flatMap(rd => roundCues({ R0: rd.R, clueTs: [rd.C1, rd.C2], buzzAt: rd.away ? [] : [rd.BUZZ], lastAt: rd.LAST })),
+    ...RT.flatMap(rd => (rd.cues || []).map(c => [c[0], r3(c[1] + rd.t0), ...c.slice(2)])),
+    ['whoosh', FIN, 0.4, 0.05], ['boom', r3(FIN + 0.15), 0.25], ['glitter', r3(FIN + 0.2), r3(FIN + 0.9)], ['bell', r3(FIN + 0.3), 1318.51, 0.03, 1.4, 0],
+    ...(LOOP ? loopCues({ duration: D, len: LOOP_LEN }) : []),
+  ].filter(c => c[1] >= 0 && c[1] < D)
+  return { DURATION: D, SCENES, CUES, T }
+}
+export function guessLongMusic(id, { style, key, seed, T }) {
+  return { id, duration: T.D, music: { style, key, seed, sections: { drop: 0.6, breakdown: T.RT.slice(1).map(r => r.t0), lift: T.RT.map(r => r.R), outroAt: r3(T.D - 2.4) }, hits: T.RT.map(r => r.R) } }
+}
