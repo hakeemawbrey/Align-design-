@@ -116,6 +116,7 @@ export function makeAch(cfg) {
       z *= 1 + p.z * k; cx = lerp(cx, p.x ?? cx, k); cy = lerp(cy, p.y ?? cy, k)
     }
     const sx = 0, sy = 0
+    if (z >= 1 && !sh.free) { cx = clamp(cx, 540 / z, 1080 - 540 / z); cy = clamp(cy, 960 / z, 1920 - 960 / z) }
     x.translate(540 + sx, 960 + sy); x.scale(z, z); x.translate(-cx, -cy)
   }
   function world(x, t) {
