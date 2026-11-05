@@ -71,6 +71,18 @@
   "sign": "virgo",
   "account": "star_advice"
  },
+ "kpvee07": {
+  "video": "/_blob/a9c1db2fcee81bd67e2b781964251b38",
+  "poster": "/_blob/01a2c77a70295223a0039f5b65ff0de8",
+  "title": "Venus to Libra: Who Are You, Darling?",
+  "len": 78.4,
+  "long": true,
+  "series": "pvenus",
+  "episode": 7,
+  "caption": "Libra agreed with nine opinions in one dinner, including being a huge morning person. Venus paused the whole date. Stay for the pineapple. What's the opinion you keep quiet on dates?",
+  "sign": "libra",
+  "account": "star_talk"
+ },
  "kpvee08": {
   "video": "/_blob/b2f5d70c4198925d9bfdfb7d515ab269",
   "poster": "/_blob/f9d3c7b5c18552946a2d5e6f625f2bf8",
@@ -93,6 +105,30 @@
   "episode": 9,
   "caption": "They said coffee. Sagittarius heard a 5 a.m. mountain hike. Venus suggested asking what they actually love, and the bookshop nap date won. What's your sign's version of a 14 km first date?",
   "sign": "sagittarius",
+  "account": "star_talk"
+ },
+ "kpvee10": {
+  "video": "/_blob/75b80dabad0cff1d131587fdb37ad64f",
+  "poster": "/_blob/1b01a23d7d535082be1df98f351bddb9",
+  "title": "Venus to Capricorn: Not a Promotion",
+  "len": 28.4,
+  "long": false,
+  "series": "pvenus",
+  "episode": 10,
+  "caption": "If your plan says Q4: deserve love, this one's for you. You don't earn love by hitting a goal. Close the laptop at six, keep Friday, and let someone enjoy the version of you that's off the clock.",
+  "sign": "capricorn",
+  "account": "star_advice"
+ },
+ "kpvee11": {
+  "video": "/_blob/d3344776928fd8465cc4bd2f313db309",
+  "poster": "/_blob/d2f93dc56ecb7eb7f08aab25d369c3f3",
+  "title": "Venus to Aquarius: Feelings in Human",
+  "len": 25.6,
+  "long": false,
+  "series": "pvenus",
+  "episode": 11,
+  "caption": "Fixed their router, sent three articles, built them a shelf, never said a word. Venus asked for it in human. The crush already knew at the shelf. Who loves you in acts of tech support?",
+  "sign": "aquarius",
   "account": "star_talk"
  }
 }
