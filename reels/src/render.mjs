@@ -8,7 +8,9 @@
 //   --topic love|self   only this topic
 //   --forever           keep rendering until stopped
 //   --line "<text>"     render one specific line (needs --sign)
-//   --from approved.json  render exactly the reels approved in the player (same seeds)
+//   --from approved.json  render exactly the reels approved in the player (same seeds),
+//                         or a batch from `npm run plan`; files already made are skipped
+//   --jobs 4            with --from: render in this many parallel workers
 //   --world cavelake    force a world (cavelake poolrooms meadow checker dunes nightsea snow cloudtops)
 //   --handle @name      small watermark, lower left
 //   --no-brand          leave out the small align ✦ mark
@@ -41,6 +43,38 @@ const WORLD = opt('world', null)
 const LINE = opt('line', null)
 const INTERNAL = +opt('internal', 0.5)
 fs.mkdirSync(OUT, { recursive: true })
+const JOBS = +opt('jobs', 1)
+const OFFSET = +opt('offset', 0)
+
+// --jobs N: split the list into N slices and render each in its own process.
+if (APPROVED && JOBS > 1) {
+  const keep = []
+  for (let i = 0; i < args.length; i++) {
+    if (['--from', '--jobs', '--offset'].includes(args[i])) i++
+    else keep.push(args[i])
+  }
+  const size = Math.ceil(APPROVED.length / JOBS)
+  const t0 = Date.now()
+  const runs = []
+  for (let j = 0; j < JOBS; j++) {
+    const slice = APPROVED.slice(j * size, (j + 1) * size)
+    if (!slice.length) continue
+    const file = path.join(OUT, `.slice-${j}.json`)
+    fs.writeFileSync(file, JSON.stringify(slice))
+    const child = spawn(process.execPath, [process.argv[1], ...keep, '--from', file, '--offset', String(j * size), '--out', OUT], { stdio: ['ignore', 'pipe', 'inherit'] })
+    child.stdout.on('data', (d) => {
+      for (const line of String(d).split(/[\r\n]+/)) if (line.includes('✓')) console.log(`  [${j + 1}/${JOBS}] ${line.trim()}`)
+    })
+    runs.push(new Promise((res) => child.on('close', (code) => {
+      fs.rmSync(file, { force: true })
+      res(code)
+    })))
+  }
+  const codes = await Promise.all(runs)
+  const made = fs.readdirSync(OUT).filter((f) => f.endsWith('.mp4')).length
+  console.log(`\n${made} reel(s) in ${path.relative(process.cwd(), OUT) || '.'} (${((Date.now() - t0) / 60000).toFixed(1)} min)`)
+  process.exit(codes.every((c) => c === 0) ? 0 : 1)
+}
 
 // --- dealing: no line twice until the whole deck (for this filter) is used
 const LEDGER = path.join(OUT, 'ledger.json')
@@ -114,8 +148,15 @@ while (made < COUNT && !stopping) {
   const item = { ...line, seed, ...(WORLD ? { world: WORLD } : {}) }
   const t0 = Date.now()
   const info = await page.evaluate(([it, h, b]) => window.ZEXE.prepare(it, { handle: h, brand: b }), [item, HANDLE, BRAND])
-  const base = `${stamp}-${String(made + 1).padStart(3, '0')}-${line.sign}-${line.id.split('-')[1]}`
-  const mp4 = path.join(OUT, base + '.mp4')
+  // a list renders under its own numbering, so a rerun skips what's done
+  const base = APPROVED
+    ? `${String(OFFSET + made + 1).padStart(3, '0')}-${line.sign}-${line.id.split('-')[1]}`
+    : `${stamp}-${String(made + 1).padStart(3, '0')}-${line.sign}-${line.id.split('-')[1]}`
+  if (APPROVED && fs.existsSync(path.join(OUT, base + '.mp4'))) {
+    made++
+    continue
+  }
+  const mp4 = path.join(OUT, base + '.part.mp4')
   const wav = path.join(OUT, base + '.wav')
   fs.writeFileSync(wav, Buffer.from(await page.evaluate(() => window.ZEXE.audio()), 'base64'))
   const enc = ffmpeg(mp4, wav)
@@ -127,6 +168,7 @@ while (made < COUNT && !stopping) {
   }
   enc.stdin.end()
   await enc.done
+  fs.renameSync(mp4, path.join(OUT, base + '.mp4'))
   fs.unlinkSync(wav)
   fs.writeFileSync(path.join(OUT, base + '.txt'), info.caption + '\n')
   fs.appendFileSync(path.join(OUT, 'manifest.jsonl'), JSON.stringify({ file: base + '.mp4', sign: line.sign, topic: line.topic, text: line.text, world: info.world, seed, duration: info.duration }) + '\n')

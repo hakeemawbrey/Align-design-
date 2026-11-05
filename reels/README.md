@@ -26,6 +26,8 @@ npm install
 npm run dev                      # the endless player → http://localhost:5178
 npm run render -- --count 12     # 12 finished MP4s + captions in out/, one per sign
 npm run check                    # validate the line library
+npm run plan -- --count 240      # pick a balanced batch (even per sign and world, no repeats)
+npm run render -- --from out/plan.json --jobs 4   # render it in 4 parallel workers; rerun to resume
 ```
 
 ### The player (`index.html`)
