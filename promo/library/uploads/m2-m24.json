@@ -29,6 +29,36 @@
   "episode": 3,
   "caption": "If a Gemini asks you forty questions, that's the flirt.\nGive them room to change their mind, ask \"joke, or real?\" when it matters, and be their favourite person to talk to."
  },
+ "kdde04": {
+  "video": "/_blob/98661f69cb10fb2f8f25420c2ccf0620",
+  "poster": "/_blob/3c192218360939cc848a4bf007763277",
+  "title": "Deep Dive: Cancer in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 4,
+  "caption": "\"Did you eat?\" is how a Cancer says I like you.\nWhen the shell closes, don't pry. Stay close, say \"no rush\", and remember their little things back."
+ },
+ "kdde05": {
+  "video": "/_blob/7dd57031331ae927d767f0ba3ab029f3",
+  "poster": "/_blob/99fac3d74ec974269afcdade2b7bb23b",
+  "title": "Deep Dive: Leo in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 5,
+  "caption": "A Leo flirts at full beam and needs love said out loud.\nIn a fight, start with what you love, then the problem. Be their biggest fan and they'll be yours."
+ },
+ "kdde06": {
+  "video": "/_blob/4af39dad2569ac1cf730b6c2f10d486e",
+  "poster": "/_blob/100aa24b46335cf97ae6671e7c2bdf30",
+  "title": "Deep Dive: Virgo in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 6,
+  "caption": "A Virgo's love lives in the details: the stuck zip, the dentist on Tuesday.\nNotice their effort, ask what would make today lighter, and let them rest."
+ },
  "kpre01": {
   "video": "/_blob/54b148caf51947d06549288c5bdff70d",
   "poster": "/_blob/c319e805c1cfdb71b64a00b1c947b1ec",
@@ -38,5 +68,55 @@
   "series": "preacts",
   "episode": 1,
   "caption": "Laughing at someone's terrible pun is a love language.\nPisces saw it happen and is not okay."
+ },
+ "kpre02": {
+  "video": "/_blob/71f177637f529496522cef7a6b370475",
+  "poster": "/_blob/5339f50779d40e4c4736d2de661c50ff",
+  "title": "They saved me a seat",
+  "len": 8.5,
+  "long": false,
+  "series": "preacts",
+  "episode": 2,
+  "caption": "Running late and someone saved you a seat?\nThat's the whole love story. Pisces is sobbing into the popcorn."
+ },
+ "kpre03": {
+  "video": "/_blob/0465f266928f51fb2f45798ae81ce5c7",
+  "poster": "/_blob/3b1ff50804ca881671781d36fd21313f",
+  "title": "The old couple at the bus stop",
+  "len": 10,
+  "long": false,
+  "series": "preacts",
+  "episode": 3,
+  "caption": "An old couple fixing each other's scarf at the bus stop.\nPisces had to sit down. Love that lasts looks like this."
+ },
+ "kpre04": {
+  "video": "/_blob/c398fab3bd73ca7ab8686b1473afd78a",
+  "poster": "/_blob/a56adc86ec650fef187ad411e9e023fc",
+  "title": "\"This reminded me of you\"",
+  "len": 8,
+  "long": false,
+  "series": "preacts",
+  "episode": 4,
+  "caption": "When someone sends you a frog because it reminded them of you.\nPisces cannot handle being thought of. Can you?"
+ },
+ "kpre05": {
+  "video": "/_blob/3b7232f5c9041c2d409529cc40172edc",
+  "poster": "/_blob/7d7a47196cf768cbedf5b9b34df1e229",
+  "title": "They remembered the interview",
+  "len": 8.5,
+  "long": false,
+  "series": "preacts",
+  "episode": 5,
+  "caption": "They texted good luck at 8 a.m. and asked how it went at 6.\nBeing remembered is the whole thing."
+ },
+ "kpre06": {
+  "video": "/_blob/0e22f1d4d2b4a0225bba4eb952a94246",
+  "poster": "/_blob/15ef71e8fbe9ddf3d01326036aceeb29",
+  "title": "Their dogs met first",
+  "len": 10,
+  "long": false,
+  "series": "preacts",
+  "episode": 6,
+  "caption": "Two dogs tangled their leashes and their owners into a date.\nPisces watched it all from the bench, crying."
  }
 }
