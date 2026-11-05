@@ -748,7 +748,7 @@ export function makeFullGame(cfg) {
         // the gag beat: the audience reacts (or cfg.gag text)
         if (q.gagAt != null && !(q.ansA.then || q.ansB.then) && t >= q.gagAt && t < q.gagAt + 1.6) {
           const g = q.gag || 'OOOOH', k = pop01(t, q.gagAt, 0.3, 2.6) * outK(t, [q.gagAt + 1.3, q.gagAt + 1.6])
-          label(x, g, 540, 1700 - 30 * prog(t, q.gagAt, q.gagAt + 1.6), { size: 56, col: '#ffd23a', font: INTER, weight: 800, alpha: clamp(k), rot: -0.04 })
+          label(x, g, 690, 1700 - 30 * prog(t, q.gagAt, q.gagAt + 1.6), { size: 56, col: '#ffd23a', font: INTER, weight: 800, alpha: clamp(k), rot: -0.04 })
         }
       }
       if (t >= FIN) {
