@@ -355,11 +355,11 @@ export function makeOpener(cfg) {
         const S = { t, e, T, x, HERO }
         if (cfg.back) cfg.back(x, e, S)
         chatCard(x, e, { match: cfg.match || 'Sam', sub: cfg.sub || 'new match · say hi!', night: cfg.night, avatar: cfg.avatar })
-        drawChat(x, t, e)
-        // the sender, mid-reaction at the edge of the phone
+        // the sender, mid-reaction at the edge of the phone (behind the chat bubbles)
         const hm = heroMood(t)
         const F = star(x, e, cfg.sign, { ...HERO_POS, mood: hm.mood, look: hm.look, hops: [LAND_E, T.score1 + 0.05, T.send, T.reply + 0.05], tears: cfg.sign === 'pisces' ? (t > T.bawl ? 3 : 2) : 0, seed: 3, squash: e < 0.4 ? -0.06 : 0 })
         S.F = F
+        drawChat(x, t, e)
         if (t > T.reply) hearts(x, t, T.reply + 0.1, HERO_POS.x + 20, HERO_POS.y - 110, { n: 5 })
         if (cfg.prop) cfg.prop(x, e, S)
         // the judges' desk
@@ -388,7 +388,7 @@ export function makeOpener(cfg) {
       // mid-flight toward the lens: big, tilted, pushed down-left, then it snaps back into the chat
       const fly = e < T.fa ? 1 : 1 - easeOutBack(prog(e, T.fa, LAND_E), 1.5)
       const drift = e < T.fa ? e / T.fa : 1
-      k = 1 + fly * (0.5 + 0.08 * drift); rot = -0.13 * fly; dx = -70 * fly - 10 * drift; dy = 210 * fly + 14 * drift
+      const kMax = Math.max(0.12, Math.min(0.58, 796 / OP.w - 1)); k = 1 + fly * kMax * (0.86 + 0.14 * drift); rot = -0.13 * fly; dx = -80 * fly; dy = 210 * fly + 14 * drift
       // motion streaks back toward the phone
       if (fly > 0.05) {
         x.save(); x.globalAlpha = 0.5 * fly
@@ -505,7 +505,7 @@ export function makeOpener(cfg) {
     let lines = 1, cur = 0, wMax = 0
     for (const w of words) { const L = (w.length + 1) * cw; if (cur + L > 620 && cur > 0) { lines++; wMax = Math.max(wMax, cur); cur = L } else cur += L }
     wMax = Math.max(wMax, cur)
-    const w = wMax + 52, h = lines * sz * 1.16 + 40, k = 1.58
+    const w = wMax + 52, h = lines * sz * 1.16 + 40, k = 1 + Math.max(0.12, Math.min(0.58, 796 / w - 1))
     const bx = SLOT.right - 80, by = SLOT.top + h + 224
     return { x: Math.round(bx - w * k / 2), y: Math.round(by - h * k / 2), r: Math.round(Math.min(470, w * k / 2 + 50)), ry: Math.round(h * k / 2 + 60) }
   }
