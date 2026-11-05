@@ -184,6 +184,19 @@ export function drawCard(x, t, cfg, { alpha = 1, slide = 0 } = {}) {
     const stamped = sq.free || (sq.at != null && t >= sq.at)
     if (sq.free) blot(x, c.x, c.y, g.ch * 0.36, '#f2b8cc', 1, i + 2)
     else if (sq.at != null) blot(x, c.x, c.y, g.ch * 0.38, sq.ink || ink, prog(t, sq.at, sq.at + 0.12), i + 2)
+  }
+  // the winning line
+  if (bk > 0 && cfg.win && cfg.win.length) {
+    const a = cellCenter(cfg, cfg.win[0]), b = cellCenter(cfg, cfg.win[cfg.win.length - 1])
+    const p = ease.outCubic(bk), ex = lerp(a.x, b.x, p), ey = lerp(a.y, b.y, p)
+    x.save(); x.lineCap = 'round'
+    x.strokeStyle = INK; x.lineWidth = 34; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(ex, ey); x.stroke()
+    x.globalAlpha *= 0.8; x.strokeStyle = GOLD; x.lineWidth = 20; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(ex, ey); x.stroke()
+    x.restore()
+  }
+  for (let i = 0; i < g.n * g.n; i++) {
+    const sq = cfg.squares[i] || { text: '' }, c = cellCenter(cfg, i)
+    const stamped = sq.free || (sq.at != null && t >= sq.at)
     // the label (wrapped, auto-sized)
     let size = sq.size || (g.n === 3 ? 34 : 27)
     x.font = `800 ${size}px ${INTER}`
@@ -195,15 +208,6 @@ export function drawCard(x, t, cfg, { alpha = 1, slide = 0 } = {}) {
       if (stamped) { x.lineWidth = 7; x.strokeStyle = 'rgba(255,255,255,0.85)'; x.lineJoin = 'round'; x.strokeText(l, c.x, y0 + j * lh) }
       x.fillStyle = INK; x.fillText(l, c.x, y0 + j * lh)
     })
-  }
-  // the winning line
-  if (bk > 0 && cfg.win && cfg.win.length) {
-    const a = cellCenter(cfg, cfg.win[0]), b = cellCenter(cfg, cfg.win[cfg.win.length - 1])
-    const p = ease.outCubic(bk), ex = lerp(a.x, b.x, p), ey = lerp(a.y, b.y, p)
-    x.save(); x.lineCap = 'round'
-    x.strokeStyle = INK; x.lineWidth = 34; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(ex, ey); x.stroke()
-    x.globalAlpha *= 0.8; x.strokeStyle = GOLD; x.lineWidth = 20; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(ex, ey); x.stroke()
-    x.restore()
   }
   x.restore()
 }

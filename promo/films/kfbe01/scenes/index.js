@@ -101,7 +101,7 @@ const EP = makeBingo({
   },
   bubbles: [
     { t0: T.hi, t1: D + 1, x: 360, y: 660, text: "hi. I'm so glad you came.", size: 40, tail: -0.2 },
-    { t0: T.sob, t1: 11.6, x: 830, y: 410, text: 'SO KEEN!!', size: 38, tail: 0.5, col: '#cfe8ff' },
+    { t0: T.sob, t1: 11.6, x: 800, y: 448, text: 'SO KEEN!!', size: 38, tail: 0.5, col: '#cfe8ff' },
   ],
   cues: [
     
