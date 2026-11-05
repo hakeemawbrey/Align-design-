@@ -16,6 +16,8 @@
 //             (screen space, planetkit speech()), cfg.heads = big pop captions.
 //   cast      the Moon follows cfg.moon keyframes, the sign follows cfg.me keyframes, Pisces (the Moon's little
 //             stargazing buddy) sits on a cloud with a telescope (cfg.pis) and CRIES in every film.
+//   cfg.moonMotion(t, pose) → partial pose overrides (e.g. a pendulum swing on top of the keyframes).
+//   cfg.string = { dx, until } draws the silver thread the Moon swings down on.
 //   ending    'loop': hookkit loopBack eases the last LOOP s into the exact frame-0 composition (seamless replay);
 //             'cut':  hard cut on the punchline (the last head lands ≥ 0.6 s before the end; nothing fades).
 //
@@ -204,8 +206,14 @@ export function moonFilm(cfg) {
     }
     // the Moon
     const M = moonPose(t)
+    if (cfg.moonMotion) Object.assign(M, cfg.moonMotion(t, M))
     if ((M.alpha ?? 1) > 0 && M.size > 0) {
       const drawM = () => {
+        if (cfg.string && t < (cfg.string.until ?? 1e9)) {
+          // the silver thread the Moon swings down on (from the top of the frame to the top of the Moon)
+          x.save(); x.strokeStyle = INK; x.lineWidth = 12; x.beginPath(); x.moveTo(M.x + (cfg.string.dx ?? -60), -400); x.lineTo(M.x, M.y - M.size / 2 + 8); x.stroke()
+          x.strokeStyle = '#eef0ff'; x.lineWidth = 5; x.stroke(); x.restore()
+        }
         if (t < LAND + 0.6) drawEntranceFx(x, 'moon', E.kind, t, E)
         drawPlanet(x, 'moon', M.x, M.y, M.size, t, { rot: M.rot, squash: M.squash, alpha: M.alpha ?? 1, mood: M.mood, look: M.look, tears: M.tears ?? 0, lines, cps: 26, hops: cfg.moonHops || null, seed: 5 })
       }
