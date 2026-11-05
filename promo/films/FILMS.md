@@ -64,3 +64,5 @@ Helpers you may import:
   - `--stills=1.2,3`
   - Full film: `node promo/scripts/teaser-sound.mjs --film=<name> && node promo/scripts/render.mjs --film=<name>`. The lead does the full render.
 - **Ending:** the end line types in by about 27.0, then the Align lockup (mark draws, chakras, wordmark "Align", "BLIND BY DESIGN") is complete by about 28.6, holds, and fades to black 29.6–30.0. The last frame is black.
+
+| promo/films/disposable30 | "We made people disposable." over film 2's fast face feed → the last face FLIPS: "What if we flipped it?" | Film 2's edit: "Fall for the card. Face last." → push-in on her card, Push / Pull / Align rows light ("Push. Pull. Align.", p1-rows) → Marcus's card meets Juniper's, the stars align (f5 at 1.25×) → BOTH blind cards flip, "It's mutual." → the talk deck SHOWN as a thread (s-talk: The Fool / The Sun played and answered). 92 bpm under the hook, 132 bpm from the flip | "No one is disposable." |
