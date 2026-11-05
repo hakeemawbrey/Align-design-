@@ -637,10 +637,10 @@ export function makeFilm(cfg) {
       { // the verdict stamp, slammed on the page above the pair
         const at = fin.verdict, sp = prog(t, at - 0.12, at)
         const d = Math.max(0, t - at), s = lerp(2.6, 1, ease.inQuad(sp)) * (1 + 0.08 * Math.exp(-d * 12) * Math.sin(d * 40))
-        x.save(); x.translate(540, 650); x.rotate(-0.07); x.scale(s, s); x.globalAlpha *= clamp(sp * 1.3)
+        x.save(); x.translate(500, 690); x.rotate(-0.07); x.scale(s, s); x.globalAlpha *= clamp(sp * 1.3)
         x.font = `800 30px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = RED
         x.fillText('THE VERDICT', 0, -70)
-        x.font = `800 66px ${INTER}`
+        x.font = `800 56px ${INTER}`
         const w = Math.max(420, x.measureText(cfg.verdict).width + 70), h = 110
         x.strokeStyle = RED; x.lineWidth = 9; x.strokeRect(-w / 2, -h / 2 + 18, w, h); x.lineWidth = 3; x.strokeRect(-w / 2 + 11, -h / 2 + 29, w - 22, h - 22)
         x.fillText(cfg.verdict, 0, 22)
