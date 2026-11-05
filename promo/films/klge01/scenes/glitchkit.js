@@ -30,6 +30,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
 import { drawStarChar, signStar, STAR } from '../../startalk.js'
+import { recordScratch, recordScratchCues, frozen, whipZoom, whipZoomCues, caught, caughtCues } from '../../hookkit.js'
 
 export const GOLD = '#f2c75c', BONE = '#efe6d6', PINK = '#ff8fb1', INK = '#1b1236', LAV = '#c9a6ff', RED = '#e8344e'
 export const CYAN = '#7fe3ff', MINT = '#9fe6b0', GREY = '#b9b3cc', WIN = '#e9e4f2', NAVY = '#241a4a'
@@ -674,5 +675,9 @@ export function makeGlitch(cfg) {
 
   const mu = cfg.music
   const MUSIC = { style: mu.style, key: mu.key, seed: mu.seed, sections: { drop: mu.drop ?? hookOut, ...(mu.breakdown ? { breakdown: mu.breakdown } : {}), ...(mu.lift ? { lift: mu.lift } : {}), outroAt: LOOP ? D - 0.5 : (cfg.last ? cfg.last.at : D - 1.5) } }
-  return { DURATION: D, SCENES: [build], CUES, MUSIC, glitchCues, errDing, scratch }
+  // shared hook-kit layers (read-only import): cfg.rec = record scratch + freeze, cfg.kwhip = whip zoom, cfg.caught
+  const recs = cfg.rec ? [].concat(cfg.rec) : []
+  const SC = [recs.length ? frozen(build, recs) : build, ...(cfg.kwhip ? [whipZoom(cfg.kwhip)] : []), ...recs.map(r => recordScratch(r)), ...(cfg.caught ? [].concat(cfg.caught).map(c => caught(c)) : [])]
+  CUES.push(...(cfg.kwhip ? whipZoomCues(cfg.kwhip) : []), ...recs.flatMap(r => recordScratchCues(r)), ...(cfg.caught ? [].concat(cfg.caught).flatMap(c => caughtCues(c)) : []))
+  return { DURATION: D, SCENES: SC, CUES, MUSIC, glitchCues, errDing, scratch }
 }
