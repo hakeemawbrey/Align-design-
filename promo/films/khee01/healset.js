@@ -164,9 +164,9 @@ export function bedroom(x, t, { morning = 1, dim = 0 } = {}) {
 export function shopAisle(x, t, { dim = 0 } = {}) {
   R(x, '#3a3060', 0, 300, 1080, 1120)
   for (const sx of [-40, 640]) {
-    box(x, sx, 420, 480, 1000, '#5a4a80', { b: 7 })
+    box(x, sx, 600, 480, 820, '#5a4a80', { b: 7 })
     for (let j = 0; j < 5; j++) {
-      const sy = 520 + j * 180
+      const sy = 640 + j * 150
       R(x, INK, sx, sy + 110, 480, 14)
       for (let i = 0; i < 6; i++) { const c = [GOLD, PINK, MINT, SKYB, '#ff9b5c', LAV][(i + j + (sx > 0 ? 2 : 0)) % 6]; box(x, sx + 24 + i * 76, sy + 10, 56, 96, c, { b: 4, hi: 'rgba(255,255,255,0.25)' }) }
     }
