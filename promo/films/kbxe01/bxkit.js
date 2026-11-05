@@ -483,7 +483,7 @@ export function makeBX(cfg) {
   const T = cfg.T || {}
   // the hook kit pieces every film uses: a frame-0 whip zoom, the slam title (the hook line, landed on frame 0), the
   // STOP slam's shake + record scratch freeze; plus any extra kit overlays the film asks for (cfg.kit: [[fn, opts]])
-  const WHIP = cfg.whip === false ? null : { at: -0.1, from: 1.3, blur: 7, ...(cfg.whip || {}) }
+  const WHIP = cfg.whip === false ? null : { at: -0.1, from: 1.3, blur: 7, cy: 440, ...(cfg.whip || {}) }
   const HOOK = { at: -1, top: 215, size: 112, ...cfg.hook }
   const shakes = cfg.shakes || []
   const recs = cfg.recs || []
