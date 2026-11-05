@@ -596,8 +596,8 @@ export function sequence(segs) {
     return {
       start: -1e9, end: 1e9, root: null,
       update(t) {
-        let k = segs.findIndex(s => t >= s.at && t < s.at + s.len)
-        if (k < 0) k = t < segs[0].at ? 0 : segs.length - 1
+        let k = 0
+        segs.forEach((s, i) => { if (t >= s.at - 1e-6) k = i })
         built.forEach((b, i) => { b.root.style.display = i === k ? 'block' : 'none' })
         const s = segs[k]
         built[k].update(Math.min(Math.max(t - s.at, 0), s.len - 0.001))
