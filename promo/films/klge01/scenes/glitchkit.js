@@ -150,7 +150,7 @@ export function richText(x, t, text, cx, y, { size = 88, accentSize = null, maxW
     if (!raw) continue
     const isA = raw.startsWith('*') && raw.endsWith('*')
     const body = isA ? raw.slice(1, -1) : raw
-    body.split(/\s+/).forEach((w, j) => { if (w) toks.push({ w, a: isA, glue: j === 0 && !isA && toks.length > 0 && !/^\s/.test(body) }) })
+    body.split(/[ \t\n]+/).forEach((w, j) => { if (w) toks.push({ w, a: isA, glue: j === 0 && !isA && toks.length > 0 && !/^[ \t\n]/.test(body) }) })
     void acc
   }
   x.save(); x.globalAlpha *= alpha; x.textBaseline = 'alphabetic'
