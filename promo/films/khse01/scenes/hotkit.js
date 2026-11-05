@@ -266,8 +266,9 @@ export function booth(x, t, { press = 0, x0 = 770, y0 = 1600, tissues = 1 } = {}
 export function timeline(cfg) {
   const n = cfg.qs.length, GAP = cfg.gap ?? 1.5
   const H = cfg.hookLen ?? 1.5
-  const qs = cfg.qs.map((_, i) => H + i * GAP)
-  const fq = H + n * GAP
+  const qs = []; let tq = H
+  for (const q of cfg.qs) { qs.push(tq); tq += q.gap ?? GAP }
+  const fq = tq
   const fa = fq + (cfg.final.ansDelay ?? 1.05)
   const lastAt = fa + (cfg.final.hold ?? 1.6)
   const brk = cfg.breakAt ?? 0.3
@@ -300,13 +301,18 @@ export function headline(root, text, { top, size = 84, accentSize = 112, accent 
     },
   }
 }
+/** an accent darkened toward ink so it reads on the bone card */
+export function deepen(hex, k = 0.42) {
+  const h = hex.replace('#', ''), c = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)), ink = [27, 18, 54]
+  return '#' + c.map((v, i) => Math.round(v + (ink[i] - v) * k).toString(16).padStart(2, '0')).join('')
+}
 /** the question card (DOM): a bone card, a numbered badge, the question. kind 'q' | 'last' */
 function buildCard(root, { n, text, kind = 'q', accent }) {
   const wrap = el('div', { position: 'absolute', left: '0', top: '176px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
   const last = kind === 'last'
   const st = el('div', { position: 'relative', display: 'flex', alignItems: 'center', gap: '24px', maxWidth: '960px', padding: '26px 38px 30px 26px', background: last ? '#fff3d6' : BONE, border: `7px solid ${INK}`, borderRadius: '16px', boxShadow: `12px 12px 0 rgba(6,4,18,0.75)`, transformOrigin: '50% 40%' }, wrap)
   el('div', { flex: '0 0 auto', minWidth: '96px', height: '96px', padding: '0 10px', boxSizing: 'border-box', borderRadius: '48px', background: last ? GOLD : RED, border: `6px solid ${INK}`, display: 'grid', placeItems: 'center', font: `800 ${last ? 26 : 44}px ${INTER}`, color: last ? INK : '#fff', lineHeight: '1', textAlign: 'center' }, st, last ? 'LAST<br>Q' : `Q${n}`)
-  const html = text.replace(/\*([^*]+)\*/g, `<span style="font:italic 500 74px ${SERIF};color:${accent};letter-spacing:0">$1</span>`)
+  const html = text.replace(/\*([^*]+)\*/g, `<span style="font:italic 600 74px ${SERIF};color:${deepen(accent)};letter-spacing:0">$1</span>`)
   el('div', { font: `800 58px ${INTER}`, lineHeight: '1.08', color: INK, letterSpacing: '-0.01em' }, st, html)
   // the timer bar under the card
   const bar = el('div', { position: 'absolute', left: '26px', right: '26px', bottom: '-30px', height: '12px', background: 'rgba(239,230,214,0.25)', border: `4px solid ${INK}`, borderRadius: '8px', overflow: 'hidden' }, st)
@@ -483,7 +489,7 @@ export function makeHotSeat(cfg) {
         scene(x, t)
         tx.clearRect(0, 0, 1080, 1920)
         if (cfg.overlay) cfg.overlay(tx, t, S)
-        cards.forEach((c, i) => c.update(t, { at: T.qs[i], out: [quickOut(i) - 0.1, quickOut(i)], dur: T.GAP }))
+        cards.forEach((c, i) => c.update(t, { at: T.qs[i], out: [quickOut(i) - 0.1, quickOut(i)], dur: quickOut(i) - T.qs[i] }))
         lastCard.update(t, { at: T.fq, out: [T.lastAt - 0.2, T.lastAt], dur: T.lastAt - T.fq, slow: true })
         lastLine.update(t, 1)
         bug.update(t, 1)
@@ -503,8 +509,9 @@ export function makeHotSeat(cfg) {
     : bf === 'whip' ? [HK.whipZoom, HK.whipZoomCues, { at: T.brk - 0.1, len: 0.45, from: 1.5 }]
     : bf === 'shake' ? [HK.screenShake, HK.shakeCues, { at: T.brk, len: 0.5, amp: 30 }]
     : bf === 'glitch' ? [HK.glitch, HK.glitchCues, { at: T.brk, len: 0.55, dialog: false }]
+    : bf === 'none' ? null
     : [HK.whipZoom, HK.whipZoomCues, { at: -0.08, len: 0.45, from: 1.6 }]
-  const FX = [BRK, ...(cfg.fx || [])]
+  const FX = [...(BRK ? [BRK] : []), ...(cfg.fx || [])]
   const wins = bf === 'scratch' ? [BRK[2]] : []
   const base = wins.length ? HK.frozen(build, wins) : build
   const SCENES = [base, ...FX.map(([f, , o]) => f(o)), HK.slamTitle(HOOK)]
@@ -531,7 +538,7 @@ export function makeHotSeat(cfg) {
     ...talkCues([{ t: T.lastAt, speaker: 'THE STARS', text: cfg.last }], { cps: CPS }),
     ...(cfg.cues || []),
   ]
-  return { DURATION, SCENES, CUES, T, LOOP }
+  return { DURATION, SCENES, CUES, T, LOOP, META: { id: cfg.id, ending: cfg.ending, music: cfg.music } }
 }
 
 /** the cues.js object for a short episode */
