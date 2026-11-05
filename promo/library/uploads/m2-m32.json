@@ -218,5 +218,25 @@
   "series": "spotgreen",
   "episode": 22,
   "caption": "Worst week ever. One makes you a plan, one just listens. Which is the green flag?\nTrick question: both. Just ask which one you need."
+ },
+ "ksge23": {
+  "video": "/_blob/c917d6d9ddedb23618fdfca73cfbbf00",
+  "poster": "/_blob/139206ee69c36e0556ef838f8770ce4b",
+  "title": "The Texting Round",
+  "len": 60,
+  "long": true,
+  "series": "spotgreen",
+  "episode": 23,
+  "caption": "Five texts, five chances to spot the green flag. Round 5 is the hard one.\nHow many did you get before the reveal?"
+ },
+ "ksge24": {
+  "video": "/_blob/c2e9f5f1169d95fb279cd17c8977ada3",
+  "poster": "/_blob/a1965bae6feaf00d9a3c4068d71e77a8",
+  "title": "First Date, Five Rounds",
+  "len": 60,
+  "long": true,
+  "series": "spotgreen",
+  "episode": 24,
+  "caption": "One first date, five rounds, and the goodbye decides it.\nPlay along and keep score: hello, questions, silence, plan B, the door."
  }
 }
