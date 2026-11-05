@@ -583,3 +583,167 @@ export function scratchCues(t) {
 export function sobCues(t) {
   return [['pluck', r3(t), 987.77, 0.045, 0.35, 0.2], ['pluck', r3(t + 0.16), 880, 0.045, 0.35, 0.2], ['pluck', r3(t + 0.3), 739.99, 0.05, 0.5, 0.2], ['glitter', r3(t), r3(t + 0.6)]]
 }
+
+// ═══════════════════════════════════════════════════════════════════════════ the 60 s version
+//   makeWhichLong(cfg) → { DURATION, SCENES, CUES, T }
+//     cfg.hook ('Keep count. | Your *verdict’s* at the end.'), cfg.hero, cfg.flash
+//     cfg.types: ['the Overthinker', …] × 4 (number N is always the same type)
+//     cfg.rounds: [{ title: 'THE FIRST TEXT', line: 'You want to *text first.*', panels: [{ sign, bg, caption, draw }] × 4 }] × 6
+//     cfg.verdicts: ['*Mostly 1s: the Overthinker.* Your care is real. Ask, don’t guess.', …] × 4
+//     cfg.pisces: the last line ('Mostly 5s? Same. *Tissues are on us.*'), cfg.ending 'loop' | 'cut'
+//   Timeline: hook 0–3.4 · six rounds of 7.2 s (chapter sticker, the round's line, four spotlight turns of 1.55 s) ·
+//   the verdict (46.6: four cards of 2.4 s, each lighting its number) · Pisces #5 and the last line (56.2–60).
+export function makeWhichLong(cfg) {
+  const RS0 = 3.4, RL = 7.2, TL = 1.55, NR = cfg.rounds.length
+  const RS = cfg.rounds.map((_, r) => r3(RS0 + r * RL))
+  const VS = r3(RS0 + NR * RL)                       // 46.6
+  const VC = [0, 1, 2, 3].map(i => r3(VS + 0.7 + i * 2.4))
+  const FIN = r3(VS + 0.7 + 4 * 2.4)                 // 56.9
+  const DURATION = cfg.dur || 60
+  const LOOP = cfg.ending === 'loop', LOOPLEN = 0.45
+  const T = { whip: [0, 0.45], freeze: [0.45, 1.0], RS, VS, VC, FIN, loop: [r3(DURATION - LOOPLEN), DURATION], E: VS }
+  const REC = { at: 0.45, len: 0.55, caption: cfg.freeze || 'grab *a pen.*', top: 1690 }
+  const turnsOf = r => [0, 1, 2, 3].map(i => [r3(RS[r] + 0.8 + i * TL), r3(RS[r] + 0.8 + (i + 1) * TL)])
+  const ptime = t => t < T.freeze[0] ? t : t < T.freeze[1] ? T.freeze[0] : t - (T.freeze[1] - T.freeze[0])
+  const grid = makeGrid({ hero: cfg.hero ?? 0 })
+  const rounds = cfg.rounds.map((R_, r) => {
+    const turns = turnsOf(r)
+    return R_.panels.map((p, i) => ({
+      ...p, turn: turns[i], col: signStar(p.sign).color,
+      P: tp => ({ u: tp - ptime(turns[i][0]), on: 0, t: tp, i, W: PW, H: PH, turn: turns[i].map(ptime), sign: p.sign, col: signStar(p.sign).color,
+        star: (x, t, o) => drawSign(x, p.sign, t, { x: 240, y: 330, s: 200, seed: 3 + i + r, ...o }) }),
+    }))
+  })
+  const roundAt = t => { let r = 0; for (let k = 0; k < NR; k++) if (t >= RS[k] - 0.05) r = k; return r }
+  const spotK = (t, i) => {
+    if (t >= VS) { const a = VC[i], b = a + 2.4; return clamp(prog(t, a - 0.05, a + 0.12)) * (1 - clamp(prog(t, b - 0.08, b + 0.04))) }
+    const r = roundAt(t), [a, b] = turnsOf(r)[i]; return clamp(prog(t, a - 0.05, a + 0.12)) * (1 - clamp(prog(t, b - 0.08, b + 0.04)))
+  }
+  const anyTurn = t => { if (t >= VS) return t >= VC[0] - 0.05 && t < FIN; const r = roundAt(t), tt = turnsOf(r); return t >= tt[0][0] - 0.05 && t < tt[3][1] }
+
+  function camera(t) {
+    const [hx, hy] = panelCenter(cfg.hero ?? 0)
+    let k = 0
+    if (t < T.whip[1]) k = 1 - ease.outCubic(prog(t, 0, T.whip[1]))
+    if (LOOP && t > T.loop[0]) k = loopK(t, DURATION, LOOPLEN)
+    // a punch at each round change
+    let punch = 0
+    for (const s of [...RS.slice(1), VS]) { const d = t - s; if (d >= 0 && d < 0.35) punch = 0.07 * (1 - ease.outCubic(d / 0.35)) }
+    return { s: lerp(1, ZOOM0, k) + punch, cx: lerp(540, hx, k), cy: lerp(990, hy, k) }
+  }
+  function paintAll(x, t, { forFrame0 = false } = {}) {
+    const tp = ptime(t), cam = camera(t), r = forFrame0 ? 0 : roundAt(t)
+    drawSky(x, t, { ...SKY_H, zoom: SKY_H.zoom * (1 + (cam.s - 1) * 0.15) })
+    x.save(); x.translate(540, 990); x.scale(cam.s, cam.s); x.translate(-cam.cx, -cam.cy)
+    grid.paint(x, t, tp, rounds[r], { spot: i => forFrame0 ? 0 : spotK(t, i), dim: i => (forFrame0 || !anyTurn(t)) ? 0 : 1 - spotK(t, i), frozen: 0 })
+    // Pisces #5: small and sniffling through the rounds, then shoved in big for the finale
+    const fin = !forFrame0 && t >= FIN
+    if (!fin) {
+      const lvl = t < RS0 ? 1 : Math.min(3, 1 + Math.floor(roundAt(t) / 2))
+      const P = signStar('pisces'), opts = { color: P.color, mood: 'sparkle', look: [0, -0.3], seed: 6, glow: 0.8, hops: RS.map(s => s + 0.1) }
+      drawStarChar(x, CENTER[0] - 6, CENTER[1] - 16, 112, t, opts)
+      const F = starFrame(CENTER[0] - 6, CENTER[1] - 16, 112, t, opts); inSprite(x, F, () => tearsCells(x, t, lvl))
+      x.save(); x.translate(CENTER[0] - 62, CENTER[1] - 74); x.fillStyle = INK; x.beginPath(); x.arc(0, 0, 28, 0, Math.PI * 2); x.fill(); x.fillStyle = PINK; x.beginPath(); x.arc(0, 0, 23, 0, Math.PI * 2); x.fill()
+      x.font = `800 30px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = INK; x.fillText('5', 0, 2); x.restore()
+    } else {
+      const k = pop01(t, FIN, 0.3, 2) * (LOOP ? 1 - ease.inQuad(prog(t, T.loop[0], T.loop[1] - 0.1)) : 1)
+      drawPisces5(x, t, k, FIN, { s: 250 })
+      sparkles(x, t, CENTER[0], CENTER[1], FIN + 0.3, 12, 220, 0.4, [TEAR, BONE, PINK])
+    }
+    x.restore()
+    { const g = x.createLinearGradient(0, 0, 0, 470); g.addColorStop(0, 'rgba(5,4,14,0.9)'); g.addColorStop(0.7, 'rgba(5,4,14,0.55)'); g.addColorStop(1, 'rgba(5,4,14,0)'); x.fillStyle = g; x.fillRect(0, 0, 1080, 470) }
+    if (cfg.fx) cfg.fx(x, t, { T, forFrame0, cam })
+    const ws = t < T.whip[1] ? 1 - prog(t, 0, T.whip[1]) : (LOOP && t > T.loop[0] && !forFrame0 ? prog(t, T.loop[0], T.loop[1]) : 0)
+    if (ws > 0.02) {
+      x.save(); x.globalAlpha = 0.5 * ws; x.strokeStyle = BONE; x.lineWidth = 6
+      for (let i = 0; i < 26; i++) { const a = (i / 26) * Math.PI * 2 + 0.3, r0 = 380 + 140 * ((i * 7) % 5) / 4; x.beginPath(); x.moveTo(540 + Math.cos(a) * r0, 990 + Math.sin(a) * r0); x.lineTo(540 + Math.cos(a) * (r0 + 260 * ws), 990 + Math.sin(a) * (r0 + 260 * ws)); x.stroke() }
+      x.restore()
+    }
+  }
+
+  async function build(stage) {
+    try { await Promise.all(["800 88px Inter", "800 46px Inter", "800 28px Inter", "italic 500 112px 'EB Garamond'", "italic 500 60px 'EB Garamond'", "700 40px 'Space Mono'", "700 26px 'Space Mono'"].map(f => document.fonts.load(f))) } catch (_) { /* optional */ }
+    const root = fill(stage, { background: '#05040c' })
+    const cv = layerCanvas(root), x = cv.getContext('2d')
+    let plate = null
+    const hookS = buildSlam(root, cfg.hook, { top: 160, size: 84, accent: GOLD })
+    const lineS = cfg.rounds.map(R_ => buildSlam(root, R_.line, { top: 170, size: 80, accent: GOLD }))
+    const verdS = buildSlam(root, 'Your *verdict.*', { top: 176, size: 92, accent: GOLD })
+    const commentS = buildSlam(root, 'Comment your *number.*', { top: 176, size: 92, accent: PINK })
+    const strips = rounds.map((ps, r) => ps.map((p, i) => buildStrip(root, { n: i + 1, text: p.caption, badge: p.col, accent: cfg.deep || '#7a3aa0' })))
+    const vStrips = cfg.verdicts.map((v, i) => buildStrip(root, { n: i + 1, text: v, badge: [GOLD, MINT, BLUE, PINK][i], accent: '#7a3aa0' }))
+    vStrips.forEach(s => { s.tx.style.fontSize = '40px'; s.tx.querySelectorAll('span').forEach(sp => { sp.style.fontSize = '52px' }) })
+    const pisStrip = buildStrip(root, { n: 5, text: cfg.pisces, badge: PINK, accent: '#2a6fd0' })
+    buildBug(root)
+    // the tally HUD (top-right): ROUND n/6 + pips
+    const hud = el('div', { position: 'absolute', right: '56px', top: '58px', display: 'flex', alignItems: 'center', gap: '10px', font: `700 26px ${MONO}`, color: BONE, textShadow: '0 2px 10px rgba(6,4,18,0.9)', pointerEvents: 'none' }, root)
+    const hudT = el('div', {}, hud, '')
+    const pips = Array.from({ length: NR }, () => el('div', { width: '16px', height: '16px', background: 'rgba(239,230,214,0.25)', boxShadow: `0 0 0 3px ${INK}` }, hud))
+    const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
+    const flashD = el('div', { position: 'absolute', inset: 0, background: cfg.flash || '#fff6ea', opacity: 0, pointerEvents: 'none', mixBlendMode: 'screen' }, root)
+
+    return {
+      start: 0, end: DURATION + 0.01, root,
+      update(t) {
+        const shake = (() => { for (const s of [VS, FIN]) { const d = t - s; if (d > 0 && d < 0.4) return 14 * Math.exp(-d * 9) * Math.sin(d * 60) } return 0 })()
+        x.save(); x.translate(0, shake); paintAll(x, t); x.restore()
+        const lk = LOOP ? loopK(t, DURATION, LOOPLEN) : 0
+        if (lk > 0) { if (!plate) { plate = document.createElement('canvas'); plate.width = 1080; plate.height = 1920; paintAll(plate.getContext('2d'), 0, { forFrame0: true }) } x.save(); x.globalAlpha = lk; x.drawImage(plate, 0, 0); x.restore() }
+        // headlines
+        hookS.update(t, t < RS0 ? -1 : T.loop[0], t < RS0 ? 1 : (LOOP ? lk : 0), 1.15)
+        lineS.forEach((s, r) => { const a = RS[r], b = r < NR - 1 ? RS[r + 1] : VS; s.update(t, a, t >= a && t < b ? 1 : 0) })
+        verdS.update(t, VS, t >= VS && t < FIN ? 1 : 0)
+        commentS.update(t, FIN, t >= FIN ? (LOOP ? 1 - lk : 1) : 0)
+        // strips
+        rounds.forEach((ps, r) => { const tt = turnsOf(r); ps.forEach((p, i) => stripUpdate(strips[r][i], t, tt[i][0] + 0.04, [tt[i][1] - 0.12, tt[i][1]], [-1.6, 1.4, -1.2, 1.6][i])) })
+        vStrips.forEach((s, i) => stripUpdate(s, t, VC[i] + 0.04, [VC[i] + 2.4 - 0.12, VC[i] + 2.4], [-1.2, 1.2, -1, 1.2][i]))
+        stripUpdate(pisStrip, t, FIN + 0.4, LOOP ? [T.loop[0] - 0.05, T.loop[0] + 0.25] : [DURATION + 1, DURATION + 2], -1.2)
+        // HUD
+        const inRounds = t >= RS0 && t < VS
+        const hudLoop = LOOP && lk > 0
+        hud.style.display = (t < VS || hudLoop) ? 'flex' : 'none'
+        hud.style.opacity = hudLoop ? String(lk) : '1'
+        const rr = t < RS0 || hudLoop ? -1 : roundAt(t)
+        hudT.textContent = t < RS0 || hudLoop ? 'KEEP COUNT' : `ROUND ${rr + 1}/${NR}`
+        pips.forEach((p, k) => { p.style.background = rr >= 0 && (k < rr || (k === rr && inRounds)) ? GOLD : 'rgba(239,230,214,0.25)' })
+        const fl = Math.max(0, ...[...RS.slice(1), VS, FIN].map(s => t >= s && t < s + 0.12 ? 0.7 * (1 - (t - s) / 0.12) : 0))
+        flashD.style.opacity = String(0.6 * fl)
+        drawGrain(gx, t)
+      },
+    }
+  }
+
+  const CH = cfg.rounds.map((R_, r) => ({ at: RS[r], out: [r3((r < NR - 1 ? RS[r + 1] : VS) - 0.15), r < NR - 1 ? RS[r + 1] : VS], n: r + 1, title: R_.title, x: 60, y: 1770 }))
+  const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
+  const CUES = [
+    ['whoosh', 0, 0.42, 0.05], ['boom', 0.43, 0.2], ...recordScratchCues(REC),
+    ...CH.flatMap(c => chapterCues(c)),
+    ...RS.flatMap((s, r) => [['boom', s, 0.18], ['whoosh', r3(s - 0.1), 0.25, 0.03],
+      ...turnsOf(r).flatMap(([a], i) => [['whoosh', r3(a - 0.06), 0.2, 0.026], ['pop', r3(a + 0.02), NOTE[(i * 2 + r) % 7], 0.042, [-0.4, 0.4, -0.3, 0.3][i]], ['tick', r3(a + 0.04), 0.05],
+        ...(cfg.rounds[r].panels[i].cues || []).map(c => [c[0], r3(a + c[1]), ...c.slice(2)])]),
+      ['pluck', r3(s + 0.3), 987.77 - r * 40, 0.03, 0.4, 0]]),
+    ['boom', VS, 0.3], ['tom', VS, 92, { gain: 0.26, decay: 0.3 }], ['crash', VS, { gain: 0.05, len: 1.4 }],
+    ...VC.flatMap((a, i) => [['whoosh', r3(a - 0.06), 0.2, 0.03], ['bell', r3(a + 0.02), NOTE[i + 2], 0.03, 1.0, 0], ['tick', r3(a + 0.04), 0.06]]),
+    ['boom', FIN, 0.3], ['tom', FIN, 92, { gain: 0.28, decay: 0.3 }], ['whoosh', r3(FIN - 0.04), 0.3, 0.04], ...sobCues(r3(FIN + 0.4)), ['pop', r3(FIN + 0.42), 1318.51, 0.04, 0.3],
+    ...(LOOP ? loopCues({ duration: DURATION, len: LOOPLEN }) : []),
+    ...(cfg.cues || []),
+  ]
+  const SCENES = [build, recordScratch(REC), ...CH.map(c => chapter(c))]
+  return { DURATION, SCENES, CUES, T }
+}
+
+/** a quick panel: floor + optional props behind/in front + the sign + a bubble or thought
+ *  o = { floorCol, star: { x, y, s, mood, look, … } | fn(P, t) → opts, back(x, t, P), front(x, t, P), say, think, at = 0.3, sayY = 100, size = 26 } */
+export function simplePanel(o) {
+  return (x, t, P) => {
+    if (o.floorCol !== null) floor(x, o.floorCol || '#2a2148', o.floorY || 470)
+    if (o.back) o.back(x, t, P)
+    const so = typeof o.star === 'function' ? o.star(P, t) : (o.star || {})
+    P.star(x, t, { x: 170, y: 330, s: 180, mood: 'happy', look: [1, 0], hops: [P.turn[0] + 0.25], ...so })
+    if (o.front) o.front(x, t, P)
+    const t0 = P.turn[0] + (o.at ?? 0.3), first = t0 - P.t + P.u
+    void first
+    if (o.say) bubble(x, t, o.sayX ?? 240, o.sayY ?? 100, t0, Infinity, o.say, { size: o.size || 26 })
+    if (o.think) thought(x, t, o.sayX ?? 240, o.sayY ?? 100, t0, Infinity, o.think, { size: o.size || 24 })
+  }
+}
