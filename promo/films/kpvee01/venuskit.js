@@ -211,7 +211,8 @@ export function episode(S) {
   const DURATION = S.dur
   const bubbles = (S.bubbles || []).map(b => {
     const role = b.who === 'venus' ? 'venus' : b.who === 'pisces' && S.sign !== 'pisces' ? 'pisces' : 'sign'
-    return { size: 52, maxW: 780, cps: 30, ...BUB[role], ...b }
+    const up = b.tailUp ?? (role === 'venus' ? (b.y === undefined || b.y > 800) : true)   // a bubble above Venus points down at her
+    return { size: 52, maxW: 780, cps: 30, ...BUB[role], ...b, tailUp: up }
   })
   const hopsOf = who => bubbles.filter(b => b.who === who).flatMap(b => {
     const len = String(b.text).replace(/\*/g, '').length / (b.cps || 30)
