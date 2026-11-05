@@ -300,7 +300,7 @@ export function cityFilm(spec) {
         const s = stops[stopIdx(t)]
         s.draw(x, t, K)
         if (spec.back) spec.back(x, t, K)
-        for (const c of (spec.cast ? spec.cast(t, K) : [])) if (c) drawChar(x, t, { seed: 3, ...c, hops: [...(c.hops || []), ...(c.sign ? hopsOf(c.sign) : [])] })
+        for (const c of (spec.cast ? spec.cast(t, K) : [])) if (c) drawChar(x, t, { seed: 3, ...c, s: c.s * (spec.castScale || 1), hops: [...(c.hops || []), ...(c.sign ? hopsOf(c.sign) : [])] })
         const S = spec.stars ? spec.stars(t, K) : null
         if (S) drawChar(x, t, { color: STAR.sky, glyph: false, seed: 2, glow: 1.15, ...S, hops: [...(S.hops || []), ...hopsOf('stars')] })
         if (spec.front) spec.front(x, t, K)
