@@ -3,6 +3,7 @@
 # your logged-in browser, works out what's in each one on this Mac (what's said,
 # what's on screen, stills), and packs it up for Claude.
 #   run.sh [handle]         study a page (asks which, remembers the last one)
+#   run.sh facebook [link]  study a Facebook page's reels and videos
 #   run.sh send [handle]    send the pack to your own private GitHub repo so Claude can read it
 eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
 cd "$(dirname "$0")/.." || exit 1
@@ -22,10 +23,14 @@ ask_handle() {
   local last given="$1"
   last="$(cat "$PREFS/handle" 2>/dev/null)"; last="${last:-tylerinthemaking}"
   if [ -z "$given" ]; then
-    printf "\n\033[1mWhich Instagram page?\033[0m Paste a link or type the handle (just press Enter for @%s): " "$last"
+    printf "\n\033[1mWhich page?\033[0m Paste an Instagram or Facebook link, or type the handle (just press Enter for @%s): " "$last"
     read -r given
     given="${given:-$last}"
   fi
+  # Facebook: the page's name comes from opening the link, so it's worked out in step 1.
+  case "$given" in
+    *facebook.com*|*fb.com*|*fb.me*|fb-*) FACEBOOK="$given"; HANDLE="$given"; return ;;
+  esac
   HANDLE="$(node --input-type=module -e "import { handleOf } from './src/paths.mjs'; console.log(handleOf(process.argv[1]) ?? '')" "$given")"
   if [ -z "$HANDLE" ]; then say "\"$given\" doesn't look like an Instagram page. Try the handle, like tylerinthemaking."; pause_close; exit 1; fi
   echo "$HANDLE" > "$PREFS/handle"
@@ -82,13 +87,57 @@ if [ "$1" = "send" ]; then
 fi
 
 # ---------- Study a page ----------
-ask_handle "$1"
+if [ "$1" = "facebook" ]; then
+  given="$2"
+  if [ -z "$given" ]; then
+    printf "\n\033[1mWhich Facebook page?\033[0m Paste its link (a share link is fine): "
+    read -r given
+  fi
+  case "$given" in *facebook.com*|*fb.com*|*fb.me*|fb-*) ;; *) say "\"$given\" doesn't look like a Facebook link."; pause_close; exit 1 ;; esac
+  ask_handle "$given"
+else
+  ask_handle "$1"
+fi
 say "Align Study: @$HANDLE"
 caffeinate -i -w $$ &   # keep the Mac awake until this window closes
 git -C "$REPO_DIR" pull --ff-only --autostash -q 2>/dev/null && note "Up to date." || note "Couldn't check for updates; carrying on."
 note "Updating the downloaders (Instagram changes often)..."
 brew upgrade gallery-dl yt-dlp >/dev/null 2>&1 || true
 for f in ffmpeg whisper-cpp; do brew list "$f" >/dev/null 2>&1 || brew install "$f"; done
+
+# ---------- Facebook: its own Chrome window collects the links, yt-dlp downloads ----------
+if [ -n "$FACEBOOK" ]; then
+  note "Getting the piece that drives the Chrome window (first time only)..."
+  npm install --no-audit --no-fund --silent >/dev/null 2>&1 || { say "Couldn't install it. Check your internet and try again."; pause_close; exit 1; }
+  say "1/3  Collecting and downloading the page's reels and videos"
+  note "A Chrome window opens and scrolls the page by itself. The first time, log into Facebook in it; it remembers you after that."
+  note "Leave this window open and your Mac plugged in; it's safe to close and double-click again later."
+  waits=0; logins=0; rm -f "$PREFS/fb-handle"
+  while true; do
+    node src/facebook.mjs "$FACEBOOK" --handle-file "$PREFS/fb-handle" $STUDY_EXTRA; code=$?
+    # Once the page is known (fb-<page>), later rounds and next time skip reopening the share link.
+    if [ -s "$PREFS/fb-handle" ]; then HANDLE="$(cat "$PREFS/fb-handle")"; FACEBOOK="$HANDLE"; echo "$HANDLE" > "$PREFS/handle"; fi
+    case $code in
+      0) break ;;
+      75) [ $waits -ge 24 ] && break
+          waits=$((waits + 1)); say "Facebook wants a break. Waiting 30 minutes, then carrying on by itself (round $waits). Progress is kept."; sleep 1800 ;;
+      77) [ $logins -ge 3 ] && { say "Still not logged in. Double-click again when you're ready."; pause_close; exit 1; }
+          logins=$((logins + 1)); say "Trying again: log into Facebook in the Chrome window when it opens." ;;
+      *)  [ -d "$STUDY/media/$HANDLE" ] && ls "$STUDY/media/$HANDLE"/*.json >/dev/null 2>&1 && { note "Stopped early; carrying on with what downloaded."; break; }
+          say "Couldn't study that page (see the message above)."; pause_close; exit 1 ;;
+    esac
+  done
+  say "2/3  Working out what's in each video on this Mac: what's said, what's on screen, stills"
+  node src/process.mjs "$HANDLE" || { say "Something went wrong working through the videos (see above)."; pause_close; exit 1; }
+  say "3/3  Packing it up"
+  node src/report.mjs "$HANDLE" || { pause_close; exit 1; }
+  open "$STUDY/pack/$HANDLE"
+  note "The numbers are in report.md in the folder that just opened."
+  printf "\n\033[1mSend it to Claude now?\033[0m It goes to a private repo on your GitHub that only you can see. [Y/n] "
+  read -r yn
+  case "$yn" in n|N|no|No) say "Not sent. Double-click \"Send Study to Claude\" whenever you're ready."; pause_close ;; *) exec "$STUDY/mac/run.sh" send "$HANDLE" ;; esac
+  exit 0
+fi
 
 # Which browser has your Instagram login (shared with Align Inspo if you've used it).
 BROWSER="$(cat "$PREFS/browser" 2>/dev/null || cat "$HOME/.align-inspo/browser" 2>/dev/null)"

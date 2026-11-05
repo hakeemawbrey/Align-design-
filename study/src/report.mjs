@@ -369,7 +369,7 @@ export function writePack(handle, { tz } = {}) {
   writeFileSync(path.join(out, 'report.md'), buildReport({ handle, profile, recs, tz }))
   writeFileSync(path.join(out, 'README.md'), [
     `# @${handle}: study pack`, '',
-    `Every post on instagram.com/${handle}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
+    `Every post on ${profile?.site === 'facebook' ? `${profile.link} (Facebook reels and videos)` : `instagram.com/${handle}`}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
     'It is reference material for private analysis only: keep this repo private and don\'t repost any of it.', '',
     '- `report.md`: the numbers (formats, top posts, hooks, topics, CTAs, timing)',
     '- `posts.json`: every post in full; `posts.csv`: the same as a spreadsheet',
