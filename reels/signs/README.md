@@ -20,6 +20,11 @@ python3 make.py --forever --jobs 3             # endless: when every script is m
 python3 tools/site.py                          # out/site/: the reels + the whole catalogue as one page
 ```
 
+The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLDNdQTtQDwK2t
+
+```sh
+```
+
 ## The reel
 
 1080×1920, 30 fps, 12–22 s. A full-bleed painting, graded toward dusk and darkened
