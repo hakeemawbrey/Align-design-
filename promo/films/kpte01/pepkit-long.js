@@ -74,7 +74,7 @@ export function makeLong(cfg) {
     const cx = lerp(560, 230, b) + lunge * 14 * Math.sin(t * 31), cy = lerp(1330, 1300, b), s = lerp(720, 250, b)
     if (lunge > 0.02) speedLines(x, t, cx, cy - 200, 0.7 * lunge, { r0: 420 })
     x.save(); x.translate(cx, cy); x.rotate(lerp(-0.16, 0, b)); x.translate(-cx, -cy)
-    C(x, t, { x: cx, y: cy, s, mood: t < T.coachBack[1] ? 'wide' : 'happy', look: t < T.coachBack[0] ? [0, 0] : [1, -0.4], blink: false, glyph: s < 400, hops: [T.coachBack[1] + 0.05, 2.0], squash: lunge * 0.06 * Math.sin(t * 18), tears: coachP ? 3 : 0 })
+    C(x, t, { x: cx, y: cy, s, mood: t < T.coachBack[1] ? 'wide' : 'happy', look: t < T.coachBack[0] ? [0, 0] : [1, -0.4], blink: false, ...(s >= 400 ? { glyph: false } : {}), hops: [T.coachBack[1] + 0.05, 2.0], squash: lunge * 0.06 * Math.sin(t * 18), tears: coachP ? 3 : 0 })
     x.restore()
   }
 

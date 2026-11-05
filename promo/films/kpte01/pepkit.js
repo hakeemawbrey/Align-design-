@@ -464,7 +464,7 @@ export function makePep(cfg) {
     const rot = lerp(-0.16, 0, b)
     if (lunge > 0.02) speedLines(x, tt, cx, cy - 200, 0.7 * lunge, { r0: 420 })
     x.save(); x.translate(cx, cy); x.rotate(rot); x.translate(-cx, -cy)
-    C(x, tt, { x: cx, y: cy, s, mood: tt < T.coachBack[1] ? 'wide' : 'happy', look: tt < T.coachBack[0] ? [0, 0] : [1, -0.4], blink: false, glyph: s < 400, hops: [T.coachBack[1] + 0.05, 1.9, 2.3], squash: lunge * 0.06 * Math.sin(tt * 18) })
+    C(x, tt, { x: cx, y: cy, s, mood: tt < T.coachBack[1] ? 'wide' : 'happy', look: tt < T.coachBack[0] ? [0, 0] : [1, -0.4], blink: false, ...(s >= 400 ? { glyph: false } : {}), hops: [T.coachBack[1] + 0.05, 1.9, 2.3], squash: lunge * 0.06 * Math.sin(tt * 18) })
     x.restore()
   }
   function grabScene(x, tt, S) {
