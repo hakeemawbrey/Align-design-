@@ -49,6 +49,16 @@
   "episode": 5,
   "caption": "First date, one hour until the last train, and they would not stop talking.\nCold noodles, one off-key song, zero regrets. Would you run for the train?"
  },
+ "kxrce06": {
+  "video": "/_blob/cdabc9d4afda9e25df056be63273489e",
+  "poster": "/_blob/65464b9411150c6ede12bbe8a75d0647",
+  "title": "Paris: Solo in the City of Couples",
+  "len": 60,
+  "long": true,
+  "series": "xremix",
+  "episode": 6,
+  "caption": "Aries took themself to Paris. Every bench had a couple on it.\nTwo croissants, one portrait and a window table later, the solo trip won. Ever taken yourself out?"
+ },
  "kxtve01": {
   "video": "/_blob/bac0da3c47244b48a4467de0d0dd1c44",
   "poster": "/_blob/5bd4d71a20d24c194a190e66a5d54da3",
@@ -88,5 +98,25 @@
   "series": "xthen",
   "episode": 4,
   "caption": "2016: Virgo hid behind the flowers at the singles table.\n2026: Virgo made joke name cards and led the conga line. Same table, very different energy. Which seat are you?"
+ },
+ "kxtve05": {
+  "video": "/_blob/ca9b80e2adba03b568475744cf9f8af3",
+  "poster": "/_blob/0356fd44eb49e9bbae43f65d4f56fc54",
+  "title": "Leo's Birthday: Sixty Guests vs Four",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 5,
+  "caption": "Sixty guests in 2016 and Leo still watched the door all night.\nFour friends in 2026 and nobody left before 1 a.m. Big party or small table?"
+ },
+ "kxtve06": {
+  "video": "/_blob/20a4c056c0a2c9af2807f59f4854667c",
+  "poster": "/_blob/e6a87f34ad7f74fd797a47715f4eb29a",
+  "title": "Board Game Night, Aries Edition",
+  "len": 60,
+  "long": true,
+  "series": "xthen",
+  "episode": 6,
+  "caption": "2016 Aries flipped the board. 2026 Aries took a deep breath and said good game.\nStill competitive, just a better sport. Who in your group can't lose quietly?"
  }
 }
