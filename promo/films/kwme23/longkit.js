@@ -27,17 +27,20 @@ export function makeLong(cfg) {
   const LOOP = [dur - LOOP_LEN, dur]
   const stageAt = t => stages.find(s => t >= s.t0 && t < s.t1) || (t < stages[0].t0 ? stages[0] : stages[stages.length - 1])
   const turnK = (st, t) => sine(prog(t, st.turn, st.turn + (st.turnLen || 1.3)))
-  const WHIPS = stages.map((s, i) => ({ at: i === 0 ? -0.12 : s.t0 - 0.06, len: 0.5, from: 1.5 }))
+  const WHIPS = stages.map((s, i) => ({ at: i === 0 && s.t0 < 0.5 ? -0.12 : s.t0 - 0.06, len: 0.5, from: 1.5 }))
+  const INTRO_WHIP = { at: -0.12, len: 0.6, from: 1.55 }
   const lines = stages.filter(s => s.line).map(s => ({ st: s, at: s.turn + (s.turnLen || 1.3) + 0.1 }))
   const LT = lines.map(l => lineTimes([{ t: l.at, speaker: 'x', text: l.st.line }], { cps: 26 })[0])
 
   function cam(t, st) {
     let z = 1, fx = 540, fy = 960
-    const i = stages.indexOf(st), W = whipZoomCam(t, WHIPS[i])
+    const i = stages.indexOf(st), intro = t < stages[0].t0, W = whipZoomCam(t, intro ? INTRO_WHIP : WHIPS[i])
     if (W) z = W.s
-    else if (i === 0 && t < WHIPS[0].at) z = WHIPS[0].from
+    else if (intro && t < INTRO_WHIP.at) z = INTRO_WHIP.from
+    else if (i === 0 && t < WHIPS[0].at && stages[0].t0 < 0.5) z = WHIPS[0].from
+    if (intro) return { z, fx, fy }
     const tk = ease.inOutCubic(prog(t, st.turn - 0.1, st.turn + (st.turnLen || 1.3) + 0.6)) * (1 - ease.inOutCubic(prog(t, st.t1 - 0.45, st.t1)))
-    z += 0.3 * tk
+    z += (st.push ?? 0.3) * tk
     fx = lerp(540, st.x, tk); fy = lerp(960, st.y - st.s * 0.08, tk)
     return { z, fx, fy }
   }
@@ -78,13 +81,15 @@ export function makeLong(cfg) {
       const w = st.wash || wash
       if (w) { const g = x.createLinearGradient(0, 0, 0, 1920); g.addColorStop(0, hexA(w, 0)); g.addColorStop(0.55, hexA(w, 0.22)); g.addColorStop(1, hexA(w, 0.5)); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920) }
       x.save(); x.translate(540, 960); x.scale(c.z, c.z); x.translate(-c.fx, -c.fy)
-      let skipHero = false
-      if (cfg.intro && t < stages[0].t0) skipHero = cfg.intro(x, t, S)
-      if (st.back) st.back(x, t, u, S)
-      if (!skipHero && !st.noHero) hero(x, t, st)
-      if (st.front) st.front(x, t, u, S)
+      if (cfg.intro && t < stages[0].t0) cfg.intro(x, t, S)
+      else {
+        if (st.back) st.back(x, t, u, S)
+        if (!st.noHero) hero(x, t, st)
+        if (st.front) st.front(x, t, u, S)
+      }
       x.restore()
-      if (pis && !(st.sign === 'pisces' && t >= st.t0)) {
+      if (st.hud && !(cfg.intro && t < stages[0].t0)) st.hud(x, t, u, S)
+      if (pis && !(st.sign === 'pisces' && t >= st.t0) && !(cfg.intro && t < stages[0].t0)) {
         const lvl = cfg.pisTears ? cfg.pisTears(t) : 2
         pisces(x, t, { x: pis.x, y: pis.y + 6 * Math.sin(t * 2.4), s: pis.s }, lvl, { mood: lvl >= 3 ? 'wide' : 'sparkle', look: turnK(st, t) > 0.5 ? [0, 0] : [-1, -1] })
       }
@@ -109,12 +114,13 @@ export function makeLong(cfg) {
     }
   }
 
-  const CH = stages.filter(s => s.chapter).map(s => ({ at: s.t0 + 0.35, out: [s.t1 - 0.4, s.t1 - 0.2], n: s.chapter.n, title: s.chapter.title, x: 60, y: 360, color: s.chapter.color || GOLD }))
+  const CH = stages.filter(s => s.chapter).map(s => ({ at: s.t0 + 0.35, out: [(s.chapter.until ?? s.t1) - 0.4, (s.chapter.until ?? s.t1) - 0.2], n: s.chapter.n, title: s.chapter.title, x: 60, y: 360, color: s.chapter.color || GOLD }))
   const SCENES = [build, ...CH.map(o => chapter(o))]
   const CUES = [
+    ...(cfg.intro ? whipZoomCues(INTRO_WHIP).map(c => c.map(v => typeof v === 'number' ? Math.max(0, v) : v)) : []),
     ...stages.flatMap((s, i) => whipZoomCues(WHIPS[i]).map(c => c.map(v => typeof v === 'number' ? Math.max(0, v) : v))),
     ...CH.flatMap(o => chapterCues(o)),
-    ...stages.flatMap(s => [['tom', s.turn, 70, { gain: 0.2, decay: 0.45 }], ['riser', s.turn + 0.1, s.turn + (s.turnLen || 1.3), 0.01]]),
+    ...stages.filter(s => s.turn != null).flatMap(s => [['tom', s.turn, 70, { gain: 0.2, decay: 0.45 }], ['riser', s.turn + 0.1, s.turn + (s.turnLen || 1.3), 0.01]]),
     ...lines.flatMap(l => talkCues([{ t: l.at, speaker: 'last', text: l.st.line }], { cps: 26, gain: 0.014 })),
     ...loopCues({ duration: dur, len: LOOP_LEN }),
     ...cues,
