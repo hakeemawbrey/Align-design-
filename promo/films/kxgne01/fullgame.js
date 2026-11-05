@@ -519,8 +519,9 @@ export function makeFullGame(cfg) {
         mood = w ? (t > T.flip[1] ? 'heart' : 'sparkle') : (C.finale?.mood || 'happy'); look = w ? [0, 0] : (C.finale?.look || [side === 'A' ? 1 : -1, 0])
       }
       const opts = { color: S.color, glyph: S.glyph, mood, look, hops: HOPS[side], seed: side === 'A' ? 3 : 9, glow: 1.1, squash }
-      drawStarChar(x, cx, CAST_Y, CAST_S, t, opts)
-      const F = starFrame(cx, CAST_Y, CAST_S, t, { hops: HOPS[side], seed: opts.seed, squash })
+      const cyy = CAST_Y + (C.dy ? C.dy(t) : 0)
+      drawStarChar(x, cx, cyy, CAST_S, t, opts)
+      const F = starFrame(cx, cyy, CAST_S, t, { hops: HOPS[side], seed: opts.seed, squash })
       const cryK = C.cry ? C.cry.reduce((k, [t0, kk]) => (t >= t0 ? kk : k), 0) : 0
       if (cryK) inSprite(x, F, () => tearsCells(x, t, cryK))
       if (C.oneTear != null) inSprite(x, F, () => oneTear(x, t, C.oneTear))
