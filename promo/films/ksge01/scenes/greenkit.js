@@ -40,7 +40,7 @@ export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, dra
 export const PW = 504, PH = 860, SET_K = 1.12      // takes are drawn on a 504 × 770 set, scaled ×1.12 into the panel
 export const PANEL = { A: { x: 24, y: 420 }, B: { x: 552, y: 420 } }
 export const FLOOR = 600                        // panel-local floor line used by most sets
-const CAM = { x: 540, y: 1424, w: 360, h: 220 }  // Pisces' judge cam (centre)
+export const CAM = { x: 540, y: 1424, w: 360, h: 220 }  // Pisces' judge cam (centre)
 const TIMER = { x: 540, y: 815, r: 104 }
 
 // ── drawing helpers (panel-local or global; all pure)
@@ -262,14 +262,14 @@ export function flag(x, t, px, py, { col = GREEN, dark = GREEN_D, k = 1, h = 330
 }
 
 // ── the series bug: "SPOT THE GREEN FLAG" Inter 800 small caps, letter-spaced, top-left
-function buildBug(root) {
+export function buildBug(root) {
   const b = el('div', { position: 'absolute', left: '56px', top: '56px', height: '44px', display: 'flex', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none' }, root)
   el('div', { width: '18px', height: '18px', background: GREEN, boxShadow: `0 0 0 4px ${INK}, 0 0 16px rgba(95,224,138,0.75)` }, b)
   el('div', { font: `800 28px ${INTER}`, letterSpacing: '0.2em', color: GREEN, textShadow: '0 2px 12px rgba(6,4,18,0.9)', whiteSpace: 'nowrap', fontVariant: 'small-caps' }, b, 'SPOT&nbsp;THE<span style="color:rgba(255,255,255,0.7)">&nbsp;GREEN&nbsp;FLAG</span>')
   return { update(alpha = 1) { b.style.opacity = String(alpha) } }
 }
 // ── a bone sticker (DOM) with one *accent*: the premise
-function buildSticker(root, { text, top = 1600, tilt = -1.6, size = 50, chip = 'THE MOMENT' }) {
+export function buildSticker(root, { text, top = 1600, tilt = -1.6, size = 50, chip = 'THE MOMENT' }) {
   const wrap = el('div', { position: 'absolute', left: '0', top: top + 'px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
   const st = el('div', { position: 'relative', maxWidth: '960px', padding: '26px 38px 26px', background: BONE, border: `6px solid ${INK}`, borderRadius: '14px', boxShadow: '10px 10px 0 rgba(6,4,18,0.7)', transformOrigin: '50% 50%' }, wrap)
   if (chip) el('div', { position: 'absolute', left: '26px', top: '-24px', padding: '6px 14px', background: GREEN, border: `5px solid ${INK}`, font: `700 22px ${MONO}`, color: INK, letterSpacing: '0.08em', whiteSpace: 'nowrap' }, st, chip)
@@ -287,7 +287,7 @@ function buildSticker(root, { text, top = 1600, tilt = -1.6, size = 50, chip = '
   }
 }
 // ── the verdict banner (DOM): "GREEN FLAG: TAKE B"
-function buildVerdict(root, html) {
+export function buildVerdict(root, html) {
   const wrap = el('div', { position: 'absolute', left: '0', top: '196px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
   const st = el('div', { padding: '18px 40px 22px', background: GREEN, border: `8px solid ${INK}`, borderRadius: '16px', boxShadow: '12px 12px 0 rgba(6,4,18,0.7)', font: `800 74px ${INTER}`, color: INK, letterSpacing: '-0.01em', whiteSpace: 'nowrap', transform: 'rotate(-3deg)' }, wrap, html)
   return {
@@ -323,7 +323,7 @@ export function cast(cfg) {
 }
 
 /** draw one panel (frame, set, take) at its place on the main canvas */
-function drawPanel(x, side, tk, t, cfg, S0, { dim = 0, grey = 0, glow = 0, tag = true }) {
+export function drawPanel(x, side, tk, t, cfg, S0, { dim = 0, grey = 0, glow = 0, tag = true }) {
   const P = PANEL[side], take = cfg.takes[side]
   x.save(); x.translate(P.x, P.y)
   // frame + glow
@@ -351,7 +351,7 @@ function drawPanel(x, side, tk, t, cfg, S0, { dim = 0, grey = 0, glow = 0, tag =
 }
 
 /** the 3-2-1 timer on the divider: digits at d[0..2], done at d[3] */
-function drawTimer(x, t, d, { r = TIMER.r, cx = TIMER.x, cy = TIMER.y, alpha = 1 } = {}) {
+export function drawTimer(x, t, d, { r = TIMER.r, cx = TIMER.x, cy = TIMER.y, alpha = 1 } = {}) {
   if (t < d[0] - 0.02 || alpha <= 0) return
   const k = pop01(t, d[0], 0.28, 2.6) * outK(t, [d[3] + 0.02, d[3] + 0.22])
   if (k <= 0.01) return
@@ -377,7 +377,7 @@ function drawTimer(x, t, d, { r = TIMER.r, cx = TIMER.x, cy = TIMER.y, alpha = 1
 }
 
 /** Pisces' judge cam under the divider. tears 1…3, mood, sweat */
-function drawJudge(x, t, C, { tears = 1, mood = 'wide', sweatOn = false, hops = null, alpha = 1, k = 1, look = [0, 0], cam = CAM } = {}) {
+export function drawJudge(x, t, C, { tears = 1, mood = 'wide', sweatOn = false, hops = null, alpha = 1, k = 1, look = [0, 0], cam = CAM } = {}) {
   if (alpha <= 0 || k <= 0.01) return
   const { x: cx, y: cy, w, h } = cam
   x.save(); x.globalAlpha *= alpha; x.translate(cx, cy); x.scale(k, k)
