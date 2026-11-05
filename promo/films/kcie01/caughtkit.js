@@ -482,6 +482,9 @@ export function makeCaught(cfg) {
     // the camcorder overlay: corner brackets, ● REC / ❚❚ PAUSED / ◀◀ REW, 4K, timecode, battery
     function camcorder(x, t, w, s) {
       const a = 0.95
+      // soft dark bands so the overlay reads on bright sets
+      const gt = x.createLinearGradient(0, 0, 0, 230); gt.addColorStop(0, 'rgba(8,5,20,0.55)'); gt.addColorStop(1, 'rgba(8,5,20,0)'); x.fillStyle = gt; x.fillRect(0, 0, 1080, 230)
+      const gb = x.createLinearGradient(0, 1660, 0, 1920); gb.addColorStop(0, 'rgba(8,5,20,0)'); gb.addColorStop(1, 'rgba(8,5,20,0.55)'); x.fillStyle = gb; x.fillRect(0, 1660, 1080, 260)
       x.save(); x.globalAlpha = a
       const L = 54, T0 = 150, B0 = 1780, Rr = 1026, len = 70, th = 8
       for (const [cx, cy, dx, dy] of [[L, T0, 1, 1], [Rr, T0, -1, 1], [L, B0, 1, -1], [Rr, B0, -1, -1]]) { R(x, 'rgba(6,4,18,0.6)', cx + 3 + (dx < 0 ? -len : 0), cy + 4 + (dy < 0 ? -th : 0), len, th); R(x, BONE, cx + (dx < 0 ? -len : 0), cy + (dy < 0 ? -th : 0), len, th); R(x, BONE, cx + (dx < 0 ? -th : 0), cy + (dy < 0 ? -len : 0), th, len) }
