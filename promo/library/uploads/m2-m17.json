@@ -1,0 +1,72 @@
+{
+ "ksbe01": {
+  "video": "/_blob/ae0ded42e222d4b7b4a8f6487957fb95",
+  "poster": "/_blob/7f200fc766055afe76e60b0e3653d86a",
+  "title": "\"You're so selfish\"",
+  "len": 20.0,
+  "long": false,
+  "series": "saybetter",
+  "episode": 1,
+  "caption": "A label makes them defend. The moment makes them listen.\nSay what happened and how it felt, not who they are."
+ },
+ "ksbe02": {
+  "video": "/_blob/ce02f5c0b44da12b8609b146af2f968f",
+  "poster": "/_blob/b6bee70a1b144a6e5ab90bb551ef5669",
+  "title": "\"I don't care\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 2,
+  "caption": "\"I don't care\" usually means \"I'm exhausted.\"\nTired is honest. Say you need the morning, then show up for the talk."
+ },
+ "ksbe03": {
+  "video": "/_blob/93e25205debbd21403f833f874c4db8f",
+  "poster": "/_blob/933572ee18649928cd778c482a3e2ff6",
+  "title": "\"Whatever.\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 3,
+  "caption": "\"Whatever\" isn't calm, it's overwhelmed.\nName the feeling, ask for a minute, then come back. That's the grown-up exit."
+ },
+ "ksbe04": {
+  "video": "/_blob/93c2537223c8e404e81970738f8180b3",
+  "poster": "/_blob/def805f85fd6a988440b48989b6a8ca9",
+  "title": "\"You never text back\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 4,
+  "caption": "The spiral after an unanswered text is real.\nSay the worry instead of the charge, and ask for the small text that would help."
+ },
+ "ksbe05": {
+  "video": "/_blob/2b31eb8fd06d7ad89a5fa10d20990a4d",
+  "poster": "/_blob/96e8122984e3fbaa1fdbf5c1d864c03f",
+  "title": "\"Calm down\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 5,
+  "caption": "Nobody in history has calmed down because they were told to.\nTry \"I can see this matters. I'm listening.\" and watch what happens."
+ },
+ "ksbe06": {
+  "video": "/_blob/4fe1097346b2bea5e65ac6d9b8ffeb7b",
+  "poster": "/_blob/b5d5263a946568eb74b85c71d9ff59d2",
+  "title": "\"Why are you like this?\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 6,
+  "caption": "\"Why are you like this\" has no good answer.\nSwap it for a useful question, then solve the problem side by side."
+ },
+ "ksbe07": {
+  "video": "/_blob/f424b4bd46ffa50e64164c5ab2491674",
+  "poster": "/_blob/4672b37dd94f4246c62a48bc00e11949",
+  "title": "\"Forget it.\"",
+  "len": 19.6,
+  "long": false,
+  "series": "saybetter",
+  "episode": 7,
+  "caption": "Walking out of a talk doesn't end it, it just moves it into your head for three days.\nPick a time to come back instead."
+ }
+}
