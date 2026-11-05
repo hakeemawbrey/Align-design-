@@ -200,7 +200,11 @@ const PIS = signStar('pisces')
 /** a sign star. o: { x, y, s, mood, look, hops, pop, seed, glyph(bool) } */
 export function sign(x, t, id, o) {
   const S = signStar(id)
-  return drawStarChar(x, o.x, o.y, o.s, t, { color: S.color, glyph: o.s >= 150 && o.glyph !== false ? S.glyph : null, seed: o.seed ?? 3, glow: 1.05, ...o })
+  const opts = { color: S.color, glyph: o.s >= 150 && o.glyph !== false ? S.glyph : null, seed: o.seed ?? 3, glow: 1.05, ...o }
+  const r = drawStarChar(x, o.x, o.y, o.s, t, opts)
+  const k = typeof o.tears === 'function' ? o.tears(t) : o.tears
+  if (k) { const F = starFrame(o.x, o.y, o.s, t, opts); inSprite(x, F, () => tearsCells(x, t, k)) }
+  return r
 }
 /** Pisces, crying. o: { x, y, s, tears 1–3, mood, look, pop, role } */
 export function pisces(x, t, o) {
@@ -414,7 +418,7 @@ function drawDraft(x, t, S, seg) {
   if (seg.hero) {
     const H = seg.hero
     const mood = typeof H.mood === 'function' ? H.mood(t) : (t < stopAt ? (H.mood0 || 'squint') : (H.mood || 'wide'))
-    sign(x, t, S.cfg.sign, { x: H.x ?? 190, y: (H.y ?? 1180) + pout * 600, s: H.s ?? 230, mood, look: H.look ?? (t < stopAt ? [1, 0.6] : [1, -0.4]), hops: [stopAt + 0.02, ...(H.hops || [])] })
+    sign(x, t, S.cfg.sign, { x: H.x ?? 190, y: (H.y ?? 1180) + pout * 600, s: H.s ?? 230, mood, look: H.look ?? (t < stopAt ? [1, 0.6] : [1, -0.4]), hops: [stopAt + 0.02, ...(H.hops || [])], tears: H.tears })
   }
   const typedK = seg.typed ? prog(t, seg.typed[0], seg.typed[1]) : 1
   const thumbIn = t < stopAt
@@ -433,7 +437,7 @@ function drawDraft(x, t, S, seg) {
   const SX = st.x ?? 640, SY = st.y ?? 1080, SR = st.r ?? 230
   if (t > dropA && pout < 1) {
     let sy
-    if (t < stopAt) { const p = prog(t, dropA, stopAt); sy = lerp(SY - 480, SY, Math.pow(p, 1.5)) }
+    if (t < stopAt) { const p = prog(t, dropA, stopAt); sy = lerp(SY - 400, SY, Math.pow(p, 1.5)) }
     else { const d = t - stopAt; sy = SY - 40 * Math.exp(-d * 9) * Math.abs(Math.sin(d * 22)) }
     const wob = t > stopAt ? 0.12 * Math.exp(-(t - stopAt) * 5) * Math.sin((t - stopAt) * 18) : 0
     const flip = seg.flipAt != null ? ease.inOutCubic(prog(t, seg.flipAt, seg.flipAt + 0.4)) : 0
@@ -470,7 +474,7 @@ function drawCheck(x, t, S, seg) {
   const cur = [...qs].reverse().find(q => t >= q.at) || qs[0]
   const mood = t < cur.at + (cur.aAt ?? 0.7) ? 'neutral' : (cur.mood || 'neutral')
   const hops = qs.map(q => q.at + (q.aAt ?? 0.7) + 0.02)
-  sign(x, t, S.cfg.sign, { x: H.x ?? 540, y: H.y ?? 1200, s: (H.s ?? 270) * k, mood, look: cur.look ?? [0, -0.6], hops })
+  sign(x, t, S.cfg.sign, { x: H.x ?? 540, y: H.y ?? 1200, s: (H.s ?? 270) * k, mood, look: cur.look ?? [0, -0.6], hops, tears: H.tears })
   if (seg.extra) seg.extra(x, t, S)
 }
 
@@ -588,6 +592,7 @@ export function shortBX(c) {
   const I = { stop, flip, C0: DE, q, I0, last, land, D, ...(c.T || {}) }
   const tick = Math.min(1.9, QL - 0.75)
   const pis = (x, t, S) => {
+    if (c.noPis) { if (c.pis) c.pis(x, t, S, I); return }
     if (t < DE) {
       const P = c.pisDraft || { x: 985, y: 760, s: 150 }
       if (c.pisDoor !== false) { box(x, P.x - 85, P.y - 200, 200, 560, '#120d26', { b: 8 }); glowAt(x, P.x + 15, P.y, 200, '255,214,150', 0.16) }
@@ -605,7 +610,7 @@ export function shortBX(c) {
     segments: [
       { kind: 'draft', t0: 0, t1: DE, stopAt: stop, flipAt: flip, room: c.room, contact: c.contact, sub: c.sub, clock: c.clock, draft: c.draft, old: c.old, typed: c.typed, back: c.back, stop: c.stop, phone: c.phone, avatar: c.avatar,
         hero: { x: 175, y: 1250, s: 220, mood0: 'squint', mood: 'wide', ...(c.hero || {}) }, extra: c.draftExtra },
-      { kind: 'check', t0: DE, t1: I0, room: c.checkRoom || ((x, t, S) => c.room && c.room(x, t, S, 0.7)), hero: { x: 380, y: 1230, s: 250, bx: 540, by: 960 }, extra: c.checkExtra,
+      { kind: 'check', t0: DE, t1: I0, room: c.checkRoom || ((x, t, S) => c.room && c.room(x, t, S, 0.7)), hero: { x: 380, y: 1230, s: 250, bx: 540, by: 960, ...(c.checkHero || {}) }, extra: c.checkExtra,
         qs: c.qs.map((o, i) => ({ ...o, at: q[i], tick })) },
       { kind: 'scene', t0: I0, t1: D + 0.1, draw: (x, t, S) => c.instead(x, t, S, I) },
     ],
