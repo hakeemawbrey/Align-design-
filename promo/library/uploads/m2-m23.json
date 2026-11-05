@@ -128,5 +128,115 @@
   "series": "longdist",
   "episode": 1,
   "caption": "When your goodnight lands in the middle of their night, it can feel like you keep missing each other.\nLeave a voice note for their morning instead. It's waiting when they wake up."
+ },
+ "klne02": {
+  "video": "/_blob/52ded57ad533348ca84b0b1a904f76d0",
+  "poster": "/_blob/fb6bc74562ea783346ad8eb3fd18e46c",
+  "title": "Same Moon Tonight",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 2,
+  "caption": "Seeing something beautiful and wishing they were there is one of the hardest parts of distance.\nSend them your sky, one photo a night. The moon shows you both the same phase."
+ },
+ "klne03": {
+  "video": "/_blob/5aa66e87272691a6a7ae9d08d993d6fd",
+  "poster": "/_blob/64b35834c984f4db662b356881c46422",
+  "title": "The Someday List",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 3,
+  "caption": "You find their favourite thing and they're fast asleep seven hours away.\nStart a shared someday list and add one thing a day. Every line is a date you get to look forward to."
+ },
+ "klne04": {
+  "video": "/_blob/bceb35474315e803aea53f74107e7d3e",
+  "poster": "/_blob/be285690ee0628604d9d8b646a0e3f67",
+  "title": "Page Forty-One",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 4,
+  "caption": "Missing the small conversations is real, even when the big ones go fine.\nRead the same chapter and send each other one line you loved. Same page, two cities."
+ },
+ "klne05": {
+  "video": "/_blob/e8126aa267f67131da2f8a7e0c76edac",
+  "poster": "/_blob/fce9aec1faac977880426ebd01255af4",
+  "title": "Tell Me the Boring Stuff",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 5,
+  "caption": "Far apart, it's easy to only share the big news and skip everything else.\nSend the boring stuff too: the late bus, the orange, the judgy pigeon. That's where the closeness lives."
+ },
+ "klne06": {
+  "video": "/_blob/719081f53857cda24c59b46f8b7f98a4",
+  "poster": "/_blob/370d5c4a537e95506c76d062759ed675",
+  "title": "Mail Takes Days",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 6,
+  "caption": "Texts scroll away so fast that they can start to feel like nothing.\nOnce a month, send a real letter. It takes days to arrive and gets kept for years."
+ },
+ "klne07": {
+  "video": "/_blob/a5e541a273081cc75225f1ec93893987",
+  "poster": "/_blob/624b81b9c08027be89a9fb1adb6dc713",
+  "title": "Not Over Text",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 7,
+  "caption": "One short reply and suddenly you've imagined a whole argument.\nWhen something feels off, call instead of guessing. Tone needs a voice. Save this for the next \"k.\""
+ },
+ "klne08": {
+  "video": "/_blob/3f9e51c2a08fdecb2ab877b30811b867",
+  "poster": "/_blob/6980949c8c5f9db0d7a29e171eeafcd6",
+  "title": "Two Clocks",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 8,
+  "caption": "It's easy to forget the hours and wake them up at 3 a.m. by accident.\nHang a second clock set to their time. A tiny habit that says you're thinking about their day too."
+ },
+ "klne09": {
+  "video": "/_blob/175c86621d8f360bcc9eec29c97f0fa8",
+  "poster": "/_blob/bf0e7be4b132906594a024a46fc8ae57",
+  "title": "One Walk, Two Cities",
+  "len": 22,
+  "long": false,
+  "series": "longdist",
+  "episode": 9,
+  "caption": "The walk home feels longest when there's nobody to tell about your day.\nCall each other and walk at the same time. Different weather, same step."
+ },
+ "klne10": {
+  "video": "/_blob/ee96ff3144291729c4aa69726b5c4909",
+  "poster": "/_blob/43d61a5a7206c95486e9285a2c19d994",
+  "title": "A Day Apart: Tokyo to LA",
+  "len": 60,
+  "long": true,
+  "series": "longdist",
+  "episode": 10,
+  "caption": "Seventeen hours apart means one of you is always living in tomorrow.\nA whole day of small notes, photos and goodnights, then the arrivals gate. Small and steady beats big and rare."
+ },
+ "klne11": {
+  "video": "/_blob/91e1057b55a360f531ba996dd27ed0ed",
+  "poster": "/_blob/c2f41c8a31d2e612c0a2006b5f8ec658",
+  "title": "A Day Apart: Paris to Montreal",
+  "len": 60,
+  "long": true,
+  "series": "longdist",
+  "episode": 11,
+  "caption": "A snow photo, a mix-up, the same soup at dinner and at lunch, and a goodnight across six hours.\nLittle rituals make the distance smaller. Wait for the table at the end."
+ },
+ "klne12": {
+  "video": "/_blob/40512f65b90e3c13afbb4c2ceb547ab6",
+  "poster": "/_blob/4657abade1467c76ce1e9e23d5ea98d9",
+  "title": "A Day Apart: Auckland to Edinburgh",
+  "len": 60,
+  "long": true,
+  "series": "longdist",
+  "episode": 12,
+  "caption": "Summer on one side, snow on the other, and the new year arrives thirteen hours apart.\nYou can be there twice: once on a call, once in person. Stay for the second midnight."
  }
 }
