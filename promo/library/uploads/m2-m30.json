@@ -218,5 +218,25 @@
   "series": "guess",
   "episode": 22,
   "caption": "Hit inbox zero at midnight so you didn't have to feel anything?\nGuess the sign. Log off. You'll be okay."
+ },
+ "kgse23": {
+  "video": "/_blob/c6adddbdf29f95e7784c584c3331c8f1",
+  "poster": "/_blob/312537c267ba5f05aabe753521329489",
+  "title": "Guess the Sign: the late-night texting round",
+  "len": 60,
+  "long": true,
+  "series": "guess",
+  "episode": 23,
+  "caption": "Six silhouettes, one late night of texting. Can you guess all six?\nRound six is the hardest. Everyone's soft at 1 a.m."
+ },
+ "kgse24": {
+  "video": "/_blob/c7f32a037ea1d97a91d8ca61dbbc2208",
+  "poster": "/_blob/ba46e3e52e6d01e1df5fbc13c7e2a2c0",
+  "title": "Guess the Sign: the first date round",
+  "len": 60,
+  "long": true,
+  "series": "guess",
+  "episode": 24,
+  "caption": "One first date, six silhouettes. How many can you guess?\nWait for round six, and the bravest line of the night."
  }
 }
