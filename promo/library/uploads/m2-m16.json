@@ -68,5 +68,85 @@
   "series": "dateyou",
   "episode": 7,
   "caption": "Does it only count if someone sees it? Put the phone face down, dance in the kitchen, watch the sunset without filming it. Some moments are just for you."
+ },
+ "kdye08": {
+  "video": "/_blob/e58e0db48782715bf299b15d1127f452",
+  "poster": "/_blob/44f2f119529469bf1144b10ff497bede",
+  "title": "No Itinerary",
+  "len": 22,
+  "long": false,
+  "series": "dateyou",
+  "episode": 8,
+  "caption": "Need a plan for everything? Try one afternoon with no list. Getting a little lost is how you find the bakery you never would have planned."
+ },
+ "kdye09": {
+  "video": "/_blob/c0c197c0261ddec70fc8e3c17611c183",
+  "poster": "/_blob/86226f1060920f9814eeeeeb33258cda",
+  "title": "The Back Row Matinee",
+  "len": 21,
+  "long": false,
+  "series": "dateyou",
+  "episode": 9,
+  "caption": "Hate letting anyone see you feel things? Take yourself to a matinee and cry at the sad part. Feeling it all is allowed, and nobody keeps score."
+ },
+ "kdye10": {
+  "video": "/_blob/3aab4d51861dba3eecdcf2b56992ffb8",
+  "poster": "/_blob/86621f09ebabbb31b467a34b4b97f19e",
+  "title": "Tourist at Home",
+  "len": 22,
+  "long": false,
+  "series": "dateyou",
+  "episode": 10,
+  "caption": "Waiting for the next big trip to feel alive? Ride three stops, find the mural you always walked past, try the food stall. Adventure starts close to home."
+ },
+ "kdye11": {
+  "video": "/_blob/ed4b0304d29a09882021b467964ca87c",
+  "poster": "/_blob/2fca09f937314f8f0c1b5964a00506d9",
+  "title": "The Class Alone",
+  "len": 21,
+  "long": false,
+  "series": "dateyou",
+  "episode": 11,
+  "caption": "Skipping things because no friend can come? Take the class alone. The bowl might lean, and it will still be the one you made yourself."
+ },
+ "kdye12": {
+  "video": "/_blob/6730ab0047d1e02512ed094b239a4ccc",
+  "poster": "/_blob/cc261f03af25e8f7805b32e7790de0ba",
+  "title": "Be Your Own Crush",
+  "len": 22,
+  "long": false,
+  "series": "dateyou",
+  "episode": 12,
+  "caption": "Lonely on a Friday night? Do what you'd do for a crush: candles, the good pasta, a sweet note. Then be the one who writes back to you."
+ },
+ "kdye13": {
+  "video": "/_blob/89570a35330d6d0803bf20e97d2b61f5",
+  "poster": "/_blob/1f4cc83f3ef7bfb1676399168de20727",
+  "title": "Cooking for Company",
+  "len": 21,
+  "long": false,
+  "series": "dateyou",
+  "episode": 13,
+  "caption": "Cooking for one can feel a bit sad. Make the family recipe anyway, set the table properly, light the candle. You count as company."
+ },
+ "kdye14": {
+  "video": "/_blob/c120d0be60a92adab9e0dd2e9b80d3ee",
+  "poster": "/_blob/ff1a0d13eef710776a923bd58d6e4e88",
+  "title": "Wobble Proudly",
+  "len": 21,
+  "long": false,
+  "series": "dateyou",
+  "episode": 14,
+  "caption": "Everyone at the rink seems to be in pairs this time of year. Go anyway. Wobble, fall a little, find your glide, then buy yourself the cocoa."
+ },
+ "kdye15": {
+  "video": "/_blob/2a44f86f5d1c107826354a490609b025",
+  "poster": "/_blob/b6e762e108be16b494aeca669bb9ad1b",
+  "title": "The Free Show Upstairs",
+  "len": 23,
+  "long": false,
+  "series": "dateyou",
+  "episode": 15,
+  "caption": "Swap the 2 a.m. scroll for the sky. On a clear winter evening, find Orion's belt and follow it to Aldebaran. The best show tonight is free and open to one."
  }
 }
