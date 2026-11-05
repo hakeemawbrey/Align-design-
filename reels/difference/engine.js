@@ -26,7 +26,7 @@ const L = {
   label: 316, top: 370, cw: 432, ch: 540, ax: 282, bx: 798, inset: 10,
   cap: { y: 1046, size: 64, lh: 84, maxW: 960 },
   star: { x: 540, y: 1446, size: 384 }, q: { y: 1290, dx: 235 },
-  pill: 1205, handle: { x: 60, y: 1600 }, mark: 146, dots: 206,
+  pill: 1172, handle: { x: 60, y: 1600 }, mark: 146, dots: 206,
 }
 const AW = L.cw - L.inset * 2
 const AH = L.ch - L.inset * 2
