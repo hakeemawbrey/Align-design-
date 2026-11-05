@@ -51,7 +51,13 @@ export const config = {
   },
 };
 
-/** Permissions requested during Facebook Login. */
+/** What posting to, and reading plays from, Facebook Pages needs on top of the Instagram permissions. */
+export const FACEBOOK_SCOPES = ["pages_manage_posts", "read_insights"];
+
+/**
+ * Permissions requested during Facebook Login.
+ * When META_LOGIN_CONFIG_ID is set, Meta ignores this list and uses the login configuration's own list instead.
+ */
 export const META_SCOPES = [
   "instagram_basic",
   "instagram_content_publish",

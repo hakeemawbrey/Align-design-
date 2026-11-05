@@ -2,7 +2,7 @@ import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, skip
 import { ChooseAccounts } from "@/components/ChooseAccounts";
 import { FbPage } from "@/components/FbPage";
 import { LocalTime } from "@/components/LocalTime";
-import { config } from "@/lib/config";
+import { FACEBOOK_SCOPES, config } from "@/lib/config";
 import { getAccount, getDb, getPendingLogin, getSetting, listAccounts } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
 import { facebookPages } from "@/lib/pages";
@@ -23,15 +23,22 @@ export default async function SettingsPage({
   const lastRunAgoMin = lastRun ? Math.round((Date.now() - new Date(lastRun.at).getTime()) / 60_000) : null;
   const appReady = Boolean(config.appId && config.appSecret);
   // Facebook Page posting needs two extra permissions; older logins don't have them until reconnected.
-  let fbAllowed: boolean | null = null;
-  if (active) {
-    try {
-      const granted = await new GraphClient({ token: active.token }).grantedPermissions();
-      fbAllowed = granted.has("pages_manage_posts") && granted.has("read_insights");
-    } catch {
-      fbAllowed = null;
-    }
-  }
+  // Accounts can hold different logins, so check each one: a permission missing on any of them is shown.
+  const clients = [...new Set(accounts.map((a) => a.token))].map((token) => new GraphClient({ token }));
+  const missing = await Promise.all(
+    clients.map((c) => c.grantedPermissions().then((g) => FACEBOOK_SCOPES.filter((p) => !g.has(p))).catch(() => null)),
+  );
+  const fbMissing = missing.includes(null) || !clients.length ? null : [...new Set(missing.flatMap((m) => m ?? []))];
+  const pageLists = await Promise.all(clients.map((c) => c.managedPages().catch(() => null)));
+  const pagesFailed = pageLists.includes(null);
+  const connectedIds = new Set(accounts.map((a) => a.igUserId));
+  const seenPages = new Set<string>();
+  const otherPages = pageLists.flatMap((l) => l ?? []).filter((p) => {
+    if (seenPages.has(p.id)) return false;
+    seenPages.add(p.id);
+    return !p.instagramId || !connectedIds.has(p.instagramId);
+  });
+  const metaApp = `https://developers.facebook.com/apps/${config.appId}`;
   const fbPages = await facebookPages(accounts);
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
@@ -60,8 +67,10 @@ export default async function SettingsPage({
           <h2>Choose accounts to add</h2>
           <div className="card stack">
             <p style={{ margin: 0 }}>
-              Facebook gave access to {pending.accounts.length} account{pending.accounts.length === 1 ? "" : "s"} you
-              haven&apos;t added yet. Tick the ones you want.
+              Your Facebook login also reaches {pending.accounts.length} other Instagram account
+              {pending.accounts.length === 1 ? "" : "s"} you haven&apos;t added to this app. Tick any you want to post to.
+              You don&apos;t need to tick anything for Facebook posting: that uses the Pages of the accounts you already have,
+              listed under Facebook Pages below.
               {refreshed && Number(refreshed) > 0 && ` Access was renewed for the ${refreshed} you already have.`}
             </p>
             <ChooseAccounts
@@ -154,17 +163,40 @@ export default async function SettingsPage({
       <h2>Facebook Pages</h2>
       <div className="card stack">
         <p className="small" style={{ margin: 0 }}>
-          {fbAllowed === null ? (
+          {fbMissing === null ? (
             <span className="muted">Could not check Facebook permissions right now.</span>
-          ) : fbAllowed ? (
+          ) : fbMissing.length === 0 ? (
             <span className="ok">Posting Reels to your Facebook Pages is allowed.</span>
           ) : (
-            <span className="error">
-              Facebook posting isn&apos;t allowed yet. Click &ldquo;Add or refresh accounts&rdquo; above and accept the new
-              permissions (manage posts and read insights). Your accounts and queue stay as they are.
-            </span>
+            <span className="error">Facebook posting isn&apos;t allowed yet. Missing: {fbMissing.join(", ")}.</span>
           )}
         </p>
+        {fbMissing !== null && fbMissing.length > 0 && (
+          <ol className="small" style={{ margin: 0, paddingLeft: 20 }}>
+            {config.loginConfigId && (
+              <>
+                <li>
+                  In Meta, open{" "}
+                  <a href={`${metaApp}/use_cases/customize/?use_case_enum=PAGES_API&selected_tab=permissions`} target="_blank" rel="noreferrer">
+                    Use cases &rarr; Manage Pages
+                  </a>{" "}
+                  and click Add on each missing permission.
+                </li>
+                <li>
+                  Open{" "}
+                  <a href={`${metaApp}/business-login/configurations/`} target="_blank" rel="noreferrer">
+                    Facebook Login for Business &rarr; Configurations
+                  </a>
+                  , edit IG Growth Studio, tick the same permissions on the last step, and save. This app&apos;s login uses that list.
+                </li>
+              </>
+            )}
+            <li>
+              Click &ldquo;Add or refresh accounts&rdquo; above and accept. Your accounts and queue stay as they are, and you can
+              skip the list of other accounts it offers.
+            </li>
+          </ol>
+        )}
         <table>
           <tbody>
             {accounts.map((a) => (
@@ -181,6 +213,13 @@ export default async function SettingsPage({
             ))}
           </tbody>
         </table>
+        {otherPages.length > 0 && (
+          <p className="muted small" style={{ margin: 0 }}>
+            Other Pages your Facebook login can reach (not used for posting):{" "}
+            {otherPages.map((p) => `${p.name.trim()}${p.instagramId ? ` (${p.instagram ? `@${p.instagram}` : "Instagram account"} not added here)` : " (no Instagram linked)"}`).join(", ")}.
+          </p>
+        )}
+        {pagesFailed && <p className="muted small" style={{ margin: 0 }}>Could not load the full list of Pages from Facebook right now.</p>}
         <p className="muted small" style={{ margin: 0 }}>
           Tick &ldquo;Also post to the Facebook Page&rdquo; on a Reel to post it there at the same time. Facebook takes
           videos of 3 to 90 seconds and allows 30 Reels per Page in any 24 hours.

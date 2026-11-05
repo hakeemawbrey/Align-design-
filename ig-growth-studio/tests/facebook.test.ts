@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createPost, editQueuedPost, getPost, openDb, updatePost, upsertAccounts } from "../src/lib/db";
 import { FB_DAILY_LIMIT, publishFacebookDue } from "../src/lib/facebook";
+import { loginUrl } from "../src/lib/graph";
 import { fakeGraph, graphError } from "./helpers";
 
 const now = new Date("2026-11-05T12:00:00Z");
@@ -34,6 +35,35 @@ function graph(extra: Record<string, () => unknown> = {}) {
     ...extra,
   });
 }
+
+describe("Facebook Pages list", () => {
+  it("merges the login's own Pages with portfolio Pages, without duplicates or failing on a portfolio error", async () => {
+    const page = (id: string, ig?: string) => ({ id, name: `Page ${id}`, ...(ig ? { instagram_business_account: { id: ig, username: `u${ig}` } } : {}) });
+    const { client } = fakeGraph({
+      "GET me/accounts": () => ({ data: [page("1", "ig1")] }),
+      "GET me/businesses": () => ({ data: [{ id: "b1" }, { id: "b2" }] }),
+      "GET b1/owned_pages": () => ({ data: [page("1", "ig1"), page("2")] }),
+      "GET b1/client_pages": () => ({ data: [] }),
+      "GET b2/owned_pages": () => graphError(200, "no access", 403),
+      "GET b2/client_pages": () => ({ data: [page("3", "ig3")] }),
+    });
+    const pages = await client.managedPages();
+    expect(pages.map((p) => [p.id, p.instagramId])).toEqual([
+      ["1", "ig1"],
+      ["2", null],
+      ["3", "ig3"],
+    ]);
+  });
+
+  it("asks again for declined permissions only when the app lists its own scopes", () => {
+    const old = process.env.META_LOGIN_CONFIG_ID;
+    process.env.META_LOGIN_CONFIG_ID = "";
+    expect(new URL(loginUrl("s", ["a"])).searchParams.get("auth_type")).toBe("rerequest");
+    process.env.META_LOGIN_CONFIG_ID = "123";
+    expect(new URL(loginUrl("s", ["a"])).searchParams.get("auth_type")).toBeNull();
+    process.env.META_LOGIN_CONFIG_ID = old ?? "";
+  });
+});
 
 describe("Facebook cross-posting", () => {
   it("uploads a due Reel to the linked Page, then marks it published with its link", async () => {
@@ -70,7 +100,7 @@ describe("Facebook cross-posting", () => {
     expect(r.waiting).toEqual([id]);
     const waiting = await getPost(db, id);
     expect(waiting?.fb_status).toBe("pending");
-    expect(waiting?.fb_error).toMatch(/Reconnect on the Settings page/);
+    expect(waiting?.fb_error).toMatch(/See Facebook Pages on the Settings page/);
     // Once it is more than 2 hours late it is skipped, so a backlog never floods the Page.
     const late = await publishFacebookDue(db, { now: new Date(now.getTime() + 3 * 3_600_000), userClient: () => client, pageClient: () => client });
     expect(late.failed).toContain(id);
@@ -82,6 +112,12 @@ describe("Facebook cross-posting", () => {
     const { client: c2 } = fakeGraph({ "GET me/accounts": () => ({ data: [] }) });
     await publishFacebookDue(noPage, { now, userClient: () => c2, pageClient: () => c2 });
     expect((await getPost(noPage, p))?.fb_error).toBe("@star has no Facebook Page linked");
+
+    const expired = await setup();
+    const e = await createPost(expired, reel());
+    const { client: c3 } = graph({ "POST P1/video_reels": () => graphError(190, "Session expired", 400) });
+    await publishFacebookDue(expired, { now, userClient: () => c3, pageClient: () => c3 });
+    expect((await getPost(expired, e))?.fb_error).toMatch(/has expired/);
   });
 
   it("holds uploads back at 30 per Page per 24 hours", async () => {

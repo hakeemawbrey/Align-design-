@@ -27,8 +27,11 @@ export type { Page as FbPage };
 
 function describe(err: unknown) {
   if (!(err instanceof Error)) return String(err);
+  if (err instanceof GraphError && err.code === 190) {
+    return `The Facebook login for this account has expired. Click "Add or refresh accounts" on the Settings page. (${err.message})`;
+  }
   if (err instanceof GraphError && err.code !== undefined && PERMISSION_CODES.has(err.code)) {
-    return `Facebook did not allow posting to the Page. Reconnect on the Settings page and allow "Manage posts". (${err.message})`;
+    return `Facebook did not allow posting to the Page yet. See Facebook Pages on the Settings page. (${err.message})`;
   }
   return err.message;
 }

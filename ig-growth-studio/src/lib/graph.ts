@@ -296,6 +296,29 @@ export class GraphClient {
     return (await this.pagesByInstagram()).get(igUserId) ?? null;
   }
 
+  /**
+   * Pages this login can reach: its own (me/accounts, which needs a direct role) plus those held by its business
+   * portfolios. Portfolio lookups are best effort, like linkedInstagramAccounts; a me/accounts failure throws.
+   */
+  async managedPages() {
+    type Row = { id: string; name: string; instagram_business_account?: { id: string; username?: string }; picture?: { data?: { url?: string } } };
+    const fields = "id,name,instagram_business_account{id,username},picture.type(large){url}";
+    const own = await this.all<Row>("me/accounts", { fields, limit: 100 });
+    const businesses = await this.all<{ id: string }>("me/businesses", { fields: "id", limit: 100 }).catch(() => []);
+    const held = await Promise.all(
+      businesses.flatMap((b) => ["owned_pages", "client_pages"].map((edge) => this.all<Row>(`${b.id}/${edge}`, { fields, limit: 100 }).catch(() => []))),
+    );
+    const byId = new Map<string, Row>();
+    for (const p of [...own, ...held.flat()]) if (!byId.has(p.id)) byId.set(p.id, p);
+    return [...byId.values()].map((p) => ({
+      id: p.id,
+      name: p.name,
+      instagramId: p.instagram_business_account?.id ?? null,
+      instagram: p.instagram_business_account?.username ?? null,
+      picture: p.picture?.data?.url ?? null,
+    }));
+  }
+
   /** Every Page the user manages that has an Instagram account linked, keyed by Instagram user ID. */
   async pagesByInstagram(): Promise<Map<string, FacebookPage>> {
     const pages = await this.all<{
@@ -473,6 +496,10 @@ export function loginUrl(state: string, scopes: string[]) {
   u.searchParams.set("response_type", "code");
   // Facebook Login for Business apps request permissions through a saved configuration.
   if (config.loginConfigId) u.searchParams.set("config_id", config.loginConfigId);
-  else u.searchParams.set("scope", scopes.join(","));
+  else {
+    u.searchParams.set("scope", scopes.join(","));
+    // Without this Facebook won't ask again for a permission that was declined before.
+    u.searchParams.set("auth_type", "rerequest");
+  }
   return u.toString();
 }
