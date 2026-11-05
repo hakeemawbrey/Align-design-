@@ -281,7 +281,7 @@ export function makeM47(cfg) {
     tm.forEach((m, n) => { const nxt = n + 1 < ls.length ? ls[n + 1].t : b.close; if (nxt - m.done < 1.4) warn.push(`${cfg.id}: line "${ls[n].text}" only ${(nxt - m.done).toFixed(2)} s after typing`) })
     ls.forEach(l => { if (l.text.replace(/\*/g, '').length > 70) warn.push(`${cfg.id}: line over 70 chars: ${l.text}`) })
   })
-  const beats = [...SHOTS.map(s => s.at), ...LINES.map(l => l.t), ...FXS.map(f => f.at), ...(cfg.cards || []).map(c => c.at), ...(cfg.beats || []), ...mk.map(m => m[0]), cfg.last.at].filter(v => v >= 0).sort((a, b) => a - b)
+  const beats = [...SHOTS.map(s => s.at), ...LINES.map(l => l.t), ...FXS.map(f => f.at), ...(cfg.cards || []).map(c => c.at), ...(cfg.beats || []), ...mk.map(m => m[0]), ...(cfg.thrive ? [cfg.thrive.at] : []), cfg.last.at].filter(v => v >= 0).sort((a, b) => a - b)
   for (let n = 1; n < beats.length; n++) if (beats[n] - beats[n - 1] > 10) warn.push(`${cfg.id}: no new beat between ${beats[n - 1].toFixed(1)} and ${beats[n].toFixed(1)}`)
   if (END - cfg.last.at - 0.4 < 0.6) warn.push(`${cfg.id}: the last line lands too late`)
   if (typeof window === 'undefined' && warn.length) console.warn(warn.join('\n'))
