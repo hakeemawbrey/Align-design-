@@ -18,7 +18,10 @@ This batch adds **900 new videos** in the gaps, so each stream goes from every 9
    of at most 7 words. Then:
    - **First second:** a pattern break, such as a whip zoom, a record scratch, sudden silence or a colour flash.
    - **By second 3:** the relatable premise has landed.
-   - **Shorter lengths:** star_talk 10–25 s, advice posts 15–30 s, trial reels 6–12 s.
+   - **Lengths:** most are short (star_talk 10–25 s, advice posts 15–30 s, trial reels 6–12 s), but **144 are long
+     (1–2 minutes, marked ⏱ below)**: 72 on star_talk and 72 on star_advice. Long videos get the same crazy first
+     second, a payoff promised up front ("wait for the verdict"), chapter stickers, and a new beat every 8–10 seconds
+     so people stay. Trial reels stay short because they're for people who don't follow yet.
 3. **Super relatable.** Every video names a feeling people actually have, such as:
    - left on read, the situationship, being single at the dinner, missing an ex;
    - the 2 a.m. scroll, being the friend who gives advice and never takes it.
@@ -44,7 +47,7 @@ It's built first, and every session imports it.
 
 ---
 
-## star_talk — 300 posts (entertainment, 10–25 s)
+## star_talk — 300 posts (entertainment: 228 short at 10–25 s, 72 long at 1–1.5 min)
 
 | Format | Videos | The hook | Ending |
 |---|---|---|---|
@@ -53,31 +56,31 @@ It's built first, and every session imports it.
 | **Falling in Love: Speedrun** | 24 | A game timer starts: "ARIES · FALLING FOR SOMEONE · ANY%". Splits flash per stage (eye contact, first text, "we should hang out"). | Timer stops on the punchline |
 | **Brain vs Heart** | 24 | Inside a sign's head, a tiny Brain and a tiny Heart fight over the phone: "DON'T text them." "TEXT THEM." | Loop |
 | **Breaking News: The Stars** | 24 | A news desk with a red BREAKING banner: "Gemini replied in under three minutes. More at eleven." | Hard cut |
-| **Zodiac Courtroom** | 24 | Gavel slam: "The court finds Leo GUILTY of reposting their own selfie." A jury of signs gasps. | Gavel |
+| **Zodiac Courtroom** ⏱ 60–75 s | 24 | Gavel slam: "The court finds Leo GUILTY of reposting their own selfie." Then the whole trial plays out: opening statements, a surprise witness (the ex), the jury of signs gasping, the verdict. | Gavel |
 | **Achievement Unlocked: Single Life** | 24 | Game pop-ups: "ACHIEVEMENT UNLOCKED: ate dinner alone and loved it." | Loop |
 | **Overthinking Simulator** | 24 | A loading bar: "Reading their 'ok.' … 37% … 99%… Error: too many feelings." | Crash to frame 0 (loop) |
 | **Zodiac Confessional** | 24 | A reality-show booth with a lower third: "Taurus, 'I'm not here to make friends. I'm here for the snacks and maybe love.'" | Hard cut |
-| **First Date Bingo** | 24 | A bingo card fills live during a date ("talks about ex", "phone face down", "splits dessert"). BINGO! | Hard cut |
-| **Sign Swap** | 24 | A flash, then Virgo wakes up as Sagittarius one hour before a date. Chaos, then a lesson. | Hard cut |
+| **First Date Bingo** ⏱ 60 s | 24 | "I bet this date hits every square." The whole date plays out as a bingo card fills live ("talks about ex", "phone face down", "splits dessert"). BINGO! | Hard cut |
+| **Sign Swap** ⏱ 60–90 s | 24 | A flash, then Virgo wakes up as Sagittarius one hour before a date. A full mini-episode: the panic, the date, the twist, and what each learned. | Hard cut |
 | **Zodiac Lie Detector** | 12 (1 per sign) | Electrodes on. "I'm totally over my ex." The needle goes off the chart. Pisces is already crying. | Needle |
 
-## star_advice — 300 posts (warm advice, 15–30 s)
+## star_advice — 300 posts (warm advice: 228 short at 15–30 s, 72 long at 1–2 min)
 
 | Format | Videos | The hook | Ending |
 |---|---|---|---|
 | **Text Rescue** | 24 | A cringe draft text on screen, then a red-pen slash. THE STARS rewrite it to be honest and kind, never manipulative. | The better text sends |
 | **Is This Normal?** | 24 | A big question slams in: "Is it normal to miss someone you broke up with?" A kind, honest answer. | Hard cut |
 | **The 10-Second Pep Talk** | 24 (12 signs × 2) | The sign grabs the camera: "Cancer. Look at me. You're not too much." | Hard cut |
-| **Healing Era** | 24 | Day 1 vs day 30 after a breakup, split screen. What actually helps. | Loop |
+| **Healing Era** ⏱ 60 s | 24 | "Day 1 after the breakup", on the kitchen floor. Then 30 days in 60 seconds: the bad days, the friend who shows up, the first good morning. What actually helps. | Ends back on day 1, now smiling |
 | **Date Yourself** | 24 | "Solo date idea for a Capricorn" stamps on screen, then the date plays out. | Hard cut |
 | **Say It Better** | 24 | What we say in a fight ("You ALWAYS…") is crossed out, and what works instead appears. | Hard cut |
 | **Your Sign's Love Glitch** | 24 (12 × 2) | A glitch effect: "LEO.EXE has stopped responding" (the pattern a sign repeats), then the patch. | Loop |
-| **The Almost Relationship** | 24 | "Are we dating or just… hanging out a lot?" Situationship advice: how to ask, and how to hear the answer. | Hard cut |
+| **The Almost Relationship** ⏱ 60–90 s | 24 | "Are we dating or just… hanging out a lot?" A mini-drama of one situationship, the conversation they keep avoiding, then THE STARS on how to ask and how to hear the answer. | Hard cut |
 | **Before You Text Your Ex** | 24 | A giant STOP sign drops in front of a thumb hovering over send, then a kind three-question check. | Hard cut |
 | **Mirror Talk** | 24 | A sign talks to its reflection, and the reflection talks back with the advice they'd give a friend. | Loop |
 | **One Card, Two People** | 24 | Two people, one talk card face down, a dramatic flip. The question, and why it brings people closer. | Hard cut |
-| **Long Distance Notes** | 12 | A split screen between two cities and two time zones. One small habit that keeps it close. | Loop |
-| **Your Match Isn't Just Your Sign** | 12 | "Incompatible?!" stamp, then record scratch: habits, kindness and timing matter more than a chart. | Hard cut |
+| **Long Distance Notes** ⏱ 60 s | 12 | A split screen between two cities and two time zones. A day apart in 60 seconds, and the small habits that keep it close. | The two halves meet |
+| **Deep Dive: ___ in Love** ⏱ about 2 min | 12 (1 per sign) | "Everything nobody tells you about loving a Scorpio." Chapters (how they flirt, what they need, how they fight, what makes them stay), and astrology framed as a lens, not science. | Hard cut |
 
 ## star_advice — 300 trial reels (6–12 s, made for people who don't follow yet)
 
@@ -105,6 +108,7 @@ It's built first, and every session imports it.
   minutes. star_talk still starts at 8:00 AM, and star_advice posts still start at 8:45 AM, with trial reels after
   them. Exact times go in the final plan.
 - **Mix:** no two videos from the same format back to back on an account; the existing day plan stays untouched.
+- **Long videos:** each account gets 2–3 long videos a day, spread out, with at least one in the evening.
 - **Seasonal touches:** light December flavour (cold weather, the holidays, New Year's resolutions) where it fits,
   but most videos are evergreen, so anything left over still works in January.
 - **Deliverables:** the same as before. Every video goes to Google Drive (a new `Month 2 boost` folder), and the
@@ -117,4 +121,6 @@ It's built first, and every session imports it.
 - **Same pipeline:** the same process that just delivered the 900, with three changes: no end card, no card cut and
   no border.
 - **Rough timing:** the last batch took about 5 hours from launch to all 900 uploaded. These videos are shorter, so
-  expect about the same or a little faster, plus the Drive copy and the schedule rebuild.
+  expect about the same or a little faster, plus the Drive copy and the schedule rebuild. The long ones take longer to
+  render, so allow 1–2 extra hours. Web copies of the 2-minute videos are encoded to stay under the 20 MB upload
+  limit.
