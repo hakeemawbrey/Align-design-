@@ -290,7 +290,7 @@ export function guideXFilm(spec) {
         for (let i = 0; i < 4; i++) { const c = CHS[i]; if (t >= c.C - 0.2 && (i === 3 || t < c.C + CH + 0.4)) GAGS[i].draw(x, t) }
         drawPisces(t)
         for (let i = 0; i < 4; i++) { const c = CHS[i]; if (GAGS[i].front && t >= c.C - 0.2 && (i === 3 || t < c.C + CH + 0.4)) GAGS[i].front(x, t) }
-        factChip(x, t, { text: chip, at: CHIP_AT, dur: 4.6, x: 540, y: 808, color: GOLD, size: 28 })
+        factChip(x, t, { text: chip, at: CHIP_AT, dur: 4.6, x: 540, y: 772, color: GOLD, size: 28 })
       }
       if (t < HOOK_END && HS.front) HS.front(x, t)
     }
