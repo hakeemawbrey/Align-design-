@@ -11,6 +11,18 @@
   "sign": "aries",
   "account": "star_talk"
  },
+ "kpvee02": {
+  "video": "/_blob/698a42d89b17e7d3eba2e5bd522e38d1",
+  "poster": "/_blob/2f14d19d61a5b114e964510ae08b16a3",
+  "title": "Venus to Taurus: Who Feeds You?",
+  "len": 75.0,
+  "long": true,
+  "series": "pvenus",
+  "episode": 2,
+  "caption": "You remember everyone's favourite snack. Do you know yours? Say one want out loud and let someone else plan the Saturday. Receiving is a love language too. Save this for the giver in your life.",
+  "sign": "taurus",
+  "account": "star_advice"
+ },
  "kpvee03": {
   "video": "/_blob/6ed666991e1a7440e73f2e6fe8843f0b",
   "poster": "/_blob/60f50cf2f497342f9badffebde6dab12",
@@ -23,6 +35,18 @@
   "sign": "gemini",
   "account": "star_talk"
  },
+ "kpvee04": {
+  "video": "/_blob/6bba18e29388ba7a5bbd8f543e25a7da",
+  "poster": "/_blob/10d4ff02a423fe52a4a09611acf9707d",
+  "title": "Venus to Cancer: The Wrong-Size Love",
+  "len": 26.4,
+  "long": false,
+  "series": "pvenus",
+  "episode": 4,
+  "caption": "Rereading the chat from someone who stopped trying hurts. Love you have to beg for is the wrong size. Archive it, call the friends who say come over, and choose you.",
+  "sign": "cancer",
+  "account": "star_advice"
+ },
  "kpvee05": {
   "video": "/_blob/d69c554b207d8941d48a6c7320c65d37",
   "poster": "/_blob/46073293f39d75cfde96682e0b7909d2",
@@ -34,5 +58,17 @@
   "caption": "Leo had a whole list of compliments ready. All about Leo. Venus flipped the card, and somehow Leo glowed brighter. Which sign would rehearse in the mirror first?",
   "sign": "leo",
   "account": "star_talk"
+ },
+ "kpvee06": {
+  "video": "/_blob/f1f616bbd1d66554de57b583237b7102",
+  "poster": "/_blob/3059a15b44b0cd12367c9889775d0490",
+  "title": "Venus to Virgo: Tear Up Page Four",
+  "len": 25.8,
+  "long": false,
+  "series": "pvenus",
+  "episode": 6,
+  "caption": "High standards are healthy. A twelve-page rubric is a lot. Keep the three that matter: kind, honest, makes you laugh. The font can be forgiven. Save this before your next first date.",
+  "sign": "virgo",
+  "account": "star_advice"
  }
 }
