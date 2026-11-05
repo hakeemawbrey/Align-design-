@@ -68,5 +68,95 @@
   "series": "opener",
   "episode": 7,
   "caption": "\"You're gorgeous\" and then nothing?\nCompliment something they chose, then ask about it."
+ },
+ "kroe08": {
+  "video": "/_blob/18e071e3885bb36633d07956bd8dfa06",
+  "poster": "/_blob/b09ff20508774a45665beec70d78ecec",
+  "title": "Sorry to Bother You",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 8,
+  "caption": "Starting with \"sorry to bother you\"?\nYou're not bothering anyone. Lead with something warm and specific."
+ },
+ "kroe09": {
+  "video": "/_blob/f0431faeb3b69c8950957f7718ef5baa",
+  "poster": "/_blob/db94d6110ce33235445074d5def8d4c3",
+  "title": "Pizza Debate Opener",
+  "len": 9,
+  "long": false,
+  "series": "opener",
+  "episode": 9,
+  "caption": "Is a food debate the perfect first message?\nA fun, easy question beats a perfect line every time."
+ },
+ "kroe10": {
+  "video": "/_blob/dd5ef4a64490b358cf9762247026e847",
+  "poster": "/_blob/ad3e75c60143b31b1a1cdd61b794a6d7",
+  "title": "The Ghost Hypothetical",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 10,
+  "caption": "Would you answer a ghost question from a stranger?\nWeird is fine. A playful question opens the door."
+ },
+ "kroe11": {
+  "video": "/_blob/2924fe373b2e8dc811bf336e1c829b4e",
+  "poster": "/_blob/c2b683401e6568247e5fd850110ee4c0",
+  "title": "\"Dinner Tomorrow, 7 PM\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 11,
+  "caption": "Matched two seconds ago and already planning dinner?\nExcited is cute. Chat a little first, then make the plan."
+ },
+ "kroe12": {
+  "video": "/_blob/df91886947276709e1e2c62c6ef63c92",
+  "poster": "/_blob/ec42ec9b7def37058381241cd6adad6f",
+  "title": "\"Hi, I Already Love You\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 12,
+  "caption": "Ever wanted to say \"I love you\" in the first message?\nBig heart, small first step. Start with something kind."
+ },
+ "kroe13": {
+  "video": "/_blob/ed4da5ec986ae8175ad3b1d3da09017d",
+  "poster": "/_blob/6edfe2d8875b2c58f4dbd617c98b0186",
+  "title": "Hi [NAME]!",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 13,
+  "caption": "Sent the copy-paste opener with the brackets still in?\nWrite it for them, using something from their profile."
+ },
+ "kroe14": {
+  "video": "/_blob/7b965b034f45ac37ac4634502890c2de",
+  "poster": "/_blob/8fd18b5cc2b6a816ef0108068b74bbb8",
+  "title": "Correcting Their Bio",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 14,
+  "caption": "Correcting their grammar as a first message?\nLead with what you liked about their bio instead."
+ },
+ "kroe15": {
+  "video": "/_blob/0b46e666fae73c7707fa12ddabfa2bd3",
+  "poster": "/_blob/45b6bc1b60170e1d293a8f35ea59e377",
+  "title": "All About Me",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 15,
+  "caption": "Opened with a list of your best qualities?\nMake the first question about them."
+ },
+ "kroe16": {
+  "video": "/_blob/f2206059d361ab6c7611889d23e67528",
+  "poster": "/_blob/ac650b827241c3a5250e19c09ed00e46",
+  "title": "\"What's Your Deepest Fear?\"",
+  "len": 10,
+  "long": false,
+  "series": "opener",
+  "episode": 16,
+  "caption": "\"What's your deepest fear?\" on day one?\nGo deep later. Start with something small and easy to answer."
  }
 }
