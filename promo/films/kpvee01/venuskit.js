@@ -187,8 +187,8 @@ function wrongWayRing(x, t, P, alpha = 1) {
   x.restore()
 }
 function sash(x, cx, cy, size, t) {
-  x.save(); x.translate(cx + size * 0.04, cy + size * 0.3); x.rotate(-0.32)
-  const w = size * 0.92, h = size * 0.15
+  x.save(); x.translate(cx + size * 0.06, cy + size * 0.4); x.rotate(-0.26)
+  const w = size * 0.86, h = size * 0.13
   x.fillStyle = INK; x.fillRect(-w / 2 - 4, -h / 2 - 4, w + 8, h + 8)
   x.fillStyle = ROSE; x.fillRect(-w / 2, -h / 2, w, h)
   x.fillStyle = INK; x.font = `800 ${Math.round(h * 0.62)}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
