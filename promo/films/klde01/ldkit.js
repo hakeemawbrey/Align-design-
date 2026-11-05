@@ -74,7 +74,7 @@ function timeline(cfg) {
     const vt = q.vt ?? r3(at + 0.62)
     return { ...q, i, done: tm.done, at, vt }
   })
-  T.Q.forEach((q, i) => { q.end = q.end ?? (i < T.Q.length - 1 ? T.Q[i + 1].t - 0.12 : (cfg.last ? cfg.last.t - 0.1 : D - 0.6)); if (q.truth) q.end = Math.min(q.end, q.truth.at) })
+  T.Q.forEach((q, i) => { q.end = q.end ?? (i < T.Q.length - 1 ? T.Q[i + 1].t - 0.12 : cfg.long?.verdictAt ? cfg.long.verdictAt - 0.35 : (cfg.last ? cfg.last.t - 0.1 : D - 0.6)); if (q.truth) q.end = Math.min(q.end, q.truth.at) })
   T.last = cfg.last
   return T
 }
@@ -88,7 +88,8 @@ export function makeLD(cfg) {
   const LINES = T.Q.map(q => ({ t: q.t, speaker: SPEAK, text: q.q }))
   const lastLine = cfg.last?.box ? [{ t: cfg.last.t, speaker: SPEAK, text: cfg.last.box }] : []
   const NAR_HOPS = talkHops([...LINES, ...lastLine], SPEAK, { cps: T.CPS })
-  const SUB_HOPS = [...T.Q.flatMap(q => [q.at, q.at + 0.4]), ...(cfg.subHops || [])]
+  const VA = cfg.long?.verdictAt
+  const SUB_HOPS = [...T.Q.flatMap(q => [q.at, q.at + 0.4]), ...(VA ? [VA + 0.05, VA + 0.7, VA + 1.4, VA + 2.1, VA + 2.8] : []), ...(cfg.subHops || [])]
   const LIES = T.Q.filter(q => q.v === 'lie' || q.v === 'squeak')
   const TRUTHS = T.Q.filter(q => q.v === 'truth')
   const FLASHES = T.Q.filter(q => q.truth).map(q => ({ ...q.truth, q }))
@@ -297,6 +298,7 @@ export function makeLD(cfg) {
       for (const q of LIES) sparkles(x, tf, NEEDLE_X, MID, q.vt, 10, 120, q.i, ['#ff6b81', '#ffffff', GOLD])
       for (const q of TRUTHS) sparkles(x, tf, SUBJ.x, SUBJ.y - 60, q.vt, 12, 220, q.i, [MINT, '#ffffff', GOLD])
       if (cfg.last) hearts(x, tf, cfg.last.t + 0.3, OPER.x, OPER.y - 80, { n: 6 })
+      if (VA) { confetti(x, tf, VA, 540, 760, { n: 44, life: 2.6, v0: 640 }); confetti(x, tf, VA + 1.6, 300, 800, { n: 24, life: 2.2 }); hearts(x, tf, VA + 0.6, SUBJ.x, SUBJ.y - 120, { n: 7, spread: 260 }) }
       x.restore()
       return Sf
     }
@@ -378,4 +380,17 @@ export function makeLD(cfg) {
   const SCENES = [MAIN, whipZoom(WHIP), slamTitle(HOOK), recordScratch(REC), ...CHAPS.map(c => chapter(c))]
   if (T.ending === 'loop') SCENES.push(loopBack([MAIN, whipZoom(WHIP), slamTitle(HOOK)], { duration: D, len: LOOP_LEN }))
   return { DURATION: D, SCENES, CUES, T, music }
+}
+
+/** schedule a long episode: qs = [{ q, a, v, flash? }] → times every `gap` s from `start`; a `flash` ({ label, draw,
+ *  dur }) cuts away after that question's stamp. Returns { qs, end } (end = when the last stamp has cleared). */
+export function longQs(list, { start = 4.3, gap = 4.4, flashAt = 3.15 } = {}) {
+  let t = start
+  const qs = list.map(q => {
+    const o = { ...q, t: r3(t) }
+    if (q.flash) { o.truth = { at: r3(t + flashAt), dur: q.flash.dur ?? 2.5, label: q.flash.label, draw: q.flash.draw }; delete o.flash; t += flashAt + o.truth.dur + 0.25 }
+    else t += gap
+    return o
+  })
+  return { qs, end: r3(t - gap + 3.1) }
 }
