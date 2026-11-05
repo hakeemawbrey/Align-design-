@@ -111,7 +111,7 @@ export function kitchen(x, t, { morning = 0, dim = 0, fridgeNote = null, noteK =
     } else {
       // a pixel crescent moon
       const MOON = ['..XXX..', '.XX....', 'XX.....', 'XX.....', 'XX.....', '.XX....', '..XXX..']
-      drawBits(x, MOON, { X: '#f4ecd8' }, WX + 232, WY + 76, 8)
+      drawBits(x, MOON, { X: '#f4ecd8' }, WX + 232, WY + 205, 8)
     }
     R(x, INK, WX + WW / 2 - 5, WY, 10, WH); R(x, INK, WX, WY + WH / 2 - 5, WW, 10)
     R(x, '#7a5e9a', WX - 24, WY + WH + 10, WW + 48, 18)
