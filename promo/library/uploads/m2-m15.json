@@ -118,5 +118,35 @@
   "series": "healing",
   "episode": 12,
   "caption": "Cried at a drawing of a dog? Tears are your heart doing the work. Drink some water, eat something, sleep. Send this to your friend who's crying at everything this week."
+ },
+ "khee13": {
+  "video": "/_blob/d7db027efdfb296774f5c253e16414da",
+  "poster": "/_blob/93607c639e2a439130d16cf22adbae6a",
+  "title": "The emergency floor visit",
+  "len": 26,
+  "long": false,
+  "series": "healing",
+  "episode": 13,
+  "caption": "You don't need a speech when you're hurting, you need company. Let your friends in, even if the kitchen is a mess and you're lying on the floor."
+ },
+ "khee14": {
+  "video": "/_blob/94d8c20d438e2e336d01c85f87747b94",
+  "poster": "/_blob/56d69f8b96193914d46f58c65cd6d0cf",
+  "title": "The bad day on day 23",
+  "len": 24,
+  "long": false,
+  "series": "healing",
+  "episode": 14,
+  "caption": "One song and it feels like day one again. A bad day isn't starting over: healing goes up and down, and every day you've done still counts."
+ },
+ "khee15": {
+  "video": "/_blob/657eac5c54a0c3e24e027db0382bfc44",
+  "poster": "/_blob/989b5cb4e4f02e085af963d2668d220d",
+  "title": "The first good morning",
+  "len": 22,
+  "long": false,
+  "series": "healing",
+  "episode": 15,
+  "caption": "The first morning they aren't your first thought feels strange, then quiet, then good. Healing isn't a parade. Notice it, and make a plan."
  }
 }
