@@ -198,5 +198,45 @@
   "series": "thisthat",
   "episode": 20,
   "caption": "Plan the whole date, or surprise me? The zodiac tied.\nThe winning move: just ask what they'd like."
+ },
+ "ktte21": {
+  "video": "/_blob/417a9dd22bb3b8d93b245669387fdaf8",
+  "poster": "/_blob/d2f15ef4b06377435e72c2e8dd58939e",
+  "title": "The Zodiac Votes: After a Fight",
+  "len": 9,
+  "long": false,
+  "series": "thisthat",
+  "episode": 21,
+  "caption": "After a fight, who texts first? Everyone said them. For a whole day.\nIt should be whoever misses them first."
+ },
+ "ktte22": {
+  "video": "/_blob/77bb6a43115771c031f957d2c782a42d",
+  "poster": "/_blob/f00f2052436b750ffa16776ae923de28",
+  "title": "The Zodiac Votes: Single at Midnight",
+  "len": 7,
+  "long": false,
+  "series": "thisthat",
+  "episode": 22,
+  "caption": "Single at midnight: sad or sparkly?\nPisces started on the sad side. The friends had other plans."
+ },
+ "ktte23": {
+  "video": "/_blob/64827c3f93a685244e35cc598ec7d281",
+  "poster": "/_blob/e87364ffd51924940c2c21bc8d816113",
+  "title": "Pisces: 30 Choices, Don't Cry",
+  "len": 61,
+  "long": true,
+  "series": "thisthat",
+  "episode": 23,
+  "caption": "Pisces has to answer 30 love questions without crying. It does not go well.\nStay for question 30. It's the one that matters."
+ },
+ "ktte24": {
+  "video": "/_blob/d7ddf80e0f92199c2afc22706599cd49",
+  "poster": "/_blob/f6e0599ae1ce4f931413872997bd4ca1",
+  "title": "The Best First Date Tournament",
+  "len": 59,
+  "long": true,
+  "series": "thisthat",
+  "episode": 24,
+  "caption": "Eight first dates, twelve signs judging, one winner. There's an upset in the semis.\nStay for the final. The winner makes sense."
  }
 }
