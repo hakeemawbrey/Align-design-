@@ -218,5 +218,25 @@
   "series": "bio",
   "episode": 22,
   "caption": "Bio says nothing serious, heart says otherwise?\nWrite what you actually want. Slowly is allowed."
+ },
+ "kbge23": {
+  "video": "/_blob/e0a62681e5ec01215515ae3774a72a22",
+  "poster": "/_blob/c4bc64925a40d9e5e66f140b6aeb7ce2",
+  "title": "The full bio makeover",
+  "len": 60,
+  "long": true,
+  "series": "bio",
+  "episode": 23,
+  "caption": "One vague bio, one cloud photo, zero replies. Watch it get rebuilt.\nSpecific, real, easy to answer. Then wait for the reply."
+ },
+ "kbge24": {
+  "video": "/_blob/e54a14741040a1273797f38725a782d8",
+  "poster": "/_blob/81810e2b29ab6ff8444230898bc9746f",
+  "title": "Twelve bios, twelve glow-ups",
+  "len": 60,
+  "long": true,
+  "series": "bio",
+  "episode": 24,
+  "caption": "Twelve signs, twelve bad bios, twelve glow-ups. Stay for Pisces.\nWhich sign's bio is secretly yours?"
  }
 }
