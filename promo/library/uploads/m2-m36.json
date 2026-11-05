@@ -158,5 +158,85 @@
   "series": "unsent",
   "episode": 16,
   "caption": "Their birthday, and your thumb won't stop hovering.\nSome wishes can stay in your heart."
+ },
+ "kute17": {
+  "video": "/_blob/b7e29ce4a9550924fc94eba347526ce0",
+  "poster": "/_blob/45fce75ea402191b599c52c361237707",
+  "title": "Leo typed \"i'm fine\" again",
+  "len": 10,
+  "long": false,
+  "series": "unsent",
+  "episode": 17,
+  "caption": "Typed 'i'm fine' for the hundredth time?\nAsking for help is strong too."
+ },
+ "kute18": {
+  "video": "/_blob/e5dec7785e7b82750baea9086cd98a35",
+  "poster": "/_blob/317465a10a9fd4e7d8c5ed8becd869b3",
+  "title": "Virgo said sorry nine times",
+  "len": 8,
+  "long": false,
+  "series": "unsent",
+  "episode": 18,
+  "caption": "Do you apologise before every question?\nDrop the extra sorrys. You're allowed to ask."
+ },
+ "kute19": {
+  "video": "/_blob/db7936045a978ace74b903698cf950c6",
+  "poster": "/_blob/3fe1273bb674fdcb53444dc06c43cae4",
+  "title": "Libra about to say yes again",
+  "len": 11,
+  "long": false,
+  "series": "unsent",
+  "episode": 19,
+  "caption": "Saying yes when your whole body says rest.\nA kind no beats a tired yes."
+ },
+ "kute20": {
+  "video": "/_blob/4edb2fc7b6d258d4708aa254c4df4dca",
+  "poster": "/_blob/fc0da445fd45f034cd544d12fa090424",
+  "title": "Texting your best friend... feelings",
+  "len": 11,
+  "long": false,
+  "series": "unsent",
+  "episode": 20,
+  "caption": "Catching feelings for your best friend.\nSome words deserve a face, not a screen."
+ },
+ "kute21": {
+  "video": "/_blob/77ba9ec20ce4383567708a6ed730aff6",
+  "poster": "/_blob/e93bb76965c1b7b195dd156c46fe4577",
+  "title": "Their time: 4 a.m.",
+  "len": 8,
+  "long": false,
+  "series": "unsent",
+  "episode": 21,
+  "caption": "When it's evening for you and 4 a.m. for them.\nSend the soft one. It will still be there when they wake."
+ },
+ "kute22": {
+  "video": "/_blob/0444bdd353e6123447e6f87b4b56ba90",
+  "poster": "/_blob/ab008e449f6c68e5f941260c8fdfd684",
+  "title": "Making a friend as an adult",
+  "len": 7,
+  "long": false,
+  "series": "unsent",
+  "episode": 22,
+  "caption": "Why is asking a new friend to hang out so scary?\nFriendship needs asking too."
+ },
+ "kute23": {
+  "video": "/_blob/8b40cf2f0e6d6c65eb09c162b8ca9f32",
+  "poster": "/_blob/c5ba34e0ace451da62df108ffb527926",
+  "title": "Five unsent texts, one night",
+  "len": 60,
+  "long": true,
+  "series": "unsent",
+  "episode": 23,
+  "caption": "Five texts drafted, four never sent. Wait for the last one.\nThe drafts show you what you actually mean."
+ },
+ "kute24": {
+  "video": "/_blob/f904c65e1f135d5ec8d85b46bd414865",
+  "poster": "/_blob/1b6f4d9b098695b89ce8ccfc6c326559",
+  "title": "One text, all night",
+  "len": 60,
+  "long": true,
+  "series": "unsent",
+  "episode": 24,
+  "caption": "One text, rewritten from 11 p.m. to 9 a.m.\nThe angry drafts faded. The true one kept."
  }
 }
