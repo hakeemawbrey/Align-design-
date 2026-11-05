@@ -380,7 +380,7 @@ ARTS.spark = (g, t) => {
   g.restore()
 }
 
-// Compatibility: two figures hand in hand on a long road toward the dawn
+// Alignment, the long kind: two figures hand in hand on a long road toward the dawn
 ARTS.road = (g, t) => {
   g.drawImage(sky('road', COL.gold), 0, 0)
   const hy = 268
@@ -558,7 +558,7 @@ ARTS.loop = (g, t) => {
   glowFigure(g, cx, 472, 130, COL.mint, { a: 0.9 })
 }
 
-// Attraction: light pours from one figure toward the other, who doesn't turn
+// A crush (or attraction): light pours from one figure toward the other, who doesn't turn
 ARTS.beam = (g, t) => {
   g.drawImage(sky('beam', COL.gold), 0, 0)
   dust(g, 16, 22, COL.gold, t, { speed: 5 })
@@ -576,7 +576,7 @@ ARTS.beam = (g, t) => {
   mono(g, '→  ONE WAY', 206, 494, { size: 17, color: COL.gold })
 }
 
-// Alignment: two figures, both lit, their star heads on one straight line
+// A match: two figures, both lit, their star heads on one straight line
 ARTS.align = (g, t) => {
   g.drawImage(sky('align', COL.gold), 0, 0)
   dust(g, 17, 36, COL.gold, t, { speed: 5 })

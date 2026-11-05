@@ -27,6 +27,8 @@ creator's footage, narration, lines or audio.
   useful. Never punch down at the sign.
 - No emoji, no hashtags in lines, no exclamation marks, no "manifest", no
   therapy jargon, no promises of a soulmate. Astrology "reads", it never decides.
+- Never say "compatibility" or "compatible". Align's word is **alignment**
+  ("aligned", "how you align"). This holds for every reel, caption and card.
 - Align's ideas are slipped in at most twice, never sold, never "download":
   read the sky before the face · it has to be mutual · say the honest thing ·
   dealbreakers up front · release, don't haunt · a new deal at 11:11 · Venus

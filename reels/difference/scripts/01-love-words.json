@@ -4,7 +4,7 @@
   "cover": "What's the difference?",
   "voice": "af_heart",
   "speed": 1.15,
-  "caption": "eight words everyone uses about love, and almost nobody can tell apart 💭\nchemistry vs compatibility · love vs limerence · your type vs your pattern · attraction vs alignment\nthe second pair has a name for the feeling you get when they go quiet. the last one is the only one that needs two people",
+  "caption": "eight words everyone uses about love, and almost nobody can tell apart 💭\nchemistry vs alignment · love vs limerence · your type vs your pattern · a crush vs a match\nthe second pair has a name for the feeling you get when they go quiet. the last one is the only one that needs two people",
   "cta": "send this to the friend who calls everything chemistry 👀\nyour full chart is free on align, link in bio",
   "hashtags": [
     "relationshipadvice",
@@ -21,25 +21,25 @@
         "art": "spark"
       },
       "b": {
-        "label": "Compatibility",
+        "label": "Alignment",
         "art": "road"
       },
       "ask": [
         "Eight words people use about love.",
         "Almost nobody can tell them apart.",
-        "*Chemistry* versus *compatibility.*"
+        "*Chemistry* versus *alignment.*"
       ],
       "explainA": [
         "*Chemistry* is how it feels.",
         "The pull, the nerves, the spark."
       ],
       "explainB": [
-        "*Compatibility* is how it works.",
+        "*Alignment* is how it works.",
         "Your values, your days, how you fight."
       ],
       "diff": [
         "Chemistry gets you a *second date.*",
-        "Compatibility gets you a *second year.*"
+        "Alignment gets you a *second year.*"
       ]
     },
     {
@@ -93,23 +93,23 @@
     },
     {
       "a": {
-        "label": "Attraction",
+        "label": "A crush",
         "art": "beam"
       },
       "b": {
-        "label": "Alignment",
+        "label": "A match",
         "art": "align"
       },
       "ask": [
         "And the one that matters most.",
-        "*Attraction* versus *alignment.*"
+        "A *crush* versus a *match.*"
       ],
       "explainA": [
-        "*Attraction* can go one way.",
+        "A *crush* can go one way.",
         "You can feel it all alone."
       ],
       "explainB": [
-        "*Alignment* has to be *mutual.*",
+        "A *match* has to be *mutual.*",
         "Both of you, at the same time."
       ],
       "diff": [

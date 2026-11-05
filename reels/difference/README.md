@@ -1,8 +1,8 @@
 # Align "What's the difference?" reels
 
 Vertical reels (1080 × 1920, about 60 s) that take two words people mix up
-and tell them apart: love words (chemistry vs compatibility, love vs
-limerence, your type vs your pattern, attraction vs alignment) and chart words
+and tell them apart: love words (chemistry vs alignment, love vs
+limerence, your type vs your pattern, a crush vs a match) and chart words
 (sun vs rising, Venus vs Mars, horoscope vs birth chart, sign vs
 constellation).
 
@@ -73,11 +73,11 @@ shrug, the way the format's thumbnails look) and `<id>.caption.txt`.
   "pairs": [
     {
       "a": { "label": "Chemistry", "art": "spark" },
-      "b": { "label": "Compatibility", "art": "road" },
-      "ask": ["Eight words people use about love.", "Almost nobody can tell them apart.", "*Chemistry* versus *compatibility.*"],
+      "b": { "label": "Alignment", "art": "road" },
+      "ask": ["Eight words people use about love.", "Almost nobody can tell them apart.", "*Chemistry* versus *alignment.*"],
       "explainA": ["*Chemistry* is how it feels.", "The pull, the nerves, the spark."],
-      "explainB": ["*Compatibility* is how it works.", "Your values, your days, how you fight."],
-      "diff": ["Chemistry gets you a *second date.*", "Compatibility gets you a *second year.*"]
+      "explainB": ["*Alignment* is how it works.", "Your values, your days, how you fight."],
+      "diff": ["Chemistry gets you a *second date.*", "Alignment gets you a *second year.*"]
     }
   ],
   "end": { "lines": ["Send this to the friend", "who calls everything *chemistry.*"], "pill": "SEND THIS TO SOMEONE" }
@@ -98,13 +98,13 @@ shrug, the way the format's thumbnails look) and `<id>.caption.txt`.
 | art | for | what |
 | --- | --- | --- |
 | `spark` | chemistry | two figures reaching, a bolt crackling between their hands |
-| `road` | compatibility | two figures hand in hand on a long road toward the dawn |
+| `road` | alignment | two figures hand in hand on a long road toward the dawn |
 | `halo` | love | two figures close inside one steady halo |
 | `limerence` | limerence | one figure lit by a phone, thoughts circling its head, the other person far off and dashed |
 | `lineup` | your type | three figures that look exactly alike |
 | `loop` | your pattern | a path that loops back on itself, a light running it |
-| `beam` | attraction | hearts streaming from one figure to another who doesn't turn |
-| `align` | alignment | two figures, their star heads on one straight line through a sun and two moons |
+| `beam` | a crush | hearts streaming from one figure to another who doesn't turn |
+| `align` | a match | two figures, their star heads on one straight line through a sun and two moons |
 | `sun` | sun sign | a big sun, a figure standing in its light |
 | `rising` | rising sign | a sign coming up over the eastern horizon |
 | `venus`, `mars` | planets | a halftone planet and its glyph (Mars has its two moons) |
@@ -128,6 +128,8 @@ decides. Every fact has to hold up:
   from the March equinox. The sun's path crosses thirteen IAU constellations
   (Ophiuchus is the thirteenth), and precession has moved the stars about 28°
   (almost a whole sign) in two thousand years.
+
+Never say "compatibility" or "compatible": Align's word is **alignment**.
 
 Say **"the Align app"**, never "on Align": spoken, "Align" sounds like
 "a line". Tie the line to something the app really does (cards flip only when
