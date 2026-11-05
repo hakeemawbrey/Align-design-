@@ -177,7 +177,7 @@ function ending(kind, b, r) {
 export const VOICES = [
   { id: 'af_heart', speed: 0.92, note: 'US woman, warm (the original)' },
   { id: 'af_bella', speed: 0.92, note: 'US woman, bright' },
-  { id: 'af_nicole', speed: 1.08, note: 'US woman, soft and breathy' },
+  { id: 'af_nicole', speed: 1.25, note: 'US woman, soft and breathy' },
   { id: 'af_aoede', speed: 0.92, note: 'US woman, clear' },
   { id: 'af_kore', speed: 0.92, note: 'US woman, full' },
   { id: 'af_sarah', speed: 0.92, note: 'US woman, light' },
