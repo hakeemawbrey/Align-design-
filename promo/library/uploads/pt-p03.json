@@ -1,0 +1,62 @@
+{
+ "kpmee01": {
+  "video": "/_blob/173aa0b98763e3b51d22f2613b4290df",
+  "poster": "/_blob/5939a51bb76391f87a49967d8695784a",
+  "title": "Sent Before Thinking",
+  "len": 24,
+  "long": false,
+  "series": "pmercury",
+  "episode": 1,
+  "sign": "aries",
+  "account": "star_talk",
+  "caption": "One coffee, 0.2 seconds, one very bold text. Even Mercury had to rewind.\nAries, what's the fastest you've ever hit send?"
+ },
+ "kpmee02": {
+  "video": "/_blob/7da96c295f0e260fcf13ec4e25789a9d",
+  "poster": "/_blob/6ce0bd2228cbb0e098c46fdd212942c9",
+  "title": "The Three-Day Reply",
+  "len": 26,
+  "long": false,
+  "series": "pmercury",
+  "episode": 2,
+  "sign": "taurus",
+  "account": "star_advice",
+  "caption": "Wanting your reply to be perfect is sweet. Three days of silence just feels like silence.\nA short honest answer now beats a perfect one later. Save this for the next sweet text."
+ },
+ "kpmee03": {
+  "video": "/_blob/40c9612e37bed0a1d549abe455655294",
+  "poster": "/_blob/81884c0dfd375af330ec3bfa1e3bf5c1",
+  "title": "Two Chats, One Feeling",
+  "len": 72,
+  "long": true,
+  "series": "pmercury",
+  "episode": 3,
+  "sign": "gemini",
+  "account": "star_talk",
+  "caption": "Gemini answered 39 chats in a minute and dodged exactly one. Guess which.\nMercury has notes, a retrograde alibi and one very slow text. Who's your one chat?"
+ },
+ "kpmee04": {
+  "video": "/_blob/c4235309f62eb04493cf6acc6173bf37",
+  "poster": "/_blob/71a93070cb7c52f4333bcb12db8cc893",
+  "title": "The Paragraph You Didn't Send",
+  "len": 28,
+  "long": false,
+  "series": "pmercury",
+  "episode": 4,
+  "sign": "cancer",
+  "account": "star_advice",
+  "caption": "When someone goes quiet, the check-in you write can turn into nine pages of love.\nLead with the feeling and keep one ask. The rest can wait for Sunday."
+ },
+ "kpmee05": {
+  "video": "/_blob/346116320f499577e363e148a9a8e703",
+  "poster": "/_blob/6ba876f4f5d4120e9f483d175cea6739",
+  "title": "Refreshing the Viewer List",
+  "len": 24,
+  "long": false,
+  "series": "pmercury",
+  "episode": 5,
+  "sign": "leo",
+  "account": "star_talk",
+  "caption": "Refresh number 43 and they finally viewed it. Mercury would like a word.\nLeo, how many stories have you posted for one person?"
+ }
+}
