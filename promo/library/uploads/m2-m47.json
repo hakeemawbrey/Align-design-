@@ -88,5 +88,35 @@
   "series": "xsingle",
   "episode": 3,
   "caption": "Single at a dinner where every couple has a tip for you.\nThey mean well, and you can still say thanks, I'm good. Then tell them what you're excited about."
+ },
+ "kxste04": {
+  "video": "/_blob/05b9347037f0041600ac5b9a18efdda9",
+  "poster": "/_blob/7ea847d5bf5d8efb8e6489ab0566a78e",
+  "title": "Couples' Game Night",
+  "len": 75,
+  "long": true,
+  "series": "xsingle",
+  "episode": 4,
+  "caption": "Every team at game night is a couple. Yours is just you.\nPlay as yourself and ask who's free to join. Sometimes the best teammate is someone's grandma."
+ },
+ "kxste05": {
+  "video": "/_blob/b469dcf4d349c3ca065fad1e277f9c01",
+  "poster": "/_blob/2c84bf23ca967d543050782cc0015c32",
+  "title": "Walking In Alone",
+  "len": 75,
+  "long": true,
+  "series": "xsingle",
+  "episode": 5,
+  "caption": "Walking into a party where you only know the host is hard, and the urge to leave is real.\nYou don't need the whole room. Ask one person one question and see where it goes."
+ },
+ "kxste06": {
+  "video": "/_blob/d2c4baacadeab51c7bb6a6f55f891fe6",
+  "poster": "/_blob/37f052c9fc72d04884ff72a01d9ca6ce",
+  "title": "Saturday In, on Purpose",
+  "len": 75,
+  "long": true,
+  "series": "xsingle",
+  "episode": 6,
+  "caption": "Everyone's posting their Saturday night out, and you're home in pyjamas.\nA night in is a plan, not a backup. If it's what you want, enjoy it on purpose."
  }
 }
