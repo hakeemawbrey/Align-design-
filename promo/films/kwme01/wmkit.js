@@ -152,7 +152,7 @@ export function makeWM(cfg) {
   function cam(t) {
     // frame 0 is mid-zoom: the hook kit's whip (pure camera fn) for 'whip' films, a gentle fly-out for the others
     const W = brk === 'whip' ? whipZoomCam(t, WHIP) : null
-    let z = W ? W.s : 1 + 0.16 * (1 - ease.outCubic(prog(t, -0.6, 0.3))), fx = 540, fy = 960
+    let z = W ? W.s : brk === 'whip' && t < WHIP.at ? WHIP.from : 1 + 0.16 * (1 - ease.outCubic(prog(t, -0.6, 0.3))), fx = 540, fy = 960
     const tk = ease.inOutCubic(prog(t, TURN[0] - 0.1, TURN[1] + 0.9))
     z += 0.34 * tk
     fx = lerp(540, focus.x, tk); fy = lerp(960, focus.y, tk)
