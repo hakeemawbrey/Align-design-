@@ -1,0 +1,108 @@
+# Align Study
+
+Point it at any Instagram page (first up: **@tylerinthemaking**) and it
+downloads every post, works out what's in each one on your own Mac, and packs
+it up so Claude can study the page and tell you how to make Align posts like
+it.
+
+For each post the pack has:
+
+- **Numbers:** views, likes and comments, and how the post did against the page's typical post
+- **What's said:** a transcript with timings (whisper.cpp, runs offline on your Mac)
+- **What's on screen:** the words in the first seconds and across the video, or on every carousel slide (macOS's built-in text recognition)
+- **What it looks like:** one contact sheet per post, with three stills from the first 2.5 seconds (the hook) and three across the rest, or a carousel's slides side by side
+- **The caption, hashtags, date and length**, plus a `report.md` that adds it all up: formats, top and bottom posts, hooks, topics, openers they reuse, calls to action, length and posting times
+
+## One click on a Mac
+
+**First time:** open Terminal (Cmd+Space, type Terminal), paste this and press Enter:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/study/mac/install.sh)"
+```
+
+It installs what's needed (Homebrew, Node, gallery-dl, yt-dlp, ffmpeg,
+whisper.cpp, GitHub's `gh`), puts the project in `~/Align-design-` (or
+updates it if Align Inspo already put it there), adds two buttons to your
+Desktop and starts:
+
+- **Study Instagram Page:** asks which page (press Enter for the last one),
+  checks you're logged into Instagram in your browser, then:
+  1. downloads every post on the grid,
+  2. reads views and comments for each, a few seconds apart,
+  3. transcribes, reads on-screen text and makes stills, all on your Mac,
+  4. packs it up, opens the folder, and asks whether to send it to Claude.
+
+  If Instagram pushes back it waits 30 minutes and carries on by itself, and
+  it keeps your Mac awake while it works. Close the window any time; double-click again to pick up
+  where it left off. A page with a few hundred posts takes an hour or two,
+  most of it waiting politely between requests. The speech model (about
+  470 MB) downloads the first time.
+- **Send Study to Claude:** pushes the pack to a **private** repo on your
+  GitHub, `<you>/align-study`, which it makes the first time (a one-time
+  GitHub sign-in). It refuses to send if that repo is ever public.
+
+Then tell Claude: **"Study @tylerinthemaking from hakeemawbrey/align-study"**.
+
+### Why a separate private repo
+
+The pack holds someone else's videos' words and stills. This repo is public,
+so the pack never goes here: `study/pack/` and `study/media/` are git-ignored,
+and only your private repo gets it. Downloads stay on your Mac in
+`study/media/`. Nothing is reposted; it's reference for working out the
+structure, the same as `inspo/`.
+
+## Step by step (Terminal)
+
+Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
+
+```bash
+cd study
+npm run download -- tylerinthemaking --cookies-from-browser chrome --limit 12   # try a few first
+npm run download -- tylerinthemaking --cookies-from-browser chrome              # then everything (re-run to resume)
+npm run numbers  -- tylerinthemaking --cookies-from-browser chrome
+npm run process  -- tylerinthemaking            # --model base.en for a smaller, faster speech model
+npm run report   -- tylerinthemaking            # --tz America/Chicago (the default) for posting times
+npm test
+```
+
+Options worth knowing:
+
+- `download --reels-tab` also gets reels that were never shared to the grid. It costs one extra request per reel, so it's off by default.
+- `numbers` uses **Meta's official API** instead of yt-dlp when `IG_ACCESS_TOKEN` and `IG_USER_ID` are set (the same two as `founder/` and `inspo/`). It's one request per 50 posts, and the numbers are exact. It only works if the page is a Business or Creator account. Without it, yt-dlp may not get reel views (Instagram reports reel plays in a field yt-dlp doesn't read). Reels are then ranked by likes, and the report says how many reels have views.
+- `process` skips whatever it can't do (no whisper.cpp, not a Mac) and fills it in on a later run once it can.
+
+Scripted downloading isn't Meta's API and is against Instagram's terms of
+use, so it's your call (see `inspo/README.md`, Option B). It uses your own
+logged-in browser and goes slowly. Private accounts only work if the
+logged-in account follows them.
+
+## What's in a pack
+
+`study/pack/<handle>/`, and the same in `<you>/align-study/<handle>/`:
+
+| File | What |
+| --- | --- |
+| `report.md` | the numbers: mix, top 25, bottom 10, top quarter vs bottom quarter, length, topics, reused openers, CTAs, hashtags, posting days and times |
+| `posts.json` | every post: numbers, `lift` (× typical), caption, `hook` {screen, spoken, caption}, transcript with timings, on-screen text per still, topics, shapes, CTAs |
+| `posts.csv` | the same as a spreadsheet |
+| `sheets/<shortcode>.jpg` | the contact sheet for each post |
+
+## What Claude does with it
+
+1. Reads `report.md` for the shape of the page, then `posts.json` end to end: every hook, transcript and caption.
+2. Looks at the contact sheets of the top and bottom posts for framing, text style, pacing and setting.
+3. Writes the playbook for Align in this repo (`study/playbooks/<handle>.md`): what the page does and why it works, the formats and hooks to borrow, and Align versions of the best posts about relationship topics. It quotes the source only in short pieces, the same rule as `founder/`.
+4. Turns the playbook into posts with the makers already here: `carousel/`, `reels/` and `founder/` (talking-head scripts).
+
+## Files
+
+| Path | What |
+| --- | --- |
+| `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
+| `src/numbers.mjs` | views, comments and length per post (yt-dlp, or Meta's API) |
+| `src/process.mjs` | stills, contact sheets, on-screen text, transcripts |
+| `src/ocr.swift` | the on-screen text reader (macOS Vision), compiled once to `~/.align-study/bin` |
+| `src/posts.mjs` | gallery-dl's files and details → one record per post |
+| `src/report.mjs` | records → `report.md`, `posts.json`, `posts.csv`, `sheets/` |
+| `mac/install.sh`, `mac/run.sh` | the one-time setup and the two Desktop buttons |

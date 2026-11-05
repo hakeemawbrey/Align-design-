@@ -1,0 +1,15 @@
+{
+  "name": "align-study",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Download every post on an Instagram page, transcribe and read it on your own computer, and pack it up for Claude to analyze",
+  "engines": { "node": ">=21" },
+  "scripts": {
+    "download": "node src/download.mjs",
+    "numbers": "node src/numbers.mjs",
+    "process": "node src/process.mjs",
+    "report": "node src/report.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
