@@ -386,7 +386,7 @@ export function makeCaught(cfg) {
   const P0 = FZ + RW                    // the story starts
   const LOOP_SETTLE = 0.45              // the last 0.45 s of a loop settles into frame 0
   const final = segs.find(s => s.final)
-  const loopBack = segs.find(s => s.loopBack)
+  const loopSeg = segs.find(s => s.loopBack)
   const settleAt = DURATION - LOOP_SETTLE
 
   // the freeze level (0…1) at t: the cold open, every catch freeze, the final freeze
