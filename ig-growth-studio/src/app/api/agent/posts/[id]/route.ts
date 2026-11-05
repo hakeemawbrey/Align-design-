@@ -2,6 +2,8 @@ import { type NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { agentAuth } from "@/lib/agent";
 import { editQueuedPost, getAccount, getDb, getPost, listAccounts, updatePost } from "@/lib/db";
+import { isLocalMedia, localMediaPath } from "@/lib/media";
+import { toDirectMediaUrl } from "@/lib/plan";
 import { MAX_HASHTAGS, PostFields, countHashtags, hasFacebookPage, publicPost } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
@@ -13,10 +15,12 @@ const Patch = z
     caption: PostFields.shape.caption.optional(),
     coverOffsetMs: PostFields.shape.coverOffsetMs,
     facebook: z.boolean().optional(),
+    /** A public https URL, or "local:<file>" for a video in the app's data/media folder (Reels only). */
+    mediaUrl: z.string().min(1).optional(),
     scheduledAt: z.iso.datetime({ offset: true, message: "scheduledAt must be ISO 8601 with a time zone" }).optional(),
   })
-  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined || b.coverOffsetMs !== undefined || b.facebook !== undefined, {
-    message: "Send caption, scheduledAt, coverOffsetMs and/or facebook",
+  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined || b.coverOffsetMs !== undefined || b.facebook !== undefined || b.mediaUrl !== undefined, {
+    message: "Send caption, scheduledAt, coverOffsetMs, facebook and/or mediaUrl",
   });
 
 async function load(req: NextRequest, params: Promise<{ id: string }>) {
@@ -40,6 +44,17 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     return NextResponse.json({ error: `${issue?.path.join(".") || "body"}: ${issue?.message ?? "invalid"}` }, { status: 400 });
   }
   const { caption, scheduledAt, coverOffsetMs, facebook } = parsed.data;
+  let mediaUrl = parsed.data.mediaUrl;
+  if (mediaUrl !== undefined) {
+    if (isLocalMedia(mediaUrl)) {
+      if (post.type !== "REELS") return NextResponse.json({ error: "Only Reels can use a video file from this computer" }, { status: 400 });
+      if (!localMediaPath(mediaUrl)) return NextResponse.json({ error: `No such file in the media folder: ${mediaUrl}` }, { status: 400 });
+    } else {
+      const ok = PostFields.shape.mediaUrl.safeParse(mediaUrl);
+      if (!ok.success) return NextResponse.json({ error: "mediaUrl must be a public https:// link or local:<file>" }, { status: 400 });
+      mediaUrl = toDirectMediaUrl(mediaUrl) ?? mediaUrl;
+    }
+  }
   if (facebook && post.type !== "REELS") {
     return NextResponse.json({ error: "Only Reels can be cross-posted to Facebook" }, { status: 400 });
   }
@@ -60,7 +75,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (when && !(await getAccount(db, post.ig_user_id))) {
     return NextResponse.json({ error: "This post's account is no longer connected" }, { status: 409 });
   }
-  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when, coverOffsetMs, facebook }, new Date()))) {
+  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when, coverOffsetMs, facebook, mediaUrl }, new Date()))) {
     const allowed = when ? "scheduled, failed or cancelled" : "scheduled";
     return NextResponse.json({ error: `Only ${allowed} posts can be changed (this one is ${post.status})` }, { status: 409 });
   }

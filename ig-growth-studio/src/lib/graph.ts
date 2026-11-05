@@ -1,4 +1,6 @@
+import fs from "node:fs";
 import { config } from "./config";
+import { isLocalMedia, localMediaPath } from "./media";
 
 /** Error returned by the Graph API, with Meta's error code when present. */
 export class GraphError extends Error {
@@ -193,7 +195,7 @@ export class GraphClient {
    * Reel container. With `trial`, it becomes a Trial Reel: shown to non-followers first, then shared
    * with followers by hand (MANUAL) or automatically if it performs well (SS_PERFORMANCE).
    */
-  createReelContainer(
+  async createReelContainer(
     igUserId: string,
     videoUrl: string,
     caption: string,
@@ -201,9 +203,12 @@ export class GraphClient {
     trial?: "MANUAL" | "SS_PERFORMANCE" | null,
     coverOffsetMs?: number | null,
   ) {
-    return this.request<{ id: string }>("POST", `${igUserId}/media`, {
+    const local = localMediaPath(videoUrl);
+    if (isLocalMedia(videoUrl) && !local) throw new GraphError(`Video file not found: ${videoUrl}`, 400);
+    const created = await this.request<{ id: string }>("POST", `${igUserId}/media`, {
       media_type: "REELS",
-      video_url: videoUrl,
+      // A file on this computer is sent with a resumable upload instead of being fetched from a URL.
+      ...(local ? { upload_type: "resumable" } : { video_url: videoUrl }),
       caption,
       // thumb_offset: the video frame (in ms) Instagram uses as the Reel's cover.
       ...(coverOffsetMs != null ? { thumb_offset: Math.round(coverOffsetMs) } : {}),
@@ -211,6 +216,23 @@ export class GraphClient {
         ? { trial_params: JSON.stringify({ graduation_strategy: trial }) }
         : { share_to_feed: shareToFeed }),
     });
+    if (local) await this.uploadFile(`https://rupload.facebook.com/ig-api-upload/${this.version}/${created.id}`, local);
+    return created;
+  }
+
+  /** Sends a local file to a Meta rupload endpoint in one request. */
+  async uploadFile(url: string, filePath: string, token = this.token) {
+    const data = await fs.promises.readFile(filePath);
+    const res = await this.fetchImpl(url, {
+      method: "POST",
+      headers: { authorization: `OAuth ${token}`, offset: "0", file_size: String(data.length), "content-type": "application/octet-stream" },
+      body: data,
+      cache: "no-store",
+    });
+    const json = (await res.json().catch(() => ({}))) as { success?: boolean; debug_info?: { message?: string }; error?: { message?: string } };
+    if (!res.ok || json.success === false || json.error) {
+      throw new GraphError(`Video upload failed: ${json.debug_info?.message ?? json.error?.message ?? `HTTP ${res.status}`}`, res.status);
+    }
   }
 
   containerStatus(containerId: string) {
@@ -297,6 +319,13 @@ export class GraphClient {
    */
   async publishPageReel(pageId: string, videoUrl: string, description: string, state: "PUBLISHED" | "DRAFT" = "PUBLISHED") {
     const start = await this.request<{ video_id: string }>("POST", `${pageId}/video_reels`, { upload_phase: "start" });
+    const local = localMediaPath(videoUrl);
+    if (isLocalMedia(videoUrl) && !local) throw new GraphError(`Video file not found: ${videoUrl}`, 400);
+    if (local) {
+      await this.uploadFile(`https://rupload.facebook.com/video-upload/${this.version}/${start.video_id}`, local);
+      await this.request("POST", `${pageId}/video_reels`, { upload_phase: "finish", video_id: start.video_id, video_state: state, description });
+      return { videoId: start.video_id };
+    }
     const res = await this.fetchImpl(`https://rupload.facebook.com/video-upload/${this.version}/${start.video_id}`, {
       method: "POST",
       headers: { authorization: `OAuth ${this.token}`, file_url: videoUrl },

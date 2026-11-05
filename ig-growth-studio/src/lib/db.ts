@@ -474,7 +474,7 @@ export async function claimPost(db: DB, id: number, now: Date): Promise<boolean>
 export async function editQueuedPost(
   db: DB,
   id: number,
-  fields: { caption?: string; scheduledAt?: Date; coverOffsetMs?: number | null; facebook?: boolean },
+  fields: { caption?: string; scheduledAt?: Date; coverOffsetMs?: number | null; facebook?: boolean; mediaUrl?: string },
   now: Date,
 ) {
   const sets: string[] = [];
@@ -488,6 +488,7 @@ export async function editQueuedPost(
     );
   }
   if (fields.caption !== undefined) sets.push("caption = ?"), args.push(fields.caption);
+  if (fields.mediaUrl !== undefined) sets.push("media_url = ?"), args.push(fields.mediaUrl);
   if (fields.coverOffsetMs !== undefined) sets.push("cover_offset_ms = CASE WHEN type = 'REELS' THEN ? END"), args.push(fields.coverOffsetMs);
   if (fields.scheduledAt) {
     sets.push("scheduled_at = ?", "status = 'scheduled'", "container_id = NULL", "error = NULL", "attempts = 0");

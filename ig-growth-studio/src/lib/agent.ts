@@ -49,7 +49,7 @@ export const AGENT_DOCS = {
       "coverOffsetMs?: number (Reels only: cover frame in ms from the start), " +
       "facebook?: boolean (Reels only: also post to the account's linked Facebook Page at the same time; 3–90 s videos, 30 per Page per 24 h) }.",
     "PATCH /api/agent/posts/{id}":
-      "Change a queued post. JSON: { caption?, scheduledAt?, coverOffsetMs?, facebook? }. facebook switches Facebook cross-posting on or off until its upload starts. coverOffsetMs (Reels): the video frame, in ms, used as the cover; " +
+      "Change a queued post. JSON: { caption?, scheduledAt?, coverOffsetMs?, facebook?, mediaUrl? }. mediaUrl: a public https link, or local:<file> for a Reel video saved in the app's data/media folder (uploaded straight to Instagram/Facebook; needs the worker on this computer). facebook switches Facebook cross-posting on or off until its upload starts. coverOffsetMs (Reels): the video frame, in ms, used as the cover; " +
       "null for Instagram's default. Sending scheduledAt also puts a failed or cancelled post back in the queue.",
     "DELETE /api/agent/posts/{id}": "Cancel a post that has not started publishing.",
     "GET /api/agent/stats?account=": "Followers, following, post count, today's account-wide views/reach/interactions (since local midnight) and reach/engagement for the 12 most recent posts.",

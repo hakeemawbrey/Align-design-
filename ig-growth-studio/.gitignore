@@ -7,3 +7,5 @@ next-env.d.ts
 data/*.db*
 .vercel
 .env*
+data/media/
+data/experiments/
