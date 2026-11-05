@@ -35,13 +35,13 @@ import * as HK from '../../hookkit.js'
 import {
   BONE, INK, PINK, GOLD, LAV, CYAN, MINT, ML_GOLD, INTER, MONO, SERIF, r3, pop01, outK, popOut, inR, bump, rgba, mixHex,
   drawSign, drawPisces, standY, drawLane, LANE, drawCafe, drawCafeTable, CAFE, drawApartment, APT,
-  drawPhone, drawBubble, sparkles, drawMysteryCard, starFrame, inSprite, tearsCells, buildCaption, captionCues, popCues, drawIcon,
+  drawPhone, drawBubble, sparkles, drawMysteryCard, starFrame, inSprite, tearsCells, buildCaption, captionCues, popCues, drawIcon, drawPastry,
 } from '../../mlpilot/scenes/mlkit.js'
 
 export {
   clamp, lerp, prog, ease, easeOutBack, BONE, INK, PINK, GOLD, LAV, CYAN, MINT, ML_GOLD, INTER, MONO, SERIF, r3, pop01, outK, popOut, inR, bump,
   rgba, mixHex, drawSign, drawPisces, standY, drawLane, LANE, drawCafe, drawCafeTable, CAFE, drawApartment, APT, drawPhone, drawBubble,
-  sparkles, drawMysteryCard, starFrame, inSprite, tearsCells, drawStarChar, signStar, STAR, drawPixelStar, drawIcon, popCues,
+  sparkles, drawMysteryCard, starFrame, inSprite, tearsCells, drawStarChar, signStar, STAR, drawPixelStar, drawIcon, popCues, drawPastry,
 }
 
 export const RED = '#e8344e'
