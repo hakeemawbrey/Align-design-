@@ -299,6 +299,7 @@ export function buildTicker(root, { label: lab = 'CHARGE', text, at, out, y = 17
   const tag = el('div', { position: 'absolute', left: '0', top: '0', height: '70px', padding: '0 26px', display: 'flex', alignItems: 'center', background: RED, color: '#fff', font: `800 30px ${INTER}`, letterSpacing: '0.16em', zIndex: 2, boxShadow: '8px 0 16px rgba(6,4,18,0.8)' }, wrap, lab)
   const run = el('div', { position: 'absolute', left: '0', top: '0', height: '70px', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', color: BONE, font: `700 32px ${MONO}`, letterSpacing: '0.04em' }, wrap, `${text} &nbsp;•&nbsp; ${text} &nbsp;•&nbsp; ${text} &nbsp;•&nbsp; ${text}`)
   void tag
+  let cyc = 0
   return {
     update(t) {
       const on = t >= at && t < out[1]
@@ -306,7 +307,9 @@ export function buildTicker(root, { label: lab = 'CHARGE', text, at, out, y = 17
       if (!on) return
       const k = ease.outCubic(prog(t, at, at + 0.3)) * outK(t, out)
       wrap.style.transform = `translateY(${((1 - k) * 90).toFixed(1)}px)`
-      run.style.transform = `translateX(${(260 - (t - at) * 150).toFixed(1)}px)`
+      if (!cyc) cyc = (run.scrollWidth || run.offsetWidth || 4000) / 4
+      const dx = (t - at) * 150, x0 = 260 - (dx > 260 ? 260 + ((dx - 260) % cyc) : dx)
+      run.style.transform = `translateX(${x0.toFixed(1)}px)`
     },
   }
 }
@@ -461,7 +464,7 @@ export function makeCourt(cfg) {
   const HOOK = cfg.hook ? { top: 210, size: 100, ...cfg.hook } : null
   const WHIPS = (FX.whips || []).map(w => typeof w === 'number' ? { at: w, from: 1.3 } : w)
   const RECS = FX.recs || []
-  const CH = (cfg.chapters || []).map((c, i) => ({ n: i + 1, y: 128, x: 600, ...c }))
+  const CH = (cfg.chapters || []).map((c, i) => ({ n: i + 1, y: 122, x: 56, ...c }))
   const SHAKES = FX.shakes || []
   const core = RECS.length ? frozen(build, RECS) : build
   const SCENES = [core, ...WHIPS.map(whipZoom), ...SHAKES.map(screenShake), ...(HOOK ? [slamTitle(HOOK)] : []), ...RECS.map(recordScratch), ...CH.map(chapter), ...(cfg.kit || [])]
