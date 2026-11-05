@@ -237,6 +237,9 @@ export function makeThenNowX(spec) {
         // the seam: clock chip per chapter
         if (i >= 0) drawClock(x, t, spec.chapters[i].time, bump(t, T.ch[i], 0.35))
         else if (spec.hookTime) drawClock(x, t, spec.hookTime, 0)
+        // a soft band behind the hook title on the seam (frame 0 readability)
+        const hb = 1 - prog(t, T.hookOut[0], T.hookOut[1])
+        if (hb > 0) { x.fillStyle = `rgba(8,5,24,${0.62 * hb})`; x.fillRect(0, 836, 1080, 290) }
         // the last line band
         const lk = ease.inOutCubic(prog(t, T.last - 0.25, T.last + 0.1))
         if (lk > 0) { x.fillStyle = `rgba(8,5,24,${0.82 * lk})`; x.fillRect(0, 840, 1080, 300 * lk); R(x, rgba(accent, lk), 0, 840, 1080, 6); R(x, rgba(accent, lk), 0, 840 + 300 * lk - 6, 1080, 6) }
