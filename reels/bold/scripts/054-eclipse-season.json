@@ -2,21 +2,138 @@
   "id": "054-eclipse-season",
   "series": "Zodiac",
   "title": "Eclipse season, explained",
-  "voice": { "voice": "bm_george", "speed": 1.02 },
+  "voice": {
+    "voice": "bm_george",
+    "speed": 1.02
+  },
   "footer": "auto",
   "caption": "Eclipses need the Sun, the Moon and the lunar nodes in a line, which is why they come in seasons. Save this for the next one.",
-  "hashtags": ["eclipseseason", "astrology", "astronomy", "moon", "zodiac"],
+  "hashtags": [
+    "eclipseseason",
+    "astrology",
+    "astronomy",
+    "moon",
+    "zodiac"
+  ],
   "beats": [
-    { "eyebrow": "ASTROLOGY, EXPLAINED", "head": "Why do eclipses come in *seasons?*", "vis": { "k": "moon", "phase": "new" } },
-    { "head": "The Moon's orbit is *tilted,* about five degrees.", "sub": "So most months, it passes above or below the Sun's path.", "vis": { "k": "planet", "p": "moon", "label": "5° TILT" } },
-    { "head": "It crosses that path at two points: the *nodes.*", "sub": "Astrology calls them the North Node and the South Node.", "vis": { "k": "icons", "items": [{ "i": "compass", "label": "North Node" }, { "i": "anchor", "label": "South Node" }], "layout": "row" } },
-    { "head": "Line up the Sun, the Moon and a *node.*", "sub": "That's an eclipse.", "vis": { "k": "aspect", "deg": 0, "a": "sun", "b": "moon", "label": "SUN + MOON + NODE" } },
-    { "head": "New Moon at a node: a *solar* eclipse.", "accent": "sun", "vis": { "k": "planet", "p": "sun", "gag": "moon", "label": "SOLAR ECLIPSE" } },
-    { "head": "Full Moon at a node: a *lunar* eclipse.", "accent": "moon", "vis": { "k": "moon", "phase": "full" } },
-    { "head": "That lineup comes around about every *six months.*", "sub": "Each window lasts about a month. That's eclipse season.", "vis": { "k": "timeline", "marks": ["Season", "6 months", "Season"], "icons": ["moon", "hourglass", "moon"], "ding": 2 } },
-    { "head": "Astrology reads eclipses as *plot twists.*", "sub": "Endings, beginnings, and things you can't keep ignoring.", "vis": { "k": "icons", "items": [{ "i": "door", "label": "Endings" }, { "i": "key", "label": "Beginnings" }, { "i": "lightbulb", "label": "Truths" }], "layout": "row" } },
-    { "head": "In love, that's the *talk* you've been putting off.", "sub": "Not a reason to panic. A nudge to be honest.", "vis": { "k": "talkcard", "q": "Where is this going?" } },
-    { "head": "Big feelings? *Sleep* on it first.", "sub": "Eclipse energy is loud. Big decisions can wait a day.", "vis": { "k": "clock", "from": "11:00", "to": "8:00", "label": "SLEEP ON IT" } },
-    { "head": "Save this for the next *eclipse* season.", "vis": { "k": "moon", "wax": true } }
+    {
+      "eyebrow": "ASTROLOGY, EXPLAINED",
+      "head": "Why do eclipses come in *seasons?*",
+      "vis": {
+        "k": "moon",
+        "phase": "new"
+      }
+    },
+    {
+      "head": "The Moon's orbit is *tilted,* about five degrees.",
+      "sub": "So most months, it passes above or below the Sun's path.",
+      "vis": {
+        "k": "planet",
+        "p": "moon",
+        "label": "5° TILT"
+      }
+    },
+    {
+      "head": "It crosses that path at two points: the *nodes.*",
+      "sub": "Astrology calls them the North Node and the South Node.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "compass",
+            "label": "North Node"
+          },
+          {
+            "i": "anchor",
+            "label": "South Node"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Line up the Sun, the Moon and a *node.*",
+      "sub": "That's an eclipse.",
+      "vis": {
+        "k": "aspect",
+        "deg": 0,
+        "a": "sun",
+        "b": "moon",
+        "label": "SUN + MOON + NODE"
+      }
+    },
+    {
+      "head": "New Moon at a node: a *solar* eclipse.",
+      "accent": "sun",
+      "vis": {
+        "k": "planet",
+        "p": "sun",
+        "gag": "moon",
+        "label": "SOLAR ECLIPSE"
+      }
+    },
+    {
+      "head": "Full Moon at a node: a *lunar* eclipse.",
+      "accent": "moon",
+      "vis": {
+        "k": "moon",
+        "phase": "full"
+      }
+    },
+    {
+      "head": "That lineup comes around about every *six months.*",
+      "sub": "Each window lasts about a month. That's eclipse season.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "Season",
+          "6 months",
+          "Season"
+        ],
+        "icons": [
+          "moon",
+          "hourglass",
+          "moon"
+        ],
+        "ding": 2
+      }
+    },
+    {
+      "head": "Astrology reads eclipses as *plot twists.*",
+      "sub": "Endings, beginnings, and things you can't keep ignoring.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "door",
+            "label": "Endings"
+          },
+          {
+            "i": "key",
+            "label": "Beginnings"
+          },
+          {
+            "i": "lightbulb",
+            "label": "Truths"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "In love, that's the *talk* you've been putting off.",
+      "sub": "Not a reason to panic. A nudge to be honest.",
+      "vis": {
+        "k": "talkcard",
+        "q": "Where is this going?"
+      }
+    },
+    {
+      "head": "Save this for the next *eclipse* season.",
+      "vis": {
+        "k": "moon",
+        "wax": true
+      }
+    }
   ]
 }
