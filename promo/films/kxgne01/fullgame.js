@@ -602,11 +602,11 @@ export function makeFullGame(cfg) {
       inMarquee(() => {
         screenBg('rgba(14,10,34,0.97)')
         x.save(); x.globalAlpha = o
-        const S = signStar(FANS), sz = 330 * (0.6 + 0.4 * k) * (1 + 0.04 * (t - a))
-        drawStarChar(x, 540, 600, sz, t, { color: S.color, mood: 'wide', look: [0.3, -0.6], seed: 6, glow: 0.9, hops: [a + 0.1, a + 1.6, a + 2.8] })
-        const F = starFrame(540, 600, sz, t, { hops: [a + 0.1, a + 1.6, a + 2.8], seed: 6 })
+        const S = signStar(FANS), sz = 290 * (0.6 + 0.4 * k) * (1 + 0.04 * (t - a))
+        drawStarChar(x, 540, 505, sz, t, { color: S.color, mood: 'wide', look: [0.3, -0.6], seed: 6, glow: 0.9, hops: [a + 0.1, a + 1.6, a + 2.8] })
+        const F = starFrame(540, 505, sz, t, { hops: [a + 0.1, a + 1.6, a + 2.8], seed: 6 })
         inSprite(x, F, () => tearsCells(x, t, 3))
-        drawProp(x, t, 'tissue', 800, 610, 1.6, { rot: 0.1 })
+        drawProp(x, t, 'tissue', 790, 560, 1.4, { rot: 0.1 })
         // scanlines + REC chrome
         for (let y = MARQ.y0; y < MARQ.y1; y += 6) R(x, 'rgba(0,0,0,0.12)', MARQ.x0, y, MARQ.x1 - MARQ.x0, 2)
         if (Math.floor(t * 2) % 2 === 0) { x.fillStyle = RED; x.beginPath(); x.arc(MARQ.x0 + 40, MARQ.y0 + 38, 12, 0, Math.PI * 2); x.fill() }
