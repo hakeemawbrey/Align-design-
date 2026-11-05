@@ -58,5 +58,35 @@
   "series": "xask",
   "episode": 6,
   "caption": "They're lovely. There's just no spark, and vanishing feels easier.\nA warm, short, clear message lets them move on. Honest is kinder than a slow fade."
+ },
+ "kxase07": {
+  "video": "/_blob/4c328826ac6b06787f930426b187a3df",
+  "poster": "/_blob/cbe7fe05efab1fd872fd4912b5d96a85",
+  "title": "Pretending Not to Care",
+  "len": 75,
+  "long": true,
+  "series": "xask",
+  "episode": 7,
+  "caption": "Saying \"sure, whatever\" when you actually mean \"yes, please.\"\nPlaying it cool can hide you from the person you like. You can stay calm and still say one true thing."
+ },
+ "kxase08": {
+  "video": "/_blob/b9306cde9209d646696363acd65e218e",
+  "poster": "/_blob/3020f1a6b8c0e55e7a90526843fca286",
+  "title": "Same Type, Same Ending",
+  "len": 75,
+  "long": true,
+  "series": "xask",
+  "episode": 8,
+  "caption": "Same type, same ending, again?\nFamiliar can feel like chemistry. Write down your green flags and give the steady one a real chance."
+ },
+ "kxffe01": {
+  "video": "/_blob/205eb7e1779683a2552a6b4cbe71b48a",
+  "poster": "/_blob/bcccfeb0a670a73917f0c05caa4951d1",
+  "title": "The Friend You Drifted From",
+  "len": 60,
+  "long": true,
+  "series": "xfriends",
+  "episode": 1,
+  "caption": "A whole year without talking, and no fight to blame.\nLead with warmth: \"I miss you, no pressure to catch up on everything.\" Then say the hard part kindly."
  }
 }
