@@ -1,4 +1,16 @@
 {
+ "kpmae01": {
+  "video": "/_blob/b948e5c0a17035b9c44d18fd3f6c920f",
+  "poster": "/_blob/045a113e8b703fc02b0a4fadbb5fc123",
+  "title": "Mars trains Aries for one ask",
+  "len": 74.5,
+  "long": true,
+  "series": "pmars",
+  "episode": 1,
+  "sign": "aries",
+  "account": "star_talk",
+  "caption": "Mars fell through the gym ceiling to coach exactly one sentence.\nEye contact reps, a mirror, a talk card, one near-disaster on the climbing wall. Stay for the answer. Who in your life needs Coach Mars?"
+ },
  "kpmae02": {
   "video": "/_blob/19a98846562c170b7d27da421abb1b09",
   "poster": "/_blob/46756a265062e07986152bc2e9124d8b",
@@ -70,5 +82,65 @@
   "sign": "libra",
   "account": "star_talk",
   "caption": "Libra ran a whole poll on who to talk to at the party.\nMars had one question: who do you keep looking at? The window person, every single time. Comment your Libra's poll results."
+ },
+ "kpmae08": {
+  "video": "/_blob/1945cdbe1a516073433bd0e73d09b08d",
+  "poster": "/_blob/64df9bed19304f7e4fc775738c06b35f",
+  "title": "Say it warm",
+  "len": 30.5,
+  "long": false,
+  "series": "pmars",
+  "episode": 8,
+  "sign": "scorpio",
+  "account": "star_advice",
+  "caption": "Three days of icy silence after they forgot the plans.\nThe hurt is allowed. Silence just makes them guess, so say it out loud and warm: I felt hurt when this happened. Can we talk?"
+ },
+ "kpmae09": {
+  "video": "/_blob/9c5162d0b0e8c69a740a0ad8195362ce",
+  "poster": "/_blob/c2a15b63dfb1401f8aa2a902d5d28593",
+  "title": "Sometime is not a day",
+  "len": 24.5,
+  "long": false,
+  "series": "pmars",
+  "episode": 9,
+  "sign": "sagittarius",
+  "account": "star_talk",
+  "caption": "Four times Sagittarius said we should hang out sometime. Zero Saturdays.\nThen a calendar the size of a door showed up. Which friend owes you a sometime?"
+ },
+ "kpmae10": {
+  "video": "/_blob/2b0aa427e424d6713b0cc350a6967944",
+  "poster": "/_blob/0509c18f1c6394e64e41f1dd241b118e",
+  "title": "Love isn't a Q3 goal",
+  "len": 29,
+  "long": false,
+  "series": "pmars",
+  "episode": 10,
+  "sign": "capricorn",
+  "account": "star_advice",
+  "caption": "Love got scheduled for next year, if there's time.\nYou can't schedule the feeling, but you can make room for it. Block one free evening a week, and actually keep it."
+ },
+ "kpmae11": {
+  "video": "/_blob/c05da79f9d9517f2312c32e75f68f0da",
+  "poster": "/_blob/847b75c4b5f0162a137fdb4eb720e9bf",
+  "title": "Label it, nerd",
+  "len": 24,
+  "long": false,
+  "series": "pmars",
+  "episode": 11,
+  "sign": "aquarius",
+  "account": "star_talk",
+  "caption": "Same hoodie, inside jokes, 4 a.m. chats, and Aquarius says they don't do labels.\nThe label maker said otherwise. Is your Aquarius just vibes, or do they like you?"
+ },
+ "kpmae12": {
+  "video": "/_blob/1752d17ab700659158736fe4d8d6ed4b",
+  "poster": "/_blob/f89d426976aa3022f3fcb89af1cff4e6",
+  "title": "Have you said hi?",
+  "len": 29.5,
+  "long": false,
+  "series": "pmars",
+  "episode": 12,
+  "sign": "pisces",
+  "account": "star_advice",
+  "caption": "A whole wedding planned with the person at the bus stop. A dog too. Zero words exchanged.\nDaydreams are lovely, but one real hi beats a hundred of them. Start with hi."
  }
 }
