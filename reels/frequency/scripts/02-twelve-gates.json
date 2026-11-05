@@ -1,0 +1,18 @@
+{
+  "id": "02-twelve-gates",
+  "mode": "gates",
+  "title": "Fly through all twelve signs. Don't blink",
+  "eyebrow": { "text": "headphones on", "to": 7.6 },
+  "lines": [
+    { "at": 0, "to": 3.6, "text": "fly through all twelve signs. don't blink." },
+    { "at": 4.0, "to": 7.6, "text": "each gate is its element's old symbol" },
+    { "at": 8.0, "to": 11.6, "text": "each tone is the planet that rules it" },
+    { "at": 12.0, "to": 15.8, "text": "screenshot the one that's yours" },
+    { "at": 22.3, "to": 24.6, "text": "which one did you feel?" }
+  ],
+  "cta": { "at": 24.8, "word": "your sign", "sub": "and i'll send you its tone + what it needs in love" },
+  "full": { "seconds": 600, "variantSeconds": 180, "variants": ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"] },
+  "cover": 2.0,
+  "caption": "Fly through all twelve signs. Don't blink 🎧✨\n\nEach gate is its element's old symbol: fire △, earth ▽ with a bar, air △ with a bar, water ▽. The tone at each gate is the planet that traditionally rules that sign, over the year tone (136.10 Hz):\n\nAries · Mars · Taurus · Venus · Gemini · Mercury · Cancer · Moon · Leo · Sun · Virgo · Mercury · Libra · Venus · Scorpio · Mars · Sagittarius · Jupiter · Capricorn · Saturn · Aquarius · Saturn · Pisces · Jupiter\n\nScreenshot your gate. Comment your sign and I'll send you its tone + what it needs in love 💛\n\nYour full chart is free on Align, link in bio",
+  "hashtags": ["zodiac", "astrology", "planetaryfrequencies", "soundhealing", "headphoneson"]
+}

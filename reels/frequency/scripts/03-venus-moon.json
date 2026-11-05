@@ -1,0 +1,20 @@
+{
+  "id": "03-venus-moon",
+  "mode": "channels",
+  "title": "Venus in your left ear. The Moon in your right",
+  "eyebrow": { "text": "headphones on · both ears", "to": 8.0 },
+  "lines": [
+    { "at": 0, "to": 3.8, "text": "venus in your left ear. the moon in your right." },
+    { "at": 4.2, "to": 7.8, "text": "your venus is how you love" },
+    { "at": 8.2, "to": 11.8, "text": "your moon is what you need" },
+    { "at": 12.2, "to": 15.8, "text": "most of us only date with one of them" },
+    { "at": 16.2, "to": 19.8, "text": "they're 10.81 hz apart" },
+    { "at": 20.2, "to": 23.8, "text": "that soft wobble in the middle of your head is them meeting" },
+    { "at": 24.2, "to": 27.0, "text": "align reads both before you see a face" }
+  ],
+  "cta": { "at": 27.2, "word": "venus", "sub": "for the ten-minute version + what your venus and moon need" },
+  "full": { "seconds": 600 },
+  "cover": 21.2,
+  "caption": "Venus in your left ear, the Moon in your right 🎧 Headphones on, both ears.\n\nVenus 221.23 Hz (one Venus year, raised 32 octaves) · Moon 210.42 Hz (one moon, new to new, raised 29 octaves)\n\nThey're 10.81 Hz apart. Your brain hears that difference as a slow wobble in the middle of your head: a binaural beat, right in the alpha range.\n\nYour Venus is how you love. Your Moon is what you need to feel safe. Most of us only date with one of them.\n\nComment \"venus\" for the ten-minute version + what yours need 🌙\n\nYour chart is free on Align, link in bio",
+  "hashtags": ["binauralbeats", "venus", "astrology", "planetaryfrequencies", "headphoneson"]
+}

@@ -103,6 +103,8 @@ For spoken love-and-zodiac affirmation reels (line art that draws itself in, wor
 
 For "What's the difference?" reels (two words people mix up, two framed Align cards, Star Talk's pixel star shrugging until the answer lands), see [reels/difference/README.md](reels/difference/README.md).
 
+For frequency reels (hypnotic 3D alignments scored with real planet tones: seven planets clicking into line, a fly-through of the twelve sign gates, Venus and the Moon in each ear, the 639 Hz heart) and the **Align · Frequencies** page that posts them, see [reels/frequency/README.md](reels/frequency/README.md) and [reels/frequency/PROFILE.md](reels/frequency/PROFILE.md).
+
 To post reels to one or more Instagram accounts as trial reels and see how they did, see [instagram/README.md](instagram/README.md).
 
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.

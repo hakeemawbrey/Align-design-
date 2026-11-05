@@ -1,0 +1,9 @@
+{
+  "note": "Profile picture options, cropped square from clean frames. node reels/frequency/render.mjs --pfp",
+  "options": [
+    { "id": "heart", "script": "04", "t": 25.0, "cy": 1000, "side": 1080, "what": "the six-pointed star in the twelve-petal lotus" },
+    { "id": "star", "script": "02", "t": 27.0, "cy": 960, "side": 760, "what": "Align's four-point star at the end of the gates" },
+    { "id": "gate", "script": "02", "t": 0.2, "cy": 960, "side": 1000, "what": "the Aries gate, nested gates behind it" },
+    { "id": "line", "script": "01", "t": 21.5, "cy": 1000, "side": 1080, "what": "the seven planets on one gold line" }
+  ]
+}
