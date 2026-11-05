@@ -481,7 +481,7 @@ export function makeEp(cfg) {
     function frame(t) {
       const i = chapAt(t)
       x.save()
-      if (i < 0) { x.save(); camOn(x); cfg.hook.draw(x, t, hookS(t)); x.restore(); drawChapterBar(x, t) }
+      if (i < 0) { x.save(); if (!cfg.hook.noCam) camOn(x); cfg.hook.draw(x, t, hookS(t)); x.restore(); drawChapterBar(x, t) }
       else {
         const c = CH[i], u = t - c.a
         // camera: a punch-in on every chapter start, then a slow push (nothing is static)
