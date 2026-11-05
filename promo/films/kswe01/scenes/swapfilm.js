@@ -11,6 +11,7 @@
 //                         count · caught · glitch · ach · news · hud   (rec windows also freeze my clock)
 //   cfg.flash             [{ at, col, a }] colour flashes (full frame, my canvas)
 //   cfg.overlay(x, t, S)  screen-space painter on my canvas
+//   cfg.shade             0…1: a soft dark band behind the top captions (off when omitted)
 //   cfg.last              { at, text, top }: the last line (a slam title that stays)
 //   cfg.cues              extra sound cues
 import { prog, ease, lerp } from '../../../src/lib.js'
@@ -62,6 +63,7 @@ export function makeSwap(cfg) {
     sh.draw?.(x, t, S)
     x.restore()
     cfg.overlay?.(x, t, S)
+    if (cfg.shade) { const g = x.createLinearGradient(0, 100, 0, 560); g.addColorStop(0, `rgba(10,6,30,${0.72 * cfg.shade})`); g.addColorStop(0.65, `rgba(10,6,30,${0.45 * cfg.shade})`); g.addColorStop(1, 'rgba(10,6,30,0)'); x.fillStyle = g; x.fillRect(0, 0, 1080, 560) }
     const cp = prog(t, sh.at, sh.at + 0.12)
     if (sh.at > 0 && cp < 1 && !sh.noBlink) { x.save(); x.globalAlpha = 0.3 * (1 - cp); x.fillStyle = '#fff8ee'; x.fillRect(0, 0, 1080, 1920); x.restore() }
     for (const f of FLASH) { const tt = t - f.at; if (tt < 0 || tt > 0.3) continue; x.save(); x.globalAlpha = (f.a ?? 0.7) * (1 - tt / 0.3); x.fillStyle = f.col ?? '#fffaf0'; x.fillRect(0, 0, 1080, 1920); x.restore() }
