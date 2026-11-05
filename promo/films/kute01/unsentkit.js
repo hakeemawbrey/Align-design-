@@ -211,9 +211,12 @@ export function makeUnsent(cfg) {
   const delTimes = DRAFTS.filter(d => d.del != null).map(d => d.del)
   const sobLevel = t => cfg.sob ? cfg.sob(t) : Math.min(3, 2 + delTimes.filter(v => v <= t && v > 0).length)
 
+  // default mood track: wide on every delete, squint while typing, happy on a send and for the last line
+  const MOODS = cfg.moods || [[-9, 'wide', [1, -0.6]], ...cfg.drafts.flatMap(d => [[d.at, 'squint', [1, -0.3]], ...(d.del != null ? [[d.del, 'wide', [0, 0]]] : []), ...(d.send != null ? [[d.send, 'sparkle', [0, 0]]] : [])]).filter(m => m[0] > -9).sort((a, b) => a[0] - b[0]),
+    ...((cfg.lines || []).length ? [[cfg.lines[cfg.lines.length - 1].t + 0.6, 'happy', [1, 0.3]]] : [])]
   const moodAt = t => {
     let m = ['neutral', undefined]
-    for (const [mt, mood, look] of cfg.moods || []) if (mt <= t) m = [mood, look]
+    for (const [mt, mood, look] of MOODS) if (mt <= t) m = [mood, look]
     return m
   }
   const heroHops = (cfg.heroHops || []).concat(DRAFTS.flatMap(d => [d.del, d.send].filter(v => v != null).map(v => v + 0.02)))
@@ -346,7 +349,7 @@ export function makeUnsent(cfg) {
       } else if (Math.floor(t * 2.4) % 2 === 0) R(c, BUG, ox0, oy0 - FONT_PX * 0.55, 5, FONT_PX * 1.05)
       c.restore()
       // a DRAFT counter chip on the field's top-right
-      const dn = cfg.draftNo ? cfg.draftNo(t, st) : null
+      const dn = cfg.draftNo ? cfg.draftNo(t, st) : cfg.draftBase != null && st.k >= 0 && (!LINES.length || t < LINES[0].t - 0.4) ? `DRAFT ${cfg.draftBase + st.k}` : null
       if (dn) {
         c.save(); c.font = `700 22px ${MONO}`; const w = c.measureText(dn).width + 26
         box(c, fx + fw - w - 6, fy - 44, w, 34, RED, { b: 4 }); c.fillStyle = BONE; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(dn, fx + fw - w / 2 - 6, fy - 26); c.restore()
@@ -436,7 +439,7 @@ export function makeUnsent(cfg) {
       phoneBody(c, tv)
       keyboard(c, tv, activeKey(tv))
       const F = field(c, tv)
-      chat(c, tv, F.fy - (cfg.draftNo ? 50 : 0))
+      chat(c, tv, F.fy - (cfg.draftNo || cfg.draftBase != null ? 50 : 0))
       if (cfg.screen) cfg.screen(c, tv, { ...S, F })
       if (cfg.pisHero) screenTears(c, tv)
       flyers(c, tv)
