@@ -3,6 +3,7 @@
 // See ../SPEC.md for the params. Optional extras beyond the spec (all safe to omit):
 //   wheel:          spin (true | number rad/s), center ('earth' default | 'none' | a sign: its glyph in the hub)
 //   glyph:          el (true: element chip under the name)
+//   glyphs:         in ring mode `labels` names only the highlighted signs (twelve names don't fit around a ring)
 //   orbit:          from/to (retro: the window in years around opposition, default −0.3 … 0.3)
 //   moon:           label (false hides the phase name, or a string replaces it)
 //   elements:       labels true → default keywords, or an array / object { fire: "…" }
@@ -15,7 +16,7 @@
 // counter-clockwise, like a chart. Planets orbit counter-clockwise seen from the north; periods are real.
 import {
   clamp, lerp, prog, ease, rng, TAU, D2R, BONE, GOLD, PINK, BLUE, VIOLET, RED, GREEN, ORANGE, MUTED, FIRE, EARTH, AIR, WATER,
-  ELEMENT_COLOR, SIGNS, PLANETS, color, sign, rgba, easeOutBack, pop01, wob, stagger, ink, line, rr, label, para, pill,
+  ELEMENT_COLOR, SIGNS, W, PLANETS, color, sign, rgba, easeOutBack, pop01, wob, stagger, ink, line, rr, label, para, pill,
   glyph, sparkle, twinkles, heart, heartPath, starPath, person, cardBack, aura, drawPixelStar, drawMoon, font, wrap,
 } from '../kit.js'
 
@@ -182,7 +183,7 @@ function zodiac(x, cx, cy, R, t, { rot = 0, hi = new Set(), hiK = 1, appear = ()
 const wheel = {
   min: p => 2.4 + (p.sun ? 1 : 0) + list(p.planets).length * 0.25,
   draw(x, p, s) {
-    const T = ct(s), R = Math.min(s.w * 0.47, s.h * 0.47), cx = s.cx, cy = s.cy
+    const T = ct(s), chip = list(p.highlight).length === 1 || (sign(p.sun) && !list(p.highlight).length), R = Math.min(s.w * 0.47, (s.h - (chip ? 120 : 0)) * 0.47), cx = s.cx, cy = s.cy - (chip ? 50 : 0)
     const rot = p.spin === true ? -s.t * 0.12 : typeof p.spin === 'number' ? -s.t * p.spin : 0
     const hi = new Set(list(p.highlight).map(sIdx).filter(i => i >= 0))
     const sunI = sIdx(p.sun)
@@ -205,14 +206,13 @@ const wheel = {
     }
     // planets on the track
     const pl = list(p.planets).map(e => Array.isArray(e) ? e : [e, null])
-    const bySign = {}
+    const cnt = {}, slot = pl.map(([, sg]) => { const i = sIdx(sg); cnt[i] = (cnt[i] || 0) + 1; return cnt[i] - 1 })
     pl.forEach(([pid, sg], j) => {
       const i = sIdx(sg); if (i < 0 || !PLANETS[pid]) return
-      const n = bySign[i] = (bySign[i] || 0) + 1
       const at = stagger(j, pl.length, s.dur, 0.3, 0.7), k = pop01(s.lt, at, 0.32, 2.4)
       if (k <= 0) return
-      const off = (n - 1) * 0.16 * (n % 2 ? 1 : -1)
-      const a = signMid(i) + rot + off, rr0 = track + (n > 1 ? (n % 2 ? -1 : 1) * R * 0.06 : 0)
+      const nn = cnt[i], q = slot[j], off = (q - (nn - 1) / 2) * 0.2
+      const a = signMid(i) + rot + off, rr0 = track + (nn > 1 ? (q % 2 ? 1 : -1) * R * 0.065 : 0)
       const [px, py] = pt(cx, cy, rr0, a), r = R * 0.085 * k
       x.beginPath(); x.arc(px, py, r, 0, TAU); x.fillStyle = 'rgba(16,10,40,0.92)'; x.fill(); ink(x, pcol(pid), { w: 5, fa: 0.25, glow: 20 })
       glyph(x, pid, px, py, r * 1.15, pcol(pid), { glow: 10 })
@@ -232,7 +232,7 @@ const wheel = {
     // a name chip for a single highlight
     if (hi.size === 1 && hiK > 0.2) {
       const S = SIGNS[[...hi][0]]
-      pill(x, S.name.toUpperCase(), cx, cy + R + 0, { size: 40, col: S.color, fg: BONE, alpha: clamp(hiK * 2), family: 'mono', weight: 700, fillA: 0.1 })
+      pill(x, S.name.toUpperCase(), cx, cy + R + 70, { size: 44, col: S.color, fg: BONE, alpha: clamp(hiK * 2), family: 'mono', weight: 700, fillA: 0.1 })
     }
   },
   cues(p, t0, dur, ctx = {}) {
@@ -315,8 +315,8 @@ const glyphs = {
       } else if (mode === 'rain') {
         const tt = T - at[i]
         if (tt < 0) return
-        const fall = 0.4, y0 = s.top - 200
-        if (tt < fall) py = lerp(y0, py, (tt / fall) ** 2)
+        const fall = 0.4, y0 = py - clamp(py - s.top + 20, 140, 420)
+        if (tt < fall) { py = lerp(y0, py, (tt / fall) ** 2); a = clamp(tt / fall * 2) }
         else py -= Math.abs(Math.sin((tt - fall) * 9)) * 60 * Math.exp(-(tt - fall) * 6)
         sc = tt < fall ? 1 : 1 + 0.12 * wob(tt, fall, 22, 7)
       } else {
@@ -329,8 +329,8 @@ const glyphs = {
       const r = G.sz * 0.62 * sc
       x.save(); x.globalAlpha *= a
       x.beginPath(); x.arc(px, py, r, 0, TAU); ink(x, S.color, { w: 5 + 3 * on, fa: 0.14 + 0.25 * on, glow: 14 + 24 * on })
-      glyph(x, S.glyph, px, py, G.sz * 0.7 * sc, S.color, { glow: 16 + 20 * on })
-      if (p.labels) label(x, S.name, px, py + r + 32, { size: 36, weight: 800, color: on ? S.color : BONE, maxW: (mode === 'ring' ? 180 : s.w / (G.cols || 4) - 12) })
+      glyph(x, S.glyph, px, py, G.sz * 0.62 * sc, S.color, { glow: 16 + 20 * on })
+      if (p.labels && (mode !== 'ring' || on > 0)) label(x, S.name, px, py + r + 32, { size: 36, weight: 800, color: on ? S.color : BONE, maxW: (mode === 'ring' ? 180 : s.w / (G.cols || 4) - 12) })
       x.restore()
       if (on) sparkle(x, px, py, s.lt, hiT + 0.1, { n: 8, R: 120, seed: i + 40, size: 20 })
     })
@@ -362,12 +362,12 @@ const planet1 = {
     const g = x.createRadialGradient(s.cx, cy, r * 0.5, s.cx, cy, r * 2.4); g.addColorStop(0, rgba(pcol(id), 0.3 * k)); g.addColorStop(1, rgba(pcol(id), 0))
     x.fillStyle = g; x.fillRect(s.cx - r * 2.4, cy - r * 2.4, r * 4.8, r * 4.8)
     // the gag orbits on a tilted ellipse: behind the planet on the far half, in front on the near half
-    const gagA = s.t * 1.3, gx = s.cx + Math.cos(gagA) * r * 1.65, gy = cy + Math.sin(gagA) * r * 0.55 - r * 0.15, front = Math.sin(gagA) > 0
+    const oR = r * (rings ? 2.05 : 1.6), gagA = s.t * 1.3, gx = s.cx + Math.cos(gagA) * oR, gy = cy + Math.sin(gagA) * r * 0.5 + r * 0.55, front = Math.sin(gagA) > 0
     const gk = pop01(s.lt, 0.45, 0.4, 2.4)
-    if (p.gag) { x.beginPath(); x.ellipse(s.cx, cy - r * 0.15, r * 1.65, r * 0.55, 0, 0, TAU); dashed(x, BONE, 3, [6, 14], 0.35) }
-    if (p.gag && !front) icon(x, p.gag, gx, gy, r * 0.42 * gk * lerp(0.8, 1, (Math.sin(gagA) + 1) / 2), null, s.t)
+    if (p.gag) { x.beginPath(); x.ellipse(s.cx, cy + r * 0.55, oR, r * 0.5, 0, 0, TAU); dashed(x, BONE, 3, [6, 14], 0.35) }
+    if (p.gag && !front) icon(x, p.gag, gx, gy, r * 0.5 * gk * 0.85, null, s.t)
     orb(x, id, s.cx, cy, r * k, s.t, { rings })
-    if (p.gag && front) icon(x, p.gag, gx, gy, r * 0.42 * gk, null, s.t)
+    if (p.gag && front) icon(x, p.gag, gx, gy, r * 0.55 * gk, null, s.t)
     sparkle(x, s.cx, cy, T, 0.2, { n: 12, R: r * 1.5, seed: 8 })
     twinkles(x, s.cx, cy, s.t, { n: 6, R: r * 2.1, seed: 4 })
     if (hasL) {
@@ -378,7 +378,7 @@ const planet1 = {
       const gw = 0
       label(x, txt, gw, 0, { size: txt.length > 14 ? 64 : 88, weight: 900, color: BONE, maxW: s.w * 0.9 })
       x.restore()
-      glyph(x, id, s.cx, ly + 86, 60 * kk, pcol(id), { glow: 18 })
+      glyph(x, id, s.cx, ly + 92, 72 * kk, pcol(id), { glow: 18 })
     }
   },
   cues(p, t0) { const c = [['bell', t0 + 0.2, 659.25, 0.05, 2.4, 0], ['glitter', t0 + 0.15, t0 + 0.8]]; if (p.label !== false) c.push(['pop', t0 + 0.3, 987.77, 0.04, 0]); if (p.gag) c.push(['pop', t0 + 0.45, 1318.51, 0.04, 0.3]); return c },
@@ -502,7 +502,7 @@ function retroDraw(x, p, s, T) {
     const st = retroState(lerp(w0, w1, fi), outer, Re, Rm, cx, cy), [ax, ay] = app(st)
     x.beginPath(); x.moveTo(st.E[0], st.E[1]); x.lineTo(st.M[0], st.M[1]); x.lineTo(ax, ay + 60); x.strokeStyle = rgba(BONE, 0.16); x.lineWidth = 3; x.stroke()
     for (const [P, id] of [[st.E, 'earth'], [st.M, outer]]) { x.beginPath(); x.arc(P[0], P[1], 8, 0, TAU); x.fillStyle = rgba(pcol(id), 0.5); x.fill() }
-    label(x, String(i + 1), ax, ay + 90, { size: 36, weight: 800, family: 'mono', color: MUTED, alpha: 0.9 })
+    x.beginPath(); x.arc(ax, ay, 9, 0, TAU); x.fillStyle = rgba(GOLD, 0.9); x.fill()
   }
   // the traced apparent path
   if (f > 0) {
@@ -605,7 +605,7 @@ const elements = {
     const n = show.length, T = ct(s)
     const cols = n === 4 ? 2 : n, rows = n === 4 ? 2 : 1
     const one = n === 1
-    const cw = Math.min(s.w / cols, one ? 640 : 460) - 24, ch = Math.min((s.h / rows) - 24, one ? s.h * 0.9 : cw * 1.25)
+    const cw = Math.min(s.w / cols, one ? 640 : 460) - 24, ch = Math.min((s.h / rows) - 24, one ? Math.min(s.h * 0.9, cw * 1.15) : cw * 1.25)
     const words = p.labels === true ? EL_WORD : Array.isArray(p.labels) ? Object.fromEntries(show.map((e, i) => [e, p.labels[i]])) : (p.labels || {})
     show.forEach((el, i) => {
       const at = p.instant ? 0 : stagger(i, n, s.cdur ?? s.dur, 0.06, 0.45), k = pop01(T, at, 0.36, 2.2)
@@ -622,8 +622,8 @@ const elements = {
       label(x, el.toUpperCase(), 0, y, { size: one ? 96 : Math.min(72, cw * 0.17), weight: 900, color: BONE, spacing: 0.04 }); y += one ? 90 : 72
       if (hasW) { label(x, words[el], 0, y - 6, { size: one ? 56 : 44, weight: 500, family: 'serif', italic: true, color: c, maxW: cw - 40 }); y += one ? 80 : 66 }
       if (hasS) {
-        const sg = SIGNS.filter(S => S.el === el), gs = Math.min(cw / 4.2, one ? 120 : 76), gy = Math.min(y + gs * 0.4, ch / 2 - gs * 0.8)
-        sg.forEach((S, j) => { const kk = pop01(T, at + 0.25 + j * 0.1, 0.3, 2.4); glyph(x, S.glyph, (j - 1) * gs * 1.25, gy, gs * kk, S.color, { glow: 14 }) })
+        const sg = SIGNS.filter(S => S.el === el), gs = Math.min(cw / 5, one ? 110 : 64), gy = Math.min(y + gs * 0.4, ch / 2 - gs * 0.8)
+        sg.forEach((S, j) => { const kk = pop01(T, at + 0.25 + j * 0.1, 0.3, 2.4); glyph(x, S.glyph, (j - 1) * gs * 1.6, gy, gs * kk, S.color, { glow: 14 }) })
       }
       x.restore()
     })
@@ -766,7 +766,7 @@ const horizon = {
   min: () => 3.2,
   draw(x, p, s) {
     const S = sign(p.sign) || SIGNS[0], T = ct(s), dur = s.cdur ?? s.dur
-    const hy = s.cy + s.h * 0.2, L = s.cx - s.w / 2 - 40, Rr = s.cx + s.w / 2 + 40
+    const hy = s.cy + s.h * 0.2, L = -20, Rr = W + 20
     const riseK = ease.outCubic(prog(T, 0.15 * dur, 0.75 * dur)), dawn = ease.inOutCubic(prog(T, 0, 0.8 * dur))
     // dawn glow above the horizon
     const gx = s.cx + 40, gr = s.w * 0.75
@@ -790,10 +790,11 @@ const horizon = {
     x.save(); x.globalAlpha *= 1 - dawn * 0.7; twinkles(x, s.cx, s.top + s.h * 0.25, s.t, { n: 8, R: s.w * 0.45, seed: 31 }); x.restore()
     // the ground
     x.beginPath(); x.moveTo(L, hy + 30); x.quadraticCurveTo(s.cx, hy - 30, Rr, hy + 30); x.lineTo(Rr, s.bottom + 40); x.lineTo(L, s.bottom + 40); x.closePath()
-    x.fillStyle = 'rgba(12,6,30,0.95)'; x.fill()
+    const gg = x.createLinearGradient(0, hy - 30, 0, s.bottom + 40); gg.addColorStop(0, 'rgba(12,6,30,0.96)'); gg.addColorStop(0.6, 'rgba(12,6,30,0.85)'); gg.addColorStop(1, 'rgba(12,6,30,0)')
+    x.fillStyle = gg; x.fill()
     x.beginPath(); x.moveTo(L, hy + 30); x.quadraticCurveTo(s.cx, hy - 30, Rr, hy + 30); line(x, ORANGE, 7, 26)
     // a few hills
-    x.beginPath(); x.moveTo(L, hy + 70); x.quadraticCurveTo(s.cx - 260, hy + 10, s.cx - 80, hy + 60); x.quadraticCurveTo(s.cx + 160, hy + 100, Rr, hy + 60); line(x, rgba(VIOLET, 0.5), 4, 8)
+    x.beginPath(); x.moveTo(L, hy + 70); x.quadraticCurveTo(s.cx - 300, hy + 20, s.cx - 80, hy + 70); x.quadraticCurveTo(s.cx + 200, hy + 110, Rr, hy + 70); line(x, rgba(VIOLET, 0.5), 4, 8)
     label(x, 'EAST', gx, hy + 70, { size: 40, weight: 700, family: 'mono', spacing: 0.3, color: ORANGE })
     x.beginPath(); x.moveTo(gx, hy + 104); x.lineTo(gx, hy + 128); line(x, ORANGE, 5, 8)
     // the chip when it's up
@@ -802,7 +803,7 @@ const horizon = {
     // someone watching
     if (p.person) {
       const P = typeof p.person === 'object' ? p.person : { col: typeof p.person === 'string' ? p.person : null }
-      const sc = Math.min(0.85, s.h / 1300)
+      const sc = Math.min(1.05, s.h / 1050)
       person(x, s.cx - s.w * 0.36, hy + 18, sc, color(P.col, BLUE), { pose: P.pose || (riseK > 0.85 ? 'point' : 'stand'), t: s.t, a: clamp(T / 0.4), sign: P.sign || null })
     }
   },
@@ -831,8 +832,9 @@ const aspect = {
     // the angle at the centre
     if (deg > 0 && sk > 0) {
       x.beginPath(); x.moveTo(cx, cy); x.lineTo(ax, ay); x.moveTo(cx, cy); x.lineTo(bx, by); dashed(x, BONE, 4, [10, 12], 0.6)
-      x.beginPath(); x.arc(cx, cy, R * 0.22, aa, ab, true); line(x, col, 7, 18)
-      const am = (aa + ab) / 2, [lx, ly] = pt(cx, cy, R * 0.38, am)
+      const chordD = tr * Math.cos(deg * D2R / 2), lr = chordD < R * 0.45 && deg < 180 ? chordD + 58 : deg >= 180 ? R * 0.2 + 52 : R * 0.36
+      x.beginPath(); x.arc(cx, cy, R * 0.2, aa, ab, true); line(x, col, 7, 18)
+      const am = (aa + ab) / 2, [lx, ly] = pt(cx, cy, lr, am)
       label(x, `${Math.round(deg * sk)}°`, lx, ly, { size: 56, weight: 900, color: col })
     }
     // the chord between them once the angle is set
@@ -868,7 +870,7 @@ const houses = {
   draw(x, p, s) {
     const T = ct(s), dur = s.cdur ?? s.dur
     const names = p.labels === true ? HOUSE_NAMES : Array.isArray(p.labels) ? p.labels : p.labels && typeof p.labels === 'object' ? HOUSE_NAMES.map((n, i) => p.labels[i + 1] ?? null) : null
-    const R = Math.min(s.w * (names ? 0.29 : 0.45), s.h * 0.44), cx = s.cx, cy = s.cy, hub = R * 0.32
+    const R = Math.min(s.w * (names ? 0.315 : 0.45), s.h * 0.44), cx = s.cx, cy = s.cy, hub = R * 0.3
     const hi = new Set(list(p.highlight).map(Number).filter(h => h >= 1 && h <= 12))
     const hT = 0.5 * s.dur, hK = hi.size ? ease.outCubic(prog(s.lt, hT, hT + 0.4)) : 0
     for (let h = 1; h <= 12; h++) {
@@ -885,7 +887,7 @@ const houses = {
       label(x, String(h), nx, ny, { size: R * 0.19 * (1 + 0.15 * on), weight: 900, color: on ? GOLD : BONE })
       if (names && names[h - 1]) {
         const [lx, ly] = pt(cx, cy, R * 1.1 + 6, am), cosA = Math.cos(am)
-        label(x, names[h - 1], lx, ly, { size: 38, weight: 800, align: Math.abs(cosA) < 0.3 ? 'center' : cosA > 0 ? 'left' : 'right', color: on ? GOLD : hi.size ? MUTED : BONE, maxW: s.w / 2 - R * 1.1 - 10 })
+        label(x, names[h - 1], lx, ly, { size: 40, weight: 800, align: Math.abs(cosA) < 0.3 ? 'center' : cosA > 0 ? 'left' : 'right', color: on ? GOLD : hi.size ? MUTED : BONE, maxW: s.w / 2 - R * 1.1 - 10 })
       }
       x.restore()
       if (on) sparkle(x, nx, ny, s.lt, hT + 0.1, { n: 8, R: 120, seed: h + 80, size: 20 })
