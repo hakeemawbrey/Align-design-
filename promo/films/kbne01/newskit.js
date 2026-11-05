@@ -594,7 +594,7 @@ export function windowFrame(x, cx, cy, w, h, draw, { col = 'rgba(255,214,150,0.9
 /** the whole desk shot in one call.
  *  o: { monitor, a: anchor opts, p: co-anchor opts, chyron: chyron opts | null, slam: slam opts | null, papers: t0 | null, plaque, label } */
 export function deskShot(x, t, o = {}) {
-  studio(x, t, { monitor: o.monitor, label: o.label })
+  studio(x, t, { monitor: o.monitor, label: o.label, ...(o.tint ? { tint: o.tint } : {}) })
   anchor(x, t, o.a || {})
   coanchor(x, t, o.p || {})
   desk(x, t, { plaque: o.plaque })
