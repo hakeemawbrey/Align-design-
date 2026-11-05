@@ -10,8 +10,8 @@
   "caption": "Four texts, zero replies, and your thumb is already typing a fifth.\nYou reach out because you care. Leave room for them to reach back."
  },
  "kmte02": {
-  "video": "/_blob/0edfdb3722fb4bed229b484261a7baea",
-  "poster": "/_blob/5b3ea51d44417ded520bd7b894c15baa",
+  "video": "/_blob/2ac4d811d8699409f29c5d790bc1ca53",
+  "poster": "/_blob/0984b91514830169714f89739bd5b0d6",
   "title": "\"It's fine,\" said Taurus",
   "len": 18,
   "long": false,
@@ -59,6 +59,16 @@
   "episode": 6,
   "caption": "Waiting to date until you finish the forty-item self-improvement list?\nYou'd never ask that of a friend. You're worth knowing right now."
  },
+ "kmte07": {
+  "video": "/_blob/bf26903321dfeefb2201c49b26eccec6",
+  "poster": "/_blob/962e823d68f847294e4ff900e2098914",
+  "title": "\"I don't mind, you pick\"",
+  "len": 18,
+  "long": false,
+  "series": "mirror",
+  "episode": 7,
+  "caption": "Saying you don't mind when you very much want tacos?\nYour preferences are part of you. You get a vote, and the right person wants to hear it."
+ },
  "kmte08": {
   "video": "/_blob/4dd8b4d318d99e658b96bc5200ca49ae",
   "poster": "/_blob/eeea42872092241f20954b3bc571d048",
@@ -88,6 +98,16 @@
   "series": "mirror",
   "episode": 10,
   "caption": "Every evening booked, and love keeps getting pushed to \"when things calm down.\"\nThey rarely do. Leave one evening open on purpose."
+ },
+ "kmte11": {
+  "video": "/_blob/03997128256de75538518d5e27238dbe",
+  "poster": "/_blob/029b86b58f1afca64afdcbee764373f7",
+  "title": "Asked how I feel. Brain: error.",
+  "len": 18,
+  "long": false,
+  "series": "mirror",
+  "episode": 11,
+  "caption": "When someone asks how you feel and your brain just freezes.\nYou don't need a speech. Pick one honest word and say it out loud."
  },
  "kmte12": {
   "video": "/_blob/7e3935bd332ea97ffce7ad52a7ec6545",
