@@ -625,3 +625,13 @@ export function livingRoom(x, t, R, { wall = '#3b2a6a', lamp = true } = {}) {
   px(x, R.x0 + 700, fy - 70, 70, 70, INK); px(x, R.x0 + 706, fy - 64, 58, 58, '#c4703a')
   for (let i = 0; i < 5; i++) { const a = -1.2 + i * 0.6 + 0.05 * Math.sin(t * 2 + i); x.save(); x.translate(R.x0 + 735, fy - 70); x.rotate(a); px(x, -8, -110, 16, 110, '#3f9a6a'); x.restore() }
 }
+
+/** the long films' promise strip ("stay for the 11:59 update") under the headline, between a and b (real time) */
+export function promise(x, t, s, [a, b], { y = 432 } = {}) {
+  const k = pop01(t, a, 0.35, 2.4) * outK(t, [b, b + 0.25])
+  if (k <= 0.01) return
+  const blink = Math.sin(t * 6) > -0.2
+  chip(x, 540, y, (blink ? '▶ ' : '  ') + s, { size: 36, color: INK, bg: GOLD, k })
+}
+/** kit chapter sticker opts for the long films (top-left of the picture, up for 2.8 s) */
+export const chap = (at, n, title) => ({ at, out: [at + 2.6, at + 2.9], n, title, x: 40, y: 488 })
