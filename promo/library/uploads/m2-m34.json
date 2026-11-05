@@ -88,5 +88,95 @@
   "series": "bio",
   "episode": 9,
   "caption": "Your bio says you're never around.\nTell people where you'll actually be, and give them a reason to say hi."
+ },
+ "kbge10": {
+  "video": "/_blob/18cdb749b5c7addf7071b274f86b9d5c",
+  "poster": "/_blob/524d83a4cd5eec4536fbcb8d8ba8f42f",
+  "title": "The bio is a résumé",
+  "len": 11,
+  "long": false,
+  "series": "bio",
+  "episode": 10,
+  "caption": "Goal-oriented, driven, available Sundays 2 to 3?\nYou're not hiring. Show the part of you that logs off."
+ },
+ "kbge11": {
+  "video": "/_blob/0cb5ed42f99ec4be6ebc8c55ae93c64c",
+  "poster": "/_blob/0a1c0bf27c977956859817fcccfe6237",
+  "title": "I'm not like other people",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 11,
+  "caption": "Saying you're different isn't the same as showing it.\nName the weird, lovely thing you actually do."
+ },
+ "kbge12": {
+  "video": "/_blob/df2b85acd03485fea81ec86ef8612dcb",
+  "poster": "/_blob/89e600c8ed3d3317fe4a5bdc363e7405",
+  "title": "\"I cry at everything, sorry\"",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 12,
+  "caption": "Ever apologised for being soft in your bio?\nYou don't owe anyone a sorry for having feelings."
+ },
+ "kbge13": {
+  "video": "/_blob/6389a8b992fa9209b443e4a30f0a8df1",
+  "poster": "/_blob/09640f1526841458962ed27bbc852828",
+  "title": "\"Adventurous.\" (that's it)",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 13,
+  "caption": "Adventurous. Loves life. Okay, but which adventure?\nOne tiny true story beats every big vague word."
+ },
+ "kbge14": {
+  "video": "/_blob/5e404bee1a1852e4b703f8b6ace4364e",
+  "poster": "/_blob/26cbc5a0129ebac993f1d1fa7dcc99b6",
+  "title": "The list of no's",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 14,
+  "caption": "Bio full of no games, no flakes, no this, no that?\nTry a list of what you'd love instead."
+ },
+ "kbge15": {
+  "video": "/_blob/9dffbef9586830bdcbff09e441e3f603",
+  "poster": "/_blob/3cdd9ae8522001e687fe964d38f804e3",
+  "title": "Six raccoons in a coat",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 15,
+  "caption": "Funny bio, but who's actually in there?\nKeep the joke. Add one true thing next to it."
+ },
+ "kbge16": {
+  "video": "/_blob/021ec7c3a60a05d6f8225eaa3be16a92",
+  "poster": "/_blob/84f4fa246082db36526643070745ff7c",
+  "title": "The bio from years ago",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 16,
+  "caption": "Still \"new to the city\" years later?\nUpdate the bio. You grew, so let it show."
+ },
+ "kbge17": {
+  "video": "/_blob/fc42318e1927bf485d8d5e414ba30441",
+  "poster": "/_blob/9ce61450b9c1243d5209456eb4252bd9",
+  "title": "Leo does not like hiking",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 17,
+  "caption": "Wrote \"loves hiking\" but secretly hates hills?\nAn honest bio finds people who like the real you."
+ },
+ "kbge18": {
+  "video": "/_blob/ee12e848f4ae0c8d24f158ed6617f7ca",
+  "poster": "/_blob/2522437c5c04034069568e7594f18c83",
+  "title": "Draft forty-seven",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 18,
+  "caption": "On your forty-seventh draft of a three-line bio?\nGood enough is ready. Post the sweet one."
  }
 }
