@@ -101,7 +101,7 @@ export function makeHealLong(cfg) {
         if (cfg.top) cfg.top(tx, t, S0)
         const pk = pop01(t, (cfg.promiseAt ?? 2.0), 0.3, 2.6) * outK(t, [ch1 - 0.25, ch1])
         if (pk > 0.01) {
-          tx.save(); tx.translate(540, cfg.promiseY ?? 1250); tx.rotate(-0.05); tx.scale(pk, pk)
+          tx.save(); tx.translate(540, cfg.promiseY ?? 1600); tx.rotate(-0.05); tx.scale(pk, pk)
           tx.font = `800 46px ${INTER}`; const w = tx.measureText(cfg.promise).width + 80
           R(tx, INK, -w / 2 - 8, -50, w + 16, 100); R(tx, BUG_COL, -w / 2, -42, w, 84)
           ink(tx, cfg.promise, 0, 2, { size: 46 }); tx.restore()
