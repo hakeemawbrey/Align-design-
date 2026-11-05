@@ -1,0 +1,92 @@
+{
+ "kbge01": {
+  "video": "/_blob/0f7085d003f48966032bfd908bacf43c",
+  "poster": "/_blob/4eeed87857263dddb457feb25cf26bef",
+  "title": "Reply fast or don't bother",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 1,
+  "caption": "Does your bio read like a warning label?\nSay what you offer instead: replying fast is lovely, patience is lovelier."
+ },
+ "kbge02": {
+  "video": "/_blob/1909e7656e2611d7b783e79c2d6a4b1c",
+  "poster": "/_blob/0a5a507a4c5ea20c8e464c54b1cbec3d",
+  "title": "\"Just ask.\"",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 2,
+  "caption": "Two-word bio, zero ways to start a chat.\nGive one specific thing they can actually ask you about."
+ },
+ "kbge03": {
+  "video": "/_blob/11adf9b967425058e8ec6dcda439d351",
+  "poster": "/_blob/9bc7fc9ff4d337400d5ea8bfab1b5a57",
+  "title": "The bio that needs a scroll bar",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 3,
+  "caption": "If your bio needs scrolling, it's a novel.\nKeep one true line and leave the rest for the first date."
+ },
+ "kbge04": {
+  "video": "/_blob/f72c9be6267c94542956bd346d6a8773",
+  "poster": "/_blob/83c5c5365ad1f9069bb7c0f4c8744fa5",
+  "title": "The ex is in the bio",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 4,
+  "caption": "Is your ex still living rent-free in your bio?\nWrite what you want next, not what you left behind."
+ },
+ "kbge05": {
+  "video": "/_blob/b521297807969aa8411eb685d6b766cf",
+  "poster": "/_blob/ac2e366bb5aa57319926c19e148c6986",
+  "title": "All about me, me, me",
+  "len": 11,
+  "long": false,
+  "series": "bio",
+  "episode": 5,
+  "caption": "Best dancer, best cook, best everything?\nA great bio leaves a little room for their story too."
+ },
+ "kbge06": {
+  "video": "/_blob/458b519d8046cd061531bc9f36295532",
+  "poster": "/_blob/11fbc463a9c6cf6f545c9d04fcac492a",
+  "title": "The requirements checklist",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 6,
+  "caption": "When your bio reads like terms and conditions.\nSwap the rules for one warm, specific clue about you."
+ },
+ "kbge07": {
+  "video": "/_blob/0d9ec42ddecae1bbebd42c91045190ce",
+  "poster": "/_blob/c8534a3d8c24cae684be7f886536420a",
+  "title": "\"idk what to put here lol\"",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 7,
+  "caption": "Still staring at an empty bio box?\nPick one true, oddly specific thing. That's enough."
+ },
+ "kbge08": {
+  "video": "/_blob/762c62a01e233d10aa7a908ab64fa549",
+  "poster": "/_blob/a1bbd627a8ed74f95f72203af3cf975a",
+  "title": "You'll never figure me out",
+  "len": 10,
+  "long": false,
+  "series": "bio",
+  "episode": 8,
+  "caption": "Mysterious bio, or just a locked door?\nLet people know there's a way in. Warmth is cuter than mystery."
+ },
+ "kbge09": {
+  "video": "/_blob/78369554c3c9a990e950176b9bb3ae76",
+  "poster": "/_blob/7a788b066455c732b05e593177d576c7",
+  "title": "\"Probably not in town\"",
+  "len": 9,
+  "long": false,
+  "series": "bio",
+  "episode": 9,
+  "caption": "Your bio says you're never around.\nTell people where you'll actually be, and give them a reason to say hi."
+ }
+}
