@@ -35,7 +35,7 @@ const CPS = 30, DRAFT_CPS = 22, REWRITE_CPS = 26
 const NAME = id => id[0].toUpperCase() + id.slice(1)
 
 // layout (1080 × 1920)
-export const PH = { cx: 540, top: 432, w: 700, h: 860 }
+export const PH = { cx: 540, top: 470, w: 700, h: 790 }
 export const BOX = { y: 1330, height: 236, size: 44 }
 export const SND = { x: 225, y: 1738, s: 236 }, NAR = { x: 858, y: 1738, s: 214 }, PIS = { x: 962, y: 880, s: 176 }
 
@@ -122,6 +122,7 @@ export function rescue(S) {
     ...(S.thread || []).map(m => ({ ...m, at: -9 })),
     ...R.flatMap(o => [...o.inc, ...(o.r.keep || o.r.rewrite ? [{ side: 'R', text: (o.r.keep ? o.r.draft : o.r.rewrite).replace(/\*/g, ''), at: o.send, gold: true }] : []), ...o.rep]),
   ]
+  const PEEK = S.sender === 'pisces' ? (S.peek || 'cancer') : null, SNDK = { k: 2 }
   const SEN = signStar(S.sender), PAR = S.partner ? signStar(S.partner) : null, PIS_ = signStar('pisces')
   const title = S.title || (PAR ? `${PAR.glyph}︎ ${NAME(S.partner)}` : 'chat')
   const SPK_S = `${SEN.glyph}︎ ${S.sender.toUpperCase()}`
@@ -181,9 +182,11 @@ export function rescue(S) {
       const peek = 1, rk = R.find(o => t >= o.rep[0]?.at && t < o.rep[0]?.at + 0.8)
       const mood = t > T.last ? 'happy' : rk ? 'wide' : 'sparkle'
       const P = { x: PIS.x + (rk ? 10 : 0), y: PIS.y - 6 * Math.sin(t * 1.3), s: PIS.s * peek }
-      const opts = { color: PIS_.color, mood, look: [-1, -0.2], seed: 6, glow: 0.8, hops: PIS_HOPS }
+      const pk = PEEK ? signStar(PEEK) : PIS_
+      const opts = { color: pk.color, glyph: PEEK ? pk.glyph : null, mood: PEEK ? (rk || t > T.last ? 'happy' : 'wide') : mood, look: [-1, -0.2], seed: 6, glow: 0.8, hops: PIS_HOPS }
       drawStarChar(c, P.x, P.y, P.s, t, opts)
-      inSprite(c, starFrame(P.x, P.y, P.s, t, opts), () => tearsCells(c, t, k))
+      if (!PEEK) inSprite(c, starFrame(P.x, P.y, P.s, t, opts), () => tearsCells(c, t, k))
+      else SNDK.k = k
     }
 
     function chars(c, t, o) {
@@ -196,7 +199,9 @@ export function rescue(S) {
       else if (o.slash != null && t > o.slash + 1.2) { mood = 'neutral'; look = [1, -0.2] }
       if (t > T.last) { mood = S.endMood || 'heart'; look = undefined }
       const lean = t < 0.5 ? (1 - ease.outCubic(prog(t, 0, 0.5))) : 0
-      drawStarChar(c, SND.x + 30 * lean, SND.y - 30 * lean, SND.s, t, { color: SEN.color, glyph: SEN.glyph, mood, look, hops: SND_HOPS, squash: -0.12 * lean, seed: 3, glow: 1.1 })
+      const so = { color: SEN.color, glyph: SEN.glyph, mood, look, hops: SND_HOPS, squash: -0.12 * lean, seed: 3, glow: 1.1 }
+      drawStarChar(c, SND.x + 30 * lean, SND.y - 30 * lean, SND.s, t, so)
+      if (PEEK) inSprite(c, starFrame(SND.x + 30 * lean, SND.y - 30 * lean, SND.s, t, so), () => tearsCells(c, t, Math.max(2, SNDK.k)))
       // the motion lines behind the frame-0 lunge
       if (lean > 0.02) { c.save(); c.globalAlpha = lean; c.fillStyle = BONE; for (let k = 0; k < 4; k++) c.fillRect(SND.x - 190 - k * 14, SND.y - 90 + k * 40, 90 - k * 10, 8); c.restore() }
       // THE STARS with the red pen
@@ -434,7 +439,7 @@ export function rescue(S) {
   const KIT = [whipZoom(WHIP), slamTitle(HOOK), recordScratch(REC),
     ...CHAP.map(c => chapter(c)), ...BARS.map(b => loadingBar(b))]
   const SCENES = [frozen(build, [REC]), ...KIT]
-  if (LOOP) SCENES.push(loopBack([build, slamTitle(HOOK)], { duration: DURATION, len: 0.45 }))
+  if (LOOP) SCENES.push(loopBack([build, whipZoom(WHIP), slamTitle(HOOK)], { duration: DURATION, len: 0.45 }))
   CUES.push(...whipZoomCues(WHIP), ...slamTitleCues(HOOK), ...recordScratchCues(REC), ...CHAP.flatMap(c => chapterCues(c)), ...BARS.flatMap(b => loadingBarCues(b)), ...(LOOP ? loopCues({ duration: DURATION, len: 0.45 }) : []))
   return { DURATION, SCENES, CUES, T }
 }
