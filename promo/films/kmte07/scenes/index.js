@@ -48,7 +48,7 @@ const F = makeMirror({
   caps: [
     { at: 2.85, out: [9.5, 9.7], text: 'Every. *Single.* Time.', accent: '#ff8fb1', size: 96, accentSize: 124 },
     { at: 9.75, out: [13.9, 14.1], text: 'Say what | you *want.*', accent: '#8fe9ff' },
-    { at: T.last, out: [99, 100], text: 'You get | a *vote.*', accent: '#ffd36b', size: 108, accentSize: 146, gap: 0.1 },
+    { at: T.last, out: [17.5, 17.95], text: 'You get | a *vote.*', accent: '#ffd36b', size: 108, accentSize: 146, gap: 0.1 },
   ],
   lines: [
     { t: T.m1, who: 'M', text: 'you clearly want *tacos*.' },
@@ -88,7 +88,7 @@ const F = makeMirror({
   front(x, t, K) {
     // the two menus orbiting the twirl (frame 0 and the loop-back)
     const mk = t < 2.2 ? 1 : t < T.back ? 1 - ease.inCubic(prog(t, 2.2, 2.5)) : ease.outCubic(prog(t, T.back, 17.4))
-    const a = 0.4 + (t < T.scratch ? t : t < T.scratch + 1.4 ? T.scratch : t - 1.4) * 2.4
+    const a = t > T.back ? 0.4 + (t - 18) * 2.4 : 0.4 + (t < T.scratch ? t : t < T.scratch + 1.4 ? T.scratch : t - 1.4) * 2.4
     menu(x, 470 + Math.cos(a) * 300, 980 + Math.sin(a) * 120, Math.sin(a) * 0.3, mk * 0.95, 'NOODLES', ['spicy', 'mild', 'extra'], '#7fd0ff')
     menu(x, 470 + Math.cos(a + Math.PI) * 300, 980 + Math.sin(a + Math.PI) * 120, -Math.sin(a) * 0.3, mk * 0.95, 'SALAD', ['big', 'bigger', 'leaf'], '#9fe6b0')
     // the TACOS thought bubble

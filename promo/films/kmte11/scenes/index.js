@@ -48,7 +48,7 @@ const F = makeMirror({
   caps: [
     { at: 2.85, out: [8.6, 8.8], text: 'Brain: | *loading…*', accent: '#7fd0ff' },
     { at: 8.85, out: [13.3, 13.5], text: 'One word. | *No crash.*', accent: '#7dffb0' },
-    { at: T.last, out: [99, 100], text: 'One feeling, | said *out loud.*', accent: '#ffd36b', gap: 0.1 },
+    { at: T.last, out: [17.5, 17.95], text: 'One feeling, | said *out loud.*', accent: '#ffd36b', gap: 0.1 },
   ],
   lines: [
     { t: T.s1, who: 'S', text: "I'm… fine… interesting *question*." },

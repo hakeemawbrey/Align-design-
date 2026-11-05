@@ -35,7 +35,7 @@ const F = makeMirror({
   caps: [
     { at: 2.85, out: [8.2, 8.4], text: 'Plans cancelled. | *Again.*', accent: '#9fe6b0' },
     { at: 8.45, out: [15.45, 15.65], text: 'Name the | *real* feeling.', accent: '#8fe9ff' },
-    { at: T.last, out: [99, 100], text: 'Fine is not | a *feeling.*', accent: '#ffd36b', gap: 0.1 },
+    { at: T.last, out: [17.5, 17.95], text: 'Fine is not | a *feeling.*', accent: '#ffd36b', gap: 0.1 },
   ],
   lines: [
     { t: T.l1, who: 'S', text: "it's fine. totally fine. i'm *fine*." },
