@@ -46,6 +46,21 @@ describe("GraphClient", () => {
     });
     expect(await client.mediaInsights("1")).toEqual({ reach: 40, shares: 3 });
   });
+  it("reads account totals for a time window", async () => {
+    const { client, calls } = fakeGraph({
+      "GET 9/insights": () => ({ data: [{ name: "views", total_value: { value: 1909 } }, { name: "reach", total_value: { value: 1400 } }] }),
+    });
+    const since = new Date("2026-11-04T06:00:00Z");
+    const until = new Date("2026-11-05T01:00:00Z");
+    expect(await client.accountTotals("9", since, until, ["views", "reach"])).toEqual({ views: 1909, reach: 1400 });
+    expect(calls[0].params).toMatchObject({
+      metric: "views,reach",
+      metric_type: "total_value",
+      period: "day",
+      since: String(since.getTime() / 1000),
+      until: String(until.getTime() / 1000),
+    });
+  });
 });
 
 describe("loginUrl", () => {

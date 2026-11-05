@@ -51,7 +51,7 @@ export const AGENT_DOCS = {
       "Change a queued post. JSON: { caption?, scheduledAt?, coverOffsetMs? }. coverOffsetMs (Reels): the video frame, in ms, used as the cover; " +
       "null for Instagram's default. Sending scheduledAt also puts a failed or cancelled post back in the queue.",
     "DELETE /api/agent/posts/{id}": "Cancel a post that has not started publishing.",
-    "GET /api/agent/stats?account=": "Followers, following, post count and reach/engagement for the 12 most recent posts.",
+    "GET /api/agent/stats?account=": "Followers, following, post count, today's account-wide views/reach/interactions (since local midnight) and reach/engagement for the 12 most recent posts.",
     "GET /api/agent/comments?account=": "Comments the account has not replied to, with any saved draft.",
     "POST /api/agent/drafts": "Save a draft reply the owner can edit and send on the Engage page. JSON: { account?, commentId, text }.",
     "DELETE /api/agent/drafts/{commentId}": "Delete a draft.",

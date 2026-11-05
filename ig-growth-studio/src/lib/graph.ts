@@ -250,6 +250,23 @@ export class GraphClient {
     return out;
   }
 
+  /**
+   * Account-wide totals between two times (e.g. local midnight to now): views of all the account's content,
+   * accounts reached, and interactions. Instagram limits the window to 30 days and counts with some delay.
+   */
+  async accountTotals(igUserId: string, since: Date, until: Date, metrics = ["views", "reach", "total_interactions"]) {
+    const res = await this.request<{ data: { name: string; total_value?: { value: number } }[] }>("GET", `${igUserId}/insights`, {
+      metric: metrics.join(","),
+      period: "day",
+      metric_type: "total_value",
+      since: String(Math.floor(since.getTime() / 1000)),
+      until: String(Math.floor(until.getTime() / 1000)),
+    });
+    const out: Record<string, number> = {};
+    for (const m of res.data) out[m.name] = m.total_value?.value ?? 0;
+    return out;
+  }
+
   // ---------- engagement ----------
 
   /** Recent posts from another Business/Creator account (Business Discovery). */

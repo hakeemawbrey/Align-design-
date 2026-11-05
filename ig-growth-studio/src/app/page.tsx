@@ -6,6 +6,7 @@ import { BarList, ColumnChart, LineChart, SegmentedBar } from "@/components/Char
 import { Sparkline } from "@/components/Sparkline";
 import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot } from "@/lib/db";
 import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
+import { GraphClient } from "@/lib/graph";
 import { type PostStats, type Profile, accountStats } from "@/lib/insights";
 
 export const dynamic = "force-dynamic";
@@ -14,6 +15,17 @@ const fmt = new Intl.NumberFormat("en-US");
 const pct = (r: number | null) => (r === null ? "—" : `${(r * 100).toFixed(1)}%`);
 const signed = (n: number | null) => (n === null ? "—" : `${n >= 0 ? "+" : ""}${fmt.format(n)}`);
 const today = () => new Date().toISOString().slice(0, 10);
+
+/** Views, reach and interactions since local midnight, or null if Instagram won't say. */
+async function todayTotals(account: Account) {
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  try {
+    return await new GraphClient({ token: account.token }).accountTotals(account.igUserId, midnight, now);
+  } catch {
+    return null;
+  }
+}
 
 async function record(db: DB, account: Account, profile: Profile) {
   if (profile.followers_count === undefined) return;
@@ -84,6 +96,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       ),
     ),
   );
+  const totals = await Promise.all(accounts.map(todayTotals));
   const allPosts = await listPosts(db);
   const queued = allPosts.filter((p) => p.status === "scheduled" || p.status === "processing");
   const history = await Promise.all(accounts.map((a) => listSnapshots(db, a.igUserId, 30)));
@@ -101,6 +114,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       error: r.ok ? null : r.error,
       snapshots,
       change: change(snapshots),
+      today: totals[i],
       queued: mine.length,
       next: next?.scheduled_at ?? null,
     };
@@ -112,7 +126,8 @@ async function Overview({ accounts }: { accounts: Account[] }) {
   return (
     <>
       <div className="stats">
-        <Stat label="Accounts" value={String(accounts.length)} />
+        <Stat label="Views today" value={totals.some(Boolean) ? fmt.format(sum((r) => r.today?.views)) : "—"} />
+        <Stat label="Reached today" value={totals.some(Boolean) ? fmt.format(sum((r) => r.today?.reach)) : "—"} />
         <Stat label="Total followers" value={fmt.format(sum((r) => r.profile?.followers_count))} />
         <Stat label="Follower change (7 days)" value={changes.length ? signed(changes.reduce((t, c) => t + c, 0)) : "—"} />
         <Stat label="Total posts" value={fmt.format(sum((r) => r.profile?.media_count))} />
@@ -212,6 +227,7 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
     error = err instanceof Error ? err.message : "Could not load account";
   }
 
+  const todayStats = await todayTotals(account);
   const snapshots = await listSnapshots(db, account.igUserId);
   const first = snapshots[0];
   const last = snapshots[snapshots.length - 1];
@@ -223,6 +239,8 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
       {error && <p className="error">{error}</p>}
       {profile && (
         <div className="stats">
+          <Stat label="Views today" value={todayStats ? fmt.format(todayStats.views ?? 0) : "—"} />
+          <Stat label="Reached today" value={todayStats ? fmt.format(todayStats.reach ?? 0) : "—"} />
           <Stat label="Followers" value={fmt.format(profile.followers_count ?? 0)} />
           <Stat label="Following" value={fmt.format(profile.follows_count ?? 0)} />
           <Stat label="Posts" value={fmt.format(profile.media_count ?? 0)} />
@@ -335,6 +353,7 @@ type OverviewRow = {
   avgReach: number | null;
   snapshots: { day: string; followers: number }[];
   change: number | null;
+  today: Record<string, number> | null;
 };
 
 async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Account[]; rows: OverviewRow[]; posts: PostRow[]; now: Date }) {
@@ -358,6 +377,13 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
                 {r.change === null ? "change shows from day two" : `${signed(r.change)} in 7 days`}
               </span>
             </div>
+            {r.today && (
+              <p className="small muted" style={{ margin: "0 0 8px" }}>
+                Today: <strong className="ink">{fmt.format(r.today.views ?? 0)}</strong> views ·{" "}
+                <strong className="ink">{fmt.format(r.today.reach ?? 0)}</strong> reached ·{" "}
+                <strong className="ink">{fmt.format(r.today.total_interactions ?? 0)}</strong> interactions
+              </p>
+            )}
             {r.snapshots.length > 0 ? (
               <LineChart
                 height={140}
@@ -419,6 +445,9 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
 
       <h2>Performance</h2>
       <div className="chart-grid">
+        <ChartCard title="Views today" sub="All of each account's posts and Reels, since midnight.">
+          <BarList items={rows.map((r) => ({ label: `@${r.a.username}`, value: r.today?.views ?? null, color: color.get(r.a.igUserId) }))} />
+        </ChartCard>
         <ChartCard title="Engagement per reach" sub={`Average over each account's last ${OVERVIEW_POSTS} posts.`}>
           <BarList
             unit="percent"

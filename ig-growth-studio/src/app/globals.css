@@ -177,3 +177,4 @@ button.link { border: 0; background: none; padding: 0; color: var(--accent); fon
 .seg { border-radius: 4px; min-width: 2px; display: flex; align-items: center; padding: 0 8px; font-size: 12px; font-weight: 600; overflow: hidden; }
 .headline { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 0 0 8px; }
 .headline .big { font-size: 22px; font-weight: 650; }
+.ink { color: var(--text); }
