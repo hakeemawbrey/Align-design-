@@ -138,5 +138,35 @@
   "series": "glitch",
   "episode": 14,
   "caption": "The text is written. Certainty: 99%. Still not sent.\nNobody ever gets to 100%. Being brave is the whole patch. Go first, gently."
+ },
+ "klge15": {
+  "video": "d0dbb98d8e5643633c59323a1ef7e6e1",
+  "poster": "2222023d7fd532c2141409223bc517d1",
+  "title": "Aries.exe: Triple Text",
+  "len": 19,
+  "long": false,
+  "series": "glitch",
+  "episode": 15,
+  "caption": "No reply in four minutes, so obviously it's over.\nA slow reply isn't a no. Put the phone down, go live your life, and let them answer."
+ },
+ "klge16": {
+  "video": "91129fff5e33c7d5438d06a5e25dd15b",
+  "poster": "8f260aa305c3dd09199f2e08a81fc90e",
+  "title": "Virgo.exe: Fix-It Mode",
+  "len": 64,
+  "long": true,
+  "series": "glitch",
+  "episode": 16,
+  "caption": "If you notice everything, you can end up correcting everyone, yourself first.\nThe patch notes: notice without fixing, let one thing stay messy, say what you like about them."
+ },
+ "klge17": {
+  "video": "d8e2eb631a50eff483320a71bfe647b5",
+  "poster": "790878670f82ae528214d96f826e96ac",
+  "title": "Libra.exe: Peace at All Costs",
+  "len": 72,
+  "long": true,
+  "series": "glitch",
+  "episode": 17,
+  "caption": "Every \"it's fine\" gets saved somewhere, until the folder is full.\nSmall honest no's on the day it happens keep love from cracking. A disagreement isn't a breakup."
  }
 }
