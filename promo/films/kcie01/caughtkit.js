@@ -428,6 +428,7 @@ export function makeCaught(cfg) {
       if (s.mode === 'play' && s.tail && t - s.t0 < 0.2) { const p = 1 - ease.outCubic(prog(t, s.t0, s.t0 + 0.2)); z = 1 + 0.08 * p }
       if (cfg.camera) ({ z, fx, fy } = cfg.camera(t, w, { z, fx, fy }) || { z, fx, fy })
       z *= B.z; fx = B.fx + (fx - 540); fy = B.fy + (fy - 960)
+      { const hw = 540 / z, hh = 960 / z; fx = Math.min(Math.max(fx, hw), 1080 - hw); fy = Math.min(Math.max(fy, hh), 1920 - hh) }
       return { z, fx, fy, jx }
     }
 
@@ -451,7 +452,7 @@ export function makeCaught(cfg) {
       label(x, '◀◀  REW', 540, 960, { size: 96, col: BONE, font: MONO, weight: 700, alpha: Math.sin(Math.PI * p) > 0.2 ? 1 : 0.6 })
     }
     // the caught circle: drawn on over 0.3 s (fully drawn at frame 0), plus "YEP. THAT'S ME." with an arrow
-    function circle(x, t, s, alpha = 1) {
+    function circle(x, t, s, alpha = 1, cam = { z: 1, fx: 540, fy: 960 }) {
       const c = cfg.catches[s.ci].circle(s.w0)
       const p = s.open || (s.mode === 'rewind' && s.loopBack) ? 1 : ease.outCubic(prog(t, s.t0 + 0.04, s.t0 + 0.34))
       if (p <= 0) return
@@ -470,8 +471,11 @@ export function makeCaught(cfg) {
       const lx = c.lx ?? (c.x + side * (c.rx + 40)), ly = c.ly ?? (c.y - c.ry - 70)
       const lk = s.open || s.loopBack ? 1 : pop01(t, s.t0 + 0.2, 0.3, 2.6)
       if (lk > 0.01) {
-        x.save(); x.translate(lx, ly); x.rotate(-0.06 * side); x.scale(lk, lk)
         x.font = `800 54px ${INTER}`; const tw = x.measureText(yep).width
+        // keep the label on screen whatever the camera does
+        const bx0 = side > 0 ? lx : lx - tw - 40, sx0 = (bx0 - cam.fx) * cam.z + 540, sx1 = sx0 + (tw + 52) * cam.z
+        const fixX = sx0 < 40 ? (40 - sx0) / cam.z : sx1 > 1040 ? (1040 - sx1) / cam.z : 0
+        x.save(); x.translate(lx + fixX, ly); x.rotate(-0.06 * side); x.scale(lk, lk)
         const bx = side > 0 ? 0 : -tw - 40
         R(x, INK, bx - 6, -44, tw + 52, 88); R(x, RED, bx, -38, tw + 40, 76)
         x.fillStyle = '#fff'; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText(yep, bx + 20, 3)
@@ -518,13 +522,13 @@ export function makeCaught(cfg) {
         tx.clearRect(0, 0, 1080, 1920)
         if (s.mode === 'freeze' || (s.mode === 'rewind' && s.loopBack)) {
           tx.save(); tx.translate(540 + cam.jx, 960); tx.scale(cam.z, cam.z); tx.translate(-cam.fx, -cam.fy)
-          circle(tx, t, s.loopBack ? { ...segs[0], ci: 0 } : s)
+          circle(tx, t, s.loopBack ? { ...segs[0], ci: 0 } : s, 1, cam)
           tx.restore()
         }
         if (cfg.overlay) cfg.overlay(tx, t, w, { seg: s, DURATION, tOfW })
         camcorder(tx, t, w, s)
         // the "N MINUTES EARLIER" sticker after the rewind; chapter stickers for each catch
-        sticker(tx, t, 540, 470, P0 - 0.05, P0 + 1.5, '◀◀ ' + cfg.earlier, { size: 46, col: BONE, accent: RED, rot: -0.04 })
+        if (cfg.earlier) sticker(tx, t, 540, 470, P0 - 0.05, P0 + 1.5, '◀◀ ' + cfg.earlier, { size: 46, col: BONE, accent: RED, rot: -0.04 })
         if (cfg.catches.length === 1) cfg.catches.forEach((c, i) => {
           if (!c.sticker) return
           const t0 = tOfW(c.s, i); if (t0 == null) return
