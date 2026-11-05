@@ -1,0 +1,1303 @@
+{
+ "series": [
+  {
+   "key": "dontwatch",
+   "name": "Don't Watch This If You're a ___",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kdw",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 23
+  },
+  {
+   "key": "caught",
+   "name": "Caught in 4K",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kci",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 23
+  },
+  {
+   "key": "speedrun",
+   "name": "Falling in Love: Speedrun",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "ksr",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 23
+  },
+  {
+   "key": "brainheart",
+   "name": "Brain vs Heart",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kbh",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 24
+  },
+  {
+   "key": "news",
+   "name": "Breaking News: The Stars",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kbn",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 24
+  },
+  {
+   "key": "court",
+   "name": "Zodiac Courtroom",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kzc",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 24
+  },
+  {
+   "key": "achieve",
+   "name": "Achievement Unlocked: Single Life",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kau",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 25
+  },
+  {
+   "key": "overthink",
+   "name": "Overthinking Simulator",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kos",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 25
+  },
+  {
+   "key": "confess",
+   "name": "Zodiac Confessional",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kcf",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 25
+  },
+  {
+   "key": "bingo",
+   "name": "First Date Bingo",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kfb",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 26
+  },
+  {
+   "key": "swap",
+   "name": "Sign Swap",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "ksw",
+   "count": 20,
+   "long": 5,
+   "short_len": "10-25 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 26
+  },
+  {
+   "key": "liedet",
+   "name": "Zodiac Lie Detector",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kld",
+   "count": 12,
+   "long": 3,
+   "short_len": "10-25 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 30
+  },
+  {
+   "key": "rescue",
+   "name": "Text Rescue",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "ktr",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 26
+  },
+  {
+   "key": "normal",
+   "name": "Is This Normal?",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kin",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 27
+  },
+  {
+   "key": "pep",
+   "name": "The 10-Second Pep Talk",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kpt",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 27
+  },
+  {
+   "key": "healing",
+   "name": "Healing Era",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "khe",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 27
+  },
+  {
+   "key": "dateyou",
+   "name": "Date Yourself",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kdy",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 28
+  },
+  {
+   "key": "saybetter",
+   "name": "Say It Better",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "ksb",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 28
+  },
+  {
+   "key": "glitch",
+   "name": "Your Sign's Love Glitch",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "klg",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 28
+  },
+  {
+   "key": "almost",
+   "name": "The Almost Relationship",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kar",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 29
+  },
+  {
+   "key": "beforeex",
+   "name": "Before You Text Your Ex",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kbx",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 29
+  },
+  {
+   "key": "mirror",
+   "name": "Mirror Talk",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kmt",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 29
+  },
+  {
+   "key": "onecard",
+   "name": "One Card, Two People",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "koc",
+   "count": 20,
+   "long": 5,
+   "short_len": "15-30 s",
+   "long_len": "60-90 s",
+   "old": null,
+   "page": 30
+  },
+  {
+   "key": "longdist",
+   "name": "Long Distance Notes",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kln",
+   "count": 12,
+   "long": 3,
+   "short_len": "15-30 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 30
+  },
+  {
+   "key": "deepdive",
+   "name": "Deep Dive: ___ in Love",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kdd",
+   "count": 12,
+   "long": 12,
+   "short_len": null,
+   "long_len": "about 2 min",
+   "old": null,
+   "page": 30
+  },
+  {
+   "key": "thatsme",
+   "name": "Wait, That's Me",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kwm",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 31
+  },
+  {
+   "key": "whichone",
+   "name": "Which One Are You?",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kwo",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 31
+  },
+  {
+   "key": "threesec",
+   "name": "3-Second Advice",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "k3s",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 32
+  },
+  {
+   "key": "thisthat",
+   "name": "This or That: Love Edition",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "ktt",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 32
+  },
+  {
+   "key": "guess",
+   "name": "Guess the Sign",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kgs",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 32
+  },
+  {
+   "key": "fakead",
+   "name": "Fake Ad",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kfa",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 33
+  },
+  {
+   "key": "spotgreen",
+   "name": "Spot the Green Flag",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "ksg",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 33
+  },
+  {
+   "key": "fivethings",
+   "name": "5 Things Every ___ Needs to Hear",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "k5t",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 33
+  },
+  {
+   "key": "bio",
+   "name": "Bio Glow-Up",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kbg",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 34
+  },
+  {
+   "key": "hotseat",
+   "name": "Zodiac Hot Seat",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "khs",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 34
+  },
+  {
+   "key": "unsent",
+   "name": "The Unsent Text",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kut",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 34
+  },
+  {
+   "key": "opener",
+   "name": "Rate the Opener",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kro",
+   "count": 24,
+   "long": 2,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 35
+  },
+  {
+   "key": "preacts",
+   "name": "Pisces Reacts",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "kpr",
+   "count": 12,
+   "long": 1,
+   "short_len": "6-12 s",
+   "long_len": "60 s",
+   "old": null,
+   "page": 30
+  },
+  {
+   "key": "xthread",
+   "name": "The Thread: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxth",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "thread (nthe01-32)",
+   "page": 35
+  },
+  {
+   "key": "xgame",
+   "name": "Star Talk Game Night: Full Games",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxgn",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "2 min",
+   "old": "game (ngne01-24)",
+   "page": 35
+  },
+  {
+   "key": "xremix",
+   "name": "Remix Cities: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxrc",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "60 s",
+   "old": "Remix (sr*) and Snow Globe Cities (nsge*)",
+   "page": 36
+  },
+  {
+   "key": "xtrends",
+   "name": "Trends: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxtr",
+   "count": 12,
+   "long": 12,
+   "short_len": null,
+   "long_len": "2 min",
+   "old": "Trends 1 (tr*) and Trends 2 (nt2e*)",
+   "page": 36
+  },
+  {
+   "key": "xthen",
+   "name": "Then vs Now: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxtv",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "60 s",
+   "old": "Then vs Now (y*, nhve*)",
+   "page": 36
+  },
+  {
+   "key": "xsilent",
+   "name": "Silent Review: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxsr",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "60 s",
+   "old": "Silent Review (trsilent*, nsre*)",
+   "page": 36
+  },
+  {
+   "key": "xratedate",
+   "name": "Rate My Date Idea: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxrd",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "75 s",
+   "old": "Rate My Date Idea (nrde*)",
+   "page": 36
+  },
+  {
+   "key": "xrank",
+   "name": "Ranking the Signs: Full Countdown",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxrk",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "Ranking the Signs (nrke*)",
+   "page": 37
+  },
+  {
+   "key": "xparty",
+   "name": "Your Sign at the Party: Extended",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "kxpy",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "Your Sign at the Holiday Party (npye*)",
+   "page": 37
+  },
+  {
+   "key": "xguide",
+   "name": "Your Star Guide: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxsg",
+   "count": 12,
+   "long": 12,
+   "short_len": null,
+   "long_len": "60-90 s",
+   "old": "Your Star Guide (guide*, ngwe*)",
+   "page": 37
+  },
+  {
+   "key": "xask",
+   "name": "Ask the Stars: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxas",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "75 s",
+   "old": "Ask the Stars (ask*, naske*)",
+   "page": 37
+  },
+  {
+   "key": "xexplain",
+   "name": "Star Talk Explains: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxex",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "2 min",
+   "old": "Star Talk Explains (nx2e*, st5*)",
+   "page": 38
+  },
+  {
+   "key": "xsxs",
+   "name": "Sign × Sign: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxss",
+   "count": 8,
+   "long": 8,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "Sign × Sign (sx*, nsse*)",
+   "page": 38
+  },
+  {
+   "key": "xmakeup",
+   "name": "The Make-Up Talk: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxmu",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "The Make-Up Talk (nmue*)",
+   "page": 38
+  },
+  {
+   "key": "xsingle",
+   "name": "Single and Thriving: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxst",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "75 s",
+   "old": "Single and Thriving (nste*), Holiday Survival Guide (nhse*)",
+   "page": 38
+  },
+  {
+   "key": "xfriends",
+   "name": "Friends First: Extended",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxff",
+   "count": 4,
+   "long": 4,
+   "short_len": null,
+   "long_len": "60 s",
+   "old": "Friends First (nffe*)",
+   "page": 37
+  },
+  {
+   "key": "xlane",
+   "name": "Moonlight Lane: Side Stories",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "kxml",
+   "count": 6,
+   "long": 6,
+   "short_len": null,
+   "long_len": "90 s",
+   "old": "Moonlight Lane (ml*, nml2e*)",
+   "page": 38
+  }
+ ],
+ "batches": [
+  {
+   "id": "m01",
+   "parts": [
+    {
+     "series": "dontwatch",
+     "first": 1,
+     "last": 20,
+     "page": 23
+    }
+   ]
+  },
+  {
+   "id": "m02",
+   "parts": [
+    {
+     "series": "caught",
+     "first": 1,
+     "last": 20,
+     "page": 23
+    }
+   ]
+  },
+  {
+   "id": "m03",
+   "parts": [
+    {
+     "series": "speedrun",
+     "first": 1,
+     "last": 20,
+     "page": 23
+    }
+   ]
+  },
+  {
+   "id": "m04",
+   "parts": [
+    {
+     "series": "brainheart",
+     "first": 1,
+     "last": 20,
+     "page": 24
+    }
+   ]
+  },
+  {
+   "id": "m05",
+   "parts": [
+    {
+     "series": "news",
+     "first": 1,
+     "last": 20,
+     "page": 24
+    }
+   ]
+  },
+  {
+   "id": "m06",
+   "parts": [
+    {
+     "series": "court",
+     "first": 1,
+     "last": 20,
+     "page": 24
+    }
+   ]
+  },
+  {
+   "id": "m07",
+   "parts": [
+    {
+     "series": "achieve",
+     "first": 1,
+     "last": 20,
+     "page": 25
+    }
+   ]
+  },
+  {
+   "id": "m08",
+   "parts": [
+    {
+     "series": "overthink",
+     "first": 1,
+     "last": 20,
+     "page": 25
+    }
+   ]
+  },
+  {
+   "id": "m09",
+   "parts": [
+    {
+     "series": "confess",
+     "first": 1,
+     "last": 20,
+     "page": 25
+    }
+   ]
+  },
+  {
+   "id": "m10",
+   "parts": [
+    {
+     "series": "bingo",
+     "first": 1,
+     "last": 20,
+     "page": 26
+    }
+   ]
+  },
+  {
+   "id": "m11",
+   "parts": [
+    {
+     "series": "swap",
+     "first": 1,
+     "last": 20,
+     "page": 26
+    }
+   ]
+  },
+  {
+   "id": "m12",
+   "parts": [
+    {
+     "series": "rescue",
+     "first": 1,
+     "last": 20,
+     "page": 26
+    }
+   ]
+  },
+  {
+   "id": "m13",
+   "parts": [
+    {
+     "series": "normal",
+     "first": 1,
+     "last": 20,
+     "page": 27
+    }
+   ]
+  },
+  {
+   "id": "m14",
+   "parts": [
+    {
+     "series": "pep",
+     "first": 1,
+     "last": 20,
+     "page": 27
+    }
+   ]
+  },
+  {
+   "id": "m15",
+   "parts": [
+    {
+     "series": "healing",
+     "first": 1,
+     "last": 20,
+     "page": 27
+    }
+   ]
+  },
+  {
+   "id": "m16",
+   "parts": [
+    {
+     "series": "dateyou",
+     "first": 1,
+     "last": 20,
+     "page": 28
+    }
+   ]
+  },
+  {
+   "id": "m17",
+   "parts": [
+    {
+     "series": "saybetter",
+     "first": 1,
+     "last": 20,
+     "page": 28
+    }
+   ]
+  },
+  {
+   "id": "m18",
+   "parts": [
+    {
+     "series": "glitch",
+     "first": 1,
+     "last": 20,
+     "page": 28
+    }
+   ]
+  },
+  {
+   "id": "m19",
+   "parts": [
+    {
+     "series": "almost",
+     "first": 1,
+     "last": 20,
+     "page": 29
+    }
+   ]
+  },
+  {
+   "id": "m20",
+   "parts": [
+    {
+     "series": "beforeex",
+     "first": 1,
+     "last": 20,
+     "page": 29
+    }
+   ]
+  },
+  {
+   "id": "m21",
+   "parts": [
+    {
+     "series": "mirror",
+     "first": 1,
+     "last": 20,
+     "page": 29
+    }
+   ]
+  },
+  {
+   "id": "m22",
+   "parts": [
+    {
+     "series": "onecard",
+     "first": 1,
+     "last": 20,
+     "page": 30
+    }
+   ]
+  },
+  {
+   "id": "m23",
+   "parts": [
+    {
+     "series": "liedet",
+     "first": 1,
+     "last": 12,
+     "page": 30
+    },
+    {
+     "series": "longdist",
+     "first": 1,
+     "last": 12,
+     "page": 30
+    }
+   ]
+  },
+  {
+   "id": "m24",
+   "parts": [
+    {
+     "series": "deepdive",
+     "first": 1,
+     "last": 6,
+     "page": 30
+    },
+    {
+     "series": "preacts",
+     "first": 1,
+     "last": 6,
+     "page": 30
+    }
+   ]
+  },
+  {
+   "id": "m25",
+   "parts": [
+    {
+     "series": "deepdive",
+     "first": 7,
+     "last": 12,
+     "page": 31
+    },
+    {
+     "series": "preacts",
+     "first": 7,
+     "last": 12,
+     "page": 31
+    }
+   ]
+  },
+  {
+   "id": "m26",
+   "parts": [
+    {
+     "series": "thatsme",
+     "first": 1,
+     "last": 24,
+     "page": 31
+    }
+   ]
+  },
+  {
+   "id": "m27",
+   "parts": [
+    {
+     "series": "whichone",
+     "first": 1,
+     "last": 24,
+     "page": 31
+    }
+   ]
+  },
+  {
+   "id": "m28",
+   "parts": [
+    {
+     "series": "threesec",
+     "first": 1,
+     "last": 24,
+     "page": 32
+    }
+   ]
+  },
+  {
+   "id": "m29",
+   "parts": [
+    {
+     "series": "thisthat",
+     "first": 1,
+     "last": 24,
+     "page": 32
+    }
+   ]
+  },
+  {
+   "id": "m30",
+   "parts": [
+    {
+     "series": "guess",
+     "first": 1,
+     "last": 24,
+     "page": 32
+    }
+   ]
+  },
+  {
+   "id": "m31",
+   "parts": [
+    {
+     "series": "fakead",
+     "first": 1,
+     "last": 24,
+     "page": 33
+    }
+   ]
+  },
+  {
+   "id": "m32",
+   "parts": [
+    {
+     "series": "spotgreen",
+     "first": 1,
+     "last": 24,
+     "page": 33
+    }
+   ]
+  },
+  {
+   "id": "m33",
+   "parts": [
+    {
+     "series": "fivethings",
+     "first": 1,
+     "last": 24,
+     "page": 33
+    }
+   ]
+  },
+  {
+   "id": "m34",
+   "parts": [
+    {
+     "series": "bio",
+     "first": 1,
+     "last": 24,
+     "page": 34
+    }
+   ]
+  },
+  {
+   "id": "m35",
+   "parts": [
+    {
+     "series": "hotseat",
+     "first": 1,
+     "last": 24,
+     "page": 34
+    }
+   ]
+  },
+  {
+   "id": "m36",
+   "parts": [
+    {
+     "series": "unsent",
+     "first": 1,
+     "last": 24,
+     "page": 34
+    }
+   ]
+  },
+  {
+   "id": "m37",
+   "parts": [
+    {
+     "series": "opener",
+     "first": 1,
+     "last": 24,
+     "page": 35
+    }
+   ]
+  },
+  {
+   "id": "m38",
+   "parts": [
+    {
+     "series": "xthread",
+     "first": 1,
+     "last": 8,
+     "page": 35
+    }
+   ]
+  },
+  {
+   "id": "m39",
+   "parts": [
+    {
+     "series": "xgame",
+     "first": 1,
+     "last": 8,
+     "page": 35
+    }
+   ]
+  },
+  {
+   "id": "m40",
+   "parts": [
+    {
+     "series": "xremix",
+     "first": 1,
+     "last": 8,
+     "page": 36
+    },
+    {
+     "series": "xthen",
+     "first": 1,
+     "last": 8,
+     "page": 36
+    }
+   ]
+  },
+  {
+   "id": "m41",
+   "parts": [
+    {
+     "series": "xtrends",
+     "first": 1,
+     "last": 12,
+     "page": 36
+    }
+   ]
+  },
+  {
+   "id": "m42",
+   "parts": [
+    {
+     "series": "xsilent",
+     "first": 1,
+     "last": 6,
+     "page": 36
+    },
+    {
+     "series": "xratedate",
+     "first": 1,
+     "last": 6,
+     "page": 36
+    }
+   ]
+  },
+  {
+   "id": "m43",
+   "parts": [
+    {
+     "series": "xrank",
+     "first": 1,
+     "last": 6,
+     "page": 37
+    },
+    {
+     "series": "xparty",
+     "first": 1,
+     "last": 6,
+     "page": 37
+    }
+   ]
+  },
+  {
+   "id": "m44",
+   "parts": [
+    {
+     "series": "xguide",
+     "first": 1,
+     "last": 12,
+     "page": 37
+    }
+   ]
+  },
+  {
+   "id": "m45",
+   "parts": [
+    {
+     "series": "xask",
+     "first": 1,
+     "last": 8,
+     "page": 37
+    },
+    {
+     "series": "xfriends",
+     "first": 1,
+     "last": 4,
+     "page": 37
+    }
+   ]
+  },
+  {
+   "id": "m46",
+   "parts": [
+    {
+     "series": "xexplain",
+     "first": 1,
+     "last": 6,
+     "page": 38
+    },
+    {
+     "series": "xsxs",
+     "first": 1,
+     "last": 8,
+     "page": 38
+    }
+   ]
+  },
+  {
+   "id": "m47",
+   "parts": [
+    {
+     "series": "xmakeup",
+     "first": 1,
+     "last": 6,
+     "page": 38
+    },
+    {
+     "series": "xsingle",
+     "first": 1,
+     "last": 6,
+     "page": 38
+    }
+   ]
+  },
+  {
+   "id": "m48",
+   "parts": [
+    {
+     "series": "xlane",
+     "first": 1,
+     "last": 6,
+     "page": 38
+    }
+   ]
+  }
+ ]
+}
