@@ -1,0 +1,112 @@
+{
+  "id": "028-fast-vs-slow-texter",
+  "series": "Relatable",
+  "title": "Four seconds vs four hours",
+  "footer": "auto",
+  "caption": "Different reply speeds, same feelings. Say it early.",
+  "hashtags": [
+    "relatable",
+    "texting",
+    "dating",
+    "datingadvice",
+    "communication"
+  ],
+  "beats": [
+    {
+      "eyebrow": "POV",
+      "head": "You text back in *four* seconds.",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "12:01 PM",
+        "msgs": [
+          [
+            "them",
+            "hey, how was your day?"
+          ],
+          [
+            "me",
+            "so good!! yours??"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "They text back in *four* hours.",
+      "vis": {
+        "k": "phone",
+        "keep": true,
+        "name": "them",
+        "time": "4:03 PM",
+        "msgs": [
+          [
+            "them",
+            "hey, how was your day?"
+          ],
+          [
+            "me",
+            "so good!! yours??"
+          ],
+          [
+            "time",
+            "4 hours later"
+          ],
+          [
+            "them",
+            "good"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Your brain: *'Did I say too much?'*",
+      "vis": {
+        "k": "person",
+        "pose": "think",
+        "think": true,
+        "bubble": "was 'so good!!' too much?",
+        "col": "blue"
+      }
+    },
+    {
+      "head": "Their brain: *'I'll reply properly later.'*",
+      "vis": {
+        "k": "person",
+        "pose": "phone",
+        "think": true,
+        "bubble": "reply when I can focus",
+        "col": "pink"
+      }
+    },
+    {
+      "head": "Neither of you is *wrong.* Just different speeds.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "bubble": "instantly"
+        },
+        "b": {
+          "bubble": "eventually"
+        },
+        "link": "gold",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "So *say it* early, kindly.",
+      "vis": {
+        "k": "stamps",
+        "title": "SAY IT EARLY",
+        "col": "blue",
+        "items": [
+          "✓ 'I reply slow at work'",
+          "✓ 'I love a phone call'",
+          "✓ 'Plans beat texts'"
+        ]
+      }
+    },
+    {
+      "head": "Send this to your *four-hours-later* texter."
+    }
+  ]
+}

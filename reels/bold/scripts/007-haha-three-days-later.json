@@ -1,0 +1,27 @@
+{
+  "id": "007-haha-three-days-later",
+  "series": "Scenarios",
+  "title": "Choose your ending: 'haha', 3 days later",
+  "voice": {
+    "voice": "am_michael",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Three days of nothing, then 'haha'. Pick your ending.",
+  "hashtags": [
+    "texting",
+    "datingscenarios",
+    "chooseyourending",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "Three days later, they reply: *'haha.'*", "vis": {"k": "phone", "name": "Alex", "sign": "gemini", "time": "Thu", "msgs": [["me", "Best taco in town. Go."],["time", "3 days later"],["them", "haha"]]}},
+    {"head": "Choose your *ending.*", "vis": {"k": "quiz", "options": ["A) Reply 'haha'", "B) Send an essay", "C) Ask one real question"]}},
+    {"eyebrow": "ENDING A", "head": "You both 'haha' *forever.*", "sub": "Nobody learns anything. Ever.", "vis": {"k": "bubbles", "float": true, "items": ["haha", "haha", "lol", "haha", "ha"]}},
+    {"eyebrow": "ENDING B", "head": "You send *four paragraphs.*", "sub": "They reply, 'haha.'", "vis": {"k": "note", "title": "Draft", "lines": ["Hey so I've been thinking", "about tacos, and also us, ", "and honestly the moon...", "(1 of 4)"]}},
+    {"eyebrow": "ENDING C", "head": "You ask *one real question.*", "vis": {"k": "talkcard", "q": "What made you laugh this week?"}},
+    {"head": "If they *still* can't meet you there, ", "sub": "that's your answer. And that's okay.", "vis": {"k": "person", "sign": "libra", "pose": "shrug"}},
+    {"head": "Comment *A, B or C.*"}
+  ]
+}

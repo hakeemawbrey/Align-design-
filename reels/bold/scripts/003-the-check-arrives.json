@@ -1,0 +1,27 @@
+{
+  "id": "003-the-check-arrives",
+  "series": "Scenarios",
+  "title": "Red or green: the check arrives",
+  "voice": {
+    "voice": "af_heart",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "The check lands on the table. Red flag or green flag, round by round.",
+  "hashtags": [
+    "redflaggreenflag",
+    "datingadvice",
+    "firstdate",
+    "houston",
+    "astrology"
+  ],
+  "beats": [
+    {"eyebrow": "RED OR GREEN?", "head": "The check *arrives.*", "vis": {"k": "duo", "a": {"sign": "gemini", "pose": "sit"}, "b": {"sign": "taurus", "pose": "sit"}, "table": ["cup", "cup"], "link": "question"}},
+    {"head": "They say, *'I've got this one.'*", "sub": "Green. Generous, no strings.", "vis": {"k": "stamp", "text": "GREEN FLAG", "col": "green", "over": "'I've got this one.'"}},
+    {"head": "They make you *feel weird* for offering.", "sub": "Red. Offering is kind, not a challenge.", "vis": {"k": "stamp", "text": "RED FLAG", "col": "red", "over": "'Wow. Okay, independent.'"}},
+    {"head": "They suggest you *split it.*", "sub": "Green. Fair is a love language too.", "vis": {"k": "quiz", "options": ["RED FLAG", "GREEN FLAG"], "pick": 1, "mark": "✓"}},
+    {"head": "They *pause* and look at you.", "sub": "Not a flag. Just a cue to talk about it.", "vis": {"k": "person", "sign": "taurus", "pose": "think", "bubble": "...", "think": true}},
+    {"head": "The healthy move: *say what you prefer.*", "vis": {"k": "bubbles", "stack": true, "items": ["I'd love to treat you", "Then next one's mine", "Deal"]}},
+    {"head": "Send this to the friend who *grabs the check.*"}
+  ]
+}

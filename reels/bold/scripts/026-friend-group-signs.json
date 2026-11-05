@@ -1,0 +1,108 @@
+{
+  "id": "026-friend-group-signs",
+  "series": "Relatable",
+  "title": "Your friend group, by sign",
+  "footer": "auto",
+  "caption": "Every group chat has a planner, a hype friend and a therapist. Who are you?",
+  "hashtags": [
+    "relatable",
+    "zodiac",
+    "friendgroup",
+    "astrology",
+    "besties"
+  ],
+  "beats": [
+    {
+      "eyebrow": "POV",
+      "head": "Every friend group has *these* signs.",
+      "vis": {
+        "k": "crowd",
+        "n": 6,
+        "signs": [
+          "capricorn",
+          "leo",
+          "cancer",
+          "sagittarius",
+          "gemini",
+          "libra"
+        ]
+      }
+    },
+    {
+      "head": "The *planner:* Capricorn, itinerary already sent.",
+      "vis": {
+        "k": "phone",
+        "name": "the group chat",
+        "sign": "capricorn",
+        "time": "8:00 AM",
+        "msgs": [
+          [
+            "them",
+            "Itinerary attached. Please confirm by noon."
+          ],
+          [
+            "me",
+            "it's a picnic"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "The *hype* friend: Leo, louder than the music.",
+      "vis": {
+        "k": "person",
+        "sign": "leo",
+        "pose": "cheer",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "The *therapist:* Cancer, tissues in every bag.",
+      "vis": {
+        "k": "person",
+        "sign": "cancer",
+        "pose": "stand",
+        "prop": "heart",
+        "bubble": "ok but how are you REALLY?"
+      }
+    },
+    {
+      "head": "The *chaos:* Sagittarius, 'what if we drove somewhere?'",
+      "vis": {
+        "k": "person",
+        "sign": "sagittarius",
+        "pose": "point",
+        "prop": "suitcase",
+        "col": "violet"
+      }
+    },
+    {
+      "head": "The *late* one: Gemini, still picking an outfit.",
+      "vis": {
+        "k": "person",
+        "sign": "gemini",
+        "pose": "shrug",
+        "bubble": "two minutes!"
+      }
+    },
+    {
+      "head": "The *matchmaker:* Libra, already planning your wedding.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "libra",
+          "pose": "point",
+          "bubble": "you two. trust me."
+        },
+        "b": {
+          "pose": "shrug"
+        },
+        "link": "heart",
+        "linkAt": 0.6
+      }
+    },
+    {
+      "head": "Tag your group's *planner.*"
+    }
+  ]
+}

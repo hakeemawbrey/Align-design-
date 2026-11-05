@@ -1,0 +1,107 @@
+{
+  "id": "029-sign-with-a-crush",
+  "series": "Relatable",
+  "title": "Every sign with a crush",
+  "footer": "auto",
+  "caption": "Subtle is relative.",
+  "hashtags": [
+    "relatable",
+    "zodiac",
+    "crush",
+    "astrology",
+    "zodiacsigns"
+  ],
+  "beats": [
+    {
+      "eyebrow": "CRUSH MODE",
+      "head": "Every sign with a *crush.*",
+      "vis": {
+        "k": "crowd",
+        "n": 12,
+        "signs": true
+      }
+    },
+    {
+      "head": "Aries: tells them. *Today.* In person.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries",
+          "pose": "point",
+          "bubble": "I like you!"
+        },
+        "b": {
+          "pose": "shrug"
+        },
+        "link": "heart",
+        "linkAt": 0.65
+      }
+    },
+    {
+      "head": "Taurus: feeds them. *Repeatedly.*",
+      "vis": {
+        "k": "duo",
+        "table": [
+          "taco",
+          "taco"
+        ],
+        "a": {
+          "sign": "taurus"
+        },
+        "b": {}
+      }
+    },
+    {
+      "head": "Cancer: remembers their coffee order *forever.*",
+      "vis": {
+        "k": "person",
+        "sign": "cancer",
+        "prop": "coffee",
+        "bubble": "oat milk, extra hot"
+      }
+    },
+    {
+      "head": "Virgo: a full *research* report. Zero words said.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "pose": "think",
+        "think": true,
+        "bubble": "favorite color: teal"
+      }
+    },
+    {
+      "head": "Aquarius: 'I don't *do* crushes.' Has a crush.",
+      "vis": {
+        "k": "person",
+        "sign": "aquarius",
+        "pose": "shrug",
+        "heart": true
+      }
+    },
+    {
+      "head": "Libra: asks *everyone* if it seems mutual.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "do they like me?",
+          "be honest",
+          "but like, LIKE like?"
+        ]
+      }
+    },
+    {
+      "head": "Pisces: has already named the *dog.*",
+      "vis": {
+        "k": "person",
+        "sign": "pisces",
+        "pose": "think",
+        "think": true,
+        "bubble": "Biscuit."
+      }
+    },
+    {
+      "head": "Tag the sign with a crush *right now.*"
+    }
+  ]
+}

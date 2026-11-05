@@ -1,0 +1,22 @@
+{
+  "id": "009-double-text",
+  "series": "Scenarios",
+  "title": "Scenario: to double-text or not",
+  "footer": "auto",
+  "caption": "You texted, they didn't. Double-texting is allowed. Guilt trips aren't.",
+  "hashtags": [
+    "doubletext",
+    "texting",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "You texted. *Nothing back.* A whole day.", "vis": {"k": "phone", "name": "Riley", "sign": "virgo", "time": "Tue", "msgs": [["me", "Had fun last night"],["status", "Delivered"]]}},
+    {"head": "Do you *double-text?*", "vis": {"k": "quiz", "options": ["A) Never. Pride.", "B) Yes, one easy text", "C) Ten texts, all caps"], "pick": 1, "mark": "✓"}},
+    {"head": "One *easy* text. No pressure.", "vis": {"k": "phone", "name": "Riley", "sign": "virgo", "time": "Wed", "msgs": [["me", "Had fun last night"],["status", "Delivered"],["time", "Wednesday"],["me", "Also: dumplings Friday?"]]}},
+    {"head": "Not: *'Guess you're busy.'*", "vis": {"k": "stamp", "text": "NO GUILT TRIPS", "col": "red", "over": "'Guess you're busy then'"}},
+    {"head": "If it's *still* quiet, ", "sub": "that's information. Not a verdict on you.", "vis": {"k": "person", "pose": "walk", "prop": "coffee", "label": "onto Friday"}},
+    {"head": "Send this to someone *staring at 'Delivered.'*"}
+  ]
+}

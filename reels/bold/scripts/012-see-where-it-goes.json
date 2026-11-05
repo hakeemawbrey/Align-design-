@@ -1,0 +1,24 @@
+{
+  "id": "012-see-where-it-goes",
+  "series": "Scenarios",
+  "title": "Each element vs 'let's see where it goes'",
+  "footer": "auto",
+  "caption": "They said 'let's just see where it goes.' Here's how each element hears it.",
+  "hashtags": [
+    "elements",
+    "situationship",
+    "zodiacsigns",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "They say: *'Let's just see where it goes.'*", "vis": {"k": "duo", "a": {"sign": "gemini", "bubble": "Let's see where it goes"}, "b": {"sign": "capricorn", "pose": "think"}}},
+    {"head": "How each *element* hears it:", "vis": {"k": "elements", "show": ["fire", "earth", "air", "water"], "signs": true}},
+    {"eyebrow": "FIRE", "accent": "fire", "head": "Fire: *'Great, let's go.'* | Already packing.", "vis": {"k": "person", "sign": "aries", "pose": "walk", "prop": "suitcase"}},
+    {"eyebrow": "EARTH", "accent": "earth", "head": "Earth: *'Where, exactly?'* Wants a map.", "vis": {"k": "icons", "items": [{"i": "compass", "label": "Where?"},{"i": "calendar", "label": "When?"},{"i": "question", "label": "Who else?"}], "layout": "row"}},
+    {"eyebrow": "AIR", "accent": "air", "head": "Air: *loves it.* Also, means it.", "vis": {"k": "bubbles", "float": true, "items": ["no labels", "vibes", "we'll see", "go with it"]}},
+    {"eyebrow": "WATER", "accent": "water", "head": "Water: *already* knows where it ends.", "vis": {"k": "heart", "mode": "fill"}},
+    {"head": "Kind clarity: *ask what they want.*", "sub": "Then say what you want. Both are allowed.", "vis": {"k": "talkcard", "q": "What are you hoping this turns into?", "answers": ["Something real", "Honestly? Same."]}},
+    {"head": "Send this to someone *seeing where it goes.*"}
+  ]
+}

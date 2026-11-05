@@ -1,0 +1,22 @@
+{
+  "id": "014-small-talk-stall",
+  "series": "Scenarios",
+  "title": "Scenario: you both run out of words",
+  "footer": "auto",
+  "caption": "First date, the conversation stalls. One real question fixes it.",
+  "hashtags": [
+    "firstdate",
+    "smalltalk",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "First date. You both *run out* of words.", "vis": {"k": "duo", "a": {"sign": "taurus", "pose": "sit", "bubble": "...", "think": true}, "b": {"sign": "aquarius", "pose": "sit", "bubble": "...", "think": true}, "table": ["cup", "cup"]}},
+    {"head": "The silence *gets loud.*", "vis": {"k": "clock", "from": "7:41", "to": "7:42", "label": "LONGEST MINUTE EVER"}},
+    {"head": "Do you *panic-ask...*", "vis": {"k": "quiz", "options": ["A) 'So, what do you do?'", "B) 'Any siblings?'", "C) 'Your hot take?'"], "pick": 2, "mark": "✓"}},
+    {"head": "A *real* question beats a resume.", "vis": {"k": "talkcard", "q": "What's a hill you'd happily die on?", "answers": ["Breakfast for dinner", "Socks with sandals"]}},
+    {"head": "And a little quiet? *Not* a failure.", "sub": "Comfy quiet is a good sign.", "vis": {"k": "heart", "mode": "beat"}},
+    {"head": "Comment your *go-to* question."}
+  ]
+}

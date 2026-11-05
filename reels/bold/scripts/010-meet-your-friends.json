@@ -1,0 +1,22 @@
+{
+  "id": "010-meet-your-friends",
+  "series": "Scenarios",
+  "title": "POV: they want to meet your friends",
+  "footer": "auto",
+  "caption": "Week three and they want to meet your people. Group chat, be normal.",
+  "hashtags": [
+    "pov",
+    "greenflag",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "POV", "head": "Week three. They want to *meet your friends.*", "vis": {"k": "phone", "name": "Morgan", "sign": "leo", "time": "9:14 PM", "msgs": [["them", "When do I get to meet the group?"]]}},
+    {"head": "Your group chat, *instantly:*", "vis": {"k": "bubbles", "stack": true, "items": ["WAIT WHAT", "Bring them Saturday", "I'll be normal", "Nobody will be normal"]}},
+    {"head": "That's a *green flag.*", "sub": "They want to know your world, not just you.", "vis": {"k": "stamp", "text": "GREEN FLAG", "col": "green", "over": "'When do I meet your people?'"}},
+    {"head": "Saturday: *low-key* is the move.", "vis": {"k": "crowd", "n": 6, "signs": true, "pair": [1,4], "pairAt": 0.6}},
+    {"head": "Your friends' *only* job:", "sub": "Be kind. Ask one good question. No interrogations.", "vis": {"k": "talkcard", "tag": "THE ONE QUESTION", "q": "What's something you're proud of lately?"}},
+    {"head": "Tag the friend who'd *interrogate them.*"}
+  ]
+}

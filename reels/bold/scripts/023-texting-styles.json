@@ -1,0 +1,137 @@
+{
+  "id": "023-texting-styles",
+  "series": "Relatable",
+  "title": "Your sign, as a texting style",
+  "footer": "auto",
+  "caption": "Some of us reply in four seconds. Some of us send a voice memo instead.",
+  "hashtags": [
+    "relatable",
+    "zodiac",
+    "texting",
+    "datingmemes",
+    "astrology"
+  ],
+  "beats": [
+    {
+      "eyebrow": "BE HONEST",
+      "head": "Your sign, as a *texting* style.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "k.",
+          "omg WAIT",
+          "lol",
+          "...",
+          "voice memo (4:12)"
+        ]
+      }
+    },
+    {
+      "head": "Aries: replies *before* you hit send.",
+      "vis": {
+        "k": "phone",
+        "name": "Aries",
+        "sign": "aries",
+        "time": "7:02 PM",
+        "msgs": [
+          [
+            "me",
+            "free saturday?"
+          ],
+          [
+            "them",
+            "YES"
+          ],
+          [
+            "them",
+            "wait what are we doing"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Gemini: *nine* texts, four topics, one minute.",
+      "vis": {
+        "k": "bubbles",
+        "stack": true,
+        "items": [
+          "ok so",
+          "unrelated but",
+          "ALSO",
+          "wait, back to the first thing"
+        ]
+      }
+    },
+    {
+      "head": "Virgo: proofreads a *'lol'*.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "pose": "phone",
+        "think": true,
+        "bubble": "'lol' or 'haha'?"
+      }
+    },
+    {
+      "head": "Scorpio: *read* at 9:02, replies at 9:47.",
+      "vis": {
+        "k": "phone",
+        "name": "Scorpio",
+        "sign": "scorpio",
+        "time": "9:47 PM",
+        "msgs": [
+          [
+            "me",
+            "so how was your day?",
+            "Read 9:02"
+          ],
+          [
+            "time",
+            "9:47"
+          ],
+          [
+            "them",
+            "interesting."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Pisces: a voice memo *longer* than the date.",
+      "vis": {
+        "k": "phone",
+        "name": "Pisces",
+        "sign": "pisces",
+        "time": "11:30 PM",
+        "msgs": [
+          [
+            "them",
+            "▶ voice memo · 6:38"
+          ],
+          [
+            "them",
+            "▶ part two · 4:15"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Capricorn: replies in *business* hours.",
+      "vis": {
+        "k": "phone",
+        "name": "Capricorn",
+        "sign": "capricorn",
+        "time": "9:00 AM",
+        "msgs": [
+          [
+            "them",
+            "Confirming Saturday, 7 PM. Looking forward to it."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Tag the friend who texts in *paragraphs.*"
+    }
+  ]
+}

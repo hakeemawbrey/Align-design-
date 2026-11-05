@@ -1,0 +1,22 @@
+{
+  "id": "020-date-two-mid-date",
+  "series": "Scenarios",
+  "title": "POV: they ask for date two mid-date",
+  "footer": "auto",
+  "caption": "They ask for a second date before the first one's over. Enthusiasm isn't desperate.",
+  "hashtags": [
+    "pov",
+    "seconddate",
+    "greenflag",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "POV", "head": "Mid-date, they ask: *'Second date?'*", "vis": {"k": "duo", "a": {"sign": "aries", "bubble": "Second date?"}, "b": {"sign": "pisces", "pose": "sit"}, "table": ["cup", "cup"], "link": "spark"}},
+    {"head": "You're *also* having fun. So:", "vis": {"k": "quiz", "options": ["A) Play it cool", "B) 'Yes. Saturday?'", "C) Say yes, then panic"], "pick": 1, "mark": "✓"}},
+    {"head": "Enthusiasm isn't *desperate.*", "sub": "It's honest. Honest is attractive.", "vis": {"k": "meter", "label": "INTEREST", "to": 0.9, "ticks": ["meh", "curious", "into it"]}},
+    {"head": "Not feeling it? *Say so,* kindly.", "vis": {"k": "bubbles", "stack": true, "items": ["I had a nice time", "but I don't feel a spark", "Thank you for saying it"]}},
+    {"head": "Either way: *no fake 'maybe.'*", "vis": {"k": "stamps", "title": "MID-DATE RULES", "items": ["✓ CLEAR YES", "✓ KIND NO", "✕ FAKE MAYBE"]}},
+    {"head": "Tag the friend who'd *book it on the spot.*"}
+  ]
+}

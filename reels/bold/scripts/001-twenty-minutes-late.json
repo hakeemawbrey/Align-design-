@@ -1,0 +1,22 @@
+{
+  "id": "001-twenty-minutes-late",
+  "series": "Scenarios",
+  "title": "Scenario: they're 20 minutes late",
+  "footer": "auto",
+  "caption": "Once is traffic. Every time is a pattern. What would you do?",
+  "hashtags": [
+    "datingadvice",
+    "firstdate",
+    "houston",
+    "astrology",
+    "datingscenarios"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "Your date is *20 minutes* late.", "vis": {"k": "phone", "name": "Sam", "sign": "aries", "time": "7:20 PM", "msgs": [["me", "Here! Got us a table"],["status", "Delivered 7:02"]]}},
+    {"head": "Then, *finally,* a text:", "vis": {"k": "phone", "keep": true, "name": "Sam", "sign": "aries", "time": "7:21 PM", "msgs": [["me", "Here! Got us a table"],["status", "Delivered 7:02"],["typing"],["them", "So sorry. Parking chaos. 5 min"]]}},
+    {"head": "What do you *do?*", "vis": {"k": "quiz", "options": ["A) Leave. Silently.", "B) Fake 'it's fine'", "C) 'All good, see you soon'"], "pick": 2, "mark": "✓"}},
+    {"head": "Once is *traffic.*", "sub": "Every time is a pattern. Say so, kindly.", "vis": {"k": "clock", "from": "7:00", "to": "7:20", "label": "ONCE"}},
+    {"head": "They walk in and *own it.*", "vis": {"k": "duo", "a": {"sign": "aries", "pose": "wave", "bubble": "Sorry. My bad."}, "b": {"pose": "sit"}, "table": ["cup", "cup"], "link": "heart", "linkAt": 0.75}},
+    {"head": "Send this to your *always-late* friend.", "vis": {"k": "stamps", "title": "LATE, BUT KIND", "items": ["✓ A HEADS-UP TEXT", "✓ A REAL SORRY", "✕ 'U HERE?' AT 7:40"]}}
+  ]
+}

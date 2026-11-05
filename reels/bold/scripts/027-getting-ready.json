@@ -1,0 +1,108 @@
+{
+  "id": "027-getting-ready",
+  "series": "Relatable",
+  "title": "Getting ready: the plan vs the reality",
+  "footer": "auto",
+  "caption": "Outfit three is always the one.",
+  "hashtags": [
+    "relatable",
+    "datenight",
+    "grwm",
+    "datingmemes",
+    "single"
+  ],
+  "beats": [
+    {
+      "eyebrow": "BE HONEST",
+      "head": "Getting ready for a date: *the plan.*",
+      "vis": {
+        "k": "person",
+        "pose": "wave",
+        "bubble": "ready in 20!"
+      }
+    },
+    {
+      "head": "6:00. *Calm.* Music on. Outfit picked.",
+      "vis": {
+        "k": "person",
+        "pose": "cheer",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "6:20. Outfit *three.* The picked one lied.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "outfit 1 ✕",
+          "outfit 2 ✕",
+          "outfit 3 ?"
+        ],
+        "cols": [
+          "red",
+          "red",
+          "gold"
+        ]
+      }
+    },
+    {
+      "head": "6:40. Photos sent to the group for a *vote.*",
+      "vis": {
+        "k": "phone",
+        "name": "the group chat",
+        "time": "6:40 PM",
+        "msgs": [
+          [
+            "me",
+            "1 or 2??"
+          ],
+          [
+            "them",
+            "2"
+          ],
+          [
+            "them",
+            "1"
+          ],
+          [
+            "them",
+            "neither. 3."
+          ]
+        ]
+      }
+    },
+    {
+      "head": "6:55. 'Running *five* minutes late, so sorry.'",
+      "vis": {
+        "k": "phone",
+        "name": "Taurus",
+        "sign": "taurus",
+        "time": "6:55 PM",
+        "msgs": [
+          [
+            "me",
+            "running 5 min late, so sorry!"
+          ],
+          [
+            "them",
+            "no rush! same lol"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "The *reality:* they were nervous too.",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {},
+        "b": {},
+        "link": "heart",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Send this to the friend *always* on outfit three."
+    }
+  ]
+}

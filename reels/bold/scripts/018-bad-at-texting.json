@@ -1,0 +1,23 @@
+{
+  "id": "018-bad-at-texting",
+  "series": "Scenarios",
+  "title": "Red or green: 'I'm bad at texting'",
+  "footer": "auto",
+  "caption": "'I'm bad at texting' can mean a lot of things. Round by round.",
+  "hashtags": [
+    "redflaggreenflag",
+    "texting",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "RED OR GREEN?", "head": "They say, *'I'm bad at texting.'*", "vis": {"k": "phone", "name": "Drew", "sign": "aquarius", "time": "4:20 PM", "msgs": [["them", "heads up, I'm bad at texting"]]}},
+    {"head": "...then *calls you* instead.", "sub": "Green. Different isn't less.", "vis": {"k": "notif", "time": "8:12 PM", "items": [["Incoming call", "Drew"]]}},
+    {"head": "...but texts *everyone else* fine.", "sub": "Red. That's not a skill issue.", "vis": {"k": "stamp", "text": "RED FLAG", "col": "red", "over": "Active in 4 group chats"}},
+    {"head": "...and *makes plans* in person.", "sub": "Green. Plans speak louder.", "vis": {"k": "calendar", "pages": ["MON", "THU"], "mark": true}},
+    {"head": "...and *disappears* for a week.", "sub": "Red. That's not texting. That's absence.", "vis": {"k": "ghost", "label": "7 days"}},
+    {"head": "Healthy move: *ask what works.*", "sub": "Calls? Voice notes? Meet in the middle.", "vis": {"k": "quiz", "options": ["A) Calls", "B) Voice notes", "C) Slow texts"]}},
+    {"head": "Send this to someone *'bad at texting.'*"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "017-last-taco",
+  "series": "Scenarios",
+  "title": "Choose your ending: the last taco",
+  "footer": "auto",
+  "caption": "One taco left, two hands reaching. Choose your ending.",
+  "hashtags": [
+    "chooseyourending",
+    "tacos",
+    "datenight",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "One taco left. *Two hands* reach.", "vis": {"k": "duo", "a": {"sign": "leo", "pose": "point"}, "b": {"sign": "taurus", "pose": "point"}, "table": ["taco"], "link": "spark"}},
+    {"head": "Choose your *ending:*", "vis": {"k": "quiz", "options": ["A) Polite standoff", "B) Split it in half", "C) 'You take it'"]}},
+    {"eyebrow": "ENDING A", "head": "Standoff. *The taco gets cold.*", "vis": {"k": "clock", "from": "8:00", "to": "8:45", "label": "STILL WAITING"}},
+    {"eyebrow": "ENDING B", "head": "You split it. *Messy.* Perfect.", "vis": {"k": "duo", "a": {"sign": "leo", "pose": "cheer"}, "b": {"sign": "taurus", "pose": "cheer"}, "table": ["taco"], "link": "heart"}},
+    {"eyebrow": "ENDING C", "head": "You give it up. *They remember.*", "sub": "Small kindness, big memory.", "vis": {"k": "heart", "mode": "fill"}},
+    {"head": "Real answer: *order more tacos.*", "vis": {"k": "icons", "items": ["taco", "taco", "taco"], "layout": "row"}},
+    {"head": "Tag who *always takes the last one.*"}
+  ]
+}

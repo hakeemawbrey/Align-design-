@@ -1,0 +1,22 @@
+{
+  "id": "006-future-on-date-two",
+  "series": "Scenarios",
+  "title": "Red or green: the future on date two",
+  "footer": "auto",
+  "caption": "Date two and they bring up the future. Some questions are green. Naming the dog is not.",
+  "hashtags": [
+    "redflaggreenflag",
+    "seconddate",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "RED OR GREEN?", "head": "Date two. They bring up *the future.*", "vis": {"k": "duo", "a": {"sign": "cancer", "bubble": "So... kids someday?"}, "b": {"sign": "sagittarius", "pose": "shrug"}, "link": "question"}},
+    {"head": "'Do you want *kids someday?*'", "sub": "Green. Knowing what you want is healthy.", "vis": {"k": "stamp", "text": "GREEN FLAG", "col": "green", "over": "An honest question"}},
+    {"head": "'I already named *our dog.*'", "sub": "Red. That's a fantasy, not a question.", "vis": {"k": "icons", "items": [{"i": "dog", "label": "Biscuit?"},{"i": "house", "label": "Our place?"}], "layout": "row"}},
+    {"head": "'Where do you see *yourself* in five years?'", "sub": "Green, if they actually listen.", "vis": {"k": "note", "title": "Date 2 or job interview?", "lines": ["Strengths:", "Weaknesses:", "Five-year plan:"]}},
+    {"head": "The truth: *dealbreakers* belong up front.", "sub": "Then date two can just be fun.", "vis": {"k": "stamps", "items": ["✓ WANTS KIDS", "✕ CASUAL ONLY", "✓ LIKES DOGS"]}},
+    {"head": "Send this to the friend who *named the dog.*"}
+  ]
+}

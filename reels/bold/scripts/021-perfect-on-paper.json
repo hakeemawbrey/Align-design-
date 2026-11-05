@@ -1,0 +1,22 @@
+{
+  "id": "021-perfect-on-paper",
+  "series": "Scenarios",
+  "title": "Scenario: perfect on paper, no spark",
+  "footer": "auto",
+  "caption": "They tick every box and you feel nothing. Here's the kind way through.",
+  "hashtags": [
+    "datingadvice",
+    "nospark",
+    "datingscenarios",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "Perfect on paper. *Zero spark.*", "vis": {"k": "checklist", "title": "ON PAPER", "items": ["Kind", "Funny", "Has a job", "Texts back"]}},
+    {"head": "Do you *keep going?*", "sub": "Some sparks are shy. One more date is fair.", "vis": {"k": "quiz", "options": ["A) Force it", "B) One more date", "C) Ghost them"], "pick": 1, "mark": "✓"}},
+    {"head": "Some sparks are *slow burns.*", "vis": {"k": "heart", "mode": "fill", "label": "slowly..."}},
+    {"head": "If date three is *still* flat, ", "sub": "a kind no beats a polite maybe.", "vis": {"k": "phone", "name": "Sam", "sign": "virgo", "time": "Sun", "msgs": [["me", "You're great. I'm just not feeling a spark."],["them", "Honestly same. Thank you."]]}},
+    {"head": "A checklist can't fake *alignment.*", "sub": "It's the fit you can't write down.", "vis": {"k": "ppa", "a": "virgo", "b": "capricorn"}},
+    {"head": "Send this to someone dating a *checklist.*"}
+  ]
+}

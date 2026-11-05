@@ -1,0 +1,95 @@
+{
+  "id": "025-left-on-read",
+  "series": "Relatable",
+  "title": "The five stages of left on read",
+  "footer": "auto",
+  "caption": "Stage five is real, we promise.",
+  "hashtags": [
+    "relatable",
+    "leftonread",
+    "datingmemes",
+    "single",
+    "texting"
+  ],
+  "beats": [
+    {
+      "eyebrow": "LEFT ON READ",
+      "head": "The five stages of being left on *read.*",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "2:14 PM",
+        "msgs": [
+          [
+            "me",
+            "so are we still on for friday?",
+            "Read 2:14 PM"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "1. *Denial:* their phone definitely died.",
+      "vis": {
+        "k": "person",
+        "pose": "phone",
+        "think": true,
+        "bubble": "low battery. has to be."
+      }
+    },
+    {
+      "head": "2. *Bargaining:* if I don't look, they'll text.",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "Check again",
+          "Phone in another room",
+          "Check from the other room"
+        ],
+        "pick": 2,
+        "mark": "✕"
+      }
+    },
+    {
+      "head": "3. *Drafting:* nine replies, zero sent.",
+      "vis": {
+        "k": "bubbles",
+        "float": true,
+        "items": [
+          "no worries!",
+          "lol ok",
+          "???",
+          "all good :)",
+          "hello?",
+          "nvm"
+        ]
+      }
+    },
+    {
+      "head": "4. *Group chat:* the jury is in session.",
+      "vis": {
+        "k": "crowd",
+        "n": 5,
+        "pose": "phone"
+      }
+    },
+    {
+      "head": "5. *Acceptance:* you deserve someone who replies.",
+      "vis": {
+        "k": "person",
+        "pose": "cheer",
+        "prop": "coffee",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Send this to whoever's on *stage two.*",
+      "vis": {
+        "k": "stamp",
+        "over": "STAGE 5",
+        "text": "ACCEPTANCE",
+        "col": "green"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "013-friend-sets-you-up",
+  "series": "Scenarios",
+  "title": "Scenario: a friend wants to set you up",
+  "footer": "auto",
+  "caption": "Your friend 'knows someone.' Ask one thing first.",
+  "hashtags": [
+    "setup",
+    "blinddate",
+    "datingscenarios",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "Your friend: *'I know someone for you.'*", "vis": {"k": "phone", "name": "Bestie", "sign": "leo", "time": "12:30 PM", "msgs": [["them", "I KNOW SOMEONE FOR YOU"],["them", "trust me"]]}},
+    {"head": "You ask *one* thing first.", "sub": "B is a very close second.", "vis": {"k": "quiz", "options": ["A) 'Are they cute?'", "B) 'What's their sign?'", "C) 'Are they kind?'"], "pick": 2, "mark": "✓"}},
+    {"head": "They send a *description,* not a photo.", "vis": {"k": "mystery", "sign": "sagittarius", "name": "Jamie, 29", "lines": ["Sun ♐ Sagittarius", "Kind to strangers", "Makes great soup"], "flip": true}},
+    {"head": "Healthy setup *rules:*", "vis": {"k": "stamps", "title": "SETUP RULES", "items": ["✓ BOTH SAY YES", "✓ NO PRESSURE", "✕ SURPRISE AMBUSH"]}},
+    {"head": "And if there's *no spark?*", "sub": "Thank your friend. Stay friends. Easy.", "vis": {"k": "duo", "a": {"pose": "wave"}, "b": {"sign": "sagittarius", "pose": "wave"}}},
+    {"head": "Tag the friend who *always knows someone.*"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "022-we-need-to-talk",
+  "series": "Scenarios",
+  "title": "Scenario: 'we need to talk'",
+  "footer": "auto",
+  "caption": "Three scary words, three hours of silence, and then: rescheduling. Say the topic.",
+  "hashtags": [
+    "texting",
+    "anxiety",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "A text arrives: *'We need to talk.'*", "vis": {"k": "phone", "name": "Taylor", "sign": "libra", "time": "2:13 PM", "msgs": [["them", "hey, we need to talk"]]}},
+    {"head": "...and then *nothing* for three hours.", "vis": {"k": "phone", "keep": true, "name": "Taylor", "sign": "libra", "time": "5:13 PM", "msgs": [["them", "hey, we need to talk"],["time", "3 hours later"],["typing"]]}},
+    {"head": "Your brain *writes the worst ending.*", "vis": {"k": "bubbles", "stack": true, "items": ["They're leaving", "I said something weird", "Is it my laugh?"]}},
+    {"head": "Then: *'Can we move Friday to Saturday?'*", "vis": {"k": "phone", "name": "Taylor", "sign": "libra", "time": "5:14 PM", "msgs": [["them", "hey, we need to talk"],["time", "3 hours later"],["them", "can we move Friday to Saturday? work stuff"]]}},
+    {"head": "Kind texting: *say the topic.*", "sub": "'Can we talk tonight? Nothing bad, just plans.'", "vis": {"k": "stamps", "title": "THE KINDER TEXT", "items": ["✓ SAY THE TOPIC", "✓ SAY THE TIME", "✕ VAGUE, THEN VANISH"]}},
+    {"head": "And if it *is* serious, ", "sub": "offer a time. Not three hours of silence.", "vis": {"k": "person", "sign": "libra", "pose": "phone", "bubble": "Call tonight at 8?"}},
+    {"head": "Send this to the friend who *texts in cliffhangers.*"}
+  ]
+}

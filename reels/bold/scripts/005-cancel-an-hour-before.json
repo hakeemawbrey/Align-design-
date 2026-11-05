@@ -1,0 +1,24 @@
+{
+  "id": "005-cancel-an-hour-before",
+  "series": "Scenarios",
+  "title": "Each element when they cancel last minute",
+  "footer": "auto",
+  "caption": "They cancel an hour before. Fire, earth, air or water: which one are you?",
+  "hashtags": [
+    "elements",
+    "zodiacsigns",
+    "datingscenarios",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "They cancel *an hour* before.", "vis": {"k": "phone", "name": "Jordan", "sign": "libra", "time": "6:02 PM", "msgs": [["them", "Hey, I'm so sorry"],["them", "Can we rain check tonight?"]]}},
+    {"head": "How each *element* handles it:", "vis": {"k": "elements", "show": ["fire", "earth", "air", "water"], "labels": true}},
+    {"eyebrow": "FIRE", "accent": "fire", "head": "Fire: *'No worries. Thursday?'*", "sub": "Rebooked before the outfit comes off.", "vis": {"k": "calendar", "pages": ["TONIGHT", "WED", "THU"], "mark": true}},
+    {"eyebrow": "EARTH", "accent": "earth", "head": "Earth: *already* in sweatpants.", "sub": "Honestly? A gift.", "vis": {"k": "person", "sign": "taurus", "pose": "sit", "prop": "coffee"}},
+    {"eyebrow": "AIR", "accent": "air", "head": "Air: *'All good! Everything okay?'*", "sub": "Checks in, then makes three new plans.", "vis": {"k": "bubbles", "stack": true, "items": ["All good!", "Everything okay?", "Also: Thursday?"]}},
+    {"eyebrow": "WATER", "accent": "water", "head": "Water: *feels it,* then says so.", "sub": "'Bummed, but thanks for the heads-up.'", "vis": {"k": "heart", "mode": "heal"}},
+    {"head": "The *healthy* part: a heads-up and a new date.", "vis": {"k": "stamps", "title": "RAIN CHECK RULES", "items": ["✓ CANCEL EARLY", "✓ OFFER A NEW DAY", "✕ VANISH QUIETLY"]}},
+    {"head": "Tag who you'd *forgive* for this."}
+  ]
+}

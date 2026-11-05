@@ -1,0 +1,23 @@
+{
+  "id": "016-ex-all-night",
+  "series": "Scenarios",
+  "title": "Your sign when they talk about their ex all night",
+  "footer": "auto",
+  "caption": "Eleven mentions of the ex and counting. Your sign in this scenario.",
+  "hashtags": [
+    "zodiacsigns",
+    "exes",
+    "firstdate",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "YOUR SIGN IN THIS SCENARIO", "head": "They've mentioned their ex *11 times.*", "vis": {"k": "bubbles", "stack": true, "items": ["my ex loved this place", "my ex hated cilantro", "anyway, my ex..."]}},
+    {"eyebrow": "LIBRA", "accent": "libra", "head": "Libra: *mediates* the breakup. Both sides.", "vis": {"k": "scale", "a": "THEM", "b": "THE EX", "tilt": 0}},
+    {"eyebrow": "SAGITTARIUS", "accent": "sagittarius", "head": "Sag: *'Want to just call them?'*", "vis": {"k": "person", "sign": "sagittarius", "pose": "point", "prop": "phone"}},
+    {"eyebrow": "CAPRICORN", "accent": "capricorn", "head": "Capricorn: *quietly* keeps score.", "vis": {"k": "grid", "title": "EX MENTIONS", "cells": ["EX", "EX", "EX", "EX", "EX", "EX", "EX", "EX", "EX"]}},
+    {"eyebrow": "GEMINI", "accent": "gemini", "head": "Gemini: *asks follow-ups.* Now invested.", "vis": {"k": "person", "sign": "gemini", "pose": "think", "bubble": "and then??", "think": true}},
+    {"head": "The kind truth: *they might not be ready.*", "sub": "That's okay. You can want someone who is.", "vis": {"k": "heart", "mode": "heal"}},
+    {"head": "Tag who you'd text *mid-date.*"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "008-watch-story-no-reply",
+  "series": "Scenarios",
+  "title": "Your sign when they watch but never reply",
+  "footer": "auto",
+  "caption": "They watch every story and never say a word. Here's your sign in this scenario.",
+  "hashtags": [
+    "zodiacsigns",
+    "astrology",
+    "texting",
+    "datingscenarios",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "YOUR SIGN IN THIS SCENARIO", "head": "They watch *every* story. Never reply.", "vis": {"k": "icons", "items": [{"i": "camera", "label": "Viewed"},{"i": "camera", "label": "Viewed"},{"i": "chat", "label": "0 replies"}], "layout": "row"}},
+    {"eyebrow": "ARIES", "accent": "aries", "head": "Aries: posts *a story about it.*", "vis": {"k": "person", "sign": "aries", "pose": "phone"}},
+    {"eyebrow": "TAURUS", "accent": "taurus", "head": "Taurus: *didn't notice.* Was eating.", "vis": {"k": "person", "sign": "taurus", "pose": "sit", "prop": "taco"}},
+    {"eyebrow": "AQUARIUS", "accent": "aquarius", "head": "Aquarius: *'Interesting. Noted.'*", "vis": {"k": "glyph", "sign": "aquarius", "name": true}},
+    {"eyebrow": "CANCER", "accent": "cancer", "head": "Cancer: *rereads* the last text from June.", "vis": {"k": "phone", "name": "Them", "sign": "cancer", "time": "June", "msgs": [["me", "That was so fun"],["them", "haha same"]]}},
+    {"head": "Healthy move: *say something,* or let it go.", "sub": "Watching isn't talking. You can want talking.", "vis": {"k": "quiz", "options": ["A) Post a vague quote", "B) 'Coffee this week?'", "C) Let it go, kindly"], "pick": 1, "mark": "✓"}},
+    {"head": "Tag your *story-watcher.*"}
+  ]
+}

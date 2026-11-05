@@ -1,0 +1,27 @@
+{
+  "id": "019-birth-time",
+  "series": "Scenarios",
+  "title": "POV: they ask your birth time",
+  "voice": {
+    "voice": "bm_george",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Date one and they ask what time you were born. Honestly? Sweet.",
+  "hashtags": [
+    "pov",
+    "birthchart",
+    "risingsign",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "POV", "head": "Date one. They ask your *birth time.*", "vis": {"k": "phone", "name": "Avery", "sign": "scorpio", "time": "10:02 PM", "msgs": [["them", "random q"],["them", "what time were you born?"]]}},
+    {"head": "Your mind: *is this a test?*", "vis": {"k": "bubbles", "stack": true, "items": ["Is this a test?", "Do I call my mom?", "Is that... romantic?"]}},
+    {"head": "It's *actually* sweet.", "sub": "Your birth time sets your Rising sign: how you come across.", "vis": {"k": "bigthree", "sun": "leo", "moon": "cancer", "rising": "libra", "labels": true}},
+    {"head": "So, *how* do you answer?", "vis": {"k": "quiz", "options": ["A) 'Why, are you a spy?'", "B) 'No idea, I'll ask'", "C) '6:10 AM. You?'"], "pick": 2, "mark": "✓"}},
+    {"head": "Asking back *is* the green flag.", "vis": {"k": "stamp", "text": "GREEN FLAG", "col": "green", "over": "'...You?'"}},
+    {"head": "Curious people *ask follow-ups.*", "sub": "Keep the one who wants your whole sky.", "vis": {"k": "mystery", "sign": "libra", "name": "You, in full", "lines": ["Sun ♌ Leo", "Moon ♋ Cancer", "Rising ♎ Libra"], "flip": true}},
+    {"head": "Tag the friend who *doesn't* know theirs."}
+  ]
+}

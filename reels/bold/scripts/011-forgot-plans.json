@@ -1,0 +1,26 @@
+{
+  "id": "011-forgot-plans",
+  "series": "Scenarios",
+  "title": "Scenario: they forgot your plans",
+  "voice": {
+    "voice": "bf_emma",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "You're dressed, they forgot. Honest and kind, both at once.",
+  "hashtags": [
+    "datingadvice",
+    "boundaries",
+    "datingscenarios",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "You're dressed. They *forgot* your plans.", "vis": {"k": "phone", "name": "Casey", "sign": "sagittarius", "time": "7:15 PM", "msgs": [["me", "I'm here!"],["them", "wait, was that tonight??"]]}},
+    {"head": "What do you *say?*", "vis": {"k": "quiz", "options": ["A) 'Wow. Cool.'", "B) 'No worries!!' (worried)", "C) 'That stung. Redo?'"], "pick": 2, "mark": "✓"}},
+    {"head": "Honest *and* kind. Both at once.", "vis": {"k": "duo", "a": {"bubble": "That stung a bit"}, "b": {"sign": "sagittarius", "pose": "shrug", "bubble": "You're right. I'm sorry."}, "link": "heart", "linkAt": 0.8}},
+    {"head": "A good apology has *a plan* in it.", "vis": {"k": "calendar", "pages": ["TONIGHT", "FRI", "SAT"], "mark": true}},
+    {"head": "Once is human. *Every week* is an answer.", "vis": {"k": "stamps", "title": "NOTED", "items": ["✓ OWNED IT", "✓ REBOOKED IT", "✕ FORGOT AGAIN"]}},
+    {"head": "Send this to the friend *still in the outfit.*"}
+  ]
+}

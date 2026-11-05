@@ -1,0 +1,24 @@
+{
+  "id": "002-dont-believe-in-astrology",
+  "series": "Scenarios",
+  "title": "Your sign vs 'I don't believe in astrology'",
+  "footer": "auto",
+  "caption": "Date one, and they don't believe in astrology. How does your sign take it?",
+  "hashtags": [
+    "zodiacsigns",
+    "astrology",
+    "firstdate",
+    "datingscenarios",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "SCENARIO", "head": "Date one: *'I don't believe in astrology.'*", "vis": {"k": "duo", "a": {"pose": "shrug", "bubble": "Astrology? Not for me."}, "b": {"pose": "think"}, "table": ["cup", "cup"], "link": "question"}},
+    {"head": "Your sign *in this scenario:*", "vis": {"k": "glyphs", "mode": "grid", "highlight": ["leo", "virgo", "scorpio", "pisces"]}},
+    {"eyebrow": "LEO", "accent": "leo", "head": "Leo: *'That's fine. I'm still a delight.'*", "vis": {"k": "person", "sign": "leo", "pose": "cheer"}},
+    {"eyebrow": "VIRGO", "accent": "virgo", "head": "Virgo: *'Fair. Want my sources?'*", "vis": {"k": "person", "sign": "virgo", "pose": "point", "prop": "phone"}},
+    {"eyebrow": "SCORPIO", "accent": "scorpio", "head": "Scorpio: *'Interesting. Tell me why.'*", "vis": {"k": "person", "sign": "scorpio", "pose": "think"}},
+    {"eyebrow": "PISCES", "accent": "pisces", "head": "Pisces: *'That's okay. I'll believe for two.'*", "vis": {"k": "person", "sign": "pisces", "pose": "stand", "prop": "heart"}},
+    {"head": "The *healthy* move: curiosity, not a debate.", "vis": {"k": "talkcard", "q": "What do you believe in?", "answers": ["Good coffee", "People, mostly"]}},
+    {"head": "Tag the friend who'd *start a debate.*"}
+  ]
+}

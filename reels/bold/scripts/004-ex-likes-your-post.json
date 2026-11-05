@@ -1,0 +1,23 @@
+{
+  "id": "004-ex-likes-your-post",
+  "series": "Scenarios",
+  "title": "POV: your ex likes your post",
+  "footer": "auto",
+  "caption": "Two years of silence and then one tiny heart. A like is just a like.",
+  "hashtags": [
+    "pov",
+    "exes",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "POV", "head": "Your ex just *liked* your post.", "vis": {"k": "notif", "time": "11:48 PM", "items": [["Notification", "Your ex liked your photo"]]}},
+    {"head": "Two years of *silence.* | One tiny heart.", "vis": {"k": "heart", "mode": "beat", "label": "1 like"}},
+    {"head": "Your brain, *immediately:*", "vis": {"k": "bubbles", "stack": true, "items": ["Do they miss me?", "Like theirs back?", "Is this a sign?", "Screenshot it"]}},
+    {"head": "Reality: a like is *just a like.*", "vis": {"k": "stamp", "text": "JUST A LIKE", "col": "blue"}},
+    {"head": "What *actually* helps:", "vis": {"k": "quiz", "options": ["A) Like back to win", "B) Text 'hey stranger'", "C) Let it be. Live on."], "pick": 2, "mark": "✓"}},
+    {"head": "Your *present* deserves the attention.", "sub": "Someone new is out there, curious about you.", "vis": {"k": "deck", "n": 5, "glow": 2, "label": "TONIGHT'S DECK"}},
+    {"head": "Tag the friend whose ex *just did this.*"}
+  ]
+}

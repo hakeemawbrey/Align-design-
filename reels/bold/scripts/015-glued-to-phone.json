@@ -1,0 +1,27 @@
+{
+  "id": "015-glued-to-phone",
+  "series": "Scenarios",
+  "title": "Red or green: they keep checking their phone",
+  "voice": {
+    "voice": "af_bella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "They keep checking their phone on the date. Red, green, or 'just ask'?",
+  "hashtags": [
+    "redflaggreenflag",
+    "firstdate",
+    "datingadvice",
+    "astrology",
+    "houston"
+  ],
+  "beats": [
+    {"eyebrow": "RED OR GREEN?", "head": "They keep *checking* their phone.", "vis": {"k": "duo", "a": {"sign": "gemini", "pose": "phone"}, "b": {"sign": "libra", "pose": "sit"}, "table": ["cup", "phone"]}},
+    {"head": "Scrolling *while you talk?*", "sub": "Red. You deserve eye contact.", "vis": {"k": "stamp", "text": "RED FLAG", "col": "red", "over": "Scrolling mid-story"}},
+    {"head": "'Sorry, my sister's *in labor.*'", "sub": "Green. Let them answer.", "vis": {"k": "phone", "name": "Sis", "sign": "cancer", "time": "8:03 PM", "msgs": [["them", "IT'S HAPPENING"],["them", "where are you"]]}},
+    {"head": "They flip it *face down.*", "sub": "Green. Tiny move, big message.", "vis": {"k": "icons", "items": [{"i": "phone", "label": "Face down"},{"i": "heart", "label": "Eyes up"}], "layout": "row"}},
+    {"head": "They show you *videos* all night.", "sub": "Red-ish. Funny once. Then talk.", "vis": {"k": "bubbles", "stack": true, "items": ["look at this one", "ok one more", "last one, promise"]}},
+    {"head": "The healthy ask: *'Phones away?'*", "sub": "Say it lightly, and go first.", "vis": {"k": "duo", "a": {"bubble": "Phones away?"}, "b": {"sign": "gemini", "bubble": "Deal."}, "table": ["cup", "cup"], "link": "heart", "linkAt": 0.8}},
+    {"head": "Send this to someone who *texts at dinner.*"}
+  ]
+}

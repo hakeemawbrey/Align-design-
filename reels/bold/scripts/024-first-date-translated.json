@@ -1,0 +1,114 @@
+{
+  "id": "024-first-date-translated",
+  "series": "Relatable",
+  "title": "First date, translated",
+  "footer": "auto",
+  "caption": "Every first date comes with subtitles. Here they are.",
+  "hashtags": [
+    "relatable",
+    "firstdate",
+    "datingmemes",
+    "single",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "FIRST DATE",
+      "head": "What we *say* vs what we mean.",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {
+          "pose": "stand"
+        },
+        "b": {
+          "pose": "stand"
+        }
+      }
+    },
+    {
+      "head": "'I'm *easy*, you pick.'",
+      "sub": "Translation: I have nine opinions.",
+      "vis": {
+        "k": "bubbles",
+        "stack": true,
+        "items": [
+          "tacos?",
+          "mm, no",
+          "pho?",
+          "not tonight",
+          "you pick!"
+        ]
+      }
+    },
+    {
+      "head": "'I'm *not* nervous.'",
+      "sub": "Has refolded the napkin eleven times.",
+      "vis": {
+        "k": "person",
+        "pose": "sit",
+        "think": true,
+        "bubble": "act normal. act normal."
+      }
+    },
+    {
+      "head": "'I *never* do this.'",
+      "sub": "Translation: I'm nervous and I like you.",
+      "vis": {
+        "k": "person",
+        "pose": "shrug",
+        "col": "pink"
+      }
+    },
+    {
+      "head": "'Let's do this *again*.'",
+      "sub": "Translation: already planning date two.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "wave"
+        },
+        "b": {
+          "pose": "wave"
+        },
+        "link": "heart"
+      }
+    },
+    {
+      "head": "'Text me when you're *home*.'",
+      "sub": "Translation: I actually care.",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "10:41 PM",
+        "msgs": [
+          [
+            "them",
+            "home safe?"
+          ],
+          [
+            "me",
+            "home safe. thanks for tonight"
+          ]
+        ],
+        "stamp": "GREEN FLAG",
+        "stampCol": "green"
+      }
+    },
+    {
+      "head": "Or skip the code and ask something *real.*",
+      "vis": {
+        "k": "talkcard",
+        "q": "What's something you'd never say on a first date?",
+        "answers": [
+          "that I looked you up",
+          "that I'm nervous"
+        ],
+        "answersAt": 0.62
+      }
+    },
+    {
+      "head": "Send this to your *next* first date."
+    }
+  ]
+}
