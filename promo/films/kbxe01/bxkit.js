@@ -282,7 +282,7 @@ export function drawThumb(x, tx, ty, { s = 1, rot = -0.35, col = '#f2b48a', alph
   x.restore()
 }
 /** the STOP sign: an octagon on a post. k scales; flip 0…1 turns it to its back (text on the back) */
-export function drawStop(x, cx, cy, s, { rot = 0, flip = 0, back = ['3 QUESTIONS', 'FIRST'], alpha = 1, post = true } = {}) {
+export function drawStop(x, cx, cy, s, { rot = 0, flip = 0, back = ['3 QUESTIONS', 'FIRST'], n = '3', alpha = 1, post = true } = {}) {
   x.save(); x.globalAlpha *= alpha; x.translate(cx, cy); x.rotate(rot)
   const fx = Math.cos(Math.PI * clamp(flip)), showBack = flip > 0.5
   if (post) { R(x, INK, -14, 0, 28, 900); R(x, '#8c86a8', -8, 0, 16, 900) }
@@ -295,7 +295,7 @@ export function drawStop(x, cx, cy, s, { rot = 0, flip = 0, back = ['3 QUESTIONS
   x.textAlign = 'center'; x.textBaseline = 'middle'
   if (!showBack) { x.font = `900 ${Math.round(s * 0.62)}px ${INTER}`; x.fillStyle = '#fff'; x.fillText('STOP', 0, s * 0.04) }
   else {
-    x.fillStyle = GOLD; x.font = `900 ${Math.round(s * 0.62)}px ${INTER}`; x.fillText('3', 0, -s * 0.3)
+    x.fillStyle = GOLD; x.font = `900 ${Math.round(s * 0.62)}px ${INTER}`; x.fillText(String(n), 0, -s * 0.3)
     x.font = `800 ${Math.round(s * 0.2)}px ${INTER}`; x.fillStyle = BONE
     x.fillText(back[0], 0, s * 0.2); x.fillText(back[1], 0, s * 0.44)
   }
@@ -384,8 +384,9 @@ export function drawCard(x, cx, cy, n, q, { k = 1, tick = 0, rot = 0, w = 900, s
 /** the three progress chips (① ② ③) along the top of the stage */
 export function drawChips(x, cx, cy, ticks, k = 1) {
   if (k <= 0.01) return
-  for (let i = 0; i < 3; i++) {
-    const px = cx + (i - 1) * 120, on = ticks[i]
+  const n = ticks.length
+  for (let i = 0; i < n; i++) {
+    const px = cx + (i - (n - 1) / 2) * 120, on = ticks[i]
     x.save(); x.translate(px, cy); x.scale(k, k)
     R(x, INK, -44, -44, 88, 88); R(x, on ? GREEN : '#3a2f66', -38, -38, 76, 76)
     x.font = `900 44px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = on ? '#fff' : 'rgba(239,230,214,0.6)'
@@ -443,7 +444,7 @@ function drawDraft(x, t, S, seg) {
     const flip = seg.flipAt != null ? ease.inOutCubic(prog(t, seg.flipAt, seg.flipAt + 0.4)) : 0
     // motion streaks while falling
     if (t < stopAt) { x.save(); x.globalAlpha = 0.5; for (let i = 0; i < 5; i++) R(x, '#fff', SX - 180 + i * 90, sy - SR - 160, 10, 140); x.restore() }
-    drawStop(x, SX, sy + pout * 1100, SR, { rot: wob, flip, back: seg.back })
+    drawStop(x, SX, sy + pout * 1100, SR, { rot: wob, flip, back: seg.back, n: seg.backN ?? '3' })
   }
   if (seg.extra) seg.extra(x, t, S, { P, info })
   void u
@@ -463,7 +464,7 @@ function drawCheck(x, t, S, seg) {
     if (t < q.at - 0.02 || t > next + 0.3) return
     const inK = easeOutBack(prog(t, q.at, q.at + 0.3), 1.6)
     const flyO = ease.inCubic(prog(t, next - 0.05, next + 0.25))
-    const cx = lerp(1500, 540, inK) + flyO * ((i - 1) * 120 - 540 + 540)
+    const cx = lerp(1500, 540, inK) + flyO * ((i - (qs.length - 1) / 2) * 120)
     const cy = lerp(seg.cardY ?? 700, seg.chipsY ?? 500, flyO)
     const tick = prog(t, q.at + (q.tick ?? 1.6), q.at + (q.tick ?? 1.6) + 0.3)
     drawCard(x, cx, cy, i + 1, q.q, { k: lerp(1, 0.1, flyO), tick, rot: lerp(0.08, -0.015, inK) })
