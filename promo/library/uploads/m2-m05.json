@@ -1,7 +1,7 @@
 {
  "kbne01": {
-  "video": "/_blob/fa739df0bdac837c8a808724159d7d39",
-  "poster": "/_blob/81a602316f92996f7f041c01df969667",
+  "video": "/_blob/c1974d90c52bdf778ca97959211ff965",
+  "poster": "/_blob/51f4f866d73c4d89323c8af752f81e14",
   "title": "Gemini replied in three minutes",
   "len": 15,
   "long": false,
@@ -10,8 +10,8 @@
   "caption": "Breaking: a Gemini replied in three minutes and the newsroom had to sit down.\nNo games, no waiting, just interest. Who's the fastest replier in your chat?"
  },
  "kbne02": {
-  "video": "/_blob/1f748aeeda7185cc6293dcaed43e5ef2",
-  "poster": "/_blob/fc7353ae0e8aebaf3ef269623871b692",
+  "video": "/_blob/f60548a12ef12c34ac2a468c1ddc65df",
+  "poster": "/_blob/99d781e9f66d3d075daf41744e3755c2",
   "title": "Virgo kept the typo",
   "len": 14,
   "long": false,
@@ -178,5 +178,15 @@
   "series": "news",
   "episode": 18,
   "caption": "The first date ended at 10. The decision desk tracked every draft and every deleted \"had fun.\"\nResults at the end. Are you the one who texts first?"
+ },
+ "kbne19": {
+  "video": "/_blob/2e3c148ccd6019323249576e8b48f6e8",
+  "poster": "/_blob/2c9aff65eedc1838f72eaaf9e8c29beb",
+  "title": "Good Morning, Stars: First Date Tonight",
+  "len": 70,
+  "long": true,
+  "series": "news",
+  "episode": 19,
+  "caption": "A Virgo with a first date tonight and a list of fourteen topics. We have traffic, weather and a live follow-up at 10 p.m.\nNervous means it matters."
  }
 }
