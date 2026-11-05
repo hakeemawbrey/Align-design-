@@ -1,0 +1,102 @@
+{
+ "k5te01": {
+  "video": "/_blob/3afc0a12fe12980898c6850aff5b9091",
+  "poster": "/_blob/765e9cb54607eb022f8df9dca6931499",
+  "title": "Aries, slow down for once",
+  "len": 11,
+  "long": false,
+  "series": "fivethings",
+  "episode": 1,
+  "caption": "Aries, not every crush is a race.\nAsk, then actually listen. The right one keeps pace with you."
+ },
+ "k5te02": {
+  "video": "/_blob/7df4b57b1cb472f451277ba316693add",
+  "poster": "/_blob/5bcaac8f07d6939490d22cff7048f736",
+  "title": "Taurus, the comfort zone talk",
+  "len": 11,
+  "long": false,
+  "series": "fivethings",
+  "episode": 2,
+  "caption": "Taurus, put the snack down for one second.\nNew can feel safe too, and you deserve to be chosen loudly."
+ },
+ "k5te03": {
+  "video": "/_blob/133f96ef20040440bf5ac5c31b10b7ae",
+  "poster": "/_blob/8bf84ffc8ed87fd8687363bd845288ca",
+  "title": "Gemini, say the real thing",
+  "len": 10.5,
+  "long": false,
+  "series": "fivethings",
+  "episode": 3,
+  "caption": "Gemini, which tab are you even on right now?\nPick one chat tonight and say the second thought out loud."
+ },
+ "k5te04": {
+  "video": "/_blob/8e32ce24dbe801d88591ec3a45b16af1",
+  "poster": "/_blob/be3af75bc29d3babe9023fd2459ae609",
+  "title": "Cancer, who is taking care of you",
+  "len": 11.5,
+  "long": false,
+  "series": "fivethings",
+  "episode": 4,
+  "caption": "Cancer, you feed everyone. Who is feeding you?\nLet someone take care of you for once. It counts."
+ },
+ "k5te05": {
+  "video": "/_blob/3dca4a261c6d20f15f1d01a95f1b4650",
+  "poster": "/_blob/7e629c6418ad132f7372833cf64d0f7f",
+  "title": "Leo, the spotlight can wait",
+  "len": 10.5,
+  "long": false,
+  "series": "fivethings",
+  "episode": 5,
+  "caption": "Leo, the spotlight left and you're still glowing.\nYou're loved off-stage too. Quiet nights count."
+ },
+ "k5te06": {
+  "video": "/_blob/f4df2720025de08359daa883397acb87",
+  "poster": "/_blob/5f5e28837a6148acf7b1aeb8547c21ee",
+  "title": "Virgo, the text was already fine",
+  "len": 11,
+  "long": false,
+  "series": "fivethings",
+  "episode": 6,
+  "caption": "Virgo, draft fourteen? Draft one was perfect.\nYou can't edit a feeling. Send it, then breathe."
+ },
+ "k5te07": {
+  "video": "/_blob/ee6a31c8da75d33b97c945523c0a29e3",
+  "poster": "/_blob/c716224e5cc51308dfc04a2c57bdec4c",
+  "title": "Libra, you're allowed to choose",
+  "len": 10,
+  "long": false,
+  "series": "fivethings",
+  "episode": 7,
+  "caption": "Libra, still deciding where to eat?\nYour opinion is welcome here, and no is a full sentence."
+ },
+ "k5te08": {
+  "video": "/_blob/c6107c74e5fdd6c5072e78164d2feab7",
+  "poster": "/_blob/706e23341ab95a24afb0d0c768705c95",
+  "title": "Scorpio, not everything is a clue",
+  "len": 11,
+  "long": false,
+  "series": "fivethings",
+  "episode": 8,
+  "caption": "Scorpio, \"seen 2h ago\" is not a case file.\nAsk instead of decoding. Trust can be built slowly."
+ },
+ "k5te09": {
+  "video": "/_blob/6591d77e5ff01cb86ae93d083ba47a27",
+  "poster": "/_blob/e71d41a87de9d5db9267441059ebaa51",
+  "title": "Sagittarius, staying isn't a cage",
+  "len": 10.5,
+  "long": false,
+  "series": "fivethings",
+  "episode": 9,
+  "caption": "Sagittarius, unpack the suitcase. Just for tonight.\nStaying isn't a cage, and home can be an adventure."
+ },
+ "k5te10": {
+  "video": "/_blob/9b1515a1363560d3caff1eaf13c512ef",
+  "poster": "/_blob/ebcd1d7b3531d576b8e177f728caa124",
+  "title": "Capricorn, love isn't a meeting",
+  "len": 11.5,
+  "long": false,
+  "series": "fivethings",
+  "episode": 10,
+  "caption": "Capricorn, it's 2 a.m. and love isn't a calendar invite.\nYour worth isn't your output. Let someone hold you."
+ }
+}
