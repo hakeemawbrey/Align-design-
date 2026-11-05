@@ -1,0 +1,86 @@
+{
+  "id": "041-hang-out-sometime",
+  "series": "Houston",
+  "title": "'We should hang out sometime'",
+  "footer": "auto",
+  "caption": "In Houston, 'sometime' needs a day, a time and a halfway spot.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "houstonlife",
+    "datingadvice",
+    "effort"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "'We should hang out *sometime*' in Houston means…",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "we should hang out sometime!"
+        ]
+      }
+    },
+    {
+      "head": "You live in *Cypress.* They live in Clear Lake.",
+      "vis": {
+        "k": "map",
+        "hoods": [
+          "Cypress",
+          "Clear Lake"
+        ],
+        "pins": true
+      }
+    },
+    {
+      "head": "That's not a hangout. That's a *road trip.*",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-45",
+        "clock": true
+      }
+    },
+    {
+      "head": "So 'sometime' quietly becomes *never.*",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "THIS WEEK?",
+          "NEXT WEEK?",
+          "NEXT MONTH?",
+          "SOMETIME"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "Make it real: a *day*, a time, a halfway spot.",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "7:12 PM",
+        "msgs": [
+          [
+            "me",
+            "saturday, 11 AM, halfway?"
+          ],
+          [
+            "them",
+            "deal. I'll pick the tacos"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Effort is the most *attractive* thing in Houston.",
+      "vis": {
+        "k": "truck",
+        "people": 2
+      }
+    },
+    {
+      "head": "Send this to your *'sometime'* friend. Pick a day."
+    }
+  ]
+}

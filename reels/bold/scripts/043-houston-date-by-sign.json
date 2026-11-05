@@ -1,0 +1,84 @@
+{
+  "id": "043-houston-date-by-sign",
+  "series": "Houston",
+  "title": "Your Houston date, by sign",
+  "footer": "auto",
+  "caption": "A Houston date for every sign. Which one is yours?",
+  "hashtags": [
+    "houston",
+    "htx",
+    "houstondatenight",
+    "zodiac",
+    "dateideas"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Your *Houston* date, by sign.",
+      "vis": {
+        "k": "map",
+        "spin": true
+      }
+    },
+    {
+      "head": "Aries: go-karts, then tacos, then a *rematch.*",
+      "vis": {
+        "k": "person",
+        "sign": "aries",
+        "pose": "cheer",
+        "col": "red"
+      }
+    },
+    {
+      "head": "Taurus: a barbecue line *worth* the wait.",
+      "vis": {
+        "k": "food",
+        "items": [
+          "bbq"
+        ]
+      }
+    },
+    {
+      "head": "Gemini: a food truck park. *Seven* samples each.",
+      "vis": {
+        "k": "truck",
+        "people": 2
+      }
+    },
+    {
+      "head": "Cancer: a picnic by the *bayou.*",
+      "vis": {
+        "k": "bayou",
+        "walkers": 2
+      }
+    },
+    {
+      "head": "Virgo: a farmers market, with a *list.*",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "prop": "flower",
+        "bubble": "item 4: peaches"
+      }
+    },
+    {
+      "head": "Sagittarius: 'Let's just drive to *Galveston.*'",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-45",
+        "label": "SOUTH"
+      }
+    },
+    {
+      "head": "Scorpio: a late drive past the city *lights.*",
+      "vis": {
+        "k": "skyline",
+        "time": "night",
+        "windows": true
+      }
+    },
+    {
+      "head": "Tag who's *planning* your next date."
+    }
+  ]
+}

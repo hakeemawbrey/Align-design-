@@ -1,0 +1,101 @@
+{
+  "id": "031-im-fine-decoded",
+  "series": "Relatable",
+  "title": "'I'm fine,' decoded",
+  "footer": "auto",
+  "caption": "Everyone's fine. Ask twice anyway.",
+  "hashtags": [
+    "relatable",
+    "zodiac",
+    "elements",
+    "astrology",
+    "feelings"
+  ],
+  "beats": [
+    {
+      "eyebrow": "BE HONEST",
+      "head": "'I'm *fine*,' decoded by element.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "I'm fine.",
+          "I'm FINE.",
+          "i'm fine lol",
+          "I'm... fine."
+        ]
+      }
+    },
+    {
+      "head": "Fire: *fine.* Already walked three laps of the block.",
+      "vis": {
+        "k": "person",
+        "sign": "aries",
+        "pose": "walk",
+        "col": "red"
+      }
+    },
+    {
+      "head": "Earth: fine. Has cleaned the *entire* kitchen.",
+      "vis": {
+        "k": "person",
+        "sign": "capricorn",
+        "pose": "shrug",
+        "col": "green",
+        "bubble": "the grout was dirty"
+      }
+    },
+    {
+      "head": "Air: fine, lol. Sent *forty* memes about it.",
+      "vis": {
+        "k": "phone",
+        "name": "Gemini",
+        "sign": "gemini",
+        "time": "1:12 AM",
+        "msgs": [
+          [
+            "them",
+            "lol"
+          ],
+          [
+            "them",
+            "anyway"
+          ],
+          [
+            "them",
+            "unrelated meme"
+          ],
+          [
+            "them",
+            "im fine"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Water: fine. Rewatching the *saddest* thing they own.",
+      "vis": {
+        "k": "person",
+        "sign": "pisces",
+        "pose": "sad",
+        "col": "blue"
+      }
+    },
+    {
+      "head": "Every element: needs *one* person to ask twice.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "bubble": "you sure?"
+        },
+        "b": {
+          "bubble": "...no. can we talk?"
+        },
+        "link": "heart",
+        "linkAt": 0.7
+      }
+    },
+    {
+      "head": "Send this to someone who said *'fine'* today."
+    }
+  ]
+}

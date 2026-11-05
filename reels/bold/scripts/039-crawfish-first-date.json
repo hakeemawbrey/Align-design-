@@ -1,0 +1,89 @@
+{
+  "id": "039-crawfish-first-date",
+  "series": "Houston",
+  "title": "Crawfish first date",
+  "voice": {
+    "voice": "bf_isabella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "There is no cute way to peel a crawfish. That is the point.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "crawfish",
+    "crawfishseason",
+    "firstdate"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "A *crawfish* first date: a bold choice.",
+      "vis": {
+        "k": "food",
+        "items": [
+          "crawfish"
+        ]
+      }
+    },
+    {
+      "head": "There is no *cute* way to peel a crawfish.",
+      "vis": {
+        "k": "person",
+        "pose": "shrug",
+        "col": "red",
+        "bubble": "how?"
+      }
+    },
+    {
+      "head": "Spicy fingers. Corn everywhere. *Zero* napkins left.",
+      "vis": {
+        "k": "bubbles",
+        "float": true,
+        "items": [
+          "pinch",
+          "twist",
+          "pull",
+          "...help"
+        ]
+      }
+    },
+    {
+      "head": "Honestly? The *perfect* first date.",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {},
+        "b": {},
+        "link": "heart",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Nobody stays *polished* over a crawfish tray.",
+      "sub": "You meet the real person, fast.",
+      "vis": {
+        "k": "stamp",
+        "over": "CRAWFISH MODE",
+        "text": "NO FILTER",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Do they *teach* you how to peel? Keep them.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "point",
+          "bubble": "pinch the tail, like this"
+        },
+        "b": {
+          "pose": "cheer"
+        }
+      }
+    },
+    {
+      "head": "Send this to the one who'd *peel* yours for you."
+    }
+  ]
+}

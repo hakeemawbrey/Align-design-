@@ -1,0 +1,94 @@
+{
+  "id": "037-galveston-day-trip",
+  "series": "Houston",
+  "title": "The Galveston day trip test",
+  "voice": {
+    "voice": "af_nicole",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "One day trip tells you more than ten dinners.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "galveston",
+    "daytrip",
+    "datenight"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "The *Galveston* day trip test.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          "sun",
+          "wave",
+          "shell"
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Who drives? Who picks the *music?* Who forgot sunscreen?",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "Drives: Capricorn",
+          "Music: Leo",
+          "No sunscreen: Sagittarius"
+        ]
+      }
+    },
+    {
+      "head": "An hour in the car is a *real* conversation.",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-45",
+        "label": "SOUTH"
+      }
+    },
+    {
+      "head": "Can you two sit in *comfortable* silence?",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "sit"
+        },
+        "b": {
+          "pose": "sit"
+        },
+        "link": "gold",
+        "linkAt": 0.55
+      }
+    },
+    {
+      "head": "Do they share their *fries* on the seawall?",
+      "vis": {
+        "k": "food",
+        "items": [
+          "fries"
+        ]
+      }
+    },
+    {
+      "head": "Skip the guessing. Ask them *before* you go.",
+      "vis": {
+        "k": "talkcard",
+        "q": "Beach day: swim, read, or nap?",
+        "answers": [
+          "swim, obviously",
+          "nap. all day."
+        ],
+        "answersAt": 0.6
+      }
+    },
+    {
+      "head": "Send this to your *road trip* person.",
+      "vis": {
+        "k": "weather",
+        "mode": "sun"
+      }
+    }
+  ]
+}

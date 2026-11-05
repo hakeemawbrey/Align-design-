@@ -1,0 +1,73 @@
+{
+  "id": "035-feeder-road",
+  "series": "Houston",
+  "title": "Missed your exit?",
+  "footer": "auto",
+  "caption": "Missed a chance? Houston always has a feeder road.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "feederroad",
+    "houstontraffic",
+    "datingadvice"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Missed your exit? Welcome to the *feeder road.*",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-45",
+        "label": "FEEDER ROAD"
+      }
+    },
+    {
+      "head": "Houston's promise: there's *always* a way back around.",
+      "vis": {
+        "k": "map",
+        "pins": true
+      }
+    },
+    {
+      "head": "Missed your chance with someone? Same *energy.*",
+      "vis": {
+        "k": "person",
+        "pose": "shrug",
+        "bubble": "I missed my exit",
+        "col": "pink"
+      }
+    },
+    {
+      "head": "Slow down. Turn around. *Try* again.",
+      "vis": {
+        "k": "stamps",
+        "title": "THE ROUTE",
+        "col": "blue",
+        "items": [
+          "✓ Slow down",
+          "✓ Turn around",
+          "✓ Say hi again"
+        ]
+      }
+    },
+    {
+      "head": "And there's a *new* deck every single night.",
+      "vis": {
+        "k": "deck",
+        "n": 7,
+        "label": "TONIGHT'S DECK"
+      }
+    },
+    {
+      "head": "Missed connections aren't *final.*",
+      "vis": {
+        "k": "freeway",
+        "shield": "610",
+        "label": "NEXT EXIT: YOU"
+      }
+    },
+    {
+      "head": "Send this to someone who just *missed* their exit."
+    }
+  ]
+}

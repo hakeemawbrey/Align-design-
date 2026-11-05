@@ -1,0 +1,21 @@
+{
+  "id": "058-north-node",
+  "series": "Zodiac",
+  "title": "Your North Node, explained",
+  "voice": { "voice": "af_heart", "speed": 1.07 },
+  "footer": "auto",
+  "caption": "Your South Node is your usual type. Your North Node is the stretch. Look yours up and tell us what you're growing toward.",
+  "hashtags": ["northnode", "astrology", "birthchart", "growth", "dating"],
+  "beats": [
+    { "eyebrow": "YOUR CHART", "head": "Your *North Node* is where you're headed.", "vis": { "k": "constellation", "shape": "dipper", "link": true } },
+    { "head": "It's not a planet. It's a *point.*", "sub": "Where the Moon's path crosses the Sun's path, heading north.", "vis": { "k": "planet", "p": "moon", "label": "THE MOON'S PATH" } },
+    { "head": "Your *South Node* sits directly opposite.", "sub": "Astrology reads it as your comfort zone and old habits.", "vis": { "k": "versus", "a": { "label": "SOUTH NODE", "icon": "bed", "lines": ["Comfort", "Habit"] }, "b": { "label": "NORTH NODE", "icon": "compass", "lines": ["Growth", "Stretch"] }, "verdict": "vs" } },
+    { "head": "In love, the South Node is your *usual* type.", "sub": "Familiar feels safe, even when it keeps ending the same way.", "vis": { "k": "crowd", "n": 5, "same": "violet" } },
+    { "head": "The North Node is the *stretch.*", "sub": "The kind of love you haven't tried yet.", "vis": { "k": "person", "pose": "walk", "prop": "suitcase", "label": "NEW" } },
+    { "head": "The nodes move *backward* through the zodiac.", "sub": "About eighteen months in each sign.", "vis": { "k": "wheel", "spin": true, "highlight": ["aries", "libra"] } },
+    { "head": "Aries North Node? Learn to *ask* for what you want.", "sub": "Libra South Node: stop keeping the peace at your own expense.", "vis": { "k": "signcard", "sign": "aries", "title": "NORTH NODE", "line": "Ask for it." } },
+    { "head": "Libra North Node? Learn to *share* the wheel.", "sub": "Aries South Node: let someone else take a turn.", "vis": { "k": "signcard", "sign": "libra", "title": "NORTH NODE", "line": "Take turns." } },
+    { "head": "Growth feels *awkward* at first.", "sub": "That's not a red flag. That's just new.", "vis": { "k": "meter", "label": "COMFORT ZONE", "to": 0.85, "ticks": ["Familiar", "Awkward", "Growth"], "col": "green" } },
+    { "head": "Look up your *North Node.*", "sub": "Then tell us what you're growing toward.", "vis": { "k": "glyphs", "mode": "explode" } }
+  ]
+}

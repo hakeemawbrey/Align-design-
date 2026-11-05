@@ -1,0 +1,21 @@
+{
+  "id": "062-big-three-on-a-date",
+  "series": "Zodiac",
+  "title": "Your big three, on a date",
+  "voice": { "voice": "am_michael", "speed": 1.04 },
+  "footer": "auto",
+  "caption": "The Rising shows up on date one, the Sun by month three, and the Moon on the first hard day. Comment your big three.",
+  "hashtags": ["bigthree", "astrology", "risingsign", "moonsign", "dating"],
+  "beats": [
+    { "eyebrow": "YOUR CHART", "head": "Your *big three* show up at different times.", "vis": { "k": "bigthree", "sun": "leo", "moon": "cancer", "rising": "virgo", "labels": true } },
+    { "head": "Their *Rising* is the first date.", "sub": "The vibe, the outfit, the hello.", "vis": { "k": "horizon", "sign": "virgo", "person": true } },
+    { "head": "Virgo Rising: neat, polished, *a little* shy.", "sub": "They notice your shoes before your jokes.", "accent": "virgo", "vis": { "k": "person", "sign": "virgo", "pose": "wave", "bubble": "Hi, I'm early." } },
+    { "head": "Their *Sun* shows up by month three.", "sub": "Who they really are once they're comfortable.", "vis": { "k": "calendar", "pages": ["MONTH 1", "MONTH 2", "MONTH 3"], "mark": true } },
+    { "head": "Leo Sun: suddenly *loud,* warm and generous.", "sub": "The shy one from date one was just warming up.", "accent": "leo", "vis": { "k": "glyph", "sign": "leo", "wash": true, "name": true } },
+    { "head": "Their *Moon* shows up on the hard day.", "sub": "What they need when they're tired, sick or sad.", "vis": { "k": "moon", "phase": "crescent" } },
+    { "head": "Cancer Moon needs *home.*", "sub": "Soup, a blanket, and you staying.", "accent": "cancer", "vis": { "k": "icons", "items": [{ "i": "house", "label": "Home" }, { "i": "bed", "label": "Rest" }, { "i": "heart", "label": "You" }], "layout": "row" } },
+    { "head": "The Align app puts all three on their *card.*", "sub": "So you know the layers before the first hello.", "vis": { "k": "mystery", "sign": "leo", "name": "Avery, 28", "lines": ["Sun ♌ Leo", "Moon ♋ Cancer", "Rising ♍ Virgo"], "flip": true } },
+    { "head": "Same person. *Three* layers.", "sub": "Fall for all of them, not just the first one.", "vis": { "k": "constellation", "n": 3, "link": true } },
+    { "head": "Comment your big three. We'll guess your *first date.*", "vis": { "k": "glyphs", "mode": "rain" } }
+  ]
+}

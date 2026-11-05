@@ -1,0 +1,78 @@
+{
+  "id": "033-lovebug-season",
+  "series": "Houston",
+  "title": "Lovebug season",
+  "footer": "auto",
+  "caption": "Spring in Houston: the lovebugs have a plus-one and you have a windshield.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "lovebugs",
+    "houstonlife",
+    "single"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Lovebug season: even the *bugs* are coupled up.",
+      "vis": {
+        "k": "lovebugs",
+        "n": 6
+      }
+    },
+    {
+      "head": "They fly *joined* in pairs. Everywhere. Onto your windshield.",
+      "vis": {
+        "k": "lovebugs",
+        "n": 12,
+        "keep": true
+      }
+    },
+    {
+      "head": "Meanwhile you, at a red light: *solo.*",
+      "vis": {
+        "k": "person",
+        "pose": "sad",
+        "col": "blue"
+      }
+    },
+    {
+      "head": "Lovebugs don't overthink it. They just *find* each other.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "wave"
+        },
+        "b": {
+          "pose": "wave"
+        },
+        "link": "heart",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "You don't need to be *glued* to someone.",
+      "sub": "But someone to ride with is nice.",
+      "vis": {
+        "k": "skyline",
+        "time": "sunset",
+        "windows": true
+      }
+    },
+    {
+      "head": "A new deck every night, dealt by the *stars.*",
+      "vis": {
+        "k": "deck",
+        "n": 6,
+        "label": "TONIGHT'S DECK"
+      }
+    },
+    {
+      "head": "Send this to your *lovebug.*",
+      "vis": {
+        "k": "lovebugs",
+        "n": 2
+      }
+    }
+  ]
+}

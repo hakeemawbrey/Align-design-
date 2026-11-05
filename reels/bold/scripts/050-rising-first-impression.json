@@ -1,0 +1,114 @@
+{
+  "id": "050-rising-first-impression",
+  "series": "Zodiac",
+  "title": "Your Rising sign = your first impression",
+  "footer": "auto",
+  "caption": "First dates meet your Rising. Month three meets your Sun. Drop yours below.",
+  "hashtags": [
+    "risingsign",
+    "astrology",
+    "bigthree",
+    "firstdate",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "eyebrow": "ZODIAC 101",
+      "head": "Your *Rising* sign is your first impression.",
+      "vis": {
+        "k": "horizon",
+        "sign": "leo",
+        "person": true
+      }
+    },
+    {
+      "head": "It's the sign rising in the *east* when you were born.",
+      "vis": {
+        "k": "horizon",
+        "sign": "leo",
+        "person": true,
+        "keep": true
+      }
+    },
+    {
+      "head": "It changes about every *two hours.*",
+      "sub": "So you need your birth time. To the minute helps.",
+      "vis": {
+        "k": "clock",
+        "from": "5:00",
+        "to": "7:00",
+        "label": "NEW RISING"
+      }
+    },
+    {
+      "head": "Your Rising is the *front door.*",
+      "sub": "How you walk in, dress, and say hello.",
+      "vis": {
+        "k": "person",
+        "sign": "leo",
+        "pose": "wave",
+        "bubble": "Hi! Love your jacket."
+      }
+    },
+    {
+      "head": "Your Sun is the *home* behind it.",
+      "sub": "Who they meet once they're invited in.",
+      "vis": {
+        "k": "bigthree",
+        "sun": "pisces",
+        "moon": "virgo",
+        "rising": "leo",
+        "labels": true
+      }
+    },
+    {
+      "head": "Leo Rising, Pisces Sun? *Bold* hello, soft heart.",
+      "sub": "Date one meets the Rising. Month three meets the Sun.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "LEO RISING",
+          "icon": "crown",
+          "col": "leo",
+          "lines": [
+            "Big hello",
+            "Loud laugh"
+          ]
+        },
+        "b": {
+          "label": "PISCES SUN",
+          "icon": "wave",
+          "col": "pisces",
+          "lines": [
+            "Soft heart",
+            "Deep feelings"
+          ]
+        },
+        "verdict": "vs"
+      }
+    },
+    {
+      "head": "Don't judge a *chart* by its cover.",
+      "sub": "The first impression is only chapter one.",
+      "vis": {
+        "k": "mystery",
+        "sign": "pisces",
+        "name": "Rowan, 29",
+        "lines": [
+          "Sun ♓ Pisces",
+          "Moon ♍ Virgo",
+          "Rising ♌ Leo"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "Drop your *Rising* in the comments.",
+      "sub": "We'll guess your first-date outfit.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "grid"
+      }
+    }
+  ]
+}

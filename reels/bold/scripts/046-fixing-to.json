@@ -1,0 +1,100 @@
+{
+  "id": "046-fixing-to",
+  "series": "Houston",
+  "title": "'Fixing to'",
+  "footer": "auto",
+  "caption": "In Houston, 'fixing to' is a timeline. Don't be fixing to. Just ask.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "texas",
+    "fixingto",
+    "datingadvice"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "In Houston, 'I'm *fixing to*' means anything.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "fixing to leave",
+          "fixing to text you",
+          "fixing to get ready"
+        ]
+      }
+    },
+    {
+      "head": "'Fixing to leave' means *thirty* minutes. Minimum.",
+      "vis": {
+        "k": "clock",
+        "from": "7:00",
+        "to": "7:30",
+        "label": "FIXING TO LEAVE"
+      }
+    },
+    {
+      "head": "'Fixing to text you back' means *Thursday.*",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "Thursday",
+        "msgs": [
+          [
+            "them",
+            "fixing to text you back"
+          ],
+          [
+            "time",
+            "Thursday"
+          ],
+          [
+            "them",
+            "ok I'm back"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "'Fixing to ask you out'? It's been *months.*",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "MARCH",
+          "APRIL",
+          "MAY",
+          "JUNE"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "Don't be *fixing to.* Just ask.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "bubble": "tacos saturday?"
+        },
+        "b": {
+          "bubble": "yes. finally."
+        },
+        "link": "heart",
+        "linkAt": 0.7
+      }
+    },
+    {
+      "head": "And say what you want *up front.*",
+      "vis": {
+        "k": "stamps",
+        "items": [
+          "✕ 'Fixing to' for six months",
+          "✓ Asks you out",
+          "✓ Shows up"
+        ]
+      }
+    },
+    {
+      "head": "Send this to someone who's *fixing to* text you."
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "048-mars-sign-flirt",
+  "series": "Zodiac",
+  "title": "Your Mars sign = how you flirt",
+  "voice": {
+    "voice": "af_bella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Venus is what you want. Mars is how you go get it. What's your opening move?",
+  "hashtags": [
+    "marssign",
+    "astrology",
+    "flirting",
+    "zodiac",
+    "datingadvice"
+  ],
+  "beats": [
+    {
+      "eyebrow": "YOUR CHART",
+      "head": "Your *Mars* sign is how you flirt.",
+      "accent": "mars",
+      "vis": {
+        "k": "planet",
+        "p": "mars",
+        "label": "MARS"
+      }
+    },
+    {
+      "head": "Venus is what you *want.* Mars is how you go get it.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "VENUS",
+          "icon": "heart",
+          "col": "venus",
+          "lines": [
+            "What you want"
+          ]
+        },
+        "b": {
+          "label": "MARS",
+          "icon": "fire",
+          "col": "mars",
+          "lines": [
+            "How you chase it"
+          ]
+        },
+        "verdict": "vs"
+      }
+    },
+    {
+      "head": "Fire Mars flirts *loud.*",
+      "sub": "Aries, Leo, Sagittarius: bold first move, big compliment, zero waiting.",
+      "accent": "fire",
+      "vis": {
+        "k": "person",
+        "sign": "aries",
+        "pose": "point",
+        "bubble": "Hi. You're cute."
+      }
+    },
+    {
+      "head": "Earth Mars flirts *slow.*",
+      "sub": "Taurus, Virgo, Capricorn: they plan the date and actually show up.",
+      "accent": "earth",
+      "vis": {
+        "k": "person",
+        "sign": "taurus",
+        "prop": "flower",
+        "bubble": "Dinner Friday at seven?"
+      }
+    },
+    {
+      "head": "Air Mars flirts with *words.*",
+      "sub": "Gemini, Libra, Aquarius: banter, puns, and a question you can't stop thinking about.",
+      "accent": "air",
+      "vis": {
+        "k": "phone",
+        "name": "Gemini",
+        "sign": "gemini",
+        "time": "8:12 PM",
+        "msgs": [
+          [
+            "them",
+            "ok but hypothetically"
+          ],
+          [
+            "them",
+            "what's your villain origin story"
+          ],
+          [
+            "me",
+            "wow. okay. sit down"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Water Mars flirts with *feelings.*",
+      "sub": "Cancer, Scorpio, Pisces: deep eye contact, and remembering everything you said.",
+      "accent": "water",
+      "vis": {
+        "k": "person",
+        "sign": "pisces",
+        "pose": "think",
+        "think": "You said you love rain…",
+        "heart": true
+      }
+    },
+    {
+      "head": "It's not about *who* chases.",
+      "sub": "It's about how each of you shows interest.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries",
+          "pose": "wave"
+        },
+        "b": {
+          "sign": "taurus"
+        },
+        "link": "spark"
+      }
+    },
+    {
+      "head": "Mars changes signs roughly every *two months.*",
+      "sub": "Your birth date tells you where it was.",
+      "vis": {
+        "k": "wheel",
+        "planets": [
+          [
+            "mars",
+            "leo"
+          ]
+        ],
+        "highlight": "leo"
+      }
+    },
+    {
+      "head": "Comment your *Mars* sign.",
+      "sub": "We'll guess your opening line.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "ring"
+      }
+    }
+  ]
+}

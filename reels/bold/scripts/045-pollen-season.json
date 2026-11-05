@@ -1,0 +1,82 @@
+{
+  "id": "045-pollen-season",
+  "series": "Houston",
+  "title": "Pollen season",
+  "footer": "auto",
+  "caption": "Watery eyes on a first date? Blame the oak trees.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "pollen",
+    "allergyseason",
+    "houstonlife"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Pollen season: your car is *yellow* now.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          "car",
+          "flower",
+          "wind"
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Everyone's eyes are watery. *Nobody* is actually crying.",
+      "vis": {
+        "k": "person",
+        "pose": "sad",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "A teary first date? *Allergies.* Probably.",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {},
+        "b": {},
+        "link": "question",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "So say the soft thing. *Blame* the oak trees.",
+      "vis": {
+        "k": "bubbles",
+        "stack": true,
+        "items": [
+          "I really like you",
+          "(it's the pollen)"
+        ]
+      }
+    },
+    {
+      "head": "Pack tissues. Pack an *honest* question too.",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "Tissues",
+          "Water",
+          "An honest question"
+        ],
+        "pick": 2,
+        "mark": "✓"
+      }
+    },
+    {
+      "head": "Pollen leaves. A *good* person stays.",
+      "vis": {
+        "k": "heart",
+        "mode": "beat"
+      }
+    },
+    {
+      "head": "Send this to your *sneezing* date."
+    }
+  ]
+}

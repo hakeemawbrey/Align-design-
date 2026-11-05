@@ -1,0 +1,21 @@
+{
+  "id": "052-mercury-retrograde-explained",
+  "series": "Zodiac",
+  "title": "Mercury retrograde, actually explained",
+  "voice": { "voice": "af_sarah", "speed": 1.04 },
+  "footer": "auto",
+  "caption": "Mercury doesn't actually reverse. It's a passing-lane illusion, and astrology reads it as a pause, not a curse.",
+  "hashtags": ["mercuryretrograde", "astrology", "astronomy", "zodiac", "dating"],
+  "beats": [
+    { "eyebrow": "ASTROLOGY, EXPLAINED", "head": "Mercury isn't *actually* moving backward.", "accent": "mercury", "vis": { "k": "planet", "p": "mercury", "label": "MERCURY", "gag": "question" } },
+    { "head": "Retrograde is an *optical illusion.*", "sub": "From Earth, a planet seems to slide backward against the stars.", "vis": { "k": "orbit", "planets": ["mercury", "venus", "earth", "mars"], "mode": "plain" } },
+    { "head": "Think of passing a car on the *freeway.*", "sub": "For a moment, the slower car seems to roll backward.", "vis": { "k": "freeway", "label": "PASSING" } },
+    { "head": "Here's Mars: Earth *overtakes* it on the inside lane.", "sub": "And Mars traces a little loop in our sky.", "vis": { "k": "orbit", "planets": ["earth", "mars"], "mode": "retro", "focus": "mars" } },
+    { "head": "Mercury does it from the *inside* track.", "sub": "It laps us, and the same illusion kicks in.", "vis": { "k": "orbit", "planets": ["mercury", "earth"], "mode": "plain", "focus": "mercury" } },
+    { "head": "It happens about *three* times a year.", "sub": "Each one lasts roughly three weeks.", "vis": { "k": "calendar", "pages": ["WEEK 1", "WEEK 2", "WEEK 3"], "mark": true } },
+    { "head": "In astrology, Mercury rules *messages.*", "sub": "So retrograde reads as a time to slow down and double-check.", "vis": { "k": "phone", "name": "Sam", "sign": "virgo", "time": "7:20 PM", "msgs": [["them", "wait, what did you mean by that"], ["me", "let me call you, easier"]] } },
+    { "head": "It's not a *curse.* It's a pause.", "sub": "Reread the text. Confirm the plan. Say what you meant.", "vis": { "k": "checklist", "title": "RETROGRADE MODE", "items": ["Reread before sending", "Confirm the plan", "Say what you mean"] } },
+    { "head": "And no, it didn't make your ex *text.*", "sub": "That was just your ex.", "vis": { "k": "ghost", "label": "EX" } },
+    { "head": "Send this to whoever blames *Mercury* for everything.", "vis": { "k": "planet", "p": "mercury", "gag": "phone" } }
+  ]
+}

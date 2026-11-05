@@ -1,0 +1,78 @@
+{
+  "id": "044-drive-out-for-stars",
+  "series": "Houston",
+  "title": "Leave the city lights",
+  "footer": "auto",
+  "caption": "Best Houston date idea: drive past the glow and look up.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "stargazing",
+    "houstondatenight",
+    "astrology"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "The best Houston date is *outside* Houston.",
+      "vis": {
+        "k": "skyline",
+        "time": "night",
+        "haze": 0.8
+      }
+    },
+    {
+      "head": "Drive past the city *glow.* Keep going.",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-10",
+        "label": "WEST"
+      }
+    },
+    {
+      "head": "Pull over. Lights off. *Look up.*",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 40
+      }
+    },
+    {
+      "head": "More stars than you've *ever* seen from your street.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "rain"
+      }
+    },
+    {
+      "head": "Find their sign. Find *yours.* Argue about it.",
+      "vis": {
+        "k": "wheel",
+        "highlight": [
+          "leo",
+          "scorpio"
+        ]
+      }
+    },
+    {
+      "head": "Then ask the question you *never* ask indoors.",
+      "vis": {
+        "k": "talkcard",
+        "q": "What did you wish for as a kid?",
+        "answers": [
+          "to fly",
+          "a dog. still do."
+        ],
+        "answersAt": 0.6
+      }
+    },
+    {
+      "head": "Send this to who you'd *stargaze* with.",
+      "vis": {
+        "k": "constellation",
+        "shape": "two",
+        "link": true
+      }
+    }
+  ]
+}

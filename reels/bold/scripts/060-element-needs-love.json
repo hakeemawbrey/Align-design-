@@ -1,0 +1,21 @@
+{
+  "id": "060-element-needs-love",
+  "series": "Zodiac",
+  "title": "What each element needs in love",
+  "footer": "auto",
+  "caption": "Fire needs adventure, earth needs consistency, air needs conversation, water needs safety. Which one do you fall for?",
+  "hashtags": ["elements", "astrology", "zodiac", "love", "datingadvice"],
+  "beats": [
+    { "eyebrow": "ZODIAC 101", "head": "What each element *needs* in love.", "vis": { "k": "elements", "show": ["fire", "earth", "air", "water"], "labels": true } },
+    { "head": "Fire needs *adventure.*", "sub": "Aries, Leo, Sagittarius: plans with a spark, praise said out loud.", "accent": "fire", "vis": { "k": "elements", "show": "fire", "signs": true } },
+    { "head": "Give fire *room* to run.", "sub": "Jealousy dims it. Cheering it on makes it glow.", "accent": "fire", "vis": { "k": "icons", "items": [{ "i": "rocket", "label": "New plans" }, { "i": "megaphone", "label": "Hype" }, { "i": "compass", "label": "Freedom" }], "layout": "row" } },
+    { "head": "Earth needs *consistency.*", "sub": "Taurus, Virgo, Capricorn: say it, then do it. Every time.", "accent": "earth", "vis": { "k": "elements", "show": "earth", "signs": true } },
+    { "head": "Earth trusts *actions.*", "sub": "Fixing the wobbly shelf beats a pretty speech.", "accent": "earth", "vis": { "k": "icons", "items": [{ "i": "clock", "label": "On time" }, { "i": "key", "label": "Reliable" }, { "i": "plant", "label": "Patient" }], "layout": "row" } },
+    { "head": "Air needs *conversation.*", "sub": "Gemini, Libra, Aquarius: curiosity, banter, and room to think.", "accent": "air", "vis": { "k": "elements", "show": "air", "signs": true } },
+    { "head": "Air falls for a *mind* first.", "sub": "Ask a strange question. Then actually listen.", "accent": "air", "vis": { "k": "talkcard", "q": "What's an opinion you'd defend forever?" } },
+    { "head": "Water needs *safety.*", "sub": "Cancer, Scorpio, Pisces: gentleness, loyalty, feelings taken seriously.", "accent": "water", "vis": { "k": "elements", "show": "water", "signs": true } },
+    { "head": "Water opens up *slowly.*", "sub": "Rush it and it closes. Wait, and it pours.", "accent": "water", "vis": { "k": "heart", "mode": "open" } },
+    { "head": "Your chart mixes *all four.*", "sub": "Your Moon and Venus often say more than your Sun.", "vis": { "k": "bigthree", "sun": "aries", "moon": "cancer", "rising": "virgo", "labels": true } },
+    { "head": "Which element do you *fall* for?", "sub": "Tell us in the comments.", "vis": { "k": "glyphs", "mode": "grid" } }
+  ]
+}

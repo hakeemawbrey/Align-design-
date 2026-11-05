@@ -1,0 +1,109 @@
+{
+  "id": "053-venus-retrograde",
+  "series": "Zodiac",
+  "title": "What's Venus retrograde?",
+  "footer": "auto",
+  "caption": "About every year and a half, Venus seems to slide backward for six weeks. Astrology calls it a rethink season for love.",
+  "hashtags": [
+    "venusretrograde",
+    "astrology",
+    "venus",
+    "zodiac",
+    "datingadvice"
+  ],
+  "beats": [
+    {
+      "eyebrow": "ASTROLOGY, EXPLAINED",
+      "head": "*Venus* retrograde, in under a minute.",
+      "accent": "venus",
+      "vis": {
+        "k": "planet",
+        "p": "venus",
+        "label": "VENUS"
+      }
+    },
+    {
+      "head": "About every *year and a half,* it seems to go backward.",
+      "sub": "Seen from Earth. Same passing-lane illusion as Mercury.",
+      "vis": {
+        "k": "orbit",
+        "planets": [
+          "venus",
+          "earth"
+        ],
+        "mode": "plain",
+        "focus": "venus"
+      }
+    },
+    {
+      "head": "It lasts about *six weeks.*",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "WEEK 1",
+          "WEEK 2",
+          "WEEK 3",
+          "WEEK 4",
+          "WEEK 5",
+          "WEEK 6"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "Old feelings tend to *resurface.*",
+      "sub": "An ex in your notifications is a memory, not a sign.",
+      "vis": {
+        "k": "notif",
+        "time": "11:48",
+        "items": [
+          [
+            "Messages",
+            "hey stranger"
+          ],
+          [
+            "Memories",
+            "3 years ago today"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Not a *ban* on dating. A slower pace.",
+      "sub": "Great for real talks. Not for rushed decisions.",
+      "vis": {
+        "k": "talkcard",
+        "q": "What do you actually want right now?"
+      }
+    },
+    {
+      "head": "Space fact: Venus draws a *star.*",
+      "sub": "Over eight years, its five retrogrades land in a near-perfect pentagram.",
+      "vis": {
+        "k": "fact",
+        "big": "8",
+        "unit": "years",
+        "note": "5 retrogrades, one star",
+        "tag": "SPACE FACT"
+      }
+    },
+    {
+      "head": "Tag the friend who just got a *'hey stranger.'*",
+      "vis": {
+        "k": "phone",
+        "name": "Ex",
+        "time": "11:48 PM",
+        "msgs": [
+          [
+            "them",
+            "hey stranger"
+          ],
+          [
+            "status",
+            "Seen"
+          ]
+        ]
+      }
+    }
+  ]
+}

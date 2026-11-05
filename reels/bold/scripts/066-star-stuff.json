@@ -1,0 +1,104 @@
+{
+  "id": "066-star-stuff",
+  "series": "Fun facts",
+  "title": "You're made of old stars",
+  "voice": {
+    "voice": "am_michael",
+    "speed": 1.03
+  },
+  "footer": "auto",
+  "caption": "The iron in your blood and the calcium in your bones were made inside stars.",
+  "hashtags": [
+    "funfacts",
+    "stardust",
+    "space",
+    "astronomy",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "The iron in your blood was made in a *star*.",
+      "vis": {
+        "k": "planet",
+        "p": "sun"
+      }
+    },
+    {
+      "head": "Early on, the universe was mostly *hydrogen* and helium.",
+      "vis": {
+        "k": "fact",
+        "big": "H + He",
+        "note": "almost everything, at first",
+        "tag": "IN THE BEGINNING"
+      }
+    },
+    {
+      "head": "Stars fused them into *heavier* elements.",
+      "sub": "Carbon, oxygen, calcium, iron: cooked in starry cores.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "fire",
+            "label": "Carbon"
+          },
+          {
+            "i": "wind",
+            "label": "Oxygen"
+          },
+          {
+            "i": "mountain",
+            "label": "Calcium"
+          },
+          {
+            "i": "bolt",
+            "label": "Iron"
+          }
+        ],
+        "layout": "grid"
+      }
+    },
+    {
+      "head": "When stars died, they *scattered* it across space.",
+      "sub": "New stars, planets and, eventually, people formed from it.",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 14
+      }
+    },
+    {
+      "head": "The calcium in your *bones* is older than the Sun.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "pose": "stand",
+        "label": "YOU"
+      }
+    },
+    {
+      "head": "Everyone you've ever loved is *star stuff* too.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "aries",
+          "pose": "stand"
+        },
+        "b": {
+          "sign": "libra",
+          "pose": "stand"
+        },
+        "link": "spark"
+      }
+    },
+    {
+      "head": "Send this to your favorite *pile* of stardust.",
+      "vis": {
+        "k": "heart",
+        "mode": "fill",
+        "label": "STAR STUFF"
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "067-old-light",
+  "series": "Fun facts",
+  "title": "You're seeing the past",
+  "voice": {
+    "voice": "bf_isabella",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "Starlight is old news: you see every star as it was when its light left.",
+  "hashtags": [
+    "funfacts",
+    "starlight",
+    "space",
+    "astronomy",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "SKY FACT",
+      "head": "Every star you see is a *memory*.",
+      "sub": "You see light that left it long ago.",
+      "vis": {
+        "k": "constellation",
+        "shape": "dipper"
+      }
+    },
+    {
+      "head": "Sunlight takes about *eight minutes* to reach you.",
+      "sub": "So you always see the Sun as it was.",
+      "vis": {
+        "k": "planet",
+        "p": "sun",
+        "label": "8 LIGHT-MINUTES"
+      }
+    },
+    {
+      "head": "The brightest star at night? Light from almost *nine* years ago.",
+      "vis": {
+        "k": "fact",
+        "big": "8.6",
+        "unit": "light-years",
+        "note": "Sirius, the brightest star at night",
+        "tag": "OLD LIGHT"
+      }
+    },
+    {
+      "head": "Some stars you can see sent their light *centuries* ago.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "8 minutes",
+          "8.6 years",
+          "Centuries"
+        ],
+        "icons": [
+          "sun",
+          "star",
+          "hourglass"
+        ],
+        "ding": 2
+      }
+    },
+    {
+      "head": "All that way, just to land in *your* eyes.",
+      "sub": "The least you can do is look up.",
+      "vis": {
+        "k": "person",
+        "sign": "pisces",
+        "pose": "point"
+      }
+    },
+    {
+      "head": "Don't leave a good text sitting until it's *starlight*.",
+      "sub": "Send this to someone whose reply you'd wait light-years for.",
+      "vis": {
+        "k": "phone",
+        "name": "Pisces",
+        "sign": "pisces",
+        "time": "9:12 PM",
+        "msgs": [
+          [
+            "them",
+            "sorry, just saw this"
+          ],
+          [
+            "me",
+            "all good. starlight takes years too"
+          ]
+        ]
+      }
+    }
+  ]
+}

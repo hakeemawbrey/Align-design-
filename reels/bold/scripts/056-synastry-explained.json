@@ -1,0 +1,107 @@
+{
+  "id": "056-synastry-explained",
+  "series": "Zodiac",
+  "title": "What's synastry?",
+  "voice": {
+    "voice": "af_kore",
+    "speed": 1.06
+  },
+  "footer": "auto",
+  "caption": "Synastry stacks two birth charts and reads where they flow and where they'll need to talk. It's a map, not a score.",
+  "hashtags": [
+    "synastry",
+    "astrology",
+    "birthchart",
+    "relationships",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "eyebrow": "ASTROLOGY, EXPLAINED",
+      "head": "Synastry: what happens when two *charts* meet.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "virgo"
+        },
+        "b": {
+          "sign": "sagittarius"
+        },
+        "link": "spark"
+      }
+    },
+    {
+      "head": "Take two birth charts and *stack* them.",
+      "sub": "Your planets land somewhere in their chart, and theirs in yours.",
+      "vis": {
+        "k": "wheel",
+        "planets": [
+          [
+            "sun",
+            "virgo"
+          ],
+          [
+            "moon",
+            "pisces"
+          ],
+          [
+            "venus",
+            "leo"
+          ],
+          [
+            "mars",
+            "sagittarius"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Your Moon on their Sun? You feel *seen.*",
+      "sub": "A classic warm contact. Comfort comes easy.",
+      "vis": {
+        "k": "aspect",
+        "deg": 0,
+        "a": "moon",
+        "b": "sun",
+        "label": "MOON ON SUN"
+      }
+    },
+    {
+      "head": "Some contacts *spark.* Some rub.",
+      "sub": "Friction isn't doom. It's where you learn each other.",
+      "vis": {
+        "k": "aspect",
+        "deg": 90,
+        "a": "mars",
+        "b": "venus",
+        "label": "FRICTION",
+        "keep": true
+      }
+    },
+    {
+      "head": "The Align app reads both charts before you *meet.*",
+      "sub": "Push, pull, align, before anyone sees a face.",
+      "vis": {
+        "k": "ppa",
+        "a": "virgo",
+        "b": "sagittarius"
+      }
+    },
+    {
+      "head": "Charts start the *conversation.*",
+      "sub": "You two still have to have it.",
+      "vis": {
+        "k": "talkcard",
+        "q": "What does a perfect Sunday look like?"
+      }
+    },
+    {
+      "head": "Tag the person whose chart you'd *stack* with yours.",
+      "vis": {
+        "k": "constellation",
+        "shape": "two",
+        "link": true
+      }
+    }
+  ]
+}

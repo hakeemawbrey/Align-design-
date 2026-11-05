@@ -1,0 +1,22 @@
+{
+  "id": "057-ruling-planets",
+  "series": "Zodiac",
+  "title": "Every sign's ruling planet",
+  "footer": "auto",
+  "caption": "Every sign has a ruling planet, and it colors how that sign loves. Find yours, then find where it sits in your chart.",
+  "hashtags": ["rulingplanet", "astrology", "zodiac", "planets", "zodiacsigns"],
+  "beats": [
+    { "eyebrow": "ZODIAC 101", "head": "Every sign has a *boss* planet.", "vis": { "k": "glyphs", "mode": "ring" } },
+    { "head": "It's called your *ruler.*", "sub": "It colors how your sign loves.", "vis": { "k": "wheel", "planets": [["mars", "aries"], ["venus", "taurus"], ["mercury", "gemini"], ["moon", "cancer"], ["sun", "leo"], ["mercury", "virgo"], ["venus", "libra"], ["pluto", "scorpio"], ["jupiter", "sagittarius"], ["saturn", "capricorn"], ["uranus", "aquarius"], ["neptune", "pisces"]] } },
+    { "head": "*Mars* rules Aries.", "sub": "Love is a chase, and they make the first move.", "accent": "mars", "vis": { "k": "planet", "p": "mars", "label": "ARIES" } },
+    { "head": "*Venus* rules Taurus and Libra.", "sub": "Taurus loves through the senses. Libra loves through harmony.", "accent": "venus", "vis": { "k": "planet", "p": "venus", "label": "TAURUS · LIBRA" } },
+    { "head": "*Mercury* rules Gemini and Virgo.", "sub": "Gemini flirts with words. Virgo shows love in the details.", "accent": "mercury", "vis": { "k": "planet", "p": "mercury", "label": "GEMINI · VIRGO" } },
+    { "head": "The *Moon* rules Cancer. The Sun rules Leo.", "sub": "Cancer nurtures quietly. Leo adores out loud.", "accent": "moon", "vis": { "k": "versus", "a": { "label": "CANCER", "icon": "moon", "col": "cancer" }, "b": { "label": "LEO", "icon": "sun", "col": "leo" }, "verdict": "vs" } },
+    { "head": "*Pluto* rules Scorpio.", "sub": "All in, all the way down. Trust is everything.", "accent": "pluto", "vis": { "k": "planet", "p": "pluto", "label": "SCORPIO" } },
+    { "head": "*Jupiter* rules Sagittarius.", "sub": "Love should feel like an adventure that keeps growing.", "accent": "jupiter", "vis": { "k": "planet", "p": "jupiter", "label": "SAGITTARIUS" } },
+    { "head": "*Saturn* rules Capricorn.", "sub": "Slow to start, built to last.", "accent": "saturn", "vis": { "k": "planet", "p": "saturn", "rings": true, "label": "CAPRICORN" } },
+    { "head": "*Uranus* rules Aquarius. Neptune rules Pisces.", "sub": "Aquarius needs freedom. Pisces needs a little magic.", "accent": "uranus", "vis": { "k": "versus", "a": { "label": "AQUARIUS", "icon": "bolt", "col": "aquarius" }, "b": { "label": "PISCES", "icon": "wave", "col": "pisces" }, "verdict": "vs" } },
+    { "head": "Old-school charts use the *classic* rulers.", "sub": "Mars for Scorpio, Saturn for Aquarius, Jupiter for Pisces. Both traditions count.", "vis": { "k": "checklist", "title": "TRADITIONAL RULERS", "items": ["Scorpio → Mars", "Aquarius → Saturn", "Pisces → Jupiter"] } },
+    { "head": "Comment your sign's *ruler.*", "sub": "Then look up where it sits in your chart.", "vis": { "k": "glyphs", "mode": "grid" } }
+  ]
+}

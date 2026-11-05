@@ -1,0 +1,90 @@
+{
+  "id": "038-montrose-or-the-heights",
+  "series": "Houston",
+  "title": "Montrose or the Heights?",
+  "footer": "auto",
+  "caption": "Two great date nights, one freeway between them.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "montrose",
+    "theheights",
+    "houstondatenight"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Montrose or the *Heights:* pick your date night.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "MONTROSE",
+          "icon": "paint",
+          "col": "pink"
+        },
+        "b": {
+          "label": "THE HEIGHTS",
+          "icon": "bike",
+          "col": "blue"
+        },
+        "verdict": "vs"
+      }
+    },
+    {
+      "head": "Montrose: murals, vintage racks, a *late* coffee.",
+      "vis": {
+        "k": "map",
+        "hoods": [
+          "Montrose"
+        ]
+      }
+    },
+    {
+      "head": "The Heights: porches, bungalows, a *long* walk.",
+      "vis": {
+        "k": "map",
+        "keep": true,
+        "hoods": [
+          "Montrose",
+          "the Heights"
+        ]
+      }
+    },
+    {
+      "head": "Some people's whole rule: never *cross* I-10.",
+      "vis": {
+        "k": "freeway",
+        "shield": "I-10"
+      }
+    },
+    {
+      "head": "But the right person is worth the *drive.*",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "label": "MONTROSE"
+        },
+        "b": {
+          "label": "HEIGHTS"
+        },
+        "link": "gold",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Settle it with one *question:*",
+      "vis": {
+        "k": "talkcard",
+        "q": "Porch night or gallery night?",
+        "answers": [
+          "porch, always",
+          "gallery, then porch"
+        ],
+        "answersAt": 0.6
+      }
+    },
+    {
+      "head": "Tag your *Montrose* friend. And your Heights one."
+    }
+  ]
+}

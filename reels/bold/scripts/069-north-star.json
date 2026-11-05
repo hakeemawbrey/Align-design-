@@ -1,0 +1,109 @@
+{
+  "id": "069-north-star",
+  "series": "Fun facts",
+  "title": "The North Star is temporary",
+  "voice": {
+    "voice": "af_bella",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "Earth wobbles, so the North Star changes. In about 12,000 years it'll be Vega.",
+  "hashtags": [
+    "funfacts",
+    "northstar",
+    "space",
+    "astronomy",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "The North Star won't *always* be the North Star.",
+      "vis": {
+        "k": "constellation",
+        "shape": "dipper"
+      }
+    },
+    {
+      "head": "Earth *wobbles* like a slowing spinning top.",
+      "sub": "One full wobble takes about twenty-six thousand years.",
+      "vis": {
+        "k": "planet",
+        "p": "earth",
+        "label": "≈ 26,000 YEARS"
+      }
+    },
+    {
+      "head": "So the sky's pole slowly *drifts* between stars.",
+      "vis": {
+        "k": "wheel",
+        "spin": true
+      }
+    },
+    {
+      "head": "When the pyramids rose, the pole star was *Thuban*.",
+      "sub": "Today it's Polaris.",
+      "vis": {
+        "k": "timeline",
+        "marks": [
+          "~2700 BC · Thuban",
+          "Now · Polaris",
+          "~14,000 AD · Vega"
+        ],
+        "icons": [
+          "star",
+          "star",
+          "star"
+        ],
+        "ding": 1
+      }
+    },
+    {
+      "head": "In about twelve thousand years, it'll be *Vega*.",
+      "vis": {
+        "k": "fact",
+        "big": "~12,000",
+        "unit": "years",
+        "note": "until Vega takes over",
+        "tag": "NEXT NORTH STAR"
+      }
+    },
+    {
+      "head": "Even the sky's *fixed point* moves.",
+      "sub": "Love isn't never changing. It's staying close while you both do.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "capricorn",
+          "pose": "walk"
+        },
+        "b": {
+          "sign": "cancer",
+          "pose": "walk"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Send this to your *North Star*, this era and the next.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "compass",
+            "label": "This era"
+          },
+          {
+            "i": "star",
+            "label": "Every era"
+          },
+          {
+            "i": "heart",
+            "label": "You"
+          }
+        ],
+        "layout": "row"
+      }
+    }
+  ]
+}

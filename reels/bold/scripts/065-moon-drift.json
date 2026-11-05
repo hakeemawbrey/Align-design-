@@ -1,0 +1,101 @@
+{
+  "id": "065-moon-drift",
+  "series": "Fun facts",
+  "title": "The Moon is slowly leaving",
+  "voice": {
+    "voice": "af_nicole",
+    "speed": 1.06
+  },
+  "footer": "auto",
+  "caption": "The Moon drifts about 3.8 cm farther from Earth every year.",
+  "hashtags": [
+    "funfacts",
+    "moon",
+    "space",
+    "astronomy",
+    "relationships"
+  ],
+  "beats": [
+    {
+      "eyebrow": "FUN FACT",
+      "head": "The Moon moves *farther* from Earth every year.",
+      "vis": {
+        "k": "moon",
+        "phase": "full"
+      }
+    },
+    {
+      "head": "About *three point eight* centimeters a year.",
+      "sub": "Roughly as fast as your fingernails grow.",
+      "vis": {
+        "k": "fact",
+        "big": "3.8",
+        "unit": "cm a year",
+        "note": "farther from Earth, every year",
+        "tag": "SKY FACT"
+      }
+    },
+    {
+      "head": "We measure it with *lasers* and mirrors left up there.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "bolt",
+            "label": "Laser"
+          },
+          {
+            "i": "mirror",
+            "label": "Mirror"
+          },
+          {
+            "i": "moon",
+            "label": "Moon"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "Earth's *tides* slowly nudge it outward.",
+      "sub": "The Moon pulls on the oceans, and the oceans tug back.",
+      "vis": {
+        "k": "planet",
+        "p": "earth",
+        "gag": "wave"
+      }
+    },
+    {
+      "head": "Don't worry. It's not *leaving* us.",
+      "sub": "At this pace, it stays our Moon for billions of years.",
+      "vis": {
+        "k": "moon",
+        "strip": true
+      }
+    },
+    {
+      "head": "Distance grows a *little* at a time.",
+      "sub": "So does closeness. Small check-ins keep you in orbit.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "cancer",
+          "pose": "phone"
+        },
+        "b": {
+          "sign": "taurus",
+          "pose": "wave"
+        },
+        "link": "gold"
+      }
+    },
+    {
+      "head": "Send this to someone you'd *never* drift from.",
+      "vis": {
+        "k": "constellation",
+        "shape": "two",
+        "link": true
+      }
+    }
+  ]
+}

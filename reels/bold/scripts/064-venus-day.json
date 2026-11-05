@@ -1,0 +1,97 @@
+{
+  "id": "064-venus-day",
+  "series": "Fun facts",
+  "title": "A day on Venus outlasts its year",
+  "voice": {
+    "voice": "af_heart",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "One spin of Venus takes longer than one lap around the Sun.",
+  "hashtags": [
+    "funfacts",
+    "venus",
+    "space",
+    "astronomy",
+    "love"
+  ],
+  "beats": [
+    {
+      "eyebrow": "SKY FACT",
+      "head": "A day on Venus is *longer* than its year.",
+      "vis": {
+        "k": "planet",
+        "p": "venus",
+        "label": "VENUS"
+      }
+    },
+    {
+      "head": "One spin takes about *two hundred forty-three* Earth days.",
+      "vis": {
+        "k": "fact",
+        "big": "243",
+        "unit": "Earth days",
+        "note": "one turn on its axis",
+        "tag": "1 SPIN"
+      }
+    },
+    {
+      "head": "One lap around the Sun? About *two hundred twenty-five*.",
+      "vis": {
+        "k": "orbit",
+        "planets": [
+          "venus",
+          "earth"
+        ],
+        "mode": "return",
+        "p": "venus",
+        "years": "≈ 225 days"
+      }
+    },
+    {
+      "head": "And it spins *backwards*.",
+      "sub": "On Venus, the Sun rises in the west.",
+      "vis": {
+        "k": "versus",
+        "a": {
+          "label": "EARTH",
+          "icon": "sun",
+          "lines": [
+            "Sun rises east"
+          ]
+        },
+        "b": {
+          "label": "VENUS",
+          "icon": "sun",
+          "lines": [
+            "Sun rises west"
+          ]
+        },
+        "verdict": "≠"
+      }
+    },
+    {
+      "head": "Slow, a little *contrary*, and still the brightest planet up there.",
+      "sub": "No wonder astrology made her the planet of love.",
+      "vis": {
+        "k": "heart",
+        "mode": "beat",
+        "label": "VENUS"
+      }
+    },
+    {
+      "head": "Some things are worth a *slow* day.",
+      "sub": "Send this to someone you'd spend two hundred forty-three days with.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "DAY 1",
+          "DAY 100",
+          "DAY 200",
+          "DAY 243"
+        ],
+        "mark": true
+      }
+    }
+  ]
+}

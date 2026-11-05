@@ -1,0 +1,82 @@
+{
+  "id": "040-pho-on-bellaire",
+  "series": "Houston",
+  "title": "Pho on Bellaire",
+  "footer": "auto",
+  "caption": "Rainy night, bad week, first date: the answer is pho.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "pho",
+    "bellaire",
+    "houstonfood"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Pho on Bellaire is a *love* language.",
+      "vis": {
+        "k": "food",
+        "items": [
+          "pho"
+        ]
+      }
+    },
+    {
+      "head": "Rainy night? *Pho.* Bad week? Pho. First date? Pho.",
+      "vis": {
+        "k": "weather",
+        "mode": "rain"
+      }
+    },
+    {
+      "head": "You learn a lot from how they *build* a bowl.",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "All the basil",
+          "Lime, no sprouts",
+          "Sauce before tasting"
+        ]
+      }
+    },
+    {
+      "head": "Sauce before tasting? *Bold.* Respect.",
+      "vis": {
+        "k": "stamp",
+        "over": "SAUCE FIRST",
+        "text": "BOLD",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Do they ask what *you* like to order?",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {
+          "bubble": "what's your order?"
+        },
+        "b": {}
+      }
+    },
+    {
+      "head": "Warm broth, warm person. That's the *whole* test.",
+      "vis": {
+        "k": "heart",
+        "mode": "fill",
+        "label": "WARM"
+      }
+    },
+    {
+      "head": "Send this to your *pho* date.",
+      "vis": {
+        "k": "food",
+        "items": [
+          "pho",
+          "boba"
+        ]
+      }
+    }
+  ]
+}

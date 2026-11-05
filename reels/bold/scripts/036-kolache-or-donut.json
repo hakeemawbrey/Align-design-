@@ -1,0 +1,93 @@
+{
+  "id": "036-kolache-or-donut",
+  "series": "Houston",
+  "title": "Kolache or donut?",
+  "footer": "auto",
+  "caption": "The Houston breakfast debate, settled by the stars. Kind of.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "kolache",
+    "houstonfood",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Houston's real question: *kolache* or donut?",
+      "vis": {
+        "k": "food",
+        "items": [
+          "kolache",
+          "donut"
+        ]
+      }
+    },
+    {
+      "head": "Taurus: both. *Obviously.* With coffee.",
+      "vis": {
+        "k": "food",
+        "items": [
+          "kolache",
+          "donut",
+          "coffee"
+        ]
+      }
+    },
+    {
+      "head": "Virgo: kolache. Fewer *crumbs*, cleaner car.",
+      "vis": {
+        "k": "person",
+        "sign": "virgo",
+        "prop": "coffee",
+        "col": "green"
+      }
+    },
+    {
+      "head": "Leo: the donut with the *most* sprinkles.",
+      "vis": {
+        "k": "person",
+        "sign": "leo",
+        "pose": "cheer",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Gemini: half of each. And then *your* half.",
+      "vis": {
+        "k": "duo",
+        "table": true,
+        "a": {
+          "sign": "gemini",
+          "pose": "point",
+          "bubble": "you gonna finish that?"
+        },
+        "b": {}
+      }
+    },
+    {
+      "head": "Capricorn: already bought a dozen for the *office.*",
+      "vis": {
+        "k": "person",
+        "sign": "capricorn",
+        "prop": "suitcase",
+        "bubble": "for the team"
+      }
+    },
+    {
+      "head": "The real test: will they *share* the box?",
+      "vis": {
+        "k": "talkcard",
+        "q": "Kolache or donut? Defend your answer.",
+        "answers": [
+          "sausage kolache, always",
+          "donut. no notes."
+        ],
+        "answersAt": 0.6
+      }
+    },
+    {
+      "head": "Tag your *kolache* person."
+    }
+  ]
+}

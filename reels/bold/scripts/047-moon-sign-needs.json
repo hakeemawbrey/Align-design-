@@ -1,0 +1,127 @@
+{
+  "id": "047-moon-sign-needs",
+  "series": "Zodiac",
+  "title": "Your Moon sign = what you need",
+  "voice": {
+    "voice": "af_heart",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "Your Sun is who you are. Your Moon is what you need when the day goes sideways. Which one's yours?",
+  "hashtags": [
+    "moonsign",
+    "astrology",
+    "zodiac",
+    "datingadvice",
+    "houston"
+  ],
+  "beats": [
+    {
+      "eyebrow": "ZODIAC 101",
+      "head": "Your Sun is who you are. Your *Moon* is what you need.",
+      "vis": {
+        "k": "moon",
+        "phase": "full"
+      }
+    },
+    {
+      "head": "Your Moon sign is your *inner* weather.",
+      "sub": "Moods, comfort, and what makes you feel safe.",
+      "vis": {
+        "k": "planet",
+        "p": "moon",
+        "label": "THE MOON"
+      }
+    },
+    {
+      "head": "It changes signs every *two and a half* days.",
+      "sub": "So your birth time can decide which Moon you got.",
+      "vis": {
+        "k": "moon",
+        "strip": true
+      }
+    },
+    {
+      "head": "Fire Moons need *excitement.*",
+      "sub": "Aries, Leo, Sagittarius: plans, play, a little spontaneity.",
+      "accent": "fire",
+      "vis": {
+        "k": "elements",
+        "show": "fire",
+        "signs": true
+      }
+    },
+    {
+      "head": "Earth Moons need *steadiness.*",
+      "sub": "Taurus, Virgo, Capricorn: show up when you said you would.",
+      "accent": "earth",
+      "vis": {
+        "k": "elements",
+        "show": "earth",
+        "signs": true,
+        "keep": true
+      }
+    },
+    {
+      "head": "Air Moons need *conversation.*",
+      "sub": "Gemini, Libra, Aquarius: talk it out, then give them room to think.",
+      "accent": "air",
+      "vis": {
+        "k": "elements",
+        "show": "air",
+        "signs": true,
+        "keep": true
+      }
+    },
+    {
+      "head": "Water Moons need *safety.*",
+      "sub": "Cancer, Scorpio, Pisces: feelings welcomed, never laughed at.",
+      "accent": "water",
+      "vis": {
+        "k": "elements",
+        "show": "water",
+        "signs": true,
+        "keep": true
+      }
+    },
+    {
+      "head": "Dating someone? *Learn* their Moon.",
+      "sub": "It's how they want to be cared for on hard days.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "cancer",
+          "pose": "sad"
+        },
+        "b": {
+          "sign": "taurus",
+          "prop": "coffee"
+        },
+        "link": "heart"
+      }
+    },
+    {
+      "head": "The Align app puts your *big three* on your card.",
+      "sub": "So your Moon walks in before your face does.",
+      "vis": {
+        "k": "mystery",
+        "sign": "scorpio",
+        "name": "Rowan, 29",
+        "lines": [
+          "Sun ♏ Scorpio",
+          "Moon ♋ Cancer",
+          "Rising ♌ Leo"
+        ],
+        "flip": true
+      }
+    },
+    {
+      "head": "Go check your *Moon* sign.",
+      "sub": "Then tell someone what it needs.",
+      "vis": {
+        "k": "moon",
+        "wax": true
+      }
+    }
+  ]
+}

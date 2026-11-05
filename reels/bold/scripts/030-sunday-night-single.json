@@ -1,0 +1,83 @@
+{
+  "id": "030-sunday-night-single",
+  "series": "Relatable",
+  "title": "Single on a Sunday night",
+  "footer": "auto",
+  "caption": "Sunday scaries, single edition. You are doing better than you think.",
+  "hashtags": [
+    "relatable",
+    "single",
+    "sundaynight",
+    "selflove",
+    "dating"
+  ],
+  "beats": [
+    {
+      "eyebrow": "SUNDAY, 9 PM",
+      "head": "Being single on a *Sunday* night hits different.",
+      "vis": {
+        "k": "person",
+        "pose": "phone",
+        "col": "blue"
+      }
+    },
+    {
+      "head": "Face mask on. *Main character* playlist on.",
+      "vis": {
+        "k": "person",
+        "pose": "sit",
+        "bubble": "self-care era",
+        "col": "violet"
+      }
+    },
+    {
+      "head": "Then a *couple* walks past your window.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "walk"
+        },
+        "b": {
+          "pose": "walk"
+        },
+        "link": "heart",
+        "linkAt": 0.35
+      }
+    },
+    {
+      "head": "Suddenly you are writing a *wedding* speech. For nobody.",
+      "vis": {
+        "k": "person",
+        "pose": "think",
+        "think": true,
+        "bubble": "and that's when I knew..."
+      }
+    },
+    {
+      "head": "So you make a plan titled *'Next Time.'*",
+      "vis": {
+        "k": "stamps",
+        "title": "NEXT TIME",
+        "col": "gold",
+        "items": [
+          "✓ Say yes to plans",
+          "✓ Ask real questions",
+          "✕ Settle for 'hey'"
+        ]
+      }
+    },
+    {
+      "head": "Then you remember: *alone* isn't lonely.",
+      "vis": {
+        "k": "person",
+        "pose": "cheer",
+        "prop": "heart",
+        "col": "gold"
+      }
+    },
+    {
+      "head": "Send this to your *Sunday-night* friend.",
+      "sub": "Call them. They're up."
+    }
+  ]
+}

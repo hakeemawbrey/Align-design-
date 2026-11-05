@@ -1,0 +1,21 @@
+{
+  "id": "049-mercury-sign-texting",
+  "series": "Zodiac",
+  "title": "Your Mercury sign = how you text",
+  "voice": { "voice": "bf_emma", "speed": 1.03 },
+  "footer": "auto",
+  "caption": "Paragraphs, one-word replies, voice notes at midnight: blame (or thank) your Mercury sign.",
+  "hashtags": ["mercurysign", "astrology", "texting", "zodiac", "dating"],
+  "beats": [
+    { "eyebrow": "YOUR CHART", "head": "Your *Mercury* sign is how you text.", "accent": "mercury", "vis": { "k": "phone", "name": "Mercury", "sign": "gemini", "time": "9:41 PM", "msgs": [["them", "hey"], ["me", "HEY. ok so. long story"], ["typing"]] } },
+    { "head": "Mercury rules *talking,* thinking and texting.", "sub": "It's the messenger planet.", "vis": { "k": "planet", "p": "mercury", "label": "MERCURY", "gag": "chat" } },
+    { "head": "Fun fact: it always stays *close* to your Sun.", "sub": "Your Mercury is in your Sun sign, or one right next to it.", "vis": { "k": "wheel", "planets": [["sun", "leo"], ["mercury", "virgo"]], "highlight": ["cancer", "leo", "virgo"] } },
+    { "head": "Fire Mercury texts *fast.*", "sub": "Aries, Leo, Sagittarius: caps lock, voice notes, replies in seconds.", "accent": "fire", "vis": { "k": "bubbles", "items": ["OMG YES", "wait", "ok calling you"], "stack": true } },
+    { "head": "Earth Mercury texts *on purpose.*", "sub": "Taurus, Virgo, Capricorn: full sentences, clear plans, real punctuation.", "accent": "earth", "vis": { "k": "bubbles", "items": ["Dinner Friday at 7?", "I booked it.", "Bring a jacket."], "stack": true } },
+    { "head": "Air Mercury texts in *paragraphs.*", "sub": "Gemini, Libra, Aquarius: three topics at once, plus a follow-up question.", "accent": "air", "vis": { "k": "bubbles", "items": ["ok random thought", "also did you see this", "anyway what's your take"], "stack": true } },
+    { "head": "Water Mercury texts the *vibe.*", "sub": "Cancer, Scorpio, Pisces: they read your tone, and the pause before it.", "accent": "water", "vis": { "k": "bubbles", "items": ["you ok?", "you sound off", "I'm here."], "stack": true } },
+    { "head": "Different *styles,* not bad intentions.", "sub": "A short reply isn't always a cold one.", "vis": { "k": "versus", "a": { "label": "FAST", "icon": "bolt", "col": "fire" }, "b": { "label": "SLOW", "icon": "hourglass", "col": "water" }, "verdict": "=" } },
+    { "head": "Ask how they like to *talk.*", "sub": "Calls, texts or voice notes. Then meet in the middle.", "vis": { "k": "icons", "items": [{ "i": "phone", "label": "Calls" }, { "i": "chat", "label": "Texts" }, { "i": "headphones", "label": "Voice notes" }], "layout": "row" } },
+    { "head": "Send this to your *slowest* texter.", "vis": { "k": "planet", "p": "mercury", "gag": "phone" } }
+  ]
+}

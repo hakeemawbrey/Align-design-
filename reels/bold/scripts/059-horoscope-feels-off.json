@@ -1,0 +1,20 @@
+{
+  "id": "059-horoscope-feels-off",
+  "series": "Zodiac",
+  "title": "Why your horoscope feels off",
+  "voice": { "voice": "af_bella", "speed": 1.03 },
+  "footer": "auto",
+  "caption": "A Sun-sign horoscope is written for a twelfth of everyone. You're a whole chart. Try reading yours for your Rising too.",
+  "hashtags": ["horoscope", "astrology", "birthchart", "bigthree", "zodiac"],
+  "beats": [
+    { "eyebrow": "ASTROLOGY, EXPLAINED", "head": "Your horoscope feels *off?* Here's why.", "vis": { "k": "note", "title": "TODAY'S HOROSCOPE", "lines": ["Love finds you today.", "Avoid big decisions.", "Lucky color: teal."] } },
+    { "head": "It's written for your *Sun* sign only.", "sub": "That's about one in twelve people, all reading the same forecast.", "vis": { "k": "crowd", "n": 12, "same": "gold" } },
+    { "head": "But you're a *whole* chart.", "sub": "Ten planets, twelve houses, and a Rising sign.", "vis": { "k": "wheel", "planets": [["sun", "gemini"], ["moon", "capricorn"], ["mercury", "taurus"], ["venus", "cancer"], ["mars", "leo"]] } },
+    { "head": "Your Sun is your *core.*", "sub": "Your Moon is your mood. Your Rising is your first impression.", "vis": { "k": "bigthree", "sun": "gemini", "moon": "capricorn", "rising": "pisces", "labels": true } },
+    { "head": "Gemini Sun, Capricorn Moon? *Two* moods in one person.", "sub": "Chatty on the surface, careful with feelings.", "vis": { "k": "versus", "a": { "label": "GEMINI SUN", "icon": "chat", "col": "gemini" }, "b": { "label": "CAPRICORN MOON", "icon": "mountain", "col": "capricorn" }, "verdict": "vs" } },
+    { "head": "Tip: read your horoscope for your *Rising* too.", "sub": "Forecasts lean on the houses, and your houses start from your Rising.", "vis": { "k": "horizon", "sign": "pisces", "person": true } },
+    { "head": "Same rule in *dating.*", "sub": "A sign isn't a person. Don't write anyone off for theirs.", "vis": { "k": "stamps", "title": "DATING RULE", "items": ["✕ 'Ew, a Gemini'", "✓ 'Tell me your Moon'"] } },
+    { "head": "The Align app shows their chart before their *face.*", "sub": "So you meet the whole sky, not just the Sun.", "vis": { "k": "mystery", "sign": "gemini", "name": "Sol, 31", "lines": ["Sun ♊ Gemini", "Moon ♑ Capricorn", "Rising ♓ Pisces"], "flip": true } },
+    { "head": "Send this to the friend whose horoscope is *always* wrong.", "vis": { "k": "glyphs", "mode": "rain" } }
+  ]
+}

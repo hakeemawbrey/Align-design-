@@ -1,0 +1,21 @@
+{
+  "id": "061-fixed-signs-love",
+  "series": "Zodiac",
+  "title": "Fixed signs in love",
+  "voice": { "voice": "bf_emma", "speed": 1.08 },
+  "footer": "auto",
+  "caption": "Taurus, Leo, Scorpio, Aquarius: loyal, steady, and yes, a little stubborn. Tag the most loyal one you know.",
+  "hashtags": ["fixedsigns", "astrology", "taurus", "leo", "scorpio", "aquarius"],
+  "beats": [
+    { "eyebrow": "ZODIAC 101", "head": "Dating a *fixed* sign? Read this first.", "vis": { "k": "glyphs", "mode": "grid", "highlight": ["taurus", "leo", "scorpio", "aquarius"] } },
+    { "head": "Taurus, Leo, Scorpio, *Aquarius.*", "sub": "One from every element, each in the middle of a season.", "vis": { "k": "wheel", "highlight": ["taurus", "leo", "scorpio", "aquarius"] } },
+    { "head": "Fixed means *loyal.*", "sub": "Once they choose you, they keep choosing you.", "vis": { "k": "heart", "mode": "lock" } },
+    { "head": "Fixed also means *stubborn.*", "sub": "Changing their mind takes time, not pressure.", "accent": "red", "vis": { "k": "stamp", "text": "STUBBORN", "over": "ALSO", "col": "red" } },
+    { "head": "Taurus holds on with *routine.*", "sub": "Same spot, same order, same person. That's devotion.", "accent": "taurus", "vis": { "k": "glyph", "sign": "taurus", "name": true, "prop": "coffee" } },
+    { "head": "Leo holds on with *warmth.*", "sub": "Big loyalty, big gestures. Just remember to clap.", "accent": "leo", "vis": { "k": "glyph", "sign": "leo", "name": true, "prop": "crown" } },
+    { "head": "Scorpio holds on with *depth.*", "sub": "Trust is earned slowly, then protected for good.", "accent": "scorpio", "vis": { "k": "glyph", "sign": "scorpio", "name": true, "prop": "key" } },
+    { "head": "Aquarius holds on with *freedom.*", "sub": "Loyal to you, as long as they can stay themselves.", "accent": "aquarius", "vis": { "k": "glyph", "sign": "aquarius", "name": true, "prop": "bolt" } },
+    { "head": "Disagreeing with a fixed sign? *Pause,* don't push.", "sub": "Give them space to land on it themselves.", "vis": { "k": "scale", "a": "PUSH", "b": "PAUSE", "tilt": 0.6 } },
+    { "head": "Tag the most *loyal* fixed sign you know.", "vis": { "k": "crowd", "n": 4, "signs": ["taurus", "leo", "scorpio", "aquarius"], "pose": "cheer" } }
+  ]
+}

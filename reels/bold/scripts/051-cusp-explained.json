@@ -1,0 +1,20 @@
+{
+  "id": "051-cusp-explained",
+  "series": "Zodiac",
+  "title": "Born on the cusp? Read this",
+  "voice": { "voice": "am_michael", "speed": 1.06 },
+  "footer": "auto",
+  "caption": "You're not half Pisces, half Aries. The Sun was in one sign when you were born. Here's how to check.",
+  "hashtags": ["cusp", "astrology", "zodiac", "sunsign", "birthchart"],
+  "beats": [
+    { "eyebrow": "ZODIAC 101", "head": "Born on a *cusp?*", "sub": "You're not half one sign and half another.", "vis": { "k": "versus", "a": { "label": "PISCES", "icon": "wave", "col": "pisces" }, "b": { "label": "ARIES", "icon": "fire", "col": "aries" }, "verdict": "≠" } },
+    { "head": "A cusp is just the *line* between two signs.", "sub": "Like the border between two neighboring towns.", "vis": { "k": "wheel", "highlight": ["pisces", "aries"], "sun": "aries" } },
+    { "head": "When you were born, the Sun was in *one* sign.", "sub": "Not two. The math picks a side, down to the minute.", "vis": { "k": "planet", "p": "sun", "label": "THE SUN" } },
+    { "head": "The dates you see are *averages.*", "sub": "The switch can move by a day from year to year.", "vis": { "k": "calendar", "pages": ["MAR 19", "MAR 20", "MAR 21"], "mark": true } },
+    { "head": "Born near the switch? Check your *year* and birth time.", "vis": { "k": "clock", "from": "11:58", "to": "12:02", "label": "SIGN CHANGE" } },
+    { "head": "Still feel like *both?* That's real.", "sub": "Your Moon, Mercury or Venus may sit in the next sign.", "vis": { "k": "icons", "items": [{ "i": "moon", "label": "Moon" }, { "i": "chat", "label": "Mercury" }, { "i": "heart", "label": "Venus" }], "layout": "row" } },
+    { "head": "Your Sun is one sign. Your chart holds *many.*", "sub": "That's where the mix comes from.", "vis": { "k": "glyphs", "mode": "explode", "highlight": ["pisces", "aries"] } },
+    { "head": "Dating a cusp baby? *Ask* for their birth time.", "sub": "Then you'll know exactly who you're texting.", "vis": { "k": "person", "sign": "aries", "pose": "phone", "bubble": "What time were you born?" } },
+    { "head": "Tag a friend who swears they're a *cusp.*", "vis": { "k": "stamp", "text": "ONE SIGN", "over": "CUSP?", "col": "gold" } }
+  ]
+}

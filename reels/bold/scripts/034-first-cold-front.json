@@ -1,0 +1,91 @@
+{
+  "id": "034-first-cold-front",
+  "series": "Houston",
+  "title": "The first cold front",
+  "voice": {
+    "voice": "am_michael",
+    "speed": 1.05
+  },
+  "footer": "auto",
+  "caption": "One cold front, two days of cuffing season, then shorts again.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "coldfront",
+    "cuffingseason",
+    "houstonweather"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "The first *cold front* hits Houston.",
+      "vis": {
+        "k": "weather",
+        "mode": "cold-front",
+        "person": true
+      }
+    },
+    {
+      "head": "Sixty-two degrees, and everyone's in a *puffer* jacket.",
+      "vis": {
+        "k": "person",
+        "pose": "shrug",
+        "prop": "hat",
+        "col": "blue",
+        "bubble": "brrr"
+      }
+    },
+    {
+      "head": "Cuffing season begins. It lasts about *two* days.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "COLD FRONT",
+          "DAY 2",
+          "84° AGAIN"
+        ],
+        "mark": true
+      }
+    },
+    {
+      "head": "By Thursday it's *shorts* weather again.",
+      "vis": {
+        "k": "weather",
+        "mode": "heat"
+      }
+    },
+    {
+      "head": "So don't pick someone for the *weather.*",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "shrug"
+        },
+        "b": {
+          "pose": "shrug"
+        },
+        "link": "question",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Pick someone who's *warm* in every season.",
+      "sub": "Say your dealbreakers first.",
+      "vis": {
+        "k": "stamps",
+        "items": [
+          "✕ 'Just for the winter'",
+          "✓ Wants something real"
+        ]
+      }
+    },
+    {
+      "head": "Send this to your *two-day* cuff.",
+      "vis": {
+        "k": "skyline",
+        "time": "night",
+        "windows": true
+      }
+    }
+  ]
+}

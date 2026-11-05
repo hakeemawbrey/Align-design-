@@ -1,0 +1,116 @@
+{
+  "id": "068-week-sky",
+  "series": "Fun facts",
+  "title": "Your week is named after the sky",
+  "footer": "auto",
+  "caption": "Sun, Moon, Saturn, and the gods matched to Mars, Mercury, Jupiter and Venus.",
+  "hashtags": [
+    "funfacts",
+    "etymology",
+    "planets",
+    "datenight",
+    "astrology"
+  ],
+  "beats": [
+    {
+      "eyebrow": "FUN FACT",
+      "head": "Your whole week is named after the *sky*.",
+      "vis": {
+        "k": "calendar",
+        "pages": [
+          "SUN",
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI",
+          "SAT"
+        ]
+      }
+    },
+    {
+      "head": "*Sunday:* the Sun. Monday: the Moon.",
+      "vis": {
+        "k": "icons",
+        "items": [
+          {
+            "i": "sun",
+            "label": "Sunday"
+          },
+          {
+            "i": "moon",
+            "label": "Monday"
+          }
+        ],
+        "layout": "row"
+      }
+    },
+    {
+      "head": "*Saturday:* Saturn, straight from the Romans.",
+      "vis": {
+        "k": "planet",
+        "p": "saturn",
+        "rings": true,
+        "label": "SATURDAY"
+      }
+    },
+    {
+      "head": "The rest swapped in old *Germanic* gods.",
+      "sub": "Cousins of the Norse Tyr, Odin and Thor.",
+      "vis": {
+        "k": "glyphs",
+        "mode": "ring"
+      }
+    },
+    {
+      "head": "Tuesday: Tiw, for *Mars*. Wednesday: Woden, for Mercury.",
+      "vis": {
+        "k": "checklist",
+        "title": "THE SWAP",
+        "items": [
+          "Tue · Tiw = Mars",
+          "Wed · Woden = Mercury"
+        ]
+      }
+    },
+    {
+      "head": "Thursday: *Thor's* day, Jupiter's thunder twin.",
+      "vis": {
+        "k": "planet",
+        "p": "jupiter",
+        "gag": "bolt",
+        "label": "THURSDAY"
+      }
+    },
+    {
+      "head": "And Friday? A goddess standing in for *Venus*.",
+      "sub": "The planet of love got the start of the weekend.",
+      "vis": {
+        "k": "planet",
+        "p": "venus",
+        "gag": "heart",
+        "label": "FRIDAY"
+      }
+    },
+    {
+      "head": "Date night was *Venus's* idea all along.",
+      "sub": "Send this to your Friday person.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "taurus",
+          "pose": "sit"
+        },
+        "b": {
+          "sign": "libra",
+          "pose": "sit"
+        },
+        "link": "heart",
+        "table": [
+          "cup",
+          "taco"
+        ]
+      }
+    }
+  ]
+}

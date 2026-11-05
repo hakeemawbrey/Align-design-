@@ -1,0 +1,95 @@
+{
+  "id": "063-bad-star",
+  "series": "Fun facts",
+  "title": "'Disaster' means bad star",
+  "voice": {
+    "voice": "bm_george",
+    "speed": 1.04
+  },
+  "footer": "auto",
+  "caption": "Blame it on the stars. Literally: that's what the word means.",
+  "hashtags": [
+    "funfacts",
+    "etymology",
+    "astrology",
+    "datinglife",
+    "houston"
+  ],
+  "beats": [
+    {
+      "eyebrow": "WAIT, WHAT?",
+      "head": "*Disaster* literally means 'bad star.'",
+      "vis": {
+        "k": "word",
+        "word": "DISASTER",
+        "parts": [
+          [
+            "dis",
+            "bad"
+          ],
+          [
+            "astro",
+            "star"
+          ]
+        ],
+        "lang": "Italian · disastro"
+      }
+    },
+    {
+      "head": "It comes from the Italian *disastro*.",
+      "sub": "An ill-starred event: the sky was against you.",
+      "vis": {
+        "k": "constellation",
+        "shape": "random",
+        "n": 9
+      }
+    },
+    {
+      "head": "People blamed bad luck on a *badly placed* star.",
+      "sub": "If something went wrong, the sky had a hand in it.",
+      "vis": {
+        "k": "wheel",
+        "spin": true
+      }
+    },
+    {
+      "head": "English kept the idea: *star-crossed*.",
+      "sub": "Lovers the stars weren't rooting for.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "sign": "leo",
+          "pose": "stand"
+        },
+        "b": {
+          "sign": "pisces",
+          "pose": "stand"
+        },
+        "link": "broken"
+      }
+    },
+    {
+      "head": "Next time a date goes sideways, blame the *star*.",
+      "sub": "Then go again. One bad night isn't your whole sky.",
+      "vis": {
+        "k": "person",
+        "sign": "gemini",
+        "pose": "shrug",
+        "think": "bad star?"
+      }
+    },
+    {
+      "head": "Send this to your best *bad-star* date story.",
+      "sub": "The good ones come after.",
+      "vis": {
+        "k": "bubbles",
+        "items": [
+          "he brought his mom",
+          "she rated my handshake",
+          "we got locked out"
+        ],
+        "stack": true
+      }
+    }
+  ]
+}

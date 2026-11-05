@@ -1,0 +1,90 @@
+{
+  "id": "042-houston-parking",
+  "series": "Houston",
+  "title": "The parking lap",
+  "footer": "auto",
+  "caption": "Every Houston date starts with three laps around the block.",
+  "hashtags": [
+    "houston",
+    "htx",
+    "houstonlife",
+    "datenight",
+    "greenflags"
+  ],
+  "beats": [
+    {
+      "eyebrow": "HOUSTON, TX",
+      "head": "Every Houston date starts with *parking.*",
+      "vis": {
+        "k": "person",
+        "pose": "think",
+        "think": true,
+        "bubble": "is this a spot?"
+      }
+    },
+    {
+      "head": "Circling the block like it owes you *money.*",
+      "vis": {
+        "k": "clock",
+        "from": "7:00",
+        "to": "7:20",
+        "label": "STILL CIRCLING"
+      }
+    },
+    {
+      "head": "Then they text: *'Inside, grabbed us a table.'*",
+      "vis": {
+        "k": "phone",
+        "name": "them",
+        "time": "7:20 PM",
+        "msgs": [
+          [
+            "them",
+            "inside! grabbed us a table"
+          ],
+          [
+            "me",
+            "circling. lap 4"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Green flag: they saved you the *good* seat.",
+      "vis": {
+        "k": "stamp",
+        "text": "GREEN FLAG",
+        "col": "green"
+      }
+    },
+    {
+      "head": "Red flag: they *judge* your parallel parking.",
+      "vis": {
+        "k": "flags",
+        "red": [
+          "Judges your parking"
+        ],
+        "green": [
+          "Waits with a smile"
+        ]
+      }
+    },
+    {
+      "head": "The right person makes the *walk* in feel short.",
+      "vis": {
+        "k": "duo",
+        "a": {
+          "pose": "walk"
+        },
+        "b": {
+          "pose": "walk"
+        },
+        "link": "heart",
+        "linkAt": 0.5
+      }
+    },
+    {
+      "head": "Tag your *designated* parker."
+    }
+  ]
+}

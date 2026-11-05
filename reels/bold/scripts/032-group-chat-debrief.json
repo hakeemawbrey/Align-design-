@@ -1,0 +1,137 @@
+{
+  "id": "032-group-chat-debrief",
+  "series": "Relatable",
+  "title": "The post-date debrief",
+  "footer": "auto",
+  "caption": "The group chat needs a full report by midnight.",
+  "hashtags": [
+    "relatable",
+    "groupchat",
+    "firstdate",
+    "besties",
+    "datingmemes"
+  ],
+  "beats": [
+    {
+      "eyebrow": "POV",
+      "head": "You get home from a date. *The chat:*",
+      "vis": {
+        "k": "phone",
+        "name": "the group chat",
+        "time": "10:58 PM",
+        "msgs": [
+          [
+            "them",
+            "WELL???"
+          ],
+          [
+            "them",
+            "we need details"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "You: 'It was *nice.*'",
+      "vis": {
+        "k": "phone",
+        "keep": true,
+        "name": "the group chat",
+        "time": "10:59 PM",
+        "msgs": [
+          [
+            "them",
+            "WELL???"
+          ],
+          [
+            "them",
+            "we need details"
+          ],
+          [
+            "me",
+            "it was... nice?"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "The chat: *'Define nice.'*",
+      "vis": {
+        "k": "phone",
+        "keep": true,
+        "name": "the group chat",
+        "time": "11:00 PM",
+        "msgs": [
+          [
+            "them",
+            "WELL???"
+          ],
+          [
+            "them",
+            "we need details"
+          ],
+          [
+            "me",
+            "it was... nice?"
+          ],
+          [
+            "them",
+            "define nice"
+          ],
+          [
+            "them",
+            "scale of 1 to movie ending"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Then the *real* questions start.",
+      "vis": {
+        "k": "quiz",
+        "options": [
+          "Did they ask about you?",
+          "Were they kind to the staff?",
+          "Do you want date two?"
+        ],
+        "pick": 2,
+        "mark": "✓",
+        "stamp": "THIS ONE"
+      }
+    },
+    {
+      "head": "You realize you're *smiling* at your phone.",
+      "vis": {
+        "k": "person",
+        "pose": "phone",
+        "heart": true,
+        "col": "pink"
+      }
+    },
+    {
+      "head": "The chat: *'Oh no. You like them.'*",
+      "vis": {
+        "k": "phone",
+        "name": "the group chat",
+        "time": "11:04 PM",
+        "msgs": [
+          [
+            "them",
+            "oh no"
+          ],
+          [
+            "them",
+            "you like them"
+          ],
+          [
+            "me",
+            "...maybe"
+          ]
+        ]
+      }
+    },
+    {
+      "head": "Tag the friend who *demands* a debrief."
+    }
+  ]
+}

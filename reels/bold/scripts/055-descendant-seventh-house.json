@@ -1,0 +1,21 @@
+{
+  "id": "055-descendant-seventh-house",
+  "series": "Zodiac",
+  "title": "Your Descendant: who you're drawn to",
+  "voice": { "voice": "af_aoede", "speed": 1.05 },
+  "footer": "auto",
+  "caption": "Your Descendant sits right across from your Rising and opens your seventh house of partnership. Comment yours.",
+  "hashtags": ["descendant", "seventhhouse", "astrology", "birthchart", "dating"],
+  "beats": [
+    { "eyebrow": "YOUR CHART", "head": "Your chart has a *dating* corner.", "vis": { "k": "houses", "highlight": [7] } },
+    { "head": "It's called the *Descendant.*", "sub": "The point directly across from your Rising sign.", "vis": { "k": "horizon", "sign": "aries", "person": true } },
+    { "head": "It opens your seventh house: *partnership.*", "sub": "Dating, commitment, and the people you choose to stand beside.", "vis": { "k": "houses", "highlight": [1, 7], "labels": true } },
+    { "head": "Your Rising is how you *show up.*", "sub": "Your Descendant is what you look for across the table.", "vis": { "k": "versus", "a": { "label": "RISING", "icon": "mirror", "lines": ["How you show up"] }, "b": { "label": "DESCENDANT", "icon": "magnifier", "lines": ["What you look for"] }, "verdict": "vs" } },
+    { "head": "Aries Rising? Libra *Descendant.*", "sub": "Independent, and drawn to someone calm and fair.", "vis": { "k": "duo", "a": { "sign": "aries", "label": "YOU" }, "b": { "sign": "libra", "label": "DRAWN TO" }, "link": "gold" } },
+    { "head": "Cancer Rising? Capricorn *Descendant.*", "sub": "Tender up front, drawn to someone steady and built to last.", "vis": { "k": "duo", "a": { "sign": "cancer", "label": "YOU" }, "b": { "sign": "capricorn", "label": "DRAWN TO" }, "link": "gold", "keep": true } },
+    { "head": "Often it's the energy you're still *growing* into.", "sub": "Qualities that feel a little out of reach in yourself.", "vis": { "k": "scale", "a": "YOU", "b": "WHAT YOU SEEK", "tilt": 0 } },
+    { "head": "It's a *lens,* not a type to hunt for.", "sub": "Your person can look nothing like your Descendant.", "vis": { "k": "stamp", "text": "LENS", "over": "NOT A RULE", "col": "gold" } },
+    { "head": "You need your *birth time* to find it.", "sub": "No birth time, no Rising. No Rising, no Descendant.", "vis": { "k": "clock", "from": "3:00", "to": "3:15", "label": "BIRTH TIME" } },
+    { "head": "Comment your *Descendant* sign.", "sub": "Then check whether your last crush fits it.", "vis": { "k": "glyphs", "mode": "ring" } }
+  ]
+}
