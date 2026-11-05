@@ -1,0 +1,42 @@
+{
+ "kdde01": {
+  "video": "/_blob/ba84cb19740017177e842944bd98633b",
+  "poster": "/_blob/99516752148033df1fec0502c69ab51e",
+  "title": "Deep Dive: Aries in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 1,
+  "caption": "Everything nobody tells you about loving an Aries, in four depths.\nThey flirt like a dare, fight fast and forgive by dinner. What keeps them: feeling chosen, out loud."
+ },
+ "kdde02": {
+  "video": "/_blob/9f25d64c63e7960ad0bc113edf224a12",
+  "poster": "/_blob/c5f0104e0d1cadc430b0583dc295c1cf",
+  "title": "Deep Dive: Taurus in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 2,
+  "caption": "Loving a Taurus is a slow dive, and worth every metre.\nThey need the same plan every week and calm over rushing. Give them time and they come back warmer."
+ },
+ "kdde03": {
+  "video": "/_blob/43e9f531a5a0d1a20f1299c1164ec17c",
+  "poster": "/_blob/4dca5d8075f4414b0dda0e7e41b98dc3",
+  "title": "Deep Dive: Gemini in Love",
+  "len": 118,
+  "long": true,
+  "series": "deepdive",
+  "episode": 3,
+  "caption": "If a Gemini asks you forty questions, that's the flirt.\nGive them room to change their mind, ask \"joke, or real?\" when it matters, and be their favourite person to talk to."
+ },
+ "kpre01": {
+  "video": "/_blob/54b148caf51947d06549288c5bdff70d",
+  "poster": "/_blob/c319e805c1cfdb71b64a00b1c947b1ec",
+  "title": "They laughed at the terrible pun",
+  "len": 9,
+  "long": false,
+  "series": "preacts",
+  "episode": 1,
+  "caption": "Laughing at someone's terrible pun is a love language.\nPisces saw it happen and is not okay."
+ }
+}
