@@ -1,0 +1,28 @@
+{
+  "id": "veiled",
+  "title": "You'd never buy a house off one photo",
+  "caption": "you'd never buy a house off one photo. so why pick a person that way? align keeps the photo veiled until you both say yes",
+  "hashtags": ["dating", "datingapp", "astrology", "align", "zodiac"],
+  "duration": 28,
+  "beats": [
+    { "id": "hook",    "t": 0.0,  "scene": "house",   "hook": "You'd never buy a house off one photo.", "accent": "one photo" },
+    { "id": "tour",    "t": 2.4,  "scene": "house",   "text": "you tour it twice. you read every page.", "accent": "twice", "label": ["time spent deciding", "3 WEEKS"] },
+    { "id": "person",  "t": 4.6,  "scene": "bedroom", "text": "the person you might fall for?", "accent": "fall for" },
+    { "id": "swipe",   "t": 6.4,  "scene": "bedroom", "text": "one photo. 0.8 seconds. next.", "accent": "0.8 seconds", "label": ["time spent deciding", "0.8 SEC"], "labelHot": true },
+    { "id": "ghost",   "t": 8.6,  "scene": "bedroom", "text": "so you match a face, not a person.", "accent": "a face" },
+    { "id": "fix",     "t": 10.6, "scene": "bedroom", "text": "align fixes that.", "accent": "align" },
+    { "id": "veil",    "t": 12.4, "scene": "bedroom", "text": "their photo stays veiled.", "accent": "veiled" },
+    { "id": "read",    "t": 14.4, "scene": "bedroom", "text": "you read who they are first.", "accent": "who they are" },
+    { "id": "align",   "t": 16.4, "scene": "bedroom", "text": "align if they're for you.", "accent": "align", "label": ["tonight's deck", "+1 ALIGNED"] },
+    { "id": "mutual",  "t": 18.2, "scene": "roof",    "text": "when it's mutual,", "accent": "mutual" },
+    { "id": "lift",    "t": 20.0, "scene": "roof",    "text": "the veil lifts.", "accent": "lifts" },
+    { "id": "talk",    "t": 22.0, "scene": "roof",    "text": "and you already know what to say.", "accent": "what to say" },
+    { "id": "end",     "t": 24.0, "scene": "end" }
+  ],
+  "end": {
+    "kicker": "read the person before the photo.",
+    "lines": ["MEET THEM", "BEFORE YOU", "SEE THEM."],
+    "button": "Get your first deck  →",
+    "foot": "photos stay veiled until you both align"
+  }
+}

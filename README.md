@@ -97,6 +97,8 @@ vars in `app/.env.local` *before* building: they're baked into the app.
 
 For a founder-camp walkthrough, see [docs/FOUNDER-CAMP.md](docs/FOUNDER-CAMP.md).
 
+For the story ad (a 3D toy figure acts out "you'd never buy a house off one photo", real Align screens float in front of it, and it ends on "Meet them before you see them"), see [reels/ad/README.md](reels/ad/README.md).
+
 For Align Town reels (a walk through a 3D astrology town, one card per line), see [reels/town/README.md](reels/town/README.md).
 
 For spoken love-and-zodiac affirmation reels (line art that draws itself in, word-by-word captions, a "Comment WORD" ending) and the Instagram page that posts them, see [reels/affirm/README.md](reels/affirm/README.md) and [reels/affirm/PROFILE.md](reels/affirm/PROFILE.md).
