@@ -37,16 +37,20 @@ export const win = (t, a, b, d = 0.25) => clamp(Math.min(pop01(t, a, d), outK(t,
 const fr = (n, s = 1) => { const v = Math.sin(n * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v) }
 
 // ─────────────────────────────────────────────── Mars + his two moons
+// Phobos + Deimos as tiny pixel sprites (hard cells, stepped shade, 1-cell ink outline), like the kit's planets
 function moon(x, X, Y, r, t, k, panic) {
-  x.save(); x.translate(X, Y); x.rotate(0.4 * Math.sin(t * 2 + k))
-  x.fillStyle = k ? '#b9aca4' : '#9d8f88'; x.strokeStyle = INK; x.lineWidth = Math.max(2, r * 0.16)
-  x.beginPath(); x.ellipse(0, 0, r * (k ? 1 : 1.25), r * (k ? 0.85 : 0.8), 0, 0, TAU); x.fill(); x.stroke()
-  x.fillStyle = 'rgba(80,60,60,0.35)'; x.beginPath(); x.arc(r * 0.35, r * 0.25, r * 0.2, 0, TAU); x.fill()
+  const N = 9, c = Math.max(2, Math.round((r * 2.3) / N)), rx = k ? 4.2 : 4.4, ry = k ? 3.4 : 3.2
+  const ox = Math.round(X - (N * c) / 2), oy = Math.round(Y - (N * c) / 2 + Math.round(Math.sin(t * 2 + k) * 1) * c)
+  const inside = (i, j, g = 0) => ((i - 4) / (rx - g)) ** 2 + ((j - 4) / (ry - g)) ** 2 <= 1
+  for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+    if (!inside(i, j)) continue
+    const edge = !inside(i, j, 1)
+    x.fillStyle = edge ? INK : (i + j > 9 ? (k ? '#8f827c' : '#7d706b') : (k ? '#c9bcb4' : '#ad9f98'))
+    x.fillRect(ox + i * c, oy + j * c, c, c)
+  }
   x.fillStyle = INK
-  const e = r * (panic ? 0.2 : 0.14)
-  for (const s of [-1, 1]) { x.beginPath(); x.arc(s * r * 0.32, -r * 0.1, e, 0, TAU); x.fill() }
-  if (panic) { x.beginPath(); x.ellipse(0, r * 0.32, r * 0.14, r * 0.18, 0, 0, TAU); x.fill() }
-  x.restore()
+  if (panic) { x.fillRect(ox + 3 * c, oy + 3 * c, c, c * 2); x.fillRect(ox + 5 * c, oy + 3 * c, c, c * 2); x.fillRect(ox + 4 * c, oy + 6 * c, c, c) }
+  else { x.fillRect(ox + 3 * c, oy + 4 * c, c, c); x.fillRect(ox + 5 * c, oy + 4 * c, c, c) }
 }
 /** Mars (planetkit) with Phobos + Deimos orbiting. Returns drawPlanet's result. */
 export function drawMars(x, t, X, Y, size, o = {}) {
