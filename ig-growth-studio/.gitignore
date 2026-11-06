@@ -9,3 +9,5 @@ data/*.db*
 .env*
 data/media/
 data/experiments/
+data/schedules/
+data/reports/

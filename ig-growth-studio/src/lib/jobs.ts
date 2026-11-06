@@ -47,6 +47,7 @@ const VIDEO_TRACK_DAYS = 7;
 /** Videos outside the hourly check are refreshed this often, at most this many per account per run. */
 const OLDER_VIDEO_REFRESH_MS = 6 * 3_600_000;
 const OLDER_VIDEO_BATCH = 50;
+const VIDEO_METRICS = ["views", "reach", "total_interactions", "saved", "shares"];
 
 /** Once an hour: the view count of each account's recent videos, for the "Top videos" progress charts. */
 export async function snapshotVideosIfDue(db: DB, now = new Date()): Promise<number | null> {
@@ -83,7 +84,7 @@ export async function snapshotAccountVideos(db: DB, account: Account, now: Date,
   );
   const results = await Promise.all(
     media.map((m) =>
-      client.mediaInsights(m.id, ["views", "reach", "total_interactions"]).then(
+      client.mediaInsights(m.id, VIDEO_METRICS).then(
         (v) => ({
           mediaId: m.id,
           igUserId: account.igUserId,
@@ -95,6 +96,8 @@ export async function snapshotAccountVideos(db: DB, account: Account, now: Date,
           views: v.views ?? 0,
           reach: v.reach ?? null,
           interactions: v.total_interactions ?? null,
+          saves: v.saved ?? null,
+          shares: v.shares ?? null,
         }),
         // A video still processing has no insights yet; it is picked up next hour.
         () => null,
@@ -111,8 +114,8 @@ async function refreshOlderVideos(db: DB, account: Account, now: Date, client: G
   const due = await videosDueForRefresh(db, account.igUserId, new Date(now.getTime() - OLDER_VIDEO_REFRESH_MS), OLDER_VIDEO_BATCH);
   const results = await Promise.all(
     due.map((video) =>
-      client.mediaInsights(video.mediaId, ["views", "reach", "total_interactions"]).then(
-        (v) => ({ ...video, views: v.views ?? 0, reach: v.reach ?? null, interactions: v.total_interactions ?? null }),
+      client.mediaInsights(video.mediaId, VIDEO_METRICS).then(
+        (v) => ({ ...video, views: v.views ?? 0, reach: v.reach ?? null, interactions: v.total_interactions ?? null, saves: v.saved ?? null, shares: v.shares ?? null }),
         async (err: unknown) => {
           if (isDeleted(err)) await markVideoGone(db, video.mediaId, now);
           else await markVideoChecked(db, video.mediaId, now);

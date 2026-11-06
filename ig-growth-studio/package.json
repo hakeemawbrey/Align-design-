@@ -13,6 +13,8 @@
     "agent": "tsx scripts/agent.ts",
     "import": "tsx scripts/import-schedule.ts",
     "experiment": "tsx scripts/experiment-report.ts",
+    "report": "tsx scripts/weekly-report.ts",
+    "ticks": "tsx scripts/sheet-ticks.ts",
     "copy-to-cloud": "tsx scripts/copy-to-cloud.ts"
   },
   "dependencies": {

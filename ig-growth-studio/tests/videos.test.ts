@@ -19,7 +19,14 @@ describe("video progress", () => {
           { id: "old", media_type: "VIDEO", timestamp: "2026-10-01T11:00:00+0000" },
         ],
       }),
-      "GET a/insights": () => ({ data: [{ name: "views", total_value: { value: views.a } }, { name: "reach", total_value: { value: 8 } }] }),
+      "GET a/insights": () => ({
+        data: [
+          { name: "views", total_value: { value: views.a } },
+          { name: "reach", total_value: { value: 8 } },
+          { name: "saved", total_value: { value: 3 } },
+          { name: "shares", total_value: { value: 2 } },
+        ],
+      }),
       "GET b/insights": () => ({ data: [{ name: "views", total_value: { value: views.b } }] }),
     });
 
@@ -34,6 +41,8 @@ describe("video progress", () => {
     ]);
     expect(top[0].history.map((h) => h.views)).toEqual([10, 200]);
     expect(top[0].reach).toBe(8);
+    const saved = await db.execute("SELECT saves, shares FROM media_snapshots WHERE media_id = 'a' LIMIT 1");
+    expect([Number(saved.rows[0].saves), Number(saved.rows[0].shares)]).toEqual([3, 2]);
     expect(await topVideos(db, { since: new Date("2026-11-01T00:00:00Z"), igUserId: "other" })).toEqual([]);
     // Uses each video's latest count only, not every hourly count.
     expect(await totalVideoViews(db)).toEqual({ views: 260, videos: 2 });

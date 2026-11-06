@@ -238,6 +238,8 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
     "ALTER TABLE media_info ADD COLUMN gone_at TEXT",
     "UPDATE media_info SET checked_at = (SELECT MAX(at) FROM media_snapshots WHERE media_snapshots.media_id = media_info.media_id)",
   ],
+  // v6: saves and shares per video, for the weekly report.
+  async () => ["ALTER TABLE media_snapshots ADD COLUMN saves INTEGER", "ALTER TABLE media_snapshots ADD COLUMN shares INTEGER"],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -613,6 +615,8 @@ export interface MediaSnapshotInput {
   views: number;
   reach: number | null;
   interactions: number | null;
+  saves?: number | null;
+  shares?: number | null;
 }
 
 /** Saves the latest details and one view count per video, all stamped with the same time. */
@@ -628,8 +632,8 @@ export async function saveMediaSnapshots(db: DB, at: Date, rows: MediaSnapshotIn
         args: [r.mediaId, r.igUserId, r.postedAt, r.kind, r.permalink, r.thumbnailUrl, r.caption, stamp],
       },
       {
-        sql: "INSERT OR REPLACE INTO media_snapshots (media_id, at, views, reach, interactions) VALUES (?, ?, ?, ?, ?)",
-        args: [r.mediaId, stamp, r.views, r.reach, r.interactions],
+        sql: "INSERT OR REPLACE INTO media_snapshots (media_id, at, views, reach, interactions, saves, shares) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        args: [r.mediaId, stamp, r.views, r.reach, r.interactions, r.saves ?? null, r.shares ?? null],
       },
     ]),
     "write",
