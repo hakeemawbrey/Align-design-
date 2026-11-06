@@ -37,10 +37,14 @@ def main():
     ap.add_argument("--from", dest="start", type=int, required=True)
     ap.add_argument("--count", type=int, default=100)
     ap.add_argument("--work", required=True, help="scratch dir for the branch")
+    ap.add_argument("--match", help="only files whose name contains this, e.g. -x-")
     ap.add_argument("--branch", help="branch to (over)write; default visions-media-NN")
     a = ap.parse_args()
-    lines = {l["id"]: l for l in json.load(open(os.path.join(HERE, "lines.json")))["lines"]}
-    reels = all_reels()[a.start:a.start + a.count]
+    sys.path.insert(0, HERE)
+    import render
+    lines = {l["id"]: l for l in render.load_lines()["lines"]}  # includes the zodiac versions
+    reels = [f for f in all_reels() if not a.match or a.match in os.path.basename(f)]
+    reels = reels[a.start:a.start + a.count]
     branch = a.branch or f"visions-media-{a.batch:02d}"
     work = os.path.join(a.work, branch)
     shutil.rmtree(work, ignore_errors=True)
