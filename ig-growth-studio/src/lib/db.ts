@@ -232,6 +232,12 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
     "ALTER TABLE posts ADD COLUMN fb_attempts INTEGER NOT NULL DEFAULT 0",
     "ALTER TABLE posts ADD COLUMN fb_started_at TEXT",
   ],
+  // v5: keep refreshing older videos; stop only when one is deleted from Instagram.
+  async () => [
+    "ALTER TABLE media_info ADD COLUMN checked_at TEXT",
+    "ALTER TABLE media_info ADD COLUMN gone_at TEXT",
+    "UPDATE media_info SET checked_at = (SELECT MAX(at) FROM media_snapshots WHERE media_snapshots.media_id = media_info.media_id)",
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -616,10 +622,10 @@ export async function saveMediaSnapshots(db: DB, at: Date, rows: MediaSnapshotIn
   await db.batch(
     rows.flatMap((r) => [
       {
-        sql: `INSERT INTO media_info (media_id, ig_user_id, posted_at, kind, permalink, thumbnail_url, caption) VALUES (?, ?, ?, ?, ?, ?, ?)
+        sql: `INSERT INTO media_info (media_id, ig_user_id, posted_at, kind, permalink, thumbnail_url, caption, checked_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
               ON CONFLICT(media_id) DO UPDATE SET kind = excluded.kind, permalink = excluded.permalink,
-                thumbnail_url = excluded.thumbnail_url, caption = excluded.caption`,
-        args: [r.mediaId, r.igUserId, r.postedAt, r.kind, r.permalink, r.thumbnailUrl, r.caption],
+                thumbnail_url = excluded.thumbnail_url, caption = excluded.caption, checked_at = excluded.checked_at`,
+        args: [r.mediaId, r.igUserId, r.postedAt, r.kind, r.permalink, r.thumbnailUrl, r.caption, stamp],
       },
       {
         sql: "INSERT OR REPLACE INTO media_snapshots (media_id, at, views, reach, interactions) VALUES (?, ?, ?, ?, ?)",
@@ -628,6 +634,48 @@ export async function saveMediaSnapshots(db: DB, at: Date, rows: MediaSnapshotIn
     ]),
     "write",
   );
+}
+
+/** Tracked videos not checked since `before`, longest-waiting first. Videos deleted from Instagram are left out. */
+export async function videosDueForRefresh(db: DB, igUserId: string, before: Date, limit: number): Promise<MediaSnapshotInput[]> {
+  const rows = await all<{
+    media_id: string;
+    ig_user_id: string;
+    posted_at: string;
+    kind: string | null;
+    permalink: string | null;
+    thumbnail_url: string | null;
+    caption: string | null;
+  }>(
+    db,
+    `SELECT media_id, ig_user_id, posted_at, kind, permalink, thumbnail_url, caption FROM media_info
+     WHERE ig_user_id = ? AND gone_at IS NULL AND (checked_at IS NULL OR checked_at < ?)
+     ORDER BY checked_at IS NOT NULL, checked_at, media_id LIMIT ?`,
+    [igUserId, before.toISOString(), limit],
+  );
+  return rows.map((r) => ({
+    mediaId: r.media_id,
+    igUserId: r.ig_user_id,
+    postedAt: r.posted_at,
+    kind: r.kind,
+    permalink: r.permalink,
+    thumbnailUrl: r.thumbnail_url,
+    caption: r.caption,
+    views: 0,
+    reach: null,
+    interactions: null,
+  }));
+}
+
+/** Records a failed check, so a video Instagram won't report on doesn't hold up the others. */
+export async function markVideoChecked(db: DB, mediaId: string, at: Date) {
+  await db.execute({ sql: "UPDATE media_info SET checked_at = ? WHERE media_id = ?", args: [at.toISOString(), mediaId] });
+}
+
+/** Stops checking a video deleted from Instagram. Its last saved count stays. */
+export async function markVideoGone(db: DB, mediaId: string, at: Date) {
+  const stamp = at.toISOString();
+  await db.execute({ sql: "UPDATE media_info SET checked_at = ?, gone_at = ? WHERE media_id = ?", args: [stamp, stamp, mediaId] });
 }
 
 export interface TopVideo {

@@ -1,6 +1,6 @@
-import { type Account, type DB, getSetting, hasSnapshot, listAccounts, saveMediaSnapshots, saveSnapshot, setPageName, setSetting } from "./db";
+import { type Account, type DB, getSetting, hasSnapshot, listAccounts, markVideoChecked, markVideoGone, saveMediaSnapshots, saveSnapshot, setPageName, setSetting, videosDueForRefresh } from "./db";
 import { type FbRunResult, publishFacebookDue } from "./facebook";
-import { GraphClient } from "./graph";
+import { GraphClient, GraphError } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
 
 /**
@@ -44,6 +44,9 @@ export async function runScheduledWork(
 const VIDEO_SNAPSHOT_EVERY_MS = 60 * 60_000;
 /** Videos younger than this keep getting hourly counts. */
 const VIDEO_TRACK_DAYS = 7;
+/** Videos outside the hourly check are refreshed this often, at most this many per account per run. */
+const OLDER_VIDEO_REFRESH_MS = 6 * 3_600_000;
+const OLDER_VIDEO_BATCH = 50;
 
 /** Once an hour: the view count of each account's recent videos, for the "Top videos" progress charts. */
 export async function snapshotVideosIfDue(db: DB, now = new Date()): Promise<number | null> {
@@ -100,5 +103,30 @@ export async function snapshotAccountVideos(db: DB, account: Account, now: Date,
   );
   const rows = results.filter((r) => r !== null);
   await saveMediaSnapshots(db, now, rows);
+  return rows.length + (await refreshOlderVideos(db, account, now, client));
+}
+
+/** Keeps counts moving on videos that have left the hourly check, a limited batch per run. */
+async function refreshOlderVideos(db: DB, account: Account, now: Date, client: GraphClient) {
+  const due = await videosDueForRefresh(db, account.igUserId, new Date(now.getTime() - OLDER_VIDEO_REFRESH_MS), OLDER_VIDEO_BATCH);
+  const results = await Promise.all(
+    due.map((video) =>
+      client.mediaInsights(video.mediaId, ["views", "reach", "total_interactions"]).then(
+        (v) => ({ ...video, views: v.views ?? 0, reach: v.reach ?? null, interactions: v.total_interactions ?? null }),
+        async (err: unknown) => {
+          if (isDeleted(err)) await markVideoGone(db, video.mediaId, now);
+          else await markVideoChecked(db, video.mediaId, now);
+          return null;
+        },
+      ),
+    ),
+  );
+  const rows = results.filter((r) => r !== null);
+  await saveMediaSnapshots(db, now, rows);
   return rows.length;
+}
+
+/** Instagram's answer for a video that no longer exists. */
+function isDeleted(err: unknown) {
+  return err instanceof GraphError && err.code === 100 && err.subcode === 33;
 }
