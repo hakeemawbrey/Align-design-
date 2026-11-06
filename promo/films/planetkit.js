@@ -1,6 +1,8 @@
 // planetkit — the shared PLANET TALK kit (promo/films/PLANETS-BUILD.md): all 10 planet characters, a sign-meets-planet
 // two-shot, a space backdrop, speech bubbles with per-character voices, and the planet ENTRANCE hook.
 // Built by batch p01 (The Sun). READ-ONLY for every other batch: import it, never edit it. The API below is frozen.
+// STYLE: everything is drawn in Star Talk's pixel style. Planets are rasterised on a 46-cell grid (hard edges, stepped
+// shading, 1-cell ink outline), bubbles are Star Talk pixel panels (gold stepped border, Space Mono), entrance FX on a 6-px grid.
 // Demo of everything: promo/films/kplanetdemo (all 10 planets, every entrance, the two-shot, the bubbles).
 //
 // ═══════════════════════════════════════ HOW IT PLUGS IN ═══════════════════════════════════════
@@ -526,6 +528,15 @@ export function drawPlanet(ctx, id, x, y, size, t, opts = {}) {
   ctx.save()
   ctx.globalAlpha *= alpha
   glowCircle(ctx, x, cy, r * (id === 'sun' ? 2.1 : 1.55), P.color, glow * (id === 'sun' ? 1.1 : 0.55) * (0.9 + 0.1 * Math.sin(t * 2.3)))
+  // PIXEL STYLE (matches startalk.js): the planet is drawn into a low-res buffer — CELLS cells across its diameter —
+  // then hardened (no anti-aliased edges, stepped shading, 1-cell ink outline) and scaled up with smoothing off.
+  const cell = Math.max(2, (2 * r) / CELLS)
+  const ext = r * EXTENT[id] * (1 + Math.abs(sq)), N = Math.ceil((2 * ext) / cell) + 4
+  const ox = x - (N / 2) * cell, oy = cy - (N / 2) * cell
+  const pb = pixBuf(N), c = pb.x
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, N, N); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over'
+  c.setTransform(1 / cell, 0, 0, 1 / cell, -ox / cell, -oy / cell)
+  const outer = ctx; ctx = c
   ctx.translate(x, cy + r); ctx.scale(1 + sq, 1 - sq * 0.9); ctx.translate(0, -r)
   ctx.rotate(rot + sway)
   ctx.scale(r, r)
@@ -544,8 +555,49 @@ export function drawPlanet(ctx, id, x, y, size, t, opts = {}) {
   // rings that pass in FRONT of the ball
   if (id === 'saturn' && opts.rings !== false) ringBand(ctx, 'front', -0.32, '#e2c27e', '#f6e2b0')
   if (id === 'uranus' && opts.rings !== false) ringBand(ctx, 'front', 1.45, '#bff3f5', '#6fd0dc', { rx: 1.6, ry: 0.3, w: 0.18 })
+  ctx = outer
+  pixelate(pb, N)
+  const sm = ctx.imageSmoothingEnabled
+  ctx.imageSmoothingEnabled = false
+  ctx.drawImage(pb.c, 0, 0, N, N, ox, oy, N * cell, N * cell)
+  ctx.imageSmoothingEnabled = sm
   ctx.restore()
   return { x, y: cy, r, top: cy - r, mouth: { x, y: cy + F.my * r } }
+}
+
+// ─────────────────────────────────────────────── the pixel pass
+const CELLS = 46                                  // cells across a planet's diameter (the Star Talk star is 36)
+// half-width of the art around the ball, in radii (rays, rings, wings, hair, tears)
+const EXTENT = { sun: 1.75, moon: 1.35, mercury: 1.9, venus: 1.35, mars: 1.4, jupiter: 1.35, saturn: 2.05, uranus: 1.85, neptune: 1.4, pluto: 1.5 }
+const BUFS = {}
+function pixBuf(N) {
+  const k = Math.ceil(N / 32) * 32
+  if (!BUFS[k]) {
+    const cv = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(k, k) : Object.assign(document.createElement('canvas'), { width: k, height: k })
+    BUFS[k] = { c: cv, x: cv.getContext('2d', { willReadFrequently: true }) }
+  }
+  return BUFS[k]
+}
+const INK_RGB = hexToRgb(INK)
+const STEP = 18                                   // colour steps (stepped shading, like the sprite's tone bands)
+function pixelate(pb, N) {
+  const c = pb.x; c.setTransform(1, 0, 0, 1, 0, 0)
+  const img = c.getImageData(0, 0, N, N), d = img.data, on = new Uint8Array(N * N)
+  for (let i = 0, p = 0; p < N * N; p++, i += 4) {
+    const a = d[i + 3]
+    if (a < 110) { d[i + 3] = 0; continue }
+    on[p] = 1
+    for (let j = 0; j < 3; j++) d[i + j] = Math.min(255, Math.round(d[i + j] / STEP) * STEP)   // stepped colour
+    d[i + 3] = 255
+  }
+  // 1-cell ink outline round the silhouette (the Star Talk sprite outline)
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const p = y * N + x; if (on[p]) continue
+    if ((x > 0 && on[p - 1]) || (x < N - 1 && on[p + 1]) || (y > 0 && on[p - N]) || (y < N - 1 && on[p + N])) {
+      const i = p * 4; d[i] = INK_RGB[0]; d[i + 1] = INK_RGB[1]; d[i + 2] = INK_RGB[2]; d[i + 3] = 255
+    }
+  }
+  c.putImageData(img, 0, 0)
 }
 
 // ─────────────────────────────────────────────── the sign (a Star Talk star) + tears
@@ -618,12 +670,12 @@ export function twoShot(name = 'stack', id = 'sun') {
 
 // ─────────────────────────────────────────────── speech bubbles
 function wrapWords(c, text, size, maxW) {
-  // returns rows of [{ s, acc }] tokens
+  // returns rows of [{ s, acc }] tokens (Star Talk dialogue font: Space Mono 700, accents in the speaker's colour)
   const toks = []; let acc = false
   for (const seg of String(text).split('*')) { for (const w of seg.split(/(\s+)/)) if (w) toks.push({ s: w, acc }); acc = !acc }
   const rows = [[]]; let w = 0
+  c.font = `700 ${size}px ${MONO}`
   for (const tk of toks) {
-    c.font = tk.acc ? `italic 600 ${Math.round(size * 1.12)}px ${SERIF}` : `800 ${size}px ${INTER}`
     const tw = c.measureText(tk.s).width
     if (/^\s+$/.test(tk.s)) { if (rows[rows.length - 1].length) { rows[rows.length - 1].push({ ...tk, w: tw }); w += tw } continue }
     if (w + tw > maxW && rows[rows.length - 1].length) { const r = rows[rows.length - 1]; while (r.length && /^\s+$/.test(r[r.length - 1].s)) r.pop(); rows.push([]); w = 0 }
@@ -631,63 +683,78 @@ function wrapWords(c, text, size, maxW) {
   }
   return rows
 }
+// a Star Talk pixel panel (startalk.js drawPanel): stepped corners, gold border, bone hairline, dark glass
+const PX = 6
+function stepRect(c, x, y, w, h, col) {
+  const P = PX; c.fillStyle = col
+  c.fillRect(x + 2 * P, y, w - 4 * P, h); c.fillRect(x, y + 2 * P, w, h - 4 * P); c.fillRect(x + P, y + P, w - 2 * P, h - 2 * P)
+}
+function pixelPanel(c, x, y, w, h, { border = GOLD, fill = 'rgba(13,8,32,0.92)', hair = 'rgba(239,230,214,0.5)', glow = true } = {}) {
+  const P = PX
+  if (glow) { c.save(); c.shadowColor = rgba(border, 0.45); c.shadowBlur = 22; stepRect(c, x, y, w, h, rgba(border, 0.9)); c.restore() }
+  stepRect(c, x, y, w, h, border)
+  stepRect(c, x + P, y + P, w - 2 * P, h - 2 * P, fill)
+  if (hair) { c.strokeStyle = hair; c.lineWidth = P / 2; c.strokeRect(x + 2.25 * P, y + 2.25 * P, w - 4.5 * P, h - 4.5 * P) }
+  c.fillStyle = '#fff1c8'; c.fillRect(x + 2 * P, y, P * 3, P / 2); c.fillRect(x, y + 2 * P, P / 2, P * 2)
+}
+// the pointer: a stepped pixel triangle (gold edge, glass inside)
+function pixelTail(c, tx, ty, dir, side, fill) {
+  const P = PX, rows = 6
+  for (let j = 0; j < rows; j++) {
+    const half = rows - j, cx = tx + side * j * P * 0.8
+    c.fillStyle = GOLD; c.fillRect(Math.round((cx - half * P) / P) * P, ty + dir * j * P - (dir < 0 ? P : 0), half * 2 * P, P)
+    if (half > 1) { c.fillStyle = fill; c.fillRect(Math.round((cx - (half - 1) * P) / P) * P, ty + dir * j * P - (dir < 0 ? P : 0), (half - 1) * 2 * P, P) }
+  }
+}
 export function speech(ctx, t, o) {
-  const { t0, t1 = 1e9, x, y, who = 'sun', text, tail = 0, tailUp = false, size = 46, maxW = 640, cps = 32, tag = true, shake = 0, color } = o
+  const { t0, t1 = 1e9, x, y, who = 'sun', tail = 0, tailUp = false, maxW = 640, cps = 32, tag = true, shake = 0, color } = o
+  const text = o.text, size = Math.round((o.size ?? 46) * 0.86)
   if (t < t0 - 0.01 || t > t1 + 0.25) return { w: 0, h: 0 }
   const col = color || colorOf(who)
   const pIn = easeOutBack(prog(t, t0, t0 + 0.26), 2.4), pOut = prog(t, t1, t1 + 0.22)
   const k = pIn * (1 - ease.inQuad(pOut))
   if (k <= 0.01) return { w: 0, h: 0 }
   const rows = wrapWords(ctx, text, size, maxW)
-  const lh = size * 1.22
+  const lh = size * 1.28
   const rowW = rows.map(r => r.reduce((a, b) => a + b.w, 0))
-  const bw = Math.max(...rowW, 120) + 64, bh = rows.length * lh + 46
+  const bw = Math.ceil((Math.max(...rowW, 120) + 72) / PX) * PX, bh = Math.ceil((rows.length * lh + 52) / PX) * PX
   // typewriter: chars revealed
   const total = PARSE(text).length, shown = Math.floor((t - t0 - 0.08) * cps)
+  const FILL = 'rgba(16,10,38,0.95)'
   ctx.save()
   const jx = shake ? Math.sin(t * 60) * shake : 0, jy = shake ? Math.cos(t * 53) * shake : 0
-  ctx.translate(x + jx, y + jy); ctx.scale(k, k)
-  // body
-  const bx = -bw / 2, by = -bh / 2, rad = 34
-  ctx.fillStyle = INK
-  const shape = (inset) => {
-    ctx.beginPath(); ctx.roundRect(bx - inset, by - inset, bw + inset * 2, bh + inset * 2, rad + inset)
-  }
-  ctx.save(); ctx.shadowColor = 'rgba(6,4,18,0.5)'; ctx.shadowBlur = 24; ctx.shadowOffsetY = 10; shape(7); ctx.fill(); ctx.restore()
+  ctx.translate(Math.round(x + jx), Math.round(y + jy)); ctx.scale(k, k)
+  const bx = -Math.round(bw / 2 / PX) * PX, by = -Math.round(bh / 2 / PX) * PX
+  pixelPanel(ctx, bx, by, bw, bh, { fill: FILL })
   // tail
-  const tx = clamp(tail, -bw / 2 + 50, bw / 2 - 50), ty = tailUp ? by : by + bh, dir = tailUp ? -1 : 1
-  ctx.beginPath(); ctx.moveTo(tx - 30, ty - dir * 4); ctx.lineTo(tx + 30, ty - dir * 4); ctx.lineTo(tx + (tail > 0 ? 34 : tail < 0 ? -34 : 0), ty + dir * 56); ctx.closePath()
-  ctx.fillStyle = INK; ctx.lineWidth = 14; ctx.strokeStyle = INK; ctx.lineJoin = 'round'; ctx.stroke(); ctx.fill()
-  shape(0); ctx.fillStyle = '#fffaf0'; ctx.fill()
-  ctx.beginPath(); ctx.moveTo(tx - 24, ty - dir * 6); ctx.lineTo(tx + 24, ty - dir * 6); ctx.lineTo(tx + (tail > 0 ? 30 : tail < 0 ? -30 : 0), ty + dir * 46); ctx.closePath(); ctx.fill()
-  // colour band
-  ctx.save(); shape(0); ctx.clip(); ctx.fillStyle = rgba(col, 0.22); ctx.fillRect(bx, by + bh - 14, bw, 14); ctx.restore()
+  const tx = clamp(tail, -bw / 2 + 60, bw / 2 - 60), side = tail > 0 ? 1 : tail < 0 ? -1 : 0
+  if (tailUp) pixelTail(ctx, tx, by + PX, -1, side, FILL); else pixelTail(ctx, tx, by + bh - PX, 1, side, FILL)
   // text
-  ctx.textBaseline = 'middle'
+  ctx.textBaseline = 'middle'; ctx.font = `700 ${size}px ${MONO}`; ctx.textAlign = 'left'
   let n = 0
   rows.forEach((r, j) => {
     let cx = -rowW[j] / 2
-    const ry = by + 23 + lh * (j + 0.5)
+    const ry = by + 26 + lh * (j + 0.5)
     for (const tk of r) {
-      ctx.font = tk.acc ? `italic 600 ${Math.round(size * 1.12)}px ${SERIF}` : `800 ${size}px ${INTER}`
-      ctx.fillStyle = tk.acc ? mixHex(col, INK, 0.35) : INK
-      ctx.textAlign = 'left'
       for (const ch of tk.s) {
-        if (n < shown || shown >= total) ctx.fillText(ch, cx, ry)
+        if (n < shown || shown >= total) {
+          ctx.fillStyle = 'rgba(6,4,18,0.85)'; ctx.fillText(ch, cx, ry + 3)
+          ctx.fillStyle = tk.acc ? col : BONE; ctx.fillText(ch, cx, ry)
+        }
         cx += ctx.measureText(ch).width; n++
       }
     }
   })
-  // name tag
+  // name tag: a small pixel panel in the speaker's colour
   if (tag) {
     const label = labelOf(who)
     ctx.font = `700 26px ${MONO}`
-    const tw = ctx.measureText(label).width + 36
-    ctx.save(); ctx.translate(bx + 26, by - 2); ctx.rotate(-0.04)
-    ctx.fillStyle = INK; ctx.beginPath(); ctx.roundRect(-4, -26, tw + 8, 48, 14); ctx.fill()
-    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(0, -22, tw, 40, 11); ctx.fill()
-    ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(label, 18, -1)
-    ctx.restore()
+    const tw = Math.ceil((ctx.measureText(label).width + 40) / PX) * PX, th = 8 * PX
+    const lx = bx + 4 * PX, ly = by - th / 2 - PX
+    pixelPanel(ctx, lx, ly, tw, th, { fill: 'rgba(20,12,44,0.98)', hair: null, glow: false })
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+    ctx.fillStyle = 'rgba(6,4,18,0.9)'; ctx.fillText(label, lx + tw / 2, ly + th / 2 + 2)
+    ctx.fillStyle = col; ctx.fillText(label, lx + tw / 2, ly + th / 2)
   }
   ctx.restore()
   return { w: bw, h: bh }
@@ -762,7 +829,7 @@ export function entrance(kind, t, { at = 0, len, x = 540, y = 700, size = 520 } 
   }
   return pose
 }
-export function drawEntranceFx(ctx, id, kind, t, o = {}) {
+function entranceFxVector(ctx, id, kind, t, o = {}) {
   const { at = 0, len, x = 540, y = 700, size = 520 } = o
   const land = entranceLand(kind, { at, len }), col = PLANETS[id]?.color || GOLD, rim = PLANETS[id]?.rim || '#ff7a1a'
   ctx.save()
@@ -824,4 +891,22 @@ export function entranceCues(kind, { at = 0, len } = {}) {
   else out.push(['boom', +land.toFixed(3), 0.3], ['pop', +land.toFixed(3), 1318.51, 0.05, 0])
   out.push(['crash', +land.toFixed(3), { gain: 0.05, len: 1.8 }], ['glitter', +land.toFixed(3), +(land + 0.5).toFixed(3)])
   return out
+}
+
+// the entrance FX in the pixel style: drawn on a 6-px grid over the 1080×1920 frame, alpha stepped, scaled up crisp
+const FXC = 6, FXW = 1080 / FXC, FXH = 1920 / FXC
+let FXB = null
+export function drawEntranceFx(ctx, id, kind, t, o = {}) {
+  if (!FXB) { const cv = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(FXW, FXH) : Object.assign(document.createElement('canvas'), { width: FXW, height: FXH }); FXB = { c: cv, x: cv.getContext('2d', { willReadFrequently: true }) } }
+  const c = FXB.x
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, FXW, FXH); c.globalAlpha = 1
+  c.setTransform(1 / FXC, 0, 0, 1 / FXC, 0, 0)
+  entranceFxVector(c, id, kind, t, o)
+  c.setTransform(1, 0, 0, 1, 0, 0)
+  const img = c.getImageData(0, 0, FXW, FXH), d = img.data
+  for (let i = 3; i < d.length; i += 4) { const a = d[i]; d[i] = a < 40 ? 0 : a < 110 ? 96 : a < 190 ? 170 : 255 }
+  c.putImageData(img, 0, 0)
+  const sm = ctx.imageSmoothingEnabled; ctx.imageSmoothingEnabled = false
+  ctx.drawImage(FXB.c, 0, 0, FXW * FXC, FXH * FXC)
+  ctx.imageSmoothingEnabled = sm
 }
