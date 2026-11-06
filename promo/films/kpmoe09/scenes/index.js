@@ -26,9 +26,11 @@ function earth(x, t, K) {
   x.save(); x.globalAlpha = k
   x.setLineDash([14, 12]); x.strokeStyle = 'rgba(223,226,242,0.6)'; x.lineWidth = 4; x.beginPath(); x.ellipse(560, 560, 250, 80, -0.1, 0, Math.PI * 2); x.stroke(); x.setLineDash([])
   const s = 70 * k
-  x.fillStyle = K.INK; x.beginPath(); x.arc(560, 560, s + 6, 0, Math.PI * 2); x.fill()
-  x.fillStyle = '#4f8ff0'; x.beginPath(); x.arc(560, 560, s, 0, Math.PI * 2); x.fill()
-  x.fillStyle = '#5fd08a'; for (const [a, b, r] of [[-0.3, -0.2, 0.35], [0.35, 0.25, 0.3], [-0.1, 0.45, 0.2]]) { x.beginPath(); x.arc(560 + a * s, 560 + b * s, r * s, 0, Math.PI * 2); x.fill() }
+  if (s > 2) K.pixSprite(x, 560, 560, s + 8, 30, (c) => {
+    c.fillStyle = K.INK; c.beginPath(); c.arc(0, 0, s + 6, 0, Math.PI * 2); c.fill()
+    c.fillStyle = '#4f8ff0'; c.beginPath(); c.arc(0, 0, s, 0, Math.PI * 2); c.fill()
+    c.fillStyle = '#5fd08a'; for (const [a, b, r] of [[-0.3, -0.2, 0.35], [0.35, 0.25, 0.3], [-0.1, 0.45, 0.2]]) { c.beginPath(); c.arc(a * s, b * s, r * s, 0, Math.PI * 2); c.fill() }
+  })
   K.label(x, 'EARTH', 560, 670, { size: 22, bg: '#cfe0ff' })
   x.restore()
 }

@@ -66,7 +66,24 @@ export function track(keys, t, base = {}) {
 
 // ═══════════════════════════════════════ moon-flavoured props
 /** a moon phase disc (phase 0 = new, 0.5 = full, 1 = new again), lit from the right while waxing */
-export function phaseDisc(x, X, Y, r, phase, { lit = SILVER, dark = '#2a2550', ink = INK } = {}) {
+// pixel sprite helper (Star Talk style): draw fn at cell scale into a small buffer, hard-threshold the alpha,
+// then blit it back with smoothing off. fn(c, cx, cy, u) draws centred on (cx, cy) with u = 1 cell per world px / cell.
+const PXB = {}
+export function pixSprite(x, X, Y, R, cells, fn) {
+  const N = cells + 4
+  if (!PXB[N]) { const cv = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(N, N) : Object.assign(document.createElement('canvas'), { width: N, height: N }); PXB[N] = { c: cv, x: cv.getContext('2d', { willReadFrequently: true }) } }
+  const b = PXB[N], c = b.x, u = cells / (2 * R)
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, N, N)
+  c.save(); c.translate(N / 2, N / 2); c.scale(u, u); fn(c, 0, 0); c.restore()
+  const img = c.getImageData(0, 0, N, N), d = img.data
+  for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 110) d[i + 3] = 0; else { d[i + 3] = 255; for (let j = 0; j < 3; j++) d[i + j] = Math.min(255, Math.round(d[i + j] / 18) * 18) } }
+  c.putImageData(img, 0, 0)
+  const sm = x.imageSmoothingEnabled; x.imageSmoothingEnabled = false
+  x.drawImage(b.c, X - N / (2 * u), Y - N / (2 * u), N / u, N / u)
+  x.imageSmoothingEnabled = sm
+}
+export function phaseDisc(x, X, Y, r, phase, o = {}) { pixSprite(x, X, Y, r + 6, 22, (c) => phaseDiscSmooth(c, 0, 0, r, phase, o)) }
+function phaseDiscSmooth(x, X, Y, r, phase, { lit = SILVER, dark = '#2a2550', ink = INK } = {}) {
   x.save()
   x.fillStyle = ink; x.beginPath(); x.arc(X, Y, r + 5, 0, TAU); x.fill()
   x.fillStyle = dark; x.beginPath(); x.arc(X, Y, r, 0, TAU); x.fill()
@@ -132,7 +149,7 @@ function hushFx(x, t, at, len, mx, my) {
   x.restore()
 }
 
-export const K = { box, rect, rrect, txt, rich, phone, room, label, loading, phaseDisc, phaseStrip, cloud, telescope, pop01, outK, inOut, track, drawPlanet, drawSign, drawSpace, GOLD, BONE, INK, RED, PINK, CY, SILVER, MOONRIM, NIGHT, INTER, MONO, SERIF }
+export const K = { pixSprite, box, rect, rrect, txt, rich, phone, room, label, loading, phaseDisc, phaseStrip, cloud, telescope, pop01, outK, inOut, track, drawPlanet, drawSign, drawSpace, GOLD, BONE, INK, RED, PINK, CY, SILVER, MOONRIM, NIGHT, INTER, MONO, SERIF }
 
 // ═══════════════════════════════════════ the series bug
 function buildBug(root) {
