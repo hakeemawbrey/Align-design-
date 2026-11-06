@@ -1,0 +1,179 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "file": "cache/signs/gemini/aic-250020.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "pin": true,
+   "note": "daguerreotype, two sisters as twins",
+   "id": "aic-250020",
+   "source": "aic",
+   "title": "Untitled (Portrait of Two Girls)",
+   "creator": "Unknown maker",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250020",
+   "url": "https://www.artic.edu/iiif/2/80353db9-b2a9-33c6-3662-98c4dadd382e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1988
+  },
+  {
+   "file": "cache/signs/gemini/met-436326.jpg",
+   "focus": [
+    0.45,
+    0.53
+   ],
+   "pin": true,
+   "note": "Fragonard, two sisters cheek to cheek",
+   "id": "met-436326",
+   "source": "met",
+   "title": "The Two Sisters",
+   "creator": "Jean Honor\u00e9 Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436326",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1012-01.jpg",
+   "w": 2017,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/gemini/nasa-PIA04216.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Ant nebula, twin lobes",
+   "id": "nasa-PIA04216",
+   "source": "nasa",
+   "title": "Ant Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA04216",
+   "url": "https://images-assets.nasa.gov/image/PIA04216/PIA04216~orig.jpg",
+   "w": 1072,
+   "h": 708
+  },
+  {
+   "file": "cache/signs/gemini/met-438001.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Gauguin, two women side by side",
+   "id": "met-438001",
+   "source": "met",
+   "title": "Two Women",
+   "creator": "Paul Gauguin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438001",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg",
+   "w": 2600,
+   "h": 2066
+  },
+  {
+   "file": "cache/signs/gemini/aic-250056.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "pin": true,
+   "note": "ambrotype, two boys as twins on black",
+   "id": "aic-250056",
+   "source": "aic",
+   "title": "Untitled (Portrait of Two Boys)",
+   "creator": "Unknown maker",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250056",
+   "url": "https://www.artic.edu/iiif/2/bc332865-ae99-7e1c-f69f-12f233da8b14/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2167
+  },
+  {
+   "file": "cache/signs/gemini/ov-584f3662-1a78-4614-a25e-5e47b99436a8.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "gold Venetian mask in copper drape",
+   "id": "ov-584f3662-1a78-4614-a25e-5e47b99436a8",
+   "source": "openverse/wikimedia",
+   "title": "Venetian Carnival Mask - Maschera di Carnevale - Venice Italy - Creative Commons by gnuckx (4820456037)",
+   "creator": "gnuckx",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=24525960",
+   "url": "https://api.openverse.org/v1/images/584f3662-1a78-4614-a25e-5e47b99436a8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Venetian_Carnival_Mask_-_Maschera_di_Carnevale_-_Venice_Italy_-_Creative_Commons_by_gnuckx_%284820456037%29.jpg",
+   "w": 1280,
+   "h": 1927
+  },
+  {
+   "file": "cache/signs/gemini/met-436896.jpg",
+   "focus": [
+    0.42,
+    0.35
+   ],
+   "note": "Lippi, double portrait at a casement",
+   "id": "met-436896",
+   "source": "met",
+   "title": "Portrait of a Woman with a Man at a Casement",
+   "creator": "Fra Filippo Lippi",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436896",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP159891.jpg",
+   "w": 1723,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/gemini/met-435852.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "two children teasing a cat, dark ground",
+   "id": "met-435852",
+   "source": "met",
+   "title": "Two Children Teasing a Cat",
+   "creator": "Annibale Carracci",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435852",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP243404.jpg",
+   "w": 2600,
+   "h": 1939
+  },
+  {
+   "file": "cache/signs/gemini/aic-111613.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Jordaens, Magdalene between angel and tempter",
+   "id": "aic-111613",
+   "source": "aic",
+   "title": "The Temptation of the Magdalene",
+   "creator": "Jacob Jordaens (Flemish, 1593-1678)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111613",
+   "url": "https://www.artic.edu/iiif/2/f3ca80bd-48a0-8922-989f-6ba3c308d8cc/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2198
+  },
+  {
+   "file": "cache/signs/gemini/met-12693.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "mother and son, two faces",
+   "id": "met-12693",
+   "source": "met",
+   "title": "Mother and Son",
+   "creator": "Thomas Sully",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12693",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT11612.jpg",
+   "w": 2060,
+   "h": 2600
+  }
+ ]
+}

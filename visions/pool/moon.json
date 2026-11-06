@@ -1,0 +1,785 @@
+{
+ "images": [
+  {
+   "id": "wc-21847087",
+   "source": "commons",
+   "title": "Caspar David Friedrich - Two Men Contemplating the Moon - Google Art Project",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg/1920px-Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1538,
+   "file": "cache/moon/cand/wc-21847087.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Friedrich, Two Men Contemplating the Moon"
+  },
+  {
+   "id": "wc-117026665",
+   "source": "commons",
+   "title": "John Atkinson Grimshaw - A moonlit lane",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_A_moonlit_lane.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/John_Atkinson_Grimshaw_-_A_moonlit_lane.jpg/1920px-John_Atkinson_Grimshaw_-_A_moonlit_lane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/John_Atkinson_Grimshaw_-_A_moonlit_lane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1894,
+   "h": 2400,
+   "file": "cache/moon/cand/wc-117026665.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ],
+   "pin": true,
+   "note": "Grimshaw, moonlit lane"
+  },
+  {
+   "id": "wc-123174451",
+   "source": "commons",
+   "title": "Ivan Konstantinovich Aivazovsky - Passing Ship on a Moonlit Night",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Passing_Ship_on_a_Moonlit_Night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Ivan_Konstantinovich_Aivazovsky_-_Passing_Ship_on_a_Moonlit_Night.jpg/1920px-Ivan_Konstantinovich_Aivazovsky_-_Passing_Ship_on_a_Moonlit_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ivan_Konstantinovich_Aivazovsky_-_Passing_Ship_on_a_Moonlit_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1468,
+   "file": "cache/moon/cand/wc-123174451.jpg",
+   "focus": [
+    0.57,
+    0.5
+   ],
+   "note": "Aivazovsky, ship under cliffs, moonlit",
+   "pin": true
+  },
+  {
+   "id": "wc-123144900",
+   "source": "commons",
+   "title": "Ivan Konstantinovich Aivazovsky - Steamboat on a Moonlit Night",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Steamboat_on_a_Moonlit_Night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Ivan_Konstantinovich_Aivazovsky_-_Steamboat_on_a_Moonlit_Night.jpg/1920px-Ivan_Konstantinovich_Aivazovsky_-_Steamboat_on_a_Moonlit_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Ivan_Konstantinovich_Aivazovsky_-_Steamboat_on_a_Moonlit_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1282,
+   "file": "cache/moon/cand/wc-123144900.jpg",
+   "focus": [
+    0.66,
+    0.5
+   ],
+   "pin": true,
+   "note": "Aivazovsky, steamboat, full moon"
+  },
+  {
+   "id": "wc-75776451",
+   "source": "commons",
+   "title": "Ivan Konstantinovich Aivazovsky - Moonlit Landing, 1895",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Moonlit_Landing,_1895.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Ivan_Konstantinovich_Aivazovsky_-_Moonlit_Landing%2C_1895.jpg/1920px-Ivan_Konstantinovich_Aivazovsky_-_Moonlit_Landing%2C_1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Ivan_Konstantinovich_Aivazovsky_-_Moonlit_Landing%2C_1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1164,
+   "file": "cache/moon/cand/wc-75776451.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Aivazovsky, moonlit landing"
+  },
+  {
+   "id": "wc-20304987",
+   "source": "commons",
+   "title": "Kuindzhi Daryal pass 1890 1895",
+   "creator": "Arkhip Kuindzhi",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Kuindzhi_Daryal_pass_1890_1895.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Kuindzhi_Daryal_pass_1890_1895.jpg/1920px-Kuindzhi_Daryal_pass_1890_1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Kuindzhi_Daryal_pass_1890_1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1281,
+   "file": "cache/moon/cand/wc-20304987.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Kuindzhi, Daryal pass, moon"
+  },
+  {
+   "id": "wc-190362987",
+   "source": "commons",
+   "title": "0860Ha. \u041a\u0443\u0438\u043d\u0434\u0436\u0438 \u0410.\u0418. \u0418\u0441\u0430\u0430\u043a\u0438\u0435\u0432\u0441\u043a\u0438\u0439 \u0441\u043e\u0431\u043e\u0440 \u043f\u0440\u0438 \u043b\u0443\u043d\u0435",
+   "creator": "Arkhip Kuindzhi",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:0860Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%B5.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/0860Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%B5.jpg/1920px-0860Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/0860Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1236,
+   "file": "cache/moon/cand/wc-190362987.jpg",
+   "focus": [
+    0.36,
+    0.5
+   ],
+   "note": "Kuindzhi, St Isaac's by moonlight"
+  },
+  {
+   "id": "wc-21996959",
+   "source": "commons",
+   "title": "Caspar David Friedrich - Northern Sea in the Moonlight - Google Art Project",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Northern_Sea_in_the_Moonlight_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Caspar_David_Friedrich_-_Northern_Sea_in_the_Moonlight_-_Google_Art_Project.jpg/1920px-Caspar_David_Friedrich_-_Northern_Sea_in_the_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Caspar_David_Friedrich_-_Northern_Sea_in_the_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1347,
+   "file": "cache/moon/cand/wc-21996959.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Friedrich, Northern Sea in moonlight"
+  },
+  {
+   "id": "wc-21846830",
+   "source": "commons",
+   "title": "Johan Christian Dahl - View of Dresden by Moonlight - Google Art Project",
+   "creator": "Johan Christian Dahl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg/1920px-Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1139,
+   "file": "cache/moon/cand/wc-21846830.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Dahl, Dresden by moonlight"
+  },
+  {
+   "id": "wc-22000531",
+   "source": "commons",
+   "title": "Pether, Abraham - Coast Scene by Moonlight - Google Art Project",
+   "creator": "Abraham Pether (1756-1812) Details on Google Art Project",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pether,_Abraham_-_Coast_Scene_by_Moonlight_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Pether%2C_Abraham_-_Coast_Scene_by_Moonlight_-_Google_Art_Project.jpg/1920px-Pether%2C_Abraham_-_Coast_Scene_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Pether%2C_Abraham_-_Coast_Scene_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1427,
+   "file": "cache/moon/cand/wc-22000531.jpg",
+   "focus": [
+    0.62,
+    0.5
+   ],
+   "tone": 0.6,
+   "note": "Abraham Pether, coast by moonlight"
+  },
+  {
+   "id": "wc-91905227",
+   "source": "commons",
+   "title": "Sebastian Pether (1790-1844) - Moonlit River Scene with a Capriccio of Ruins - 515717 - National Trust",
+   "creator": "Sebastian Pether",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sebastian_Pether_(1790-1844)_-_Moonlit_River_Scene_with_a_Capriccio_of_Ruins_-_515717_-_National_Trust.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Sebastian_Pether_%281790-1844%29_-_Moonlit_River_Scene_with_a_Capriccio_of_Ruins_-_515717_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Sebastian_Pether_%281790-1844%29_-_Moonlit_River_Scene_with_a_Capriccio_of_Ruins_-_515717_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1200,
+   "h": 923,
+   "file": "cache/moon/cand/wc-91905227.jpg",
+   "focus": [
+    0.56,
+    0.5
+   ],
+   "note": "Sebastian Pether, moonlit river with ruin"
+  },
+  {
+   "id": "wc-91868969",
+   "source": "commons",
+   "title": "William Pether (1731-1819) - Moonlit River Scene with a Ruined Gothic Church, and a Stone Bridge with an Angler - 515485 - National Trust",
+   "creator": "William Pether",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:William_Pether_(1731-1819)_-_Moonlit_River_Scene_with_a_Ruined_Gothic_Church,_and_a_Stone_Bridge_with_an_Angler_-_515485_-_National_Trust.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/William_Pether_%281731-1819%29_-_Moonlit_River_Scene_with_a_Ruined_Gothic_Church%2C_and_a_Stone_Bridge_with_an_Angler_-_515485_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/William_Pether_%281731-1819%29_-_Moonlit_River_Scene_with_a_Ruined_Gothic_Church%2C_and_a_Stone_Bridge_with_an_Angler_-_515485_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1200,
+   "h": 993,
+   "file": "cache/moon/cand/wc-91868969.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "William Pether, moonlit ruin"
+  },
+  {
+   "id": "wc-23590109",
+   "source": "commons",
+   "title": "Joseph Wright of Derby - Dovedale by Moonlight - Google Art Project",
+   "creator": "Joseph Wright of Derby",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Wright_of_Derby_-_Dovedale_by_Moonlight_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Joseph_Wright_of_Derby_-_Dovedale_by_Moonlight_-_Google_Art_Project.jpg/1920px-Joseph_Wright_of_Derby_-_Dovedale_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Joseph_Wright_of_Derby_-_Dovedale_by_Moonlight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1617,
+   "file": "cache/moon/cand/wc-23590109.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Wright of Derby, Dovedale by moonlight"
+  },
+  {
+   "id": "wc-176917289",
+   "source": "commons",
+   "title": "Carl Gustav Carus - Stadt im Mondschein",
+   "creator": "Carl Gustav Carus",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Stadt_im_Mondschein.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Carl_Gustav_Carus_-_Stadt_im_Mondschein.jpg/1920px-Carl_Gustav_Carus_-_Stadt_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Carl_Gustav_Carus_-_Stadt_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1864,
+   "h": 2400,
+   "file": "cache/moon/cand/wc-176917289.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "note": "Carus, city in moonlight"
+  },
+  {
+   "id": "wc-33201873",
+   "source": "commons",
+   "title": "Carl Gustav Carus - Vollmond bei Pillnitz",
+   "creator": "Carl Gustav Carus",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Vollmond_bei_Pillnitz.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Carl_Gustav_Carus_-_Vollmond_bei_Pillnitz.jpg/1920px-Carl_Gustav_Carus_-_Vollmond_bei_Pillnitz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Carl_Gustav_Carus_-_Vollmond_bei_Pillnitz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1342,
+   "file": "cache/moon/cand/wc-33201873.jpg",
+   "focus": [
+    0.53,
+    0.5
+   ],
+   "note": "Carus, full moon at Pillnitz"
+  },
+  {
+   "id": "wc-83112288",
+   "source": "commons",
+   "title": "Verreyt Landscape in the Moonlight",
+   "creator": "Jacob Verreyt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Verreyt_Landscape_in_the_Moonlight.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Verreyt_Landscape_in_the_Moonlight.JPG/1920px-Verreyt_Landscape_in_the_Moonlight.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Verreyt_Landscape_in_the_Moonlight.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1359,
+   "file": "cache/moon/cand/wc-83112288.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Verreyt, landscape in moonlight",
+   "pin": true
+  },
+  {
+   "id": "wc-77713884",
+   "source": "commons",
+   "title": "Giovanni Grubacs - Piazza San Marco by moonlight, Venice",
+   "creator": "Giovanni Grubacs",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Giovanni_Grubacs_-_Piazza_San_Marco_by_moonlight,_Venice.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Giovanni_Grubacs_-_Piazza_San_Marco_by_moonlight%2C_Venice.jpg/1920px-Giovanni_Grubacs_-_Piazza_San_Marco_by_moonlight%2C_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Giovanni_Grubacs_-_Piazza_San_Marco_by_moonlight%2C_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1358,
+   "file": "cache/moon/cand/wc-77713884.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Grubacs, San Marco by moonlight"
+  },
+  {
+   "id": "wc-6696937",
+   "source": "commons",
+   "title": "Vernet, Claude Joseph - Seaport by Moonlight - 1771",
+   "creator": "Joseph Vernet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vernet,_Claude_Joseph_-_Seaport_by_Moonlight_-_1771.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Vernet%2C_Claude_Joseph_-_Seaport_by_Moonlight_-_1771.JPG/1920px-Vernet%2C_Claude_Joseph_-_Seaport_by_Moonlight_-_1771.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Vernet%2C_Claude_Joseph_-_Seaport_by_Moonlight_-_1771.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1142,
+   "file": "cache/moon/cand/wc-6696937.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Vernet, seaport by moonlight"
+  },
+  {
+   "id": "wc-40048471",
+   "source": "commons",
+   "title": "Joseph Vernet-Carpentras-Clair de lune",
+   "creator": "Joseph Vernet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Vernet-Carpentras-Clair_de_lune.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Joseph_Vernet-Carpentras-Clair_de_lune.jpg/1920px-Joseph_Vernet-Carpentras-Clair_de_lune.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Joseph_Vernet-Carpentras-Clair_de_lune.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1595,
+   "file": "cache/moon/cand/wc-40048471.jpg",
+   "focus": [
+    0.59,
+    0.5
+   ],
+   "note": "Vernet, clair de lune"
+  },
+  {
+   "id": "wc-80037018",
+   "source": "commons",
+   "title": "Joseph Vernet - A Harbor in Moonlight (1787)",
+   "creator": "Joseph Vernet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Vernet_-_A_Harbor_in_Moonlight_(1787).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Joseph_Vernet_-_A_Harbor_in_Moonlight_%281787%29.jpg/1920px-Joseph_Vernet_-_A_Harbor_in_Moonlight_%281787%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Joseph_Vernet_-_A_Harbor_in_Moonlight_%281787%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1418,
+   "file": "cache/moon/cand/wc-80037018.jpg",
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "note": "Vernet, harbour in moonlight"
+  },
+  {
+   "id": "wc-21393865",
+   "source": "commons",
+   "title": "Arnold B\u00f6cklin - Mondscheinlandschaft mit Ruine",
+   "creator": "Arnold B\u00f6cklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Mondscheinlandschaft_mit_Ruine.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Arnold_B%C3%B6cklin_-_Mondscheinlandschaft_mit_Ruine.jpg/1920px-Arnold_B%C3%B6cklin_-_Mondscheinlandschaft_mit_Ruine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Arnold_B%C3%B6cklin_-_Mondscheinlandschaft_mit_Ruine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1468,
+   "file": "cache/moon/cand/wc-21393865.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Bocklin, moonlit landscape with ruin"
+  },
+  {
+   "id": "wc-59249844",
+   "source": "commons",
+   "title": "Moonlight seascape",
+   "creator": "Thomas Moran",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Moonlight_seascape.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Moonlight_seascape.jpg/1920px-Moonlight_seascape.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Moonlight_seascape.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1236,
+   "file": "cache/moon/cand/wc-59249844.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Thomas Moran, moonlight seascape",
+   "pin": true
+  },
+  {
+   "id": "wc-30612732",
+   "source": "commons",
+   "title": "Ralph Albert Blakelock - 'Moonlight', c. 1883-1889, High Museum",
+   "creator": "Ralph Albert Blakelock",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_%27Moonlight%27,_c._1883-1889,_High_Museum.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Ralph_Albert_Blakelock_-_%27Moonlight%27%2C_c._1883-1889%2C_High_Museum.JPG/1920px-Ralph_Albert_Blakelock_-_%27Moonlight%27%2C_c._1883-1889%2C_High_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Ralph_Albert_Blakelock_-_%27Moonlight%27%2C_c._1883-1889%2C_High_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2394,
+   "file": "cache/moon/cand/wc-30612732.jpg",
+   "focus": [
+    0.47,
+    0.35
+   ],
+   "note": "Blakelock, moonlight, tree"
+  },
+  {
+   "id": "wc-24968340",
+   "source": "commons",
+   "title": "Fitz Henry Lane - Fishing Party",
+   "creator": "Fitz Henry Lane",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Fitz_Henry_Lane_-_Fishing_Party.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Fitz_Henry_Lane_-_Fishing_Party.jpg/1920px-Fitz_Henry_Lane_-_Fishing_Party.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Fitz_Henry_Lane_-_Fishing_Party.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1276,
+   "file": "cache/moon/cand/wc-24968340.jpg",
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "note": "Fitz Henry Lane, moonlit sail"
+  },
+  {
+   "id": "wc-97989597",
+   "source": "commons",
+   "title": "Knud Baade - Clouds in Moonlight - NG.M.02666 - National Museum of Art, Architecture and Design",
+   "creator": "Knud Baade",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Clouds_in_Moonlight_-_NG.M.02666_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Knud_Baade_-_Clouds_in_Moonlight_-_NG.M.02666_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Knud_Baade_-_Clouds_in_Moonlight_-_NG.M.02666_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Knud_Baade_-_Clouds_in_Moonlight_-_NG.M.02666_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1159,
+   "file": "cache/moon/cand/wc-97989597.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Baade, clouds in moonlight"
+  },
+  {
+   "id": "wc-152625264",
+   "source": "commons",
+   "title": "Knud Baade - Norwegische K\u00fcstenwacht im Mondschein",
+   "creator": "Derbrauni",
+   "license": "CC BY 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Norwegische_K%C3%BCstenwacht_im_Mondschein.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Knud_Baade_-_Norwegische_K%C3%BCstenwacht_im_Mondschein.jpg/1920px-Knud_Baade_-_Norwegische_K%C3%BCstenwacht_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Knud_Baade_-_Norwegische_K%C3%BCstenwacht_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1393,
+   "file": "cache/moon/cand/wc-152625264.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.06,
+   "note": "Baade, coastguard by moonlight"
+  },
+  {
+   "id": "wc-69494470",
+   "source": "commons",
+   "title": "Knud Baade - Klippeparti i m\u00e5nelys - 1868",
+   "creator": "Knud Baade",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Klippeparti_i_m%C3%A5nelys_-_1868.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Knud_Baade_-_Klippeparti_i_m%C3%A5nelys_-_1868.png/1920px-Knud_Baade_-_Klippeparti_i_m%C3%A5nelys_-_1868.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Knud_Baade_-_Klippeparti_i_m%C3%A5nelys_-_1868.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1391,
+   "file": "cache/moon/cand/wc-69494470.jpg",
+   "focus": [
+    0.54,
+    0.5
+   ],
+   "note": "Baade, cliffs by moonlight"
+  },
+  {
+   "id": "wc-84972776",
+   "source": "commons",
+   "title": "Peder Balke - The North Cape by Moonlight - 2019.167.4 - Metropolitan Museum of Art",
+   "creator": "Peder Balke",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_The_North_Cape_by_Moonlight_-_2019.167.4_-_Metropolitan_Museum_of_Art.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Peder_Balke_-_The_North_Cape_by_Moonlight_-_2019.167.4_-_Metropolitan_Museum_of_Art.jpg/1920px-Peder_Balke_-_The_North_Cape_by_Moonlight_-_2019.167.4_-_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Peder_Balke_-_The_North_Cape_by_Moonlight_-_2019.167.4_-_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1386,
+   "file": "cache/moon/cand/wc-84972776.jpg",
+   "focus": [
+    0.44,
+    0.5
+   ],
+   "note": "Balke, North Cape by moonlight"
+  },
+  {
+   "id": "wc-105577902",
+   "source": "commons",
+   "title": "Peder Balke - Two sailing boats by moonlight (1843)",
+   "creator": "Peder Balke",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Two_sailing_boats_by_moonlight_(1843).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Peder_Balke_-_Two_sailing_boats_by_moonlight_%281843%29.jpg/1920px-Peder_Balke_-_Two_sailing_boats_by_moonlight_%281843%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Peder_Balke_-_Two_sailing_boats_by_moonlight_%281843%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1195,
+   "file": "cache/moon/cand/wc-105577902.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Balke, sailing boats by moonlight"
+  },
+  {
+   "id": "wc-105578632",
+   "source": "commons",
+   "title": "Peder Balke - Seilb\u00e5t i m\u00e5neskinn",
+   "creator": "Peder Balke",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Seilb%C3%A5t_i_m%C3%A5neskinn.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Peder_Balke_-_Seilb%C3%A5t_i_m%C3%A5neskinn.jpg/1920px-Peder_Balke_-_Seilb%C3%A5t_i_m%C3%A5neskinn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Peder_Balke_-_Seilb%C3%A5t_i_m%C3%A5neskinn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1331,
+   "file": "cache/moon/cand/wc-105578632.jpg",
+   "focus": [
+    0.46,
+    0.5
+   ],
+   "note": "Balke, sailboat in moonlight"
+  },
+  {
+   "id": "wc-22731787",
+   "source": "commons",
+   "title": "Winslow Homer - Moonlight",
+   "creator": "Winslow Homer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Moonlight.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Winslow_Homer_-_Moonlight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Winslow_Homer_-_Moonlight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1000,
+   "h": 667,
+   "file": "cache/moon/cand/wc-22731787.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Homer, Moonlight, couple on the shore"
+  },
+  {
+   "id": "wc-22469943",
+   "source": "commons",
+   "title": "Winslow Homer - Kissing the Moon",
+   "creator": "Winslow Homer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Kissing_the_Moon.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Winslow_Homer_-_Kissing_the_Moon.jpg/1920px-Winslow_Homer_-_Kissing_the_Moon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Winslow_Homer_-_Kissing_the_Moon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1426,
+   "file": "cache/moon/cand/wc-22469943.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Homer, Kissing the Moon"
+  },
+  {
+   "id": "wc-33547819",
+   "source": "commons",
+   "title": "\u041b\u0443\u043d\u043d\u0430\u044f \u043d\u043e\u0447\u044c \u0410\u0439\u0432\u0430\u0437\u043e\u0432\u0441\u043a\u0438\u0439",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/%D0%9B%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg/1920px-%D0%9B%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/%D0%9B%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1199,
+   "file": "cache/moon/cand/wc-33547819.jpg",
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "note": "Aivazovsky, moonlit night, towers on the rocks"
+  },
+  {
+   "id": "wc-98069514",
+   "source": "commons",
+   "title": "Sebastian Pether (1790-1844) (follower of) - Moonlit River Scene with a Ruined Castle and a Townscape beyond - 515682 - National Trust",
+   "creator": "anonymous",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sebastian_Pether_(1790-1844)_(follower_of)_-_Moonlit_River_Scene_with_a_Ruined_Castle_and_a_Townscape_beyond_-_515682_-_National_Trust.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Sebastian_Pether_%281790-1844%29_%28follower_of%29_-_Moonlit_River_Scene_with_a_Ruined_Castle_and_a_Townscape_beyond_-_515682_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Sebastian_Pether_%281790-1844%29_%28follower_of%29_-_Moonlit_River_Scene_with_a_Ruined_Castle_and_a_Townscape_beyond_-_515682_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 984,
+   "h": 1200,
+   "file": "cache/moon/cand/wc-98069514.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "note": "follower of Pether, moonlit castle by a river"
+  },
+  {
+   "id": "wc-79266307",
+   "source": "commons",
+   "title": "Philippe-Jacques de Loutherbourg - A Philosopher in a Moonlit Churchyard",
+   "creator": "Philip James de Loutherbourg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Philippe-Jacques_de_Loutherbourg_-_A_Philosopher_in_a_Moonlit_Churchyard.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Philippe-Jacques_de_Loutherbourg_-_A_Philosopher_in_a_Moonlit_Churchyard.jpg/1920px-Philippe-Jacques_de_Loutherbourg_-_A_Philosopher_in_a_Moonlit_Churchyard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Philippe-Jacques_de_Loutherbourg_-_A_Philosopher_in_a_Moonlit_Churchyard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2309,
+   "file": "cache/moon/cand/wc-79266307.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Loutherbourg, philosopher in a moonlit churchyard"
+  },
+  {
+   "id": "wc-89034945",
+   "source": "commons",
+   "title": "Alexandre Calame - Abendliche Seelandschaft",
+   "creator": "Alexandre Calame",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alexandre_Calame_-_Abendliche_Seelandschaft.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Alexandre_Calame_-_Abendliche_Seelandschaft.jpg/1920px-Alexandre_Calame_-_Abendliche_Seelandschaft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Alexandre_Calame_-_Abendliche_Seelandschaft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1223,
+   "file": "cache/moon/cand/wc-89034945.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Calame, lake at night, moon and boat"
+  },
+  {
+   "id": "wc-62556411",
+   "source": "commons",
+   "title": "The Thames and Greenwich Hospital by Moonlight RMG BHC3870",
+   "creator": "Henry Pether",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff/lossy-page1-1920px-The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1245,
+   "file": "cache/moon/cand/wc-62556411.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Henry Pether, Thames and Greenwich by moonlight"
+  },
+  {
+   "id": "wc-68447475",
+   "source": "commons",
+   "title": "Carl Blechen - Landschaft im Winter bei Mondschein (1836)",
+   "creator": "Carl Blechen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_(1836).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg/1920px-Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1415,
+   "file": "cache/moon/cand/wc-68447475.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Blechen, winter landscape by moonlight"
+  },
+  {
+   "id": "wc-65831106",
+   "source": "commons",
+   "title": "Karl Kaufmann - A Moonlit Night over Venice",
+   "creator": "Karl Kaufmann",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg/1920px-Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1439,
+   "file": "cache/moon/cand/wc-65831106.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "Kaufmann, moonlit night over Venice",
+   "exposure": 0.85
+  },
+  {
+   "id": "wc-53556767",
+   "source": "commons",
+   "title": "Storm at Sea on a Moonlit Night (Aivazovsky)",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Storm_at_Sea_on_a_Moonlit_Night_(Aivazovsky).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Storm_at_Sea_on_a_Moonlit_Night_%28Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Storm_at_Sea_on_a_Moonlit_Night_%28Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1694,
+   "h": 1200,
+   "file": "cache/water/cand/wc-53556767.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "restored: defining moon image"
+  },
+  {
+   "id": "met-11981",
+   "source": "met",
+   "title": "The Toilers of the Sea",
+   "creator": "Albert Pinkham Ryder",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11981",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT228023.jpg",
+   "w": 2400,
+   "h": 2270,
+   "file": "cache/water/cand/met-11981.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "restored: defining moon image"
+  },
+  {
+   "id": "wc-6872227",
+   "source": "commons",
+   "title": "Grimshaw, John Atkinson - In Peril - 1879",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Grimshaw,_John_Atkinson_-_In_Peril_-_1879.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg/1920px-Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1289,
+   "file": "cache/water/cand/wc-6872227.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "restored: defining moon image"
+  },
+  {
+   "id": "wc-15883868",
+   "source": "commons",
+   "title": "Caspar David Friedrich - Moonrise by the Sea - WGA08266",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg/1920px-Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1458,
+   "file": "cache/water/cand/wc-15883868.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "restored: defining moon image"
+  }
+ ]
+}

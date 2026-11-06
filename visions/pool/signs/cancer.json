@@ -1,0 +1,216 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "file": "cache/signs/cancer/nasa-PIA03606.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Crab Nebula, Hubble",
+   "pin": true,
+   "id": "nasa-PIA03606",
+   "source": "nasa",
+   "title": "Most Detailed Image of the Crab Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA03606",
+   "url": "https://images-assets.nasa.gov/image/PIA03606/PIA03606~orig.jpg",
+   "w": 2600,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/cancer/ov-c9397265-7ef2-48e0-a591-39dab21fdd3a.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "moon in clouds over a Norwegian fjord",
+   "id": "ov-c9397265-7ef2-48e0-a591-39dab21fdd3a",
+   "source": "openverse/wikimedia",
+   "title": "Skogsoy moonlight",
+   "creator": "Yosh3000",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=4523823",
+   "url": "https://api.openverse.org/v1/images/c9397265-7ef2-48e0-a591-39dab21fdd3a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Skogsoy_moonlight.JPG",
+   "w": 1280,
+   "h": 857
+  },
+  {
+   "file": "cache/signs/cancer/met-436344.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Holy Family by candlelight",
+   "id": "met-436344",
+   "source": "met",
+   "title": "Holy Family with Saint Anne",
+   "creator": "French Painter",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436344",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-44678-001.jpg",
+   "w": 1964,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/cancer/nasa-NHQ201712030002.jpg",
+   "focus": [
+    0.42,
+    0.3
+   ],
+   "note": "blood-red full moon over the city",
+   "pin": true,
+   "id": "nasa-NHQ201712030002",
+   "source": "nasa",
+   "title": "Supermoon",
+   "creator": "HQ",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/NHQ201712030002",
+   "url": "https://images-assets.nasa.gov/image/NHQ201712030002/NHQ201712030002~orig.jpg",
+   "w": 2600,
+   "h": 2069
+  },
+  {
+   "file": "cache/signs/cancer/met-441379.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "North Cape by moonlight",
+   "id": "met-441379",
+   "source": "met",
+   "title": "The North Cape by Moonlight",
+   "creator": "Peder Balke",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/441379",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1740-001_cropped.jpg",
+   "w": 2600,
+   "h": 1877
+  },
+  {
+   "file": "cache/signs/cancer/ov-84a1999e-4c9c-477c-b9ec-ddcb0a7c2522.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Selene statue on dark",
+   "id": "ov-84a1999e-4c9c-477c-b9ec-ddcb0a7c2522",
+   "source": "openverse/wikimedia",
+   "title": "Antalya Museum Selene statue 9650",
+   "creator": "Dosseman",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=128255415",
+   "url": "https://api.openverse.org/v1/images/84a1999e-4c9c-477c-b9ec-ddcb0a7c2522/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Antalya_Museum_Selene_statue_9650.jpg",
+   "w": 1280,
+   "h": 1923
+  },
+  {
+   "file": "cache/signs/cancer/ov-990b49a3-4cf4-4426-a9af-83ee1e74391b.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "blue crab, claws raised",
+   "id": "ov-990b49a3-4cf4-4426-a9af-83ee1e74391b",
+   "source": "openverse/wikimedia",
+   "title": "Blue crab on market in Piraeus - Callinectes sapidus Rathbun 20020819-317",
+   "creator": "wpopp",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=20497",
+   "url": "https://api.openverse.org/v1/images/990b49a3-4cf4-4426-a9af-83ee1e74391b/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Blue_crab_on_market_in_Piraeus_-_Callinectes_sapidus_Rathbun_20020819-317.jpg",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "file": "cache/signs/cancer/nasa-iss070e127437.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "moonglint on the ocean from orbit",
+   "id": "nasa-iss070e127437",
+   "source": "nasa",
+   "title": "iss070e127437",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/iss070e127437",
+   "url": "https://images-assets.nasa.gov/image/iss070e127437/iss070e127437~orig.jpg",
+   "w": 2600,
+   "h": 1733
+  },
+  {
+   "file": "cache/signs/cancer/aic-86780.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Melchers, mother and child",
+   "id": "aic-86780",
+   "source": "aic",
+   "title": "Mother and Child",
+   "creator": "Julius Gari Melchers (American, 1860\u20131932)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86780",
+   "url": "https://www.artic.edu/iiif/2/49f45b42-b565-199f-6ef5-f09dea142205/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1969
+  },
+  {
+   "file": "cache/signs/cancer/met-435977.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Corot, mother and child",
+   "id": "met-435977",
+   "source": "met",
+   "title": "Mother and Child",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435977",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2008.jpg",
+   "w": 1820,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/cancer/ov-38377724-c9b9-46d9-a5e1-ca1a603e5440.jpg",
+   "focus": [
+    0.23,
+    0.28
+   ],
+   "note": "bright moon on black",
+   "id": "ov-38377724-c9b9-46d9-a5e1-ca1a603e5440",
+   "source": "openverse/wikimedia",
+   "title": "Moon, Beehive Cluster, and Venus - June 17 2026 (55342034697)",
+   "creator": "Kevin M. Gill",
+   "license": "by 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=194133993",
+   "url": "https://api.openverse.org/v1/images/38377724-c9b9-46d9-a5e1-ca1a603e5440/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Moon%2C_Beehive_Cluster%2C_and_Venus_-_June_17_2026_%2855342034697%29.png",
+   "w": 1280,
+   "h": 916
+  },
+  {
+   "file": "cache/signs/cancer/ov-3e270dcd-fee5-4503-b4fb-6ea7c47110ee.jpg",
+   "focus": [
+    0.5,
+    0.85
+   ],
+   "note": "owl silhouetted in the full moon",
+   "id": "ov-3e270dcd-fee5-4503-b4fb-6ea7c47110ee",
+   "source": "openverse/wikimedia",
+   "title": "Owl in the Moon (9379671511)",
+   "creator": "See1,Do1,Teach1",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=93725421",
+   "url": "https://api.openverse.org/v1/images/3e270dcd-fee5-4503-b4fb-6ea7c47110ee/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Owl_in_the_Moon_%289379671511%29.jpg",
+   "w": 1280,
+   "h": 1280
+  }
+ ]
+}

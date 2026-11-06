@@ -1,0 +1,133 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "file": "cache/signs/aries/aic-57996.jpg",
+   "focus": [
+    0.22,
+    0.5
+   ],
+   "pin": true,
+   "note": "Volaire, Vesuvius erupting at night",
+   "id": "aic-57996",
+   "source": "aic",
+   "title": "The Eruption of Vesuvius",
+   "creator": "Pierre-Jacques Volaire (French, 1729–1799)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/57996",
+   "url": "https://www.artic.edu/iiif/2/6a676ee7-39c0-0b88-c37e-36ba0c5e3065/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 776
+  },
+  {
+   "file": "cache/signs/aries/ov-769e3cce-050b-4fcf-a078-c212deee48b0.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "ram skull with curling horns on black",
+   "id": "ov-769e3cce-050b-4fcf-a078-c212deee48b0",
+   "source": "openverse/sketchfab",
+   "title": "Ram Skull",
+   "creator": "UON - School of Creative Industries",
+   "license": "by 4.0",
+   "landing": "https://sketchfab.com/3d-models/9e914d2d7e8c405db6e896b8db185d35",
+   "url": "https://api.openverse.org/v1/images/769e3cce-050b-4fcf-a078-c212deee48b0/thumb/?full_size=true",
+   "alt_url": "https://media.sketchfab.com/models/9e914d2d7e8c405db6e896b8db185d35/thumbnails/e36b948d5dd8479f9d77ae7fac6a856a/8929d455ac5b41668a98c31d433c8956.jpeg",
+   "w": 1920,
+   "h": 1080
+  },
+  {
+   "file": "cache/signs/aries/nasa-S91-32389.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Mars, the ruler planet",
+   "id": "nasa-S91-32389",
+   "source": "nasa",
+   "title": "Composite image of the planet Mars taken by Hubble Space Telescope (HST)",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/S91-32389",
+   "url": "https://images-assets.nasa.gov/image/S91-32389/S91-32389~orig.jpg",
+   "w": 2065,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/aries/met-437389.jpg",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "note": "Rembrandt, Bellona in armour",
+   "id": "met-437389",
+   "source": "met",
+   "title": "Bellona",
+   "creator": "Rembrandt (Rembrandt van Rijn)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437389",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146454.jpg",
+   "w": 1995,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/aries/nasa-GSFC_20171208_Archive_e000762.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "solar flare, red sun",
+   "id": "nasa-GSFC_20171208_Archive_e000762",
+   "source": "nasa",
+   "title": "Sun Emits an X2.2 Flare",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000762",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000762/GSFC_20171208_Archive_e000762~orig.jpg",
+   "w": 1200,
+   "h": 1200
+  },
+  {
+   "file": "cache/signs/aries/cand/wc-67110060.jpg",
+   "focus": [
+    0.5,
+    0.47
+   ],
+   "zoom": 1.75,
+   "tone": 0.66,
+   "exposure": 0.8,
+   "pin": true,
+   "note": "Sidney Hall, Urania's Mirror: Aries the ram",
+   "id": "wc-67110060",
+   "source": "commons",
+   "title": "Aries and Musca Borealis - Sidy. Hall, sculpt. LCCN2002695509",
+   "creator": "Hall, Sidney, etcher",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Aries_and_Musca_Borealis_-_Sidy._Hall,_sculpt._LCCN2002695509.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Aries_and_Musca_Borealis_-_Sidy._Hall%2C_sculpt._LCCN2002695509.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Aries_and_Musca_Borealis_-_Sidy._Hall%2C_sculpt._LCCN2002695509.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1024,
+   "h": 824
+  },
+  {
+   "file": "cache/signs/aries/cand/wc-31702695.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "note": "Erasmus Quellinus II, Jason with the Golden Fleece",
+   "id": "wc-31702695",
+   "source": "commons",
+   "title": "Erasmus Quellinus (II)- Jason with the Golden Fleece, 1630",
+   "creator": "Erasmus Quellinus II",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_(II)-_Jason_with_the_Golden_Fleece,_1630.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg/1920px-Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Erasmus_Quellinus_%28II%29-_Jason_with_the_Golden_Fleece%2C_1630.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1782
+  }
+ ]
+}

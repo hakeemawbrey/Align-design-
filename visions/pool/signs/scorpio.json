@@ -1,0 +1,204 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "id": "ov-9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af",
+   "source": "openverse/wikimedia",
+   "title": "Rondanini Medusa Glyptothek Munich 252 n1",
+   "creator": "Unknown (Greek original by Phidias)",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=1706338",
+   "url": "https://api.openverse.org/v1/images/9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Rondanini_Medusa_Glyptothek_Munich_252_n1.jpg",
+   "w": 1280,
+   "h": 1280,
+   "file": "cache/signs/scorpio/ov-9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af.jpg",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "note": "Rondanini Medusa, eyes lifted clear of the card",
+   "pin": true
+  },
+  {
+   "id": "nasa-AFRC2017-0233-009",
+   "source": "nasa",
+   "title": "2017 Total Solar Eclipse",
+   "creator": "AFRC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/AFRC2017-0233-009",
+   "url": "https://images-assets.nasa.gov/image/AFRC2017-0233-009/AFRC2017-0233-009~orig.jpg",
+   "w": 2600,
+   "h": 1733,
+   "file": "cache/signs/scorpio/nasa-AFRC2017-0233-009.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "diamond-ring total solar eclipse"
+  },
+  {
+   "id": "met-435649",
+   "source": "met",
+   "title": "Judith",
+   "creator": "Benjamin-Constant (Jean-Joseph-Benjamin Constant)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435649",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2818.jpg",
+   "w": 1711,
+   "h": 2600,
+   "file": "cache/signs/scorpio/met-435649.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Benjamin-Constant, Judith in red and gold with the blade"
+  },
+  {
+   "id": "met-435904",
+   "source": "met",
+   "title": "Still Life with a Skull and a Writing Quill",
+   "creator": "Pieter Claesz",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435904",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145929.jpg",
+   "w": 2600,
+   "h": 1753,
+   "file": "cache/signs/scorpio/met-435904.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Claesz, vanitas skull"
+  },
+  {
+   "id": "ov-242adf69-2339-4c38-bc2a-1edaf9af1cae",
+   "source": "openverse/wikimedia",
+   "title": "Full Eclipse of the Moon as seen in from Irvine, CA, USA (52075715442) (cropped)",
+   "creator": "Sergei Mutovkin from Irvine, California, United States",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=118047426",
+   "url": "https://api.openverse.org/v1/images/242adf69-2339-4c38-bc2a-1edaf9af1cae/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Full_Eclipse_of_the_Moon_as_seen_in_from_Irvine%2C_CA%2C_USA_%2852075715442%29_%28cropped%29.jpg",
+   "w": 1280,
+   "h": 1268,
+   "file": "cache/signs/scorpio/ov-242adf69-2339-4c38-bc2a-1edaf9af1cae.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "blood moon, total lunar eclipse"
+  },
+  {
+   "id": "nasa-PIA13974",
+   "source": "nasa",
+   "title": "WISE Unveils a Treasure Trove of Beauty",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA13974",
+   "url": "https://images-assets.nasa.gov/image/PIA13974/PIA13974~orig.jpg",
+   "w": 2600,
+   "h": 2550,
+   "file": "cache/signs/scorpio/nasa-PIA13974.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "rho Ophiuchi clouds around Antares"
+  },
+  {
+   "id": "ov-29f7d6c6-9782-49df-9347-7e037a1fe250",
+   "source": "openverse/wikimedia",
+   "title": "Medusa by René Lalique22",
+   "creator": "https://www.flickr.com/photos/shadowgate/",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=4763080",
+   "url": "https://api.openverse.org/v1/images/29f7d6c6-9782-49df-9347-7e037a1fe250/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Medusa_by_Ren%C3%A9_Lalique22.jpg",
+   "w": 1280,
+   "h": 961,
+   "file": "cache/signs/scorpio/ov-29f7d6c6-9782-49df-9347-7e037a1fe250.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Lalique, Medusa crowned with black snakes"
+  },
+  {
+   "id": "aic-86323",
+   "source": "aic",
+   "title": "The Entombment",
+   "creator": "Guercino (Giovanni Francesco Barbieri; Italian, 1591-1666)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86323",
+   "url": "https://www.artic.edu/iiif/2/b30b708a-be47-c3cc-f3af-2a6798b7b088/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1107,
+   "file": "cache/signs/scorpio/aic-86323.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Guercino, the Entombment"
+  },
+  {
+   "file": "cache/signs/scorpio/cand/wc-32100363.jpg",
+   "focus": [
+    0.55,
+    0.42
+   ],
+   "zoom": 1.3,
+   "tone": 0.6,
+   "pin": true,
+   "note": "Sidney Hall, Urania's Mirror: Scorpio constellation",
+   "id": "wc-32100363",
+   "source": "commons",
+   "title": "Sidney Hall - Urania's Mirror - Scorpio",
+   "creator": "Sidney Hall / Adam Cuerden",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg/1920px-Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1675,
+   "h": 2400
+  },
+  {
+   "file": "cache/signs/scorpio/cand/wc-90497915.jpg",
+   "focus": [
+    0.42,
+    0.28
+   ],
+   "zoom": 1.4,
+   "pin": true,
+   "note": "Rossetti, Proserpine with the pomegranate",
+   "id": "wc-90497915",
+   "source": "commons",
+   "title": "8th Rossetti Proserpine cropped",
+   "creator": "Dante Gabriel Rossetti",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:8th_Rossetti_Proserpine_cropped.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/8th_Rossetti_Proserpine_cropped.jpeg/1920px-8th_Rossetti_Proserpine_cropped.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/8th_Rossetti_Proserpine_cropped.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1181,
+   "h": 2400
+  },
+  {
+   "file": "cache/signs/scorpio/cand/wc-14403.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Medusa, painted head with snakes",
+   "id": "wc-14403",
+   "source": "commons",
+   "title": "Medusa",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Medusa.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Medusa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Medusa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 700,
+   "h": 698
+  }
+ ]
+}
