@@ -9,7 +9,7 @@
 //  50.0  ch4 THE TEXT: "want to come with me?" "where??" "anywhere. together." "packing."
 //  62.0  ch5 THE GATE: the crush runs in with a suitcase, two passports, Pisces sobs on the PA.
 //  70.2  "Packed for two. Finally." hard cut at 75.
-import { drawSpace, drawSign, entrance, drawEntranceFx, entranceCues, planetSize } from '../../planetkit.js'
+import { drawSpace, drawSign, drawPlanet, entrance, drawEntranceFx, entranceCues, planetSize } from '../../planetkit.js'
 import { recordScratch, recordScratchCues, chapter, chapterCues, caught, caughtCues, screenShake, shakeCues } from '../../hookkit.js'
 import { jupFilm, drawJupiter, pisces, phone, sticker, pr, easeOut, easeInOut, back, rr, INK, BONE, GOLD } from '../../kpjue01/jupkit.js'
 
@@ -103,9 +103,9 @@ function orbit(x, t, cx, cy, R) {
     x.fillStyle = i === cur && t > 36.2 ? INK : BONE; x.font = '700 36px "Space Mono", monospace'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(g + '︎', gx, gy + 2)
   })
   // the Sun in the middle, little Jupiter on its lap
-  x.fillStyle = '#ffb347'; x.beginPath(); x.arc(cx, cy, 46, 0, Math.PI * 2); x.fill()
+  drawPlanet(x, 'sun', cx, cy, 110, t, { mood: 'happy', glow: 0.6, bob: 0 })
   const a = -Math.PI / 2 + (t < 36.2 ? (t - 31.2) * 0.25 : lap / 12 * Math.PI * 2)
-  x.fillStyle = '#d9a46c'; x.strokeStyle = INK; x.lineWidth = 4; x.beginPath(); x.arc(cx + Math.cos(a) * R, cy + Math.sin(a) * R, 26, 0, Math.PI * 2); x.fill(); x.stroke()
+  drawPlanet(x, 'jupiter', cx + Math.cos(a) * R, cy + Math.sin(a) * R, 70, t, { mood: 'happy', glow: 0.4, bob: 0, blink: false })
   if (t > 36.2 && t < 41) { x.fillStyle = BONE; x.font = '800 30px Inter'; x.textAlign = 'center'; x.fillText(`year ${Math.min(12, Math.floor(lap) + 1)}`, cx, cy + 90) }
   x.restore()
 }
