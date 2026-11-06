@@ -10,6 +10,7 @@ bars, a hard cut every quarter second through dark, moonlit, painterly images,
 one statement held in white condensed type, then the Align wordmark.
 """
 import argparse
+import glob
 import json
 import math
 import os
@@ -94,7 +95,21 @@ HUE_MAP = np.array([
 
 
 def load_lines():
-    return json.load(open(os.path.join(HERE, "lines.json")))
+    """lines.json, plus the zodiac versions in seo/x_*.json (new lines only; the
+    source lines are untouched). Each x entry carries its own caption body."""
+    data = json.load(open(os.path.join(HERE, "lines.json")))
+    have = {l["id"] for l in data["lines"]}
+    for f in sorted(glob.glob(os.path.join(HERE, "seo", "x_*.json"))):
+        try:
+            extra = json.load(open(f))["lines"]
+        except (OSError, ValueError, KeyError):
+            continue  # a file still being written
+        for e in extra:
+            if e["id"] not in have:
+                have.add(e["id"])
+                data["lines"].append({"id": e["id"], "theme": "sign", "sign": e["sign"], "text": e["text"],
+                                      "moods": e["moods"], "caption": e["bodies"][0], "source": e.get("source")})
+    return data
 
 
 def load_pool(name):
