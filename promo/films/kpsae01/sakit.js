@@ -43,25 +43,42 @@ const TAU = Math.PI * 2
 // ═══════════════════════════════════════ Saturn's props
 /** a detached Saturn ring (the running gag: Saturn uses its rings as tools). Centre (X, Y), radii rx / ry, rot radians.
  *  half: 'both' | 'back' | 'front' (to sandwich something inside the ring). */
-export function ring(x, X, Y, rx, ry, { rot = 0, w = 0.2, alpha = 1, half = 'both', spin = 0, t = 0 } = {}) {
+export function ring(x, X, Y, rx, ry, { rot = 0, w = 0.2, alpha = 1, half = 'both', spin = 0, t = 0, cell = RING_CELL } = {}) {
   if (alpha <= 0.01 || rx <= 1) return
-  x.save(); x.globalAlpha *= alpha; x.translate(X, Y); x.rotate(rot)
+  // drawn in the Star Talk pixel style (like planetkit's sprites): rasterised on a coarse grid, hard edges, ink outline
+  const W = rx * w, Rb = Math.ceil(Math.max(rx, ry) + W / 2 + 10)
+  const N = Math.max(4, Math.ceil((2 * Rb) / cell))
+  const c = ringCanvas(N), g = c.getContext('2d')
+  g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, N, N)
+  g.setTransform(1 / cell, 0, 0, 1 / cell, N / 2, N / 2); g.rotate(rot)
   const a0 = half === 'front' ? 0 : Math.PI, a1 = half === 'back' ? TAU : half === 'front' ? Math.PI : Math.PI + TAU
-  const W = rx * w
-  x.lineCap = 'butt'
-  x.strokeStyle = INK; x.lineWidth = W + 12
-  x.beginPath(); x.ellipse(0, 0, rx, ry, 0, a0, a1); x.stroke()
+  g.lineCap = 'butt'
+  g.strokeStyle = INK; g.lineWidth = W + 2 * cell
+  g.beginPath(); g.ellipse(0, 0, rx, ry, 0, a0, a1); g.stroke()
   const bands = ['#c9a663', '#f6e2b0', '#e2c27e']
-  bands.forEach((c, k) => {
-    const s = 1 + (k - 1) * (W / 3) / rx
-    x.strokeStyle = c; x.lineWidth = W / 3 + 1
-    x.beginPath(); x.ellipse(0, 0, rx * s, ry * s, 0, a0, a1); x.stroke()
+  bands.forEach((col, k) => {
+    const sc = 1 + (k - 1) * (W / 3) / rx
+    g.strokeStyle = col; g.lineWidth = W / 3 + cell * 0.6
+    g.beginPath(); g.ellipse(0, 0, rx * sc, ry * sc, 0, a0, a1); g.stroke()
   })
   // a glint that travels round the ring (spin = speed)
-  const g = (t * (spin || 0.6)) % 1 * TAU
-  x.strokeStyle = 'rgba(255,255,255,0.75)'; x.lineWidth = W / 4
-  x.beginPath(); x.ellipse(0, 0, rx, ry, 0, g, g + 0.35); x.stroke()
+  const gl = (t * (spin || 0.6)) % 1 * TAU
+  g.strokeStyle = '#fffaf0'; g.lineWidth = Math.max(cell, W / 4)
+  g.beginPath(); g.ellipse(0, 0, rx, ry, 0, gl, gl + 0.35); g.stroke()
+  // hard pixel edges: snap each cell's alpha to on / off
+  const im = g.getImageData(0, 0, N, N), d = im.data
+  for (let i = 3; i < d.length; i += 4) d[i] = d[i] >= 110 ? 255 : 0
+  g.putImageData(im, 0, 0)
+  x.save(); x.globalAlpha *= alpha; x.imageSmoothingEnabled = false
+  x.drawImage(c, X - (N * cell) / 2, Y - (N * cell) / 2, N * cell, N * cell)
   x.restore()
+}
+const RING_CELL = 9
+const RING_CV = new Map()
+function ringCanvas(N) {
+  let c = RING_CV.get(N)
+  if (!c) { c = document.createElement('canvas'); c.width = N; c.height = N; RING_CV.set(N, c) }
+  return c
 }
 /** Saturn's pocket watch (screen or world) */
 export function watch(x, t, X, Y, s = 1, { pop = 1, time = null } = {}) {
@@ -213,6 +230,14 @@ export function saFilm(cfg) {
     const top = layerCanvas(root), tx = top.getContext('2d')
     const heads = (cfg.heads || []).map(h => ({ h, P: popText(root, h.text.replace(/\s*\|\s*/g, ' | '), { top: h.top ?? 250, size: h.size ?? 88, accentSize: h.accentSize ?? Math.round((h.size ?? 88) * 1.3), at: h.at, gap: h.gap ?? 0.07, wobble: h.wobble ?? true, accentColor: h.accent || GOLD, fit: true }) }))
     const hk = layerCanvas(root), hx = hk.getContext('2d')
+    // keep every speech panel inside the frame (the kit's pixel panels size themselves to the text)
+    { const sc = document.createElement('canvas'); sc.width = 1080; sc.height = 1920; const sx = sc.getContext('2d')
+      for (const s of says) {
+        const { w = 0 } = speech(sx, s.t0 + 2, { ...s, t1: 1e9 }) || {}
+        if (!w) continue
+        const nx = Math.min(Math.max(s.x, w / 2 + 28), 1052 - w / 2)
+        if (nx !== s.x) { s.tail = (s.tail || 0) + (s.x - nx); s.x = nx }
+      } }
     const bug = buildBug(root)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff', opacity: 0, pointerEvents: 'none' }, root)
