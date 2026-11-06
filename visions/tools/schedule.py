@@ -34,6 +34,7 @@ def main():
     ap.add_argument("--first", default="07:00", help="first post time, local")
     ap.add_argument("--last", default="23:00", help="last post time, local")
     ap.add_argument("--out", default=os.path.join(HERE, "out", "schedule.csv"))
+    ap.add_argument("--themes", default=",".join(THEMES), help="comma list of themes to include, e.g. sign")
     a = ap.parse_args()
 
     lines = json.load(open(os.path.join(HERE, "lines.json")))["lines"]
@@ -50,8 +51,9 @@ def main():
     for v in reels.values():
         v.sort()
 
-    by_theme = {t: [l for l in lines if l["theme"] == t and l["id"] in reels] for t in THEMES[:4]}
-    signs = {s: [l for l in lines if l.get("sign") == s and l["id"] in reels] for s in SIGNS}
+    keep = set(a.themes.split(","))
+    by_theme = {t: [l for l in lines if l["theme"] == t and l["id"] in reels and t in keep] for t in THEMES[:4]}
+    signs = {s: [l for l in lines if l.get("sign") == s and l["id"] in reels and "sign" in keep] for s in SIGNS}
     order = []
     for rnd in range(max(len(v) for v in reels.values())):
         queues = {t: [l for l in by_theme[t] if len(reels[l["id"]]) > rnd] for t in by_theme}
