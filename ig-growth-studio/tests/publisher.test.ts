@@ -63,6 +63,20 @@ describe("publishDuePosts", () => {
     expect(calls.filter((c) => c.method === "POST" && c.path === "17841/media")).toHaveLength(1);
   });
 
+  it("gives a Reel started late after downtime its full processing time", async () => {
+    const id = await schedule("REELS", new Date(NOW.getTime() - 4 * 3_600_000));
+    const { client } = fakeGraph({
+      "POST 17841/media": () => ({ id: "C9" }),
+      "GET C9": () => ({ status_code: "IN_PROGRESS" }),
+    });
+    // Started 4 hours late: still processing right after upload, and 10 minutes on.
+    expect((await publishDuePosts(db, { now: NOW, client })).pending).toEqual([id]);
+    expect((await publishDuePosts(db, { now: new Date(NOW.getTime() + 10 * 60_000), client })).pending).toEqual([id]);
+    expect((await getPost(db, id))!.status).toBe("processing");
+    // 30 minutes after the upload itself, it times out.
+    expect((await publishDuePosts(db, { now: new Date(NOW.getTime() + PROCESSING_TIMEOUT_MS + 5000), client })).failed).toEqual([id]);
+  });
+
   it("fails a Reel stuck processing past the timeout", async () => {
     const id = await schedule("REELS");
     const { client } = fakeGraph({

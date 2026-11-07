@@ -41,6 +41,7 @@ export interface PostRow {
   fb_attempts: number;
   /** When the Facebook upload started (for the 30-per-24-hours Page limit). */
   fb_started_at: string | null;
+  started_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -240,6 +241,8 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
   ],
   // v6: saves and shares per video, for the weekly report.
   async () => ["ALTER TABLE media_snapshots ADD COLUMN saves INTEGER", "ALTER TABLE media_snapshots ADD COLUMN shares INTEGER"],
+  // v7: when publishing actually started, which can be well after the scheduled time.
+  async () => ["ALTER TABLE posts ADD COLUMN started_at TEXT"],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -469,8 +472,8 @@ export async function duePosts(db: DB, now: Date): Promise<PostRow[]> {
 export async function claimPost(db: DB, id: number, now: Date): Promise<boolean> {
   const res = await run(
     db,
-    "UPDATE posts SET status = 'processing', attempts = attempts + 1, error = NULL, updated_at = ? WHERE id = ? AND status = 'scheduled'",
-    [now.toISOString(), id],
+    "UPDATE posts SET status = 'processing', attempts = attempts + 1, error = NULL, updated_at = ?, started_at = ? WHERE id = ? AND status = 'scheduled'",
+    [now.toISOString(), now.toISOString(), id],
   );
   return res.rowsAffected === 1;
 }

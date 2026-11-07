@@ -117,7 +117,9 @@ async function advance(
 
   const status = await client.containerStatus(containerId);
   if (status.status_code === "IN_PROGRESS") {
-    if (now.getTime() - new Date(post.scheduled_at).getTime() > PROCESSING_TIMEOUT_MS) {
+    // Time since upload, not since the scheduled time: a post started late after downtime still gets its 30 minutes.
+    const startedAt = post.status === "scheduled" ? now : new Date(post.started_at ?? post.updated_at);
+    if (now.getTime() - startedAt.getTime() > PROCESSING_TIMEOUT_MS) {
       await updatePost(db, post.id, { status: "failed", error: "Instagram did not finish processing the video in 30 minutes" });
       return "failed";
     }
