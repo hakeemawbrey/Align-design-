@@ -1,73 +1,106 @@
-# Neon Buddha quote reels
+# Buddha quote reels
 
-An endless generator of vertical (1080 × 1920) quote reels: a glowing neon
-Buddha, a hook line, a quote from the Buddha or a great philosopher revealed
-line by line, and a calm ambient score with a singing-bowl strike. Every
-video is a new mix, and nothing is downloaded: the figures, halos, music and
-motion are all drawn in code.
+An endless generator of Buddha quote posts in the style of
+[@dontfearunknown](https://www.instagram.com/p/DfTN0pLxDwF/): a real Buddha
+statue, recoloured in saturated neon tones over a painted sky, with a
+hand-painted oil texture and bold white captions. The setup line goes on top
+and the punchline at the bottom:
 
-## Run it
+> **What stands in the way**
+> …
+> **becomes the way**
 
-Needs Python 3 with `pillow` and `numpy` (`pip install pillow numpy`) and
-`ffmpeg` (`brew install ffmpeg` on a Mac).
+Every run makes a vertical reel (1080 × 1920 MP4 with music), a still of its
+last frame, and a caption file. Nothing of theirs is reused: the statues are
+public-domain museum photos, and the quotes, colours, texture and music are
+made by this code.
+
+## Set up (once)
+
+You need Python 3 and ffmpeg (`brew install ffmpeg` on a Mac).
 
 ```bash
-python3 reels/buddha/generate.py                  # one video
-python3 reels/buddha/generate.py --count 30       # thirty
-python3 reels/buddha/generate.py --forever        # keeps going until Ctrl-C
-python3 reels/buddha/generate.py --theme love     # only love quotes (also: align, spiritual)
-python3 reels/buddha/generate.py --stills 12      # a quick contact sheet of 12 looks, no video
+pip install pillow numpy rembg onnxruntime
+python3 reels/buddha/fetch_images.py          # about 120 Buddha statue photos
 ```
 
-Videos land in `reels/buddha/out/` (git-ignored) as `buddha-<time>.mp4`, each
-with a matching `.txt` caption (quote, author, source and hashtags) ready to
-paste. A video is 9–24 s depending on the quote, and takes about 30 s to make.
+`fetch_images.py` downloads Buddha and Bodhisattva sculptures from
+[The Met's Open Access](https://www.metmuseum.org/hubs/open-access) collection.
+It only takes ones marked public domain (CC0, free to post) and skips relief
+panels and narrative scenes. It also cuts each statue out of its museum
+backdrop so it can sit in a painted sky. Use `--max 300` for more. The first
+run downloads the cut-out model (about 180 MB).
+Credits go in `library/credits.json`.
 
-`out/history.json` remembers what was used: no quote repeats until every quote
-in the bank has had a turn, and it avoids reusing the same look.
+`rembg` is optional. Without it, a simpler cut-out is used, which works on
+plain backdrops but can leave holes in grey statues on grey backdrops.
 
-## What changes between videos
+## Make videos
+
+```bash
+python3 reels/buddha/generate.py                    # one
+python3 reels/buddha/generate.py --count 30         # thirty
+python3 reels/buddha/generate.py --forever          # keeps going until Ctrl-C
+python3 reels/buddha/generate.py --theme love       # only love quotes (also: align, spiritual)
+python3 reels/buddha/generate.py --square           # also a 1080 × 1080 picture post, like the original
+python3 reels/buddha/generate.py --handle @yourpage # a small watermark with your handle
+python3 reels/buddha/generate.py --no-credit        # leave the author's name off the picture
+python3 reels/buddha/generate.py --stills 12        # a quick contact sheet, no video
+python3 reels/buddha/generate.py --style neon       # the glowing line-art Buddha instead (or: --style mix)
+```
+
+Everything goes to `reels/buddha/out/` (git-ignored):
+
+| File | What |
+| --- | --- |
+| `buddha-<time>.mp4` | the reel: 7–16 s, slow zoom, the top line pops in, then the punchline, then the author |
+| `buddha-<time>.jpg` | its last frame, for a story or a pin |
+| `buddha-<time>-square.jpg` | a square picture post (with `--square`) |
+| `buddha-<time>.txt` | the caption: the quote, author, source and hashtags |
+
+A reel takes about 20 s to make. `out/history.json` remembers what was used:
+no quote repeats until every quote has had a turn, and every statue is used
+once before any repeats.
+
+## What changes between posts
 
 | | Options |
 | --- | --- |
-| **Figure** | seated in meditation, close-up head with curls, half-body bust |
-| **Halo** | rings, sun rays, rotating mandala, flower of life, moon, chakra points |
-| **Base** | lotus throne, water ripples, none |
-| **Colours** | 8 neon palettes (violet/cyan, magenta/gold, jade, sunset, moonlight…) |
-| **Hook** | "Read this slowly", "If this found you, it's for you", "On love"… |
-| **Motion** | neon flicker-on, breathing glow, slow-turning halo, rising light motes |
-| **Music** | a new key and chord each time |
+| **Statue** | every photo in `library/` (and `images/`): heads, seated, standing, busts |
+| **Framing** | face close-up, half body, whole statue |
+| **Colours** | 8 looks: jade on a blue-and-gold sky, gold, violet, cosmic blue, rose, emerald, ocean, true colour |
+| **Sky** | painted clouds, new every time |
+| **Music** | an ambient pad and singing bowl, new key every time (original, so safe to post) |
 
-That's over 500 looks before you count the quotes.
+To use a trending sound instead, turn the reel's audio down to 0 in
+Instagram's editor and add the sound there.
 
-## Your own Buddha pictures
+## Your own pictures
 
-Put `.png`, `.jpg` or `.webp` files in `reels/buddha/images/` and about 4 in
-10 videos will use one of them instead of a drawn figure:
+Put `.jpg`, `.png` or `.webp` files in `reels/buddha/images/` and they join the
+library. Run `python3 reels/buddha/fetch_images.py` again to make clean
+cut-outs of them. Only use pictures you took or have the rights to post.
 
-- **Dark, already-neon art** (mostly black) is used as it is, with soft edges.
-- **Ordinary photos or statues** are traced into glowing neon lines.
+## Quotes
 
-Only use pictures you made or have the rights to post.
+`quotes.json` holds 55 two-part quotes, each with a `top`, a `bottom`, an
+`author`, a `source` and a `theme` (`love`, `align` or `spiritual`). Writing a
+word in CAPS makes it the punch, as in "Happiness IS the way". They come from
+the Buddha (Dhammapada, Metta Sutta), Marcus Aurelius, Lao Tzu, Seneca,
+Epictetus, Rumi, Kahlil Gibran, Thich Nhat Hanh, Rilke, Kierkegaard, Nietzsche,
+Frankl, Jung, Alan Watts, Pema Chödrön, Erich Fromm, bell hooks and others.
 
-## Adding quotes
-
-Quotes live in `quotes.json`. Each has a `theme` (`love`, `align` or
-`spiritual`), `author`, `source` and `text`. Add as many as you like.
-
-The starter bank (42 quotes) only has quotes with a real source: the
-Dhammapada and Metta Sutta for the Buddha, plus Rumi, Lao Tzu, Marcus Aurelius,
-Seneca, Epictetus, Thich Nhat Hanh, Kahlil Gibran, Tagore, Rilke, Hafiz, Alan
-Watts, Ram Dass, Socrates, Plato, Aristotle, Shunryu Suzuki and Pema Chödrön.
-Many "Buddha quotes" online are made up, so check a source before you add one.
-Rumi and Hafiz lines are modern English versions (Coleman Barks, Daniel
-Ladinsky), and the `source` says so.
+Every one has a real source. Many quotes credited to the Buddha online are
+made up, so check a source before you add one. Rumi and Hafiz lines are modern
+English versions (Coleman Barks, Daniel Ladinsky), and the `source` says so.
 
 ## Files
 
 | Path | What |
 | --- | --- |
-| `generate.py` | the whole generator: figures, halos, text, animation, score, ffmpeg |
+| `generate.py` | the command: picks a quote and a look, makes the files (also the neon line-art style) |
+| `painted.py` | the painted style: cut-out, recolour, sky, oil paint, captions, zoom |
+| `fetch_images.py` | builds `library/` from The Met's public-domain collection |
 | `quotes.json` | the quote bank |
-| `images/` | drop your own Buddha images here (optional) |
-| `fonts/` | Cormorant Garamond and Cinzel (SIL Open Font License, `fonts/OFL.txt`) |
+| `images/` | your own pictures (optional) |
+| `fonts/` | TikTok Sans, Cormorant Garamond, Cinzel (SIL Open Font License, `fonts/OFL.txt`) |

@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Neon Buddha quote reels, generated forever.
+"""Buddha quote reels, generated forever.
 
-Every video is a fresh mix of a quote (quotes.json), a Buddha figure drawn in
-neon (pose x halo x base x palette), a hook line and an ambient score with a
-singing-bowl strike. Drop your own pictures into images/ and they are mixed in
-too (dark neon art is used as-is, photos are traced into neon lines).
+Two styles:
+  painted (default)  a real Buddha sculpture photo (library/ + images/), recoloured
+                     in neon tones over a painted sky, oil-paint texture, bold white
+                     captions: setup line on top, punchline at the bottom.
+  neon               a Buddha drawn in glowing neon lines with a serif quote.
 
-    python3 reels/buddha/generate.py               # one video
-    python3 reels/buddha/generate.py --count 20    # twenty
-    python3 reels/buddha/generate.py --forever     # until Ctrl-C
-    python3 reels/buddha/generate.py --stills 12   # contact sheet, no video
+    python3 reels/buddha/fetch_images.py            # once: download free Buddha photos
+    python3 reels/buddha/generate.py                # one video
+    python3 reels/buddha/generate.py --count 20     # twenty
+    python3 reels/buddha/generate.py --forever      # until Ctrl-C
+    python3 reels/buddha/generate.py --style neon   # the line-art style (or: mix)
+    python3 reels/buddha/generate.py --stills 12    # contact sheet, no video
 
 Needs Python 3 with Pillow + numpy, and ffmpeg on the PATH.
 """
@@ -27,6 +30,9 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import painted  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
@@ -536,7 +542,7 @@ def make_score(path, dur, rng, line_times):
 
 
 # -------------------------------------------------------------- the render --
-def plan(rng, quotes, history, images, theme=None):
+def plan(rng, quotes, history, images, theme=None, style="neon", library=()):
     used = set(history.get("quotes", []))
     pool = [q for q in quotes if (theme is None or q["theme"] == theme)]
     fresh = [q for q in pool if q["text"] not in used]
@@ -544,6 +550,9 @@ def plan(rng, quotes, history, images, theme=None):
         history["quotes"] = [u for u in history.get("quotes", []) if u not in {q["text"] for q in pool}]
         fresh = pool
     quote = rng.choice(fresh)
+    if style == "painted":
+        look = painted.plan_look(rng, history, library)
+        return dict(style="painted", quote=quote, **look)
     combos = set(history.get("combos", []))
     for _ in range(50):
         pose = rng.choice(POSES)
@@ -559,7 +568,7 @@ def plan(rng, quotes, history, images, theme=None):
         user_image = rng.choice(images)
         layout = "bottom"
     hooks = HOOKS["any"] + HOOKS[quote["theme"]] + (HOOKS["buddha"] if quote["author"] == "The Buddha" else [])
-    return dict(quote=quote, pose=pose, halo=halo, base=base, palette=palette, layout=layout,
+    return dict(style="neon", quote=quote, pose=pose, halo=halo, base=base, palette=palette, layout=layout,
                 hook=rng.choice(hooks), user_image=user_image, key=key)
 
 
@@ -652,6 +661,10 @@ def main():
     ap.add_argument("--stills", type=int, default=0, help="make a contact sheet of N looks instead of videos")
     ap.add_argument("--out", default=str(HERE / "out"), help="output folder")
     ap.add_argument("--seed", type=int, help="random seed (repeatable output)")
+    ap.add_argument("--style", choices=["painted", "neon", "mix"], default="painted", help="look (default painted)")
+    ap.add_argument("--square", action="store_true", help="painted: also save a 1080x1080 picture post")
+    ap.add_argument("--handle", help="painted: a small @handle watermark, e.g. @yourpage")
+    ap.add_argument("--no-credit", action="store_true", help="painted: leave the author's name off the video")
     a = ap.parse_args()
 
     if not a.stills and subprocess.run(["which", "ffmpeg"], capture_output=True).returncode != 0:
@@ -659,17 +672,36 @@ def main():
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     quotes = json.loads((HERE / "quotes.json").read_text())
-    images = sorted(p for p in (HERE / "images").glob("*") if p.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp"))
+    for q in quotes:
+        q["text"] = q["top"].rstrip(" ,") + (", " if q["top"][-1] not in ".?!:" else " ") + q["bottom"] + \
+            ("" if q["bottom"][-1] in ".?!\"" else ".")
+    exts = (".png", ".jpg", ".jpeg", ".webp")
+    images = sorted(p for p in (HERE / "images").glob("*") if p.suffix.lower() in exts)
+    library = sorted(p for p in (HERE / "library").glob("*") if p.suffix.lower() in exts) + images
+    if a.style != "neon" and not library:
+        sys.exit("no Buddha photos yet: run  python3 reels/buddha/fetch_images.py  first "
+                 "(or put your own in reels/buddha/images/, or use --style neon)")
     hist_path = out / "history.json"
     history = json.loads(hist_path.read_text()) if hist_path.exists() else {"quotes": [], "combos": []}
     rng = random.Random(a.seed)
 
+    def pick():
+        st = a.style if a.style != "mix" else rng.choice(["painted", "painted", "neon"])
+        return plan(rng, quotes, history, images, a.theme, st, library)
+
+    def make(p, stills_only=False):
+        if p["style"] == "painted":
+            return painted.render(p, out, rng, make_score, HASHTAGS, stills_only, not a.no_credit, a.handle, a.square)
+        return render(p, out, rng, stills_only)
+
     if a.stills:
         thumbs = []
         for _ in range(a.stills):
-            p = plan(rng, quotes, history, images, a.theme)
+            p = pick()
             history.setdefault("quotes", []).append(p["quote"]["text"])
-            img, _ = render(p, out, rng, stills_only=True)
+            if p["style"] == "painted":
+                history.setdefault("images", []).append(p["image"].name)
+            img, _ = make(p, stills_only=True)
             thumbs.append(Image.fromarray(img).resize((270, 480)))
             print(f"  {p['key']:40s} {p['quote']['author']}")
         cols = min(6, len(thumbs))
@@ -685,14 +717,16 @@ def main():
     made = 0
     try:
         while a.forever or made < a.count:
-            p = plan(rng, quotes, history, images, a.theme)
+            p = pick()
             t0 = time.time()
-            mp4, dur = render(p, out, rng)
+            mp4, dur = make(p)
             history.setdefault("quotes", []).append(p["quote"]["text"])
+            if p["style"] == "painted":
+                history.setdefault("images", []).append(p["image"].name)
             history.setdefault("combos", []).append(p["key"])
             hist_path.write_text(json.dumps(history, indent=1))
             made += 1
-            src = p["user_image"].name if p["user_image"] else p["key"]
+            src = p["key"] if p["style"] == "painted" or not p["user_image"] else p["user_image"].name
             print(f"[{made}] {mp4.name}  {dur:.1f}s  {src}  \u2014 {p['quote']['author']}  ({time.time() - t0:.0f}s)")
             time.sleep(1.05)  # unique timestamped filenames
     except KeyboardInterrupt:
