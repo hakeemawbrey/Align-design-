@@ -415,6 +415,12 @@ function makeChar(spec, name) {
     const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.54), new THREE.MeshBasicMaterial({ color: '#9fc3e8' }))
     scr.rotation.x = -Math.PI / 2; scr.rotation.z = Math.PI; scr.position.y = -0.035; phone.add(scr)
     holds.phone = phone
+    const umb = new THREE.Group()
+    umb.add(box(0.08, 2.6, 0.08, mat('#2b2522'), 0, -1.3, 0))
+    const canopy = new THREE.Mesh(new THREE.ConeGeometry(1.8, 0.8, 8, 1, true), mat('#e8445a', { side: THREE.DoubleSide }))
+    canopy.rotation.x = Math.PI; canopy.position.y = -2.7; canopy.castShadow = true
+    umb.add(canopy)
+    holds.umbrella = umb
     for (const h of Object.values(holds)) { h.visible = false; hand.add(h) }
   }
   // binder held at the chest
@@ -802,6 +808,9 @@ function poseChar(c, e, sh, u, dur) {
     case 'stomp': c.arms[0].rotation.z = -0.5; c.arms[1].rotation.z = 0.5; c.arms[0].rotation.x = -0.4; c.arms[1].rotation.x = -0.4; c.legs[(Math.floor(T * 4) % 2)].rotation.x = -0.5; y = Math.abs(Math.sin(T * 12.5)) * 0.12; break
     case 'shrug': { const k = Math.abs(Math.sin(T * 2.4)); c.arms[0].rotation.z = -0.9 * k - 0.2; c.arms[1].rotation.z = 0.9 * k + 0.2; c.arms[0].rotation.x = -0.6 * k; c.arms[1].rotation.x = -0.6 * k; c.head.rotation.z = 0.15 * k; break }
     case 'shake': c.arms[0].rotation.x = -1.2 + Math.sin(T * 40) * 0.06; c.arms[1].rotation.x = -1.2 + Math.sin(T * 41) * 0.06; c.arms[0].rotation.z = 0.35; c.arms[1].rotation.z = -0.35; c.torso.rotation.z = Math.sin(T * 38) * 0.02; break
+    case 'kneel': y = -0.55; c.legs[0].rotation.x = -1.5; c.legs[1].rotation.x = 0.35; c.arms[1].rotation.x = -1.5; c.arms[1].rotation.z = -0.1; c.head.rotation.x = -0.1; break
+    case 'tie': y = -0.55; c.legs[0].rotation.x = -1.5; c.legs[1].rotation.x = 0.35; c.torso.rotation.x = 0.55; c.head.rotation.x = 0.3; c.arms[0].rotation.x = -0.9 + Math.sin(T * 10) * 0.1; c.arms[1].rotation.x = -0.9 + Math.sin(T * 10 + 1) * 0.1; break
+    case 'umbrella': c.arms[1].rotation.x = -3.0; c.arms[1].rotation.z = -0.28; c.head.rotation.z = -0.08; break
     case 'walkoff': { walkCycle(9); const d = ease(P) * 4; x += Math.sin(ry) * d; z += Math.cos(ry) * d; break }
     case 'walk': { walkCycle(8); const d = (T - dur / 2) * 1.6 * (e.dir || 1); x += Math.sin(ry) * d; z += Math.cos(ry) * d; break }
     default: c.head.rotation.y = Math.sin(T * 0.9 + ph) * 0.12
@@ -813,7 +822,7 @@ function poseChar(c, e, sh, u, dur) {
   // hats and held things
   const hat = e.hat || c.hatDefault
   for (const [k, h] of Object.entries(c.hats)) h.visible = k === hat
-  for (const [k, h] of Object.entries(c.holds)) h.visible = k === e.hold
+  for (const [k, h] of Object.entries(c.holds)) h.visible = k === e.hold || (k === 'umbrella' && anim === 'umbrella')
   for (const [k, b] of Object.entries(c.binders)) b.visible = k === e.hold
   if (e.hold === 'card' && (anim === 'give' || anim === 'trade' || anim === 'hold' || anim === 'shake')) {
     c.holds.card.visible = true
@@ -1033,6 +1042,21 @@ function drawConfetti(o, sh, u) {
   }
 }
 
+function drawRain(o, sh, u) {
+  o.save()
+  o.fillStyle = 'rgba(20,30,70,0.18)'; o.fillRect(0, 0, W, H)
+  const r = rng(sh.i * 29 + 1)
+  o.strokeStyle = 'rgba(200,220,255,0.45)'; o.lineCap = 'round'
+  for (let i = 0; i < 240; i++) {
+    const x0 = r() * (W + 300), sp = 2600 + r() * 1400, len = 50 + r() * 70, off = r()
+    const y = ((u * sp + off * (H + 200)) % (H + 200)) - 100
+    const x = x0 - y * 0.18
+    o.lineWidth = 2 + r() * 2.5
+    o.beginPath(); o.moveTo(x, y); o.lineTo(x - len * 0.18, y + len); o.stroke()
+  }
+  o.restore()
+}
+
 function drawRelease(o, sh, u, id) {
   const c = S.chars[id]; if (!c) return
   const k = clamp((u - 0.5) / (sh.dur - 0.5))
@@ -1120,6 +1144,7 @@ window.frame = (t) => {
   for (const f of sh.fx) {
     const [kind, id, ...rest] = f.split(':')
     if (kind === 'confetti') drawConfetti(o, sh, u)
+    else if (kind === 'rain') drawRain(o, sh, u)
     else if (kind === 'hearts') drawHearts(o, sh, u, id)
     else if (kind === 'sparkle') drawSparkle(o, sh, u, id)
     else if (kind === 'question') drawQuestion(o, sh, u, id)

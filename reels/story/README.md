@@ -36,6 +36,12 @@ format carries over from the trend; no lines, art or audio do.
    binder and finds a reason to release everyone, until Eli, a Capricorn, just
    keeps showing up. On day three they trade. Now her binder has one card:
    "the whole set."
+4. **`04-one-moment-no-context`: In this town, you're shown one moment from your love life. No context.**
+   From the "photo of your future" variant of the trend. One Leo sees himself
+   on one knee and proposes on a first date (he was tying his shoe). Maya, a
+   Cancer, sees herself crying alone in the rain at 11:11, so she releases
+   everyone first. The moment turns out to be the three seconds before Sol
+   (Pisces) runs over with an umbrella. *It's who you align with after.*
 
 ## Render
 
@@ -83,12 +89,12 @@ animation re-renders frames without re-speaking.
 - Per shot, per character: `x` `z` `ry` (degrees; 0 faces the camera at yaw 0),
   `face` (`neutral happy love sad cry shock smirk focus angry soft`),
   `anim` (`idle wave point cheer jump dance slump cry type snap hold phone talk
-  release trade trade2 give stomp shrug shake walk walkoff`),
+  release trade trade2 give stomp shrug shake kneel tie umbrella walk walkoff`),
   `hold` (`card coffee phone binder binder-empty binder-one`),
   `over` (`card` or `star`) with `flipped` / `flipAt` (0–1 of the shot),
   `lit` / `litAt`, `glow`, `overSize`.
 - `crowd`: `{ "n": 18, "radius": 6, "anim": "cheer", "over": "card", "flipSome": true }`.
-- `fx`: `confetti`, `hearts:<id>`, `sparkle[:<id>]`, `question:<id>`,
+- `fx`: `confetti`, `rain`, `hearts:<id>`, `sparkle[:<id>]`, `question:<id>`,
   `rings:<id>`, `release:<id>`, `bubble:<id>:<text>`, `board:<text>`.
 - `grade: "gray"` for the low point. `end: true` on the last shot shows the
   wordmark and `endSub`.
