@@ -99,6 +99,8 @@ For a founder-camp walkthrough, see [docs/FOUNDER-CAMP.md](docs/FOUNDER-CAMP.md)
 
 For Align Town reels (a walk through a 3D astrology town, one card per line), see [reels/town/README.md](reels/town/README.md).
 
+For "In this town…" story reels (a narrated fable in a blocky 3D toy town where the town's one rule is an Align idea: cards only flip when it's mutual, stars only light up when it's mutual, people fall in love by trading cards), see [reels/story/README.md](reels/story/README.md).
+
 For spoken love-and-zodiac affirmation reels (line art that draws itself in, word-by-word captions, a "Comment WORD" ending) and the Instagram page that posts them, see [reels/affirm/README.md](reels/affirm/README.md) and [reels/affirm/PROFILE.md](reels/affirm/PROFILE.md).
 
 For "What's the difference?" reels (two words people mix up, two framed Align cards, Star Talk's pixel star shrugging until the answer lands), see [reels/difference/README.md](reels/difference/README.md).
