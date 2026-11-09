@@ -1,0 +1,25 @@
+{
+  "id": "what-if-stars-align",
+  "title": "What if stars could align?",
+  "voice": "bm_george",
+  "speed": 1.06,
+  "gap": 0.24,
+  "lines": [
+    {"text": "What if two stars could align?", "beats": {"align": "align"}},
+    {"text": "Not touching, just perfectly in line, from one point of view.", "beats": {"line": "pullback"}},
+    {"text": "The far one is twenty-six thousand light years away.", "beats": {"twenty-six": "ruler"}},
+    {"text": "The near one, about halfway.", "beats": {"halfway": "halfway"}},
+    {"text": "The near star's gravity bends the far one's light into a ring around it.", "beats": {"bends": "dive", "ring": "ring"}},
+    {"text": "Too small for you to see.", "beats": {"you": "pin"}},
+    {"text": "But you see it brighten, with light that left before anyone wrote a word.", "beats": {"brighten": "brighten", "left": "photon"}},
+    {"text": "Einstein worked it out in nineteen thirty six, and said we'd never catch one.", "beats": {"Einstein": "pullout", "never": "dotted"}, "gapAfter": 0.36},
+    {"text": "He was wrong.", "beats": {"wrong": "reveal"}},
+    {"text": "Telescopes now catch thousands every year.", "beats": {"thousands": "counter"}},
+    {"text": "Each lasts a few weeks, and some get a thousand times brighter.", "beats": {"thousand": "meter", "brighter": "shades"}},
+    {"text": "A tiny blip in that glow can even reveal a hidden planet.", "beats": {"blip": "blip", "planet": "planet"}},
+    {"text": "The odds for any one star, right now?", "beats": {"odds": "zoomout"}},
+    {"text": "About one in a million.", "beats": {"million": "million"}},
+    {"text": "One in a million, and it keeps happening.", "beats": {"keeps": "rewind"}},
+    {"text": "That's what it means to align.", "beats": {"align": "title"}}
+  ]
+}
