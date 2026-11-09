@@ -1,0 +1,61 @@
+{
+  "id": "a07-ghosted",
+  "format": "crime-scene",
+  "captions": "caps",
+  "music": "noir",
+  "victim": "her",
+  "phone": {
+    "screen": "chat",
+    "name": "Leo",
+    "lines": [
+      ">so are we still on?"
+    ],
+    "footer": "Read 3 weeks ago"
+  },
+  "title": "Detective, what killed her?",
+  "caption": "she watched his story at 2am. every night",
+  "hashtags": [
+    "dating",
+    "datingadvice",
+    "astrology",
+    "relatable"
+  ],
+  "beats": [
+    {
+      "shot": "sheet",
+      "text": "detective, what killed her?",
+      "dur": 2.4
+    },
+    {
+      "shot": "phone",
+      "text": "",
+      "dur": 1.3
+    },
+    {
+      "shot": "detective",
+      "face": "closed",
+      "text": "she got ghosted.\nthen she checked his story.",
+      "dur": 2.8,
+      "cue": "sting"
+    },
+    {
+      "shot": "group",
+      "text": "another victim.",
+      "dur": 2.3
+    },
+    {
+      "shot": "walkout",
+      "text": "",
+      "dur": 4.6,
+      "cue": "reveal"
+    },
+    {
+      "shot": "end",
+      "dur": 3.4
+    }
+  ],
+  "end": {
+    "line": "release, don't haunt.",
+    "sub": "a new deal at 11:11"
+  }
+}

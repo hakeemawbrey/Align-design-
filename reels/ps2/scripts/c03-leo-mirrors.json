@@ -1,0 +1,62 @@
+{
+  "id": "c03-leo-mirrors",
+  "format": "storytime",
+  "captions": "sub",
+  "music": "sunny",
+  "title": "my leo date has a very strange relationship with mirrors",
+  "caption": "photo 41 was the one",
+  "hashtags": [
+    "leo",
+    "astrology",
+    "datingstories",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "my leo date has a very strange relationship with mirrors",
+      "dur": 3.4
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "every window we passed, she checked her hair",
+      "dur": 2.8
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "then asked me to take forty photos of her by this statue.",
+      "dur": 3.2
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "apparently, leos are ruled by the sun.",
+      "dur": 2.6
+    },
+    {
+      "shot": "himclose",
+      "speaker": "him",
+      "text": "i'm a virgo. i fixed the lighting in every one.",
+      "dur": 3.0,
+      "gesture": "head"
+    },
+    {
+      "shot": "herclose",
+      "speaker": "her",
+      "text": "and you still missed my good side.",
+      "dur": 2.6,
+      "cue": "sting"
+    },
+    {
+      "shot": "end",
+      "dur": 3.2
+    }
+  ],
+  "end": {
+    "line": "read the sky before the face.",
+    "sub": "a new deal at 11:11"
+  }
+}

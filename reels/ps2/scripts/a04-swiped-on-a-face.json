@@ -1,0 +1,57 @@
+{
+  "id": "a04-swiped-on-a-face",
+  "format": "crime-scene",
+  "captions": "caps",
+  "music": "noir",
+  "victim": "him",
+  "phone": {
+    "screen": "swipe",
+    "name": "Mia, 26"
+  },
+  "title": "Detective, what killed him?",
+  "caption": "he had 300 matches and no idea who any of them were",
+  "hashtags": [
+    "dating",
+    "datingadvice",
+    "astrology",
+    "relatable"
+  ],
+  "beats": [
+    {
+      "shot": "sheet",
+      "text": "detective, what killed him?",
+      "dur": 2.4
+    },
+    {
+      "shot": "phone",
+      "text": "",
+      "dur": 1.3
+    },
+    {
+      "shot": "detective",
+      "face": "closed",
+      "text": "he swiped on a face.",
+      "dur": 2.8,
+      "cue": "sting"
+    },
+    {
+      "shot": "group",
+      "text": "another victim.",
+      "dur": 2.3
+    },
+    {
+      "shot": "walkout",
+      "text": "",
+      "dur": 4.6,
+      "cue": "reveal"
+    },
+    {
+      "shot": "end",
+      "dur": 3.4
+    }
+  ],
+  "end": {
+    "line": "read the sky before the face.",
+    "sub": "a new deal at 11:11"
+  }
+}
