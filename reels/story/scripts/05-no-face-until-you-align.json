@@ -1,0 +1,604 @@
+{
+ "id": "05-no-face-until-you-align",
+ "title": "In this town, nobody sees your face until you both align",
+ "sign": "leo",
+ "voice": "am_michael",
+ "speed": 1.08,
+ "caption": "best face in town. nobody had ever seen it.",
+ "hashtags": [
+  "inthistown",
+  "leo",
+  "virgo",
+  "astrology",
+  "align"
+ ],
+ "accent": [
+  "Dre",
+  "Ivy",
+  "Leo",
+  "Leos",
+  "Virgo",
+  "align",
+  "aligned",
+  "veil",
+  "aura",
+  "Align",
+  "Too"
+ ],
+ "beta": [
+  "onboarding",
+  "aura photo",
+  "deck: align or release",
+  "veiled card",
+  "mutual reveal",
+  "profile: edit your card",
+  "learn your sign"
+ ],
+ "cast": {
+  "dre": {
+   "skin": "#b87a52",
+   "shirt": "#f2b33d",
+   "pants": "#3a3020",
+   "hair": "curly",
+   "hairColor": "#1e140e",
+   "sign": "leo",
+   "name": "Dre"
+  },
+  "ivy": {
+   "skin": "#f1c6a0",
+   "shirt": "#a7c7a0",
+   "pants": "#2e3a30",
+   "hair": "bun",
+   "hairColor": "#5a3420",
+   "sign": "virgo",
+   "glasses": true,
+   "name": "Ivy"
+  },
+  "leo2": {
+   "skin": "#f0c08e",
+   "shirt": "#f07f3c",
+   "pants": "#30281e",
+   "hair": "long",
+   "hairColor": "#e0b050",
+   "sign": "leo"
+  },
+  "kai": {
+   "skin": "#8d5a3b",
+   "shirt": "#9fc3e8",
+   "pants": "#2a3040",
+   "hair": "short",
+   "hairColor": "#141010",
+   "sign": "libra",
+   "name": "Kai"
+  },
+  "mo": {
+   "skin": "#e8b48a",
+   "shirt": "#b6a2e0",
+   "pants": "#2e2a40",
+   "hair": "long",
+   "hairColor": "#6b3a26",
+   "sign": "aquarius",
+   "name": "Mo"
+  }
+ },
+ "shots": [
+  {
+   "say": "In this town, nobody sees your face until you both align.",
+   "at": "plaza",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "shock",
+     "anim": "idle",
+     "over": "card"
+    }
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   },
+   "fx": []
+  },
+  {
+   "say": "When you turn eighteen, you take one photo. The town checks you're a real person, then turns it into your aura.",
+   "at": "room",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "smirk",
+     "anim": "phone",
+     "hold": "phone"
+    }
+   ],
+   "fx": [
+    "board:AURA PHOTO \u00b7 REAL PERSON \u2713|Your photo becomes your aura.",
+    "sparkle:dre"
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "medium",
+    "yaw": 10
+   }
+  },
+  {
+   "say": "Your card shows your sun, moon and rising, your dealbreakers, and one line about you. That's it.",
+   "at": "plaza",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "neutral",
+     "anim": "point",
+     "over": "card",
+     "overSize": 1.9
+    }
+   ],
+   "fx": [
+    "board:YOUR CARD|Sun, moon, rising. Dealbreakers. One line. No photo."
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "medium",
+    "yaw": 12,
+    "lookUp": 1.4
+   }
+  },
+  {
+   "say": "Every night, you're dealt a deck. Align, or release.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "kai",
+     "x": -1.3,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "ry": 20
+    },
+    {
+     "id": "mo",
+     "x": 1.3,
+     "z": 0,
+     "face": "neutral",
+     "anim": "walkoff",
+     "over": "card",
+     "ry": 90
+    }
+   ],
+   "fx": [
+    "board:TONIGHT'S DECK \u00b7 11 / 15|\u2190 Release       Align \u2192"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "And only when you both align does the veil lift.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "kai",
+     "x": -1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "card",
+     "ry": 55,
+     "flipAt": 0.5,
+     "glow": true
+    },
+    {
+     "id": "mo",
+     "x": 1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "card",
+     "ry": -55,
+     "flipAt": 0.5,
+     "glow": true
+    }
+   ],
+   "fx": [
+    "hearts:kai",
+    "hearts:mo"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.8,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Leos hated this rule.",
+   "at": "street",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "leo2",
+     "x": 0,
+     "z": 0,
+     "face": "angry",
+     "anim": "stomp",
+     "over": "card"
+    }
+   ],
+   "fx": [
+    "rings:leo2"
+   ],
+   "cam": {
+    "on": "leo2",
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "But one Leo hated it the most.",
+   "at": "street",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "sad",
+     "anim": "slump",
+     "over": "card"
+    }
+   ],
+   "fx": [
+    "question:dre"
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.18
+   }
+  },
+  {
+   "say": "His name was Dre. Best face in town. Nobody had ever seen it.",
+   "at": "street",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "smirk",
+     "anim": "wave",
+     "over": "card"
+    }
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   },
+   "fx": []
+  },
+  {
+   "say": "Dre's whole card said: dealbreakers, none. Bio, I'm better in person.",
+   "at": "plaza",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "smirk",
+     "anim": "shrug"
+    }
+   ],
+   "fx": [
+    "bubble:dre:dealbreakers: none. bio: i'm better in person."
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Three hundred cards. Not one aligned back.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "cry",
+     "anim": "cry"
+    }
+   ],
+   "grade": "gray",
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   },
+   "fx": []
+  },
+  {
+   "say": "Until one night, he opened his own sign, and actually read it.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "shock",
+     "anim": "phone",
+     "hold": "phone"
+    }
+   ],
+   "fx": [
+    "board:LEO, THE USER MANUAL \u00b7 WORK ON|Needing an audience."
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.12
+   }
+  },
+  {
+   "say": "So he rewrote his card. Dealbreaker: people who are rude to waiters. Bio: I'll know your coffee order by day two.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "soft",
+     "anim": "hold",
+     "hold": "card"
+    }
+   ],
+   "fx": [
+    "bubble:dre:dealbreaker: rude to waiters. bio: i'll know your coffee order by day two."
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "The next night, a Virgo named Ivy aligned on him.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "ivy",
+     "x": 0,
+     "z": 0,
+     "face": "soft",
+     "anim": "idle",
+     "over": "card",
+     "glow": true
+    }
+   ],
+   "fx": [
+    "sparkle:ivy"
+   ],
+   "cam": {
+    "on": "ivy",
+    "view": "medium",
+    "yaw": 0,
+    "lookUp": 1
+   }
+  },
+  {
+   "say": "He aligned back.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "card",
+     "glow": true
+    }
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 0
+   },
+   "fx": []
+  },
+  {
+   "say": "And the veil lifted.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": -1.2,
+     "z": 0,
+     "face": "love",
+     "anim": "jump",
+     "over": "card",
+     "ry": 55,
+     "flipAt": 0.15,
+     "glow": true
+    },
+    {
+     "id": "ivy",
+     "x": 1.2,
+     "z": 0,
+     "face": "love",
+     "anim": "jump",
+     "over": "card",
+     "ry": -55,
+     "flipAt": 0.15,
+     "glow": true
+    }
+   ],
+   "fx": [
+    "confetti",
+    "hearts:dre",
+    "hearts:ivy"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.8,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Ivy smiled. Oh. You're cute too.",
+   "at": "cafe",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "ivy",
+     "x": 0,
+     "z": 0,
+     "face": "happy",
+     "anim": "talk",
+     "hold": "coffee"
+    }
+   ],
+   "fx": [
+    "bubble:ivy:oh. you're cute too."
+   ],
+   "cam": {
+    "on": "ivy",
+    "view": "close",
+    "yaw": -10
+   }
+  },
+  {
+   "say": "Too?",
+   "at": "cafe",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "dre",
+     "x": 0,
+     "z": 0,
+     "face": "shock",
+     "anim": "idle"
+    }
+   ],
+   "cam": {
+    "on": "dre",
+    "view": "close",
+    "yaw": 10
+   },
+   "fx": []
+  },
+  {
+   "say": "Your card already was.",
+   "at": "cafe",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "ivy",
+     "x": -0.8,
+     "z": 0,
+     "face": "soft",
+     "anim": "idle",
+     "ry": 25
+    },
+    {
+     "id": "dre",
+     "x": 0.8,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "ry": -25
+    }
+   ],
+   "fx": [
+    "bubble:ivy:your card already was.",
+    "hearts:dre"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.7,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Align. Read the sky before the face.",
+   "at": "plaza",
+   "sky": "night",
+   "end": true,
+   "cast": [
+    {
+     "id": "dre",
+     "x": -0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": 15
+    },
+    {
+     "id": "ivy",
+     "x": 0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": -15
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     4,
+     -4
+    ],
+    "view": "wide",
+    "yaw": 0,
+    "height": 5
+   },
+   "fx": []
+  }
+ ],
+ "end": "align",
+ "endSub": "read the sky before the face",
+ "cta": "Read tonight\u2019s deck"
+}

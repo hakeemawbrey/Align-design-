@@ -1,0 +1,625 @@
+{
+ "id": "02-stars-light-up",
+ "title": "In this town, your star only lights up when it's mutual",
+ "sign": "scorpio",
+ "voice": "am_michael",
+ "speed": 1.08,
+ "caption": "it has to be mutual. that's the whole rule.",
+ "hashtags": [
+  "inthistown",
+  "scorpio",
+  "astrology",
+  "movingon",
+  "align"
+ ],
+ "accent": [
+  "Marcus",
+  "Dani",
+  "Scorpio",
+  "Pisces",
+  "Leos",
+  "mutual",
+  "Align",
+  "lit"
+ ],
+ "cast": {
+  "marcus": {
+   "skin": "#a8714c",
+   "shirt": "#3c2f4f",
+   "pants": "#1e1c26",
+   "hair": "short",
+   "hairColor": "#120c0a",
+   "sign": "scorpio"
+  },
+  "dani": {
+   "skin": "#f1c6a0",
+   "shirt": "#d76b5a",
+   "pants": "#3a2a2a",
+   "hair": "long",
+   "hairColor": "#8a4a22",
+   "sign": "aries"
+  },
+  "danibf": {
+   "skin": "#e2ad80",
+   "shirt": "#7aa2d6",
+   "pants": "#2a3040",
+   "hair": "short",
+   "hairColor": "#3a2618",
+   "sign": "gemini"
+  },
+  "nia": {
+   "skin": "#7a4c33",
+   "shirt": "#8fd0d2",
+   "pants": "#2a3a44",
+   "hair": "bun",
+   "hairColor": "#140e0c",
+   "sign": "pisces"
+  },
+  "leo": {
+   "skin": "#f0c08e",
+   "shirt": "#f2b33d",
+   "pants": "#3a3020",
+   "hair": "curly",
+   "hairColor": "#d89a3a",
+   "sign": "leo",
+   "shades": true
+  },
+  "leo2": {
+   "skin": "#c78d63",
+   "shirt": "#f07f3c",
+   "pants": "#30281e",
+   "hair": "long",
+   "hairColor": "#e0b050",
+   "sign": "leo",
+   "shades": true
+  },
+  "sage": {
+   "skin": "#d9a882",
+   "shirt": "#4b3f7a",
+   "pants": "#2a2440",
+   "hair": "none",
+   "hairColor": "#e8e2d8",
+   "sign": "capricorn",
+   "hat": "wizard",
+   "beard": true
+  }
+ },
+ "shots": [
+  {
+   "say": "In this town, everyone has a little star floating over their head.",
+   "at": "street",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "neutral",
+     "anim": "idle",
+     "over": "star"
+    }
+   ],
+   "crowd": {
+    "n": 8,
+    "radius": 7,
+    "anim": "walk",
+    "over": "star",
+    "litSome": true
+   },
+   "cam": {
+    "on": "marcus",
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "When two people align, both of their stars light up gold.",
+   "at": "street",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "danibf",
+     "x": -1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "star",
+     "litAt": 0.55,
+     "ry": 55
+    },
+    {
+     "id": "nia",
+     "x": 1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "star",
+     "litAt": 0.55,
+     "ry": -55
+    }
+   ],
+   "fx": [
+    "sparkle"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.8,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Leos light up so often, they wear sunglasses.",
+   "at": "street",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "leo",
+     "x": -1.2,
+     "z": 0,
+     "face": "smirk",
+     "anim": "dance",
+     "over": "star",
+     "lit": true
+    },
+    {
+     "id": "leo2",
+     "x": 1.2,
+     "z": 0,
+     "face": "smirk",
+     "anim": "dance",
+     "over": "star",
+     "lit": true
+    }
+   ],
+   "fx": [
+    "sparkle:leo",
+    "sparkle:leo2"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 8
+   }
+  },
+  {
+   "say": "But one Scorpio's star had been dark for three years.",
+   "at": "street",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "sad",
+     "anim": "slump",
+     "over": "star"
+    }
+   ],
+   "fx": [
+    "question:marcus"
+   ],
+   "cam": {
+    "on": "marcus",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.18,
+    "lookUp": 1
+   }
+  },
+  {
+   "say": "His name was Marcus.",
+   "at": "street",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "smirk",
+     "anim": "idle",
+     "over": "star"
+    }
+   ],
+   "cam": {
+    "on": "marcus",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Marcus only ever aligned on one person. His ex, Dani.",
+   "at": "street",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": -2.2,
+     "z": 1,
+     "face": "love",
+     "anim": "idle",
+     "over": "star",
+     "ry": 60
+    },
+    {
+     "id": "dani",
+     "x": 1.8,
+     "z": -1,
+     "face": "neutral",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": -20
+    }
+   ],
+   "fx": [
+    "hearts:marcus"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.4,
+     0
+    ],
+    "view": "medium",
+    "yaw": -10
+   }
+  },
+  {
+   "say": "Every morning, he walked past her house. Every night, he checked her stories.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": -2.5,
+     "z": -2,
+     "face": "focus",
+     "anim": "phone",
+     "hold": "phone",
+     "over": "star",
+     "ry": 20
+    }
+   ],
+   "cam": {
+    "on": "marcus",
+    "view": "close",
+    "yaw": 15
+   }
+  },
+  {
+   "say": "Dani's star had been lit for two years. Just not by him.",
+   "at": "street",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "dani",
+     "x": -0.9,
+     "z": -1.2,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": 20
+    },
+    {
+     "id": "danibf",
+     "x": 0.5,
+     "z": -1.2,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": -20
+    },
+    {
+     "id": "marcus",
+     "x": 1.5,
+     "z": 2.6,
+     "face": "shock",
+     "anim": "idle",
+     "over": "star",
+     "ry": -165
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.4,
+     0
+    ],
+    "view": "medium",
+    "yaw": 10
+   }
+  },
+  {
+   "say": "One day, the town astrologer finally pulled him aside.",
+   "at": "cafe",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "sage",
+     "x": 1.3,
+     "z": 0,
+     "face": "neutral",
+     "anim": "point",
+     "over": "star",
+     "lit": true,
+     "ry": -60
+    },
+    {
+     "id": "marcus",
+     "x": -1.3,
+     "z": 0,
+     "face": "shock",
+     "anim": "idle",
+     "over": "star",
+     "ry": 60
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Son, your star can't light up while you're still holding someone else's.",
+   "at": "cafe",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "sage",
+     "x": 0,
+     "z": 0,
+     "face": "soft",
+     "anim": "talk",
+     "over": "star",
+     "lit": true
+    }
+   ],
+   "fx": [
+    "bubble:sage:your star can't light up while you're holding someone else's."
+   ],
+   "cam": {
+    "on": "sage",
+    "view": "close",
+    "yaw": -10
+   }
+  },
+  {
+   "say": "So Marcus did the hardest thing a Scorpio can do.",
+   "at": "street",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "cry",
+     "anim": "cry",
+     "over": "star"
+    }
+   ],
+   "grade": "gray",
+   "cam": {
+    "on": "marcus",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.15
+   }
+  },
+  {
+   "say": "He let her go.",
+   "at": "street",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "soft",
+     "anim": "release",
+     "over": "star"
+    }
+   ],
+   "fx": [
+    "release:marcus"
+   ],
+   "cam": {
+    "on": "marcus",
+    "view": "medium",
+    "yaw": 0,
+    "lookUp": 1.4
+   }
+  },
+  {
+   "say": "The next morning, a Pisces at the bakery smiled at him.",
+   "at": "cafe",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "nia",
+     "x": 1.2,
+     "z": -1.6,
+     "face": "happy",
+     "anim": "wave",
+     "over": "star",
+     "ry": -30,
+     "hold": "coffee"
+    },
+    {
+     "id": "marcus",
+     "x": -1.4,
+     "z": 1,
+     "face": "shock",
+     "anim": "idle",
+     "over": "star",
+     "ry": 130
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.4,
+     -0.4
+    ],
+    "view": "medium",
+    "yaw": -25
+   }
+  },
+  {
+   "say": "He aligned. She aligned.",
+   "at": "cafe",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": -1.2,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "star",
+     "ry": 60
+    },
+    {
+     "id": "nia",
+     "x": 1.2,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "star",
+     "ry": -60
+    }
+   ],
+   "fx": [
+    "hearts:marcus",
+    "hearts:nia"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "And for the first time in three years, his star lit up.",
+   "at": "cafe",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": 0,
+     "z": 0,
+     "face": "love",
+     "anim": "jump",
+     "over": "star",
+     "litAt": 0.3
+    }
+   ],
+   "fx": [
+    "confetti",
+    "sparkle:marcus"
+   ],
+   "cam": {
+    "on": "marcus",
+    "view": "medium",
+    "yaw": 0,
+    "lookUp": 1.2
+   }
+  },
+  {
+   "say": "It has to be mutual. Release, don't haunt.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "marcus",
+     "x": -0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": 15
+    },
+    {
+     "id": "nia",
+     "x": 0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": -15
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.12
+   }
+  },
+  {
+   "say": "Align.",
+   "at": "plaza",
+   "sky": "night",
+   "end": true,
+   "cast": [
+    {
+     "id": "marcus",
+     "x": -0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": 15
+    },
+    {
+     "id": "nia",
+     "x": 0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "star",
+     "lit": true,
+     "ry": -15
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     4,
+     -4
+    ],
+    "view": "wide",
+    "yaw": 0,
+    "height": 5
+   },
+   "hold": 2.6
+  }
+ ],
+ "end": "align",
+ "endSub": "it has to be mutual"
+}

@@ -1,0 +1,584 @@
+{
+ "id": "01-cards-flip",
+ "title": "In this town, your card only flips when it's mutual",
+ "sign": "virgo",
+ "voice": "am_michael",
+ "speed": 1.08,
+ "caption": "based on a true story. probably yours.",
+ "hashtags": [
+  "inthistown",
+  "virgo",
+  "astrology",
+  "dating",
+  "align"
+ ],
+ "accent": [
+  "Theo",
+  "June",
+  "Virgo",
+  "Taurus",
+  "Align",
+  "honest",
+  "flips",
+  "flipped"
+ ],
+ "cast": {
+  "theo": {
+   "skin": "#f2c79b",
+   "shirt": "#6f8fb8",
+   "pants": "#2f3446",
+   "hair": "short",
+   "hairColor": "#4a3022",
+   "sign": "virgo",
+   "glasses": true
+  },
+  "june": {
+   "skin": "#c98e62",
+   "shirt": "#e9a3a8",
+   "pants": "#3b2f3a",
+   "hair": "long",
+   "hairColor": "#2a1a14",
+   "sign": "taurus"
+  },
+  "leo1": {
+   "skin": "#f0c08e",
+   "shirt": "#f2b33d",
+   "pants": "#3a3020",
+   "hair": "curly",
+   "hairColor": "#d89a3a",
+   "sign": "leo"
+  },
+  "lib1": {
+   "skin": "#e8b48a",
+   "shirt": "#a7c7a0",
+   "pants": "#2e3a30",
+   "hair": "bun",
+   "hairColor": "#6b3a26",
+   "sign": "libra"
+  },
+  "lib2": {
+   "skin": "#8d5a3b",
+   "shirt": "#b6a2e0",
+   "pants": "#2e2a40",
+   "hair": "short",
+   "hairColor": "#141010",
+   "sign": "libra"
+  }
+ },
+ "shots": [
+  {
+   "say": "In this town, everyone is dealt a card on their eighteenth birthday.",
+   "at": "plaza",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "shock",
+     "anim": "idle",
+     "over": "card",
+     "hat": "party"
+    }
+   ],
+   "props": [
+    {
+     "kind": "cake",
+     "x": 0,
+     "z": 1.6
+    }
+   ],
+   "fx": [
+    "confetti"
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Your sun, moon and rising go on the front. Your face goes on the back.",
+   "at": "plaza",
+   "sky": "day",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "neutral",
+     "anim": "point",
+     "over": "card",
+     "overSize": 1.9
+    }
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "medium",
+    "yaw": 15,
+    "lookUp": 1.6
+   }
+  },
+  {
+   "say": "And your card only flips when someone aligns on you, and you align on them back.",
+   "at": "plaza",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "leo1",
+     "x": -1.6,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "card",
+     "ry": 50,
+     "flipAt": 0.6
+    },
+    {
+     "id": "lib1",
+     "x": 1.6,
+     "z": 0,
+     "face": "love",
+     "anim": "idle",
+     "over": "card",
+     "ry": -50,
+     "flipAt": 0.6
+    }
+   ],
+   "fx": [
+    "hearts:leo1",
+    "hearts:lib1"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Most Leos flipped in a week. Most Libras flipped twice in one night.",
+   "at": "plaza",
+   "sky": "dusk",
+   "cast": [
+    {
+     "id": "leo1",
+     "x": -2.4,
+     "z": 0,
+     "face": "happy",
+     "anim": "cheer",
+     "over": "card",
+     "flipped": true
+    },
+    {
+     "id": "lib1",
+     "x": 0.4,
+     "z": -0.6,
+     "face": "smirk",
+     "anim": "dance",
+     "over": "card",
+     "flipped": true
+    },
+    {
+     "id": "lib2",
+     "x": 2.6,
+     "z": 0.2,
+     "face": "smirk",
+     "anim": "dance",
+     "over": "card",
+     "flipped": true
+    }
+   ],
+   "fx": [
+    "sparkle:lib1"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.4,
+     0
+    ],
+    "view": "wide",
+    "yaw": -8
+   }
+  },
+  {
+   "say": "But one Virgo's card never flipped at all.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "sad",
+     "anim": "slump",
+     "over": "card"
+    }
+   ],
+   "fx": [
+    "question:theo"
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.18
+   }
+  },
+  {
+   "say": "His name was Theo.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "neutral",
+     "anim": "wave",
+     "over": "card"
+    }
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Every night at eleven eleven, the whole town met in the plaza to watch cards flip.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 3,
+     "face": "neutral",
+     "anim": "idle",
+     "over": "card",
+     "ry": 180
+    }
+   ],
+   "crowd": {
+    "n": 18,
+    "radius": 6,
+    "anim": "cheer",
+    "over": "card",
+    "flipSome": true
+   },
+   "fx": [
+    "sparkle"
+   ],
+   "cam": {
+    "at": [
+     0,
+     4,
+     -2
+    ],
+    "view": "wide",
+    "yaw": 0,
+    "height": 7
+   }
+  },
+  {
+   "say": "Theo aligned on everyone. Nobody aligned back.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": -1.4,
+     "z": 0,
+     "face": "happy",
+     "anim": "wave",
+     "over": "card",
+     "ry": 40
+    },
+    {
+     "id": "lib2",
+     "x": 1.6,
+     "z": -0.4,
+     "face": "neutral",
+     "anim": "walkoff",
+     "over": "card",
+     "ry": 90
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.4,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "So he wrote a cuter bio. Then a funnier one. Then a cooler one.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 2.6,
+     "z": -2.6,
+     "face": "focus",
+     "anim": "type",
+     "ry": 150,
+     "hat": "beanie"
+    }
+   ],
+   "fx": [
+    "bubble:theo:cute bio \u2192 funny bio \u2192 cool bio"
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "close",
+    "yaw": 40
+   }
+  },
+  {
+   "say": "Still nothing.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "cry",
+     "anim": "cry",
+     "ry": 0
+    }
+   ],
+   "grade": "gray",
+   "cam": {
+    "on": "theo",
+    "view": "close",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Until one night, he finally gave up on being cool.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "angry",
+     "anim": "snap"
+    }
+   ],
+   "fx": [
+    "rings:theo"
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "He wrote the honest thing. I fold socks. I cry at dog videos. I want something real.",
+   "at": "room",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": 0,
+     "z": 0,
+     "face": "soft",
+     "anim": "hold",
+     "hold": "card"
+    }
+   ],
+   "fx": [
+    "bubble:theo:i fold socks. i cry at dog videos. i want something real."
+   ],
+   "cam": {
+    "on": "theo",
+    "view": "close",
+    "yaw": 10
+   }
+  },
+  {
+   "say": "Across the plaza, one card started to glow.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "june",
+     "x": 0,
+     "z": 0,
+     "face": "shock",
+     "anim": "idle",
+     "over": "card",
+     "glow": true,
+     "ry": 0
+    }
+   ],
+   "fx": [
+    "sparkle:june"
+   ],
+   "cam": {
+    "on": "june",
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.2,
+    "lookUp": 1.2
+   }
+  },
+  {
+   "say": "It was a Taurus named June. Her card said: same.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "june",
+     "x": 0,
+     "z": 0,
+     "face": "happy",
+     "anim": "wave",
+     "over": "card",
+     "glow": true
+    }
+   ],
+   "fx": [
+    "bubble:june:same."
+   ],
+   "cam": {
+    "on": "june",
+    "view": "close",
+    "yaw": -10
+   }
+  },
+  {
+   "say": "Both cards flipped at once.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": -1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "jump",
+     "over": "card",
+     "ry": 55,
+     "flipAt": 0.15,
+     "glow": true
+    },
+    {
+     "id": "june",
+     "x": 1.3,
+     "z": 0,
+     "face": "love",
+     "anim": "jump",
+     "over": "card",
+     "ry": -55,
+     "flipAt": 0.15,
+     "glow": true
+    }
+   ],
+   "fx": [
+    "confetti",
+    "hearts:theo",
+    "hearts:june"
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.8,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0
+   }
+  },
+  {
+   "say": "Turns out nobody was ever aligning with the cool version.",
+   "at": "plaza",
+   "sky": "night",
+   "cast": [
+    {
+     "id": "theo",
+     "x": -0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": 15
+    },
+    {
+     "id": "june",
+     "x": 0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": -15
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     2.6,
+     0
+    ],
+    "view": "medium",
+    "yaw": 0,
+    "push": 0.12
+   }
+  },
+  {
+   "say": "Align. Read the sky before the face.",
+   "at": "plaza",
+   "sky": "night",
+   "end": true,
+   "cast": [
+    {
+     "id": "theo",
+     "x": -0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": 15
+    },
+    {
+     "id": "june",
+     "x": 0.7,
+     "z": 0,
+     "face": "happy",
+     "anim": "idle",
+     "over": "card",
+     "flipped": true,
+     "ry": -15
+    }
+   ],
+   "cam": {
+    "at": [
+     0,
+     4,
+     -4
+    ],
+    "view": "wide",
+    "yaw": 0,
+    "height": 5
+   }
+  }
+ ],
+ "end": "align",
+ "endSub": "read the sky before the face"
+}
