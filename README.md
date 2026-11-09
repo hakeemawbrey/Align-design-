@@ -113,7 +113,7 @@ For founder-page videos, see [founder/README.md](founder/README.md): her reels s
 
 To study a creator's whole Instagram page (download every post on your Mac, transcribe it and read the on-screen text, then send it privately to Claude for a breakdown and Align versions), see [study/README.md](study/README.md).
 
-For **Video Lab** (drop inspo links in a private portal; Claude studies whole YouTube channels and grows a playbook of what makes videos work, with Align versions to film), see [study/kb/README.md](study/kb/README.md).
+For **Video Lab** (drop YouTube, Instagram, X or Facebook inspo links in a private portal; Claude studies whole accounts and grows a playbook of what makes videos work, with Align versions to film), see [study/kb/README.md](study/kb/README.md).
 
 To go through the 1,068 inspiration posts (download them, mark each one use / maybe / skip with feedback and an Align spin, and turn that into a content brief), see [inspo/README.md](inspo/README.md).
 
