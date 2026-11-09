@@ -1,0 +1,165 @@
+{
+  "id": "03-full-moon-gemini",
+  "title": "The Gemini supermoon",
+  "date": "2026-11-24",
+  "postBy": "2026-11-22",
+  "cover": "The *Gemini* supermoon is Tuesday",
+  "caption": "tuesday's full moon in gemini is a supermoon, and gemini is the sign of conversation. notice the sentence you keep swallowing, say it without the haha, then listen",
+  "hashtags": [
+    "fullmoon",
+    "geminifullmoon",
+    "supermoon",
+    "beavermoon",
+    "astrology",
+    "datingadvice"
+  ],
+  "voice": "af_heart",
+  "speed": 1.0,
+  "steps": [
+    "NOTICE",
+    "SAY",
+    "LISTEN"
+  ],
+  "sources": [
+    "Full Moon Nov 24, 2026, 6:53 am PT (14:53 UTC) at 2°20' Gemini — https://chani.com/this-year/key-dates/2026-astrological-key-dates-new-and-full-moons",
+    "Supermoon, Beaver Moon, Nov 24, 2026 14:53 GMT — https://starwalk.space/news/full-moon-november",
+    "Full moon = Sun and Moon on opposite sides of Earth (Sun in Sagittarius, Moon in Gemini); Gemini = the twins, ruled by Mercury (communication)."
+  ],
+  "scenes": [
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "♊",
+        "halo": "rays"
+      },
+      "label": "NOVEMBER 24 · SUPERMOON",
+      "step": null,
+      "lines": [
+        "The full moon in *Gemini* is Tuesday,",
+        "and it's a *supermoon.*",
+        "Here's what to say, and to *whom.*"
+      ]
+    },
+    {
+      "art": "moon",
+      "opts": {
+        "phase": 0.5,
+        "glyph": "♊"
+      },
+      "label": "SUN ☉ · EARTH · MOON ☽",
+      "step": null,
+      "lines": [
+        "A full moon is the sun and moon",
+        "on *opposite* sides of Earth,",
+        "so the whole face is *lit.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "label": "GEMINI · THE TWINS",
+      "step": null,
+      "lines": [
+        "Gemini is the *twins,* the sign of talking.",
+        "So this moon lights up what you *haven't said.*"
+      ]
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "UNSAID",
+        "words": [
+          "I LIKE YOU",
+          "I'M HURT",
+          "I WANT MORE"
+        ],
+        "wordsAt": 2,
+        "dissolveAt": null
+      },
+      "label": "THE NIGHT BEFORE",
+      "step": 0,
+      "lines": [
+        "Step one: *notice.*",
+        "Write the sentence you keep swallowing.",
+        "I like you. I'm hurt. I want *more.*"
+      ]
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "SEND",
+        "words": [
+          "HAHA"
+        ],
+        "wordsAt": 2,
+        "dissolveAt": 3
+      },
+      "label": "ONE SENTENCE · NO HAHA",
+      "step": 1,
+      "lines": [
+        "Step two: *say* it.",
+        "One sentence, to them, before Wednesday,",
+        "and don't soften it with a *haha.*",
+        "Delete it. Then *send.*"
+      ]
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "Talk card",
+        "sub": "BOTH ANSWER · THEN REVEAL",
+        "revealAt": 3
+      },
+      "label": "THE ALIGN APP",
+      "step": 2,
+      "lines": [
+        "Step three: *listen.*",
+        "Ask, then let the quiet do the work.",
+        "It's why talk cards on the Align app",
+        "hide your answer until you've *both* answered."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "label": "UNDER THE FULL MOON",
+      "step": 2,
+      "lines": [
+        "Hear what they say,",
+        "and what they *don't.*"
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "NOTICE",
+          "SAY",
+          "LISTEN"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Notice. Say. *Listen.*"
+      ]
+    },
+    {
+      "art": "moon",
+      "opts": {
+        "phase": 0.5,
+        "glyph": "♊"
+      },
+      "step": 2,
+      "lines": [
+        "The moon is full.",
+        "*Say it.*"
+      ],
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}

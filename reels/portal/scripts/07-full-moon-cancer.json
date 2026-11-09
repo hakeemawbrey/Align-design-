@@ -1,0 +1,158 @@
+{
+  "id": "07-full-moon-cancer",
+  "title": "The Cancer supermoon",
+  "date": "2026-12-23",
+  "postBy": "2026-12-21",
+  "cover": "The biggest *supermoon* of the year is Wednesday",
+  "caption": "wednesday's full moon in cancer is the biggest supermoon of 2026, in the sign the moon rules. soften at the family table, gather the people who feel like home, and hold yourself",
+  "hashtags": [
+    "fullmoon",
+    "cancerfullmoon",
+    "supermoon",
+    "coldmoon",
+    "astrology",
+    "holidays",
+    "datingadvice"
+  ],
+  "voice": "af_heart",
+  "speed": 1.0,
+  "steps": [
+    "SOFTEN",
+    "GATHER",
+    "HOLD"
+  ],
+  "sources": [
+    "Full Moon Dec 23, 2026, 5:28 pm PT / 8:28 pm ET (01:28 UTC Dec 24) at 2°13' Cancer — https://chani.com/this-year/key-dates/2026-astrological-key-dates-new-and-full-moons",
+    "Cold Moon, 'the last and biggest Supermoon of 2026', Dec 24, 2026 01:28 GMT — https://starwalk.space/news/full-moon-december",
+    "The Moon rules Cancer (traditional rulership); the Moon sign needs birth time, read by the app's chart (Sun, Moon, Rising)."
+  ],
+  "scenes": [
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "♋",
+        "halo": "rays"
+      },
+      "label": "DECEMBER 23 · SUPERMOON",
+      "step": null,
+      "lines": [
+        "The biggest *supermoon* of the year",
+        "is Wednesday night,",
+        "the night before Christmas Eve.",
+        "Here's what to do with the *holidays.*"
+      ]
+    },
+    {
+      "art": "moon",
+      "opts": {
+        "phase": 0.5,
+        "glyph": "♋"
+      },
+      "label": "THE MOON AT HOME",
+      "step": null,
+      "lines": [
+        "It's full in *Cancer,*",
+        "the sign the moon itself *rules.*",
+        "Home. Family. Being *held.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "label": "THE FAMILY TABLE",
+      "step": null,
+      "lines": [
+        "And right on time for someone asking,",
+        "so, are you *seeing* anyone?"
+      ]
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "MY ANSWER",
+        "words": [
+          "NOT YET",
+          "AND I'M HAPPY"
+        ],
+        "wordsAt": 3,
+        "dissolveAt": null
+      },
+      "label": "ONE LINE · NO STORY",
+      "step": 0,
+      "lines": [
+        "Step one: *soften.*",
+        "Smile. Pass the potatoes.",
+        "You don't owe anyone a story.",
+        "Not yet, and I'm *happy.* That's enough."
+      ]
+    },
+    {
+      "art": "list",
+      "opts": {
+        "title": "WHO FEELS LIKE HOME",
+        "count": 3,
+        "items": [
+          "MY SISTER",
+          "MY BEST FRIEND",
+          "ME, LATELY"
+        ],
+        "itemsAt": 2
+      },
+      "label": "THE SHAPE OF IT",
+      "step": 1,
+      "lines": [
+        "Step two: *gather.*",
+        "Write three people who feel like home.",
+        "My sister. My best friend. *Me,* lately.",
+        "That's the *shape* of the love you want."
+      ]
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "Moon",
+        "glyph": "☽",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "revealAt": 1
+      },
+      "label": "THE ALIGN APP",
+      "step": 2,
+      "lines": [
+        "Step three: *hold* yourself.",
+        "Your moon sign is what makes you feel *safe.*",
+        "The Align app reads it from your birth date and time.",
+        "Give yourself that, tonight."
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "SOFTEN",
+          "GATHER",
+          "HOLD"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Soften. Gather. *Hold.*"
+      ]
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "♋",
+        "halo": "rays"
+      },
+      "step": 2,
+      "lines": [
+        "The moon is home.",
+        "*So are you.*"
+      ],
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}

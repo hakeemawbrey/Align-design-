@@ -1,0 +1,170 @@
+{
+  "id": "02-venus-direct",
+  "title": "Venus turns direct",
+  "date": "2026-11-13",
+  "postBy": "2026-11-11",
+  "cover": "*Venus* turns direct on Friday",
+  "caption": "venus has looked like she was moving backward since october 3. on friday she turns direct in libra, and mercury does too. remember the feeling, decide on the ex, then move",
+  "hashtags": [
+    "venusretrograde",
+    "venusdirect",
+    "mercurydirect",
+    "libra",
+    "astrology",
+    "exes",
+    "datingadvice"
+  ],
+  "voice": "af_heart",
+  "speed": 1.0,
+  "steps": [
+    "REMEMBER",
+    "DECIDE",
+    "MOVE"
+  ],
+  "sources": [
+    "Venus stations direct Nov 13, 2026, 7:27 pm EST at 22°52' Libra; retrograde began Oct 3, 2026 at 8°30' Scorpio — https://cafeastrology.com/events/venus-turns-direct-in-libra/",
+    "Mercury stations direct Nov 13, 2026, 10:53 am EST at 5°02' Scorpio — https://cafeastrology.com/events/mercury-turns-direct-in-scorpio-2026/",
+    "https://cafeastrology.com/this-month-astrology-november-2026/",
+    "Venus rules Libra (traditional rulership); retrograde is apparent motion as Earth and Venus pass each other (Venus at inferior conjunction)."
+  ],
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "retro": false
+      },
+      "label": "NOVEMBER 13 · VENUS DIRECT",
+      "step": null,
+      "lines": [
+        "*Venus* turns direct on Friday.",
+        "Here's what to do about the *ex.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "retro": true
+      },
+      "label": "OCT 3 → NOV 13",
+      "step": null,
+      "lines": [
+        "Since October third, she's looked",
+        "like she's moving *backward.*",
+        "It's an illusion. Earth and Venus",
+        "are *passing* each other."
+      ],
+      "show": {
+        "0": "Since *Oct 3,* she's looked"
+      }
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "♎",
+        "halo": "rays"
+      },
+      "label": "♀ 22° LIBRA · ☿ 5° SCORPIO",
+      "step": null,
+      "lines": [
+        "She backed into *Libra,* the sign she rules.",
+        "And Mercury turns direct the *same day.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "label": "THE ONES WHO CAME BACK",
+      "step": null,
+      "lines": [
+        "So the ex who liked your late-night story",
+        "gets an *answer* this week."
+      ]
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "I MISS",
+        "words": [
+          "THE LATE CALLS",
+          "FEELING SURE"
+        ],
+        "wordsAt": 2,
+        "dissolveAt": null
+      },
+      "label": "BEFORE FRIDAY",
+      "step": 0,
+      "lines": [
+        "Step one: *remember.*",
+        "Write what you really miss.",
+        "The late calls. Feeling *sure.*",
+        "Not the person. The *feeling.*"
+      ]
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "Released",
+        "sub": "THEY LEAVE YOUR DECK",
+        "revealAt": 3
+      },
+      "label": "THE ALIGN APP",
+      "step": 1,
+      "lines": [
+        "Step two: *decide.*",
+        "Does that feeling need *them?*",
+        "On the Align app, when you release someone,",
+        "they leave your deck.",
+        "Let them leave your *head* too."
+      ]
+    },
+    {
+      "art": "portal",
+      "opts": {
+        "inside": "stars",
+        "icons": [
+          "heart",
+          "letter"
+        ]
+      },
+      "label": "FRIDAY NIGHT · FORWARD",
+      "step": 2,
+      "lines": [
+        "Step three: when Venus *moves,* move.",
+        "Say yes to the coffee you keep *postponing,*",
+        "and don't look back."
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "REMEMBER",
+          "DECIDE",
+          "MOVE"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Remember. Decide. *Move.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "retro": false
+      },
+      "step": 2,
+      "lines": [
+        "Venus is moving *forward.*",
+        "So are you."
+      ],
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "08-year-of-eleven",
+  "title": "The year of eleven",
+  "date": "2027-01-01",
+  "postBy": "2026-12-30",
+  "cover": "2027 is a *master-number* year",
+  "caption": "add up 2027: 2 + 0 + 2 + 7 = 11, a master number year, and it opens on 1/1. clear what stays in this year, choose how you want to be loved, and begin at midnight",
+  "hashtags": [
+    "2027",
+    "newyear",
+    "numerology",
+    "masternumber11",
+    "astrology",
+    "loveritual",
+    "datingadvice"
+  ],
+  "voice": "af_heart",
+  "speed": 1.0,
+  "steps": [
+    "CLEAR",
+    "CHOOSE",
+    "BEGIN"
+  ],
+  "sources": [
+    "Calendar date: Friday, January 1, 2027 (month 1, day 1)",
+    "Numerology universal year: 2 + 0 + 2 + 7 = 11, a master number (kept as 11, not reduced to 2). Standard Pythagorean convention."
+  ],
+  "scenes": [
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "JANUARY",
+        "day": "1/1",
+        "sub": "2027 · YEAR 11"
+      },
+      "label": "TWO DAYS AWAY",
+      "step": null,
+      "lines": [
+        "The new year opens in *two days,*",
+        "and it's a *master number* year."
+      ]
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "11",
+        "halo": "rays"
+      },
+      "label": "2 + 0 + 2 + 7 = 11",
+      "step": null,
+      "lines": [
+        "Add up the digits of twenty twenty-seven",
+        "and you get *eleven.*"
+      ],
+      "show": {
+        "0": "Add up the digits of *2027*",
+        "1": "and you get *11.*"
+      }
+    },
+    {
+      "art": "pillars",
+      "opts": {
+        "count": 2
+      },
+      "label": "JANUARY 1 · 1/1",
+      "step": null,
+      "lines": [
+        "The number of *intuition,*",
+        "for a whole year that starts on one one."
+      ],
+      "show": {
+        "1": "for a whole year that starts on *1/1.*"
+      }
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "STAYS IN 2026",
+        "words": [
+          "THE WAITING",
+          "THE MAYBE"
+        ],
+        "wordsAt": 2,
+        "dissolveAt": 3
+      },
+      "label": "NEW YEAR'S EVE",
+      "step": 0,
+      "lines": [
+        "Step one: *clear.*",
+        "On New Year's Eve, write what stays behind.",
+        "The waiting by the phone. The *maybe.*",
+        "Then tear it up."
+      ]
+    },
+    {
+      "art": "list",
+      "opts": {
+        "title": "IN 2027 I AM",
+        "count": 11,
+        "items": [
+          "TEXTED BACK",
+          "MET HALFWAY",
+          "CHOSEN OUT LOUD"
+        ],
+        "itemsAt": 2
+      },
+      "label": "PRESENT TENSE · AS IF DONE",
+      "step": 1,
+      "lines": [
+        "Step two: *choose* eleven ways to be loved,",
+        "written as if they're already true.",
+        "Texted back. Met halfway. Chosen *out loud.*"
+      ],
+      "show": {
+        "0": "Step two: *choose* 11 ways to be loved,"
+      }
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "Mutual",
+        "sub": "A MATCH ONLY WHEN YOU BOTH ALIGN",
+        "revealAt": 2
+      },
+      "label": "THE ALIGN APP",
+      "step": 1,
+      "lines": [
+        "Choose people who choose you *back.*",
+        "On the Align app, a match only happens",
+        "when you *both* align."
+      ]
+    },
+    {
+      "art": "clock",
+      "opts": {
+        "time": "00:00"
+      },
+      "label": "MIDNIGHT · 1/1",
+      "step": 2,
+      "lines": [
+        "Step three: at midnight, *begin.*",
+        "Read your list once, out loud,",
+        "then put the phone *down.*",
+        "No midnight text to the ex."
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "CLEAR",
+          "CHOOSE",
+          "BEGIN"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Clear. Choose. *Begin.*"
+      ]
+    },
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "JANUARY",
+        "day": "1/1",
+        "sub": "2027 · YEAR 11"
+      },
+      "step": 2,
+      "lines": [
+        "The year of eleven",
+        "is *open.*"
+      ],
+      "show": {
+        "0": "The year of *11*"
+      },
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}
