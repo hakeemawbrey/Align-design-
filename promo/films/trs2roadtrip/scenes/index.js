@@ -113,7 +113,7 @@ const CAMEOS = [
   { sign: 'aries', cap: 'Wants to drive | the *whole* way.', mood: 'sparkle', hops: [0.6, 1.4],
     front(x, t, lt, P, F) {
       const k = pop01(t, P.t0 + 0.15, 0.35, 2)
-      drawBits(x, WHEEL, WHEEL_C, F.x, F.cy + 95, 14 * k, { rot: 0.22 * Math.sin(lt * 3.2) })
+      drawBits(x, WHEEL, WHEEL_C, F.x + 60, F.cy + 120, 12 * k, { rot: 0.22 * Math.sin(lt * 3.2) })
     } },
   { sign: 'taurus', cap: 'Packed no clothes. | Only *snacks.*', mood: 'heart', look: [1, 0], star: { x: -140 },
     back(x, t, lt, P) {

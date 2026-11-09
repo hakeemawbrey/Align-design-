@@ -6,7 +6,7 @@
 //              · ♋ scrolled every old photo · ♌ new hair, new era · ♍ a five-step healing plan · ♎ moved the furniture
 //              twice · ♏ went quiet, came back glowing · ♐ needed space, booked a trip · ♑ scheduled one good cry
 //              · ♒ joined a stargazing club · ♓ cried at a commercial.
-//  49.2        "Everyone *came back stronger.*"  The twelve fly up into a group photo under the bunting.
+//  49.2        "Everyone came | back *stronger.*"  The twelve fly up into a group photo under the bunting.
 //  52.4        LESSON UNLOCKED: "Healing isn’t | *a race.*"  SELF-LOVE: UNLOCKED
 //  58.3        "*Glow-up* season."  Hearts rise off the photo.
 import { prog, lerp, ease } from '../../../src/lib.js'
@@ -26,8 +26,8 @@ const CHAIR = ['.RRRRRR.', '.RrrrrR.', 'RRrrrrRR', 'RRRRRRRR', 'RRRRRRRR', '.D..
 const CHAIR_C = { R: '#4fa6d8', r: '#9fd4ff', D: '#3a2d74' }
 const SUIT = ['...HHHH...', '...H..H...', 'SSSSSSSSSS', 'SsSSSSSSsS', 'SSSSYYSSSS', 'SSSSYYSSSS', 'SsSSSSSSsS', 'SSSSSSSSSS', '.W......W.']
 const SUIT_C = { S: '#ff9f4a', s: '#ffc68a', Y: '#ffe27a', H: '#3a2d74', W: '#2a2350' }
-const SCOPE = ['......BB', '....BBBB', '..BBBBB.', 'BBBBB...', '.BB.....', '..L.....', '.L.L....', 'L...L...']
-const SCOPE_C = { B: '#c9c4d8', L: '#6b62a8' }
+const SCOPE = ['........YY', '......BBYY', '....BBBBB.', '..BBBBBb..', 'BBBBbb....', 'BB..L.....', '...LLL....', '..L.L.L...', '.L..L..L..', 'L...L...L.']
+const SCOPE_C = { B: '#c9c4d8', b: '#8f88b0', Y: '#ffe27a', L: '#9a8fd8' }
 const TV = ['..A....A..', '...A..A...', 'KKKKKKKKKK', 'KSSSSSSSSK', 'KSHHSSHHSK', 'KSHHHHHHSK', 'KSSHHHHSSK', 'KSSSHHSSSK', 'KSSSSSSSSK', 'KKKKKKKKKK', '.K......K.']
 const TV_C = { A: '#c9c4d8', K: '#2a2350', S: '#5fb6ff', H: '#ff8fb1' }
 
@@ -72,7 +72,7 @@ const CAMEOS = [
     back(x, t, lt, P) {
       const k = pop01(t, P.t0 + 0.15, 0.3, 2)
       if (k <= 0.01) return
-      x.save(); x.translate(320, 900); x.scale(k, k); x.rotate(-0.06)
+      x.save(); x.translate(350, 900); x.scale(k * 0.92, k * 0.92); x.rotate(-0.06)
       x.fillStyle = INK; x.fillRect(-150, -200, 300, 400)
       x.fillStyle = '#a0784a'; x.fillRect(-142, -192, 284, 384)
       x.fillStyle = '#f4e8cc'; x.fillRect(-122, -160, 244, 336)
@@ -88,8 +88,8 @@ const CAMEOS = [
   { sign: 'libra', cap: 'Moved the furniture. | *Twice.*', mood: lt => lt > 1.9 ? 'sparkle' : 'happy', look: lt => [lt < 1.1 ? -1 : 1, 0],
     back(x, t, lt) {
       const a = ease.inOutCubic(prog(lt, 0.4, 0.9)), b = ease.inOutCubic(prog(lt, 1.3, 1.8))
-      const cx = lerp(lerp(250, 830, a), 260, b)
-      drawBits(x, CHAIR, CHAIR_C, cx, 1080, 18)
+      const cx = lerp(lerp(270, 810, a), 280, b)
+      drawBits(x, CHAIR, CHAIR_C, cx, 1070, 26)
     } },
   { sign: 'scorpio', cap: 'Went quiet. | Came back *glowing.*', mood: lt => lt < 1.3 ? 'squint' : 'sparkle', look: [1, 0],
     front(x, t, lt, P, F) {
@@ -121,15 +121,15 @@ const CAMEOS = [
     } },
   { sign: 'aquarius', cap: 'Joined a | *stargazing club.*', mood: 'sparkle', look: [1, -1], star: { x: -160 },
     back(x, t, lt, P) {
-      drawBits(x, SCOPE, SCOPE_C, 790, 1010, 22 * pop01(t, P.t0 + 0.2, 0.35, 2))
-      label(x, 790, 760, 'CLUB NIGHT', pop01(t, P.t0 + 0.7, 0.3, 2), { bg: SKYB, rot: 0.06 })
+      drawBits(x, SCOPE, SCOPE_C, 790, 1020, 20 * pop01(t, P.t0 + 0.2, 0.35, 2))
+      label(x, 790, 800, 'CLUB NIGHT', pop01(t, P.t0 + 0.7, 0.3, 2), { bg: SKYB, rot: 0.06 })
     } },
   { sign: 'pisces', cap: 'Cried at | *a commercial.*', mood: lt => lt < 1.2 ? 'sparkle' : 'wide', tears: lt => lt < 1.2 ? 2 : 3, star: { x: -110 },
     back(x, t, lt, P) {
-      drawBits(x, TV, TV_C, 790, 990, 16 * pop01(t, P.t0 + 0.2, 0.35, 2))
+      drawBits(x, TV, TV_C, 790, 950, 18 * pop01(t, P.t0 + 0.2, 0.35, 2))
     },
     front(x, t, lt, P) {
-      label(x, 790, 1130, 'it was for soup', pop01(t, P.t0 + 1.1, 0.35, 2.2), { size: 26, bg: '#7c74f0', color: BONE, rot: 0.05 })
+      label(x, 790, 1100, 'it was for soup', pop01(t, P.t0 + 1.1, 0.35, 2.2), { size: 30, bg: '#7c74f0', color: BONE, rot: 0.05 })
     } },
 ]
 
@@ -137,7 +137,7 @@ const F = makeFilm({
   id: 'trs2breakup', key: 'G', accent: '#c9a6ff',
   title: 'The signs after | a *breakup.*',
   cameos: CAMEOS,
-  group: { cap: 'Everyone *came back stronger.*' },
+  group: { cap: 'Everyone came | back *stronger.*' },
   lesson: { text: 'Healing isn’t | *a race.*', chip: 'SELF-LOVE: UNLOCKED' },
   last: {
     text: '*Glow-up* season.',
