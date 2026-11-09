@@ -72,6 +72,34 @@ Each script lists the features it shows in a `beta` field. The on-screen
 boards (`fx: "board:TITLE|second line"`) stand in for the app's widgets. Keep
 their wording to Align's: **alignment**, never "compatibility".
 
+## Design language
+
+The reels use the app's own Stardust system, not a generic toy-town look:
+
+- **Colour:** the tokens from `app/src/index.css`. Indigo surfaces (`--void`
+  `#0b0620`, `--canvas` `#140a2e`, `--raised` `#1e1240`), never black, and
+  warm bone labels (`#efe6d6`), never white. Spark `#7fd8b0`, Rub `#e8628a`
+  and Align `#f2c75c` appear only where the app uses them.
+- **Characters** wear their sign's aura colour from `app/src/data/signs.ts`
+  (Leo Goldleaf, Virgo Rose Quartz, Capricorn Jade, Pisces Dusk…).
+- **Cards** are the app's cards. The overhead card is a small `ProfileCard`:
+  "D., 26", the sign's aura image with "NO PHOTO UNTIL YOU BOTH ALIGN", the
+  sign and element chip, Spark / Rub / Align pips, "ALIGN · № 031" and
+  "✦ STRONG PULL". When both align, it flips to the same card with the face
+  and a "REVEALED TONIGHT" chip. A held card is the `CardBack`: indigo glass,
+  foil edge, seed of life and the chakra column.
+- **Type:** EB Garamond italic for captions, headlines and bubbles; Space Mono
+  for eyebrows. That's the app's two voices, with mono for labels and serials.
+- **Widgets:** `fx: "board:EYEBROW|Headline"` draws an app panel (raised
+  indigo, mono eyebrow, serif italic headline). The edge is Spark for PULL,
+  Rub for PUSH, Align gold otherwise. Write headlines in sentence case, the
+  way the app does ("Moon in Cancer — stay close to home.").
+- **Logo:** the mark (seed-of-life circles and the glowing chakra column, from
+  `components/intro/AlignMark.tsx`) and the italic "Align" wordmark sit top
+  left on every shot. The end card is the splash screen: mark, wordmark, a
+  mono line (`endSub`), then one chrome CTA pill (`cta`, default "Read
+  tonight's deck").
+
 ## Render
 
 Needs Node 18+, ffmpeg, and the narrator voice. Run `npm install` in

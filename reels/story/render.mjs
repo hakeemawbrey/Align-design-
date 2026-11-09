@@ -43,6 +43,9 @@ const FONTS = [
   ['Poppins', `${HOST}fonts/poppins/files/poppins-latin-700-normal.woff2`, 'normal', '700'],
   ['Poppins', `${HOST}fonts/poppins/files/poppins-latin-600-normal.woff2`, 'normal', '600'],
   ['EB Garamond', `${HOST}fonts/eb-garamond/files/eb-garamond-latin-500-italic.woff2`, 'italic', '500'],
+  ['EB Garamond', `${HOST}fonts/eb-garamond/files/eb-garamond-latin-400-italic.woff2`, 'italic', '400'],
+  ['EB Garamond', `${HOST}fonts/eb-garamond/files/eb-garamond-latin-500-normal.woff2`, 'normal', '500'],
+  ['Space Mono', `${HOST}fonts/space-mono/files/space-mono-latin-400-normal.woff2`, 'normal', '400'],
   ['Space Mono', `${HOST}fonts/space-mono/files/space-mono-latin-700-normal.woff2`, 'normal', '700'],
 ]
 const SIGNS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']

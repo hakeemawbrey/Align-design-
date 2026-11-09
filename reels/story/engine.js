@@ -8,9 +8,28 @@ import * as THREE from 'three'
 
 const W = 1080
 const H = 1920
-const GOLD = '#f7c948'
-const PAPER = '#f3ece0'
-const NAVY = '#1b1530'
+// Align Stardust tokens (app/src/index.css): indigo, never black; warm bone, never white
+const VOID = '#0b0620', CANVAS = '#140a2e', RAISED = '#1e1240', RAISED2 = '#281a4e', GLASS = '#34235f'
+const BONE = '#efe6d6', L2 = '#b3a6c4', L3 = '#7d6f94'
+const SPARK = '#7fd8b0', RUB = '#e8628a', ALIGNC = '#f2c75c', VIOLET = '#9a7be0'
+const GOLD = ALIGNC
+const PAPER = BONE
+const NAVY = CANVAS
+const SERIF = '"EB Garamond", Georgia, serif'
+const MONO = '"Space Mono", monospace'
+// sign colour, light, dark (app/src/data/signs.ts · "The twelve auras")
+const SIGNC = {
+  aries: ['#f0603a', '#ffb39a', '#5a1c10', 'fire'], taurus: ['#e9b24a', '#ffe1a0', '#4e3510', 'earth'],
+  gemini: ['#f2cf4a', '#fff0a8', '#4f4210', 'air'], cancer: ['#3fb6f0', '#a8e4ff', '#0f3550', 'water'],
+  leo: ['#f39a3a', '#ffd09a', '#55300f', 'fire'], virgo: ['#ef5c94', '#ffb6d2', '#561a33', 'earth'],
+  libra: ['#e163d6', '#ffbdf6', '#4d1a49', 'air'], scorpio: ['#e23d66', '#ff9fb7', '#55102a', 'water'],
+  sagittarius: ['#a35cf0', '#dcbcff', '#36165a', 'fire'], capricorn: ['#2fc79a', '#a6f0d6', '#0e4636', 'earth'],
+  aquarius: ['#38c4ec', '#b2ecff', '#0e3d4e', 'air'], pisces: ['#7c74f0', '#c6c1ff', '#25205a', 'water'],
+}
+// the mark's chakra column, bottom → top (components/intro/AlignMark.tsx)
+const CHAKRA_UP = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
+// the card back's column, top → bottom (components/deck/CardBack.tsx)
+const CHAKRA_DOWN = ['#b06cff', '#5b6cff', '#3fb6f0', '#4fd27a', '#f2cf4a', '#f39a3a', '#f0383a']
 const GAP = 0.08 // silence after each line before the cut
 const END_HOLD = 2.4
 
@@ -89,30 +108,32 @@ function heartPath(x, cx, cy, s) {
 
 // ── textures ──────────────────────────────────────────────────────────────
 function brickTexture() {
+  // indigo cobbles for the plaza
   const N = 512
   const [c, x] = canvas(N, N)
   const r = rng(3)
-  x.fillStyle = '#b88a78'; x.fillRect(0, 0, N, N)
+  x.fillStyle = '#120a28'; x.fillRect(0, 0, N, N)
   const rows = 16, cols = 8
   for (let row = 0; row < rows; row++) {
     for (let col = -1; col <= cols; col++) {
       const off = (row % 2) * (N / cols / 2)
-      const k = 0.9 + r() * 0.2
-      x.fillStyle = `rgb(${196 * k},${110 * k},${92 * k})`
-      x.fillRect(col * (N / cols) + off + 2, row * (N / rows) + 2, N / cols - 4, N / rows - 4)
+      x.fillStyle = ['#2a1f4e', '#33275c', '#2d2254', '#3a2c6e'][Math.floor(r() * 4)]
+      x.beginPath(); x.roundRect(col * (N / cols) + off + 3, row * (N / rows) + 3, N / cols - 6, N / rows - 6, 6); x.fill()
     }
   }
   return tex(c, 10)
 }
+
 function grassTexture() {
   const N = 256
   const [c, x] = canvas(N, N)
   const r = rng(9)
-  x.fillStyle = '#7fb069'; x.fillRect(0, 0, N, N)
-  for (let i = 0; i < 500; i++) { x.fillStyle = r() < 0.5 ? '#76a862' : '#8abb72'; x.fillRect(r() * N, r() * N, 3, 6) }
+  x.fillStyle = '#1c2446'; x.fillRect(0, 0, N, N)
+  for (let i = 0; i < 500; i++) { x.fillStyle = r() < 0.5 ? '#222c52' : '#26224e'; x.fillRect(r() * N, r() * N, 3, 6) }
   return tex(c, 24)
 }
-function woodTexture(base = '#b98a5e') {
+
+function woodTexture(base = '#4a3058') {
   const N = 512
   const [c, x] = canvas(N, N)
   const r = rng(5)
@@ -124,7 +145,7 @@ function woodTexture(base = '#b98a5e') {
   }
   return tex(c, 3)
 }
-function tileTexture(a = '#efe6d6', b = '#d9c9b0') {
+function tileTexture(a = '#2a1f4e', b = '#3a2c6e') {
   const N = 256
   const [c, x] = canvas(N, N)
   for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { x.fillStyle = (i + j) % 2 ? a : b; x.fillRect(i * 64, j * 64, 64, 64) }
@@ -142,59 +163,70 @@ function wallpaperTexture() {
 function skyTexture(mode) {
   const [c, x] = canvas(64, 512)
   const g = x.createLinearGradient(0, 0, 0, 512)
-  if (mode === 'day') { g.addColorStop(0, '#2f7fd6'); g.addColorStop(0.55, '#5aa6ee'); g.addColorStop(1, '#bfe2ff') }
-  else if (mode === 'dusk') { g.addColorStop(0, '#3a2c6e'); g.addColorStop(0.5, '#b45f86'); g.addColorStop(1, '#f6b27a') }
-  else { g.addColorStop(0, '#070818'); g.addColorStop(0.55, '#141a44'); g.addColorStop(1, '#2c2a5e') }
+  if (mode === 'day') { g.addColorStop(0, '#3c1a8a'); g.addColorStop(0.55, '#7a5ad0'); g.addColorStop(1, '#f3c9e8') }
+  else if (mode === 'dusk') { g.addColorStop(0, '#140a2e'); g.addColorStop(0.5, '#6b4bd0'); g.addColorStop(1, '#f39a7a') }
+  else { g.addColorStop(0, VOID); g.addColorStop(0.55, CANVAS); g.addColorStop(1, '#2c1f5a') }
   x.fillStyle = g; x.fillRect(0, 0, 64, 512)
   const t = new THREE.CanvasTexture(c)
   t.colorSpace = THREE.SRGBColorSpace
   return t
 }
+
 function windowsTexture(wall, lit, seed) {
   const [c, x] = canvas(256, 256)
   const r = rng(seed)
   x.fillStyle = wall; x.fillRect(0, 0, 256, 256)
   for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) {
     const on = lit && r() < 0.75
-    x.fillStyle = '#fffaf0'; x.fillRect(30 + i * 120, 40 + j * 110, 76, 76)
-    x.fillStyle = on ? '#ffd77a' : '#6d8fb3'; x.fillRect(36 + i * 120, 46 + j * 110, 64, 64)
-    x.fillStyle = '#fffaf0'; x.fillRect(66 + i * 120, 46 + j * 110, 4, 64); x.fillRect(36 + i * 120, 76 + j * 110, 64, 4)
+    x.fillStyle = '#c8b4ff'; x.fillRect(30 + i * 120, 40 + j * 110, 76, 76)
+    x.fillStyle = on ? ALIGNC : '#241a48'; x.fillRect(36 + i * 120, 46 + j * 110, 64, 64)
+    x.fillStyle = '#c8b4ff'; x.fillRect(66 + i * 120, 46 + j * 110, 4, 64); x.fillRect(36 + i * 120, 76 + j * 110, 64, 4)
   }
   return tex(c)
 }
+
 function wheelTexture(sign) {
   const N = 1024
   const [c, x] = canvas(N, N)
   const C = N / 2, R = N / 2 - 4
-  x.fillStyle = '#6b4a35'; x.beginPath(); x.arc(C, C, R, 0, 7); x.fill()
-  x.fillStyle = '#efe6d6'; x.beginPath(); x.arc(C, C, R * 0.92, 0, 7); x.fill()
-  x.fillStyle = '#2c2350'; x.beginPath(); x.arc(C, C, R * 0.62, 0, 7); x.fill()
-  x.strokeStyle = '#6b4a35'; x.lineWidth = 6
+  const foil = x.createLinearGradient(0, 0, N, 0)
+  ;[['#a9802e', 0], ['#f2c75c', 0.22], ['#fff4cf', 0.44], ['#f2c75c', 0.62], ['#b88a2c', 0.82], ['#f2d784', 1]].forEach(([k, o]) => foil.addColorStop(o, k))
+  x.fillStyle = foil; x.beginPath(); x.arc(C, C, R, 0, 7); x.fill()
+  x.fillStyle = RAISED; x.beginPath(); x.arc(C, C, R * 0.94, 0, 7); x.fill()
+  x.fillStyle = CANVAS; x.beginPath(); x.arc(C, C, R * 0.62, 0, 7); x.fill()
+  x.strokeStyle = 'rgba(200,180,255,0.4)'; x.lineWidth = 4
+  for (const k of [0.62, 0.92]) { x.beginPath(); x.arc(C, C, R * k, 0, 7); x.stroke() }
   x.textAlign = 'center'; x.textBaseline = 'middle'
   for (let i = 0; i < 12; i++) {
     const a = (i / 12) * Math.PI * 2
     x.beginPath(); x.moveTo(C + Math.cos(a) * R * 0.62, C + Math.sin(a) * R * 0.62); x.lineTo(C + Math.cos(a) * R * 0.92, C + Math.sin(a) * R * 0.92); x.stroke()
     const m = a + Math.PI / 12
-    x.fillStyle = SIGNS[i] === sign ? '#c9962f' : '#4a3a5a'
-    x.font = `${SIGNS[i] === sign ? 96 : 78}px ${GLYPH_FONT}`
+    x.fillStyle = SIGNS[i] === sign ? SIGNC[sign][0] : L2
+    x.font = `${SIGNS[i] === sign ? 96 : 76}px ${GLYPH_FONT}`
     x.fillText(glyph(SIGNS[i]), C + Math.cos(m) * R * 0.77, C + Math.sin(m) * R * 0.77)
   }
-  x.fillStyle = GOLD; starPath(x, C, C, R * 0.3, R * 0.12, 4, 0); x.fill()
+  // seed of life in the middle, like the mark
+  x.strokeStyle = 'rgba(217,205,240,0.5)'; x.lineWidth = 3
+  const rr = R * 0.16
+  x.beginPath(); x.arc(C, C, rr, 0, 7); x.stroke()
+  for (let k = 0; k < 6; k++) { const a = (-90 + k * 60) * Math.PI / 180; x.beginPath(); x.arc(C + Math.cos(a) * rr, C + Math.sin(a) * rr, rr, 0, 7); x.stroke() }
+  x.fillStyle = GOLD; starPath(x, C, C, R * 0.12, R * 0.035, 4, 0); x.fill()
   return tex(c)
 }
+
 function clockTexture() {
   const [c, x] = canvas(256, 256)
-  x.fillStyle = '#fffaf0'; x.beginPath(); x.arc(128, 128, 124, 0, 7); x.fill()
-  x.strokeStyle = '#2b2522'; x.lineWidth = 8; x.stroke()
-  x.fillStyle = '#2b2522'
+  x.fillStyle = BONE; x.beginPath(); x.arc(128, 128, 124, 0, 7); x.fill()
+  x.strokeStyle = ALIGNC; x.lineWidth = 8; x.stroke()
+  x.fillStyle = CANVAS
   for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; x.fillRect(128 + Math.cos(a) * 100 - 4, 128 + Math.sin(a) * 100 - 4, 8, 8) }
-  // 11:11
-  x.lineCap = 'round'
+  x.strokeStyle = CANVAS; x.lineCap = 'round'
   const hand = (a, l, w) => { x.lineWidth = w; x.beginPath(); x.moveTo(128, 128); x.lineTo(128 + Math.sin(a) * l, 128 - Math.cos(a) * l); x.stroke() }
   hand((11 + 11 / 60) / 12 * Math.PI * 2, 60, 12)
   hand((11 / 60) * Math.PI * 2, 92, 8)
   return tex(c)
 }
+
 function glowTexture(color = '255,220,140') {
   const [c, x] = canvas(128, 128)
   const g = x.createRadialGradient(64, 64, 0, 64, 64, 64)
@@ -205,42 +237,103 @@ function glowTexture(color = '255,220,140') {
 function signTexture(lines, opts = {}) {
   const w = opts.w || 512, h = opts.h || 160
   const [c, x] = canvas(w, h)
-  x.fillStyle = opts.bg || '#2c2350'; roundRect(x, 0, 0, w, h, 18); x.fill()
-  x.strokeStyle = opts.edge || GOLD; x.lineWidth = 8; roundRect(x, 8, 8, w - 16, h - 16, 12); x.stroke()
-  x.fillStyle = opts.ink || PAPER; x.textAlign = 'center'; x.textBaseline = 'middle'
-  lines.forEach((l, i) => {
-    x.font = i === 0 ? `800 ${opts.size || 58}px Poppins, sans-serif` : `600 ${(opts.size || 58) * 0.5}px Poppins, sans-serif`
-    x.fillText(l, w / 2, h / 2 + (i - (lines.length - 1) / 2) * (opts.size || 58) * 0.95)
+  x.fillStyle = CANVAS; roundRect(x, 0, 0, w, h, 24); x.fill()
+  x.strokeStyle = opts.edge || ALIGNC; x.lineWidth = 5; roundRect(x, 8, 8, w - 16, h - 16, 18); x.stroke()
+  x.textAlign = 'center'; x.textBaseline = 'middle'
+  x.fillStyle = BONE; x.font = `italic 500 ${opts.size || 58}px ${SERIF}`
+  x.fillText(lines[0], w / 2, h / 2 - (lines[1] ? 22 : 0))
+  if (lines[1]) { x.fillStyle = L2; x.font = `700 24px ${MONO}`; x.fillText(lines[1].toUpperCase(), w / 2, h / 2 + 42) }
+  return tex(c)
+}
+
+function cardBackTexture() {
+  // components/deck/CardBack.tsx: indigo glass, foil edge, seed of life, chakra column
+  const Wc = 400, Hc = 620
+  const [c, x] = canvas(Wc, Hc)
+  const edge = x.createLinearGradient(0, 0, Wc, Hc)
+  ;[['#c8b4ff', 0], ['#6b4bd0', 0.3], ['#f2d784', 0.52], ['#6b4bd0', 0.72], ['#c8b4ff', 1]].forEach(([k, o]) => edge.addColorStop(o, k))
+  x.fillStyle = edge; roundRect(x, 0, 0, Wc, Hc, 34); x.fill()
+  const bg = x.createLinearGradient(0, 0, Wc, Hc)
+  bg.addColorStop(0, '#2a1260'); bg.addColorStop(0.45, '#3c1a8a'); bg.addColorStop(1, '#170a3e')
+  x.fillStyle = bg; roundRect(x, 5, 5, Wc - 10, Hc - 10, 30); x.fill()
+  const cx = Wc / 2, cy = Hc / 2 - 16, r = 70
+  const bloom = x.createRadialGradient(cx, cy, 0, cx, cy, Wc * 0.6)
+  bloom.addColorStop(0, 'rgba(138,92,240,0.55)'); bloom.addColorStop(1, 'rgba(138,92,240,0)')
+  x.fillStyle = bloom; x.fillRect(0, 0, Wc, Hc)
+  x.strokeStyle = 'rgba(200,180,255,0.28)'; x.lineWidth = 2; roundRect(x, 22, 22, Wc - 44, Hc - 44, 20); x.stroke()
+  x.strokeStyle = 'rgba(217,201,255,0.5)'; x.lineWidth = 1.6
+  x.globalAlpha = 0.7; x.beginPath(); x.arc(cx, cy, r * 2, 0, 7); x.stroke()
+  x.globalAlpha = 0.35; x.beginPath(); x.arc(cx, cy, r * 2 + 9, 0, 7); x.stroke(); x.globalAlpha = 1
+  x.beginPath(); x.arc(cx, cy, r, 0, 7); x.stroke()
+  for (let i = 0; i < 6; i++) { const a = (Math.PI / 3) * i - Math.PI / 2; x.beginPath(); x.arc(cx + r * Math.cos(a), cy + r * Math.sin(a), r, 0, 7); x.stroke() }
+  CHAKRA_DOWN.forEach((k, i) => {
+    const y = cy - r * 1.5 + i * (r / 2)
+    const g = x.createRadialGradient(cx, y, 0, cx, y, 22); g.addColorStop(0, k); g.addColorStop(1, 'rgba(0,0,0,0)')
+    x.fillStyle = g; x.beginPath(); x.arc(cx, y, 22, 0, 7); x.fill()
+    x.fillStyle = k; x.beginPath(); x.arc(cx, y, 7, 0, 7); x.fill()
+    x.fillStyle = 'rgba(255,255,255,0.8)'; x.beginPath(); x.arc(cx - 2, y - 2, 2.2, 0, 7); x.fill()
   })
+  x.fillStyle = 'rgba(200,180,255,0.6)'; x.font = `700 15px ${MONO}`; x.textAlign = 'center'
+  x.fillText('A L I G N  ·  ✦  ·  T O N I G H T', cx, Hc - 46)
   return tex(c)
 }
-function cardBackTexture(sign) {
-  const [c, x] = canvas(256, 360)
-  x.fillStyle = NAVY; roundRect(x, 0, 0, 256, 360, 22); x.fill()
-  x.strokeStyle = GOLD; x.lineWidth = 7; roundRect(x, 12, 12, 232, 336, 14); x.stroke()
-  x.lineWidth = 2; roundRect(x, 24, 24, 208, 312, 10); x.stroke()
-  const r = rng(SIGNS.indexOf(sign) + 3)
-  x.fillStyle = 'rgba(247,201,72,0.6)'
-  for (let i = 0; i < 16; i++) { starPath(x, 34 + r() * 188, 34 + r() * 292, 4, 1.6, 4, 0); x.fill() }
-  x.fillStyle = GOLD; x.textAlign = 'center'; x.textBaseline = 'middle'
-  x.font = `120px ${GLYPH_FONT}`; x.fillText(glyph(sign), 128, 170)
-  x.font = 'italic 500 40px "EB Garamond", serif'; x.fillText('align', 128, 296)
-  return tex(c)
-}
-function cardFaceTexture(sign, name, aura) {
-  const [c, x] = canvas(256, 360)
-  x.fillStyle = PAPER; roundRect(x, 0, 0, 256, 360, 22); x.fill()
-  x.save(); roundRect(x, 18, 18, 220, 250, 12); x.clip()
-  if (aura) { const s = Math.max(220 / aura.width, 250 / aura.height); x.drawImage(aura, 128 - (aura.width * s) / 2, 143 - (aura.height * s) / 2, aura.width * s, aura.height * s) }
-  else { x.fillStyle = '#e9a3a8'; x.fillRect(18, 18, 220, 250) }
+
+function cardFaceTexture(sign, name, aura, revealed, faceImg, age = 26, serial = 31) {
+  // components/deck/ProfileCard.tsx, small: name, aura panel, sign row, spark/rub/align, footer
+  const Wc = 400, Hc = 620
+  const [c, x] = canvas(Wc, Hc)
+  const [col, light] = SIGNC[sign]
+  x.fillStyle = col; roundRect(x, 0, 0, Wc, Hc, 34); x.fill()
+  x.fillStyle = CANVAS; roundRect(x, 4, 4, Wc - 8, Hc - 8, 30); x.fill()
+  x.fillStyle = BONE; x.font = `italic 500 44px ${SERIF}`; x.textAlign = 'left'; x.textBaseline = 'alphabetic'
+  x.fillText(revealed ? `${name}, ${age}` : `${name[0]}., ${age}`, 30, 66)
+  const sph = x.createRadialGradient(Wc - 56, 40, 2, Wc - 50, 46, 24)
+  sph.addColorStop(0, '#fff'); sph.addColorStop(0.25, light); sph.addColorStop(1, col)
+  x.fillStyle = sph; x.beginPath(); x.arc(Wc - 50, 48, 22, 0, 7); x.fill()
+  // aura panel
+  const px = 22, py = 92, pw = Wc - 44, ph = 270
+  x.save(); roundRect(x, px, py, pw, ph, 18); x.clip()
+  x.fillStyle = RAISED; x.fillRect(px, py, pw, ph)
+  if (aura) { const s = Math.max(pw / aura.width, ph / aura.height); x.drawImage(aura, px + pw / 2 - (aura.width * s) / 2, py + ph / 2 - (aura.height * s) / 2, aura.width * s, aura.height * s) }
+  if (revealed && faceImg) {
+    x.shadowColor = 'rgba(0,0,0,0.5)'; x.shadowBlur = 20
+    const fs = 190
+    x.drawImage(faceImg, px + pw / 2 - fs / 2, py + ph / 2 - fs / 2 + 10, fs, fs)
+    x.shadowBlur = 0
+  }
   x.restore()
-  x.strokeStyle = GOLD; x.lineWidth = 6; roundRect(x, 18, 18, 220, 250, 12); x.stroke()
-  x.fillStyle = 'rgba(255,255,255,0.92)'; x.textAlign = 'center'; x.textBaseline = 'middle'
-  x.font = `86px ${GLYPH_FONT}`; x.fillText(glyph(sign), 128, 143)
-  x.fillStyle = '#2b2522'; x.font = '800 40px Poppins, sans-serif'; x.fillText(name, 128, 300)
-  x.fillStyle = '#c0715a'; x.font = '600 20px Poppins, sans-serif'; x.fillText(sign.toUpperCase() + ' · ALIGNED', 128, 336)
+  x.strokeStyle = col; x.lineWidth = 2.5; roundRect(x, px, py, pw, ph, 18); x.stroke()
+  x.textAlign = 'center'; x.font = `700 13px ${MONO}`
+  if (revealed) {
+    x.fillStyle = 'rgba(11,6,32,0.85)'; roundRect(x, Wc / 2 - 96, py + 14, 192, 30, 15); x.fill()
+    x.strokeStyle = ALIGNC; x.lineWidth = 1.5; roundRect(x, Wc / 2 - 96, py + 14, 192, 30, 15); x.stroke()
+    x.fillStyle = ALIGNC; x.fillText('REVEALED TONIGHT', Wc / 2, py + 34)
+  } else {
+    x.fillStyle = 'rgba(239,230,214,0.75)'; x.fillText('NO PHOTO UNTIL YOU BOTH ALIGN', Wc / 2, py + ph - 16)
+  }
+  // sign row
+  x.textAlign = 'left'; x.fillStyle = col; x.font = `500 40px ${SERIF}`
+  x.fillText(SIGNS.includes(sign) ? sign.toUpperCase() : '', 28, 412)
+  const sw = x.measureText(sign.toUpperCase()).width
+  x.font = `700 13px ${MONO}`
+  const el = SIGNC[sign][3].toUpperCase()
+  const ew = x.measureText(el).width + 46
+  x.strokeStyle = light; x.lineWidth = 1.5; roundRect(x, 40 + sw, 388, ew, 30, 15); x.stroke()
+  x.fillStyle = light; x.beginPath(); x.arc(56 + sw, 403, 7, 0, 7); x.fill()
+  x.fillStyle = BONE; x.fillText(el, 70 + sw, 408)
+  // spark / rub / align rows
+  ;[['SPARK', SPARK, 3], ['RUB', RUB, 2], ['ALIGN', ALIGNC, 3]].forEach(([k, kc, pips], i) => {
+    const y = 456 + i * 34
+    x.fillStyle = kc; x.font = `700 14px ${MONO}`; x.fillText(k, 30, y)
+    x.fillStyle = 'rgba(179,166,196,0.35)'; x.fillRect(120, y - 6, 180, 3)
+    for (let q = 0; q < 3; q++) { x.fillStyle = q < pips ? kc : 'rgba(179,166,196,0.3)'; x.beginPath(); x.arc(326 + q * 16, y - 5, 5, 0, 7); x.fill() }
+  })
+  x.strokeStyle = 'rgba(179,166,196,0.3)'; x.lineWidth = 1.5; x.beginPath(); x.moveTo(28, 552); x.lineTo(Wc - 28, 552); x.stroke()
+  x.font = `700 13px ${MONO}`; x.fillStyle = L3; x.fillText(`ALIGN · № ${String(serial).padStart(3, '0')}`, 30, 588)
+  x.textAlign = 'right'; x.fillStyle = ALIGNC; x.fillText('✦ STRONG PULL', Wc - 30, 588)
   return tex(c)
 }
+
 function shirtTexture(color, sign) {
   const [c, x] = canvas(128, 128)
   x.fillStyle = color; x.fillRect(0, 0, 128, 128)
@@ -336,6 +429,7 @@ function starMesh(size) {
 }
 
 function makeChar(spec, name) {
+  if (SIGNC[spec.sign] && !spec.keepColors) spec = { ...spec, shirt: SIGNC[spec.sign][0], pants: shade(SIGNC[spec.sign][2], 1.25) }
   const g = new THREE.Group()
   const skin = mat(spec.skin)
   const shirt = mat(spec.shirt)
@@ -427,7 +521,7 @@ function makeChar(spec, name) {
   const binders = {}
   for (const kind of ['binder', 'binder-empty', 'binder-one']) {
     const b = new THREE.Group()
-    b.add(box(1.5, 1.05, 0.12, mat('#5a3a7a'), 0, 0, 0))
+    b.add(box(1.5, 1.05, 0.12, mat('#3c1a8a'), 0, 0, 0))
     const [c, x] = canvas(384, 256)
     x.fillStyle = '#efe6d6'; x.fillRect(0, 0, 384, 256)
     const n = kind === 'binder' ? 6 : kind === 'binder-one' ? 1 : 0
@@ -447,15 +541,15 @@ function makeChar(spec, name) {
     b.visible = false; torso.add(b); binders[kind] = b
   }
   // overhead card (two faces back to back) and star
-  const over = new THREE.Group(); over.position.y = 4.25; g.add(over)
+  const over = new THREE.Group(); over.position.y = 4.8; g.add(over)
   const flip = new THREE.Group(); over.add(flip)
-  const cw = 1.1, ch = 1.55
+  const cw = 1.2, ch = 1.86
   const cb = new THREE.Mesh(new THREE.PlaneGeometry(cw, ch), new THREE.MeshBasicMaterial({ map: cardBackTexture(spec.sign), transparent: true }))
   const cf = new THREE.Mesh(new THREE.PlaneGeometry(cw, ch), new THREE.MeshBasicMaterial({ map: null, transparent: true }))
   cf.rotation.y = Math.PI
   cf.userData.pending = { sign: spec.sign, name }
   flip.add(cb, cf)
-  const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: S.glowTex, color: '#ffd77a', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }))
+  const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: S.glowTex, color: SIGNC[spec.sign] ? SIGNC[spec.sign][0] : '#ffd77a', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }))
   glow.scale.set(3.2, 3.6, 1); glow.position.z = -0.05; over.add(glow)
   const star = new THREE.Mesh(S.starGeo, new THREE.MeshStandardMaterial({ color: '#5a5a66', roughness: 0.5, metalness: 0.3, emissive: '#000000' }))
   star.castShadow = true
@@ -468,8 +562,8 @@ function makeChar(spec, name) {
 function tree(x, z, s = 1, seed = 1) {
   const g = new THREE.Group()
   const r = rng(seed)
-  g.add(box(0.5 * s, 2.4 * s, 0.5 * s, mat('#7a5232'), 0, 1.2 * s, 0))
-  const leaf = mat(r() < 0.5 ? '#5f9e4a' : '#6fae52')
+  g.add(box(0.5 * s, 2.4 * s, 0.5 * s, mat('#3a2a40'), 0, 1.2 * s, 0))
+  const leaf = mat(r() < 0.5 ? '#2a6f7a' : '#4a3f98')
   for (let i = 0; i < 4; i++) {
     const b = new THREE.Mesh(new THREE.IcosahedronGeometry((1.1 + r() * 0.5) * s, 1), leaf)
     b.position.set((r() - 0.5) * 1.4 * s, (2.8 + r() * 1.0) * s, (r() - 0.5) * 1.4 * s)
@@ -508,11 +602,11 @@ function lamppost(x, z) {
 }
 function cake() {
   const g = new THREE.Group()
-  const t = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 1.1, 32), mat('#4a3a5a')); t.position.y = 0.55; g.add(t)
+  const t = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 1.1, 32), mat('#281a4e')); t.position.y = 0.55; g.add(t)
   const c1 = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.55, 32), mat('#fff6ee')); c1.position.y = 1.38; g.add(c1)
-  const f = new THREE.Mesh(new THREE.CylinderGeometry(0.93, 0.93, 0.14, 32), mat('#9fd0f0')); f.position.y = 1.62; g.add(f)
+  const f = new THREE.Mesh(new THREE.CylinderGeometry(0.93, 0.93, 0.14, 32), mat('#9a7be0')); f.position.y = 1.62; g.add(f)
   for (const dx of [-0.18, 0.18]) {
-    const cd = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.42, 8), mat('#f7c948')); cd.position.set(dx, 1.9, 0); g.add(cd)
+    const cd = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.42, 8), mat('#f2c75c')); cd.position.set(dx, 1.9, 0); g.add(cd)
     const fl = new THREE.Sprite(new THREE.SpriteMaterial({ map: S.glowTex, color: '#ffb040', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }))
     fl.scale.set(0.45, 0.6, 1); fl.position.set(dx, 2.2, 0); g.add(fl)
   }
@@ -531,14 +625,14 @@ function buildPlaza(scene, sign) {
   wheel.rotation.x = -Math.PI / 2; wheel.position.y = 0.02; wheel.receiveShadow = true; root.add(wheel)
   // clock tower at 11:11
   const tw = new THREE.Group(); tw.position.set(0, 0, -20); root.add(tw)
-  tw.add(box(5, 14, 5, mat('#c9a77e'), 0, 7, 0))
-  tw.add(box(5.6, 0.6, 5.6, mat('#8a6a4a'), 0, 14.3, 0))
-  const spire = new THREE.Mesh(new THREE.ConeGeometry(3.4, 5, 4), mat('#5a4a7a')); spire.rotation.y = Math.PI / 4; spire.position.y = 17; tw.add(spire)
+  tw.add(box(5, 14, 5, mat('#3a2c6e'), 0, 7, 0))
+  tw.add(box(5.6, 0.6, 5.6, mat('#c9962f', { metalness: 0.4, roughness: 0.4 }), 0, 14.3, 0))
+  const spire = new THREE.Mesh(new THREE.ConeGeometry(3.4, 5, 4), mat('#6b4bd0')); spire.rotation.y = Math.PI / 4; spire.position.y = 17; tw.add(spire)
   const clk = new THREE.Mesh(new THREE.CircleGeometry(1.7, 48), new THREE.MeshStandardMaterial({ map: clockTexture(), emissive: '#fff4d0', emissiveMap: clockTexture(), emissiveIntensity: 0.2 }))
   clk.position.set(0, 11, 2.52); tw.add(clk)
   S.clock = clk
-  const walls = ['#f4d6b0', '#d8e6c8', '#f2c4c4', '#cfd8f0', '#f0e2a8', '#e4cfe8']
-  const roofs = ['#8a4a3a', '#5a6a8a', '#7a5a8a', '#4a6a5a']
+  const walls = ['#3a2c6e', '#4a3a7a', '#5a3f80', '#2f2a5e', '#46356e', '#3c3070']
+  const roofs = ['#1e1240', '#6b4bd0', '#281a4e', '#9a7be0']
   for (let i = 0; i < 9; i++) {
     const a = Math.PI * (0.15 + (i / 8) * 0.7) + Math.PI
     const r = 22
@@ -552,7 +646,7 @@ function buildPlaza(scene, sign) {
     for (let i = 0; i < 12; i++) {
       const u = i / 11
       const x = lerp(-9, 9, u), y = 7.2 - Math.sin(u * Math.PI) * 0.9
-      const f = new THREE.Mesh(new THREE.ConeGeometry(0.28, 0.6, 3), mat(['#e9a3a8', '#f7c948', '#8fd0d2', '#b6a2e0'][i % 4]))
+      const f = new THREE.Mesh(new THREE.ConeGeometry(0.28, 0.6, 3), mat(['#e8628a', '#f2c75c', '#7fd8b0', '#9a7be0'][i % 4]))
       f.rotation.x = Math.PI; f.position.set(x, y - 0.3, -6); root.add(f)
     }
   }
@@ -563,11 +657,11 @@ function buildStreet(scene) {
   const root = new THREE.Group(); root.position.set(ox, 0, oz); scene.add(root)
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(140, 140), mat('#ffffff', { map: grassTexture() }))
   ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; root.add(ground)
-  const road = new THREE.Mesh(new THREE.PlaneGeometry(140, 7), mat('#5a5560')); road.rotation.x = -Math.PI / 2; road.position.set(0, 0.02, 6.5); road.receiveShadow = true; root.add(road)
-  for (let i = -10; i <= 10; i++) { const d = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.2), mat('#f3ece0')); d.rotation.x = -Math.PI / 2; d.position.set(i * 4, 0.03, 6.5); root.add(d) }
-  const walk = new THREE.Mesh(new THREE.PlaneGeometry(140, 7), mat('#d9cbb6')); walk.rotation.x = -Math.PI / 2; walk.position.set(0, 0.025, -0.5); walk.receiveShadow = true; root.add(walk)
-  const walls = ['#f4d6b0', '#d8e6c8', '#f2c4c4', '#cfd8f0', '#f0e2a8', '#e4cfe8']
-  const roofs = ['#8a4a3a', '#5a6a8a', '#7a5a8a', '#4a6a5a']
+  const road = new THREE.Mesh(new THREE.PlaneGeometry(140, 7), mat('#221a40')); road.rotation.x = -Math.PI / 2; road.position.set(0, 0.02, 6.5); road.receiveShadow = true; root.add(road)
+  for (let i = -10; i <= 10; i++) { const d = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.2), mat('#7d6f94')); d.rotation.x = -Math.PI / 2; d.position.set(i * 4, 0.03, 6.5); root.add(d) }
+  const walk = new THREE.Mesh(new THREE.PlaneGeometry(140, 7), mat('#33275c')); walk.rotation.x = -Math.PI / 2; walk.position.set(0, 0.025, -0.5); walk.receiveShadow = true; root.add(walk)
+  const walls = ['#3a2c6e', '#4a3a7a', '#5a3f80', '#2f2a5e', '#46356e', '#3c3070']
+  const roofs = ['#1e1240', '#6b4bd0', '#281a4e', '#9a7be0']
   for (let i = -5; i <= 5; i++) root.add(house(i * 7.5, -9, 0, i + 40, walls[(i + 6) % 6], roofs[(i + 8) % 4]))
   for (let i = -4; i <= 4; i++) if (i % 2) root.add(tree(i * 7.5 + 3.7, -5, 0.8, i + 70))
   for (let i = -3; i <= 3; i++) root.add(lamppost(i * 10 + 5, 2.6))
@@ -584,40 +678,40 @@ function buildRoom(scene) {
   // window with the sky
   const win = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 2.6), new THREE.MeshBasicMaterial({ color: '#141a44' }))
   win.position.set(-2.5, 4.6, -5.33); root.add(win); S.roomWindow = win
-  root.add(box(3.5, 0.2, 0.3, mat('#f3ece0'), -2.5, 3.25, -5.25)); root.add(box(0.15, 2.6, 0.2, mat('#f3ece0'), -2.5, 4.6, -5.28))
+  root.add(box(3.5, 0.2, 0.3, mat('#c8b4ff'), -2.5, 3.25, -5.25)); root.add(box(0.15, 2.6, 0.2, mat('#c8b4ff'), -2.5, 4.6, -5.28))
   const moon = new THREE.Mesh(new THREE.CircleGeometry(0.38, 24), new THREE.MeshBasicMaterial({ color: '#fff4d0' })); moon.position.set(-1.6, 5.3, -5.3); root.add(moon)
   // bed
-  root.add(box(3.2, 0.8, 4.6, mat('#7a5232'), -4.8, 0.4, -2.8))
+  root.add(box(3.2, 0.8, 4.6, mat('#3a2a40'), -4.8, 0.4, -2.8))
   root.add(box(3.0, 0.4, 4.4, mat('#b6a2e0'), -4.8, 1.0, -2.6))
   root.add(box(2.2, 0.35, 0.9, mat('#fffaf0'), -4.8, 1.35, -4.4))
   // desk, monitor, chair
-  root.add(box(3.4, 0.15, 1.6, mat('#e8dcc8'), 3, 2.0, -4.3))
-  for (const dx of [-1.5, 1.5]) root.add(box(0.15, 2.0, 1.4, mat('#cdbfa8'), 3 + dx, 1.0, -4.3))
+  root.add(box(3.4, 0.15, 1.6, mat('#3a2c6e'), 3, 2.0, -4.3))
+  for (const dx of [-1.5, 1.5]) root.add(box(0.15, 2.0, 1.4, mat('#2a1f4e'), 3 + dx, 1.0, -4.3))
   const mon = box(1.9, 1.2, 0.12, mat('#1a1a22'), 3, 3.0, -4.85); root.add(mon)
   const scr = new THREE.Mesh(new THREE.PlaneGeometry(1.75, 1.05), new THREE.MeshBasicMaterial({ map: screenTexture() })); scr.position.set(3, 3.0, -4.78); root.add(scr)
   // poster
   const poster = new THREE.Mesh(new THREE.PlaneGeometry(2.2, 2.2), new THREE.MeshStandardMaterial({ map: wheelTexture('virgo') })); poster.position.set(2.8, 5.6, -5.33); root.add(poster)
   // lamp light
   const pl = new THREE.PointLight('#ffd9a0', 30, 22, 1.6); pl.position.set(0, 7, 1); root.add(pl)
-  const rug = new THREE.Mesh(new THREE.CircleGeometry(2.6, 40), mat('#e9a3a8')); rug.rotation.x = -Math.PI / 2; rug.position.set(0, 0.02, 0.4); rug.receiveShadow = true; root.add(rug)
+  const rug = new THREE.Mesh(new THREE.CircleGeometry(2.6, 40), mat('#5a3fa0')); rug.rotation.x = -Math.PI / 2; rug.position.set(0, 0.02, 0.4); rug.receiveShadow = true; root.add(rug)
   return root
 }
 function buildCafe(scene) {
   const [ox, oz] = AREAS.cafe
   const root = new THREE.Group(); root.position.set(ox, 0, oz); scene.add(root)
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(18, 16), mat('#ffffff', { map: tileTexture() })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; root.add(floor)
-  const wall = mat('#f2c4c4')
+  const wall = mat('#2a1a4e')
   root.add(box(18, 8, 0.3, wall, 0, 4, -6)); root.add(box(0.3, 8, 16, wall, -9, 4, 0)); root.add(box(0.3, 8, 16, wall, 9, 4, 0))
-  root.add(box(18, 0.3, 16, mat('#fff6ee'), 0, 8, 0))
+  root.add(box(18, 0.3, 16, mat('#1e1240'), 0, 8, 0))
   // counter and pastries
-  root.add(box(9, 2.1, 1.6, mat('#7a5232'), 0, 1.05, -4.2))
+  root.add(box(9, 2.1, 1.6, mat('#3c1a8a'), 0, 1.05, -4.2))
   root.add(box(9.2, 0.15, 1.8, mat('#efe6d6'), 0, 2.15, -4.2))
   const r = rng(12)
   for (let i = 0; i < 10; i++) {
     const p = new THREE.Mesh(new THREE.SphereGeometry(0.22, 12, 8), mat(['#e8b060', '#c07040', '#f0d0a0', '#e9a3a8'][i % 4]))
     p.scale.y = 0.6; p.position.set(-3.6 + i * 0.8, 2.32, -4.2 + (r() - 0.5) * 0.5); root.add(p)
   }
-  const menu = new THREE.Mesh(new THREE.PlaneGeometry(5, 1.6), new THREE.MeshStandardMaterial({ map: signTexture(['BAKERY & CAFÉ', '11:11 LATTE · VENUS BUN'], { w: 640, h: 200, size: 64 }) }))
+  const menu = new THREE.Mesh(new THREE.PlaneGeometry(5, 1.6), new THREE.MeshStandardMaterial({ map: signTexture(['Bakery & Café', '11:11 latte · Venus bun'], { w: 640, h: 200, size: 70 }) }))
   menu.position.set(0, 5.4, -5.83); root.add(menu)
   for (const [x, z] of [[-5.5, 2.5], [5.5, 2.5], [-6, -1], [6, -1]]) {
     const t = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.12, 24), mat('#fffaf0')); t.position.set(x, 1.6, z); t.castShadow = true; root.add(t)
@@ -695,7 +789,9 @@ window.setup = async (script, assets, voice) => {
   for (const [id, spec] of Object.entries(script.cast)) {
     const name = id.replace(/\d+$/, '').replace(/^./, (c) => c.toUpperCase())
     const c = makeChar(spec, spec.name || name)
-    c.cardFace.material.map = cardFaceTexture(spec.sign, spec.name || name, auras[spec.sign])
+    const nm = spec.name || name
+    c.cardBack.material.map = cardFaceTexture(spec.sign, nm, auras[spec.sign], false, null, spec.age || 26, 20 + Object.keys(S.chars).length * 7)
+    c.cardFace.material.map = cardFaceTexture(spec.sign, nm, auras[spec.sign], true, c.faces.happy.image, spec.age || 26, 20 + Object.keys(S.chars).length * 7)
     c.hatDefault = spec.hat
     c.g.visible = false
     scene.add(c.g); S.chars[id] = c
@@ -709,7 +805,9 @@ window.setup = async (script, assets, voice) => {
     for (let i = 0; i < 22; i++) {
       const spec = { skin: skins[Math.floor(r() * skins.length)], shirt: shirts[Math.floor(r() * shirts.length)], pants: shade(shirts[Math.floor(r() * shirts.length)], 0.35), hair: hairs[Math.floor(r() * 4)], hairColor: ['#2a1a14', '#4a3022', '#120c0a', '#8a4a22', '#d89a3a'][Math.floor(r() * 5)], sign: SIGNS[Math.floor(r() * 12)] }
       const c = makeChar(spec, '')
-      c.cardFace.material.map = cardFaceTexture(spec.sign, ['Mo', 'Ava', 'Kai', 'Zoe', 'Ray', 'Lu', 'Ty', 'Bea'][i % 8], auras[spec.sign])
+      const nm = ['Mo', 'Ava', 'Kai', 'Zoe', 'Ray', 'Lu', 'Ty', 'Bea'][i % 8]
+      c.cardBack.material.map = cardFaceTexture(spec.sign, nm, auras[spec.sign], false, null, 22 + (i % 9), 100 + i)
+      c.cardFace.material.map = cardFaceTexture(spec.sign, nm, auras[spec.sign], true, c.faces.happy.image, 22 + (i % 9), 100 + i)
       c.g.visible = false; c.seed = r(); scene.add(c.g); S.crowd.push(c)
     }
   }
@@ -732,7 +830,7 @@ window.setup = async (script, assets, voice) => {
   {
     const [vc, vx] = canvas(W, H)
     const g = vx.createRadialGradient(W / 2, H * 0.48, H * 0.3, W / 2, H * 0.5, H * 0.75)
-    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.38)')
+    g.addColorStop(0, 'rgba(11,6,32,0)'); g.addColorStop(1, 'rgba(11,6,32,0.5)')
     vx.fillStyle = g; vx.fillRect(0, 0, W, H)
     S.vignette = vc
   }
@@ -746,15 +844,15 @@ function applySky(mode, area) {
   const interior = area === 'room' || area === 'cafe'
   S.scene.background = S.skies[mode]
   const night = mode === 'night'
-  S.stars.visible = night && !interior
-  if (mode === 'day') { S.hemi.color.set('#d8ecff'); S.hemi.groundColor.set('#9a7a60'); S.hemi.intensity = 1.25; S.sun.color.set('#fff6e8'); S.sun.intensity = 2.4; S.fill.intensity = 0.55 }
-  else if (mode === 'dusk') { S.hemi.color.set('#f6c0a0'); S.hemi.groundColor.set('#4a3048'); S.hemi.intensity = 1.0; S.sun.color.set('#ffb478'); S.sun.intensity = 1.9; S.fill.intensity = 0.6 }
-  else { S.hemi.color.set('#8a9ae0'); S.hemi.groundColor.set('#2a2038'); S.hemi.intensity = 0.95; S.sun.color.set('#b8c4ff'); S.sun.intensity = 0.9; S.fill.intensity = 0.75 }
-  if (interior) { S.hemi.intensity = Math.max(S.hemi.intensity, 1.0); S.sun.intensity *= 0.35; S.hemi.color.set('#ffe8d0') }
-  for (const m of S.windowed) m.emissiveIntensity = night ? 0.9 : mode === 'dusk' ? 0.35 : 0
-  for (const g of S.lampGlows) g.material.opacity = night ? 0.9 : mode === 'dusk' ? 0.45 : 0
-  S.roomWindow.material.color.set(night ? '#141a44' : mode === 'dusk' ? '#c0708a' : '#7ab8ee')
-  S.scene.fog = interior ? null : new THREE.Fog(night ? '#1a1c44' : mode === 'dusk' ? '#d79a8a' : '#bfe2ff', 40, 160)
+  S.stars.visible = mode !== 'day' && !interior
+  if (mode === 'day') { S.hemi.color.set('#d9c9ff'); S.hemi.groundColor.set('#3a2c6e'); S.hemi.intensity = 1.35; S.sun.color.set('#fff0f6'); S.sun.intensity = 2.2; S.fill.intensity = 0.6 }
+  else if (mode === 'dusk') { S.hemi.color.set('#f6c0d8'); S.hemi.groundColor.set('#2a1a4e'); S.hemi.intensity = 1.1; S.sun.color.set('#ffb48a'); S.sun.intensity = 1.8; S.fill.intensity = 0.65 }
+  else { S.hemi.color.set('#9a8af0'); S.hemi.groundColor.set('#1e1240'); S.hemi.intensity = 1.05; S.sun.color.set('#b8a8ff'); S.sun.intensity = 0.9; S.fill.intensity = 0.8 }
+  if (interior) { S.hemi.intensity = Math.max(S.hemi.intensity, 1.05); S.sun.intensity *= 0.35; S.hemi.color.set('#f0dcff') }
+  for (const m of S.windowed) m.emissiveIntensity = night ? 0.95 : mode === 'dusk' ? 0.5 : 0.15
+  for (const g of S.lampGlows) g.material.opacity = night ? 0.9 : mode === 'dusk' ? 0.5 : 0.1
+  S.roomWindow.material.color.set(night ? CANVAS : mode === 'dusk' ? '#b06a9a' : '#9a7be0')
+  S.scene.fog = interior ? null : new THREE.Fog(night ? CANVAS : mode === 'dusk' ? '#8a5a9a' : '#c9a8e8', 40, 160)
 }
 
 function shotAt(t) {
@@ -830,7 +928,7 @@ function poseChar(c, e, sh, u, dur) {
   // overhead
   const over = e.over
   c.over.visible = !!over
-  c.over.position.y = 4.35 + Math.sin(T * 2 + ph) * 0.08 + (over === 'star' ? -0.15 : 0)
+  c.over.position.y = 4.85 + Math.sin(T * 2 + ph) * 0.08 + (over === 'star' ? -0.15 : 0)
   // the over item faces the camera (yaw only), independent of the body
   const camYaw = Math.atan2(S.camera.position.x - g.position.x, S.camera.position.z - g.position.z)
   c.over.rotation.y = camYaw - ry
@@ -874,7 +972,7 @@ function cameraFor(sh, u) {
   if (cam.on) {
     const e = sh.cast.find((c) => c.id === cam.on) || sh.cast[0]
     target = areaPos(sh.at, e.x || 0, e.z || 0)
-    target.y = view === 'close' ? 2.95 : 2.4
+    target.y = view === 'close' ? (e.over ? 3.7 : 2.95) : (e.over ? 2.8 : 2.4)
   } else {
     const a = cam.at || [0, 2.4, 0]
     target = areaPos(sh.at, a[0], a[2]); target.y = a[1]
@@ -902,104 +1000,114 @@ function charScreen(id, sh, yOff) {
 
 // ── overlay drawing ───────────────────────────────────────────────────────
 function drawCaption(o, sh, u) {
+  // one word at a time, in the app's display voice: EB Garamond italic, warm bone, gold accents
   if (sh.end) return
   const spans = sh.spans
   let k = 0
   for (let i = 0; i < spans.length; i++) if (u >= spans[i][0] - 0.04) k = i
-  // two short words share a beat, like the trend's captions
-  let word = sh.words[k]
+  const word = sh.words[k]
   const since = u - (spans[k] ? spans[k][0] : 0)
   const clean = word.replace(/[^\w'’]/g, '').replace(/['’]s$/i, '').toLowerCase()
   const accent = S.accent.has(clean)
-  const pop = 1 + 0.18 * (1 - easeOut(since / 0.12))
+  const pop = 1 + 0.14 * (1 - easeOut(since / 0.12))
   o.save()
-  o.translate(W / 2, H * 0.62)
+  o.translate(W / 2, H * 0.63)
   o.scale(pop, pop)
   o.textAlign = 'center'; o.textBaseline = 'middle'
-  let size = 104
-  o.font = `800 ${size}px Poppins, sans-serif`
+  let size = 150
+  o.font = `italic 500 ${size}px ${SERIF}`
   const w = o.measureText(word).width
-  if (w > W * 0.86) { size *= (W * 0.86) / w; o.font = `800 ${size}px Poppins, sans-serif` }
+  if (w > W * 0.86) { size *= (W * 0.86) / w; o.font = `italic 500 ${size}px ${SERIF}` }
   o.lineJoin = 'round'
-  o.lineWidth = size * 0.2
-  o.strokeStyle = '#000000'
-  o.shadowColor = 'rgba(0,0,0,0.45)'; o.shadowBlur = 18; o.shadowOffsetY = 6
+  o.shadowColor = 'rgba(11,6,32,0.9)'; o.shadowBlur = 40
+  o.lineWidth = size * 0.16; o.strokeStyle = 'rgba(11,6,32,0.92)'
   o.strokeText(word, 0, 0)
-  o.shadowColor = 'transparent'
-  o.fillStyle = accent ? GOLD : '#ffffff'
+  o.shadowColor = accent ? 'rgba(242,199,92,0.65)' : 'rgba(239,230,214,0.35)'; o.shadowBlur = 26
+  o.fillStyle = accent ? ALIGNC : BONE
   o.fillText(word, 0, 0)
   o.restore()
 }
 
 function drawBubble(o, sh, u, id, text) {
-  const s = charScreen(id, sh, (sh.cast.find((c) => c.id === id) || {}).over ? 5.6 : 4.0)
+  // a chat bubble from the app: raised indigo glass, bone serif italic
+  const s = charScreen(id, sh, (sh.cast.find((c) => c.id === id) || {}).over ? 6.0 : 4.0)
   if (!s) return
   const k = backOut((u - 0.25) / 0.35)
   if (k <= 0) return
   o.save()
-  o.font = '700 50px Poppins, sans-serif'
-  const lines = wrap(o, text, 640)
-  const lh = 62
-  const bw = Math.min(760, Math.max(...lines.map((l) => o.measureText(l).width)) + 80)
-  const bh = lines.length * lh + 54
-  let cx = clamp(s.x, bw / 2 + 40, W - bw / 2 - 40)
-  let by = clamp(s.y - bh - 30, 150, H * 0.5 - bh)
-  o.translate(cx, by + bh)
-  o.scale(k, k)
-  o.translate(-cx, -(by + bh))
-  o.shadowColor = 'rgba(0,0,0,0.3)'; o.shadowBlur = 24; o.shadowOffsetY = 8
-  o.fillStyle = '#fffaf0'
-  roundRect(o, cx - bw / 2, by, bw, bh, 36); o.fill()
-  o.beginPath(); o.moveTo(clamp(s.x, cx - bw / 2 + 50, cx + bw / 2 - 50) - 26, by + bh - 2); o.lineTo(clamp(s.x, cx - bw / 2 + 50, cx + bw / 2 - 50), by + bh + 40); o.lineTo(clamp(s.x, cx - bw / 2 + 50, cx + bw / 2 - 50) + 26, by + bh - 2); o.fill()
-  o.shadowColor = 'transparent'
-  o.fillStyle = '#2b2522'; o.textAlign = 'center'; o.textBaseline = 'middle'
-  lines.forEach((l, i) => o.fillText(l, cx, by + 27 + lh / 2 + i * lh))
+  o.font = `italic 500 56px ${SERIF}`
+  const lines = wrap(o, text.charAt(0).toUpperCase() + text.slice(1), 640)
+  const lh = 64
+  const bw = Math.min(780, Math.max(...lines.map((l) => o.measureText(l).width)) + 88)
+  const bh = lines.length * lh + 56
+  const cx = clamp(s.x, bw / 2 + 40, W - bw / 2 - 40)
+  const by = clamp(s.y - bh - 34, 230, H * 0.5 - bh)
+  o.translate(cx, by + bh); o.scale(k, k); o.translate(-cx, -(by + bh))
+  const tx = clamp(s.x, cx - bw / 2 + 60, cx + bw / 2 - 60)
+  o.shadowColor = 'rgba(11,6,32,0.6)'; o.shadowBlur = 30; o.shadowOffsetY = 10
+  o.fillStyle = 'rgba(30,18,64,0.95)'
+  roundRect(o, cx - bw / 2, by, bw, bh, 40); o.fill()
+  o.beginPath(); o.moveTo(tx - 24, by + bh - 2); o.lineTo(tx, by + bh + 34); o.lineTo(tx + 24, by + bh - 2); o.fill()
+  o.shadowColor = 'transparent'; o.shadowOffsetY = 0
+  o.strokeStyle = 'rgba(200,180,255,0.4)'; o.lineWidth = 2.5; roundRect(o, cx - bw / 2, by, bw, bh, 40); o.stroke()
+  o.fillStyle = BONE; o.textAlign = 'center'; o.textBaseline = 'middle'
+  lines.forEach((l, i) => o.fillText(l, cx, by + 28 + lh / 2 + i * lh))
   o.restore()
 }
 
 function drawQuestion(o, sh, u, id) {
+  // the app icon's four-point star, pulsing over the one who's left out
   const e = sh.cast.find((c) => c.id === id) || {}
-  const s = charScreen(id, sh, e.over ? 4.35 : 4.2)
+  const s = charScreen(id, sh, e.over ? 4.55 : 4.2)
   if (!s) return
   const k = backOut((u - 0.15) / 0.35)
   if (k <= 0) return
   const r = 120 * k
   o.save()
-  o.lineWidth = 10; o.strokeStyle = '#ffffff'
-  o.beginPath(); o.arc(s.x, s.y, r + 18, 0, 7); o.stroke()
+  const g = o.createRadialGradient(s.x, s.y, 0, s.x, s.y, r * 1.6)
+  g.addColorStop(0, 'rgba(242,199,92,0.35)'); g.addColorStop(1, 'rgba(242,199,92,0)')
+  o.fillStyle = g; o.beginPath(); o.arc(s.x, s.y, r * 1.6, 0, 7); o.fill()
+  o.strokeStyle = 'rgba(239,230,214,0.85)'; o.lineWidth = 6
+  o.beginPath(); o.arc(s.x, s.y, r + 18 + Math.sin(u * 5) * 4, 0, 7); o.stroke()
   if (!e.over) {
-    o.fillStyle = '#f6e4c0'; roundRect(o, s.x - 70 * k, s.y - 70 * k, 140 * k, 140 * k, 12); o.fill()
-    o.fillStyle = '#6b4aa0'; o.font = `800 ${110 * k}px Poppins, sans-serif`; o.textAlign = 'center'; o.textBaseline = 'middle'
-    o.fillText('?', s.x, s.y + 6 * k)
+    const sg = o.createLinearGradient(0, s.y - r, 0, s.y + r)
+    sg.addColorStop(0, '#fff4cf'); sg.addColorStop(1, ALIGNC)
+    o.fillStyle = sg; starPath(o, s.x, s.y, r * 0.8, r * 0.18, 4, 0); o.fill()
   }
   o.restore()
 }
 
 function drawBoard(o, u, text) {
-  // a cream sign hanging up top; "|" splits a title line from a smaller second line
+  // an app widget: raised indigo panel, mono eyebrow, serif italic headline ("EYEBROW|Headline")
   const k = backOut((u - 0.1) / 0.4)
   if (k <= 0) return
-  const [title, sub] = text.split('|')
+  let [eyebrow, head] = text.split('|')
+  if (!head) { head = eyebrow; eyebrow = '' }
+  const tint = /PULL/.test(eyebrow) ? SPARK : /PUSH/.test(eyebrow) ? RUB : ALIGNC
   o.save()
   o.translate(W / 2, H * 0.22); o.scale(k, k)
-  let ts = 64, ss = 40
-  o.font = `800 ${ts}px Poppins, sans-serif`
-  const tw = o.measureText(title).width
-  if (tw > W - 200) { ts *= (W - 200) / tw; o.font = `800 ${ts}px Poppins, sans-serif` }
-  let sw = 0, subs = []
-  if (sub) { o.font = `700 ${ss}px Poppins, sans-serif`; subs = wrap(o, sub, W - 220); sw = Math.max(...subs.map((l) => o.measureText(l).width)) }
-  const w = Math.max(Math.min(tw, W - 200), sw) + 120
-  const h = sub ? ts + ss * 1.2 * subs.length + 90 : 160
-  o.shadowColor = 'rgba(0,0,0,0.35)'; o.shadowBlur = 30; o.shadowOffsetY = 10
-  o.fillStyle = '#f6e4c0'; roundRect(o, -w / 2, -h / 2, w, h, 18); o.fill()
-  o.shadowColor = 'transparent'
-  o.strokeStyle = '#c9962f'; o.lineWidth = 6; roundRect(o, -w / 2 + 14, -h / 2 + 14, w - 28, h - 28, 10); o.stroke()
+  o.font = `italic 500 68px ${SERIF}`
+  const lines = wrap(o, head, W - 260)
+  const hw = Math.max(...lines.map((l) => o.measureText(l).width))
+  o.font = `700 30px ${MONO}`
+  const ew = eyebrow ? o.measureText(eyebrow).width + eyebrow.length * 5 : 0
+  const w = Math.min(W - 100, Math.max(hw, ew) + 140)
+  const h = (eyebrow ? 70 : 0) + lines.length * 78 + 70
+  o.shadowColor = 'rgba(11,6,32,0.7)'; o.shadowBlur = 40; o.shadowOffsetY = 12
+  o.fillStyle = 'rgba(20,10,46,0.94)'; roundRect(o, -w / 2, -h / 2, w, h, 40); o.fill()
+  o.shadowColor = 'transparent'; o.shadowOffsetY = 0
+  o.strokeStyle = tint; o.globalAlpha = 0.75; o.lineWidth = 3; roundRect(o, -w / 2, -h / 2, w, h, 40); o.stroke(); o.globalAlpha = 1
   o.textAlign = 'center'; o.textBaseline = 'middle'
-  o.fillStyle = '#4a2f7a'; o.font = `800 ${ts}px Poppins, sans-serif`
-  const top = -h / 2 + 45
-  o.fillText(title, 0, sub ? top + ts / 2 : 4)
-  o.fillStyle = '#c0715a'; o.font = `700 ${ss}px Poppins, sans-serif`
-  subs.forEach((l, i) => o.fillText(l, 0, top + ts + 8 + ss * 0.6 + i * ss * 1.2))
+  let y = -h / 2 + 52
+  if (eyebrow) {
+    o.font = `700 30px ${MONO}`; o.fillStyle = tint
+    if ('letterSpacing' in o) o.letterSpacing = '5px'
+    o.fillText(eyebrow, 0, y)
+    if ('letterSpacing' in o) o.letterSpacing = '0px'
+    y += 70
+  }
+  o.font = `italic 500 68px ${SERIF}`; o.fillStyle = BONE
+  lines.forEach((l, i) => o.fillText(l, 0, y + i * 78))
   o.restore()
 }
 
@@ -1016,7 +1124,7 @@ function drawHearts(o, sh, u, id) {
     const s = project(p)
     const size = (28 + r() * 26) * (1 - Math.abs(life - 0.4)) * (16 / Math.max(3, S.camera.position.distanceTo(p)))
     o.globalAlpha = clamp(1 - life) * clamp(life * 6)
-    o.fillStyle = r() < 0.5 ? '#ff8fb0' : '#ff6f91'
+    o.fillStyle = r() < 0.5 ? RUB : '#ffb6d2'
     heartPath(o, s.x, s.y, size); o.fill()
   }
   o.globalAlpha = 1
@@ -1035,24 +1143,27 @@ function drawSparkle(o, sh, u, id) {
     const tw = Math.max(0, Math.sin(u * (3 + r() * 3) + r() * 6))
     const size = (14 + r() * 22) * tw
     if (size < 1) continue
-    o.fillStyle = r() < 0.7 ? '#ffe9a8' : '#ffffff'
+    o.fillStyle = r() < 0.7 ? '#fff4cf' : ALIGNC
     starPath(o, s.x, s.y, size, size * 0.22, 4, 0); o.fill()
   }
 }
 
 function drawConfetti(o, sh, u) {
+  // stardust: gold, bone and aura-coloured four-point stars drifting down
   const r = rng(sh.i * 13 + 5)
-  const cols = ['#f7c948', '#ff8fb0', '#8fd0d2', '#b6a2e0', '#ffffff', '#a7e08a']
-  for (let i = 0; i < 110; i++) {
-    const x0 = r() * W, sp = 380 + r() * 520, delay = r() * 0.5, rot = r() * 6, rs = (r() - 0.5) * 12
+  const cols = [ALIGNC, '#fff4cf', BONE, SPARK, RUB, VIOLET]
+  for (let i = 0; i < 120; i++) {
+    const x0 = r() * W, sp = 300 + r() * 420, delay = r() * 0.5, size = 8 + r() * 18, tw = r() * 6
     const y = -60 + (u - delay) * sp
     if (y < -60 || y > H + 60) continue
-    const x = x0 + Math.sin(u * 3 + i) * 40
-    o.save(); o.translate(x, y); o.rotate(rot + u * rs)
+    const x = x0 + Math.sin(u * 2 + i) * 30
+    const a = 0.55 + 0.45 * Math.sin(u * 6 + tw)
+    o.globalAlpha = a
     o.fillStyle = cols[i % cols.length]
-    o.fillRect(-11, -6, 22, 12 * Math.abs(Math.cos(u * 6 + i)) + 2)
-    o.restore()
+    if (i % 3) { starPath(o, x, y, size, size * 0.22, 4, u * 2 + i); o.fill() }
+    else { o.beginPath(); o.arc(x, y, size * 0.25, 0, 7); o.fill() }
   }
+  o.globalAlpha = 1
 }
 
 function drawRain(o, sh, u) {
@@ -1081,22 +1192,70 @@ function drawRelease(o, sh, u, id) {
   o.globalAlpha = 1
 }
 
+function drawMark(o, cx, cy, size, a = 1) {
+  // components/intro/AlignMark.tsx: seed-of-life circles and a glowing chakra column
+  const R = size * 0.227
+  o.save(); o.globalAlpha = a
+  o.strokeStyle = 'rgba(217,205,240,0.6)'; o.lineWidth = Math.max(1.2, size / 110)
+  const circ = (x, y, r) => { o.beginPath(); o.arc(x, y, r, 0, 7); o.stroke() }
+  circ(cx, cy, R); circ(cx, cy, R * 2)
+  for (let k = 0; k < 6; k++) { const t = (-90 + k * 60) * Math.PI / 180; circ(cx + Math.cos(t) * R, cy + Math.sin(t) * R, R) }
+  const gap = R * 0.53, dr = size * 0.042
+  CHAKRA_UP.forEach((c, i) => {
+    const y = cy + gap * 3 - i * gap
+    const g = o.createRadialGradient(cx, y, 0, cx, y, dr * 3.4); g.addColorStop(0, c); g.addColorStop(0.45, c + '59'); g.addColorStop(1, c + '00')
+    o.fillStyle = g; o.beginPath(); o.arc(cx, y, dr * 3.4, 0, 7); o.fill()
+    const g2 = o.createRadialGradient(cx - dr * 0.3, y - dr * 0.3, 0, cx, y, dr); g2.addColorStop(0, '#fff'); g2.addColorStop(0.35, c); g2.addColorStop(1, c)
+    o.fillStyle = g2; o.beginPath(); o.arc(cx, y, dr, 0, 7); o.fill()
+  })
+  o.restore()
+}
+
+function drawLogo(o, a) {
+  // the mark and the wordmark, small, top-left, on every shot
+  drawMark(o, 112, 182, 92, a)
+  o.save(); o.globalAlpha = a
+  o.font = `italic 500 58px ${SERIF}`; o.fillStyle = BONE; o.textAlign = 'left'; o.textBaseline = 'middle'
+  o.shadowColor = 'rgba(11,6,32,0.8)'; o.shadowBlur = 18
+  o.fillText('Align', 172, 184)
+  o.restore()
+}
+
 function drawEnd(o, sh, u) {
+  // S-01: the mark draws in, the wordmark, then the chrome CTA (one per screen)
   const k = easeOut((u - 0.05) / 0.6)
   o.save()
-  o.globalAlpha = k * 0.72
-  o.fillStyle = '#0b0820'; o.fillRect(0, 0, W, H)
+  o.globalAlpha = k * 0.88
+  const bg = o.createRadialGradient(W / 2, H * 0.4, 0, W / 2, H * 0.45, H * 0.7)
+  bg.addColorStop(0, '#2a1470'); bg.addColorStop(0.5, CANVAS); bg.addColorStop(1, VOID)
+  o.fillStyle = bg; o.fillRect(0, 0, W, H)
+  o.restore()
+  drawMark(o, W / 2, H * 0.34, 330 * (0.9 + 0.1 * k), k)
+  o.save()
   o.globalAlpha = k
-  o.fillStyle = GOLD
-  starPath(o, W / 2, H * 0.36, 70, 18, 4, 0); o.fill()
-  o.fillStyle = PAPER; o.textAlign = 'center'; o.textBaseline = 'middle'
-  o.font = 'italic 500 230px "EB Garamond", serif'
-  o.fillText(S.script.end || 'align', W / 2, H * 0.46)
-  const k2 = easeOut((u - 0.8) / 0.6)
+  o.fillStyle = BONE; o.textAlign = 'center'; o.textBaseline = 'middle'
+  o.shadowColor = 'rgba(239,230,214,0.3)'; o.shadowBlur = 40
+  o.font = `italic 500 170px ${SERIF}`
+  o.fillText('Align', W / 2, H * 0.5)
+  o.shadowBlur = 0
+  const k2 = easeOut((u - 0.7) / 0.6)
   o.globalAlpha = k2
-  o.font = '700 38px "Space Mono", monospace'
-  o.fillStyle = 'rgba(243,236,224,0.9)'
-  o.fillText((S.script.endSub || '').toUpperCase().split('').join(' '), W / 2, H * 0.55)
+  o.font = `700 30px ${MONO}`; o.fillStyle = L2
+  if ('letterSpacing' in o) o.letterSpacing = '7px'
+  o.fillText((S.script.endSub || '').toUpperCase(), W / 2, H * 0.565)
+  if ('letterSpacing' in o) o.letterSpacing = '0px'
+  const k3 = backOut((u - 1.1) / 0.5)
+  if (k3 > 0) {
+    const pw = 640 * k3, ph = 128 * k3, py = H * 0.68
+    const ch = o.createLinearGradient(W / 2 - pw / 2, 0, W / 2 + pw / 2, 0)
+    ;[['#f8edff', 0], ['#fff7ec', 0.38], ['#eaf4ff', 0.72], ['#ffeff7', 1]].forEach(([c, s]) => ch.addColorStop(s, c))
+    o.globalAlpha = 1
+    o.shadowColor = 'rgba(248,237,255,0.45)'; o.shadowBlur = 36
+    o.fillStyle = ch; roundRect(o, W / 2 - pw / 2, py - ph / 2, pw, ph, ph / 2); o.fill()
+    o.shadowBlur = 0
+    o.fillStyle = '#3a2c4e'; o.font = `italic 500 ${54 * k3}px ${SERIF}`
+    o.fillText((S.script.cta || 'Read tonight’s deck') + ' ✦', W / 2, py + 2)
+  }
   o.restore()
 }
 
@@ -1176,8 +1335,8 @@ window.frame = (t) => {
       const pulse = 1 + 0.12 * Math.sin(u * 10 + k)
       const a = clamp(u / 0.25)
       o.save(); o.globalAlpha = a
-      o.strokeStyle = 'rgba(255,120,150,0.9)'; o.lineWidth = 22 * sc
-      o.shadowColor = '#ff7896'; o.shadowBlur = 30
+      o.strokeStyle = 'rgba(232,98,138,0.9)'; o.lineWidth = 22 * sc
+      o.shadowColor = RUB; o.shadowBlur = 30
       o.beginPath(); o.ellipse(s.x, s.y, 120 * sc * pulse, 34 * sc * pulse, 0, 0, 7); o.stroke()
       o.restore()
     }
@@ -1188,6 +1347,7 @@ window.frame = (t) => {
     drawBubble(o, sh, u, id, rest.join(':'))
   }
   if (sh.end) drawEnd(o, sh, u)
+  else drawLogo(o, 0.92)
   drawCaption(o, sh, u)
   return S.out.toDataURL('image/jpeg', 0.9)
 }
