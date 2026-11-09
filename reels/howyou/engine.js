@@ -8,9 +8,15 @@
 // time and the word being said turns gold.
 
 import * as THREE from 'three'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js'
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
 
 const W = 1080, H = 1920, FPS = 30
 const GOLD = '#ffd54a', PINK = '#ff8db4', INK = '#120d24', BONE = '#f6efe2', INDIGO = '#1c1640'
+const SETS = ['room', 'cafe', 'street', 'space', 'lab', 'phone', 'studio']
 const SIGNS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 const SIGN_CH = Object.fromEntries(SIGNS.map((s, i) => [s, String.fromCodePoint(0x2648 + i)]))
 const PLANET_CH = { venus: '♀', mars: '♂', sun: '☉', moon: '☽', mercury: '☿', jupiter: '♃', saturn: '♄' }
@@ -76,7 +82,7 @@ function glyphTex(ch, color = GOLD) {
 const MATS = new Map()
 function clay(color, o = {}) {
   const key = color + JSON.stringify(o)
-  if (!MATS.has(key)) MATS.set(key, new THREE.MeshStandardMaterial({ color, roughness: 0.58, metalness: 0, ...o }))
+  if (!MATS.has(key)) MATS.set(key, new THREE.MeshPhysicalMaterial({ color, roughness: 0.48, metalness: 0, clearcoat: 0.45, clearcoatRoughness: 0.32, sheen: 0.35, sheenRoughness: 0.5, sheenColor: new THREE.Color('#ffffff'), ...o }))
   return MATS.get(key)
 }
 const basic = (o) => new THREE.MeshBasicMaterial(o)
@@ -102,7 +108,8 @@ function roundBox(w, h, d, r) {
   return g
 }
 function sprite(map, size, o = {}) {
-  const m = new THREE.Sprite(new THREE.SpriteMaterial({ map, transparent: true, depthWrite: false, ...o }))
+  const solid = !o.blending
+  const m = new THREE.Sprite(new THREE.SpriteMaterial({ map, transparent: true, depthWrite: solid, alphaTest: solid ? 0.2 : 0, ...o }))
   m.scale.set(size, size, 1)
   return m
 }
@@ -297,7 +304,7 @@ function brainMesh() {
   for (let i = 0; i < p.count; i++) {
     v.fromBufferAttribute(p, i)
     const n = v.clone().normalize()
-    const fold = Math.sin(n.x * 22 + Math.sin(n.y * 9) * 2) * Math.sin(n.y * 19 + n.z * 7) * 0.018
+    const fold = (Math.sin(n.x * 11 + Math.sin(n.y * 6) * 2.5) * Math.sin(n.y * 10 + n.z * 5) + 0.6 * Math.sin(n.z * 13 + Math.sin(n.x * 5) * 2)) * 0.016
     const groove = Math.exp(-Math.pow(n.x * 9, 2)) * 0.035
     v.addScaledVector(n, fold - groove)
     v.y *= 0.82; v.z *= 1.18
@@ -604,7 +611,24 @@ function buildSets() {
     g.userData.marks = {}
     sets.phone = g
   }
-  for (const k of ['room', 'cafe', 'street', 'space', 'lab', 'phone']) { sets[k].visible = false; S.scene.add(sets[k]) }
+  // studio: a dark seamless sweep for macro cutaways (organs, big planets)
+  {
+    const g = new THREE.Group()
+    const [bc, bx] = canvas(1024, 1024)
+    const gr = bx.createRadialGradient(512, 420, 40, 512, 512, 700)
+    gr.addColorStop(0, '#3a2f8f'); gr.addColorStop(0.45, '#17123f'); gr.addColorStop(1, '#05040f')
+    bx.fillStyle = gr; bx.fillRect(0, 0, 1024, 1024)
+    const back = new THREE.Mesh(new THREE.SphereGeometry(40, 48, 24), basic({ map: tex(bc), side: THREE.BackSide }))
+    back.rotation.y = -Math.PI / 2; g.add(back)
+    const r = rng(21)
+    for (let k = 0; k < 40; k++) { const d = sprite(S.glowTex, 0.08 + r() * 0.12, { color: '#bfb6ff', blending: THREE.AdditiveBlending, opacity: 0.25 + r() * 0.4 }); d.position.set((r() - 0.5) * 6, r() * 5, (r() - 0.5) * 4); g.add(d) }
+    lightRig(g, { sky: '#d6d0ff', ground: '#120c30', hemi: 0.9, key: '#fff3e0', keyI: 2.6, rim: '#ff6fb8', rimI: 3.2 })
+    const rim2 = new THREE.DirectionalLight('#5fd0ff', 2.4); rim2.position.set(-6, 3, -5); g.add(rim2)
+    g.userData.marks = { center: [0, 0.4, 0], left: [-0.9, 0.4, 0], right: [0.9, 0.4, 0] }
+    g.userData.space = true
+    sets.studio = g
+  }
+  for (const k of SETS) { sets[k].visible = false; S.scene.add(sets[k]) }
   return sets
 }
 
@@ -783,6 +807,20 @@ function buildFx(sc, scene, cast, i) {
       fx.push({ kind: 'link', ...linkFx(scene, cast) })
     } else if (name === 'pull') {
       fx.push({ kind: 'pull' })
+    } else if (name === 'organ') {
+      // a big glowing organ, centred, for macro cutaways
+      const g = new THREE.Group(); g.position.set(0, 1.7, 0); scene.add(g)
+      const mode = (arg || 'brain').split('-')
+      let m
+      if (mode[0] === 'heart') { m = heartMesh(); m.scale.setScalar(2.2) } else { m = brainMesh(); m.scale.setScalar(3.2) }
+      g.add(m)
+      const halo = sprite(S.glowTex, 5.5, { color: mode[0] === 'heart' ? '#ff3f5e' : '#ff7fc0', blending: THREE.AdditiveBlending, opacity: 0.45 }); halo.position.z = -0.6; g.add(halo)
+      const parts = []
+      for (let k = 0; k < 26; k++) { const sp = sprite(S.sparkTex, 0.22, { blending: THREE.AdditiveBlending, color: mode[0] === 'heart' ? '#ffd0d8' : '#fff2a8' }); g.add(sp); parts.push({ sp, ph: k / 26, a: k * 2.39 }) }
+      fx.push({ kind: 'organ', g, m, halo, parts, type: mode[0], dim: mode[1] === 'dim' })
+    } else if (name === 'big') {
+      const p = planet(arg, 1.0); p.position.set(0, 1.85, 0); scene.add(p)
+      fx.push({ kind: 'planet', g: p })
     }
   }
   return fx
@@ -855,7 +893,7 @@ function focusPoint(sc, built) {
     return { p: mid, d: Math.min(11, Math.max(6.2, (a.distanceTo(b) + 1.7) / 0.42)) }
   }
   if (f === 'line') return { p: new THREE.Vector3(0, 1.5, 0.3), d: 14 }
-  if (f === 'center') return { p: new THREE.Vector3(0, sc.set === 'space' ? 1.6 : 1, 0), d: 8 }
+  if (f === 'center') return sc.set === 'studio' ? { p: new THREE.Vector3(0, 1.75, 0), d: 7.2 } : { p: new THREE.Vector3(0, sc.set === 'space' ? 1.6 : 1, 0), d: 8 }
   if (f === 'clock') return { p: S.sets.clock.g.position.clone(), d: 3.2 }
   if (f === 'horizon') return { p: new THREE.Vector3(0, 1.8, -8), d: 8 }
   const c = cast.find((c) => c.id === f) || cast[0]
@@ -890,7 +928,7 @@ window.setup = async ({ script, timeline, fonts, glyphs }) => {
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 300)
-  S = { script, timeline, renderer, scene, camera, out, o: out.getContext('2d') }
+  S = { script, timeline, shots: timeline.shots, renderer, scene, camera, out, o: out.getContext('2d') }
   geos()
   S.glowTex = radial(256, [[0, 'rgba(255,255,255,1)'], [0.25, 'rgba(255,255,255,0.45)'], [1, 'rgba(255,255,255,0)']])
   S.shadowTex = radial(128, [[0, 'rgba(10,6,20,0.5)'], [1, 'rgba(10,6,20,0)']])
@@ -902,7 +940,18 @@ window.setup = async ({ script, timeline, fonts, glyphs }) => {
   S.dropTex = (() => { const [c, x] = canvas(128, 128); x.fillStyle = '#7fd0ff'; x.strokeStyle = INK; x.lineWidth = 8; x.beginPath(); x.moveTo(64, 10); x.bezierCurveTo(110, 70, 100, 118, 64, 118); x.bezierCurveTo(28, 118, 18, 70, 64, 10); x.fill(); x.stroke(); return tex(c) })()
   S.wheelTex = wheelTex()
   S.sets = buildSets()
-  S.built = script.scenes.map((sc, i) => buildScene(sc, i))
+  S.built = S.shots.map((sh, i) => buildScene(sh.spec, i))
+  // studio reflections on the clay, and a lens with depth of field
+  const pm = new THREE.PMREMGenerator(renderer)
+  scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture
+  scene.environmentIntensity = 0.4
+  const composer = new EffectComposer(renderer)
+  composer.setPixelRatio(1); composer.setSize(W, H)
+  composer.addPass(new RenderPass(scene, camera))
+  S.bokeh = new BokehPass(scene, camera, { focus: 5, aperture: 0.0015, maxblur: 0.009 })
+  composer.addPass(S.bokeh)
+  composer.addPass(new OutputPass())
+  S.composer = composer
   // rain streaks on the bedroom window
   S.rain = []
   for (let k = 0; k < 40; k++) {
@@ -922,15 +971,15 @@ window.setup = async ({ script, timeline, fonts, glyphs }) => {
 }
 
 function show(i) {
-  const sc = S.script.scenes[i]
-  for (const k of ['room', 'cafe', 'street', 'space', 'lab', 'phone']) S.sets[k].visible = k === sc.set
+  const sc = S.shots[i].spec
+  for (const k of SETS) S.sets[k].visible = k === sc.set
   S.built.forEach((b, j) => { b.scene.visible = j === i })
 }
 
 // caption chunks: up to three words, broken at punctuation
 function chunkWords(tl) {
   const out = []
-  tl.scenes.forEach((s, si) => {
+  tl.sentences.forEach((s, si) => {
     let cur = []
     const flush = () => { if (cur.length) out.push({ scene: si, words: cur }); cur = [] }
     s.words.forEach((w) => {
@@ -943,14 +992,14 @@ function chunkWords(tl) {
   for (const c of out) c.s = c.words[0].s
   out.forEach((c, i) => {
     const next = out[i + 1]
-    const sEnd = tl.scenes[c.scene].end
+    const sEnd = tl.sentences[c.scene].end
     c.e = next && next.scene === c.scene ? next.s : Math.min(sEnd, c.words[c.words.length - 1].e + 0.6)
   })
   return out
 }
 
 function sceneAt(t) {
-  const sc = S.timeline.scenes
+  const sc = S.shots
   for (let i = 0; i < sc.length; i++) if (t < sc[i].end) return i
   return sc.length - 1
 }
@@ -958,8 +1007,8 @@ function sceneAt(t) {
 window.frame = (t) => {
   const { camera, renderer, timeline } = S
   const i = sceneAt(t)
-  const ts = timeline.scenes[i]
-  const sc = S.script.scenes[i]
+  const ts = S.shots[i]
+  const sc = ts.spec
   const b = S.built[i]
   show(i)
   const local = t - ts.start
@@ -982,8 +1031,9 @@ window.frame = (t) => {
     let target = F.p.clone()
     let d = F.d * shot.d
     if (shot.head && F.head) { target = F.head.clone(); target.y -= 0.25; d = Math.max(d, 3.0) }
-    // punch-in on every cut
+    // punch-in on every cut; impact shots slam in and shake
     d *= 1 + 0.05 * (1 - easeOut(local / 0.22))
+    if (sc.impact) { d *= 1.12 - 0.2 * easeOut(local / 0.16); shot.shake = Math.max(shot.shake || 0, 1.6 * Math.max(0, 1 - local / 0.55)) }
     const az = shot.az, el = shot.el
     pos = target.clone().add(new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)).multiplyScalar(d))
     if (sc.shot === 'top') pos.y = Math.max(pos.y, target.y + 2)
@@ -996,12 +1046,19 @@ window.frame = (t) => {
   camera.updateProjectionMatrix()
   animateFx(b, sc, local, speaking, slow)
   if (S.sets.labScan) { S.sets.labScan.position.y = 0.3 + ((local * 0.9) % 1) * 2.6; S.sets.labRing.scale.setScalar(1 + (local % 1.2) * 0.8); S.sets.labRing.material.opacity = 0.8 * (1 - (local % 1.2) / 1.2) }
-  renderer.render(S.scene, camera)
+  // focus on the subject; x-ray glass and the phone stay sharp
+  const u2 = S.bokeh.uniforms
+  u2.focus.value = pos.distanceTo(look)
+  const tight = ['close', 'snap'].includes(sc.shot) || sc.impact
+  u2.aperture.value = sc.set === 'lab' ? 0 : sc.set === 'phone' ? 0.0006 : tight ? 0.0028 : 0.0016
+  u2.maxblur.value = sc.set === 'phone' ? 0.004 : 0.01
+  S.composer.render()
 
   const o = S.o
   o.globalAlpha = 1; o.globalCompositeOperation = 'source-over'
   o.drawImage(renderer.domElement, 0, 0, W, H)
   o.drawImage(S.vignette, 0, 0)
+  if (sc.impact) { const fl = 1 - local / 0.12; if (fl > 0) { o.fillStyle = `rgba(255,248,230,${0.55 * fl})`; o.fillRect(0, 0, W, H) } }
   if (slow < 1) { o.fillStyle = 'rgba(0,0,0,0.92)'; o.fillRect(0, 0, W, 120); o.fillRect(0, H - 120, W, 120) }
   drawWordmark(o)
   if (sc.tag) drawTag(o, sc.tag, local)
@@ -1053,6 +1110,22 @@ function animateFx(b, sc, l, speaking, slow) {
       }
     } else if (f.kind === 'pull') {
       const c = b.cast[0]; if (c) c.body.rotation.z = Math.sin(l * 2) * 0.1 - 0.12
+    } else if (f.kind === 'organ') {
+      const beat = Math.pow(Math.abs(Math.sin(l * (f.type === 'heart' ? 6.5 : 3))), 6)
+      f.g.rotation.y = Math.sin(l * 0.6) * 0.35
+      f.m.scale.setScalar((f.type === 'heart' ? 2.2 : 3.2) * (1 + beat * (f.type === 'heart' ? 0.14 : 0.03)))
+      if (f.type === 'brain') {
+        f.m.material.emissiveIntensity = f.dim ? 0.25 : 0.45 + beat * 0.4
+        f.m.userData.front(f.dim ? 'dim' : '', ease((l - 0.5) / 1.0))
+      } else f.m.material.emissiveIntensity = 0.4 + beat * 0.8
+      f.halo.material.opacity = 0.3 + beat * 0.35
+      f.parts.forEach((p) => {
+        const q = (l * 0.5 + p.ph) % 1
+        const a = p.a + q * 2.2
+        const r = f.type === 'heart' ? 0.9 : 1.05
+        p.sp.position.set(Math.cos(a) * r, Math.sin(a * 1.3) * r * 0.7, 0.75 + Math.sin(a) * 0.2)
+        p.sp.material.opacity = Math.sin(q * Math.PI) * (f.dim ? 0.3 : 1)
+      })
     }
   }
   for (const c of b.cast) {
@@ -1101,7 +1174,7 @@ function drawCaptions(o, t) {
   // wrap to fit
   const lines = [[]]; let lw = 0
   for (const p of parts) { if (lw + p.width > W - 140 && lines[lines.length - 1].length) { lines.push([]); lw = 0 } lines[lines.length - 1].push(p); lw += p.width + gap }
-  const cy = S.script.scenes[c.scene].set === 'phone' ? H * 0.83 : H * 0.68
+  const cy = S.shots[sceneAt(t)].spec.set === 'phone' ? H * 0.83 : H * 0.68
   o.translate(W / 2, cy); o.scale(pop, pop); o.translate(-W / 2, -cy)
   lines.forEach((ln, li) => {
     const total = ln.reduce((a, p) => a + p.width, 0) + gap * (ln.length - 1)

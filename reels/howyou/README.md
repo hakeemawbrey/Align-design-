@@ -16,6 +16,17 @@ that makes them work and nothing else:
 - **Cutaways that show the invisible:** an x-ray brain flooding with dopamine, Mercury's backwards loop, the chart wheel with the 7th house lit.
 - **Big word-by-word captions:** white with a heavy black outline, the word being said in gold, Align words in pink.
 
+### Version 2: what we borrowed from the Zack D Director skill
+
+The community skill [Anil-matcha/zack-d-films-ai-video-generator](https://github.com/Anil-matcha/zack-d-films-ai-video-generator)
+makes these shorts with paid AI image and video models (MuAPI, Veo 3.1). We
+didn't use the models. These reels took its craft rules instead:
+
+- **Curiosity loops.** Every line opens a question the next line closes ("So which planet does?" → "*Venus.*").
+- **Two shots per sentence:** the scene, then a cutaway or reaction, so no shot runs much past 4 s.
+- **Impact beats.** On the key line the camera slams in, shakes and flashes, with a low hit in the score.
+- **The look:** glossy polymer-clay materials (clearcoat and sheen), studio reflections, shallow depth of field, and dark studio cutaways for big organs and planets.
+
 No footage, characters, narration, music or look is reused. The characters,
 sets and effects are built in code (three.js), the voice is the open-weights
 Kokoro model (shared with `../affirm`), and the score and sound effects are
@@ -56,7 +67,7 @@ node reels/howyou/render.mjs venus moon      # by id
 node reels/howyou/render.mjs --jobs 3        # reels rendered at once
 ```
 
-A reel takes about 7–8 minutes on a CPU (WebGL in software). Each gives:
+A reel takes about 15–20 minutes on a CPU (WebGL in software; depth of field and the glossy materials roughly double v1's time). Each gives:
 
 - `<id>.mp4`: full quality, ready to post
 - `<id>.web.mp4`: a light 720p copy
@@ -87,12 +98,16 @@ shot lasts 2–4 s.
 }
 ```
 
-`*stars*` mark Align words (shown pink). `tag` is an optional pill at the top.
+`*stars*` mark Align words (shown pink). Add `"b": { … }` to give a sentence a
+second shot from word `cut` on (0-based; by default the first word after a
+full stop or comma). `b` takes the same fields as a scene and inherits the
+set, cast and focus unless it names a new set. `"impact": true` on a scene or
+on its `b` makes that shot an impact beat. `tag` is an optional pill at the top.
 `end` is the line under the wordmark on the closing card.
 
 | Field | Options |
 | --- | --- |
-| `set` | `room` · `cafe` · `street` · `space` · `lab` · `phone` |
+| `set` | `room` · `cafe` · `street` · `space` · `lab` · `phone` · `studio` (dark sweep for cutaways) |
 | `mark` | room: `bed` `bedR` `center` `left` `right` `door` · cafe: `seatL` `seatR` · street: `center` `left` `right` `line1`–`line5` · space: `center` `left` `right` · lab: `center` |
 | `pose` | `stand` `sit` `phone` `shrug` `wave` `point` `shock` `heart` `think` `float` |
 | `expr` | `neutral` `smile` `grin` `shock` `sad` `worried` `smitten` `smug` |
@@ -100,9 +115,9 @@ shot lasts 2–4 s.
 | `style` (hair) | `short` `curly` `long` `bun` `bald` |
 | `shot` | `wide` `medium` `close` `push` `pull` `orbit` `low` `top` `snap` `slow` (`phone` for the phone set) |
 | `focus` | a cast id, `both`, `line`, `center`, `clock`, `horizon` |
-| `fx` | `glyph:<sign>[@who]` `planet:<venus\|mars\|moon\|mercury\|sun\|earth>` `hearts` `sparks` `sweat` `tears` `zzz` `question` `exclaim` `wheel` `house7` `retro` `orbits` `rise:<sign>` `clock` `rain` `slowmo` `moonrun` `link` `pull` |
+| `fx` | `glyph:<sign>[@who]` `planet:<venus\|mars\|moon\|mercury\|sun\|earth>` `hearts` `sparks` `sweat` `tears` `zzz` `question` `exclaim` `wheel` `house7` `retro` `orbits` `rise:<sign>` `clock` `rain` `slowmo` `moonrun` `link` `pull` · studio: `organ:brain` `organ:brain-dim` `organ:heart` `big:<planet>` |
 | `screen` (phone) | `{ "name": "Jordan", "msgs": [["me", "text"], ["them", "text"], ["me", "~4:02"]] }`. `~` makes a voice note. The last message pops in. |
-| `sfx` | `whoosh` `pop` `boing` `thud` `ding` `swell` `sparkle` `heartbeat` `tick` `rewind` |
+| `sfx` | `whoosh` `pop` `boing` `thud` `ding` `swell` `sparkle` `heartbeat` `tick` `rewind` `cut` (b shots' default) |
 
 ## Rules for the words
 

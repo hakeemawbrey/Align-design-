@@ -130,6 +130,13 @@ def sfx(kind, rs):
         f = 1400 * np.exp(-t * 3) + 200
         y = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * 0.25
         return lowpass(y, 0.2) * np.sin(np.linspace(0, np.pi, n)) * 0.8
+    if kind == 'cut':
+        return sweep_noise(0.16, 900, 6000, rs) * 0.6
+    if kind == 'hit':
+        n = int(0.7 * SR); t = np.arange(n) / SR
+        boom = np.sin(2 * np.pi * np.cumsum(70 * np.exp(-t * 5) + 32) / SR) * env(n, 0.001, 0.3)
+        crack = lowpass(noise(n, rs), 0.35) * env(n, 0.0005, 0.03)
+        return (boom * 1.2 + crack * 0.7)
     if kind == 'outro':
         return (tone(midi(81), 2.4, 'bell', 1.4) + tone(midi(76), 2.4, 'bell', 1.2) * 0.7 + tone(midi(69), 2.4, 'bell', 1.6) * 0.6) * 0.32
     return np.zeros(1)
@@ -181,8 +188,8 @@ def main():
     for t0, kind in cues:
         s = sfx(kind, rs)
         g = {'whoosh': 0.35, 'pop': 0.5, 'boing': 0.45, 'thud': 0.7, 'ding': 0.5, 'swell': 0.45, 'sparkle': 0.5,
-             'heartbeat': 0.8, 'tick': 0.6, 'rewind': 0.45, 'outro': 0.7}.get(kind, 0.4)
-        add(buf, s, max(0, t0 - (0.12 if kind == 'whoosh' else 0)), g)
+             'heartbeat': 0.8, 'tick': 0.6, 'rewind': 0.45, 'outro': 0.7, 'cut': 0.3, 'hit': 0.75}.get(kind, 0.4)
+        add(buf, s, max(0, t0 - (0.12 if kind == 'whoosh' else 0.06 if kind == 'cut' else 0)), g)
     peak = np.abs(buf).max() or 1
     buf = buf / peak * 0.8
     buf = buf[: int(dur * SR)]

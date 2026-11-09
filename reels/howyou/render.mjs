@@ -57,7 +57,7 @@ const FONTS = [
 const GLYPHS = JSON.parse(readFileSync(path.join(AFFIRM, 'glyphs.json'), 'utf8'))
 const INDEX = `<!doctype html><html><body style="margin:0;background:#000">
 <canvas id="c"></canvas>
-<script type="importmap">{"imports":{"three":"${HOST}three/three.module.js"}}</script>
+<script type="importmap">{"imports":{"three":"${HOST}three/three.module.js","three/addons/":"${HOST}addons/"}}</script>
 <script type="module" src="${HOST}engine.js"></script>
 </body></html>`
 const TYPES = { '.js': 'text/javascript', '.woff2': 'font/woff2', '.html': 'text/html' }
@@ -65,6 +65,7 @@ function serve(url) {
   const p = url.slice(HOST.length).split('?')[0]
   if (p === 'engine.js') return path.join(HERE, 'engine.js')
   if (p.startsWith('three/')) return path.join(MODULES, 'three/build', p.slice(6))
+  if (p.startsWith('addons/')) return path.join(MODULES, 'three/examples/jsm', p.slice(7))
   if (p.startsWith('fonts/')) return path.join(fontDir, p.slice(6))
   return null
 }
@@ -97,9 +98,24 @@ function speak(script) {
   return { dir, ...JSON.parse(readFileSync(path.join(dir, 'voice.json'), 'utf8')) }
 }
 
+// A sentence can be two shots: the scene, then its "b" shot (a cutaway or
+// reaction) from word "cut" on. No shot should run much past 4 s.
+function shotSpecs(sc) {
+  const { b, cut, ...a } = sc
+  if (!b) return [a]
+  const own = b.set && b.set !== a.set
+  const bs = { ...b, set: b.set || a.set, cast: b.cast ?? (own ? [] : a.cast), fx: b.fx ?? (own ? [] : a.fx), shot: b.shot || 'medium', focus: b.focus || (own ? 'center' : a.focus), sfx: b.sfx || 'cut' }
+  return [a, bs]
+}
+function cutWord(sc, words) {
+  if (sc.cut != null) return sc.cut
+  const k = words.findIndex((w, i) => i > 0 && i < words.length - 1 && /[.,?!…]$/.test(words[i - 1].w))
+  return k > 0 ? k : Math.floor(words.length / 2)
+}
+
 function timeline(script, voice) {
   let t = 0
-  const scenes = []
+  const sentences = [], shots = []
   script.scenes.forEach((sc, i) => {
     const v = voice.scenes[i]
     const start = t
@@ -109,12 +125,19 @@ function timeline(script, voice) {
     const voiceEnd = at + Math.min(v.dur, lastWord + 0.12)
     const end = voiceEnd + TAIL
     const words = lineWords(sc.text).map((w, k) => ({ ...w, s: at + v.words[k][0], e: at + v.words[k][1] }))
-    scenes.push({ start, end, at, voiceEnd, words, wav: path.join(voice.dir, v.wav), sfx: sc.sfx || 'whoosh' })
+    sentences.push({ start, end, at, voiceEnd, words, wav: path.join(voice.dir, v.wav) })
+    const specs = shotSpecs(sc)
+    if (specs.length === 1) shots.push({ start, end, at, spec: specs[0] })
+    else {
+      const ct = words[cutWord(sc, words)].s - 0.06
+      shots.push({ start, end: ct, at, spec: specs[0] }, { start: ct, end, at: ct, spec: specs[1] })
+    }
     t = end
   })
   const outro = t
-  scenes[scenes.length - 1].end = t + OUTRO
-  return { scenes, outro, duration: t + OUTRO }
+  shots[shots.length - 1].end = t + OUTRO
+  sentences[sentences.length - 1].end = t + OUTRO
+  return { shots, sentences, outro, duration: t + OUTRO }
 }
 
 async function launch() {
@@ -128,21 +151,25 @@ async function launch() {
 
 function mixAudio(script, tl, wav) {
   const bed = wav.replace(/\.wav$/, '.score.wav')
-  const cues = tl.scenes.map((s) => [Number(s.start.toFixed(3)), s.sfx])
+  const cues = []
+  for (const s of tl.shots) {
+    cues.push([Number(s.start.toFixed(3)), s.spec.sfx || 'whoosh'])
+    if (s.spec.impact) cues.push([Number(s.start.toFixed(3)), 'hit'])
+  }
   cues.push([Number(tl.outro.toFixed(3)), 'outro'])
   const seed = parseInt(createHash('sha1').update(script.id).digest('hex').slice(0, 6), 16)
   execFileSync('python3', ['-I', path.join(HERE, 'score.py'), String(tl.duration), bed, String(seed), JSON.stringify(cues)])
   const ins = ['-i', bed]
   const chains = []
-  tl.scenes.forEach((s, i) => {
+  tl.sentences.forEach((s, i) => {
     ins.push('-i', s.wav)
     const ms = Math.round(s.at * 1000)
     chains.push(`[${i + 1}:a]atrim=0:${(s.voiceEnd - s.at + 0.1).toFixed(3)},aresample=44100,aformat=channel_layouts=stereo,adelay=${ms}|${ms}[v${i}]`)
   })
-  const n = tl.scenes.length
+  const n = tl.sentences.length
   const filter = [
     ...chains,
-    `${tl.scenes.map((_, i) => `[v${i}]`).join('')}amix=inputs=${n}:normalize=0,highpass=f=70,equalizer=f=3000:t=q:w=1.2:g=2.5,acompressor=threshold=0.1:ratio=3:attack=5:release=120,volume=1.6,apad=whole_dur=${tl.duration.toFixed(3)}[vox]`,
+    `${tl.sentences.map((_, i) => `[v${i}]`).join('')}amix=inputs=${n}:normalize=0,highpass=f=70,equalizer=f=3000:t=q:w=1.2:g=2.5,acompressor=threshold=0.1:ratio=3:attack=5:release=120,volume=1.6,apad=whole_dur=${tl.duration.toFixed(3)}[vox]`,
     '[vox]asplit=2[va][vb]',
     '[0:a]volume=1.0[bed]',
     '[bed][va]sidechaincompress=threshold=0.04:ratio=3:attack=30:release=500[bd]',
@@ -175,7 +202,8 @@ async function renderOne(browser, file) {
   if (stills) {
     const dir = path.join(outDir, 'stills', script.id)
     mkdirSync(dir, { recursive: true })
-    const times = tl.scenes.map((s) => s.at + (s.voiceEnd - s.at) * 0.6)
+    const times = tl.shots.map((s) => s.start + (s.end - s.start) * (s.spec.impact ? 0.45 : 0.6))
+    times[times.length - 1] = tl.shots[tl.shots.length - 1].start + 1.2
     times.push(duration - 0.4)
     for (const [i, t] of times.entries()) writeFileSync(path.join(dir, `${String(i).padStart(2, '0')}.jpg`), await grab(t))
     const cols = Math.ceil(times.length / 2)
