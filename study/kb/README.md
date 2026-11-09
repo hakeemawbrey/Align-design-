@@ -24,6 +24,7 @@ When asked to "go through my Video Lab inbox", or when handed a link:
    | X | no: Mac | yes: text, views, likes, replies, length, thumbnail |
    | Instagram | no: Mac | no: Mac |
    | Facebook | no: Mac | no: Mac |
+   | TikTok | **yes, in full**: videos, captions, views, likes, comments, shares | yes |
 
    ```bash
    pip install -q yt-dlp   # if missing
@@ -31,6 +32,12 @@ When asked to "go through my Video Lab inbox", or when handed a link:
    ```
    For YouTube this writes `study/pack/yt-<channel>/quick.md`, `quick.json`, `quick-top.jpg` and `quick-bottom.jpg` (git-ignored). Read `quick.md` and look at both thumbnail sheets. A YouTube video link reads its whole channel. YouTube blocks full video downloads from the cloud (the "not a bot" check), so this is packaging only.
    For one X post it writes `pack/x-<account>/post-<id>.json` and its thumbnail. For Instagram and Facebook it exits 3 and says it needs the Mac. In that case set the inbox doc's `status` to `"read"` and its `reply` to say a Mac study is needed.
+   **Instagram creator? Check TikTok first.** Most creators post the same videos to both. Search for their TikTok, and if it's there, study it in full from the cloud:
+   ```bash
+   cd study && node src/tiktok.mjs "https://www.tiktok.com/@<account>" --limit 300 \
+     && node src/process.mjs tt-<account> --no-ocr && node src/report.mjs tt-<account>
+   ```
+   That gives transcripts (TikTok's captions), stills and contact sheets, and a `report.md` with every video against the account's typical one. On-screen text still needs the Mac, so look at the contact sheets for the hooks.
    Also read the person's `note` on what caught their eye, and look at the thumbnail.
 3. **Full study (on the Mac).** For accounts worth going deep on, and for anything on Instagram or Facebook, tell the person to double-click **Study Any Link** and paste the link. It works for all four platforms: YouTube by yt-dlp, Instagram and X by gallery-dl with their browser login, Facebook in its own Chrome window. The pack goes to their private `align-study` repo, saved as `yt-…`, `x-…`, `fb-…` or the Instagram handle. Then read `posts.json`, `report.md`, `sheets/` and `thumbs/` from there (see `study/README.md`). This adds transcripts, on-screen text and stills from the hook.
 4. **Update the playbook**, all in one `ArtifactData batch`:

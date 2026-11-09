@@ -13,6 +13,7 @@
     "facebook": "node src/facebook.mjs",
     "youtube": "node src/youtube.mjs",
     "twitter": "node src/twitter.mjs",
+    "tiktok": "node src/tiktok.mjs",
     "quick": "node src/quick.mjs",
     "numbers": "node src/numbers.mjs",
     "process": "node src/process.mjs",

@@ -19,6 +19,8 @@ export function handleOf(s) {
   if (/^fb-[a-z0-9.-]{1,44}$/.test(raw)) return raw
   // YouTube channels are saved as yt-<channel> (src/youtube.mjs).
   if (/^yt-[a-z0-9._-]{1,60}$/.test(raw)) return raw
+  // TikTok accounts are saved as tt-<account> (src/tiktok.mjs).
+  if (/^tt-[a-z0-9._]{2,24}$/.test(raw)) return raw
   // X (Twitter) accounts are saved as x-<account> (src/twitter.mjs).
   if (/^x-[a-z0-9_]{1,15}$/.test(raw)) return raw
   const fromUrl = raw.match(/instagram\.com\/([A-Za-z0-9._]+)/)?.[1]

@@ -141,6 +141,15 @@ thumbnail). Claude can do this in the cloud the moment you send an X link.
 **Study Any Link** takes a YouTube, Instagram, X or Facebook link and runs the
 right study. The single-platform buttons still work.
 
+## TikTok accounts (and Instagram creators who post there too)
+
+`npm run tiktok -- "https://www.tiktok.com/@<account>"` downloads the newest 300
+videos (`--all` for every one) with TikTok's captions and the views, likes,
+comments and shares. No login is needed, so it works anywhere, including in
+Claude's cloud sessions. Most creators post the same videos to TikTok and Instagram
+Reels, so this is the fastest way to study an Instagram creator too. Then
+`npm run process -- tt-<account>` and `npm run report -- tt-<account>` as usual.
+
 ## Step by step (Terminal)
 
 Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
@@ -191,6 +200,7 @@ logged-in account follows them.
 | `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
 | `src/youtube.mjs` | a whole YouTube channel: lists Videos and Shorts, yt-dlp downloads each small with captions and thumbnail |
 | `src/twitter.mjs` | an X account's Media tab with gallery-dl and your browser login, reshaped like the Instagram downloads |
+| `src/tiktok.mjs` | a TikTok account with yt-dlp, no login, captions as transcripts |
 | `src/quick.mjs` | a quick read of a YouTube channel from its lists alone, or of one X post (no downloads; works in the cloud) |
 | `kb/` | Video Lab: the portal's source and how Claude keeps the playbook |
 | `src/facebook.mjs` | a Facebook page: its own Chrome window collects the reel and video links, yt-dlp downloads each with its numbers |

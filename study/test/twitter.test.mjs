@@ -71,3 +71,18 @@ test('downloaded X posts settle into records with views, replies and reposts', (
   assert.equal(r.views, 3000); assert.equal(r.reposts, 7); assert.equal(r.lift, 1.5)
   assert.equal(metaOf({ tweet_id: 1, extension: 'mp4' }, 'u').subcategory, 'video')
 })
+
+test('TikTok: links, captions and records', async () => {
+  const { accountOf: tt, vttTranscript, metaOf: ttMeta, numbersOf: ttNum } = await import('../src/tiktok.mjs')
+  assert.deepEqual(tt('https://www.tiktok.com/@JettFranzen/video/1?x=1'), { handle: 'tt-jettfranzen', user: 'JettFranzen' })
+  assert.deepEqual(tt('@someone'), { handle: 'tt-someone', user: 'someone' })
+  assert.equal(tt('https://www.instagram.com/someone'), null)
+  assert.equal(handleOf('tt-jettfranzen'), 'tt-jettfranzen')
+  const t = vttTranscript('WEBVTT\n\n00:00:00.120 --> 00:00:01.500\nYou are not\ncrazy\n\n00:00:01.500 --> 00:00:03.000\n<c>something</c> is off\n\n00:01:01.000 --> 00:01:02.000\nsomething is off\n')
+  assert.equal(t.text, 'You are not crazy something is off')
+  assert.deepEqual(t.segments[0], { from: 0.1, to: 1.5, text: 'You are not crazy' })
+  assert.equal(t.words, 7)
+  const m = ttMeta({ description: 'cap', timestamp: 1794082317, like_count: 5 }, { id: '7', url: 'u' })
+  assert.equal(m.post_shortcode, '7'); assert.equal(m.category, 'tiktok'); assert.match(m.date, /^2026-11/)
+  assert.equal(ttNum({ view_count: 10, repost_count: 3, duration: 30 }).reposts, 3)
+})
