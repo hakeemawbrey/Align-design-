@@ -416,7 +416,7 @@ class Sketch {
   }
   // times for a list of phrases: when each is said in the captions, else
   // spread over the lines from `stage` on
-  cues(items, stage, until = null) {
+  cues(items, stage, until = null, early = 0) {
     const env = this.env
     const last = until != null ? Math.min(until - 1, env.lines.length - 1) : env.lines.length - 1
     const from = clamp(stage, 0, env.lines.length - 1)
@@ -428,10 +428,10 @@ class Sketch {
     const found = items.map((it) => {
       const iw = String(it).split(/\s+/).map(norm).filter(Boolean)
       for (let j = cursor; j <= words.length - iw.length; j++) {
-        if (iw.every((w, q) => words[j + q].w === w)) { cursor = j + 1; return words[j].s - 0.12 }
+        if (iw.every((w, q) => words[j + q].w === w)) { cursor = j + 1; return words[j].s - 0.12 - early }
       }
       const key = iw.filter((w) => !STOP.has(w)).sort((a, b) => b.length - a.length)[0]
-      if (key) for (let j = cursor; j < words.length; j++) if (words[j].w === key) { cursor = j + 1; return words[j].s - 0.2 }
+      if (key) for (let j = cursor; j < words.length; j++) if (words[j].w === key) { cursor = j + 1; return words[j].s - 0.2 - early }
       return null
     })
     // fill the gaps: one item per line if there are lines enough, else spread
@@ -738,7 +738,7 @@ function ringAround(s, cx, cy, rx, ry, t, { out = null } = {}) {
   for (let i = 0; i <= 140; i++) {
     const a = -Math.PI * 0.9 + (i / 140) * TAU * 1.04 // a hand-drawn loop that overshoots a little
     const wob = 1 + 0.035 * Math.sin(a * 3 + cx)
-    pts.push([cx + Math.cos(a) * rx * wob, cy + Math.sin(a) * ry * wob - (i / 140) * 4])
+    pts.push([cx + Math.cos(a) * rx * wob, cy + Math.sin(a) * ry * (0.97 + 0.03 * wob) + (i / 140 - 0.5) * 2])
   }
   s.add(resample(pts, 6.5), { t, dur: 0.55, order: 'path', r: 2.1, c: COL.goldHi, out, flash: 1, tw: 0.15 })
   s.fx({ t: t + 0.3, dur: 0.6, out }, (g, k, lt) => {
@@ -774,7 +774,7 @@ ARTS.note = (s, o) => {
   s.add(dLine(x0 + 90, y0 + 118, x0 + w - 90, y0 + 118, 6), { delay: 0.55, dur: 0.5, order: 'both', r: 1.5, c: COL.gold, a: 0.9 })
   const dz = o.dissolveAt
   const outT = dz != null ? s.T(dz, 0.55) : null
-  let cues = s.cues(words, o.wordsAt ?? 1, dz ?? null)
+  let cues = s.cues(words, o.wordsAt ?? 1, dz ?? null, 0.4)
   // every word is written before the tear, and stays until it
   if (dz != null) cues = cues.map((c, i) => Math.min(c, s.T(dz, -0.35 - (words.length - 1 - i) * 0.3)))
   const rings = ringTimes(s, o, words)
@@ -795,7 +795,7 @@ ARTS.note = (s, o) => {
 ARTS.list = (s, o) => {
   const count = clamp(o.count ?? 11, 1, 14)
   const items = o.items ?? []
-  const w = 660, h = count <= 4 ? 600 : 820, x0 = CX - w / 2, y0 = CY - h / 2
+  const w = 660, h = count <= 4 ? 600 : count > 9 ? 960 : 900, x0 = CX - w / 2, y0 = CY - h / 2
   s.add(dRect(x0, y0, w, h, 8), { dur: 0.9, order: 'both', r: 2.2, flash: 0.5 })
   let top = y0 + 60
   if (o.title) {
@@ -805,7 +805,7 @@ ARTS.list = (s, o) => {
     top = y0 + 150
   }
   const rowH = (y0 + h - 50 - top) / Math.max(1, count - 1 || 1)
-  const cues = o.filled ? items.map((_, i) => 0.5 + i * 0.12) : s.cues(items, o.itemsAt ?? 1)
+  const cues = o.filled ? items.map((_, i) => 0.5 + i * 0.12) : s.cues(items, o.itemsAt ?? 1, null, 0.4)
   const rings = ringTimes(s, o, items)
   for (let i = 0; i < count; i++) {
     const y = count === 1 ? (top + y0 + h) / 2 : top + i * rowH
@@ -822,7 +822,8 @@ ARTS.list = (s, o) => {
       s.add(ledText(item, x0 + 106, y, p, { align: 'left', sub: 2 }), { t: it + 0.1, dur: 0.6, order: 'sweep', mix: 0.12, r: p * 0.22, c: COL.white })
       if (rings[i] != null) {
         const iw = ledWidth(item, p)
-        ringAround(s, x0 + 106 + iw / 2, y, iw / 2 + 34, Math.min(34, rowH * 0.55), rings[i])
+        // a tall ellipse centred on the line, never touching the next line's letters
+        ringAround(s, x0 + 106 + iw / 2, y, iw / 2 + 30, clamp(rowH - 24, 26, 38), rings[i]) // clears the text above and below
       }
       s.add(fillPoly(starPoly(x0 + 76, y, 15, 6.5), 3.2), { t: it, dur: 0.25, order: 'radial', r: 1.25, c: COL.goldHi, tw: 0.3 })
       s.fx({ t: it, dur: 0.5 }, (g, k, lt) => {
@@ -1510,7 +1511,7 @@ function build(script, tl) {
       const t1 = nx ? t.start + stages[Math.min(nx.at, stages.length - 1)] - 0.35 : t.start + outAt + 0.2
       LABELS.push({ t0, t1, text: lb.text })
     })
-    return { start: t.start, end: t.end, s, env, outAt }
+    return { start: t.start, end: t.end, s, env, outAt, art: sc.art }
   })
   // Consecutive scenes with the same art morph: the old dots fly to the new
   // shape instead of blowing away and building again.
@@ -1651,6 +1652,16 @@ function paint(t, { cover = false } = {}) {
   ctx.drawImage(glowA, 0, 0, W, H)
   ctx.restore()
   ctx.drawImage(artLayer, 0, 0)
+  if (cover && ['planet', 'moon'].includes(SC[0].art)) {
+    // thin crescents read dim as a small grid tile: lift them for the cover
+    ctx.save()
+    ctx.globalCompositeOperation = 'lighter'
+    ctx.globalAlpha = 0.55
+    ctx.drawImage(artLayer, 0, 0)
+    ctx.globalAlpha = 0.6
+    ctx.drawImage(glowB, 0, 0, W, H)
+    ctx.restore()
+  }
   drawWordmark(ctx, cover ? 0.7 : 0.42, cover ? 120 : 80)
   if (!cover) {
     drawTracker(ctx, t)

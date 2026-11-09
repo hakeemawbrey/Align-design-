@@ -80,12 +80,9 @@
       "label": "THE ONES WHO CAME BACK",
       "step": null,
       "lines": [
-        "So the ex who liked your two a.m. story",
+        "So the ex who liked your late-night story",
         "gets an *answer* this week."
-      ],
-      "show": {
-        "0": "So the ex who liked your 2 a.m. story"
-      }
+      ]
     },
     {
       "art": "note",

@@ -121,7 +121,9 @@ function timeline(script, voice) {
     const last = i === script.scenes.length - 1
     const start = t
     const at = t + (i === 0 ? LEAD_FIRST : LEAD)
-    const end = at + v.dur + (last ? END_HOLD : TAIL)
+    // lists and notes hold a beat after the last item is written
+    const tail = sc.tail ?? (['list', 'note'].includes(sc.art) || (sc.with ?? []).some((w) => w.art === 'list') ? TAIL + 0.55 : TAIL)
+    const end = at + v.dur + (last ? END_HOLD : tail)
     let wi = 0
     const scLines = sc.lines.map((l, li) => {
       const spoken = lineWords(l).map((w) => {

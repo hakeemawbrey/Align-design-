@@ -148,10 +148,10 @@
       ]
     },
     {
-      "art": "numeral",
+      "art": "moon",
       "opts": {
-        "text": "♊",
-        "halo": "rays"
+        "phase": 0.5,
+        "glyph": "♊"
       },
       "step": 2,
       "lines": [
