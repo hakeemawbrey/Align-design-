@@ -2,9 +2,9 @@
 reel's voice.py), join the lines with the script's gaps, and turn each beat
 word into an absolute event time.
 
-    .voice/venv/bin/python src/voice.py [voice] [speed]
+    .voice/venv/bin/python src/voice.py [story-id] [voice] [speed]
 
-Writes build/voice.wav (24 kHz mono) and build/timeline.json:
+Writes build/[story-id/]voice.wav (24 kHz mono) and build/timeline.json:
     {"dur": 54.2, "words": [{"w": "What", "t0": .., "t1": .., "line": 0}],
      "lines": [{"t0": .., "t1": .., "text": ..}], "events": {"align": 1.42, ...}}
 """
@@ -15,12 +15,16 @@ import soundfile as sf
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 AFFIRM = os.path.join(ROOT, '..', 'affirm')
-BUILD = os.path.join(ROOT, 'build')
+# usage: voice.py [story-id] [voice] [speed]; with no story id it reads the
+# original stars-align script.json at the top of reels/whatif
+args = sys.argv[1:]
+story = args.pop(0) if args and os.path.isdir(os.path.join(ROOT, 'stories', args[0])) else None
+BUILD = os.path.join(ROOT, 'build', story) if story else os.path.join(ROOT, 'build')
 os.makedirs(BUILD, exist_ok=True)
 
-script = json.load(open(os.path.join(ROOT, 'script.json')))
-voice = sys.argv[1] if len(sys.argv) > 1 else script['voice']
-speed = float(sys.argv[2]) if len(sys.argv) > 2 else script['speed']
+script = json.load(open(os.path.join(ROOT, 'stories', story, 'script.json') if story else os.path.join(ROOT, 'script.json')))
+voice = args[0] if len(args) > 0 else script['voice']
+speed = float(args[1]) if len(args) > 1 else script['speed']
 lines = script['lines']
 req = {'voice': voice, 'speed': speed,
        'scenes': [{'text': l['text'], 'words': l['text'].split(), 'pause': 0.2} for l in lines]}

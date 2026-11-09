@@ -8,8 +8,11 @@ import json, os, subprocess
 import numpy as np
 import soundfile as sf
 
+import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-B = os.path.join(ROOT, 'build')
+# usage: mix.py [story-id]; a story lists its effects in stories/<id>/script.json "sfx"
+STORY = sys.argv[1] if len(sys.argv) > 1 else None
+B = os.path.join(ROOT, 'build', STORY) if STORY else os.path.join(ROOT, 'build')
 A = os.path.join(ROOT, 'assets', 'audio')
 SR = 48000
 tl = json.load(open(os.path.join(B, 'timeline.json')))
@@ -19,8 +22,9 @@ L = [l['t0'] for l in tl['lines']]
 # the page's own timing constants (index.html)
 FLASH_AFTER, RWD = .55, .8
 TITLE, RW = E['title'], E['rewind']
-A0 = min(E['align'] - .6, E['align'] + FLASH_AFTER - (TITLE - .12 - RW - RWD))
-FLASH2 = RW + RWD + (E['align'] + FLASH_AFTER - A0)
+if not STORY:
+    A0 = min(E['align'] - .6, E['align'] + FLASH_AFTER - (TITLE - .12 - RW - RWD))
+    FLASH2 = RW + RWD + (E['align'] + FLASH_AFTER - A0)
 TOTAL = TITLE + 3.2
 N = int(TOTAL * SR)
 
@@ -62,7 +66,7 @@ out += seg * env[:, None]
 # effects: (file, event time, dB under the voice); placed so the file's peak hits the time
 def ticks(t0, n, span):
     return [('tick', t0 + span * (1 - (1 - i / n) ** 2), -10) for i in range(n)]
-FX = [
+FX = [] if STORY else [
     ('collapse', E['align'] + .5, -5), ('impact', E['align'] + FLASH_AFTER, -4),
     ('whoosh', E['pullback'] + .35, -7),
     ('tick', E['ruler'], -5), *ticks(E['ruler'] + .1, 9, 1.4),
@@ -76,6 +80,20 @@ FX = [
     ('whoosh', E['zoomout'] + .6, -7), ('reveal', E['million'], -6),
     ('rewind', RW + .45, -5), ('impact', FLASH2, -6), ('reveal', TITLE + .1, -5),
 ]
+if STORY:
+    # "sfx": [[name, "event+offset" | "line:N+offset" | "t:12.3", dB under the voice, repeats?, span?], ...]
+    sc = json.load(open(os.path.join(ROOT, 'stories', STORY, 'script.json')))
+    def when(spec):
+        base, _, off = spec.replace('-', '+-').partition('+')
+        if base.startswith('line:'): v = L[int(base[5:])]
+        elif base.startswith('t:'): v = float(base[2:])
+        else: v = E[base]
+        return v + (float(off) if off else 0)
+    FX = []
+    for cue in sc['sfx']:
+        name, spec, gain = cue[:3]
+        if len(cue) > 3: FX += [(name, when(spec) + cue[4] * i / cue[3], gain) for i in range(cue[3])]
+        else: FX.append((name, when(spec), gain))
 cache = {}
 for name, at, gain in FX:
     if name not in cache:

@@ -1,4 +1,30 @@
-# What if two stars could align?
+# What-if explainers
+
+Three Kurzgesagt-style explainers for Align (1920 × 1080, 30 fps), drawn
+entirely in code:
+
+| Video | Story | Length |
+| --- | --- | --- |
+| `out/stardust.mp4` | *What if the person you're meant to find was made in the same star as you?* | 52 s |
+| `out/lightspeed.mp4` | *What if "I love you" had a speed limit?* | 47 s |
+| `out/stars-align.mp4` | *What if two stars could align?* (the first one: microlensing) | 55 s |
+
+The two newer ones live in `stories/<id>/` (`script.json` + `scene.js`) and
+share one engine, `kit.js`, loaded by `story.html?v=<id>`. Pass the id to
+every tool:
+
+```bash
+../affirm/.voice/venv/bin/python src/voice.py stardust
+node src/render.mjs --story stardust --stills
+node src/render.mjs --story stardust --frames --jobs 3
+../affirm/.voice/venv/bin/python src/mix.py stardust
+src/encode.sh stardust
+```
+
+A story's `script.json` also lists its sound effects (`sfx`), each tied to a
+beat word with an offset and a level under the voice.
+
+## The first one: what if two stars could align?
 
 A 55-second animated explainer for Align (1920 × 1080, 30 fps). It's about
 gravitational microlensing: a near star lines up with a far one, and its

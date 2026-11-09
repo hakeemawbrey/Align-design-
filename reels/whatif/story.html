@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>What If</title>
+<style>
+@font-face { font-family: Fredoka; src: url(assets/fredoka-latin.woff2) format('woff2'); font-weight: 300 700; }
+html, body { margin: 0; background: #000; overflow: hidden; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// story.html?v=<id> loads that story's timeline, the kit, then its scene
+const id = new URLSearchParams(location.search).get('v');
+for (const src of [`build/${id}/timeline.js`, 'kit.js', `stories/${id}/scene.js`]) document.write(`<script src="${src}"><\/script>`);
+</script>
+</body>
+</html>

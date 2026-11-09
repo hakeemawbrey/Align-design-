@@ -18,8 +18,10 @@ let playwright;
 try { playwright = require('playwright'); } catch { playwright = require('/opt/node-tools/node_modules/playwright'); }
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const BUILD = path.join(ROOT, 'build');
 const args = process.argv.slice(2);
+// --story <id> renders stories/<id> through story.html; without it, the original index.html
+const STORY = args.includes('--story') ? args[args.indexOf('--story') + 1] : null;
+const BUILD = STORY ? path.join(ROOT, 'build', STORY) : path.join(ROOT, 'build');
 const flag = n => args.includes(n);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 
@@ -35,7 +37,7 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(p).pipe(res);
 });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
-const URL_ = `http://127.0.0.1:${server.address().port}/index.html`;
+const URL_ = `http://127.0.0.1:${server.address().port}/` + (STORY ? `story.html?v=${STORY}` : 'index.html');
 
 const browser = await playwright.chromium.launch({
   args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-webgl', '--disable-accelerated-2d-canvas', '--disable-gpu-rasterization'],
@@ -78,7 +80,7 @@ try {
       '-vf', `tile=${cols}x${rows}:padding=6:color=0x0b1020`, '-frames:v', '1', path.join(BUILD, 'contact.png')]);
     console.log(`contact sheet: ${tiles.length} beats → build/contact.png`);
   } else if (flag('--at')) {
-    for (const a of args.filter(a => /^[\d.]+$/.test(a))) { await shot(page, +a, path.join(BUILD, `at-${a}.png`)); console.log('build/at-' + a + '.png'); }
+    for (const a of args.filter(a => /^[\d.]+$/.test(a) && a !== STORY)) { await shot(page, +a, path.join(BUILD, `at-${a}.png`)); console.log('build/at-' + a + '.png'); }
   } else if (flag('--frames')) {
     const FPS = 30, N = Math.round(TOTAL * FPS);
     const dir = path.join(BUILD, 'frames'); fs.mkdirSync(dir, { recursive: true });

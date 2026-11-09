@@ -1,0 +1,37 @@
+{
+  "id": "stardust",
+  "title": "What if the person you're meant to find was made in the same star as you?",
+  "voice": "bm_george",
+  "speed": 1.0,
+  "gap": 0.24,
+  "lines": [
+    {"text": "What if the person you're meant to find was made in the same star as you?", "beats": {"star": "star"}},
+    {"text": "Five billion years ago, a star like that exploded.", "beats": {"exploded": "exploded"}},
+    {"text": "It scattered everything it had made. Carbon. Oxygen. The iron in your blood.", "beats": {"Carbon": "carbon", "Oxygen": "oxygen", "iron": "iron", "blood": "blood"}},
+    {"text": "Gravity gathered that dust into a Sun, a planet, and eventually, you.", "beats": {"Sun": "sun", "planet": "planet", "you": "you"}},
+    {"text": "And them.", "beats": {"them": "them"}},
+    {"text": "Every atom in both of you was once in the same cloud.", "beats": {"same": "same"}},
+    {"text": "Then you were scattered. By oceans. By centuries. By whole lifetimes.", "beats": {"scattered": "scattered", "oceans": "oceans", "centuries": "centuries", "lifetimes": "lifetimes"}},
+    {"text": "You'll walk past millions of strangers.", "beats": {"millions": "millions"}},
+    {"text": "Most of them, you'll never even notice.", "beats": {"notice": "notice"}},
+    {"text": "But every so often, two of them find their way back.", "beats": {"back": "rewind"}},
+    {"text": "Five billion years apart. Then, a few feet.", "beats": {"apart": "apart", "feet": "feet"}, "gapAfter": 0.36},
+    {"text": "Maybe that's why it feels like recognition. Not meeting someone new. Finding what you were made with.", "beats": {"recognition": "recognition", "new": "new", "made": "title"}}
+  ],
+  "sfx": [
+    ["reveal", "star", -9],
+    ["collapse", "exploded+0.5", -5], ["impact", "exploded+0.55", -4],
+    ["pin", "carbon+0.1", -7], ["pin", "oxygen+0.1", -7], ["pin", "iron+0.1", -7],
+    ["tick", "blood", -6], ["tick", "blood+0.28", -8], ["tick", "blood+0.9", -7], ["tick", "blood+1.18", -9],
+    ["hit", "sun", -6], ["photon", "planet", -7], ["dive", "planet+0.9", -8],
+    ["pin", "you+0.12", -5], ["pin", "them+0.12", -5],
+    ["reveal", "same", -6],
+    ["whoosh", "oceans+0.3", -8], ["whoosh", "centuries+0.3", -7], ["whoosh", "lifetimes+0.35", -6],
+    ["tick", "millions", -7, 14, 2.0],
+    ["click", "notice+0.25", -6], ["whoosh", "notice+0.75", -9],
+    ["rewind", "rewind+0.45", -5],
+    ["tick", "apart", -6], ["dive", "feet+0.9", -6],
+    ["reveal", "recognition", -5], ["photon", "recognition+0.05", -7],
+    ["frost", "title", -9], ["reveal", "title+0.1", -6]
+  ]
+}
