@@ -49,6 +49,32 @@ Why it works: a taunt, a silent stare, a status reversal, then a one-line
 comeback that is also the shirt's slogan. Half as long as unemployed_corp's,
 and every beat is visual.
 
+## @lucamaxiim: "my malaysian girlfriend"
+
+Reel `DfU8hBpnGAm`, posted 2026-11-04. About 19.2k likes and 88 comments.
+About 30 seconds. Sells a "You met me at a very Chinese time in my life"
+sweatshirt from childrenofkhan.com. It's the same slogan template as
+demitrivornov0's "Russian" shirt, so this looks like a family of accounts
+for one brand, each with its own character and nationality.
+
+This one is in colour and closer to a modern game render than PS2: a
+white-haired hero with goggles and his girlfriend riding pillion on a
+motorbike, in front of a real landmark (the Batu Caves statue and stairs).
+The camera holds a wide shot, then pushes in to his face for the punchline.
+
+| Time | Shot | Subtitle (white, two lines, centred low) |
+| --- | --- | --- |
+| 0–6s | Wide: the couple on the bike at the landmark | "my malaysian girlfriend has a very strange relationship with parking spaces" / "she spotted an empty parking spot" |
+| 6–14s | The same wide shot; he gestures as he tells it | "and immediately jumped out of the car to stand in it while i drove around the block." / "apparently, in malaysia, some people reserve parking spaces by physically standing in them." |
+| 14–21s | Close-up of him, smug, then his hands on his head | "we don't need to do this in china. instead, we have smart garages that literally move cars into spaces for you." / "we don't need to stand in the middle of a parking lot like a traffic cone." |
+| 21–25s | Back to the wide shot; he points at his shirt | "you met me at a very chinese time in my life." / "get yours at" |
+| 25–30s | Product shot of a model in the sweatshirt on white, with the URL | the URL |
+
+Why it works: it's a storytime about his partner's funny habit, told
+deadpan. The culture-clash brag leads into the slogan, so the shirt is the
+punchline. There's more talking than in the other two, and the captions
+carry the whole story.
+
 ## How Align uses it
 
 A series with two recurring characters, **Him** and **Her**, a single man
@@ -74,6 +100,13 @@ then the Align end card at 11:11.
 about being single ("Still single? Shame no one swipes on you."). A silent
 stare, then the reveal: their match walking up, or an "It's mutual" screen.
 The comeback line is an Align line.
+
+**Format C, the storytime (from lucamaxiim):** Him and Her on a motorbike in
+front of a landmark. He deadpans one of her strange habits, and her sign
+explains it ("my scorpio girlfriend has a very strange relationship with my
+phone..."). Then she gets the last word about one of his habits and his
+sign. It ends on an Align line and the end card. It's a good fit because
+Align is about couples, and each episode can be about a different sign.
 
 Voice rules from `reels/SPEC.md` still apply. Never say "compatible" or
 "compatibility"; it's always "align".
