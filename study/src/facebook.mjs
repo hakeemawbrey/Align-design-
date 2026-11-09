@@ -53,6 +53,12 @@ export function pageOf(s) {
   return null
 }
 
+/** The Facebook link in whatever got pasted (a whole command line, a sentence, quotes), or the text as it was. */
+export function linkIn(text) {
+  const s = String(text ?? '').trim()
+  return s.match(/https?:\/\/[^\s"'<>]*(?:facebook\.com|fb\.com|fb\.me)[^\s"'<>]*/i)?.[0] ?? s.replace(/^["']|["']$/g, '')
+}
+
 /** The Reels and Videos tabs of a page. */
 export function tabsOf(page) {
   if (page.id) return [`${FB}/profile.php?id=${page.id}&sk=reels_tab`, `${FB}/profile.php?id=${page.id}&sk=videos`]
@@ -265,7 +271,8 @@ async function download(links, dir, cookieFile, pageName) {
 
 async function main() {
   const argv = process.argv.slice(2)
-  const input = argv.find((a, i) => !a.startsWith('--') && !(argv[i - 1] ?? '').match(/^--(limit|handle-file)$/))
+  const pasted = argv.find((a, i) => !a.startsWith('--') && !(argv[i - 1] ?? '').match(/^--(limit|handle-file)$/))
+  const input = pasted && linkIn(pasted)
   if (!input) { console.error('Usage: node src/facebook.mjs <facebook page link> [--limit N] [--links-only] [--handle-file path]'); process.exit(2) }
   const limit = flag(argv, 'limit') ? Number(flag(argv, 'limit')) : undefined
 
