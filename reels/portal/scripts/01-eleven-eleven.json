@@ -1,0 +1,211 @@
+{
+  "id": "01-eleven-eleven",
+  "title": "The 11/11 love portal",
+  "date": "2026-11-11",
+  "postBy": "2026-11-09",
+  "cover": "The *11/11* portal opens in two days",
+  "caption": "11/11 is two days away. release the old story the night before, write eleven lines about the love you want, and read them at 11:11. follow for the next portal ✦",
+  "hashtags": [
+    "1111portal",
+    "1111",
+    "numerology",
+    "astrology",
+    "loveritual",
+    "datingadvice",
+    "zodiac"
+  ],
+  "voice": "af_heart",
+  "speed": 0.95,
+  "steps": [
+    "RELEASE",
+    "WRITE",
+    "RECEIVE"
+  ],
+  "sources": [
+    "Calendar date: Wednesday, November 11, 2026 (month 11, day 11)",
+    "Numerology: 11 is a master number (not reduced to 2), associated with intuition; 1 = new beginnings. Standard Pythagorean numerology convention."
+  ],
+  "scenes": [
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "NOVEMBER",
+        "day": "11/11",
+        "sub": "MONTH 11 · DAY 11"
+      },
+      "label": "TWO DAYS AWAY",
+      "step": null,
+      "lines": [
+        "*Eleven eleven* opens in two days.",
+        "Here's exactly what to do for *love.*"
+      ],
+      "show": {
+        "0": "*11/11* opens in two days."
+      }
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "1",
+        "halo": null
+      },
+      "label": "ONE · NEW BEGINNINGS",
+      "step": null,
+      "lines": [
+        "In numerology, *one* is a new beginning."
+      ]
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "11",
+        "halo": "rays"
+      },
+      "label": "11 · MASTER NUMBER",
+      "step": null,
+      "lines": [
+        "*Eleven* is a master number,",
+        "the number of *intuition.*"
+      ],
+      "show": {
+        "0": "*11* is a master number,"
+      }
+    },
+    {
+      "art": "pillars",
+      "opts": {
+        "count": 4
+      },
+      "label": "11 · 11",
+      "step": null,
+      "lines": [
+        "And on *eleven eleven,* the ones stand",
+        "like the pillars of a *gate.*"
+      ],
+      "show": {
+        "0": "And on *11/11,* the ones stand"
+      }
+    },
+    {
+      "art": "portal",
+      "opts": {
+        "inside": "heart",
+        "icons": [
+          "heart",
+          "letter",
+          "ring",
+          "key"
+        ]
+      },
+      "label": "NOVEMBER 11 · THE PORTAL",
+      "step": null,
+      "lines": [
+        "A door for the love you're *ready* for."
+      ]
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "I RELEASE",
+        "words": [
+          "THE EX",
+          "THE DOUBT",
+          "THE NOT YET"
+        ],
+        "dissolveAt": 4
+      },
+      "label": "THE NIGHT BEFORE",
+      "step": 0,
+      "lines": [
+        "Step one: *release.*",
+        "The night before, write what you're letting go.",
+        "The ex you still check on.",
+        "The doubt. The *not yet.*",
+        "Then tear it up."
+      ]
+    },
+    {
+      "art": "list",
+      "opts": {
+        "title": "I AM LOVED",
+        "count": 11,
+        "items": [
+          "I AM CHOSEN",
+          "I FEEL SAFE",
+          "I GET TO BE SEEN"
+        ],
+        "itemsAt": 3
+      },
+      "label": "PRESENT TENSE · AS IF DONE",
+      "step": 1,
+      "lines": [
+        "Step two: *write* eleven lines",
+        "about the love you want.",
+        "Present tense, as if it's *here.*",
+        "I am chosen. I feel *safe.*"
+      ],
+      "show": {
+        "0": "Step two: *write* 11 lines"
+      }
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "11:11",
+        "sub": "THE SKY BEFORE THE FACE",
+        "revealAt": 2
+      },
+      "label": "THE ALIGN APP",
+      "step": 1,
+      "lines": [
+        "Write how it *feels,* not how they look.",
+        "It's why the *Align* app shows you",
+        "someone's *sky* before their face."
+      ]
+    },
+    {
+      "art": "clock",
+      "opts": {
+        "time": "11:11"
+      },
+      "label": "NOT HOPING · REMEMBERING",
+      "step": 2,
+      "lines": [
+        "Step three: at *eleven eleven,* receive it.",
+        "Feel each line as *done.*",
+        "Not hoping. *Remembering.*"
+      ],
+      "show": {
+        "0": "Step three: at *11:11,* receive it."
+      }
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "RELEASE",
+          "WRITE",
+          "RECEIVE"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Release. Write. *Receive.*"
+      ]
+    },
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "NOVEMBER",
+        "day": "11/11",
+        "sub": "MONTH 11 · DAY 11"
+      },
+      "step": 2,
+      "lines": [
+        "The door is *open.*"
+      ],
+      "pill": "+ FOLLOW",
+      "pillAt": 0
+    }
+  ]
+}

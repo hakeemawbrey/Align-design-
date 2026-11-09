@@ -1,0 +1,152 @@
+{
+  "id": "06-solstice",
+  "title": "The longest night",
+  "date": "2026-12-21",
+  "postBy": "2026-12-19",
+  "cover": "The *longest night* of the year is Monday",
+  "caption": "the december solstice is monday: the longest night up north, and the sun moves into capricorn. rest, name what you want more of, and come back tomorrow. follow for the next portal ✦",
+  "hashtags": [
+    "wintersolstice",
+    "solstice",
+    "capricornseason",
+    "astrology",
+    "loveritual",
+    "datingadvice"
+  ],
+  "voice": "af_heart",
+  "speed": 0.95,
+  "steps": [
+    "REST",
+    "LIGHT",
+    "RETURN"
+  ],
+  "sources": [
+    "December solstice Monday Dec 21, 2026, 20:50 UTC (3:50 pm EST) — https://www.universaltimedate.com/articles/equinoxes-and-solstices-2026 ; https://starwalk.space/en/news/what-is-a-solstice",
+    "Sun enters Capricorn at the December solstice (tropical zodiac, 0° Capricorn); Sun in Sagittarius Nov 22 – Dec 21, 2026 — https://cafeastrology.com/events/sun-enters-sagittarius-2026/",
+    "Longest night in the Northern Hemisphere only (label says so)."
+  ],
+  "scenes": [
+    {
+      "art": "moon",
+      "opts": {
+        "phase": 0.5,
+        "glyph": "♑"
+      },
+      "label": "DECEMBER 21 · SOLSTICE",
+      "step": null,
+      "lines": [
+        "The *longest night* of the year is Monday.",
+        "Here's how to spend it, *heart first.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "retro": false
+      },
+      "label": "0° CAPRICORN",
+      "step": null,
+      "lines": [
+        "At the solstice, the north tilts",
+        "*farthest* from the sun,",
+        "and the sun moves into *Capricorn,*",
+        "the sign of what you *build* to last."
+      ]
+    },
+    {
+      "art": "pillars",
+      "opts": {
+        "count": 2
+      },
+      "label": "THE LIGHT TURNS BACK",
+      "step": null,
+      "lines": [
+        "From here, every day gets",
+        "a little *longer.*"
+      ]
+    },
+    {
+      "art": "portal",
+      "opts": {
+        "inside": "stars",
+        "icons": [
+          "star"
+        ]
+      },
+      "label": "LONGEST NIGHT · NORTH",
+      "step": 0,
+      "lines": [
+        "Step one: *rest.*",
+        "Don't text first tonight.",
+        "Let the quiet *hold* you.",
+        "Rest isn't waiting. It's making *room.*"
+      ]
+    },
+    {
+      "art": "list",
+      "opts": {
+        "title": "MORE OF",
+        "count": 3,
+        "items": [
+          "SLOW MORNINGS",
+          "SOMEONE WHO STAYS",
+          "LAUGHING IN BED"
+        ],
+        "itemsAt": 1
+      },
+      "label": "AS THE DAYS GROW",
+      "step": 1,
+      "lines": [
+        "Step two: *light* one candle,",
+        "and write what you want *more* of",
+        "as the light comes back.",
+        "Slow mornings. Someone who *stays.*"
+      ]
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "Tonight",
+        "sub": "A NEW DECK EVERY NIGHT",
+        "revealAt": 2
+      },
+      "label": "THE ALIGN APP",
+      "step": 2,
+      "lines": [
+        "Step three: *return.*",
+        "Tomorrow, show up again.",
+        "Every night, the *Align* app deals a new deck.",
+        "Love is a *practice,* not a lightning bolt."
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "REST",
+          "LIGHT",
+          "RETURN"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Rest. Light. *Return.*"
+      ]
+    },
+    {
+      "art": "portal",
+      "opts": {
+        "inside": "stars",
+        "icons": []
+      },
+      "step": 2,
+      "lines": [
+        "The light is *coming back,*",
+        "a little more each day."
+      ],
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "05-twelve-twelve",
+  "title": "The 12/12 portal",
+  "date": "2026-12-12",
+  "postBy": "2026-12-10",
+  "cover": "The *12/12* portal is Saturday",
+  "caption": "12/12 is a full circle: twelve months, twelve signs, twelve houses. close one thing from this year, mirror what you give in love, and open up before you're seen. follow for the next portal ✦",
+  "hashtags": [
+    "1212portal",
+    "1212",
+    "numerology",
+    "astrology",
+    "loveritual",
+    "datingadvice"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.95,
+  "steps": [
+    "CLOSE",
+    "MIRROR",
+    "OPEN"
+  ],
+  "sources": [
+    "Calendar date: Saturday, December 12, 2026 (month 12, day 12)",
+    "Twelve months, twelve zodiac signs, twelve houses; numerology: 1 = self, 2 = partnership, 12 reduces to 3 (1+2)."
+  ],
+  "scenes": [
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "DECEMBER",
+        "day": "12/12",
+        "sub": "MONTH 12 · DAY 12"
+      },
+      "label": "TWO DAYS AWAY",
+      "step": null,
+      "lines": [
+        "*Twelve twelve* is Saturday.",
+        "Here's what to do with it, for *love.*"
+      ],
+      "show": {
+        "0": "*12/12* is Saturday."
+      }
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "12",
+        "halo": "wheel"
+      },
+      "label": "THE WHOLE WHEEL",
+      "step": null,
+      "lines": [
+        "Twelve is a *full circle.*",
+        "Twelve months. Twelve signs. Twelve *houses.*"
+      ]
+    },
+    {
+      "art": "numeral",
+      "opts": {
+        "text": "1 2",
+        "halo": null
+      },
+      "label": "ONE · YOU  ·  TWO · US",
+      "step": null,
+      "lines": [
+        "And in numerology, *one* is you,",
+        "and *two* is the pair."
+      ]
+    },
+    {
+      "art": "pillars",
+      "opts": {
+        "count": 4
+      },
+      "label": "12 · 12",
+      "step": null,
+      "lines": [
+        "On *twelve twelve,* they stand side by side,",
+        "*twice,* like a mirror."
+      ],
+      "show": {
+        "0": "On *12/12,* they stand side by side,"
+      }
+    },
+    {
+      "art": "note",
+      "opts": {
+        "title": "I'M DONE WITH",
+        "words": [
+          "THE DRAFT",
+          "THE HOODIE"
+        ],
+        "dissolveAt": 2
+      },
+      "label": "BEFORE SATURDAY",
+      "step": 0,
+      "lines": [
+        "Step one: *close* the circle.",
+        "Finish one thing from this year,",
+        "something that's stayed open too long.",
+        "Delete the draft. Return the *hoodie.*"
+      ]
+    },
+    {
+      "art": "list",
+      "opts": {
+        "title": "I GIVE",
+        "count": 12,
+        "items": [
+          "I LISTEN",
+          "I SHOW UP",
+          "I REMEMBER"
+        ],
+        "itemsAt": 1
+      },
+      "label": "WHAT YOU GIVE · WHAT YOU WANT",
+      "step": 1,
+      "lines": [
+        "Step two: *mirror.*",
+        "Write twelve things you give in love.",
+        "Then circle the ones you want *back.*"
+      ],
+      "show": {
+        "1": "Write 12 things you give in love."
+      }
+    },
+    {
+      "art": "card",
+      "opts": {
+        "face": "12/12",
+        "sub": "VEILED UNTIL YOU BOTH ALIGN",
+        "revealAt": 3
+      },
+      "label": "THE ALIGN APP",
+      "step": 2,
+      "lines": [
+        "Step three: *open.*",
+        "Let someone know you before they *see* you.",
+        "On the *Align* app, your card stays veiled",
+        "until you *both* align.",
+        "Your sky, your words, then your *face.*"
+      ]
+    },
+    {
+      "art": "words",
+      "opts": {
+        "items": [
+          "CLOSE",
+          "MIRROR",
+          "OPEN"
+        ]
+      },
+      "step": 2,
+      "lines": [
+        "Close. Mirror. *Open.*"
+      ]
+    },
+    {
+      "art": "calendar",
+      "opts": {
+        "month": "DECEMBER",
+        "day": "12/12",
+        "sub": "MONTH 12 · DAY 12"
+      },
+      "step": 2,
+      "lines": [
+        "Twelve twelve.",
+        "The circle closes,",
+        "and *opens* again."
+      ],
+      "show": {
+        "0": "12/12."
+      },
+      "pill": "+ FOLLOW",
+      "pillAt": 1
+    }
+  ]
+}
