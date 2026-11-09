@@ -43,7 +43,37 @@ format carries over from the trend; no lines, art or audio do.
    everyone first. The moment turns out to be the three seconds before Sol
    (Pisces) runs over with an umbrella. *It's who you align with after.*
 
-### Beta-feature stories (start here)
+### Comedy-first stories (current direction)
+
+Feedback on 5 and 6: not fun enough, and the ad was too loud. Both reference
+reels work the same way. An absurd rule comes with quick-fire jokes about who
+gets what, then a specific loser, an escalating plan, and a deadpan or dark
+anticlimax. The plug is one throwaway line at the end. So 7 and 8 follow
+these rules:
+
+- **Story first, ad last and quiet.** The narrator never says "Align". There's
+  no logo on the shots (`"logo": true` brings it back) and no chrome CTA
+  (`"cta"` adds one). The end card is a silent 2.2 s shot (`"say": ""`,
+  `"dur": 2.2`) with the mark, the wordmark and one mono line.
+- **The app lives inside the story,** as props the plot needs: grandma's
+  blocked-signs list (Block a sign), Doreen's daily horoscope column, and
+  reading your own chart (Venus in Leo).
+- **Jokes per beat:** a sign gag in the opening, a beat of silence before
+  punchlines (`"hold": 0.4`), and a kicker after the twist.
+
+7. **`07-it-never-said-first`: In this town, the sky tells you the sign you'll marry.**
+   Priya gets Scorpio. Mum cries, Dad changes the locks, Grandma blocks the
+   whole sign. She spends ten years running from Scorpios, marries a sweet
+   Taurus, and then a Scorpio moves in next door with soup. The astrologer:
+   "Sweetie. It never said *first*." Dev was the best man. Grandma blocked Tauruses.
+8. **`08-doreen-writes-the-horoscopes`: In this town, one woman writes every horoscope.**
+   Doreen is 81. Leos come to work in sequins. For eight years, Virgos: "Stay
+   inside." Theo, the only Virgo, misses prom and watches June date Brock. He
+   finally storms Doreen's door: "I don't hate Virgos. I just don't know anything
+   about them. You never leave the house." His Venus is in Leo, so he's supposed to make a scene.
+   June: "I married Brock. But my sister's a Virgo too." They've been inside together for two years. Very happy.
+
+### Beta-feature stories
 
 Stories 1–4 were written before the beta scope was set. Two of their premises
 aren't in the beta: trading cards after three days (3) and a star over every

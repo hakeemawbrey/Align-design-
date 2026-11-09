@@ -81,7 +81,7 @@ function speak(script) {
   const req = {
     voice: script.voice || 'am_michael',
     speed: script.speed || 1.05,
-    scenes: script.shots.map((s) => ({ text: s.say, words: s.say.split(/\s+/).filter(Boolean), pause: 0.12 })),
+    scenes: script.shots.filter((s) => s.say).map((s) => ({ text: s.say, words: s.say.split(/\s+/).filter(Boolean), pause: 0.12 })),
   }
   const hash = createHash('sha1').update(JSON.stringify(req)).digest('hex').slice(0, 10)
   const dir = path.join(outDir, 'voice', `${script.id}-${hash}`)
@@ -90,7 +90,11 @@ function speak(script) {
     writeFileSync(path.join(dir, 'request.json'), JSON.stringify(req))
     execFileSync(VENV_PY, [path.join(REPO, 'reels/affirm/voice.py'), path.join(dir, 'request.json'), dir], { stdio: 'inherit' })
   }
-  return { dir, voice: JSON.parse(readFileSync(path.join(dir, 'voice.json'), 'utf8')) }
+  // silent shots (an end card with no line) get their own length and no words
+  const spoken = JSON.parse(readFileSync(path.join(dir, 'voice.json'), 'utf8')).scenes
+  let k = 0
+  const scenes = script.shots.map((s) => (s.say ? spoken[k++] : { wav: null, dur: s.dur || 2.2, words: [] }))
+  return { dir, voice: { scenes } }
 }
 
 async function renderOne(browser, file) {
@@ -124,7 +128,7 @@ async function renderOne(browser, file) {
   }
 
   const tl = path.join(vdir, 'timeline.json')
-  writeFileSync(tl, JSON.stringify({ duration: info.duration, shots: info.shots, seed: SIGNS.indexOf(script.sign) + 1 }))
+  writeFileSync(tl, JSON.stringify({ duration: info.duration, shots: info.shots, clips: voice.scenes.map((v) => v.wav), seed: SIGNS.indexOf(script.sign) + 1 }))
   const wav = path.join(outDir, `${script.id}.wav`)
   execFileSync(VENV_PY, [path.join(HERE, 'mix.py'), vdir, tl, wav], { stdio: 'inherit' })
   const mp4 = path.join(outDir, `${script.id}.mp4`)

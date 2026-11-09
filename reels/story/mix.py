@@ -63,8 +63,11 @@ def main():
 
     voice = np.zeros(n)
     vj = json.load(open(os.path.join(vdir, 'voice.json')))
-    for sc, sh in zip(vj['scenes'], tl['shots']):
-        v, sr = sf.read(os.path.join(vdir, sc['wav']))
+    clips = tl.get('clips') or [sc['wav'] for sc in vj['scenes']]
+    for wav, sh in zip(clips, tl['shots']):
+        if not wav:
+            continue
+        v, sr = sf.read(os.path.join(vdir, wav))
         if v.ndim > 1:
             v = v.mean(axis=1)
         if sr != SR:

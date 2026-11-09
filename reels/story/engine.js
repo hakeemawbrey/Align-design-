@@ -816,7 +816,7 @@ window.setup = async (script, assets, voice) => {
   let t = 0
   S.shots = script.shots.map((sh, i) => {
     const v = voice.scenes[i]
-    const dur = v.dur + GAP + (sh.end ? END_HOLD : 0) + (sh.hold || 0)
+    const dur = v.dur + GAP + (sh.end && sh.say ? END_HOLD : 0) + (sh.hold || 0)
     const words = sh.say.split(/\s+/).filter(Boolean)
     const o = { ...sh, i, start: t, dur, words, spans: v.words, fx: sh.fx || [] }
     t += dur
@@ -910,10 +910,11 @@ function poseChar(c, e, sh, u, dur) {
     case 'tie': y = -0.55; c.legs[0].rotation.x = -1.5; c.legs[1].rotation.x = 0.35; c.torso.rotation.x = 0.55; c.head.rotation.x = 0.3; c.arms[0].rotation.x = -0.9 + Math.sin(T * 10) * 0.1; c.arms[1].rotation.x = -0.9 + Math.sin(T * 10 + 1) * 0.1; break
     case 'umbrella': c.arms[1].rotation.x = -3.0; c.arms[1].rotation.z = -0.28; c.head.rotation.z = -0.08; break
     case 'walkoff': { walkCycle(9); const d = ease(P) * 4; x += Math.sin(ry) * d; z += Math.cos(ry) * d; break }
-    case 'walk': { walkCycle(8); const d = (T - dur / 2) * 1.6 * (e.dir || 1); x += Math.sin(ry) * d; z += Math.cos(ry) * d; break }
+    case 'walk': { walkCycle(8); const d = (T - dur / 2) * 0.7 * (e.dir || 1); x += Math.sin(ry) * d; z += Math.cos(ry) * d; break }
     default: c.head.rotation.y = Math.sin(T * 0.9 + ph) * 0.12
   }
   g.position.copy(areaPos(sh.at, x, z)); g.position.y = y
+  g.scale.setScalar(c.spec.scale || 1)
   g.rotation.set(0, ry, 0)
   // face
   c.faceMat.map = c.faces[e.face || 'neutral'] || c.faces.neutral
@@ -1001,7 +1002,7 @@ function charScreen(id, sh, yOff) {
 // ── overlay drawing ───────────────────────────────────────────────────────
 function drawCaption(o, sh, u) {
   // one word at a time, in the app's display voice: EB Garamond italic, warm bone, gold accents
-  if (sh.end) return
+  if (sh.end || !sh.words.length) return
   const spans = sh.spans
   let k = 0
   for (let i = 0; i < spans.length; i++) if (u >= spans[i][0] - 0.04) k = i
@@ -1230,12 +1231,12 @@ function drawEnd(o, sh, u) {
   bg.addColorStop(0, '#2a1470'); bg.addColorStop(0.5, CANVAS); bg.addColorStop(1, VOID)
   o.fillStyle = bg; o.fillRect(0, 0, W, H)
   o.restore()
-  drawMark(o, W / 2, H * 0.34, 330 * (0.9 + 0.1 * k), k)
+  drawMark(o, W / 2, H * 0.38, (S.script.cta ? 330 : 220) * (0.9 + 0.1 * k), k)
   o.save()
   o.globalAlpha = k
   o.fillStyle = BONE; o.textAlign = 'center'; o.textBaseline = 'middle'
   o.shadowColor = 'rgba(239,230,214,0.3)'; o.shadowBlur = 40
-  o.font = `italic 500 170px ${SERIF}`
+  o.font = `italic 500 ${S.script.cta ? 170 : 130}px ${SERIF}`
   o.fillText('Align', W / 2, H * 0.5)
   o.shadowBlur = 0
   const k2 = easeOut((u - 0.7) / 0.6)
@@ -1244,7 +1245,7 @@ function drawEnd(o, sh, u) {
   if ('letterSpacing' in o) o.letterSpacing = '7px'
   o.fillText((S.script.endSub || '').toUpperCase(), W / 2, H * 0.565)
   if ('letterSpacing' in o) o.letterSpacing = '0px'
-  const k3 = backOut((u - 1.1) / 0.5)
+  const k3 = S.script.cta ? backOut((u - 1.1) / 0.5) : 0
   if (k3 > 0) {
     const pw = 640 * k3, ph = 128 * k3, py = H * 0.68
     const ch = o.createLinearGradient(W / 2 - pw / 2, 0, W / 2 + pw / 2, 0)
@@ -1347,7 +1348,7 @@ window.frame = (t) => {
     drawBubble(o, sh, u, id, rest.join(':'))
   }
   if (sh.end) drawEnd(o, sh, u)
-  else drawLogo(o, 0.92)
+  else if (S.script.logo) drawLogo(o, 0.92)
   drawCaption(o, sh, u)
   return S.out.toDataURL('image/jpeg', 0.9)
 }
