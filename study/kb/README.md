@@ -48,4 +48,4 @@ When asked to "go through my Video Lab inbox", or when handed a link:
    - `inbox/<id>`: `update` with `status: "read"` (quick read) or `"studied"` (full study), plus `reply`, a two-line takeaway, and `title`.
 5. **Tell the person** what changed in a few lines: new rules, rules that got stronger, and the best new idea.
 
-Every claim needs a number behind it ("78% of the top quarter vs 33% of the bottom"), or it says it's a hunch. Lifetime views favour older uploads, so treat the newest few as still climbing.
+Every claim needs a number behind it ("8 of the top 30 vs 4 of the bottom 30"), or it says it's a hunch. Lifetime views favour older uploads, so treat the newest few as still climbing.
