@@ -27,6 +27,9 @@ ask_handle() {
     read -r given
     given="${given:-$last}"
   fi
+  # Facebook: keep just the link, even if a whole command or sentence got pasted.
+  fb="$(printf '%s' "$given" | grep -oiE "https?://[^[:space:]\"'<>]*(facebook\.com|fb\.com|fb\.me)[^[:space:]\"'<>]*" | head -1)"
+  [ -n "$fb" ] && given="$fb"
   # Facebook: the page's name comes from opening the link, so it's worked out in step 1.
   case "$given" in
     *facebook.com*|*fb.com*|*fb.me*|fb-*) FACEBOOK="$given"; HANDLE="$given"; return ;;
@@ -90,7 +93,7 @@ fi
 if [ "$1" = "facebook" ]; then
   given="$2"
   if [ -z "$given" ]; then
-    printf "\n\033[1mWhich Facebook page?\033[0m Paste its link (a share link is fine): "
+    printf "\n\033[1mWhich Facebook page?\033[0m Paste just its link, like https://www.facebook.com/share/1KezBxmTFj/ : "
     read -r given
   fi
   case "$given" in *facebook.com*|*fb.com*|*fb.me*|fb-*) ;; *) say "\"$given\" doesn't look like a Facebook link."; pause_close; exit 1 ;; esac

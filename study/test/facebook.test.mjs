@@ -10,7 +10,7 @@ process.env.STUDY_MEDIA_DIR = path.join(TMP, 'media')
 process.env.STUDY_PACK_DIR = path.join(TMP, 'pack')
 process.env.STUDY_HOME = path.join(TMP, 'home')
 
-const { pageOf, tabsOf, videoLinks, countOf, cookiesTxt, captionOf, metaOf, whyFailed, ytdlpVideoArgs, videoFileOf, collect } = await import('../src/facebook.mjs')
+const { linkIn, pageOf, tabsOf, videoLinks, countOf, cookiesTxt, captionOf, metaOf, whyFailed, ytdlpVideoArgs, videoFileOf, collect } = await import('../src/facebook.mjs')
 const { handleOf } = await import('../src/paths.mjs')
 const { readPosts, loadPosts } = await import('../src/posts.mjs')
 const { fromYtdlp } = await import('../src/numbers.mjs')
@@ -28,6 +28,13 @@ test('Facebook page links become a page and a handle', () => {
   // The later steps take the fb- handle as it is.
   assert.equal(handleOf('fb-astriva'), 'fb-astriva')
   assert.equal(handleOf('@tylerinthemaking'), 'tylerinthemaking')
+})
+
+test('the link is pulled out of whatever got pasted', () => {
+  const cmd = 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/study/mac/install.sh)" _ facebook "https://www.facebook.com/share/1KezBxmTFj/"'
+  assert.equal(linkIn(cmd), 'https://www.facebook.com/share/1KezBxmTFj/')
+  assert.equal(linkIn('"https://www.facebook.com/people/Astriva/61595402754931/?mibextid=wwXIfr"'), 'https://www.facebook.com/people/Astriva/61595402754931/?mibextid=wwXIfr')
+  assert.equal(linkIn('fb-astriva'), 'fb-astriva')
 })
 
 test('reel and video links are picked out of a page, once each', () => {
