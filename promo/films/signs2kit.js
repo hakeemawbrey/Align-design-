@@ -257,7 +257,7 @@ export function makeFilm(S) {
   T.out = [r3(STORY_END - 0.5), r3(STORY_END - 0.05)]
   const DURATION = r3(STORY_END + ENDCARD_SHORT_LEN)
   T.cams = CAM.map(c => c.t0)
-  const LESSON = { at: T.lesson, out: T.lessonOut, text: S.lesson.text, chip: S.lesson.chip, accentColor: S.accent || GOLD, dim: 0.6 }
+  const LESSON = { at: T.lesson, out: T.lessonOut, text: S.lesson.text, chip: S.lesson.chip, accentColor: S.accent || GOLD, dim: 0.7, top: 330, textTop: 520 }   // raised: clears the group photo's bunting
 
   const GRID = i => ({ x: 540 + ((i % 4) - 1.5) * 225, y: 690 + Math.floor(i / 4) * 235, s: 150 })
   const PIP = i => ({ x: 540 + (i - 5.5) * 80, y: 1660, s: 62 })
