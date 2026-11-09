@@ -30,11 +30,12 @@ const jobs = Number(opt('--jobs', 2))
 const outDir = path.resolve(opt('--out', path.join(REPO, 'reels/out/portal')))
 const scriptsDir = path.resolve(opt('--dir', path.join(HERE, 'scripts')))
 const skipExisting = flag('--skip-existing')
-const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out', '--dir'].includes(args[i - 1]))
+const at = opt('--at', null) // --stills --at 3.1,3.4: stills at these seconds instead (check a transition)
+const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out', '--dir', '--at'].includes(args[i - 1]))
 
 // Seconds. The reference moves fast: a new object every ~4 s, the voice
 // barely pauses between beats, objects dissolve while the next builds.
-const LEAD_FIRST = 0.3
+const LEAD_FIRST = 0.02 // the first word lands within ~0.15 s
 const LEAD = 0.45
 const TAIL = 0.3
 const END_HOLD = 2.6
@@ -201,6 +202,14 @@ function mixAudio(script, tl, wav) {
   execFileSync('ffmpeg', ['-v', 'error', '-y', ...ins, '-filter_complex', filter, '-map', '[out]', '-ac', '2', wav])
 }
 
+// What to paste when posting. The default follow line is skipped when the
+// script's caption already asks for the follow.
+function captionText(script) {
+  const cap = script.caption ?? ''
+  const cta = script.cta ?? (/follow/i.test(cap) ? null : 'follow for the next portal ✦ your chart and your deck are free in the align app, link in bio')
+  return [cap, cta, (script.hashtags ?? []).map((h) => `#${h}`).join(' ')].filter(Boolean).join('\n\n') + '\n'
+}
+
 function loadScript(file) {
   return JSON.parse(readFileSync(path.join(scriptsDir, file), 'utf8'))
 }
@@ -214,11 +223,12 @@ async function renderOne(browser, file) {
   mkdirSync(outDir, { recursive: true })
   writeFileSync(path.join(outDir, `${script.id}.cover.jpg`), b64(await page.evaluate((t) => window.cover(t), script.cover ?? script.title)))
 
+  writeFileSync(path.join(outDir, `${script.id}.caption.txt`), captionText(script))
   if (stills) {
     const dir = path.join(outDir, 'stills', script.id)
     rmSync(dir, { recursive: true, force: true })
     mkdirSync(dir, { recursive: true })
-    const times = tl.lines.map((l) => (l.start + l.end) / 2 + 0.25).concat([tl.duration - 0.8])
+    const times = at ? at.split(',').map(Number) : tl.lines.map((l) => (l.start + l.end) / 2 + 0.25).concat([tl.duration - 0.8])
     for (const [i, t] of times.entries()) writeFileSync(path.join(dir, `${String(i).padStart(2, '0')}.jpg`), b64(await page.evaluate((t) => window.frame(t), t)))
     const cols = Math.min(8, times.length)
     execFileSync('ffmpeg', ['-v', 'error', '-y', '-pattern_type', 'glob', '-i', path.join(dir, '*.jpg'),
@@ -262,8 +272,7 @@ async function renderOne(browser, file) {
   await done
   renameSync(part, mp4)
   web()
-  writeFileSync(path.join(outDir, `${script.id}.caption.txt`),
-    `${script.caption}\n\n${script.cta ?? 'follow for the next portal ✦ your chart and your deck are free in the align app, link in bio'}\n\n${(script.hashtags ?? []).map((h) => `#${h}`).join(' ')}\n`)
+  writeFileSync(path.join(outDir, `${script.id}.caption.txt`), captionText(script))
   await page.close()
   console.log(`${script.id}: ${tl.duration.toFixed(1)}s, ${frames} frames in ${((Date.now() - t0) / 1000).toFixed(0)}s → ${path.relative(REPO, mp4)}`)
 }

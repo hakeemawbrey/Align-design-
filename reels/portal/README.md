@@ -43,11 +43,13 @@ node reels/portal/render.mjs eleven venus      # by id (substring match)
 node reels/portal/render.mjs --jobs 4          # parallel reels (default 2)
 node reels/portal/render.mjs --remix           # new music/voice mix onto the existing video (fast)
 node reels/portal/render.mjs --skip-existing   # resume a batch
+node reels/portal/render.mjs --stills --at 8.3,8.6 eleven   # stills at exact seconds (check a transition)
 ```
 
 Each reel gives you `<id>.mp4` (full quality), `<id>.web.mp4` (720p),
 `<id>.cover.jpg` (grid cover: first object + the `cover` hook) and
-`<id>.caption.txt` (caption, follow line, hashtags). The voice is cached per
+`<id>.caption.txt` (caption, follow line, hashtags; the default follow line is
+left out when the caption already says "follow", and `cta` replaces it). The voice is cached per
 script in `out/portal/voice/`, so art changes don't re-synthesise it. A full
 reel takes ~3–4 CPU-minutes.
 
@@ -90,9 +92,15 @@ reel takes ~3–4 CPU-minutes.
 - **pause** (optional): seconds of silence after each sentence (default 0.25).
 - Last scene: `pill` ("+ FOLLOW" or "FOLLOW FOR THE NEXT PORTAL") appears after
   line `pillAt` ends, with a chime.
-- Any scene may add `"with": [{"art": "list", "opts": {"scale": 0.5, "y": 420}}]`
-  to draw a second, smaller object in the same beat (the reference's "portal
-  over the list"). Any art takes `scale` and `y` (offset in px) to move it.
+- Any scene may add `"with": [{"art": "list", "opts": {"scale": 0.5, "y": 250, "filled": true}}]`
+  to keep a previous object, smaller, alongside the new one (the reference's
+  list under the clock). Any art takes `scale` and `y` (and in `with`, `x`)
+  offsets in px. `filled: true` on a list writes its items in straight away.
+- Two scenes in a row with the same `art` **morph**: the old dots fly into the
+  new shape instead of dissolving and rebuilding ("1" → "11", moon → moon).
+  `"morph": false` in the second scene's opts turns it off.
+- The caption band is never blank: each line hands straight to the next, across
+  scene changes too. The first word lands within ~0.15 s.
 - Extra fields (`postBy`, `sources`, …) are ignored by the renderer.
 - Aim for ~125–135 words: about 55 s.
 
@@ -108,14 +116,15 @@ back to one per line from the given stage, or are spread across the lines.
 | `calendar` | dotted calendar card with two ring binders, LED month, gold divider, a giant dot-matrix date with a warm bloom | `month`, `day` ("11/11", "1/1"), `sub` ("MONTH 11 · DAY 11") |
 | `numeral` | giant dot-matrix characters ("1", "11", "1 2") or a zodiac/planet glyph (♀ ☽ ♊ ♋ ♎ ♐ …) | `text`, `halo`: `null` · `"rays"` (rings, orbiting beads, gold rays and a rising half-sun on a horizon) · `"wheel"` (rings with the twelve sign glyphs) · `true` = rays |
 | `pillars` | gold sparkle pillars rising like a gate, bright heads climbing, warm floor glow | `count` (even counts stand in pairs: 4 = "11 11", 2 = "1 1") |
-| `portal` | dotted arch doorway with gold sparkle jambs, violet starfield and a bright core inside, a star above, floor glow | `inside`: `"stars"` (core) · `"heart"` · `"moon"` (crescent); `icons`: up to six of `star` `heart` `house` `key` `letter` `ring` `moon` `spark` floating around |
-| `note` | dotted card titled in LED; words written in; a gold slash, then the words blow away into dust | `title`, `words` [..], `wordsAt` (first stage to look for the words, default 1), `dissolveAt` (stage of the tear, `null` = keep) |
-| `list` | lined page numbered 1..count, little gold stars, wavy dotted lines; items written in as they're said, their stars lighting | `title` (LED header), `count`, `items` [..], `itemsAt` (stage) |
+| `portal` | dotted arch doorway with gold sparkle jambs; inside a deep violet nebula, a starfield and stars streaming out of a soft core; a star above, floor glow; icons drift slowly around it | `inside`: `"stars"` (core) · `"heart"` · `"moon"` (crescent); `icons`: up to six of `star` `heart` `house` `key` `letter` `ring` `moon` `spark` floating around |
+| `note` | dotted card titled in LED; words written in as they're said; a gold slash, then the words blow away into dust | `title`, `words` [..], `wordsAt` (first stage to look for the words, default 1), `dissolveAt` (stage of the tear, `null` = keep; every word is on the card before it), `circle` [indices] + `circleAt` (stage): a gold hand-drawn ring around those words |
+| `list` | lined page numbered 1..count, little gold stars, wavy dotted lines; items written in as they're said, their stars lighting | `title` (LED header), `count`, `items` [..], `itemsAt` (stage), `filled` (items already written), `circle` [indices] + `circleAt` (stage): gold rings around those items, each as it's said again if it is |
+| `candle` | a dot-matrix candle on a gold plate; the wick catches with a spark and the flame flickers, warming the wax | `litAt` (stage it lights, default 1), `lit` (lit from the start), `count` (3 = a small candle either side, lighting just after) |
 | `clock` | dot-matrix clock, gold blinking colon, gold rails | `time` ("11:11", "00:00") |
 | `moon` | dot-matrix moon with craters and the right phase shadow, a gold ring, a glyph top right | `phase` 0 new · 0.25 first quarter · 0.5 full · 0.75 last quarter (1 also = full), `glyph` |
-| `planet` | dotted planet with a tilted orbit ring (☉ draws a sun with rays), its glyph top right | `glyph`, `retro`: adds the apparent retrograde loop traced across the sky (DIRECT · RX · DIRECT) |
+| `planet` | dotted planet showing its phase (default a soft crescent, as Venus near the sun), a lilac limb and an orbit arc, its glyph top right; ☉ draws a sun with rays | `glyph`, `phase` (0 new · 0.5 full, default 0.17), `ring` (Saturn's ring, off by default), `retro`: adds the apparent retrograde loop traced across the sky (DIRECT · RX · DIRECT) |
 | `words` | stacked big dot-matrix words, each appearing as it's said (the recap) | `items` [..] |
-| `card` | Align's veiled card: gold dotted card, violet dot veil with Align's star; the veil blows away to show the face | `face` (word or "11:11"), `sub` (LED gold), `glyph` (optional, above the face), `revealAt` (stage) |
+| `card` | Align's veiled card: gold dotted card, violet dot veil with Align's star; the veil blows away to show the face | `face` (word or "11:11"), `sub` (LED gold, wrapped onto up to 3 lines, 35 px tall), `glyph` (optional, above the face), `revealAt` (stage) |
 | `figures` | two star-headed Stardust figures on a lit horizon | `pose`: `"apart"` (a gold thread between their hands) · `"meet"` (hands joined, a heart above) |
 
 ## Voice and astrology rules

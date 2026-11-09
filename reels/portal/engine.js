@@ -12,8 +12,8 @@ const H = 1920
 const CX = 540
 const CY = 800
 const DUST = 1.05 // seconds a dot takes to blow away
-const LABEL_Y = 1395
-const TRACK_Y = 176
+const LABEL_Y = 1338
+const TRACK_Y = 172
 
 const canvas = document.getElementById('c')
 canvas.width = W
@@ -332,6 +332,22 @@ function ledText(str, cx, cy, pitch, { align = 'center', track = 1, sub = 1 } = 
   out.w = cols * pitch
   return out
 }
+// LED text wrapped onto lines that fit maxW, centred on (cx, cy) as a block.
+function ledWrap(str, cx, cy, pitch, maxW, { sub = 2, gap = 2.2, track = 1 } = {}) {
+  const words = String(str).split(/\s+/).filter(Boolean)
+  const rows = []
+  for (const w of words) {
+    const cur = rows[rows.length - 1]
+    if (cur && ledWidth(cur + ' ' + w, pitch, track) <= maxW) rows[rows.length - 1] = cur + ' ' + w
+    else rows.push(w)
+  }
+  const lh = pitch * (7 + gap)
+  const out = []
+  rows.forEach((row, i) => out.push(...ledText(row, cx, cy + (i - (rows.length - 1) / 2) * lh, Math.min(pitch, maxW / Math.max(1, ledWidth(row, 1, track))), { sub, track })))
+  out.rows = rows.length
+  out.lh = lh
+  return out
+}
 const ledWidth = (str, pitch, track = 1) => [...String(str).toUpperCase()].map((ch) => LED[ch] ?? LED['?']).reduce((a, g) => a + g[0].length + track, -track) * pitch
 
 // ---------- the sketch: a scene's dots and effects ----------
@@ -387,7 +403,7 @@ class Sketch {
         x, y, r: (p[2] ?? o.r ?? 2.4) * this.tf.s, c: p[3] ?? o.c ?? COL.ink, a: p[4] ?? o.a ?? 1,
         t: t0 + ks[i] * dur, out: o.out != null ? o.out + this.r() * (o.outSpread ?? 0.3) : null,
         tw: o.tw ?? 0.06, ph: this.r() * TAU, sp: 1.2 + this.r() * 3.5, vx: this.r() - 0.5, vy: this.r(),
-        flash: o.flash ?? 1, blink: o.blink ?? 0,
+        flash: o.flash ?? 1, blink: o.blink ?? 0, bob: (o.bob ?? 0) * this.tf.s, bph: o.bph ?? 0,
       }
       this.dots.push(d)
       out.push(d)
@@ -612,20 +628,39 @@ ARTS.portal = (s, o) => {
     inner.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y)))
     g.closePath()
     g.clip()
-    const grd = g.createRadialGradient(CX, coreY, 10, CX, coreY, 560)
-    grd.addColorStop(0, rgba('#d9d0ff', 0.95 * k))
-    grd.addColorStop(0.25, rgba('#8f7cf2', 0.75 * k))
-    grd.addColorStop(0.6, rgba('#4b3aa8', 0.6 * k))
-    grd.addColorStop(1, rgba('#1d1550', 0.5 * k))
+    // a deep violet sky, darker at the edges
+    const grd = g.createRadialGradient(CX, coreY, 10, CX, coreY, 520)
+    grd.addColorStop(0, rgba('#a99bff', 0.85 * k))
+    grd.addColorStop(0.22, rgba('#5f4bd0', 0.75 * k))
+    grd.addColorStop(0.55, rgba('#2c1f86', 0.72 * k))
+    grd.addColorStop(1, rgba('#0f0a3a', 0.7 * k))
     g.fillStyle = grd
     g.fillRect(CX - Ri, spring - Ri, Ri * 2, base - spring + Ri)
+    // nebula: slow drifting clouds of rose, blue and violet
+    g.globalCompositeOperation = 'lighter'
+    for (const [dx, dy, rr, c, sp] of [[-70, -170, 150, '#d86ab8', 0.21], [80, 120, 170, '#4f7dff', 0.17], [-40, 230, 130, '#9b6cff', 0.25], [60, -60, 120, '#ff9ad0', 0.3]]) {
+      glow(g, CX + dx + Math.sin(lt * sp) * 22, coreY + dy + Math.cos(lt * sp * 0.8) * 18, rr, c, 0.2 * k)
+    }
+    // stars streaming out of the core: depth
+    for (let i = 0; i < 46; i++) {
+      const ang = i * 2.39996
+      const q = (lt * 0.22 + i * 0.137) % 1
+      const d0 = 12 + q * q * 330, d1 = d0 + 6 + q * 26
+      const ca = Math.cos(ang), sa = Math.sin(ang)
+      g.strokeStyle = rgba('#e9e4ff', 0.75 * k * Math.sin(q * Math.PI))
+      g.lineWidth = 0.8 + q * 1.8
+      g.beginPath()
+      g.moveTo(CX + ca * d0, coreY + sa * d0 * 1.25)
+      g.lineTo(CX + ca * d1, coreY + sa * d1 * 1.25)
+      g.stroke()
+    }
     g.restore()
     if (o.inside !== 'moon' && o.inside !== 'heart') {
       g.save()
       g.globalCompositeOperation = 'lighter'
       const p = 0.9 + 0.1 * Math.sin(lt * 2.1)
-      glow(g, CX, coreY, 190 * p, '#ffffff', 0.85 * k)
-      glow(g, CX, coreY, 60, '#ffffff', 0.9 * k)
+      glow(g, CX, coreY, 140 * p, '#ffffff', 0.5 * k)
+      glow(g, CX, coreY, 34, '#ffffff', 0.85 * k)
       g.restore()
     }
   })
@@ -686,14 +721,46 @@ ARTS.portal = (s, o) => {
   ;(o.icons ?? []).slice(0, 6).forEach((name, i) => {
     const make = ICONS[name] ?? ICONS.star
     const [x, y] = spots[i]
-    for (const part of make(0, 0)) s.add(resample(part.map(([px, py]) => [x + px * 1.5, y + py * 1.5]), 7.5), { delay: 1.3 + i * 0.18, dur: 0.5, r: 2.1, a: 0.9, flash: 0.7 })
+    // each icon drifts slowly on its own loop around the doorway
+    for (const part of make(0, 0)) s.add(resample(part.map(([px, py]) => [x + px * 1.5, y + py * 1.5]), 7.5), { delay: 1.3 + i * 0.18, dur: 0.5, r: 2.1, a: 0.9, flash: 0.7, bob: 18, bph: i * 1.7 })
     s.fx({ delay: 1.3 + i * 0.18, dur: 0.6 }, (g, k, lt) => {
       g.save()
       g.globalCompositeOperation = 'lighter'
-      glow(g, x, y, 70, '#d9d0ff', 0.12 * k * (0.8 + 0.2 * Math.sin(lt * 2 + i)))
+      glow(g, x + Math.sin(lt * 0.55 + i * 1.7) * 18, y + Math.cos(lt * 0.42 + i * 1.7 * 1.3) * 14.4, 70, '#d9d0ff', 0.12 * k * (0.8 + 0.2 * Math.sin(lt * 2 + i)))
       g.restore()
     })
   })
+}
+
+// a gold dotted ring drawn around an item (note words, list items), with a glow
+function ringAround(s, cx, cy, rx, ry, t, { out = null } = {}) {
+  const pts = []
+  for (let i = 0; i <= 140; i++) {
+    const a = -Math.PI * 0.9 + (i / 140) * TAU * 1.04 // a hand-drawn loop that overshoots a little
+    const wob = 1 + 0.035 * Math.sin(a * 3 + cx)
+    pts.push([cx + Math.cos(a) * rx * wob, cy + Math.sin(a) * ry * wob - (i / 140) * 4])
+  }
+  s.add(resample(pts, 6.5), { t, dur: 0.55, order: 'path', r: 2.1, c: COL.goldHi, out, flash: 1, tw: 0.15 })
+  s.fx({ t: t + 0.3, dur: 0.6, out }, (g, k, lt) => {
+    g.save()
+    g.globalCompositeOperation = 'lighter'
+    g.translate(cx, cy)
+    g.scale(rx / 60, ry / 60)
+    glow(g, 0, 0, 70, '#ffd98f', 0.22 * k * (0.85 + 0.15 * Math.sin(lt * 2.5)))
+    g.restore()
+  })
+}
+// which items get a ring, and when: opts.circle [indices] at stage opts.circleAt,
+// one after another (each when its words are said again, if they are)
+function ringTimes(s, o, items) {
+  const idx = (o.circle ?? []).filter((i) => i >= 0 && i < items.length)
+  if (!idx.length) return {}
+  const at = o.circleAt ?? Math.max(0, s.env.lines.length - 1)
+  const said = s.cues(idx.map((i) => items[i]), at)
+  const t0 = s.T(at, 0.35)
+  const out = {}
+  idx.forEach((i, j) => { out[i] = Math.max(t0 + j * 0.45, Math.min(said[j], t0 + j * 0.45 + 1.2)) })
+  return out
 }
 
 // a dotted note card; words written in; then crossed out and blown to dust
@@ -707,11 +774,15 @@ ARTS.note = (s, o) => {
   s.add(dLine(x0 + 90, y0 + 118, x0 + w - 90, y0 + 118, 6), { delay: 0.55, dur: 0.5, order: 'both', r: 1.5, c: COL.gold, a: 0.9 })
   const dz = o.dissolveAt
   const outT = dz != null ? s.T(dz, 0.55) : null
-  const cues = s.cues(words, o.wordsAt ?? 1, dz ?? null)
+  let cues = s.cues(words, o.wordsAt ?? 1, dz ?? null)
+  // every word is written before the tear, and stays until it
+  if (dz != null) cues = cues.map((c, i) => Math.min(c, s.T(dz, -0.35 - (words.length - 1 - i) * 0.3)))
+  const rings = ringTimes(s, o, words)
   words.forEach((wd, i) => {
     const y = y0 + 190 + i * 74
     const p = Math.min(7, (w - 90) / Math.max(1, ledWidth(wd, 1, 1)))
     s.add(ledText(wd, CX, y, p, { sub: 2 }), { t: cues[i], dur: 0.55, order: 'sweep', mix: 0.15, r: p * 0.21, c: COL.ink, out: outT, outSpread: 0.5 })
+    if (rings[i] != null) ringAround(s, CX, y, ledWidth(wd, p) / 2 + 38, 36, rings[i], { out: outT })
   })
   if (dz != null) {
     // the strike: a gold slash through every word, just before the tear
@@ -724,21 +795,22 @@ ARTS.note = (s, o) => {
 ARTS.list = (s, o) => {
   const count = clamp(o.count ?? 11, 1, 14)
   const items = o.items ?? []
-  const w = 560, h = count <= 4 ? 560 : 800, x0 = CX - w / 2, y0 = CY - h / 2
+  const w = 660, h = count <= 4 ? 600 : 820, x0 = CX - w / 2, y0 = CY - h / 2
   s.add(dRect(x0, y0, w, h, 8), { dur: 0.9, order: 'both', r: 2.2, flash: 0.5 })
   let top = y0 + 60
   if (o.title) {
-    const p = Math.min(5.5, (w - 70) / Math.max(1, ledWidth(o.title, 1, 1)))
+    const p = Math.min(6, (w - 70) / Math.max(1, ledWidth(o.title, 1, 1)))
     s.add(ledText(o.title, CX, y0 + 58, p, { sub: 2 }), { delay: 0.3, dur: 0.6, order: 'sweep', r: p * 0.21, c: COL.white })
     s.add(dLine(x0 + 60, y0 + 98, x0 + w - 60, y0 + 98, 6), { delay: 0.5, dur: 0.5, order: 'both', r: 1.4, c: COL.gold, a: 0.85 })
     top = y0 + 150
   }
   const rowH = (y0 + h - 50 - top) / Math.max(1, count - 1 || 1)
-  const cues = s.cues(items, o.itemsAt ?? 1)
+  const cues = o.filled ? items.map((_, i) => 0.5 + i * 0.12) : s.cues(items, o.itemsAt ?? 1)
+  const rings = ringTimes(s, o, items)
   for (let i = 0; i < count; i++) {
     const y = count === 1 ? (top + y0 + h) / 2 : top + i * rowH
     const dl = 0.45 + i * 0.07
-    s.add(ledText(String(i + 1), x0 + 34, y, 2.6, { align: 'center' }), { delay: dl, dur: 0.2, r: 1.0, c: COL.ink, a: 0.65, flash: 0 })
+    s.add(ledText(String(i + 1), x0 + 34, y, 3.2, { align: 'center' }), { delay: dl, dur: 0.2, r: 1.15, c: COL.ink, a: 0.7, flash: 0 })
     const star = resample(starPoly(x0 + 76, y, 13, 5.5), 4, true)
     const item = items[i]
     const it = item != null ? cues[i] : null
@@ -746,8 +818,12 @@ ARTS.list = (s, o) => {
     const wave = dWave(x0 + 106, x0 + w - 36, y, 5, 48, 6.5)
     s.add(wave, { delay: dl + 0.1, dur: 0.35, r: 1.5, a: 0.75, flash: 0.3, out: it, outSpread: 0.25 })
     if (item != null) {
-      const p = Math.min(4.6, (w - 150) / Math.max(1, ledWidth(item, 1, 1)))
+      const p = Math.min(5.2, (w - 150) / Math.max(1, ledWidth(item, 1, 1)))
       s.add(ledText(item, x0 + 106, y, p, { align: 'left', sub: 2 }), { t: it + 0.1, dur: 0.6, order: 'sweep', mix: 0.12, r: p * 0.22, c: COL.white })
+      if (rings[i] != null) {
+        const iw = ledWidth(item, p)
+        ringAround(s, x0 + 106 + iw / 2, y, iw / 2 + 34, Math.min(34, rowH * 0.55), rings[i])
+      }
       s.add(fillPoly(starPoly(x0 + 76, y, 15, 6.5), 3.2), { t: it, dur: 0.25, order: 'radial', r: 1.25, c: COL.goldHi, tw: 0.3 })
       s.fx({ t: it, dur: 0.5 }, (g, k, lt) => {
         g.save()
@@ -757,6 +833,71 @@ ARTS.list = (s, o) => {
       })
     }
   }
+}
+
+// a dot-matrix candle; the wick catches and the flame flickers at litAt
+function candle(s, cx, base, k, litT, delay = 0) {
+  const bw = 150 * k, bh = 360 * k, top = base - bh
+  // body: cylinder-shaded dots, a soft wax rim and two drips
+  const body = []
+  const pitch = 9 * Math.max(0.75, k)
+  for (let y = top + pitch / 2; y < base; y += pitch)
+    for (let x = cx - bw / 2 + pitch / 2; x < cx + bw / 2; x += pitch) {
+      const u = (x - cx) / (bw / 2)
+      const b = clamp(0.95 - Math.abs(u + 0.25) * 0.75)
+      body.push([x, y, pitch * (0.14 + 0.16 * b), COL.ink, 0.25 + 0.6 * b])
+    }
+  s.add(body, { delay, dur: 1.0, order: 'up', mix: 0.3, flash: 0.4, tw: 0.03 })
+  s.add(resample(arcPts(cx, top, bw / 2, 0, TAU, 80).map(([x, y]) => [x, top + (y - top) * 0.22]), 6 * k + 1), { delay: delay + 0.8, dur: 0.4, order: 'both', r: 1.8, c: COL.white })
+  for (const [dx, len] of [[-0.28, 70], [0.3, 40]]) s.add(dLine(cx + dx * bw, top + 4, cx + dx * bw, top + len * k, 6), { delay: delay + 0.9, dur: 0.3, r: 2.4 * Math.max(0.8, k), c: COL.white, a: 0.85 })
+  // plate
+  s.add(resample(arcPts(cx, base + 6, bw * 1.25, 0, TAU, 120).map(([x, y]) => [x, base + 6 + (y - base - 6) * 0.2]), 8), { delay: delay + 0.2, dur: 0.8, order: 'both', r: 1.7, c: COL.gold, a: 0.85 })
+  // wick
+  const wy = top - 4
+  s.add(dLine(cx, wy, cx + 3 * k, wy - 30 * k, 4), { delay: delay + 1.0, dur: 0.2, r: 1.9 * Math.max(0.8, k), c: '#8c8474' })
+  // the flame: a teardrop of dots, flickering every frame
+  const fh = 150 * k, fw = 40 * k
+  const tear = []
+  for (let i = 0; i < 60; i++) {
+    const a = (i / 60) * TAU
+    const yy = Math.cos(a) // 1 at the bottom, -1 at the tip
+    const rad = yy > 0 ? Math.sin(a) : Math.sin(a) * Math.pow((1 + yy), 0.8)
+    tear.push([rad * fw, (yy > 0 ? yy * fw : yy * fh)])
+  }
+  const fl = fillPoly(tear, 3.6 * Math.max(0.8, k))
+  const r0 = rng(hash(cx + 'flame'))
+  const fdots = fl.map(([x, y]) => ({ x, y, ph: r0() * TAU, hot: Math.hypot(x / fw, (y + fh * 0.2) / fh) }))
+  const fy0 = wy - 26 * k
+  s.fx({ t: litT, dur: 0.7 }, (g, kk, lt) => {
+    const flick = 1 + 0.07 * Math.sin(lt * 11.3) + 0.05 * Math.sin(lt * 17.9 + 1) + 0.03 * Math.sin(lt * 31)
+    const sway = Math.sin(lt * 2.3) * 5 * k + Math.sin(lt * 7.1) * 2 * k
+    g.save()
+    g.globalCompositeOperation = 'lighter'
+    glow(g, cx, fy0 - fh * 0.3, 360 * k, '#ffb860', 0.28 * kk * flick)
+    glow(g, cx, fy0 - fh * 0.25, 120 * k, '#ffe3a8', 0.55 * kk * flick)
+    // warm light on the wax
+    glow(g, cx, top + 40 * k, 150 * k, '#ffcf80', 0.25 * kk)
+    g.restore()
+    const grow = easeOut(kk)
+    for (const d of fdots) {
+      const lift = -d.y / fh // 0 base → 1 tip
+      const x = cx + d.x * grow + sway * Math.max(0, lift) * 1.4
+      const y = fy0 + d.y * grow * flick
+      const c = d.hot < 0.35 ? COL.white : d.hot < 0.7 ? COL.goldHi : COL.gold
+      dot(g, x, y, (d.hot < 0.5 ? 2.2 : 1.7) * Math.max(0.8, k), c, (0.6 + 0.4 * Math.sin(lt * 9 + d.ph)) * kk)
+    }
+    if (lt - litT < 0.6) sparkle(g, cx, fy0, 50 * k * (1 - (lt - litT) / 0.6), '#ffffff', 1 - (lt - litT) / 0.6, lt)
+  })
+}
+ARTS.candle = (s, o) => {
+  const litT = o.lit ? 0.9 : s.T(o.litAt ?? 1, 0.15)
+  const base = CY + 330
+  s.add(dLine(CX - 470, base + 40, CX + 470, base + 40, 8), { dur: 0.8, order: 'both', r: 1.5, a: 0.45, flash: 0.2 })
+  if ((o.count ?? 1) >= 3) {
+    candle(s, CX - 250, base, 0.62, litT + 0.5, 0.25)
+    candle(s, CX + 250, base, 0.62, litT + 0.8, 0.35)
+  }
+  candle(s, CX, base, 1, litT, 0)
 }
 
 // a dot-matrix clock, colon blinking
@@ -856,8 +997,12 @@ ARTS.planet = (s, o) => {
   const glyph = o.glyph ?? '♀'
   const sun = glyph === '☉'
   const retro = !!o.retro
-  const r = sun ? 210 : 175, cy = retro ? CY - 150 : CY - 20
-  const pts = sphere(CX, cy, r, 9.5, (nx, ny, nz) => (sun ? 0.75 + 0.25 * nz : -0.5 * nx - 0.55 * ny + 0.68 * nz + 0.15), { lit: sun ? COL.goldHi : '#f6e6c4' })
+  const r = sun ? 210 : 190, cy = retro ? CY - 150 : CY - 20
+  // Planets show a phase like the moon (Venus near the sun is a crescent);
+  // phase 0 new · 0.5 full. Default: a soft crescent lit from the right.
+  const ph = (((o.phase ?? 0.17) % 1) + 1) % 1, th = ph * TAU
+  const L = [Math.sin(th), -0.18, -Math.cos(th)]
+  const pts = sphere(CX, cy, r, 9, (nx, ny, nz) => (sun ? 0.75 + 0.25 * nz : nx * L[0] + ny * L[1] + nz * L[2] > 0 ? 0.3 + 0.75 * (nx * L[0] + ny * L[1] + nz * L[2]) : -1), { lit: sun ? COL.goldHi : '#fbeccc', dark: '#4a3f6e', darkA: 0.32 })
   s.fx({ delay: 0.3, dur: 1.4 }, (g, k, lt) => {
     g.save()
     g.globalCompositeOperation = 'lighter'
@@ -870,8 +1015,8 @@ ARTS.planet = (s, o) => {
       const a = (i / 24) * TAU
       s.add(dLine(CX + Math.cos(a) * (r + 40), cy + Math.sin(a) * (r + 40), CX + Math.cos(a) * (r + (i % 2 ? 90 : 140)), cy + Math.sin(a) * (r + (i % 2 ? 90 : 140)), 9), { delay: 0.7 + i * 0.02, dur: 0.3, r: 1.7, c: COL.gold, a: 0.7 })
     }
-  } else {
-    // a tilted dotted orbit ring, hidden where it passes behind the sphere
+  } else if (o.ring) {
+    // a tilted dotted ring (Saturn only), hidden where it passes behind the sphere
     const ring = []
     for (let i = 0; i < 200; i++) {
       const a = (i / 200) * TAU
@@ -882,6 +1027,10 @@ ARTS.planet = (s, o) => {
       ring.push([CX + rx, cy + ry])
     }
     s.add(ring, { delay: 0.6, dur: 0.9, r: 1.7, c: COL.gold, a: 0.75, flash: 0.4 })
+  } else {
+    // a soft rim on the dark limb and a faint orbit arc: reads as a planet, not a ball
+    s.add(resample(arcPts(CX, cy, r + 8, 0, TAU, 160), 9), { delay: 0.5, dur: 1.0, order: 'both', r: 1.3, c: COL.lilac, a: 0.4, flash: 0.2 })
+    s.add(resample(arcPts(CX, cy + 40, r + 170, Math.PI * 1.08, Math.PI * 1.92, 120), 10), { delay: 0.7, dur: 1.0, order: 'path', r: 1.4, c: COL.gold, a: 0.5, flash: 0.3 })
   }
   // the planet's glyph, bright, top right
   const gx = CX + (sun ? 330 : 290), gy = cy - (sun ? 300 : 250)
@@ -894,13 +1043,13 @@ ARTS.planet = (s, o) => {
   })
   if (retro) {
     // prolate trochoid: the apparent loop a planet traces against the stars
-    const by = CY + 340
+    const by = CY + 300
     const path = []
     for (let u = -3.0; u <= 3.0; u += 0.02) path.push([CX + 115 * u - 175 * Math.sin(u), by + 70 * Math.cos(u) - 10])
     const dots = resample(path, 9)
     const t0 = 0.9, dur = 2.6
     s.add(dots, { delay: t0, dur, r: 2, c: COL.ink, a: 0.85, flash: 0.9 })
-    s.add(dLine(CX - 470, by + 120, CX + 470, by + 120, 9), { delay: 0.4, dur: 0.8, order: 'both', r: 1.3, a: 0.4 })
+    s.add(dLine(CX - 470, by + 85, CX + 470, by + 85, 9), { delay: 0.4, dur: 0.8, order: 'both', r: 1.3, a: 0.4 })
     s.fx({ delay: t0, dur }, (g, k, lt) => {
       const i = Math.min(dots.length - 1, Math.floor(k * (dots.length - 1)))
       const [x, y] = dots[i]
@@ -910,7 +1059,7 @@ ARTS.planet = (s, o) => {
       g.restore()
       dot(g, x, y, 6, COL.goldHi, 1)
     })
-    for (const [txt, x] of [['DIRECT', CX - 330], ['RX', CX], ['DIRECT', CX + 330]]) s.add(ledText(txt, x, by + 150, 3, { sub: 1 }), { delay: 1.4, dur: 0.4, order: 'sweep', r: 1.1, c: COL.gold, a: 0.8 })
+    for (const [txt, x] of [['DIRECT', CX - 330], ['RX', CX], ['DIRECT', CX + 330]]) s.add(ledText(txt, x, by + 128, 5, { sub: 2 }), { delay: 1.4, dur: 0.4, order: 'sweep', r: 1.1, c: COL.gold, a: 0.9 })
   }
 }
 
@@ -963,8 +1112,8 @@ ARTS.card = (s, o) => {
   })
   // the face
   const face = String(o.face ?? 'Align')
-  const fy = o.glyph ? CY + 120 : CY - 10
-  if (o.glyph) s.add(sampleGlyph(o.glyph, { size: 230, x: CX, y: CY - 110, pitch: 6.5, thicken: 4 }), { t: rev + 0.4, dur: 0.6, order: 'radial', r: 2.5, c: COL.goldHi })
+  const fy = o.glyph ? CY + 60 : CY - 30
+  if (o.glyph) s.add(sampleGlyph(o.glyph, { size: 220, x: CX, y: CY - 150, pitch: 6.5, thicken: 4 }), { t: rev + 0.4, dur: 0.6, order: 'radial', r: 2.5, c: COL.goldHi })
   s.add(sampleText(face, { size: o.glyph ? 96 : 130, x: CX, y: fy, pitch: 5.5, weight: 600, maxW: w - 110 }), { t: rev + 0.45, dur: 0.7, order: 'sweep', mix: 0.3, r: 2.25, c: COL.white })
   s.fx({ t: rev + 0.4, dur: 0.8 }, (g, k) => {
     g.save()
@@ -973,10 +1122,13 @@ ARTS.card = (s, o) => {
     g.restore()
   })
   if (o.sub) {
-    const p = Math.min(3.6, (w - 90) / Math.max(1, ledWidth(o.sub, 1, 1)))
-    s.add(ledText(o.sub, CX, fy + (o.glyph ? 100 : 130), p, { sub: 2 }), { t: rev + 0.9, dur: 0.5, order: 'sweep', r: p * 0.22, c: COL.gold })
+    // ≥ 35 px tall LED, wrapped to the card
+    const pts = ledWrap(o.sub, CX, 0, 5, w - 80)
+    const top = fy + (o.glyph ? 80 : 105)
+    const dy = top + ((pts.rows - 1) * pts.lh) / 2 + 18
+    s.add(pts.map(([x, y]) => [x, y + dy]), { t: rev + 0.9, dur: 0.6, order: 'sweep', r: 1.1, c: COL.gold })
   }
-  s.add(ledText('ALIGN', CX, y0 + h - 62, 3.2, { track: 2, sub: 2 }), { delay: 1.0, dur: 0.4, order: 'sweep', r: 0.8, c: COL.ink, a: 0.75 })
+  s.add(ledText('ALIGN', CX, y0 + h - 66, 5, { track: 2, sub: 2 }), { delay: 1.0, dur: 0.4, order: 'sweep', r: 1.1, c: COL.ink, a: 0.8 })
 }
 
 // two star-headed people (Align's Stardust figures) on a horizon
@@ -1101,7 +1253,7 @@ function drawTracker(g, t) {
   const vis = easeOut(clamp((t - first) / 0.5)) * (1 - clamp((t - (DURATION - 0.5)) / 0.5))
   const { cur, since } = stepAt(t)
   const n = STEP_NAMES.length
-  const gap = 210
+  const gap = 300
   const xs = STEP_NAMES.map((_, i) => CX + (i - (n - 1) / 2) * gap)
   g.save()
   g.globalAlpha = vis
@@ -1128,12 +1280,12 @@ function drawTracker(g, t) {
     g.stroke()
     if (k > 0) dot(g, x, TRACK_Y, 5.5 * k, COL.goldHi, vis)
     g.globalAlpha = vis
-    g.font = '700 17px "Space Mono"'
-    g.letterSpacing = '3px'
+    g.font = '700 27px "Space Mono"'
+    g.letterSpacing = '2px'
     g.textAlign = 'center'
     g.textBaseline = 'middle'
     g.fillStyle = on ? rgba(COL.gold, 0.7 + 0.3 * k) : 'rgba(150,146,158,0.8)'
-    g.fillText(STEP_NAMES[i], x + 1.5, TRACK_Y + 36)
+    g.fillText(STEP_NAMES[i], x + 1, TRACK_Y + 46)
   })
   g.restore()
 }
@@ -1148,8 +1300,11 @@ function drawLabels(g, t) {
     const n = Math.ceil(chars.length * k)
     g.save()
     g.globalAlpha = (1 - out) * 0.95
-    g.font = '700 25px "Space Mono"'
-    g.letterSpacing = '7px'
+    g.font = '700 32px "Space Mono"'
+    g.letterSpacing = '6px'
+    let ls = 6
+    while (ls > 0 && g.measureText(L.text).width > 980) { ls -= 1; g.letterSpacing = `${ls}px` }
+    if (g.measureText(L.text).width > 980) g.font = '700 28px "Space Mono"'
     g.textAlign = 'center'
     g.textBaseline = 'middle'
     g.fillStyle = COL.gold
@@ -1158,7 +1313,7 @@ function drawLabels(g, t) {
     // lay out the full string so typing doesn't shift it
     const full = g.measureText(L.text).width
     g.textAlign = 'left'
-    g.fillText(chars.slice(0, n).join(''), CX - full / 2 + 3.5, LABEL_Y)
+    g.fillText(chars.slice(0, n).join(''), CX - full / 2 + ls / 2, LABEL_Y)
     g.restore()
   }
 }
@@ -1178,8 +1333,8 @@ function drawWordmark(g, a = 0.42, y = 80) {
 
 // ---------- captions ----------
 
-const CAP = { size: 58, lh: 78, maxW: 900, y: 1585 }
-const PILL_Y = 1750
+const CAP = { size: 58, lh: 78, maxW: 900, y: 1505 } // two lines clear Instagram's bottom UI
+const PILL_Y = 1668
 let lines = []
 function layoutCaptions(tl) {
   lines = tl.lines.map((ln) => {
@@ -1225,8 +1380,10 @@ function drawCaptions(g, t, all = false) {
   for (let i = 0; i < lines.length; i++) {
     const ln = lines[i]
     const prev = lines[i - 1], next = lines[i + 1]
-    const samePrev = prev && prev.scene === ln.scene
-    const sameNext = next && next.scene === ln.scene
+    // every line hands straight to the next (across scenes too): the
+    // caption band is never blank while the next object builds
+    const samePrev = !!prev
+    const sameNext = !!next
     const show = i === 0 ? -1 : samePrev ? handover(prev, ln) : ln.start - 0.2
     const fadeIn = i === 0 ? 1 : clamp((t - show) / 0.12)
     const fadeOut = sameNext ? clamp((handover(ln, next) - t) / 0.12) : 1 - clamp((t - ln.hideAt) / 0.18)
@@ -1355,6 +1512,37 @@ function build(script, tl) {
     })
     return { start: t.start, end: t.end, s, env, outAt }
   })
+  // Consecutive scenes with the same art morph: the old dots fly to the new
+  // shape instead of blowing away and building again.
+  for (let i = 1; i < SC.length; i++) {
+    const a = script.scenes[i - 1], b = script.scenes[i]
+    if (a.art !== b.art || (b.opts ?? {}).morph === false) continue
+    const prev = SC[i - 1], cur = SC[i]
+    const from = prev.s.dots.filter((d) => d.out == null && d.t <= prev.env.dur)
+    const to = cur.s.dots.filter((d) => d.t <= 1.8 && d.out == null)
+    if (!from.length || !to.length) continue
+    const r = rng(hash(script.id + 'morph' + i))
+    // pair by position within each shape's bounding box (row bands, then x),
+    // so each dot travels a short, orderly way and the motion reads as a reshape
+    const keyer = (arr) => {
+      const xs = arr.map((d) => d.x), ys = arr.map((d) => d.y)
+      const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys)
+      return (d) => Math.floor(((d.y - y0) / Math.max(1, y1 - y0)) * 24) + (d.x - x0) / Math.max(1, x1 - x0) * 0.999 + r() * 0.02
+    }
+    const kf = keyer(from), kt = keyer(to)
+    const fs = from.map((d) => [kf(d), d]).sort((p, q) => p[0] - q[0]).map((p) => p[1])
+    const ts = to.map((d) => [kt(d), d]).sort((p, q) => p[0] - q[0]).map((p) => p[1])
+    ts.forEach((d, j) => {
+      const src = fs[Math.floor((j / ts.length) * fs.length)]
+      d.src = { x: src.x, y: src.y, r: src.r, a: src.a, c: src.c }
+      d.mt = r() * 0.2
+      d.md = 0.75 + r() * 0.4
+      src.morphed = true
+      src.out = 1e9
+    })
+    // leftover old dots blow away as usual; matched ones hand over exactly at the cut
+    prev.outAt = prev.env.dur - 0.12
+  }
   const last = script.scenes[script.scenes.length - 1]
   const lt = tl.scenes[tl.scenes.length - 1]
   if (last.pill) PILL = { text: last.pill, at: lt.lines[Math.min(last.pillAt ?? 1, lt.lines.length - 1)].end + 0.2 }
@@ -1385,11 +1573,27 @@ function drawScene(g, sc, t, full = false) {
   for (const d of sc.s.dots) {
     let a = d.a, x = d.x, y = d.y, r = d.r, c = d.c
     let flash = 0
+    if (d.bob) {
+      x += Math.sin(T * 0.55 + d.bph) * d.bob
+      y += Math.cos(T * 0.42 + d.bph * 1.3) * d.bob * 0.8
+    }
     if (!full) {
-      if (lt < d.t) continue
-      const age = lt - d.t
-      a *= clamp(age / 0.08)
-      flash = d.flash * clamp(1 - age / 0.4)
+      if (d.morphed && lt > sc.env.dur) continue // handed to the next scene's dots
+      if (d.src) {
+        // morphing: fly from the previous scene's dot to this one
+        if (lt < d.mt) continue
+        const k = ease(clamp((lt - d.mt) / d.md))
+        x = lerp(d.src.x, x, k)
+        y = lerp(d.src.y, y, k)
+        r = lerp(d.src.r, r, k)
+        a = lerp(d.src.a, a, k)
+        if (k < 1) c = k < 0.5 ? d.src.c : c
+      } else {
+        if (lt < d.t) continue
+        const age = lt - d.t
+        a *= clamp(age / 0.08)
+        flash = d.flash * clamp(1 - age / 0.4)
+      }
       const oT = d.out ?? sc.outAt + (d.ph / TAU) * 0.4
       if (lt > oT) {
         const q = (lt - oT) / DUST
@@ -1472,7 +1676,7 @@ function paintCoverText(text) {
   const words = text.split(/\s+/).map((w) => ({ w: w.replace(/\*/g, ''), em: /\*/.test(w), s: -1, e: -1 }))
   const saved = lines
   const savedCap = { ...CAP }
-  Object.assign(CAP, { size: 70, lh: 92, y: 1500, maxW: 860 })
+  Object.assign(CAP, { size: 70, lh: 92, y: 1450, maxW: 860 })
   layoutCaptions({ lines: [{ start: 0, end: 0, words, scene: 0, hideAt: 1e9 }] })
   ctx.save()
   ctx.shadowColor = 'rgba(0,0,0,0.6)'

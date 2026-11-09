@@ -166,8 +166,23 @@
     {
       "art": "clock",
       "opts": {
-        "time": "11:11"
+        "time": "11:11",
+        "scale": 0.72,
+        "y": -290
       },
+      "with": [
+        {
+          "art": "list",
+          "opts": {
+            "title": "I AM LOVED",
+            "count": 11,
+            "items": ["I AM CHOSEN", "I FEEL SAFE", "I'M SEEN"],
+            "filled": true,
+            "scale": 0.5,
+            "y": 250
+          }
+        }
+      ],
       "label": "NOT HOPING · REMEMBERING",
       "step": 2,
       "lines": [
