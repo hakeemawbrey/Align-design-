@@ -125,7 +125,7 @@ footer { color: var(--ink-3); font-size: 13px; display: grid; gap: 6px; max-widt
   <form class="drop" id="drop" autocomplete="off">
     <label class="eyebrow" for="drop-url">Drop inspo</label>
     <div class="drop-row">
-      <input id="drop-url" type="text" inputmode="url" placeholder="A YouTube channel, video or Short, or an Instagram, TikTok or Facebook link" required>
+      <input id="drop-url" type="text" inputmode="url" placeholder="A YouTube, Instagram, X or Facebook link: a whole account or one post" required>
       <button class="btn" id="drop-add" type="submit">Add to inbox</button>
     </div>
     <textarea id="drop-note" rows="1" placeholder="What caught your eye? (optional) e.g. the first 3 seconds, the thumbnail, how fast it cuts"></textarea>
@@ -166,7 +166,7 @@ footer { color: var(--ink-3); font-size: 13px; display: grid; gap: 6px; max-widt
 
   <footer>
     <div class="eyebrow">How it works</div>
-    <div>1. Drop a link here, or paste it to Claude in chat. 2. Tell Claude <b>"go through my Video Lab inbox"</b>. Claude reads the channel's titles, views and thumbnails right away. For a full study (what's said and shown in every video), double-click <b>Study YouTube Channel</b> on your Mac. 3. What Claude learns lands here as rules, sources and Align ideas.</div>
+    <div>1. Drop a YouTube, Instagram, X or Facebook link here, or paste it to Claude in chat. 2. Tell Claude <b>"go through my Video Lab inbox"</b>. Claude reads YouTube channels and single X posts right away. Instagram, Facebook and whole X accounts need a login, so for those (and for a full study of what's said and shown in every video), double-click <b>Study Any Link</b> on your Mac and paste the link. 3. What Claude learns lands here as rules, sources and Align ideas.</div>
   </footer>
 </div>
 
@@ -198,13 +198,20 @@ const day = (iso) => (iso ? String(iso).slice(0, 10) : '')
 const arr = (x) => (Array.isArray(x) ? x : [])
 function toast(msg, bad) { const t = $('toast'); t.textContent = msg; t.style.color = bad ? 'var(--rub)' : 'var(--spark)'; clearTimeout(toast.t); toast.t = setTimeout(() => (t.textContent = ''), 4000) }
 
+function platformOf(url) {
+  const u = String(url)
+  if (/youtube\.com|youtu\.be/i.test(u)) return 'YouTube'
+  if (/(^|[/.])(x|twitter)\.com\//i.test(u)) return 'X'
+  if (/instagram\.com/i.test(u)) return 'Instagram'
+  if (/facebook\.com|fb\.watch|fb\.me/i.test(u)) return 'Facebook'
+  if (/tiktok\.com/i.test(u)) return 'TikTok'
+  return 'Other'
+}
 function kindOf(url) {
   const u = String(url)
-  if (/youtube\.com\/shorts\//i.test(u)) return 'short'
-  if (/youtu\.be\/|youtube\.com\/(watch|live)/i.test(u)) return 'video'
-  if (/youtube\.com\/(@|channel\/|c\/|user\/)/i.test(u) || /^@/.test(u)) return 'channel'
-  if (/instagram\.com|tiktok\.com|facebook\.com|fb\.watch/i.test(u)) return 'social'
-  return 'other'
+  if (/youtube\.com\/shorts\/|instagram\.com\/reels?\/|facebook\.com\/reel\//i.test(u)) return 'short'
+  if (/youtu\.be\/|youtube\.com\/(watch|live)|\/status\/\d|instagram\.com\/p\/|facebook\.com\/(watch|share\/[rv]\/)|\/videos\/\d/i.test(u)) return 'post'
+  return 'account'
 }
 
 // ---------- tabs ----------
@@ -251,7 +258,7 @@ function renderRules() {
 
 function renderInbox() {
   const box = $('inbox')
-  if (!state.inbox.length) { box.replaceChildren(empty('Nothing in the inbox', 'Paste a link in the box above. A whole channel is best (Claude can compare every upload), but a single video or Short works too.')); return }
+  if (!state.inbox.length) { box.replaceChildren(empty('Nothing in the inbox', 'Paste a link in the box above: YouTube, Instagram, X or Facebook. A whole account is best (Claude can compare every post), but a single post works too.')); return }
   const order = { new: 0, read: 1, studied: 2 }
   box.replaceChildren(...[...state.inbox].sort((a, b) => (order[a.status] ?? 0) - (order[b.status] ?? 0) || String(b.addedAt).localeCompare(String(a.addedAt))).map((i) => {
     const url = safeUrl(i.url)
@@ -261,7 +268,7 @@ function renderInbox() {
         h('span', { class: `pill ${i.status ?? 'new'}` }, i.status === 'studied' ? 'Studied' : i.status === 'read' ? 'Quick read done' : 'Waiting for Claude')),
       i.note ? h('p', {}, `“${i.note}”`) : null,
       i.reply ? h('p', { class: 'reply' }, i.reply) : null,
-      h('div', { class: 'row-actions' }, h('span', { class: 'meta' }, [i.kind, day(i.addedAt)].filter(Boolean).join(' · ')),
+      h('div', { class: 'row-actions' }, h('span', { class: 'meta' }, [i.platform ?? platformOf(i.url), i.kind, day(i.addedAt)].filter(Boolean).join(' · ')),
         i.status === 'new' ? h('button', { class: 'ghost', type: 'button', onclick: () => remove('inbox', i.id) }, 'Remove') : null),
     )
   }))
@@ -320,7 +327,7 @@ $('drop').addEventListener('submit', async (e) => {
   if (state.inbox.some((i) => i.url === url)) { toast('That one is already in the inbox.'); return }
   $('drop-add').disabled = true
   try {
-    await db.collection('inbox').add({ url, note: $('drop-note').value.trim() || null, kind: kindOf(url), status: 'new', addedAt: new Date().toISOString() })
+    await db.collection('inbox').add({ url, note: $('drop-note').value.trim() || null, platform: platformOf(url), kind: kindOf(url), status: 'new', addedAt: new Date().toISOString() })
     $('drop-url').value = ''; $('drop-note').value = ''
     toast('Added. Tell Claude "go through my Video Lab inbox" when you\'re ready.')
   } catch (err) { toast(`Couldn't add it: ${err.message ?? err.code}`, true) }

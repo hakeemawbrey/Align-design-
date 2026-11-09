@@ -12,6 +12,10 @@
 // a study; the Mac's `npm run youtube` adds what's said and shown.
 //
 // Writes pack/yt-<channel>/quick.json, quick.md and quick-top.jpg / quick-bottom.jpg.
+//
+// A single X, Instagram, Facebook or TikTok post gets whatever yt-dlp can read without a
+// login (X posts usually work; the others usually need the Mac): its text, numbers and
+// thumbnail, in pack/<account>/post-<id>.json.
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
@@ -19,6 +23,7 @@ import { fileURLToPath } from 'node:url'
 import { run } from './download.mjs'
 import { ensureDir, flag, mediaDir, packDir, readJson, writeJson } from './paths.mjs'
 import { fmt, median } from './report.mjs'
+import { accountOf } from './twitter.mjs'
 import { channelOf, linksOf, listArgs, mergeLinks, videoIdOf } from './youtube.mjs'
 
 const YT = 'https://www.youtube.com'
@@ -135,10 +140,57 @@ export async function channelFor(input) {
   return { channel, video }
 }
 
+/** Which platform a pasted link is from. */
+export function platformOf(s) {
+  const t = String(s ?? '')
+  if (/youtube\.com|youtu\.be|^yt-/i.test(t)) return 'youtube'
+  if (/(^|[/.])(x|twitter)\.com\//i.test(t) || /^x-/.test(t)) return 'x'
+  if (/instagram\.com/i.test(t)) return 'instagram'
+  if (/facebook\.com|fb\.watch|fb\.me/i.test(t)) return 'facebook'
+  if (/tiktok\.com/i.test(t)) return 'tiktok'
+  return null
+}
+
+/** yt-dlp's details for one post on any site → the few things worth keeping. */
+export function postOf(info, platform, url) {
+  const text = String(info?.description ?? info?.title ?? '').trim()
+  return {
+    platform, url, id: info?.id ?? null,
+    author: info?.uploader ?? info?.channel ?? null, authorHandle: info?.uploader_id ?? null,
+    text, date: /^\d{8}$/.test(info?.upload_date ?? '') ? `${info.upload_date.slice(0, 4)}-${info.upload_date.slice(4, 6)}-${info.upload_date.slice(6)}` : null,
+    duration: Number.isFinite(info?.duration) ? info.duration : null,
+    views: info?.view_count ?? null, likes: info?.like_count ?? null, comments: info?.comment_count ?? null, reposts: info?.repost_count ?? null,
+    thumbnail: info?.thumbnail ?? null,
+  }
+}
+
+/** A single post on X, Instagram, Facebook or TikTok: whatever can be read without a login. */
+async function readPost(input, platform) {
+  const r = await run('yt-dlp', ['--skip-download', '-J', '--no-warnings', '--no-playlist', input], { echo: false })
+  let info = null
+  try { info = JSON.parse(r.out) } catch {}
+  const name = platform === 'x' ? accountOf(input)?.handle : null
+  if (!info) {
+    const why = /login|cookies|rate.?limit|not a bot|authenticat/i.test(r.err) ? 'it needs a login' : r.err.trim().split('\n').pop() || 'nothing came back'
+    console.error(`Couldn't read that ${platform} post from here (${why}). Study it on the Mac: double-click "Study Any Link" and paste the account's link.`)
+    process.exit(3)
+  }
+  const post = postOf(info, platform, input)
+  const out = ensureDir(packDir(name ?? `${platform}-posts`))
+  writeJson(path.join(out, `post-${post.id}.json`), post)
+  if (post.thumbnail) {
+    const res = await fetch(post.thumbnail).catch(() => null)
+    if (res?.ok) writeFileSync(path.join(out, `post-${post.id}.jpg`), Buffer.from(await res.arrayBuffer()))
+  }
+  console.log(`${post.author ?? platform}: ${fmt(post.views)} views · ${fmt(post.likes)} likes · ${fmt(post.comments)} replies${post.duration ? ` · ${Math.round(post.duration)}s` : ''}\n${post.text.slice(0, 300)}\n${path.join(out, `post-${post.id}.json`)}`)
+}
+
 async function main() {
   const argv = process.argv.slice(2)
   const input = argv.find((a, i) => !a.startsWith('--') && !(argv[i - 1] ?? '').match(/^--limit$/))
   const limit = Number(flag(argv, 'limit') ?? 500)
+  const platform = platformOf(input)
+  if (platform && platform !== 'youtube') return readPost(input, platform)
   const { channel, video } = await channelFor(input)
   if (!channel?.url) { console.error('Usage: node src/quick.mjs <channel link, @handle or a video link> [--limit 500] [--no-thumbs]'); process.exit(2) }
   console.log(`Quick read of ${channel.url}${video ? ` (from "${video.title}")` : ''}`)

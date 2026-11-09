@@ -118,6 +118,29 @@ contact sheets of the best and weakest thumbnails (`pack/yt-<channel>/quick.md`)
 What Claude learns from both goes into **Video Lab**, the playbook portal: see
 [kb/README.md](kb/README.md).
 
+## X (Twitter) accounts
+
+The same study for an **X account**: every post on its Media tab (its own posts
+with a video or photos, no reposts), with views, likes, reposts and replies.
+
+**On a Mac:** double-click **Study Any Link** (or **Study X Account**) and paste
+the account's link, or a link to any post from it. X only shows timelines to
+logged-in people, so it uses your browser's X login, the same way the Instagram
+study does. The account is saved as `x-<account>`.
+
+In Terminal: `npm run twitter -- "https://x.com/<account>" --cookies-from-browser chrome --limit 40`,
+then `npm run process -- x-<account>` and `npm run report -- x-<account>`.
+Scripted downloading is against X's terms too, so it's your call, the same as for Instagram.
+
+**One post, anywhere:** `npm run quick -- "https://x.com/<account>/status/<id>"`
+reads a single post without a login (text, views, likes, replies, length,
+thumbnail). Claude can do this in the cloud the moment you send an X link.
+
+## One button for all four
+
+**Study Any Link** takes a YouTube, Instagram, X or Facebook link and runs the
+right study. The single-platform buttons still work.
+
 ## Step by step (Terminal)
 
 Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
@@ -167,7 +190,8 @@ logged-in account follows them.
 | --- | --- |
 | `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
 | `src/youtube.mjs` | a whole YouTube channel: lists Videos and Shorts, yt-dlp downloads each small with captions and thumbnail |
-| `src/quick.mjs` | a quick read of a channel from its lists alone (no downloads; works in the cloud) |
+| `src/twitter.mjs` | an X account's Media tab with gallery-dl and your browser login, reshaped like the Instagram downloads |
+| `src/quick.mjs` | a quick read of a YouTube channel from its lists alone, or of one X post (no downloads; works in the cloud) |
 | `kb/` | Video Lab: the portal's source and how Claude keeps the playbook |
 | `src/facebook.mjs` | a Facebook page: its own Chrome window collects the reel and video links, yt-dlp downloads each with its numbers |
 | `src/numbers.mjs` | views, comments and length per post (yt-dlp, or Meta's API) |

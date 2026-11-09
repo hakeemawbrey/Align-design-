@@ -33,10 +33,12 @@ make_button() {  # name, command
   printf '#!/bin/bash\nexec "%s" %s\n' "$DIR/study/mac/run.sh" "$2" > "$f"
   chmod +x "$f"
 }
+make_button "Study Any Link" ""
 make_button "Study Instagram Page" ""
 make_button "Study Facebook Page" "facebook"
 make_button "Study YouTube Channel" "youtube"
+make_button "Study X Account" "x"
 make_button "Send Study to Claude" "send"
-say "Added four buttons to your Desktop: \"Study Instagram Page\", \"Study Facebook Page\", \"Study YouTube Channel\" and \"Send Study to Claude\". Double-click them from now on."
+say "Added buttons to your Desktop. Easiest: \"Study Any Link\" takes a YouTube, Instagram, X or Facebook link. Then \"Send Study to Claude\"."
 
 exec "$DIR/study/mac/run.sh" "$@"

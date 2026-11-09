@@ -2,8 +2,8 @@
 
 **Portal:** https://claude.ai/artifact/NETEdhadQkdZATc4Xuq67M (private to the owner)
 
-Drop any video, Short or channel that inspires you into the portal, or paste
-it to Claude in chat. Claude studies it and adds what it learns to the
+Drop any YouTube, Instagram, X (Twitter) or Facebook link that inspires you into
+the portal (a whole account, or one post), or paste it to Claude in chat. Claude studies it and adds what it learns to the
 playbook. Every study adds rules, sources and Align ideas, so the playbook
 keeps getting sharper.
 
@@ -16,17 +16,25 @@ quotes other people's titles and numbers.
 When asked to "go through my Video Lab inbox", or when handed a link:
 
 1. **Read the inbox.** `ArtifactData list` on `inbox` at the portal URL. Work through each doc with `status: "new"`, plus any links pasted in chat (add those to `inbox` first).
-2. **Quick read (works in the cloud).** For a YouTube channel, video or Short:
+2. **Read what the cloud can.** What each platform lets a cloud machine see without a login:
+
+   | | Whole account | One post |
+   | --- | --- | --- |
+   | YouTube | yes: titles, views, lengths, thumbnails | yes |
+   | X | no: Mac | yes: text, views, likes, replies, length, thumbnail |
+   | Instagram | no: Mac | no: Mac |
+   | Facebook | no: Mac | no: Mac |
+
    ```bash
    pip install -q yt-dlp   # if missing
    cd study && node src/quick.mjs "<link>" --limit 500
    ```
-   This writes `study/pack/yt-<channel>/quick.md`, `quick.json`, `quick-top.jpg` and `quick-bottom.jpg` (git-ignored). Read `quick.md`, and look at both thumbnail sheets. YouTube blocks full video downloads from cloud machines (the "not a bot" check), so the cloud only gets titles, views, lengths and thumbnails.
-   For a single video, also note what the person said caught their eye (`note`), and look at that video's thumbnail (`https://i.ytimg.com/vi/<id>/hqdefault.jpg`).
-   For Instagram, TikTok or Facebook links, the cloud can't read them. Ask for a Mac study (step 3).
-3. **Full study (on the Mac).** For channels worth going deep on, tell the person to double-click **Study YouTube Channel** (or Instagram or Facebook) and paste the link. The pack goes to their private `align-study` repo. Then read `posts.json`, `report.md`, `sheets/` and `thumbs/` from there (see `study/README.md`). This adds transcripts, on-screen text and stills from the hook.
+   For YouTube this writes `study/pack/yt-<channel>/quick.md`, `quick.json`, `quick-top.jpg` and `quick-bottom.jpg` (git-ignored). Read `quick.md` and look at both thumbnail sheets. A YouTube video link reads its whole channel. YouTube blocks full video downloads from the cloud (the "not a bot" check), so this is packaging only.
+   For one X post it writes `pack/x-<account>/post-<id>.json` and its thumbnail. For Instagram and Facebook it exits 3 and says it needs the Mac. In that case set the inbox doc's `status` to `"read"` and its `reply` to say a Mac study is needed.
+   Also read the person's `note` on what caught their eye, and look at the thumbnail.
+3. **Full study (on the Mac).** For accounts worth going deep on, and for anything on Instagram or Facebook, tell the person to double-click **Study Any Link** and paste the link. It works for all four platforms: YouTube by yt-dlp, Instagram and X by gallery-dl with their browser login, Facebook in its own Chrome window. The pack goes to their private `align-study` repo, saved as `yt-…`, `x-…`, `fb-…` or the Instagram handle. Then read `posts.json`, `report.md`, `sheets/` and `thumbs/` from there (see `study/README.md`). This adds transcripts, on-screen text and stills from the hook.
 4. **Update the playbook**, all in one `ArtifactData batch`:
-   - `sources/<handle>`: `{ name, url, handle, platform, depth: "quick"|"deep", subs, uploads, typicalViews, studiedAt, summary, works[], borrow[], avoid[] }`
+   - `sources/<handle>`: `{ name, url, handle, platform: "YouTube"|"Instagram"|"X"|"Facebook", depth: "quick"|"deep", subs, uploads, typicalViews, studiedAt, summary, works[], borrow[], avoid[] }`
    - `rules/<slug>`: `{ area, rule, why, alignUse, strength 1-5, evidence: [{ source, url, note }], updatedAt }`. `area` is one of `packaging hook structure retention visual voice topic format cta channel`.
      **Merge, don't pile up.** If a rule already says the same thing, add this source to its `evidence` and raise `strength` (1 = one source, 2 = one source with clear numbers, 3 = two or three sources, 4 = four or more, 5 = also proven on Align's own posts). If a new source contradicts a rule, say so in `why` and lower `strength`. Pin each write with `if_version`.
    - `ideas/<slug>`: 2-4 slim Align versions of what works: `{ title, hook, format, beats[], from, status: "idea", createdAt }`. Align is a dating app with an astrology and tarot-card look; ideas are about love, dating and signs. Quote the source only in short pieces, the same rule as `founder/`.

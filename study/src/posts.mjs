@@ -95,6 +95,7 @@ export function mergeNumbers(post, n) {
     likes: n.likes ?? post.likes,
     comments: n.comments ?? null,
     duration: n.duration ?? null,
+    reposts: n.reposts ?? null,   // X only
     numbersFrom: n.from ?? null,
   }
 }

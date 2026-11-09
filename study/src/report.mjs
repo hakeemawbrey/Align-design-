@@ -140,6 +140,7 @@ export function buildRecords(posts, workOf) {
       onScreen: onScreenByFrame ? uniqueLines(onScreenByFrame) : [],
       onScreenByFrame: onScreenByFrame ? (w.frames ?? []).map((f, i) => ({ at: f.t ?? null, slide: f.slide ?? null, lines: onScreenByFrame[i] ?? [] })) : null,
       sheet: w.sheet ? `sheets/${p.shortcode}.jpg` : null,
+      reposts: p.reposts ?? null,
       numbersFrom: p.numbersFrom,
       chapters: p.chapters ?? null,
       thumb: p.subtype ? `thumbs/${p.shortcode}.jpg` : null,
@@ -401,7 +402,7 @@ export function writePack(handle, { tz } = {}) {
   writeFileSync(path.join(out, 'report.md'), buildReport({ handle, profile, recs, tz }))
   writeFileSync(path.join(out, 'README.md'), [
     `# @${handle}: study pack`, '',
-    `Every post on ${profile?.site === 'facebook' ? `${profile.link} (Facebook reels and videos)` : profile?.site === 'youtube' ? `${profile.link} (YouTube videos and Shorts)` : `instagram.com/${handle}`}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
+    `Every post on ${profile?.site === 'facebook' ? `${profile.link} (Facebook reels and videos)` : profile?.site === 'youtube' ? `${profile.link} (YouTube videos and Shorts)` : profile?.site === 'twitter' ? `${profile.link} (X posts with video or photos)` : `instagram.com/${handle}`}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
     'It is reference material for private analysis only: keep this repo private and don\'t repost any of it.', '',
     '- `report.md`: the numbers (formats, top posts, hooks, topics, CTAs, timing)',
     '- `posts.json`: every post in full; `posts.csv`: the same as a spreadsheet',
