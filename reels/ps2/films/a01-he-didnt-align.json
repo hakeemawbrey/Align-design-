@@ -1,0 +1,17 @@
+{
+  "id": "a01-he-didnt-align",
+  "captions": "caps",
+  "music": "noir",
+  "title": "Detective, what killed him?",
+  "caption": "dating kills slowly.",
+  "hashtags": ["dating", "datingapps", "astrology", "relatable"],
+  "beats": [
+    { "img": "a01/01-gurney.png", "text": "detective, what killed him?", "textAt": 0.3, "dur": 2.8, "from": [0.5, 0.3, 1.12], "to": [0.5, 0.62, 1.2] },
+    { "img": "a01/02-phone.png", "text": "", "dur": 1.5, "from": [0.45, 0.62, 1.0], "to": [0.42, 0.68, 1.18] },
+    { "img": "a01/03-detective.png", "text": "he didn't align.", "textAt": 0.6, "dur": 3.0, "from": [0.5, 0.42, 1.0], "to": [0.5, 0.38, 1.1], "cue": "sting" },
+    { "img": "a01/04-two-shot.png", "text": "another victim.", "textAt": 0.2, "dur": 2.3, "from": [0.5, 0.35, 1.05], "to": [0.5, 0.35, 1.12] },
+    { "img": "a01/05-walkout.png", "text": "", "dur": 4.4, "bw": true, "from": [0.55, 0.5, 1.0], "to": [0.6, 0.42, 1.14], "cue": "reveal" },
+    { "end": true, "dur": 3.2 }
+  ],
+  "end": { "line": "it has to be mutual.", "sub": "a new deal at 11:11" }
+}

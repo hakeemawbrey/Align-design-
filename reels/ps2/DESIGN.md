@@ -6,8 +6,15 @@ cutscene, and the faces are characterful and funny when played straight.
 Direction A (cold noir) looked good but risks reading muddy on a phone.
 Direction B (glossy FMV) never ran because of the image limit.
 
-Frames are made with **gemini-3-pro-image** (ElevenLabs), then cut together
-by `film.mjs`: slow push-ins, crossfades, captions, end card and score.
+Frames are made with **gemini-3.1-flash-image** through Figma's image generation
+(file "Align PS2 reels – pilot frames", 1080×1920 requested, comes back
+768×1376). The ElevenLabs free plan hit its daily image limit. Frames live in
+`art/<episode>/` and are cut together by `film.mjs` (`films/<id>.json`):
+slow push-ins, crossfades, captions, end card and score.
+
+```bash
+node reels/ps2/film.mjs a01      # → reels/out/ps2/film/a01-he-didnt-align.mp4
+```
 
 ## Style paragraph (paste into every prompt)
 
