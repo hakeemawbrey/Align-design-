@@ -1,0 +1,36 @@
+{
+  "id": "01-venus-sign",
+  "title": "How you found out about your Venus sign",
+  "caption": "your sun sign was never the one doing the loving",
+  "cta": "comment VENUS and we'll send you yours. full chart free on align",
+  "hashtags": ["venussign", "astrology", "zodiac", "lovelanguage", "birthchart"],
+  "cast": {
+    "you": { "skin": "#e0a77f", "shirt": "#f2b43a", "pants": "#3b3f6b", "hair": "#2a1a14", "style": "short", "sign": "leo" },
+    "them": { "skin": "#8d5a3b", "shirt": "#5fb8c9", "pants": "#2c2c3a", "hair": "#120c0a", "style": "curly", "sign": "aquarius" }
+  },
+  "scenes": [
+    { "text": "This is how you found out about your *Venus sign.*", "set": "room", "shot": "push", "focus": "you",
+      "cast": [{ "who": "you", "mark": "bed", "pose": "phone", "expr": "smile" }], "sfx": "whoosh" },
+    { "text": "You've been texting someone for three weeks.", "set": "phone", "shot": "phone",
+      "screen": { "name": "Jordan", "msgs": [["me", "ok but have you seen the moon tonight"], ["them", "lol yes"], ["me", "it's so big. it looks like it's listening"], ["me", "anyway how was your day"], ["them", "good"]] }, "sfx": "pop" },
+    { "text": "So you send them a voice note. *Four minutes* long.", "set": "phone", "shot": "phone",
+      "screen": { "name": "Jordan", "msgs": [["them", "good"], ["me", "~4:02"]] }, "sfx": "pop" },
+    { "text": "They reply... *haha.*", "set": "phone", "shot": "phone",
+      "screen": { "name": "Jordan", "msgs": [["me", "~4:02"], ["them", "haha"]] }, "sfx": "thud" },
+    { "text": "You blame your sun sign. Classic *Leo.*", "set": "room", "shot": "snap", "focus": "you",
+      "cast": [{ "who": "you", "mark": "center", "pose": "shrug", "expr": "worried" }], "fx": ["glyph:leo"], "sfx": "boing" },
+    { "text": "But your sun sign isn't how you love. *Venus* is.", "set": "space", "shot": "orbit", "focus": "you",
+      "cast": [{ "who": "you", "mark": "center", "pose": "float", "expr": "shock" }], "fx": ["planet:venus"], "tag": "venus = how you love", "sfx": "swell" },
+    { "text": "Wherever Venus was the day you were born is how you love.", "set": "space", "shot": "top", "focus": "you",
+      "cast": [{ "who": "you", "mark": "center", "pose": "stand", "expr": "smile" }], "fx": ["wheel", "planet:venus"], "sfx": "whoosh" },
+    { "text": "Yours is in *Cancer.* You love like a warm meal.", "set": "room", "shot": "medium", "focus": "you",
+      "cast": [{ "who": "you", "mark": "center", "pose": "heart", "expr": "smitten" }], "fx": ["glyph:cancer", "hearts"], "sfx": "ding" },
+    { "text": "Theirs is in *Aquarius.* They love like a group chat.", "set": "street", "shot": "medium", "focus": "them",
+      "cast": [{ "who": "them", "mark": "center", "pose": "phone", "expr": "smile" }], "fx": ["glyph:aquarius"], "sfx": "ding" },
+    { "text": "Neither of you is wrong. You just weren't *aligned.*", "set": "cafe", "shot": "wide", "focus": "both",
+      "cast": [{ "who": "you", "mark": "seatL", "pose": "sit", "expr": "worried" }, { "who": "them", "mark": "seatR", "pose": "sit", "expr": "neutral" }], "fx": ["question"], "sfx": "whoosh" },
+    { "text": "So next time, read the sky before the face.", "set": "space", "shot": "pull", "focus": "both",
+      "cast": [{ "who": "you", "mark": "left", "pose": "float", "expr": "smile" }, { "who": "them", "mark": "right", "pose": "float", "expr": "smile" }], "fx": ["link"], "sfx": "swell" }
+  ],
+  "end": "read the sky before the face"
+}
