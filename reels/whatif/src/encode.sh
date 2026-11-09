@@ -9,7 +9,7 @@ read I TP <<<"$(lufs build/mix.wav)"
 gain=$(python3 -c "print(-14 - $I)")
 # the limiter needs a few passes of make-up gain to settle at -14 under a -2.2 dB ceiling
 for pass in 1 2 3; do
-  ffmpeg -y -loglevel error -i build/mix.wav -af "volume=${gain}dB,alimiter=limit=$(python3 -c 'print(10**(-2.6/20))'):attack=1:release=60:level=false,aresample=48000" -c:a pcm_s24le build/master.wav
+  ffmpeg -y -loglevel error -i build/mix.wav -af "volume=${gain}dB,aresample=192000,alimiter=limit=$(python3 -c 'print(10**(-2.7/20))'):attack=1:release=60:level=false,aresample=48000" -c:a pcm_s24le build/master.wav
   read I TP <<<"$(lufs build/master.wav)"
   gain=$(python3 -c "print($gain + (-14 - $I))")
 done
