@@ -276,7 +276,8 @@ export function makeFilm(S) {
     const caps = CAM.map(c => popText(box, c.cap, { top: 1290, size: 80, accentSize: 106, at: c.t0 + 0.25, gap: 0.09, accentColor: c.st.color, fit: true }))
     const gcap = popText(box, S.group.cap, { top: 1500, size: 84, accentSize: 112, at: T.group + 0.6, gap: 0.12, accentColor: S.accent || GOLD })
     const last = popText(box, S.last.text, { top: 300, size: 120, accentSize: 168, at: T.last + 0.2, gap: 0.16, late: 1, lateAt: T.last + 0.5, wobble: false, accentColor: S.accent || GOLD, fit: true })
-    const bug = buildBug(box, { at: T.bug })
+    // a very subtle invite where the old "THE SIGNS AS…" bug sat (top-left of the safe box)
+    const tag = el('div', { position: 'absolute', left: '56px', top: '64px', font: `700 28px ${MONO}`, letterSpacing: '0.14em', color: BONE, opacity: 0, whiteSpace: 'nowrap', pointerEvents: 'none' }, box, 'come align · join the beta')
     const lesson = buildLesson(root, LESSON)   // full frame: its scrim must cover the whole picture (text sits mid-frame)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
@@ -357,7 +358,7 @@ export function makeFilm(S) {
         gcap.update(t, outK(t, [T.lesson, T.lesson + 0.3]))
         last.update(t, popOut(t, T.out))
         lesson.update(t)
-        bug.update(t, outK(t, [STORY_END - 0.3, STORY_END]))
+        tag.style.opacity = String((0.38 * clamp((t - 1.0) / 0.8) * outK(t, [STORY_END - 0.3, STORY_END])).toFixed(3))
         black.style.opacity = String(1 - ease.inOutQuad(prog(t, 0, 0.35)))
         drawGrain(gx, t)
       },
