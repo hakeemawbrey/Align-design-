@@ -43,6 +43,35 @@ format carries over from the trend; no lines, art or audio do.
    everyone first. The moment turns out to be the three seconds before Sol
    (Pisces) runs over with an umbrella. *It's who you align with after.*
 
+### Beta-feature stories (start here)
+
+Stories 1–4 were written before the beta scope was set. Two of their premises
+aren't in the beta: trading cards after three days (3) and a star over every
+head (2). Stories 5 and 6 are built only from beta features, and every rule in
+their towns is something the app actually does:
+
+5. **`05-no-face-until-you-align`: In this town, nobody sees your face until you both align.**
+   The aura photo checks you're a real person, your card holds your sun, moon and
+   rising, dealbreakers and one line, and each night's deck is align or release,
+   with the veil lifting only when it's mutual. Dre (Leo), "best face in town",
+   writes "dealbreakers: none. bio: I'm better in person" and gets nothing back.
+   He reads his own sign in his profile ("Leo · work on: needing an audience"),
+   rewrites his card, and Ivy (Virgo) aligns. "Oh. You're cute too." "Too?"
+   "Your card already was." *Read the sky before the face.*
+   Beta: onboarding, aura photo, deck, veiled card and mutual reveal, edit your card, learn your sign.
+6. **`06-nobody-writes-a-first-message`: In this town, nobody has to write a first message.**
+   You play a talk card, and neither answer shows until you both have. Nia
+   (Capricorn) checks today's sky every morning and reads her alignment with Jonah
+   (Pisces): Pull 4, "he answers like you do"; Push 2, "you plan, he drifts". She
+   waits on the cosmic calendar for a perfect day. On Oct 24, Mercury retrograde,
+   Jonah plays "What's something you're scared to say first?" Both answers flip:
+   the same line. *Astrology reads. It never decides.*
+   Beta: chat, talk cards, the alignment widget (Pull / Push), today's sky, cosmic calendar.
+
+Each script lists the features it shows in a `beta` field. The on-screen
+boards (`fx: "board:TITLE|second line"`) stand in for the app's widgets. Keep
+their wording to Align's: **alignment**, never "compatibility".
+
 ## Render
 
 Needs Node 18+, ffmpeg, and the narrator voice. Run `npm install` in

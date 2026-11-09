@@ -976,17 +976,30 @@ function drawQuestion(o, sh, u, id) {
 }
 
 function drawBoard(o, u, text) {
+  // a cream sign hanging up top; "|" splits a title line from a smaller second line
   const k = backOut((u - 0.1) / 0.4)
   if (k <= 0) return
+  const [title, sub] = text.split('|')
   o.save()
-  o.translate(W / 2, H * 0.24); o.scale(k, k)
-  o.font = '800 64px Poppins, sans-serif'
-  const w = o.measureText(text).width + 120
+  o.translate(W / 2, H * 0.22); o.scale(k, k)
+  let ts = 64, ss = 40
+  o.font = `800 ${ts}px Poppins, sans-serif`
+  const tw = o.measureText(title).width
+  if (tw > W - 200) { ts *= (W - 200) / tw; o.font = `800 ${ts}px Poppins, sans-serif` }
+  let sw = 0, subs = []
+  if (sub) { o.font = `700 ${ss}px Poppins, sans-serif`; subs = wrap(o, sub, W - 220); sw = Math.max(...subs.map((l) => o.measureText(l).width)) }
+  const w = Math.max(Math.min(tw, W - 200), sw) + 120
+  const h = sub ? ts + ss * 1.2 * subs.length + 90 : 160
   o.shadowColor = 'rgba(0,0,0,0.35)'; o.shadowBlur = 30; o.shadowOffsetY = 10
-  o.fillStyle = '#f6e4c0'; roundRect(o, -w / 2, -80, w, 160, 18); o.fill()
+  o.fillStyle = '#f6e4c0'; roundRect(o, -w / 2, -h / 2, w, h, 18); o.fill()
   o.shadowColor = 'transparent'
-  o.strokeStyle = '#c9962f'; o.lineWidth = 6; roundRect(o, -w / 2 + 14, -66, w - 28, 132, 10); o.stroke()
-  o.fillStyle = '#4a2f7a'; o.textAlign = 'center'; o.textBaseline = 'middle'; o.fillText(text, 0, 4)
+  o.strokeStyle = '#c9962f'; o.lineWidth = 6; roundRect(o, -w / 2 + 14, -h / 2 + 14, w - 28, h - 28, 10); o.stroke()
+  o.textAlign = 'center'; o.textBaseline = 'middle'
+  o.fillStyle = '#4a2f7a'; o.font = `800 ${ts}px Poppins, sans-serif`
+  const top = -h / 2 + 45
+  o.fillText(title, 0, sub ? top + ts / 2 : 4)
+  o.fillStyle = '#c0715a'; o.font = `700 ${ss}px Poppins, sans-serif`
+  subs.forEach((l, i) => o.fillText(l, 0, top + ts + 8 + ss * 0.6 + i * ss * 1.2))
   o.restore()
 }
 
