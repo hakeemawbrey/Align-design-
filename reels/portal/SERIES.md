@@ -14,9 +14,9 @@ crosses midnight UTC.
 | `05-twelve-twelve` | Sat Dec 12 2026 · 12/12 | Thu Dec 10 | The *12/12* portal is Saturday | CLOSE · MIRROR · OPEN | calendar date; numerology (1 = self, 2 = partnership) |
 | `06-solstice` | Mon Dec 21 2026 · December solstice 20:50 UTC, Sun into Capricorn | Sat Dec 19 | The *longest night* of the year is Monday | REST · LIGHT · RETURN | [Universal Time Date: solstices 2026](https://www.universaltimedate.com/articles/equinoxes-and-solstices-2026), [Star Walk: solstice](https://starwalk.space/en/news/what-is-a-solstice) |
 | `07-full-moon-cancer` | Wed Dec 23 2026 · Full Moon 2°13' Cancer, biggest supermoon of 2026 (8:28 pm ET; Dec 24 01:28 UTC) | Mon Dec 21 | The biggest *supermoon* of the year is Wednesday | SOFTEN · GATHER · HOLD | [CHANI lunations 2026](https://chani.com/this-year/key-dates/2026-astrological-key-dates-new-and-full-moons), [Star Walk: December full moon](https://starwalk.space/news/full-moon-december) |
-| `08-year-of-eleven` | Fri Jan 1 2027 · 1/1 of an 11 year (2+0+2+7) | Wed Dec 30 | *2027* is an eleven year | CLEAR · CHOOSE · BEGIN | calendar date; numerology (universal year 11) |
+| `08-year-of-eleven` | Fri Jan 1 2027 · 1/1 of an 11 year (2+0+2+7) | Wed Dec 30 | 2027 is a *master-number* year | CLEAR · CHOOSE · BEGIN | calendar date; numerology (universal year 11) |
 
-Voices rotate: af_heart (01, 06), af_bella (02, 07), af_nicole (03, 08), bf_emma (04), af_sarah (05).
+One brand voice for the whole series: Kokoro `af_heart` at speed 1.0. Measured voice runs 42–47 s, so the reels come out at about 51–57 s.
 
 Left out: **Sun into Sagittarius** (Nov 22 2026, 07:23 UTC). The date checks
 out, but in the Americas it falls on the night of Nov 21, and it lands two days
@@ -40,5 +40,4 @@ Post each reel **two days before its date**, so the hook ("in two days", "is
 Tuesday") is literally true on the day people see it. That gives roughly one
 portal a week through the holidays. The gaps are at Nov 13–24 and Dec 12–21,
 which leaves room for the affirm and signs reels between. Pin 01 while it's
-live, and swap the pin to the next portal once it's posted. The caption always
-ends "follow for the next portal ✦", so each episode sells the next.
+live, and swap the pin to the next portal once it's posted. The renderer adds the follow line to every caption, so each episode points to the next.

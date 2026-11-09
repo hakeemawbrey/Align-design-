@@ -4,7 +4,7 @@
   "date": "2026-12-23",
   "postBy": "2026-12-21",
   "cover": "The biggest *supermoon* of the year is Wednesday",
-  "caption": "wednesday's full moon in cancer is the biggest supermoon of 2026, in the sign the moon rules. soften at the family table, gather the people who feel like home, and hold yourself. follow for the next portal ✦",
+  "caption": "wednesday's full moon in cancer is the biggest supermoon of 2026, in the sign the moon rules. soften at the family table, gather the people who feel like home, and hold yourself",
   "hashtags": [
     "fullmoon",
     "cancerfullmoon",
@@ -14,8 +14,8 @@
     "holidays",
     "datingadvice"
   ],
-  "voice": "af_bella",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "SOFTEN",
     "GATHER",
@@ -28,10 +28,10 @@
   ],
   "scenes": [
     {
-      "art": "moon",
+      "art": "numeral",
       "opts": {
-        "phase": 1,
-        "glyph": "♋"
+        "text": "♋",
+        "halo": "rays"
       },
       "label": "DECEMBER 23 · SUPERMOON",
       "step": null,
@@ -43,10 +43,10 @@
       ]
     },
     {
-      "art": "numeral",
+      "art": "moon",
       "opts": {
-        "text": "♋",
-        "halo": "rays"
+        "phase": 0.5,
+        "glyph": "♋"
       },
       "label": "THE MOON AT HOME",
       "step": null,
@@ -76,6 +76,7 @@
           "NOT YET",
           "AND I'M HAPPY"
         ],
+        "wordsAt": 3,
         "dissolveAt": null
       },
       "label": "ONE LINE · NO STORY",
@@ -121,7 +122,7 @@
       "lines": [
         "Step three: *hold* yourself.",
         "Your moon sign is what makes you feel *safe.*",
-        "The *Align* app reads it from your birth time.",
+        "The Align app reads it from your birth time.",
         "Give yourself that, tonight."
       ]
     },
@@ -140,10 +141,10 @@
       ]
     },
     {
-      "art": "moon",
+      "art": "numeral",
       "opts": {
-        "phase": 1,
-        "glyph": "♋"
+        "text": "♋",
+        "halo": "rays"
       },
       "step": 2,
       "lines": [

@@ -4,7 +4,7 @@
   "date": "2026-11-11",
   "postBy": "2026-11-09",
   "cover": "The *11/11* portal opens in two days",
-  "caption": "11/11 is two days away. release the old story the night before, write eleven lines about the love you want, and read them at 11:11. follow for the next portal ✦",
+  "caption": "11/11 is two days away. release the old story the night before, write eleven lines about the love you want, and read them at 11:11",
   "hashtags": [
     "1111portal",
     "1111",
@@ -15,7 +15,7 @@
     "zodiac"
   ],
   "voice": "af_heart",
-  "speed": 0.95,
+  "speed": 1.0,
   "steps": [
     "RELEASE",
     "WRITE",
@@ -112,6 +112,7 @@
           "THE DOUBT",
           "THE NOT YET"
         ],
+        "wordsAt": 2,
         "dissolveAt": 4
       },
       "label": "THE NIGHT BEFORE",
@@ -152,37 +153,21 @@
       "art": "card",
       "opts": {
         "face": "11:11",
-        "sub": "THE SKY BEFORE THE FACE",
-        "revealAt": 2
+        "sub": "THE FACE COMES LAST",
+        "revealAt": 1
       },
       "label": "THE ALIGN APP",
       "step": 1,
       "lines": [
         "Write how it *feels,* not how they look.",
-        "It's why the *Align* app shows you",
-        "someone's *sky* before their face."
+        "On the Align app, the face comes *last.*"
       ]
     },
     {
       "art": "clock",
       "opts": {
-        "time": "11:11",
-        "scale": 0.72,
-        "y": -290
+        "time": "11:11"
       },
-      "with": [
-        {
-          "art": "list",
-          "opts": {
-            "title": "I AM LOVED",
-            "count": 11,
-            "items": ["I AM CHOSEN", "I FEEL SAFE", "I'M SEEN"],
-            "filled": true,
-            "scale": 0.5,
-            "y": 250
-          }
-        }
-      ],
       "label": "NOT HOPING · REMEMBERING",
       "step": 2,
       "lines": [

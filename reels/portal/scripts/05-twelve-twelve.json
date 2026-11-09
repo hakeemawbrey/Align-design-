@@ -4,7 +4,7 @@
   "date": "2026-12-12",
   "postBy": "2026-12-10",
   "cover": "The *12/12* portal is Saturday",
-  "caption": "12/12 is a full circle: twelve months, twelve signs, twelve houses. close one thing from this year, mirror what you give in love, and open up before you're seen. follow for the next portal ✦",
+  "caption": "12/12 is a full circle: twelve months, twelve signs, twelve houses. close one thing from this year, mirror what you give in love, and let someone know you before they see you",
   "hashtags": [
     "1212portal",
     "1212",
@@ -13,8 +13,8 @@
     "loveritual",
     "datingadvice"
   ],
-  "voice": "af_sarah",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "CLOSE",
     "MIRROR",
@@ -114,7 +114,12 @@
           "I SHOW UP",
           "I REMEMBER"
         ],
-        "itemsAt": 2
+        "itemsAt": 2,
+        "circle": [
+          1,
+          2
+        ],
+        "circleAt": 3
       },
       "label": "WHAT YOU GIVE · WHAT YOU WANT",
       "step": 1,
@@ -140,9 +145,8 @@
       "lines": [
         "Step three: *open.*",
         "Let someone know you before they *see* you.",
-        "On the *Align* app, your card stays veiled",
-        "until you *both* align.",
-        "Your sky, your words, then your *face.*"
+        "On the Align app, your card stays veiled",
+        "until you *both* align."
       ]
     },
     {
@@ -176,7 +180,7 @@
         "0": "12/12."
       },
       "pill": "+ FOLLOW",
-      "pillAt": 1
+      "pillAt": 2
     }
   ]
 }

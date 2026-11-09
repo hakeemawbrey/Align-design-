@@ -4,7 +4,7 @@
   "date": "2026-11-13",
   "postBy": "2026-11-11",
   "cover": "*Venus* turns direct on Friday",
-  "caption": "venus has looked like she was moving backward since october 3. on friday she turns direct in libra, and mercury does too. remember the feeling, decide on the ex, then move. follow for the next portal ✦",
+  "caption": "venus has looked like she was moving backward since october 3. on friday she turns direct in libra, and mercury does too. remember the feeling, decide on the ex, then move",
   "hashtags": [
     "venusretrograde",
     "venusdirect",
@@ -14,8 +14,8 @@
     "exes",
     "datingadvice"
   ],
-  "voice": "af_bella",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "REMEMBER",
     "DECIDE",
@@ -80,10 +80,12 @@
       "label": "THE ONES WHO CAME BACK",
       "step": null,
       "lines": [
-        "So everyone who came *back around*",
-        "during the retrograde",
-        "gets an answer this week."
-      ]
+        "So the ex who liked your two a.m. story",
+        "gets an *answer* this week."
+      ],
+      "show": {
+        "0": "So the ex who liked your 2 a.m. story"
+      }
     },
     {
       "art": "note",
@@ -93,6 +95,7 @@
           "THE LATE CALLS",
           "FEELING SURE"
         ],
+        "wordsAt": 2,
         "dissolveAt": null
       },
       "label": "BEFORE FRIDAY",
@@ -109,14 +112,14 @@
       "opts": {
         "face": "Released",
         "sub": "THEY LEAVE YOUR DECK",
-        "revealAt": 2
+        "revealAt": 3
       },
       "label": "THE ALIGN APP",
       "step": 1,
       "lines": [
         "Step two: *decide.*",
         "Does that feeling need *them?*",
-        "On the *Align* app, when you release someone,",
+        "On the Align app, when you release someone,",
         "they leave your deck.",
         "Let them leave your *head* too."
       ]
@@ -134,9 +137,8 @@
       "step": 2,
       "lines": [
         "Step three: when Venus *moves,* move.",
-        "Say yes to one new plan,",
-        "with someone *new,*",
-        "and don't look *back.*"
+        "Say yes to the coffee you keep *postponing,*",
+        "and don't look back."
       ]
     },
     {

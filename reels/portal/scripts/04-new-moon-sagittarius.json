@@ -4,7 +4,7 @@
   "date": "2026-12-08",
   "postBy": "2026-12-06",
   "cover": "The *Sagittarius* new moon is Tuesday",
-  "caption": "tuesday night's new moon in sagittarius is a blank page in the sign of honesty. name the feeling you want, plant three things you won't bend on, and trust the dark for a few days. follow for the next portal ✦",
+  "caption": "tuesday night's new moon in sagittarius is a blank page in the sign of honesty. name the feeling you want, plant three things you won't bend on, and trust the dark for a few days",
   "hashtags": [
     "newmoon",
     "sagittariusnewmoon",
@@ -13,8 +13,8 @@
     "dealbreakers",
     "datingadvice"
   ],
-  "voice": "bf_emma",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "NAME",
     "PLANT",
@@ -64,7 +64,7 @@
       "lines": [
         "Sagittarius is the *archer,*",
         "the sign of honesty and the open road.",
-        "So aim at what you *actually* want."
+        "Aim past the one who only texts *after ten.*"
       ]
     },
     {
@@ -75,6 +75,7 @@
           "TO BE MET",
           "NOT MANAGED"
         ],
+        "wordsAt": 2,
         "dissolveAt": null
       },
       "label": "A FEELING · NOT A TYPE",
@@ -115,7 +116,7 @@
       "label": "THE ALIGN APP",
       "step": 1,
       "lines": [
-        "On the *Align* app, your dealbreakers",
+        "On the Align app, your dealbreakers",
         "sit right on your card,",
         "so they're read *before* your face."
       ]
@@ -131,8 +132,8 @@
       "lines": [
         "Step three: *trust* the dark.",
         "Seeds don't sprout the night you plant them.",
-        "Watch for the first thin *crescent,*",
-        "and keep going."
+        "Don't check who viewed your *story.*",
+        "Watch for the first thin crescent."
       ]
     },
     {

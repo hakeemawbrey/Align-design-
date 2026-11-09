@@ -4,7 +4,7 @@
   "date": "2026-11-24",
   "postBy": "2026-11-22",
   "cover": "The *Gemini* supermoon is Tuesday",
-  "caption": "tuesday's full moon in gemini is a supermoon, and gemini is the sign of conversation. notice the sentence you keep swallowing, say it, then listen. follow for the next portal ✦",
+  "caption": "tuesday's full moon in gemini is a supermoon, and gemini is the sign of conversation. notice the sentence you keep swallowing, say it without the haha, then listen",
   "hashtags": [
     "fullmoon",
     "geminifullmoon",
@@ -13,8 +13,8 @@
     "astrology",
     "datingadvice"
   ],
-  "voice": "af_nicole",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "NOTICE",
     "SAY",
@@ -27,38 +27,37 @@
   ],
   "scenes": [
     {
-      "art": "moon",
+      "art": "numeral",
       "opts": {
-        "phase": 1,
-        "glyph": "♊"
+        "text": "♊",
+        "halo": "rays"
       },
       "label": "NOVEMBER 24 · SUPERMOON",
       "step": null,
       "lines": [
         "The full moon in *Gemini* is Tuesday,",
-        "a *supermoon.*",
-        "Here's what to *say.*"
+        "and it's a *supermoon.*",
+        "Here's what to say, and to *whom.*"
       ]
     },
     {
       "art": "moon",
       "opts": {
-        "phase": 1,
-        "glyph": "☉"
+        "phase": 0.5,
+        "glyph": "♊"
       },
       "label": "SUN ☉ · EARTH · MOON ☽",
       "step": null,
       "lines": [
         "A full moon is the sun and moon",
-        "on *opposite* sides of Earth.",
-        "Nothing *hidden.*"
+        "on *opposite* sides of Earth,",
+        "so the whole face is *lit.*"
       ]
     },
     {
-      "art": "numeral",
+      "art": "figures",
       "opts": {
-        "text": "♊",
-        "halo": "rays"
+        "pose": "apart"
       },
       "label": "GEMINI · THE TWINS",
       "step": null,
@@ -83,20 +82,27 @@
       "step": 0,
       "lines": [
         "Step one: *notice.*",
-        "The sentence you keep swallowing.",
+        "Write the sentence you keep swallowing.",
         "I like you. I'm hurt. I want *more.*"
       ]
     },
     {
-      "art": "figures",
+      "art": "note",
       "opts": {
-        "pose": "apart"
+        "title": "SEND",
+        "words": [
+          "HAHA"
+        ],
+        "wordsAt": 2,
+        "dissolveAt": 3
       },
-      "label": "ONE SENTENCE · OUT LOUD",
+      "label": "ONE SENTENCE · NO HAHA",
       "step": 1,
       "lines": [
-        "Step two: *say* it, out loud.",
-        "Short is braver than *perfect.*"
+        "Step two: *say* it.",
+        "One sentence, to them, before Wednesday,",
+        "and don't soften it with a *haha.*",
+        "Delete it. Then *send.*"
       ]
     },
     {
@@ -104,14 +110,27 @@
       "opts": {
         "face": "Talk card",
         "sub": "BOTH ANSWER · THEN REVEAL",
-        "revealAt": 2
+        "revealAt": 3
       },
       "label": "THE ALIGN APP",
       "step": 2,
       "lines": [
         "Step three: *listen.*",
-        "It's why talk cards on the *Align* app",
+        "Ask, then let the quiet do the work.",
+        "It's why talk cards on the Align app",
         "hide your answer until you've *both* answered."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "label": "UNDER THE FULL MOON",
+      "step": 2,
+      "lines": [
+        "Hear what they say,",
+        "and what they *don't.*"
       ]
     },
     {
@@ -129,10 +148,10 @@
       ]
     },
     {
-      "art": "moon",
+      "art": "numeral",
       "opts": {
-        "phase": 1,
-        "glyph": "♊"
+        "text": "♊",
+        "halo": "rays"
       },
       "step": 2,
       "lines": [

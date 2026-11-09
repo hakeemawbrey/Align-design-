@@ -4,7 +4,7 @@
   "date": "2026-12-21",
   "postBy": "2026-12-19",
   "cover": "The *longest night* of the year is Monday",
-  "caption": "the december solstice is monday: the longest night up north, and the sun moves into capricorn. rest, name what you want more of, and come back tomorrow. follow for the next portal ✦",
+  "caption": "the december solstice is monday: the longest night up north, and the sun moves into capricorn. rest, light one candle for what you want more of, and come back tomorrow",
   "hashtags": [
     "wintersolstice",
     "solstice",
@@ -14,7 +14,7 @@
     "datingadvice"
   ],
   "voice": "af_heart",
-  "speed": 0.95,
+  "speed": 1.0,
   "steps": [
     "REST",
     "LIGHT",
@@ -23,6 +23,7 @@
   "sources": [
     "December solstice Monday Dec 21, 2026, 20:50 UTC (3:50 pm EST) — https://www.universaltimedate.com/articles/equinoxes-and-solstices-2026 ; https://starwalk.space/en/news/what-is-a-solstice",
     "Sun enters Capricorn at the December solstice (tropical zodiac, 0° Capricorn); Sun in Sagittarius Nov 22 – Dec 21, 2026 — https://cafeastrology.com/events/sun-enters-sagittarius-2026/",
+    "Moon on Dec 21, 2026 is waxing gibbous (full Dec 23/24), hence phase 0.43.",
     "Longest night in the Northern Hemisphere only (label says so)."
   ],
   "scenes": [
@@ -79,27 +80,20 @@
       "lines": [
         "Step one: *rest.*",
         "Don't text first tonight.",
-        "Let the quiet *hold* you.",
-        "Rest isn't waiting. It's making *room.*"
+        "Not even the *happy holidays* one.",
+        "Let the quiet *hold* you."
       ]
     },
     {
-      "art": "list",
+      "art": "candle",
       "opts": {
-        "title": "MORE OF",
-        "count": 3,
-        "items": [
-          "SLOW MORNINGS",
-          "SOMEONE WHO STAYS",
-          "LAUGHING IN BED"
-        ],
-        "itemsAt": 3
+        "litAt": 0
       },
       "label": "AS THE DAYS GROW",
       "step": 1,
       "lines": [
         "Step two: *light* one candle,",
-        "and write what you want *more* of",
+        "and name what you want *more* of",
         "as the light comes back.",
         "Slow mornings. Someone who stays. Laughing in *bed.*"
       ]
@@ -116,8 +110,8 @@
       "lines": [
         "Step three: *return.*",
         "Tomorrow, show up again.",
-        "Every night, the *Align* app deals a new deck.",
-        "Love is a *practice,* not a lightning bolt."
+        "Every night, the Align app deals a new deck,",
+        "and tonight's quiet doesn't cancel tomorrow's *yes.*"
       ]
     },
     {

@@ -3,8 +3,8 @@
   "title": "The year of eleven",
   "date": "2027-01-01",
   "postBy": "2026-12-30",
-  "cover": "*2027* is an eleven year",
-  "caption": "add up 2027: 2 + 0 + 2 + 7 = 11, a master number year, and it opens on 1/1. clear what stays in this year, choose how you want to be loved, and begin at midnight. follow for the next portal ✦",
+  "cover": "2027 is a *master-number* year",
+  "caption": "add up 2027: 2 + 0 + 2 + 7 = 11, a master number year, and it opens on 1/1. clear what stays in this year, choose how you want to be loved, and begin at midnight",
   "hashtags": [
     "2027",
     "newyear",
@@ -14,8 +14,8 @@
     "loveritual",
     "datingadvice"
   ],
-  "voice": "af_nicole",
-  "speed": 0.95,
+  "voice": "af_heart",
+  "speed": 1.0,
   "steps": [
     "CLEAR",
     "CHOOSE",
@@ -49,12 +49,12 @@
       "label": "2 + 0 + 2 + 7 = 11",
       "step": null,
       "lines": [
-        "Add up twenty twenty-seven.",
-        "Two, zero, two, seven. *Eleven.*"
+        "Add up the digits of twenty twenty-seven",
+        "and you get *eleven.*"
       ],
       "show": {
-        "0": "Add up *2027.*",
-        "1": "2 + 0 + 2 + 7 = *11.*"
+        "0": "Add up the digits of *2027*",
+        "1": "and you get *11.*"
       }
     },
     {
@@ -66,10 +66,10 @@
       "step": null,
       "lines": [
         "The number of *intuition,*",
-        "starting on one, one."
+        "for a whole year that starts on one one."
       ],
       "show": {
-        "1": "starting on *1/1.*"
+        "1": "for a whole year that starts on *1/1.*"
       }
     },
     {
@@ -87,9 +87,9 @@
       "step": 0,
       "lines": [
         "Step one: *clear.*",
-        "Write what stays in this year.",
-        "The waiting. The *maybe.*",
-        "Then let it *go.*"
+        "On New Year's Eve, write what stays behind.",
+        "The waiting by the phone. The *maybe.*",
+        "Then tear it up."
       ]
     },
     {
@@ -107,12 +107,12 @@
       "label": "PRESENT TENSE · AS IF DONE",
       "step": 1,
       "lines": [
-        "Step two: *choose.*",
-        "Eleven ways you want to be loved.",
+        "Step two: *choose* eleven ways to be loved,",
+        "written as if they're already true.",
         "Texted back. Met halfway. Chosen *out loud.*"
       ],
       "show": {
-        "1": "11 ways you want to be loved."
+        "0": "Step two: *choose* 11 ways to be loved,"
       }
     },
     {
@@ -120,12 +120,13 @@
       "opts": {
         "face": "Mutual",
         "sub": "A MATCH ONLY WHEN YOU BOTH ALIGN",
-        "revealAt": 1
+        "revealAt": 2
       },
       "label": "THE ALIGN APP",
       "step": 1,
       "lines": [
-        "On the *Align* app, a match only happens",
+        "Choose people who choose you *back.*",
+        "On the Align app, a match only happens",
         "when you *both* align."
       ]
     },
@@ -139,7 +140,8 @@
       "lines": [
         "Step three: at midnight, *begin.*",
         "Read your list once, out loud,",
-        "then put the phone *down.*"
+        "then put the phone *down.*",
+        "No midnight text to the ex."
       ]
     },
     {
