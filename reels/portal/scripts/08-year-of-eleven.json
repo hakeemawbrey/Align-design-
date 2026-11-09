@@ -50,13 +50,11 @@
       "step": null,
       "lines": [
         "Add up twenty twenty-seven.",
-        "Two, zero, two, seven.",
-        "*Eleven.*"
+        "Two, zero, two, seven. *Eleven.*"
       ],
       "show": {
         "0": "Add up *2027.*",
-        "1": "2 + 0 + 2 + 7.",
-        "2": "*11.*"
+        "1": "2 + 0 + 2 + 7 = *11.*"
       }
     },
     {
@@ -67,11 +65,11 @@
       "label": "JANUARY 1 · 1/1",
       "step": null,
       "lines": [
-        "A whole year of the number of *intuition,*",
-        "and it starts on one, one."
+        "The number of *intuition,*",
+        "starting on one, one."
       ],
       "show": {
-        "1": "and it starts on *1/1.*"
+        "1": "starting on *1/1.*"
       }
     },
     {
@@ -82,15 +80,16 @@
           "THE WAITING",
           "THE MAYBE"
         ],
-        "dissolveAt": 2
+        "wordsAt": 2,
+        "dissolveAt": 3
       },
       "label": "NEW YEAR'S EVE",
       "step": 0,
       "lines": [
         "Step one: *clear.*",
-        "On New Year's Eve,",
-        "write what stays in this year.",
-        "The waiting by the phone. The *maybe.*"
+        "Write what stays in this year.",
+        "The waiting. The *maybe.*",
+        "Then let it *go.*"
       ]
     },
     {
@@ -99,9 +98,9 @@
         "title": "IN 2027 I AM",
         "count": 11,
         "items": [
-          "CHOSEN OUT LOUD",
           "TEXTED BACK",
-          "MET HALFWAY"
+          "MET HALFWAY",
+          "CHOSEN OUT LOUD"
         ],
         "itemsAt": 2
       },
@@ -109,11 +108,11 @@
       "step": 1,
       "lines": [
         "Step two: *choose.*",
-        "Eleven ways you want to be loved,",
-        "written as if they're *already* true."
+        "Eleven ways you want to be loved.",
+        "Texted back. Met halfway. Chosen *out loud.*"
       ],
       "show": {
-        "1": "11 ways you want to be loved,"
+        "1": "11 ways you want to be loved."
       }
     },
     {
@@ -121,12 +120,11 @@
       "opts": {
         "face": "Mutual",
         "sub": "A MATCH ONLY WHEN YOU BOTH ALIGN",
-        "revealAt": 2
+        "revealAt": 1
       },
       "label": "THE ALIGN APP",
       "step": 1,
       "lines": [
-        "Choose people who choose you *back.*",
         "On the *Align* app, a match only happens",
         "when you *both* align."
       ]
@@ -140,9 +138,8 @@
       "step": 2,
       "lines": [
         "Step three: at midnight, *begin.*",
-        "Read your list once, out loud.",
-        "Then put the phone *down,* and live it.",
-        "Let this be the year you're *met.*"
+        "Read your list once, out loud,",
+        "then put the phone *down.*"
       ]
     },
     {

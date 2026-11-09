@@ -91,7 +91,8 @@
           "THE DRAFT",
           "THE HOODIE"
         ],
-        "dissolveAt": 2
+        "wordsAt": 3,
+        "dissolveAt": 4
       },
       "label": "BEFORE SATURDAY",
       "step": 0,
@@ -99,7 +100,8 @@
         "Step one: *close* the circle.",
         "Finish one thing from this year,",
         "something that's stayed open too long.",
-        "Delete the draft. Return the *hoodie.*"
+        "Delete the draft. Return the *hoodie.*",
+        "Then let it *go.*"
       ]
     },
     {
@@ -112,13 +114,14 @@
           "I SHOW UP",
           "I REMEMBER"
         ],
-        "itemsAt": 1
+        "itemsAt": 2
       },
       "label": "WHAT YOU GIVE · WHAT YOU WANT",
       "step": 1,
       "lines": [
         "Step two: *mirror.*",
         "Write twelve things you give in love.",
+        "I listen. I show up. I *remember.*",
         "Then circle the ones you want *back.*"
       ],
       "show": {

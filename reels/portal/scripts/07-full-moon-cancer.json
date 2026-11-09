@@ -97,13 +97,14 @@
           "MY BEST FRIEND",
           "ME, LATELY"
         ],
-        "itemsAt": 1
+        "itemsAt": 2
       },
       "label": "THE SHAPE OF IT",
       "step": 1,
       "lines": [
         "Step two: *gather.*",
         "Write three people who feel like home.",
+        "My sister. My best friend. *Me,* lately.",
         "That's the *shape* of the love you want."
       ]
     },

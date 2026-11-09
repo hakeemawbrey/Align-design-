@@ -29,7 +29,7 @@
     {
       "art": "moon",
       "opts": {
-        "phase": 0.5,
+        "phase": 0.43,
         "glyph": "♑"
       },
       "label": "DECEMBER 21 · SOLSTICE",
@@ -93,7 +93,7 @@
           "SOMEONE WHO STAYS",
           "LAUGHING IN BED"
         ],
-        "itemsAt": 1
+        "itemsAt": 3
       },
       "label": "AS THE DAYS GROW",
       "step": 1,
@@ -101,7 +101,7 @@
         "Step two: *light* one candle,",
         "and write what you want *more* of",
         "as the light comes back.",
-        "Slow mornings. Someone who *stays.*"
+        "Slow mornings. Someone who stays. Laughing in *bed.*"
       ]
     },
     {

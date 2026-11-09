@@ -36,8 +36,8 @@
       "step": null,
       "lines": [
         "The full moon in *Gemini* is Tuesday,",
-        "and it's a *supermoon.*",
-        "Here's what to *say,* and to whom."
+        "a *supermoon.*",
+        "Here's what to *say.*"
       ]
     },
     {
@@ -51,7 +51,7 @@
       "lines": [
         "A full moon is the sun and moon",
         "on *opposite* sides of Earth.",
-        "Everything lit. Nothing *hidden.*"
+        "Nothing *hidden.*"
       ]
     },
     {
@@ -64,8 +64,7 @@
       "step": null,
       "lines": [
         "Gemini is the *twins,* the sign of talking.",
-        "So this moon lights up",
-        "what you *haven't said.*"
+        "So this moon lights up what you *haven't said.*"
       ]
     },
     {
@@ -77,13 +76,14 @@
           "I'M HURT",
           "I WANT MORE"
         ],
+        "wordsAt": 2,
         "dissolveAt": null
       },
       "label": "THE NIGHT BEFORE",
       "step": 0,
       "lines": [
         "Step one: *notice.*",
-        "Write the sentence you keep swallowing.",
+        "The sentence you keep swallowing.",
         "I like you. I'm hurt. I want *more.*"
       ]
     },
@@ -95,8 +95,7 @@
       "label": "ONE SENTENCE · OUT LOUD",
       "step": 1,
       "lines": [
-        "Step two: *say* it.",
-        "One sentence, out loud, to them.",
+        "Step two: *say* it, out loud.",
         "Short is braver than *perfect.*"
       ]
     },
@@ -105,28 +104,14 @@
       "opts": {
         "face": "Talk card",
         "sub": "BOTH ANSWER · THEN REVEAL",
-        "revealAt": 4
+        "revealAt": 2
       },
       "label": "THE ALIGN APP",
       "step": 2,
       "lines": [
         "Step three: *listen.*",
-        "Ask, then let the quiet *work.*",
         "It's why talk cards on the *Align* app",
-        "keep your answer hidden",
-        "until you've *both* answered."
-      ]
-    },
-    {
-      "art": "figures",
-      "opts": {
-        "pose": "meet"
-      },
-      "label": "UNDER THE FULL MOON",
-      "step": 2,
-      "lines": [
-        "Hear what they say,",
-        "and what they *don't.*"
+        "hide your answer until you've *both* answered."
       ]
     },
     {
