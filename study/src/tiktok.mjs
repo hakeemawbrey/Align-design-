@@ -16,7 +16,7 @@
 // Already-downloaded videos are skipped, so it's safe to stop and run again.
 //
 // Exit codes: 0 done · 75 TikTok wants a break · 1 anything else.
-import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { EXIT, run } from './download.mjs'
@@ -107,6 +107,18 @@ export function settle(dir, link) {
   return info
 }
 
+/** Fold the shards' numbers into _numbers.json. */
+export function mergeShards(dir) {
+  const file = path.join(dir, '_numbers.json')
+  const all = readJson(file, {})
+  for (const f of readdirSync(dir).filter((x) => /^_numbers\.shard-\d+\.json$/.test(x))) {
+    for (const [id, v] of Object.entries(readJson(path.join(dir, f), {}))) if (v?.views != null || !all[id]?.views) all[id] = v
+    rmSync(path.join(dir, f))
+  }
+  writeJson(file, all)
+  console.log(`Merged: ${Object.values(all).filter((v) => v?.views != null).length} videos with numbers.`)
+}
+
 const jitter = (lo, hi) => new Promise((r) => setTimeout(r, 1000 * (lo + Math.random() * (hi - lo))))
 
 async function main() {
@@ -119,18 +131,26 @@ async function main() {
   ensureDir(path.join(dir, '_tt'))
   if (flag(argv, 'handle-file')) writeFileSync(flag(argv, 'handle-file'), acct.handle + '\n')
 
+  // --shard k/n: one of n downloaders running side by side on the same listing (k = 1…n).
+  const shard = (flag(argv, 'shard') ?? '').match(/^(\d+)\/(\d+)$/)
+  const [k, n] = shard ? [Number(shard[1]), Number(shard[2])] : [1, 1]
+  if (argv.includes('--merge')) { mergeShards(dir); return }
+  let listing = readJson(path.join(dir, '_listing.json'))
+  if (!(shard && listing)) {
   console.log(`Listing tiktok.com/@${acct.user}${Number.isFinite(limit) ? ` (newest ${limit})` : ''}`)
   const r = await run('yt-dlp', ['--flat-playlist', '-J', '--no-warnings', ...(Number.isFinite(limit) ? ['--playlist-end', String(limit)] : []), `https://www.tiktok.com/@${acct.user}`], { echo: false })
   if (r.code === 127) { console.error('yt-dlp is not installed (pip install yt-dlp, or brew install yt-dlp).'); process.exit(EXIT.failed) }
-  let listing = null
   try { listing = JSON.parse(r.out) } catch {}
+  if (!listing) { console.error(`Couldn't list @${acct.user}: ${r.err.trim().split('\n').pop() || 'nothing came back'}`); process.exit(EXIT.failed) }
+  writeJson(path.join(dir, '_listing.json'), { ...listing, entries: listing.entries.map((e) => ({ id: e.id, url: e.url, view_count: e.view_count })) })
+  }
   const links = (listing?.entries ?? []).filter((e) => /^\d{8,}$/.test(e?.id ?? '')).map((e) => ({ id: e.id, url: e.url ?? `https://www.tiktok.com/@${acct.user}/video/${e.id}`, views: e.view_count ?? null }))
-  if (!links.length) { console.error(`Couldn't list @${acct.user}: ${r.err.trim().split('\n').pop() || 'nothing came back'}`); process.exit(EXIT.failed) }
+  if (!links.length) { console.error(`Nothing listed for @${acct.user}.`); process.exit(EXIT.failed) }
   writeJson(path.join(dir, '_links.json'), links)
 
-  const numbersFile = path.join(dir, '_numbers.json')
-  const numbers = readJson(numbersFile, {})
-  const todo = links.filter((l) => !(videoFileOf(dir, l.id) && numbers[l.id]?.views != null) && (numbers[l.id]?.failed ?? 0) < 2)
+  const numbersFile = path.join(dir, n > 1 ? `_numbers.shard-${k}.json` : '_numbers.json')
+  const numbers = { ...readJson(path.join(dir, '_numbers.json'), {}), ...readJson(numbersFile, {}) }
+  const todo = links.filter((l, i) => i % n === k - 1).filter((l) => !(videoFileOf(dir, l.id) && numbers[l.id]?.views != null) && (numbers[l.id]?.failed ?? 0) < 2)
   console.log(`${links.length} videos listed; ${links.length - todo.length} already here. Downloading ${todo.length}.`)
   let streak = 0, ok = 0, profiled = Boolean(readJson(path.join(dir, '_profile.json')))
   for (const [i, l] of todo.entries()) {
@@ -150,7 +170,8 @@ async function main() {
     writeJson(numbersFile, numbers)
     if (i < todo.length - 1) await jitter(1.5, 4)
   }
-  console.log(`Done: ${ok} downloaded this run. Next: npm run process -- ${acct.handle}`)
+  if (n > 1) console.log(`Shard ${k}/${n} done: ${ok} downloaded. When every shard is done: node src/tiktok.mjs ${acct.handle} --merge`)
+  else console.log(`Done: ${ok} downloaded this run. Next: npm run process -- ${acct.handle}`)
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
