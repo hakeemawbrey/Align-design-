@@ -129,7 +129,7 @@ export function buildRecords(posts, workOf) {
     const w = workOf(p.shortcode) ?? {}
     const onScreenByFrame = w.onScreen ?? null
     const rec = {
-      shortcode: p.shortcode, url: p.url, type: p.type, date: p.date, pinned: p.pinned,
+      shortcode: p.shortcode, url: p.url, type: p.type, subtype: p.subtype ?? null, title: p.title ?? null, date: p.date, pinned: p.pinned,
       views: p.views, likes: p.likes, comments: p.comments,
       duration: p.duration ?? w.duration ?? null,
       slides: p.type === 'reel' ? null : p.files.length,
@@ -141,6 +141,8 @@ export function buildRecords(posts, workOf) {
       onScreenByFrame: onScreenByFrame ? (w.frames ?? []).map((f, i) => ({ at: f.t ?? null, slide: f.slide ?? null, lines: onScreenByFrame[i] ?? [] })) : null,
       sheet: w.sheet ? `sheets/${p.shortcode}.jpg` : null,
       numbersFrom: p.numbersFrom,
+      chapters: p.chapters ?? null,
+      thumb: p.subtype ? `thumbs/${p.shortcode}.jpg` : null,
     }
     rec.hook = hookOf(p, w)
     const all = `${rec.caption}\n${rec.transcript ?? ''}\n${rec.onScreen.join('\n')}`
@@ -159,13 +161,13 @@ export function buildRecords(posts, workOf) {
     const [name, v] = metricOf(r)
     r.metric = name
     if (!name) continue
-    const key = `${r.type}:${name}`
+    const key = `${r.type}:${r.subtype ?? ''}:${name}`
     groups.set(key, [...(groups.get(key) ?? []), v])
   }
   const typical = new Map([...groups].map(([k, vs]) => [k, median(vs)]))
   for (const r of recs) {
     const [name, v] = metricOf(r)
-    const t = name ? typical.get(`${r.type}:${name}`) : null
+    const t = name ? typical.get(`${r.type}:${r.subtype ?? ''}:${name}`) : null
     r.lift = t ? Math.round((v / t) * 100) / 100 : null
   }
   return recs
@@ -207,6 +209,25 @@ function liftRow(label, rs, total) {
 
 function postRow(r, i) {
   return [String(i + 1), r.date?.slice(0, 10) ?? '–', r.type, fmt(r.views), fmt(r.likes), fmt(r.comments), lift(r.lift), cell(firstHook(r), 80) || '_(no words)_', `[open](${r.url})`]
+}
+
+/** YouTube: long videos and Shorts side by side, and the titles that pulled most and least in each. */
+export function youtubeSection(recs) {
+  const L = ['## YouTube: videos and Shorts', '']
+  const kinds = [['video', 'Long videos'], ['short', 'Shorts']].map(([k, label]) => [label, recs.filter((r) => r.subtype === k)]).filter(([, rs]) => rs.length)
+  L.push(table(['Kind', 'Count', 'Median views', 'Median length', 'Median likes', 'Median comments'],
+    kinds.map(([label, rs]) => [label, String(rs.length), fmt(median(rs.map((r) => r.views))), `${fmt(median(rs.map((r) => r.duration)))}s`, fmt(median(rs.map((r) => r.likes))), fmt(median(rs.map((r) => r.comments)))])))
+  for (const [label, rs] of kinds) {
+    const ranked = rs.filter((r) => Number.isFinite(r.lift)).sort((a, b) => b.lift - a.lift)
+    if (ranked.length < 4) continue
+    const row = (r) => [lift(r.lift), fmt(r.views), `${fmt(r.duration)}s`, cell(r.title ?? firstHook(r), 90), `[open](${r.url})`]
+    L.push(`### ${label}: best titles`, '', table(['× typical', 'Views', 'Length', 'Title', ''], ranked.slice(0, 15).map(row)))
+    L.push(`### ${label}: weakest titles`, '', table(['× typical', 'Views', 'Length', 'Title', ''], ranked.slice(-8).reverse().map(row)))
+  }
+  const withChapters = recs.filter((r) => r.chapters?.length)
+  if (withChapters.length) L.push(`${withChapters.length} videos have chapters; they're in \`posts.json\` (\`chapters\`), which shows how each video is built.`, '')
+  L.push('Thumbnails are in `thumbs/<id>.jpg`.', '')
+  return L
 }
 
 export function buildReport({ handle, profile, recs, tz = 'America/Chicago', now = new Date() }) {
@@ -252,6 +273,7 @@ export function buildReport({ handle, profile, recs, tz = 'America/Chicago', now
   L.push(`- Captions: ${fmt(median(capWords))} words typical; ${pct(recs.filter((r) => r.hashtags.length).length, n)} use hashtags (${fmt(median(recs.map((r) => r.hashtags.length)))} typical).`)
   if (ranked.length) L.push(`- Best post: ${lift(ranked[0].lift)} typical, "${cell(firstHook(ranked[0]), 100)}" (${ranked[0].url}).`)
   L.push('')
+  if (recs.some((r) => r.subtype)) L.push(...youtubeSection(recs))
 
   // Formats
   L.push('## Formats', '')
@@ -329,14 +351,14 @@ export function buildReport({ handle, profile, recs, tz = 'America/Chicago', now
 
 // ---------- the pack ----------
 
-const CSV_COLS = ['shortcode', 'url', 'date', 'type', 'views', 'likes', 'comments', 'lift', 'duration', 'slides', 'hook_screen', 'hook_spoken', 'hook_caption', 'topics', 'formats', 'ctas', 'hashtags', 'on_screen', 'transcript', 'caption']
+const CSV_COLS = ['shortcode', 'url', 'date', 'type', 'views', 'likes', 'comments', 'lift', 'duration', 'slides', 'hook_screen', 'hook_spoken', 'hook_caption', 'topics', 'formats', 'ctas', 'hashtags', 'on_screen', 'transcript', 'caption', 'subtype', 'title']
 
 export function toCsv(recs) {
   const q = (v) => {
     const s = Array.isArray(v) ? v.join(' ') : v == null ? '' : String(v)
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
   }
-  const row = (r) => [r.shortcode, r.url, r.date, r.type, r.views, r.likes, r.comments, r.lift, r.duration, r.slides, r.hook.screen, r.hook.spoken, r.hook.caption, r.topics, r.formats, r.ctas, r.hashtags, r.onScreen.join(' / '), r.transcript, r.caption]
+  const row = (r) => [r.shortcode, r.url, r.date, r.type, r.views, r.likes, r.comments, r.lift, r.duration, r.slides, r.hook.screen, r.hook.spoken, r.hook.caption, r.topics, r.formats, r.ctas, r.hashtags, r.onScreen.join(' / '), r.transcript, r.caption, r.subtype, r.title]
   return [CSV_COLS.join(','), ...recs.map((r) => row(r).map(q).join(','))].join('\n') + '\n'
 }
 
@@ -363,13 +385,23 @@ export function writePack(handle, { tz } = {}) {
     keep.add(path.basename(r.sheet))
   }
   for (const f of readdirSync(sheets)) if (!keep.has(f)) rmSync(path.join(sheets, f), { force: true })
+  // YouTube: the thumbnail is half the packaging, so it travels with the pack.
+  const thumbsFrom = path.join(mediaDir(handle), '_thumbs')
+  if (existsSync(thumbsFrom)) {
+    const thumbs = ensureDir(path.join(out, 'thumbs'))
+    for (const r of recs) {
+      if (!r.thumb) continue
+      if (existsSync(path.join(thumbsFrom, `${r.shortcode}.jpg`))) copyFileSync(path.join(thumbsFrom, `${r.shortcode}.jpg`), path.join(out, r.thumb))
+      else r.thumb = null
+    }
+  }
 
   writeJson(path.join(out, 'posts.json'), { handle, profile, madeAt: new Date().toISOString(), count: recs.length, posts: recs })
   writeFileSync(path.join(out, 'posts.csv'), toCsv(recs))
   writeFileSync(path.join(out, 'report.md'), buildReport({ handle, profile, recs, tz }))
   writeFileSync(path.join(out, 'README.md'), [
     `# @${handle}: study pack`, '',
-    `Every post on ${profile?.site === 'facebook' ? `${profile.link} (Facebook reels and videos)` : `instagram.com/${handle}`}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
+    `Every post on ${profile?.site === 'facebook' ? `${profile.link} (Facebook reels and videos)` : profile?.site === 'youtube' ? `${profile.link} (YouTube videos and Shorts)` : `instagram.com/${handle}`}, downloaded and read on a personal computer by Align's study program (\`study/\` in the Align design repo) so Claude can learn how the page works.`,
     'It is reference material for private analysis only: keep this repo private and don\'t repost any of it.', '',
     '- `report.md`: the numbers (formats, top posts, hooks, topics, CTAs, timing)',
     '- `posts.json`: every post in full; `posts.csv`: the same as a spreadsheet',

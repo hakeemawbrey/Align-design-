@@ -4,6 +4,7 @@
 # what's on screen, stills), and packs it up for Claude.
 #   run.sh [handle]         study a page (asks which, remembers the last one)
 #   run.sh facebook [link]  study a Facebook page's reels and videos
+#   run.sh youtube [link]   study a whole YouTube channel (videos and Shorts)
 #   run.sh send [handle]    send the pack to your own private GitHub repo so Claude can read it
 eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
 cd "$(dirname "$0")/.." || exit 1
@@ -30,6 +31,7 @@ ask_handle() {
   # Facebook: the page's name comes from opening the link, so it's worked out in step 1.
   case "$given" in
     *facebook.com*|*fb.com*|*fb.me*|fb-*) FACEBOOK="$given"; HANDLE="$given"; return ;;
+    *youtube.com*|*youtu.be*|yt-*) YOUTUBE="$given"; HANDLE="$given"; return ;;
   esac
   HANDLE="$(node --input-type=module -e "import { handleOf } from './src/paths.mjs'; console.log(handleOf(process.argv[1]) ?? '')" "$given")"
   if [ -z "$HANDLE" ]; then say "\"$given\" doesn't look like an Instagram page. Try the handle, like tylerinthemaking."; pause_close; exit 1; fi
@@ -95,6 +97,14 @@ if [ "$1" = "facebook" ]; then
   fi
   case "$given" in *facebook.com*|*fb.com*|*fb.me*|fb-*) ;; *) say "\"$given\" doesn't look like a Facebook link."; pause_close; exit 1 ;; esac
   ask_handle "$given"
+elif [ "$1" = "youtube" ]; then
+  given="$2"
+  if [ -z "$given" ]; then
+    printf "\n\033[1mWhich YouTube channel?\033[0m Paste its link, or a link to any video on it: "
+    read -r given
+  fi
+  case "$given" in *youtube.com*|*youtu.be*|yt-*) ;; @*) given="https://www.youtube.com/$given" ;; *) say "\"$given\" doesn't look like a YouTube link."; pause_close; exit 1 ;; esac
+  ask_handle "$given"
 else
   ask_handle "$1"
 fi
@@ -133,6 +143,41 @@ if [ -n "$FACEBOOK" ]; then
   node src/report.mjs "$HANDLE" || { pause_close; exit 1; }
   open "$STUDY/pack/$HANDLE"
   note "The numbers are in report.md in the folder that just opened."
+  printf "\n\033[1mSend it to Claude now?\033[0m It goes to a private repo on your GitHub that only you can see. [Y/n] "
+  read -r yn
+  case "$yn" in n|N|no|No) say "Not sent. Double-click \"Send Study to Claude\" whenever you're ready."; pause_close ;; *) exec "$STUDY/mac/run.sh" send "$HANDLE" ;; esac
+  exit 0
+fi
+
+# ---------- YouTube: yt-dlp lists the channel and downloads each video small, with captions ----------
+if [ -n "$YOUTUBE" ]; then
+  BROWSER="$(cat "$PREFS/browser" 2>/dev/null || cat "$HOME/.align-inspo/browser" 2>/dev/null)"
+  [ -z "$BROWSER" ] && for pair in "chrome:Google Chrome" "brave:Brave Browser" "edge:Microsoft Edge" "firefox:Firefox"; do [ -d "/Applications/${pair#*:}.app" ] && { BROWSER="${pair%%:*}"; break; }; done
+  [ "$BROWSER" = safari ] && BROWSER=""   # reading Safari's cookies needs Full Disk Access; YouTube mostly works without
+  say "1/3  Listing the channel and downloading every video and Short (small, 480p, with captions and thumbnails)"
+  note "Leave this window open and your Mac plugged in; it's safe to close and double-click again later."
+  [ -n "$BROWSER" ] && [ "$BROWSER" != safari ] && note "It uses your $BROWSER login so YouTube doesn't think it's a bot. If your Mac asks for your password for \"Safe Storage\", type it and press Always Allow."
+  waits=0; logins=0; rm -f "$PREFS/yt-handle"
+  while true; do
+    node src/youtube.mjs "$YOUTUBE" --handle-file "$PREFS/yt-handle" ${BROWSER:+--cookies-from-browser "$BROWSER"} $STUDY_EXTRA; code=$?
+    if [ -s "$PREFS/yt-handle" ]; then HANDLE="$(cat "$PREFS/yt-handle")"; YOUTUBE="$HANDLE"; echo "$HANDLE" > "$PREFS/handle"; fi
+    case $code in
+      0) break ;;
+      75) [ $waits -ge 24 ] && break
+          waits=$((waits + 1)); say "YouTube wants a break. Waiting 30 minutes, then carrying on by itself (round $waits). Progress is kept."; sleep 1800 ;;
+      77) [ $logins -ge 3 ] && { say "YouTube still wants a login. Log into youtube.com in your browser and double-click again."; pause_close; exit 1; }
+          logins=$((logins + 1)); say "Log into youtube.com in your browser, then come back here and press Enter."
+          open "https://www.youtube.com/"; read -r _ ;;
+      *)  [ -d "$STUDY/media/$HANDLE" ] && ls "$STUDY/media/$HANDLE"/*.json >/dev/null 2>&1 && { note "Stopped early; carrying on with what downloaded."; break; }
+          say "Couldn't study that channel (see the message above)."; pause_close; exit 1 ;;
+    esac
+  done
+  say "2/3  Working out what's in each video on this Mac: what's on screen, stills (speech comes from YouTube's captions)"
+  node src/process.mjs "$HANDLE" || { say "Something went wrong working through the videos (see above)."; pause_close; exit 1; }
+  say "3/3  Packing it up"
+  node src/report.mjs "$HANDLE" || { pause_close; exit 1; }
+  node src/quick.mjs "$HANDLE" --no-thumbs >/dev/null 2>&1 || true
+  open "$STUDY/pack/$HANDLE"
   printf "\n\033[1mSend it to Claude now?\033[0m It goes to a private repo on your GitHub that only you can see. [Y/n] "
   read -r yn
   case "$yn" in n|N|no|No) say "Not sent. Double-click \"Send Study to Claude\" whenever you're ready."; pause_close ;; *) exec "$STUDY/mac/run.sh" send "$HANDLE" ;; esac

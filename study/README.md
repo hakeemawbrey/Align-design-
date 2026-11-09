@@ -90,6 +90,34 @@ If Facebook asks for a break, it exits with 75 and the Mac button waits 30
 minutes, the same as for Instagram. Scripted downloading is against Facebook's
 terms too, so it's your call, the same as for Instagram.
 
+## YouTube channels
+
+The same study for a whole **YouTube channel**: every long video and Short,
+small (480p), with its thumbnail and YouTube's own captions. The captions mean
+even a 40-minute video gets its full transcript in seconds, with no whisper.
+
+**On a Mac:** double-click **Study YouTube Channel** and paste the channel's
+link, or a link to any video on it. If you only have the older buttons, run the
+install line once more. It uses your browser's YouTube login so YouTube doesn't
+take it for a bot. If YouTube asks for a break, it waits 30 minutes and carries on.
+The channel is saved as `yt-<channel>`. Then tell Claude: **"Study yt-<channel> from
+hakeemawbrey/align-study"**.
+
+In Terminal: `npm run youtube -- "<link>" --cookies-from-browser chrome --limit 20`
+to try the newest 20 of each tab, then without `--limit` for everything (re-run
+to resume). Then `npm run process -- yt-<channel>` and `npm run report -- yt-<channel>`.
+The report adds long videos vs Shorts and the best and weakest titles of each, and
+the pack adds `thumbs/`.
+
+**Quick read, anywhere:** `npm run quick -- "<link>"` needs only yt-dlp. It
+downloads no videos and needs no login, so Claude can run it in the cloud the
+moment you send a link. It ranks every upload against the channel's typical one,
+compares title shapes and lengths between the top and bottom quarters, and makes
+contact sheets of the best and weakest thumbnails (`pack/yt-<channel>/quick.md`).
+
+What Claude learns from both goes into **Video Lab**, the playbook portal: see
+[kb/README.md](kb/README.md).
+
 ## Step by step (Terminal)
 
 Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
@@ -138,6 +166,9 @@ logged-in account follows them.
 | Path | What |
 | --- | --- |
 | `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
+| `src/youtube.mjs` | a whole YouTube channel: lists Videos and Shorts, yt-dlp downloads each small with captions and thumbnail |
+| `src/quick.mjs` | a quick read of a channel from its lists alone (no downloads; works in the cloud) |
+| `kb/` | Video Lab: the portal's source and how Claude keeps the playbook |
 | `src/facebook.mjs` | a Facebook page: its own Chrome window collects the reel and video links, yt-dlp downloads each with its numbers |
 | `src/numbers.mjs` | views, comments and length per post (yt-dlp, or Meta's API) |
 | `src/process.mjs` | stills, contact sheets, on-screen text, transcripts |
