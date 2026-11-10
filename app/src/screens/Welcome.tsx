@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import CardBack from '../components/intro/CardBack'
 import { sfx } from '../lib/sfx'
+import { BETA, betaSeen } from '../lib/beta'
 import { PERSONA, PERSONAS, switchPersona, type PersonaId } from '../data/persona'
 
 const rise = (delay: number) => ({
@@ -13,7 +15,9 @@ const rise = (delay: number) => ({
 
 /** S-02 Auth — "The stars kept your seat warm." */
 export default function Welcome({ go }: ScreenProps) {
-  const enter = () => { sfx.align(); go('dealing') }
+  // the beta greets a first-timer with the chart reading up front; everyone else is welcomed back
+  const [firstRun] = useState(() => BETA && !betaSeen())
+  const enter = () => { sfx.align(); go(firstRun ? 'onboarding' : 'dealing') }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -32,11 +36,11 @@ export default function Welcome({ go }: ScreenProps) {
 
       <motion.div className="eyebrow" {...rise(0.1)}
         style={{ position: 'absolute', top: 97, width: '100%', textAlign: 'center', color: 'var(--label-2)' }}>
-        Welcome back
+        {firstRun ? 'Welcome to Align' : 'Welcome back'}
       </motion.div>
       <motion.h1 className="h-display" {...rise(0.22)}
         style={{ position: 'absolute', top: 120, width: '100%', textAlign: 'center', fontSize: 31, lineHeight: 1.18, letterSpacing: '-0.005em' }}>
-        The stars kept<br />your seat warm.
+        {firstRun ? <>Fall for the chart.<br />The face comes after.</> : <>The stars kept<br />your seat warm.</>}
       </motion.h1>
 
       {/* the face-down card — bobbing, glow breathing */}
@@ -105,12 +109,12 @@ export default function Welcome({ go }: ScreenProps) {
           whileHover={{ scale: 1.02, boxShadow: '0 0 44px rgba(248, 237, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.9)' }}
           whileTap={{ scale: 0.97 }}
         >
-          Continue as {PERSONA.name} <span className="spark">✦</span>
+          {firstRun ? 'Read my chart' : `Continue as ${PERSONA.name}`} <span className="spark">✦</span>
         </motion.button>
       </motion.div>
       <motion.div {...rise(0.7)} style={{ position: 'absolute', top: 650, left: 38, width: 314 }}>
         <motion.button
-          onClick={() => { sfx.tap(); go('x/phone') }}
+          onClick={() => { sfx.tap(); go(firstRun ? 'dealing' : 'x/phone') }}
           whileHover={{ backgroundColor: 'rgba(120, 100, 160, 0.28)' }}
           whileTap={{ scale: 0.97 }}
           style={{
@@ -121,13 +125,13 @@ export default function Welcome({ go }: ScreenProps) {
             fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 19, color: 'var(--label-1)',
           }}
         >
-          Sign in
+          {firstRun ? `Skip · play as ${PERSONA.name}` : 'Sign in'}
         </motion.button>
       </motion.div>
 
-      <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go('onboarding') }} className="serif italic"
+      <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go(firstRun ? 'x/phone' : 'onboarding') }} className="serif italic"
         style={{ position: 'absolute', top: 710, left: 60, right: 60, height: 46, textAlign: 'center', fontSize: 15.5, color: 'var(--label-1)', zIndex: 5, touchAction: 'manipulation', textDecoration: 'underline', textDecorationColor: 'rgba(239,230,214,0.35)', textUnderlineOffset: 4 }}>
-        New here — read my chart ›
+        {firstRun ? 'I already have an account ›' : 'New here — read my chart ›'}
       </motion.button>
       <motion.div {...rise(0.9)}
         style={{ position: 'absolute', top: 765, width: '100%', textAlign: 'center', pointerEvents: 'none', fontSize: 10.5, lineHeight: 1.45, color: 'var(--label-3)' }}>

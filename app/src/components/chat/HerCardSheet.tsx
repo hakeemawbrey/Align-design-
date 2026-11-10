@@ -52,7 +52,7 @@ export default function HerCardSheet({ p, pronoun = 'she', onClose, onAlignment 
           </motion.button>
         </div>
         <div style={{ position: 'absolute', top: 744, left: 0, right: 0, textAlign: 'center', fontSize: 12, color: 'var(--label-3)' }}>
-          Spark · Rub · Align · how you two fit
+          Spark · Clash · Align · how you two fit
         </div>
       </motion.div>
     </>

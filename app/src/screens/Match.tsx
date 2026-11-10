@@ -12,6 +12,8 @@ import AuraOrb from '../components/reveal/AuraOrb'
 import Burst from '../components/reveal/Burst'
 import Rarity from '../components/reveal/Rarity'
 import RevealStyles from '../components/reveal/RevealStyles'
+import { BETA } from '../lib/beta'
+import { compatWith } from '../lib/compat'
 import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 
 const MINE = SIGNS[ME.sign]
@@ -44,6 +46,7 @@ export default function Match({ go }: ScreenProps) {
   // whoever aligned back last (Juniper in the scripted demo)
   const [HER] = useState(() => profileById(session.get().matchWith) ?? profileById('j27')!)
   const HERS = SIGNS[HER.sign]
+  const compat = compatWith(HER)
   useEffect(() => { session.patch({ unseenMatch: true }); talk.grantOnce(`match:${HER.id}`, 'starter') }, [HER.id])
   const [stage, setStage] = useState(0)
   const [skipped, setSkipped] = useState(false)
@@ -148,7 +151,10 @@ export default function Match({ go }: ScreenProps) {
       <ConfettiCanvas canvasRef={canvasRef} />
 
       {/* game layer */}
-      <Rarity show={stage >= 3} instant={skipped} pull={HER.pull} serial={HER.serial} />
+      {/* the beta shows the same compatibility here as in the chat */}
+      {BETA
+        ? <Rarity show={stage >= 3} instant={skipped} pull={compat.label} serial={HER.serial} lit={Math.max(1, Math.round((compat.score / 100) * 7))} caption={`${compat.score}% in tune · tap the ring in chat for why`} />
+        : <Rarity show={stage >= 3} instant={skipped} pull={HER.pull} serial={HER.serial} />}
 
       {/* labels under orbs */}
       <motion.div {...rise(0)} style={{ position: 'absolute', top: 464, left: 0, right: 0, height: 14, zIndex: 5 }}>

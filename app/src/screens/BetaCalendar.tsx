@@ -3,21 +3,25 @@ import { PageShell } from '../components/kit'
 import { DayDetail, MonthGrid } from '../components/deck/SkyDropdown'
 import { COSMIC_COLOR, cosmicMonth } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
+import { cameFrom, takeCalendarFocus } from '../components/you/origin'
 import type { ScreenProps } from './types'
 
 /** The cosmic calendar (beta): any month's real sky events, from your profile. */
 export default function BetaCalendar({ go }: ScreenProps) {
   const now = new Date()
-  const [offset, setOffset] = useState(0)
+  // where Back returns to (deck, profile or your chart) and the day to open on, both read once
+  const [from] = useState(() => cameFrom('calendar', 'you'))
+  const [focus] = useState(() => takeCalendarFocus())
+  const [offset, setOffset] = useState(() => (focus ? (focus.getFullYear() - now.getFullYear()) * 12 + focus.getMonth() - now.getMonth() : 0))
   const base = new Date(now.getFullYear(), now.getMonth() + offset, 1)
   const m = useMemo(() => cosmicMonth(base), [offset]) // eslint-disable-line react-hooks/exhaustive-deps
   const today = offset === 0 ? now.getDate() : -1
-  const [sel, setSel] = useState(now.getDate())
+  const [sel, setSel] = useState((focus ?? now).getDate())
   const pick = Math.min(sel, m.days.length)
   const step = (d: number) => { sfx.tap(); setOffset((o) => o + d); setSel(1) }
 
   return (
-    <PageShell onBack={() => go('you')} eyebrow="COSMIC CALENDAR" title={m.title} titleSize={32}
+    <PageShell onBack={() => go(from)} eyebrow="COSMIC CALENDAR" title={m.title} titleSize={32}
       body="Every moon phase, retrograde and new season this month, and what it means for dating.">
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
         <button className="mono" onClick={() => step(-1)} style={{ fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>‹ PREV</button>

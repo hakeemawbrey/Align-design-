@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { compatibility } from '../../lib/compat'
+import { compatWith } from '../../lib/compat'
 import { ME, type Profile } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
 import { usToday } from '../../data/skyReading'
@@ -10,7 +10,7 @@ const KIND = { pull: { label: 'Spark', color: 'var(--spark)' }, push: { label: '
 
 /** the chat's top-right widget: your compatibility score as a ring */
 export function CompatBadge({ them, onClick }: { them: Profile; onClick: () => void }) {
-  const c = useMemo(() => compatibility(ME, them), [them])
+  const c = useMemo(() => compatWith(them), [them])
   const R = 16, L = 2 * Math.PI * R
   return (
     <motion.button onClick={() => { sfx.tap(); onClick() }} whileTap={{ scale: 0.92 }} aria-label={`Compatibility with ${them.name}: ${c.score}%, ${c.label}`}
@@ -28,7 +28,7 @@ export function CompatBadge({ them, onClick }: { them: Profile; onClick: () => v
 
 /** the breakdown behind the score */
 export function CompatSheet({ them, open, onClose, onFullReading }: { them: Profile; open: boolean; onClose: () => void; onFullReading?: () => void }) {
-  const c = useMemo(() => compatibility(ME, them), [them])
+  const c = useMemo(() => compatWith(them), [them])
   const today = useMemo(() => usToday(them.sign), [them])
   return (
     <AnimatePresence>
@@ -60,8 +60,13 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
               </div>
 
               <p className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '16px 0 0' }}>{c.elements}</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '8px 0 0' }}>
+                {c.card != null ? 'Half from your two charts, half from the Spark, Clash and Align on their card.' : 'From your two charts.'}
+              </p>
 
-              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '22px 0 10px' }}>YOUR CHARTS</div>
+              <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '22px 0 10px' }}>
+                <span>YOUR CHARTS</span><span style={{ color: 'var(--label-2)' }}>{c.chart}%</span>
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {c.parts.map((p) => (
                   <div key={p.label}>
@@ -82,7 +87,9 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
 
               {them.reading?.length ? (
                 <>
-                  <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '24px 0 10px' }}>FROM {them.name.toUpperCase()}’S CARD</div>
+                  <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '24px 0 10px' }}>
+                    <span>FROM {them.name.toUpperCase()}’S CARD</span>{c.card != null && <span style={{ color: 'var(--label-2)' }}>{c.card}%</span>}
+                  </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {(['pull', 'push', 'align'] as const).map((k) => {
                       const r = them.reading.find((x) => x.kind === k)

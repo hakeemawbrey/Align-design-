@@ -6,6 +6,11 @@
  */
 export const BETA = import.meta.env.MODE === 'beta'
 
+/** has this phone been through the door before? (first-timers get a different welcome) */
+const SEEN_KEY = 'align:beta:seen'
+export const betaSeen = () => { try { return localStorage.getItem(SEEN_KEY) === '1' } catch { return true } }
+export const markBetaSeen = () => { try { localStorage.setItem(SEEN_KEY, '1') } catch { /* nothing to remember it with */ } }
+
 /** screens the beta doesn't have; links to them do nothing */
 export const BETA_BLOCKED = new Set<string>([
   'club', 'founding', 'paywall', 'collection', 'trade', 'howto', 'notifications', 'sky',

@@ -475,7 +475,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       </AnimatePresence>
       <AnimatePresence>
         {cardOpen && (
-          <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => go('alignment')} />
+          <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), setCompat(true)) : go('alignment'))} />
         )}
       </AnimatePresence>
       {BETA && <CompatSheet them={juniper} open={compat} onClose={() => setCompat(false)} onFullReading={() => go('alignment')} />}

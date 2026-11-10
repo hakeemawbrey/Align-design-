@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenId, ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import { sfx } from '../lib/sfx'
-import { goFrom } from '../components/you/origin'
+import { goFrom, openCalendarOn } from '../components/you/origin'
 import { Planet } from '../components/onboarding/shared'
 import TermText from '../pages/plus/TermText'
 import { ME } from '../data/profiles'
@@ -59,7 +59,7 @@ const HAKEEM_TABS: ChartTab[] = [
     love: 'You fall slowly and stay for real. Someone who rushes you or keeps changing plans will feel unsafe, even if they’re lovely.',
     self: 'Stop apologising for needing time. A slow yes from you is worth more than a fast one.',
     tryLine: 'Tell your match one thing you’d like to do with them more than once.',
-    cta: 'See today’s sky', to: 'sky',
+    cta: BETA ? 'See your month in the sky' : 'See today’s sky', to: 'sky',
   },
   {
     id: 'moon', label: 'Moon', eyebrow: 'Your emotional self', pips: 4, color: '#5b8cf0', art: 'figure',
@@ -104,7 +104,7 @@ const HAKEEM_TABS: ChartTab[] = [
     love: 'You show love through care: good food, your time, a hand on the back. Look for someone who receives that and gives it back.',
     self: 'Venus is retrograde until Nov 13. Revisit what you actually want; don’t lock anything in yet.',
     tryLine: 'Write down three things that make you feel loved.',
-    cta: 'See today’s sky', to: 'sky',
+    cta: BETA ? 'See your month in the sky' : 'See today’s sky', to: 'sky',
   },
   {
     id: 'house', label: 'House', eyebrow: '8th house', pips: 4, color: '#e8628a', art: 'house',
@@ -398,7 +398,7 @@ export default function Chart({ go }: ScreenProps) {
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.button key={t.cta} className="chrome-cta" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}
-            onClick={() => { sfx.tap(); if (t.to === 'sky') goFrom(go, 'sky', 'chart'); else go(t.to) }}>
+            onClick={() => { sfx.tap(); if (t.to === 'sky') { if (BETA) openCalendarOn(go, 'chart'); else goFrom(go, 'sky', 'chart') } else go(t.to) }}>
             {t.cta} <span className="spark">✦</span>
           </motion.button>
         </AnimatePresence>

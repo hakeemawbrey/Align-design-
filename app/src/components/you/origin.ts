@@ -12,6 +12,17 @@ export function goFrom(go: (id: ScreenId) => void, to: ScreenId, from: ScreenId)
   go(to)
 }
 
+/** the day of the month the calendar should open on (a tapped event) */
+let focusDay: { date: Date; at: number } | null = null
+export function openCalendarOn(go: (id: ScreenId) => void, from: ScreenId, date?: Date) {
+  focusDay = date ? { date, at: Date.now() } : null
+  goFrom(go, 'calendar', from)
+}
+export function takeCalendarFocus(): Date | null {
+  // not cleared on read (a dev double-render would lose it); it goes stale by itself
+  return focusDay && Date.now() - focusDay.at < 1500 ? focusDay.date : null
+}
+
 export function cameFrom(screen: ScreenId, fallback: ScreenId): ScreenId {
   const m = memo[screen]
   return m && Date.now() - m.at < 1500 ? m.from : fallback

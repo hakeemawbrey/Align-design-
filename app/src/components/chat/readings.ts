@@ -4,6 +4,7 @@
  * Aquarius rising, Venus in Virgo, Mercury in Libra).
  */
 import { PERSONA, type PersonaId } from '../../data/persona'
+import { BETA } from '../../lib/beta'
 
 export type ReadingTab = 'pull' | 'push' | 'align' | 'relationship'
 
@@ -22,13 +23,13 @@ export interface Reading {
 
 const HAKEEM: Reading[] = [
   {
-    id: 'pull', label: 'Pull', eyebrow: 'What draws you in', color: '#8fd8f6', pill: 'rgba(120, 150, 230, 0.38)', pips: 4,
+    id: 'pull', label: BETA ? 'Spark' : 'Pull', eyebrow: 'What draws you in', color: '#8fd8f6', pill: 'rgba(120, 150, 230, 0.38)', pips: 4,
     headline: 'She answers like you do.',
     body: 'No games, no three-day rule. You both reply when you have something to say and go quiet when you don’t, which reads as confidence from either side. The first five nights will feel easier than they should.',
     tryLine: 'Ask about the last thing she changed her mind on.',
   },
   {
-    id: 'push', label: 'Push', eyebrow: 'Where you push back', color: '#f59cc4', pill: 'rgba(232, 98, 160, 0.38)', pips: 2,
+    id: 'push', label: BETA ? 'Clash' : 'Push', eyebrow: 'Where you push back', color: '#f59cc4', pill: 'rgba(232, 98, 160, 0.38)', pips: 2,
     headline: 'You want the last word. She wants silence.',
     body: 'She ends an argument by leaving the room; you end it by trying to win. Neither works on the other. Money is the other one: you save, she spends on beautiful things, and you each think your way is obvious.',
     tryLine: 'Name a number before the second dinner.',

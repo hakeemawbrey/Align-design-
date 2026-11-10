@@ -22,6 +22,10 @@ import ExpandSheet from '../components/deck/ExpandSheet'
 import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
 import { BETA } from '../lib/beta'
 import SkyDropdown, { OPEN_SKY_EVENT } from '../components/deck/SkyDropdown'
+import { openCalendarOn } from '../components/you/origin'
+import { todayKey } from '../data/skyReading'
+
+const SKY_READ_KEY = 'align:sky-read'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, ELEMENT_INK, skyMood, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
@@ -259,6 +263,13 @@ export default function Deck({ go, sky }: ScreenProps & {
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
   const [skyOpen, setSkyOpen] = useState(false)
+  // the pill's dot: today's horoscope hasn't been opened yet (beta)
+  const [skyRead, setSkyRead] = useState(() => { try { return localStorage.getItem(SKY_READ_KEY) === todayKey() } catch { return false } })
+  useEffect(() => {
+    if (!skyOpen || skyRead) return
+    setSkyRead(true)
+    try { localStorage.setItem(SKY_READ_KEY, todayKey()) } catch { /* it still clears for this visit */ }
+  }, [skyOpen, skyRead])
   useEffect(() => {
     const open = () => setSkyOpen(true)
     window.addEventListener(OPEN_SKY_EVENT, open)
@@ -587,8 +598,8 @@ export default function Deck({ go, sky }: ScreenProps & {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => (BETA ? setSkyOpen((o) => !o) : go('sky'))} skyOpen={skyOpen} onNotifs={() => go('notifications')} energy={BETA ? undefined : energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
-      {BETA && <SkyDropdown open={skyOpen && !peekOpen} onClose={() => setSkyOpen(false)} onFullCalendar={() => go('calendar')} />}
+      <DeckHeader onSky={() => (BETA ? setSkyOpen((o) => !o) : go('sky'))} skyOpen={skyOpen} skyUnread={!skyRead} onNotifs={() => go('notifications')} energy={BETA ? undefined : energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      {BETA && <SkyDropdown open={skyOpen && !peekOpen} onClose={() => setSkyOpen(false)} onFullCalendar={() => openCalendarOn(go, 'deck')} />}
 
       {/* peek header */}
       <AnimatePresence>
@@ -668,7 +679,8 @@ export default function Deck({ go, sky }: ScreenProps & {
           releaseStyle={{ scale: releaseLabelScale, color: releaseLabelColor }}
           event={slot?.kind === 'event'}
         />
-        {slot && <DrawTracker slot={slot} drawsOf={drawsOf} />}
+        {/* draws only mean something with event cards between them, so the beta leaves the tracker out */}
+        {slot && !BETA && <DrawTracker slot={slot} drawsOf={drawsOf} />}
         <AnimatePresence mode="wait" initial={false}>
           {toast ? (
             <motion.div key={toast.id}

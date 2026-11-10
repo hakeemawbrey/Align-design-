@@ -86,6 +86,8 @@ interface HeaderProps {
   onSky?: () => void
   /** the beta's sky dropdown is open (turns the chevron) */
   skyOpen?: boolean
+  /** today's horoscope hasn't been opened yet (beta) */
+  skyUnread?: boolean
   /** open Notifications */
   onNotifs?: () => void
   /** your hand: saved event cards plus packs to open; the widget beside the sky pill */
@@ -99,7 +101,7 @@ interface HeaderProps {
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, skyOpen, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, skyOpen, skyUnread, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
   const skyDrawn = useTalk().skyDays.includes(todayKey())
   return (
     <motion.div
@@ -156,7 +158,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
         <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left' }}>
           Read today’s horoscope
         </span>
-        {!skyDrawn && <span aria-hidden style={{ width: 7, height: 7, borderRadius: 4, flexShrink: 0, background: 'var(--rub)', boxShadow: '0 0 6px var(--rub)' }} />}
+        {(BETA ? skyUnread : !skyDrawn) && <span aria-hidden style={{ width: 7, height: 7, borderRadius: 4, flexShrink: 0, background: 'var(--rub)', boxShadow: '0 0 6px var(--rub)' }} />}
         {energy != null && (
           <span className="mono" aria-label={`Energy ${energy}`} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 9.5, letterSpacing: '0.08em', fontWeight: 700, color: '#9fe8c8' }}>
             <span style={{ width: 26, height: 5, borderRadius: 3, background: 'rgba(159,232,200,0.2)', overflow: 'hidden' }}>

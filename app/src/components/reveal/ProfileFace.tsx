@@ -109,7 +109,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
           {!BETA && <Chip label={sign.element} color={el} />}
           <Chip label={`${moon.name} moon`} color="#a35cf0" />
           {BETA && <Chip label={`${SIGNS[p.rising].name} rising`} color="#f2a96a" />}
-          {p.house && <Chip label={p.house} color="#f8edff" pearl />}
+          {!BETA && p.house && <Chip label={p.house} color="#f8edff" pearl />}
         </motion.div>
 
         <div style={{ height: 11 }} />

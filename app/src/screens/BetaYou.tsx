@@ -14,6 +14,7 @@ import { SIGN_FACTS } from '../data/signFacts'
 import { MOON_NOW } from '../data/sky'
 import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
+import { openCalendarOn } from '../components/you/origin'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
@@ -127,7 +128,7 @@ export default function BetaYou({ go }: ScreenProps) {
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
               <span className="eyebrow" style={EYEBROW}>Your sky this month</span>
-              <button className="mono" onClick={() => { sfx.tap(); go('calendar') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>OPEN CALENDAR ›</button>
+              <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>OPEN CALENDAR ›</button>
             </div>
             <div style={{ ...PANEL, overflow: 'hidden' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', fontSize: 13, color: 'var(--label-2)' }}>
@@ -135,7 +136,7 @@ export default function BetaYou({ go }: ScreenProps) {
                 {MOON_NOW.phase} in {MOON_NOW.sign} {MOON_NOW.glyph}
               </div>
               {events.map((e, i) => (
-                <button key={i} onClick={() => { sfx.tap(); go('calendar') }}
+                <button key={i} onClick={() => { sfx.tap(); openCalendarOn(go, 'you', e.date) }}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', textAlign: 'left', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
                   <span style={{ width: 38, flexShrink: 0, textAlign: 'center' }}>
                     <span className="mono" style={{ display: 'block', fontSize: 8, letterSpacing: '0.12em', color: 'var(--label-3)' }}>{e.date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()}</span>

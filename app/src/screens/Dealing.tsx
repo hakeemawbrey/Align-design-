@@ -13,6 +13,7 @@ import { EVENTS, EVENT_ORDER } from '../data/draws'
 import ProfileCard from '../components/deck/ProfileCard'
 import { DeckHeader, Counter, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
 import { PLUS_PEOPLE, PLUS_DRAWS, FREE_PEOPLE, PEOPLE_PER_DRAW } from '../data/draws'
+import { BETA, markBetaSeen } from '../lib/beta'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
 
 const SW = CARD_W * CARD_SCALE
@@ -54,6 +55,8 @@ export default function Dealing({ go }: ScreenProps) {
     go('deck')
   }
 
+  // once the deck is dealt, this phone has been here before
+  useEffect(() => { if (BETA) markBetaSeen() }, [])
   useEffect(() => {
     const ts: number[] = []
     const at = (s: number, fn: () => void) => ts.push(window.setTimeout(fn, s * 1000))
