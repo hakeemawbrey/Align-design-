@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "seed:gen": "node --experimental-strip-types scripts/gen-seed.ts",
     "ios": "npm run build && npx cap sync ios && npx cap open ios",
-    "ios:sync": "npm run build && npx cap sync ios"
+    "ios:sync": "npm run build && npx cap sync ios",
+    "build:beta": "tsc -b && vite build --mode beta --outDir dist-beta",
+    "preview:beta": "vite preview --outDir dist-beta --port 4175"
   },
   "dependencies": {
     "@capacitor/core": "^8.5.3",
@@ -20,6 +22,7 @@
     "@fontsource/eb-garamond": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
     "@fontsource/space-mono": "^5.3.0",
+    "@mediapipe/tasks-vision": "0.10.21",
     "@supabase/supabase-js": "^2.117.3",
     "astronomy-engine": "^2.1.19",
     "canvas-confetti": "^1.9.4",

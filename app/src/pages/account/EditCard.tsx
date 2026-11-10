@@ -11,6 +11,7 @@ import { ME } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
 import { sfx } from '../../lib/sfx'
 import { account, useAccount } from './store'
+import { BETA } from '../../lib/beta'
 import { EditableRow, Segment, TextCard, useToast } from './bits'
 
 type Side = 'down' | 'flipped'
@@ -66,7 +67,7 @@ export default function EditCard({ go, back, arg }: PageProps) {
               <div className="mono" style={{ textAlign: 'center', marginTop: 12, fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>LIVE PREVIEW · WHAT STRANGERS SEE FIRST</div>
               <Group label="Aura & sign">
                 <Row label={`Aura · ${sun.name}`} value="From your chart" onClick={() => go('chart')} />
-                <Row label="Verification" value="Verify your photo" onClick={() => go('x/verify-photo')} />
+                <Row label={BETA ? 'Aura photo' : 'Verification'} value={BETA ? 'Update' : 'Verify your photo'} onClick={() => go(BETA ? 'x/aura-photo' : 'x/verify-photo')} />
               </Group>
               <Label>Dealbreakers</Label>
               <TextCard value={draft.dealbreakers} max={90} minHeight={44} onChange={(v) => set({ dealbreakers: v })} />
@@ -83,7 +84,7 @@ export default function EditCard({ go, back, arg }: PageProps) {
               <div className="mono" style={{ textAlign: 'center', marginTop: 12, fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>LIVE PREVIEW · WHAT A MATCH SEES WHEN IT FLIPS</div>
               <Label>Revealed photo</Label>
               <div style={{ borderRadius: 16, background: CARD_BG, border: CARD_LINE, overflow: 'hidden' }}>
-                <Row onClick={() => go('x/verify-photo')} value="Replace"
+                <Row onClick={() => go(BETA ? 'x/aura-photo' : 'x/verify-photo')} value="Replace"
                   icon={<span style={{ width: 40, height: 40, borderRadius: 20, overflow: 'hidden', flexShrink: 0, boxShadow: `0 0 12px ${sun.color}88` }}>
                     <img src={ME.photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </span>}

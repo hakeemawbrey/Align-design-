@@ -4,6 +4,7 @@ import type { Profile } from '../../data/profiles'
 import { SIGNS, ELEMENT_COLOR } from '../../data/signs'
 import { CARD_W, CARD_H } from './fx'
 import { strengthWord } from '../Strength'
+import { BETA } from '../../lib/beta'
 import ElementBadge from '../ElementBadge'
 
 export type PeekState = 'none' | 'charging' | 'open' | 'sealing'
@@ -21,7 +22,9 @@ interface Props {
 const KIND_COLOR = { push: 'var(--rub)', pull: 'var(--spark)', align: 'var(--align)' } as const
 /** room for the sign row: card width minus both 32px insets */
 const ROW_MAX = CARD_W - 64
-const KIND_ORDER = ['push', 'pull', 'align'] as const
+const KIND_ORDER = BETA ? (['pull', 'push', 'align'] as const) : (['push', 'pull', 'align'] as const)
+/** the beta's names for the three readings */
+const KIND_LABEL = BETA ? ({ pull: 'spark', push: 'clash', align: 'align' } as const) : ({ pull: 'pull', push: 'push', align: 'align' } as const)
 
 /** pull tiers, rarest first; Rare pull gets the holo treatment */
 const PULL_COLOR: Record<Profile['pull'], string> = {
@@ -83,7 +86,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
   useLayoutEffect(() => {
     const w = rowRef.current?.offsetWidth ?? 0
     setRowFit(w > ROW_MAX ? ROW_MAX / w : 1)
-  }, [sign.name, moon.name, sign.element])
+  }, [sign.name, moon.name, sign.element, profile.rising])
 
   return (
     <div className={profile.founder ? 'holo-frame' : undefined} style={{
@@ -102,7 +105,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           {profile.initial}, {profile.age}
         </div>
         {/* element orb */}
-        <div style={{ position: 'absolute', right: 26, top: 14 }}>
+        <div style={{ position: 'absolute', right: 26, top: BETA ? 7 : 14 }}>
           <ElementBadge element={sign.element} size={38} />
         </div>
 
@@ -130,12 +133,13 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           />
           {/* inner vignette */}
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(90% 90% at 50% 45%, transparent 55%, rgba(7,4,15,0.55) 100%)', pointerEvents: 'none' }} />
-          <div className="mono" style={{
+          {/* the beta only says it while you peek */}
+          {(!BETA || peek !== 'none') && <div className="mono" style={{
             position: 'absolute', left: 8, bottom: 6, fontSize: 8, letterSpacing: '0.16em',
             color: peek === 'open' ? 'var(--label-1)' : 'var(--label-2)', textShadow: '0 1px 4px rgba(0,0,0,0.9)', zIndex: 2,
           }}>
             {captionFor(peek, isPhoto)}
-          </div>
+          </div>}
           {profile.founder && (
             <div className="mono" style={{
               position: 'absolute', left: 8, top: 8, zIndex: 3, padding: 1.5, borderRadius: 999,
@@ -149,7 +153,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
               </div>
             </div>
           )}
-          {!(ring && (peek === 'charging' || peek === 'open')) && (
+          {!BETA && !(ring && (peek === 'charging' || peek === 'open')) && (
             <div style={{ position: 'absolute', right: 8, top: 8, zIndex: 3 }}><PullBadge pull={profile.pull} /></div>
           )}
           {ring && (peek === 'charging' || peek === 'open') && (
@@ -171,14 +175,19 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           <span className="serif" style={{ fontSize: 18, letterSpacing: '0.08em', color: sign.color, textTransform: 'uppercase', textShadow: `0 0 10px ${sign.color}66` }}>
             {sign.name}
           </span>
-          <span className="chip" style={{ flexShrink: 0, color: elColor, height: 22, padding: '0 9px 0 3px', borderColor: `${elColor}cc`, background: `${elColor}14` }}>
+          {/* the beta shows the element once, in the orb; the tags are moon and rising */}
+          {!BETA && <span className="chip" style={{ flexShrink: 0, color: elColor, height: 22, padding: '0 9px 0 3px', borderColor: `${elColor}cc`, background: `${elColor}14` }}>
             <Sphere color={elColor} light="#e8fbff" />
             {sign.element}
-          </span>
+          </span>}
           <span className="chip" style={{ flexShrink: 0, color: 'var(--label-2)', height: 22, padding: '0 9px 0 3px', borderColor: 'rgba(179,166,196,0.55)' }}>
             <Sphere color="#8f7be8" light="#ece6ff" />
             {moon.name} moon
           </span>
+          {BETA && <span className="chip" style={{ flexShrink: 0, color: 'var(--label-2)', height: 22, padding: '0 9px 0 3px', borderColor: 'rgba(242,169,106,0.55)' }}>
+            <Sphere color="#f2a96a" light="#fff0dc" />
+            {SIGNS[profile.rising].name} rising
+          </span>}
         </div>
 
         {/* one-line bio */}
@@ -196,8 +205,19 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           {[...profile.reading].sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind)).map((r) => (
             <div key={r.kind} style={{ display: 'flex', alignItems: 'center', minHeight: 36, paddingLeft: 32, paddingRight: 18 }}>
               <span style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: KIND_COLOR[r.kind], textTransform: 'uppercase', fontWeight: 700 }}>{r.kind}</span>
-                <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', color: 'var(--label-3)', textTransform: 'uppercase' }}>{strengthWord(r.strength)}</span>
+                <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: KIND_COLOR[r.kind], textTransform: 'uppercase', fontWeight: 700 }}>{KIND_LABEL[r.kind]}</span>
+                {BETA ? (
+                  <span aria-label={strengthWord(r.strength)} style={{ display: 'flex', gap: 4, marginTop: 3 }}>
+                    {[1, 2, 3].map((i) => (
+                      <span key={i} style={{
+                        width: 6, height: 6, borderRadius: '50%',
+                        background: i <= r.strength ? KIND_COLOR[r.kind] : 'transparent',
+                        border: `1.2px solid ${KIND_COLOR[r.kind]}`, opacity: i <= r.strength ? 1 : 0.55,
+                        boxShadow: i <= r.strength ? `0 0 6px ${KIND_COLOR[r.kind]}` : 'none',
+                      }} />
+                    ))}
+                  </span>
+                ) : <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', color: 'var(--label-3)', textTransform: 'uppercase' }}>{strengthWord(r.strength)}</span>}
               </span>
               <span className="serif" style={{ flex: 1, fontSize: 14.5, lineHeight: 1.16, color: 'var(--label-1)' }}>
                 {r.text}

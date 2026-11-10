@@ -7,6 +7,7 @@ import { useSession } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
 import TalkCardFace, { TalkCardBack } from './TalkCardFace'
 import PackOpen from './PackOpen'
+import { BETA } from '../../lib/beta'
 import { PLACES, WHENS } from '../../data/places'
 
 type Tab = 'today' | 'hand' | 'places' | 'packs'
@@ -54,7 +55,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
         <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(201,182,240,0.4)', margin: '0 auto 12px' }} />
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div className="h-display" style={{ fontSize: 26, flex: 1 }}>Your hand</div>
-          {onBinder ? (
+          {onBinder && !BETA ? (
             <button className="mono" onClick={() => { sfx.tap(); onBinder() }} style={{ height: 30, fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '0 12px', borderRadius: 999 }}>YOUR BINDER ›</button>
           ) : (
             <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
@@ -68,7 +69,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
 
         {/* tabs */}
         <div style={{ marginTop: 14, height: 36, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
-          {([['today', 'Today'], ['hand', 'Your cards'], ...(onPlace ? [['places', 'Places']] as const : []), ['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const).map(([id, label]) => (
+          {([['today', 'Today'], ['hand', 'Your cards'], ...(onPlace ? [['places', 'Places']] as const : []), ...(BETA ? [] : [['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const)] as const).map(([id, label]) => (
             <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? 'var(--chrome-ink)' : 'var(--label-2)' }}>
               {tab === id && <motion.span layoutId="hand-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'var(--chrome)' }} />}
               <span style={{ position: 'relative' }}>{label}</span>

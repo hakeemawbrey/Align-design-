@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
+import { BETA } from '../lib/beta'
 import { sfx } from '../lib/sfx'
 
 const OUTLINES = [
@@ -75,21 +76,21 @@ export default function Spent({ go }: ScreenProps) {
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
         style={{ position: 'absolute', top: 542, left: 40, right: 40, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
-        Fifteen people and three events, gone in one sitting. A new deal lands at 11:11. Align+ deals you 45 a night.
+        {BETA ? 'Fifteen people, gone in one sitting. A new deal lands at 11:11. Until then, talk to who you aligned with.' : 'Fifteen people and three events, gone in one sitting. A new deal lands at 11:11. Align+ deals you 45 a night.'}
       </motion.p>
 
       <motion.button className="chrome-cta"
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75, duration: 0.6 }}
         whileTap={{ scale: 0.96 }} whileHover={{ scale: 1.015 }}
-        onClick={() => { sfx.tap(); go('paywall') }}
+        onClick={() => { sfx.tap(); go(BETA ? 'matches' : 'paywall') }}
         style={{ position: 'absolute', left: 38, top: 648, fontSize: 20 }}>
-        45 a night with Align+ <span className="spark">✦</span>
+        {BETA ? 'Talk to your matches' : '45 a night with Align+'} <span className="spark">✦</span>
       </motion.button>
-      <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
+      {!BETA && <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
         onClick={() => { sfx.tap(); go('x/wait-reset') }}
         style={{ position: 'absolute', top: 710, left: 80, right: 80, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
         Wait for the 11:11 deal
-      </motion.button>
+      </motion.button>}
 
       <TabBar active="deck" go={go} />
     </div>

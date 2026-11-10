@@ -3,6 +3,7 @@ import EditChart from './EditChart'
 import Settings from './Settings'
 import Pause from './Pause'
 import EditCard from './EditCard'
+import AuraPhoto from './AuraPhoto'
 import Help from './Help'
 import NotifDetail from './NotifDetail'
 import NotifSettings from './NotifSettings'
@@ -13,6 +14,7 @@ export const PAGES: Record<string, PageDef> = {
   settings: { ref: 'G-07 — Settings', Component: Settings, home: 'you' },
   pause: { ref: 'G-08 — Pause / Delete', Component: Pause, home: 'you' },
   'edit-card': { ref: 'G-27 — Edit Card · Face Down / G-28 — Edit Card · Flipped', Component: EditCard, home: 'you' },
+  'aura-photo': { ref: 'Beta — Aura photo', Component: AuraPhoto, home: 'you' },
   help: { ref: 'G-29 — Help & Support', Component: Help, home: 'you' },
   'notifs-empty': { ref: 'S-19b — No Notifications', Component: NotifsEmpty, home: 'notifications' },
   'notif-detail': { ref: 'S-19c — Notification · Detail', Component: NotifDetail, home: 'notifications' },

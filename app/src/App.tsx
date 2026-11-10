@@ -36,12 +36,24 @@ import Collection from './screens/Collection'
 import HowToPlay from './screens/HowToPlay'
 import { sfx } from './lib/sfx'
 import { PAGES, parsePage } from './pages/registry'
+import { BETA, BETA_BLOCKED } from './lib/beta'
+import { OPEN_SKY_EVENT } from './components/deck/SkyDropdown'
+import BetaCalendar from './screens/BetaCalendar'
 
 const SCREENS: Record<Exclude<ScreenId, `x/${string}`>, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
-  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: BETA ? BetaCalendar : Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,
+}
+
+/** in the beta, a link to a left-out screen does nothing (today's sky opens the deck's sky panel) */
+function betaRoute(id: ScreenId): ScreenId | null {
+  if (!BETA) return id
+  const page = parsePage(id)?.page
+  if (!BETA_BLOCKED.has(id) && !(page && BETA_BLOCKED.has(`x/${page}`))) return id
+  if (id === 'sky') { window.setTimeout(() => window.dispatchEvent(new Event(OPEN_SKY_EVENT)), 60); return 'deck' }
+  return null
 }
 
 /** Keyboard jump order for recording: 1–9, then 0 */
@@ -59,7 +71,7 @@ function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
   // #reset: a link that always opens a fresh demo (state lives in memory, so a load is already clean)
   if ((h as string) === 'reset') return 'splash'
-  return ALL.includes(h) || parsePage(h) ? h : 'splash'
+  return (ALL.includes(h) || parsePage(h)) && betaRoute(h) === h ? h : 'splash'
 }
 
 /** screens a page was opened from, so back() unwinds page → page → screen */
@@ -71,7 +83,9 @@ export default function App() {
   // bump to force a full remount (restart the demo from any screen)
   const [run, setRun] = useState(0)
 
-  const go = useCallback((id: ScreenId) => {
+  const go = useCallback((to: ScreenId) => {
+    const id = betaRoute(to)
+    if (!id) return
     const cur = current.current
     if (parsePage(id)) { if (cur !== id) trail.push(cur) } else trail.length = 0
     current.current = id
@@ -106,7 +120,7 @@ export default function App() {
       if (n >= 1 && n <= ORDER.length) restart(ORDER[n - 1])
       else if (k === 'b') restart('matches')
       else if (k === 'r') restart('splash')
-      else if (LETTERS[k]) restart(LETTERS[k])
+      else if (LETTERS[k] && betaRoute(LETTERS[k]) === LETTERS[k]) restart(LETTERS[k])
       if (e.key === 'm' || e.key === 'M') sfx.setMuted(!sfx.isMuted())
     }
     window.addEventListener('keydown', onKey)

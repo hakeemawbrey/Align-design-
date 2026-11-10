@@ -17,6 +17,7 @@ import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
 import { binderNav } from '../lib/binderNav'
+import { BETA } from '../lib/beta'
 import NoMatches from '../components/chat/NoMatches'
 
 type View = 'list' | 'binder'
@@ -55,7 +56,7 @@ export default function Matches({ go }: ScreenProps) {
     .map((id) => profileById(id)).filter((p) => !!p)
     .map((p) => matchFromDeal(p, pronoun(p).subj as Match['pronoun']))
   const visible = [...real, ...dealt, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
-  const [view, setView] = useState<View>(() => (binderNav.takePages() || justTraded ? 'binder' : lastView))
+  const [view, setView] = useState<View>(() => (BETA ? 'list' : binderNav.takePages() || justTraded ? 'binder' : lastView))
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)
   const [showcase, setShowcase] = useState<ArtistCard | null>(null)
@@ -93,6 +94,7 @@ export default function Matches({ go }: ScreenProps) {
   }
   /** the tag on the right of a row: trade when it's ready, see the card once traded */
   const openTag = (m: Match) => {
+    if (BETA) return false
     const st = slotState(m, traded)
     if (st === 'ready') { sfx.tap(); binder.startTrade(m.id); go('trade'); return true }
     if (st === 'traded') { sfx.tap(); setView('binder'); setZoom(m); return true }
@@ -139,8 +141,8 @@ export default function Matches({ go }: ScreenProps) {
       <div className="h-display" style={{ position: 'absolute', left: 24, top: 62, fontSize: 34 }}>Your matches</div>
       <div style={{ position: 'absolute', left: 24, top: 106, fontSize: 13.5, color: 'var(--label-2)' }}>{summary}</div>
 
-      {/* List / Binder toggle: same pill track as the binder and hand-sheet tabs */}
-      <div style={{
+      {/* List / Binder toggle: same pill track as the binder and hand-sheet tabs (not in the beta) */}
+      {!BETA && <div style={{
         position: 'absolute', left: 24, right: 24, top: 138, height: 36, padding: 3, borderRadius: 999,
         display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)',
       }}>
@@ -153,12 +155,12 @@ export default function Matches({ go }: ScreenProps) {
             <span style={{ position: 'relative' }}>{v === 'list' ? 'Matches' : `Binder · ${traded.size}`}</span>
           </button>
         ))}
-      </div>
+      </div>}
 
       <AnimatePresence mode="wait">
         {view === 'list' ? (
           <motion.div key="list" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}
-            style={{ position: 'absolute', left: 0, right: 0, top: 186, bottom: 96, overflowY: 'auto', padding: '0 24px', scrollbarWidth: 'none' }}>
+            style={{ position: 'absolute', left: 0, right: 0, top: BETA ? 142 : 186, bottom: 96, overflowY: 'auto', padding: '0 24px', scrollbarWidth: 'none' }}>
             {(['your-turn', 'waiting', 'quiet'] as MatchSection[]).map((sec) => {
               const rows = visible.filter((m) => m.section === sec)
               return (
@@ -380,7 +382,7 @@ function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: b
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
         <span className="mono" style={{ fontSize: 8.5, color: 'var(--label-3)' }}>{m.when} ›</span>
         <span role="button" onClick={(e) => { if (onTag()) e.stopPropagation() }} style={{ display: 'flex', alignItems: 'center', minHeight: 30, padding: '2px 0 2px 8px' }}>
-          <TradeTag st={st} day={m.day} />
+          {!BETA && <TradeTag st={st} day={m.day} />}
         </span>
       </div>
     </button>

@@ -45,6 +45,10 @@ export interface Profile {
   comet?: boolean
 }
 
+/** a photo you set yourself (the aura photo), kept on this device */
+export const MY_PHOTO_KEY = 'align:photo'
+const savedPhoto = (): string | undefined => { try { return localStorage.getItem(MY_PHOTO_KEY) ?? undefined } catch { return undefined } }
+
 /** The viewer of the demo: whichever founder is playing (see persona.ts). */
 export const ME = {
   name: PERSONA.name,
@@ -55,7 +59,7 @@ export const ME = {
   venus: PERSONA.venus,
   serial: PERSONA.serial,
   /** shown on the flipped side of your card and on copies you trade */
-  photo: PERSONA.photo,
+  photo: savedPhoto() ?? PERSONA.photo,
   blurb: PERSONA.blurb,
 }
 

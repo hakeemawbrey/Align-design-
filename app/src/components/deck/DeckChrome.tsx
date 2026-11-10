@@ -7,6 +7,7 @@ import type { ReactNode } from 'react'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
 import { HandIcon } from '../talk/CardsButton'
 import { sfx } from '../../lib/sfx'
+import { BETA } from '../../lib/beta'
 
 /**
  * Notifications: a four-point star, taller than it is wide, with an unread badge.
@@ -83,6 +84,8 @@ interface HeaderProps {
   hidden?: boolean
   /** open Today's Sky */
   onSky?: () => void
+  /** the beta's sky dropdown is open (turns the chevron) */
+  skyOpen?: boolean
   /** open Notifications */
   onNotifs?: () => void
   /** your hand: saved event cards plus packs to open; the widget beside the sky pill */
@@ -96,7 +99,7 @@ interface HeaderProps {
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, skyOpen, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
   const skyDrawn = useTalk().skyDays.includes(todayKey())
   return (
     <motion.div
@@ -134,10 +137,10 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           </motion.div>
         </AnimatePresence>
       </div>
-      <NotifStar pulse={starPulse} onClick={onNotifs} />
+      {!BETA && <NotifStar pulse={starPulse} onClick={onNotifs} />}
       {/* Today's Sky pill */}
-      <motion.button onClick={() => { sfx.tap(); onSky?.() }} aria-label="Open today's sky"
-        initial={false} animate={{ right: 80 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      <motion.button onClick={() => { sfx.tap(); onSky?.() }} aria-label={BETA ? 'Today’s horoscope and cosmic calendar' : "Open today's sky"} aria-expanded={BETA ? !!skyOpen : undefined}
+        initial={false} animate={{ right: BETA ? 24 : 80 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         style={{
         position: 'absolute', left: 24, top: 108, height: 39, borderRadius: 999, overflow: 'hidden',
         background: 'linear-gradient(90deg, rgba(52,35,95,0.62), rgba(40,26,78,0.5))',
@@ -162,10 +165,14 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
             {energy}
           </span>
         )}
-        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>›</span>
+        {BETA
+          ? <motion.span animate={{ rotate: skyOpen ? 180 : 0 }} style={{ display: 'grid', placeItems: 'center' }}>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="#f2c75c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></svg>
+            </motion.span>
+          : <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>›</span>}
       </motion.button>
       {/* your hand, next to the sky: saved events and packs, the way into your binder */}
-      <motion.button key="hand" aria-label={`Your hand: ${saved}`} onClick={() => { sfx.tap(); onSaved?.() }}
+      {!BETA && <motion.button key="hand" aria-label={`Your hand: ${saved}`} onClick={() => { sfx.tap(); onSaved?.() }}
         whileTap={{ scale: 0.92 }}
         style={{
           position: 'absolute', right: 24, top: 108, width: 48, height: 39, borderRadius: 999,
@@ -179,7 +186,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
             display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 8px rgba(248,237,255,0.45)',
           }}>{saved}</motion.span>
         )}
-      </motion.button>
+      </motion.button>}
     </motion.div>
   )
 }

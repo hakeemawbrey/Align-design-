@@ -2,6 +2,7 @@ import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { talk, useTalk } from '../lib/talk'
 import type { ScreenId } from '../screens/types'
+import { BETA } from '../lib/beta'
 
 export type Tab = 'deck' | 'matches' | 'club' | 'you'
 
@@ -38,6 +39,9 @@ interface Props {
   onSelect?: (t: Tab) => boolean | void
 }
 
+/** the beta has no Club */
+const TABS = (Object.keys(LABEL) as Tab[]).filter((t) => !(BETA && t === 'club'))
+
 const ROUTE: Record<Tab, ScreenId> = { deck: 'deck', matches: 'matches', club: 'club', you: 'you' }
 
 /** Floating glass pill nav from S-05. */
@@ -47,8 +51,8 @@ export default function TabBar({ active, go, onSelect }: Props) {
   const { packs } = useTalk()
   // packs waiting show on the You tab, the same count the binder and hand sheets use;
   // today's unclaimed drop alone shows as a plain pearl dot
-  const packCount = packs.length
-  const dailyDot = !packCount && talk.dailyPackAvailable()
+  const packCount = BETA ? 0 : packs.length
+  const dailyDot = !BETA && !packCount && talk.dailyPackAvailable()
   return (
     <nav style={{
       position: 'absolute', left: 32, right: 32, bottom: 22, height: 62, zIndex: 40,
@@ -58,7 +62,7 @@ export default function TabBar({ active, go, onSelect }: Props) {
       backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)',
       boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
     }}>
-      {(Object.keys(LABEL) as Tab[]).map((t) => {
+      {TABS.map((t) => {
         const a = t === active
         return (
           <button key={t} onClick={() => { sfx.tap(); if (onSelect?.(t)) return; if (t !== active) go?.(ROUTE[t]) }} style={{

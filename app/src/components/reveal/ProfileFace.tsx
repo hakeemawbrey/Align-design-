@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import type { Profile } from '../../data/profiles'
 import { ELEMENT_COLOR, SIGNS } from '../../data/signs'
 import VeilPhoto from './VeilPhoto'
+import { BETA } from '../../lib/beta'
 import ElementBadge from '../ElementBadge'
 
 interface Props {
@@ -105,8 +106,9 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
           <span style={{ fontFamily: 'var(--serif)', fontSize: 21, letterSpacing: '0.08em', color: sign.color, marginRight: 4, textShadow: `0 0 12px ${sign.color}66` }}>
             {sign.name.toUpperCase()}
           </span>
-          <Chip label={sign.element} color={el} />
+          {!BETA && <Chip label={sign.element} color={el} />}
           <Chip label={`${moon.name} moon`} color="#a35cf0" />
+          {BETA && <Chip label={`${SIGNS[p.rising].name} rising`} color="#f2a96a" />}
           {p.house && <Chip label={p.house} color="#f8edff" pearl />}
         </motion.div>
 

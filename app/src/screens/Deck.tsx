@@ -20,6 +20,8 @@ import { session, useSession, energize, EVENT_COST } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
 import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
+import { BETA } from '../lib/beta'
+import SkyDropdown, { OPEN_SKY_EVENT } from '../components/deck/SkyDropdown'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, ELEMENT_INK, skyMood, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
@@ -238,7 +240,8 @@ export default function Deck({ go, sky }: ScreenProps & {
   const [peeks, setPeeks] = useState(() => Math.max(0, peekAllowance + session.get().bonusPeeks - session.get().peeksUsed))
   // upgrading mid-deck tops the allowance up
   useEffect(() => { setPeeks(Math.max(0, peekAllowance + session.get().bonusPeeks - session.get().peeksUsed)) }, [peekAllowance])
-  const seq = useMemo(() => buildSeq(people, alignPlus, inserts), [people, alignPlus, inserts])
+  // the beta deals people only: no event cards between them
+  const seq = useMemo(() => buildSeq(people, alignPlus, inserts).filter((x) => !BETA || x.kind === 'person'), [people, alignPlus, inserts])
   const seqRef = useRef(seq)
   seqRef.current = seq
   const drawsOf = alignPlus ? PLUS_DRAWS : Math.ceil(Math.min(people.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)
@@ -255,6 +258,12 @@ export default function Deck({ go, sky }: ScreenProps & {
   const [matching, setMatching] = useState(false)
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
+  const [skyOpen, setSkyOpen] = useState(false)
+  useEffect(() => {
+    const open = () => setSkyOpen(true)
+    window.addEventListener(OPEN_SKY_EVENT, open)
+    return () => window.removeEventListener(OPEN_SKY_EVENT, open)
+  }, [])
   const { savedEvents, energy } = useSession()
   const { packs } = useTalk()
 
@@ -351,7 +360,7 @@ export default function Deck({ go, sky }: ScreenProps & {
       sfx.deny()
       topRef.current?.shake()
       if (alignPlus) { showToast('That’s your 33 peeks this week · more on Monday', 1800); return }
-      if (!session.get().peekUpsellSeen) { session.patch({ peekUpsellSeen: true }); later(() => setUpsell(true), 380); return }
+      if (!BETA && !session.get().peekUpsellSeen) { session.patch({ peekUpsellSeen: true }); later(() => setUpsell(true), 380); return }
       showToast('No peeks left tonight · more at 11:11', 1600)
       return
     }
@@ -578,7 +587,8 @@ export default function Deck({ go, sky }: ScreenProps & {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => (BETA ? setSkyOpen((o) => !o) : go('sky'))} skyOpen={skyOpen} onNotifs={() => go('notifications')} energy={BETA ? undefined : energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      {BETA && <SkyDropdown open={skyOpen && !peekOpen} onClose={() => setSkyOpen(false)} onFullCalendar={() => go('calendar')} />}
 
       {/* peek header */}
       <AnimatePresence>

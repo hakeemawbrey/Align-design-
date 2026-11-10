@@ -16,6 +16,10 @@ import { talk, useTalk } from '../lib/talk'
 import { binderNav } from '../lib/binderNav'
 import { useBinder } from '../lib/binder'
 import { TalkCardBack } from '../components/talk/TalkCardFace'
+import { BETA } from '../lib/beta'
+import type { ScreenId } from './types'
+import { retrograde } from '../lib/astro'
+import { MOON_NOW } from '../data/sky'
 import { goFrom } from '../components/you/origin'
 
 const SUN = SIGNS[ME.sign]
@@ -28,7 +32,16 @@ const maskFor = (scrolled: boolean) => `linear-gradient(180deg, transparent ${sc
 
 type TileId = 'sign' | 'sky' | 'calendar' | 'moon' | 'retro'
 
-const TILES: { id: TileId; title: string; sub: string }[] = [
+/** the beta reads the tiles off today's real sky */
+const NOW = new Date()
+const RETRO_NOW = (['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const).filter((p) => retrograde(p, NOW)).map((p) => p[0].toUpperCase() + p.slice(1))
+const TILES: { id: TileId; title: string; sub: string }[] = BETA ? [
+  { id: 'sign', title: 'Your sign', sub: SUN.name },
+  { id: 'sky', title: 'Today’s sky', sub: NOW.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) },
+  { id: 'calendar', title: 'Calendar', sub: NOW.toLocaleDateString('en-US', { month: 'long' }) },
+  { id: 'moon', title: 'Moon phase', sub: MOON_NOW.phase },
+  { id: 'retro', title: 'Retrogrades', sub: RETRO_NOW.length ? RETRO_NOW.slice(0, 2).join(' · ') : 'None today' },
+] : [
   { id: 'sign', title: 'Your sign', sub: SUN.name },
   { id: 'sky', title: 'Today’s sky', sub: 'Venus ℞ · Oct 5' },
   { id: 'calendar', title: 'Calendar', sub: 'October' },
@@ -43,6 +56,31 @@ const APP_ROWS: { label: string; right: string; to: 'notifications' | 'x/setting
 ]
 
 /** Hand the phone to another founder: the demo starts fresh from their chart. One row per founder. */
+/** the beta's profile shortcuts: your photo, the calendar, your sign, the glossary */
+const BETA_ROWS: { title: string; sub: string; to: ScreenId; icon: string; tint: string }[] = [
+  { title: 'Aura photo', sub: 'Take a photo; we check it’s you and add your aura', to: 'x/aura-photo', icon: '◉', tint: '#ff9ad8' },
+  { title: 'Cosmic calendar', sub: 'This month’s moons, retrogrades and seasons', to: 'calendar', icon: '☾', tint: '#c9bedb' },
+  { title: 'Learn your sign', sub: 'Your sun, moon, rising, element and planet', to: 'chart', icon: '✦', tint: '#f2c75c' },
+  { title: 'The language', sub: 'Every astro word in plain English', to: 'x/glossary', icon: 'Aa', tint: '#7fd8b0' },
+]
+function BetaRows({ go }: { go: (id: ScreenId) => void }) {
+  return (
+    <div style={{ margin: '18px 24px 0', borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }}>
+      {BETA_ROWS.map((r, i) => (
+        <motion.button key={r.to} onClick={() => { sfx.tap(); go(r.to) }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
+          style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '12px 14px', textAlign: 'left', borderTop: i ? '1px solid rgba(179,166,196,0.12)' : undefined }}>
+          <span className="serif" style={{ width: 38, height: 38, borderRadius: 19, flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 16, color: r.tint, background: 'rgba(11,6,32,0.6)', border: `1px solid ${r.tint}66` }}>{r.icon}</span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span className="serif italic" style={{ display: 'block', fontSize: 17, color: 'var(--label-1)' }}>{r.title}</span>
+            <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 2 }}>{r.sub}</span>
+          </span>
+          <Chevron />
+        </motion.button>
+      ))}
+    </div>
+  )
+}
+
 function SwitchRows() {
   return <>{(Object.keys(PERSONAS) as PersonaId[]).filter((id) => id !== PERSONA.id).map((id) => <SwitchRow key={id} other={PERSONAS[id]} />)}</>
 }
@@ -122,8 +160,10 @@ export default function You({ go }: ScreenProps) {
             </div>
           </div>
 
+          {BETA && <BetaRows go={go} />}
+
           {/* your collection: the way in to packs */}
-          <motion.button onClick={() => { sfx.tap(); binderNav.open(go, 'you') }}
+          {!BETA && <motion.button onClick={() => { sfx.tap(); binderNav.open(go, 'you') }}
             initial="rest" animate="rest" whileHover="hover" whileTap="tap"
             variants={{ rest: { y: 0 }, hover: { y: -2 }, tap: { scale: 0.98 } }}
             style={{
@@ -150,10 +190,10 @@ export default function You({ go }: ScreenProps) {
             }}>
               {packCount ? (dailyToClaim ? `${packCount} TO OPEN · 1 TO CLAIM ›` : `OPEN PACKS · ${packCount} WAITING ›`) : dailyToClaim ? 'CLAIM TODAY’S PACK ›' : 'SEE YOUR CARDS ›'}
             </div>
-          </motion.button>
+          </motion.button>}
 
           {/* how to play */}
-          <motion.button onClick={() => { sfx.tap(); go('howto') }} whileTap={{ scale: 0.98 }}
+          {!BETA && <motion.button onClick={() => { sfx.tap(); go('howto') }} whileTap={{ scale: 0.98 }}
             style={{
               display: 'flex', alignItems: 'center', gap: 14, width: 'calc(100% - 48px)', margin: '10px 24px 0', padding: '12px 14px', borderRadius: 16, textAlign: 'left',
               background: 'rgba(36,22,74,0.8)', border: '1px solid rgba(179,166,196,0.22)',
@@ -164,7 +204,7 @@ export default function You({ go }: ScreenProps) {
               <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 2 }}>The deal, packs, energy and trading</span>
             </span>
             <Chevron />
-          </motion.button>
+          </motion.button>}
 
           {/* your sky */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 24px 8px' }}>
@@ -210,7 +250,7 @@ export default function You({ go }: ScreenProps) {
           </motion.div>
 
           {/* Align+ */}
-          <div style={{ display: 'flex', justifyContent: 'center', margin: '22px 0 0' }}>
+          {!BETA && <div style={{ display: 'flex', justifyContent: 'center', margin: '22px 0 0' }}>
             {alignPlus ? (
               <motion.button className="chrome-cta" whileHover={{ scale: 1.02 }} onClick={() => sfx.sparkle()}>
                 <span style={{
@@ -226,7 +266,7 @@ export default function You({ go }: ScreenProps) {
                 Align+ · Founding member <span className="spark">✦</span>
               </motion.button>
             )}
-          </div>
+          </div>}
 
           {/* app */}
           <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '24px 24px 8px' }}>App</div>
@@ -234,7 +274,7 @@ export default function You({ go }: ScreenProps) {
             margin: '0 24px', borderRadius: 16, overflow: 'hidden',
             background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
-            {APP_ROWS.map((r, i) => (
+            {APP_ROWS.filter((r) => !BETA || r.to !== 'notifications').map((r, i) => (
               <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to === 'notifications') goFrom(go, r.to, 'you'); else go(r.to) }}
                 whileHover={{ backgroundColor: 'rgba(52,35,95,0.6)' }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
                 style={{
@@ -250,7 +290,7 @@ export default function You({ go }: ScreenProps) {
             <ResetRow />
           </div>
           <div className="mono" style={{ textAlign: 'center', margin: '18px 0 0', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>
-            ALIGN · {ME.serial} · FOUNDING DECK
+            ALIGN · {ME.serial} · {BETA ? 'BETA' : 'FOUNDING DECK'}
           </div>
         </div>
       </motion.div>

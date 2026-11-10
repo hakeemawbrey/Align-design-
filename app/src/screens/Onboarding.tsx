@@ -24,6 +24,7 @@ import Dealbreakers, { type Pick } from '../components/onboarding/Dealbreakers'
 import FaceLast from '../components/onboarding/FaceLast'
 import TheField from '../components/onboarding/TheField'
 import Resume from '../components/onboarding/Resume'
+import { BETA } from '../lib/beta'
 
 export const STEPS = [
   'arrival', 'birth', 'time', 'sky', 'reveal', 'manual', 'three', 'check',
@@ -100,7 +101,7 @@ export function OnboardingFlow({ go, start, initialBirth, initialTime, exit }: S
   const next = useCallback(() => {
     if (step === 'birth' && ageOn(birth) < 18) { sfx.release(); setDir(1); setAside('age'); return }
     if (fixing && (step === 'birth' || step === 'time')) { sfx.align(); setFixing(false); to(STEPS.indexOf('check')); return }
-    if (i >= STEPS.length - 1) { sfx.align(); session.patch({ obStep: 0 }); go('founding'); return }
+    if (i >= STEPS.length - 1) { sfx.align(); session.patch({ obStep: 0 }); go(BETA ? 'dealing' : 'founding'); return }
     sfx.align()
     to(i + 1)
   }, [i, go, to, step, birth, fixing])

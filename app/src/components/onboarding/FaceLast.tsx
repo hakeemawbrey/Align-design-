@@ -9,6 +9,10 @@ import { api } from '../../api'
 import { CARD_W } from '../deck/fx'
 import ProfileCard from '../deck/ProfileCard'
 import { Caption, Cta, Header, EASE } from './shared'
+import { BETA } from '../../lib/beta'
+import { makeAuraPhoto } from '../../lib/aura'
+import { dataUrlToFile, setMyPhoto } from '../../lib/myPhoto'
+import { SIGNS } from '../../data/signs'
 
 const W = 150
 const S = W / CARD_W
@@ -31,6 +35,7 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
   const [blurb, setBlurb] = useState(ME.blurb)
   const [photo, setPhoto] = useState<string>(ME.photo)
   const [uploading, setUploading] = useState(false)
+  const [photoError, setPhotoError] = useState<string | null>(null)
   const t = useRef(0)
   const file = useRef<HTMLInputElement>(null)
   useEffect(() => () => clearTimeout(t.current), [])
@@ -57,8 +62,17 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
   const pick = async (f: File | undefined) => {
     if (!f) return
     setUploading(true)
+    setPhotoError(null)
     try {
-      const url = await api.uploadPhoto(f)
+      let src: File = f
+      if (BETA) {
+        // the beta checks it's really you, then paints your aura
+        const aura = await makeAuraPhoto(f, SIGNS[sun].element)
+        if (!aura.ok) { setPhotoError(aura.message); sfx.deny(); return }
+        src = await dataUrlToFile(aura.url)
+      }
+      const url = await api.uploadPhoto(src)
+      if (BETA) setMyPhoto(url)
       setPhoto(url)
       sfx.sparkle()
       peek()
@@ -115,8 +129,9 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
             color: 'var(--label-1)', border: '1px dashed rgba(201,182,240,0.6)', background: 'rgba(84,44,170,0.25)', marginTop: 2,
           }}>
           <img src={photo} alt="" style={{ width: 24, height: 24, borderRadius: 12, objectFit: 'cover' }} />
-          {uploading ? 'Saving…' : 'Change photo'}
+          {uploading ? (BETA ? 'Checking…' : 'Saving…') : BETA ? 'Aura photo' : 'Change photo'}
         </button>
+        {photoError && <div role="alert" style={{ fontSize: 12, lineHeight: 1.35, color: '#ff9ab0' }}>{photoError}</div>}
       </motion.div>
 
       <Cta onClick={done} delay={1}>Publish my card</Cta>

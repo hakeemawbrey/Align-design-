@@ -23,6 +23,8 @@ import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
+import { BETA } from '../lib/beta'
+import { CompatBadge, CompatSheet } from '../components/chat/Compat'
 import { talk } from '../lib/talk'
 
 export type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
@@ -122,6 +124,7 @@ const OPENERS = ['Being honest first: your playlist made me miss my stop.', 'The
 
 export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [report, setReport] = useState(false)
+  const [compat, setCompat] = useState(false)
   const [cardOpen, setCardOpen] = useState(demo === 'card')
   const daysLeft = demo === 'expiring' ? 2 : demo === 'closed' ? 0 : DAYS_LEFT
   const closed = daysLeft <= 0
@@ -343,7 +346,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const expiring = !closed && daysLeft <= 2
   const empty = !replay && loaded && msgs.length === 0 && !typing
   const showComposer = !empty || composing
-  const backTo = () => { sfx.tap(); go(demo ? 'matches' : 'reveal') }
+  const backTo = () => { sfx.tap(); go(demo || BETA ? 'matches' : 'reveal') }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -351,6 +354,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       <div style={{ position: 'absolute', inset: 0, background: '#150b35', mixBlendMode: 'lighten', pointerEvents: 'none' }} />
 
       <ChatHeader onBack={backTo} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }}
+        right={BETA ? <CompatBadge them={juniper} onClick={() => setCompat(true)} /> : undefined}
         onWho={() => { sfx.flip(); setCardOpen(true) }} photo={PHOTO} name={juniper.name}
         sub={empty ? 'Matched 2 minutes ago' : undefined} />
       {!empty && <ExpiryBar daysLeft={daysLeft} />}
@@ -474,6 +478,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
           <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => go('alignment')} />
         )}
       </AnimatePresence>
+      {BETA && <CompatSheet them={juniper} open={compat} onClose={() => setCompat(false)} onFullReading={() => go('alignment')} />}
       <AnimatePresence>
         {report && (
           <ReportSheet name={juniper.name} pronoun="her" onClose={() => setReport(false)}

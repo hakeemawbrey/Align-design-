@@ -24,6 +24,8 @@ import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
+import { BETA } from '../lib/beta'
+import { CompatBadge, CompatSheet } from '../components/chat/Compat'
 import { talk } from '../lib/talk'
 
 const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me' ? 'me' : 'her', text: m.body })
@@ -55,6 +57,7 @@ export default function Thread({ go }: ScreenProps) {
   const [hand, setHand] = useState(false)
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   const [report, setReport] = useState(false)
+  const [compat, setCompat] = useState(false)
   const [cardOpen, setCardOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   /** messages that didn't send, shown at the end with "tap to retry" */
@@ -172,7 +175,8 @@ export default function Thread({ go }: ScreenProps) {
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
       <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }}
         onWho={them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
-        photo={them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined} />
+        photo={them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined}
+        right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => setCompat(true)} /> : undefined} />
 
       {empty && !composing && (
         <EmptyThread sign={them.sign} openers={openers} picked={picked}
@@ -250,8 +254,9 @@ export default function Thread({ go }: ScreenProps) {
         {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
-        {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => go('alignment')} />}
+        {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), setCompat(true)) : go('alignment'))} />}
       </AnimatePresence>
+      {BETA && <CompatSheet them={profileById(them.id) ?? them} open={compat} onClose={() => setCompat(false)} />}
       <AnimatePresence>
         {report && (
           <ReportSheet name={them.name} pronoun="them" onClose={() => setReport(false)}

@@ -12,6 +12,7 @@ import { PERSONA } from '../data/persona'
 import { SIGNS, type SignId } from '../data/signs'
 import { SIGN_FACTS } from '../data/signFacts'
 import { SUN_HOUSE, ordinal } from '../data/myBirth'
+import { BETA } from '../lib/beta'
 import { DEFAULT_BIRTH, sunDegree } from '../components/onboarding/zodiac'
 
 
@@ -94,7 +95,7 @@ const HAKEEM_TABS: ChartTab[] = [
     love: 'You click easiest with earth and water signs. Air brings ideas you lack; fire brings spark but can feel like too much.',
     self: 'Your body knows first. If a date leaves you tired or tense, take that seriously.',
     tryLine: 'Plan a date you can touch: cook, walk, make something together.',
-    cta: 'See your element set', to: 'matches',
+    cta: BETA ? 'Talk to your matches' : 'See your element set', to: 'matches',
   },
   {
     id: 'ruler', label: 'Ruler', eyebrow: 'Venus', pips: 5, color: '#f3a98f', art: 'venus',

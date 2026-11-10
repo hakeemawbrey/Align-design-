@@ -6,8 +6,10 @@ import { MY_READING_TITLE, READINGS } from './readings'
 
 /* ───────────────────────── header ───────────────────────── */
 
-export function ChatHeader({ onBack, onSky, onMore, onWho, photo, name, sub }: {
+export function ChatHeader({ onBack, onSky, onMore, onWho, photo, name, sub, right }: {
   onBack: () => void; onSky?: () => void; onMore?: () => void
+  /** a widget for the top-right corner (the beta's compatibility ring); replaces the alignment mark */
+  right?: React.ReactNode
   /** tap on the thumbnail + name (her card); falls back to onSky */
   onWho?: () => void
   photo: string; name: string
@@ -53,12 +55,13 @@ export function ChatHeader({ onBack, onSky, onMore, onWho, photo, name, sub }: {
 
       {onMore && (
         <motion.button onClick={onMore} whileTap={{ scale: 0.9 }} aria-label="Report or block"
-          style={{ position: 'absolute', right: onSky ? 68 : 16, top: 12, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
+          style={{ position: 'absolute', right: right ? 62 : onSky ? 68 : 16, top: 12, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
           <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor"><circle cx="2" cy="2" r="1.8" /><circle cx="9" cy="2" r="1.8" /><circle cx="16" cy="2" r="1.8" /></svg>
         </motion.button>
       )}
 
-      {onSky && (
+      {right}
+      {!right && onSky && (
         <motion.button
           onClick={onSky}
           whileHover={{ scale: 1.08 }}

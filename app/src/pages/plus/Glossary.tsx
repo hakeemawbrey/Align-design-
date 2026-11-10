@@ -8,6 +8,7 @@ import { CARD_BG, CARD_LINE, Label } from '../../components/kit'
 import { useSession } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
 import { KIND_LABEL, TERMS, termFrom, type Term, type TermKind } from './terms'
+import { BETA } from '../../lib/beta'
 import { Cta, Frame } from './ui'
 
 const KINDS: TermKind[] = ['sign', 'element', 'house', 'planet']
@@ -36,12 +37,13 @@ function Icon({ t, locked }: { t: Term; locked: boolean }) {
 export default function Glossary({ go, back }: PageProps) {
   const { alignPlus } = useSession()
   const [kind, setKind] = useState<TermKind>('sign')
-  const open = (t: Term) => (alignPlus || t.free)
+  // the beta opens every term
+  const open = (t: Term) => (BETA || alignPlus || t.free)
   const unlocked = TERMS.filter(open).length
 
   const inTab = TERMS.filter((t) => t.kind === kind)
   const mine = inTab.filter(open)
-  const locked = kind === 'sign' && !alignPlus ? TERMS.filter((t) => TEASE.includes(t.slug)) : inTab.filter((t) => !open(t))
+  const locked = kind === 'sign' && !alignPlus && !BETA ? TERMS.filter((t) => TEASE.includes(t.slug)) : inTab.filter((t) => !open(t))
 
   const tap = (t: Term) => {
     if (!open(t)) { go('paywall'); return }
@@ -103,7 +105,7 @@ export default function Glossary({ go, back }: PageProps) {
         </AnimatePresence>
       </div>
 
-      {!alignPlus && <Cta onClick={() => go('paywall')}>Unlock the whole glossary</Cta>}
+      {!BETA && !alignPlus && <Cta onClick={() => go('paywall')}>Unlock the whole glossary</Cta>}
       <TabBar active="you" go={go} />
     </Frame>
   )
