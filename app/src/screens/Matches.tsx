@@ -18,7 +18,6 @@ import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
 import { binderNav } from '../lib/binderNav'
 import { BETA } from '../lib/beta'
-import { compatWith } from '../lib/compat'
 import NoMatches from '../components/chat/NoMatches'
 
 type View = 'list' | 'binder'
@@ -383,7 +382,7 @@ function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: b
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
         <span className="mono" style={{ fontSize: 8.5, color: 'var(--label-3)' }}>{m.when} ›</span>
         <span role="button" onClick={(e) => { if (onTag()) e.stopPropagation() }} style={{ display: 'flex', alignItems: 'center', minHeight: 30, padding: '2px 0 2px 8px' }}>
-          {BETA ? <span className="mono" aria-label={`${compatWith(m).score}% compatible`} style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.04em', color: 'var(--align)' }}>{compatWith(m).score}%</span> : <TradeTag st={st} day={m.day} />}
+          {!BETA && <TradeTag st={st} day={m.day} />}
         </span>
       </div>
     </button>

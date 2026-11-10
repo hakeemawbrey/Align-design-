@@ -16,7 +16,7 @@ npm run preview:beta   # http://localhost:4175
 3. **Today's horoscope and cosmic calendar:** the deck's horoscope pill drops down a panel. "Today" is your daily reading; "This month" is a real calendar of moon phases, planets changing sign, retrogrades and seasons, worked out from the ephemeris (`src/data/cosmicMonth.ts`).
 4. **Chat** with matches (Juniper's scripted chat and everyone else's thread).
 5. **Talk cards** in chat (no packs or binder).
-6. **Compatibility:** one score per person, shown the same on the match moment, the matches list, the chat ring and its sheet. Half comes from the two charts, half from the Spark / Clash / Align on their card (`src/lib/compat.ts`).
+6. **How you fit:** the two-orb button top-right in every chat opens a sheet describing how the two charts meet, in words (`src/lib/compat.ts`). **There is no compatibility score, percentage or rating anywhere, on purpose (liability). Don't add one.**
 7. **Aura photo:** take or pick a photo. MediaPipe finds one face on the phone, cuts the person out and paints their aura in their element's colours, then sets it as the card photo (`src/lib/aura.ts`, `x/aura-photo`). Also runs in onboarding's photo step.
 8. **Profile** (`src/screens/BetaYou.tsx`): your card first (face down, aura photo behind; tap to flip), your big three, Edit card and Aura photo, your sign, your next sky events, then settings and the demo tools.
 9. **Learn your sign:** your chart, plus the whole glossary unlocked.
@@ -28,7 +28,7 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 ## How it connects
 
-- **One compatibility score** everywhere (see 6). Her card's "Your alignment" and the chat ring open the same sheet; the sheet leads on to the full reading.
+- **One way into "how you fit":** her card's "Your alignment" and the chat's top-right button open the same sheet; the sheet leads on to the full reading. No scores.
 - **One vocabulary:** Spark / Clash / Align on cards, in chat and in the full reading.
 - **Back returns you where you were:** the calendar remembers whether it was opened from the deck, the profile or your chart, and a tapped event opens on its day.
 - **First visit:** Welcome leads with "Read my chart"; after the first deal it says "Welcome back".

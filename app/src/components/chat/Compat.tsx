@@ -8,25 +8,25 @@ import { sfx } from '../../lib/sfx'
 
 const KIND = { pull: { label: 'Spark', color: 'var(--spark)' }, push: { label: 'Clash', color: 'var(--rub)' }, align: { label: 'Align', color: 'var(--align)' } } as const
 
-/** the chat's top-right widget: your compatibility score as a ring */
+/**
+ * The chat's top-right widget: how your two charts meet. Words only; there is
+ * no score, percentage or rating anywhere in it, on purpose.
+ */
 export function CompatBadge({ them, onClick }: { them: Profile; onClick: () => void }) {
-  const c = useMemo(() => compatWith(them), [them])
-  const R = 16, L = 2 * Math.PI * R
+  const mine = SIGNS[ME.sign], theirs = SIGNS[them.sign]
   return (
-    <motion.button onClick={() => { sfx.tap(); onClick() }} whileTap={{ scale: 0.92 }} aria-label={`Compatibility with ${them.name}: ${c.score}%, ${c.label}`}
+    <motion.button onClick={() => { sfx.tap(); onClick() }} whileTap={{ scale: 0.92 }} aria-label={`How you and ${them.name} fit`}
       style={{ position: 'absolute', right: 12, top: 10, width: 44, height: 44, display: 'grid', placeItems: 'center' }}>
-      <svg width="44" height="44" viewBox="0 0 44 44" style={{ position: 'absolute', inset: 0, transform: 'rotate(-90deg)' }}>
-        <circle cx="22" cy="22" r={R} fill="rgba(11,6,32,0.6)" stroke="rgba(242,199,92,0.22)" strokeWidth="3" />
-        <motion.circle cx="22" cy="22" r={R} fill="none" stroke="var(--align)" strokeWidth="3" strokeLinecap="round"
-          strokeDasharray={L} initial={{ strokeDashoffset: L }} animate={{ strokeDashoffset: L * (1 - c.score / 100) }} transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-          style={{ filter: 'drop-shadow(0 0 3px rgba(242,199,92,0.6))' }} />
-      </svg>
-      <span className="mono" style={{ position: 'relative', fontSize: 11, fontWeight: 700, color: 'var(--align)', letterSpacing: 0 }}>{c.score}</span>
+      {/* two orbs, overlapping: your sign and theirs */}
+      <span style={{ position: 'relative', width: 34, height: 24 }}>
+        <span style={{ position: 'absolute', left: 0, top: 1, width: 22, height: 22, borderRadius: 11, background: `radial-gradient(circle at 35% 30%, ${mine.light}, ${mine.color} 70%)`, boxShadow: `0 0 8px ${mine.color}aa`, opacity: 0.95 }} />
+        <span style={{ position: 'absolute', right: 0, top: 1, width: 22, height: 22, borderRadius: 11, background: `radial-gradient(circle at 35% 30%, ${theirs.light}, ${theirs.color} 70%)`, boxShadow: `0 0 8px ${theirs.color}aa`, opacity: 0.9, mixBlendMode: 'screen' }} />
+      </span>
     </motion.button>
   )
 }
 
-/** the breakdown behind the score */
+/** how the two charts meet, in words */
 export function CompatSheet({ them, open, onClose, onFullReading }: { them: Profile; open: boolean; onClose: () => void; onFullReading?: () => void }) {
   const c = useMemo(() => compatWith(them), [them])
   const today = useMemo(() => usToday(them.sign), [them])
@@ -45,7 +45,7 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
             }}>
             <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '10px auto 0' }} />
             <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', padding: '16px 24px 40px' }}>
-              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>COMPATIBILITY</div>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>HOW YOU FIT</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 6 }}>
                 <div>
                   <div className="h-display" style={{ fontSize: 30 }}>You &amp; {them.name}</div>
@@ -53,20 +53,11 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
                     {SIGNS[ME.sign].name} {SIGNS[ME.sign].glyph} · {SIGNS[them.sign].name} {SIGNS[them.sign].glyph}
                   </div>
                 </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div className="serif" style={{ fontSize: 46, lineHeight: 1, color: 'var(--align)' }}>{c.score}<span style={{ fontSize: 22 }}>%</span></div>
-                  <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)', marginTop: 4 }}>{c.label.toUpperCase()}</div>
-                </div>
               </div>
 
               <p className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '16px 0 0' }}>{c.elements}</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '8px 0 0' }}>
-                {c.card != null ? 'Half from your two charts, half from the Spark, Clash and Align on their card.' : 'From your two charts.'}
-              </p>
 
-              <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '22px 0 10px' }}>
-                <span>YOUR CHARTS</span><span style={{ color: 'var(--label-2)' }}>{c.chart}%</span>
-              </div>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '22px 0 10px' }}>YOUR CHARTS</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {c.parts.map((p) => (
                   <div key={p.label}>
@@ -76,10 +67,6 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
                         {SIGNS[p.mine].name.toUpperCase()} · {SIGNS[p.theirs].name.toUpperCase()}
                       </span>
                     </div>
-                    <div style={{ height: 5, borderRadius: 3, background: 'rgba(179,166,196,0.16)', marginTop: 6, overflow: 'hidden' }}>
-                      <motion.div initial={{ width: 0 }} animate={{ width: `${p.score}%` }} transition={{ duration: 0.8, ease: 'easeOut' }}
-                        style={{ height: '100%', borderRadius: 3, background: p.score >= 75 ? 'var(--spark)' : p.score >= 60 ? 'var(--align)' : 'var(--rub)' }} />
-                    </div>
                     <div style={{ fontSize: 12.5, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 5 }}><b style={{ fontWeight: 600, color: 'var(--label-1)' }}>{p.aspectName}.</b> {p.line}</div>
                   </div>
                 ))}
@@ -87,9 +74,7 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
 
               {them.reading?.length ? (
                 <>
-                  <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '24px 0 10px' }}>
-                    <span>FROM {them.name.toUpperCase()}’S CARD</span>{c.card != null && <span style={{ color: 'var(--label-2)' }}>{c.card}%</span>}
-                  </div>
+                  <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '24px 0 10px' }}>FROM {them.name.toUpperCase()}’S CARD</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {(['pull', 'push', 'align'] as const).map((k) => {
                       const r = them.reading.find((x) => x.kind === k)
@@ -115,6 +100,9 @@ export function CompatSheet({ them, open, onClose, onFullReading }: { them: Prof
                 <div style={{ fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 6 }}>{today.line}</div>
               </div>
 
+              <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '18px 0 0' }}>
+                Astrology, for reflection and fun. It describes how two charts meet; it doesn’t measure or predict a relationship.
+              </p>
               {onFullReading && (
                 <button className="chrome-cta" onClick={() => { sfx.tap(); onFullReading() }} style={{ marginTop: 22, width: '100%' }}>
                   Read your full alignment <span className="spark">✦</span>

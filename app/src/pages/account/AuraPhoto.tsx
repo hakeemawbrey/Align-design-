@@ -102,7 +102,7 @@ export default function AuraPhoto({ go, back }: PageProps) {
       <div style={{ marginTop: 16, textAlign: 'center', minHeight: 40 }}>
         {state.at === 'result' && (
           <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--spark)' }}>
-            ✓ ONE PERSON FOUND · {Math.round(state.score * 100)}% SURE
+            ✓ ONE PERSON FOUND
           </div>
         )}
         {state.at === 'error' && <div role="alert" style={{ fontSize: 14, lineHeight: 1.4, color: '#ff9ab0' }}>{state.message}</div>}
