@@ -4,6 +4,9 @@
 # what's on screen, stills), and packs it up for Claude.
 #   run.sh [handle]         study a page (asks which, remembers the last one)
 #   run.sh facebook [link]  study a Facebook page's reels and videos
+#   run.sh youtube [link]   study a whole YouTube channel (videos and Shorts)
+#   run.sh x [link]         study an X (Twitter) account's videos and photos
+#   run.sh                  asks for a link from any of the four and picks the right study
 #   run.sh send [handle]    send the pack to your own private GitHub repo so Claude can read it
 eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
 cd "$(dirname "$0")/.." || exit 1
@@ -23,13 +26,15 @@ ask_handle() {
   local last given="$1"
   last="$(cat "$PREFS/handle" 2>/dev/null)"; last="${last:-tylerinthemaking}"
   if [ -z "$given" ]; then
-    printf "\n\033[1mWhich page?\033[0m Paste an Instagram or Facebook link, or type the handle (just press Enter for @%s): " "$last"
+    printf "\n\033[1mWhich page?\033[0m Paste a YouTube, Instagram, X or Facebook link, or an Instagram handle (just press Enter for %s): " "$last"
     read -r given
     given="${given:-$last}"
   fi
   # Facebook: the page's name comes from opening the link, so it's worked out in step 1.
   case "$given" in
     *facebook.com*|*fb.com*|*fb.me*|fb-*) FACEBOOK="$given"; HANDLE="$given"; return ;;
+    *youtube.com*|*youtu.be*|yt-*) YOUTUBE="$given"; HANDLE="$given"; return ;;
+    x.com/*|*://x.com/*|*://www.x.com/*|*://mobile.x.com/*|*twitter.com/*|x-*) XACCT="$given"; HANDLE="$given"; return ;;
   esac
   HANDLE="$(node --input-type=module -e "import { handleOf } from './src/paths.mjs'; console.log(handleOf(process.argv[1]) ?? '')" "$given")"
   if [ -z "$HANDLE" ]; then say "\"$given\" doesn't look like an Instagram page. Try the handle, like tylerinthemaking."; pause_close; exit 1; fi
@@ -49,7 +54,7 @@ github_login() {
 if [ "$1" = "send" ]; then
   ask_handle "$2"
   PACK="$STUDY/pack/$HANDLE"
-  if [ ! -f "$PACK/posts.json" ]; then say "Nothing packed for @$HANDLE yet. Double-click \"Study Instagram Page\" first."; pause_close; exit 1; fi
+  if [ ! -f "$PACK/posts.json" ]; then say "Nothing packed for @$HANDLE yet. Double-click \"Study Any Link\" first."; pause_close; exit 1; fi
   github_login
   LOGIN="$(gh api user -q .login)" || { say "Couldn't reach GitHub. Check your internet and try again."; pause_close; exit 1; }
   if ! gh repo view "$LOGIN/$DATA_REPO" >/dev/null 2>&1; then
@@ -95,6 +100,22 @@ if [ "$1" = "facebook" ]; then
   fi
   case "$given" in *facebook.com*|*fb.com*|*fb.me*|fb-*) ;; *) say "\"$given\" doesn't look like a Facebook link."; pause_close; exit 1 ;; esac
   ask_handle "$given"
+elif [ "$1" = "youtube" ]; then
+  given="$2"
+  if [ -z "$given" ]; then
+    printf "\n\033[1mWhich YouTube channel?\033[0m Paste its link, or a link to any video on it: "
+    read -r given
+  fi
+  case "$given" in *youtube.com*|*youtu.be*|yt-*) ;; @*) given="https://www.youtube.com/$given" ;; *) say "\"$given\" doesn't look like a YouTube link."; pause_close; exit 1 ;; esac
+  ask_handle "$given"
+elif [ "$1" = "x" ]; then
+  given="$2"
+  if [ -z "$given" ]; then
+    printf "\n\033[1mWhich X account?\033[0m Paste its link, or a link to any post from it: "
+    read -r given
+  fi
+  case "$given" in *x.com/*|*twitter.com/*|x-*) ;; @*) given="https://x.com/${given#@}" ;; *) say "\"$given\" doesn't look like an X link."; pause_close; exit 1 ;; esac
+  ask_handle "$given"
 else
   ask_handle "$1"
 fi
@@ -133,6 +154,53 @@ if [ -n "$FACEBOOK" ]; then
   node src/report.mjs "$HANDLE" || { pause_close; exit 1; }
   open "$STUDY/pack/$HANDLE"
   note "The numbers are in report.md in the folder that just opened."
+  printf "\n\033[1mSend it to Claude now?\033[0m It goes to a private repo on your GitHub that only you can see. [Y/n] "
+  read -r yn
+  case "$yn" in n|N|no|No) say "Not sent. Double-click \"Send Study to Claude\" whenever you're ready."; pause_close ;; *) exec "$STUDY/mac/run.sh" send "$HANDLE" ;; esac
+  exit 0
+fi
+
+# ---------- YouTube and X: one script downloads, the same three steps follow ----------
+if [ -n "$YOUTUBE$XACCT" ]; then
+  if [ -n "$YOUTUBE" ]; then
+    SITE="YouTube"; SITE_URL="https://www.youtube.com/"; SCRIPT="src/youtube.mjs"; INPUT="$YOUTUBE"; HFILE="$PREFS/yt-handle"
+    STEP1="Listing the channel and downloading every video and Short (small, 480p, with captions and thumbnails)"
+    STEP2="what's on screen, stills (speech comes from YouTube's captions)"
+  else
+    SITE="X"; SITE_URL="https://x.com/login"; SCRIPT="src/twitter.mjs"; INPUT="$XACCT"; HFILE="$PREFS/x-handle"
+    STEP1="Downloading every video and photo on the account's Media tab, a few seconds apart"
+    STEP2="what's said, what's on screen, stills"
+  fi
+  BROWSER="$(cat "$PREFS/browser" 2>/dev/null || cat "$HOME/.align-inspo/browser" 2>/dev/null)"
+  [ -z "$BROWSER" ] && for pair in "chrome:Google Chrome" "brave:Brave Browser" "edge:Microsoft Edge" "firefox:Firefox"; do [ -d "/Applications/${pair#*:}.app" ] && { BROWSER="${pair%%:*}"; break; }; done
+  # Reading Safari's cookies needs Full Disk Access; YouTube mostly works without a login, X never does.
+  [ "$BROWSER" = safari ] && [ "$SITE" = YouTube ] && BROWSER=""
+  [ -z "$BROWSER" ] && [ "$SITE" = X ] && BROWSER="safari"
+  say "1/3  $STEP1"
+  note "Leave this window open and your Mac plugged in; it's safe to close and double-click again later."
+  [ -n "$BROWSER" ] && note "It uses your $SITE login in $BROWSER. If your Mac asks for your password for \"Safe Storage\", type it and press Always Allow."
+  waits=0; logins=0; rm -f "$HFILE"
+  while true; do
+    node "$SCRIPT" "$INPUT" --handle-file "$HFILE" ${BROWSER:+--cookies-from-browser "$BROWSER"} $STUDY_EXTRA; code=$?
+    if [ -s "$HFILE" ]; then HANDLE="$(cat "$HFILE")"; INPUT="$HANDLE"; echo "$HANDLE" > "$PREFS/handle"; fi
+    case $code in
+      0) break ;;
+      75) [ $waits -ge 24 ] && break
+          waits=$((waits + 1)); say "$SITE wants a break. Waiting 30 minutes, then carrying on by itself (round $waits). Progress is kept."; sleep 1800 ;;
+      77) [ $logins -ge 3 ] && { say "$SITE still wants a login. Log in in your browser and double-click again."; pause_close; exit 1; }
+          logins=$((logins + 1)); say "Log into $SITE in your browser, then come back here and press Enter."
+          [ "$BROWSER" = safari ] && note "Safari also needs: System Settings > Privacy & Security > Full Disk Access > turn on Terminal."
+          open "$SITE_URL"; read -r _ ;;
+      *)  [ -d "$STUDY/media/$HANDLE" ] && ls "$STUDY/media/$HANDLE"/*.json >/dev/null 2>&1 && { note "Stopped early; carrying on with what downloaded."; break; }
+          say "Couldn't study that (see the message above)."; pause_close; exit 1 ;;
+    esac
+  done
+  say "2/3  Working out what's in each post on this Mac: $STEP2"
+  node src/process.mjs "$HANDLE" || { say "Something went wrong working through the posts (see above)."; pause_close; exit 1; }
+  say "3/3  Packing it up"
+  node src/report.mjs "$HANDLE" || { pause_close; exit 1; }
+  [ "$SITE" = YouTube ] && { node src/quick.mjs "$HANDLE" --no-thumbs >/dev/null 2>&1 || true; }
+  open "$STUDY/pack/$HANDLE"
   printf "\n\033[1mSend it to Claude now?\033[0m It goes to a private repo on your GitHub that only you can see. [Y/n] "
   read -r yn
   case "$yn" in n|N|no|No) say "Not sent. Double-click \"Send Study to Claude\" whenever you're ready."; pause_close ;; *) exec "$STUDY/mac/run.sh" send "$HANDLE" ;; esac

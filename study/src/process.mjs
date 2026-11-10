@@ -210,6 +210,9 @@ export async function processPost(post, mdir, wdir, t) {
     }
   }
 
+  // YouTube: the platform's own captions, already saved by src/youtube.mjs. Whole video, no waiting on whisper.
+  const captions = w.transcript == null ? readJson(path.join(mdir, '_captions', `${post.shortcode}.json`)) : null
+  if (captions?.segments) { w.transcript = captions; did.push(`${captions.words} words spoken (YouTube captions)`) }
   if (w.transcript == null && post.type === 'reel' && w.hasAudio !== false && t.whisper && t.modelReady) {
     w.transcript = await transcribe(path.join(mdir, post.files[0].file), path.join(fdir, 'speech'), t)
     if (w.transcript) did.push(w.transcript.speech ? `${w.transcript.words} words spoken` : 'no speech (music only)')

@@ -59,6 +59,10 @@ export function readPosts(dir) {
         coauthors: (meta.coauthors ?? []).map((c) => c?.username).filter(Boolean),
         likes: Number.isFinite(meta.likes) && meta.likes > 0 ? meta.likes : null,
         location: meta.location_name || null,
+        // YouTube: 'video' or 'short', so long videos and Shorts are each measured against their own kind.
+        subtype: meta.category === 'youtube' ? meta.subcategory ?? null : null,
+        title: meta.category === 'youtube' ? meta.title ?? null : null,
+        chapters: meta.chapters ?? null,
         // gallery-dl's "count" also counts a reel's music, so only sidecar_shortcode marks a carousel.
         sidecar: Boolean(meta.sidecar_shortcode),
         files: [],
@@ -91,6 +95,7 @@ export function mergeNumbers(post, n) {
     likes: n.likes ?? post.likes,
     comments: n.comments ?? null,
     duration: n.duration ?? null,
+    reposts: n.reposts ?? null,   // X only
     numbersFrom: n.from ?? null,
   }
 }

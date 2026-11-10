@@ -1,0 +1,415 @@
+<title>Align Video Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,400;1,500&family=Sofia+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column workbench. Drop bar on top, tabs below, each tab a list of studied things. Align "Stardust": indigo night, bone ink, pearl buttons, gold only for small marks. */
+:root {
+  --void: #0b0620; --canvas: #140a2e; --raised: #1e1240; --raised-alt: #281a4e; --line: rgba(236,226,207,.14);
+  --ink-1: #ece2cf; --ink-2: #b9aecb; --ink-3: #8a7fa3;
+  --chrome: linear-gradient(135deg,#f4efe6 0%,#d9d2e6 45%,#f6f1e9 70%,#cfc6dc 100%); --chrome-ink: #3a2c4e;
+  --gold: #f2c75c; --spark: #7fd8b0; --rub: #e8628a; --violet: #9a7be0;
+  --serif: "EB Garamond", "Iowan Old Style", Georgia, serif;
+  --sans: "Sofia Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --void: #efe9dd; --canvas: #f7f2e8; --raised: #fffaf1; --raised-alt: #efe7f6; --line: rgba(40,26,78,.14);
+  --ink-1: #24163f; --ink-2: #4e4266; --ink-3: #7a6f8f;
+  --chrome: linear-gradient(135deg,#2a1b52 0%,#3b2a6b 50%,#2a1b52 100%); --chrome-ink: #f4efe6;
+  --gold: #a87a12; --spark: #1f8a5f; --rub: #b8345c; --violet: #5f45a8; color-scheme: light;
+} }
+:root[data-theme="light"] {
+  --void: #efe9dd; --canvas: #f7f2e8; --raised: #fffaf1; --raised-alt: #efe7f6; --line: rgba(40,26,78,.14);
+  --ink-1: #24163f; --ink-2: #4e4266; --ink-3: #7a6f8f;
+  --chrome: linear-gradient(135deg,#2a1b52 0%,#3b2a6b 50%,#2a1b52 100%); --chrome-ink: #f4efe6;
+  --gold: #a87a12; --spark: #1f8a5f; --rub: #b8345c; --violet: #5f45a8; color-scheme: light;
+}
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--canvas); color: var(--ink-1); font: 15px/1.45 var(--sans); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 22px }
+.eyebrow { font: 500 10.5px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3) }
+h1 { font: italic 500 clamp(34px, 6vw, 48px)/1.02 var(--serif); margin: 6px 0 0; text-wrap: balance }
+h1 .star { color: var(--gold); font-style: normal; font-size: .55em; vertical-align: .55em; margin-left: 4px }
+.lede { color: var(--ink-2); max-width: 62ch; margin: 8px 0 0 }
+header { display: grid; gap: 4px }
+.stats { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; font: 13px var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums }
+.stats b { color: var(--ink-1); font-weight: 500 }
+
+/* Drop bar */
+.drop { background: var(--raised); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 10px }
+.drop-row { display: grid; grid-template-columns: 1fr auto; gap: 10px }
+@media (max-width: 560px) { .drop-row { grid-template-columns: 1fr } }
+input, textarea, select { font: inherit; color: var(--ink-1); background: var(--canvas); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; width: 100%; min-width: 0 }
+textarea { resize: vertical; min-height: 44px }
+input::placeholder, textarea::placeholder { color: var(--ink-3) }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px }
+.btn { font: 600 14px var(--sans); border: 0; border-radius: 999px; padding: 11px 20px; background: var(--chrome); color: var(--chrome-ink); cursor: pointer; white-space: nowrap }
+.btn:disabled { opacity: .5; cursor: default }
+.ghost { font: 500 13px var(--sans); background: transparent; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer }
+.ghost:hover { color: var(--ink-1) }
+.hint { font-size: 12.5px; color: var(--ink-3) }
+.hint code { font: 12px var(--mono); color: var(--ink-2) }
+.toast { font: 13px var(--mono); color: var(--spark); min-height: 1em }
+
+/* Tabs */
+nav { display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none }
+nav a { flex: none; padding: 10px 14px; color: var(--ink-3); text-decoration: none; font: 500 14px var(--sans); border-bottom: 2px solid transparent; margin-bottom: -1px }
+nav a[aria-current="page"] { color: var(--ink-1); border-color: var(--gold) }
+nav a .n { font: 11px var(--mono); color: var(--ink-3); margin-left: 4px }
+section[data-view] { display: grid; gap: 16px }
+.filters { display: flex; flex-wrap: wrap; gap: 6px }
+.chip { font: 500 12px var(--sans); padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink-2); cursor: pointer }
+.chip[aria-pressed="true"] { background: var(--raised-alt); color: var(--ink-1); border-color: transparent }
+
+/* Principles */
+.area { display: grid; gap: 10px }
+.area h2 { font: italic 500 24px/1.1 var(--serif); margin: 8px 0 0 }
+.rule { background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0 }
+.rule-top { display: flex; gap: 12px; align-items: baseline; justify-content: space-between }
+.rule h3 { font: italic 500 19px/1.25 var(--serif); margin: 0; text-wrap: balance }
+.strength { flex: none; display: flex; gap: 3px }
+.strength i { width: 7px; height: 7px; border-radius: 50%; background: var(--line) }
+.strength i.on { background: var(--gold) }
+.rule p { margin: 0; color: var(--ink-2); max-width: 70ch }
+.for-align { color: var(--ink-1) !important }
+.for-align b { font: 500 10.5px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-right: 6px }
+.evidence { display: flex; flex-wrap: wrap; gap: 6px }
+.ev { font: 12px var(--sans); color: var(--ink-2); background: var(--raised-alt); border-radius: 8px; padding: 3px 8px; text-decoration: none }
+a.ev:hover { color: var(--ink-1) }
+
+/* Lists */
+.list { display: grid; gap: 10px }
+.item { background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0 }
+.item-top { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between }
+.item h3 { font: italic 500 19px/1.25 var(--serif); margin: 0; min-width: 0; overflow-wrap: anywhere }
+.item a.link { font: 12.5px var(--mono); color: var(--ink-2); overflow-wrap: anywhere }
+.item p { margin: 0; color: var(--ink-2); max-width: 72ch }
+.item ul { margin: 0; padding-left: 18px; color: var(--ink-2); display: grid; gap: 3px }
+.meta { font: 12px var(--mono); color: var(--ink-3); font-variant-numeric: tabular-nums }
+.pill { font: 500 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); white-space: nowrap }
+.pill.new { color: var(--rub); border-color: color-mix(in srgb, var(--rub) 45%, transparent) }
+.pill.read { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 45%, transparent) }
+.pill.studied, .pill.posted { color: var(--spark); border-color: color-mix(in srgb, var(--spark) 45%, transparent) }
+.pill.deep { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 45%, transparent) }
+.reply { border-left: 2px solid var(--gold); padding-left: 10px; color: var(--ink-1) !important }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px 20px }
+.cols h4 { font: 500 10.5px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 4px 0 4px }
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.row-actions select { width: auto; padding: 6px 10px; font-size: 13px }
+.beats { font-size: 14px }
+
+.empty { border: 1px dashed var(--line); border-radius: 14px; padding: 22px; color: var(--ink-2); display: grid; gap: 6px }
+.empty strong { font: italic 500 20px var(--serif); color: var(--ink-1) }
+
+/* Check an idea */
+.answer { background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 10px }
+.score { font: italic 500 40px/1 var(--serif); color: var(--gold) }
+.answer h4 { margin: 0; font: 500 10.5px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3) }
+.answer ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--ink-2) }
+.answer .rewrite { font: italic 500 20px/1.3 var(--serif); color: var(--ink-1) }
+footer { color: var(--ink-3); font-size: 13px; display: grid; gap: 6px; max-width: 70ch }
+@media (prefers-reduced-motion: no-preference) { .rule, .item { transition: border-color .15s } .rule:hover, .item:hover { border-color: color-mix(in srgb, var(--ink-3) 50%, transparent) } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Align · study desk</div>
+    <h1>Video Lab<span class="star">✦</span></h1>
+    <p class="lede">Drop any video or channel that inspires you. Claude studies it and adds what works to the playbook, then writes Align versions you can film. The playbook grows with every link.</p>
+    <div class="stats" id="stats"><span><b id="s-rules">0</b> rules</span><span><b id="s-sources">0</b> sources studied</span><span><b id="s-inbox">0</b> waiting in the inbox</span><span><b id="s-ideas">0</b> Align ideas</span></div>
+  </header>
+
+  <form class="drop" id="drop" autocomplete="off">
+    <label class="eyebrow" for="drop-url">Drop inspo</label>
+    <div class="drop-row">
+      <input id="drop-url" type="text" inputmode="url" placeholder="A YouTube, Instagram, X or Facebook link: a whole account or one post" required>
+      <button class="btn" id="drop-add" type="submit">Add to inbox</button>
+    </div>
+    <textarea id="drop-note" rows="1" placeholder="What caught your eye? (optional) e.g. the first 3 seconds, the thumbnail, how fast it cuts"></textarea>
+    <div class="toast" id="toast" role="status"></div>
+  </form>
+
+  <nav aria-label="Sections">
+    <a href="#playbook" data-tab="playbook">Playbook <span class="n" id="n-playbook"></span></a>
+    <a href="#inbox" data-tab="inbox">Inbox <span class="n" id="n-inbox"></span></a>
+    <a href="#sources" data-tab="sources">Sources <span class="n" id="n-sources"></span></a>
+    <a href="#ideas" data-tab="ideas">Align ideas <span class="n" id="n-ideas"></span></a>
+    <a href="#check" data-tab="check">Check an idea</a>
+  </nav>
+
+  <section data-view="playbook">
+    <div class="row-actions" style="justify-content:space-between">
+      <div class="filters" id="areas"></div>
+      <button class="ghost" id="export" type="button" hidden>Save playbook as Markdown</button>
+    </div>
+    <div id="rules"></div>
+  </section>
+
+  <section data-view="inbox" hidden><div class="list" id="inbox"></div></section>
+  <section data-view="sources" hidden><div class="list" id="sources"></div></section>
+  <section data-view="ideas" hidden>
+    <div class="filters" id="idea-filter"></div>
+    <div class="list" id="ideas"></div>
+  </section>
+
+  <section data-view="check" hidden>
+    <form class="drop" id="check-form">
+      <label class="eyebrow" for="check-text">Check an idea against the playbook</label>
+      <textarea id="check-text" rows="4" placeholder="Paste a title, a hook, a thumbnail idea or a whole script. e.g. &quot;3 signs you're dating your mirror sign&quot;" required></textarea>
+      <div class="row-actions"><button class="btn" id="check-go" type="submit">Check it</button><span class="hint" id="check-note">Scores it against every rule in the playbook and suggests a stronger version.</span></div>
+    </form>
+    <div id="check-out"></div>
+  </section>
+
+  <footer>
+    <div class="eyebrow">How it works</div>
+    <div>1. Drop a YouTube, Instagram, X or Facebook link here, or paste it to Claude in chat. 2. Tell Claude <b>"go through my Video Lab inbox"</b>. Claude reads YouTube channels and single X posts right away. Instagram, Facebook and whole X accounts need a login, so for those (and for a full study of what's said and shown in every video), double-click <b>Study Any Link</b> on your Mac and paste the link. 3. What Claude learns lands here as rules, sources and Align ideas.</div>
+  </footer>
+</div>
+
+<script>
+const AREAS = [
+  ['packaging', 'Titles & thumbnails'], ['hook', 'Hooks'], ['structure', 'Structure & pacing'], ['retention', 'Retention'],
+  ['visual', 'Look & edit'], ['voice', 'Voice & delivery'], ['topic', 'Topics'], ['format', 'Formats & series'], ['cta', 'Calls to action'], ['channel', 'Channel strategy'],
+]
+const AREA_NAME = Object.fromEntries(AREAS)
+const IDEA_STATES = ['idea', 'scripted', 'filmed', 'posted', 'dropped']
+const state = { rules: [], sources: [], inbox: [], ideas: [], area: 'all', ideaState: 'open' }
+let db = null, sample = null, downloads = null
+
+const $ = (id) => document.getElementById(id)
+function h(tag, attrs = {}, ...kids) {
+  const el = document.createElement(tag)
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue
+    if (k === 'class') el.className = v
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v)
+    else el.setAttribute(k, v === true ? '' : v)
+  }
+  for (const kid of kids.flat()) if (kid != null && kid !== false) el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)))
+  return el
+}
+const safeUrl = (u) => { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null } catch { return null } }
+const fmt = (n) => !Number.isFinite(n) ? '–' : n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(n >= 1e4 ? 0 : 1)}K` : String(Math.round(n))
+const day = (iso) => (iso ? String(iso).slice(0, 10) : '')
+const arr = (x) => (Array.isArray(x) ? x : [])
+function toast(msg, bad) { const t = $('toast'); t.textContent = msg; t.style.color = bad ? 'var(--rub)' : 'var(--spark)'; clearTimeout(toast.t); toast.t = setTimeout(() => (t.textContent = ''), 4000) }
+
+function platformOf(url) {
+  const u = String(url)
+  if (/youtube\.com|youtu\.be/i.test(u)) return 'YouTube'
+  if (/(^|[/.])(x|twitter)\.com\//i.test(u)) return 'X'
+  if (/instagram\.com/i.test(u)) return 'Instagram'
+  if (/facebook\.com|fb\.watch|fb\.me/i.test(u)) return 'Facebook'
+  if (/tiktok\.com/i.test(u)) return 'TikTok'
+  return 'Other'
+}
+function kindOf(url) {
+  const u = String(url)
+  if (/youtube\.com\/shorts\/|instagram\.com\/reels?\/|facebook\.com\/reel\//i.test(u)) return 'short'
+  if (/youtu\.be\/|youtube\.com\/(watch|live)|\/status\/\d|instagram\.com\/p\/|facebook\.com\/(watch|share\/[rv]\/)|\/videos\/\d/i.test(u)) return 'post'
+  return 'account'
+}
+
+// ---------- tabs ----------
+const TABS = ['playbook', 'inbox', 'sources', 'ideas', 'check']
+function show() {
+  const tab = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'playbook'
+  document.querySelectorAll('section[data-view]').forEach((s) => (s.hidden = s.dataset.view !== tab))
+  document.querySelectorAll('nav a').forEach((a) => (a.dataset.tab === tab ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')))
+}
+addEventListener('hashchange', show)
+
+// ---------- render ----------
+function empty(title, body) { return h('div', { class: 'empty' }, h('strong', {}, title), h('span', {}, body)) }
+
+function renderStats() {
+  const waiting = state.inbox.filter((i) => i.status !== 'studied').length
+  const open = state.ideas.filter((i) => !['posted', 'dropped'].includes(i.status)).length
+  $('s-rules').textContent = state.rules.length; $('s-sources').textContent = state.sources.length
+  $('s-inbox').textContent = waiting; $('s-ideas').textContent = state.ideas.length
+  $('n-playbook').textContent = state.rules.length || ''; $('n-inbox').textContent = waiting || ''
+  $('n-sources').textContent = state.sources.length || ''; $('n-ideas').textContent = open || ''
+  $('export').hidden = !state.rules.length || !downloads
+}
+
+function renderRules() {
+  const used = AREAS.filter(([k]) => state.rules.some((r) => r.area === k))
+  $('areas').replaceChildren(...(used.length > 1 ? [['all', 'All'], ...used] : []).map(([k, label]) =>
+    h('button', { class: 'chip', type: 'button', 'aria-pressed': String(state.area === k), onclick: () => { state.area = k; renderRules() } }, label)))
+  const box = $('rules')
+  if (!state.rules.length) { box.replaceChildren(empty('The playbook is empty for now', 'Drop a link above. When Claude studies it, the rules it learns show up here, grouped by hooks, titles and thumbnails, structure, and so on. Each rule shows which sources back it up.')); return }
+  const groups = AREAS.map(([k, label]) => [label, state.rules.filter((r) => r.area === k && (state.area === 'all' || state.area === k))])
+    .concat([['Other', state.rules.filter((r) => !AREA_NAME[r.area] && state.area === 'all')]]).filter(([, rs]) => rs.length)
+  box.replaceChildren(...groups.map(([label, rs]) => h('div', { class: 'area' }, h('h2', {}, label),
+    ...rs.sort((a, b) => (b.strength ?? 0) - (a.strength ?? 0)).map((r) => {
+      const s = Math.max(1, Math.min(5, Number(r.strength) || arr(r.evidence).length || 1))
+      return h('article', { class: 'rule' },
+        h('div', { class: 'rule-top' }, h('h3', {}, r.rule ?? ''), h('span', { class: 'strength', title: `${s} of 5: how well it's backed up`, 'aria-label': `Backed up ${s} of 5` }, ...[1, 2, 3, 4, 5].map((i) => h('i', { class: i <= s ? 'on' : '' })))),
+        r.why ? h('p', {}, r.why) : null,
+        r.alignUse ? h('p', { class: 'for-align' }, h('b', {}, 'For Align'), r.alignUse) : null,
+        arr(r.evidence).length ? h('div', { class: 'evidence' }, ...arr(r.evidence).map((e) => safeUrl(e.url) ? h('a', { class: 'ev', href: safeUrl(e.url), target: '_blank', rel: 'noopener', title: e.note ?? '' }, e.source ?? 'source') : h('span', { class: 'ev', title: e.note ?? '' }, e.source ?? 'source'))) : null,
+      )
+    }))))
+}
+
+function renderInbox() {
+  const box = $('inbox')
+  if (!state.inbox.length) { box.replaceChildren(empty('Nothing in the inbox', 'Paste a link in the box above: YouTube, Instagram, X or Facebook. A whole account is best (Claude can compare every post), but a single post works too.')); return }
+  const order = { new: 0, read: 1, studied: 2 }
+  box.replaceChildren(...[...state.inbox].sort((a, b) => (order[a.status] ?? 0) - (order[b.status] ?? 0) || String(b.addedAt).localeCompare(String(a.addedAt))).map((i) => {
+    const url = safeUrl(i.url)
+    return h('article', { class: 'item' },
+      h('div', { class: 'item-top' },
+        url ? h('a', { class: 'link', href: url, target: '_blank', rel: 'noopener' }, i.title || i.url) : h('span', { class: 'link' }, i.url),
+        h('span', { class: `pill ${i.status ?? 'new'}` }, i.status === 'studied' ? 'Studied' : i.status === 'read' ? 'Quick read done' : 'Waiting for Claude')),
+      i.note ? h('p', {}, `“${i.note}”`) : null,
+      i.reply ? h('p', { class: 'reply' }, i.reply) : null,
+      h('div', { class: 'row-actions' }, h('span', { class: 'meta' }, [i.platform ?? platformOf(i.url), i.kind, day(i.addedAt)].filter(Boolean).join(' · ')),
+        i.status === 'new' ? h('button', { class: 'ghost', type: 'button', onclick: () => remove('inbox', i.id) }, 'Remove') : null),
+    )
+  }))
+}
+
+function renderSources() {
+  const box = $('sources')
+  if (!state.sources.length) { box.replaceChildren(empty('No sources studied yet', 'Each channel or video Claude studies gets a card here: what it does, what to borrow, what to skip, and its numbers.')); return }
+  box.replaceChildren(...[...state.sources].sort((a, b) => String(b.studiedAt).localeCompare(String(a.studiedAt))).map((s) => {
+    const url = safeUrl(s.url)
+    const list = (title, xs) => arr(xs).length ? h('div', {}, h('h4', {}, title), h('ul', {}, ...arr(xs).map((x) => h('li', {}, x)))) : null
+    return h('article', { class: 'item' },
+      h('div', { class: 'item-top' }, h('h3', {}, s.name ?? s.url), h('span', { class: `pill ${s.depth === 'deep' ? 'deep' : ''}` }, s.depth === 'deep' ? 'Full study' : 'Quick read')),
+      h('div', { class: 'meta' }, [s.platform, Number.isFinite(s.subs) ? `${fmt(s.subs)} subscribers` : null, Number.isFinite(s.uploads) ? `${s.uploads} uploads read` : null, Number.isFinite(s.typicalViews) ? `typical ${fmt(s.typicalViews)} views` : null, day(s.studiedAt)].filter(Boolean).join(' · ')),
+      s.summary ? h('p', {}, s.summary) : null,
+      h('div', { class: 'cols' }, list('What works', s.works), list('Borrow for Align', s.borrow), list('Skip', s.avoid)),
+      url ? h('a', { class: 'link', href: url, target: '_blank', rel: 'noopener' }, url) : null,
+    )
+  }))
+}
+
+function renderIdeas() {
+  const filters = [['open', 'To make'], ['posted', 'Posted'], ['all', 'All']]
+  $('idea-filter').replaceChildren(...(state.ideas.length ? filters : []).map(([k, label]) => h('button', { class: 'chip', type: 'button', 'aria-pressed': String(state.ideaState === k), onclick: () => { state.ideaState = k; renderIdeas() } }, label)))
+  const box = $('ideas')
+  if (!state.ideas.length) { box.replaceChildren(empty('No Align ideas yet', 'After each study Claude writes slim Align versions of what works: a title, the hook, and the beats. Move each one along as you script, film and post it.')); return }
+  const shown = state.ideas.filter((i) => state.ideaState === 'all' || (state.ideaState === 'posted' ? i.status === 'posted' : !['posted', 'dropped'].includes(i.status)))
+  if (!shown.length) { box.replaceChildren(empty('Nothing here', 'Try another filter above.')); return }
+  box.replaceChildren(...shown.sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt))).map((i) => {
+    const sel = h('select', { id: `st-${i.id}`, 'aria-label': 'Status', onchange: (e) => setIdea(i.id, e.target.value) }, ...IDEA_STATES.map((s) => h('option', { value: s, selected: s === (i.status ?? 'idea') }, s[0].toUpperCase() + s.slice(1))))
+    return h('article', { class: 'item' },
+      h('div', { class: 'item-top' }, h('h3', {}, i.title ?? ''), h('span', { class: `pill ${i.status === 'posted' ? 'posted' : ''}` }, i.format ?? 'idea')),
+      i.hook ? h('p', { class: 'reply' }, i.hook) : null,
+      arr(i.beats).length ? h('ul', { class: 'beats' }, ...arr(i.beats).map((b) => h('li', {}, b))) : null,
+      h('div', { class: 'row-actions' }, sel, h('span', { class: 'meta' }, [i.from ? `from ${i.from}` : null, day(i.createdAt)].filter(Boolean).join(' · '))),
+    )
+  }))
+}
+
+function renderAll() { renderStats(); renderRules(); renderInbox(); renderSources(); renderIdeas() }
+
+// ---------- writes ----------
+async function remove(coll, id) {
+  try { await db.collection(coll).doc(id).delete(); toast('Removed.') } catch (e) { toast(`Couldn't remove it: ${e.message ?? e.code}`, true) }
+}
+async function setIdea(id, status) {
+  try { await db.collection('ideas').doc(id).update({ status, updatedAt: new Date().toISOString() }) } catch (e) { toast(`Couldn't save that: ${e.message ?? e.code}`, true) }
+}
+
+$('drop').addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const raw = $('drop-url').value.trim()
+  const url = /^https?:\/\//i.test(raw) ? raw : /^@/.test(raw) ? `https://www.youtube.com/${raw}` : `https://${raw}`
+  if (!safeUrl(url)) { toast('That doesn\'t look like a link. Paste the full address.', true); return }
+  if (!db) { toast('Sign in to claude.ai to add links here, or paste the link to Claude in chat.', true); return }
+  if (state.inbox.some((i) => i.url === url)) { toast('That one is already in the inbox.'); return }
+  $('drop-add').disabled = true
+  try {
+    await db.collection('inbox').add({ url, note: $('drop-note').value.trim() || null, platform: platformOf(url), kind: kindOf(url), status: 'new', addedAt: new Date().toISOString() })
+    $('drop-url').value = ''; $('drop-note').value = ''
+    toast('Added. Tell Claude "go through my Video Lab inbox" when you\'re ready.')
+  } catch (err) { toast(`Couldn't add it: ${err.message ?? err.code}`, true) }
+  $('drop-add').disabled = false
+})
+document.addEventListener('paste', (e) => {
+  if (e.target.closest('input, textarea')) return
+  const t = e.clipboardData?.getData('text')?.trim()
+  if (t && /^https?:\/\//.test(t)) { $('drop-url').value = t; $('drop-note').focus() }
+})
+
+// ---------- check an idea ----------
+function playbookText() {
+  return state.rules.map((r) => `- [${AREA_NAME[r.area] ?? r.area}] ${r.rule}${r.why ? ` (why: ${r.why})` : ''}${r.alignUse ? ` (for Align: ${r.alignUse})` : ''} [backed by ${arr(r.evidence).length || r.strength || 1} source(s)]`).join('\n')
+}
+$('check-form').addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const idea = $('check-text').value.trim()
+  if (!idea || !sample) return
+  const out = $('check-out')
+  $('check-go').disabled = true
+  out.replaceChildren(h('div', { class: 'answer' }, h('span', { class: 'meta' }, 'Reading it against the playbook…')))
+  const prompt = `You coach the content team of Align, a dating app with an astrology and tarot-card look ("align" with someone instead of swiping). Their short videos are about love, dating and zodiac signs.
+Here is their playbook of what makes videos work, learned from studying successful channels:
+${playbookText() || '(The playbook is still empty. Use well-known short-form and YouTube principles: hook in the first 2 seconds, a clear promise in the title, one idea per video, payoff before the viewer leaves.)'}
+
+Judge this idea against the playbook:
+"""${idea}"""
+
+Answer as JSON only: {"score": 1-10, "verdict": "one sentence", "works": ["what already follows the playbook"], "fix": ["specific changes, each tied to a rule"], "rewrite": "a stronger title or hook", "beats": ["3-6 beats for a 20-45 second Align video"]}`
+  try {
+    const a = await sample.json(prompt, { modelTier: 'default' })
+    const list = (title, xs) => arr(xs).length ? h('div', {}, h('h4', {}, title), h('ul', {}, ...arr(xs).map((x) => h('li', {}, x)))) : null
+    out.replaceChildren(h('div', { class: 'answer' },
+      h('div', { class: 'row-actions' }, h('span', { class: 'score' }, `${a.score ?? '–'}/10`), h('span', {}, a.verdict ?? '')),
+      list('Already working', a.works), list('Fix', a.fix),
+      a.rewrite ? h('div', {}, h('h4', {}, 'Stronger version'), h('p', { class: 'rewrite' }, a.rewrite)) : null,
+      list('Beats', a.beats),
+      db ? h('div', {}, h('button', { class: 'ghost', type: 'button', onclick: async (ev) => {
+        ev.target.disabled = true
+        try { await db.collection('ideas').add({ title: a.rewrite || idea.slice(0, 120), hook: idea.slice(0, 400), beats: arr(a.beats), format: 'idea', status: 'idea', from: 'Check an idea', createdAt: new Date().toISOString() }); ev.target.textContent = 'Saved to Align ideas' }
+        catch (err) { ev.target.disabled = false; toast(`Couldn't save it: ${err.message ?? err.code}`, true) }
+      } }, 'Save to Align ideas')) : null))
+  } catch (err) {
+    out.replaceChildren(h('div', { class: 'answer' }, h('span', { class: 'meta' }, err?.code === 'rate_limited' ? 'Too many checks in a row. Wait a minute and try again.' : `Couldn't check it: ${err?.message ?? err?.code ?? 'unknown error'}`)))
+  }
+  $('check-go').disabled = false
+})
+
+// ---------- export ----------
+$('export').addEventListener('click', async () => {
+  const L = ['# Align video playbook', '', `Saved ${new Date().toISOString().slice(0, 10)} from Video Lab: ${state.rules.length} rules from ${state.sources.length} sources.`, '']
+  for (const [k, label] of AREAS) {
+    const rs = state.rules.filter((r) => r.area === k)
+    if (!rs.length) continue
+    L.push(`## ${label}`, '')
+    for (const r of rs) {
+      L.push(`### ${r.rule}`, '')
+      if (r.why) L.push(r.why, '')
+      if (r.alignUse) L.push(`**For Align:** ${r.alignUse}`, '')
+      if (arr(r.evidence).length) L.push(`Seen in: ${arr(r.evidence).map((e) => e.source).join(', ')}`, '')
+    }
+  }
+  try { await downloads.save({ filename: 'align-video-playbook.md', data: L.join('\n') }) } catch (e) { if (e?.code !== 'declined') toast(`Couldn't save the file: ${e.message ?? e.code}`, true) }
+})
+
+// ---------- boot ----------
+show(); renderAll()
+;(async () => {
+  const c = window.claude
+  if (!c?.use) { toast('Open this page in claude.ai to use it.', true); return }
+  const [d, s, dl] = await Promise.all([c.use('db'), c.use('sample'), c.use('downloads')])
+  db = d; sample = s; downloads = dl
+  if (!sample) { $('check-go').disabled = true; $('check-note').textContent = 'Checking ideas needs claude.ai. Paste the idea to Claude in chat instead.' }
+  if (!db) { toast('Sign in to claude.ai to see your Video Lab.', true); renderStats(); return }
+  const loading = setTimeout(() => toast('Still loading your Video Lab…'), 10000)
+  for (const coll of ['rules', 'sources', 'inbox', 'ideas']) {
+    db.collection(coll).onSnapshot((snap) => {
+      clearTimeout(loading)
+      state[coll] = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+      renderAll()
+    }, (err) => { clearTimeout(loading); toast(`Couldn't load ${coll}: ${err.message ?? err.code}`, true) })
+  }
+})()
+</script>
