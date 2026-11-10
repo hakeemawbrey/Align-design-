@@ -18,7 +18,7 @@ npm run preview:beta   # http://localhost:4175
 5. **Talk cards** in chat (no packs or binder).
 6. **Compatibility:** the ring top-right in every chat. Tap for sun, moon, rising and cross pairings, elements, today, and their card's reading (`src/lib/compat.ts`).
 7. **Aura photo:** take or pick a photo. MediaPipe finds one face on the phone, cuts the person out and paints their aura in their element's colours, then sets it as the card photo (`src/lib/aura.ts`, `x/aura-photo`). Also runs in onboarding's photo step.
-8. **Profile:** edit your card, the cosmic calendar (`calendar`), aura photo.
+8. **Profile** (`src/screens/BetaYou.tsx`): your card first (face down, aura photo behind; tap to flip), your big three, Edit card and Aura photo, your sign, your next sky events, then settings and the demo tools.
 9. **Learn your sign:** your chart, plus the whole glossary unlocked.
 10. **Peeks:** hold a card to peek, 3 a night.
 

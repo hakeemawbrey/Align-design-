@@ -39,12 +39,13 @@ import { PAGES, parsePage } from './pages/registry'
 import { BETA, BETA_BLOCKED } from './lib/beta'
 import { OPEN_SKY_EVENT } from './components/deck/SkyDropdown'
 import BetaCalendar from './screens/BetaCalendar'
+import BetaYou from './screens/BetaYou'
 
 const SCREENS: Record<Exclude<ScreenId, `x/${string}`>, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
-  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: BETA ? BetaCalendar : Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: BETA ? BetaYou : You, club: Club, sky: Sky, calendar: BETA ? BetaCalendar : Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,
 }
 
 /** in the beta, a link to a left-out screen does nothing (today's sky opens the deck's sky panel) */

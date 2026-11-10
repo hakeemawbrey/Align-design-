@@ -6,6 +6,7 @@ import { sfx } from '../../lib/sfx'
 import { account, useAccount } from './store'
 import { useToast } from './bits'
 import { BIRTH_LABEL } from '../../data/myBirth'
+import { BETA } from '../../lib/beta'
 import { TERMS } from '../plus/terms'
 
 /** G-07 · Settings */
@@ -18,21 +19,21 @@ export default function Settings({ go, back }: PageProps) {
     <>
     <PageShell onBack={back} topBar="Settings">
       <div style={{ marginTop: -18 }}>
-        <Group label="Membership">
+        {!BETA && <Group label="Membership">
           <Row label={alignPlus ? 'Align+ · Founding member' : 'Align+'} value={alignPlus ? 'Lifetime' : 'Not yet'}
             onClick={() => go(alignPlus ? 'x/manage-plus' : 'paywall')} />
-        </Group>
+        </Group>}
 
         <Group label="Your chart">
           <Row label="Edit your chart" onClick={() => go('x/edit-chart')} />
           <Row label="Edit your card" onClick={() => go('x/edit-card/down')} />
-          <Row label="The language" value={`${TERMS.filter((t) => t.free).length} of ${TERMS.length}`} onClick={() => go('howto')} />
+          <Row label="The language" value={BETA ? `${TERMS.length} words` : `${TERMS.filter((t) => t.free).length} of ${TERMS.length}`} onClick={() => go(BETA ? 'x/glossary' : 'howto')} />
         </Group>
 
         <Group label="Your orbit">
           <Row label="Blocked signs" value={blockedSigns.length || undefined} onClick={() => go('block')} />
           <Row label="Blocked people" value={blockedPeople.length || undefined} onClick={() => go('x/blocked-list')} />
-          <Row label="Verify your photo" onClick={() => go('x/verify-photo')} />
+          <Row label={BETA ? 'Aura photo' : 'Verify your photo'} onClick={() => go(BETA ? 'x/aura-photo' : 'x/verify-photo')} />
           <Row label="Your city" value={BIRTH_LABEL.place} onClick={() => go('x/change-city')} />
         </Group>
 
