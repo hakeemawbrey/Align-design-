@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Space+Mono:wght@700&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0b0620}
+  .sq{width:1080px;height:1080px;position:relative;overflow:hidden;
+    background:radial-gradient(75% 75% at 50% 36%,#4a2a9a 0%,#1e0f4a 55%,#0b0620 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .glow{position:absolute;left:50%;top:330px;width:760px;height:760px;transform:translate(-50%,-50%);
+    background:radial-gradient(closest-side,rgba(242,199,92,.42),rgba(242,199,92,0));}
+  .dot{position:absolute;border-radius:50%;background:#fff}
+  svg.star{position:relative;width:250px;height:300px;margin-top:-40px;filter:drop-shadow(0 0 30px rgba(242,199,92,.55))}
+  .word{position:relative;font-family:'EB Garamond',serif;font-weight:500;font-size:230px;line-height:1;
+    color:#fff4cf;letter-spacing:-2px;margin-top:6px}
+  .rule{position:relative;width:120px;height:2px;background:#f2c75c;opacity:.7;margin:34px 0 40px}
+  .pill{position:relative;margin-top:96px;font-family:'Space Mono',monospace;font-weight:700;font-size:44px;letter-spacing:12px;
+    color:#0b0620;background:linear-gradient(#fff4cf,#f2c75c);padding:24px 44px 24px 56px;border-radius:999px;
+    box-shadow:0 0 40px rgba(242,199,92,.35)}
+</style></head><body>
+<div class="sq" id="sq">
+  <div class="glow"></div>
+  <div class="dot" style="left:830px;top:170px;width:10px;height:10px;opacity:.8"></div>
+  <div class="dot" style="left:190px;top:820px;width:8px;height:8px;opacity:.55"></div>
+  <div class="dot" style="left:210px;top:180px;width:6px;height:6px;opacity:.5"></div>
+  <div class="dot" style="left:900px;top:760px;width:6px;height:6px;opacity:.45"></div>
+  <div class="dot" style="left:120px;top:470px;width:5px;height:5px;opacity:.4"></div>
+  <div class="dot" style="left:960px;top:440px;width:5px;height:5px;opacity:.4"></div>
+  <svg class="star" viewBox="156 76 200 360"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff4cf"/><stop offset="1" stop-color="#f2c75c"/></linearGradient></defs>
+    <path d="M256 76 Q270 230 356 256 Q270 282 256 436 Q242 282 156 256 Q242 230 256 76 Z" fill="url(#s)"/></svg>
+  <div class="word">Align</div>
+  <div class="pill">JOIN BETA</div>
+</div></body></html>
