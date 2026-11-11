@@ -13,7 +13,7 @@ from PIL import Image, ImageOps
 import catalog, scripts
 
 OUT = os.path.join(HERE, "out", "site")
-TW, TH, COLS = 150, 267, 12
+TW, TH, COLS = 180, 180, 12
 LABELS = {"portrait-her": "portraits (her)", "portrait-him": "portraits (him)", "city-night": "city at night"}
 
 
@@ -61,9 +61,9 @@ def reels(limit):
         web = os.path.join(OUT, "reels", base + ".mp4")
         poster = os.path.join(OUT, "reels", base + ".jpg")
         if not os.path.exists(web):
-            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m[:-5] + ".mp4", "-vf", "scale=540:-2", "-c:v", "libx264",
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m[:-5] + ".mp4", "-vf", "scale=720:-2", "-c:v", "libx264",
                             "-crf", "27", "-preset", "slow", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", web], check=True)
-            Image.open(m[:-5] + ".cover.jpg").resize((360, 640), Image.LANCZOS).save(poster, quality=80)
+            Image.open(m[:-5] + ".cover.jpg").resize((480, 480), Image.LANCZOS).save(poster, quality=80)
         cap = open(m[:-5] + ".txt").read().split("----- NOT FOR POSTING")[0].strip()
         s = scripts.build(j["id"]) if j["format"] != "custom" else None
         out.append({"id": base, "title": j["title"], "sign": j["sign"], "format": j["format"], "sec": j["seconds"],

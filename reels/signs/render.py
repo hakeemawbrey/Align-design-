@@ -6,9 +6,9 @@ public-domain paintings from the catalogue, with a soft generated score.
   python3 render.py scorpio-dear-2 --stills       # a contact sheet of the cards, no video (fast)
   python3 render.py --sign leo --text "Leo, this is your sign." "Rest." "You did enough."
 
-The look: a full-bleed painting (graded toward dusk, darkened where the type sits) pushing
-in slowly, one card at a time. The sign's glyph and name sit up top, story-style
-progress ticks under them, and a small "align" at the bottom. Cards fade up word-line by line.
+The look: square 1080x1080. Each card is one still: a painting (graded toward dusk,
+darkened where the type sits) with the line on top, the sign's glyph and name above,
+and a small "align" below. Cards change with a hard cut, no transitions or motion.
 The last card is always a call to action: send it, invite them, or come align.
 """
 import argparse
@@ -30,10 +30,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONTS = os.path.join(HERE, "assets", "fonts")
 Image.MAX_IMAGE_PIXELS = 400_000_000
 
-W, H, FPS = 1080, 1920, 30
+W, H, FPS = 1080, 1080, 30
 CREAM = (246, 238, 222)
 GOLD = (233, 205, 150)
-XF = 0.45                                   # crossfade between cards, seconds
 
 
 # ---------------------------------------------------------------- timing
@@ -76,11 +75,11 @@ def text_block(card, ss=2):
     """RGBA layer for one card, plus per-line boxes for the line-by-line fade."""
     kind = card["kind"]
     if kind == "hook":
-        f, size, lead, col = "EBGaramond-Italic.ttf", 120, 1.1, CREAM
+        f, size, lead, col = "EBGaramond-Italic.ttf", 104, 1.1, CREAM
     elif kind == "cta":
-        f, size, lead, col = "EBGaramond-Italic.ttf", 112, 1.1, GOLD
+        f, size, lead, col = "EBGaramond-Italic.ttf", 96, 1.1, GOLD
     else:
-        f, size, lead, col = "SofiaSansCondensed.ttf", 100, 1.14, CREAM
+        f, size, lead, col = "SofiaSansCondensed.ttf", 86, 1.14, CREAM
     n = len(card["text"].split())
     if n > 11:
         size = int(size * 0.86)
@@ -88,12 +87,12 @@ def text_block(card, ss=2):
     lines = wrap(card["text"], F, W * 0.80 * ss)
     lh = size * lead * ss
     sub = card.get("sub")
-    SF = font("SofiaSansCondensed.ttf", 40 * ss)
+    SF = font("SofiaSansCondensed.ttf", 34 * ss)
     block_h = lh * len(lines) + (90 * ss if sub else 0)
     layer = Image.new("RGBA", (W * ss, H * ss), (0, 0, 0, 0))
     shadow = Image.new("L", (W * ss, H * ss), 0)
     d, ds = ImageDraw.Draw(layer), ImageDraw.Draw(shadow)
-    cy = H * ss * 0.52
+    cy = H * ss * 0.5
     y0 = cy - block_h / 2
     rows = []
     for i, ln in enumerate(lines):
@@ -120,59 +119,33 @@ def text_block(card, ss=2):
 
 
 def chrome_layer(sign, n_cards, idx, prog):
-    """Sign label, progress ticks, and the align wordmark. prog: 0-1 through card idx."""
+    """Sign label up top and the align wordmark at the bottom."""
     d = scripts.SIGNS[sign]
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     dr = ImageDraw.Draw(im)
-    G = font("DejaVuSans.ttf", 50)
-    L = font("SofiaSansCondensed.ttf", 44)
+    G = font("DejaVuSans.ttf", 40)
+    L = font("SofiaSansCondensed.ttf", 36)
     label = d["name"].upper()
     tr = 7
     lw = sum(L.getlength(ch) + tr for ch in label) - tr
     gw = G.getlength(d["glyph"])
     total = gw + 22 + lw
     x = (W - total) / 2
-    y = 196
+    y = 62
     dr.text((x, y - 4), d["glyph"], font=G, fill=GOLD + (240,))
     x += gw + 22
     for ch in label:
         dr.text((x, y), ch, font=L, fill=CREAM + (235,))
         x += L.getlength(ch) + tr
-    # story ticks
-    gap, tw = 10, 70
-    tx = (W - (n_cards * tw + (n_cards - 1) * gap)) / 2
-    for i in range(n_cards):
-        x0 = tx + i * (tw + gap)
-        dr.rounded_rectangle([x0, 150, x0 + tw, 156], 3, fill=(255, 255, 255, 70))
-        fill = 1 if i < idx else (prog if i == idx else 0)
-        if fill > 0:
-            dr.rounded_rectangle([x0, 150, x0 + tw * fill, 156], 3, fill=CREAM + (230,))
     # wordmark
-    A = font("EBGaramond-Italic.ttf", 70)
+    A = font("EBGaramond-Italic.ttf", 58)
     t = "align"
-    dr.text(((W - A.getlength(t)) / 2, H - 250), t, font=A, fill=CREAM + (225,))
+    dr.text(((W - A.getlength(t)) / 2, H - 118), t, font=A, fill=CREAM + (225,))
     # soft shadow under everything so it holds on bright skies
     m = im.getchannel("A").filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(12))
     sh = Image.new("RGBA", im.size, (6, 3, 14, 0))
     sh.putalpha(m.point(lambda v: int(v * 0.7)))
     return Image.alpha_composite(sh, im)
-
-
-TY0, TY1 = 144, 162
-
-
-def ticks(n_cards, idx, prog):
-    im = Image.new("RGBA", (W, TY1 - TY0), (0, 0, 0, 0))
-    dr = ImageDraw.Draw(im)
-    gap, tw = 10, 70
-    tx = (W - (n_cards * tw + (n_cards - 1) * gap)) / 2
-    for i in range(n_cards):
-        x0 = tx + i * (tw + gap)
-        dr.rounded_rectangle([x0, 6, x0 + tw, 12], 3, fill=(255, 255, 255, 70))
-        fill = 1 if i < idx else (prog if i == idx else 0)
-        if fill > 0:
-            dr.rounded_rectangle([x0, 6, x0 + max(tw * fill, 6), 12], 3, fill=CREAM + (230,))
-    return np.asarray(im, np.float32) / 255
 
 
 # ---------------------------------------------------------------- pictures
@@ -205,9 +178,9 @@ def grade(im, item=None):
     x /= w
     # darken the middle band where text sits, and top/bottom for the chrome
     l = a @ Wt
-    mid = float(l[int(h * 0.36):int(h * 0.68)].mean())
+    mid = float(l[int(h * 0.32):int(h * 0.68)].mean())
     depth = float(np.clip(0.42 + (mid - 0.25) * 1.6, 0.42, 0.72))   # bright pictures get a deeper band
-    band = 1 - depth * np.exp(-((y - 0.52) / 0.22) ** 2) - 0.35 * np.clip((0.14 - y) / 0.14, 0, 1) \
+    band = 1 - depth * np.exp(-((y - 0.5) / 0.24) ** 2) - 0.35 * np.clip((0.14 - y) / 0.14, 0, 1) \
         - 0.4 * np.clip((y - 0.82) / 0.18, 0, 1)
     v = 1 - 0.55 * np.clip(np.sqrt((x - 0.5) ** 2 + ((y - 0.5) * 0.7) ** 2) / 0.6 - 0.3, 0, 1) ** 1.4
     a *= (band * v)[..., None]
@@ -216,9 +189,9 @@ def grade(im, item=None):
 
 
 def prepared(item, rng):
-    """Graded picture at 1.18x frame size, cropped to 9:16 around its focus, for the push-in."""
+    """Graded picture at frame size, cropped square around its focus."""
     im = ImageOps.exif_transpose(Image.open(catalog.local_file(item))).convert("RGB")
-    S = 1.18
+    S = 1.0
     tw, th = int(W * S), int(H * S)
     fx, fy = item.get("focus", (0.5, 0.42))
     scale = max(tw / im.width, th / im.height) * item.get("zoom", 1.0)
@@ -227,22 +200,6 @@ def prepared(item, rng):
     y0 = int(min(max(fy * im.height - th / 2, 0), im.height - th))
     im = im.crop((x0, y0, x0 + tw, y0 + th))
     return grade(im, item)
-
-
-def kenburns(im, t, seed):
-    """t 0-1 through the shot. Slow push in (or out), with a little drift."""
-    r = np.random.default_rng(seed)
-    z0, z1 = (1.0, 1.1) if r.random() < 0.75 else (1.1, 1.0)
-    dx, dy = r.uniform(-0.03, 0.03, 2)
-    e = t  # linear reads calmer than eased for long holds
-    z = z0 + (z1 - z0) * e
-    w, h = im.width / z, im.height / z
-    cx = im.width / 2 + dx * im.width * (e - 0.5)
-    cy = im.height / 2 + dy * im.height * (e - 0.5)
-    cx = min(max(cx, w / 2), im.width - w / 2)
-    cy = min(max(cy, h / 2), im.height - h / 2)
-    box = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
-    return np.asarray(im.resize((W, H), Image.BILINEAR, box=box), np.float32) / 255
 
 
 # ---------------------------------------------------------------- render
@@ -263,56 +220,27 @@ def render(script, seed=0, out=None, stills=False, silent=False):
     pics = [prepared(it, rng) for it in items]
     texts = [text_block(c) for c in cards]
     starts = np.concatenate([[0], np.cumsum(lens)[:-1]])
-    full = np.asarray(chrome_layer(script["sign"], 0, 0, 0), np.float32) / 255
-    chrome_static = [(y0, y1, full[y0:y1]) for y0, y1 in ((165, 290), (H - 275, H - 135))]
-    total = float(sum(lens)) + 0.6
-    nfr = int(total * FPS)
+    chrome = np.asarray(chrome_layer(script["sign"], 0, 0, 0), np.float32) / 255
+    total = float(sum(lens))
+    nfr = int(round(total * FPS))
+
+    def still(i):
+        """Card i as one frame: picture, text, sign label and wordmark. No motion, no fades."""
+        img = np.asarray(pics[i], np.float32) / 255
+        for arr in (texts[i][0], chrome):
+            a = arr[..., 3:4]
+            img = img * (1 - a) + arr[..., :3] * a
+        return (np.clip(img, 0, 1) * 255).astype(np.uint8)
+    frames = [still(i) for i in range(len(cards))]
+    cuts = [int(round(st * FPS)) for st in starts]
 
     def frame(fi):
-        t = fi / FPS
-        i = int(np.searchsorted(starts, t, side="right") - 1)
-        i = max(0, min(i, len(cards) - 1))
-        lt = t - starts[i]
-        p = min(lt / lens[i], 1)
-        span = lens[i] + XF
-        base = kenburns(pics[i], min((lt + XF) / (span + XF), 1), seed * 100 + i)
-        if i > 0 and lt < XF:                                    # crossfade from the last card
-            prev = kenburns(pics[i - 1], 1.0, seed * 100 + i - 1)
-            k = lt / XF
-            k = k * k * (3 - 2 * k)
-            base = prev * (1 - k) + base * k
-        img = base
-
-        def put(img, ti, alpha_rows):
-            arr, rows = texts[ti]
-            for (y0, y1), al in zip(rows, alpha_rows):
-                y0, y1 = max(y0, 0), min(y1, H)
-                if al <= 0 or y1 <= y0:
-                    continue
-                a = arr[y0:y1, :, 3:4] * al
-                img[y0:y1] = img[y0:y1] * (1 - a) + arr[y0:y1, :, :3] * a
-            return img
-        if i > 0 and lt < XF * 0.8:
-            img = put(img, i - 1, [1 - lt / (XF * 0.8)] * len(texts[i - 1][1]))
-        rows = texts[i][1]
-        al = [float(np.clip((lt - (0.25 + 0.22 * r)) / 0.45, 0, 1)) for r in range(len(rows))]
-        if i == len(cards) - 1 and t > total - 0.5:
-            al = [a * max(0, (total - t) / 0.5) for a in al]
-        img = put(img, i, al)
-        for y0, y1, arr in chrome_static:
-            a = arr[..., 3:4]
-            img[y0:y1] = img[y0:y1] * (1 - a) + arr[..., :3] * a
-        tk = ticks(len(cards), i, p)
-        a = tk[..., 3:4]
-        img[TY0:TY1] = img[TY0:TY1] * (1 - a) + tk[..., :3] * a
-        if t < 0.25:
-            img *= t / 0.25 * 0.6 + 0.4
-        return (np.clip(img, 0, 1) * 255).astype(np.uint8)
+        i = max(0, int(np.searchsorted(cuts, fi, side="right") - 1))
+        return frames[min(i, len(cards) - 1)]
 
     if stills:
-        mids = [int((s + l * 0.8) * FPS) for s, l in zip(starts, lens)]
-        ims = [Image.fromarray(frame(f)).resize((360, 640), Image.LANCZOS) for f in mids]
-        sheet = Image.new("RGB", (360 * len(ims) + 10 * (len(ims) - 1), 640), (0, 0, 0))
+        ims = [Image.fromarray(f).resize((360, 360), Image.LANCZOS) for f in frames]
+        sheet = Image.new("RGB", (360 * len(ims) + 10 * (len(ims) - 1), 360), (0, 0, 0))
         for k, im in enumerate(ims):
             sheet.paste(im, (k * 370, 0))
         sheet.save(out + ".sheet.jpg", quality=88)
@@ -340,7 +268,7 @@ def render(script, seed=0, out=None, stills=False, silent=False):
             p.stdin.write(frame(f).tobytes())
         p.stdin.close()
         p.wait()
-        Image.fromarray(frame(int((starts[0] + lens[0] * 0.85) * FPS))).save(out + ".cover.jpg", quality=90)
+        Image.fromarray(frames[0]).save(out + ".cover.jpg", quality=90)
     write_caption(out + ".txt", script, items)
     json.dump({"id": script["id"], "seed": seed, "title": script["title"], "sign": script["sign"],
                "format": script["format"], "seconds": round(total, 1),

@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,500&family=Sofia+Sans+Condensed:wght@400;600;700&family=Sofia+Sans:wght@400;600&display=swap">
 <style>
-/* Layout: a night-sky reel wall — sticky header with two views (reels, catalogue), a filter rail of sign glyphs, then a dense 9:16 grid. Deliberately one dark look, matching the reels. */
+/* Layout: a night-sky reel wall — sticky header with two views (reels, catalogue), a filter rail of sign glyphs, then a dense square grid. Deliberately one dark look, matching the reels. */
 :root {
   --night: #130d1c;
   --dusk: #1d1529;
@@ -43,7 +43,7 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
 .rail-label { width: 100%; font: 600 11px var(--cond); letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
 .reels { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px 16px; padding-bottom: 60px; }
 .reel { display: grid; gap: 8px; min-width: 0; }
-.reel video { width: 100%; aspect-ratio: 9 / 16; max-width: 100%; background: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
+.reel video { width: 100%; aspect-ratio: 1 / 1; max-width: 100%; background: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
 .reel .meta { font: 600 12px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); display: flex; justify-content: space-between; gap: 8px; }
 .reel .meta span:last-child { color: var(--mute); font-variant-numeric: tabular-nums; }
 .reel h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 19px; line-height: 1.2; margin: 0; text-wrap: balance; }
@@ -57,7 +57,7 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
 .pool h3 .g { font-family: "DejaVu Sans", "Segoe UI Symbol", sans-serif; font-style: normal; color: var(--gold); font-size: 20px; }
 .pool h3 small { font: 600 12px var(--cond); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); font-style: normal; }
 .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 6px; }
-.tile { aspect-ratio: 150 / 267; max-width: 100%; border-radius: 6px; background-repeat: no-repeat; border: 0; padding: 0; cursor: zoom-in; background-color: var(--dusk); }
+.tile { aspect-ratio: 1 / 1; max-width: 100%; border-radius: 6px; background-repeat: no-repeat; border: 0; padding: 0; cursor: zoom-in; background-color: var(--dusk); }
 .sheet { position: fixed; z-index: 20; inset: auto 0 0 0; background: var(--dusk); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
 .sheet .wrap { display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; align-items: start; padding-block: 16px; }
 .sheet .tile { cursor: default; width: 120px; }
@@ -101,7 +101,7 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
     </div>
     <div class="rail" id="cat-rail" role="group" aria-label="Filter catalogue by pool"></div>
     <div id="pools"></div>
-    <p class="note">Shown as a 9:16 crop around each picture's focus point, the way a reel frames it.</p>
+    <p class="note">Shown as a square crop around each picture's focus point, the way a reel frames it.</p>
   </section>
 </main>
 

@@ -24,9 +24,9 @@ The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLD
 
 ## The reel
 
-1080×1920, 30 fps, 12–22 s. A full-bleed painting, graded toward dusk and darkened
-where the type sits, pushes in slowly; each card gets its own picture and crossfades
-to the next. Up top: the sign's glyph and name and story-style progress ticks. At the
+Square 1080×1080, 30 fps, 10–20 s. Each card is a still: one painting, graded toward
+dusk and darkened where the type sits, with the line on top. Cards change with a hard
+cut, no transitions, motion or progress bar. Up top: the sign's glyph and name. At the
 bottom: a small *align*. The hook and the call to action are EB Garamond italic; the
 body is Sofia Sans Condensed.
 
