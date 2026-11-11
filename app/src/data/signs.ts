@@ -27,7 +27,8 @@ const foil = (c: string, l: string) =>
   `linear-gradient(90deg, ${c} 0%, ${l} 22%, #ffffff 42%, ${l} 58%, ${c} 78%, ${l} 100%)`
 
 const mk = (id: SignId, name: string, glyph: string, element: Element, aura: string, color: string, light: string, dark: string): Sign => ({
-  id, name, glyph, element, aura, color, light, dark,
+  // U+FE0E asks for the text glyph; without it phones draw the emoji box
+  id, name, glyph: `${glyph}\uFE0E`, element, aura, color, light, dark,
   foil: foil(color, light),
   auraImg: `img/aura/${id}.jpg`,
   figureImg: `img/figure/${id}.jpg`,

@@ -83,6 +83,6 @@ export function CardOrb({ tint, children, size = 36 }: { tint: string; children:
       width: size, height: size, borderRadius: '50%', flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: size * 0.46, color: '#1a0f2e',
       background: `radial-gradient(circle at 32% 28%, color-mix(in srgb, ${tint} 35%, white) 0%, ${tint} 55%, color-mix(in srgb, ${tint} 60%, #1a0f2e) 100%)`,
       boxShadow: `0 0 ${Math.round(size * 0.4)}px color-mix(in srgb, ${tint} 60%, transparent), inset 0 1px 1px rgba(255,255,255,0.6)`,
-    }}>{children}</span>
+    }}>{typeof children === 'string' ? `${children}\uFE0E` : children}</span>
   )
 }

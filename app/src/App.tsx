@@ -41,9 +41,10 @@ import { OPEN_SKY_EVENT } from './components/deck/SkyDropdown'
 import BetaCalendar from './screens/BetaCalendar'
 import BetaYou from './screens/BetaYou'
 import BetaChart from './screens/BetaChart'
+import BetaMatch from './screens/BetaMatch'
 
 const SCREENS: Record<Exclude<ScreenId, `x/${string}`>, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
-  splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
+  splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: BETA ? BetaMatch : Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
   onboarding: Onboarding, founding: Founding, paywall: Paywall, you: BETA ? BetaYou : You, club: Club, sky: Sky, calendar: BETA ? BetaCalendar : Calendar, chart: BETA ? BetaChart : Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,

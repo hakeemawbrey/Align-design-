@@ -12,7 +12,7 @@ npm run preview:beta   # http://localhost:4175
 ## What's in it
 
 1. **Onboarding:** ends on the deal (no founding offer).
-2. **The deck:** people only (no event cards). The card uses Spark / Clash / Align with strength dots, moon and rising tags, and the element orb.
+2. **The deck:** people only (no event cards). The card uses Spark / Clash / Align with strength dots, moon and rising tags, and the element orb. When you both align, the match moment (`src/screens/BetaMatch.tsx`) brings your card and theirs in face down and flips them together, then shows the Align line from their card. No pull badge or lights.
 3. **Today's horoscope and cosmic calendar:** the deck's horoscope pill drops down a panel. "Today" is your daily reading; "This month" is a real calendar of moon phases, planets changing sign, retrogrades and seasons, worked out from the ephemeris (`src/data/cosmicMonth.ts`).
 4. **Chat** with matches (Juniper's scripted chat and everyone else's thread).
 5. **Talk cards** in chat (no packs or binder).
