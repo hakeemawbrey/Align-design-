@@ -15,9 +15,10 @@ const rise = (delay: number) => ({
 
 /** S-02 Auth — "The stars kept your seat warm." */
 export default function Welcome({ go }: ScreenProps) {
-  // the beta greets a first-timer with the chart reading up front; everyone else is welcomed back
+  // the beta greets a first-timer by name of the app; the buttons are the same either way:
+  // the main one goes straight into the app, and reading your chart (onboarding) is the link under it
   const [firstRun] = useState(() => BETA && !betaSeen())
-  const enter = () => { sfx.align(); go(firstRun ? 'onboarding' : 'dealing') }
+  const enter = () => { sfx.align(); go('dealing') }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -109,12 +110,12 @@ export default function Welcome({ go }: ScreenProps) {
           whileHover={{ scale: 1.02, boxShadow: '0 0 44px rgba(248, 237, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.9)' }}
           whileTap={{ scale: 0.97 }}
         >
-          {firstRun ? 'Read my chart' : `Continue as ${PERSONA.name}`} <span className="spark">✦</span>
+          Continue as {PERSONA.name} <span className="spark">✦</span>
         </motion.button>
       </motion.div>
       <motion.div {...rise(0.7)} style={{ position: 'absolute', top: 650, left: 38, width: 314 }}>
         <motion.button
-          onClick={() => { sfx.tap(); go(firstRun ? 'dealing' : 'x/phone') }}
+          onClick={() => { sfx.tap(); go('x/phone') }}
           whileHover={{ backgroundColor: 'rgba(120, 100, 160, 0.28)' }}
           whileTap={{ scale: 0.97 }}
           style={{
@@ -125,13 +126,13 @@ export default function Welcome({ go }: ScreenProps) {
             fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 19, color: 'var(--label-1)',
           }}
         >
-          {firstRun ? `Skip · play as ${PERSONA.name}` : 'Sign in'}
+          Sign in
         </motion.button>
       </motion.div>
 
-      <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go(firstRun ? 'x/phone' : 'onboarding') }} className="serif italic"
+      <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go('onboarding') }} className="serif italic"
         style={{ position: 'absolute', top: 710, left: 60, right: 60, height: 46, textAlign: 'center', fontSize: 15.5, color: 'var(--label-1)', zIndex: 5, touchAction: 'manipulation', textDecoration: 'underline', textDecorationColor: 'rgba(239,230,214,0.35)', textUnderlineOffset: 4 }}>
-        {firstRun ? 'I already have an account ›' : 'New here — read my chart ›'}
+        New here — read my chart ›
       </motion.button>
       <motion.div {...rise(0.9)}
         style={{ position: 'absolute', top: 765, width: '100%', textAlign: 'center', pointerEvents: 'none', fontSize: 10.5, lineHeight: 1.45, color: 'var(--label-3)' }}>

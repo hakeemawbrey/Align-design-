@@ -31,5 +31,5 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 - **One way into "how you fit":** her card's "Your alignment" and the chat's top-right button open the same sheet; the sheet leads on to the full reading. No scores.
 - **One vocabulary:** Spark / Clash / Align on cards, in chat and in the full reading.
 - **Back returns you where you were:** the calendar remembers whether it was opened from the deck, the profile or your chart, and a tapped event opens on its day.
-- **First visit:** Welcome leads with "Read my chart"; after the first deal it says "Welcome back".
+- **Welcome:** the main button goes straight into the app; "New here — read my chart" under it starts onboarding. A first visit says "Welcome to Align", later ones "Welcome back".
 - **The horoscope pill's dot** clears once you've opened today's reading.
