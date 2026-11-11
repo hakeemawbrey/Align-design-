@@ -256,7 +256,7 @@ export default function Thread({ go }: ScreenProps) {
       <AnimatePresence>
         {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), setCompat(true)) : go('alignment'))} />}
       </AnimatePresence>
-      {BETA && <CompatSheet them={profileById(them.id) ?? them} open={compat} onClose={() => setCompat(false)} />}
+      {BETA && <CompatSheet them={profileById(them.id) ?? them} open={compat} onClose={() => setCompat(false)} onPlayCard={() => { setCompat(false); setHand(true) }} />}
       <AnimatePresence>
         {report && (
           <ReportSheet name={them.name} pronoun="them" onClose={() => setReport(false)}

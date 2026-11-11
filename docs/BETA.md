@@ -16,7 +16,7 @@ npm run preview:beta   # http://localhost:4175
 3. **Today's horoscope and cosmic calendar:** the deck's horoscope pill drops down a panel. "Today" is your daily reading; "This month" is a real calendar of moon phases, planets changing sign, retrogrades and seasons, worked out from the ephemeris (`src/data/cosmicMonth.ts`).
 4. **Chat** with matches (Juniper's scripted chat and everyone else's thread).
 5. **Talk cards** in chat (no packs or binder).
-6. **How you fit:** the two-orb button top-right in every chat opens a sheet describing how the two charts meet, in words (`src/lib/compat.ts`). **There is no compatibility score, percentage or rating anywhere, on purpose (liability). Don't add one.**
+6. **How you fit:** the two-orb button top-right in every chat opens a sheet written for the relationship: Day to day, Feelings, First impressions and Feeling understood, each a plain sentence and one thing to try, then their card's Spark / Clash / Align, tonight's line and a button to play a talk card (`src/lib/compat.ts`, `src/components/chat/Compat.tsx`). The astrology behind each area sits under a "Why?" toggle. **There is no compatibility score, percentage or rating anywhere, on purpose (liability). Don't add one.**
 7. **Aura photo:** take or pick a photo. MediaPipe finds one face on the phone, cuts the person out and paints their aura in their element's colours, then sets it as the card photo (`src/lib/aura.ts`, `x/aura-photo`). Also runs in onboarding's photo step.
 8. **Profile** (`src/screens/BetaYou.tsx`): your card first (face down, aura photo behind; tap to flip), your big three, Edit card and Aura photo, your sign, your next sky events, then settings and the demo tools.
 9. **Learn your sign:** your chart, plus the whole glossary unlocked.
