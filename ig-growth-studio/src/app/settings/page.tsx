@@ -1,4 +1,5 @@
-import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, skipPendingAccounts } from "@/app/actions";
+import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, setReelAudio, skipPendingAccounts } from "@/app/actions";
+import { getAudioSetting } from "@/lib/audio";
 import { ChooseAccounts } from "@/components/ChooseAccounts";
 import { FbPage } from "@/components/FbPage";
 import { LocalTime } from "@/components/LocalTime";
@@ -40,6 +41,7 @@ export default async function SettingsPage({
   });
   const metaApp = `https://developers.facebook.com/apps/${config.appId}`;
   const fbPages = await facebookPages(accounts);
+  const audio = await Promise.all(accounts.map((a) => getAudioSetting(db, a.igUserId)));
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
   return (
@@ -224,6 +226,34 @@ export default async function SettingsPage({
           Tick &ldquo;Also post to the Facebook Page&rdquo; on a Reel to post it there at the same time. Facebook takes
           videos of 3 to 90 seconds and allows 30 Reels per Page in any 24 hours.
         </p>
+      </div>
+
+      <h2>Reels audio</h2>
+      <div className="card stack">
+        <p className="muted small" style={{ margin: 0 }}>
+          Adds music from Instagram&rsquo;s library to each Reel when it publishes. <b>Trending</b> uses what is
+          trending on Instagram right now and rotates so posts don&rsquo;t all share one song. <b>Search</b> uses a
+          keyword instead (a mood, genre or artist). Only music Meta clears for apps is offered, so the list is
+          shorter than in the Instagram app. If Instagram refuses a track, the Reel still goes out with its own sound.
+          Lower &ldquo;video sound&rdquo; when the video already has music.
+        </p>
+        {accounts.map((a, i) => (
+          <form key={a.igUserId} action={setReelAudio} className="row" style={{ flexWrap: "wrap", gap: 8, alignItems: "center" }}>
+            <input type="hidden" name="igUserId" value={a.igUserId} />
+            <b style={{ minWidth: 140 }}>@{a.username}</b>
+            <select name="mode" defaultValue={audio[i].mode} aria-label={`Reels audio for @${a.username}`}>
+              <option value="off">Off (video&rsquo;s own sound)</option>
+              <option value="trending">Trending music</option>
+              <option value="search">Search…</option>
+            </select>
+            <input name="query" placeholder="search term" defaultValue={audio[i].query ?? ""} aria-label="Search term" style={{ width: 140 }} />
+            <label className="small muted">
+              video sound{" "}
+              <input name="videoVolume" type="number" min={1} max={100} placeholder="100" defaultValue={audio[i].videoVolume ?? ""} style={{ width: 64 }} />
+            </label>
+            <button type="submit">Save</button>
+          </form>
+        ))}
       </div>
 
       <h2>Claude automation</h2>

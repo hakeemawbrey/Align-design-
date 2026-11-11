@@ -95,9 +95,24 @@ npm run typecheck
 npm run dev
 ```
 
+## Reels audio
+
+Settings → **Reels audio** adds music from Instagram's library to each Reel as it publishes, using Meta's
+Instagram Audio API (June 2026; works with this app's Facebook Login). Per account:
+
+- **Trending music**: a track from what is trending on Instagram right now. The list is fetched at most once an
+  hour, and each Reel takes the highest-ranked track the account has used least in the last 7 days.
+- **Search**: the same, from a keyword (a mood, genre or artist).
+- **Video sound** (1–100): the video's own sound under the music. Lower it for videos that already have music.
+
+Only music Meta has cleared for apps is offered, so the list is shorter than in the Instagram app. Audio never
+blocks a post: if the lookup fails or Instagram refuses a track, the Reel goes out with its own sound and the reason
+shows on the post (`audio` in the agent API). It needs no new permission (`instagram_basic` and
+`instagram_content_publish`).
+
 ## Possible next steps
 
-- Carousel posts, Stories, partnership labels, Reels audio and the AI-content disclosure flag
+- Carousel posts, Stories, partnership labels and the AI-content disclosure flag
   (all supported by recent API versions).
 - Upload media to your own storage instead of pasting a URL.
 - Best-time-to-post suggestions from audience insights.

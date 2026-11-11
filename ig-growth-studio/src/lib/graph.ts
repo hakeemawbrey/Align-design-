@@ -31,6 +31,24 @@ export interface GraphClientOptions {
  * Thin client for graph.facebook.com (Instagram API with Facebook Login).
  * Every call is a documented, official endpoint.
  */
+export interface AudioConfiguration {
+  audioId: string;
+  /** 1–100; Instagram's default is 100. */
+  audioVolume?: number | null;
+  /** 1–100: the video's own sound under the music. */
+  videoVolume?: number | null;
+}
+
+export interface IgAudio {
+  audio_id: string;
+  title?: string;
+  display_artist?: string;
+  duration_in_ms?: number;
+  audio_type?: string;
+  ig_username?: string;
+  on_platform_audio_preview_link?: string;
+}
+
 export class GraphClient {
   private token?: string;
   private version: string;
@@ -202,6 +220,7 @@ export class GraphClient {
     shareToFeed: boolean,
     trial?: "MANUAL" | "SS_PERFORMANCE" | null,
     coverOffsetMs?: number | null,
+    audio?: AudioConfiguration | null,
   ) {
     const local = localMediaPath(videoUrl);
     if (isLocalMedia(videoUrl) && !local) throw new GraphError(`Video file not found: ${videoUrl}`, 400);
@@ -215,9 +234,31 @@ export class GraphClient {
       ...(trial
         ? { trial_params: JSON.stringify({ graduation_strategy: trial }) }
         : { share_to_feed: shareToFeed }),
+      // Instagram Audio API: music from Instagram's library mixed in at creation time.
+      ...(audio
+        ? {
+            audio_configuration: JSON.stringify({
+              audio_id: audio.audioId,
+              ...(audio.audioVolume != null ? { audio_volume: audio.audioVolume } : {}),
+              ...(audio.videoVolume != null ? { video_volume: audio.videoVolume } : {}),
+            }),
+          }
+        : {}),
     });
     if (local) await this.uploadFile(`https://rupload.facebook.com/ig-api-upload/${this.version}/${created.id}`, local);
     return created;
+  }
+
+  /**
+   * Instagram Audio API (Facebook Login only). With no query, Instagram returns what is trending now.
+   * Only audio cleared for third-party use is returned, so it is a subset of the in-app library.
+   */
+  searchAudio(igUserId: string, opts: { type?: "music" | "original_sound"; query?: string } = {}) {
+    return this.request<{ data: IgAudio[] }>("GET", "ig_audio", {
+      user_id: igUserId,
+      audio_type: opts.type ?? "music",
+      ...(opts.query ? { search_query: opts.query } : {}),
+    });
   }
 
   /** Sends a local file to a Meta rupload endpoint in one request. */

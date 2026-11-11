@@ -69,6 +69,7 @@ export function publicPost(p: PostRow, accounts: Map<string, Account>) {
     type: p.type,
     trial: p.trial_strategy,
     coverOffsetMs: p.cover_offset_ms,
+    audio: p.audio_id || p.audio_error ? { id: p.audio_id, title: p.audio_title, note: p.audio_error } : null,
     mediaUrl: p.media_url,
     caption: p.caption,
     shareToFeed: p.share_to_feed === 1,

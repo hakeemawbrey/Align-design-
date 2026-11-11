@@ -25,6 +25,10 @@ export interface PostRow {
   trial_strategy: TrialStrategy | null;
   /** Reels: the frame (ms into the video) Instagram uses as the cover. Null = Instagram's default. */
   cover_offset_ms: number | null;
+  /** Reels: the Instagram audio attached when it was published, or why none was (audio_error). */
+  audio_id: string | null;
+  audio_title: string | null;
+  audio_error: string | null;
   source: PostSource;
   scheduled_at: string; // ISO UTC
   status: PostStatus;
@@ -243,6 +247,12 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
   async () => ["ALTER TABLE media_snapshots ADD COLUMN saves INTEGER", "ALTER TABLE media_snapshots ADD COLUMN shares INTEGER"],
   // v7: when publishing actually started, which can be well after the scheduled time.
   async () => ["ALTER TABLE posts ADD COLUMN started_at TEXT"],
+  // v8: music attached to a Reel at publish time (Instagram Audio API), and why it was skipped if it was.
+  async () => [
+    "ALTER TABLE posts ADD COLUMN audio_id TEXT",
+    "ALTER TABLE posts ADD COLUMN audio_title TEXT",
+    "ALTER TABLE posts ADD COLUMN audio_error TEXT",
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -451,6 +461,16 @@ export async function listPosts(db: DB, filter: { igUserId?: string; from?: Date
   }
   const sql = `SELECT * FROM posts ${where.length ? `WHERE ${where.join(" AND ")}` : ""} ORDER BY scheduled_at DESC`;
   return all<PostRow>(db, sql, args);
+}
+
+/** How often each audio track went out on this account's Reels since `since` (rotation for trending audio). */
+export async function audioUseCounts(db: DB, igUserId: string, since: Date): Promise<Map<string, number>> {
+  const rows = await all<{ audio_id: string; n: number }>(
+    db,
+    "SELECT audio_id, COUNT(*) AS n FROM posts WHERE ig_user_id = ? AND audio_id IS NOT NULL AND updated_at >= ? GROUP BY audio_id",
+    [igUserId, since.toISOString()],
+  );
+  return new Map(rows.map((r) => [r.audio_id, Number(r.n)]));
 }
 
 export async function getPost(db: DB, id: number): Promise<PostRow | undefined> {

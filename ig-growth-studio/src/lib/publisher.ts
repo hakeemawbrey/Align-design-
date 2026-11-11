@@ -1,5 +1,6 @@
 import { type DB, type PostRow, claimPost, duePosts, getAccount, updatePost } from "./db";
-import { GraphClient, GraphError } from "./graph";
+import { pickAudio } from "./audio";
+import { type AudioConfiguration, GraphClient, GraphError } from "./graph";
 
 /** Reels that have not finished processing after this long are marked failed. */
 export const PROCESSING_TIMEOUT_MS = 30 * 60 * 1000;
@@ -97,14 +98,7 @@ async function advance(
 
     const container =
       post.type === "REELS"
-        ? await client.createReelContainer(
-            igUserId,
-            post.media_url,
-            post.caption,
-            post.share_to_feed === 1,
-            post.trial_strategy,
-            post.cover_offset_ms,
-          )
+        ? await createReel(db, client, igUserId, post, now)
         : await client.createImageContainer(igUserId, post.media_url, post.caption);
     containerId = container.id;
     await updatePost(db, post.id, { container_id: containerId });
@@ -142,4 +136,36 @@ async function advance(
   }
   await updatePost(db, post.id, { status: "published", ig_media_id: published.id, permalink, error: null });
   return "published";
+}
+
+/**
+ * Creates the Reel container, with music when the account has Reels audio switched on. Audio never blocks a post:
+ * if the track cannot be found or Instagram refuses it, the Reel goes out with its own sound and the reason is kept.
+ */
+async function createReel(db: DB, client: GraphClient, igUserId: string, post: PostRow, now: Date) {
+  const create = (audio: AudioConfiguration | null) =>
+    client.createReelContainer(igUserId, post.media_url, post.caption, post.share_to_feed === 1, post.trial_strategy, post.cover_offset_ms, audio);
+  let picked: Awaited<ReturnType<typeof pickAudio>> = null;
+  try {
+    picked = await pickAudio(db, client, igUserId, now);
+  } catch (err) {
+    if (isTransient(err)) throw err;
+    await updatePost(db, post.id, { audio_id: null, audio_title: null, audio_error: `No audio: ${errText(err)}` });
+  }
+  if (!picked) return create(null);
+  try {
+    const c = await create(picked.config);
+    await updatePost(db, post.id, { audio_id: picked.config.audioId, audio_title: picked.title, audio_error: null });
+    return c;
+  } catch (err) {
+    if (isTransient(err)) throw err;
+    const c = await create(null);
+    await updatePost(db, post.id, { audio_id: null, audio_title: null, audio_error: `Posted without "${picked.title}": ${errText(err)}` });
+    return c;
+  }
+}
+
+function errText(err: unknown) {
+  const base = err instanceof Error ? err.message : String(err);
+  return err instanceof GraphError && err.code !== undefined ? `${base} (code ${err.code})` : base;
 }

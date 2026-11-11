@@ -42,6 +42,12 @@ For long JSON, write it to a file in a temp folder and pass `@path/to/body.json`
 | `trial` | Reels only. `MANUAL`: shown to non-followers; the owner shares it with followers in the Instagram app. `SS_PERFORMANCE`: same, but Instagram shares it with followers automatically if it performs well. Omit for a normal Reel. |
 | `shareToFeed` | Normal Reels only (default `true`). |
 
+### Reels audio
+
+`GET /audio?account=…` shows the account's setting and what's trending now (`&q=lofi` to search).
+`POST /audio '{"account":"…","mode":"trending","videoVolume":20}'` switches it on for every Reel not yet published
+(`mode`: `off`, `trending`, or `search` with `query`). It changes the whole queue, so ask the owner first.
+
 Instagram allows about 100 API posts per account per 24 hours. Spread posts out; one to two a day per account
 is a sensible default.
 

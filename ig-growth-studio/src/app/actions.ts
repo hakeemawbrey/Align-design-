@@ -17,6 +17,7 @@ import {
   setActiveAccount,
   updatePost,
 } from "@/lib/db";
+import { setAudioSetting } from "@/lib/audio";
 import { GraphClient } from "@/lib/graph";
 import { PostFields, queuePost } from "@/lib/posts";
 import { localToUtc } from "@/lib/time";
@@ -139,5 +140,20 @@ export async function addChosenAccounts(form: FormData) {
 
 export async function skipPendingAccounts() {
   await clearPendingLogin(await getDb());
+  revalidatePath("/settings");
+}
+
+export async function setReelAudio(form: FormData) {
+  const mode = String(form.get("mode") ?? "off");
+  const vol = (k: string) => (String(form.get(k) ?? "").trim() ? Number(form.get(k)) : null);
+  if (mode !== "off" && mode !== "trending" && mode !== "search") return;
+  const igUserId = String(form.get("igUserId") ?? "");
+  const db = await getDb();
+  if (!(await getAccount(db, igUserId))) return;
+  try {
+    await setAudioSetting(db, igUserId, { mode, query: String(form.get("query") ?? ""), videoVolume: vol("videoVolume") });
+  } catch {
+    // Search mode without a term: leave the setting as it was.
+  }
   revalidatePath("/settings");
 }
