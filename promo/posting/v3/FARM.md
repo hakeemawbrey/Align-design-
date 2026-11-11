@@ -1,7 +1,7 @@
 # v3 social cut: production farm (one batch per cloud session)
 
 You are one worker in a farm making short vertical Instagram films for two Align accounts: **star_talk** (funny,
-relatable zodiac entertainment) and **zodiac.advice444** (warm, relatable zodiac advice). Your batch is a JSON file in
+relatable zodiac entertainment) and **star_advice** (warm, relatable zodiac advice). Your batch is a JSON file in
 `promo/posting/v3/batches/` (your prompt names it): ten films, each with `id`, `account`, `format`, `topic`, optional
 `sign`, and `music: { key, seed }`. Make all ten: write, check, render, upload, record. Work on branch
 `claude/align-promo-video`.
@@ -27,11 +27,11 @@ Formats:
   EXTREME version of itself in that situation.
 - **belike**: twelve signs, hook `'Zodiacs <situation> | *be like.*'` (the topic gives it; keep each line short).
 - **solo**: `solo: '<sign>'`, 9 cards, the topic is the hook. Nine different relatable situations for that sign.
-- **advice-solo** (zodiac.advice444): `solo: '<sign>'`, 9 cards, the topic is the hook. Each card: a relatable truth
+- **advice-solo** (star_advice): `solo: '<sign>'`, 9 cards, the topic is the hook. Each card: a relatable truth
   about that sign + a warm reframe, still with ONE visual gag and a little humour (the star is cute, the props are
   funny, the words are kind). Caption style: `'You give *everything.* | Save some for you.'` Lesson and last line warm
   and encouraging. Never controlling, never "you must", never diagnosing; astrology as gentle fun.
-- **advice-rollcall** (zodiac.advice444): twelve signs, the topic is the hook; one warm, specific, relatable line per
+- **advice-rollcall** (star_advice): twelve signs, the topic is the hook; one warm, specific, relatable line per
   sign with a light visual gag.
 
 Everything in SIGNS3-BUILD.md applies (house rules, Pisces cries whenever it appears, light Align nods, closing match

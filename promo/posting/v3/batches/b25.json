@@ -1,6 +1,6 @@
 [
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "capricorn",
   "topic": "Capricorn, you're allowed | *to rest.*",
@@ -11,7 +11,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "pisces",
   "topic": "What Pisces need | *in love.*",
@@ -22,7 +22,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "cancer",
   "topic": "Signs you're | *a healed Cancer.*",
@@ -33,7 +33,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-rollcall",
   "topic": "Each sign's | *love era.*",
   "id": "v3a113",
@@ -43,7 +43,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "gemini",
   "topic": "Gemini, your gift | *is this.*",
@@ -54,7 +54,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "taurus",
   "topic": "Taurus, read this | *before your next date.*",
@@ -65,7 +65,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-rollcall",
   "topic": "What each sign | *deserves.*",
   "id": "v3a116",
@@ -75,7 +75,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-solo",
   "sign": "aries",
   "topic": "Aries, stop doing | *this in love.*",
@@ -86,7 +86,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-rollcall",
   "topic": "How each sign | *falls in love.*",
   "id": "v3a118",
@@ -96,7 +96,7 @@
   }
  },
  {
-  "account": "zodiac.advice444",
+  "account": "star_advice",
   "format": "advice-rollcall",
   "topic": "Each sign's | *biggest strength.*",
   "id": "v3a119",
