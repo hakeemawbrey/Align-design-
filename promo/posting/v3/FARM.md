@@ -9,7 +9,7 @@ relatable zodiac entertainment) and **zodiac.advice444** (warm, relatable zodiac
 ## 0. Setup (once)
 ```bash
 cd <repo> && git fetch origin claude/align-promo-video && git checkout claude/align-promo-video && git pull --rebase
-[ -d app/node_modules/@fontsource/inter ] || (cd app && npm ci)      # fonts + playwright resolution for the renderer
+fc-list | grep -qi 'EB Garamond' && fc-list | grep -qi inter || echo 'FONTS MISSING: stop and report'   # fonts are system-installed
 python3 promo/scripts/farm/gdrive.py folder "Star Talk/v3 Social Cut/<account>"   # prints the Drive folder id
 ```
 The renderer needs `ffmpeg` and the pre-installed Chromium (no install needed). Drive credentials are environment
