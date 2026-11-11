@@ -129,18 +129,66 @@ def text_layer(text, ss=2, ink="light"):
     return np.asarray(base.resize((W, H), Image.LANCZOS), np.float32) / 255, [l for l in lines if l]
 
 
+ART_DIR = os.path.join(HERE, "art")
+ART = {"dim": 0.60, "vignette": 0.35, "zoom": 0.07}   # darkening for legibility; slow push-in over the reel
+_art = None
+
+
+def art_list():
+    global _art
+    if _art is None:
+        p = os.path.join(ART_DIR, "art.json")
+        _art = json.load(open(p)) if os.path.exists(p) else []
+    return _art
+
+
+def art_for(post, seed):
+    arts = art_list()
+    if not arts:
+        raise SystemExit("No artwork: run tools/build_art.py first")
+    want = post.get("art")
+    if want is not None:
+        for a in arts:
+            if a["n"] == want or a["id"] == want:
+                return a
+    return arts[seed % len(arts)]
+
+
+def art_background(art):
+    """The artwork dimmed, with a soft vignette, at its largest zoom; frames crop into it."""
+    s = 1 + ART["zoom"]
+    im = Image.open(os.path.join(ART_DIR, art["file"])).convert("RGB").resize((round(W * s), round(H * s)), Image.LANCZOS)
+    a = np.asarray(im, np.float32) / 255
+    yy, xx = np.mgrid[0:a.shape[0], 0:a.shape[1]]
+    r = np.hypot((xx / a.shape[1] - 0.5) / 0.5, (yy / a.shape[0] - 0.5) / 0.5) / math.sqrt(2)
+    a = a * ART["dim"] * (1 - ART["vignette"] * r[..., None] ** 2)
+    return Image.fromarray((np.clip(a, 0, 1) * 255).astype(np.uint8))
+
+
+def art_credit(art):
+    who = f" by {art['creator']}" if art.get("creator") else ""
+    lic = art["license"] if art.get("credit") else "public domain"
+    return f"Art: {art.get('title') or 'untitled'}{who} ({lic})"
+
+
 def seconds_for(text):
     words = len(text.split())
     return round(min(14, max(6, 3 + words * 0.3)), 1)
 
 
-def render(post, out, palette=None):
+def render(post, out, palette=None, bg_mode=None):
+    """bg_mode: "gradient" (default) or "art" (a dimmed artwork from art/art.json with a slow push-in)."""
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     seed = zlib.crc32(post["text"].encode())
+    bg_mode = bg_mode or post.get("bg") or "gradient"
+    art = art_for(post, seed) if bg_mode == "art" else None
     palette = palette or post.get("palette") or ["classic", "magenta", "deep", "rainbow", "classic", "magenta", "aqua"][seed % 7]
-    ink = post.get("ink") or "light"
+    ink = "light" if art else (post.get("ink") or "light")
     margin = int(W * STYLE["drift"])
-    bg = gradient(palette, W + margin, H + margin)
+    if art:
+        art_img = art_background(art)
+    else:
+        bg = gradient(palette, W + margin, H + margin)
     txt, lines = text_layer(post["text"], ink=ink)
     a = txt[..., 3:4]
     dur = seconds_for(post["text"])
@@ -154,9 +202,16 @@ def render(post, out, palette=None):
     still = None
     for i in range(n):
         t = i / max(n - 1, 1)
-        ox = int(margin * (0.5 + 0.5 * math.sin(math.pi * (t - 0.5))))   # slow ease across the reel
-        oy = int(margin * 0.5 * (1 - math.cos(math.pi * t)) / 2)
-        frame = bg[oy:oy + H, ox:ox + W] / 255
+        if art:
+            # push in from 1.0 to 1+zoom, eased, centred
+            z = 1 + ART["zoom"] * (0.5 - 0.5 * math.cos(math.pi * t))
+            cw, ch = W * (1 + ART["zoom"]) / z, H * (1 + ART["zoom"]) / z
+            x0, y0 = (art_img.width - cw) / 2, (art_img.height - ch) / 2
+            frame = np.asarray(art_img.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch)), np.float32) / 255
+        else:
+            ox = int(margin * (0.5 + 0.5 * math.sin(math.pi * (t - 0.5))))   # slow ease across the reel
+            oy = int(margin * 0.5 * (1 - math.cos(math.pi * t)) / 2)
+            frame = bg[oy:oy + H, ox:ox + W] / 255
         frame = frame * (1 - a) + txt[..., :3] * a
         buf = (np.clip(frame, 0, 1) * 255 + 0.5).astype(np.uint8)
         if i == 0:
@@ -167,6 +222,8 @@ def render(post, out, palette=None):
     Image.fromarray(still).save(out[:-4] + ".png")
     with open(out[:-4] + ".txt", "w") as fh:
         fh.write(post.get("caption", "").strip() + "\n\n")
+        if art:
+            fh.write(art_credit(art) + "\n\n")
         tags = post.get("hashtags", [])[:5]
         if tags:
             fh.write(" ".join("#" + t.lstrip("#") for t in tags) + "\n")
@@ -183,12 +240,14 @@ if __name__ == "__main__":
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--palette", choices=list(PALETTES))
     ap.add_argument("--ink", choices=list(INK))
+    ap.add_argument("--bg", choices=["gradient", "art"])
     ap.add_argument("--out")
     a = ap.parse_args()
     if a.text:
-        render({"text": a.text.replace("\\n", "\n"), "ink": a.ink}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette)
+        render({"text": a.text.replace("\\n", "\n"), "ink": a.ink}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette, a.bg)
     else:
         posts = [p for f in a.copy for p in json.load(open(f))["posts"]]
         for p in posts:
             if a.all or p["id"] == a.id:
-                render(p, a.out if a.id and a.out else os.path.join(HERE, "out", p["id"] + ".mp4"), a.palette)
+                name = p["id"] + ("-art" if a.bg == "art" else "")
+                render(p, a.out if a.id and a.out else os.path.join(HERE, "out", name + ".mp4"), a.palette, a.bg)

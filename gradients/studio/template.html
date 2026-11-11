@@ -58,13 +58,20 @@ button[disabled]{opacity:.5;cursor:default}
 .item[aria-current="true"]{background:var(--chip);border-color:var(--accent)}
 .dot{width:28px;height:36px;border-radius:6px}
 .item b{display:block;font-size:12px;font-family:var(--f-mono);font-weight:500;color:var(--muted)}
+[hidden]{display:none!important}
+.seg{width:max-content}
+.art-tools{display:grid;gap:10px}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(60px,1fr));gap:6px;max-height:300px;overflow:auto;padding:2px}
+.thumb{aspect-ratio:3/4;width:100%;padding:0;border:2px solid transparent;border-radius:6px;background-image:url(art/thumbs.jpg);background-repeat:no-repeat}
+.thumb[aria-pressed="true"]{border-color:var(--accent)}
+.credit{font-size:12px;color:var(--muted)}
 .item .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 <div class="wrap">
   <header>
-    <div><h1>Gradient Studio</h1><p>Text-on-gradient reels for <span class="handle">@zodiac.advice444</span>, 1080×1440.</p></div>
+    <div><h1>Gradient Studio</h1><p>Text-on-gradient and text-on-artwork reels for <span class="handle">@zodiac.advice444</span>, 1080×1440.</p></div>
     <div class="row"><button id="rand">Random post</button></div>
   </header>
 
@@ -87,6 +94,19 @@ button[disabled]{opacity:.5;cursor:default}
           <div class="meta" id="count"></div>
         </div>
         <div class="field">
+          <span class="lbl">Background</span>
+          <div class="seg" id="bgmode"><button data-v="gradient" aria-pressed="true">Gradient</button><button data-v="art" aria-pressed="false">Artwork</button></div>
+        </div>
+        <div class="field art-tools" id="artTools" hidden>
+          <div class="row">
+            <button id="randArt">Random artwork</button>
+            <select id="artPool" aria-label="Artwork set" style="width:auto"></select>
+            <span class="meta" id="artCount"></span>
+          </div>
+          <div class="art-grid" id="artGrid"></div>
+          <div class="credit" id="artCredit"></div>
+        </div>
+        <div class="field" id="gradTools">
           <span class="lbl">Gradient</span>
           <div class="swatches" id="sw"></div>
         </div>
@@ -122,6 +142,7 @@ button[disabled]{opacity:.5;cursor:default}
 
 <script>
 const POSTS = __POSTS__;
+const ART = __ART__;
 const W=1080,H=1440,FPS=24;
 const PALETTES={
  classic:[["#4090f2","#4077f2","#733af2"],["#6052f2","#733df5","#b325dd"],["#a569f6","#b353ec","#c236dd"]],
@@ -135,7 +156,7 @@ const PALETTES={
 const ROT=["classic","magenta","deep","rainbow","classic","magenta","aqua"];
 const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.62,shadow:.30,gap:.75,drift:.06};
 const $=id=>document.getElementById(id);
-const state={text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true};
+const state={text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true,bg:"gradient",art:0};
 
 // crc32, so default gradients match the batch renderer
 const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c}return t})();
@@ -192,7 +213,22 @@ function makeText(){
   x.fillStyle=state.ink==="light"?"#fff":"#111";pos.forEach(([l,yy])=>x.fillText(l,W/2,yy));
   textKey=key;return textLayer=c;
 }
+// artwork: dimmed, vignetted, slow push-in (same treatment as the batch renderer)
+const artCache={};
+function artImg(n){
+  if(!artCache[n]){const im=new Image();im.decoding="async";im.src=`art/${String(n).padStart(3,"0")}.jpg`;artCache[n]=im;im.onload=()=>{textKey=textKey}}
+  return artCache[n];
+}
+const artReady=n=>new Promise(r=>{const im=artImg(n);if(im.complete&&im.naturalWidth)r();else{im.addEventListener("load",r,{once:true});im.addEventListener("error",r,{once:true})}});
+function drawArt(ctx,t){
+  const im=artImg(state.art);ctx.fillStyle="#141018";ctx.fillRect(0,0,W,H);
+  if(im.complete&&im.naturalWidth){const z=1+.07*(.5-.5*Math.cos(Math.PI*t)),dw=W*z,dh=H*z;ctx.drawImage(im,(W-dw)/2,(H-dh)/2,dw,dh)}
+  ctx.fillStyle="rgba(0,0,0,.40)";ctx.fillRect(0,0,W,H);
+  const g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.hypot(W,H)/2);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,"rgba(0,0,0,.33)");
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.drawImage(makeText(),0,0);
+}
 function drawFrame(ctx,t){
+  if(state.bg==="art")return drawArt(ctx,t);
   const m=Math.round(W*ST.drift),bg=background(state.palette);
   const ox=Math.round(m*(.5+.5*Math.sin(Math.PI*(t-.5)))),oy=Math.round(m*.5*(1-Math.cos(Math.PI*t))/2);
   ctx.drawImage(bg,ox,oy,W,H,0,0,W,H);ctx.drawImage(makeText(),0,0);
@@ -216,8 +252,14 @@ function renderControls(){
   document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.palette));
   document.querySelectorAll("#ink button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.ink));
   document.querySelectorAll(".item").forEach(b=>b.setAttribute("aria-current",b.dataset.id===state.id));
+  document.querySelectorAll("#bgmode button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.bg));
+  $("artTools").hidden=state.bg!=="art";$("gradTools").hidden=state.bg==="art";
+  document.querySelectorAll(".thumb").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.n===state.art));
+  const a=ART[state.art];$("artCredit").textContent=a?artCredit(a):"";
 }
+function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.creator:""} (${a.credit?a.license:"public domain"})`}
 function load(p){
+  if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
   Object.assign(state,{text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:p.ink||"light",id:p.id,scale:1});
   $("size").value=1;t0=performance.now();renderControls();
   try{localStorage.setItem("gs-last",p.id)}catch(e){}
@@ -233,8 +275,24 @@ $("cap").addEventListener("input",e=>{state.caption=e.target.value});
 $("size").addEventListener("input",e=>{state.scale=+e.target.value});
 $("play").onclick=()=>{state.playing=!state.playing;$("play").textContent=state.playing?"Pause drift":"Play drift";$("play").setAttribute("aria-pressed",state.playing);t0=performance.now()};
 $("rand").onclick=()=>{const l=filtered();const p=l.length?l:POSTS;load(p[Math.floor(Math.random()*p.length)])};
-function captionText(){return state.caption.trim()+(state.tags.length?"\n\n"+state.tags.map(t=>"#"+t).join(" "):"")}
+function captionText(){return state.caption.trim()+(state.bg==="art"&&ART[state.art]?"\n\n"+artCredit(ART[state.art]):"")+(state.tags.length?"\n\n"+state.tags.map(t=>"#"+t).join(" "):"")}
 $("copyCap").onclick=async()=>{try{await navigator.clipboard.writeText(captionText());setStatus("Caption copied.")}catch(e){$("cap").select();setStatus("Press Ctrl/Cmd+C to copy the selected caption.")}};
+
+// artwork picker
+document.querySelectorAll("#bgmode button").forEach(b=>b.onclick=()=>{state.bg=b.dataset.v;if(state.bg==="art")state.ink="light";renderControls()});
+const pools=["All artwork",...new Set(ART.map(a=>a.pool))];
+$("artPool").innerHTML=pools.map(p=>`<option value="${p}">${p[0].toUpperCase()+p.slice(1)}</option>`).join("");
+const artFiltered=()=>ART.filter(a=>$("artPool").value==="All artwork"||a.pool===$("artPool").value);
+function renderArtGrid(){
+  const frag=document.createDocumentFragment(),l=artFiltered();
+  for(const a of l){const b=document.createElement("button");b.className="thumb";b.dataset.n=a.n;
+    b.setAttribute("aria-label",(a.title||"artwork")+(a.creator?" by "+a.creator:""));b.title=b.getAttribute("aria-label");
+    b.style.backgroundSize="2000% 2000%";b.style.backgroundPosition=`${(a.n%20)/19*100}% ${Math.floor(a.n/20)/19*100}%`;
+    b.onclick=()=>{state.art=a.n;renderControls()};frag.append(b)}
+  $("artGrid").replaceChildren(frag);$("artCount").textContent=`${l.length} artworks`;renderControls();
+}
+$("artPool").addEventListener("change",renderArtGrid);
+$("randArt").onclick=()=>{const l=artFiltered();if(l.length){state.art=l[Math.floor(Math.random()*l.length)].n;renderControls()}};
 
 // library
 const sets=["All sets",...new Set(POSTS.map(p=>p.set))];
@@ -262,13 +320,14 @@ function renderList(){
 
 // saving
 let downloads=null;
-const fname=ext=>(state.id||"gradient-post")+"."+ext;
+const fname=ext=>(state.id||"gradient-post")+(state.bg==="art"?"-art":"")+"."+ext;
 async function save(filename,data){
   if(!downloads){setStatus("Saving files isn't available in this view. Right-click the preview and choose Save image instead.");return}
   try{await downloads.save({filename,data});setStatus("Saved "+filename+".")}
   catch(e){setStatus(e&&e.code==="declined"?"Save cancelled.":"Couldn't save: "+(e&&e.message||"unknown error"))}
 }
-$("savePng").onclick=()=>{
+$("savePng").onclick=async()=>{
+  if(state.bg==="art")await artReady(state.art);
   const c=document.createElement("canvas");c.width=W;c.height=H;drawFrame(c.getContext("2d"),0);
   c.toBlob(b=>save(fname("png"),b),"image/png");
 };
@@ -277,6 +336,7 @@ $("saveVid").onclick=async()=>{
   const types=["video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm"];
   const type=types.find(t=>MediaRecorder.isTypeSupported(t));if(!type){setStatus("This browser can't record video.");return}
   const ext=type.startsWith("video/mp4")?"mp4":"webm";
+  if(state.bg==="art")await artReady(state.art);
   const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");drawFrame(x,0);
   const stream=c.captureStream(FPS),rec=new MediaRecorder(stream,{mimeType:type,videoBitsPerSecond:8e6}),chunks=[];
   rec.ondataavailable=e=>e.data.size&&chunks.push(e.data);
@@ -291,7 +351,7 @@ $("saveVid").onclick=async()=>{
   try{await document.fonts.load("800 80px Figtree")}catch(e){}
   let first=POSTS.find(p=>p.id==="libra-f01")||POSTS[0];
   try{const last=localStorage.getItem("gs-last");const f=last&&POSTS.find(p=>p.id===last);if(f)first=f}catch(e){}
-  renderList();load(first);requestAnimationFrame(loop);
+  renderList();renderArtGrid();load(first);requestAnimationFrame(loop);
   document.fonts.ready.then(()=>{textKey=""});
   try{downloads=await window.claude?.use?.("downloads")}catch(e){downloads=null}
   if(!downloads){$("savePng").title=$("saveVid").title="Saving isn't available in this view"}
