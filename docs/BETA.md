@@ -19,7 +19,7 @@ npm run preview:beta   # http://localhost:4175
 6. **How you fit:** the two-orb button top-right in every chat opens a sheet written for the relationship: Day to day, Feelings, First impressions and Feeling understood, each a plain sentence and one thing to try, then their card's Spark / Clash / Align, tonight's line and a button to play a talk card (`src/lib/compat.ts`, `src/components/chat/Compat.tsx`). The astrology behind each area sits under a "Why?" toggle. **There is no compatibility score, percentage or rating anywhere, on purpose (liability). Don't add one.**
 7. **Aura photo:** take or pick a photo. MediaPipe finds one face on the phone, cuts the person out and paints their aura in their element's colours, then sets it as the card photo (`src/lib/aura.ts`, `x/aura-photo`). Also runs in onboarding's photo step.
 8. **Profile** (`src/screens/BetaYou.tsx`): your card first (face down, aura photo behind; tap to flip), your big three, Edit card and Aura photo, your sign, your next sky events, then settings and the demo tools.
-9. **Learn your sign:** your chart, plus the whole glossary unlocked.
+9. **Learn your sign** (`src/screens/BetaChart.tsx`): a scrolling page built to be read. Three big tiles (Sun, Moon, Rising) with what each means, the reading for the one you pick as In love / For you / Try this, then the rest of the chart as plain questions that open in place, and quick facts. The whole glossary is unlocked.
 10. **Peeks:** hold a card to peek, 3 a night.
 
 Left out: Club, packs and binder, Align+, trading, energy, notifications and the Sky screen (links to them do nothing; "today's sky" opens the deck panel).

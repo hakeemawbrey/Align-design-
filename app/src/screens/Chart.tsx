@@ -16,7 +16,7 @@ import { BETA } from '../lib/beta'
 import { DEFAULT_BIRTH, sunDegree } from '../components/onboarding/zodiac'
 
 
-interface ChartTab {
+export interface ChartTab {
   id: 'sign' | 'moon' | 'rising' | 'traits' | 'element' | 'ruler' | 'house'
   label: string
   eyebrow: string
@@ -269,7 +269,7 @@ const SAMID_TABS: ChartTab[] = [
   },
 ]
 
-const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS, jeremy: JEREMY_TABS, samid: SAMID_TABS }[PERSONA.id]
+export const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS, jeremy: JEREMY_TABS, samid: SAMID_TABS }[PERSONA.id]
 
 /** G-23 Your chart — reached from the You tab's "Your sign" tile. */
 export default function Chart({ go }: ScreenProps) {
