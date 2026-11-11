@@ -66,7 +66,7 @@ def reels(limit):
             Image.open(m[:-5] + ".cover.jpg").resize((480, 480), Image.LANCZOS).save(poster, quality=80)
         cap = open(m[:-5] + ".txt").read().split("----- NOT FOR POSTING")[0].strip()
         s = scripts.build(j["id"]) if j["format"] != "custom" else None
-        out.append({"id": base, "title": j["title"], "sign": j["sign"], "format": j["format"], "sec": j["seconds"],
+        out.append({"id": base, "title": j["title"], "sign": j["sign"], "format": j["format"], "sec": j["seconds"], "music": j.get("music") or "",
                     "cards": [c["text"] for c in s["cards"]] if s else [], "caption": cap})
     out.sort(key=lambda r: (scripts.ORDER.index(r["sign"]), r["id"]))
     return out

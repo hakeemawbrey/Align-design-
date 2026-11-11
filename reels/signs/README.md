@@ -74,9 +74,23 @@ lines below "NOT FOR POSTING" list every image's source for your records.
 
 ## Music
 
-`music.py` is the Visions score engine with a `soft` mode (no kick or clap, a sparser
-arpeggio): a minor pad loop with a plucked arpeggio and sub bass, keyed per sign, faded
-in and out and mastered to −14 LUFS.
+`score.py` has eight styles, and a batch rotates through them so they're heard evenly:
+
+| Style | Sound | Tempo |
+| --- | --- | --- |
+| `piano` | felt piano, broken chords and a slow melody | 66–80 |
+| `lofi` | dusty Rhodes 7ths, swung hats, soft kick and snare, vinyl crackle | 70–86 |
+| `rnb` | slow Rhodes 9ths, deep sub bass, finger snaps on 2 and 4 | 62–72 |
+| `guitar` | nylon-string fingerpicking with a soft bass | 78–96 |
+| `musicbox` | music-box melody over a warm pad | 88–108 |
+| `ambient` | slow string swells and far-off bells, no beat | 56–66 |
+| `dream` | the Visions synth: pads and plucked arpeggio, no drums | 120 |
+| `pulse` | the Visions synth with kick, clap and hats | 120 |
+
+The seed picks the key, major or minor, chord loop, melody, tempo and tone, so no two reels
+sound alike. `--music piano` on `render.py` or `make.py` fixes the style;
+`python3 score.py --all` writes a 16-second demo of each to `out/music/`. Everything is
+synthesized, so there's nothing to license. Mastered to −14 LUFS.
 
 ## Fonts
 

@@ -116,6 +116,7 @@ const D = /*DATA*/null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const FMT = { dear: "Dear sign", loves: "How they love", wontsay: "Won't say", needs: "Dating them", relatable: "Relatable", advice: "Advice", reminder: "Reminder", align: "Alignment", invite: "Invite", pair: "Pair", custom: "Custom" };
+const MUS = { piano: "piano", lofi: "lo-fi", rnb: "r&b", guitar: "guitar", musicbox: "music box", ambient: "strings", dream: "dream synth", pulse: "pulse" };
 const total = D.catalog.reduce((n, p) => n + p.items.length, 0);
 
 // ---------- reels
@@ -131,7 +132,7 @@ function reelGrid() {
   $("#reel-grid").innerHTML = list.length ? list.map((r) => `
     <article class="reel">
       <video src="reels/${r.id}.mp4" poster="reels/${r.id}.jpg" controls playsinline preload="none"></video>
-      <div class="meta"><span>${D.signs[r.sign].glyph} ${esc(D.signs[r.sign].name)} · ${FMT[r.format] || r.format}</span><span>${Math.round(r.sec)}s</span></div>
+      <div class="meta"><span>${D.signs[r.sign].glyph} ${esc(D.signs[r.sign].name)} · ${FMT[r.format] || r.format}</span><span>${r.music ? esc(MUS[r.music] || r.music) + " · " : ""}${Math.round(r.sec)}s</span></div>
       <h3>${esc(r.title)}</h3>
       <details><summary>Cards and caption</summary>
         <ol>${r.cards.map((c) => `<li>${esc(c)}</li>`).join("")}</ol>

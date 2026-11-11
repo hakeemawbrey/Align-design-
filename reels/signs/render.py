@@ -23,6 +23,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 import catalog
 import music
+import score
 import scripts
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -199,7 +200,8 @@ def plan(script, seed):
     return cards, lens, items
 
 
-def render(script, seed=0, out=None, stills=False, silent=False):
+def render(script, seed=0, out=None, stills=False, silent=False, style=None):
+    style = style or script.get("music") or score.pick(seed, script["id"])
     cards, lens, items = plan(script, seed)
     out = out or os.path.join(HERE, "out", f"{script['id']}-s{seed}")
     os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -236,7 +238,7 @@ def render(script, seed=0, out=None, stills=False, silent=False):
     with tempfile.TemporaryDirectory() as td:
         wav = os.path.join(td, "m.wav")
         if not silent:
-            x = music.compose(total + 0.5, seed=seed, theme="sign", sign=script["sign"], salt=script["id"], soft=True)
+            x = score.compose(style, total + 0.5, seed=seed, salt=script["id"])
             n = int(total * music.SR)
             x = x[:, :n]
             fi, fo = int(0.6 * music.SR), int(1.4 * music.SR)
@@ -258,7 +260,7 @@ def render(script, seed=0, out=None, stills=False, silent=False):
         Image.fromarray(frames[0]).save(out + ".cover.jpg", quality=90)
     write_caption(out + ".txt", script, items)
     json.dump({"id": script["id"], "seed": seed, "title": script["title"], "sign": script["sign"],
-               "format": script["format"], "seconds": round(total, 1),
+               "format": script["format"], "seconds": round(total, 1), "music": None if silent else style,
                "images": [it["id"] for it in items]}, open(out + ".json", "w"), indent=1)
     return out + ".mp4"
 
@@ -280,6 +282,7 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--stills", action="store_true")
     ap.add_argument("--silent", action="store_true")
+    ap.add_argument("--music", choices=score.ORDER, help="music style (default: picked per reel and seed)")
     ap.add_argument("--sign")
     ap.add_argument("--text", nargs="+", help="custom cards: the first is the hook, the rest the body")
     a = ap.parse_args()
@@ -293,7 +296,7 @@ def main():
                       [{"text": f"send this to your {S}", "kind": "cta", "sub": "find who you align with · link in bio"}]}
     else:
         s = scripts.build(a.id)
-    print(render(s, a.seed, stills=a.stills, silent=a.silent))
+    print(render(s, a.seed, stills=a.stills, silent=a.silent, style=a.music))
 
 
 if __name__ == "__main__":
