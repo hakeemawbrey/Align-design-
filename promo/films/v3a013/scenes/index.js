@@ -61,8 +61,8 @@ function beamPans(x, cx, cy, k, ang) {
   if (k <= 0.01) return
   x.save(); x.translate(cx, cy); x.scale(k, k)
   x.save(); x.rotate(ang)
-  x.fillStyle = INK; x.fillRect(-184, -12, 368, 24); x.fillStyle = GOLD; x.fillRect(-178, -6, 356, 12)
-  const ends = [-170, 170].map(px => [px * Math.cos(ang), px * Math.sin(ang)])
+  x.fillStyle = INK; x.fillRect(-154, -12, 308, 24); x.fillStyle = GOLD; x.fillRect(-148, -6, 296, 12)
+  const ends = [-140, 140].map(px => [px * Math.cos(ang), px * Math.sin(ang)])
   x.restore()
   for (const [px, py] of ends) {
     x.strokeStyle = INK; x.lineWidth = 4; x.beginPath(); x.moveTo(px, py); x.lineTo(px - 56, py + 110); x.moveTo(px, py); x.lineTo(px + 56, py + 110); x.stroke()
@@ -143,9 +143,9 @@ const CAMEOS = [
     keyCue: t0 => ['pluck', t0 + 1.2, 1318.51, 0.02, 0.5, 0],
     front(x, t, lt, P) {
       const k = pop01(t, P.t0 + 0.2, 0.35, 2)
-      scale(x, t, 790, 830, k)
+      scale(x, t, 760, 830, k)
       const ang = 0.3 * Math.cos(lt * 5) * (1 - ease.outCubic(prog(lt, 0.3, 1.4)))
-      beamPans(x, 790, 700, k, ang)
+      beamPans(x, 760, 700, k, ang)
       label(x, 790, 1120, 'PERFECTLY EVEN', pop01(t, P.t0 + 1.5, 0.3, 2.4), { size: 34, bg: ROSE, rot: -0.04, font: MONO, weight: 700 })
     } },
   { sign: S, cap: 'You walk in. | The room gets *prettier.*', mood: lt => lt > 1.3 ? 'wink' : 'happy', look: [1, 0], star: { x: -200 }, hops: [0.4],
