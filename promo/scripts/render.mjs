@@ -8,6 +8,9 @@
 //   --film2 renders film 2 "Flip it" (promo/film2.html) → promo/out/film2/align-flip-it.mp4
 //   --teaser=<id> renders a vertical teaser (promo/teaser.html?t=<id>) → promo/out/teasers/<id>.mp4
 //   --vertical renders the 9:16 (1080×1920) cut
+//   --calm[=speed] the social cut: plays at `speed` (default 0.8), and (vertical) shrinks the picture into a padded,
+//     soft-edged box over a blurred, darkened copy of itself, clear of the app's top bar, side buttons and caption.
+//     Make the sound with teaser-sound.mjs --calm too.
 //   options: --fps=30 --from=0 --to=30 --workers=4 --out=path.mp4
 import { createRequire } from 'node:module'
 import { createServer } from 'node:http'
@@ -30,6 +33,7 @@ const FILM = arg('film')   // --film=<name> → promo/films/<name>
 const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), WORKERS = Number(arg('workers', 4))
 let TO = Number(arg('to', TEASER || FILM2 || FILM3 || FILM ? 0 : 31.5))
 const VERT = !!arg('vertical') || !!TEASER
+const CALM = arg('calm'), SPEED = CALM ? (CALM === true ? 0.8 : Number(CALM)) : 1
 const [VW, VH] = VERT ? [1080, 1920] : [1920, 1080]
 const OUT = path.resolve(arg('out', path.join(ROOT, FILM ? `promo/out/films/${FILM}/align-${FILM}.mp4` : FILM3 ? 'promo/out/film3/align-rigged.mp4' : FILM2 ? 'promo/out/film2/align-flip-it.mp4' : TEASER ? `promo/out/teasers/${TEASER}.mp4` : VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
 
@@ -42,11 +46,12 @@ const server = createServer(async (req, res) => {
 const port = server.address().port
 const URL_ = FILM ? `http://127.0.0.1:${port}/promo/film.html?render&f=${FILM}${VERT ? '&v' : ''}` : FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
+const URL2 = SPEED !== 1 ? `${URL_}&speed=${SPEED}` : URL_
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
   const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 })
   page.on('pageerror', e => console.error('PAGE ERROR', e.message))
-  await page.goto(URL_)
+  await page.goto(URL2)
   await page.waitForFunction(() => window.ready === true, null, { timeout: 60000 })
   return page
 }
@@ -104,7 +109,23 @@ if (stills || sheet) {
   await mkdir(path.dirname(OUT), { recursive: true })
   const audio = FILM ? path.join(ROOT, `promo/out/films/${FILM}/soundtrack.wav`) : FILM3 ? path.join(ROOT, 'promo/out/film3/soundtrack.wav') : FILM2 ? path.join(ROOT, 'promo/out/film2/soundtrack.wav') : TEASER ? path.join(ROOT, `promo/out/teasers/${TEASER}.wav`) : path.join(ROOT, 'promo/out/soundtrack.wav')
   const a = existsSync(audio) && !arg('mute') ? ['-i', audio] : []
-  const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(FPS), '-i', path.join(dir, 'f%05d.jpg'), ...a,
+  // the calm cut's safe area: picture at BOX scale, its top-left at (BX, BY); the rest of the frame is the same picture
+  // blurred and darkened, and the box's edge is feathered into it through a rounded-corner alpha mask
+  let vf = []
+  if (CALM && VERT) {
+    const BOX = 0.74, BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = 210, R = 44, F = 22
+    const mask = path.join(ROOT, `promo/out/calm-mask-${BW}x${BH}.png`)
+    if (!existsSync(mask)) {
+      await mkdir(path.dirname(mask), { recursive: true })
+      const dx = `max(max(${R}-X,X-(W-1-${R})),0)`, dy = `max(max(${R}-Y,Y-(H-1-${R})),0)`
+      spawnSync('ffmpeg', ['-v', 'error', '-y', '-f', 'lavfi', '-i', `color=black:s=${BW}x${BH}`, '-frames:v', '1', '-vf', `format=gray,geq=lum='255*clip((${R}-hypot(${dx},${dy}))/${F},0,1)'`, mask])
+    }
+    vf = ['-loop', '1', '-i', mask, '-filter_complex',
+      `[0:v]split[a][b];[a]scale=${Math.round(VW * 1.15)}:${Math.round(VH * 1.15)},crop=${VW}:${VH},boxblur=30:2,eq=brightness=-0.04:saturation=1.1[bg];` +
+      `[b]scale=${BW}:${BH}:flags=lanczos,format=rgba[fg0];[${a.length ? 2 : 1}:v]format=gray[m];[fg0][m]alphamerge[fg];` +
+      `[bg][fg]overlay=${BX}:${BY}:shortest=1,format=yuv420p[v]`, '-map', '[v]', ...(a.length ? ['-map', '1:a'] : [])]
+  }
+  const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(FPS), '-i', path.join(dir, 'f%05d.jpg'), ...a, ...vf,
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
     ...(a.length ? ['-c:a', 'aac', '-b:a', '192k', '-shortest'] : []), OUT])
   if (r.status) console.error(r.stderr.toString())

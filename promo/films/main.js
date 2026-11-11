@@ -8,13 +8,14 @@ const stage = document.getElementById('stage'), fx = document.getElementById('fx
 const params = new URLSearchParams(location.search)
 const { SCENES, DURATION } = await import(`./${params.get('f')}/scenes/index.js`)
 const RENDER = params.has('render')
+const SPEED = Number(params.get('speed') || 1)   // render.mjs --calm: the whole film plays slower (0.8 = 25% longer)
 if (RENDER) document.body.classList.add('render')
 stage.style.width = fx.style.width = W + 'px'; stage.style.height = fx.style.height = H + 'px'; fx.width = W; fx.height = H
 const fit = () => { const s = RENDER ? 1 : Math.min(innerWidth / W, innerHeight / H); window.__stageScale = s; stage.style.transform = `scale(${s})` }
 fit(); addEventListener('resize', fit)
 
 async function boot() {
-  window.DURATION = DURATION
+  window.DURATION = DURATION / SPEED
   await Promise.all(['800 100px Inter', '900 100px Inter', '700 100px Inter', 'italic 500 100px "EB Garamond"', 'italic 600 100px "EB Garamond"', 'bold 58px "EB Garamond"', '700 30px "Space Mono"'].map(f => document.fonts.load(f).catch(() => {})))
   const scenes = []
   for (const [i, build] of SCENES.entries()) { const s = await build(stage); s.root && (s.root.style.zIndex = String(10 + i)); scenes.push(s) }
@@ -22,6 +23,7 @@ async function boot() {
   await document.fonts.ready
   await Promise.all([...document.images].map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r })))
   window.seek = (t) => {
+    t *= SPEED
     for (const s of scenes) {
       const on = t >= s.start && t < s.end
       if (s.root) s.root.style.display = on ? 'block' : 'none'
