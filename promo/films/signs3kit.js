@@ -282,13 +282,28 @@ export function makeFilm(S) {
   const SOLO = S.solo || null, N = S.cameos.length          // solo: the whole film is one sign, N cards (6–10)
   const camEnd = HOOK + N * CARD                             // 49.2 for twelve
   const T = { title: 0.2, bug: 0.45, grid: 0.7, dive: [3.0, 3.6], group: r3(camEnd), lesson: r3(camEnd + 3.2) }
-  T.lessonOut = [r3(T.lesson + 5.6), r3(T.lesson + 5.9)]
-  T.last = T.lessonOut[1]
-  const STORY_END = r3(T.last + 4.4)
+  // endings vary film to film (S.ending): 'lesson' = lesson beat + last line · 'callback' = straight to a last line that
+  // calls back a card's joke (S.last.draw) · 'group' = the group beat is the ending (no lesson, no last line) ·
+  // 'card' = lesson + last line over the two-card match (use rarely; it's the most promotional)
+  const END = S.ending || (S.card ? 'card' : 'lesson'), HAS_LESSON = END === 'card' || END === 'lesson'
+  S.last = S.last || { text: '' }; S.lesson = S.lesson || { text: '', chip: '' }
+  let STORY_END
+  if (HAS_LESSON) {
+    T.lessonOut = [r3(T.lesson + 5.6), r3(T.lesson + 5.9)]
+    T.last = T.lessonOut[1]
+    STORY_END = r3(T.last + (END === 'card' ? 4.4 : 3.8))
+  } else if (END === 'callback') {
+    T.lesson = r3(T.group + 3.4); T.lessonOut = [T.lesson, T.lesson]; T.last = T.lesson
+    STORY_END = r3(T.last + 4.0)
+  } else {                                                     // 'group'
+    STORY_END = r3(T.group + 5.0); T.lesson = T.lessonOut = T.last = 1e6
+    T.lessonOut = [1e6, 1e6]
+  }
+  const FADE = END === 'card' || END === 'callback' ? [T.last, T.last + 0.45] : null   // the stars clear for the closing beat
   T.out = [r3(STORY_END - 0.5), r3(STORY_END - 0.05)]
   const DURATION = STORY_END                                 // no end card
   T.cams = CAM.map(c => c.t0)
-  const LESSON = { at: T.lesson, out: T.lessonOut, text: S.lesson.text, chip: S.lesson.chip, accentColor: S.accent || GOLD, dim: 0.7, top: 330, textTop: 520 }   // raised: clears the group photo's bunting
+  const LESSON = { at: HAS_LESSON ? T.lesson : 1e6, out: T.lessonOut, text: S.lesson.text, chip: S.lesson.chip, accentColor: S.accent || GOLD, dim: 0.7, top: 330, textTop: 520 }   // raised: clears the group photo's bunting
 
   const GRID = i => ({ x: 540 + ((i % 4) - 1.5) * 225, y: 690 + Math.floor(i / 4) * 235, s: 150 })
   const PIP = i => ({ x: 540 + (i - 5.5) * 80, y: 1660, s: 62 })
@@ -316,9 +331,9 @@ export function makeFilm(S) {
     // solo films: one big star instead of the twelve. It pops in for the hook, hides while the cards play (each card
     // has it), comes back for the group beat, and clears for the closing match card.
     function soloStar(t) {
-      const inHook = t < T.dive[1], inGroup = t >= T.group && t < T.last + 0.45
+      const inHook = t < T.dive[1], inGroup = t >= T.group && t < (FADE ? FADE[1] : STORY_END)
       if (!inHook && !inGroup) return
-      const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, [T.last, T.last + 0.45])
+      const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, FADE || T.out)
       const hops = inHook ? [T.grid + 0.6, T.grid + 1.6] : [T.group + 0.7, T.group + 1.9]
       signChar(x, t, SOLO, 540, 860, 360, { mood: inGroup ? (S.group.mood || 'sparkle') : 'happy', pop: k, hops, seed: 7, tears: SOLO === 'pisces' ? 2 : 0 })
     }
@@ -341,7 +356,7 @@ export function makeFilm(S) {
       }
       if (t < T.dive[0]) mood = i === 11 ? 'wide' : i % 3 === 1 ? 'wink' : 'happy'
       if (gp > 0) { mood = S.group.moods?.[i] || 'happy'; alpha = 1 }
-      const fin = popOut(t, S.card !== false ? [T.last, T.last + 0.45] : T.out)
+      const fin = popOut(t, FADE || T.out)
       const hops = isCur ? [cur.t0 + 0.1] : gp > 0 ? [T.group + 0.8 + i * 0.05, T.group + 2.0] : [T.grid + 0.8 + i * 0.12]
       const tears = i === 11 ? (gp > 0 ? 3 : 1) : 0
       return signChar(x, t, id, X, Y, s, { mood, look, alpha, pop: pin * fin, seed: 20 + i, hops, tears, glow: 0.9, glyph: s >= 120 })
@@ -382,7 +397,7 @@ export function makeFilm(S) {
         const dF = t - (T.group + 1.0)
         if (t < STORY_END) {
           for (const c of CAM) cameo(t, c)
-          const gk = pop01(t, T.group, 0.5, 1.6) * popOut(t, S.card !== false ? [T.last, T.last + 0.45] : T.out)
+          const gk = pop01(t, T.group, 0.5, 1.6) * popOut(t, FADE || T.out)
           if (!SOLO && gk > 0.01 && t >= T.group) {
             x.save(); x.globalAlpha = clamp(gk)
             for (let i = 0; i < 13; i++) { const fx = 80 + i * 76, fy = PHOTO_Y - 220 + 26 * Math.sin(Math.PI * i / 12); x.fillStyle = signStar(SIGN_IDS[i % 12]).color; x.beginPath(); x.moveTo(fx - 18, fy); x.lineTo(fx + 18, fy); x.lineTo(fx, fy + 34); x.fill() }
@@ -393,7 +408,7 @@ export function makeFilm(S) {
           if (SOLO) soloStar(t)
           else for (let i = 0; i < 12; i++) mini(t, i)
           if (S.last.draw && t >= T.last) { x.save(); S.last.draw(x, t, t - T.last); x.restore() }
-          if (S.card !== false && t >= T.last) matchCard(x, t, t - T.last, S.card || {})
+          if (END === 'card' && t >= T.last) matchCard(x, t, t - T.last, S.card || {})
 
         }
         title.update(t, outK(t, [T.lesson - 0.05, T.lesson + 0.25]))
@@ -417,8 +432,8 @@ export function makeFilm(S) {
     ['whoosh', T.dive[0], 0.5, 0.02],
     ...CAM.flatMap(c => [['pop', r3(c.t0 + 0.08), NOTE[c.i % 7], 0.018, 0], ...(c.keyCue ? [c.keyCue(c.t0)] : [])]),
     ['whoosh', T.group, 0.5, 0.02], ['glitter', r3(T.group + 1.0), r3(T.group + 1.4)],
-    ['glitter', r3(T.lesson + 0.1), r3(T.lesson + 0.8)], ['bell', r3(T.lesson + 0.4), 1760, 0.018, 1.6, 0],
-    ['pluck', r3(T.last + 0.5), 1174.66, 0.022, 0.8, 0],
+    ...(HAS_LESSON ? [['glitter', r3(T.lesson + 0.1), r3(T.lesson + 0.8)], ['bell', r3(T.lesson + 0.4), 1760, 0.018, 1.6, 0]] : []),
+    ...(END !== 'group' ? [['pluck', r3(T.last + 0.5), 1174.66, 0.022, 0.8, 0]] : []),
   ]
   return { DURATION, STORY_END, SCENES, CUES, T, CAM }
 }

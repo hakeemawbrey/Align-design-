@@ -7,7 +7,8 @@
   "music": {
    "key": "C",
    "seed": 6170
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_talk",
@@ -17,7 +18,8 @@
   "music": {
    "key": "D",
    "seed": 6183
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_talk",
@@ -27,7 +29,8 @@
   "music": {
    "key": "E",
    "seed": 6196
-  }
+  },
+  "ending": "callback"
  },
  {
   "account": "star_talk",
@@ -37,7 +40,8 @@
   "music": {
    "key": "F",
    "seed": 6209
-  }
+  },
+  "ending": "callback"
  },
  {
   "account": "star_talk",
@@ -48,7 +52,8 @@
   "music": {
    "key": "G",
    "seed": 6222
-  }
+  },
+  "ending": "callback"
  },
  {
   "account": "star_talk",
@@ -58,7 +63,8 @@
   "music": {
    "key": "C",
    "seed": 6235
-  }
+  },
+  "ending": "lesson"
  },
  {
   "account": "star_talk",
@@ -68,7 +74,8 @@
   "music": {
    "key": "D",
    "seed": 6248
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_talk",
@@ -79,7 +86,8 @@
   "music": {
    "key": "E",
    "seed": 6261
-  }
+  },
+  "ending": "lesson"
  },
  {
   "account": "star_talk",
@@ -89,7 +97,8 @@
   "music": {
    "key": "F",
    "seed": 6274
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_talk",
@@ -100,6 +109,7 @@
   "music": {
    "key": "G",
    "seed": 6287
-  }
+  },
+  "ending": "callback"
  }
 ]

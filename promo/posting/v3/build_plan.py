@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds promo/posting/v3/plan.csv for the posting app (npm run import -- plan.csv --commit) from done/*.json.
 Each film has a FIXED slot (its place in the order below), so re-running after more films finish only adds rows.
-star_talk: 10 a day, every 90 min from 8:00 AM; star_advice: 10 a day, every 90 min from 8:45 AM. Day 1 = Thu 12 Nov."""
+50 a day per account, every 20 min from 7:00 AM (star_talk) / 7:10 AM (star_advice). Day 1 = START (python3 build_plan.py 2026-11-14)."""
 import csv, glob, json, datetime, os
 here = os.path.dirname(os.path.abspath(__file__))
 done = {d['id']: d for d in (json.load(open(f)) for f in glob.glob(f'{here}/done/*.json'))}
@@ -11,15 +11,17 @@ orders = {
   'star_talk': FIRST + [x['id'] for x in batch if x['account'] == 'star_talk'],
   'star_advice': [x['id'] for x in batch if x['account'] == 'star_advice'],
 }
-start = {'star_talk': (8, 0), 'star_advice': (8, 45)}
-day1 = datetime.date(2026, 11, 12)
+import sys
+PER = 50
+start = {'star_talk': (7, 0), 'star_advice': (7, 10)}
+day1 = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date(2026, 11, 12)
 rows = []
 for acct, ids in orders.items():
     for n, fid in enumerate(ids):
         if fid not in done: continue
-        d = done[fid]; day = day1 + datetime.timedelta(days=n // 10)
-        h, m = start[acct]; t = datetime.datetime(2000, 1, 1, h, m) + datetime.timedelta(minutes=90 * (n % 10))
-        rows.append({'account': acct, 'day': n // 10 + 1, 'date': f"{day:%a} {day.day} {day:%b}", 'time': t.strftime('%I:%M %p').lstrip('0'),
+        d = done[fid]; day = day1 + datetime.timedelta(days=n // PER)
+        h, m = start[acct]; t = datetime.datetime(2000, 1, 1, h, m) + datetime.timedelta(minutes=20 * (n % PER))
+        rows.append({'account': acct, 'day': n // PER + 1, 'date': f"{day:%a} {day.day} {day:%b}", 'time': t.strftime('%I:%M %p').lstrip('0'),
                      'type': 'post', 'title': d['title'], 'film_id': fid, 'drive_file': d['drive_file'], 'drive_link': d['drive_link'], 'caption': d['caption'], '_k': (day, t)})
 rows.sort(key=lambda r: r.pop('_k'))
 with open(f'{here}/plan.csv', 'w', newline='') as f:

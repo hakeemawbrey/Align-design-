@@ -6,7 +6,7 @@ Instagram feedback on v2: good, but not hitting hard enough. v3 keeps the calm, 
 Kit: `promo/films/signs3kit.js` (same `makeFilm` spec as v2). It already does: a centred 0.70× safe box (lots of padding
 for the Instagram UI), no card transitions (one panel, the sign inside swaps), no episode numbers, no end card / CTA /
 logo, a faint "come align · join the beta" watermark, and a closing **match card** (two sign cards + an ALIGNED chip)
-under the last line. Reference film: `promo/films/trs2crush/scenes/index.js` (v2; same spec, just import from
+under the last line (the match card is now optional and rare: see Endings). Reference film: `promo/films/trs2crush/scenes/index.js` (v2; same spec, just import from
 `'../../signs3kit.js'`).
 
 ## Files for a film `<id>`
@@ -64,3 +64,15 @@ the hook and the group beat (no line-up of twelve, no group photo), and times ev
 - **group.cap:** a punchy summary ("Main character. | *Every day.*"); **lesson:** warm, about loving that sign;
   **card:** `{ a: '<sign>', b: <a sign that pays off a joke> }`.
 - Pisces cries whenever it appears (its own film: in every card). Other house rules unchanged.
+
+## Endings (vary them: never the same every film, never salesy)
+`makeFilm({ ending, ... })`. No ad lines, no "download", no app pitch in any ending: the only Align mark is the faint
+watermark. Pick the ending your batch item names:
+- **'callback'**: right after the group beat, a last line that pays off one card's joke, with `last.draw(x, t, lt)`
+  bringing that card's prop back (e.g. Taurus finally shares one fry; Aries' forty texts land as one reply). No lesson.
+  Funniest option; use it most.
+- **'lesson'**: the LESSON beat (`lesson: { text, chip }`, warm and true) then `last.text`. No match card.
+- **'group'**: the group beat IS the ending: a strong `group.cap` (the punchline of the whole film) and optionally
+  `group.draw` for one last visual gag. No lesson, no last line.
+- **'card'**: lesson + last line over the two-card match (`card: { a, b, chip }`). Only when the film is about
+  matching/dating, and only if your batch item says 'card'.

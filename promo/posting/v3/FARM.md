@@ -35,7 +35,7 @@ Formats:
   sign with a light visual gag.
 
 Everything in SIGNS3-BUILD.md applies (house rules, Pisces cries whenever it appears, light Align nods, closing match
-card pair that pays off a joke). Captions: ≤ 9 words, two lines, one *accent*. Never repeat a gag from the approved
+card pair that pays off a joke) EXCEPT the ending: every batch item has an `ending` (callback, lesson, group or card); use exactly that one, as SIGNS3-BUILD.md "Endings" describes. Endings must never feel salesy. Captions: ≤ 9 words, two lines, one *accent*. Never repeat a gag from the approved
 films or from another film in your batch. Check the stills as the guide says (pick times inside every card and the
 ending) and fix anything clipped, overlapping, tiny or unreadable before rendering.
 

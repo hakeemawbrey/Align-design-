@@ -8,7 +8,8 @@
   "music": {
    "key": "C",
    "seed": 7990
-  }
+  },
+  "ending": "lesson"
  },
  {
   "account": "star_advice",
@@ -19,7 +20,8 @@
   "music": {
    "key": "D",
    "seed": 8003
-  }
+  },
+  "ending": "card"
  },
  {
   "account": "star_advice",
@@ -30,7 +32,8 @@
   "music": {
    "key": "E",
    "seed": 8016
-  }
+  },
+  "ending": "callback"
  },
  {
   "account": "star_advice",
@@ -41,7 +44,8 @@
   "music": {
    "key": "F",
    "seed": 8029
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_advice",
@@ -52,7 +56,8 @@
   "music": {
    "key": "G",
    "seed": 8042
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_advice",
@@ -63,7 +68,8 @@
   "music": {
    "key": "C",
    "seed": 8055
-  }
+  },
+  "ending": "lesson"
  },
  {
   "account": "star_advice",
@@ -74,7 +80,8 @@
   "music": {
    "key": "D",
    "seed": 8068
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_advice",
@@ -85,7 +92,8 @@
   "music": {
    "key": "E",
    "seed": 8081
-  }
+  },
+  "ending": "lesson"
  },
  {
   "account": "star_advice",
@@ -96,7 +104,8 @@
   "music": {
    "key": "F",
    "seed": 8094
-  }
+  },
+  "ending": "group"
  },
  {
   "account": "star_advice",
@@ -107,6 +116,7 @@
   "music": {
    "key": "G",
    "seed": 8107
-  }
+  },
+  "ending": "callback"
  }
 ]
