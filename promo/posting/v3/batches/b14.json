@@ -1,0 +1,108 @@
+[
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a long drive | *be like.*",
+  "id": "v3t131",
+  "music": {
+   "key": "C",
+   "seed": 6690
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, read this | *before your next date.*",
+  "id": "v3a001",
+  "music": {
+   "key": "D",
+   "seed": 6703
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *boundary to set.*",
+  "id": "v3a002",
+  "music": {
+   "key": "E",
+   "seed": 6716
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Dear Capricorn: | *it's okay.*",
+  "id": "v3a003",
+  "music": {
+   "key": "F",
+   "seed": 6729
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to rest.*",
+  "id": "v3a004",
+  "music": {
+   "key": "G",
+   "seed": 6742
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs in a partner.*",
+  "id": "v3a005",
+  "music": {
+   "key": "C",
+   "seed": 6755
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, read this | *before your next date.*",
+  "id": "v3a006",
+  "music": {
+   "key": "D",
+   "seed": 6768
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign is | *secretly great at.*",
+  "id": "v3a007",
+  "music": {
+   "key": "E",
+   "seed": 6781
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, stop doing | *this in love.*",
+  "id": "v3a008",
+  "music": {
+   "key": "F",
+   "seed": 6794
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to rest.*",
+  "id": "v3a009",
+  "music": {
+   "key": "G",
+   "seed": 6807
+  }
+ }
+]

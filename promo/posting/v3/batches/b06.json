@@ -1,0 +1,104 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Things only | *Libras* get.",
+  "id": "v3t051",
+  "music": {
+   "key": "C",
+   "seed": 5650
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a theme park",
+  "id": "v3t052",
+  "music": {
+   "key": "D",
+   "seed": 5663
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs doing laundry",
+  "id": "v3t053",
+  "music": {
+   "key": "E",
+   "seed": 5676
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at trivia night",
+  "id": "v3t054",
+  "music": {
+   "key": "F",
+   "seed": 5689
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as roommates",
+  "id": "v3t055",
+  "music": {
+   "key": "G",
+   "seed": 5702
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs when their friend gets a partner",
+  "id": "v3t056",
+  "music": {
+   "key": "C",
+   "seed": 5715
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Dating a Cancer | *be like.*",
+  "id": "v3t057",
+  "music": {
+   "key": "D",
+   "seed": 5728
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they lose their phone | *be like.*",
+  "id": "v3t058",
+  "music": {
+   "key": "E",
+   "seed": 5741
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their crush posts a story | *be like.*",
+  "id": "v3t059",
+  "music": {
+   "key": "F",
+   "seed": 5754
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a holiday dinner",
+  "id": "v3t060",
+  "music": {
+   "key": "G",
+   "seed": 5767
+  }
+ }
+]

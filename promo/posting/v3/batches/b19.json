@@ -1,0 +1,110 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, your gift | *is this.*",
+  "id": "v3a050",
+  "music": {
+   "key": "C",
+   "seed": 7340
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Signs you're | *a healed Aquarius.*",
+  "id": "v3a051",
+  "music": {
+   "key": "D",
+   "seed": 7353
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Signs you're | *a healed Virgo.*",
+  "id": "v3a052",
+  "music": {
+   "key": "E",
+   "seed": 7366
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *self-care.*",
+  "id": "v3a053",
+  "music": {
+   "key": "F",
+   "seed": 7379
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to rest.*",
+  "id": "v3a054",
+  "music": {
+   "key": "G",
+   "seed": 7392
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to love | *a Scorpio.*",
+  "id": "v3a055",
+  "music": {
+   "key": "C",
+   "seed": 7405
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, stop doing | *this in love.*",
+  "id": "v3a056",
+  "music": {
+   "key": "D",
+   "seed": 7418
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to rest.*",
+  "id": "v3a057",
+  "music": {
+   "key": "E",
+   "seed": 7431
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *recharges.*",
+  "id": "v3a058",
+  "music": {
+   "key": "F",
+   "seed": 7444
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Dear Gemini: | *it's okay.*",
+  "id": "v3a059",
+  "music": {
+   "key": "G",
+   "seed": 7457
+  }
+ }
+]

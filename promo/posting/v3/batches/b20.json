@@ -1,0 +1,106 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is learning.*",
+  "id": "v3a060",
+  "music": {
+   "key": "C",
+   "seed": 7470
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *green flag.*",
+  "id": "v3a061",
+  "music": {
+   "key": "D",
+   "seed": 7483
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *can't fake.*",
+  "id": "v3a062",
+  "music": {
+   "key": "E",
+   "seed": 7496
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *love language.*",
+  "id": "v3a063",
+  "music": {
+   "key": "F",
+   "seed": 7509
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs to forgive.*",
+  "id": "v3a064",
+  "music": {
+   "key": "G",
+   "seed": 7522
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *after healing.*",
+  "id": "v3a065",
+  "music": {
+   "key": "C",
+   "seed": 7535
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, read this | *before your next date.*",
+  "id": "v3a066",
+  "music": {
+   "key": "D",
+   "seed": 7548
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, read this | *before your next date.*",
+  "id": "v3a067",
+  "music": {
+   "key": "E",
+   "seed": 7561
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Dear Aquarius: | *it's okay.*",
+  "id": "v3a068",
+  "music": {
+   "key": "F",
+   "seed": 7574
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What Aries need | *in love.*",
+  "id": "v3a069",
+  "music": {
+   "key": "G",
+   "seed": 7587
+  }
+ }
+]

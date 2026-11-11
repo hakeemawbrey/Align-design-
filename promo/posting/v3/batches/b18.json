@@ -1,0 +1,107 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *glow-up.*",
+  "id": "v3a040",
+  "music": {
+   "key": "C",
+   "seed": 7210
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows up for friends.*",
+  "id": "v3a041",
+  "music": {
+   "key": "D",
+   "seed": 7223
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *reminder for today.*",
+  "id": "v3a042",
+  "music": {
+   "key": "E",
+   "seed": 7236
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes friends.*",
+  "id": "v3a043",
+  "music": {
+   "key": "F",
+   "seed": 7249
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, stop doing | *this in love.*",
+  "id": "v3a044",
+  "music": {
+   "key": "G",
+   "seed": 7262
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, your gift | *is this.*",
+  "id": "v3a045",
+  "music": {
+   "key": "C",
+   "seed": 7275
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What Capricorns need | *in love.*",
+  "id": "v3a046",
+  "music": {
+   "key": "D",
+   "seed": 7288
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Signs you're | *a healed Taurus.*",
+  "id": "v3a047",
+  "music": {
+   "key": "E",
+   "seed": 7301
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *comfort food.*",
+  "id": "v3a048",
+  "music": {
+   "key": "F",
+   "seed": 7314
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, read this | *before your next date.*",
+  "id": "v3a049",
+  "music": {
+   "key": "G",
+   "seed": 7327
+  }
+ }
+]

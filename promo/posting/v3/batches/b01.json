@@ -1,0 +1,105 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Things only | *Tauruses* get.",
+  "id": "v3t001",
+  "music": {
+   "key": "C",
+   "seed": 5000
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Dating a Virgo | *be like.*",
+  "id": "v3t002",
+  "music": {
+   "key": "D",
+   "seed": 5013
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a camping trip",
+  "id": "v3t003",
+  "music": {
+   "key": "E",
+   "seed": 5026
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to eat healthy | *be like.*",
+  "id": "v3t004",
+  "music": {
+   "key": "F",
+   "seed": 5039
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs checking compatibility | *be like.*",
+  "id": "v3t005",
+  "music": {
+   "key": "G",
+   "seed": 5052
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in love | *be like.*",
+  "id": "v3t006",
+  "music": {
+   "key": "C",
+   "seed": 5065
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a group project",
+  "id": "v3t007",
+  "music": {
+   "key": "D",
+   "seed": 5078
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in the rain | *be like.*",
+  "id": "v3t008",
+  "music": {
+   "key": "E",
+   "seed": 5091
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a double date",
+  "id": "v3t009",
+  "music": {
+   "key": "F",
+   "seed": 5104
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Your Libra friend | *be like.*",
+  "id": "v3t010",
+  "music": {
+   "key": "G",
+   "seed": 5117
+  }
+ }
+]

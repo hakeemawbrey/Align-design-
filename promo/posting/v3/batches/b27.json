@@ -1,0 +1,106 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *misses most.*",
+  "id": "v3a130",
+  "music": {
+   "key": "C",
+   "seed": 8380
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows they care.*",
+  "id": "v3a131",
+  "music": {
+   "key": "D",
+   "seed": 8393
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to rest.*",
+  "id": "v3a132",
+  "music": {
+   "key": "E",
+   "seed": 8406
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, your gift | *is this.*",
+  "id": "v3a133",
+  "music": {
+   "key": "F",
+   "seed": 8419
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *in a healthy relationship.*",
+  "id": "v3a134",
+  "music": {
+   "key": "G",
+   "seed": 8432
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *best first message.*",
+  "id": "v3a135",
+  "music": {
+   "key": "C",
+   "seed": 8445
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Dear Libra: | *it's okay.*",
+  "id": "v3a136",
+  "music": {
+   "key": "D",
+   "seed": 8458
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What Sagittarians need | *in love.*",
+  "id": "v3a137",
+  "music": {
+   "key": "E",
+   "seed": 8471
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is too hard on.*",
+  "id": "v3a138",
+  "music": {
+   "key": "F",
+   "seed": 8484
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *says I love you.*",
+  "id": "v3a139",
+  "music": {
+   "key": "G",
+   "seed": 8497
+  }
+ }
+]

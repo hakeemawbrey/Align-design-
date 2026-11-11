@@ -1,0 +1,112 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What Leos need | *in love.*",
+  "id": "v3a100",
+  "music": {
+   "key": "C",
+   "seed": 7990
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Dear Leo: | *it's okay.*",
+  "id": "v3a101",
+  "music": {
+   "key": "D",
+   "seed": 8003
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Signs you're | *a healed Aries.*",
+  "id": "v3a102",
+  "music": {
+   "key": "E",
+   "seed": 8016
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Signs you're | *a healed Libra.*",
+  "id": "v3a103",
+  "music": {
+   "key": "F",
+   "seed": 8029
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Dear Pisces: | *it's okay.*",
+  "id": "v3a104",
+  "music": {
+   "key": "G",
+   "seed": 8042
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, your gift | *is this.*",
+  "id": "v3a105",
+  "music": {
+   "key": "C",
+   "seed": 8055
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to love | *a Virgo.*",
+  "id": "v3a106",
+  "music": {
+   "key": "D",
+   "seed": 8068
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What Libras need | *in love.*",
+  "id": "v3a107",
+  "music": {
+   "key": "E",
+   "seed": 8081
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, read this | *before your next date.*",
+  "id": "v3a108",
+  "music": {
+   "key": "F",
+   "seed": 8094
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Dear Aries: | *it's okay.*",
+  "id": "v3a109",
+  "music": {
+   "key": "G",
+   "seed": 8107
+  }
+ }
+]

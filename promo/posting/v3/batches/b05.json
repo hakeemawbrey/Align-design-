@@ -1,0 +1,105 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Your Gemini friend | *be like.*",
+  "id": "v3t041",
+  "music": {
+   "key": "C",
+   "seed": 5520
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're bored | *be like.*",
+  "id": "v3t042",
+  "music": {
+   "key": "D",
+   "seed": 5533
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a job interview",
+  "id": "v3t043",
+  "music": {
+   "key": "E",
+   "seed": 5546
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone takes their seat | *be like.*",
+  "id": "v3t044",
+  "music": {
+   "key": "F",
+   "seed": 5559
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs when it snows",
+  "id": "v3t045",
+  "music": {
+   "key": "G",
+   "seed": 5572
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to flirt | *be like.*",
+  "id": "v3t046",
+  "music": {
+   "key": "C",
+   "seed": 5585
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Things only | *Scorpios* get.",
+  "id": "v3t047",
+  "music": {
+   "key": "D",
+   "seed": 5598
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs giving advice | *be like.*",
+  "id": "v3t048",
+  "music": {
+   "key": "E",
+   "seed": 5611
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs making a new friend | *be like.*",
+  "id": "v3t049",
+  "music": {
+   "key": "F",
+   "seed": 5624
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Dating a Leo | *be like.*",
+  "id": "v3t050",
+  "music": {
+   "key": "G",
+   "seed": 5637
+  }
+ }
+]

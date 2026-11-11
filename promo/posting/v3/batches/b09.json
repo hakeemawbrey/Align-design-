@@ -1,0 +1,107 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Dating a Sagittarius | *be like.*",
+  "id": "v3t081",
+  "music": {
+   "key": "C",
+   "seed": 6040
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs cooking dinner for a date",
+  "id": "v3t082",
+  "music": {
+   "key": "D",
+   "seed": 6053
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on vacation",
+  "id": "v3t083",
+  "music": {
+   "key": "E",
+   "seed": 6066
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Dating a Gemini | *be like.*",
+  "id": "v3t084",
+  "music": {
+   "key": "F",
+   "seed": 6079
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the dentist",
+  "id": "v3t085",
+  "music": {
+   "key": "G",
+   "seed": 6092
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Dating a Capricorn | *be like.*",
+  "id": "v3t086",
+  "music": {
+   "key": "C",
+   "seed": 6105
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers in love | *be like.*",
+  "id": "v3t087",
+  "music": {
+   "key": "D",
+   "seed": 6118
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a budget | *be like.*",
+  "id": "v3t088",
+  "music": {
+   "key": "E",
+   "seed": 6131
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the first day of school",
+  "id": "v3t089",
+  "music": {
+   "key": "F",
+   "seed": 6144
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Things only | *Aries* get.",
+  "id": "v3t090",
+  "music": {
+   "key": "G",
+   "seed": 6157
+  }
+ }
+]

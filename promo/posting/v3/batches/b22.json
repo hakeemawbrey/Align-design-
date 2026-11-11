@@ -1,0 +1,110 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, read this | *before your next date.*",
+  "id": "v3a080",
+  "music": {
+   "key": "C",
+   "seed": 7730
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to rest.*",
+  "id": "v3a081",
+  "music": {
+   "key": "D",
+   "seed": 7743
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, read this | *before your next date.*",
+  "id": "v3a082",
+  "music": {
+   "key": "E",
+   "seed": 7756
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a crush.*",
+  "id": "v3a083",
+  "music": {
+   "key": "F",
+   "seed": 7769
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Signs you're | *a healed Capricorn.*",
+  "id": "v3a084",
+  "music": {
+   "key": "G",
+   "seed": 7782
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, your gift | *is this.*",
+  "id": "v3a085",
+  "music": {
+   "key": "C",
+   "seed": 7795
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What Tauruses need | *in love.*",
+  "id": "v3a086",
+  "music": {
+   "key": "D",
+   "seed": 7808
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign needs | *after a long day.*",
+  "id": "v3a087",
+  "music": {
+   "key": "E",
+   "seed": 7821
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to love | *a Cancer.*",
+  "id": "v3a088",
+  "music": {
+   "key": "F",
+   "seed": 7834
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, stop doing | *this in love.*",
+  "id": "v3a089",
+  "music": {
+   "key": "G",
+   "seed": 7847
+  }
+ }
+]

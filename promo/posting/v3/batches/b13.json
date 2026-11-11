@@ -1,0 +1,105 @@
+[
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the gym",
+  "id": "v3t121",
+  "music": {
+   "key": "C",
+   "seed": 6560
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs at the end of a long week | *be like.*",
+  "id": "v3t122",
+  "music": {
+   "key": "D",
+   "seed": 6573
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"we need to talk\" | *be like.*",
+  "id": "v3t123",
+  "music": {
+   "key": "E",
+   "seed": 6586
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Your Cancer friend | *be like.*",
+  "id": "v3t124",
+  "music": {
+   "key": "F",
+   "seed": 6599
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're happy | *be like.*",
+  "id": "v3t125",
+  "music": {
+   "key": "G",
+   "seed": 6612
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos in love | *be like.*",
+  "id": "v3t126",
+  "music": {
+   "key": "C",
+   "seed": 6625
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on their birthday",
+  "id": "v3t127",
+  "music": {
+   "key": "D",
+   "seed": 6638
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a picnic",
+  "id": "v3t128",
+  "music": {
+   "key": "E",
+   "seed": 6651
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries in love | *be like.*",
+  "id": "v3t129",
+  "music": {
+   "key": "F",
+   "seed": 6664
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs cleaning their room",
+  "id": "v3t130",
+  "music": {
+   "key": "G",
+   "seed": 6677
+  }
+ }
+]

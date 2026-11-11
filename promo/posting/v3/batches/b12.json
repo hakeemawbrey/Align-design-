@@ -1,0 +1,104 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Things only | *Geminis* get.",
+  "id": "v3t111",
+  "music": {
+   "key": "C",
+   "seed": 6430
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a baby shower",
+  "id": "v3t112",
+  "music": {
+   "key": "D",
+   "seed": 6443
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in a heatwave",
+  "id": "v3t113",
+  "music": {
+   "key": "E",
+   "seed": 6456
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting a compliment | *be like.*",
+  "id": "v3t114",
+  "music": {
+   "key": "F",
+   "seed": 6469
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on payday | *be like.*",
+  "id": "v3t115",
+  "music": {
+   "key": "G",
+   "seed": 6482
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs assembling furniture",
+  "id": "v3t116",
+  "music": {
+   "key": "C",
+   "seed": 6495
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the airport",
+  "id": "v3t117",
+  "music": {
+   "key": "D",
+   "seed": 6508
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs trying a new hobby",
+  "id": "v3t118",
+  "music": {
+   "key": "E",
+   "seed": 6521
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on their friend's birthday | *be like.*",
+  "id": "v3t119",
+  "music": {
+   "key": "F",
+   "seed": 6534
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Things only | *Cancers* get.",
+  "id": "v3t120",
+  "music": {
+   "key": "G",
+   "seed": 6547
+  }
+ }
+]

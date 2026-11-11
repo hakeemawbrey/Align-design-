@@ -1,0 +1,107 @@
+[
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone spoils a show | *be like.*",
+  "id": "v3t071",
+  "music": {
+   "key": "C",
+   "seed": 5910
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a concert",
+  "id": "v3t072",
+  "music": {
+   "key": "D",
+   "seed": 5923
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Dating a Aquarius | *be like.*",
+  "id": "v3t073",
+  "music": {
+   "key": "E",
+   "seed": 5936
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos in love | *be like.*",
+  "id": "v3t074",
+  "music": {
+   "key": "F",
+   "seed": 5949
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces in love | *be like.*",
+  "id": "v3t075",
+  "music": {
+   "key": "G",
+   "seed": 5962
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians in love | *be like.*",
+  "id": "v3t076",
+  "music": {
+   "key": "C",
+   "seed": 5975
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Things only | *Pisces* get.",
+  "id": "v3t077",
+  "music": {
+   "key": "D",
+   "seed": 5988
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a Monday morning | *be like.*",
+  "id": "v3t078",
+  "music": {
+   "key": "E",
+   "seed": 6001
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a farmers market",
+  "id": "v3t079",
+  "music": {
+   "key": "F",
+   "seed": 6014
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs after winning an argument | *be like.*",
+  "id": "v3t080",
+  "music": {
+   "key": "G",
+   "seed": 6027
+  }
+ }
+]

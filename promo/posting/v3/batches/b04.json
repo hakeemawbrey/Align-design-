@@ -1,0 +1,102 @@
+[
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're sick | *be like.*",
+  "id": "v3t031",
+  "music": {
+   "key": "C",
+   "seed": 5390
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting ready for a date | *be like.*",
+  "id": "v3t032",
+  "music": {
+   "key": "D",
+   "seed": 5403
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs giving gifts",
+  "id": "v3t033",
+  "music": {
+   "key": "E",
+   "seed": 5416
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making a playlist",
+  "id": "v3t034",
+  "music": {
+   "key": "F",
+   "seed": 5429
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs when the wifi goes out",
+  "id": "v3t035",
+  "music": {
+   "key": "G",
+   "seed": 5442
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a bakery",
+  "id": "v3t036",
+  "music": {
+   "key": "C",
+   "seed": 5455
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the alarm goes off | *be like.*",
+  "id": "v3t037",
+  "music": {
+   "key": "D",
+   "seed": 5468
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs meeting the parents",
+  "id": "v3t038",
+  "music": {
+   "key": "E",
+   "seed": 5481
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs picking a movie",
+  "id": "v3t039",
+  "music": {
+   "key": "F",
+   "seed": 5494
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone's late | *be like.*",
+  "id": "v3t040",
+  "music": {
+   "key": "G",
+   "seed": 5507
+  }
+ }
+]

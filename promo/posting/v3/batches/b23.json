@@ -1,0 +1,110 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to love | *a Gemini.*",
+  "id": "v3a090",
+  "music": {
+   "key": "C",
+   "seed": 7860
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *wants on a date.*",
+  "id": "v3a091",
+  "music": {
+   "key": "D",
+   "seed": 7873
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can rest.*",
+  "id": "v3a092",
+  "music": {
+   "key": "E",
+   "seed": 7886
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to love | *a Aquarius.*",
+  "id": "v3a093",
+  "music": {
+   "key": "F",
+   "seed": 7899
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, read this | *before your next date.*",
+  "id": "v3a094",
+  "music": {
+   "key": "G",
+   "seed": 7912
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, stop doing | *this in love.*",
+  "id": "v3a095",
+  "music": {
+   "key": "C",
+   "seed": 7925
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Signs you're | *a healed Pisces.*",
+  "id": "v3a096",
+  "music": {
+   "key": "D",
+   "seed": 7938
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Signs you're | *a healed Scorpio.*",
+  "id": "v3a097",
+  "music": {
+   "key": "E",
+   "seed": 7951
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, your gift | *is this.*",
+  "id": "v3a098",
+  "music": {
+   "key": "F",
+   "seed": 7964
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, stop doing | *this in love.*",
+  "id": "v3a099",
+  "music": {
+   "key": "G",
+   "seed": 7977
+  }
+ }
+]

@@ -1,0 +1,105 @@
+[
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as pet owners",
+  "id": "v3t021",
+  "music": {
+   "key": "C",
+   "seed": 5260
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the plan changes | *be like.*",
+  "id": "v3t022",
+  "music": {
+   "key": "D",
+   "seed": 5273
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in an argument | *be like.*",
+  "id": "v3t023",
+  "music": {
+   "key": "E",
+   "seed": 5286
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the waiter says \"enjoy\" | *be like.*",
+  "id": "v3t024",
+  "music": {
+   "key": "F",
+   "seed": 5299
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Your Leo friend | *be like.*",
+  "id": "v3t025",
+  "music": {
+   "key": "G",
+   "seed": 5312
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Things only | *Virgos* get.",
+  "id": "v3t026",
+  "music": {
+   "key": "C",
+   "seed": 5325
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their friend has drama | *be like.*",
+  "id": "v3t027",
+  "music": {
+   "key": "D",
+   "seed": 5338
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Dating a Aries | *be like.*",
+  "id": "v3t028",
+  "music": {
+   "key": "E",
+   "seed": 5351
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a rainy Sunday",
+  "id": "v3t029",
+  "music": {
+   "key": "F",
+   "seed": 5364
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs taking a power nap",
+  "id": "v3t030",
+  "music": {
+   "key": "G",
+   "seed": 5377
+  }
+ }
+]

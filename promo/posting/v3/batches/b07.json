@@ -1,0 +1,108 @@
+[
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns in love | *be like.*",
+  "id": "v3t061",
+  "music": {
+   "key": "C",
+   "seed": 5780
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Dating a Libra | *be like.*",
+  "id": "v3t062",
+  "music": {
+   "key": "D",
+   "seed": 5793
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a work call | *be like.*",
+  "id": "v3t063",
+  "music": {
+   "key": "E",
+   "seed": 5806
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Your Virgo friend | *be like.*",
+  "id": "v3t064",
+  "music": {
+   "key": "F",
+   "seed": 5819
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Things only | *Aquarians* get.",
+  "id": "v3t065",
+  "music": {
+   "key": "G",
+   "seed": 5832
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs at a party where they know no one | *be like.*",
+  "id": "v3t066",
+  "music": {
+   "key": "C",
+   "seed": 5845
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when plans get cancelled | *be like.*",
+  "id": "v3t067",
+  "music": {
+   "key": "D",
+   "seed": 5858
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a hike",
+  "id": "v3t068",
+  "music": {
+   "key": "E",
+   "seed": 5871
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios in love | *be like.*",
+  "id": "v3t069",
+  "music": {
+   "key": "F",
+   "seed": 5884
+  }
+ },
+ {
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Your Aries friend | *be like.*",
+  "id": "v3t070",
+  "music": {
+   "key": "G",
+   "seed": 5897
+  }
+ }
+]

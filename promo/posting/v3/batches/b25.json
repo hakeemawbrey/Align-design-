@@ -1,0 +1,108 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to rest.*",
+  "id": "v3a110",
+  "music": {
+   "key": "C",
+   "seed": 8120
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What Pisces need | *in love.*",
+  "id": "v3a111",
+  "music": {
+   "key": "D",
+   "seed": 8133
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Signs you're | *a healed Cancer.*",
+  "id": "v3a112",
+  "music": {
+   "key": "E",
+   "seed": 8146
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *love era.*",
+  "id": "v3a113",
+  "music": {
+   "key": "F",
+   "seed": 8159
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, your gift | *is this.*",
+  "id": "v3a114",
+  "music": {
+   "key": "G",
+   "seed": 8172
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, read this | *before your next date.*",
+  "id": "v3a115",
+  "music": {
+   "key": "C",
+   "seed": 8185
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *deserves.*",
+  "id": "v3a116",
+  "music": {
+   "key": "D",
+   "seed": 8198
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, stop doing | *this in love.*",
+  "id": "v3a117",
+  "music": {
+   "key": "E",
+   "seed": 8211
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *falls in love.*",
+  "id": "v3a118",
+  "music": {
+   "key": "F",
+   "seed": 8224
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *biggest strength.*",
+  "id": "v3a119",
+  "music": {
+   "key": "G",
+   "seed": 8237
+  }
+ }
+]

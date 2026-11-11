@@ -1,0 +1,109 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign's | *heart needs.*",
+  "id": "v3a020",
+  "music": {
+   "key": "C",
+   "seed": 6950
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to love | *a Leo.*",
+  "id": "v3a021",
+  "music": {
+   "key": "D",
+   "seed": 6963
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Signs you're | *a healed Gemini.*",
+  "id": "v3a022",
+  "music": {
+   "key": "E",
+   "seed": 6976
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What Virgos need | *in love.*",
+  "id": "v3a023",
+  "music": {
+   "key": "F",
+   "seed": 6989
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to love | *a Libra.*",
+  "id": "v3a024",
+  "music": {
+   "key": "G",
+   "seed": 7002
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, your gift | *is this.*",
+  "id": "v3a025",
+  "music": {
+   "key": "C",
+   "seed": 7015
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *brings to love.*",
+  "id": "v3a026",
+  "music": {
+   "key": "D",
+   "seed": 7028
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, read this | *before your next date.*",
+  "id": "v3a027",
+  "music": {
+   "key": "E",
+   "seed": 7041
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Dear Sagittarius: | *it's okay.*",
+  "id": "v3a028",
+  "music": {
+   "key": "F",
+   "seed": 7054
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs to hear.*",
+  "id": "v3a029",
+  "music": {
+   "key": "G",
+   "seed": 7067
+  }
+ }
+]

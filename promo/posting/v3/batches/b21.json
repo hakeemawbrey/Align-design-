@@ -1,0 +1,108 @@
+[
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dating superpower.*",
+  "id": "v3a070",
+  "music": {
+   "key": "C",
+   "seed": 7600
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *hidden soft side.*",
+  "id": "v3a071",
+  "music": {
+   "key": "D",
+   "seed": 7613
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *heals.*",
+  "id": "v3a072",
+  "music": {
+   "key": "E",
+   "seed": 7626
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, stop doing | *this in love.*",
+  "id": "v3a073",
+  "music": {
+   "key": "F",
+   "seed": 7639
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, stop doing | *this in love.*",
+  "id": "v3a074",
+  "music": {
+   "key": "G",
+   "seed": 7652
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Dear Scorpio: | *it's okay.*",
+  "id": "v3a075",
+  "music": {
+   "key": "C",
+   "seed": 7665
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What Geminis need | *in love.*",
+  "id": "v3a076",
+  "music": {
+   "key": "D",
+   "seed": 7678
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *sign to text first.*",
+  "id": "v3a077",
+  "music": {
+   "key": "E",
+   "seed": 7691
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to love | *a Sagittarius.*",
+  "id": "v3a078",
+  "music": {
+   "key": "F",
+   "seed": 7704
+  }
+ },
+ {
+  "account": "zodiac.advice444",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're allowed | *to rest.*",
+  "id": "v3a079",
+  "music": {
+   "key": "G",
+   "seed": 7717
+  }
+ }
+]
