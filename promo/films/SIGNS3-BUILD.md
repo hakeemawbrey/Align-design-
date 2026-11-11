@@ -52,3 +52,15 @@ node promo/scripts/teaser-sound.mjs --film=<id>
 Look at every still: props inside the panel and readable, captions on two lines, Pisces tears, nothing overlapping the
 name tab. Fix and re-check. Commit only your film folder (git add promo/films/<id>; never other files) and push to the
 current branch (pull --rebase first if the push is rejected).
+
+## Solo films: the whole video is ONE sign
+`makeFilm({ solo: '<sign>', ... })` with 8–10 cameos, every cameo `sign: '<sign>'`. The kit then shows one big star in
+the hook and the group beat (no line-up of twelve, no group photo), and times everything from the number of cards
+(8 cards ≈ 47 s, 10 ≈ 55 s). In `cues.js` import `T` too and use `breakdown: [T.group]` instead of `[49.2]`.
+- **Hook:** speaks straight to that sign or the people who love one: "Things only | *Leos* get.", "Dating a Scorpio |
+  *be like.*" Shareable: a Leo should want to send it to a friend, and their friends should tag them.
+- **Cards:** 8–10 different, instantly relatable situations, each the most EXTREME version of that sign's trait. Vary
+  the settings (work, dating, friends, at home, on their phone) so it never repeats a joke. Still one big gag per card.
+- **group.cap:** a punchy summary ("Main character. | *Every day.*"); **lesson:** warm, about loving that sign;
+  **card:** `{ a: '<sign>', b: <a sign that pays off a joke> }`.
+- Pisces cries whenever it appears (its own film: in every card). Other house rules unchanged.

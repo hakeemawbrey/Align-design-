@@ -279,7 +279,8 @@ export const CARD = 3.8                                     // seconds per sign
 const HOOK = 3.6
 export function makeFilm(S) {
   const CAM = S.cameos.map((c, i) => { const t0 = r3(HOOK + i * CARD); return { ...c, i, t0, t1: r3(t0 + CARD), st: signStar(c.sign) } })
-  const camEnd = HOOK + 12 * CARD                            // 49.2
+  const SOLO = S.solo || null, N = S.cameos.length          // solo: the whole film is one sign, N cards (6–10)
+  const camEnd = HOOK + N * CARD                             // 49.2 for twelve
   const T = { title: 0.2, bug: 0.45, grid: 0.7, dive: [3.0, 3.6], group: r3(camEnd), lesson: r3(camEnd + 3.2) }
   T.lessonOut = [r3(T.lesson + 5.6), r3(T.lesson + 5.9)]
   T.last = T.lessonOut[1]
@@ -312,6 +313,15 @@ export function makeFilm(S) {
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
+    // solo films: one big star instead of the twelve. It pops in for the hook, hides while the cards play (each card
+    // has it), comes back for the group beat, and clears for the closing match card.
+    function soloStar(t) {
+      const inHook = t < T.dive[1], inGroup = t >= T.group && t < T.last + 0.45
+      if (!inHook && !inGroup) return
+      const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, [T.last, T.last + 0.45])
+      const hops = inHook ? [T.grid + 0.6, T.grid + 1.6] : [T.group + 0.7, T.group + 1.9]
+      signChar(x, t, SOLO, 540, 860, 360, { mood: inGroup ? (S.group.mood || 'sparkle') : 'happy', pop: k, hops, seed: 7, tears: SOLO === 'pisces' ? 2 : 0 })
+    }
     function mini(t, i) {
       const id = SIGN_IDS[i]
       const g = GRID(i), p = PIP(i), ph = PHOTO(i)
@@ -343,12 +353,12 @@ export function makeFilm(S) {
     function cameo(t, c) {
       if (t < c.t0 || t >= c.t1) return
       // no transition: the panel is the same object every card; it only swaps colour. The first card fades in, the last out.
-      const fade = c.i === 0 ? ease.outCubic(prog(t, c.t0 - 0.05, c.t0 + 0.3)) : c.i === 11 ? 1 - ease.inCubic(prog(t, c.t1 - 0.35, c.t1)) : 1
+      const fade = c.i === 0 ? ease.outCubic(prog(t, c.t0 - 0.05, c.t0 + 0.3)) : c.i === N - 1 ? 1 - ease.inCubic(prog(t, c.t1 - 0.35, c.t1)) : 1
       const ox = 0, rot = 0
       const lt = Math.min(2.4, (t - c.t0) / STRETCH)
       const tl = c.t0 + lt                                    // the card's slowed clock, for props that read t
       x.save(); x.globalAlpha = fade; x.translate(540 + ox, 850); x.rotate(rot); x.translate(-540, -850)
-      drawPanel(x, t, c.i, c.st.color, c.st.glyph)
+      drawPanel(x, t, SIGN_IDS.indexOf(c.sign), c.st.color, c.st.glyph)
       const sp = { x: 540 + (c.star?.x ?? 0), y: 880 + (c.star?.y ?? 0), s: c.star?.s ?? 300 }
       const k = pop01(t, c.t0 + 0.05, 0.45, 1.8)
       const P = { cx: 540, cy: 850, color: c.st.color, glyph: c.st.glyph, k, i: c.i, t0: c.t0, t1: c.t1 }
@@ -373,14 +383,15 @@ export function makeFilm(S) {
         if (t < STORY_END) {
           for (const c of CAM) cameo(t, c)
           const gk = pop01(t, T.group, 0.5, 1.6) * popOut(t, S.card !== false ? [T.last, T.last + 0.45] : T.out)
-          if (gk > 0.01 && t >= T.group) {
+          if (!SOLO && gk > 0.01 && t >= T.group) {
             x.save(); x.globalAlpha = clamp(gk)
             for (let i = 0; i < 13; i++) { const fx = 80 + i * 76, fy = PHOTO_Y - 220 + 26 * Math.sin(Math.PI * i / 12); x.fillStyle = signStar(SIGN_IDS[i % 12]).color; x.beginPath(); x.moveTo(fx - 18, fy); x.lineTo(fx + 18, fy); x.lineTo(fx, fy + 34); x.fill() }
             x.strokeStyle = 'rgba(239,230,214,0.5)'; x.lineWidth = 3; x.beginPath(); for (let i = 0; i <= 24; i++) { const fx = 60 + i * 40, fy = PHOTO_Y - 220 + 26 * Math.sin(Math.PI * i / 24); i ? x.lineTo(fx, fy) : x.moveTo(fx, fy) } x.stroke()
             x.restore()
             if (S.group.draw) { x.save(); S.group.draw(x, t, t - T.group); x.restore() }
           }
-          for (let i = 0; i < 12; i++) mini(t, i)
+          if (SOLO) soloStar(t)
+          else for (let i = 0; i < 12; i++) mini(t, i)
           if (S.last.draw && t >= T.last) { x.save(); S.last.draw(x, t, t - T.last); x.restore() }
           if (S.card !== false && t >= T.last) matchCard(x, t, t - T.last, S.card || {})
 
