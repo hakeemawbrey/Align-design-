@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0306",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on rest day | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10610
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0306",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "What Aquarians need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 10611
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0307",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs hosting overnight guests",
+  "music": {
+   "key": "E",
+   "seed": 10612
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0307",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, let yourself | *be loved.*",
+  "music": {
+   "key": "F",
+   "seed": 10613
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0308",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their headphones die | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10614
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0308",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, staying | *can be an adventure.*",
+  "music": {
+   "key": "C",
+   "seed": 10615
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0309",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs apple picking",
+  "music": {
+   "key": "D",
+   "seed": 10616
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0309",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "A small win | *for each sign today.*",
+  "music": {
+   "key": "E",
+   "seed": 10617
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0310",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries texting | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10618
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0310",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *gentle goal this month.*",
+  "music": {
+   "key": "G",
+   "seed": 10619
+  },
+  "ending": "group"
+ }
+]

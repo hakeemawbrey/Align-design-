@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0581",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs opening presents | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11160
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0581",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, let yourself | *be loved.*",
+  "music": {
+   "key": "D",
+   "seed": 11161
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0582",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they see a rainbow | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11162
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0582",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, this is your sign | *to call home.*",
+  "music": {
+   "key": "F",
+   "seed": 11163
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0583",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis shopping | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11164
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0583",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, let someone | *take care of you.*",
+  "music": {
+   "key": "C",
+   "seed": 11165
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0584",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to stay awake in a movie | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11166
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0584",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes up with a friend.*",
+  "music": {
+   "key": "E",
+   "seed": 11167
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0585",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces texting | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11168
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0585",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *keeps the spark alive.*",
+  "music": {
+   "key": "G",
+   "seed": 11169
+  },
+  "ending": "card"
+ }
+]

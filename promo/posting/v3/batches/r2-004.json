@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0016",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces keeping a secret | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10030
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0016",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "D",
+   "seed": 10031
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0017",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "How to spot | *a Sagittarius.*",
+  "music": {
+   "key": "E",
+   "seed": 10032
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0017",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, here's your | *Sunday reset.*",
+  "music": {
+   "key": "F",
+   "seed": 10033
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0018",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries shopping | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10034
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0018",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *says when they're hurt.*",
+  "music": {
+   "key": "C",
+   "seed": 10035
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0019",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as tourists",
+  "music": {
+   "key": "D",
+   "seed": 10036
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0019",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you don't have | *to be perfect.*",
+  "music": {
+   "key": "E",
+   "seed": 10037
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0020",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their flight is delayed | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10038
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0020",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect phone call.*",
+  "music": {
+   "key": "G",
+   "seed": 10039
+  },
+  "ending": "group"
+ }
+]

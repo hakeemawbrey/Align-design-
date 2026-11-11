@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0151",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "How to spot | *a Scorpio.*",
+  "music": {
+   "key": "C",
+   "seed": 10300
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0151",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10301
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0152",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a night market",
+  "music": {
+   "key": "E",
+   "seed": 10302
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0152",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to thank | *a Leo.*",
+  "music": {
+   "key": "F",
+   "seed": 10303
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0153",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a hotel",
+  "music": {
+   "key": "G",
+   "seed": 10304
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0153",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to apologise | *to a Sagittarius.*",
+  "music": {
+   "key": "C",
+   "seed": 10305
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0154",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the bowling alley",
+  "music": {
+   "key": "D",
+   "seed": 10306
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0154",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *secretly wants.*",
+  "music": {
+   "key": "E",
+   "seed": 10307
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0155",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're asked to speak first | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10308
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0155",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes the first move.*",
+  "music": {
+   "key": "G",
+   "seed": 10309
+  },
+  "ending": "card"
+ }
+]

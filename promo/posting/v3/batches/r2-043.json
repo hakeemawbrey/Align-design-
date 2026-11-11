@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0211",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers on a trip | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10420
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0211",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, let someone | *else plan it.*",
+  "music": {
+   "key": "D",
+   "seed": 10421
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0212",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis at a party | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10422
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0212",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, it's okay | *to start over.*",
+  "music": {
+   "key": "F",
+   "seed": 10423
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0213",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the mall",
+  "music": {
+   "key": "G",
+   "seed": 10424
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0213",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "What Cancers need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 10425
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0214",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "How to spot | *a Libra.*",
+  "music": {
+   "key": "D",
+   "seed": 10426
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0214",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *cheers you up.*",
+  "music": {
+   "key": "E",
+   "seed": 10427
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0215",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a movie marathon",
+  "music": {
+   "key": "F",
+   "seed": 10428
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0215",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *builds confidence.*",
+  "music": {
+   "key": "G",
+   "seed": 10429
+  },
+  "ending": "callback"
+ }
+]

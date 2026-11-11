@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0011",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios when they're mad | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10020
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0011",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Signs a Capricorn | *needs a break.*",
+  "music": {
+   "key": "D",
+   "seed": 10021
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0012",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces when a stranger | *is nice.*",
+  "music": {
+   "key": "E",
+   "seed": 10022
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0012",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "F",
+   "seed": 10023
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0013",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs getting new glasses",
+  "music": {
+   "key": "G",
+   "seed": 10024
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0013",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *never travels without.*",
+  "music": {
+   "key": "C",
+   "seed": 10025
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0014",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs waving at someone who wasn't waving | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10026
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0014",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, before you | *send that text.*",
+  "music": {
+   "key": "E",
+   "seed": 10027
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0015",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the song is stuck in their head | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10028
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0015",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles feedback.*",
+  "music": {
+   "key": "G",
+   "seed": 10029
+  },
+  "ending": "callback"
+ }
+]

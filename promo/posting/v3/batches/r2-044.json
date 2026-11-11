@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0216",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis on a day off | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10430
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0216",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to apologise | *to a Leo.*",
+  "music": {
+   "key": "D",
+   "seed": 10431
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0217",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a cruise",
+  "music": {
+   "key": "E",
+   "seed": 10432
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0217",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Signs a Scorpio | *needs a break.*",
+  "music": {
+   "key": "F",
+   "seed": 10433
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0218",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs with 100 unread messages",
+  "music": {
+   "key": "G",
+   "seed": 10434
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0218",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you can't fix | *everyone.*",
+  "music": {
+   "key": "C",
+   "seed": 10435
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0219",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the nap goes wrong | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10436
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0219",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *habit to soften.*",
+  "music": {
+   "key": "E",
+   "seed": 10437
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0220",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're sleepy | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10438
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0220",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can handle the holidays.*",
+  "music": {
+   "key": "G",
+   "seed": 10439
+  },
+  "ending": "callback"
+ }
+]

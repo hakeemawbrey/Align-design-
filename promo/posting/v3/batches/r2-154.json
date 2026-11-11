@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0766",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries on a first date | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11530
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0766",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What a Taurus | *won't say out loud.*",
+  "music": {
+   "key": "D",
+   "seed": 11531
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0767",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at speed dating",
+  "music": {
+   "key": "E",
+   "seed": 11532
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0767",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "F",
+   "seed": 11533
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0768",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians running late | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11534
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0768",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "C",
+   "seed": 11535
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0769",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a tea party",
+  "music": {
+   "key": "D",
+   "seed": 11536
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0769",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, let yourself | *be loved.*",
+  "music": {
+   "key": "E",
+   "seed": 11537
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0770",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a staycation",
+  "music": {
+   "key": "F",
+   "seed": 11538
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0770",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, it's okay | *to miss them.*",
+  "music": {
+   "key": "G",
+   "seed": 11539
+  },
+  "ending": "card"
+ }
+]

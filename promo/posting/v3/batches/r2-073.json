@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0361",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Your Aries coworker | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10720
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0361",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "D",
+   "seed": 10721
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0362",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces running late | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10722
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0362",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, before you | *send that text.*",
+  "music": {
+   "key": "F",
+   "seed": 10723
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0363",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs reading their horoscope | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10724
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0363",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "C",
+   "seed": 10725
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0364",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a lighthouse",
+  "music": {
+   "key": "D",
+   "seed": 10726
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0364",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows they're proud of you.*",
+  "music": {
+   "key": "E",
+   "seed": 10727
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0365",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting their own place | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10728
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0365",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should cook this weekend.*",
+  "music": {
+   "key": "G",
+   "seed": 10729
+  },
+  "ending": "callback"
+ }
+]

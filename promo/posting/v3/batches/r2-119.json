@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0591",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos keeping a secret | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11180
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0591",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to apologise | *to a Pisces.*",
+  "music": {
+   "key": "D",
+   "seed": 11181
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0592",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at parent-teacher night",
+  "music": {
+   "key": "E",
+   "seed": 11182
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0592",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Signs an Aries | *trusts you.*",
+  "music": {
+   "key": "F",
+   "seed": 11183
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0593",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a graduation",
+  "music": {
+   "key": "G",
+   "seed": 11184
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0593",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, the right people | *will stay.*",
+  "music": {
+   "key": "C",
+   "seed": 11185
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0594",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the party's too loud | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11186
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0594",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *stands up for themselves.*",
+  "music": {
+   "key": "E",
+   "seed": 11187
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0595",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs with 1% battery",
+  "music": {
+   "key": "F",
+   "seed": 11188
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0595",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *morning mantra.*",
+  "music": {
+   "key": "G",
+   "seed": 11189
+  },
+  "ending": "lesson"
+ }
+]

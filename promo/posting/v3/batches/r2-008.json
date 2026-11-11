@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0036",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the nail salon",
+  "music": {
+   "key": "C",
+   "seed": 10070
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0036",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 10071
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0037",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Being a Leo | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10072
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0037",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're allowed | *to say no.*",
+  "music": {
+   "key": "F",
+   "seed": 10073
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0038",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses on a day off | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10074
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0038",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, let yourself | *be loved.*",
+  "music": {
+   "key": "C",
+   "seed": 10075
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0039",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos on a day off | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10076
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0039",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles being wrong.*",
+  "music": {
+   "key": "E",
+   "seed": 10077
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0040",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs liking an old photo by accident | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10078
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0040",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *holiday reminder.*",
+  "music": {
+   "key": "G",
+   "seed": 10079
+  },
+  "ending": "callback"
+ }
+]

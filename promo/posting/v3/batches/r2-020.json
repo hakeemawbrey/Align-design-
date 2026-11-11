@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0096",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Your Leo coworker | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10190
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0096",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you don't have | *to be perfect.*",
+  "music": {
+   "key": "D",
+   "seed": 10191
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0097",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the store is out of their snack | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10192
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0097",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Signs a Libra | *trusts you.*",
+  "music": {
+   "key": "F",
+   "seed": 10193
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0098",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the hair salon",
+  "music": {
+   "key": "G",
+   "seed": 10194
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0098",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, take the compliment | *and believe it.*",
+  "music": {
+   "key": "C",
+   "seed": 10195
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0099",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10196
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0099",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *new moon wish.*",
+  "music": {
+   "key": "E",
+   "seed": 10197
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0100",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says astrology is fake | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10198
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0100",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *learned from home.*",
+  "music": {
+   "key": "G",
+   "seed": 10199
+  },
+  "ending": "callback"
+ }
+]

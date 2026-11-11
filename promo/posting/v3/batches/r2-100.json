@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0496",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a block party",
+  "music": {
+   "key": "C",
+   "seed": 10990
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0496",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, your intensity | *is love.*",
+  "music": {
+   "key": "D",
+   "seed": 10991
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0497",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the longest day of the year",
+  "music": {
+   "key": "E",
+   "seed": 10992
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0497",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, patience | *looks good on you.*",
+  "music": {
+   "key": "F",
+   "seed": 10993
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0498",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs writing holiday cards",
+  "music": {
+   "key": "G",
+   "seed": 10994
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0498",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "C",
+   "seed": 10995
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0499",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Your Cancer mom | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10996
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0499",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *kind of hug.*",
+  "music": {
+   "key": "E",
+   "seed": 10997
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0500",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians on a day off | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10998
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0500",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *most lovable quirk.*",
+  "music": {
+   "key": "G",
+   "seed": 10999
+  },
+  "ending": "callback"
+ }
+]

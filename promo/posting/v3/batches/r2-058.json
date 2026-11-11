@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0286",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos making plans | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10570
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0286",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, here's your | *Sunday reset.*",
+  "music": {
+   "key": "D",
+   "seed": 10571
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0287",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs binge-watching a show | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10572
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0287",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, the right people | *will stay.*",
+  "music": {
+   "key": "F",
+   "seed": 10573
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0288",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios as your boss | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10574
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0288",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to encourage | *a Capricorn.*",
+  "music": {
+   "key": "C",
+   "seed": 10575
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0289",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians when they're mad | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10576
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0289",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *travel style.*",
+  "music": {
+   "key": "E",
+   "seed": 10577
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0290",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs ice skating",
+  "music": {
+   "key": "F",
+   "seed": 10578
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0290",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *gets right.*",
+  "music": {
+   "key": "G",
+   "seed": 10579
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0101",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to put their phone down | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10200
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0101",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you don't have | *to be perfect.*",
+  "music": {
+   "key": "D",
+   "seed": 10201
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0102",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone chews loudly | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10202
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0102",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, feelings | *aren't a bug.*",
+  "music": {
+   "key": "F",
+   "seed": 10203
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0103",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their ex texts | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10204
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0103",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, it's okay | *to miss them.*",
+  "music": {
+   "key": "C",
+   "seed": 10205
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0104",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on their last day at a job",
+  "music": {
+   "key": "D",
+   "seed": 10206
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0104",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles being left out.*",
+  "music": {
+   "key": "E",
+   "seed": 10207
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0105",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the zoo",
+  "music": {
+   "key": "F",
+   "seed": 10208
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0105",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is afraid to ask for.*",
+  "music": {
+   "key": "G",
+   "seed": 10209
+  },
+  "ending": "callback"
+ }
+]

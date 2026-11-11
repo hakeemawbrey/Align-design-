@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0536",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to dance | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11070
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0536",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, soft | *is not weak.*",
+  "music": {
+   "key": "D",
+   "seed": 11071
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0537",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs waiting for results | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11072
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0537",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "F",
+   "seed": 11073
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0538",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs packing for a trip",
+  "music": {
+   "key": "G",
+   "seed": 11074
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0538",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to surprise | *a Capricorn.*",
+  "music": {
+   "key": "C",
+   "seed": 11075
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0539",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the plan actually works | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11076
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0539",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *finds cleaning motivation.*",
+  "music": {
+   "key": "E",
+   "seed": 11077
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0540",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers making plans | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11078
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0540",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *confidence boost.*",
+  "music": {
+   "key": "G",
+   "seed": 11079
+  },
+  "ending": "callback"
+ }
+]

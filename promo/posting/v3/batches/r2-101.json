@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0501",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Being a Capricorn | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11000
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0501",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, protect | *your peace.*",
+  "music": {
+   "key": "D",
+   "seed": 11001
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0502",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as dogs",
+  "music": {
+   "key": "E",
+   "seed": 11002
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0502",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, celebrate | *the small wins.*",
+  "music": {
+   "key": "F",
+   "seed": 11003
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0503",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Your Virgo sibling | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11004
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0503",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, log off | *at five.*",
+  "music": {
+   "key": "C",
+   "seed": 11005
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0504",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making pancakes",
+  "music": {
+   "key": "D",
+   "seed": 11006
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0504",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is quietly carrying.*",
+  "music": {
+   "key": "E",
+   "seed": 11007
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0505",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a Friday afternoon | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11008
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0505",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can feel confident on dates.*",
+  "music": {
+   "key": "G",
+   "seed": 11009
+  },
+  "ending": "callback"
+ }
+]

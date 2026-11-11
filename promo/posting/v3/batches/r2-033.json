@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0161",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs giving a presentation",
+  "music": {
+   "key": "C",
+   "seed": 10320
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0161",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, protect | *your peace.*",
+  "music": {
+   "key": "D",
+   "seed": 10321
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0162",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as students",
+  "music": {
+   "key": "E",
+   "seed": 10322
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0162",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, have you | *eaten today?*",
+  "music": {
+   "key": "F",
+   "seed": 10323
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0163",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a parade",
+  "music": {
+   "key": "G",
+   "seed": 10324
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0163",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to make friends | *with a Scorpio.*",
+  "music": {
+   "key": "C",
+   "seed": 10325
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0164",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Your Virgo mom | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10326
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0164",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *work superpower.*",
+  "music": {
+   "key": "E",
+   "seed": 10327
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0165",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to make small talk | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10328
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0165",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows love with food.*",
+  "music": {
+   "key": "G",
+   "seed": 10329
+  },
+  "ending": "group"
+ }
+]

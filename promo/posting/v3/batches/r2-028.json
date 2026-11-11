@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0136",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis making plans | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10270
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0136",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 10271
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0137",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians keeping a secret | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10272
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0137",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're doing | *better than you think.*",
+  "music": {
+   "key": "F",
+   "seed": 10273
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0138",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a potluck",
+  "music": {
+   "key": "G",
+   "seed": 10274
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0138",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, celebrate | *the small wins.*",
+  "music": {
+   "key": "C",
+   "seed": 10275
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0139",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their favourite shirt shrinks | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10276
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0139",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *when they feel at home.*",
+  "music": {
+   "key": "E",
+   "seed": 10277
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0140",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on Valentine's Day",
+  "music": {
+   "key": "F",
+   "seed": 10278
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0140",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *gets their spark back.*",
+  "music": {
+   "key": "G",
+   "seed": 10279
+  },
+  "ending": "card"
+ }
+]

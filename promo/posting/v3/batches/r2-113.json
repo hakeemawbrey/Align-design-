@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0561",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos on their birthday | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11120
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0561",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, here's your | *Sunday reset.*",
+  "music": {
+   "key": "D",
+   "seed": 11121
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0562",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their friend is sad | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11122
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0562",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, protect | *your peace.*",
+  "music": {
+   "key": "F",
+   "seed": 11123
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0563",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs singing in the car | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11124
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0563",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Signs an Aquarius | *trusts you.*",
+  "music": {
+   "key": "C",
+   "seed": 11125
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0564",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the bus is late | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11126
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0564",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *picks a partner.*",
+  "music": {
+   "key": "E",
+   "seed": 11127
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0565",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios vs. | *small talk.*",
+  "music": {
+   "key": "F",
+   "seed": 11128
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0565",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *learns best.*",
+  "music": {
+   "key": "G",
+   "seed": 11129
+  },
+  "ending": "group"
+ }
+]

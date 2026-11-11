@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0626",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as librarians",
+  "music": {
+   "key": "C",
+   "seed": 11250
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0626",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, let them | *see you.*",
+  "music": {
+   "key": "D",
+   "seed": 11251
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0627",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Your Libra mom | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11252
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0627",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, it's okay | *to miss them.*",
+  "music": {
+   "key": "F",
+   "seed": 11253
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0628",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on their first day at a new job",
+  "music": {
+   "key": "G",
+   "seed": 11254
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0628",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, this is your sign | *to call home.*",
+  "music": {
+   "key": "C",
+   "seed": 11255
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0629",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the post office",
+  "music": {
+   "key": "D",
+   "seed": 11256
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0629",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What Geminis need | *from a friend.*",
+  "music": {
+   "key": "E",
+   "seed": 11257
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0630",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs writing a thank-you note | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11258
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0630",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you don't have | *to be perfect.*",
+  "music": {
+   "key": "G",
+   "seed": 11259
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0741",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a walking tour",
+  "music": {
+   "key": "C",
+   "seed": 11480
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0741",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, it's okay | *to start over.*",
+  "music": {
+   "key": "D",
+   "seed": 11481
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0742",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they lose a game | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11482
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0742",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to check in | *on a Capricorn.*",
+  "music": {
+   "key": "F",
+   "seed": 11483
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0743",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone remembers a tiny detail | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11484
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0743",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "What Aquarians need | *on a bad day.*",
+  "music": {
+   "key": "C",
+   "seed": 11485
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0744",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns making plans | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11486
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0744",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, have you | *eaten today?*",
+  "music": {
+   "key": "E",
+   "seed": 11487
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0745",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they see the ocean | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11488
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0745",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to make friends | *with an Aquarius.*",
+  "music": {
+   "key": "G",
+   "seed": 11489
+  },
+  "ending": "group"
+ }
+]

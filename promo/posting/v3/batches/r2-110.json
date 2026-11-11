@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0546",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the car wash",
+  "music": {
+   "key": "C",
+   "seed": 11090
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0546",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 11091
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0547",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs gardening",
+  "music": {
+   "key": "E",
+   "seed": 11092
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0547",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What Pisces need | *on a bad day.*",
+  "music": {
+   "key": "F",
+   "seed": 11093
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0548",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs during finals week",
+  "music": {
+   "key": "G",
+   "seed": 11094
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0548",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "C",
+   "seed": 11095
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0549",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns on a first date | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11096
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0549",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *overthinks.*",
+  "music": {
+   "key": "E",
+   "seed": 11097
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0550",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone opens the curtains | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11098
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0550",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows they're listening.*",
+  "music": {
+   "key": "G",
+   "seed": 11099
+  },
+  "ending": "callback"
+ }
+]

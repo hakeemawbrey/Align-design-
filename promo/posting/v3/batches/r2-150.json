@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0746",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at brunch",
+  "music": {
+   "key": "C",
+   "seed": 11490
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0746",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Signs a Scorpio | *likes you.*",
+  "music": {
+   "key": "D",
+   "seed": 11491
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0747",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs at the self-checkout | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11492
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0747",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, say | *what you mean.*",
+  "music": {
+   "key": "F",
+   "seed": 11493
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0748",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"we're almost there\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11494
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0748",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "C",
+   "seed": 11495
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0749",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians running late | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11496
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0749",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "What Aquarians need | *to feel heard.*",
+  "music": {
+   "key": "E",
+   "seed": 11497
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0750",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Your Scorpio roommate | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11498
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0750",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to thank | *a Taurus.*",
+  "music": {
+   "key": "G",
+   "seed": 11499
+  },
+  "ending": "callback"
+ }
+]

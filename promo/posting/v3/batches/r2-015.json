@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0071",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone mispronounces a word | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10140
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0071",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to give a Cancer | *space.*",
+  "music": {
+   "key": "D",
+   "seed": 10141
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0072",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone calls instead of texting | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10142
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0072",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What Leos need | *to feel heard.*",
+  "music": {
+   "key": "F",
+   "seed": 10143
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0073",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone sings off-key | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10144
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0073",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What an Aries | *won't say out loud.*",
+  "music": {
+   "key": "C",
+   "seed": 10145
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0074",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs flying a kite",
+  "music": {
+   "key": "D",
+   "seed": 10146
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0074",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *soft spot.*",
+  "music": {
+   "key": "E",
+   "seed": 10147
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0075",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Your Libra roommate | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10148
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0075",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should try this month.*",
+  "music": {
+   "key": "G",
+   "seed": 10149
+  },
+  "ending": "lesson"
+ }
+]

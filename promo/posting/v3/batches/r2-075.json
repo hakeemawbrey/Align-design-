@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0371",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs watching the sunrise",
+  "music": {
+   "key": "C",
+   "seed": 10740
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0371",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, play | *is productive.*",
+  "music": {
+   "key": "D",
+   "seed": 10741
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0372",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Your Sagittarius sibling | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10742
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0372",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, protect | *your peace.*",
+  "music": {
+   "key": "F",
+   "seed": 10743
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0373",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the coffee kicks in | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10744
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0373",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What Libras need | *from a friend.*",
+  "music": {
+   "key": "C",
+   "seed": 10745
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0374",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios at a party | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10746
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0374",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to travel | *with each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10747
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0375",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Your Pisces mom | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10748
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0375",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *tradition to start.*",
+  "music": {
+   "key": "G",
+   "seed": 10749
+  },
+  "ending": "callback"
+ }
+]

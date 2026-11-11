@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0636",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on their lunch break",
+  "music": {
+   "key": "C",
+   "seed": 11270
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0636",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "D",
+   "seed": 11271
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0637",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a long weekend | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11272
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0637",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you can | *care out loud.*",
+  "music": {
+   "key": "F",
+   "seed": 11273
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0638",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning to swim",
+  "music": {
+   "key": "G",
+   "seed": 11274
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0638",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to cheer up | *a Scorpio.*",
+  "music": {
+   "key": "C",
+   "seed": 11275
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0639",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to take a nice photo | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11276
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0639",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, this is your sign | *to slow down.*",
+  "music": {
+   "key": "E",
+   "seed": 11277
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0640",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their socks get wet | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11278
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0640",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, celebrate | *the small wins.*",
+  "music": {
+   "key": "G",
+   "seed": 11279
+  },
+  "ending": "callback"
+ }
+]

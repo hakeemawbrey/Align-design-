@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0756",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers texting | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11510
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0756",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to thank | *a Cancer.*",
+  "music": {
+   "key": "D",
+   "seed": 11511
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0757",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs decorating cookies",
+  "music": {
+   "key": "E",
+   "seed": 11512
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0757",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to say no.*",
+  "music": {
+   "key": "F",
+   "seed": 11513
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0758",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the shop closes in five minutes | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11514
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0758",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What Libras need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 11515
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0759",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on the first page of a new notebook | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11516
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0759",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to surprise | *a Sagittarius.*",
+  "music": {
+   "key": "E",
+   "seed": 11517
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0760",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to read more | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11518
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0760",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to cheer up | *a Virgo.*",
+  "music": {
+   "key": "G",
+   "seed": 11519
+  },
+  "ending": "lesson"
+ }
+]

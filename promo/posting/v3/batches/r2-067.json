@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0331",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses in the group chat | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10660
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0331",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10661
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0332",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries at a party | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10662
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0332",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, decide | *and don't look back.*",
+  "music": {
+   "key": "F",
+   "seed": 10663
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0333",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when a package arrives | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10664
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0333",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, celebrate | *the small wins.*",
+  "music": {
+   "key": "C",
+   "seed": 10665
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0334",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a comedy show",
+  "music": {
+   "key": "D",
+   "seed": 10666
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0334",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *best friend sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10667
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0335",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the oven timer goes off | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10668
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0335",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *creative outlet.*",
+  "music": {
+   "key": "G",
+   "seed": 10669
+  },
+  "ending": "callback"
+ }
+]

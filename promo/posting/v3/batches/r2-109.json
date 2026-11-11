@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0541",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs house-sitting",
+  "music": {
+   "key": "C",
+   "seed": 11080
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0541",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, one conversation | *at a time.*",
+  "music": {
+   "key": "D",
+   "seed": 11081
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0542",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs doing a crossword",
+  "music": {
+   "key": "E",
+   "seed": 11082
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0542",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to surprise | *a Libra.*",
+  "music": {
+   "key": "F",
+   "seed": 11083
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0543",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning to drive",
+  "music": {
+   "key": "G",
+   "seed": 11084
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0543",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 11085
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0544",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis telling | *a story.*",
+  "music": {
+   "key": "D",
+   "seed": 11086
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0544",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *cherishes most.*",
+  "music": {
+   "key": "E",
+   "seed": 11087
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0545",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the hot water runs out | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11088
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0545",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What to text | *each sign after a fight.*",
+  "music": {
+   "key": "G",
+   "seed": 11089
+  },
+  "ending": "callback"
+ }
+]

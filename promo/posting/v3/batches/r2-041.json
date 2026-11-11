@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0201",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorn red flags | *we love.*",
+  "music": {
+   "key": "C",
+   "seed": 10400
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0201",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Signs an Aries | *needs a break.*",
+  "music": {
+   "key": "D",
+   "seed": 10401
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0202",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"relax\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10402
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0202",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "F",
+   "seed": 10403
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0203",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their show gets cancelled | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10404
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0203",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to give a Sagittarius | *space.*",
+  "music": {
+   "key": "C",
+   "seed": 10405
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0204",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs rearranging the living room",
+  "music": {
+   "key": "D",
+   "seed": 10406
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0204",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a creative block.*",
+  "music": {
+   "key": "E",
+   "seed": 10407
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0205",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a good grade | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10408
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0205",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign's friends | *love about them.*",
+  "music": {
+   "key": "G",
+   "seed": 10409
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0046",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a candy store",
+  "music": {
+   "key": "C",
+   "seed": 10090
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0046",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What Aries need | *after a fight.*",
+  "music": {
+   "key": "D",
+   "seed": 10091
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0047",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Being a Gemini | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10092
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0047",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, before you | *send that text.*",
+  "music": {
+   "key": "F",
+   "seed": 10093
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0048",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Your Capricorn roommate | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10094
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0048",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you can't fix | *everyone.*",
+  "music": {
+   "key": "C",
+   "seed": 10095
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0049",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos when it's | *not about them.*",
+  "music": {
+   "key": "D",
+   "seed": 10096
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0049",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *teaches others.*",
+  "music": {
+   "key": "E",
+   "seed": 10097
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0050",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs waiting for a delivery",
+  "music": {
+   "key": "F",
+   "seed": 10098
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0050",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs when they're homesick.*",
+  "music": {
+   "key": "G",
+   "seed": 10099
+  },
+  "ending": "lesson"
+ }
+]

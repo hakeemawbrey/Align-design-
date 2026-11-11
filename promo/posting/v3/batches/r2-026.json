@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0126",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces making plans | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10250
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0126",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're allowed | *to want more.*",
+  "music": {
+   "key": "D",
+   "seed": 10251
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0127",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras when two friends | *argue.*",
+  "music": {
+   "key": "E",
+   "seed": 10252
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0127",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to make friends | *with a Cancer.*",
+  "music": {
+   "key": "F",
+   "seed": 10253
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0128",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Being an Aries | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10254
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0128",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 10255
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0129",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs using a paper map | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10256
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0129",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *falling for a friend.*",
+  "music": {
+   "key": "E",
+   "seed": 10257
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0130",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs decluttering their closet",
+  "music": {
+   "key": "F",
+   "seed": 10258
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0130",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *after a big win.*",
+  "music": {
+   "key": "G",
+   "seed": 10259
+  },
+  "ending": "lesson"
+ }
+]

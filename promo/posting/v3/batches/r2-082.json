@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0406",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a talent show",
+  "music": {
+   "key": "C",
+   "seed": 10810
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0406",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What Sagittarians need | *on a bad day.*",
+  "music": {
+   "key": "D",
+   "seed": 10811
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0407",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their tea goes cold | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10812
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0407",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What Virgos need | *from a friend.*",
+  "music": {
+   "key": "F",
+   "seed": 10813
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0408",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a full moon | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10814
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0408",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to make friends | *with a Capricorn.*",
+  "music": {
+   "key": "C",
+   "seed": 10815
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0409",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning to knit",
+  "music": {
+   "key": "D",
+   "seed": 10816
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0409",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *gives a compliment.*",
+  "music": {
+   "key": "E",
+   "seed": 10817
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0410",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Your Aries sibling | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10818
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0410",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dream good-morning text.*",
+  "music": {
+   "key": "G",
+   "seed": 10819
+  },
+  "ending": "lesson"
+ }
+]

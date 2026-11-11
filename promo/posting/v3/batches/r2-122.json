@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0606",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as florists",
+  "music": {
+   "key": "C",
+   "seed": 11210
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0606",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "D",
+   "seed": 11211
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0607",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces on a trip | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11212
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0607",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to make friends | *with a Sagittarius.*",
+  "music": {
+   "key": "F",
+   "seed": 11213
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0608",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses on a trip | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11214
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0608",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, protect | *your peace.*",
+  "music": {
+   "key": "C",
+   "seed": 11215
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0609",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"you look tired\" | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11216
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0609",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Signs a Virgo | *misses you.*",
+  "music": {
+   "key": "E",
+   "seed": 11217
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0610",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians on a trip | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11218
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0610",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, before you | *send that text.*",
+  "music": {
+   "key": "G",
+   "seed": 11219
+  },
+  "ending": "card"
+ }
+]

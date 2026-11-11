@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0426",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Being a Scorpio | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10850
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0426",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, not every sad story | *is yours to carry.*",
+  "music": {
+   "key": "D",
+   "seed": 10851
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0427",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting a handwritten letter | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10852
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0427",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "What Cancers need | *to feel heard.*",
+  "music": {
+   "key": "F",
+   "seed": 10853
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0428",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs baking bread",
+  "music": {
+   "key": "G",
+   "seed": 10854
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0428",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, protect | *your peace.*",
+  "music": {
+   "key": "C",
+   "seed": 10855
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0429",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"small world\" | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10856
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0429",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *brings to the group chat.*",
+  "music": {
+   "key": "E",
+   "seed": 10857
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0430",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to keep a plant alive | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10858
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0430",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What to say | *when each sign is sad.*",
+  "music": {
+   "key": "G",
+   "seed": 10859
+  },
+  "ending": "lesson"
+ }
+]

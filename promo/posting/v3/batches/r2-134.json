@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0666",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers on their birthday | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11330
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0666",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What a Virgo | *won't say out loud.*",
+  "music": {
+   "key": "D",
+   "seed": 11331
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0667",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as chefs",
+  "music": {
+   "key": "E",
+   "seed": 11332
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0667",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to cheer up | *an Aries.*",
+  "music": {
+   "key": "F",
+   "seed": 11333
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0668",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a cabin weekend",
+  "music": {
+   "key": "G",
+   "seed": 11334
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0668",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're more | *than your work.*",
+  "music": {
+   "key": "C",
+   "seed": 11335
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0669",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they wake up late | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11336
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0669",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you can't | *edit people.*",
+  "music": {
+   "key": "E",
+   "seed": 11337
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0670",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses at a party | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11338
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0670",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, your joy | *is contagious.*",
+  "music": {
+   "key": "G",
+   "seed": 11339
+  },
+  "ending": "lesson"
+ }
+]

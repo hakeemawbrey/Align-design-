@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0401",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone sits too close | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10800
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0401",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you don't have | *to be perfect.*",
+  "music": {
+   "key": "D",
+   "seed": 10801
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0402",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"guess what\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10802
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0402",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, it's okay | *to start over.*",
+  "music": {
+   "key": "F",
+   "seed": 10803
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0403",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses keeping a secret | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10804
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0403",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to give an Aquarius | *space.*",
+  "music": {
+   "key": "C",
+   "seed": 10805
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0404",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers on a day off | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10806
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0404",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *cozy hobby.*",
+  "music": {
+   "key": "E",
+   "seed": 10807
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0405",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs watching a sad movie | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10808
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0405",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *knows it's a match.*",
+  "music": {
+   "key": "G",
+   "seed": 10809
+  },
+  "ending": "card"
+ }
+]

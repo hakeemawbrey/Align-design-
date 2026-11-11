@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0761",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at an auction",
+  "music": {
+   "key": "C",
+   "seed": 11520
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0761",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're not | *too much.*",
+  "music": {
+   "key": "D",
+   "seed": 11521
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0762",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Your Leo roommate | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11522
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0762",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What a Sagittarius | *won't say out loud.*",
+  "music": {
+   "key": "F",
+   "seed": 11523
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0763",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on New Year's Eve",
+  "music": {
+   "key": "G",
+   "seed": 11524
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0763",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "C",
+   "seed": 11525
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0764",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs meeting their sign twin | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11526
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0764",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to cheer up | *a Capricorn.*",
+  "music": {
+   "key": "E",
+   "seed": 11527
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0765",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're cold | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11528
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0765",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're allowed | *to want more.*",
+  "music": {
+   "key": "G",
+   "seed": 11529
+  },
+  "ending": "callback"
+ }
+]

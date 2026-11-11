@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0191",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "How to spot | *a Capricorn.*",
+  "music": {
+   "key": "C",
+   "seed": 10380
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0191",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to apologise | *to an Aries.*",
+  "music": {
+   "key": "D",
+   "seed": 10381
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0192",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces red flags | *we love.*",
+  "music": {
+   "key": "E",
+   "seed": 10382
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0192",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, celebrate | *the small wins.*",
+  "music": {
+   "key": "F",
+   "seed": 10383
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0193",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios in the group chat | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10384
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0193",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What Pisces need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 10385
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0194",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as baristas",
+  "music": {
+   "key": "D",
+   "seed": 10386
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0194",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a long wait.*",
+  "music": {
+   "key": "E",
+   "seed": 10387
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0195",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs working from home",
+  "music": {
+   "key": "F",
+   "seed": 10388
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0195",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *travels.*",
+  "music": {
+   "key": "G",
+   "seed": 10389
+  },
+  "ending": "group"
+ }
+]

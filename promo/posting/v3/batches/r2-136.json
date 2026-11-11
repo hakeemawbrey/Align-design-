@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0676",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Your Aquarius roommate | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11350
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0676",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to check in | *on a Pisces.*",
+  "music": {
+   "key": "D",
+   "seed": 11351
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0677",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in a long-distance relationship",
+  "music": {
+   "key": "E",
+   "seed": 11352
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0677",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to want more.*",
+  "music": {
+   "key": "F",
+   "seed": 11353
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0678",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"trust me\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11354
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0678",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you don't have | *to finish every hobby.*",
+  "music": {
+   "key": "C",
+   "seed": 11355
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0679",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"we'll see\" | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11356
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0679",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, it's okay | *to miss them.*",
+  "music": {
+   "key": "E",
+   "seed": 11357
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0680",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs online shopping",
+  "music": {
+   "key": "F",
+   "seed": 11358
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0680",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Signs a Sagittarius | *misses you.*",
+  "music": {
+   "key": "G",
+   "seed": 11359
+  },
+  "ending": "card"
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0341",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a pie-baking contest",
+  "music": {
+   "key": "C",
+   "seed": 10680
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0341",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 10681
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0342",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the vet",
+  "music": {
+   "key": "E",
+   "seed": 10682
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0342",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, it's okay | *to start over.*",
+  "music": {
+   "key": "F",
+   "seed": 10683
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0343",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone guesses their sign wrong | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10684
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0343",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, this is your sign | *to slow down.*",
+  "music": {
+   "key": "C",
+   "seed": 10685
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0344",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs during Mercury retrograde | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10686
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0344",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *treats themselves.*",
+  "music": {
+   "key": "E",
+   "seed": 10687
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0345",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on the last day of vacation | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10688
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0345",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *next chapter.*",
+  "music": {
+   "key": "G",
+   "seed": 10689
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0566",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras on their birthday | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11130
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0566",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 11131
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0567",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs forgetting someone's name | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11132
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0567",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Signs a Cancer | *likes you.*",
+  "music": {
+   "key": "F",
+   "seed": 11133
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0568",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their crush says hi | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11134
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0568",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to thank | *a Sagittarius.*",
+  "music": {
+   "key": "C",
+   "seed": 11135
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0569",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs before an exam | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11136
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0569",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *permission slip.*",
+  "music": {
+   "key": "E",
+   "seed": 11137
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0570",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the boardwalk",
+  "music": {
+   "key": "F",
+   "seed": 11138
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0570",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *heart in one sentence.*",
+  "music": {
+   "key": "G",
+   "seed": 11139
+  },
+  "ending": "lesson"
+ }
+]

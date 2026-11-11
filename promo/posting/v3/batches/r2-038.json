@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0186",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a thrift store",
+  "music": {
+   "key": "C",
+   "seed": 10370
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0186",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "D",
+   "seed": 10371
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0187",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras on a day off | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10372
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0187",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What Aries need | *to feel heard.*",
+  "music": {
+   "key": "F",
+   "seed": 10373
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0188",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the aquarium",
+  "music": {
+   "key": "G",
+   "seed": 10374
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0188",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, it's okay | *to start over.*",
+  "music": {
+   "key": "C",
+   "seed": 10375
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0189",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying a new recipe | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10376
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0189",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs in a hard season.*",
+  "music": {
+   "key": "E",
+   "seed": 10377
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0190",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they win a game | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10378
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0190",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can reconnect with an old friend.*",
+  "music": {
+   "key": "G",
+   "seed": 10379
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0296",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs lost in a new city",
+  "music": {
+   "key": "C",
+   "seed": 10590
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0296",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to give a Leo | *space.*",
+  "music": {
+   "key": "D",
+   "seed": 10591
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0297",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone replies \"lol\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10592
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0297",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to want more.*",
+  "music": {
+   "key": "F",
+   "seed": 10593
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0298",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Your Pisces coworker | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10594
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0298",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to encourage | *a Sagittarius.*",
+  "music": {
+   "key": "C",
+   "seed": 10595
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0299",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos when they're mad | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10596
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0299",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *helps a friend move on.*",
+  "music": {
+   "key": "E",
+   "seed": 10597
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0300",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Never race | *an Aries.*",
+  "music": {
+   "key": "F",
+   "seed": 10598
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0300",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *best compliment.*",
+  "music": {
+   "key": "G",
+   "seed": 10599
+  },
+  "ending": "group"
+ }
+]

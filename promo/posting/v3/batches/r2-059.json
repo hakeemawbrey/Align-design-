@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0291",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs slow dancing",
+  "music": {
+   "key": "C",
+   "seed": 10580
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0291",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to surprise | *a Gemini.*",
+  "music": {
+   "key": "D",
+   "seed": 10581
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0292",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a basketball game",
+  "music": {
+   "key": "E",
+   "seed": 10582
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0292",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Signs a Capricorn | *misses you.*",
+  "music": {
+   "key": "F",
+   "seed": 10583
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0293",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're the first to arrive | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10584
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0293",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to apologise | *to a Libra.*",
+  "music": {
+   "key": "C",
+   "seed": 10585
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0294",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians shopping | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10586
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0294",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to spend a Sunday | *with each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10587
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0295",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos on a first date | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10588
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0295",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *hidden worry.*",
+  "music": {
+   "key": "G",
+   "seed": 10589
+  },
+  "ending": "group"
+ }
+]

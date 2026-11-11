@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0166",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as waiters",
+  "music": {
+   "key": "C",
+   "seed": 10330
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0166",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 10331
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0167",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they laugh at the wrong moment | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10332
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0167",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "What Aquarians need | *after a fight.*",
+  "music": {
+   "key": "F",
+   "seed": 10333
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0168",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians texting | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10334
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0168",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, it's okay | *to start over.*",
+  "music": {
+   "key": "C",
+   "seed": 10335
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0169",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs watching a meteor shower",
+  "music": {
+   "key": "D",
+   "seed": 10336
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0169",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to be a good guest | *at each sign's home.*",
+  "music": {
+   "key": "E",
+   "seed": 10337
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0170",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to be chill | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10338
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0170",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *new year intention.*",
+  "music": {
+   "key": "G",
+   "seed": 10339
+  },
+  "ending": "lesson"
+ }
+]

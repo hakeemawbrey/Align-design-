@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0711",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the planetarium",
+  "music": {
+   "key": "C",
+   "seed": 11420
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0711",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to give a Virgo | *space.*",
+  "music": {
+   "key": "D",
+   "seed": 11421
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0712",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians explaining | *their new theory.*",
+  "music": {
+   "key": "E",
+   "seed": 11422
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0712",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, it's okay | *to start over.*",
+  "music": {
+   "key": "F",
+   "seed": 11423
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0713",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a Sunday night | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11424
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0713",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Signs a Pisces | *likes you.*",
+  "music": {
+   "key": "C",
+   "seed": 11425
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0714",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they wear something new | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11426
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0714",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, this is your sign | *to slow down.*",
+  "music": {
+   "key": "E",
+   "seed": 11427
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0715",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Gemini red flags | *we love.*",
+  "music": {
+   "key": "F",
+   "seed": 11428
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0715",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, your opinion | *matters too.*",
+  "music": {
+   "key": "G",
+   "seed": 11429
+  },
+  "ending": "callback"
+ }
+]

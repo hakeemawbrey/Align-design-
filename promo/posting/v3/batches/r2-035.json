@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0171",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos when they're mad | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10340
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0171",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're not | *too much.*",
+  "music": {
+   "key": "D",
+   "seed": 10341
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0172",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers on a first date | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10342
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0172",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, not every goodbye | *is forever.*",
+  "music": {
+   "key": "F",
+   "seed": 10343
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0173",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a coffee shop",
+  "music": {
+   "key": "G",
+   "seed": 10344
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0173",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, your warmth | *is the real crown.*",
+  "music": {
+   "key": "C",
+   "seed": 10345
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0174",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Your Taurus coworker | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10346
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0174",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes a big decision.*",
+  "music": {
+   "key": "E",
+   "seed": 10347
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0175",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a lemonade stand",
+  "music": {
+   "key": "F",
+   "seed": 10348
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0175",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a crowded room.*",
+  "music": {
+   "key": "G",
+   "seed": 10349
+  },
+  "ending": "lesson"
+ }
+]

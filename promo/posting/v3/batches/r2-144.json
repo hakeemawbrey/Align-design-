@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0716",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in a meeting",
+  "music": {
+   "key": "C",
+   "seed": 11430
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0716",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, peace isn't | *keeping quiet.*",
+  "music": {
+   "key": "D",
+   "seed": 11431
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0717",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns in the group chat | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11432
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0717",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to surprise | *a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 11433
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0718",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses vs. | *their comfy bed.*",
+  "music": {
+   "key": "G",
+   "seed": 11434
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0718",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, your softness | *is a superpower.*",
+  "music": {
+   "key": "C",
+   "seed": 11435
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0719",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting feedback at work | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11436
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0719",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, it's okay | *to be quiet.*",
+  "music": {
+   "key": "E",
+   "seed": 11437
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0720",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a group hug | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11438
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0720",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to give a Libra | *space.*",
+  "music": {
+   "key": "G",
+   "seed": 11439
+  },
+  "ending": "lesson"
+ }
+]

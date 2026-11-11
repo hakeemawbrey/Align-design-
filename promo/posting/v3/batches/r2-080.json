@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0396",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos shopping | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10790
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0396",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to cheer up | *a Pisces.*",
+  "music": {
+   "key": "D",
+   "seed": 10791
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0397",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "How to spot | *a Leo.*",
+  "music": {
+   "key": "E",
+   "seed": 10792
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0397",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to encourage | *a Scorpio.*",
+  "music": {
+   "key": "F",
+   "seed": 10793
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0398",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a holiday market",
+  "music": {
+   "key": "G",
+   "seed": 10794
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0398",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Signs a Cancer | *needs a break.*",
+  "music": {
+   "key": "C",
+   "seed": 10795
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0399",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians vs. | *staying in.*",
+  "music": {
+   "key": "D",
+   "seed": 10796
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0399",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to host | *each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10797
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0400",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs running into a teacher in public | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10798
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0400",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is secretly proud of.*",
+  "music": {
+   "key": "G",
+   "seed": 10799
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0411",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a long bus ride",
+  "music": {
+   "key": "C",
+   "seed": 10820
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0411",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, honesty | *with a hug.*",
+  "music": {
+   "key": "D",
+   "seed": 10821
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0412",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone asks a favour | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10822
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0412",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Signs a Leo | *misses you.*",
+  "music": {
+   "key": "F",
+   "seed": 10823
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0413",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs pretending to listen | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10824
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0413",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Signs a Pisces | *needs a break.*",
+  "music": {
+   "key": "C",
+   "seed": 10825
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0414",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Being a Libra | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10826
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0414",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to remind each sign | *they're loved.*",
+  "music": {
+   "key": "E",
+   "seed": 10827
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0415",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a pumpkin patch",
+  "music": {
+   "key": "F",
+   "seed": 10828
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0415",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *phone-free hour.*",
+  "music": {
+   "key": "G",
+   "seed": 10829
+  },
+  "ending": "lesson"
+ }
+]

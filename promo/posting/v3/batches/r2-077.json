@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0381",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs sending voice notes",
+  "music": {
+   "key": "C",
+   "seed": 10760
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0381",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What Capricorns need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 10761
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0382",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Your Cancer coworker | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10762
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0382",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "F",
+   "seed": 10763
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0383",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "How to spot | *an Aries.*",
+  "music": {
+   "key": "G",
+   "seed": 10764
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0383",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Signs a Sagittarius | *likes you.*",
+  "music": {
+   "key": "C",
+   "seed": 10765
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0384",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns making | *a five-year plan.*",
+  "music": {
+   "key": "D",
+   "seed": 10766
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0384",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *snow-day plan.*",
+  "music": {
+   "key": "E",
+   "seed": 10767
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0385",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs choosing a profile picture",
+  "music": {
+   "key": "F",
+   "seed": 10768
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0385",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a surprise visit.*",
+  "music": {
+   "key": "G",
+   "seed": 10769
+  },
+  "ending": "lesson"
+ }
+]

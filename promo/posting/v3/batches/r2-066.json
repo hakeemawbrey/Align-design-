@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0326",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at an art class",
+  "music": {
+   "key": "C",
+   "seed": 10650
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0326",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, protect | *your peace.*",
+  "music": {
+   "key": "D",
+   "seed": 10651
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0327",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when a text ends with a full stop | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10652
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0327",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, before you | *send that text.*",
+  "music": {
+   "key": "F",
+   "seed": 10653
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0328",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs playing charades",
+  "music": {
+   "key": "G",
+   "seed": 10654
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0328",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What Libras need | *to feel heard.*",
+  "music": {
+   "key": "C",
+   "seed": 10655
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0329",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the wifi password is long | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10656
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0329",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles big feelings.*",
+  "music": {
+   "key": "E",
+   "seed": 10657
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0330",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs fixing a wobbly table",
+  "music": {
+   "key": "F",
+   "seed": 10658
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0330",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *rebuilds trust.*",
+  "music": {
+   "key": "G",
+   "seed": 10659
+  },
+  "ending": "lesson"
+ }
+]

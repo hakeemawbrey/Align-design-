@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0091",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs volunteering",
+  "music": {
+   "key": "C",
+   "seed": 10180
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0091",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, this is your sign | *to slow down.*",
+  "music": {
+   "key": "D",
+   "seed": 10181
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0092",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when autocorrect strikes | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10182
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0092",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to cheer up | *a Gemini.*",
+  "music": {
+   "key": "F",
+   "seed": 10183
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0093",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs when the clocks change",
+  "music": {
+   "key": "G",
+   "seed": 10184
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0093",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to encourage | *a Leo.*",
+  "music": {
+   "key": "C",
+   "seed": 10185
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0094",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when a baby smiles at them | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10186
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0094",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *after a good cry.*",
+  "music": {
+   "key": "E",
+   "seed": 10187
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0095",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to whistle | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10188
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0095",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *learns to trust their gut.*",
+  "music": {
+   "key": "G",
+   "seed": 10189
+  },
+  "ending": "group"
+ }
+]

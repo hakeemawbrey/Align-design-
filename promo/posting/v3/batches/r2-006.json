@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0026",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs as the plus-one | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10050
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0026",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to check in | *on a Libra.*",
+  "music": {
+   "key": "D",
+   "seed": 10051
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0027",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a neighbourhood meeting",
+  "music": {
+   "key": "E",
+   "seed": 10052
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0027",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Signs a Virgo | *trusts you.*",
+  "music": {
+   "key": "F",
+   "seed": 10053
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0028",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a lantern festival",
+  "music": {
+   "key": "G",
+   "seed": 10054
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0028",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to encourage | *a Cancer.*",
+  "music": {
+   "key": "C",
+   "seed": 10055
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0029",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10056
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0029",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *learning to receive.*",
+  "music": {
+   "key": "E",
+   "seed": 10057
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0030",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Your Taurus mom | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10058
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0030",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *happy place.*",
+  "music": {
+   "key": "G",
+   "seed": 10059
+  },
+  "ending": "group"
+ }
+]

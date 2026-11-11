@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0041",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a second date",
+  "music": {
+   "key": "C",
+   "seed": 10080
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0041",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What Aries need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 10081
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0042",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a play",
+  "music": {
+   "key": "E",
+   "seed": 10082
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0042",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to cheer up | *a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 10083
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0043",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on their third coffee | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10084
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0043",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What Capricorns need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 10085
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0044",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the office party",
+  "music": {
+   "key": "D",
+   "seed": 10086
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0044",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *season of growth.*",
+  "music": {
+   "key": "E",
+   "seed": 10087
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0045",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they hear their name | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10088
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0045",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *in their element.*",
+  "music": {
+   "key": "G",
+   "seed": 10089
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0476",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a surprise | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10950
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0476",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, let yourself | *be loved.*",
+  "music": {
+   "key": "D",
+   "seed": 10951
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0477",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get the hiccups | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10952
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0477",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to check in | *on a Gemini.*",
+  "music": {
+   "key": "F",
+   "seed": 10953
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0478",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone saves them a seat | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10954
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0478",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to thank | *a Virgo.*",
+  "music": {
+   "key": "C",
+   "seed": 10955
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0479",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs meeting their date's friends",
+  "music": {
+   "key": "D",
+   "seed": 10956
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0479",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *finds their people.*",
+  "music": {
+   "key": "E",
+   "seed": 10957
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0480",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a cozy night in",
+  "music": {
+   "key": "F",
+   "seed": 10958
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0480",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *little ritual for luck.*",
+  "music": {
+   "key": "G",
+   "seed": 10959
+  },
+  "ending": "group"
+ }
+]

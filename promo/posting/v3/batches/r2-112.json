@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0556",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs folding a fitted sheet",
+  "music": {
+   "key": "C",
+   "seed": 11110
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0556",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to check in | *on a Sagittarius.*",
+  "music": {
+   "key": "D",
+   "seed": 11111
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0557",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a buffet",
+  "music": {
+   "key": "E",
+   "seed": 11112
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0557",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What Tauruses need | *from a friend.*",
+  "music": {
+   "key": "F",
+   "seed": 11113
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0558",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs after a season finale | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11114
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0558",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, come back | *to earth gently.*",
+  "music": {
+   "key": "C",
+   "seed": 11115
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0559",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're nervous | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11116
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0559",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect book genre.*",
+  "music": {
+   "key": "E",
+   "seed": 11117
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0560",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs asking for a raise | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11118
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0560",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *spring fresh start.*",
+  "music": {
+   "key": "G",
+   "seed": 11119
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0531",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians as your boss | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11060
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0531",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "D",
+   "seed": 11061
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0532",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the teacher calls on them | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11062
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0532",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Signs a Taurus | *likes you.*",
+  "music": {
+   "key": "F",
+   "seed": 11063
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0533",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras making plans | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11064
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0533",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, protect | *your peace.*",
+  "music": {
+   "key": "C",
+   "seed": 11065
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0534",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs painting a room",
+  "music": {
+   "key": "D",
+   "seed": 11066
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0534",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *kindest habit.*",
+  "music": {
+   "key": "E",
+   "seed": 11067
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0535",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces as your boss | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11068
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0535",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *wish for their friends.*",
+  "music": {
+   "key": "G",
+   "seed": 11069
+  },
+  "ending": "callback"
+ }
+]

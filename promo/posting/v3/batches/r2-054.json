@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0266",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone else picks the music | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10530
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0266",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10531
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0267",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses making plans | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10532
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0267",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to encourage | *a Libra.*",
+  "music": {
+   "key": "F",
+   "seed": 10533
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0268",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on jury duty",
+  "music": {
+   "key": "G",
+   "seed": 10534
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0268",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Signs an Aquarius | *likes you.*",
+  "music": {
+   "key": "C",
+   "seed": 10535
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0269",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone cheats at cards | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10536
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0269",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *birthday wish.*",
+  "music": {
+   "key": "E",
+   "seed": 10537
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0270",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"one bite\" | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10538
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0270",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *work-life reminder.*",
+  "music": {
+   "key": "G",
+   "seed": 10539
+  },
+  "ending": "lesson"
+ }
+]

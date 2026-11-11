@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0301",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as types of weather",
+  "music": {
+   "key": "C",
+   "seed": 10600
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0301",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to check in | *on a Scorpio.*",
+  "music": {
+   "key": "D",
+   "seed": 10601
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0302",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as plus-ones",
+  "music": {
+   "key": "E",
+   "seed": 10602
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0302",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, here's your | *Sunday reset.*",
+  "music": {
+   "key": "F",
+   "seed": 10603
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0303",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers at a party | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10604
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0303",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "How to cheer up | *a Sagittarius.*",
+  "music": {
+   "key": "C",
+   "seed": 10605
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0304",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a class reunion",
+  "music": {
+   "key": "D",
+   "seed": 10606
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0304",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can find balance.*",
+  "music": {
+   "key": "E",
+   "seed": 10607
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0305",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs meeting new coworkers | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10608
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0305",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *ideal friend group.*",
+  "music": {
+   "key": "G",
+   "seed": 10609
+  },
+  "ending": "lesson"
+ }
+]

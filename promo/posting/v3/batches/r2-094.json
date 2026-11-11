@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0466",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians telling | *the truth.*",
+  "music": {
+   "key": "C",
+   "seed": 10930
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0466",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, before you | *send that text.*",
+  "music": {
+   "key": "D",
+   "seed": 10931
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0467",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Your Taurus sibling | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10932
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0467",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're not | *too much.*",
+  "music": {
+   "key": "F",
+   "seed": 10933
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0468",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Your Scorpio sibling | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10934
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0468",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Signs a Leo | *needs a break.*",
+  "music": {
+   "key": "C",
+   "seed": 10935
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0469",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a sunflower field",
+  "music": {
+   "key": "D",
+   "seed": 10936
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0469",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *bedtime reminder.*",
+  "music": {
+   "key": "E",
+   "seed": 10937
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0470",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the library",
+  "music": {
+   "key": "F",
+   "seed": 10938
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0470",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *reason to smile today.*",
+  "music": {
+   "key": "G",
+   "seed": 10939
+  },
+  "ending": "group"
+ }
+]

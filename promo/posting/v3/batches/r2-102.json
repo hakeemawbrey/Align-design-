@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0506",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as only children",
+  "music": {
+   "key": "C",
+   "seed": 11010
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0506",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're doing | *better than you think.*",
+  "music": {
+   "key": "D",
+   "seed": 11011
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0507",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis texting | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11012
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0507",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 11013
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0508",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they lose their keys | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11014
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0508",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you can share | *the last bite.*",
+  "music": {
+   "key": "C",
+   "seed": 11015
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0509",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a voicemail | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11016
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0509",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *note to self.*",
+  "music": {
+   "key": "E",
+   "seed": 11017
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0510",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they spot their friend across the room | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11018
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0510",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to be patient | *with each sign.*",
+  "music": {
+   "key": "G",
+   "seed": 11019
+  },
+  "ending": "lesson"
+ }
+]

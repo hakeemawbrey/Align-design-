@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0631",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs decorating for the holidays",
+  "music": {
+   "key": "C",
+   "seed": 11260
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0631",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What Geminis need | *to feel heard.*",
+  "music": {
+   "key": "D",
+   "seed": 11261
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0632",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as the middle child",
+  "music": {
+   "key": "E",
+   "seed": 11262
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0632",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to surprise | *a Leo.*",
+  "music": {
+   "key": "F",
+   "seed": 11263
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0633",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Your Aries mom | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11264
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0633",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you don't have | *to be perfect.*",
+  "music": {
+   "key": "C",
+   "seed": 11265
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0634",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leo red flags | *we love.*",
+  "music": {
+   "key": "D",
+   "seed": 11266
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0634",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, here's your | *Sunday reset.*",
+  "music": {
+   "key": "E",
+   "seed": 11267
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0635",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone corrects their grammar | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11268
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0635",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "G",
+   "seed": 11269
+  },
+  "ending": "group"
+ }
+]

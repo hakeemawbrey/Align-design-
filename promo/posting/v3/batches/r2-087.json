@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0431",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs carpooling",
+  "music": {
+   "key": "C",
+   "seed": 10860
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0431",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Signs a Pisces | *trusts you.*",
+  "music": {
+   "key": "D",
+   "seed": 10861
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0432",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs birdwatching",
+  "music": {
+   "key": "E",
+   "seed": 10862
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0432",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 10863
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0433",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a cooking class",
+  "music": {
+   "key": "G",
+   "seed": 10864
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0433",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you notice everything. | *Notice yourself.*",
+  "music": {
+   "key": "C",
+   "seed": 10865
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0434",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying on clothes | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10866
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0434",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes a house a home.*",
+  "music": {
+   "key": "E",
+   "seed": 10867
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0435",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis on their birthday | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10868
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0435",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *role in the family.*",
+  "music": {
+   "key": "G",
+   "seed": 10869
+  },
+  "ending": "lesson"
+ }
+]

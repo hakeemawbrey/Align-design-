@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0391",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians when they're mad | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10780
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0391",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to say no.*",
+  "music": {
+   "key": "D",
+   "seed": 10781
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0392",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs cooking for the first time | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10782
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0392",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you don't have | *to be perfect.*",
+  "music": {
+   "key": "F",
+   "seed": 10783
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0393",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs reading reviews before buying",
+  "music": {
+   "key": "G",
+   "seed": 10784
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0393",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, have you | *eaten today?*",
+  "music": {
+   "key": "C",
+   "seed": 10785
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0394",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their name's spelled wrong | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10786
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0394",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *keeps friends close.*",
+  "music": {
+   "key": "E",
+   "seed": 10787
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0395",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs decorating their room | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10788
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0395",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs in a text.*",
+  "music": {
+   "key": "G",
+   "seed": 10789
+  },
+  "ending": "lesson"
+ }
+]

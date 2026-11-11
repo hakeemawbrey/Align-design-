@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0246",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs ordering takeout",
+  "music": {
+   "key": "C",
+   "seed": 10490
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0246",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10491
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0247",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs doing a face mask night",
+  "music": {
+   "key": "E",
+   "seed": 10492
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0247",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to check in | *on an Aries.*",
+  "music": {
+   "key": "F",
+   "seed": 10493
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0248",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the last day of school",
+  "music": {
+   "key": "G",
+   "seed": 10494
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0248",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What Capricorns need | *to feel heard.*",
+  "music": {
+   "key": "C",
+   "seed": 10495
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0249",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos vs. | *a mirror.*",
+  "music": {
+   "key": "D",
+   "seed": 10496
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0249",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs at work.*",
+  "music": {
+   "key": "E",
+   "seed": 10497
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0250",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces on a first date | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10498
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0250",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *remembers about you.*",
+  "music": {
+   "key": "G",
+   "seed": 10499
+  },
+  "ending": "callback"
+ }
+]

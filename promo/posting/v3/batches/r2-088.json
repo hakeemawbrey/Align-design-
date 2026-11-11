@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0436",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at an ice cream shop",
+  "music": {
+   "key": "C",
+   "seed": 10870
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0436",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What Sagittarians need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 10871
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0437",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as kids on a field trip",
+  "music": {
+   "key": "E",
+   "seed": 10872
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0437",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "F",
+   "seed": 10873
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0438",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a photo shoot",
+  "music": {
+   "key": "G",
+   "seed": 10874
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0438",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Signs a Gemini | *trusts you.*",
+  "music": {
+   "key": "C",
+   "seed": 10875
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0439",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10876
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0439",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *first-date tip.*",
+  "music": {
+   "key": "E",
+   "seed": 10877
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0440",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses when they're mad | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10878
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0440",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *best travel buddy.*",
+  "music": {
+   "key": "G",
+   "seed": 10879
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0551",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs fishing",
+  "music": {
+   "key": "C",
+   "seed": 11100
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0551",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, trust | *can be rebuilt.*",
+  "music": {
+   "key": "D",
+   "seed": 11101
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0552",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as grandparents",
+  "music": {
+   "key": "E",
+   "seed": 11102
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0552",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, this is your sign | *to call home.*",
+  "music": {
+   "key": "F",
+   "seed": 11103
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0553",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Your Cancer roommate | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11104
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0553",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to make friends | *with an Aries.*",
+  "music": {
+   "key": "C",
+   "seed": 11105
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0554",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a foggy morning",
+  "music": {
+   "key": "D",
+   "seed": 11106
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0554",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *study style.*",
+  "music": {
+   "key": "E",
+   "seed": 11107
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0555",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses shopping | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11108
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0555",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should stop comparing.*",
+  "music": {
+   "key": "G",
+   "seed": 11109
+  },
+  "ending": "group"
+ }
+]

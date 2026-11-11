@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0236",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs splitting the bill",
+  "music": {
+   "key": "C",
+   "seed": 10470
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0236",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10471
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0237",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Your Gemini roommate | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10472
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0237",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're not | *too much.*",
+  "music": {
+   "key": "F",
+   "seed": 10473
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0238",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns vs. | *relaxing.*",
+  "music": {
+   "key": "G",
+   "seed": 10474
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0238",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, let yourself | *be loved.*",
+  "music": {
+   "key": "C",
+   "seed": 10475
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0239",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs with a new phone",
+  "music": {
+   "key": "D",
+   "seed": 10476
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0239",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to ask out | *each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10477
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0240",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Being a Virgo | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10478
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0240",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *being brave.*",
+  "music": {
+   "key": "G",
+   "seed": 10479
+  },
+  "ending": "lesson"
+ }
+]

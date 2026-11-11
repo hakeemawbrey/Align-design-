@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0066",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Your Pisces sibling | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10130
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0066",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "What Cancers need | *on a bad day.*",
+  "music": {
+   "key": "D",
+   "seed": 10131
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0067",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses texting | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10132
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0067",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you can't fix | *everyone.*",
+  "music": {
+   "key": "F",
+   "seed": 10133
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0068",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs picking matching outfits",
+  "music": {
+   "key": "G",
+   "seed": 10134
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0068",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're doing | *better than you think.*",
+  "music": {
+   "key": "C",
+   "seed": 10135
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0069",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs watching a romcom | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10136
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0069",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to disagree | *with each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10137
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0070",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns when they're mad | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10138
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0070",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *way to unwind.*",
+  "music": {
+   "key": "G",
+   "seed": 10139
+  },
+  "ending": "lesson"
+ }
+]

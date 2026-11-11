@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0321",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a science fair",
+  "music": {
+   "key": "C",
+   "seed": 10640
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0321",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, let yourself | *be loved.*",
+  "music": {
+   "key": "D",
+   "seed": 10641
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0322",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a dinner party",
+  "music": {
+   "key": "E",
+   "seed": 10642
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0322",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Signs a Virgo | *likes you.*",
+  "music": {
+   "key": "F",
+   "seed": 10643
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0323",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Your Aries roommate | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10644
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0323",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 10645
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0324",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when dessert arrives | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10646
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0324",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should say yes to.*",
+  "music": {
+   "key": "E",
+   "seed": 10647
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0325",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos on their birthday | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10648
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0325",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes a friend feel seen.*",
+  "music": {
+   "key": "G",
+   "seed": 10649
+  },
+  "ending": "callback"
+ }
+]

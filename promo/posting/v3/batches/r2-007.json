@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0031",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a puppet show",
+  "music": {
+   "key": "C",
+   "seed": 10060
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0031",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, this is your sign | *to slow down.*",
+  "music": {
+   "key": "D",
+   "seed": 10061
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0032",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Your Virgo coworker | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10062
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0032",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, this is your sign | *to slow down.*",
+  "music": {
+   "key": "F",
+   "seed": 10063
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0033",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs explaining their birth chart | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10064
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0033",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What Pisces need | *to feel heard.*",
+  "music": {
+   "key": "C",
+   "seed": 10065
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0034",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs tripping in public | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10066
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0034",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *stays close long distance.*",
+  "music": {
+   "key": "E",
+   "seed": 10067
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0035",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a hardware store",
+  "music": {
+   "key": "F",
+   "seed": 10068
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0035",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *hopes you'll ask them.*",
+  "music": {
+   "key": "G",
+   "seed": 10069
+  },
+  "ending": "callback"
+ }
+]

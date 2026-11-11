@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0571",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs finding the perfect gift | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11140
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0571",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're not | *too much.*",
+  "music": {
+   "key": "D",
+   "seed": 11141
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0572",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when it's their turn to cook | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11142
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0572",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What a Capricorn | *won't say out loud.*",
+  "music": {
+   "key": "F",
+   "seed": 11143
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0573",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone answers with a question | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11144
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0573",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to check in | *on a Leo.*",
+  "music": {
+   "key": "C",
+   "seed": 11145
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0574",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a bake sale",
+  "music": {
+   "key": "D",
+   "seed": 11146
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0574",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *outside their comfort zone.*",
+  "music": {
+   "key": "E",
+   "seed": 11147
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0575",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries on their birthday | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11148
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0575",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *would put in a time capsule.*",
+  "music": {
+   "key": "G",
+   "seed": 11149
+  },
+  "ending": "lesson"
+ }
+]

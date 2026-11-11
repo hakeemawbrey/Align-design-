@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0461",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians at a party | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10920
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0461",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Signs a Virgo | *needs a break.*",
+  "music": {
+   "key": "D",
+   "seed": 10921
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0462",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they have to make a phone call | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10922
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0462",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, this is your sign | *to call home.*",
+  "music": {
+   "key": "F",
+   "seed": 10923
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0463",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries making plans | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10924
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0463",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, let yourself | *be loved.*",
+  "music": {
+   "key": "C",
+   "seed": 10925
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0464",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos texting | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10926
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0464",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *stress reset.*",
+  "music": {
+   "key": "E",
+   "seed": 10927
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0465",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on picture day",
+  "music": {
+   "key": "F",
+   "seed": 10928
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0465",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *word for the year.*",
+  "music": {
+   "key": "G",
+   "seed": 10929
+  },
+  "ending": "group"
+ }
+]

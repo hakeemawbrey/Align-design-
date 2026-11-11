@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0471",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone touches their food | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10940
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0471",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to encourage | *a Virgo.*",
+  "music": {
+   "key": "D",
+   "seed": 10941
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0472",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"no offense\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10942
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0472",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you can't fix | *everyone.*",
+  "music": {
+   "key": "F",
+   "seed": 10943
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0473",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs reading the last page of a book | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10944
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0473",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "What Capricorns need | *on a bad day.*",
+  "music": {
+   "key": "C",
+   "seed": 10945
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0474",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a housewarming party",
+  "music": {
+   "key": "D",
+   "seed": 10946
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0474",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *choosing themselves.*",
+  "music": {
+   "key": "E",
+   "seed": 10947
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0475",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios when you | *fib to them.*",
+  "music": {
+   "key": "F",
+   "seed": 10948
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0475",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to make each sign | *feel welcome.*",
+  "music": {
+   "key": "G",
+   "seed": 10949
+  },
+  "ending": "lesson"
+ }
+]

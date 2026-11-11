@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0226",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs getting a promotion",
+  "music": {
+   "key": "C",
+   "seed": 10450
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0226",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're doing | *better than you think.*",
+  "music": {
+   "key": "D",
+   "seed": 10451
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0227",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a botanical garden",
+  "music": {
+   "key": "E",
+   "seed": 10452
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0227",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, it's okay | *to sit still.*",
+  "music": {
+   "key": "F",
+   "seed": 10453
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0228",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs getting tagged in a bad photo | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10454
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0228",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "C",
+   "seed": 10455
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0229",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their crush likes their photo | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10456
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0229",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *keeps a promise.*",
+  "music": {
+   "key": "E",
+   "seed": 10457
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0230",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in autumn",
+  "music": {
+   "key": "F",
+   "seed": 10458
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0230",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *forgives.*",
+  "music": {
+   "key": "G",
+   "seed": 10459
+  },
+  "ending": "callback"
+ }
+]

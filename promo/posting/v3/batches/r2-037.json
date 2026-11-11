@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0181",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a fresh bedsheets night | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10360
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0181",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, ask before | *you charge in.*",
+  "music": {
+   "key": "D",
+   "seed": 10361
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0182",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when it's their turn to pick | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10362
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0182",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, let yourself | *be loved.*",
+  "music": {
+   "key": "F",
+   "seed": 10363
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0183",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries keeping a secret | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10364
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0183",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to encourage | *a Gemini.*",
+  "music": {
+   "key": "C",
+   "seed": 10365
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0184",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when an unknown number calls | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10366
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0184",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can unplug from their phone.*",
+  "music": {
+   "key": "E",
+   "seed": 10367
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0185",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Your Pisces roommate | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10368
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0185",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect walk.*",
+  "music": {
+   "key": "G",
+   "seed": 10369
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0721",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as game show hosts",
+  "music": {
+   "key": "C",
+   "seed": 11440
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0721",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "D",
+   "seed": 11441
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0722",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces on a day off | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11442
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0722",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Signs an Aries | *likes you.*",
+  "music": {
+   "key": "F",
+   "seed": 11443
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0723",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're cozy | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11444
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0723",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to make friends | *with a Pisces.*",
+  "music": {
+   "key": "C",
+   "seed": 11445
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0724",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as camp counselors",
+  "music": {
+   "key": "D",
+   "seed": 11446
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0724",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Signs a Sagittarius | *trusts you.*",
+  "music": {
+   "key": "E",
+   "seed": 11447
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0725",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as breakfast foods",
+  "music": {
+   "key": "F",
+   "seed": 11448
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0725",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you can't fix | *everyone.*",
+  "music": {
+   "key": "G",
+   "seed": 11449
+  },
+  "ending": "lesson"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0261",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "How to spot | *a Taurus.*",
+  "music": {
+   "key": "C",
+   "seed": 10520
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0261",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 10521
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0262",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as hairdressers",
+  "music": {
+   "key": "E",
+   "seed": 10522
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0262",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you don't have | *to be perfect.*",
+  "music": {
+   "key": "F",
+   "seed": 10523
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0263",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the movie lights come on | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10524
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0263",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you can't fix | *everyone.*",
+  "music": {
+   "key": "C",
+   "seed": 10525
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0264",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs planning a proposal",
+  "music": {
+   "key": "D",
+   "seed": 10526
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0264",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dream vacation.*",
+  "music": {
+   "key": "E",
+   "seed": 10527
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0265",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs teaching their parents tech",
+  "music": {
+   "key": "F",
+   "seed": 10528
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0265",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dream job.*",
+  "music": {
+   "key": "G",
+   "seed": 10529
+  },
+  "ending": "lesson"
+ }
+]

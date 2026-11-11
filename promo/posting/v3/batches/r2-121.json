@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0601",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone flirts with them | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11200
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0601",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "D",
+   "seed": 11201
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0602",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a ski trip",
+  "music": {
+   "key": "E",
+   "seed": 11202
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0602",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, here's your | *Sunday reset.*",
+  "music": {
+   "key": "F",
+   "seed": 11203
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0603",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs making New Year's resolutions | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11204
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0603",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "What an Aquarius | *won't say out loud.*",
+  "music": {
+   "key": "C",
+   "seed": 11205
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0604",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11206
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0604",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Signs a Sagittarius | *needs a break.*",
+  "music": {
+   "key": "E",
+   "seed": 11207
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0605",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos reading | *the instructions.*",
+  "music": {
+   "key": "F",
+   "seed": 11208
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0605",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to thank | *an Aries.*",
+  "music": {
+   "key": "G",
+   "seed": 11209
+  },
+  "ending": "callback"
+ }
+]

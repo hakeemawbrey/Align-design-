@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0416",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone asks their sign | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10830
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0416",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, home is | *also you.*",
+  "music": {
+   "key": "D",
+   "seed": 10831
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0417",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs sightseeing",
+  "music": {
+   "key": "E",
+   "seed": 10832
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0417",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What Leos need | *on a bad day.*",
+  "music": {
+   "key": "F",
+   "seed": 10833
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0418",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone orders the same thing | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10834
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0418",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What Sagittarians need | *to feel heard.*",
+  "music": {
+   "key": "C",
+   "seed": 10835
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0419",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios keeping a secret | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10836
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0419",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should stop apologising for.*",
+  "music": {
+   "key": "E",
+   "seed": 10837
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0420",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the house is finally clean | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10838
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0420",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles rejection.*",
+  "music": {
+   "key": "G",
+   "seed": 10839
+  },
+  "ending": "group"
+ }
+]

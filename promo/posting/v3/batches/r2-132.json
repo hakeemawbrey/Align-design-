@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0656",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgo red flags | *we love.*",
+  "music": {
+   "key": "C",
+   "seed": 11310
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0656",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're doing | *better than you think.*",
+  "music": {
+   "key": "D",
+   "seed": 11311
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0657",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarius red flags | *we love.*",
+  "music": {
+   "key": "E",
+   "seed": 11312
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0657",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're not | *too much.*",
+  "music": {
+   "key": "F",
+   "seed": 11313
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0658",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone eats their leftovers | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11314
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0658",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, the right people | *will stay.*",
+  "music": {
+   "key": "C",
+   "seed": 11315
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0659",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns on a trip | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11316
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0659",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, here's your | *Sunday reset.*",
+  "music": {
+   "key": "E",
+   "seed": 11317
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0660",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning an instrument",
+  "music": {
+   "key": "F",
+   "seed": 11318
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0660",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What Virgos need | *on a bad day.*",
+  "music": {
+   "key": "G",
+   "seed": 11319
+  },
+  "ending": "lesson"
+ }
+]

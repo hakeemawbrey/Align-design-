@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0061",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras keeping a secret | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10120
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0061",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're still loved | *off stage.*",
+  "music": {
+   "key": "D",
+   "seed": 10121
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0062",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone whistles | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10122
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0062",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're allowed | *to say no.*",
+  "music": {
+   "key": "F",
+   "seed": 10123
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0063",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs running a fun run",
+  "music": {
+   "key": "G",
+   "seed": 10124
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0063",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, before you | *send that text.*",
+  "music": {
+   "key": "C",
+   "seed": 10125
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0064",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the ice cream melts | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10126
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0064",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *in their softest era.*",
+  "music": {
+   "key": "E",
+   "seed": 10127
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0065",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns running late | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10128
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0065",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *brave step this week.*",
+  "music": {
+   "key": "G",
+   "seed": 10129
+  },
+  "ending": "callback"
+ }
+]

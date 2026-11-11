@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0021",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they can't decide | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10040
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0021",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to say no.*",
+  "music": {
+   "key": "D",
+   "seed": 10041
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0022",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as fairy godmothers",
+  "music": {
+   "key": "E",
+   "seed": 10042
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0022",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, here's your | *Sunday reset.*",
+  "music": {
+   "key": "F",
+   "seed": 10043
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0023",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Being a Sagittarius | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10044
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0023",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 10045
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0024",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to go to bed early | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10046
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0024",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to make each sign | *laugh.*",
+  "music": {
+   "key": "E",
+   "seed": 10047
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0025",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as lifeguards",
+  "music": {
+   "key": "F",
+   "seed": 10048
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0025",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles change.*",
+  "music": {
+   "key": "G",
+   "seed": 10049
+  },
+  "ending": "callback"
+ }
+]

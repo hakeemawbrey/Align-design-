@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0681",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as wedding planners",
+  "music": {
+   "key": "C",
+   "seed": 11360
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0681",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to cheer up | *a Leo.*",
+  "music": {
+   "key": "D",
+   "seed": 11361
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0682",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning a language",
+  "music": {
+   "key": "E",
+   "seed": 11362
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0682",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, dreams need | *a little plan.*",
+  "music": {
+   "key": "F",
+   "seed": 11363
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0683",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras vs. | *a yes or no question.*",
+  "music": {
+   "key": "G",
+   "seed": 11364
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0683",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to give an Aries | *space.*",
+  "music": {
+   "key": "C",
+   "seed": 11365
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0684",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians at a party | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11366
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0684",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, before you | *send that text.*",
+  "music": {
+   "key": "E",
+   "seed": 11367
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0685",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis keeping a secret | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11368
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0685",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What Leos need | *after a fight.*",
+  "music": {
+   "key": "G",
+   "seed": 11369
+  },
+  "ending": "card"
+ }
+]

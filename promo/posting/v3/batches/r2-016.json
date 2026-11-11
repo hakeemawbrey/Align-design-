@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0076",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Your Sagittarius mom | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10150
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0076",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you don't have | *to be perfect.*",
+  "music": {
+   "key": "D",
+   "seed": 10151
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0077",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a kid's birthday party",
+  "music": {
+   "key": "E",
+   "seed": 10152
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0077",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "F",
+   "seed": 10153
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0078",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancer red flags | *we love.*",
+  "music": {
+   "key": "G",
+   "seed": 10154
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0078",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "C",
+   "seed": 10155
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0079",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos texting | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10156
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0079",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *asks for space.*",
+  "music": {
+   "key": "E",
+   "seed": 10157
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0080",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs getting a passport photo",
+  "music": {
+   "key": "F",
+   "seed": 10158
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0080",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to give advice | *to each sign.*",
+  "music": {
+   "key": "G",
+   "seed": 10159
+  },
+  "ending": "lesson"
+ }
+]

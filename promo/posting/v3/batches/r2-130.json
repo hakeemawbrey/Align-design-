@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0646",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to say no | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11290
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0646",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What Leos need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 11291
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0647",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to choose an outfit | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11292
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0647",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 11293
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0648",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"it's just a game\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11294
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0648",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, it's okay | *to start over.*",
+  "music": {
+   "key": "C",
+   "seed": 11295
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0649",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as dog walkers",
+  "music": {
+   "key": "D",
+   "seed": 11296
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0649",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to surprise | *a Cancer.*",
+  "music": {
+   "key": "E",
+   "seed": 11297
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0650",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as personal trainers",
+  "music": {
+   "key": "F",
+   "seed": 11298
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0650",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Signs a Taurus | *trusts you.*",
+  "music": {
+   "key": "G",
+   "seed": 11299
+  },
+  "ending": "callback"
+ }
+]

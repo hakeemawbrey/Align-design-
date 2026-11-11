@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0196",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos shopping | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10390
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0196",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Signs a Cancer | *misses you.*",
+  "music": {
+   "key": "D",
+   "seed": 10391
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0197",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces on their birthday | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10392
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0197",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "What Aries need | *on a bad day.*",
+  "music": {
+   "key": "F",
+   "seed": 10393
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0198",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians on a first date | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10394
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0198",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "What Scorpios need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 10395
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0199",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their camera roll is full | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10396
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0199",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *slow morning.*",
+  "music": {
+   "key": "E",
+   "seed": 10397
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0200",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs pretending to understand the plot | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10398
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0200",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a friend's good news.*",
+  "music": {
+   "key": "G",
+   "seed": 10399
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0706",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs coming home from a trip | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11410
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0706",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, celebrate | *the small wins.*",
+  "music": {
+   "key": "D",
+   "seed": 11411
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0707",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis on a trip | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11412
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0707",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to surprise | *a Virgo.*",
+  "music": {
+   "key": "F",
+   "seed": 11413
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0708",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Your Leo sibling | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11414
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0708",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "C",
+   "seed": 11415
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0709",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a shoe store",
+  "music": {
+   "key": "D",
+   "seed": 11416
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0709",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, it's okay | *to start over.*",
+  "music": {
+   "key": "E",
+   "seed": 11417
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0710",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Your Sagittarius coworker | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11418
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0710",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to apologise | *to a Gemini.*",
+  "music": {
+   "key": "G",
+   "seed": 11419
+  },
+  "ending": "callback"
+ }
+]

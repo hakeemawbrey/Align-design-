@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0586",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when summer ends | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11170
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0586",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "What Sagittarians need | *after a fight.*",
+  "music": {
+   "key": "D",
+   "seed": 11171
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0587",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Your Gemini sibling | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11172
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0587",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "F",
+   "seed": 11173
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0588",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns on their birthday | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11174
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0588",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What a Libra | *won't say out loud.*",
+  "music": {
+   "key": "C",
+   "seed": 11175
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0589",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11176
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0589",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should leave in the old year.*",
+  "music": {
+   "key": "E",
+   "seed": 11177
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0590",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a costume party",
+  "music": {
+   "key": "F",
+   "seed": 11178
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0590",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *would tell their younger self.*",
+  "music": {
+   "key": "G",
+   "seed": 11179
+  },
+  "ending": "callback"
+ }
+]

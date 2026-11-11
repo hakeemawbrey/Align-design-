@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0596",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "The two moods | *of a Gemini.*",
+  "music": {
+   "key": "C",
+   "seed": 11190
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0596",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "What a Scorpio | *won't say out loud.*",
+  "music": {
+   "key": "D",
+   "seed": 11191
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0597",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they hear gossip | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11192
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0597",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to encourage | *a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 11193
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0598",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs after a breakup | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11194
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0598",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to check in | *on a Cancer.*",
+  "music": {
+   "key": "C",
+   "seed": 11195
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0599",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Your Sagittarius roommate | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11196
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0599",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *spends a day off.*",
+  "music": {
+   "key": "E",
+   "seed": 11197
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0600",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"be honest\" | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11198
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0600",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, your care | *shows in the details.*",
+  "music": {
+   "key": "G",
+   "seed": 11199
+  },
+  "ending": "group"
+ }
+]

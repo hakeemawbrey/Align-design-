@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0576",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their charger is too short | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11150
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0576",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Signs a Gemini | *needs a break.*",
+  "music": {
+   "key": "D",
+   "seed": 11151
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0577",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in traffic | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11152
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0577",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to check in | *on a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 11153
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0578",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"you had to be there\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11154
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0578",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, this is your sign | *to slow down.*",
+  "music": {
+   "key": "C",
+   "seed": 11155
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0579",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a bike ride",
+  "music": {
+   "key": "D",
+   "seed": 11156
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0579",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dream home.*",
+  "music": {
+   "key": "E",
+   "seed": 11157
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0580",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs kayaking",
+  "music": {
+   "key": "F",
+   "seed": 11158
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0580",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a group decision.*",
+  "music": {
+   "key": "G",
+   "seed": 11159
+  },
+  "ending": "lesson"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0671",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on their commute",
+  "music": {
+   "key": "C",
+   "seed": 11340
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0671",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're doing | *better than you think.*",
+  "music": {
+   "key": "D",
+   "seed": 11341
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0672",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Your Aquarius mom | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11342
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0672",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "F",
+   "seed": 11343
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0673",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a pool party",
+  "music": {
+   "key": "G",
+   "seed": 11344
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0673",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, protect | *your peace.*",
+  "music": {
+   "key": "C",
+   "seed": 11345
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0674",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a family reunion",
+  "music": {
+   "key": "D",
+   "seed": 11346
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0674",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, not everyone | *is hiding something.*",
+  "music": {
+   "key": "E",
+   "seed": 11347
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0675",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone uses their nickname | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11348
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0675",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, protect | *your peace.*",
+  "music": {
+   "key": "G",
+   "seed": 11349
+  },
+  "ending": "lesson"
+ }
+]

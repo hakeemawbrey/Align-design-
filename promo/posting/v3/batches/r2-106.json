@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0526",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos packing | *a suitcase.*",
+  "music": {
+   "key": "C",
+   "seed": 11050
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0526",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What Tauruses need | *on a bad day.*",
+  "music": {
+   "key": "D",
+   "seed": 11051
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0527",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces at a party | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11052
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0527",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to cheer up | *an Aquarius.*",
+  "music": {
+   "key": "F",
+   "seed": 11053
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0528",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the call could've been a text | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11054
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0528",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, this is your sign | *to slow down.*",
+  "music": {
+   "key": "C",
+   "seed": 11055
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0529",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at bingo night",
+  "music": {
+   "key": "D",
+   "seed": 11056
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0529",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *treat-yourself rule.*",
+  "music": {
+   "key": "E",
+   "seed": 11057
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0530",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras texting | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11058
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0530",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a hard conversation.*",
+  "music": {
+   "key": "G",
+   "seed": 11059
+  },
+  "ending": "callback"
+ }
+]

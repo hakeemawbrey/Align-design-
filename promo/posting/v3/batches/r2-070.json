@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0346",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making the bed",
+  "music": {
+   "key": "C",
+   "seed": 10690
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0346",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "D",
+   "seed": 10691
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0347",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs pretending to know the words | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10692
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0347",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to apologise | *to a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 10693
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0348",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the date's awkward | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10694
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0348",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to cheer up | *a Libra.*",
+  "music": {
+   "key": "C",
+   "seed": 10695
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0349",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos at a party | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10696
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0349",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can start fresh this season.*",
+  "music": {
+   "key": "E",
+   "seed": 10697
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0350",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries as your boss | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10698
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0350",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect study buddy.*",
+  "music": {
+   "key": "G",
+   "seed": 10699
+  },
+  "ending": "group"
+ }
+]

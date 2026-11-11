@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0351",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers vs. | *old photos.*",
+  "music": {
+   "key": "C",
+   "seed": 10700
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0351",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, here's your | *Sunday reset.*",
+  "music": {
+   "key": "D",
+   "seed": 10701
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0352",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs making their morning coffee | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10702
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0352",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, before you | *send that text.*",
+  "music": {
+   "key": "F",
+   "seed": 10703
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0353",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians on a first date | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10704
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0353",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, before you | *send that text.*",
+  "music": {
+   "key": "C",
+   "seed": 10705
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0354",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces when they're mad | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10706
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0354",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *most romantic habit.*",
+  "music": {
+   "key": "E",
+   "seed": 10707
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0355",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a food festival",
+  "music": {
+   "key": "F",
+   "seed": 10708
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0355",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs on a Sunday.*",
+  "music": {
+   "key": "G",
+   "seed": 10709
+  },
+  "ending": "group"
+ }
+]

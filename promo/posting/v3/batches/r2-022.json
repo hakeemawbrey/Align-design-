@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0106",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"long story\" | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10210
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0106",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to thank | *a Libra.*",
+  "music": {
+   "key": "D",
+   "seed": 10211
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0107",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the vending machine eats their coin | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10212
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0107",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, the right people | *will stay.*",
+  "music": {
+   "key": "F",
+   "seed": 10213
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0108",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs finding a parking spot | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10214
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0108",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "C",
+   "seed": 10215
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0109",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs trying the local food",
+  "music": {
+   "key": "D",
+   "seed": 10216
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0109",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *practises patience.*",
+  "music": {
+   "key": "E",
+   "seed": 10217
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0110",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making breakfast",
+  "music": {
+   "key": "F",
+   "seed": 10218
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0110",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect match.*",
+  "music": {
+   "key": "G",
+   "seed": 10219
+  },
+  "ending": "card"
+ }
+]

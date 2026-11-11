@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0686",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as the oldest child",
+  "music": {
+   "key": "C",
+   "seed": 11370
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0686",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "D",
+   "seed": 11371
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0687",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios on a day off | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11372
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0687",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, it's okay | *to be alone.*",
+  "music": {
+   "key": "F",
+   "seed": 11373
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0688",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a hot air balloon ride",
+  "music": {
+   "key": "G",
+   "seed": 11374
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0688",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to make friends | *with a Gemini.*",
+  "music": {
+   "key": "C",
+   "seed": 11375
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0689",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs training the new hire",
+  "music": {
+   "key": "D",
+   "seed": 11376
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0689",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, it's okay | *to miss them.*",
+  "music": {
+   "key": "E",
+   "seed": 11377
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0690",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians in the group chat | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11378
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0690",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "G",
+   "seed": 11379
+  },
+  "ending": "callback"
+ }
+]

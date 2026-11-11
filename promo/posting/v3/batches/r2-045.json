@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0221",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a spelling bee",
+  "music": {
+   "key": "C",
+   "seed": 10440
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0221",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "D",
+   "seed": 10441
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0222",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a farm stay",
+  "music": {
+   "key": "E",
+   "seed": 10442
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0222",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to surprise | *a Pisces.*",
+  "music": {
+   "key": "F",
+   "seed": 10443
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0223",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the book was better | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10444
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0223",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, this is your sign | *to slow down.*",
+  "music": {
+   "key": "C",
+   "seed": 10445
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0224",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a bubble tea shop",
+  "music": {
+   "key": "D",
+   "seed": 10446
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0224",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs after a long trip.*",
+  "music": {
+   "key": "E",
+   "seed": 10447
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0225",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis on a first date | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10448
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0225",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *love lesson.*",
+  "music": {
+   "key": "G",
+   "seed": 10449
+  },
+  "ending": "lesson"
+ }
+]

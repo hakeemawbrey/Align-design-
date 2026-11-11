@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0446",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a magic show",
+  "music": {
+   "key": "C",
+   "seed": 10890
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0446",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "How to make friends | *with a Leo.*",
+  "music": {
+   "key": "D",
+   "seed": 10891
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0447",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a work retreat",
+  "music": {
+   "key": "E",
+   "seed": 10892
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0447",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to make friends | *with a Taurus.*",
+  "music": {
+   "key": "F",
+   "seed": 10893
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0448",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the waiter gets it wrong | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10894
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0448",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What Geminis need | *on a bad day.*",
+  "music": {
+   "key": "C",
+   "seed": 10895
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0449",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Your Scorpio coworker | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10896
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0449",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs to feel chosen.*",
+  "music": {
+   "key": "E",
+   "seed": 10897
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0450",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a friend's art show",
+  "music": {
+   "key": "F",
+   "seed": 10898
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0450",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "One kind act | *for each sign this week.*",
+  "music": {
+   "key": "G",
+   "seed": 10899
+  },
+  "ending": "group"
+ }
+]

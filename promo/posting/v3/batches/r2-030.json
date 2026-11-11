@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0146",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the sun comes out | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10290
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0146",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're allowed | *to say no.*",
+  "music": {
+   "key": "D",
+   "seed": 10291
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0147",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a poetry reading",
+  "music": {
+   "key": "E",
+   "seed": 10292
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0147",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, have you | *eaten today?*",
+  "music": {
+   "key": "F",
+   "seed": 10293
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0148",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos running late | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10294
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0148",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Signs a Cancer | *trusts you.*",
+  "music": {
+   "key": "C",
+   "seed": 10295
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0149",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at game night",
+  "music": {
+   "key": "D",
+   "seed": 10296
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0149",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *dream weekend.*",
+  "music": {
+   "key": "E",
+   "seed": 10297
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0150",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries on a day off | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10298
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0150",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs more of.*",
+  "music": {
+   "key": "G",
+   "seed": 10299
+  },
+  "ending": "callback"
+ }
+]

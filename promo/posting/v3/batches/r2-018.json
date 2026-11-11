@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0086",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at mini golf",
+  "music": {
+   "key": "C",
+   "seed": 10170
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0086",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Signs a Taurus | *needs a break.*",
+  "music": {
+   "key": "D",
+   "seed": 10171
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0087",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone shows them vacation photos | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10172
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0087",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 10173
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0088",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Your Aquarius sibling | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10174
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0088",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "C",
+   "seed": 10175
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0089",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers shopping | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10176
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0089",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *grows.*",
+  "music": {
+   "key": "E",
+   "seed": 10177
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0090",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns as your boss | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10178
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0090",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a long phone call.*",
+  "music": {
+   "key": "G",
+   "seed": 10179
+  },
+  "ending": "callback"
+ }
+]

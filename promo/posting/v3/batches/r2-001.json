@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0001",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Being a Taurus | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10000
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0001",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you can't fix | *everyone.*",
+  "music": {
+   "key": "D",
+   "seed": 10001
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0002",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they find a four-leaf clover | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10002
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0002",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "F",
+   "seed": 10003
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0003",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "How to spot | *an Aquarius.*",
+  "music": {
+   "key": "G",
+   "seed": 10004
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0003",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to live | *with each sign.*",
+  "music": {
+   "key": "C",
+   "seed": 10005
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0004",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs taking a selfie",
+  "music": {
+   "key": "D",
+   "seed": 10006
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0004",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, quiet is | *not boring.*",
+  "music": {
+   "key": "E",
+   "seed": 10007
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0005",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone borrows their stuff | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10008
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0005",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can stop overthinking.*",
+  "music": {
+   "key": "G",
+   "seed": 10009
+  },
+  "ending": "group"
+ }
+]

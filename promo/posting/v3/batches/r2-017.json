@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0081",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs doing homework | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10160
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0081",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 10161
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0082",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers as your boss | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10162
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0082",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, this is your sign | *to slow down.*",
+  "music": {
+   "key": "F",
+   "seed": 10163
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0083",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at an escape room",
+  "music": {
+   "key": "G",
+   "seed": 10164
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0083",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're not | *too much.*",
+  "music": {
+   "key": "C",
+   "seed": 10165
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0084",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a deadline",
+  "music": {
+   "key": "D",
+   "seed": 10166
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0084",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign's family | *wishes they knew.*",
+  "music": {
+   "key": "E",
+   "seed": 10167
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0085",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their match sends a long message | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10168
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0085",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shares the spotlight.*",
+  "music": {
+   "key": "G",
+   "seed": 10169
+  },
+  "ending": "lesson"
+ }
+]

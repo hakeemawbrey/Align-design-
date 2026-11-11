@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0386",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Your Capricorn sibling | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10770
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0386",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, have you | *eaten today?*",
+  "music": {
+   "key": "D",
+   "seed": 10771
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0387",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs typing for ten minutes | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10772
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0387",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, your soft heart | *is strength.*",
+  "music": {
+   "key": "F",
+   "seed": 10773
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0388",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a long flight",
+  "music": {
+   "key": "G",
+   "seed": 10774
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0388",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, have you | *eaten today?*",
+  "music": {
+   "key": "C",
+   "seed": 10775
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0389",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they can't find the remote | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10776
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0389",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *brings to a friendship.*",
+  "music": {
+   "key": "E",
+   "seed": 10777
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0390",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos vs. | *a messy desk.*",
+  "music": {
+   "key": "F",
+   "seed": 10778
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0390",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs in a best friend.*",
+  "music": {
+   "key": "G",
+   "seed": 10779
+  },
+  "ending": "callback"
+ }
+]

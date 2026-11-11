@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0156",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as houseplants",
+  "music": {
+   "key": "C",
+   "seed": 10310
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0156",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, your courage | *inspires people.*",
+  "music": {
+   "key": "D",
+   "seed": 10311
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0157",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs answering emails",
+  "music": {
+   "key": "E",
+   "seed": 10312
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0157",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 10313
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0158",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras running late | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10314
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0158",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, protect | *your peace.*",
+  "music": {
+   "key": "C",
+   "seed": 10315
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0159",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making it official",
+  "music": {
+   "key": "D",
+   "seed": 10316
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0159",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *exam-week reminder.*",
+  "music": {
+   "key": "E",
+   "seed": 10317
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0160",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to wake up early | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10318
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0160",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a big birthday.*",
+  "music": {
+   "key": "G",
+   "seed": 10319
+  },
+  "ending": "lesson"
+ }
+]

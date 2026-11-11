@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0276",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians texting | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10550
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0276",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, let yourself | *be loved.*",
+  "music": {
+   "key": "D",
+   "seed": 10551
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0277",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libra red flags | *we love.*",
+  "music": {
+   "key": "E",
+   "seed": 10552
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0277",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Signs a Gemini | *misses you.*",
+  "music": {
+   "key": "F",
+   "seed": 10553
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0278",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their friend is driving | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10554
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0278",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to thank | *an Aquarius.*",
+  "music": {
+   "key": "C",
+   "seed": 10555
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0279",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "How to spot | *a Gemini.*",
+  "music": {
+   "key": "D",
+   "seed": 10556
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0279",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *makes peace with the past.*",
+  "music": {
+   "key": "E",
+   "seed": 10557
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0280",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the lift is full | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10558
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0280",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *friendship advice.*",
+  "music": {
+   "key": "G",
+   "seed": 10559
+  },
+  "ending": "lesson"
+ }
+]

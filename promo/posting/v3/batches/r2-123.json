@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0611",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone looks at their screen | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11220
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0611",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What Virgos need | *after a fight.*",
+  "music": {
+   "key": "D",
+   "seed": 11221
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0612",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs playing tennis",
+  "music": {
+   "key": "E",
+   "seed": 11222
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0612",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "F",
+   "seed": 11223
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0613",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses on their birthday | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11224
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0613",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to give a Scorpio | *space.*",
+  "music": {
+   "key": "C",
+   "seed": 11225
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0614",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces vs. | *a sad movie.*",
+  "music": {
+   "key": "D",
+   "seed": 11226
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0614",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to check in | *on an Aquarius.*",
+  "music": {
+   "key": "E",
+   "seed": 11227
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0615",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in the passenger seat | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11228
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0615",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "What Scorpios need | *to feel heard.*",
+  "music": {
+   "key": "G",
+   "seed": 11229
+  },
+  "ending": "group"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0651",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs on a bad hair day | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11300
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0651",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you don't have | *to be perfect.*",
+  "music": {
+   "key": "D",
+   "seed": 11301
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0652",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to drink more water | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11302
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0652",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, the right people | *will stay.*",
+  "music": {
+   "key": "F",
+   "seed": 11303
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0653",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're wrong | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11304
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0653",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to give a Pisces | *space.*",
+  "music": {
+   "key": "C",
+   "seed": 11305
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0654",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Your Virgo roommate | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11306
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0654",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to say no.*",
+  "music": {
+   "key": "E",
+   "seed": 11307
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0655",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at book club",
+  "music": {
+   "key": "F",
+   "seed": 11308
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0655",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're doing | *better than you think.*",
+  "music": {
+   "key": "G",
+   "seed": 11309
+  },
+  "ending": "callback"
+ }
+]

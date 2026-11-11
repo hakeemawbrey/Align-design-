@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0516",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs making a wish | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11030
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0516",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "What Scorpios need | *on a bad day.*",
+  "music": {
+   "key": "D",
+   "seed": 11031
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0517",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the neighbours are loud | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11032
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0517",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you don't have | *to be perfect.*",
+  "music": {
+   "key": "F",
+   "seed": 11033
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0518",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Your Capricorn mom | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11034
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0518",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, here's your | *Sunday reset.*",
+  "music": {
+   "key": "C",
+   "seed": 11035
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0519",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're early for once | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11036
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0519",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows gratitude.*",
+  "music": {
+   "key": "E",
+   "seed": 11037
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0520",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a coffee date",
+  "music": {
+   "key": "F",
+   "seed": 11038
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0520",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *starts the day.*",
+  "music": {
+   "key": "G",
+   "seed": 11039
+  },
+  "ending": "callback"
+ }
+]

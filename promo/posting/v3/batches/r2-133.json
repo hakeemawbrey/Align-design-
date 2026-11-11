@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0661",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs finding money in a pocket | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11320
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0661",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, the right people | *will stay.*",
+  "music": {
+   "key": "D",
+   "seed": 11321
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0662",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Your Gemini mom | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11322
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0662",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to say no.*",
+  "music": {
+   "key": "F",
+   "seed": 11323
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0663",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces daydreaming | *at work.*",
+  "music": {
+   "key": "G",
+   "seed": 11324
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0663",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, your stubbornness | *is loyalty.*",
+  "music": {
+   "key": "C",
+   "seed": 11325
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0664",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a food truck",
+  "music": {
+   "key": "D",
+   "seed": 11326
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0664",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're allowed | *to say no.*",
+  "music": {
+   "key": "E",
+   "seed": 11327
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0665",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius red flags | *we love.*",
+  "music": {
+   "key": "F",
+   "seed": 11328
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0665",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you can't fix | *everyone.*",
+  "music": {
+   "key": "G",
+   "seed": 11329
+  },
+  "ending": "group"
+ }
+]

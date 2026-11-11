@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0641",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis with | *a new hobby.*",
+  "music": {
+   "key": "C",
+   "seed": 11280
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0641",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to thank | *a Pisces.*",
+  "music": {
+   "key": "D",
+   "seed": 11281
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0642",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers running late | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11282
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0642",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you can't fix | *everyone.*",
+  "music": {
+   "key": "F",
+   "seed": 11283
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0643",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs spilling coffee on themselves | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11284
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0643",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, the right people | *will stay.*",
+  "music": {
+   "key": "C",
+   "seed": 11285
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0644",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians making plans | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11286
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0644",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, this is your sign | *to call home.*",
+  "music": {
+   "key": "E",
+   "seed": 11287
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0645",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs after a long nap | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11288
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0645",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you don't have | *to be perfect.*",
+  "music": {
+   "key": "G",
+   "seed": 11289
+  },
+  "ending": "lesson"
+ }
+]

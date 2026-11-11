@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0176",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as the youngest child",
+  "music": {
+   "key": "C",
+   "seed": 10350
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0176",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to give a Gemini | *space.*",
+  "music": {
+   "key": "D",
+   "seed": 10351
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0177",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers when you | *leave early.*",
+  "music": {
+   "key": "E",
+   "seed": 10352
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0177",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're doing | *better than you think.*",
+  "music": {
+   "key": "F",
+   "seed": 10353
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0178",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs at a red light | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10354
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0178",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, let yourself | *be loved.*",
+  "music": {
+   "key": "C",
+   "seed": 10355
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0179",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a team lunch",
+  "music": {
+   "key": "D",
+   "seed": 10356
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0179",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect breakfast.*",
+  "music": {
+   "key": "E",
+   "seed": 10357
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0180",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs doing a puzzle",
+  "music": {
+   "key": "F",
+   "seed": 10358
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0180",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *flower to grow.*",
+  "music": {
+   "key": "G",
+   "seed": 10359
+  },
+  "ending": "lesson"
+ }
+]

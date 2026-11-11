@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0751",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries red flags | *we love.*",
+  "music": {
+   "key": "C",
+   "seed": 11500
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0751",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, change | *can be cozy too.*",
+  "music": {
+   "key": "D",
+   "seed": 11501
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0752",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"no rush\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11502
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0752",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "F",
+   "seed": 11503
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0753",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Your Taurus roommate | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11504
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0753",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to thank | *a Scorpio.*",
+  "music": {
+   "key": "C",
+   "seed": 11505
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0754",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when there's free food | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11506
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0754",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, commitment | *isn't a cage.*",
+  "music": {
+   "key": "E",
+   "seed": 11507
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0755",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Your Scorpio mom | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11508
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0755",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to surprise | *an Aquarius.*",
+  "music": {
+   "key": "G",
+   "seed": 11509
+  },
+  "ending": "callback"
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0111",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone plans the whole day | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10220
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0111",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, treat yourself | *without guilt.*",
+  "music": {
+   "key": "D",
+   "seed": 10221
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0112",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"pick a number\" | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10222
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0112",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, laugh | *more often.*",
+  "music": {
+   "key": "F",
+   "seed": 10223
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0113",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're asked to share | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10224
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0113",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "How to apologise | *to a Scorpio.*",
+  "music": {
+   "key": "C",
+   "seed": 10225
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0114",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a networking event",
+  "music": {
+   "key": "D",
+   "seed": 10226
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0114",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *means by \"I'm fine.\"*",
+  "music": {
+   "key": "E",
+   "seed": 10227
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0115",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as interns",
+  "music": {
+   "key": "F",
+   "seed": 10228
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0115",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to brighten | *each sign's Monday.*",
+  "music": {
+   "key": "G",
+   "seed": 10229
+  },
+  "ending": "callback"
+ }
+]

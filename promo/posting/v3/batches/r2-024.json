@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0116",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"one more thing\" | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10230
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0116",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, let yourself | *be loved.*",
+  "music": {
+   "key": "D",
+   "seed": 10231
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0117",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs giving directions | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10232
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0117",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you're allowed | *to want more.*",
+  "music": {
+   "key": "F",
+   "seed": 10233
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0118",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in a waiting room",
+  "music": {
+   "key": "G",
+   "seed": 10234
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0118",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, celebrate | *the small wins.*",
+  "music": {
+   "key": "C",
+   "seed": 10235
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0119",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Asking a Taurus | *to share dessert.*",
+  "music": {
+   "key": "D",
+   "seed": 10236
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0119",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to cook | *for each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10237
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0120",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the arcade",
+  "music": {
+   "key": "F",
+   "seed": 10238
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0120",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *gets through winter.*",
+  "music": {
+   "key": "G",
+   "seed": 10239
+  },
+  "ending": "callback"
+ }
+]

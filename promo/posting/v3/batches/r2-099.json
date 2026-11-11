@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0491",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns on a day off | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10980
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0491",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're doing | *better than you think.*",
+  "music": {
+   "key": "D",
+   "seed": 10981
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0492",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs sending the wrong text | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10982
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0492",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Signs a Scorpio | *trusts you.*",
+  "music": {
+   "key": "F",
+   "seed": 10983
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0493",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the first cold day",
+  "music": {
+   "key": "G",
+   "seed": 10984
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0493",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, the plan | *can be loose.*",
+  "music": {
+   "key": "C",
+   "seed": 10985
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0494",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs deleting a text unsent | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10986
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0494",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *best roommate match.*",
+  "music": {
+   "key": "E",
+   "seed": 10987
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0495",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos giving | *a speech.*",
+  "music": {
+   "key": "F",
+   "seed": 10988
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0495",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What fills | *each sign's cup.*",
+  "music": {
+   "key": "G",
+   "seed": 10989
+  },
+  "ending": "callback"
+ }
+]

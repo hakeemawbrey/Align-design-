@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0376",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"we should hang out\" | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10750
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0376",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "How to give a Taurus | *space.*",
+  "music": {
+   "key": "D",
+   "seed": 10751
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0377",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "How to spot | *a Virgo.*",
+  "music": {
+   "key": "E",
+   "seed": 10752
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0377",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "F",
+   "seed": 10753
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0378",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as real estate agents",
+  "music": {
+   "key": "G",
+   "seed": 10754
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0378",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, not everything | *is a race.*",
+  "music": {
+   "key": "C",
+   "seed": 10755
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0379",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a summer barbecue",
+  "music": {
+   "key": "D",
+   "seed": 10756
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0379",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *says goodbye.*",
+  "music": {
+   "key": "E",
+   "seed": 10757
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0380",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians on a trip | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10758
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0380",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *summer adventure.*",
+  "music": {
+   "key": "G",
+   "seed": 10759
+  },
+  "ending": "callback"
+ }
+]

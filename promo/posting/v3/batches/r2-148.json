@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0736",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs making dumplings",
+  "music": {
+   "key": "C",
+   "seed": 11470
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0736",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you can't fix | *everyone.*",
+  "music": {
+   "key": "D",
+   "seed": 11471
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0737",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the food arrives | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11472
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0737",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, celebrate | *the small wins.*",
+  "music": {
+   "key": "F",
+   "seed": 11473
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0738",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a dance class",
+  "music": {
+   "key": "G",
+   "seed": 11474
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0738",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "C",
+   "seed": 11475
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0739",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a craft fair",
+  "music": {
+   "key": "D",
+   "seed": 11476
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0739",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "What a Cancer | *won't say out loud.*",
+  "music": {
+   "key": "E",
+   "seed": 11477
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0740",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when you steal a fry | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11478
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0740",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to cheer up | *a Cancer.*",
+  "music": {
+   "key": "G",
+   "seed": 11479
+  },
+  "ending": "group"
+ }
+]

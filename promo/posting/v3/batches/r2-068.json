@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0336",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the snack bag is half air | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10670
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0336",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "D",
+   "seed": 10671
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0337",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs learning to skateboard",
+  "music": {
+   "key": "E",
+   "seed": 10672
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0337",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "F",
+   "seed": 10673
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0338",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians making plans | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10674
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0338",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to encourage | *an Aquarius.*",
+  "music": {
+   "key": "C",
+   "seed": 10675
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0339",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Being a Cancer | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10676
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0339",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to make plans | *with each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10677
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0340",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios making plans | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10678
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0340",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles conflict.*",
+  "music": {
+   "key": "G",
+   "seed": 10679
+  },
+  "ending": "callback"
+ }
+]

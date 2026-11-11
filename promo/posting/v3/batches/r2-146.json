@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0726",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a cheese tasting",
+  "music": {
+   "key": "C",
+   "seed": 11450
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0726",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, celebrate | *the small wins.*",
+  "music": {
+   "key": "D",
+   "seed": 11451
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0727",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs hanging a picture frame",
+  "music": {
+   "key": "E",
+   "seed": 11452
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0727",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to give a Capricorn | *space.*",
+  "music": {
+   "key": "F",
+   "seed": 11453
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0728",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they sneeze in a quiet room | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11454
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0728",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "C",
+   "seed": 11455
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0729",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras as your boss | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11456
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0729",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, both of you | *are welcome here.*",
+  "music": {
+   "key": "E",
+   "seed": 11457
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0730",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a lake house",
+  "music": {
+   "key": "F",
+   "seed": 11458
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0730",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, have you | *eaten today?*",
+  "music": {
+   "key": "G",
+   "seed": 11459
+  },
+  "ending": "group"
+ }
+]

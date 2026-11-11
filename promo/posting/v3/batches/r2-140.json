@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0696",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"five minutes away\" | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11390
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0696",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to say no.*",
+  "music": {
+   "key": "D",
+   "seed": 11391
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0697",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the printer jams | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11392
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0697",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "What a Leo | *won't say out loud.*",
+  "music": {
+   "key": "F",
+   "seed": 11393
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0698",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses running late | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11394
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0698",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "How to apologise | *to a Cancer.*",
+  "music": {
+   "key": "C",
+   "seed": 11395
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0699",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when there's one slice left | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11396
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0699",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Signs a Taurus | *misses you.*",
+  "music": {
+   "key": "E",
+   "seed": 11397
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0700",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as neighbours",
+  "music": {
+   "key": "F",
+   "seed": 11398
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0700",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What Pisces need | *from a friend.*",
+  "music": {
+   "key": "G",
+   "seed": 11399
+  },
+  "ending": "group"
+ }
+]

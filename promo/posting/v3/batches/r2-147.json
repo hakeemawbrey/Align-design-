@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0731",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs having breakfast in bed",
+  "music": {
+   "key": "C",
+   "seed": 11460
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0731",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "What Scorpios need | *from a friend.*",
+  "music": {
+   "key": "D",
+   "seed": 11461
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0732",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a blind date",
+  "music": {
+   "key": "E",
+   "seed": 11462
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0732",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to apologise | *to a Capricorn.*",
+  "music": {
+   "key": "F",
+   "seed": 11463
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0733",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're in a mood | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11464
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0733",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What Geminis need | *after a fight.*",
+  "music": {
+   "key": "C",
+   "seed": 11465
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0734",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a ferry",
+  "music": {
+   "key": "D",
+   "seed": 11466
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0734",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "What a Gemini | *won't say out loud.*",
+  "music": {
+   "key": "E",
+   "seed": 11467
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0735",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries on a trip | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11468
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0735",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What Tauruses need | *after a fight.*",
+  "music": {
+   "key": "G",
+   "seed": 11469
+  },
+  "ending": "card"
+ }
+]

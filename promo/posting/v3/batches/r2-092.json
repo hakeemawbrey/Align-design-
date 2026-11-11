@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0456",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians on their birthday | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10910
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0456",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Signs a Libra | *likes you.*",
+  "music": {
+   "key": "D",
+   "seed": 10911
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0457",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras shopping | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10912
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0457",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, the past | *can stay there.*",
+  "music": {
+   "key": "F",
+   "seed": 10913
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0458",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos at a party | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10914
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0458",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 10915
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0459",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they finally get the joke | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10916
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0459",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *relationship goal.*",
+  "music": {
+   "key": "E",
+   "seed": 10917
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0460",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're shy | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10918
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0460",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *team role.*",
+  "music": {
+   "key": "G",
+   "seed": 10919
+  },
+  "ending": "callback"
+ }
+]

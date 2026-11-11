@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0311",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs after an exam | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10620
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0311",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "What Tauruses need | *to feel heard.*",
+  "music": {
+   "key": "D",
+   "seed": 10621
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0312",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis in the group chat | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10622
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0312",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, celebrate | *the small wins.*",
+  "music": {
+   "key": "F",
+   "seed": 10623
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0313",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios texting | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10624
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0313",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Signs a Scorpio | *misses you.*",
+  "music": {
+   "key": "C",
+   "seed": 10625
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0314",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries at | *board game night.*",
+  "music": {
+   "key": "D",
+   "seed": 10626
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0314",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should do on a free day.*",
+  "music": {
+   "key": "E",
+   "seed": 10627
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0315",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their match double texts | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10628
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0315",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can enjoy being alone.*",
+  "music": {
+   "key": "G",
+   "seed": 10629
+  },
+  "ending": "lesson"
+ }
+]

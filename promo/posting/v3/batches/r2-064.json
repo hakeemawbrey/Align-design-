@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0316",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Your Capricorn coworker | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10630
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0316",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, celebrate | *the small wins.*",
+  "music": {
+   "key": "D",
+   "seed": 10631
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0317",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras on a trip | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10632
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0317",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Signs a Leo | *likes you.*",
+  "music": {
+   "key": "F",
+   "seed": 10633
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0318",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "Pisces shopping | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10634
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0318",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're worth | *the slow build.*",
+  "music": {
+   "key": "C",
+   "seed": 10635
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0319",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a toy store",
+  "music": {
+   "key": "D",
+   "seed": 10636
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0319",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *opens up.*",
+  "music": {
+   "key": "E",
+   "seed": 10637
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0320",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to stay calm | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10638
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0320",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can sleep better.*",
+  "music": {
+   "key": "G",
+   "seed": 10639
+  },
+  "ending": "callback"
+ }
+]

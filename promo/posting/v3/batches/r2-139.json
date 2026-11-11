@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0691",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios on their birthday | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11380
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0691",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, it's okay | *to start over.*",
+  "music": {
+   "key": "D",
+   "seed": 11381
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0692",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as teachers",
+  "music": {
+   "key": "E",
+   "seed": 11382
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0692",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "What a Pisces | *won't say out loud.*",
+  "music": {
+   "key": "F",
+   "seed": 11383
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0693",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos running late | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11384
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0693",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "C",
+   "seed": 11385
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0694",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the door says pull | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11386
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0694",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, it's okay | *to start over.*",
+  "music": {
+   "key": "E",
+   "seed": 11387
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0695",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they learn a new word | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11388
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0695",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Signs an Aquarius | *misses you.*",
+  "music": {
+   "key": "G",
+   "seed": 11389
+  },
+  "ending": "card"
+ }
+]

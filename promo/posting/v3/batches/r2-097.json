@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0481",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs shopping while hungry | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10960
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0481",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Signs a Gemini | *likes you.*",
+  "music": {
+   "key": "D",
+   "seed": 10961
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0482",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios on a first date | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10962
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0482",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "F",
+   "seed": 10963
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0483",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at chess club",
+  "music": {
+   "key": "G",
+   "seed": 10964
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0483",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "What Cancers need | *from a friend.*",
+  "music": {
+   "key": "C",
+   "seed": 10965
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0484",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they hear good news | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10966
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0484",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is outgrowing.*",
+  "music": {
+   "key": "E",
+   "seed": 10967
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0485",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the mechanic",
+  "music": {
+   "key": "F",
+   "seed": 10968
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0485",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *notices on a first date.*",
+  "music": {
+   "key": "G",
+   "seed": 10969
+  },
+  "ending": "card"
+ }
+]

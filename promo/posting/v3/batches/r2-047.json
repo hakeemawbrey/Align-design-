@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0231",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a fancy tasting menu",
+  "music": {
+   "key": "C",
+   "seed": 10460
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0231",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to apologise | *to a Virgo.*",
+  "music": {
+   "key": "D",
+   "seed": 10461
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0232",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're embarrassed | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10462
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0232",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you can't fix | *everyone.*",
+  "music": {
+   "key": "F",
+   "seed": 10463
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0233",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as babysitters",
+  "music": {
+   "key": "G",
+   "seed": 10464
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0233",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "What Libras need | *on a bad day.*",
+  "music": {
+   "key": "C",
+   "seed": 10465
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0234",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs planning a group trip",
+  "music": {
+   "key": "D",
+   "seed": 10466
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0234",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *inner child.*",
+  "music": {
+   "key": "E",
+   "seed": 10467
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0235",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Your Leo mom | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10468
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0235",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can make mornings easier.*",
+  "music": {
+   "key": "G",
+   "seed": 10469
+  },
+  "ending": "lesson"
+ }
+]

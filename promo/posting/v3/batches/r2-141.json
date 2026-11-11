@@ -1,0 +1,119 @@
+[
+ {
+  "id": "r2t0701",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they miss the train | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11400
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0701",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "How to apologise | *to an Aquarius.*",
+  "music": {
+   "key": "D",
+   "seed": 11401
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0702",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they finish their to-do list | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11402
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0702",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're doing | *better than you think.*",
+  "music": {
+   "key": "F",
+   "seed": 11403
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0703",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Your Cancer sibling | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11404
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0703",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, it's okay | *to miss them.*",
+  "music": {
+   "key": "C",
+   "seed": 11405
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0704",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone texts \"k\" | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11406
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0704",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "How to thank | *a Gemini.*",
+  "music": {
+   "key": "E",
+   "seed": 11407
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0705",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians on their birthday | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11408
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0705",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, you're allowed | *to say no.*",
+  "music": {
+   "key": "G",
+   "seed": 11409
+  },
+  "ending": "callback"
+ }
+]

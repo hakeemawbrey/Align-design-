@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0511",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos on a trip | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 11020
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0511",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "D",
+   "seed": 11021
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0512",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis running late | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11022
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0512",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, new things | *can feel like home.*",
+  "music": {
+   "key": "F",
+   "seed": 11023
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0513",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they hear \"can I ask you something?\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11024
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0513",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, let someone else | *shine too.*",
+  "music": {
+   "key": "C",
+   "seed": 11025
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0514",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a paper cut | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11026
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0514",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *at their most generous.*",
+  "music": {
+   "key": "E",
+   "seed": 11027
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0515",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone stands them up | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11028
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0515",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *winds down at night.*",
+  "music": {
+   "key": "G",
+   "seed": 11029
+  },
+  "ending": "callback"
+ }
+]

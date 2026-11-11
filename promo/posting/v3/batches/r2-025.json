@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0121",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone hums all day | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10240
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0121",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, have you | *eaten today?*",
+  "music": {
+   "key": "D",
+   "seed": 10241
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0122",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries running late | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10242
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0122",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, have you | *eaten today?*",
+  "music": {
+   "key": "F",
+   "seed": 10243
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0123",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Being an Aquarius | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10244
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0123",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "C",
+   "seed": 10245
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0124",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "How to spot | *a Cancer.*",
+  "music": {
+   "key": "D",
+   "seed": 10246
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0124",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is building right now.*",
+  "music": {
+   "key": "E",
+   "seed": 10247
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0125",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a hot spring",
+  "music": {
+   "key": "F",
+   "seed": 10248
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0125",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *rainy-day plan.*",
+  "music": {
+   "key": "G",
+   "seed": 10249
+  },
+  "ending": "lesson"
+ }
+]

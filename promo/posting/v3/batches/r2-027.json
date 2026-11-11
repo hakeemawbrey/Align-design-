@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0131",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as cats",
+  "music": {
+   "key": "C",
+   "seed": 10260
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0131",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you can't fix | *everyone.*",
+  "music": {
+   "key": "D",
+   "seed": 10261
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0132",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs planning an anniversary",
+  "music": {
+   "key": "E",
+   "seed": 10262
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0132",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Signs a Libra | *misses you.*",
+  "music": {
+   "key": "F",
+   "seed": 10263
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0133",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at pizza night",
+  "music": {
+   "key": "G",
+   "seed": 10264
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0133",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, before you | *send that text.*",
+  "music": {
+   "key": "C",
+   "seed": 10265
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0134",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis when they're mad | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10266
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0134",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *lunch-break reset.*",
+  "music": {
+   "key": "E",
+   "seed": 10267
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0135",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers hosting | *dinner.*",
+  "music": {
+   "key": "F",
+   "seed": 10268
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0135",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *can be kinder to themselves.*",
+  "music": {
+   "key": "G",
+   "seed": 10269
+  },
+  "ending": "lesson"
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0281",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers keeping a secret | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10560
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0281",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, let yourself | *be proud.*",
+  "music": {
+   "key": "D",
+   "seed": 10561
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0282",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Taurus red flags | *we love.*",
+  "music": {
+   "key": "E",
+   "seed": 10562
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0282",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're allowed | *to want more.*",
+  "music": {
+   "key": "F",
+   "seed": 10563
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0283",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos as your boss | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10564
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0283",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, here's your | *Sunday reset.*",
+  "music": {
+   "key": "C",
+   "seed": 10565
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0284",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're told no | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10566
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0284",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *brings to family dinner.*",
+  "music": {
+   "key": "E",
+   "seed": 10567
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0285",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the food's too spicy | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10568
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0285",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *favourite small joy.*",
+  "music": {
+   "key": "G",
+   "seed": 10569
+  },
+  "ending": "callback"
+ }
+]

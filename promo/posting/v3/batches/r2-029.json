@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0141",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs seeing a shooting star | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10280
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0141",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, you're not | *too much.*",
+  "music": {
+   "key": "D",
+   "seed": 10281
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0142",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a horse riding lesson",
+  "music": {
+   "key": "E",
+   "seed": 10282
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0142",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, you're not | *too much.*",
+  "music": {
+   "key": "F",
+   "seed": 10283
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0143",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians keeping a secret | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10284
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0143",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Signs an Aquarius | *needs a break.*",
+  "music": {
+   "key": "C",
+   "seed": 10285
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0144",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Your Aquarius coworker | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10286
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0144",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *brings on a trip.*",
+  "music": {
+   "key": "E",
+   "seed": 10287
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0145",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Your Libra sibling | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10288
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0145",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *should learn next.*",
+  "music": {
+   "key": "G",
+   "seed": 10289
+  },
+  "ending": "group"
+ }
+]

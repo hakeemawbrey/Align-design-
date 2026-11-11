@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0616",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in a crowded elevator",
+  "music": {
+   "key": "C",
+   "seed": 11230
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0616",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're not | *too much.*",
+  "music": {
+   "key": "D",
+   "seed": 11231
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0617",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs in the break room",
+  "music": {
+   "key": "E",
+   "seed": 11232
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0617",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "F",
+   "seed": 11233
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0618",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a garage sale",
+  "music": {
+   "key": "G",
+   "seed": 11234
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0618",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, you don't have | *to win this one.*",
+  "music": {
+   "key": "C",
+   "seed": 11235
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0619",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone remembers their order | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 11236
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0619",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, weird | *is wonderful.*",
+  "music": {
+   "key": "E",
+   "seed": 11237
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0620",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras on a first date | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11238
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0620",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, this is your sign | *to call home.*",
+  "music": {
+   "key": "G",
+   "seed": 11239
+  },
+  "ending": "group"
+ }
+]

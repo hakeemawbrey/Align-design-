@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0051",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Your Libra coworker | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10100
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0051",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "How to make friends | *with a Virgo.*",
+  "music": {
+   "key": "D",
+   "seed": 10101
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0052",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "virgo",
+  "topic": "Virgos keeping a secret | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10102
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0052",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "F",
+   "seed": 10103
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0053",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a retirement party",
+  "music": {
+   "key": "G",
+   "seed": 10104
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0053",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to want more.*",
+  "music": {
+   "key": "C",
+   "seed": 10105
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0054",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"calm down\" | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10106
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0054",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *houseplant match.*",
+  "music": {
+   "key": "E",
+   "seed": 10107
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0055",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos making plans | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10108
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0055",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *signature dish.*",
+  "music": {
+   "key": "G",
+   "seed": 10109
+  },
+  "ending": "callback"
+ }
+]

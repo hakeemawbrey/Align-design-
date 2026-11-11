@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0421",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries when they're mad | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10840
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0421",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, this is your sign | *to slow down.*",
+  "music": {
+   "key": "D",
+   "seed": 10841
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0422",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "libra",
+  "topic": "Libras at a party | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10842
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0422",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Capricorn, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "F",
+   "seed": 10843
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0423",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at the ballet",
+  "music": {
+   "key": "G",
+   "seed": 10844
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0423",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "How to encourage | *a Pisces.*",
+  "music": {
+   "key": "C",
+   "seed": 10845
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0424",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns keeping a secret | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10846
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0424",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *wants you to notice.*",
+  "music": {
+   "key": "E",
+   "seed": 10847
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0425",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a bookstore",
+  "music": {
+   "key": "F",
+   "seed": 10848
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0425",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs less of.*",
+  "music": {
+   "key": "G",
+   "seed": 10849
+  },
+  "ending": "lesson"
+ }
+]

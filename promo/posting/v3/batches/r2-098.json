@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0486",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone holds the door | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10970
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0486",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 10971
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0487",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarians shopping | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10972
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0487",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, celebrate | *the small wins.*",
+  "music": {
+   "key": "F",
+   "seed": 10973
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0488",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "pisces",
+  "topic": "How to spot | *a Pisces.*",
+  "music": {
+   "key": "G",
+   "seed": 10974
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0488",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "C",
+   "seed": 10975
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0489",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos as your boss | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10976
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0489",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to celebrate | *each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10977
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0490",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they're introduced | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10978
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0490",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *shows they're serious.*",
+  "music": {
+   "key": "G",
+   "seed": 10979
+  },
+  "ending": "card"
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0441",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as pizza toppings",
+  "music": {
+   "key": "C",
+   "seed": 10880
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0441",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "How to make friends | *with a Libra.*",
+  "music": {
+   "key": "D",
+   "seed": 10881
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0442",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs doing the dishes",
+  "music": {
+   "key": "E",
+   "seed": 10882
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0442",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "What Virgos need | *to feel heard.*",
+  "music": {
+   "key": "F",
+   "seed": 10883
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0443",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a souvenir shop",
+  "music": {
+   "key": "G",
+   "seed": 10884
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0443",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Signs an Aries | *misses you.*",
+  "music": {
+   "key": "C",
+   "seed": 10885
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0444",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries in the group chat | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10886
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0444",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What drains | *each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10887
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0445",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the movie has subtitles | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10888
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0445",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How to start a conversation | *with each sign.*",
+  "music": {
+   "key": "G",
+   "seed": 10889
+  },
+  "ending": "callback"
+ }
+]

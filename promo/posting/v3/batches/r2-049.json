@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0241",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Geminis as your boss | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10480
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0241",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, this is your sign | *to slow down.*",
+  "music": {
+   "key": "D",
+   "seed": 10481
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0242",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as coffee orders",
+  "music": {
+   "key": "E",
+   "seed": 10482
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0242",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Signs a Pisces | *misses you.*",
+  "music": {
+   "key": "F",
+   "seed": 10483
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0243",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a pottery class",
+  "music": {
+   "key": "G",
+   "seed": 10484
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0243",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you don't owe anyone | *an instant reply.*",
+  "music": {
+   "key": "C",
+   "seed": 10485
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0244",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses when dinner | *is late.*",
+  "music": {
+   "key": "D",
+   "seed": 10486
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0244",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *loves their family.*",
+  "music": {
+   "key": "E",
+   "seed": 10487
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0245",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs fixing the office printer",
+  "music": {
+   "key": "F",
+   "seed": 10488
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0245",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *perfect cup of tea.*",
+  "music": {
+   "key": "G",
+   "seed": 10489
+  },
+  "ending": "lesson"
+ }
+]

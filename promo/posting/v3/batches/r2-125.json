@@ -1,0 +1,120 @@
+[
+ {
+  "id": "r2t0621",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on the first day of spring",
+  "music": {
+   "key": "C",
+   "seed": 11240
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0621",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you can't | *please everyone.*",
+  "music": {
+   "key": "D",
+   "seed": 11241
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0622",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios shopping | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 11242
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0622",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're allowed | *to be a beginner.*",
+  "music": {
+   "key": "F",
+   "seed": 11243
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0623",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when it's time to leave | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 11244
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0623",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, it's okay | *to start over.*",
+  "music": {
+   "key": "C",
+   "seed": 11245
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0624",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aries",
+  "topic": "Aries vs. | *waiting in line.*",
+  "music": {
+   "key": "D",
+   "seed": 11246
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0624",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Libra, you're not | *too much.*",
+  "music": {
+   "key": "E",
+   "seed": 11247
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0625",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos in the group chat | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 11248
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0625",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "sagittarius",
+  "topic": "Sagittarius, you're not | *too much.*",
+  "music": {
+   "key": "G",
+   "seed": 11249
+  },
+  "ending": "callback"
+ }
+]

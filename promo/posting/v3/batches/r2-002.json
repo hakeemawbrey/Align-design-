@@ -1,0 +1,115 @@
+[
+ {
+  "id": "r2t0006",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpio red flags | *we love.*",
+  "music": {
+   "key": "C",
+   "seed": 10010
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0006",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "How to encourage | *an Aries.*",
+  "music": {
+   "key": "D",
+   "seed": 10011
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0007",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as weather forecasters",
+  "music": {
+   "key": "E",
+   "seed": 10012
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0007",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs to unlearn.*",
+  "music": {
+   "key": "F",
+   "seed": 10013
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0008",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone asks \"what's wrong?\" | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10014
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0008",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *moves on.*",
+  "music": {
+   "key": "C",
+   "seed": 10015
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0009",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a spa day",
+  "music": {
+   "key": "D",
+   "seed": 10016
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0009",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *money mindset.*",
+  "music": {
+   "key": "E",
+   "seed": 10017
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0010",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs in a long line | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10018
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0010",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "cancer",
+  "topic": "Cancer, here's your | *Sunday reset.*",
+  "music": {
+   "key": "G",
+   "seed": 10019
+  },
+  "ending": "lesson"
+ }
+]

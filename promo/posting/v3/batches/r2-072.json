@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0356",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians as your boss | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10710
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0356",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 10711
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0357",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a train",
+  "music": {
+   "key": "E",
+   "seed": 10712
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0357",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "gemini",
+  "topic": "Gemini, you're doing | *better than you think.*",
+  "music": {
+   "key": "F",
+   "seed": 10713
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0358",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when their pen runs out | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10714
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0358",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "libra",
+  "topic": "Signs a Libra | *needs a break.*",
+  "music": {
+   "key": "C",
+   "seed": 10715
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0359",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a gift they hate | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10716
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0359",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a busy week.*",
+  "music": {
+   "key": "E",
+   "seed": 10717
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0360",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a plant nursery",
+  "music": {
+   "key": "F",
+   "seed": 10718
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0360",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign's coworkers | *appreciate.*",
+  "music": {
+   "key": "G",
+   "seed": 10719
+  },
+  "ending": "group"
+ }
+]

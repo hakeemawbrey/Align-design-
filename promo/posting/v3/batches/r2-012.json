@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0056",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a trampoline park",
+  "music": {
+   "key": "C",
+   "seed": 10110
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0056",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, this is your sign | *to call home.*",
+  "music": {
+   "key": "D",
+   "seed": 10111
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0057",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios running late | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10112
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0057",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, have you | *eaten today?*",
+  "music": {
+   "key": "F",
+   "seed": 10113
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0058",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians on a day off | *be like.*",
+  "music": {
+   "key": "G",
+   "seed": 10114
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0058",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, you're allowed | *to change your mind.*",
+  "music": {
+   "key": "C",
+   "seed": 10115
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0059",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get a sunburn | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10116
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0059",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles jealousy.*",
+  "music": {
+   "key": "E",
+   "seed": 10117
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0060",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to meditate | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10118
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0060",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *autumn ritual.*",
+  "music": {
+   "key": "G",
+   "seed": 10119
+  },
+  "ending": "lesson"
+ }
+]

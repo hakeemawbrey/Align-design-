@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0251",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses on a first date | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10500
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2a0251",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, have you | *eaten today?*",
+  "music": {
+   "key": "D",
+   "seed": 10501
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0252",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns texting | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10502
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0252",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "How to thank | *a Capricorn.*",
+  "music": {
+   "key": "F",
+   "seed": 10503
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0253",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs on a windy day",
+  "music": {
+   "key": "G",
+   "seed": 10504
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0253",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, your ideas | *deserve a voice.*",
+  "music": {
+   "key": "C",
+   "seed": 10505
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0254",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "gemini",
+  "topic": "Your Gemini coworker | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10506
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0254",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "A love note | *to each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10507
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0255",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs journaling",
+  "music": {
+   "key": "F",
+   "seed": 10508
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0255",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "How each sign | *handles a new job.*",
+  "music": {
+   "key": "G",
+   "seed": 10509
+  },
+  "ending": "group"
+ }
+]

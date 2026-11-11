@@ -1,0 +1,117 @@
+[
+ {
+  "id": "r2t0271",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "taurus",
+  "topic": "Tauruses as your boss | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10540
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0271",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "capricorn",
+  "topic": "Signs a Capricorn | *likes you.*",
+  "music": {
+   "key": "D",
+   "seed": 10541
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0272",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone asks for the recipe | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10542
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0272",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you're allowed | *to ask for help.*",
+  "music": {
+   "key": "F",
+   "seed": 10543
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0273",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as desserts",
+  "music": {
+   "key": "G",
+   "seed": 10544
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0273",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "scorpio",
+  "topic": "Scorpio, here's your | *Monday pep talk.*",
+  "music": {
+   "key": "C",
+   "seed": 10545
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0274",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs trying to parallel park | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10546
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0274",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "One question | *to ask each sign.*",
+  "music": {
+   "key": "E",
+   "seed": 10547
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0275",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "cancer",
+  "topic": "Cancers when they're mad | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10548
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0275",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *needs in winter.*",
+  "music": {
+   "key": "G",
+   "seed": 10549
+  },
+  "ending": "lesson"
+ }
+]

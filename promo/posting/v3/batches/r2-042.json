@@ -1,0 +1,116 @@
+[
+ {
+  "id": "r2t0206",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs at a yoga class",
+  "music": {
+   "key": "C",
+   "seed": 10410
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0206",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "virgo",
+  "topic": "Virgo, leave the dishes | *for tonight.*",
+  "music": {
+   "key": "D",
+   "seed": 10411
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0207",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "scorpio",
+  "topic": "Scorpios on a trip | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10412
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0207",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aquarius",
+  "topic": "Aquarius, you belong | *here too.*",
+  "music": {
+   "key": "F",
+   "seed": 10413
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0208",
+  "account": "star_talk",
+  "format": "rollcall",
+  "topic": "The signs as bus drivers",
+  "music": {
+   "key": "G",
+   "seed": 10414
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0208",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "aries",
+  "topic": "Aries, have you | *eaten today?*",
+  "music": {
+   "key": "C",
+   "seed": 10415
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0209",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone moves their stuff | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10416
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0209",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign | *as a parent.*",
+  "music": {
+   "key": "E",
+   "seed": 10417
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2t0210",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when someone says \"it's fine\" | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10418
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0210",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "What each sign | *is ready for.*",
+  "music": {
+   "key": "G",
+   "seed": 10419
+  },
+  "ending": "callback"
+ }
+]

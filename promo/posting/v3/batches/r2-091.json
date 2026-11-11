@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r2t0451",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when the waiter forgets their order | *be like.*",
+  "music": {
+   "key": "C",
+   "seed": 10900
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0451",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "taurus",
+  "topic": "Taurus, it's okay | *to miss them.*",
+  "music": {
+   "key": "D",
+   "seed": 10901
+  },
+  "ending": "card"
+ },
+ {
+  "id": "r2t0452",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "capricorn",
+  "topic": "Capricorns shopping | *be like.*",
+  "music": {
+   "key": "E",
+   "seed": 10902
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0452",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "leo",
+  "topic": "Leo, before you | *send that text.*",
+  "music": {
+   "key": "F",
+   "seed": 10903
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0453",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "aquarius",
+  "topic": "Aquarians vs. | *the dress code.*",
+  "music": {
+   "key": "G",
+   "seed": 10904
+  },
+  "ending": "group"
+ },
+ {
+  "id": "r2a0453",
+  "account": "star_advice",
+  "format": "advice-solo",
+  "sign": "pisces",
+  "topic": "Pisces, crying | *is allowed.*",
+  "music": {
+   "key": "C",
+   "seed": 10905
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2t0454",
+  "account": "star_talk",
+  "format": "solo",
+  "sign": "leo",
+  "topic": "Leos on a day off | *be like.*",
+  "music": {
+   "key": "D",
+   "seed": 10906
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2a0454",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "Each sign's | *ideal hangout.*",
+  "music": {
+   "key": "E",
+   "seed": 10907
+  },
+  "ending": "lesson"
+ },
+ {
+  "id": "r2t0455",
+  "account": "star_talk",
+  "format": "belike",
+  "topic": "Zodiacs when they get lost | *be like.*",
+  "music": {
+   "key": "F",
+   "seed": 10908
+  },
+  "ending": "callback"
+ },
+ {
+  "id": "r2a0455",
+  "account": "star_advice",
+  "format": "advice-rollcall",
+  "topic": "A tiny habit | *for each sign.*",
+  "music": {
+   "key": "G",
+   "seed": 10909
+  },
+  "ending": "group"
+ }
+]
