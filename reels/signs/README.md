@@ -26,8 +26,7 @@ The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLD
 
 Square 1080×1080, 30 fps, 10–20 s. Each card is a still: one painting, graded toward
 dusk and darkened where the type sits, with the line on top. Cards change with a hard
-cut, no transitions, motion or progress bar. Up top: the sign's glyph and name. At the
-bottom: a small *align*. The hook and the call to action are EB Garamond italic; the
+cut, no transitions, motion, progress bar or header. At the bottom: a small *align*. The hook and the call to action are EB Garamond italic; the
 body is Sofia Sans Condensed.
 
 | Format | Hook | Ends on |

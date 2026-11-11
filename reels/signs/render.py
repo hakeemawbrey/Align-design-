@@ -7,8 +7,7 @@ public-domain paintings from the catalogue, with a soft generated score.
   python3 render.py --sign leo --text "Leo, this is your sign." "Rest." "You did enough."
 
 The look: square 1080x1080. Each card is one still: a painting (graded toward dusk,
-darkened where the type sits) with the line on top, the sign's glyph and name above,
-and a small "align" below. Cards change with a hard cut, no transitions or motion.
+darkened where the type sits) with the line on top and a small "align" below. Cards change with a hard cut, no transitions or motion.
 The last card is always a call to action: send it, invite them, or come align.
 """
 import argparse
@@ -119,24 +118,9 @@ def text_block(card, ss=2):
 
 
 def chrome_layer(sign, n_cards, idx, prog):
-    """Sign label up top and the align wordmark at the bottom."""
-    d = scripts.SIGNS[sign]
+    """The align wordmark at the bottom."""
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     dr = ImageDraw.Draw(im)
-    G = font("DejaVuSans.ttf", 40)
-    L = font("SofiaSansCondensed.ttf", 36)
-    label = d["name"].upper()
-    tr = 7
-    lw = sum(L.getlength(ch) + tr for ch in label) - tr
-    gw = G.getlength(d["glyph"])
-    total = gw + 22 + lw
-    x = (W - total) / 2
-    y = 62
-    dr.text((x, y - 4), d["glyph"], font=G, fill=GOLD + (240,))
-    x += gw + 22
-    for ch in label:
-        dr.text((x, y), ch, font=L, fill=CREAM + (235,))
-        x += L.getlength(ch) + tr
     # wordmark
     A = font("EBGaramond-Italic.ttf", 58)
     t = "align"
@@ -180,7 +164,7 @@ def grade(im, item=None):
     l = a @ Wt
     mid = float(l[int(h * 0.32):int(h * 0.68)].mean())
     depth = float(np.clip(0.42 + (mid - 0.25) * 1.6, 0.42, 0.72))   # bright pictures get a deeper band
-    band = 1 - depth * np.exp(-((y - 0.5) / 0.24) ** 2) - 0.35 * np.clip((0.14 - y) / 0.14, 0, 1) \
+    band = 1 - depth * np.exp(-((y - 0.5) / 0.24) ** 2) - 0.15 * np.clip((0.14 - y) / 0.14, 0, 1) \
         - 0.4 * np.clip((y - 0.82) / 0.18, 0, 1)
     v = 1 - 0.55 * np.clip(np.sqrt((x - 0.5) ** 2 + ((y - 0.5) * 0.7) ** 2) / 0.6 - 0.3, 0, 1) ** 1.4
     a *= (band * v)[..., None]
