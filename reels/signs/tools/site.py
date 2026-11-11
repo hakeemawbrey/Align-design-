@@ -60,7 +60,7 @@ def reels(limit):
         base = os.path.basename(m)[:-5]
         web = os.path.join(OUT, "reels", base + ".mp4")
         poster = os.path.join(OUT, "reels", base + ".jpg")
-        if not os.path.exists(web):
+        if not os.path.exists(web) or os.path.getmtime(web) < os.path.getmtime(m[:-5] + ".mp4"):
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m[:-5] + ".mp4", "-vf", "scale=720:-2", "-c:v", "libx264",
                             "-crf", "27", "-preset", "slow", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", web], check=True)
             Image.open(m[:-5] + ".cover.jpg").resize((480, 480), Image.LANCZOS).save(poster, quality=80)

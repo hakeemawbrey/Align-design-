@@ -7,7 +7,7 @@ public-domain paintings from the catalogue, with a soft generated score.
   python3 render.py --sign leo --text "Leo, this is your sign." "Rest." "You did enough."
 
 The look: square 1080x1080. Each card is one still: a painting (graded toward dusk,
-darkened where the type sits) with the line on top and a small "align" below. Cards change with a hard cut, no transitions or motion.
+darkened where the type sits) with the line on top and a quiet "come align · join the beta" below. Cards change with a hard cut, no transitions or motion.
 The last card is always a call to action: send it, invite them, or come align.
 """
 import argparse
@@ -118,13 +118,16 @@ def text_block(card, ss=2):
 
 
 def chrome_layer(sign, n_cards, idx, prog):
-    """The align wordmark at the bottom."""
+    """A quiet "come align · join the beta" at the bottom."""
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     dr = ImageDraw.Draw(im)
-    # wordmark
-    A = font("EBGaramond-Italic.ttf", 58)
-    t = "align"
-    dr.text(((W - A.getlength(t)) / 2, H - 118), t, font=A, fill=CREAM + (225,))
+    # sign-off: quiet, small, spaced caps
+    A = font("SofiaSansCondensed.ttf", 30)
+    t, tr = "COME ALIGN \u00b7 JOIN THE BETA", 4
+    x = (W - (sum(A.getlength(ch) + tr for ch in t) - tr)) / 2
+    for ch in t:
+        dr.text((x, H - 78), ch, font=A, fill=CREAM + (150,))
+        x += A.getlength(ch) + tr
     # soft shadow under everything so it holds on bright skies
     m = im.getchannel("A").filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(12))
     sh = Image.new("RGBA", im.size, (6, 3, 14, 0))
