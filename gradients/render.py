@@ -30,7 +30,20 @@ PALETTES = {
     "rainbow": [["#dceb44", "#63d661", "#00a3d2"],
                 ["#fe7f01", "#fa8602", "#7b5bd6"],
                 ["#fc0262", "#f40274", "#9f3bd6"]],
+    "magenta": [["#d63fd0", "#c33ad8", "#8e2be0"],
+                ["#e86ae6", "#e04bc4", "#a332e0"],
+                ["#e27ad8", "#d44fd4", "#9a2fdc"]],
+    "sunset":  [["#ea6b2c", "#ee7d2c", "#f39a3a"],
+                ["#ee612c", "#f07530", "#f6b44a"],
+                ["#e2384d", "#e64a45", "#e8673c"]],
+    "lime":    [["#80df8e", "#8cf088", "#84e89a"],
+                ["#c5e86a", "#ddd062", "#d7c86a"],
+                ["#ec7564", "#e8665e", "#c856a8"]],
+    "aqua":    [["#4fa6e0", "#5bb3ea", "#7ab9ef"],
+                ["#62c6a2", "#6ccb8a", "#8fc6c9"],
+                ["#d7a63c", "#8cc955", "#70cc56"]],
 }
+INK = {"light": (255, 255, 255), "dark": (17, 17, 17)}
 
 STYLE = {
     "size": 0.075,     # starting font px / width; shrinks to fit
@@ -39,6 +52,7 @@ STYLE = {
     "lead": 1.14,      # line height / font size
     "max_h": 0.62,     # max text block height / height
     "shadow": 0.30,
+    "gap": 0.75,       # blank line between paragraphs, in line heights
     "drift": 0.06,     # how far the gradient pans over the reel (fraction of width)
 }
 
@@ -59,16 +73,16 @@ def gradient(palette, w, h):
 
 
 def wrap(text, f, max_w):
-    words, lines, cur = text.split(), [], ""
-    for w_ in words:
-        t = (cur + " " + w_).strip()
-        if f.getlength(t) <= max_w or not cur:
-            cur = t
-        else:
-            lines.append(cur)
-            cur = w_
-    lines.append(cur)
-    return lines  # greedy, like the reference posts (a short last line is part of the look)
+    """Greedy wrap that keeps the post's own line breaks: "\n" forces a new line
+    (lists), a blank line becomes a gap (None) like the reference paragraphs."""
+    out = []
+    for para in text.strip().split("\n"):
+        if not para.strip():
+            if out and out[-1] is not None:
+                out.append(None)
+            continue
+        out += _greedy(para, f, max_w)
+    return out
 
 
 def _greedy(text, f, max_w):
@@ -84,14 +98,14 @@ def _greedy(text, f, max_w):
     return lines
 
 
-def text_layer(text, ss=2):
+def text_layer(text, ss=2, ink="light"):
     px = W * STYLE["size"]
     while True:
         f = ImageFont.truetype(FONT, int(px * ss))
         f.set_variation_by_name(b"ExtraBold")
         lines = wrap(text, f, W * STYLE["wrap"] * ss)
         lead = px * ss * STYLE["lead"]
-        block = lead * len(lines)
+        block = lead * sum(1 if l is not None else STYLE["gap"] for l in lines)
         if block <= H * STYLE["max_h"] * ss or px <= W * STYLE["min_size"]:
             break
         px *= 0.95
@@ -99,16 +113,20 @@ def text_layer(text, ss=2):
     sh = Image.new("L", img.size, 0)
     d, ds = ImageDraw.Draw(img), ImageDraw.Draw(sh)
     asc, desc = f.getmetrics()
-    top = (H * ss - (lead * (len(lines) - 1) + asc + desc)) / 2
-    for i, ln in enumerate(lines):
-        x = (W * ss - f.getlength(ln)) / 2
-        y = top + i * lead
-        ds.text((x, y + px * ss * 0.05), ln, font=f, fill=int(255 * STYLE["shadow"]))
-        d.text((x, y), ln, font=f, fill=(255, 255, 255, 255))
+    steps = [1 if l is not None else STYLE["gap"] for l in lines]
+    top = (H * ss - (lead * (sum(steps) - 1) + asc + desc)) / 2
+    shadow = STYLE["shadow"] if ink == "light" else STYLE["shadow"] * 0.35
+    y = top
+    for ln, st in zip(lines, steps):
+        if ln is not None:
+            x = (W * ss - f.getlength(ln)) / 2
+            ds.text((x, y + px * ss * 0.05), ln, font=f, fill=int(255 * shadow))
+            d.text((x, y), ln, font=f, fill=INK[ink] + (255,))
+        y += st * lead
     base = Image.new("RGBA", img.size, (0, 0, 0, 0))
     base.putalpha(sh.filter(ImageFilter.GaussianBlur(px * ss * 0.09)))
     base.alpha_composite(img)
-    return np.asarray(base.resize((W, H), Image.LANCZOS), np.float32) / 255, lines
+    return np.asarray(base.resize((W, H), Image.LANCZOS), np.float32) / 255, [l for l in lines if l]
 
 
 def seconds_for(text):
@@ -119,10 +137,11 @@ def seconds_for(text):
 def render(post, out, palette=None):
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     seed = zlib.crc32(post["text"].encode())
-    palette = palette or post.get("palette") or ["classic", "classic", "deep"][seed % 3]
+    palette = palette or post.get("palette") or ["classic", "magenta", "deep", "rainbow", "classic", "magenta", "aqua"][seed % 7]
+    ink = post.get("ink") or "light"
     margin = int(W * STYLE["drift"])
     bg = gradient(palette, W + margin, H + margin)
-    txt, lines = text_layer(post["text"])
+    txt, lines = text_layer(post["text"], ink=ink)
     a = txt[..., 3:4]
     dur = seconds_for(post["text"])
     n = int(dur * FPS)
@@ -163,10 +182,11 @@ if __name__ == "__main__":
     ap.add_argument("--id")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--palette", choices=list(PALETTES))
+    ap.add_argument("--ink", choices=list(INK))
     ap.add_argument("--out")
     a = ap.parse_args()
     if a.text:
-        render({"text": a.text}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette)
+        render({"text": a.text.replace("\\n", "\n"), "ink": a.ink}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette)
     else:
         posts = [p for f in a.copy for p in json.load(open(f))["posts"]]
         for p in posts:
