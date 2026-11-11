@@ -5,6 +5,10 @@ import { ME, type Profile } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
 import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
+import CardFrame, { CardOrb } from '../CardFrame'
+
+/** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
+const AREA_TINT = { daily: '#f2c75c', feelings: '#8fb4ff', first: '#cdb0ff', understood: '#f0a8d8' } as const
 
 /** their card's three lines, said plainly */
 const KIND = {
@@ -31,7 +35,6 @@ export function CompatBadge({ them, onClick }: { them: Profile; onClick: () => v
   )
 }
 
-const CARD: React.CSSProperties = { padding: '14px 14px 13px', borderRadius: 16, background: 'rgba(52,35,95,0.55)', border: '1px solid rgba(179,166,196,0.14)' }
 const EYEBROW: React.CSSProperties = { fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }
 
 /**
@@ -85,26 +88,20 @@ export function CompatSheet({ them, open, onClose, onFullReading, onPlayCard }: 
               </div>
               <p className="serif italic" style={{ fontSize: 18, lineHeight: 1.3, color: 'var(--label-1)', margin: '14px 4px 0' }}>{fit.summary}</p>
 
-              {/* the relationship, area by area */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 16 }}>
-                {fit.areas.map((a) => (
-                  <section key={a.id} style={CARD}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <span aria-hidden style={{ width: 30, height: 30, borderRadius: 15, flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 15, color: 'var(--align)', background: 'rgba(11,6,32,0.6)', border: '1px solid rgba(242,199,92,0.4)' }}>{a.glyph}</span>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div className="serif italic" style={{ fontSize: 19, lineHeight: 1.1, color: 'var(--label-1)' }}>{a.title}</div>
-                        <div style={{ fontSize: 12, color: 'var(--label-3)', marginTop: 2 }}>{a.sub}</div>
-                      </div>
-                      <span className="mono" style={{ flexShrink: 0, padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)', whiteSpace: 'nowrap' }}>{FEEL_TAG[a.feel].toUpperCase()}</span>
-                    </div>
-                    <p style={{ margin: '10px 0 0', fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)' }}>{a.body}</p>
-                    <div style={{ marginTop: 9, fontSize: 13.5, lineHeight: 1.4, color: 'var(--label-2)' }}><span style={{ color: 'var(--align)' }}>✦ Try:</span> {a.tryThis}</div>
-                    {why && <div className="mono" style={{ marginTop: 9, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-3)' }}>{a.from.toUpperCase()}</div>}
-                  </section>
+              {/* the relationship, area by area: one card each */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 18 }}>
+                {fit.areas.map((a, i) => (
+                  <CardFrame key={a.id} tint={AREA_TINT[a.id]} kicker={a.sub} title={a.title}
+                    orb={<CardOrb tint={AREA_TINT[a.id]}>{a.glyph}</CardOrb>}
+                    strip={{ label: 'Try this', text: a.tryThis }}
+                    footer={[why ? a.from : 'Align · how you fit', `${i + 1}/${fit.areas.length}`]}>
+                    <span className="mono" style={{ display: 'inline-block', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[a.feel].toUpperCase()}</span>
+                    <p style={{ margin: '10px 0 2px', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{a.body}</p>
+                  </CardFrame>
                 ))}
               </div>
               {fit.sunOnly ? (
-                <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '10px 4px 0' }}>
+                <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '12px 4px 0' }}>
                   {them.name}’s card only shows a sun sign. Feelings and first impressions need a birth time.
                 </p>
               ) : (
@@ -114,38 +111,37 @@ export function CompatSheet({ them, open, onClose, onFullReading, onPlayCard }: 
                 </button>
               )}
 
-              {/* what their card says about the two of you */}
+              {/* what their card says about the two of you, framed in their colour */}
               {them.reading?.length ? (
-                <>
-                  <div className="mono" style={{ ...EYEBROW, margin: '20px 4px 10px' }}>FROM {them.name.toUpperCase()}’S CARD</div>
-                  <section style={{ ...CARD, display: 'flex', flexDirection: 'column', gap: 13 }}>
+                <CardFrame tint={theirs.color} kicker={`${theirs.name} · from their card`} title={`${them.name} and you`}
+                  orb={<CardOrb tint={theirs.color}>{theirs.glyph}</CardOrb>} footer={[`Align · ${them.serial ?? ''}`, 'Their card']} style={{ marginTop: 16 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 13, paddingBottom: 4 }}>
                     {(['pull', 'push', 'align'] as const).map((k) => {
                       const r = them.reading.find((x) => x.kind === k)
                       if (!r) return null
                       return (
                         <div key={k}>
-                          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', fontWeight: 700, color: KIND[k].color }}>
+                          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: KIND[k].color }}>
                             {KIND[k].label.toUpperCase()} <span style={{ fontWeight: 400, color: 'var(--label-3)', letterSpacing: '0.1em' }}>· {KIND[k].plain.toUpperCase()}</span>
                           </div>
                           <div className="serif" style={{ fontSize: 16, lineHeight: 1.3, color: 'var(--label-1)', marginTop: 4 }}>{r.text}</div>
                         </div>
                       )
                     })}
-                  </section>
-                </>
+                  </div>
+                </CardFrame>
               ) : null}
 
               {/* tonight, and something to do about it */}
-              <div className="mono" style={{ ...EYEBROW, margin: '20px 4px 10px' }}>TONIGHT</div>
-              <section style={CARD}>
-                <div style={{ fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
+              <CardFrame tint="#c9bedb" kicker="Tonight" title="You two, under this sky" orb={<CardOrb tint="#c9bedb">☾</CardOrb>} style={{ marginTop: 16 }}>
+                <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
                 {onPlayCard && (
                   <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
-                    style={{ marginTop: 12, height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+                    style={{ margin: '12px 0 4px', height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
                     PLAY A TALK CARD WITH {them.name.toUpperCase()} ›
                   </button>
                 )}
-              </section>
+              </CardFrame>
 
               <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '18px 4px 0' }}>
                 Astrology, for reflection and fun. It describes how two charts meet; it doesn’t measure or predict a relationship.

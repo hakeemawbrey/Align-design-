@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import MoonPhase from '../sky/MoonPhase'
-import { TODAY_READING, readingFor } from '../../data/skyReading'
+import { PLANET, TODAY_READING, readingFor } from '../../data/skyReading'
+import CardFrame, { CardOrb } from '../CardFrame'
 import { SIGNS } from '../../data/signs'
 import { COSMIC_COLOR, cosmicMonth, runningRetrogrades, type CosmicDay } from '../../data/cosmicMonth'
 import { sfx } from '../../lib/sfx'
@@ -10,6 +11,7 @@ import { sfx } from '../../lib/sfx'
 export const OPEN_SKY_EVENT = 'align:open-sky'
 
 const SLOT_LABEL = { you: 'You', love: 'Love', move: 'Your move' } as const
+const SLOT_TINT = { you: '#f2c75c', love: '#f39ab8', move: '#7fd8b0' } as const
 const WEEK = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
 /**
@@ -70,13 +72,12 @@ function Today() {
           {moon.name} in {SIGNS[moon.sign].name} · {Math.round(moon.lit * 100)}% lit
         </div>
       </div>
-      {TODAY_READING.cards.map((c) => (
-        <div key={c.slot} style={{ padding: '12px 14px', borderRadius: 16, background: 'rgba(52,35,95,0.55)', border: '1px solid rgba(179,166,196,0.14)' }}>
-          <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--align)' }}>{SLOT_LABEL[c.slot].toUpperCase()} · {c.title.toUpperCase()}</div>
-          <div className="serif italic" style={{ fontSize: 19, lineHeight: 1.2, marginTop: 6, color: 'var(--label-1)' }}>{c.headline}</div>
-          <p style={{ margin: '6px 0 0', fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)' }}>{c.story}</p>
-          <div style={{ marginTop: 8, fontSize: 12.5, color: 'var(--label-1)' }}><span style={{ color: 'var(--align)' }}>✦ Try:</span> {c.tryThis}</div>
-        </div>
+      {TODAY_READING.cards.map((c, i) => (
+        <CardFrame key={c.slot} tint={SLOT_TINT[c.slot]} kicker={`${SLOT_LABEL[c.slot]} · ${c.title}`} title={c.headline}
+          orb={<CardOrb tint={SLOT_TINT[c.slot]}>{PLANET[c.planet].glyph}</CardOrb>}
+          strip={{ label: 'Try this', text: c.tryThis }} footer={['Align · today’s sky', `${i + 1}/3`]}>
+          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>{c.story}</p>
+        </CardFrame>
       ))}
     </div>
   )
@@ -147,7 +148,8 @@ export function DayDetail({ day, isToday }: { day: CosmicDay; isToday: boolean }
   // that day's love reading, from your chart
   const love = useMemo(() => readingFor(day.date).cards.find((c) => c.slot === 'love'), [day])
   return (
-    <div style={{ padding: '12px 14px', borderRadius: 16, background: 'rgba(52,35,95,0.55)', border: '1px solid rgba(179,166,196,0.14)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+    <CardFrame tint="#c9bedb" thick={2.5} radius={18} padding="12px 14px">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <MoonPhase size={16} lit={day.moon.lit} waxing={day.moon.waxing} glow={false} />
         <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-2)' }}>
@@ -169,6 +171,7 @@ export function DayDetail({ day, isToday }: { day: CosmicDay; isToday: boolean }
           <div className="serif italic" style={{ fontSize: 16, marginTop: 3, color: 'var(--label-1)' }}>{love.headline}</div>
         </div>
       )}
-    </div>
+      </div>
+    </CardFrame>
   )
 }

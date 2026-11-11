@@ -15,6 +15,7 @@ import { MOON_NOW } from '../data/sky'
 import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
 import { openCalendarOn } from '../components/you/origin'
+import CardFrame from '../components/CardFrame'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
@@ -110,7 +111,7 @@ export default function BetaYou({ go }: ScreenProps) {
           {/* your sign */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <span className="eyebrow" style={EYEBROW}>Your sign</span>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
+            <CardFrame tint={SUN.color} padding="0" footer={['Align · your sign', ME.serial]}>
               <button onClick={() => { sfx.tap(); go('chart') }} style={{ width: '100%', display: 'flex', gap: 14, padding: 14, textAlign: 'left', alignItems: 'center' }}>
                 <img src={SUN.figureImg} alt="" style={{ width: 64, height: 64, borderRadius: 14, objectFit: 'cover', flexShrink: 0, boxShadow: `0 0 18px ${SUN.color}55` }} />
                 <span style={{ flex: 1, minWidth: 0 }}>
@@ -121,7 +122,7 @@ export default function BetaYou({ go }: ScreenProps) {
               </button>
               <Link label="Learn your sign" sub="Your sun, moon, rising, element and planet" onClick={() => go('chart')} />
               <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
-            </div>
+            </CardFrame>
           </section>
 
           {/* your month */}
@@ -130,7 +131,7 @@ export default function BetaYou({ go }: ScreenProps) {
               <span className="eyebrow" style={EYEBROW}>Your sky this month</span>
               <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>OPEN CALENDAR ›</button>
             </div>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
+            <CardFrame tint="#c9bedb" padding="0" footer={['Align · cosmic calendar', new Date().toLocaleDateString('en-US', { month: 'long' })]}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', fontSize: 13, color: 'var(--label-2)' }}>
                 <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-3)' }}>TONIGHT</span>
                 {MOON_NOW.phase} in {MOON_NOW.sign} {MOON_NOW.glyph}
@@ -151,7 +152,7 @@ export default function BetaYou({ go }: ScreenProps) {
                   </span>
                 </button>
               ))}
-            </div>
+            </CardFrame>
           </section>
 
           {/* app */}

@@ -10,6 +10,7 @@ import { SIGNS } from '../data/signs'
 import { SIGN_FACTS } from '../data/signFacts'
 import { sfx } from '../lib/sfx'
 import { TABS, type ChartTab } from './Chart'
+import CardFrame, { CardOrb } from '../components/CardFrame'
 
 /** the big three, said the way a friend would explain them */
 const BIG3 = [
@@ -26,27 +27,19 @@ const MORE: Record<string, { title: string; q: string }> = {
   house: { title: 'Your house', q: 'Where in life your energy goes' },
 }
 
-const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
 const EYEBROW: React.CSSProperties = { fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-3)' }
 
-/** the three things every page of the chart says: in love, for you, try this */
+/** the body of a chart card: what it is, in love, for you (the card's strip carries "try this") */
 function Reading({ t, go }: { t: ChartTab; go: ScreenProps['go'] }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingBottom: 4 }}>
       <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--label-2)' }}><TermText text={t.meaning} go={go} /></p>
-      {([['In love', t.love, '♡'], ['For you', t.self, '✦']] as const).map(([k, v, icon]) => (
-        <div key={k} style={{ display: 'flex', gap: 12, padding: '13px 14px', borderRadius: 14, background: 'rgba(52,35,95,0.6)', border: '1px solid rgba(179,166,196,0.14)' }}>
-          <span aria-hidden style={{ width: 28, height: 28, borderRadius: 14, flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 14, color: t.color, background: 'rgba(11,6,32,0.6)', border: `1px solid ${t.color}66` }}>{icon}</span>
-          <div>
-            <div className="mono" style={{ fontSize: 10, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>{k.toUpperCase()}</div>
-            <div style={{ fontSize: 15.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}><TermText text={v} go={go} /></div>
-          </div>
+      {([['In love', t.love], ['For you', t.self]] as const).map(([k, v]) => (
+        <div key={k} style={{ paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
+          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: t.color }}>{k.toUpperCase()}</div>
+          <div style={{ fontSize: 15.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}><TermText text={v} go={go} /></div>
         </div>
       ))}
-      <div style={{ padding: '13px 14px', borderRadius: 14, border: '1px solid rgba(242,199,92,0.5)', background: 'rgba(242,199,92,0.08)' }}>
-        <div className="mono" style={{ fontSize: 10, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--align)' }}>TRY THIS</div>
-        <div style={{ fontSize: 15.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}>{t.tryLine}</div>
-      </div>
     </div>
   )
 }
@@ -93,18 +86,17 @@ export default function BetaChart({ go }: ScreenProps) {
             {BIG3.map((o) => {
               const on = o.tab === tab
               return (
-                <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setTab(o.tab) } }} whileTap={{ scale: 0.96 }}
-                  style={{
-                    ...PANEL, padding: '12px 6px 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-                    background: on ? 'rgba(74,46,140,0.9)' : 'rgba(30,18,64,0.6)', border: on ? `1.5px solid ${o.ink}` : '1px solid rgba(179,166,196,0.16)',
-                    boxShadow: on ? `0 0 22px ${o.color}55` : 'none',
-                  }}>
-                  <span style={{ height: 48, display: 'grid', placeItems: 'center', opacity: on ? 1 : 0.75 }}>
-                    <Planet size={o.size} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.35} />
-                  </span>
-                  <span className="mono" style={{ fontSize: 10, letterSpacing: '0.16em', fontWeight: 700, color: on ? o.ink : 'var(--label-2)' }}>{o.word.toUpperCase()}</span>
-                  <span className="serif italic" style={{ fontSize: 18, lineHeight: 1.1, color: 'var(--label-1)' }}>{SIGNS[o.sign].name}</span>
-                  <span style={{ fontSize: 11.5, lineHeight: 1.25, color: 'var(--label-2)', textAlign: 'center' }}>{o.plain}</span>
+                <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setTab(o.tab) } }} whileTap={{ scale: 0.96 }} animate={{ y: on ? -4 : 0 }}>
+                  <CardFrame tint={o.ink} quiet={!on} radius={16} padding="12px 4px 12px" style={{ height: '100%' }}>
+                    <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+                      <span style={{ height: 48, display: 'grid', placeItems: 'center', opacity: on ? 1 : 0.75 }}>
+                        <Planet size={o.size} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.35} />
+                      </span>
+                      <span className="mono" style={{ fontSize: 10, letterSpacing: '0.16em', fontWeight: 700, color: on ? o.ink : 'var(--label-2)' }}>{o.word.toUpperCase()}</span>
+                      <span className="serif italic" style={{ fontSize: 18, lineHeight: 1.1, color: 'var(--label-1)' }}>{SIGNS[o.sign].name}</span>
+                      <span style={{ fontSize: 11.5, lineHeight: 1.25, color: 'var(--label-2)', textAlign: 'center' }}>{o.plain}</span>
+                    </span>
+                  </CardFrame>
                 </motion.button>
               )
             })}
@@ -112,61 +104,57 @@ export default function BetaChart({ go }: ScreenProps) {
 
           {/* the one you picked */}
           <AnimatePresence mode="wait" initial={false}>
-            <motion.section key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div>
-                <div className="mono" style={{ fontSize: 10, letterSpacing: '0.18em', fontWeight: 700, color: sel.ink }}>
-                  {sel.word.toUpperCase()} IN {SIGNS[sel.sign].name.toUpperCase()} {SIGNS[sel.sign].glyph} · {sel.plain.toUpperCase()}
-                </div>
-                <div className="serif italic" style={{ fontSize: 25, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 6 }}>{t.headline}</div>
-              </div>
-              <Reading t={t} go={go} />
+            <motion.section key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}>
+              <CardFrame tint={sel.ink} kicker={`${sel.word} in ${SIGNS[sel.sign].name} · ${sel.plain}`} title={t.headline}
+                orb={<CardOrb tint={sel.ink}>{SIGNS[sel.sign].glyph}</CardOrb>}
+                strip={{ label: 'Try this', text: t.tryLine }} footer={['Align · your chart', `${sel.word} · ${tab + 1}/3`]}>
+                <Reading t={t} go={go} />
+              </CardFrame>
             </motion.section>
           </AnimatePresence>
 
           {/* the rest of the chart, as questions */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 6 }}>
             <span className="mono" style={EYEBROW}>MORE ABOUT {SIGNS[ME.sign].name.toUpperCase()}</span>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
-              {TABS.slice(3).map((x, i) => {
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {TABS.slice(3).map((x) => {
                 const m = MORE[x.id], on = open === x.id
                 return (
-                  <div key={x.id} style={{ borderTop: i ? '1px solid rgba(179,166,196,0.12)' : undefined }}>
+                  <CardFrame key={x.id} tint={x.color} quiet={!on} padding="0" strip={on ? { label: 'Try this', text: x.tryLine } : undefined} footer={on ? ['Align · your chart', m.title] : undefined}>
                     <button aria-expanded={on} onClick={() => { sfx.tap(); setOpen(on ? null : x.id) }}
                       style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '14px 14px 14px 16px', textAlign: 'left' }}>
-                      <span style={{ width: 10, height: 10, borderRadius: 5, flexShrink: 0, background: x.color, boxShadow: `0 0 8px ${x.color}` }} />
                       <span style={{ flex: 1, minWidth: 0 }}>
-                        <span style={{ display: 'block', fontSize: 16, color: 'var(--label-1)' }}>
+                        <span className="serif italic" style={{ display: 'block', fontSize: 19, lineHeight: 1.15, color: 'var(--label-1)' }}>
                           {m.title}{x.id !== 'traits' && <span style={{ color: x.color }}> · {x.eyebrow}</span>}
                         </span>
-                        <span style={{ display: 'block', fontSize: 13, color: 'var(--label-2)', marginTop: 2 }}>{m.q}</span>
+                        <span style={{ display: 'block', fontSize: 13, color: 'var(--label-2)', marginTop: 3 }}>{m.q}</span>
                       </span>
-                      <motion.svg animate={{ rotate: on ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
+                      <motion.svg animate={{ rotate: on ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke={x.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
                     </button>
                     <AnimatePresence initial={false}>
                       {on && (
                         <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden' }}>
-                          <div style={{ padding: '0 14px 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                          <div style={{ padding: '0 16px 12px', display: 'flex', flexDirection: 'column', gap: 10 }}>
                             <div className="serif italic" style={{ fontSize: 21, lineHeight: 1.2, color: 'var(--label-1)' }}>{x.headline}</div>
                             <Reading t={x} go={go} />
                           </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
+                  </CardFrame>
                 )
               })}
             </div>
           </section>
 
           {/* quick facts, then where to go next */}
-          <div style={{ ...PANEL, padding: '4px 16px' }}>
+          <CardFrame tint={SIGNS[ME.sign].color} kicker={`${SIGNS[ME.sign].name} at a glance`} title="The quick facts" orb={<CardOrb tint={SIGNS[ME.sign].color}>{SIGNS[ME.sign].glyph}</CardOrb>} footer={['Align · your chart', 'Facts']}>
             {([['Dates', facts.dates], ['Element', facts.element], ['Style', facts.mode], ['Ruled by', facts.ruler], ['Famous one', facts.famous]] as const).map(([k, v], i) => (
-              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '11px 0', borderTop: i ? '1px solid rgba(179,166,196,0.12)' : undefined, fontSize: 14.5 }}>
+              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 0', borderTop: i ? '1px solid rgba(179,166,196,0.12)' : undefined, fontSize: 14.5 }}>
                 <span style={{ color: 'var(--label-2)' }}>{k}</span><span style={{ color: 'var(--label-1)', textAlign: 'right' }}>{v}</span>
               </div>
             ))}
-          </div>
+          </CardFrame>
           <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); openCalendarOn(go, 'chart') }} style={{ width: '100%' }}>
             See your month in the sky <span className="spark">✦</span>
           </motion.button>
