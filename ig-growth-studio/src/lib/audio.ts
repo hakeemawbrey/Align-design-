@@ -16,7 +16,12 @@ export interface AudioSetting {
   audioVolume?: number | null;
   /** 1–100: the video's own sound under the music. Lower it when the video already has music. */
   videoVolume?: number | null;
+  /** Silence the video's own sound under the music (Instagram's lowest level, 1 of 100; 0 is not accepted). */
+  muteVideo?: boolean;
 }
+
+/** The lowest video volume Instagram accepts; effectively silent under a music track. */
+export const MUTED_VIDEO_VOLUME = 1;
 
 export const DEFAULT_AUDIO: AudioSetting = { mode: "off" };
 /** How long a fetched trending or search list is reused before asking Instagram again. */
@@ -43,9 +48,10 @@ export async function setAudioSetting(db: DB, igUserId: string, s: AudioSetting)
     query: s.mode === "search" ? (s.query ?? "").trim() || null : null,
     audioVolume: clampVolume(s.audioVolume),
     videoVolume: clampVolume(s.videoVolume),
+    muteVideo: Boolean(s.muteVideo),
   };
   if (clean.mode === "search" && !clean.query) throw new Error("Search mode needs a search term");
-  await setSetting(db, settingKey(igUserId), clean.mode === "off" && clean.audioVolume == null && clean.videoVolume == null ? null : JSON.stringify(clean));
+  await setSetting(db, settingKey(igUserId), clean.mode === "off" && clean.audioVolume == null && clean.videoVolume == null && !clean.muteVideo ? null : JSON.stringify(clean));
   return clean;
 }
 
@@ -90,7 +96,7 @@ export async function pickAudio(
   let best = items[0];
   for (const a of items) if ((used.get(a.audio_id) ?? 0) < (used.get(best.audio_id) ?? 0)) best = a;
   return {
-    config: { audioId: best.audio_id, audioVolume: s.audioVolume ?? null, videoVolume: s.videoVolume ?? null },
+    config: { audioId: best.audio_id, audioVolume: s.audioVolume ?? null, videoVolume: s.muteVideo ? MUTED_VIDEO_VOLUME : (s.videoVolume ?? null) },
     title: [best.title, best.display_artist].filter(Boolean).join(" · ") || best.audio_id,
   };
 }

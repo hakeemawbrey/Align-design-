@@ -58,6 +58,15 @@ describe("Reels audio", () => {
     expect(post).toMatchObject({ status: "published", audio_id: "A1", audio_title: "Song One · Artist", audio_error: null });
   });
 
+  it("mutes the video's own sound when asked", async () => {
+    await setAudioSetting(db, "17841", { mode: "trending", videoVolume: 40, muteVideo: true });
+    await reel();
+    const { client, calls } = graph();
+    await publishDuePosts(db, { now: NOW, client });
+    const cfg = JSON.parse(calls.find((c) => c.path === "17841/media")!.params.audio_configuration);
+    expect(cfg).toEqual({ audio_id: "A1", video_volume: 1 });
+  });
+
   it("rotates so the next Reel gets a different track, and reuses the cached list", async () => {
     await setAudioSetting(db, "17841", { mode: "trending" });
     const first = await reel(0);
@@ -109,7 +118,7 @@ describe("Reels audio", () => {
 
   it("validates settings", async () => {
     await expect(setAudioSetting(db, "17841", { mode: "search", query: " " })).rejects.toThrow(/search term/);
-    expect(await setAudioSetting(db, "17841", { mode: "trending", videoVolume: 500 })).toMatchObject({ videoVolume: 100 });
+    expect(await setAudioSetting(db, "17841", { mode: "trending", videoVolume: 500 })).toMatchObject({ videoVolume: 100, muteVideo: false });
     await setAudioSetting(db, "17841", { mode: "off" });
     expect(await getAudioSetting(db, "17841")).toEqual({ mode: "off" });
   });

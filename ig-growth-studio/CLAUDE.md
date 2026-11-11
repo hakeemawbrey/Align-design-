@@ -46,7 +46,7 @@ For long JSON, write it to a file in a temp folder and pass `@path/to/body.json`
 
 `GET /audio?account=…` shows the account's setting and what's trending now (`&q=lofi` to search).
 `POST /audio '{"account":"…","mode":"trending","videoVolume":20}'` switches it on for every Reel not yet published
-(`mode`: `off`, `trending`, or `search` with `query`). It changes the whole queue, so ask the owner first.
+(`mode`: `off`, `trending`, or `search` with `query`; `"muteVideo":true` silences the video's own sound). It changes the whole queue, so ask the owner first.
 
 Instagram allows about 100 API posts per account per 24 hours. Spread posts out; one to two a day per account
 is a sensible default.

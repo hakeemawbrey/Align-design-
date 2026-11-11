@@ -235,7 +235,8 @@ export default async function SettingsPage({
           trending on Instagram right now and rotates so posts don&rsquo;t all share one song. <b>Search</b> uses a
           keyword instead (a mood, genre or artist). Only music Meta clears for apps is offered, so the list is
           shorter than in the Instagram app. If Instagram refuses a track, the Reel still goes out with its own sound.
-          Lower &ldquo;video sound&rdquo; when the video already has music.
+          Lower &ldquo;video sound&rdquo; when the video already has music, or tick &ldquo;Mute&rdquo; to hear only the
+          track. Muting applies only when a track is attached; a Reel that falls back keeps its own sound.
         </p>
         {accounts.map((a, i) => (
           <form key={a.igUserId} action={setReelAudio} className="row" style={{ flexWrap: "wrap", gap: 8, alignItems: "center" }}>
@@ -250,6 +251,9 @@ export default async function SettingsPage({
             <label className="small muted">
               video sound{" "}
               <input name="videoVolume" type="number" min={1} max={100} placeholder="100" defaultValue={audio[i].videoVolume ?? ""} style={{ width: 64 }} />
+            </label>
+            <label className="small">
+              <input name="muteVideo" type="checkbox" defaultChecked={audio[i].muteVideo ?? false} /> Mute video&rsquo;s own sound
             </label>
             <button type="submit">Save</button>
           </form>

@@ -151,7 +151,7 @@ export async function setReelAudio(form: FormData) {
   const db = await getDb();
   if (!(await getAccount(db, igUserId))) return;
   try {
-    await setAudioSetting(db, igUserId, { mode, query: String(form.get("query") ?? ""), videoVolume: vol("videoVolume") });
+    await setAudioSetting(db, igUserId, { mode, query: String(form.get("query") ?? ""), videoVolume: vol("videoVolume"), muteVideo: form.get("muteVideo") === "on" });
   } catch {
     // Search mode without a term: leave the setting as it was.
   }

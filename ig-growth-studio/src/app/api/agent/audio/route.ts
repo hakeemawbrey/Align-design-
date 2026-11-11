@@ -40,6 +40,7 @@ const Body = z.object({
   query: z.string().max(100).optional().nullable(),
   audioVolume: z.number().int().min(1).max(100).optional().nullable(),
   videoVolume: z.number().int().min(1).max(100).optional().nullable(),
+  muteVideo: z.boolean().optional(),
 });
 
 /** Switch Reels audio for an account. Applies to every Reel that has not started publishing yet. */

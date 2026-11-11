@@ -55,7 +55,7 @@ export const AGENT_DOCS = {
     "GET /api/agent/audio?account=&q=&type=":
       "Reels audio: the account's setting and Instagram's trending music right now (or a keyword search with q; type=original_sound for original sounds).",
     "POST /api/agent/audio":
-      "Set Reels audio for an account. JSON: { account?, mode: 'off'|'trending'|'search', query? (search mode), audioVolume?: 1-100, videoVolume?: 1-100 (the video's own sound) }. " +
+      "Set Reels audio for an account. JSON: { account?, mode: 'off'|'trending'|'search', query? (search mode), audioVolume?: 1-100, videoVolume?: 1-100 (the video's own sound), muteVideo?: boolean (silence the video's own sound under the music) }. " +
       "Applies to every Reel not yet published: each gets a track at publish time, rotating through the list. Ask the owner first.",
     "GET /api/agent/stats?account=": "Followers, following, post count, today's account-wide views/reach/interactions (since local midnight) and reach/engagement for the 12 most recent posts.",
     "GET /api/agent/comments?account=": "Comments the account has not replied to, with any saved draft.",

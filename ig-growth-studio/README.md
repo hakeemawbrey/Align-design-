@@ -104,6 +104,7 @@ Instagram Audio API (June 2026; works with this app's Facebook Login). Per accou
   hour, and each Reel takes the highest-ranked track the account has used least in the last 7 days.
 - **Search**: the same, from a keyword (a mood, genre or artist).
 - **Video sound** (1–100): the video's own sound under the music. Lower it for videos that already have music.
+- **Mute video's own sound**: only the track is heard (video volume 1, the lowest Instagram accepts).
 
 Only music Meta has cleared for apps is offered, so the list is shorter than in the Instagram app. Audio never
 blocks a post: if the lookup fails or Instagram refuses a track, the Reel goes out with its own sound and the reason
