@@ -23,7 +23,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-desig
 
 It installs what's needed (Homebrew, Node, gallery-dl, yt-dlp, ffmpeg,
 whisper.cpp, GitHub's `gh`), puts the project in `~/Align-design-` (or
-updates it if Align Inspo already put it there), adds two buttons to your
+updates it if Align Inspo already put it there), adds its buttons to your
 Desktop and starts:
 
 - **Study Instagram Page:** asks which page (press Enter for the last one),
@@ -90,6 +90,48 @@ If Facebook asks for a break, it exits with 75 and the Mac button waits 30
 minutes, the same as for Instagram. Scripted downloading is against Facebook's
 terms too, so it's your call, the same as for Instagram.
 
+## YouTube channels
+
+The same study for a YouTube channel's **Shorts and videos** (first up:
+**@greenbrorants**, 196 Shorts and a long video).
+
+**On a Mac that already has Align Study:** double-click **Study YouTube Channel**
+on your Desktop and paste the channel's link (a share link with `?si=…` is
+fine, or just `@greenbrorants`). If you don't have that button yet, run the
+install line once more to get it.
+
+**First time on this Mac:** paste this into Terminal:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/study/mac/install.sh)" _ youtube "https://youtube.com/@greenbrorants"
+```
+
+What happens:
+
+1. It uses your YouTube login in your own browser (the same one as for
+   Instagram, usually Chrome), so **be signed into YouTube
+   there**. YouTube asks computers that aren't signed in to prove they're not
+   a bot, and this doesn't try to get around that: it signs in as you and goes slowly.
+2. yt-dlp lists the channel's Videos and Shorts tabs, then downloads each
+   video (up to 720p) 4–9 seconds apart, with its title, description, date,
+   views, likes, comments and YouTube's English captions.
+3. Where YouTube has captions, they're the transcript, so whisper only runs
+   on videos without them. The rest is the same as Instagram: on-screen text,
+   contact sheets, `report.md`, and an offer to send the pack to your private repo.
+
+The channel is saved as `yt-<handle>`, for example `yt-greenbrorants`. Then
+tell Claude: **"Study yt-greenbrorants from hakeemawbrey/align-study"**.
+
+In Terminal: `npm run youtube -- "https://youtube.com/@greenbrorants" --limit 12`
+to try a few (`--cookies-from-browser safari` or `firefox` if that's where
+you're signed in; Chrome is the default). Without `--limit` it gets
+everything, and you can re-run it to resume. Then run
+`npm run process -- yt-greenbrorants` and `npm run report -- yt-greenbrorants`.
+Add `--links-only` to only list what's there. If YouTube asks to confirm
+you're not a bot, or says too many requests, it exits with 75 and the Mac
+button waits 30 minutes. Downloading with a script is against YouTube's terms
+too, so it's your call, the same as for Instagram and Facebook.
+
 ## Step by step (Terminal)
 
 Needs Node 22+, ffmpeg and gallery-dl; yt-dlp for views; whisper.cpp for speech.
@@ -139,9 +181,10 @@ logged-in account follows them.
 | --- | --- |
 | `src/download.mjs` | gallery-dl over the whole profile, resumable, plus the profile's bio, links and counts |
 | `src/facebook.mjs` | a Facebook page: its own Chrome window collects the reel and video links, yt-dlp downloads each with its numbers |
+| `src/youtube.mjs` | a YouTube channel: yt-dlp lists its Videos and Shorts and downloads each with its numbers and captions (as the transcript) |
 | `src/numbers.mjs` | views, comments and length per post (yt-dlp, or Meta's API) |
 | `src/process.mjs` | stills, contact sheets, on-screen text, transcripts |
 | `src/ocr.swift` | the on-screen text reader (macOS Vision), compiled once to `~/.align-study/bin` |
 | `src/posts.mjs` | gallery-dl's files and details → one record per post |
 | `src/report.mjs` | records → `report.md`, `posts.json`, `posts.csv`, `sheets/` |
-| `mac/install.sh`, `mac/run.sh` | the one-time setup and the two Desktop buttons |
+| `mac/install.sh`, `mac/run.sh` | the one-time setup and the Desktop buttons |

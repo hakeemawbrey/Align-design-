@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Download every post on an Instagram page (or every reel and video on a Facebook page), transcribe and read it on your own computer, and pack it up for Claude to analyze",
+  "description": "Download every post on an Instagram page (or every reel and video on a Facebook page, or every Short and video on a YouTube channel), transcribe and read it on your own computer, and pack it up for Claude to analyze",
   "engines": { "node": ">=21" },
   "dependencies": {
     "playwright-core": "1.63.0"
@@ -11,6 +11,7 @@
   "scripts": {
     "download": "node src/download.mjs",
     "facebook": "node src/facebook.mjs",
+    "youtube": "node src/youtube.mjs",
     "numbers": "node src/numbers.mjs",
     "process": "node src/process.mjs",
     "report": "node src/report.mjs",

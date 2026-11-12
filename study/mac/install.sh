@@ -1,7 +1,8 @@
 #!/bin/bash
 # One-time setup for Align Study on a Mac. Paste this into Terminal:
 #   bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/study/mac/install.sh)"
-# It installs what's needed, puts two buttons on your Desktop, and starts.
+# It installs what's needed, puts the buttons on your Desktop, and starts.
+# Add `_ facebook "<link>"` or `_ youtube "<link>"` to start on a Facebook page or YouTube channel.
 set -e
 REPO="https://github.com/hakeemawbrey/align-design-.git"
 DIR="$HOME/Align-design-"
@@ -35,7 +36,8 @@ make_button() {  # name, command
 }
 make_button "Study Instagram Page" ""
 make_button "Study Facebook Page" "facebook"
+make_button "Study YouTube Channel" "youtube"
 make_button "Send Study to Claude" "send"
-say "Added three buttons to your Desktop: \"Study Instagram Page\", \"Study Facebook Page\" and \"Send Study to Claude\". Double-click them from now on."
+say "Added four buttons to your Desktop: \"Study Instagram Page\", \"Study Facebook Page\", \"Study YouTube Channel\" and \"Send Study to Claude\". Double-click them from now on."
 
 exec "$DIR/study/mac/run.sh" "$@"

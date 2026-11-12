@@ -37,9 +37,14 @@ export function frameTimes(duration) {
 
 /** whisper.cpp's -oj output → { text, segments, words, speech }. Drops [Music], (laughs), ♪ and the like. */
 export function cleanTranscript(json) {
-  const segs = (json?.transcription ?? []).map((s) => ({
-    from: Math.round((s.offsets?.from ?? 0) / 100) / 10,
-    to: Math.round((s.offsets?.to ?? 0) / 100) / 10,
+  return transcriptFrom((json?.transcription ?? []).map((s) => ({ from: (s.offsets?.from ?? 0) / 1000, to: (s.offsets?.to ?? 0) / 1000, text: s.text })))
+}
+
+/** [{ from, to (seconds), text }] from any source (whisper, YouTube's captions) → { text, segments, words, speech }. */
+export function transcriptFrom(raw) {
+  const segs = (raw ?? []).map((s) => ({
+    from: Math.round((Number(s.from) || 0) * 10) / 10,
+    to: Math.round((Number(s.to) || 0) * 10) / 10,
     text: String(s.text ?? '').replace(/\[[^\]]*\]|\([^)]*\)|\*[^*]*\*|♪+/g, ' ').replace(/\s+/g, ' ').trim(),
   })).filter((s) => s.text && /[\p{L}\p{N}]/u.test(s.text))
   const text = segs.map((s) => s.text).join(' ').replace(/\s+/g, ' ').trim()
@@ -210,6 +215,12 @@ export async function processPost(post, mdir, wdir, t) {
     }
   }
 
+  // YouTube's own captions, when src/youtube.mjs saved some, stand in for whisper.
+  const captions = post.type === 'reel' ? readJson(path.join(mdir, '_captions', `${post.shortcode}.json`)) : null
+  if (w.transcript == null && captions?.segments) {
+    w.transcript = captions
+    did.push(captions.speech ? `${captions.words} words spoken (YouTube's captions)` : 'no speech in YouTube\'s captions')
+  }
   if (w.transcript == null && post.type === 'reel' && w.hasAudio !== false && t.whisper && t.modelReady) {
     w.transcript = await transcribe(path.join(mdir, post.files[0].file), path.join(fdir, 'speech'), t)
     if (w.transcript) did.push(w.transcript.speech ? `${w.transcript.words} words spoken` : 'no speech (music only)')
