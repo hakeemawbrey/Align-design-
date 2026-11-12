@@ -1,0 +1,101 @@
+{
+  "id": "01-card-flips",
+  "story": "01-card-flips",
+  "sign": "leo",
+  "title": "Your Card Only Flips If It's Mutual 🃏",
+  "caption": "in this world your card stays face down until it's mutual",
+  "hashtags": [
+    "roblox",
+    "story",
+    "align",
+    "love",
+    "astrology"
+  ],
+  "voice": "am_puck",
+  "speed": 1.08,
+  "scenes": [
+    {
+      "text": "In this world, when you turn eighteen, you get a card.",
+      "shot": "intro"
+    },
+    {
+      "text": "It has your face on it, but it stays face down.",
+      "shot": "cardBack"
+    },
+    {
+      "text": "It only flips when someone aligns with you, and you align back.",
+      "shot": "demoFlip"
+    },
+    {
+      "text": "My sister's card flipped in a week.",
+      "shot": "sister"
+    },
+    {
+      "text": "My best friend's flipped twice.",
+      "shot": "friend"
+    },
+    {
+      "text": "Mine stayed face down for three years.",
+      "shot": "alone"
+    },
+    {
+      "text": "So I did something dumb. I painted a fake face on my card.",
+      "shot": "paint"
+    },
+    {
+      "text": "And everyone aligned with it.",
+      "shot": "crowd"
+    },
+    {
+      "text": "But it never flipped.",
+      "shot": "noFlip"
+    },
+    {
+      "text": "Because none of them were aligning with me.",
+      "shot": "turnAway"
+    },
+    {
+      "text": "Then one night, at eleven eleven, the whole deck reshuffled.",
+      "shot": "clock"
+    },
+    {
+      "text": "A girl at the bus stop held up her card. Face down too.",
+      "shot": "busStop"
+    },
+    {
+      "text": "She said, I painted mine for a year.",
+      "shot": "girlConfess"
+    },
+    {
+      "text": "So I scraped the paint off mine, and told her the honest thing.",
+      "shot": "scrape"
+    },
+    {
+      "text": "I'm kind of boring, and I really like stars.",
+      "shot": "honest"
+    },
+    {
+      "text": "She laughed.",
+      "shot": "laugh"
+    },
+    {
+      "text": "And both our cards flipped, at the exact same time.",
+      "shot": "bothFlip"
+    }
+  ],
+  "end": "come align",
+  "accent": [
+    "card",
+    "flips",
+    "flipped",
+    "align",
+    "aligns",
+    "aligned",
+    "aligning",
+    "mutual",
+    "eleven",
+    "stars",
+    "honest",
+    "face"
+  ]
+}

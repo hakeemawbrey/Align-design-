@@ -12,11 +12,13 @@ export const PACK = process.env.STUDY_PACK_DIR ? path.resolve(process.env.STUDY_
 /** Per-computer things: the OCR helper, whisper models, which browser you use. */
 export const HOME = process.env.STUDY_HOME ? path.resolve(process.env.STUDY_HOME) : path.join(os.homedir(), '.align-study')
 
-/** "@TylerInTheMaking", "instagram.com/tylerinthemaking?x=1" → "tylerinthemaking"; "fb-astriva" stays as it is. */
+/** "@TylerInTheMaking", "instagram.com/tylerinthemaking?x=1" → "tylerinthemaking"; "fb-astriva" and "yt-greenbrorants" stay as they are. */
 export function handleOf(s) {
   const raw = String(s ?? '').trim()
-  // Facebook pages are saved as fb-<page> (src/facebook.mjs works the name out from the link).
+  // Facebook pages are saved as fb-<page> (src/facebook.mjs works the name out from the link),
+  // YouTube channels as yt-<handle> (src/youtube.mjs).
   if (/^fb-[a-z0-9.-]{1,44}$/.test(raw)) return raw
+  if (/^yt-[a-z0-9._-]{1,44}$/.test(raw)) return raw
   const fromUrl = raw.match(/instagram\.com\/([A-Za-z0-9._]+)/)?.[1]
   const h = (fromUrl ?? raw).replace(/^@/, '').replace(/[/?#].*$/, '').toLowerCase()
   if (!/^[a-z0-9._]{1,30}$/.test(h) || ['p', 'reel', 'reels', 'stories', 'explore'].includes(h)) return null

@@ -54,6 +54,7 @@ export function readPosts(dir) {
         date: isoDate(meta.post_date ?? meta.date),
         pinned: Boolean(meta.pinned && (Array.isArray(meta.pinned) ? meta.pinned.length : true)),
         caption,
+        ...(meta.title ? { title: String(meta.title) } : {}),   // YouTube videos have a title as well
         hashtags: hashtagsOf(caption),
         mentions: mentionsOf(caption),
         coauthors: (meta.coauthors ?? []).map((c) => c?.username).filter(Boolean),

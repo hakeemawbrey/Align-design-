@@ -103,6 +103,8 @@ For spoken love-and-zodiac affirmation reels (line art that draws itself in, wor
 
 For "What's the difference?" reels (two words people mix up, two framed Align cards, Star Talk's pixel star shrugging until the answer lands), see [reels/difference/README.md](reels/difference/README.md).
 
+For Align World reels (block-game story Shorts: "In this world, your card only flips if it's mutual", told by a blocky avatar in a toy town, one bold word at a time), see [reels/world/README.md](reels/world/README.md).
+
 For Align Signs reels (cards that talk straight to each zodiac sign: letters, love advice, relatable lines, alignment and invites, over a catalogue of ~900 free public-domain paintings), see [reels/signs/README.md](reels/signs/README.md).
 
 For frequency reels (hypnotic 3D alignments scored with real planet tones: seven planets clicking into line, a fly-through of the twelve sign gates, Venus and the Moon in each ear, the 639 Hz heart) and the **Align · Frequencies** page that posts them, see [reels/frequency/README.md](reels/frequency/README.md) and [reels/frequency/PROFILE.md](reels/frequency/PROFILE.md).
