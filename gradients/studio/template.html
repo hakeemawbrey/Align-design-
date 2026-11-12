@@ -158,7 +158,7 @@ const PALETTES={
  aqua:[["#4fa6e0","#5bb3ea","#7ab9ef"],["#62c6a2","#6ccb8a","#8fc6c9"],["#d7a63c","#8cc955","#70cc56"]],
 };
 const ROT=["classic","magenta","deep","rainbow","classic","magenta","aqua"];
-const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.62,shadow:.30,gap:.75,drift:.06};
+const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.58,center:.47,shadow:.30,gap:.75,drift:.06};
 const $=id=>document.getElementById(id);
 const TAGS={houston:"come align · join the houston beta",beta:"come align · join the beta"};
 function tagFor(p){if(p.id&&p.id.startsWith("htx"))return"houston";return(crc32(p.text)>>>24)%2?"houston":"beta"}
@@ -217,7 +217,7 @@ function makeText(){
   const {px,lines,lead}=layout(x,state.text||" ",state.scale);
   x.font=fontFor(px);x.textAlign="center";x.textBaseline="alphabetic";
   const steps=lines.map(l=>l===null?ST.gap:1),asc=px*.95,desc=px*.25;
-  let y=(H-(lead*(steps.reduce((a,b)=>a+b,0)-1)+asc+desc))/2+asc;
+  let y=H*ST.center-(lead*(steps.reduce((a,b)=>a+b,0)-1)+asc+desc)/2+asc;
   const sh=document.createElement("canvas");sh.width=W;sh.height=H;const s=sh.getContext("2d");
   s.font=x.font;s.textAlign="center";const alpha=state.bg==="art"?ST.shadow:({lime:.55,sunset:.42,aqua:.45,rainbow:.38}[state.palette]||ST.shadow);s.fillStyle=`rgba(0,0,0,${alpha})`;
   const pos=[];lines.forEach((l,i)=>{if(l!==null)pos.push([l,y]);y+=steps[i]*lead});

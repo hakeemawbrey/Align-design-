@@ -54,7 +54,8 @@ STYLE = {
     "min_size": 0.052,
     "wrap": 0.86,      # max line width / width
     "lead": 1.14,      # line height / font size
-    "max_h": 0.62,     # max text block height / height
+    "max_h": 0.58,     # max text block height / height (keeps clear of the sign-off at 80%)
+    "center": 0.47,    # text block centre, a touch above the middle
     "shadow": 0.30,
     "gap": 0.75,       # blank line between paragraphs, in line heights
     "drift": 0.06,     # how far the gradient pans over the reel (fraction of width)
@@ -127,7 +128,7 @@ def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None, si
     d, ds = ImageDraw.Draw(img), ImageDraw.Draw(sh)
     asc, desc = f.getmetrics()
     steps = [1 if l is not None else STYLE["gap"] for l in lines]
-    top = (H * ss - (lead * (sum(steps) - 1) + asc + desc)) / 2
+    top = H * ss * STYLE["center"] - (lead * (sum(steps) - 1) + asc + desc) / 2
     shadow = shadow_k or STYLE["shadow"]
     stroke = 0 if style == "clean" else max(1, round(px * ss * 0.075))
     fill = (255, 255, 255)   # white text only, in every look
