@@ -125,6 +125,8 @@ CHORDS = {
     'night': [[-3, 2, 7], [-7, -2, 4], [-3, 0, 7], [-8, -1, 4]],
     'warm': [[-7, -3, 0], [-5, -1, 2], [-3, 0, 4], [-12, -5, 4]],
     'lift': [[-7, -3, 0, 4], [-5, -1, 2, 7], [-3, 0, 4, 7], [0, 4, 7, 12]],
+    'chaos': [[-3, 0, 4], [-4, -1, 3], [-3, 0, 4], [-1, 2, 6]],
+    'hit': [[-3, 0, 4]],
 }
 
 
@@ -141,7 +143,7 @@ def main():
     def mood_at(t):
         for s in scenes:
             if s['start'] <= t < s['end']:
-                return MOOD.get(s['shot'], 'bright')
+                return s.get('mood') or MOOD.get(s['shot'], 'bright')
         return 'lift'
 
     step = BEAT / 2
@@ -185,6 +187,16 @@ def main():
                 put(music, musicbox(f, 1.6, 0.1), t)
             if i % 8 == 0:
                 put(music, kick(0.12), t)
+        elif m == 'chaos':
+            f = hz(chord[i % len(chord)] + (12 if i % 2 else 0))
+            put(music, marimba(f, 0.25, 0.16), t)
+            put(music, marimba(f * 2, 0.2, 0.06), t + step / 2)
+            if i % 2 == 0:
+                put(music, kick(0.26), t)
+            put(music, shaker(0.05), t)
+            put(music, shaker(0.03), t + step / 2)
+        elif m == 'hit':
+            pass
         elif m == 'lift':
             pat = [0, 1, 2, 3, 2, 1, 2, 3]
             f = hz(chord[pat[i % 8] % len(chord)] + 12)
@@ -229,11 +241,63 @@ def main():
         x = x - lowpass(x, 0.3)
         put(fx, x * (0.4 + 0.6 * np.abs(np.sin(tt * 14 * np.pi / 2))) * amp * np.minimum(1, np.minimum(tt / 0.1, (d - tt) / 0.2)), t)
 
+    def alarm(t, amp=0.12):
+        k = int(0.5 * SR)
+        tt = np.arange(k) / SR
+        x = np.sign(np.sin(2 * np.pi * 220 * tt)) * 0.5 + np.sin(2 * np.pi * 440 * tt)
+        put(fx, lowpass(x, 0.3) * np.exp(-tt / 0.25) * amp, t)
+        put(fx, kick(0.35), t)
+
+    def crash(t, amp=0.1):
+        for q in range(5):
+            k = int(0.3 * SR)
+            tt = np.arange(k) / SR
+            x = noise(k) - lowpass(noise(k), 0.2)
+            put(fx, x * np.exp(-tt / (0.05 + 0.03 * q)) * amp, t + q * 0.09 + rng.random() * 0.05)
+            put(fx, bell(hz(24 + rng.integers(0, 12)), 0.4, 0.03), t + q * 0.09)
+
+    def siren(t, d=1.6, amp=0.05):
+        k = int(d * SR)
+        tt = np.arange(k) / SR
+        f = 700 + 250 * np.sin(2 * np.pi * 1.4 * tt)
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR)
+        put(fx, x * np.minimum(1, np.minimum(tt / 0.2, (d - tt) / 0.4)) * amp, t)
+
+    def water(t, d=1.8, amp=0.07):
+        k = int(d * SR)
+        tt = np.arange(k) / SR
+        put(fx, lowpass(noise(k), 0.5) * np.minimum(1, np.minimum(tt / 0.1, (d - tt) / 0.3)) * amp, t)
+
+    def buzz(t, d=0.9, amp=0.06):
+        k = int(d * SR)
+        tt = np.arange(k) / SR
+        x = np.sin(2 * np.pi * 150 * tt) * (np.sin(2 * np.pi * 6 * tt) > 0)
+        put(fx, x * amp, t)
+
+    def dun(t, amp=0.3):
+        for q, f in enumerate([55, 52]):
+            k = int(1.2 * SR)
+            tt = np.arange(k) / SR
+            put(fx, (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(2 * np.pi * f * 2 * tt)) * np.exp(-tt / 0.5) * amp, t + q * 0.42)
+
+    SFX = {'alarm': alarm, 'crash': crash, 'siren': siren, 'water': water, 'buzz': buzz, 'dun': dun, 'pop': pop,
+           'sparkle': lambda t: sparkle(t, 0.06), 'chime': lambda t: put(fx, bell(hz(12), 2.5, 0.12), t), 'whoosh': lambda t: whoosh(t, 0.06, 0.4)}
+
     for j, s in enumerate(scenes):
         a, b = s['start'], s['end']
         d = b - a
         if j > 0:
             whoosh(a, 0.035)
+        for cue in s.get('sfx') or []:
+            name, _, at = cue.partition('@')
+            # '@w3' = on the scene's 4th word, '@0.5' = halfway through, none = at the cut
+            if at.startswith('w'):
+                when = a + s['wt'][min(int(at[1:]), len(s['wt']) - 1)]
+            elif at:
+                when = a + d * float(at)
+            else:
+                when = a
+            SFX[name](when)
         shot = s['shot']
         if shot == 'intro':
             pop(a + d * 0.62, 0.3)

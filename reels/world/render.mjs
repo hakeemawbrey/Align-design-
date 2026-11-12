@@ -52,6 +52,7 @@ function serve(url) {
   const p = url.slice(HOST.length).split('?')[0]
   if (p === 'index.html') return INDEX
   if (p === 'engine.js') return path.join(HERE, 'engine.js')
+  if (p.startsWith('stories/') || p === 'zodiac.js') return path.join(HERE, p)
   if (p.startsWith('three/')) return path.join(MODULES, 'three/build', p.slice(6))
   if (p.startsWith('addons/')) return path.join(MODULES, 'three/examples/jsm', p.slice(7))
   if (p.startsWith('fonts/')) return path.join(fontDir, p.slice(6))
@@ -125,7 +126,7 @@ async function renderOne(browser, file) {
     '-map', '[v]', '-ar', '44100', '-ac', '1', voiceWav])
   // score + effects, ducked under the voice
   const mixWav = path.join(work, 'mix.wav')
-  writeFileSync(path.join(work, 'cues.json'), JSON.stringify({ duration: info.duration, scenes: info.scenes, words: info.words }))
+  writeFileSync(path.join(work, 'cues.json'), JSON.stringify({ duration: info.duration, words: info.words, scenes: info.scenes.map((s, i) => ({ ...s, mood: script.scenes[i].mood, sfx: script.scenes[i].sfx, wt: voice.scenes[i].words.map((w) => s.vStart - s.start + w[0]) })) }))
   execFileSync('python3', ['-I', path.join(HERE, 'score.py'), path.join(work, 'cues.json'), voiceWav, mixWav], { stdio: 'inherit' })
 
   const end = to ?? info.duration

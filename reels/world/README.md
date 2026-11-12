@@ -8,16 +8,23 @@ time. The format comes from studying @greenbrorants
 Only the format carries over. The characters, towns, story, music and the
 Align card are all original and built in code.
 
-The first reel, **Your Card Only Flips If It's Mutual 🃏**: everyone gets a
-card at eighteen, face down, and it only flips when it's mutual. He paints a
-fake face on his. Everyone aligns with the paint, and nothing flips. At 11:11
-he meets a girl at a bus stop whose card is face down too. He scrapes off the
-paint, tells her the honest thing, and both cards flip at once.
+**The series: one sign per reel, all twelve in turn.** Each story stars one
+sign as the main character, with a piece of signature gear that drives the
+plot (`zodiac.js` lists all twelve). The rule escalates until something goes
+wildly wrong. Then the twist turns the rule back on the hero, and the ending
+lands on an Align idea.
+
+| # | Sign | Story |
+| --- | --- | --- |
+| 1 | Scorpio | **If You Lie To A Scorpio, Their Tail Glows Red 🦂**. Her tail lights up at every lie on every date, until it turns the whole diner red and the fire department hoses her down. She quits and tells her mom she doesn't need anyone, and the tail goes red at *her*. On the next date she says the honest thing first. He laughs and stands up, and he has a tail too. Neither one glows all night. |
+| – | Leo (pilot) | *Your Card Only Flips If It's Mutual 🃏*: the first test of the engine, kept as a reference. |
 
 | Path | What |
 | --- | --- |
-| `scripts/*.json` | one story per reel: the lines and the shot for each |
-| `engine.js` | the world: avatars with decal faces, the street, bedroom, plaza and bus stop, the cards, the shots and the captions (three.js in Chromium) |
+| `scripts/*.json` | one story per reel: each line, its shot, its music mood and its sound effects |
+| `engine.js` | the shared world: avatars with decal faces, the street, bedroom, plaza and bus stop, the cards, particles, captions, the sign tag and screen effects (three.js in Chromium) |
+| `zodiac.js` | the twelve signs as characters (glyphs, colours, gear such as Scorpio's tail), the diner, props |
+| `stories/<id>.js` | one story's cast and shots |
 | `render.mjs` | script → narration → frames → score → MP4 |
 | `score.py` | the original score and effects, mood by mood, ducked under the voice |
 | `../out/world/` | renders (git-ignored) |
@@ -40,31 +47,42 @@ A full reel takes about half an hour on a laptop CPU (no GPU needed).
 
 ```json
 {
-  "id": "01-card-flips",
-  "title": "Your Card Only Flips If It's Mutual 🃏",
-  "caption": "…",
-  "voice": "am_puck",
-  "speed": 1.08,
-  "scenes": [{ "text": "In this world, when you turn eighteen, you get a card.", "shot": "intro" }],
-  "end": "come align"
+  "id": "02-scorpio-tail",
+  "story": "02-scorpio-tail",
+  "sign": "scorpio",
+  "title": "If You Lie To A Scorpio, Their Tail Glows Red 🦂",
+  "voice": "af_bella",
+  "speed": 1.1,
+  "accent": ["scorpio", "tail", "red", "honest"],
+  "scenes": [{ "text": "My first date said he loves hiking.", "shot": "date1", "mood": "sneaky", "sfx": ["alarm@w3"] }],
+  "end": "come align",
+  "endSub": "SCORPIO · 1 OF 12"
 }
 ```
 
 - One line per scene, 2–4 seconds spoken. The shot cuts on every line, which
   is the pace these Shorts run at.
-- `shot` names a function in `SHOTS` in `engine.js` (`intro`, `cardBack`,
-  `demoFlip`, `sister`, `friend`, `alone`, `paint`, `crowd`, `noFlip`,
-  `turnAway`, `clock`, `busStop`, `girlConfess`, `scrape`, `honest`, `laugh`,
-  `bothFlip`). A new story needs new shots. Each one is a pure function of
-  time: it places the cast, sets the faces, moves the camera and fires the
-  particles.
+- `shot` names a function in the story's `SHOTS` (`stories/<story>.js`).
+  Each one is a pure function of time `(t, d, endHold, T, wordTimes)`: it
+  places the cast, sets the faces, moves the camera, fires the particles, and
+  can ask for a red flash (`fx.tint`), a shake (`fx.shake`) or the sign tag
+  (`fx.label`). `wordTimes` lets a beat land exactly on a word.
+- `mood` picks the music for that line: `bright` `sneaky` `sad` `night`
+  `warm` `lift` `chaos` `hit` (near silence, for a punchline).
+- `sfx`: `alarm` `crash` `siren` `water` `buzz` `dun` `pop` `sparkle`
+  `chime` `whoosh`. `@w3` lands on the line's 4th word, `@0.5` halfway
+  through, and no suffix lands on the cut.
 - Faces: `smile` `grin` `happy` `laugh` `sad` `worried` `shock` `sly` `heart`
   `blush` `shy` `determined` `curious` `down`.
-- Words in `ACCENT` (card, flips, align, honest, stars…) show up in gold.
-- `voice` is any Kokoro voice; `am_puck` sounds the most like a storyteller.
+- Words in `accent` show up in gold.
+- `voice` is any Kokoro voice: `af_bella` for her, `am_puck` for him.
 
 ## Rules
 
+- One sign is the hero, named in the first two lines, with its gear on
+  screen in the first three seconds and its glyph on the chest.
+- Escalate. Every beat makes the rule's cost bigger (a lie, a bigger lie, the
+  whole room, the fire department), then the rule turns on the hero.
 - Title: a stated rule beats a bare noun ("Your Card Only Flips If It's
   Mutual" over "The Card"), with one emoji. The hook is the first line,
   spoken, at frame one.

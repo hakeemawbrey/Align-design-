@@ -1,0 +1,165 @@
+{
+  "id": "02-scorpio-tail",
+  "story": "02-scorpio-tail",
+  "sign": "scorpio",
+  "title": "If You Lie To A Scorpio, Their Tail Glows Red 🦂",
+  "caption": "in this world, a scorpio's tail tells on every lie. even hers",
+  "hashtags": [
+    "scorpio",
+    "roblox",
+    "story",
+    "zodiac",
+    "align"
+  ],
+  "voice": "af_bella",
+  "speed": 1.1,
+  "accent": [
+    "scorpio",
+    "scorpios",
+    "tail",
+    "red",
+    "lies",
+    "lie",
+    "honest",
+    "me",
+    "glowed",
+    "too",
+    "anyone"
+  ],
+  "scenes": [
+    {
+      "text": "In this world, every sign is born with one power.",
+      "shot": "power",
+      "mood": "bright",
+      "sfx": [
+        "sparkle@0.1"
+      ]
+    },
+    {
+      "text": "Scorpios get a tail that glows red when someone lies to them.",
+      "shot": "tailReveal",
+      "mood": "bright",
+      "sfx": [
+        "alarm@w10"
+      ]
+    },
+    {
+      "text": "Sounds cool, right? Until you try dating.",
+      "shot": "dating",
+      "mood": "sneaky",
+      "sfx": []
+    },
+    {
+      "text": "My first date said he loves hiking.",
+      "shot": "date1",
+      "mood": "sneaky",
+      "sfx": []
+    },
+    {
+      "text": "Red.",
+      "shot": "red1",
+      "mood": "hit",
+      "sfx": [
+        "alarm"
+      ]
+    },
+    {
+      "text": "My second date said she was totally over her ex.",
+      "shot": "date2",
+      "mood": "sneaky",
+      "sfx": [
+        "buzz@w8"
+      ]
+    },
+    {
+      "text": "Red.",
+      "shot": "red2",
+      "mood": "hit",
+      "sfx": [
+        "alarm"
+      ]
+    },
+    {
+      "text": "My third date said, I'm not like other guys.",
+      "shot": "date3",
+      "mood": "sneaky",
+      "sfx": []
+    },
+    {
+      "text": "My tail lit up the entire restaurant.",
+      "shot": "restaurantRed",
+      "mood": "chaos",
+      "sfx": [
+        "alarm",
+        "crash@0.25",
+        "alarm@0.5"
+      ]
+    },
+    {
+      "text": "Someone called the fire department.",
+      "shot": "fire",
+      "mood": "chaos",
+      "sfx": [
+        "siren",
+        "water@0.22"
+      ]
+    },
+    {
+      "text": "So I quit dating. I called my mom and said, I don't need anyone.",
+      "shot": "phoneCall",
+      "mood": "sad",
+      "sfx": []
+    },
+    {
+      "text": "And my tail turned red.",
+      "shot": "selfRed",
+      "mood": "hit",
+      "sfx": [
+        "alarm@w3"
+      ]
+    },
+    {
+      "text": "It wasn't just catching other people. It was catching me.",
+      "shot": "realize",
+      "mood": "sad",
+      "sfx": []
+    },
+    {
+      "text": "So on my next date, I said the honest thing first.",
+      "shot": "date4",
+      "mood": "warm",
+      "sfx": []
+    },
+    {
+      "text": "I'm a Scorpio. I'm scared of this. And my tail will tell on both of us.",
+      "shot": "confess",
+      "mood": "warm",
+      "sfx": []
+    },
+    {
+      "text": "He laughed and said, good. Mine too.",
+      "shot": "heLaughs",
+      "mood": "warm",
+      "sfx": []
+    },
+    {
+      "text": "Then he stood up. He had a tail.",
+      "shot": "twist",
+      "mood": "night",
+      "sfx": [
+        "dun@w5"
+      ]
+    },
+    {
+      "text": "And neither of them glowed all night.",
+      "shot": "ending",
+      "mood": "lift",
+      "sfx": [
+        "sparkle@0.2",
+        "chime@0.5"
+      ]
+    }
+  ],
+  "end": "come align",
+  "endSub": "SCORPIO · 1 OF 12"
+}
