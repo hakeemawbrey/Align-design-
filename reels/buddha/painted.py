@@ -325,13 +325,7 @@ def paste(canvas, rgb, alpha, y, k=1.0, scale=1.0):
     canvas[y0:y1, x0:x1] = canvas[y0:y1, x0:x1] * (1 - a) + rgb[y0 - y:y1 - y, x0 - x:x1 - x] * a
 
 
-def ease_out_back(x):
-    x = min(1.0, max(0.0, x))
-    c = 1.4
-    return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2
-
-
-def text_items(p, w, h, credit=True, handle=None):
+def text_items(p, w, h, credit=True, handle=None, cta=None):
     q = p["quote"]
     sq = abs(w - h) < 10
     items = []
@@ -353,18 +347,16 @@ def text_items(p, w, h, credit=True, handle=None):
     if handle:
         hr, ha = caption_sprite(handle, w, int(w * 0.03), w * 0.9, "SemiBold", 1)
         items.append(dict(rgb=hr, a=ha * 0.85, y=int(h * (0.93 if sq else 0.06)), t=0.0, static=True))
+    if cta:  # a quiet line near the bottom, above where Instagram puts its buttons on a reel
+        cr, ca = caption_sprite(cta, w, int(w * 0.03), w * 0.9, "Medium", 1)
+        items.append(dict(rgb=cr, a=ca * 0.72, y=int(h * (0.925 if sq else 0.835)), t=0.0, static=True))
     return items, end
 
 
-def draw_text(c, items, t):
+def draw_text(c, items):
+    """All text, plain and still: no pop-in, no fades."""
     for it in items:
-        if it.get("static"):
-            paste(c, it["rgb"], it["a"], it["y"])
-            continue
-        x = (t - it["t"]) / 0.35
-        if x <= 0:
-            continue
-        paste(c, it["rgb"], it["a"], it["y"], k=min(1.0, x * 1.6), scale=0.86 + 0.14 * ease_out_back(x))
+        paste(c, it["rgb"], it["a"], it["y"])
 
 
 # ---------------------------------------------------------------- render --
@@ -379,57 +371,37 @@ def plan_look(rng, history, library):
     return dict(image=img, palette=palette, framing=framing, key=f"{img.stem}/{palette}/{framing}")
 
 
-def render(p, out_dir, rng, make_score, hashtags, stills_only=False, credit=True, handle=None, square=False):
-    W, H, FPS = 1080, 1920, 30
-    MARGIN = 1.10
-    big = compose(rng, p["image"], p["palette"], p["framing"], (int(W * MARGIN), int(H * MARGIN)))
-    big_img = Image.fromarray((big * 255).astype(np.uint8))
-    items, end = text_items(p, W, H, credit, handle)
+def render(p, out_dir, rng, make_score, hashtags, stills_only=False, credit=True, handle=None, square=False,
+           cta=None):
+    """A still picture held for the length of the reel: no motion, no text effects."""
+    W, H = 1080, 1920
+    img = compose(rng, p["image"], p["palette"], p["framing"], (W, H))
+    items, end = text_items(p, W, H, credit, handle, cta)
+    draw_text(img, items)
+    still = (np.clip(img, 0, 1) * 255).astype(np.uint8)
     dur = float(min(16, max(7.5, end + 2.8)))
-    nframes = int(dur * FPS)
-    BW, BH = big_img.size
-    z0, z1 = 1.0, rng.uniform(1.06, 1.10)
-    dx = rng.uniform(-0.03, 0.03) * W
-    dy = rng.uniform(-0.03, 0.02) * H
-
-    def frame(i):
-        t = i / FPS
-        u = t / dur
-        e = u * u * (3 - 2 * u)
-        z = z0 + (z1 - z0) * e  # zoom in slowly
-        cw, ch = BW / MARGIN / z, BH / MARGIN / z
-        cx, cy = BW / 2 + dx * e, BH / 2 + dy * e
-        fr = big_img.resize((W, H), Image.BILINEAR, box=(cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2))
-        c = np.asarray(fr, np.float32) / 255.0
-        draw_text(c, items, t)
-        c *= max(0.0, min(1.0, 0.25 + 1.8 * t, (dur - t) / 0.5))
-        return (np.clip(c, 0, 1) * 255).astype(np.uint8)
-
     stem = out_dir / time.strftime("buddha-%Y%m%d-%H%M%S")
-    last = frame(int((end + 0.5) * FPS))
     if stills_only:
-        return last, stem
-    Image.fromarray(last).save(str(stem) + ".jpg", quality=92)
+        return still, stem
+    jpg = Path(str(stem) + ".jpg")
+    Image.fromarray(still).save(jpg, quality=95)
     if square:
         sq = compose(rng, p["image"], p["palette"], p["framing"], (1080, 1080))
-        s_items, s_end = text_items(p, 1080, 1080, credit, handle)
-        draw_text(sq, s_items, s_end + 5)
-        Image.fromarray((np.clip(sq, 0, 1) * 255).astype(np.uint8)).save(str(stem) + "-square.jpg", quality=92)
+        draw_text(sq, text_items(p, 1080, 1080, credit, handle, cta)[0])
+        Image.fromarray((np.clip(sq, 0, 1) * 255).astype(np.uint8)).save(str(stem) + "-square.jpg", quality=95)
 
     wav = Path(str(stem) + ".wav")
-    make_score(wav, dur, rng, [it["t"] for it in items if not it.get("static")])
+    make_score(wav, dur, rng, [])
     mp4 = Path(str(stem) + ".mp4")
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-           "-r", str(FPS), "-i", "-", "-i", str(wav), "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-framerate", "30", "-i", str(jpg), "-i", str(wav),
+           "-t", f"{dur:.2f}", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-tune", "stillimage",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(mp4)]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    for i in range(nframes):
-        proc.stdin.write(frame(i).tobytes())
-    proc.stdin.close()
-    if proc.wait() != 0:
+    if subprocess.run(cmd).returncode != 0:
         raise RuntimeError("ffmpeg failed")
     wav.unlink()
     q = p["quote"]
-    cap = f"{q['top']}\n{q['bottom']}\n\n— {q['author']}" + (f", {q['source']}" if q.get("source") else "")
+    cap = f"{q['top']}\n{q['bottom']}\n\n\u2014 {q['author']}" + (f", {q['source']}" if q.get("source") else "")
+    if cta:
+        cap += f"\n\n{cta}"
     Path(str(stem) + ".txt").write_text(cap + "\n\n" + hashtags + "\n")
     return mp4, dur

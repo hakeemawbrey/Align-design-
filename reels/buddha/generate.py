@@ -665,6 +665,9 @@ def main():
     ap.add_argument("--square", action="store_true", help="painted: also save a 1080x1080 picture post")
     ap.add_argument("--handle", help="painted: a small @handle watermark, e.g. @yourpage")
     ap.add_argument("--no-credit", action="store_true", help="painted: leave the author's name off the video")
+    ap.add_argument("--cta", default="come align \u00b7 join the beta",
+                    help="painted: the small line near the bottom (default: come align · join the beta)")
+    ap.add_argument("--no-cta", action="store_true", help="painted: leave the small bottom line off")
     a = ap.parse_args()
 
     if not a.stills and subprocess.run(["which", "ffmpeg"], capture_output=True).returncode != 0:
@@ -691,7 +694,8 @@ def main():
 
     def make(p, stills_only=False):
         if p["style"] == "painted":
-            return painted.render(p, out, rng, make_score, HASHTAGS, stills_only, not a.no_credit, a.handle, a.square)
+            return painted.render(p, out, rng, make_score, HASHTAGS, stills_only, not a.no_credit, a.handle, a.square,
+                                 None if a.no_cta else a.cta)
         return render(p, out, rng, stills_only)
 
     if a.stills:

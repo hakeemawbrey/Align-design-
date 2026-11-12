@@ -45,6 +45,8 @@ python3 reels/buddha/generate.py --theme love       # only love quotes (also: al
 python3 reels/buddha/generate.py --square           # also a 1080 × 1080 picture post, like the original
 python3 reels/buddha/generate.py --handle @yourpage # a small watermark with your handle
 python3 reels/buddha/generate.py --no-credit        # leave the author's name off the picture
+python3 reels/buddha/generate.py --cta "link in bio" # change the small bottom line
+python3 reels/buddha/generate.py --no-cta           # leave the small bottom line off
 python3 reels/buddha/generate.py --stills 12        # a quick contact sheet, no video
 python3 reels/buddha/generate.py --style neon       # the glowing line-art Buddha instead (or: --style mix)
 ```
@@ -53,12 +55,17 @@ Everything goes to `reels/buddha/out/` (git-ignored):
 
 | File | What |
 | --- | --- |
-| `buddha-<time>.mp4` | the reel: 7–16 s, slow zoom, the top line pops in, then the punchline, then the author |
-| `buddha-<time>.jpg` | its last frame, for a story or a pin |
+| `buddha-<time>.mp4` | the reel: the picture held still for 7–16 s (long enough to read) with music |
+| `buddha-<time>.jpg` | the same picture, for a feed post, story or pin |
 | `buddha-<time>-square.jpg` | a square picture post (with `--square`) |
 | `buddha-<time>.txt` | the caption: the quote, author, source and hashtags |
 
-A reel takes about 20 s to make. `out/history.json` remembers what was used:
+The reel is a still picture: no zoom and no text effects. All the text is on
+screen from the first frame. A small, quiet line near the bottom says **come
+align · join the beta**, and the caption file ends with it too. It sits above
+where Instagram puts its buttons on a reel.
+
+A reel takes about 10 s to make. `out/history.json` remembers what was used:
 no quote repeats until every quote has had a turn, and every statue is used
 once before any repeats.
 
