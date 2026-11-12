@@ -1,0 +1,20 @@
+{
+  "id": "01-venus-sign",
+  "title": "How you found out about your Venus sign",
+  "caption": "your sun sign was never the one doing the loving",
+  "cta": "comment VENUS and we'll send you yours. full chart free on align",
+  "hashtags": ["venussign", "astrology", "zodiac", "lovelanguage", "birthchart"],
+  "cast": {"you": {"skin": "#e0a77f", "shirt": "#f2b43a", "pants": "#3b3f6b", "hair": "#2a1a14", "style": "short", "sign": "leo"}, "them": {"skin": "#8d5a3b", "shirt": "#5fb8c9", "pants": "#2c2c3a", "hair": "#120c0a", "style": "curly", "sign": "aquarius"}},
+  "end": "read the sky before the face",
+  "scenes": [
+    {"text": "You send someone a *four-minute* voice note.", "set": "phone", "shot": "phone", "screen": {"name": "Jordan", "msgs": [["them", "good"], ["me", "~4:02"]]}, "sfx": "whoosh"},
+    {"text": "They reply... *haha.* So what went wrong?", "set": "phone", "shot": "phone", "screen": {"name": "Jordan", "msgs": [["me", "~4:02"], ["them", "haha"]]}, "sfx": "pop", "cut": 3, "b": {"set": "room", "shot": "snap", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "shock", "expr": "shock"}], "fx": ["question"], "impact": true, "sfx": "thud"}},
+    {"text": "You blame your sun sign. Classic *Leo.* Too much.", "set": "room", "shot": "push", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "shrug", "expr": "worried"}], "fx": ["glyph:leo"], "sfx": "boing"},
+    {"text": "But your sun sign doesn't run your love life. So which planet does?", "set": "space", "shot": "orbit", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "shock"}], "fx": ["planet:mars", "planet:mercury"], "sfx": "whoosh", "cut": 7, "b": {"set": "space", "shot": "top", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "think", "expr": "worried"}], "fx": ["wheel", "question"]}},
+    {"text": "*Venus.* Wherever it sat the day you were born is how you love.", "set": "studio", "shot": "push", "focus": "center", "fx": ["big:venus"], "impact": true, "tag": "venus = how you love", "sfx": "swell", "cut": 4, "b": {"set": "space", "shot": "top", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "smile"}], "fx": ["wheel", "planet:venus"]}},
+    {"text": "Your Venus is in *Cancer.* You love like a warm meal.", "set": "room", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "heart", "expr": "smitten"}], "fx": ["glyph:cancer", "hearts"], "sfx": "ding"},
+    {"text": "Theirs is in *Aquarius.* They love like a group chat.", "set": "street", "shot": "medium", "focus": "them", "cast": [{"who": "them", "mark": "center", "pose": "phone", "expr": "smile"}], "fx": ["glyph:aquarius"], "sfx": "ding"},
+    {"text": "So who's wrong? Neither. You just weren't *aligned.*", "set": "cafe", "shot": "wide", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "worried"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "neutral"}], "fx": ["question"], "sfx": "whoosh", "cut": 3, "b": {"shot": "push", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "sad"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "worried"}], "fx": []}},
+    {"text": "Which is why you read the sky before the face.", "set": "space", "shot": "pull", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "smile"}, {"who": "them", "mark": "right", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}

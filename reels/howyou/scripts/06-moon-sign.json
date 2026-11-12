@@ -1,0 +1,20 @@
+{
+  "id": "06-moon-sign",
+  "title": "What your moon sign does on a bad day",
+  "caption": "they wanted to fix it. you wanted a blanket",
+  "cta": "comment MOON and we'll send you what yours needs",
+  "hashtags": ["moonsign", "astrology", "relationships", "zodiac", "cancer"],
+  "cast": {"you": {"skin": "#f0c3a0", "shirt": "#9aa7e8", "pants": "#2e3150", "hair": "#141014", "style": "long", "sign": "cancer"}, "them": {"skin": "#9a6142", "shirt": "#e0503c", "pants": "#2a2a3c", "hair": "#110b08", "style": "short", "sign": "aries"}},
+  "end": "it has to be mutual",
+  "scenes": [
+    {"text": "On a bad day, you and your partner want opposite things. And it's written in the sky.", "set": "room", "shot": "push", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "sad", "blanket": true}, {"who": "them", "mark": "door", "pose": "point", "expr": "grin", "look": "you"}], "fx": ["rain"], "sfx": "whoosh", "cut": 10, "b": {"set": "studio", "shot": "push", "focus": "center", "cast": [], "fx": ["big:moon"], "impact": true}},
+    {"text": "Your sun sign is who you are. Your *moon sign* is what you need.", "set": "space", "shot": "orbit", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "neutral"}], "fx": ["planet:moon"], "tag": "moon = what you need", "sfx": "swell"},
+    {"text": "And the moon moves fast. It changes sign every two and a half days.", "set": "space", "shot": "top", "focus": "center", "cast": [], "fx": ["wheel", "moonrun"], "sfx": "whoosh"},
+    {"text": "Their moon is in *Aries.* Bad day? They want to fix it. Now.", "set": "room", "shot": "medium", "focus": "them", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "sad"}, {"who": "them", "mark": "center", "pose": "point", "expr": "grin", "look": "you"}], "fx": ["glyph:aries@them"], "sfx": "boing", "cut": 7, "b": {"shot": "snap", "focus": "them", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "sad"}, {"who": "them", "mark": "center", "pose": "point", "expr": "grin", "look": "you"}], "fx": ["exclaim"], "impact": true, "sfx": "cut"}},
+    {"text": "Your moon is in *Cancer.* You want a blanket, and someone to just sit there.", "set": "room", "shot": "close", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "sad", "blanket": true}], "fx": ["glyph:cancer"], "sfx": "pop"},
+    {"text": "So they solve. You hide. Nobody feels loved.", "set": "room", "shot": "wide", "focus": "both", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "sad", "blanket": true}, {"who": "them", "mark": "door", "pose": "shrug", "expr": "worried", "look": "you"}], "fx": ["question"], "sfx": "thud"},
+    {"text": "Nobody's broken. Your moons just ask for different things.", "set": "space", "shot": "wide", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "neutral"}, {"who": "them", "mark": "right", "pose": "float", "expr": "neutral"}], "fx": ["planet:moon", "glyph:cancer@you", "glyph:aries@them"], "sfx": "whoosh"},
+    {"text": "Learn their moon, and you learn how to show up.", "set": "room", "shot": "push", "focus": "both", "cast": [{"who": "you", "mark": "bed", "pose": "sit", "expr": "smile", "blanket": true}, {"who": "them", "mark": "bedR", "pose": "sit", "expr": "smile", "look": "you"}], "fx": ["hearts"], "sfx": "ding"},
+    {"text": "Because it has to go both ways.", "set": "space", "shot": "pull", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "smile"}, {"who": "them", "mark": "right", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}
