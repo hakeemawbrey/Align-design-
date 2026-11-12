@@ -253,12 +253,14 @@ export class GraphClient {
    * Instagram Audio API (Facebook Login only). With no query, Instagram returns what is trending now.
    * Only audio cleared for third-party use is returned, so it is a subset of the in-app library.
    */
-  searchAudio(igUserId: string, opts: { type?: "music" | "original_sound"; query?: string } = {}) {
-    return this.request<{ data: IgAudio[] }>("GET", "ig_audio", {
+  async searchAudio(igUserId: string, opts: { type?: "music" | "original_sound"; query?: string } = {}): Promise<{ data: IgAudio[] }> {
+    const res = await this.request<{ audio?: IgAudio[]; data?: IgAudio[] }>("GET", "ig_audio", {
       user_id: igUserId,
       audio_type: opts.type ?? "music",
       ...(opts.query ? { search_query: opts.query } : {}),
     });
+    // Instagram returns the tracks under "audio", not the usual "data".
+    return { data: res.audio ?? res.data ?? [] };
   }
 
   /** Sends a local file to a Meta rupload endpoint in one request. */

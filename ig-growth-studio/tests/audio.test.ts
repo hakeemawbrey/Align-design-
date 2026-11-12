@@ -22,7 +22,8 @@ const reel = (n = 0) =>
     scheduledAt: new Date(NOW.getTime() - 1000 + n),
   });
 
-const TRENDING = { data: [{ audio_id: "A1", title: "Song One", display_artist: "Artist" }, { audio_id: "A2", title: "Song Two" }] };
+// The shape Instagram really returns: tracks under "audio", not "data".
+const TRENDING = { audio: [{ audio_id: "A1", title: "Song One", display_artist: "Artist" }, { audio_id: "A2", title: "Song Two" }] };
 
 function graph(media: (body: URLSearchParams | null) => unknown = () => ({ id: "C1" })) {
   return fakeGraph({
@@ -114,6 +115,22 @@ describe("Reels audio", () => {
     const post = (await getPost(db, id))!;
     expect(post.status).toBe("published");
     expect(post.audio_error).toMatch(/No audio: Application does not have permission/);
+  });
+
+  it("says why when Instagram returns no tracks, and still posts", async () => {
+    await setAudioSetting(db, "17841", { mode: "trending" });
+    const id = await reel();
+    const { client } = fakeGraph({
+      "GET ig_audio": () => ({ audio: [], paging: { cursors: {} } }),
+      "POST 17841/media": () => ({ id: "C1" }),
+      "GET C1": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () => ({ id: "M1" }),
+      "GET M1": () => ({ id: "M1" }),
+    });
+    await publishDuePosts(db, { now: NOW, client });
+    const post = (await getPost(db, id))!;
+    expect(post.status).toBe("published");
+    expect(post.audio_error).toMatch(/no trending music/);
   });
 
   it("validates settings", async () => {

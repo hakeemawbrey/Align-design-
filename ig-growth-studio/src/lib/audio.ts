@@ -91,7 +91,8 @@ export async function pickAudio(
   const s = await getAudioSetting(db, igUserId);
   if (s.mode === "off") return null;
   const items = await audioCandidates(db, client, igUserId, s, now);
-  if (!items.length) return null;
+  // Recorded on the post (the Reel still goes out with its own sound), so an empty list is never silent.
+  if (!items.length) throw new Error(s.mode === "search" ? `Instagram found no music for "${s.query}"` : "Instagram returned no trending music");
   const used = await audioUseCounts(db, igUserId, new Date(now.getTime() - ROTATION_MS));
   let best = items[0];
   for (const a of items) if ((used.get(a.audio_id) ?? 0) < (used.get(best.audio_id) ?? 0)) best = a;
