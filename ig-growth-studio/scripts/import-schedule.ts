@@ -5,7 +5,8 @@
  *   npm run import -- plan.csv --commit              # queue the posts
  *   npm run import -- plan.csv --shift-days=-1 --trial=MANUAL --commit
  *
- * Columns: account, date ("Wed 4 Nov"), time ("8:30 PM"), type ("post" | "reel" | "image" | "trial reel"),
+ * Columns: account, date ("Wed 4 Nov"), time ("8:30 PM"), type ("post" | "reel" | "image" | "trial reel"; a photo marked
+ * "reel" is posted as a photo Reel),
  * caption, and the media in drive_link / media_url (Google Drive share links are turned into direct downloads).
  * Times are in this computer's time zone. Rows already queued (same account + media) are skipped, so re-running is safe.
  */
@@ -69,7 +70,8 @@ async function main() {
     if (!media) return problems.push(`row ${line}: no usable media link`);
     if (existing.has(`${account}|${media}`)) return void skipped++;
     const kind = (r.type ?? "post").trim().toLowerCase();
-    const isImage = kind === "image" || /\.(jpe?g)$/i.test(r.drive_file ?? r.media_url ?? "");
+    // A photo with type "reel" stays a Reel: the worker turns it into a 10-second video so Reels audio can go on it.
+    const isImage = kind === "image" || (!kind.includes("reel") && /\.(jpe?g)$/i.test(r.drive_file ?? r.media_url ?? ""));
     plan.push({
       row: line,
       when,
