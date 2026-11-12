@@ -24,8 +24,8 @@ export interface AudioSetting {
 export const MUTED_VIDEO_VOLUME = 1;
 
 export const DEFAULT_AUDIO: AudioSetting = { mode: "off" };
-/** How long a fetched trending or search list is reused before asking Instagram again. */
-export const AUDIO_CACHE_MS = 60 * 60 * 1000;
+/** How long a fetched trending or search list is reused before asking Instagram again: every two days. */
+export const AUDIO_CACHE_MS = 2 * 24 * 60 * 60 * 1000;
 /** Rotation window: prefer tracks this account has not used in this long. */
 export const ROTATION_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -60,7 +60,7 @@ function clampVolume(v: number | null | undefined) {
   return Math.min(100, Math.max(1, Math.round(Number(v))));
 }
 
-/** The current trending (or search) list for an account, cached for an hour. */
+/** The current trending (or search) list for an account, rechecked every two days. */
 export async function audioCandidates(db: DB, client: GraphClient, igUserId: string, s: AudioSetting, now: Date): Promise<IgAudio[]> {
   const key = cacheKey(igUserId, s);
   const cached = await getSetting(db, key);

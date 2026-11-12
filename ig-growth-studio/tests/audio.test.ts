@@ -79,6 +79,38 @@ describe("Reels audio", () => {
     expect(calls.filter((c) => c.path === "ig_audio")).toHaveLength(1);
   });
 
+  it("rotates through all 25 tracks before repeating, and rechecks Instagram every two days", async () => {
+    await setAudioSetting(db, "17841", { mode: "trending" });
+    const tracks = Array.from({ length: 25 }, (_, i) => ({ audio_id: `T${i}`, title: `Track ${i}` }));
+    let list = tracks;
+    const { client, calls } = fakeGraph({
+      "GET ig_audio": () => ({ audio: list }),
+      "POST 17841/media": () => ({ id: "C1" }),
+      "GET C1": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () => ({ id: "M1" }),
+      "GET M1": () => ({ id: "M1" }),
+    });
+    const HOUR = 3_600_000;
+    const used: string[] = [];
+    for (let i = 0; i < 26; i++) {
+      const at = new Date(NOW.getTime() + i * HOUR);
+      const id = await createPost(db, { igUserId: "17841", type: "REELS", mediaUrl: `https://cdn.example.com/r${i}.mp4`, caption: "", shareToFeed: true, scheduledAt: at });
+      await publishDuePosts(db, { now: at, client });
+      used.push((await getPost(db, id))!.audio_id!);
+    }
+    expect(new Set(used.slice(0, 25)).size).toBe(25);
+    expect(used[25]).toBe("T0");
+    // 26 Reels over a day and a bit: one lookup.
+    expect(calls.filter((c) => c.path === "ig_audio")).toHaveLength(1);
+    // Two days on, new music is picked up.
+    list = [{ audio_id: "NEW", title: "New song" }, ...tracks];
+    const later = new Date(NOW.getTime() + 49 * HOUR);
+    const id = await createPost(db, { igUserId: "17841", type: "REELS", mediaUrl: "https://cdn.example.com/new.mp4", caption: "", shareToFeed: true, scheduledAt: later });
+    await publishDuePosts(db, { now: later, client });
+    expect(calls.filter((c) => c.path === "ig_audio")).toHaveLength(2);
+    expect((await getPost(db, id))!.audio_id).toBe("NEW");
+  });
+
   it("uses a keyword search in search mode", async () => {
     await setAudioSetting(db, "17841", { mode: "search", query: "lofi" });
     await reel();
