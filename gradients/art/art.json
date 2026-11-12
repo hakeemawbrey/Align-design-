@@ -8,7 +8,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001188",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 1,
@@ -19,7 +20,8 @@
   "creator": "KSC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/KSC-20110527-PH-NAS01_0001",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 2,
@@ -30,7 +32,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA00143",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 3,
@@ -41,7 +44,8 @@
   "creator": "Pixelmaniac pictures (Leave a reply)",
   "license": "cc0 1.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=30489793",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 4,
@@ -52,7 +56,8 @@
   "creator": "Pierre-Jacques Volaire (French, 1729–1799)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/57996",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 5,
@@ -63,7 +68,8 @@
   "creator": "Rembrandt (Rembrandt van Rijn)",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437389",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 6,
@@ -74,7 +80,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000762",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 7,
@@ -85,7 +92,8 @@
   "creator": "JSC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/S91-32389",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 8,
@@ -96,7 +104,8 @@
   "creator": "Erasmus Quellinus II",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_(II)-_Jason_with_the_Golden_Fleece,_1630.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 9,
@@ -107,7 +116,8 @@
   "creator": "Julius Gari Melchers (American, 1860–1932)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/86780",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 10,
@@ -118,7 +128,8 @@
   "creator": "Camille Corot",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435977",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 11,
@@ -129,7 +140,8 @@
   "creator": "French Painter",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436344",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 12,
@@ -140,7 +152,8 @@
   "creator": "Peder Balke",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/441379",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 13,
@@ -151,7 +164,8 @@
   "creator": "HQ",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/NHQ201712030002",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 14,
@@ -162,7 +176,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA03606",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 15,
@@ -173,7 +188,8 @@
   "creator": "JSC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/iss070e127437",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 16,
@@ -184,7 +200,8 @@
   "creator": "Domenico Fetti (Italian, c. 1589–1623)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/250762",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 17,
@@ -195,7 +212,8 @@
   "creator": "Gustave Courbet (French, 1819–1877)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/39554",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 18,
@@ -206,7 +224,8 @@
   "creator": "Albert Bierstadt",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/10158",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 19,
@@ -217,7 +236,8 @@
   "creator": "Joseph Wright (Wright of Derby)",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/441769",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 20,
@@ -228,7 +248,8 @@
   "creator": "El Greco (Domenikos Theotokopoulos)",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/459088",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 21,
@@ -239,7 +260,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA06193",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 22,
@@ -250,7 +272,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA14924",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 23,
@@ -261,7 +284,8 @@
   "creator": "Stefan Stefancik",
   "license": "cc0 1.0",
   "landing": "https://stocksnap.io/photo/guy-man-S4LYSG83OB",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 24,
@@ -272,7 +296,8 @@
   "creator": "Vassil",
   "license": "cc0 1.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=35861347",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 25,
@@ -283,7 +308,8 @@
   "creator": "Jacob van Ruisdael (Dutch, 1628/29-1682)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/60755",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 26,
@@ -294,7 +320,8 @@
   "creator": "Théodore Géricault",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436455",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 27,
@@ -305,7 +332,8 @@
   "creator": "Carl Gustav Carus",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/439122",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 28,
@@ -316,7 +344,8 @@
   "creator": "Thomas Cole",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Past_-_1838.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 29,
@@ -327,7 +356,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer,_1878%E2%80%931880,_A_DSC_9416_(cropped).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 30,
@@ -338,7 +368,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 31,
@@ -349,7 +380,8 @@
   "creator": "Ernst Ferdinand Oehme",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ernst_Ferdinand_Oehme_-_Burg_Scharfenberg_bei_Nacht_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 32,
@@ -360,7 +392,8 @@
   "creator": "Karl Friedrich Schinkel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 33,
@@ -371,7 +404,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Klosterfriedhof_im_Schnee_(Farbe).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 34,
@@ -382,7 +416,8 @@
   "creator": "Carl Gustav Carus",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Ruine_Eldena_mit_H%C3%BCtte_bei_Greifswald_im_Mondschein.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 35,
@@ -393,7 +428,8 @@
   "creator": "Thomas Cole",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Present_1838.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 36,
@@ -404,7 +440,8 @@
   "creator": "Dguendel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Wewelsburg,_die_Burg,_Kreismuseum,_Alexander_Kircher,_Parzival_erblickt_die_Gralsburg.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 37,
@@ -415,7 +452,8 @@
   "creator": "Karl Friedrich Schinkel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Schinkel,_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 38,
@@ -426,7 +464,8 @@
   "creator": "Thomas Cole",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Departure_by_Thomas_Cole,_1837_-_Corcoran_Gallery_of_Art_-_DSC01118.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 39,
@@ -437,7 +476,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Klosterruine_Eldena_bei_Greifswald_(1824)_-_Caspar_David_Friedrich_(Alte_Nationalgalerie,_Berlin).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 40,
@@ -448,7 +488,8 @@
   "creator": "Carl Blechen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Gothic_Church_Ruins_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 41,
@@ -459,7 +500,8 @@
   "creator": "Lluís Rigalt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Llu%C3%ADs_Rigalt_-_Night_Landscape_with_Gothic_Ruins_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 42,
@@ -470,7 +512,8 @@
   "creator": "Carl Blechen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 43,
@@ -481,7 +524,8 @@
   "creator": "Karl Friedrich Schinkel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_Schinkel_Gotischer_Dom_am_Wasser.tif",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 44,
@@ -492,7 +536,8 @@
   "creator": "Carl Spitzweg",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Spitzweg_-_Mondlichtszene_mit_Burgruine.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 45,
@@ -503,7 +548,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Ruine_am_Meer_(1881).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 46,
@@ -514,7 +560,8 @@
   "creator": "Johan Christian Dahl",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:J.C._Dahl,_Frederiksborg_Slot_i_m%C3%A5neskin,_1817,_0189NMK,_Nivaagaards_Malerisamling.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 47,
@@ -525,7 +572,8 @@
   "creator": "Ernst Ferdinand Oehme",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Oehme_Dom_1821.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 48,
@@ -536,7 +584,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Landschaft_mit_Burgruine_(1847).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 49,
@@ -547,7 +596,8 @@
   "creator": "Joseph Magnus Stäck",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Magnus_St%C3%A4ck_-_Italienskt_ruinlandskap_i_m%C3%A5nsken.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 50,
@@ -558,7 +608,8 @@
   "creator": "Carl Gustav Carus",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Schloss_Milkel_im_Mondschein_(1833-1835).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 51,
@@ -569,7 +620,8 @@
   "creator": "Thomas Cole",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Cole,_The_Return,_1837,_NGA_166438.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 52,
@@ -580,7 +632,8 @@
   "creator": "Johan Christian Dahl",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 53,
@@ -591,7 +644,8 @@
   "creator": "George Cochran Lambdin",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/11392",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 54,
@@ -602,7 +656,8 @@
   "creator": "Albert Pinkham Ryder",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/11977",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 55,
@@ -613,7 +668,8 @@
   "creator": "Worthington Whittredge",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/16875",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 56,
@@ -624,7 +680,8 @@
   "creator": "Narcisse-Virgile Diaz de la Peña",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436192",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 57,
@@ -635,7 +692,8 @@
   "creator": "Julius von Leypold",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/439333",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 58,
@@ -646,7 +704,8 @@
   "creator": "Johan Christian Dahl",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/439344",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 59,
@@ -657,7 +716,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Sacred_Grove_(1882)_-_Arnold_B%C3%B6cklin_(Kunstmuseum_Basel).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 60,
@@ -668,7 +728,8 @@
   "creator": "Carl Julius von Leypold / Formerly attributed to Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Julius_von_Leypold_-_B%C3%A4ume_im_Mondschein.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 61,
@@ -679,7 +740,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wald_im_Sp%C3%A4therbst.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 62,
@@ -690,7 +752,8 @@
   "creator": "George Cruikshank",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:George_Cruikshank_-_The_Fairy_Ring.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 63,
@@ -701,7 +764,8 @@
   "creator": "Edward Robert Hughes",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Midsummer_Eve_-_Edward_Robert_Hughes_(1908).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 64,
@@ -712,7 +776,8 @@
   "creator": "Arnold Böcklin",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Das_Schweigen_des_Waldes_(Arnold_B%C3%B6cklin)-WUS02559.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 65,
@@ -723,7 +788,8 @@
   "creator": "Moritz von Schwind",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Moritz_von_Schwind_-_Elfentanz_im_Erlenhain_-_Sammlung_Schack_-_11570.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 66,
@@ -734,7 +800,8 @@
   "creator": "Mikalojus Konstantinas Čiurlionis",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_(FAIRY_TALE_OF_KINGS)_-_1909.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 67,
@@ -745,7 +812,8 @@
   "creator": "Arkhip Kuindzhi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:0828Ha._Kuindzhi_A.I._Birch_Grove,_1879.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 68,
@@ -756,7 +824,8 @@
   "creator": "Arkhip Kuindzhi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:0847Ha._Kuindzhi_A.I._Sunset_over_a_Pine_Forest,_1900-%D0%B5.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 69,
@@ -767,7 +836,8 @@
   "creator": "Viktor Vasnetsov",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Vasnetsov_Sirin_Alkonost.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 70,
@@ -778,7 +848,8 @@
   "creator": "August Malmström",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:August_Malmstr%C3%B6m_-_Dancing_Fairies_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 71,
@@ -789,7 +860,8 @@
   "creator": "Gustave Courbet",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Courbet_-_Deer_in_the_Forest_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 72,
@@ -800,7 +872,8 @@
   "creator": "Maxfield Parrish",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Maxfield_Parrish_-_Dream_Castle_in_the_Sky_(1908).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 73,
@@ -811,7 +884,8 @@
   "creator": "Akseli Gallen-Kallela",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gallen-Kallela_Autumn_forrest.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 74,
@@ -822,7 +896,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Chasseur_in_the_Forest_by_Caspar_David_Friedrich.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 75,
@@ -833,7 +908,8 @@
   "creator": "Ludwig Richter",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Adrian_Ludwig_Richter_013.png",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 76,
@@ -844,7 +920,8 @@
   "creator": "Edwin Landseer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Monarch_of_the_Glen,_Edwin_Landseer,_1851.png",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 77,
@@ -855,7 +932,8 @@
   "creator": "Ivan Shishkin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%87%D0%B5%D1%80_(%D0%A8%D0%B8%D1%88%D0%BA%D0%B8%D0%BD).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 78,
@@ -866,7 +944,8 @@
   "creator": "Ivan Shishkin / Konstantin Savitsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Shishkin,_Ivan_-_Morning_in_a_Pine_Forest.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 79,
@@ -877,7 +956,8 @@
   "creator": "Theodor Kittelsen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen,_Soria_Moria.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 80,
@@ -888,7 +968,8 @@
   "creator": "Henri Rousseau",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Henri_Rousseau,_The_Equatorial_Jungle,_1909,_NGA_46688.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 81,
@@ -899,7 +980,8 @@
   "creator": "Charlotte Major Wylie",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Ballad_of_Sir_David_Graeme_-_Charlotte_Wylie.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 82,
@@ -910,7 +992,8 @@
   "creator": "Hans Thoma",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hans_Thoma_Waldwiese_1876.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 83,
@@ -921,7 +1004,8 @@
   "creator": "Bruno Liljefors",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 84,
@@ -932,7 +1016,8 @@
   "creator": "Ivan Shishkin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Pine_Forest_02_(Ivan_Shishkin).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 85,
@@ -943,7 +1028,8 @@
   "creator": "Theodor Kittelsen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_Forest_Troll_-_NG.K%26H.B.03222_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 86,
@@ -954,7 +1040,8 @@
   "creator": "Jacob Jordaens (Flemish, 1593-1678)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/111613",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 87,
@@ -965,7 +1052,8 @@
   "creator": "Unknown maker",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/250020",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 88,
@@ -976,7 +1064,8 @@
   "creator": "Unknown maker",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/250056",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 89,
@@ -987,7 +1076,8 @@
   "creator": "Thomas Sully",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/12693",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 90,
@@ -998,7 +1088,8 @@
   "creator": "Annibale Carracci",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435852",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 91,
@@ -1009,7 +1100,8 @@
   "creator": "Jean Honoré Fragonard",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436326",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 92,
@@ -1020,7 +1112,8 @@
   "creator": "Fra Filippo Lippi",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436896",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 93,
@@ -1031,7 +1124,8 @@
   "creator": "Paul Gauguin",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/438001",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 94,
@@ -1042,7 +1136,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA04216",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 95,
@@ -1053,7 +1148,8 @@
   "creator": "Ferdinand Leeke",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ferdinand_Leeke_-_Parsifal_on_the_Way_to_the_Grail_Castle.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 96,
@@ -1064,7 +1160,8 @@
   "creator": "Viktor Vasnetsov",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Viktor_Vasnetsov_-_%D0%91%D0%BE%D0%B3%D0%B0%D1%82%D1%8B%D1%80%D0%B8_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 97,
@@ -1075,7 +1172,8 @@
   "creator": "Edmund Blair Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Accolade_by_Edmund_Blair_Leighton.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 98,
@@ -1086,7 +1184,8 @@
   "creator": "Peter Paul Rubens",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Rubens_-_San_Jorge_y_el_Drag%C3%B3n_(Museo_del_Prado,_1605).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 99,
@@ -1097,7 +1196,8 @@
   "creator": "Edmund Blair Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edmund_Blair_Leighton_-_God_Speed_(1900).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 100,
@@ -1108,7 +1208,8 @@
   "creator": "Frank Bernard Dicksee",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Frank_Dicksee_-_La_Belle_Dame_sans_Merci_-_Bristol_Museums,_Galleries_and_Archives.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 101,
@@ -1119,7 +1220,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_La_Belle_Dame_sans_Merci_(1893).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 102,
@@ -1130,7 +1232,8 @@
   "creator": "Raphael",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:P1080746_Louvre_Rap%C4%A5ael_St_Georges_luttant_avec_le_dragon_INV_609_rwk.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 103,
@@ -1141,7 +1244,8 @@
   "creator": "Théodore Géricault",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:GericaultHorseman.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 104,
@@ -1152,7 +1256,8 @@
   "creator": "Viktor Vasnetsov",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 105,
@@ -1163,7 +1268,8 @@
   "creator": "Walter Crane",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 106,
@@ -1174,7 +1280,8 @@
   "creator": "John Everett Millais",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Everett_Millais_-_Joan_of_Arc.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 107,
@@ -1185,7 +1292,8 @@
   "creator": "Jean-Auguste-Dominique Ingres",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ingres_coronation_charles_vii.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 108,
@@ -1196,7 +1304,8 @@
   "creator": "Edmund Blair Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edmund_Blair_Leighton_-_The_Dedication_(1908).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 109,
@@ -1207,7 +1316,8 @@
   "creator": "Arthur Hughes",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arthur_Hughes_-_Sir_Galahad.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 110,
@@ -1218,7 +1328,8 @@
   "creator": "Gustave Moreau",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Saint-Georges_et_le_dragon_(c.1889).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 111,
@@ -1229,7 +1340,8 @@
   "creator": "Edward Burne-Jones",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Fight_--_St_George_Kills_the_Dragon_VI_(Burne-Jones).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 112,
@@ -1240,7 +1352,8 @@
   "creator": "Peter Nicolai Arbo",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Valkyrie_(Peter_Nicolai_Arbo)_-_Nationalmuseum_-_18255.tif",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 113,
@@ -1251,7 +1364,8 @@
   "creator": "Dante Gabriel Rossetti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Joan_of_Arc_(1882).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 114,
@@ -1262,7 +1376,8 @@
   "creator": "Hans Thoma",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hans_Thoma_-_Ritter_Sankt_Georg_(1889).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 115,
@@ -1273,7 +1388,8 @@
   "creator": "Paolo Uccello",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Saint_George_and_the_Dragon_by_Paolo_Uccello_(London)_01.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 116,
@@ -1284,7 +1400,8 @@
   "creator": "Peter Nicolai Arbo",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:La_caza_salvaje_de_Od%C3%ADn,_por_Peter_Nicolai_Arbo.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 117,
@@ -1295,7 +1412,8 @@
   "creator": "Vittore Carpaccio",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Vittore_Carpaccio_-_Young_Knight_in_a_Landscape_-_Google_Art_ProjectFXD.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 118,
@@ -1306,7 +1424,8 @@
   "creator": "Rogier van der Weyden",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Rogier_van_der_Weyden,_Saint_George_and_the_Dragon,_c._1432-1435,_NGA_50662.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 119,
@@ -1317,7 +1436,8 @@
   "creator": "John Pettie",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Pettie_(1839-1893)_-_The_Vigil_-_N01582_-_National_Gallery.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 120,
@@ -1328,7 +1448,8 @@
   "creator": "Akseli Gallen-Kallela",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Akseli_Gallen-Kallela_-_Kullervo_Sets_Off_for_War_(tempera).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 121,
@@ -1339,7 +1460,8 @@
   "creator": "Jules Bastien-Lepage",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 122,
@@ -1350,7 +1472,8 @@
   "creator": "Albert Pinkham Ryder",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Albert_Pinkham_Ryder_-_The_Race_Track_(Death_on_a_Pale_Horse)_-_1928.8_-_Cleveland_Museum_of_Art.tiff",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 123,
@@ -1361,7 +1484,8 @@
   "creator": "John Duncan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Riders_of_th_Sidhe_(big).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 124,
@@ -1372,7 +1496,8 @@
   "creator": "Aleksander Lesser",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Aleksander_Lesser_-_Knight_in_armour_-_MP_2240_MNW_-_National_Museum_in_Warsaw.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 125,
@@ -1383,7 +1508,8 @@
   "creator": "Jules Breton (French, 1827–1906)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/94841",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 126,
@@ -1394,7 +1520,8 @@
   "creator": "Rembrandt van Rijn (Dutch, 1606–1669)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/95998",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 127,
@@ -1405,7 +1532,8 @@
   "creator": "Johan Christian Dahl",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/438159",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 128,
@@ -1416,7 +1544,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000962",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 129,
@@ -1427,7 +1556,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA19821",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 130,
@@ -1438,7 +1568,8 @@
   "creator": "Nathalie E. Julien",
   "license": "cc0 1.0",
   "landing": "https://stocksnap.io/photo/lion-animal-RKAECBZ4CP",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 131,
@@ -1449,7 +1580,8 @@
   "creator": "Ju On",
   "license": "cc0 1.0",
   "landing": "https://stocksnap.io/photo/nature-landscape-ZD6WAL4LGT",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 132,
@@ -1460,7 +1592,8 @@
   "creator": "Michelle Frechette",
   "license": "cc0 1.0",
   "landing": "https://wordpress.org/photos/photo/42061b26a7/",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 133,
@@ -1471,7 +1604,8 @@
   "creator": "Adriaen Isenbrant",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436722",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 134,
@@ -1482,7 +1616,8 @@
   "creator": "Laurent de La Hyre",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436836",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 135,
@@ -1493,7 +1628,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000637",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 136,
@@ -1504,7 +1640,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001859",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 137,
@@ -1515,7 +1652,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA10391",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 138,
@@ -1526,7 +1664,8 @@
   "creator": "Francesco Fontebasso",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:All%C3%A9gorie_de_la_Justice_-_Francesco_Fontebasso_-_Q24061101.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 139,
@@ -1537,7 +1676,8 @@
   "creator": "Gaetano Gandolfi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gandolfi_-_Allegory_of_Justice.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 140,
@@ -1548,7 +1688,8 @@
   "creator": "Corrado Giaquinto",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Giaquinto,_Corrado_-_Justice_and_Peace_-_18th_century.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 141,
@@ -1559,7 +1700,8 @@
   "creator": "Carl Spitzweg",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Spitzweg_-_Das_Auge_des_Gesetzes_(Justitia)_-_1857.jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 142,
@@ -1570,7 +1712,8 @@
   "creator": "Bernardino Mei",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Bernardino_Mei_-_Allegory_of_Justice.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 143,
@@ -1581,7 +1724,8 @@
   "creator": "Edvard Munch (Norwegian, 1863–1944)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/154235",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 144,
@@ -1592,7 +1736,8 @@
   "creator": "William Powell Frith (English, 1819–1909)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/180709",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 145,
@@ -1603,7 +1748,8 @@
   "creator": "Henry Peters Gray",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/10966",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 146,
@@ -1614,7 +1760,8 @@
   "creator": "Sir Edward Burne-Jones",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435826",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 147,
@@ -1625,7 +1772,8 @@
   "creator": "Francesco Hayez",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hayez_-_The_Kiss,_1859,_6335.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 148,
@@ -1636,7 +1784,8 @@
   "creator": "Arthur Hughes",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Arthur_Hughes_-_The_Long_Engagement,_1859.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 149,
@@ -1647,7 +1796,8 @@
   "creator": "JOHN MELHUISH STRUDWICK",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:2021_CKS_20111_0003_000(john_melhuish_strudwick_when_sorrow_comes_in_summer_days122213).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 150,
@@ -1658,7 +1808,8 @@
   "creator": "Ford Madox Brown",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Madox_Brown-Romeo_%26_Juliet.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 151,
@@ -1669,7 +1820,8 @@
   "creator": "Arthur Hughes",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arthur_Hughes_-_April_Love_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 152,
@@ -1680,7 +1832,8 @@
   "creator": "Lucien Lévy-Dhurmer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_(c._1895-1927).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 153,
@@ -1691,7 +1844,8 @@
   "creator": "Alexandre Cabanel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Inf._06_Alexandre_Cabanel,_Morte_di_Francesca_da_Rimini_e_di_Paolo_Malatesta,_1870.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 154,
@@ -1702,7 +1856,8 @@
   "creator": "Edmund Blair Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Leighton-Alain_Chartier-1903.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 155,
@@ -1713,7 +1868,8 @@
   "creator": "Edmund Blair Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edmund_Blair_Leighton_-_The_End_of_the_Song_(1902).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 156,
@@ -1724,7 +1880,8 @@
   "creator": "Frederic Leighton",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Leighton_The_Painter-s_Honeymoon_1864.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 157,
@@ -1735,7 +1892,8 @@
   "creator": "Daderot",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Love_and_the_Maiden,_by_John_Roddam_Spencer_Stanhope,_1877,_oil_and_gold_leaf_on_canvas_-_California_Palace_of_the_Legion_of_Honor_-_San_Francisco,_CA_-_DSC00076.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 158,
@@ -1746,7 +1904,8 @@
   "creator": "William Dyce",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 159,
@@ -1757,7 +1916,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Waterhouse_-_Lamia_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 160,
@@ -1768,7 +1928,8 @@
   "creator": "Dante Gabriel Rossetti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Paolo_and_Francesca_da_Rimini_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 161,
@@ -1779,7 +1940,8 @@
   "creator": "Dante Gabriel Rossetti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_The_Day_Dream_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 162,
@@ -1790,7 +1952,8 @@
   "creator": "Gustav Klimt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Klimt_-_The_Kiss_(detail).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 163,
@@ -1801,7 +1964,8 @@
   "creator": "Edvard Munch",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_Vampire_(1895)_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 164,
@@ -1812,7 +1976,8 @@
   "creator": "Edvard Munch",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_Kiss_by_the_window_(1892).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 165,
@@ -1823,7 +1988,8 @@
   "creator": "George Frederic Watts",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Watts-Paolo_and_Francesca.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 166,
@@ -1834,7 +2000,8 @@
   "creator": "Edward Burne-Jones",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Burne-jones-love-among-the-ruins.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 167,
@@ -1845,7 +2012,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Waterhousem_Tristan_and_Isolde.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 168,
@@ -1856,7 +2024,8 @@
   "creator": "John Everett Millais",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Huguenot_lovers_on_St._Bartholomew%27s_Day.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 169,
@@ -1867,7 +2036,8 @@
   "creator": "Edvard Munch",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Kiss_-_BF.1968.1_-_Museum_of_Fine_Arts,_Houston.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 170,
@@ -1878,7 +2048,8 @@
   "creator": "Francesco Hayez",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Tremezzo_-_Villa_Carlotta_0713FXD.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 171,
@@ -1889,7 +2060,8 @@
   "creator": "Francesco Hayez",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Francesco_Hayez_Romeo_and_JulietFXD.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 172,
@@ -1900,7 +2072,8 @@
   "creator": "Frank Bernard Dicksee",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Romeo_and_Juliet_(detail)_by_Frank_Dicksee.png",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 173,
@@ -1911,7 +2084,8 @@
   "creator": "Auguste Toulmouche",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 174,
@@ -1922,7 +2096,8 @@
   "creator": "François Gérard",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gerard_FrancoisPascalSimon-Cupid_Psyche_end.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 175,
@@ -1933,7 +2108,8 @@
   "creator": "Albert Pinkham Ryder",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/11981",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 176,
@@ -1944,7 +2120,8 @@
   "creator": "Peder Balke",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Two_sailing_boats_by_moonlight_(1843).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 177,
@@ -1955,7 +2132,8 @@
   "creator": "Peder Balke",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Seilb%C3%A5t_i_m%C3%A5neskinn.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 178,
@@ -1966,7 +2144,8 @@
   "creator": "John Atkinson Grimshaw",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_A_moonlit_lane.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 179,
@@ -1977,7 +2156,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Steamboat_on_a_Moonlit_Night.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 180,
@@ -1988,7 +2168,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Passing_Ship_on_a_Moonlit_Night.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 181,
@@ -1999,7 +2180,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 182,
@@ -2010,7 +2192,8 @@
   "creator": "Carl Gustav Carus",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Stadt_im_Mondschein.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 183,
@@ -2021,7 +2204,8 @@
   "creator": "Arkhip Kuindzhi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:0860Ha._%D0%9A%D1%83%D0%B8%D0%BD%D0%B4%D0%B6%D0%B8_%D0%90.%D0%98._%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%B5.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 184,
@@ -2032,7 +2216,8 @@
   "creator": "Arkhip Kuindzhi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Kuindzhi_Daryal_pass_1890_1895.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 185,
@@ -2043,7 +2228,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Mondscheinlandschaft_mit_Ruine.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 186,
@@ -2054,7 +2240,8 @@
   "creator": "Johan Christian Dahl",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 187,
@@ -2065,7 +2252,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 188,
@@ -2076,7 +2264,8 @@
   "creator": "Caspar David Friedrich",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Northern_Sea_in_the_Moonlight_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 189,
@@ -2087,7 +2276,8 @@
   "creator": "Abraham Pether (1756-1812) Details on Google Art Project",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Pether,_Abraham_-_Coast_Scene_by_Moonlight_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 190,
@@ -2098,7 +2288,8 @@
   "creator": "Winslow Homer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Kissing_the_Moon.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 191,
@@ -2109,7 +2300,8 @@
   "creator": "Winslow Homer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Moonlight.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 192,
@@ -2120,7 +2312,8 @@
   "creator": "Joseph Wright of Derby",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Wright_of_Derby_-_Dovedale_by_Moonlight_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 193,
@@ -2131,7 +2324,8 @@
   "creator": "Fitz Henry Lane",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Fitz_Henry_Lane_-_Fishing_Party.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 194,
@@ -2142,7 +2336,8 @@
   "creator": "Ralph Albert Blakelock",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_%27Moonlight%27,_c._1883-1889,_High_Museum.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 195,
@@ -2153,7 +2348,8 @@
   "creator": "Carl Gustav Carus",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Vollmond_bei_Pillnitz.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 196,
@@ -2164,7 +2360,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 197,
@@ -2175,7 +2372,8 @@
   "creator": "Joseph Vernet",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Vernet-Carpentras-Clair_de_lune.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 198,
@@ -2186,7 +2384,8 @@
   "creator": "Thomas Moran",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Moonlight_seascape.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 199,
@@ -2197,7 +2396,8 @@
   "creator": "Henry Pether",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 200,
@@ -2208,7 +2408,8 @@
   "creator": "Karl Kaufmann",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 201,
@@ -2219,7 +2420,8 @@
   "creator": "Joseph Vernet",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Vernet,_Claude_Joseph_-_Seaport_by_Moonlight_-_1771.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 202,
@@ -2230,7 +2432,8 @@
   "creator": "Carl Blechen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_(1836).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 203,
@@ -2241,7 +2444,8 @@
   "creator": "John Atkinson Grimshaw",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Grimshaw,_John_Atkinson_-_In_Peril_-_1879.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 204,
@@ -2252,7 +2456,8 @@
   "creator": "Knud Baade",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Klippeparti_i_m%C3%A5nelys_-_1868.png",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 205,
@@ -2263,7 +2468,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_Moonlit_Landing,_1895.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 206,
@@ -2274,7 +2480,8 @@
   "creator": "Giovanni Grubacs",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Giovanni_Grubacs_-_Piazza_San_Marco_by_moonlight,_Venice.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 207,
@@ -2285,7 +2492,8 @@
   "creator": "Philip James de Loutherbourg",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Philippe-Jacques_de_Loutherbourg_-_A_Philosopher_in_a_Moonlit_Churchyard.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 208,
@@ -2296,7 +2504,8 @@
   "creator": "Joseph Vernet",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Vernet_-_A_Harbor_in_Moonlight_(1787).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 209,
@@ -2307,7 +2516,8 @@
   "creator": "Jacob Verreyt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Verreyt_Landscape_in_the_Moonlight.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 210,
@@ -2318,7 +2528,8 @@
   "creator": "Peder Balke",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_The_North_Cape_by_Moonlight_-_2019.167.4_-_Metropolitan_Museum_of_Art.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 211,
@@ -2329,7 +2540,8 @@
   "creator": "Alexandre Calame",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Alexandre_Calame_-_Abendliche_Seelandschaft.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 212,
@@ -2340,7 +2552,8 @@
   "creator": "Knud Baade",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Clouds_in_Moonlight_-_NG.M.02666_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 213,
@@ -2351,7 +2564,8 @@
   "creator": "Ludovico Carracci (Italian, 1555–1619)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/203330",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 214,
@@ -2362,7 +2576,8 @@
   "creator": "El Greco (Doménikos Theotokópoulos; Greek, active in Spain, 1541–1614)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/21907",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 215,
@@ -2373,7 +2588,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Magic_Circle_-_John_William_Waterhouse.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 216,
@@ -2384,7 +2600,8 @@
   "creator": "Evelyn De Morgan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Evelyn_De_Morgan_-_The_Love_Potion_(1903)_-_Google_Cultural_Institute.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 217,
@@ -2395,7 +2612,8 @@
   "creator": "Evelyn De Morgan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Vision,_by_Evelyn_de_Morgan.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 218,
@@ -2406,7 +2624,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_I_am_half-sick_of_shadows,_said_the_lady_of_shalott.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 219,
@@ -2417,7 +2636,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Annunciation.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 220,
@@ -2428,7 +2648,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Crystal_Ball.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 221,
@@ -2439,7 +2660,8 @@
   "creator": "Evelyn De Morgan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 222,
@@ -2450,7 +2672,8 @@
   "creator": "Joseph Wright of Derby",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Wright_of_Derby,_The_Orrery.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 223,
@@ -2461,7 +2684,8 @@
   "creator": "Mikhail Vrubel",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Mikhail_Vrubel_-_%D0%94%D0%B5%D0%BC%D0%BE%D0%BD_(%D1%81%D0%B8%D0%B4%D1%8F%D1%89%D0%B8%D0%B9)_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 224,
@@ -2472,7 +2696,8 @@
   "creator": "Abbott Handerson Thayer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 225,
@@ -2483,7 +2708,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_II_(Metropolitan_Museum_of_Art).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 226,
@@ -2494,7 +2720,8 @@
   "creator": "Caravaggio",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Saint_Francis_of_Assisi_in_Ecstasy-Caravaggio_(c.1595).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 227,
@@ -2505,7 +2732,8 @@
   "creator": "Georges de La Tour",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_022.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 228,
@@ -2516,7 +2744,8 @@
   "creator": "Joseph Wright of Derby",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Three_Persons_Viewing_the_Gladiator_by_Candlelight.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 229,
@@ -2527,7 +2756,8 @@
   "creator": "Rembrandt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_The_Philosopher_in_Meditation_(cleaned).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 230,
@@ -2538,7 +2768,8 @@
   "creator": "Gustave Moreau",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Salome_Dancing_before_Herod_by_Gustave_Moreau.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 231,
@@ -2549,7 +2780,8 @@
   "creator": "Michelangelo",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Delphic_Sibyl.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 232,
@@ -2560,7 +2792,8 @@
   "creator": "Gustave Moreau",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Orpheus_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 233,
@@ -2571,7 +2804,8 @@
   "creator": "John Collier",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Collier_-_Priestess_of_Delphi_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 234,
@@ -2582,7 +2816,8 @@
   "creator": "Odilon Redon",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Odilon_Redon_-_Buddha_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 235,
@@ -2593,7 +2828,8 @@
   "creator": "Evelyn De Morgan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Eos.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 236,
@@ -2604,7 +2840,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 237,
@@ -2615,7 +2852,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_william_waterhouse_destiny.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 238,
@@ -2626,7 +2864,8 @@
   "creator": "Joseph Wright of Derby",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 239,
@@ -2637,7 +2876,8 @@
   "creator": "Frederick Sandys",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Medea_-_Frederick_Sandys_-_Google_Cultural_Institute.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 240,
@@ -2648,7 +2888,8 @@
   "creator": "Edward Robert Hughes",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Lady_of_Shalott_by_William_Holman_Hunt,_c._1890-1905,_oil_on_canvas_-_Wadsworth_Atheneum_-_Hartford,_CT_-_DSC05541.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 241,
@@ -2659,7 +2900,8 @@
   "creator": "Dante Gabriel Rossetti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Beata_Beatrix,_1864-1870.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 242,
@@ -2670,7 +2912,8 @@
   "creator": "Abbott Handerson Thayer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Abbott_Handerson_Thayer_-_Boy_and_Angel_-_1925-3_-_Albright%E2%80%93Knox_Art_Gallery.tiff",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 243,
@@ -2681,7 +2924,8 @@
   "creator": "Joseph Wright of Derby",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hennig_Brand_(Joseph_Wright).jpeg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 244,
@@ -2692,7 +2936,8 @@
   "creator": "Gustave Le Gray",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/36848",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 245,
@@ -2703,7 +2948,8 @@
   "creator": "Daniel Huntington",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/11192",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 246,
@@ -2714,7 +2960,8 @@
   "creator": "MSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/8910708",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 247,
@@ -2725,7 +2972,8 @@
   "creator": "W.carter",
   "license": "cc0 1.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=80379553",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 248,
@@ -2736,7 +2984,8 @@
   "creator": "Immanuel Giel",
   "license": "cc0 1.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=15122968",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 249,
@@ -2747,7 +2996,8 @@
   "creator": "Northern Italian; possibly Verona",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/102098",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 250,
@@ -2758,7 +3008,8 @@
   "creator": "Johann Michael Rottmayr (Austrian, 1654–1730)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/12883",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 251,
@@ -2769,7 +3020,8 @@
   "creator": "Edward S. Curtis",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/49940",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 252,
@@ -2780,7 +3032,8 @@
   "creator": "Adolphe Schreyer (German, 1828–1899)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/895",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 253,
@@ -2791,7 +3044,8 @@
   "creator": "Winslow Homer",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/11112",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 254,
@@ -2802,7 +3056,8 @@
   "creator": "Benjamin West",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/13202",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 255,
@@ -2813,7 +3068,8 @@
   "creator": "Rosa Bonheur",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435702",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 256,
@@ -2824,7 +3080,8 @@
   "creator": "Baldassarre Tommaso Peruzzi",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437274",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 257,
@@ -2835,7 +3092,8 @@
   "creator": "Adolf Schreyer",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437642",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 258,
@@ -2846,7 +3104,8 @@
   "creator": "Horace Vernet",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437888",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 259,
@@ -2857,7 +3116,8 @@
   "creator": "MSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/0302063",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 260,
@@ -2868,7 +3128,8 @@
   "creator": "MSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/0302064",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 261,
@@ -2879,7 +3140,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000671",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 262,
@@ -2890,7 +3152,8 @@
   "creator": "Guercino (Giovanni Francesco Barbieri; Italian, 1591-1666)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/86323",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 263,
@@ -2901,7 +3164,8 @@
   "creator": "Benjamin-Constant (Jean-Joseph-Benjamin Constant)",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435649",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 264,
@@ -2912,7 +3176,8 @@
   "creator": "Pieter Claesz",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435904",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 265,
@@ -2923,7 +3188,8 @@
   "creator": "AFRC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/AFRC2017-0233-009",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 266,
@@ -2934,7 +3200,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA13974",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 267,
@@ -2945,7 +3212,8 @@
   "creator": "Arnold Böcklin",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Medusa.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 268,
@@ -2956,7 +3224,8 @@
   "creator": "Sidney Hall / Adam Cuerden",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 269,
@@ -2967,7 +3236,8 @@
   "creator": "Dante Gabriel Rossetti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:8th_Rossetti_Proserpine_cropped.jpeg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 270,
@@ -2978,7 +3248,8 @@
   "creator": "Vincent van Gogh",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Road_with_Cypress_and_Star_-_c._12-15_May_1890.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 271,
@@ -2989,7 +3260,8 @@
   "creator": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Tea",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 272,
@@ -3000,7 +3272,8 @@
   "creator": "Donato Creti",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Donato_Creti,_Le_osservazioni_astronomiche,_Giove,_1711_-FG.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 273,
@@ -3011,7 +3284,8 @@
   "creator": "Harald Sohlberg",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Harald_Sohlberg_-_Winter_Night_in_the_Mountains._Rondane_-_TKM-264-1922_-_Trondheim_kunstmuseum_(cropped).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 274,
@@ -3022,7 +3296,8 @@
   "creator": "Frederic Edwin Church",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Meteor_of_1860.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 275,
@@ -3033,7 +3308,8 @@
   "creator": "James McNeill Whistler",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Whistler-Nocturne_in_black_and_gold.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 276,
@@ -3044,7 +3320,8 @@
   "creator": "Léon Frédéric",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:L%C3%A9on_Fr%C3%A9d%C3%A9ric_-_Allegory_of_Night_-_1914-AP_-_Museum_of_Fine_Arts_Ghent_(MSK).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 277,
@@ -3055,7 +3332,8 @@
   "creator": "Vincent van Gogh",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 278,
@@ -3066,7 +3344,8 @@
   "creator": "Santa Monica Mountains National Recreation Area",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Night_Sky_-_Boney_Mountain_%26_Milky_Way_(11074300594).jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 279,
@@ -3077,7 +3356,8 @@
   "creator": "Chuck Ayoub",
   "license": "CC0",
   "landing": "https://commons.wikimedia.org/wiki/File:Flaming_Star_Nebula,_IC_405.png",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 280,
@@ -3088,7 +3368,8 @@
   "creator": "Sailko",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Arkhip_Kuindzhi,_notturno,_1905-1908.JPG",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 281,
@@ -3099,7 +3380,8 @@
   "creator": "Forest Service - Northern Region",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_at_Earthquake_Lake_May_10_2024_Hebgen_Lake_RD_CGNF_USDA_FS_photo_by_Ellen_Butler_DSC_7719_(54147742447).jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 282,
@@ -3110,7 +3392,8 @@
   "creator": "Edvard Munch",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Starry_Night_(Edvard_Munch)_-_Getty_Center.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 283,
@@ -3121,7 +3404,8 @@
   "creator": "Jan Matejko",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 284,
@@ -3132,7 +3416,8 @@
   "creator": "Adam Elsheimer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Adam_Elsheimer_-_Die_Flucht_nach_%C3%84gypten_(Alte_Pinakothek).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 285,
@@ -3143,7 +3428,8 @@
   "creator": "Vincent van Gogh",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 286,
@@ -3154,7 +3440,8 @@
   "creator": "Edward Burne-Jones",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edward_Burne-Jones_-_The_Star_of_Bethlehem_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 287,
@@ -3165,7 +3452,8 @@
   "creator": "Edward Robert Hughes",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edward_Robert_Hughes_-_Night_with_her_Train_of_Stars_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 288,
@@ -3176,7 +3464,8 @@
   "creator": "Peder Balke",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Nordlys_over_fire_menn_i_rob%C3%A5t_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 289,
@@ -3187,7 +3476,8 @@
   "creator": "Evelyn De Morgan",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Night_and_Sleep_-_Evelyn_de_Morgan_(1878).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 290,
@@ -3198,7 +3488,8 @@
   "creator": "Henri Rousseau",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:La_Boh%C3%A9mienne_endormie.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 291,
@@ -3209,7 +3500,8 @@
   "creator": "NASA, ESA, AURA/Caltech, Palomar Observatory\n\nThe science team consists of: D. Soderblom and E. Nelan (STScI), F. Benedi",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Pleiades_large.jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 292,
@@ -3220,7 +3512,8 @@
   "creator": "William Blake",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Europe_a_Prophecy_copy_K_plate_01.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 293,
@@ -3231,7 +3524,8 @@
   "creator": "Frederic Edwin Church",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Smithsonian-Church-Aurora_Borealis-2139_(cropped).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 294,
@@ -3242,7 +3536,8 @@
   "creator": "Rosa Bonheur (French, 1822–1899)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/39542",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 295,
@@ -3253,7 +3548,8 @@
   "creator": "Attributed to Jan Brueghel the Elder (Flemish, 1568–1625)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/64029",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 296,
@@ -3264,7 +3560,8 @@
   "creator": "George Inness (American, 1825–1894)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/64754",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 297,
@@ -3275,7 +3572,8 @@
   "creator": "Emile van Marcke de Lummen (French, 1827–1890)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/86298",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 298,
@@ -3286,7 +3584,8 @@
   "creator": "Odilon Redon (French, 1840–1916)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/94240",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 299,
@@ -3297,7 +3596,8 @@
   "creator": "Jean-François Millet",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437095",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 300,
@@ -3308,7 +3608,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA00342",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 301,
@@ -3319,7 +3620,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA01320",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 302,
@@ -3330,7 +3632,8 @@
   "creator": "Workshop of Dieric Bouts (Netherlandish, 1415–1475)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/110673",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 303,
@@ -3341,7 +3644,8 @@
   "creator": "Frans Francken II (Flemish, 1581–1642)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/37743",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 304,
@@ -3352,7 +3656,8 @@
   "creator": "Henry Fuseli (Swiss, active in England, 1741–1825)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/44739",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 305,
@@ -3363,7 +3668,8 @@
   "creator": "Master of the Female Half-Lengths (Netherlandish, active about 1520–1540)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/80538",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 306,
@@ -3374,7 +3680,8 @@
   "creator": "Robert Campin",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/435838",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 307,
@@ -3385,7 +3692,8 @@
   "creator": "Georges de La Tour",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436839",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 308,
@@ -3396,7 +3704,8 @@
   "creator": "Nicolaes Maes",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/436932",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 309,
@@ -3407,7 +3716,8 @@
   "creator": "Master of the Magdalen",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437015",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 310,
@@ -3418,7 +3728,8 @@
   "creator": "Marco d'Oggiono",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437332",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 311,
@@ -3429,7 +3740,8 @@
   "creator": "Johannes Vermeer",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437881",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 312,
@@ -3440,7 +3752,8 @@
   "creator": "Francisco de Zurbarán",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/437971",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 313,
@@ -3451,7 +3764,8 @@
   "creator": "GSFC",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000151",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 314,
@@ -3462,7 +3776,8 @@
   "creator": "JPL",
   "license": "public domain (NASA)",
   "landing": "https://images.nasa.gov/details/PIA15226",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 315,
@@ -3473,7 +3788,8 @@
   "creator": "Joseph Mallord William Turner (English, 1775–1851)",
   "license": "public domain",
   "landing": "https://www.artic.edu/artworks/4796",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 316,
@@ -3484,7 +3800,8 @@
   "creator": "William Bradford",
   "license": "public domain (CC0)",
   "landing": "https://www.metmuseum.org/art/collection/search/10209",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 317,
@@ -3495,7 +3812,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Undine.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 318,
@@ -3506,7 +3824,8 @@
   "creator": "John Everett Millais",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Everett_Millais_-_Ophelia_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 319,
@@ -3517,7 +3836,8 @@
   "creator": "Edmund Dulac",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Edmund_Dulac_-_The_Mermaid_-_The_Prince.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 320,
@@ -3528,7 +3848,8 @@
   "creator": "Albert Bierstadt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Indian_Sunset_Deer_by_a_Lake_by_Albert_Bierstadt.jpeg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 321,
@@ -3539,7 +3860,8 @@
   "creator": "J. M. W. Turner",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:A_boat_in_a_storm_-_J_M_W_Turner_RA_-_46_1925_679.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 322,
@@ -3550,7 +3872,8 @@
   "creator": "Albert Bierstadt",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Albert_Bierstadt_-_Mirror_Lake_(c._1868).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 323,
@@ -3561,7 +3884,8 @@
   "creator": "Hovhannes Aivazovsky (1817 - 1900) – painter (Russian) Born in Rossiiskaya imperiya, Feodosia. Died in Rossiiskaya imper",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 324,
@@ -3572,7 +3896,8 @@
   "creator": "J. M. W. Turner",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Staffa,_Fingal%27s_Cave_-_Google_Art_Project.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 325,
@@ -3583,7 +3908,8 @@
   "creator": "Theodor Kittelsen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_N%C3%B8kken,_1887-92_(The_Water_Sprite).jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 326,
@@ -3594,7 +3920,8 @@
   "creator": "Johan Christian Dahl",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Claussen_Dahl_-_En_sky_og_landskap_studie_av_m%C3%A5neskinn.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 327,
@@ -3605,7 +3932,8 @@
   "creator": "Joseph Vernet",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Claude_Joseph_Vernet_-_Schipbreuk.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 328,
@@ -3616,7 +3944,8 @@
   "creator": "Frederic Edwin Church",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Icebergs_(Frederic_Edwin_Church),_1861_(color).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 329,
@@ -3627,7 +3956,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Aivazovsky_Chaos_1841.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 330,
@@ -3638,7 +3968,8 @@
   "creator": "Frederic Edwin Church",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Twilight_in_the_Wilderness_by_Frederic_Edwin_Church_(3).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 331,
@@ -3649,7 +3980,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%BA%D1%80%D1%83%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 332,
@@ -3660,7 +3992,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%BF%D0%BE%D0%BB%D1%8F_%D0%BF%D1%80%D0%B8_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B8_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 333,
@@ -3671,7 +4004,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%BD%D0%B0_%D0%BC%D0%BE%D1%80%D0%B5-2_%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 334,
@@ -3682,7 +4016,8 @@
   "creator": "J. M. W. Turner",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:The_Fighting_Temeraire,_JMW_Turner,_National_Gallery.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 335,
@@ -3693,7 +4028,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Storm_over_the_Black_Sea_by_Aivazovsky,_1893.png",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 336,
@@ -3704,7 +4040,8 @@
   "creator": "Winslow Homer",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Summer_Night_(1890).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 337,
@@ -3715,7 +4052,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Aivazovsky_Segelschiff_auf_hoher_See_bei_Mondschein_1840er.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 338,
@@ -3726,7 +4064,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D1%81%D0%B2%D0%B5%D1%82%D0%B5.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 339,
@@ -3737,7 +4076,8 @@
   "creator": "Albert de Marees",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Albert_de_Marees_-_Coast_at_Night_with_Lighthouse.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 340,
@@ -3748,7 +4088,8 @@
   "creator": "John Atkinson Grimshaw",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_Whitby_Harbor_-_B2015.13_-_Yale_Center_for_British_Art.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 341,
@@ -3759,7 +4100,8 @@
   "creator": "John Atkinson Grimshaw",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_Whitby_-_B2012.28_-_Yale_Center_for_British_Art.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 342,
@@ -3770,7 +4112,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Constantinovich_Aivazovsky_-_Battle_of_%C3%87esme_at_Night.JPG",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 343,
@@ -3781,7 +4124,8 @@
   "creator": "John William Waterhouse",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ophelia_(1894).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 344,
@@ -3792,7 +4136,8 @@
   "creator": "Johan Christian Dahl",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Claussen_Dahl_-_The_Elbe_by_Moonlight_(1856).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 345,
@@ -3803,7 +4148,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_(1880).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 346,
@@ -3814,7 +4160,8 @@
   "creator": "Ivan Aivazovsky",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_(1899).jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 347,
@@ -3825,7 +4172,8 @@
   "creator": "Hjalmar Munsterhjelm",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Hjalmar_Munsterhjelm_-_Moonlight_over_the_Sea.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 348,
@@ -3836,7 +4184,8 @@
   "creator": "Theodor Kittelsen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_The_Sea_Monster_-_NG.M.01984_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
-  "credit": false
+  "credit": false,
+  "painting": true
  },
  {
   "n": 349,
@@ -3847,7 +4196,8 @@
   "creator": "Theodor Kittelsen",
   "license": "Public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_The_Water_Sprite_-_NG.M.00863_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
-  "credit": false
+  "credit": false,
+  "painting": false
  },
  {
   "n": 350,
@@ -3858,7 +4208,8 @@
   "creator": "User Iantresman on en.wikipedia",
   "license": "by 2.5",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=962632",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 351,
@@ -3869,7 +4220,8 @@
   "creator": "Sigmund Pettersen, Zig 22:29, 8 January 2006 (UTC)",
   "license": "by-sa 2.5",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=503903",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 352,
@@ -3880,7 +4232,8 @@
   "creator": "vaidyanathan",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=75409914",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 353,
@@ -3891,7 +4244,8 @@
   "creator": "Eric Kilby",
   "license": "by-sa 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=164989357",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 354,
@@ -3902,7 +4256,8 @@
   "creator": "UON - School of Creative Industries",
   "license": "by 4.0",
   "landing": "https://sketchfab.com/3d-models/9e914d2d7e8c405db6e896b8db185d35",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 355,
@@ -3913,7 +4268,8 @@
   "creator": "Dosseman",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=128255415",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 356,
@@ -3924,7 +4280,8 @@
   "creator": "wpopp",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=20497",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 357,
@@ -3935,7 +4292,8 @@
   "creator": "Yosh3000",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=4523823",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 358,
@@ -3946,7 +4304,8 @@
   "creator": "Carole Raddato from FRANKFURT, Germany",
   "license": "by-sa 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=37878643",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 359,
@@ -3957,7 +4316,8 @@
   "creator": "Thomas",
   "license": "by 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=7638660",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 360,
@@ -3968,7 +4328,8 @@
   "creator": "Giles Laurent",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=120510152",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 361,
@@ -3979,7 +4340,8 @@
   "creator": "Christian David",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 362,
@@ -3990,7 +4352,8 @@
   "creator": "…trialsanderrors",
   "license": "CC BY 2.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Flickr_-_%E2%80%A6trialsanderrors_-_Moon_over_Cologne,_Germany,_ca._1895.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 363,
@@ -4001,7 +4364,8 @@
   "creator": "Peter Jeffery",
   "license": "CC BY-SA 2.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Eilean_Donan_Castle,_At_Night_-_geograph.org.uk_-_5405948.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 364,
@@ -4012,7 +4376,8 @@
   "creator": "MOs810",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Exterior_of_Cologne_Cathedral_night_(1).jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 365,
@@ -4023,7 +4388,8 @@
   "creator": "Rolf Kranz",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Ruines_du_ch%C3%A2teau_de_Mehun-sur-Y%C3%A8vre_illumin%C3%A9es_de_nuit.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 366,
@@ -4034,7 +4400,8 @@
   "creator": "Ad Meskens",
   "license": "CC BY-SA 3.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Edinburgh_castle_by_night_01.JPG",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 367,
@@ -4045,7 +4412,8 @@
   "creator": "Rklengel",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Lichtenstein_Castle_Honau.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 368,
@@ -4056,7 +4424,8 @@
   "creator": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:L%C3%BCdinghausen,_Burg_L%C3%BCdinghausen_--_2014_--_5500-2.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 369,
@@ -4067,7 +4436,8 @@
   "creator": "Livioandronico2013",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 370,
@@ -4078,7 +4448,8 @@
   "creator": "Inferno986return",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Carcassonne_at_night.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 371,
@@ -4089,7 +4460,8 @@
   "creator": "Jurikowski",
   "license": "CC BY-SA 3.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Malbork_(84000391).jpeg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 372,
@@ -4100,7 +4472,8 @@
   "creator": "Ввласенко",
   "license": "CC BY-SA 3.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Mont_Saint-Michel_at_night,_view_from_the_south._France.tif",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 373,
@@ -4111,7 +4484,8 @@
   "creator": "R. J. Mathar",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Castle_North_and_East_Front_(Heidelberg)_Night_Aug_2020.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 374,
@@ -4122,7 +4496,8 @@
   "creator": "krb&nah from highlands, scotland",
   "license": "CC BY 2.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Eilean_Donan_night.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 375,
@@ -4133,7 +4508,8 @@
   "creator": "APK",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Suit_of_armour_-_Windsor_Castle.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 376,
@@ -4144,7 +4520,8 @@
   "creator": "Dguendel",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Dresden,_Albertinum,_Arnold_B%C3%B6cklin,_der_Krieg.JPG",
-  "credit": true
+  "credit": true,
+  "painting": true
  },
  {
   "n": 377,
@@ -4155,7 +4532,8 @@
   "creator": "Atsme (Betty Wills)",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=45544480",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 378,
@@ -4166,7 +4544,8 @@
   "creator": "nearsjasmine",
   "license": "by-sa 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=113212394",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 379,
@@ -4177,7 +4556,8 @@
   "creator": "Krishna7797k",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=49744247",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 380,
@@ -4188,7 +4568,8 @@
   "creator": "Ababamov",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=84009181",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 381,
@@ -4199,7 +4580,8 @@
   "creator": "Mariordo (Mario Roberto Durán Ortiz)",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=19263779",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 382,
@@ -4210,7 +4592,8 @@
   "creator": "Geri340",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=21544851",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 383,
@@ -4221,7 +4604,8 @@
   "creator": "Ad Meskens\nYou are free to use this picture for any purpose as long as you credit its author, Ad Meskens.\nExample:  © Ad",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:London_National_Gallery_Turner_Hero_and_Leander.jpg",
-  "credit": true
+  "credit": true,
+  "painting": true
  },
  {
   "n": 384,
@@ -4232,7 +4616,8 @@
   "creator": "Sailko",
   "license": "CC BY 3.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Edward_burne-jones,_la_principessa_dormiente,_serie_briar-rose,_1872-74_ca._03.jpg",
-  "credit": true
+  "credit": true,
+  "painting": true
  },
  {
   "n": 385,
@@ -4243,7 +4628,8 @@
   "creator": "Derbrauni",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Knud_Baade_-_Norwegische_K%C3%BCstenwacht_im_Mondschein.jpg",
-  "credit": true
+  "credit": true,
+  "painting": true
  },
  {
   "n": 386,
@@ -4254,7 +4640,8 @@
   "creator": "Francisco de Zurbarán",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Saint_Francis_in_Ecstasy_-_Francisco_de_Zurbar%C3%A1n.jpg",
-  "credit": true
+  "credit": true,
+  "painting": true
  },
  {
   "n": 387,
@@ -4265,7 +4652,8 @@
   "creator": "ESA/Hubble & NASA, M. Gullieuszik",
   "license": "by 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=129105854",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 388,
@@ -4276,7 +4664,8 @@
   "creator": "Alexander Vasenin",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=32753304",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 389,
@@ -4287,7 +4676,8 @@
   "creator": "TrapperFrank",
   "license": "by 2.5",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=2196800",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 390,
@@ -4298,7 +4688,8 @@
   "creator": "Ndshankar",
   "license": "by-sa 4.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=42212898",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 391,
@@ -4309,7 +4700,8 @@
   "creator": "Sergei Mutovkin from Irvine, California, United States",
   "license": "by 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=118047426",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 392,
@@ -4320,7 +4712,8 @@
   "creator": "https://www.flickr.com/photos/shadowgate/",
   "license": "by 2.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=4763080",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 393,
@@ -4331,7 +4724,8 @@
   "creator": "Unknown (Greek original by Phidias)",
   "license": "by-sa 3.0",
   "landing": "https://commons.wikimedia.org/w/index.php?curid=1706338",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 394,
@@ -4342,7 +4736,8 @@
   "creator": "Giles Laurent",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 395,
@@ -4353,7 +4748,8 @@
   "creator": "Giles Laurent",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:039_Northern_lights_over_M%C3%BDvatn_(Iceland)_Photo_by_Giles_Laurent.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 396,
@@ -4364,7 +4760,8 @@
   "creator": "Giles Laurent",
   "license": "CC BY-SA 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:036_Milky_Way_during_Perseids_seen_from_Oeschinensee_with_water_reflections_Photo_by_Giles_Laurent.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 397,
@@ -4375,7 +4772,8 @@
   "creator": "NASA, H. Ford (JHU), G. Illingworth (UCSC/LO), M.Clampin (STScI), G. Hartig (STScI), the ACS Science Team, and ESA\n\nThe ",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Cone_Nebula_(NGC_2264)_Star-Forming_Pillar_of_Gas_and_Dust.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 398,
@@ -4386,7 +4784,8 @@
   "creator": "ESO/T. Preibisch",
   "license": "CC BY 4.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Carina_Nebula.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  },
  {
   "n": 399,
@@ -4397,6 +4796,7 @@
   "creator": "Steve Jurvetson",
   "license": "CC BY 2.0",
   "landing": "https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg",
-  "credit": true
+  "credit": true,
+  "painting": false
  }
 ]
