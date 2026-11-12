@@ -1,0 +1,383 @@
+<title>Gradient Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a studio bench. Preview frame on the left, controls and the post library on the right; stacks on phones. */
+:root{
+  --bg:#f6f3fb; --panel:#ffffff; --fg:#1d1530; --muted:#6c6380; --line:#e4ddef;
+  --accent:#7b3afd; --accent-ink:#ffffff; --chip:#efe9f8;
+  --f-ui:"Figtree",system-ui,sans-serif; --f-mono:"DM Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#130f1c; --panel:#1c1628; --fg:#f1ecfa; --muted:#a49bb8; --line:#2e2640;
+  --accent:#a77cff; --accent-ink:#130f1c; --chip:#261e36; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#130f1c; --panel:#1c1628; --fg:#f1ecfa; --muted:#a49bb8; --line:#2e2640;
+  --accent:#a77cff; --accent-ink:#130f1c; --chip:#261e36; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:1200px;margin:0 auto;display:grid;gap:20px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+h1{font-size:26px;font-weight:800;margin:0;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted)}
+.handle{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.bench{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.bench{grid-template-columns:minmax(0,1fr)}}
+.stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:grid;gap:12px}
+@media (max-width:820px){.stage{position:static}}
+canvas#view{width:100%;max-width:100%;aspect-ratio:3/4;border-radius:14px;display:block;background:var(--chip);box-shadow:0 10px 40px -18px rgba(60,20,120,.45)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px;min-width:0}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+textarea,input[type=search],select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:150px;resize:vertical;font-weight:600}
+textarea#cap{min-height:90px;font-weight:400}
+textarea:focus,input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.field{display:grid;gap:6px}
+button{font:inherit;font-weight:600;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--fg);padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button[disabled]{opacity:.5;cursor:default}
+.swatches{display:flex;flex-wrap:wrap;gap:8px}
+.sw{width:44px;height:44px;border-radius:10px;padding:0;border:2px solid transparent;position:relative}
+.sw[aria-pressed="true"]{border-color:var(--fg)}
+.sw span{position:absolute;inset:auto 0 -18px;font-size:11px;color:var(--muted);font-weight:500}
+.swatches{padding-bottom:16px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;border-radius:0;background:transparent}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.meta{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.status{font-size:13px;color:var(--muted);min-height:1.2em}
+.lib-filters{display:grid;grid-template-columns:1fr 1fr 2fr;gap:8px}
+@media (max-width:520px){.lib-filters{grid-template-columns:1fr 1fr}.lib-filters input{grid-column:1/-1}}
+.list{display:grid;gap:6px;max-height:520px;overflow:auto;padding-right:4px}
+.item{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;text-align:left;font-weight:400;background:transparent;border:1px solid transparent;padding:8px}
+.item:hover{background:var(--chip);border-color:var(--line)}
+.item[aria-current="true"]{background:var(--chip);border-color:var(--accent)}
+.dot{width:28px;height:36px;border-radius:6px}
+.item b{display:block;font-size:12px;font-family:var(--f-mono);font-weight:500;color:var(--muted)}
+[hidden]{display:none!important}
+.seg{width:max-content}
+.art-tools{display:grid;gap:10px}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(60px,1fr));gap:6px;max-height:300px;overflow:auto;padding:2px}
+.thumb{aspect-ratio:3/4;width:100%;padding:0;border:2px solid transparent;border-radius:6px;background-image:url(art/thumbs.jpg);background-repeat:no-repeat}
+.thumb[aria-pressed="true"]{border-color:var(--accent)}
+.credit{font-size:12px;color:var(--muted)}
+.item .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div><h1>Gradient Studio</h1><p>Text-on-gradient and text-on-artwork reels for <span class="handle">@zodiac.advice444</span>, 1080×1440.</p></div>
+    <div class="row"><button id="rand">Random post</button></div>
+  </header>
+
+  <div class="bench">
+    <div class="stage">
+      <canvas id="view" width="1080" height="1440" aria-label="Post preview"></canvas>
+      <div class="row">
+        <button class="primary" id="savePng">Save PNG</button>
+        <button id="saveVid">Save video</button>
+        <button id="play" aria-pressed="true">Pause drift</button>
+      </div>
+      <div class="status" id="status" role="status"></div>
+    </div>
+
+    <div style="display:grid;gap:20px;min-width:0">
+      <section class="panel">
+        <div class="field">
+          <label class="lbl" for="txt">On-screen text</label>
+          <textarea id="txt" spellcheck="true"></textarea>
+          <div class="meta" id="count"></div>
+        </div>
+        <div class="field">
+          <span class="lbl">Background</span>
+          <div class="seg" id="bgmode"><button data-v="gradient" aria-pressed="true">Gradient</button><button data-v="art" aria-pressed="false">Artwork</button></div>
+        </div>
+        <div class="field art-tools" id="artTools" hidden>
+          <div class="row">
+            <button id="randArt">Random artwork</button>
+            <select id="artPool" aria-label="Artwork set" style="width:auto"></select>
+            <span class="meta" id="artCount"></span>
+          </div>
+          <div class="art-grid" id="artGrid"></div>
+          <div class="credit" id="artCredit"></div>
+        </div>
+        <div class="field" id="gradTools">
+          <span class="lbl">Gradient</span>
+          <div class="swatches" id="sw"></div>
+        </div>
+        <div class="field">
+          <span class="lbl">Sign-off</span>
+          <div class="seg" id="tag"><button data-v="houston" aria-pressed="true">Join the Houston beta</button><button data-v="beta" aria-pressed="false">Join the beta</button><button data-v="none" aria-pressed="false">None</button></div>
+        </div>
+        <div class="row" style="justify-content:flex-end">
+          <div class="field" style="min-width:160px">
+            <label class="lbl" for="size">Size</label>
+            <input type="range" id="size" min="0.6" max="1.4" step="0.05" value="1">
+          </div>
+        </div>
+        <div class="field">
+          <label class="lbl" for="cap">Caption</label>
+          <textarea id="cap"></textarea>
+          <div class="row"><button id="copyCap">Copy caption + hashtags</button><span class="meta" id="tags"></span></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="row" style="justify-content:space-between"><span class="lbl">Library</span><span class="meta" id="libcount"></span></div>
+        <div class="lib-filters">
+          <select id="fset" aria-label="Set"></select>
+          <select id="fsign" aria-label="Sign"></select>
+          <input type="search" id="fq" placeholder="Search words, e.g. katy, soup, retrograde">
+        </div>
+        <div class="list" id="list"></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+const POSTS = __POSTS__;
+const ART = __ART__;
+const W=1080,H=1440,FPS=24;
+const PALETTES={
+ classic:[["#4090f2","#4077f2","#733af2"],["#6052f2","#733df5","#b325dd"],["#a569f6","#b353ec","#c236dd"]],
+ deep:[["#0192fa","#2a77fb","#7c38fa"],["#6253fc","#7b3afd","#c404e4"],["#af67ff","#c04df3","#d325e5"]],
+ rainbow:[["#dceb44","#63d661","#00a3d2"],["#fe7f01","#fa8602","#7b5bd6"],["#fc0262","#f40274","#9f3bd6"]],
+ magenta:[["#d63fd0","#c33ad8","#8e2be0"],["#e86ae6","#e04bc4","#a332e0"],["#e27ad8","#d44fd4","#9a2fdc"]],
+ sunset:[["#ea6b2c","#ee7d2c","#f39a3a"],["#ee612c","#f07530","#f6b44a"],["#e2384d","#e64a45","#e8673c"]],
+ lime:[["#80df8e","#8cf088","#84e89a"],["#c5e86a","#ddd062","#d7c86a"],["#ec7564","#e8665e","#c856a8"]],
+ aqua:[["#4fa6e0","#5bb3ea","#7ab9ef"],["#62c6a2","#6ccb8a","#8fc6c9"],["#d7a63c","#8cc955","#70cc56"]],
+};
+const ROT=["classic","magenta","deep","rainbow","classic","magenta","aqua"];
+const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.58,center:.47,shadow:.30,gap:.75,drift:.06};
+const $=id=>document.getElementById(id);
+const TAGS={houston:"come align · join the houston beta",beta:"come align · join the beta"};
+function tagFor(p){if(p.id&&p.id.startsWith("htx"))return"houston";return(crc32(p.text)>>>24)%2?"houston":"beta"}
+function drawTag(ctx){
+  if(!state.tag||!TAGS[state.tag])return;
+  const px=W*.026;ctx.save();ctx.font=`600 ${px}px Figtree`;ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.shadowColor="rgba(0,0,0,.35)";ctx.shadowBlur=px*.5;ctx.fillStyle="rgba(255,255,255,.72)";
+  ctx.fillText(TAGS[state.tag],W/2,H*.80);ctx.restore();
+}
+const state={tag:"houston",text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true,bg:"gradient",art:0,style:"clean"};
+
+// crc32, so default gradients match the batch renderer
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c}return t})();
+function crc32(s){const b=new TextEncoder().encode(s);let c=0xFFFFFFFF;for(const x of b)c=CRC[(c^x)&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0}
+const defaultPalette=p=>p.palette||ROT[crc32(p.text)%7];
+
+// background: 3x3 grid -> tiny smooth canvas -> blurred upscale + grain
+const bgCache={};
+function background(name){
+  if(bgCache[name])return bgCache[name];
+  const m=Math.round(W*ST.drift),bw=W+m,bh=H+m;
+  const g=document.createElement("canvas");g.width=3;g.height=3;const gx=g.getContext("2d");
+  const id=gx.createImageData(3,3);
+  PALETTES[name].forEach((row,y)=>row.forEach((h,x)=>{const i=(y*3+x)*4;id.data[i]=parseInt(h.slice(1,3),16);id.data[i+1]=parseInt(h.slice(3,5),16);id.data[i+2]=parseInt(h.slice(5,7),16);id.data[i+3]=255}));
+  gx.putImageData(id,0,0);
+  const s=document.createElement("canvas");s.width=6;s.height=6;const sx=s.getContext("2d");sx.imageSmoothingEnabled=true;sx.drawImage(g,0,0,6,6);
+  const c=document.createElement("canvas");c.width=bw;c.height=bh;const cx=c.getContext("2d");
+  cx.imageSmoothingEnabled=true;cx.imageSmoothingQuality="high";
+  const pad=bw/10;cx.filter=`blur(${bw/40}px)`;cx.drawImage(s,-pad,-pad,bw+2*pad,bh+2*pad);cx.filter="none";
+  const d=cx.getImageData(0,0,bw,bh),a=d.data;let r=12345;
+  for(let i=0;i<a.length;i+=4){r=(r*1103515245+12345)&0x7fffffff;const n=((r>>16)/32768-.5)*3;a[i]+=n;a[i+1]+=n;a[i+2]+=n}
+  cx.putImageData(d,0,0);
+  return bgCache[name]=c;
+}
+
+// text: keeps line breaks, blank line = paragraph gap, greedy wrap, shrink to fit
+const fontFor=px=>`800 ${px}px Figtree`;
+function layout(ctx,text,scale){
+  let px=W*ST.size*scale;
+  for(;;){
+    ctx.font=fontFor(px);
+    const lines=[];
+    for(const para of text.trim().split("\n")){
+      if(!para.trim()){if(lines.length&&lines[lines.length-1]!==null)lines.push(null);continue}
+      let cur="";for(const w of para.split(/\s+/).filter(Boolean)){const t=(cur+" "+w).trim();if(ctx.measureText(t).width<=W*(state.wrap||ST.wrap)||!cur)cur=t;else{lines.push(cur);cur=w}}lines.push(cur);
+    }
+    const lead=px*ST.lead,h=lead*lines.reduce((s,l)=>s+(l===null?ST.gap:1),0);
+    if(h<=H*ST.maxh||px<=W*ST.min*scale)return{px,lines,lead};
+    px*=.95;
+  }
+}
+let textLayer=null,textKey="";
+function makeText(){
+  const key=[state.text,state.scale,state.wrap,state.style,state.palette,state.bg].join("|");if(key===textKey)return textLayer;
+  const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+  const {px,lines,lead}=layout(x,state.text||" ",state.scale);
+  x.font=fontFor(px);x.textAlign="center";x.textBaseline="alphabetic";
+  const steps=lines.map(l=>l===null?ST.gap:1),asc=px*.95,desc=px*.25;
+  let y=H*ST.center-(lead*(steps.reduce((a,b)=>a+b,0)-1)+asc+desc)/2+asc;
+  const sh=document.createElement("canvas");sh.width=W;sh.height=H;const s=sh.getContext("2d");
+  s.font=x.font;s.textAlign="center";const alpha=state.bg==="art"?ST.shadow:({lime:.55,sunset:.42,aqua:.45,rainbow:.38}[state.palette]||ST.shadow);s.fillStyle=`rgba(0,0,0,${alpha})`;
+  const pos=[];lines.forEach((l,i)=>{if(l!==null)pos.push([l,y]);y+=steps[i]*lead});
+  pos.forEach(([l,yy])=>s.fillText(l,W/2,yy+px*.05));
+  if(state.style!=="clean"){
+    // outline: white with a black stroke (TikTok look)
+    x.lineJoin="round";x.strokeStyle="#000";x.lineWidth=px*.15;
+    pos.forEach(([l,yy])=>x.strokeText(l,W/2,yy));
+    x.fillStyle="#fff";
+  }else{
+    x.filter=`blur(${px*.09}px)`;x.drawImage(sh,0,0);x.filter="none";
+    x.fillStyle="#fff";
+  }
+  pos.forEach(([l,yy])=>x.fillText(l,W/2,yy));
+  textKey=key;return textLayer=c;
+}
+// artwork: dimmed, vignetted, slow push-in (same treatment as the batch renderer)
+const artCache={};
+function artImg(n){
+  if(!artCache[n]){const im=new Image();im.decoding="async";im.src=`art/${String(n).padStart(3,"0")}.jpg`;artCache[n]=im;im.onload=()=>{textKey=textKey}}
+  return artCache[n];
+}
+const artReady=n=>new Promise(r=>{const im=artImg(n);if(im.complete&&im.naturalWidth)r();else{im.addEventListener("load",r,{once:true});im.addEventListener("error",r,{once:true})}});
+function drawArt(ctx,t){
+  const im=artImg(state.art);ctx.fillStyle="#141018";ctx.fillRect(0,0,W,H);
+  if(im.complete&&im.naturalWidth){const z=1+.07*(.5-.5*Math.cos(Math.PI*t)),dw=W*z,dh=H*z;ctx.drawImage(im,(W-dw)/2,(H-dh)/2,dw,dh)}
+  ctx.fillStyle="rgba(0,0,0,.40)";ctx.fillRect(0,0,W,H);
+  const g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.hypot(W,H)/2);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,"rgba(0,0,0,.33)");
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.drawImage(makeText(),0,0);drawTag(ctx);
+}
+function drawFrame(ctx,t){
+  if(state.bg==="art")return drawArt(ctx,t);
+  const m=Math.round(W*ST.drift),bg=background(state.palette);
+  const ox=Math.round(m*(.5+.5*Math.sin(Math.PI*(t-.5)))),oy=Math.round(m*.5*(1-Math.cos(Math.PI*t))/2);
+  ctx.drawImage(bg,ox,oy,W,H,0,0,W,H);ctx.drawImage(makeText(),0,0);drawTag(ctx);
+}
+const secondsFor=t=>Math.round(Math.min(14,Math.max(6,3+t.split(/\s+/).filter(Boolean).length*.3))*10)/10;
+
+const view=$("view"),vctx=view.getContext("2d");
+let t0=performance.now();
+function loop(now){
+  const dur=secondsFor(state.text||"x")*1000;
+  const p=state.playing?((now-t0)%(dur*2))/dur:0;const t=p<=1?p:2-p;
+  drawFrame(vctx,t);requestAnimationFrame(loop);
+}
+
+// UI
+function setStatus(s){$("status").textContent=s}
+function renderControls(){
+  $("txt").value=state.text;$("cap").value=state.caption;
+  $("tags").textContent=state.tags.map(t=>"#"+t).join(" ");
+  const w=state.text.split(/\s+/).filter(Boolean).length;$("count").textContent=`${w} words · ${secondsFor(state.text||"x")}s reel${state.id?" · "+state.id:""}`;
+  document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.palette));
+  document.querySelectorAll(".item").forEach(b=>b.setAttribute("aria-current",b.dataset.id===state.id));
+  document.querySelectorAll("#bgmode button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.bg));
+  document.querySelectorAll("#style button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.style));
+  document.querySelectorAll("#tag button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.tag));
+  $("artTools").hidden=state.bg!=="art";$("gradTools").hidden=state.bg==="art";
+  document.querySelectorAll(".thumb").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.n===state.art));
+  const a=ART[state.art];$("artCredit").textContent=a?artCredit(a):"";
+}
+function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.creator:""} (${a.credit?a.license:"public domain"})`}
+// Same per-post size and side padding as the batch renderer (from the text's crc32), gradients only.
+function layoutFor(text){const s=crc32(text);return{size:.70+((s>>>8)%64)/63*.65,wrap:.60+((s>>>16)%32)/31*.30}}
+function load(p){
+  if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
+  Object.assign(state,{tag:tagFor(p),style:"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
+  if(state.bg!=="art"){const l=layoutFor(p.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
+  $("size").value=state.scale;t0=performance.now();renderControls();
+  try{localStorage.setItem("gs-last",p.id)}catch(e){}
+}
+for(const name of Object.keys(PALETTES)){
+  const b=document.createElement("button");b.className="sw";b.dataset.v=name;b.setAttribute("aria-label",name+" gradient");
+  const g=PALETTES[name];b.style.background=`linear-gradient(160deg,${g[0][0]},${g[1][1]},${g[2][2]})`;
+  b.innerHTML=`<span>${name}</span>`;b.onclick=()=>{state.palette=name;renderControls()};$("sw").append(b);
+}
+$("txt").addEventListener("input",e=>{state.text=e.target.value;state.id=null;renderControls()});
+$("cap").addEventListener("input",e=>{state.caption=e.target.value});
+$("size").addEventListener("input",e=>{state.scale=+e.target.value});
+$("play").onclick=()=>{state.playing=!state.playing;$("play").textContent=state.playing?"Pause drift":"Play drift";$("play").setAttribute("aria-pressed",state.playing);t0=performance.now()};
+$("rand").onclick=()=>{const l=filtered();const p=l.length?l:POSTS;load(p[Math.floor(Math.random()*p.length)])};
+function captionText(){return state.caption.trim()+(state.bg==="art"&&ART[state.art]?"\n\n"+artCredit(ART[state.art]):"")+(state.tags.length?"\n\n"+state.tags.map(t=>"#"+t).join(" "):"")}
+$("copyCap").onclick=async()=>{try{await navigator.clipboard.writeText(captionText());setStatus("Caption copied.")}catch(e){$("cap").select();setStatus("Press Ctrl/Cmd+C to copy the selected caption.")}};
+
+document.querySelectorAll("#style button").forEach(b=>b.onclick=()=>{state.style=b.dataset.v;renderControls()});
+document.querySelectorAll("#tag button").forEach(b=>b.onclick=()=>{state.tag=b.dataset.v;renderControls()});
+// artwork picker
+document.querySelectorAll("#bgmode button").forEach(b=>b.onclick=()=>{state.bg=b.dataset.v;
+  if(state.bg==="art"){state.scale=1;state.wrap=null}else{const l=layoutFor(state.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
+  $("size").value=state.scale;renderControls()});
+const pools=["All artwork",...new Set(ART.map(a=>a.pool))];
+$("artPool").innerHTML=pools.map(p=>`<option value="${p}">${p[0].toUpperCase()+p.slice(1)}</option>`).join("");
+const artFiltered=()=>ART.filter(a=>$("artPool").value==="All artwork"||a.pool===$("artPool").value);
+function renderArtGrid(){
+  const frag=document.createDocumentFragment(),l=artFiltered();
+  for(const a of l){const b=document.createElement("button");b.className="thumb";b.dataset.n=a.n;
+    b.setAttribute("aria-label",(a.title||"artwork")+(a.creator?" by "+a.creator:""));b.title=b.getAttribute("aria-label");
+    b.style.backgroundSize="2000% 2000%";b.style.backgroundPosition=`${(a.n%20)/19*100}% ${Math.floor(a.n/20)/19*100}%`;
+    b.onclick=()=>{state.art=a.n;renderControls()};frag.append(b)}
+  $("artGrid").replaceChildren(frag);$("artCount").textContent=`${l.length} artworks`;renderControls();
+}
+$("artPool").addEventListener("change",renderArtGrid);
+$("randArt").onclick=()=>{const l=artFiltered();if(l.length){state.art=l[Math.floor(Math.random()*l.length)].n;renderControls()}};
+
+// library
+const sets=["All sets",...new Set(POSTS.map(p=>p.set))];
+$("fset").innerHTML=sets.map(s=>`<option>${s}</option>`).join("");
+const signs=["All signs",...new Set(POSTS.map(p=>p.sign).filter(Boolean))];
+$("fsign").innerHTML=signs.map(s=>`<option value="${s}">${s[0].toUpperCase()+s.slice(1)}</option>`).join("");
+function filtered(){
+  const s=$("fset").value,g=$("fsign").value,q=$("fq").value.trim().toLowerCase();
+  return POSTS.filter(p=>(s==="All sets"||p.set===s)&&(g==="All signs"||p.sign===g)&&(!q||(p.text+" "+p.caption).toLowerCase().includes(q)));
+}
+function renderList(){
+  const l=filtered();$("libcount").textContent=`${l.length} of ${POSTS.length}`;
+  const frag=document.createDocumentFragment();
+  for(const p of l.slice(0,400)){
+    const b=document.createElement("button");b.className="item";b.dataset.id=p.id;
+    const g=PALETTES[defaultPalette(p)];
+    const d=document.createElement("span");d.className="dot";d.style.background=`linear-gradient(160deg,${g[0][0]},${g[1][1]},${g[2][2]})`;
+    const t=document.createElement("span");const h=document.createElement("b");h.textContent=`${p.id} · ${p.set}`;
+    const tx=document.createElement("span");tx.className="t";tx.textContent=p.text.replace(/\n+/g," / ");
+    t.append(h,tx);b.append(d,t);b.onclick=()=>load(p);frag.append(b);
+  }
+  $("list").replaceChildren(frag);renderControls();
+}
+["fset","fsign"].forEach(i=>$(i).addEventListener("change",renderList));$("fq").addEventListener("input",renderList);
+
+// saving
+let downloads=null;
+const fname=ext=>(state.id||"gradient-post")+(state.bg==="art"?"-art":"")+"."+ext;
+async function save(filename,data){
+  if(!downloads){setStatus("Saving files isn't available in this view. Right-click the preview and choose Save image instead.");return}
+  try{await downloads.save({filename,data});setStatus("Saved "+filename+".")}
+  catch(e){setStatus(e&&e.code==="declined"?"Save cancelled.":"Couldn't save: "+(e&&e.message||"unknown error"))}
+}
+$("savePng").onclick=async()=>{
+  if(state.bg==="art")await artReady(state.art);
+  const c=document.createElement("canvas");c.width=W;c.height=H;drawFrame(c.getContext("2d"),0);
+  c.toBlob(b=>save(fname("png"),b),"image/png");
+};
+$("saveVid").onclick=async()=>{
+  if(typeof MediaRecorder==="undefined"){setStatus("This browser can't record video. Save the PNG instead.");return}
+  const types=["video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm"];
+  const type=types.find(t=>MediaRecorder.isTypeSupported(t));if(!type){setStatus("This browser can't record video.");return}
+  const ext=type.startsWith("video/mp4")?"mp4":"webm";
+  if(state.bg==="art")await artReady(state.art);
+  const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");drawFrame(x,0);
+  const stream=c.captureStream(FPS),rec=new MediaRecorder(stream,{mimeType:type,videoBitsPerSecond:8e6}),chunks=[];
+  rec.ondataavailable=e=>e.data.size&&chunks.push(e.data);
+  const dur=secondsFor(state.text||"x");$("saveVid").disabled=true;
+  rec.onstop=()=>{$("saveVid").disabled=false;save(fname(ext),new Blob(chunks,{type}))};
+  rec.start();const start=performance.now();
+  (function step(){const e=(performance.now()-start)/1000;drawFrame(x,Math.min(1,e/dur));setStatus(`Recording ${ext.toUpperCase()}… ${Math.min(dur,e).toFixed(1)}s of ${dur}s`);
+    if(e<dur)requestAnimationFrame(step);else rec.stop()})();
+};
+
+(async()=>{
+  try{await document.fonts.load("800 80px Figtree")}catch(e){}
+  let first=POSTS.find(p=>p.id==="libra-f01")||POSTS[0];
+  try{const last=localStorage.getItem("gs-last");const f=last&&POSTS.find(p=>p.id===last);if(f)first=f}catch(e){}
+  renderList();renderArtGrid();load(first);requestAnimationFrame(loop);
+  document.fonts.ready.then(()=>{textKey=""});
+  try{downloads=await window.claude?.use?.("downloads")}catch(e){downloads=null}
+  if(!downloads){$("savePng").title=$("saveVid").title="Saving isn't available in this view"}
+})();
+</script>

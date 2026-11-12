@@ -1,0 +1,217 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "id": "ov-62f168b0-9d0e-45d7-9a9e-0a113d1842a7",
+   "source": "openverse/wikimedia",
+   "title": "File:Capra falconeri Markhor Parc Bouillon 31082014 1.jpg",
+   "creator": "Vassil",
+   "license": "cc0 1.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=35861347",
+   "url": "https://api.openverse.org/v1/images/62f168b0-9d0e-45d7-9a9e-0a113d1842a7/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Capra_falconeri_Markhor_Parc_Bouillon_31082014_1.jpg",
+   "w": 1280,
+   "h": 2190,
+   "file": "cache/signs/capricorn/ov-62f168b0-9d0e-45d7-9a9e-0a113d1842a7.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "markhor, spiral horns in dark forest",
+   "pin": true
+  },
+  {
+   "id": "ov-dc0760a8-ba34-4c42-8f6c-1c04e37f5aea",
+   "source": "openverse/wikimedia",
+   "title": "003 Wild Alpine Ibex Sunset Creux du Van Mont Racine Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=120510152",
+   "url": "https://api.openverse.org/v1/images/dc0760a8-ba34-4c42-8f6c-1c04e37f5aea/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/003_Wild_Alpine_Ibex_Sunset_Creux_du_Van_Mont_Racine_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 1920,
+   "file": "cache/signs/capricorn/ov-dc0760a8-ba34-4c42-8f6c-1c04e37f5aea.jpg",
+   "focus": [
+    0.55,
+    0.62
+   ],
+   "note": "alpine ibex in snow at dusk",
+   "pin": true
+  },
+  {
+   "id": "nasa-PIA06193",
+   "source": "nasa",
+   "title": "The Greatest Saturn Portrait ...Yet",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA06193",
+   "url": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+   "w": 2600,
+   "h": 1329,
+   "file": "cache/signs/capricorn/nasa-PIA06193.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Saturn portrait, Cassini",
+   "pin": true
+  },
+  {
+   "id": "met-459088",
+   "source": "met",
+   "title": "Saint Jerome as Scholar",
+   "creator": "El Greco (Domenikos Theotokopoulos)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459088",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DT3103.jpg",
+   "w": 2144,
+   "h": 2600,
+   "file": "cache/signs/capricorn/met-459088.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "El Greco, Saint Jerome, Saturnine elder on black"
+  },
+  {
+   "id": "met-441769",
+   "source": "met",
+   "title": "Virgil's Tomb by Moonlight, with Silius Italicus Declaiming",
+   "creator": "Joseph Wright (Wright of Derby)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/441769",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP322015.jpg",
+   "w": 2600,
+   "h": 2096,
+   "file": "cache/signs/capricorn/met-441769.jpg",
+   "focus": [
+    0.68,
+    0.48
+   ],
+   "note": "Wright of Derby, Virgil's tomb by moonlight"
+  },
+  {
+   "id": "aic-250762",
+   "source": "aic",
+   "title": "Melancholia",
+   "creator": "Domenico Fetti (Italian, c. 1589\u20131623)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250762",
+   "url": "https://www.artic.edu/iiif/2/73a93ee5-b169-73f4-4db9-6e738eca7fce/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2253,
+   "file": "cache/signs/capricorn/aic-250762.jpg",
+   "focus": [
+    0.5,
+    0.48
+   ],
+   "note": "Fetti, Melancholia with skull"
+  },
+  {
+   "id": "ov-4996e4b8-c88b-479a-afe8-a578089ce644",
+   "source": "openverse/stocksnap",
+   "title": "Guy Man",
+   "creator": "Stefan Stefancik",
+   "license": "cc0 1.0",
+   "landing": "https://stocksnap.io/photo/guy-man-S4LYSG83OB",
+   "url": "https://api.openverse.org/v1/images/4996e4b8-c88b-479a-afe8-a578089ce644/thumb/?full_size=true",
+   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/S4LYSG83OB.jpg",
+   "w": 960,
+   "h": 1449,
+   "file": "cache/signs/capricorn/ov-4996e4b8-c88b-479a-afe8-a578089ce644.jpg",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "note": "lone climber on a peak under the Milky Way"
+  },
+  {
+   "id": "nasa-PIA14924",
+   "source": "nasa",
+   "title": "A Ring of Color",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA14924",
+   "url": "https://images-assets.nasa.gov/image/PIA14924/PIA14924~orig.jpg",
+   "w": 914,
+   "h": 914,
+   "file": "cache/signs/capricorn/nasa-PIA14924.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Titan backlit ring of haze"
+  },
+  {
+   "id": "aic-39554",
+   "source": "aic",
+   "title": "An Alpine Scene",
+   "creator": "Gustave Courbet (French, 1819\u20131877)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/39554",
+   "url": "https://www.artic.edu/iiif/2/54b7fd5e-3467-f777-45e7-0719400ecfc0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1392,
+   "file": "cache/signs/capricorn/aic-39554.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Courbet, dark Alpine peaks over a chalet"
+  },
+  {
+   "id": "met-10158",
+   "source": "met",
+   "title": "Sunrise on the Matterhorn",
+   "creator": "Albert Bierstadt",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10158",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT218107.jpg",
+   "w": 1901,
+   "h": 2600,
+   "file": "cache/signs/capricorn/met-10158.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Bierstadt, sunrise on the Matterhorn"
+  },
+  {
+   "id": "ov-3b20117f-6163-4629-be9c-2946af973196",
+   "source": "openverse/wikimedia",
+   "title": "Statue of Silvanus, god of woods and wild fields, 1st century AD, National Archaeological Museum of Spain, Madrid (15106078074)",
+   "creator": "Carole Raddato from FRANKFURT, Germany",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=37878643",
+   "url": "https://api.openverse.org/v1/images/3b20117f-6163-4629-be9c-2946af973196/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Statue_of_Silvanus%2C_god_of_woods_and_wild_fields%2C_1st_century_AD%2C_National_Archaeological_Museum_of_Spain%2C_Madrid_%2815106078074%29.jpg",
+   "w": 1280,
+   "h": 2162,
+   "file": "cache/signs/capricorn/ov-3b20117f-6163-4629-be9c-2946af973196.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Silvanus, god of wild fields, on black"
+  },
+  {
+   "id": "ov-652cad19-c9b0-4150-90dd-cf69a4231441",
+   "source": "openverse/wikimedia",
+   "title": "Markhor Male and youngs",
+   "creator": "Thomas",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=7638660",
+   "url": "https://api.openverse.org/v1/images/652cad19-c9b0-4150-90dd-cf69a4231441/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Markhor_Male_and_youngs.jpg",
+   "w": 1280,
+   "h": 1026,
+   "file": "cache/signs/capricorn/ov-652cad19-c9b0-4150-90dd-cf69a4231441.jpg",
+   "focus": [
+    0.6,
+    0.85
+   ],
+   "note": "markhor clashing horns on the rocks"
+  }
+ ]
+}

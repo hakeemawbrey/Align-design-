@@ -1,0 +1,219 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "id": "nasa-GSFC_20171208_Archive_e001859",
+   "source": "nasa",
+   "title": "Third Quarter",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001859",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001859/GSFC_20171208_Archive_e001859~orig.jpg",
+   "w": 2400,
+   "h": 2400,
+   "file": "cache/signs/libra/nasa-GSFC_20171208_Archive_e001859.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "half moon, light and dark in balance"
+  },
+  {
+   "id": "met-436722",
+   "source": "met",
+   "title": "Man Weighing Gold",
+   "creator": "Adriaen Isenbrant",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436722",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-017.jpg",
+   "w": 1610,
+   "h": 2600,
+   "file": "cache/signs/libra/met-436722.jpg",
+   "focus": [
+    0.45,
+    0.58
+   ],
+   "note": "Isenbrant, man holding a balance",
+   "pin": true
+  },
+  {
+   "id": "nasa-GSFC_20171208_Archive_e000637",
+   "source": "nasa",
+   "title": "Hubble Sees the Wings of a Butterfly: The Twin Jet Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000637",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000637/GSFC_20171208_Archive_e000637~orig.jpg",
+   "w": 1280,
+   "h": 1070,
+   "file": "cache/signs/libra/nasa-GSFC_20171208_Archive_e000637.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Twin Jet nebula, balanced wings"
+  },
+  {
+   "id": "met-436836",
+   "source": "met",
+   "title": "Allegory of Music",
+   "creator": "Laurent de La Hyre",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436836",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1387.jpg",
+   "w": 2600,
+   "h": 1916,
+   "file": "cache/signs/libra/met-436836.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "note": "La Hyre, Allegory of Music, harmony with the lute"
+  },
+  {
+   "id": "nasa-PIA10391",
+   "source": "nasa",
+   "title": "Interacting Galaxies",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA10391",
+   "url": "https://images-assets.nasa.gov/image/PIA10391/PIA10391~orig.jpg",
+   "w": 2371,
+   "h": 2371,
+   "file": "cache/signs/libra/nasa-PIA10391.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "spiral galaxy and its companion"
+  },
+  {
+   "id": "ov-3fb57373-d14a-4420-a068-af889d990bd0",
+   "source": "openverse/wikimedia",
+   "title": "Justitia Statue 01",
+   "creator": "Geri340",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=21544851",
+   "url": "https://api.openverse.org/v1/images/3fb57373-d14a-4420-a068-af889d990bd0/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Justitia_Statue_01.jpg",
+   "w": 1280,
+   "h": 1609,
+   "file": "cache/signs/libra/ov-3fb57373-d14a-4420-a068-af889d990bd0.jpg",
+   "focus": [
+    0.36,
+    0.5
+   ],
+   "note": "Bern Justitia, blindfolded Lady Justice"
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-5815933.jpg",
+   "focus": [
+    0.55,
+    0.3
+   ],
+   "note": "Gandolfi, Justice with scales and sword",
+   "id": "wc-5815933",
+   "source": "commons",
+   "title": "Gandolfi - Allegory of Justice",
+   "creator": "Gaetano Gandolfi",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gandolfi_-_Allegory_of_Justice.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Gandolfi_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Gandolfi_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 750,
+   "h": 750
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-66346780.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Veronese workshop, Justitia and Prudentia",
+   "id": "wc-66346780",
+   "source": "commons",
+   "title": "Paolo Veronese (Werkstatt) - Justitia und Prudentia - 447 - Bavarian State Painting Collections",
+   "creator": "Paolo Veronese",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Paolo_Veronese_(Werkstatt)_-_Justitia_und_Prudentia_-_447_-_Bavarian_State_Painting_Collections.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Paolo_Veronese_%28Werkstatt%29_-_Justitia_und_Prudentia_-_447_-_Bavarian_State_Painting_Collections.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Paolo_Veronese_%28Werkstatt%29_-_Justitia_und_Prudentia_-_447_-_Bavarian_State_Painting_Collections.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 753,
+   "h": 1200
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-90151285.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "tone": 0.6,
+   "note": "Spitzweg, Justitia statue in shadow",
+   "id": "wc-90151285",
+   "source": "commons",
+   "title": "Carl Spitzweg - Das Auge des Gesetzes (Justitia) - 1857",
+   "creator": "Carl Spitzweg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Spitzweg_-_Das_Auge_des_Gesetzes_(Justitia)_-_1857.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Carl_Spitzweg_-_Das_Auge_des_Gesetzes_%28Justitia%29_-_1857.jpg/1920px-Carl_Spitzweg_-_Das_Auge_des_Gesetzes_%28Justitia%29_-_1857.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carl_Spitzweg_-_Das_Auge_des_Gesetzes_%28Justitia%29_-_1857.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1300,
+   "h": 2400
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-99637001.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Bernardino Mei, Justice weighing",
+   "id": "wc-99637001",
+   "source": "commons",
+   "title": "Bernardino Mei - Allegory of Justice",
+   "creator": "Bernardino Mei",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bernardino_Mei_-_Allegory_of_Justice.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Bernardino_Mei_-_Allegory_of_Justice.jpg/1920px-Bernardino_Mei_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bernardino_Mei_-_Allegory_of_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1400
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-48774879.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Fontebasso, Justice holding the scales",
+   "id": "wc-48774879",
+   "source": "commons",
+   "title": "Allégorie de la Justice - Francesco Fontebasso - Q24061101",
+   "creator": "Francesco Fontebasso",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:All%C3%A9gorie_de_la_Justice_-_Francesco_Fontebasso_-_Q24061101.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/All%C3%A9gorie_de_la_Justice_-_Francesco_Fontebasso_-_Q24061101.jpg/1920px-All%C3%A9gorie_de_la_Justice_-_Francesco_Fontebasso_-_Q24061101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/All%C3%A9gorie_de_la_Justice_-_Francesco_Fontebasso_-_Q24061101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1665,
+   "h": 2400
+  },
+  {
+   "file": "cache/signs/libra/cand/wc-6726713.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "zoom": 1.3,
+   "note": "Giaquinto, Justice and Peace embrace",
+   "id": "wc-6726713",
+   "source": "commons",
+   "title": "Giaquinto, Corrado - Justice and Peace - 18th century",
+   "creator": "Corrado Giaquinto",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Giaquinto,_Corrado_-_Justice_and_Peace_-_18th_century.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Giaquinto%2C_Corrado_-_Justice_and_Peace_-_18th_century.jpg/1920px-Giaquinto%2C_Corrado_-_Justice_and_Peace_-_18th_century.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Giaquinto%2C_Corrado_-_Justice_and_Peace_-_18th_century.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1237
+  }
+ ]
+}
