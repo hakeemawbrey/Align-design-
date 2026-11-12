@@ -17,6 +17,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(HERE, "assets", "fonts", "Figtree.ttf")
+BOOMER_FONT = os.path.join(HERE, "assets", "fonts", "ComicNeue-Bold.ttf")
+# Text looks: clean (soft shadow, the reference posts), outline (white with a black stroke, the TikTok look),
+# boomer (Comic Neue in a loud colour with a black stroke, the 2014 Facebook look).
+BOOMER_COLOURS = [(255, 225, 77), (255, 95, 210), (95, 242, 255), (255, 255, 255)]
 W, H, FPS = 1080, 1440, 24
 
 # 3x3 colour grids sampled off the reference posts (top row, middle row, bottom row)
@@ -98,11 +102,14 @@ def _greedy(text, f, max_w):
     return lines
 
 
-def text_layer(text, ss=2, ink="light"):
-    px = W * STYLE["size"]
+def text_layer(text, ss=2, ink="light", style="clean", seed=0):
+    px = W * STYLE["size"] * (1.06 if style == "boomer" else 1)
     while True:
-        f = ImageFont.truetype(FONT, int(px * ss))
-        f.set_variation_by_name(b"ExtraBold")
+        if style == "boomer":
+            f = ImageFont.truetype(BOOMER_FONT, int(px * ss))
+        else:
+            f = ImageFont.truetype(FONT, int(px * ss))
+            f.set_variation_by_name(b"ExtraBold")
         lines = wrap(text, f, W * STYLE["wrap"] * ss)
         lead = px * ss * STYLE["lead"]
         block = lead * sum(1 if l is not None else STYLE["gap"] for l in lines)
@@ -116,12 +123,15 @@ def text_layer(text, ss=2, ink="light"):
     steps = [1 if l is not None else STYLE["gap"] for l in lines]
     top = (H * ss - (lead * (sum(steps) - 1) + asc + desc)) / 2
     shadow = STYLE["shadow"] if ink == "light" else STYLE["shadow"] * 0.35
+    stroke = 0 if style == "clean" else max(1, round(px * ss * (0.075 if style == "outline" else 0.065)))
+    fill = BOOMER_COLOURS[seed % len(BOOMER_COLOURS)] if style == "boomer" else ((255, 255, 255) if style == "outline" else INK[ink])
     y = top
     for ln, st in zip(lines, steps):
         if ln is not None:
             x = (W * ss - f.getlength(ln)) / 2
-            ds.text((x, y + px * ss * 0.05), ln, font=f, fill=int(255 * shadow))
-            d.text((x, y), ln, font=f, fill=INK[ink] + (255,))
+            if style == "clean":
+                ds.text((x, y + px * ss * 0.05), ln, font=f, fill=int(255 * shadow))
+            d.text((x, y), ln, font=f, fill=fill + (255,), stroke_width=stroke, stroke_fill=(0, 0, 0, 255))
         y += st * lead
     base = Image.new("RGBA", img.size, (0, 0, 0, 0))
     base.putalpha(sh.filter(ImageFilter.GaussianBlur(px * ss * 0.09)))
@@ -184,12 +194,13 @@ def render(post, out, palette=None, bg_mode=None):
     art = art_for(post, seed) if bg_mode == "art" else None
     palette = palette or post.get("palette") or ["classic", "magenta", "deep", "rainbow", "classic", "magenta", "aqua"][seed % 7]
     ink = "light" if art else (post.get("ink") or "light")
+    style = post.get("style") or "clean"
     margin = int(W * STYLE["drift"])
     if art:
         art_img = art_background(art)
     else:
         bg = gradient(palette, W + margin, H + margin)
-    txt, lines = text_layer(post["text"], ink=ink)
+    txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed)
     a = txt[..., 3:4]
     dur = seconds_for(post["text"])
     n = int(dur * FPS)
@@ -241,10 +252,11 @@ if __name__ == "__main__":
     ap.add_argument("--palette", choices=list(PALETTES))
     ap.add_argument("--ink", choices=list(INK))
     ap.add_argument("--bg", choices=["gradient", "art"])
+    ap.add_argument("--style", choices=["clean", "outline", "boomer"])
     ap.add_argument("--out")
     a = ap.parse_args()
     if a.text:
-        render({"text": a.text.replace("\\n", "\n"), "ink": a.ink}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette, a.bg)
+        render({"text": a.text.replace("\\n", "\n"), "ink": a.ink, "style": a.style}, a.out or os.path.join(HERE, "out", "test.mp4"), a.palette, a.bg)
     else:
         posts = [p for f in a.copy for p in json.load(open(f))["posts"]]
         for p in posts:
