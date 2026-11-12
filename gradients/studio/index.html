@@ -114,11 +114,7 @@ button[disabled]{opacity:.5;cursor:default}
           <span class="lbl">Text look</span>
           <div class="seg" id="style"><button data-v="clean" aria-pressed="true">Clean</button><button data-v="outline" aria-pressed="false">Outline</button><button data-v="boomer" aria-pressed="false">Boomer</button></div>
         </div>
-        <div class="row" style="justify-content:space-between">
-          <div class="field">
-            <span class="lbl">Text color</span>
-            <div class="seg" id="ink"><button data-v="light" aria-pressed="true">White</button><button data-v="dark" aria-pressed="false">Black</button></div>
-          </div>
+        <div class="row" style="justify-content:flex-end">
           <div class="field" style="min-width:160px">
             <label class="lbl" for="size">Size</label>
             <input type="range" id="size" min="0.6" max="1.4" step="0.05" value="1">
@@ -161,7 +157,6 @@ const ROT=["classic","magenta","deep","rainbow","classic","magenta","aqua"];
 const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.62,shadow:.30,gap:.75,drift:.06};
 const $=id=>document.getElementById(id);
 const state={text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true,bg:"gradient",art:0,style:"clean"};
-const BOOMER_COLOURS=["#ffe14d","#ff5fd2","#5ff2ff","#ffffff"];
 
 // crc32, so default gradients match the batch renderer
 const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c}return t})();
@@ -205,24 +200,24 @@ function layout(ctx,text,scale){
 }
 let textLayer=null,textKey="";
 function makeText(){
-  const key=[state.text,state.ink,state.scale,state.style].join("|");if(key===textKey)return textLayer;
+  const key=[state.text,state.scale,state.style,state.palette,state.bg].join("|");if(key===textKey)return textLayer;
   const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
   const {px,lines,lead}=layout(x,state.text||" ",state.scale);
   x.font=fontFor(px);x.textAlign="center";x.textBaseline="alphabetic";
   const steps=lines.map(l=>l===null?ST.gap:1),asc=px*.95,desc=px*.25;
   let y=(H-(lead*(steps.reduce((a,b)=>a+b,0)-1)+asc+desc))/2+asc;
   const sh=document.createElement("canvas");sh.width=W;sh.height=H;const s=sh.getContext("2d");
-  s.font=x.font;s.textAlign="center";const alpha=state.ink==="light"?ST.shadow:ST.shadow*.35;s.fillStyle=`rgba(0,0,0,${alpha})`;
+  s.font=x.font;s.textAlign="center";const alpha=state.bg==="art"?ST.shadow:({lime:.55,sunset:.42,aqua:.45,rainbow:.38}[state.palette]||ST.shadow);s.fillStyle=`rgba(0,0,0,${alpha})`;
   const pos=[];lines.forEach((l,i)=>{if(l!==null)pos.push([l,y]);y+=steps[i]*lead});
   pos.forEach(([l,yy])=>s.fillText(l,W/2,yy+px*.05));
   if(state.style!=="clean"){
     // outline: white with a black stroke (TikTok look); boomer: Comic Neue in a loud colour with a stroke
     x.lineJoin="round";x.strokeStyle="#000";x.lineWidth=px*(state.style==="outline"?.15:.13);
     pos.forEach(([l,yy])=>x.strokeText(l,W/2,yy));
-    x.fillStyle=state.style==="boomer"?BOOMER_COLOURS[crc32(state.text)%4]:"#fff";
+    x.fillStyle="#fff";
   }else{
     x.filter=`blur(${px*.09}px)`;x.drawImage(sh,0,0);x.filter="none";
-    x.fillStyle=state.ink==="light"?"#fff":"#111";
+    x.fillStyle="#fff";
   }
   pos.forEach(([l,yy])=>x.fillText(l,W/2,yy));
   textKey=key;return textLayer=c;
@@ -264,7 +259,6 @@ function renderControls(){
   $("tags").textContent=state.tags.map(t=>"#"+t).join(" ");
   const w=state.text.split(/\s+/).filter(Boolean).length;$("count").textContent=`${w} words · ${secondsFor(state.text||"x")}s reel${state.id?" · "+state.id:""}`;
   document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.palette));
-  document.querySelectorAll("#ink button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.ink));
   document.querySelectorAll(".item").forEach(b=>b.setAttribute("aria-current",b.dataset.id===state.id));
   document.querySelectorAll("#bgmode button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.bg));
   document.querySelectorAll("#style button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.style));
@@ -275,7 +269,7 @@ function renderControls(){
 function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.creator:""} (${a.credit?a.license:"public domain"})`}
 function load(p){
   if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
-  Object.assign(state,{style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:p.ink||"light",id:p.id,scale:1});
+  Object.assign(state,{style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1});
   $("size").value=1;t0=performance.now();renderControls();
   try{localStorage.setItem("gs-last",p.id)}catch(e){}
 }
@@ -284,7 +278,6 @@ for(const name of Object.keys(PALETTES)){
   const g=PALETTES[name];b.style.background=`linear-gradient(160deg,${g[0][0]},${g[1][1]},${g[2][2]})`;
   b.innerHTML=`<span>${name}</span>`;b.onclick=()=>{state.palette=name;renderControls()};$("sw").append(b);
 }
-document.querySelectorAll("#ink button").forEach(b=>b.onclick=()=>{state.ink=b.dataset.v;renderControls()});
 $("txt").addEventListener("input",e=>{state.text=e.target.value;state.id=null;renderControls()});
 $("cap").addEventListener("input",e=>{state.caption=e.target.value});
 $("size").addEventListener("input",e=>{state.scale=+e.target.value});

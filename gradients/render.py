@@ -19,8 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(HERE, "assets", "fonts", "Figtree.ttf")
 BOOMER_FONT = os.path.join(HERE, "assets", "fonts", "ComicNeue-Bold.ttf")
 # Text looks: clean (soft shadow, the reference posts), outline (white with a black stroke, the TikTok look),
-# boomer (Comic Neue in a loud colour with a black stroke, the 2014 Facebook look).
-BOOMER_COLOURS = [(255, 225, 77), (255, 95, 210), (95, 242, 255), (255, 255, 255)]
+# boomer (Comic Neue with a black stroke, the 2014 Facebook look). Text is always white.
 W, H, FPS = 1080, 1440, 24
 
 # 3x3 colour grids sampled off the reference posts (top row, middle row, bottom row)
@@ -47,6 +46,8 @@ PALETTES = {
                 ["#62c6a2", "#6ccb8a", "#8fc6c9"],
                 ["#d7a63c", "#8cc955", "#70cc56"]],
 }
+# Stronger shadow under the white text on the lighter gradients, so it stays readable.
+SHADOW = {"lime": 0.55, "sunset": 0.42, "aqua": 0.45, "rainbow": 0.38}
 INK = {"light": (255, 255, 255), "dark": (17, 17, 17)}
 
 STYLE = {
@@ -102,7 +103,7 @@ def _greedy(text, f, max_w):
     return lines
 
 
-def text_layer(text, ss=2, ink="light", style="clean", seed=0):
+def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None):
     px = W * STYLE["size"] * (1.06 if style == "boomer" else 1)
     while True:
         if style == "boomer":
@@ -122,9 +123,9 @@ def text_layer(text, ss=2, ink="light", style="clean", seed=0):
     asc, desc = f.getmetrics()
     steps = [1 if l is not None else STYLE["gap"] for l in lines]
     top = (H * ss - (lead * (sum(steps) - 1) + asc + desc)) / 2
-    shadow = STYLE["shadow"] if ink == "light" else STYLE["shadow"] * 0.35
+    shadow = shadow_k or STYLE["shadow"]
     stroke = 0 if style == "clean" else max(1, round(px * ss * (0.075 if style == "outline" else 0.065)))
-    fill = BOOMER_COLOURS[seed % len(BOOMER_COLOURS)] if style == "boomer" else ((255, 255, 255) if style == "outline" else INK[ink])
+    fill = (255, 255, 255)   # white text only, in every look
     y = top
     for ln, st in zip(lines, steps):
         if ln is not None:
@@ -193,14 +194,14 @@ def render(post, out, palette=None, bg_mode=None):
     bg_mode = bg_mode or post.get("bg") or "gradient"
     art = art_for(post, seed) if bg_mode == "art" else None
     palette = palette or post.get("palette") or ["classic", "magenta", "deep", "rainbow", "classic", "magenta", "aqua"][seed % 7]
-    ink = "light" if art else (post.get("ink") or "light")
+    ink = "light"   # white text only
     style = post.get("style") or "clean"
     margin = int(W * STYLE["drift"])
     if art:
         art_img = art_background(art)
     else:
         bg = gradient(palette, W + margin, H + margin)
-    txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed)
+    txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed, shadow_k=None if art else SHADOW.get(palette))
     a = txt[..., 3:4]
     dur = seconds_for(post["text"])
     n = int(dur * FPS)
