@@ -1,0 +1,24 @@
+{
+  "id": "01-winter-morning",
+  "title": ["winter morning.", "which sign gets out of bed first?"],
+  "music": "musicbox",
+  "seed": 4,
+  "caption": "winter morning, ranked. send this to your five-more-minutes friend",
+  "hashtags": ["zodiac", "astrology", "zodiacsigns", "wintermorning", "3dcg"],
+  "beats": [
+    { "sign": "taurus",      "pose": "burrito", "line": "the duvet is load-bearing.", "sub": "not moving. not discussing it." },
+    { "sign": "pisces",      "pose": "hide",    "line": "still finishing a dream.",   "sub": "it was going really well." },
+    { "sign": "sagittarius", "pose": "snooze",  "line": "seven alarms.",              "sub": "snoozed all seven." },
+    { "sign": "scorpio",     "pose": "peek",    "line": "awake since six.",           "sub": "hasn't told anyone." },
+    { "sign": "gemini",      "pose": "phone",   "line": "awake for an hour.",         "sub": "still horizontal. 41 tabs open." },
+    { "sign": "leo",         "pose": "mirror",  "line": "up. but only for the mirror.", "sub": "the hair has to wake up first." },
+    { "sign": "libra",       "pose": "sit",     "line": "sitting up.",                "sub": "can't decide which sock first." },
+    { "sign": "aquarius",    "pose": "window",  "line": "up at 4am.",                 "sub": "watching the snow. back in bed at 7." },
+    { "sign": "aries",       "pose": "jump",    "line": "up and sprinting.",          "sub": "it's saturday. it's fine." },
+    { "sign": "virgo",       "pose": "make",    "line": "bed made",                   "sub": "before the alarm finished." },
+    { "sign": "capricorn",   "pose": "desk",    "line": "on a call.",                 "sub": "it's 6:40." },
+    { "sign": "cancer",      "pose": "wake",    "line": "cancer wins.",               "sub": "they promised to wake you up. so they did." }
+  ],
+  "end": ["send this to your", "five-more-minutes friend"],
+  "endSub": "come align · join the beta"
+}
