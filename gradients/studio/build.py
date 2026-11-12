@@ -3,7 +3,7 @@ import glob, json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SETS = {"aries_cancer": "Signs", "leo_scorpio": "Signs", "sag_pisces": "Signs", "placements": "Placements",
         "houston_a": "Houston", "houston_b": "Houston", "houston_c": "Houston", "houston_d": "Houston",
-        "formats": "Formats", "brainrot": "Brainrot", "boomer": "Boomer"}
+        "formats": "Formats", "short": "Short", "brainrot": "Brainrot", "boomer": "Boomer"}
 out = []
 for f in sorted(glob.glob(os.path.join(HERE, "..", "copy", "*.json"))):
     k = os.path.basename(f)[:-5]
