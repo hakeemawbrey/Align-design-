@@ -1,5 +1,6 @@
 import { type DB, type PostRow, claimPost, duePosts, getAccount, updatePost } from "./db";
 import { pickAudio } from "./audio";
+import { isPhoto, photoToReel } from "./photoReel";
 import { type AudioConfiguration, GraphClient, GraphError } from "./graph";
 
 /** Reels that have not finished processing after this long are marked failed. */
@@ -143,8 +144,14 @@ async function advance(
  * if the track cannot be found or Instagram refuses it, the Reel goes out with its own sound and the reason is kept.
  */
 async function createReel(db: DB, client: GraphClient, igUserId: string, post: PostRow, now: Date) {
+  // A photo queued as a Reel becomes a short video first, so it can carry music.
+  let mediaUrl = post.media_url;
+  if (isPhoto(mediaUrl)) {
+    mediaUrl = await photoToReel(mediaUrl, post.id);
+    await updatePost(db, post.id, { media_url: mediaUrl });
+  }
   const create = (audio: AudioConfiguration | null) =>
-    client.createReelContainer(igUserId, post.media_url, post.caption, post.share_to_feed === 1, post.trial_strategy, post.cover_offset_ms, audio);
+    client.createReelContainer(igUserId, mediaUrl, post.caption, post.share_to_feed === 1, post.trial_strategy, post.cover_offset_ms, audio);
   let picked: Awaited<ReturnType<typeof pickAudio>> = null;
   try {
     picked = await pickAudio(db, client, igUserId, now);

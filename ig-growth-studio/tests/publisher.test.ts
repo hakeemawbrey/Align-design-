@@ -12,7 +12,7 @@ beforeEach(async () => {
 });
 
 async function schedule(type: "IMAGE" | "REELS", at = new Date(NOW.getTime() - 1000)) {
-  return await createPost(db, { igUserId: "17841", type, mediaUrl: "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
+  return await createPost(db, { igUserId: "17841", type, mediaUrl: type === "REELS" ? "https://cdn.example.com/a.mp4" : "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
 }
 
 describe("publishDuePosts", () => {
@@ -54,7 +54,7 @@ describe("publishDuePosts", () => {
     let res = await publishDuePosts(db, { now: NOW, client });
     expect(res.pending).toEqual([id]);
     expect((await getPost(db, id))!.status).toBe("processing");
-    expect(calls[0].params).toMatchObject({ media_type: "REELS", video_url: "https://cdn.example.com/a.jpg", share_to_feed: "true" });
+    expect(calls[0].params).toMatchObject({ media_type: "REELS", video_url: "https://cdn.example.com/a.mp4", share_to_feed: "true" });
 
     status = "FINISHED";
     res = await publishDuePosts(db, { now: new Date(NOW.getTime() + 60_000), client });

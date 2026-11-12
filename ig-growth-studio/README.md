@@ -111,6 +111,15 @@ blocks a post: if the lookup fails or Instagram refuses a track, the Reel goes o
 shows on the post (`audio` in the agent API). It needs no new permission (`instagram_basic` and
 `instagram_content_publish`).
 
+## Photo Reels
+
+Queue a **photo** (a `.jpg`, `.png` or `.webp` link, or a `local:` file) as a **Reel** and the worker turns it into a
+7-second video (a slow 5% push-in with a silent track) on this computer just before publishing, then uploads it like any
+local video. That lets Reels audio put trending music on a photo: Instagram only takes music on Reels, and a Reel must
+be a video of at least 3 seconds. Length: `PHOTO_REEL_SECONDS` in `.env` (default 7). The video is made with the
+bundled `ffmpeg-static` (or `FFMPEG_PATH`) and kept in `data/media/photo-reels/`. Needs the worker on this computer,
+not Vercel.
+
 ## Possible next steps
 
 - Carousel posts, Stories, partnership labels and the AI-content disclosure flag
