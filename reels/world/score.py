@@ -274,7 +274,7 @@ def main():
         x = np.sin(2 * np.pi * 150 * tt) * (np.sin(2 * np.pi * 6 * tt) > 0)
         put(fx, x * amp, t)
 
-    def dun(t, amp=0.3):
+    def dun(t, amp=0.2):
         for q, f in enumerate([55, 52]):
             k = int(1.2 * SR)
             tt = np.arange(k) / SR
@@ -338,10 +338,10 @@ def main():
     lvl = np.sqrt(np.convolve(voice ** 2, np.ones(win) / win, mode='same'))
     duck = np.clip(lvl / 0.04, 0, 1)
     duck = np.convolve(duck, np.ones(int(0.25 * SR)) / int(0.25 * SR), mode='same')
-    gain = 1 - 0.45 * np.clip(duck, 0, 1)
+    gain = 1 - 0.55 * np.clip(duck, 0, 1)
     tt = np.arange(n) / SR
     fade = np.clip((dur - tt) / 1.2, 0, 1)
-    mix = voice * 1.0 + music * gain * 0.85 * fade + fx * 0.9
+    mix = voice * 1.0 + music * gain * 0.5 * fade + fx * 0.62
     mix = mix[: int(dur * SR)]
     peak = np.abs(mix).max()
     if peak > 0.95:
