@@ -1,7 +1,7 @@
 <title>Gradient Studio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Figtree:wght@400;500;600;800&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&family=DM+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a studio bench. Preview frame on the left, controls and the post library on the right; stacks on phones. */
 :root{
@@ -112,7 +112,7 @@ button[disabled]{opacity:.5;cursor:default}
         </div>
         <div class="field">
           <span class="lbl">Text look</span>
-          <div class="seg" id="style"><button data-v="clean" aria-pressed="true">Clean</button><button data-v="outline" aria-pressed="false">Outline</button><button data-v="boomer" aria-pressed="false">Boomer</button></div>
+          <div class="seg" id="style"><button data-v="clean" aria-pressed="true">Clean</button><button data-v="outline" aria-pressed="false">Outline</button></div>
         </div>
         <div class="row" style="justify-content:flex-end">
           <div class="field" style="min-width:160px">
@@ -183,9 +183,9 @@ function background(name){
 }
 
 // text: keeps line breaks, blank line = paragraph gap, greedy wrap, shrink to fit
-const fontFor=px=>state.style==="boomer"?`700 ${px}px "Comic Neue"`:`800 ${px}px Figtree`;
+const fontFor=px=>`800 ${px}px Figtree`;
 function layout(ctx,text,scale){
-  let px=W*ST.size*scale*(state.style==="boomer"?1.06:1);
+  let px=W*ST.size*scale;
   for(;;){
     ctx.font=fontFor(px);
     const lines=[];
@@ -211,8 +211,8 @@ function makeText(){
   const pos=[];lines.forEach((l,i)=>{if(l!==null)pos.push([l,y]);y+=steps[i]*lead});
   pos.forEach(([l,yy])=>s.fillText(l,W/2,yy+px*.05));
   if(state.style!=="clean"){
-    // outline: white with a black stroke (TikTok look); boomer: Comic Neue in a loud colour with a stroke
-    x.lineJoin="round";x.strokeStyle="#000";x.lineWidth=px*(state.style==="outline"?.15:.13);
+    // outline: white with a black stroke (TikTok look)
+    x.lineJoin="round";x.strokeStyle="#000";x.lineWidth=px*.15;
     pos.forEach(([l,yy])=>x.strokeText(l,W/2,yy));
     x.fillStyle="#fff";
   }else{
@@ -362,7 +362,7 @@ $("saveVid").onclick=async()=>{
 };
 
 (async()=>{
-  try{await Promise.all([document.fonts.load("800 80px Figtree"),document.fonts.load('700 80px "Comic Neue"')])}catch(e){}
+  try{await document.fonts.load("800 80px Figtree")}catch(e){}
   let first=POSTS.find(p=>p.id==="libra-f01")||POSTS[0];
   try{const last=localStorage.getItem("gs-last");const f=last&&POSTS.find(p=>p.id===last);if(f)first=f}catch(e){}
   renderList();renderArtGrid();load(first);requestAnimationFrame(loop);

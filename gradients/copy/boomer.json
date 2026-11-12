@@ -13,7 +13,6 @@
         "astrologymemes"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -29,7 +28,6 @@
         "astrologyhumor"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -44,8 +42,7 @@
         "zodiacsigns",
         "boomermemes"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "aries-m04",
@@ -59,8 +56,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "taurus-m01",
@@ -74,8 +70,7 @@
         "stubborn",
         "astrologymemes"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "taurus-m02",
@@ -89,8 +84,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "taurus-m03",
@@ -104,8 +98,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "taurus-m04",
@@ -120,7 +113,6 @@
         "astrology"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -136,7 +128,6 @@
         "astrologymemes"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -151,8 +142,7 @@
         "zodiacsigns",
         "boomerhumor"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "gemini-m03",
@@ -166,8 +156,7 @@
         "zodiacmemes",
         "astrology"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "gemini-m04",
@@ -181,8 +170,7 @@
         "zodiaccompatibility",
         "astrologyhumor"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "cancer-m01",
@@ -196,8 +184,7 @@
         "watersigns",
         "boomermemes"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "cancer-m02",
@@ -211,8 +198,7 @@
         "zodiacmemes",
         "astrologyhumor"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "cancer-m03",
@@ -227,7 +213,6 @@
         "boomerhumor"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -243,7 +228,6 @@
         "astrology"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -258,8 +242,7 @@
         "boomermemes",
         "astrologymemes"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "leo-m02",
@@ -273,8 +256,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "leo-m03",
@@ -288,8 +270,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "leo-m04",
@@ -303,8 +284,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "virgo-m01",
@@ -318,8 +298,7 @@
         "earthsigns",
         "astrologymemes"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "virgo-m02",
@@ -334,7 +313,6 @@
         "boomerhumor"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -350,7 +328,6 @@
         "astrologyhumor"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -365,8 +342,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "libra-m01",
@@ -380,8 +356,7 @@
         "boomermemes",
         "astrologymemes"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "libra-m02",
@@ -395,8 +370,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "libra-m03",
@@ -410,8 +384,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "libra-m04",
@@ -425,8 +398,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "scorpio-m01",
@@ -441,7 +413,6 @@
         "astrologymemes"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -457,7 +428,6 @@
         "boomerhumor"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -472,8 +442,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "scorpio-m04",
@@ -487,8 +456,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "sagittarius-m01",
@@ -502,8 +470,7 @@
         "boomermemes",
         "astrologymemes"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "sagittarius-m02",
@@ -517,8 +484,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "sagittarius-m03",
@@ -532,8 +498,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "sagittarius-m04",
@@ -548,7 +513,6 @@
         "astrology"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -564,7 +528,6 @@
         "astrologymemes"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -579,8 +542,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "capricorn-m03",
@@ -594,8 +556,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "capricorn-m04",
@@ -609,8 +570,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "aquarius-m01",
@@ -624,8 +584,7 @@
         "boomermemes",
         "astrologymemes"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     },
     {
       "id": "aquarius-m02",
@@ -639,8 +598,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "rainbow",
-      "style": "boomer"
+      "palette": "rainbow"
     },
     {
       "id": "aquarius-m03",
@@ -655,7 +613,6 @@
         "astrologyhumor"
       ],
       "palette": "sunset",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -671,7 +628,6 @@
         "astrology"
       ],
       "palette": "lime",
-      "style": "boomer",
       "ink": "dark"
     },
     {
@@ -686,8 +642,7 @@
         "boomermemes",
         "astrologymemes"
       ],
-      "palette": "aqua",
-      "style": "boomer"
+      "palette": "aqua"
     },
     {
       "id": "pisces-m02",
@@ -701,8 +656,7 @@
         "zodiacmemes",
         "boomerhumor"
       ],
-      "palette": "magenta",
-      "style": "boomer"
+      "palette": "magenta"
     },
     {
       "id": "pisces-m03",
@@ -716,8 +670,7 @@
         "zodiacsigns",
         "astrologyhumor"
       ],
-      "palette": "classic",
-      "style": "boomer"
+      "palette": "classic"
     },
     {
       "id": "pisces-m04",
@@ -731,8 +684,7 @@
         "zodiaccompatibility",
         "astrology"
       ],
-      "palette": "deep",
-      "style": "boomer"
+      "palette": "deep"
     }
   ]
 }

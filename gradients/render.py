@@ -17,9 +17,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(HERE, "assets", "fonts", "Figtree.ttf")
-BOOMER_FONT = os.path.join(HERE, "assets", "fonts", "ComicNeue-Bold.ttf")
 # Text looks: clean (soft shadow, the reference posts), outline (white with a black stroke, the TikTok look),
-# boomer (Comic Neue with a black stroke, the 2014 Facebook look). Text is always white.
+# (boomer is a copy category, not a look). Text is always white.
 W, H, FPS = 1080, 1440, 24
 
 # 3x3 colour grids sampled off the reference posts (top row, middle row, bottom row)
@@ -112,14 +111,11 @@ def layout_for(seed):
 
 
 def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None, size_k=1.0, wrap_k=None):
-    px = W * STYLE["size"] * size_k * (1.06 if style == "boomer" else 1)
+    px = W * STYLE["size"] * size_k
     wrap_w = wrap_k or STYLE["wrap"]
     while True:
-        if style == "boomer":
-            f = ImageFont.truetype(BOOMER_FONT, int(px * ss))
-        else:
-            f = ImageFont.truetype(FONT, int(px * ss))
-            f.set_variation_by_name(b"ExtraBold")
+        f = ImageFont.truetype(FONT, int(px * ss))
+        f.set_variation_by_name(b"ExtraBold")
         lines = wrap(text, f, W * wrap_w * ss)
         lead = px * ss * STYLE["lead"]
         block = lead * sum(1 if l is not None else STYLE["gap"] for l in lines)
@@ -133,7 +129,7 @@ def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None, si
     steps = [1 if l is not None else STYLE["gap"] for l in lines]
     top = (H * ss - (lead * (sum(steps) - 1) + asc + desc)) / 2
     shadow = shadow_k or STYLE["shadow"]
-    stroke = 0 if style == "clean" else max(1, round(px * ss * (0.075 if style == "outline" else 0.065)))
+    stroke = 0 if style == "clean" else max(1, round(px * ss * 0.075))
     fill = (255, 255, 255)   # white text only, in every look
     y = top
     for ln, st in zip(lines, steps):
@@ -264,7 +260,7 @@ if __name__ == "__main__":
     ap.add_argument("--palette", choices=list(PALETTES))
     ap.add_argument("--ink", choices=list(INK))
     ap.add_argument("--bg", choices=["gradient", "art"])
-    ap.add_argument("--style", choices=["clean", "outline", "boomer"])
+    ap.add_argument("--style", choices=["clean", "outline"])
     ap.add_argument("--out")
     a = ap.parse_args()
     if a.text:
