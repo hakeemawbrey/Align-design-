@@ -43,7 +43,14 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
 .rail-label { width: 100%; font: 600 11px var(--cond); letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
 .reels { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px 16px; padding-bottom: 60px; }
 .reel { display: grid; gap: 8px; min-width: 0; }
-.reel video { width: 100%; aspect-ratio: 1 / 1; max-width: 100%; background: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
+.reel video, .reel .poster { width: 100%; aspect-ratio: 1 / 1; max-width: 100%; background-color: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
+.reel .poster { border: 0; padding: 0; cursor: pointer; background-repeat: no-repeat; position: relative; }
+.reel .poster::after { content: ""; position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: color-mix(in srgb, var(--night) 55%, transparent); box-shadow: inset 0 0 0 1px var(--line); }
+.reel .poster::before { content: ""; position: absolute; left: 50%; top: 50%; margin: -9px 0 0 -5px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent var(--cream); z-index: 1; }
+.filters { display: grid; gap: 4px; padding-block: 18px 14px; }
+.filters .rail { padding-block: 0 8px; }
+.count { font: 600 12px var(--cond); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); padding-bottom: 12px; font-variant-numeric: tabular-nums; }
+.more { justify-self: center; margin: 0 auto 60px; display: block; }
 .reel .meta { font: 600 12px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); display: flex; justify-content: space-between; gap: 8px; }
 .reel .meta span:last-child { color: var(--mute); font-variant-numeric: tabular-nums; }
 .reel h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 19px; line-height: 1.2; margin: 0; text-wrap: balance; }
@@ -86,11 +93,17 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
   <section id="view-reels" class="wrap">
     <div class="intro">
       <h2>Reels that talk straight to each sign.</h2>
-      <p>Letters, love advice, what they won't say out loud, relatable lines, alignment, and invites. Every reel is painted with free public-domain art and ends on a share or invite. These are samples; the generator makes the rest.</p>
+      <p>Letters, love advice, what they won't say out loud, relatable lines, alignment, and invites. Every reel is painted with free public-domain art and ends on a share or invite. Every script, rendered. Filter by sign, format or music, tap a reel to play it, and copy its caption.</p>
       <div class="stats" id="reel-stats"></div>
     </div>
-    <div class="rail" id="reel-rail" role="group" aria-label="Filter reels by sign"></div>
+    <div class="filters">
+      <span class="rail-label">Sign</span><div class="rail" id="reel-rail" role="group" aria-label="Filter reels by sign"></div>
+      <span class="rail-label">Format</span><div class="rail" id="fmt-rail" role="group" aria-label="Filter reels by format"></div>
+      <span class="rail-label">Music</span><div class="rail" id="mus-rail" role="group" aria-label="Filter reels by music"></div>
+    </div>
+    <div class="count" id="reel-count"></div>
     <div class="reels" id="reel-grid"></div>
+    <button type="button" class="copy more" id="more" hidden>Show more</button>
   </section>
 
   <section id="view-catalog" class="wrap" hidden>
@@ -120,18 +133,31 @@ const MUS = { piano: "piano", lofi: "lo-fi", rnb: "r&b", guitar: "guitar", music
 const total = D.catalog.reduce((n, p) => n + p.items.length, 0);
 
 // ---------- reels
-let reelSign = "all";
+const F = { sign: "all", format: "all", music: "all" };
+let shown = 48;
+const match = (r, skip) => Object.keys(F).every((k) => k === skip || F[k] === "all" || r[k] === F[k]);
+function rail(el, key, opts) {
+  const n = (v) => D.reels.filter((r) => match(r, key) && (v === "all" || r[key] === v)).length;
+  $(el).innerHTML = [["all", "All", ""], ...opts].map(([v, label, g]) =>
+    `<button type="button" class="chip" data-key="${key}" data-v="${v}" aria-pressed="${F[key] === v}">${g ? `<span class="g">${g}</span>` : ""}${esc(label)}<small>${n(v)}</small></button>`).join("");
+}
 function reelRail() {
-  const counts = {};
-  D.reels.forEach((r) => (counts[r.sign] = (counts[r.sign] || 0) + 1));
-  const opts = [["all", "All", "", D.reels.length], ...Object.keys(D.signs).filter((k) => counts[k]).map((k) => [k, D.signs[k].name, D.signs[k].glyph, counts[k]])];
-  $("#reel-rail").innerHTML = opts.map(([k, n, g, c]) => `<button type="button" class="chip" data-k="${k}" aria-pressed="${k === reelSign}">${g ? `<span class="g">${g}</span>` : ""}${n}<small>${c}</small></button>`).join("");
+  const has = (k) => [...new Set(D.reels.map((r) => r[k]))];
+  rail("#reel-rail", "sign", Object.keys(D.signs).filter((k) => has("sign").includes(k)).map((k) => [k, D.signs[k].name, D.signs[k].glyph]));
+  rail("#fmt-rail", "format", Object.keys(FMT).filter((k) => has("format").includes(k)).map((k) => [k, FMT[k]]));
+  rail("#mus-rail", "music", Object.keys(MUS).filter((k) => has("music").includes(k)).map((k) => [k, MUS[k]]));
+}
+function poster(r) {
+  const c = r.pi % D.cols, row = Math.floor(r.pi / D.cols);
+  const x = D.cols > 1 ? (c / (D.cols - 1)) * 100 : 0, y = r.prow > 1 ? (row / (r.prow - 1)) * 100 : 0;
+  return `background-image:url(posters/${r.sign}.jpg);background-size:${D.cols * 100}% ${r.prow * 100}%;background-position:${x}% ${y}%`;
 }
 function reelGrid() {
-  const list = D.reels.filter((r) => reelSign === "all" || r.sign === reelSign);
-  $("#reel-grid").innerHTML = list.length ? list.map((r) => `
+  const list = D.reels.filter((r) => match(r));
+  $("#reel-count").textContent = `${list.length} reel${list.length === 1 ? "" : "s"}`;
+  $("#reel-grid").innerHTML = list.length ? list.slice(0, shown).map((r) => `
     <article class="reel">
-      <video src="reels/${r.id}.mp4" poster="reels/${r.id}.jpg" controls playsinline preload="none"></video>
+      <button type="button" class="poster" data-id="${r.id}" aria-label="Play ${esc(r.title)}" style="${poster(r)}"></button>
       <div class="meta"><span>${D.signs[r.sign].glyph} ${esc(D.signs[r.sign].name)} · ${FMT[r.format] || r.format}</span><span>${r.music ? esc(MUS[r.music] || r.music) + " · " : ""}${Math.round(r.sec)}s</span></div>
       <h3>${esc(r.title)}</h3>
       <details><summary>Cards and caption</summary>
@@ -139,9 +165,21 @@ function reelGrid() {
         <pre id="cap-${r.id}">${esc(r.caption)}</pre>
       </details>
       <button type="button" class="copy" data-cap="${r.id}">Copy caption</button>
-    </article>`).join("") : `<p class="empty">No reels for this sign yet.</p>`;
+    </article>`).join("") : `<p class="empty">No reels match these filters.</p>`;
+  $("#more").hidden = list.length <= shown;
+  $("#more").textContent = `Show more (${list.length - shown} left)`;
 }
-$("#reel-rail").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (!b) return; reelSign = b.dataset.k; reelRail(); reelGrid(); });
+$(".filters").addEventListener("click", (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  F[b.dataset.key] = b.dataset.v; shown = 48; reelRail(); reelGrid();
+});
+$("#more").addEventListener("click", () => { shown += 48; reelGrid(); });
+$("#reel-grid").addEventListener("click", (e) => {
+  const p = e.target.closest(".poster"); if (!p) return;
+  const v = document.createElement("video");
+  v.src = `reels/${p.dataset.id}.mp4`; v.controls = true; v.playsInline = true; v.autoplay = true;
+  p.replaceWith(v);
+});
 $("#reel-grid").addEventListener("click", async (e) => {
   const b = e.target.closest(".copy"); if (!b) return;
   const r = D.reels.find((x) => x.id === b.dataset.cap);
@@ -193,7 +231,7 @@ function route() {
   $("#nav-catalog").toggleAttribute("aria-current", v === "catalog"); if (v === "catalog") $("#nav-catalog").setAttribute("aria-current", "page");
   $("#sheet").hidden = true;
 }
-$("#reel-stats").innerHTML = `<span>${D.reels.length} sample reels</span><span>${D.scripts} scripts</span><span>12 signs · 10 formats</span><span>${total} free images</span>`;
+$("#reel-stats").innerHTML = `<span>${D.reels.length} reels</span><span>${D.scripts} scripts</span><span>12 signs · 10 formats</span><span>${total} free images</span>`;
 $("#cat-stats").innerHTML = `<span>${total} images</span><span>${D.catalog.length} pools</span><span>public domain · CC0 · CC BY</span>`;
 reelRail(); reelGrid(); catRail(); catGrid(); route();
 addEventListener("hashchange", route);
