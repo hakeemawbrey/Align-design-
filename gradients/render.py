@@ -243,7 +243,7 @@ def render(post, out, palette=None, bg_mode=None):
     art = art_for(post, seed) if bg_mode == "art" else None
     palette = palette or post.get("palette") or ["classic", "magenta", "deep", "rainbow", "classic", "magenta", "aqua"][seed % 7]
     ink = "light"   # white text only
-    style = post.get("style") or "clean"
+    style = "clean"   # always plain white text with a soft shadow, never outlined
     margin = int(W * STYLE["drift"])
     if art:
         art_img = art_background(art)

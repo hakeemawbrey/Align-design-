@@ -114,10 +114,6 @@ button[disabled]{opacity:.5;cursor:default}
           <span class="lbl">Sign-off</span>
           <div class="seg" id="tag"><button data-v="houston" aria-pressed="true">Join the Houston beta</button><button data-v="beta" aria-pressed="false">Join the beta</button><button data-v="none" aria-pressed="false">None</button></div>
         </div>
-        <div class="field">
-          <span class="lbl">Text look</span>
-          <div class="seg" id="style"><button data-v="clean" aria-pressed="true">Clean</button><button data-v="outline" aria-pressed="false">Outline</button></div>
-        </div>
         <div class="row" style="justify-content:flex-end">
           <div class="field" style="min-width:160px">
             <label class="lbl" for="size">Size</label>
@@ -284,7 +280,7 @@ function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.cr
 function layoutFor(text){const s=crc32(text);return{size:.70+((s>>>8)%64)/63*.65,wrap:.60+((s>>>16)%32)/31*.30}}
 function load(p){
   if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
-  Object.assign(state,{tag:tagFor(p),style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
+  Object.assign(state,{tag:tagFor(p),style:"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
   if(state.bg!=="art"){const l=layoutFor(p.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
   $("size").value=state.scale;t0=performance.now();renderControls();
   try{localStorage.setItem("gs-last",p.id)}catch(e){}
