@@ -103,18 +103,27 @@ def _greedy(text, f, max_w):
     return lines
 
 
-def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None):
-    px = W * STYLE["size"] * (1.06 if style == "boomer" else 1)
+def layout_for(seed):
+    """Per-post text size and side padding, so a feed of these doesn't look stamped out: some captions small with wide
+    margins, some big and nearly edge to edge. Fixed per post (from the text's hash)."""
+    size = 0.70 + ((seed >> 8) % 64) / 63 * 0.65     # 0.70x - 1.35x the base size
+    wrap = 0.60 + ((seed >> 16) % 32) / 31 * 0.30     # line width 60% - 90% of the frame
+    return size, wrap
+
+
+def text_layer(text, ss=2, ink="light", style="clean", seed=0, shadow_k=None, size_k=1.0, wrap_k=None):
+    px = W * STYLE["size"] * size_k * (1.06 if style == "boomer" else 1)
+    wrap_w = wrap_k or STYLE["wrap"]
     while True:
         if style == "boomer":
             f = ImageFont.truetype(BOOMER_FONT, int(px * ss))
         else:
             f = ImageFont.truetype(FONT, int(px * ss))
             f.set_variation_by_name(b"ExtraBold")
-        lines = wrap(text, f, W * STYLE["wrap"] * ss)
+        lines = wrap(text, f, W * wrap_w * ss)
         lead = px * ss * STYLE["lead"]
         block = lead * sum(1 if l is not None else STYLE["gap"] for l in lines)
-        if block <= H * STYLE["max_h"] * ss or px <= W * STYLE["min_size"]:
+        if block <= H * STYLE["max_h"] * ss or px <= W * STYLE["min_size"] * min(1, size_k):
             break
         px *= 0.95
     img = Image.new("RGBA", (W * ss, H * ss), (0, 0, 0, 0))
@@ -201,7 +210,9 @@ def render(post, out, palette=None, bg_mode=None):
         art_img = art_background(art)
     else:
         bg = gradient(palette, W + margin, H + margin)
-    txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed, shadow_k=None if art else SHADOW.get(palette))
+    size_k, wrap_k = (1.0, None) if art else layout_for(seed)
+    txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed, shadow_k=None if art else SHADOW.get(palette),
+                            size_k=size_k, wrap_k=wrap_k)
     a = txt[..., 3:4]
     dur = seconds_for(post["text"])
     n = int(dur * FPS)

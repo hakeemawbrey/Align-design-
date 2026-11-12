@@ -191,7 +191,7 @@ function layout(ctx,text,scale){
     const lines=[];
     for(const para of text.trim().split("\n")){
       if(!para.trim()){if(lines.length&&lines[lines.length-1]!==null)lines.push(null);continue}
-      let cur="";for(const w of para.split(/\s+/).filter(Boolean)){const t=(cur+" "+w).trim();if(ctx.measureText(t).width<=W*ST.wrap||!cur)cur=t;else{lines.push(cur);cur=w}}lines.push(cur);
+      let cur="";for(const w of para.split(/\s+/).filter(Boolean)){const t=(cur+" "+w).trim();if(ctx.measureText(t).width<=W*(state.wrap||ST.wrap)||!cur)cur=t;else{lines.push(cur);cur=w}}lines.push(cur);
     }
     const lead=px*ST.lead,h=lead*lines.reduce((s,l)=>s+(l===null?ST.gap:1),0);
     if(h<=H*ST.maxh||px<=W*ST.min*scale)return{px,lines,lead};
@@ -200,7 +200,7 @@ function layout(ctx,text,scale){
 }
 let textLayer=null,textKey="";
 function makeText(){
-  const key=[state.text,state.scale,state.style,state.palette,state.bg].join("|");if(key===textKey)return textLayer;
+  const key=[state.text,state.scale,state.wrap,state.style,state.palette,state.bg].join("|");if(key===textKey)return textLayer;
   const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
   const {px,lines,lead}=layout(x,state.text||" ",state.scale);
   x.font=fontFor(px);x.textAlign="center";x.textBaseline="alphabetic";
@@ -267,10 +267,13 @@ function renderControls(){
   const a=ART[state.art];$("artCredit").textContent=a?artCredit(a):"";
 }
 function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.creator:""} (${a.credit?a.license:"public domain"})`}
+// Same per-post size and side padding as the batch renderer (from the text's crc32), gradients only.
+function layoutFor(text){const s=crc32(text);return{size:.70+((s>>>8)%64)/63*.65,wrap:.60+((s>>>16)%32)/31*.30}}
 function load(p){
   if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
-  Object.assign(state,{style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1});
-  $("size").value=1;t0=performance.now();renderControls();
+  Object.assign(state,{style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
+  if(state.bg!=="art"){const l=layoutFor(p.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
+  $("size").value=state.scale;t0=performance.now();renderControls();
   try{localStorage.setItem("gs-last",p.id)}catch(e){}
 }
 for(const name of Object.keys(PALETTES)){
@@ -288,7 +291,9 @@ $("copyCap").onclick=async()=>{try{await navigator.clipboard.writeText(captionTe
 
 document.querySelectorAll("#style button").forEach(b=>b.onclick=()=>{state.style=b.dataset.v;renderControls()});
 // artwork picker
-document.querySelectorAll("#bgmode button").forEach(b=>b.onclick=()=>{state.bg=b.dataset.v;if(state.bg==="art")state.ink="light";renderControls()});
+document.querySelectorAll("#bgmode button").forEach(b=>b.onclick=()=>{state.bg=b.dataset.v;
+  if(state.bg==="art"){state.scale=1;state.wrap=null}else{const l=layoutFor(state.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
+  $("size").value=state.scale;renderControls()});
 const pools=["All artwork",...new Set(ART.map(a=>a.pool))];
 $("artPool").innerHTML=pools.map(p=>`<option value="${p}">${p[0].toUpperCase()+p.slice(1)}</option>`).join("");
 const artFiltered=()=>ART.filter(a=>$("artPool").value==="All artwork"||a.pool===$("artPool").value);
