@@ -64,7 +64,7 @@ const CAMEOS = [
 
 const F = makeFilm({
   id: 'r2a0553', key: 'C', accent: ACC, solo: 'aries', ending: 'lesson',
-  title: 'How to make | friends *with an Aries.*',
+  title: 'Making friends | *with an Aries.*',
   cameos: CAMEOS,
   group: { cap: 'Fast friends. | *Forever friends.*', mood: 'sparkle' },
   lesson: { text: 'Aries love fast and loyal. | Just *match the energy.*', chip: 'FRIEND: UNLOCKED' },
