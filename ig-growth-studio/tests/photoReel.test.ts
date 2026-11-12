@@ -35,10 +35,10 @@ describe("photo Reels", () => {
   });
 
   it("turns a photo into a 3:4 H.264 video with a silent AAC track", async () => {
-    const url = await photoToReel("local:art.jpg", 42, { seconds: 4 });
+    const url = await photoToReel("local:art.jpg", 42);
     expect(url).toBe("local:photo-reels/42.mp4");
     const info = probe(path.join(dir, "photo-reels", "42.mp4"));
-    expect(info).toMatch(/Duration: 00:00:04/);
+    expect(info).toMatch(/Duration: 00:00:10/);
     expect(info).toMatch(/h264.*1080x1440/);
     expect(info).toMatch(/Audio: aac/);
   }, 60_000);

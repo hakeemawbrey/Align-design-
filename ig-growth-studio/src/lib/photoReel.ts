@@ -7,10 +7,10 @@ import { LOCAL_PREFIX, localMediaPath, mediaDir } from "./media";
 
 /**
  * Photo Reels: Instagram only takes music on Reels, and a Reel must be a video of at least 3 seconds.
- * A Reel whose media is a photo is turned into a short video (slow push-in, silent track) on this computer just
- * before publishing, then uploaded like any local video, so Reels audio (trending music) can go on it.
+ * A Reel whose media is a photo is turned into a short video (the photo held still for 10 seconds, silent track) on this computer just
+ * (the photo held still) before publishing, then uploaded like any local video, so Reels audio (trending music) can go on it.
  */
-export const PHOTO_REEL_SECONDS = Number(process.env.PHOTO_REEL_SECONDS || 7);
+export const PHOTO_REEL_SECONDS = Number(process.env.PHOTO_REEL_SECONDS || 10);
 const IMAGE_EXT = /\.(jpe?g|png|webp)$/i;
 
 const run = promisify(execFile);
@@ -64,19 +64,15 @@ export async function photoToReel(
   const name = `photo-reels/${postId}.mp4`;
   const out = path.join(mediaDir(), name);
   const fps = 30;
-  const frames = Math.round(seconds * fps);
   const size = await imageSize(src);
   const h = 2 * Math.round((1080 * size.h) / size.w / 2);
-  // Upscale 2x (smooth sub-pixel zoom), then push in 5% over the clip, centred, out at 1080 wide.
-  const vf = [
-    `scale=2160:${2 * h}:flags=lanczos`,
-    `zoompan=z='1+0.05*on/${frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=1080x${h}:fps=${fps}`,
-  ].join(",");
+  // The photo as it is, held still for the whole clip, at 1080 wide.
+  const vf = `scale=1080:${h}:flags=lanczos,format=yuv420p`;
   await run(
     ffmpegPath(),
     [
       "-v", "error", "-y",
-      "-loop", "1", "-i", src,
+      "-loop", "1", "-framerate", String(fps), "-i", src,
       "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
       "-vf", vf,
       "-t", String(seconds), "-r", String(fps),

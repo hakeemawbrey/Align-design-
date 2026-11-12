@@ -36,7 +36,7 @@ For long JSON, write it to a file in a temp folder and pass `@path/to/body.json`
 | Field | Notes |
 | --- | --- |
 | `account` | Username or IG user ID. Omit for the account selected in the app. |
-| `type` | `IMAGE` (JPEG) or `REELS` (MP4, H.264/AAC). A photo (.jpg/.png/.webp) queued as `REELS` is turned into a 7-second video at publish time, so Reels audio can add music to it. |
+| `type` | `IMAGE` (JPEG) or `REELS` (MP4, H.264/AAC). A photo (.jpg/.png/.webp) queued as `REELS` is turned into a 10-second video at publish time, so Reels audio can add music to it. |
 | `mediaUrl` | Public `https://` URL Instagram can download at publish time. You cannot upload files. |
 | `scheduledAt` | ISO 8601 **with offset**, at least 2 minutes ahead. Ask the owner's time zone if unsure. |
 | `trial` | Reels only. `MANUAL`: shown to non-followers; the owner shares it with followers in the Instagram app. `SS_PERFORMANCE`: same, but Instagram shares it with followers automatically if it performs well. Omit for a normal Reel. |
