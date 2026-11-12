@@ -83,7 +83,7 @@ const CAMEOS = [
 
 const F = makeFilm({
   id: 'r2a0337', key: 'F', accent: ACC, solo: 'virgo', ending: 'callback',
-  title: 'Virgo, you don’t owe | *an instant reply.*',
+  title: 'Virgo, take your | *time replying.*',
   cameos: CAMEOS,
   group: { cap: 'Your time is yours. | *Take it.*', mood: 'heart' },
   last: {
