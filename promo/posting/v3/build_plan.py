@@ -14,7 +14,7 @@ orders = {
 import sys
 PER = 50
 start = {'star_talk': (7, 0), 'star_advice': (7, 10)}
-day1 = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date(2026, 11, 12)
+day1 = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date(2026, 11, 13)
 rows = []
 for acct, ids in orders.items():
     for n, fid in enumerate(ids):
