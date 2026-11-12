@@ -187,6 +187,48 @@ def art_credit(art):
     return f"Art: {art.get('title') or 'untitled'}{who} ({lic})"
 
 
+TAG = {"size": 0.026, "y": 0.80, "alpha": 0.72}
+TAGS = {"houston": "come align \u00b7 join the houston beta", "beta": "come align \u00b7 join the beta"}
+
+
+def tag_for(post, seed):
+    """Houston posts always say the Houston beta; the rest split about evenly between the two sign-offs."""
+    if post.get("tag") in TAGS:
+        return post["tag"]
+    if str(post.get("id", "")).startswith("htx"):
+        return "houston"
+    return "houston" if (seed >> 24) % 2 else "beta"
+
+
+def tag_layer(text, ss=2):
+    """The small sign-off low on every reel: white, semi-transparent, soft shadow, inside Instagram's safe zone."""
+    px = int(W * TAG["size"] * ss)
+    f = ImageFont.truetype(FONT, px)
+    f.set_variation_by_name(b"SemiBold")
+    box = f.getbbox(text)
+    x = (W * ss - (box[2] - box[0])) / 2 - box[0]
+    y = H * TAG["y"] * ss - (box[3] + box[1]) / 2
+    core = Image.new("L", (W * ss, H * ss), 0)
+    ImageDraw.Draw(core).text((x, y), text, font=f, fill=255)
+    sh = core.filter(ImageFilter.GaussianBlur(px * 0.25))
+    c = np.asarray(core.resize((W, H), Image.LANCZOS), np.float32) / 255 * TAG["alpha"]
+    s = np.asarray(sh.resize((W, H), Image.LANCZOS), np.float32) / 255 * 0.35
+    alpha = c + s * (1 - c)
+    rgb = np.where(alpha[..., None] > 0, (c / np.maximum(alpha, 1e-4))[..., None], 0) * np.ones(3, np.float32)
+    return np.dstack([rgb, alpha])
+
+
+_tags = {}
+
+
+def with_tag(frame, which="houston"):
+    if which not in _tags:
+        _tags[which] = tag_layer(TAGS[which])
+    t = _tags[which]
+    a = t[..., 3:4]
+    return frame * (1 - a) + t[..., :3] * a
+
+
 def seconds_for(text):
     words = len(text.split())
     return round(min(14, max(6, 3 + words * 0.3)), 1)
@@ -207,6 +249,7 @@ def render(post, out, palette=None, bg_mode=None):
     else:
         bg = gradient(palette, W + margin, H + margin)
     size_k, wrap_k = (1.0, None) if art else layout_for(seed)
+    tag = tag_for(post, seed)
     txt, lines = text_layer(post["text"], ink=ink, style=style, seed=seed, shadow_k=None if art else SHADOW.get(palette),
                             size_k=size_k, wrap_k=wrap_k)
     a = txt[..., 3:4]
@@ -231,7 +274,7 @@ def render(post, out, palette=None, bg_mode=None):
             ox = int(margin * (0.5 + 0.5 * math.sin(math.pi * (t - 0.5))))   # slow ease across the reel
             oy = int(margin * 0.5 * (1 - math.cos(math.pi * t)) / 2)
             frame = bg[oy:oy + H, ox:ox + W] / 255
-        frame = frame * (1 - a) + txt[..., :3] * a
+        frame = with_tag(frame * (1 - a) + txt[..., :3] * a, tag)
         buf = (np.clip(frame, 0, 1) * 255 + 0.5).astype(np.uint8)
         if i == 0:
             still = buf

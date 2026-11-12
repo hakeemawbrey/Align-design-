@@ -10,7 +10,7 @@
         "ariesseason",
         "firesigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -23,7 +23,7 @@
         "ariesseason",
         "firesigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -36,7 +36,7 @@
         "ariesseason",
         "firesigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -49,7 +49,7 @@
         "ariesseason",
         "firesigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -61,8 +61,8 @@
         "aries",
         "ariesseason",
         "firesigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -74,8 +74,8 @@
         "aries",
         "ariesseason",
         "firesigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -87,8 +87,8 @@
         "aries",
         "ariesseason",
         "firesigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -100,8 +100,229 @@
         "aries",
         "ariesseason",
         "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aries-s09",
+      "sign": "aries",
+      "text": "aries texting habits: replies in two seconds, gets mad in three",
+      "caption": "speed is the whole personality. relate?",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "aries-s10",
+      "sign": "aries",
+      "text": "green flag: an aries will defend you in the group chat unprompted",
+      "caption": "loyal, loud, and already typing.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "aries-s11",
+      "sign": "aries",
+      "text": "first date with an aries: we're already planning the second one",
+      "caption": "no waiting three days with this sign.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "aries-s12",
+      "sign": "aries",
+      "text": "aries ex energy: blocked you, unblocked you, asked how your mom is",
+      "caption": "chaotic, but polite about it.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "aries-s13",
+      "sign": "aries",
+      "text": "situationship with an aries lasts exactly as long as it's exciting",
+      "caption": "the second it gets boring, they're gone. agree?",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "aries-s14",
+      "sign": "aries",
+      "text": "the aries in the group chat says \"outside in 10\" at midnight",
+      "caption": "nobody agreed, but everyone's going.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "aries-s15",
+      "sign": "aries",
+      "text": "aries don't hold grudges. we forget why we were mad",
+      "caption": "rage with a short memory. tag your aries.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "aries-s16",
+      "sign": "aries",
+      "text": "if an aries says \"bet\" you should run. they mean it",
+      "caption": "there's no take-backs after bet.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aries-s17",
+      "sign": "aries",
+      "text": "aries patience is a myth, like mermaids or decaf",
+      "caption": "has anyone ever seen it in the wild?",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "aries-s18",
+      "sign": "aries",
+      "text": "aries starting a new hobby at 11pm and quitting by 1am",
+      "caption": "two hours of pure passion though.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "aries-s19",
+      "sign": "aries",
+      "text": "idk tbh but my aries sun said do it so i did",
+      "caption": "the aries sun makes all the decisions here.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "aries-s20",
+      "sign": "aries",
+      "text": "flirting with an aries is basically a competition you will lose",
+      "caption": "they flirt to win. do you play along?",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "aries-s21",
+      "sign": "aries",
+      "text": "aries love language: honking at the car that cut you off",
+      "caption": "protective in the most aries way possible.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "aries-s22",
+      "sign": "aries",
+      "text": "my aries mars made me late because i got into a debate",
+      "caption": "worth it, i was right.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "aries-s23",
+      "sign": "aries",
+      "text": "hot take: aries are the best huggers. aggressive, but the best",
+      "caption": "the tackle hug counts. agree?",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "aries-s24",
+      "sign": "aries",
+      "text": "an aries reading their horoscope: \"wrong\" and then doing exactly that",
+      "caption": "the stars were right again, sorry.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aries-s25",
+      "sign": "aries",
+      "text": "aries venus asked you out first and will not be taking questions",
+      "caption": "just say yes. it's easier.",
+      "hashtags": [
+        "aries",
+        "ariesseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -114,7 +335,7 @@
         "taurusseason",
         "earthsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -127,7 +348,7 @@
         "taurusseason",
         "earthsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -140,7 +361,7 @@
         "taurusseason",
         "earthsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -153,7 +374,7 @@
         "taurusseason",
         "earthsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -165,8 +386,8 @@
         "taurus",
         "taurusseason",
         "earthsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -178,8 +399,8 @@
         "taurus",
         "taurusseason",
         "earthsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -191,8 +412,8 @@
         "taurus",
         "taurusseason",
         "earthsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -204,8 +425,229 @@
         "taurus",
         "taurusseason",
         "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "taurus-s09",
+      "sign": "taurus",
+      "text": "taurus texting habits: leaves you on read but sends a food pic",
+      "caption": "the food pic is the reply. tag your taurus.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "taurus-s10",
+      "sign": "taurus",
+      "text": "green flag: a taurus remembers your favorite snack forever",
+      "caption": "they'll have it ready before you ask.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "taurus-s11",
+      "sign": "taurus",
+      "text": "first date with a taurus: they already know the best dish here",
+      "caption": "trust the order. it's always right.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "taurus-s12",
+      "sign": "taurus",
+      "text": "taurus ex energy: still has your hoodie, will not be returning it",
+      "caption": "it's their hoodie now. accept it.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "taurus-s13",
+      "sign": "taurus",
+      "text": "situationship with a taurus? no. they want the cozy forever version",
+      "caption": "slow to commit, impossible to leave.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "taurus-s14",
+      "sign": "taurus",
+      "text": "the taurus in the group chat only responds to dinner plans",
+      "caption": "silent all week, then \"what time?\"",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "taurus-s15",
+      "sign": "taurus",
+      "text": "red flag: a taurus who willingly shares dessert. who hurt you?",
+      "caption": "something is very wrong here.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "taurus-s16",
+      "sign": "taurus",
+      "text": "taurus energy is buying the expensive candle and calling it self-care",
+      "caption": "the candle smells like a raise, honestly.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "taurus-s17",
+      "sign": "taurus",
+      "text": "a taurus will wait six years to say \"told you so\"",
+      "caption": "patience is a weapon for this sign.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "taurus-s18",
+      "sign": "taurus",
+      "text": "my type as a taurus: someone who cooks and never rushes me",
+      "caption": "feed me and i'm yours. agree?",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "taurus-s19",
+      "sign": "taurus",
+      "text": "taurus moon: i don't do change. i do the same latte",
+      "caption": "same order, same seat, same happiness.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "taurus-s20",
+      "sign": "taurus",
+      "text": "flirting with a taurus means bringing snacks. that's the whole trick",
+      "caption": "it works every time, trust us.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "taurus-s21",
+      "sign": "taurus",
+      "text": "taurus love language: sitting next to you doing absolutely nothing",
+      "caption": "peak romance, no notes.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "taurus-s22",
+      "sign": "taurus",
+      "text": "hot take: taurus has the best taste in the zodiac, no contest",
+      "caption": "their playlist and pantry prove it.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "taurus-s23",
+      "sign": "taurus",
+      "text": "a taurus on a diet is just a taurus eating quietly",
+      "caption": "the snacks are hidden, not gone.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "taurus-s24",
+      "sign": "taurus",
+      "text": "mars in taurus: slow to anger, impossible to calm back down",
+      "caption": "you have been warned, gently.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "taurus-s25",
+      "sign": "taurus",
+      "text": "tbh my taurus rising is the reason i look this relaxed",
+      "caption": "inside, i'm thinking about lunch.",
+      "hashtags": [
+        "taurus",
+        "taurusseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -218,7 +660,7 @@
         "geminiseason",
         "airsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -231,7 +673,7 @@
         "geminiseason",
         "airsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -244,7 +686,7 @@
         "geminiseason",
         "airsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -257,7 +699,7 @@
         "geminiseason",
         "airsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -269,8 +711,8 @@
         "gemini",
         "geminiseason",
         "airsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -282,8 +724,8 @@
         "gemini",
         "geminiseason",
         "airsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -295,8 +737,8 @@
         "gemini",
         "geminiseason",
         "airsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -308,8 +750,229 @@
         "gemini",
         "geminiseason",
         "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "gemini-s09",
+      "sign": "gemini",
+      "text": "gemini texting habits: seven messages in a row, then gone for days",
+      "caption": "the double text is a lifestyle. relate?",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "gemini-s10",
+      "sign": "gemini",
+      "text": "green flag: a gemini will make even a dmv line fun",
+      "caption": "they'll know everyone's name by the end.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "gemini-s11",
+      "sign": "gemini",
+      "text": "first date with a gemini: we covered aliens, taxes, and their ex",
+      "caption": "three hours, zero awkward silences.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "gemini-s12",
+      "sign": "gemini",
+      "text": "gemini ex energy: \"we should catch up\" and means it, briefly",
+      "caption": "for about one afternoon, sincerely.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "gemini-s13",
+      "sign": "gemini",
+      "text": "situationship with a gemini: you're both confused and they're narrating it",
+      "caption": "with live commentary, of course.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "gemini-s14",
+      "sign": "gemini",
+      "text": "the gemini in the group chat started three topics before you woke up",
+      "caption": "catching up takes twenty minutes.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "gemini-s15",
+      "sign": "gemini",
+      "text": "red flag: a gemini who tells the same story the same way twice",
+      "caption": "the details should change. that's the fun.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "gemini-s16",
+      "sign": "gemini",
+      "text": "a gemini changing their mind isn't flaky, it's an update",
+      "caption": "version 2.0 just dropped. tag your gemini.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "gemini-s17",
+      "sign": "gemini",
+      "text": "gemini energy is having a podcast idea every single day",
+      "caption": "none recorded, all brilliant.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "gemini-s18",
+      "sign": "gemini",
+      "text": "venus in gemini and i fall for whoever has the best comebacks",
+      "caption": "banter is the love language here.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "gemini-s19",
+      "sign": "gemini",
+      "text": "flirting with a gemini is just a nonstop trivia battle",
+      "caption": "know your fun facts or go home.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "gemini-s20",
+      "sign": "gemini",
+      "text": "gemini love language: sending you 14 memes before you're awake",
+      "caption": "good morning, here's the internet.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "gemini-s21",
+      "sign": "gemini",
+      "text": "hot take: geminis aren't two-faced, we just have range",
+      "caption": "range is a talent. agree?",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "gemini-s22",
+      "sign": "gemini",
+      "text": "gemini sun, gemini moon, both are typing right now",
+      "caption": "the typing bubble never stops.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "gemini-s23",
+      "sign": "gemini",
+      "text": "a gemini in a group project: brilliant ideas, zero follow-through",
+      "caption": "the vision was there, the slides were not.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "gemini-s24",
+      "sign": "gemini",
+      "text": "my gemini mercury will start an argument just to see how it ends",
+      "caption": "curiosity, not conflict. mostly.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "gemini-s25",
+      "sign": "gemini",
+      "text": "lowkey a gemini is the best person to get lost with",
+      "caption": "you'll never be bored on the detour.",
+      "hashtags": [
+        "gemini",
+        "geminiseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -322,7 +985,7 @@
         "cancerseason",
         "watersigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -335,7 +998,7 @@
         "cancerseason",
         "watersigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -348,7 +1011,7 @@
         "cancerseason",
         "watersigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -361,7 +1024,7 @@
         "cancerseason",
         "watersigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -373,8 +1036,8 @@
         "cancer",
         "cancerseason",
         "watersigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -386,8 +1049,8 @@
         "cancer",
         "cancerseason",
         "watersigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -399,8 +1062,8 @@
         "cancer",
         "cancerseason",
         "watersigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -412,8 +1075,229 @@
         "cancer",
         "cancerseason",
         "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "cancer-s09",
+      "sign": "cancer",
+      "text": "cancer texting habits: \"did you eat?\" every two hours",
+      "caption": "the check-ins are love. tag your cancer.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "cancer-s10",
+      "sign": "cancer",
+      "text": "green flag: a cancer will bring you soup without being asked",
+      "caption": "sick or not, the soup is coming.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "cancer-s11",
+      "sign": "cancer",
+      "text": "first date with a cancer: they asked about your childhood dog",
+      "caption": "and they remembered its name forever.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "cancer-s12",
+      "sign": "cancer",
+      "text": "cancer ex energy: wishes you well, still has the movie tickets",
+      "caption": "sentimental does not mean single-ready.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "cancer-s13",
+      "sign": "cancer",
+      "text": "situationship with a cancer? they already picked out a couch",
+      "caption": "casual is not in the vocabulary.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "cancer-s14",
+      "sign": "cancer",
+      "text": "the cancer in the group chat remembers everyone's anniversaries, even yours",
+      "caption": "they're the group's calendar and mom.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "cancer-s15",
+      "sign": "cancer",
+      "text": "red flag: a cancer who says they're over their ex",
+      "caption": "they have a shoebox of memories. trust us.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "cancer-s16",
+      "sign": "cancer",
+      "text": "a cancer will leave the party early and text \"miss u guys\"",
+      "caption": "homebody with a big heart. relate?",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "cancer-s17",
+      "sign": "cancer",
+      "text": "cancer energy is reading old texts at 2am for fun",
+      "caption": "nostalgia is a hobby here.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "cancer-s18",
+      "sign": "cancer",
+      "text": "flirting with a cancer means letting them feed you, that's it",
+      "caption": "say yes to seconds and they're yours.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "cancer-s19",
+      "sign": "cancer",
+      "text": "cancer love language: tucking you in with a blanket you didn't need",
+      "caption": "you needed it. they knew.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "cancer-s20",
+      "sign": "cancer",
+      "text": "hot take: cancers are the funniest sign and nobody gives them credit",
+      "caption": "the jokes are elite. agree?",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "cancer-s21",
+      "sign": "cancer",
+      "text": "cancer sun with a scorpio moon? congrats, you've met a mood ring",
+      "caption": "every color, every hour.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "cancer-s22",
+      "sign": "cancer",
+      "text": "a cancer's shell is just a cozy hoodie and three snacks",
+      "caption": "protection, but make it comfy.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "cancer-s23",
+      "sign": "cancer",
+      "text": "mars in cancer means i get mad then make you dinner anyway",
+      "caption": "angry but nurturing, the cancer way.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "cancer-s24",
+      "sign": "cancer",
+      "text": "idgaf rn but my cancer moon definitely does",
+      "caption": "the moon cares for both of us.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "cancer-s25",
+      "sign": "cancer",
+      "text": "cancer moms are undefeated. they will adopt your entire friend group",
+      "caption": "everyone gets a plate and a hug.",
+      "hashtags": [
+        "cancer",
+        "cancerseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -426,7 +1310,7 @@
         "leoseason",
         "firesigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -439,7 +1323,7 @@
         "leoseason",
         "firesigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -452,7 +1336,7 @@
         "leoseason",
         "firesigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -465,7 +1349,7 @@
         "leoseason",
         "firesigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -477,8 +1361,8 @@
         "leo",
         "leoseason",
         "firesigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -490,8 +1374,8 @@
         "leo",
         "leoseason",
         "firesigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -503,8 +1387,8 @@
         "leo",
         "leoseason",
         "firesigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -516,8 +1400,229 @@
         "leo",
         "leoseason",
         "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "leo-s09",
+      "sign": "leo",
+      "text": "leo texting habits: sends a selfie instead of \"good morning\"",
+      "caption": "the selfie is the greeting. tag your leo.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "leo-s10",
+      "sign": "leo",
+      "text": "green flag: a leo hypes you up louder than your own mom",
+      "caption": "the best cheerleader in the zodiac.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "leo-s11",
+      "sign": "leo",
+      "text": "first date with a leo: they picked the spot for the lighting",
+      "caption": "golden hour was not an accident.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "leo-s12",
+      "sign": "leo",
+      "text": "leo ex energy: posting a glow-up photo the same day it ends",
+      "caption": "the revenge is just looking amazing.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "leo-s13",
+      "sign": "leo",
+      "text": "situationship with a leo? sorry, they need the official announcement",
+      "caption": "soft launch is not enough for a leo.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "leo-s14",
+      "sign": "leo",
+      "text": "the leo in the group chat changed the group name to their name",
+      "caption": "it's their chat now, everyone knows.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "leo-s15",
+      "sign": "leo",
+      "text": "red flag: a leo who doesn't want a birthday dinner. check on them",
+      "caption": "something is seriously off.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "leo-s16",
+      "sign": "leo",
+      "text": "a leo's mirror deserves a raise honestly",
+      "caption": "it works overtime every single day.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "leo-s17",
+      "sign": "leo",
+      "text": "leo energy is clapping when the plane lands, and meaning it",
+      "caption": "applause for everyone, especially the pilot.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "leo-s18",
+      "sign": "leo",
+      "text": "a leo venus wants flowers, plural, delivered publicly",
+      "caption": "romance needs an audience. agree?",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "leo-s19",
+      "sign": "leo",
+      "text": "flirting with a leo is easy. compliment the hair. done.",
+      "caption": "works every time, guaranteed.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "leo-s20",
+      "sign": "leo",
+      "text": "leo love language: making you their phone wallpaper",
+      "caption": "you're the main character now too.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "leo-s21",
+      "sign": "leo",
+      "text": "hot take: leos are actually the most generous sign. ask anyone",
+      "caption": "they'll cover dinner and the dessert.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "leo-s22",
+      "sign": "leo",
+      "text": "living with a leo means applauding when they do the dishes",
+      "caption": "positive reinforcement only, please.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "leo-s23",
+      "sign": "leo",
+      "text": "a leo at karaoke picks a song with a key change",
+      "caption": "and absolutely nails it. relate?",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "leo-s24",
+      "sign": "leo",
+      "text": "leo sun, main character, supporting cast is everyone else",
+      "caption": "no hard feelings, it's just the script.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "leo-s25",
+      "sign": "leo",
+      "text": "put me on a lie detector and ask if i'm a leo. obviously",
+      "caption": "the machine already knew.",
+      "hashtags": [
+        "leo",
+        "leoseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -530,7 +1635,7 @@
         "virgoseason",
         "earthsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -543,7 +1648,7 @@
         "virgoseason",
         "earthsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -556,7 +1661,7 @@
         "virgoseason",
         "earthsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -569,7 +1674,7 @@
         "virgoseason",
         "earthsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -581,8 +1686,8 @@
         "virgo",
         "virgoseason",
         "earthsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -594,8 +1699,8 @@
         "virgo",
         "virgoseason",
         "earthsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -607,8 +1712,8 @@
         "virgo",
         "virgoseason",
         "earthsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -620,8 +1725,229 @@
         "virgo",
         "virgoseason",
         "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "virgo-s09",
+      "sign": "virgo",
+      "text": "virgo texting habits: proper punctuation, zero emojis, absolutely no typos",
+      "caption": "a period at the end. every time.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "virgo-s10",
+      "sign": "virgo",
+      "text": "green flag: a virgo will remind you to drink water, lovingly",
+      "caption": "hydration as a love language. tag your virgo.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "virgo-s11",
+      "sign": "virgo",
+      "text": "first date with a virgo: they wiped down the table first",
+      "caption": "hygiene is a green flag, honestly.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "virgo-s12",
+      "sign": "virgo",
+      "text": "virgo ex energy: sends back your stuff, labeled and folded",
+      "caption": "the cleanest breakup you'll ever have.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "virgo-s13",
+      "sign": "virgo",
+      "text": "situationship with a virgo? they made a pros and cons list",
+      "caption": "the pros won, barely.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "virgo-s14",
+      "sign": "virgo",
+      "text": "the virgo in the group chat corrects \"your\" to \"you're\" instantly",
+      "caption": "grammar police, but friendly.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "virgo-s15",
+      "sign": "virgo",
+      "text": "red flag: a virgo who says \"whatever works.\" they are lying",
+      "caption": "they have a plan already. ask.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "virgo-s16",
+      "sign": "virgo",
+      "text": "a virgo's \"quick tidy\" is a four-hour deep clean",
+      "caption": "the baseboards are spotless now.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "virgo-s17",
+      "sign": "virgo",
+      "text": "virgo energy is reading every review before buying a $4 spatula",
+      "caption": "research is self-care. agree?",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "virgo-s18",
+      "sign": "virgo",
+      "text": "venus in virgo and i fall for people who reply on time",
+      "caption": "punctuality is attractive, period.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "virgo-s19",
+      "sign": "virgo",
+      "text": "flirting with a virgo means showing up exactly when you said",
+      "caption": "on time is the whole pickup line.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "virgo-s20",
+      "sign": "virgo",
+      "text": "virgo love language: noticing you're tired and handling everything quietly",
+      "caption": "no announcement, just done.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "virgo-s21",
+      "sign": "virgo",
+      "text": "hot take: virgos aren't picky, everyone else just has low standards",
+      "caption": "standards are not a flaw.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "virgo-s22",
+      "sign": "virgo",
+      "text": "virgo moon so i apologize for things that weren't my fault",
+      "caption": "sorry for apologizing, honestly.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "virgo-s23",
+      "sign": "virgo",
+      "text": "a virgo on vacation still brings a planner and three backup chargers",
+      "caption": "relaxing, but with structure.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "virgo-s24",
+      "sign": "virgo",
+      "text": "virgo sun, sagittarius moon: organized chaos with a carry-on bag",
+      "caption": "the itinerary has a spontaneous section.",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "virgo-s25",
+      "sign": "virgo",
+      "text": "ngl a virgo will fix your life and expect nothing back",
+      "caption": "the most underrated friend. agree?",
+      "hashtags": [
+        "virgo",
+        "virgoseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -634,7 +1960,7 @@
         "libraseason",
         "airsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -647,7 +1973,7 @@
         "libraseason",
         "airsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -660,7 +1986,7 @@
         "libraseason",
         "airsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -673,7 +1999,7 @@
         "libraseason",
         "airsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -685,8 +2011,8 @@
         "libra",
         "libraseason",
         "airsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -698,8 +2024,8 @@
         "libra",
         "libraseason",
         "airsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -711,8 +2037,8 @@
         "libra",
         "libraseason",
         "airsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -724,8 +2050,229 @@
         "libra",
         "libraseason",
         "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "libra-s09",
+      "sign": "libra",
+      "text": "libra texting habits: \"haha\" to be polite, \"hahaha\" when it's real",
+      "caption": "learn the code. tag your libra.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "libra-s10",
+      "sign": "libra",
+      "text": "green flag: a libra will make sure everyone feels included",
+      "caption": "nobody gets left out on their watch.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "libra-s11",
+      "sign": "libra",
+      "text": "first date with a libra: they complimented your shoes, then the waiter's",
+      "caption": "charm is just their default setting.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "libra-s12",
+      "sign": "libra",
+      "text": "libra ex energy: \"we're still friends!\" and they actually mean it",
+      "caption": "peace is the priority, always.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "libra-s13",
+      "sign": "libra",
+      "text": "situationship with a libra: they can't decide, so it just continues",
+      "caption": "indecision, but make it romantic.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "libra-s14",
+      "sign": "libra",
+      "text": "the libra in the group chat mediates every fight with a gif",
+      "caption": "peacekeeping, one gif at a time.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "libra-s15",
+      "sign": "libra",
+      "text": "red flag: a libra who orders in under one minute. impostor",
+      "caption": "real libras need at least twenty.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "libra-s16",
+      "sign": "libra",
+      "text": "a libra can't pick a restaurant but can pick your outfit instantly",
+      "caption": "their talents are very specific.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "libra-s17",
+      "sign": "libra",
+      "text": "libra energy is rearranging the room before having the hard talk",
+      "caption": "ambiance matters, even for feelings.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "libra-s18",
+      "sign": "libra",
+      "text": "flirting with a libra is a two-person charm competition",
+      "caption": "nobody wins, everyone blushes.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "libra-s19",
+      "sign": "libra",
+      "text": "libra love language: matching outfits and an aesthetic photo dump",
+      "caption": "couple content is a must. agree?",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "libra-s20",
+      "sign": "libra",
+      "text": "hot take: libras aren't fake nice, they're just really, really nice",
+      "caption": "kindness is real here, promise.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "libra-s21",
+      "sign": "libra",
+      "text": "my crush has to be pretty and polite, i'm a libra venus",
+      "caption": "manners are the main requirement.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "libra-s22",
+      "sign": "libra",
+      "text": "a libra will say \"no worries!\" with seven worries",
+      "caption": "the exclamation point is doing a lot.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "libra-s23",
+      "sign": "libra",
+      "text": "libra sun asking the whole group chat which text to send",
+      "caption": "democracy decides the reply.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "libra-s24",
+      "sign": "libra",
+      "text": "mars in libra: i don't argue, i send a calm, balanced essay",
+      "caption": "both sides, cited and fair.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "libra-s25",
+      "sign": "libra",
+      "text": "one libra smile and you forget why you were mad",
+      "caption": "disarming is their superpower.",
+      "hashtags": [
+        "libra",
+        "libraseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -738,7 +2285,7 @@
         "scorpioseason",
         "watersigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -751,7 +2298,7 @@
         "scorpioseason",
         "watersigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -764,7 +2311,7 @@
         "scorpioseason",
         "watersigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -777,7 +2324,7 @@
         "scorpioseason",
         "watersigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -789,8 +2336,8 @@
         "scorpio",
         "scorpioseason",
         "watersigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -802,8 +2349,8 @@
         "scorpio",
         "scorpioseason",
         "watersigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -815,8 +2362,8 @@
         "scorpio",
         "scorpioseason",
         "watersigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -828,8 +2375,229 @@
         "scorpio",
         "scorpioseason",
         "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "scorpio-s09",
+      "sign": "scorpio",
+      "text": "scorpio texting habits: read at 3:02, replied at 3:47, perfectly calculated",
+      "caption": "nothing is an accident. tag your scorpio.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "scorpio-s10",
+      "sign": "scorpio",
+      "text": "green flag: a scorpio will keep your secret forever, no exceptions",
+      "caption": "the vault is locked for life.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "scorpio-s11",
+      "sign": "scorpio",
+      "text": "first date with a scorpio: they asked your biggest fear by dessert",
+      "caption": "small talk was skipped entirely.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "scorpio-s12",
+      "sign": "scorpio",
+      "text": "scorpio ex energy: silent, unbothered, watching your story within seconds",
+      "caption": "they see everything. they say nothing.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "scorpio-s13",
+      "sign": "scorpio",
+      "text": "situationship with a scorpio? impossible. it's all or absolutely nothing",
+      "caption": "no gray area with this sign.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "scorpio-s14",
+      "sign": "scorpio",
+      "text": "the scorpio in the group chat reads everything and says nothing",
+      "caption": "the silent observer knows all.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "scorpio-s15",
+      "sign": "scorpio",
+      "text": "red flag: a scorpio being too nice. something's coming",
+      "caption": "enjoy it while it lasts.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "scorpio-s16",
+      "sign": "scorpio",
+      "text": "a scorpio's private story has three people and one is their cat",
+      "caption": "exclusive is an understatement.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "scorpio-s17",
+      "sign": "scorpio",
+      "text": "scorpio energy is knowing the ending of a mystery in chapter one",
+      "caption": "nobody can surprise them. relate?",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "scorpio-s18",
+      "sign": "scorpio",
+      "text": "flirting with a scorpio is a staring contest you'll lose",
+      "caption": "don't blink. you will anyway.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "scorpio-s19",
+      "sign": "scorpio",
+      "text": "scorpio love language: remembering every detail you ever told them",
+      "caption": "attentive or detective? both.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "scorpio-s20",
+      "sign": "scorpio",
+      "text": "hot take: scorpios are the softest sign, they just hide it well",
+      "caption": "soft center, tough shell. agree?",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "scorpio-s21",
+      "sign": "scorpio",
+      "text": "my scorpio moon is calm, mysterious, and rewatching our texts",
+      "caption": "composed outside, analyzing inside.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "scorpio-s22",
+      "sign": "scorpio",
+      "text": "a scorpio will forgive you, eventually, after a full investigation",
+      "caption": "the case is still open.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "scorpio-s23",
+      "sign": "scorpio",
+      "text": "pluto-ruled scorpio has reinvented themselves four times since june",
+      "caption": "new era every season. relate?",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "scorpio-s24",
+      "sign": "scorpio",
+      "text": "scorpio sun, leo rising: mysterious but make it glamorous",
+      "caption": "intensity with good lighting.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "scorpio-s25",
+      "sign": "scorpio",
+      "text": "idk tbh but a scorpio stare could charge my phone",
+      "caption": "the energy is unmatched.",
+      "hashtags": [
+        "scorpio",
+        "scorpioseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -842,7 +2610,7 @@
         "sagseason",
         "firesigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -855,7 +2623,7 @@
         "sagseason",
         "firesigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -868,7 +2636,7 @@
         "sagseason",
         "firesigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -881,7 +2649,7 @@
         "sagseason",
         "firesigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -893,8 +2661,8 @@
         "sagittarius",
         "sagseason",
         "firesigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -906,8 +2674,8 @@
         "sagittarius",
         "sagseason",
         "firesigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -919,8 +2687,8 @@
         "sagittarius",
         "sagseason",
         "firesigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -932,8 +2700,229 @@
         "sagittarius",
         "sagseason",
         "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "sagittarius-s09",
+      "sign": "sagittarius",
+      "text": "sagittarius texting habits: replies from a different time zone every week",
+      "caption": "where are they now? nobody knows.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "sagittarius-s10",
+      "sign": "sagittarius",
+      "text": "green flag: a sagittarius makes every boring errand an adventure",
+      "caption": "grocery run became a road trip.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "sagittarius-s11",
+      "sign": "sagittarius",
+      "text": "first date with a sagittarius: started at coffee, ended at the beach",
+      "caption": "plans are just suggestions here.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "sagittarius-s12",
+      "sign": "sagittarius",
+      "text": "sagittarius ex energy: \"no hard feelings!\" already in another city",
+      "caption": "moving on, literally. tag your sag.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "sagittarius-s13",
+      "sign": "sagittarius",
+      "text": "situationship with a sagittarius is their favorite kind of relationship tbh",
+      "caption": "freedom with benefits of company.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "sagittarius-s14",
+      "sign": "sagittarius",
+      "text": "the sagittarius in the group chat sends a flight deal at 2am",
+      "caption": "nobody's going, but everyone's tempted.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "sagittarius-s15",
+      "sign": "sagittarius",
+      "text": "red flag: a sagittarius with no stamps in their passport",
+      "caption": "the wanderlust has to show somewhere.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "sagittarius-s16",
+      "sign": "sagittarius",
+      "text": "every great story starts with a sagittarius saying \"trust me\"",
+      "caption": "and some questionable ones too.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "sagittarius-s17",
+      "sign": "sagittarius",
+      "text": "sagittarius energy is laughing so loud the whole restaurant turns around",
+      "caption": "joy is meant to be heard.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "sagittarius-s18",
+      "sign": "sagittarius",
+      "text": "flirting with a sagittarius means daring them to do something silly",
+      "caption": "they never say no to a dare.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "sagittarius-s19",
+      "sign": "sagittarius",
+      "text": "sagittarius love language: \"get in the car, don't ask questions\"",
+      "caption": "the destination is a surprise.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "sagittarius-s20",
+      "sign": "sagittarius",
+      "text": "hot take: sagittarius is the luckiest sign and it's not even fair",
+      "caption": "jupiter keeps showing up for them.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "sagittarius-s21",
+      "sign": "sagittarius",
+      "text": "sag sun, gemini moon: i've already forgotten what we were talking about",
+      "caption": "onto the next thing. relate?",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "sagittarius-s22",
+      "sign": "sagittarius",
+      "text": "a sagittarius can't sit still for a two-hour movie",
+      "caption": "intermission needed at minute forty.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "sagittarius-s23",
+      "sign": "sagittarius",
+      "text": "mars in sagittarius means my arguments come with fun facts",
+      "caption": "you'll lose and learn something.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "sagittarius-s24",
+      "sign": "sagittarius",
+      "text": "jupiter-ruled sagittarius said yes before you finished the question",
+      "caption": "optimism at full speed.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "sagittarius-s25",
+      "sign": "sagittarius",
+      "text": "lowkey a sagittarius will make you say yes to everything",
+      "caption": "your comfort zone never stood a chance.",
+      "hashtags": [
+        "sagittarius",
+        "sagseason",
+        "firesigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -946,7 +2935,7 @@
         "capricornseason",
         "earthsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -959,7 +2948,7 @@
         "capricornseason",
         "earthsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -972,7 +2961,7 @@
         "capricornseason",
         "earthsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -985,7 +2974,7 @@
         "capricornseason",
         "earthsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -997,8 +2986,8 @@
         "capricorn",
         "capricornseason",
         "earthsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -1010,8 +2999,8 @@
         "capricorn",
         "capricornseason",
         "earthsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -1023,8 +3012,8 @@
         "capricorn",
         "capricornseason",
         "earthsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -1036,8 +3025,229 @@
         "capricorn",
         "capricornseason",
         "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "capricorn-s09",
+      "sign": "capricorn",
+      "text": "capricorn texting habits: replies only during business hours",
+      "caption": "after 6pm, leave a message.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "capricorn-s10",
+      "sign": "capricorn",
+      "text": "green flag: a capricorn will help you file your taxes",
+      "caption": "the most romantic thing possible. agree?",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "capricorn-s11",
+      "sign": "capricorn",
+      "text": "first date with a capricorn: they asked about your long-term goals",
+      "caption": "bring your vision board.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "capricorn-s12",
+      "sign": "capricorn",
+      "text": "capricorn ex energy: got promoted the week after you left",
+      "caption": "the glow-up is professional.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "capricorn-s13",
+      "sign": "capricorn",
+      "text": "situationship with a capricorn? they need a timeline and a deadline",
+      "caption": "define it or they're out.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "capricorn-s14",
+      "sign": "capricorn",
+      "text": "the capricorn in the group chat finally made the trip spreadsheet",
+      "caption": "the trip actually happens now.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "capricorn-s15",
+      "sign": "capricorn",
+      "text": "red flag: a capricorn without a savings account. who is this?",
+      "caption": "they must be in disguise.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "capricorn-s16",
+      "sign": "capricorn",
+      "text": "a capricorn's idea of fun is a productive saturday",
+      "caption": "errands done, life thriving. relate?",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "capricorn-s17",
+      "sign": "capricorn",
+      "text": "capricorn energy is taking a nap and calling it a strategy",
+      "caption": "rest is part of the plan.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "capricorn-s18",
+      "sign": "capricorn",
+      "text": "flirting with a capricorn means having a stable career, sorry",
+      "caption": "ambition is attractive here.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "capricorn-s19",
+      "sign": "capricorn",
+      "text": "capricorn love language: fixing your problem before you finish explaining",
+      "caption": "solution delivered, feelings later.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "capricorn-s20",
+      "sign": "capricorn",
+      "text": "hot take: capricorns are hilarious. dry, deadpan, absolutely hilarious",
+      "caption": "the humor sneaks up on you.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "capricorn-s21",
+      "sign": "capricorn",
+      "text": "i'm a capricorn moon so i cry once a year, scheduled",
+      "caption": "emotions have a calendar slot.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "capricorn-s22",
+      "sign": "capricorn",
+      "text": "a capricorn will say \"i'm proud of you\" maybe twice ever",
+      "caption": "treasure it when it happens.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "capricorn-s23",
+      "sign": "capricorn",
+      "text": "capricorn rising answers \"how are you\" with a quarterly update",
+      "caption": "growth is up 12 percent, thanks.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "capricorn-s24",
+      "sign": "capricorn",
+      "text": "saturn-ruled capricorn has a retirement fund at 22 and no regrets",
+      "caption": "planning ahead since birth.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "capricorn-s25",
+      "sign": "capricorn",
+      "text": "ngl a capricorn is who you call when it all falls apart",
+      "caption": "calm, steady, already has a plan.",
+      "hashtags": [
+        "capricorn",
+        "capricornseason",
+        "earthsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -1050,7 +3260,7 @@
         "aquariusseason",
         "airsigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -1063,7 +3273,7 @@
         "aquariusseason",
         "airsigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -1076,7 +3286,7 @@
         "aquariusseason",
         "airsigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -1089,7 +3299,7 @@
         "aquariusseason",
         "airsigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -1101,8 +3311,8 @@
         "aquarius",
         "aquariusseason",
         "airsigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -1114,8 +3324,8 @@
         "aquarius",
         "aquariusseason",
         "airsigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -1127,8 +3337,8 @@
         "aquarius",
         "aquariusseason",
         "airsigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -1140,8 +3350,229 @@
         "aquarius",
         "aquariusseason",
         "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aquarius-s09",
+      "sign": "aquarius",
+      "text": "aquarius texting habits: replies to a message from three weeks ago",
+      "caption": "time is a construct. tag your aquarius.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "aquarius-s10",
+      "sign": "aquarius",
+      "text": "green flag: an aquarius will defend the underdog every single time",
+      "caption": "justice is their whole thing.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "aquarius-s11",
+      "sign": "aquarius",
+      "text": "first date with an aquarius: we discussed the meaning of time",
+      "caption": "deep talk, zero small talk.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "aquarius-s12",
+      "sign": "aquarius",
+      "text": "aquarius ex energy: genuinely forgot you existed, wishes you well",
+      "caption": "detached, but kind about it.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "aquarius-s13",
+      "sign": "aquarius",
+      "text": "situationship with an aquarius: they'll never define it, on principle",
+      "caption": "labels are too mainstream.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "aquarius-s14",
+      "sign": "aquarius",
+      "text": "the aquarius in the group chat muted it in 2021, still lurks",
+      "caption": "they see everything eventually.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "aquarius-s15",
+      "sign": "aquarius",
+      "text": "red flag: an aquarius who agrees with everyone. are you okay?",
+      "caption": "they need at least one hot take.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "aquarius-s16",
+      "sign": "aquarius",
+      "text": "an aquarius has a niche hobby nobody else has heard of",
+      "caption": "and they're the best at it.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aquarius-s17",
+      "sign": "aquarius",
+      "text": "aquarius energy is being weird on purpose and proud of it",
+      "caption": "normal was never the goal. relate?",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "aquarius-s18",
+      "sign": "aquarius",
+      "text": "flirting with an aquarius means arguing about something niche for hours",
+      "caption": "the debate is the date.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "aquarius-s19",
+      "sign": "aquarius",
+      "text": "aquarius love language: sending you a random article at 1am",
+      "caption": "read it, then discuss. required.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "aquarius-s20",
+      "sign": "aquarius",
+      "text": "hot take: aquarius is the most loyal friend you'll ever have",
+      "caption": "distant but always there. agree?",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "aquarius-s21",
+      "sign": "aquarius",
+      "text": "aquarius sun, cancer moon: detached on the outside, soup on the inside",
+      "caption": "a cozy alien, basically.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "aquarius-s22",
+      "sign": "aquarius",
+      "text": "an aquarius will save the planet but forget your birthday",
+      "caption": "priorities are global.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "aquarius-s23",
+      "sign": "aquarius",
+      "text": "mars in aquarius: i rebel against rules nobody even made",
+      "caption": "the system is the opponent.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "aquarius-s24",
+      "sign": "aquarius",
+      "text": "uranus-ruled aquarius changed their whole aesthetic overnight again",
+      "caption": "new era, who dis?",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "aquarius-s25",
+      "sign": "aquarius",
+      "text": "idgaf rn ngl, the aquarius motto since forever",
+      "caption": "unbothered is the brand.",
+      "hashtags": [
+        "aquarius",
+        "aquariusseason",
+        "airsigns",
+        "zodiacmemes",
+        "relatable"
       ]
     },
     {
@@ -1154,7 +3585,7 @@
         "piscesseason",
         "watersigns",
         "zodiacmemes",
-        "astrologytiktok"
+        "relatable"
       ]
     },
     {
@@ -1167,7 +3598,7 @@
         "piscesseason",
         "watersigns",
         "datingadvice",
-        "relatable"
+        "zodiacsigns"
       ]
     },
     {
@@ -1180,7 +3611,7 @@
         "piscesseason",
         "watersigns",
         "astrologytiktok",
-        "astrologymemes"
+        "horoscope"
       ]
     },
     {
@@ -1193,7 +3624,7 @@
         "piscesseason",
         "watersigns",
         "relatable",
-        "zodiacmemes"
+        "datingtips"
       ]
     },
     {
@@ -1205,8 +3636,8 @@
         "pisces",
         "piscesseason",
         "watersigns",
-        "astrologymemes",
-        "datingadvice"
+        "zodiacsigns",
+        "astrologymemes"
       ]
     },
     {
@@ -1218,8 +3649,8 @@
         "pisces",
         "piscesseason",
         "watersigns",
-        "zodiacmemes",
-        "astrologytiktok"
+        "horoscope",
+        "zodiacmemes"
       ]
     },
     {
@@ -1231,8 +3662,8 @@
         "pisces",
         "piscesseason",
         "watersigns",
-        "datingadvice",
-        "relatable"
+        "datingtips",
+        "datingadvice"
       ]
     },
     {
@@ -1244,8 +3675,229 @@
         "pisces",
         "piscesseason",
         "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "pisces-s09",
+      "sign": "pisces",
+      "text": "pisces texting habits: voice notes that are eleven minutes long",
+      "caption": "press play and get comfy. tag your pisces.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "pisces-s10",
+      "sign": "pisces",
+      "text": "green flag: a pisces writes you a poem for no reason",
+      "caption": "romance on a random tuesday.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "pisces-s11",
+      "sign": "pisces",
+      "text": "first date with a pisces: they cried at the sunset. cute",
+      "caption": "emotional and proud of it.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
         "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "pisces-s12",
+      "sign": "pisces",
+      "text": "pisces ex energy: wrote a playlist about you, called it healing",
+      "caption": "the healing has 62 songs.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "pisces-s13",
+      "sign": "pisces",
+      "text": "situationship with a pisces? they're already in love, sorry",
+      "caption": "casual is just not possible.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "zodiacsigns",
         "astrologymemes"
+      ]
+    },
+    {
+      "id": "pisces-s14",
+      "sign": "pisces",
+      "text": "the pisces in the group chat sends a heart for every message",
+      "caption": "pure love, every single time.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "pisces-s15",
+      "sign": "pisces",
+      "text": "red flag: a pisces who doesn't have a comfort movie",
+      "caption": "every pisces needs one on repeat.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "pisces-s16",
+      "sign": "pisces",
+      "text": "a pisces will forgive anyone who says sorry with a dog photo",
+      "caption": "the dog photo works every time.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "pisces-s17",
+      "sign": "pisces",
+      "text": "pisces energy is zoning out mid-conversation and blaming the moon",
+      "caption": "the moon is always involved. relate?",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
+      ]
+    },
+    {
+      "id": "pisces-s18",
+      "sign": "pisces",
+      "text": "flirting with a pisces means sending them a song. that's all",
+      "caption": "pick the right song and it's over.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "datingadvice",
+        "zodiacsigns"
+      ]
+    },
+    {
+      "id": "pisces-s19",
+      "sign": "pisces",
+      "text": "pisces love language: a playlist made just for you, 47 songs",
+      "caption": "every track has a meaning.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "astrologytiktok",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "pisces-s20",
+      "sign": "pisces",
+      "text": "hot take: pisces are the most intuitive sign and kind of psychic",
+      "caption": "they knew you'd read this.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "relatable",
+        "datingtips"
+      ]
+    },
+    {
+      "id": "pisces-s21",
+      "sign": "pisces",
+      "text": "pisces sun, aries moon: cried, apologized, then won the argument",
+      "caption": "soft but surprisingly competitive.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "zodiacsigns",
+        "astrologymemes"
+      ]
+    },
+    {
+      "id": "pisces-s22",
+      "sign": "pisces",
+      "text": "a pisces daydream lasts longer than most relationships",
+      "caption": "the fantasy has seasons and sequels.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "horoscope",
+        "zodiacmemes"
+      ]
+    },
+    {
+      "id": "pisces-s23",
+      "sign": "pisces",
+      "text": "mars in pisces: i'd rather cry than fight, honestly",
+      "caption": "tears are a strategy too.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "datingtips",
+        "datingadvice"
+      ]
+    },
+    {
+      "id": "pisces-s24",
+      "sign": "pisces",
+      "text": "neptune-ruled pisces believes in signs, fate, and your horoscope app",
+      "caption": "the universe is always talking.",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "astrologymemes",
+        "astrologytiktok"
+      ]
+    },
+    {
+      "id": "pisces-s25",
+      "sign": "pisces",
+      "text": "pisces have the power to visit your dreams and just wave",
+      "caption": "friendly dream visits only. agree?",
+      "hashtags": [
+        "pisces",
+        "piscesseason",
+        "watersigns",
+        "zodiacmemes",
+        "relatable"
       ]
     }
   ]

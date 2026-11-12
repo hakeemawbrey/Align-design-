@@ -111,6 +111,10 @@ button[disabled]{opacity:.5;cursor:default}
           <div class="swatches" id="sw"></div>
         </div>
         <div class="field">
+          <span class="lbl">Sign-off</span>
+          <div class="seg" id="tag"><button data-v="houston" aria-pressed="true">Join the Houston beta</button><button data-v="beta" aria-pressed="false">Join the beta</button><button data-v="none" aria-pressed="false">None</button></div>
+        </div>
+        <div class="field">
           <span class="lbl">Text look</span>
           <div class="seg" id="style"><button data-v="clean" aria-pressed="true">Clean</button><button data-v="outline" aria-pressed="false">Outline</button></div>
         </div>
@@ -156,7 +160,15 @@ const PALETTES={
 const ROT=["classic","magenta","deep","rainbow","classic","magenta","aqua"];
 const ST={size:.075,min:.052,wrap:.86,lead:1.14,maxh:.62,shadow:.30,gap:.75,drift:.06};
 const $=id=>document.getElementById(id);
-const state={text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true,bg:"gradient",art:0,style:"clean"};
+const TAGS={houston:"come align · join the houston beta",beta:"come align · join the beta"};
+function tagFor(p){if(p.id&&p.id.startsWith("htx"))return"houston";return(crc32(p.text)>>>24)%2?"houston":"beta"}
+function drawTag(ctx){
+  if(!state.tag||!TAGS[state.tag])return;
+  const px=W*.026;ctx.save();ctx.font=`600 ${px}px Figtree`;ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.shadowColor="rgba(0,0,0,.35)";ctx.shadowBlur=px*.5;ctx.fillStyle="rgba(255,255,255,.72)";
+  ctx.fillText(TAGS[state.tag],W/2,H*.80);ctx.restore();
+}
+const state={tag:"houston",text:"",palette:"classic",ink:"light",scale:1,caption:"",tags:[],id:null,playing:true,bg:"gradient",art:0,style:"clean"};
 
 // crc32, so default gradients match the batch renderer
 const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c}return t})();
@@ -234,13 +246,13 @@ function drawArt(ctx,t){
   if(im.complete&&im.naturalWidth){const z=1+.07*(.5-.5*Math.cos(Math.PI*t)),dw=W*z,dh=H*z;ctx.drawImage(im,(W-dw)/2,(H-dh)/2,dw,dh)}
   ctx.fillStyle="rgba(0,0,0,.40)";ctx.fillRect(0,0,W,H);
   const g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.hypot(W,H)/2);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,"rgba(0,0,0,.33)");
-  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.drawImage(makeText(),0,0);
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.drawImage(makeText(),0,0);drawTag(ctx);
 }
 function drawFrame(ctx,t){
   if(state.bg==="art")return drawArt(ctx,t);
   const m=Math.round(W*ST.drift),bg=background(state.palette);
   const ox=Math.round(m*(.5+.5*Math.sin(Math.PI*(t-.5)))),oy=Math.round(m*.5*(1-Math.cos(Math.PI*t))/2);
-  ctx.drawImage(bg,ox,oy,W,H,0,0,W,H);ctx.drawImage(makeText(),0,0);
+  ctx.drawImage(bg,ox,oy,W,H,0,0,W,H);ctx.drawImage(makeText(),0,0);drawTag(ctx);
 }
 const secondsFor=t=>Math.round(Math.min(14,Math.max(6,3+t.split(/\s+/).filter(Boolean).length*.3))*10)/10;
 
@@ -262,6 +274,7 @@ function renderControls(){
   document.querySelectorAll(".item").forEach(b=>b.setAttribute("aria-current",b.dataset.id===state.id));
   document.querySelectorAll("#bgmode button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.bg));
   document.querySelectorAll("#style button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.style));
+  document.querySelectorAll("#tag button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.tag));
   $("artTools").hidden=state.bg!=="art";$("gradTools").hidden=state.bg==="art";
   document.querySelectorAll(".thumb").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.n===state.art));
   const a=ART[state.art];$("artCredit").textContent=a?artCredit(a):"";
@@ -271,7 +284,7 @@ function artCredit(a){return `Art: ${a.title||"untitled"}${a.creator?" by "+a.cr
 function layoutFor(text){const s=crc32(text);return{size:.70+((s>>>8)%64)/63*.65,wrap:.60+((s>>>16)%32)/31*.30}}
 function load(p){
   if(ART.length)state.art=ART[crc32(p.text)%ART.length].n;
-  Object.assign(state,{style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
+  Object.assign(state,{tag:tagFor(p),style:p.style||"clean",text:p.text,caption:p.caption||"",tags:p.tags||[],palette:defaultPalette(p),ink:"light",id:p.id,scale:1,wrap:null});
   if(state.bg!=="art"){const l=layoutFor(p.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}
   $("size").value=state.scale;t0=performance.now();renderControls();
   try{localStorage.setItem("gs-last",p.id)}catch(e){}
@@ -290,6 +303,7 @@ function captionText(){return state.caption.trim()+(state.bg==="art"&&ART[state.
 $("copyCap").onclick=async()=>{try{await navigator.clipboard.writeText(captionText());setStatus("Caption copied.")}catch(e){$("cap").select();setStatus("Press Ctrl/Cmd+C to copy the selected caption.")}};
 
 document.querySelectorAll("#style button").forEach(b=>b.onclick=()=>{state.style=b.dataset.v;renderControls()});
+document.querySelectorAll("#tag button").forEach(b=>b.onclick=()=>{state.tag=b.dataset.v;renderControls()});
 // artwork picker
 document.querySelectorAll("#bgmode button").forEach(b=>b.onclick=()=>{state.bg=b.dataset.v;
   if(state.bg==="art"){state.scale=1;state.wrap=null}else{const l=layoutFor(state.text);state.scale=Math.round(l.size*100)/100;state.wrap=l.wrap}

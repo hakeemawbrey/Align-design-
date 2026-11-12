@@ -44,7 +44,7 @@ def main():
         frame = np.asarray(bg.resize((render.W, render.H), Image.LANCZOS), np.float32) / 255   # whole painting, no crop
         txt, _ = render.text_layer(p["text"], style=p.get("style") or "clean", seed=zlib.crc32(p["text"].encode()))
         a = txt[..., 3:4]
-        img = (np.clip(frame * (1 - a) + txt[..., :3] * a, 0, 1) * 255 + 0.5).astype(np.uint8)
+        img = (np.clip(render.with_tag(frame * (1 - a) + txt[..., :3] * a, render.tag_for(p, zlib.crc32(p["text"].encode()))), 0, 1) * 255 + 0.5).astype(np.uint8)
         name = f"{i + 1:03d}-{p['id']}"
         Image.fromarray(img).save(os.path.join(OUT, name + ".jpg"), quality=92)
         tags = " ".join("#" + t.lstrip("#") for t in p.get("hashtags", [])[:5])
