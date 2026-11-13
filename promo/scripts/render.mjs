@@ -9,7 +9,7 @@
 //   --teaser=<id> renders a vertical teaser (promo/teaser.html?t=<id>) → promo/out/teasers/<id>.mp4
 //   --vertical renders the 9:16 (1080×1920) cut
 //   --calm[=speed] the social cut: plays at `speed` (default 0.8), and (vertical) shrinks the picture into a padded,
-//     soft-edged box over a blurred, darkened copy of itself, clear of the app's top bar, side buttons and caption.
+//     soft-edged box over a solid fill of the frame's average colour (no blurred copy), clear of the app's top bar, side buttons and caption.
 //     Make the sound with teaser-sound.mjs --calm too.
 //   options: --fps=30 --from=0 --to=30 --workers=4 --out=path.mp4
 import { createRequire } from 'node:module'
@@ -113,15 +113,15 @@ if (stills || sheet) {
   // blurred and darkened, and the box's edge is feathered into it through a rounded-corner alpha mask
   let vf = []
   if (CALM && VERT) {
-    const BOX = Number(arg('pad', 0.66)), BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = Math.round((VH - BH) / 2 - 30)   // --pad=<scale>: picture size inside the frame, R = 44, F = 22
-    const mask = path.join(ROOT, `promo/out/calm-mask-${BW}x${BH}.png`)
+    const BOX = Number(arg('pad', 0.66)), BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = Math.round((VH - BH) / 2 - 30), R = 90, F = 90   // --pad=<scale>: picture size inside the frame; R/F: corner radius and edge feather
+    const mask = path.join(ROOT, `promo/out/calm-mask-${BW}x${BH}-soft.png`)
     if (!existsSync(mask)) {
       await mkdir(path.dirname(mask), { recursive: true })
       const dx = `max(max(${R}-X,X-(W-1-${R})),0)`, dy = `max(max(${R}-Y,Y-(H-1-${R})),0)`
       spawnSync('ffmpeg', ['-v', 'error', '-y', '-f', 'lavfi', '-i', `color=black:s=${BW}x${BH}`, '-frames:v', '1', '-vf', `format=gray,geq=lum='255*clip((${R}-hypot(${dx},${dy}))/${F},0,1)'`, mask])
     }
     vf = ['-loop', '1', '-i', mask, '-filter_complex',
-      `[0:v]split[a][b];[a]scale=${Math.round(VW * 1.15)}:${Math.round(VH * 1.15)},crop=${VW}:${VH},boxblur=30:2,eq=brightness=-0.04:saturation=1.1[bg];` +
+      `[0:v]split[a][b];[a]scale=1:1:flags=area,scale=${VW}:${VH}:flags=neighbor,eq=brightness=-0.02[bg];` +
       `[b]scale=${BW}:${BH}:flags=lanczos,format=rgba[fg0];[${a.length ? 2 : 1}:v]format=gray[m];[fg0][m]alphamerge[fg];` +
       `[bg][fg]overlay=${BX}:${BY}:shortest=1,format=yuv420p[v]`, '-map', '[v]', ...(a.length ? ['-map', '1:a'] : [])]
   }
