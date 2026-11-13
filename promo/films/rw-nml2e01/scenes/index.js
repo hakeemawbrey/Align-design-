@@ -248,13 +248,17 @@ const F = makeFilm({
   cast: ['cancer', 'sagittarius', 'gemini'],
   cameos: CAMEOS,
   ending: 'lesson',
-  group: { cap: 'Who do you | *tell first?*', moods: ['heart', 'sparkle', 'wink'] },
+  group: { cap: 'Who do you | *tell first?*', moods: ['heart', 'sparkle', 'wink'],
+    draw(x, t, lt) {                // only during the group beat (fades before the lesson)
+      const out = 1 - ease.inQuad(prog(lt, 2.9, 3.2)); if (out <= 0.01) return
+      snow(x, t, { n: 30, alpha: clamp(lt / 0.6) * out }); snowStar(x, 540, 620, 100, 5, pop01(t, t - lt + 0.5, 0.4, 2) * out, 1, t)
+    } },
   lesson: { text: 'Notice who you run to. | *Don’t vanish.*', chip: '+1 SNOW-STAR' },
   last: {
     text: 'Next snow? | Cancer *says it.*',
     draw(x, t, lt) {
-      snowStar(x, 540, 1170, 140, 5, pop01(t, t - lt + 0.4, 0.4, 2), 1, t)
-      hearts(x, t, 540, 1300, t - lt + 0.8, { n: 6, life: 2.0, spread: 420, cell: 7, seed: 6 })
+      snowStar(x, 540, 900, 170, 5, pop01(t, t - lt + 0.4, 0.4, 2), 1, t)
+      hearts(x, t, 540, 1060, t - lt + 0.8, { n: 6, life: 2.0, spread: 420, cell: 7, seed: 6 })
     },
   },
 })
