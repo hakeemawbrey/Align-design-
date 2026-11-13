@@ -29,6 +29,7 @@
 //   0.50–1.00    "JOIN THE HOUSTON BETA" (Space Mono, bone ~72%) fades up under the phrase at y 1440 and stays to the fade
 //   3.70–4.40    fade to black (last frame black)
 // Pure function of t; nothing touches `document` at module top level (the sound build imports this in node).
+import { SOCIAL, socialEnd } from './social.js'
 import { clamp, lerp, prog, ease, tw, el, rng, hexToRgb } from '../src/lib.js'
 import { W, H, fill } from '../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from './sky.js'
@@ -101,7 +102,8 @@ function drawBurst(x, parts, px, py, t, t0, dur = 0.75) {
   x.restore()
 }
 
-export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA', short = false }) {   // cta: the quiet line under the phrase (e.g. 'JOIN THE WAITLIST', 'VOTE FOR YOUR CITY')
+export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA', short = false }) {
+  if (SOCIAL) { socialEnd.t = Math.min(socialEnd.t, start); return { start, end: start, root: null, update() {} } }   // social mode: no end card   // cta: the quiet line under the phrase (e.g. 'JOIN THE WAITLIST', 'VOTE FOR YOUR CITY')
   const S = start, T = k => S + k, END = S + ENDCARD_LEN
   try {
     await Promise.all([`800 ${COME_FS0}px Inter`, `italic 400 ${WORD_FS}px 'EB Garamond'`, `700 ${BETA_FS}px 'Space Mono'`].map(f => document.fonts.load(f)))
@@ -322,6 +324,7 @@ export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA'
 }
 
 export function endcardCues(start, { short = false } = {}) {
+  if (SOCIAL) { socialEnd.t = Math.min(socialEnd.t, start); return [] }
   const T = k => start + (short ? shortUnwarp(k) : k)
   const PET = [587.33, 659.25, 739.99, 880, 987.77, 1174.66]          // one soft rising chime per petal
   return [

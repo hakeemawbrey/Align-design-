@@ -6,7 +6,10 @@ import { W, H } from '../src/scenes/common.js'
 
 const stage = document.getElementById('stage'), fx = document.getElementById('fx'), ctx = fx.getContext('2d')
 const params = new URLSearchParams(location.search)
-const { SCENES, DURATION } = await import(`./${params.get('f')}/scenes/index.js`)
+const FILM = await import(`./${params.get('f')}/scenes/index.js`)
+const { SCENES } = FILM
+let { DURATION } = FILM
+const { socialEnd } = await import('./social.js')
 const RENDER = params.has('render')
 const SPEED = Number(params.get('speed') || 1)   // render.mjs --calm: the whole film plays slower (0.8 = 25% longer)
 if (RENDER) document.body.classList.add('render')
@@ -20,6 +23,29 @@ async function boot() {
   const scenes = []
   for (const [i, build] of SCENES.entries()) { const s = await build(stage); s.root && (s.root.style.zIndex = String(10 + i)); scenes.push(s) }
   stage.appendChild(fx)
+  // social mode: the film ends where its story ends (the end card's start); films may also export STORY_END
+  if (params.has('social')) { const e = Math.min(socialEnd.t, FILM.STORY_END ?? Infinity); if (e < DURATION) { DURATION = e; window.DURATION = DURATION / SPEED } }
+  // HOOK: a TikTok/Instagram-style hook caption, fully on screen from frame 1 (no animation) until HOOK_UNTIL (film s).
+  //   export const HOOK = 'Gemini is on trial | for a *meme.*'   (' | ' = line break, *word* = yellow accent)
+  //   export const HOOK_STYLE = 'outline' (white, thick black outline) | 'box' (white on a solid black box) | 'light' (black on white)
+  //   export const HOOK_UNTIL = 3.5 · HOOK_TOP = 260 (px from the top of the 1080×1920 frame)
+  if (FILM.HOOK) {
+    const st = FILM.HOOK_STYLE || 'outline', esc = v => v.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
+    const lines = String(FILM.HOOK).split('|').map(l => esc(l.trim()).replace(/\*([^*]+)\*/g, (_, w) => `<span class="hk-acc">${w}</span>`))
+    const hk = document.createElement('div'); hk.className = 'hk hk-' + st
+    hk.innerHTML = lines.map(l => `<div class="hk-line"><span>${l}</span></div>`).join('')
+    const css = document.createElement('style')
+    css.textContent = `.hk{position:absolute;left:0;right:0;top:${FILM.HOOK_TOP ?? 260}px;z-index:3000;text-align:center;font:900 84px/1.14 Inter,'Helvetica Neue',Arial,sans-serif;pointer-events:none}
+      .hk-line{margin:0 auto 10px;max-width:960px}
+      .hk-outline span{color:#fff;text-shadow:7.0px 0.0px 0 #000,6.5px 2.7px 0 #000,4.9px 4.9px 0 #000,2.7px 6.5px 0 #000,-0.0px 7.0px 0 #000,-2.7px 6.5px 0 #000,-4.9px 4.9px 0 #000,-6.5px 2.7px 0 #000,-7.0px -0.0px 0 #000,-6.5px -2.7px 0 #000,-4.9px -4.9px 0 #000,-2.7px -6.5px 0 #000,0.0px -7.0px 0 #000,2.7px -6.5px 0 #000,4.9px -4.9px 0 #000,6.5px -2.7px 0 #000,0 9px 0 #000}
+      .hk-outline .hk-acc{color:#ffd23a}
+      .hk-box span{display:inline;color:#fff;background:#000;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
+      .hk-box .hk-acc{color:#ffd23a;padding:0;background:none}
+      .hk-light span{display:inline;color:#111;background:#fff;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
+      .hk-light .hk-acc{color:#b8008f;padding:0;background:none}`
+    document.head.appendChild(css); stage.appendChild(hk)
+    window.__hook = { el: hk, until: FILM.HOOK_UNTIL ?? 3.5 }
+  }
   await document.fonts.ready
   await Promise.all([...document.images].map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r })))
   window.seek = (t) => {
@@ -32,6 +58,7 @@ async function boot() {
       if (s.root && s.fadeIn) s.root.style.opacity = String(prog(t, s.start, s.start + s.fadeIn))
     }
     ctx.clearRect(0, 0, W, H)
+    if (window.__hook) window.__hook.el.style.display = t < window.__hook.until ? 'block' : 'none'
     for (const s of scenes) if (s.fx && t >= (s.fxStart ?? s.start) && t < (s.fxEnd ?? s.end)) s.fx(ctx, t)
   }
   window.ready = true

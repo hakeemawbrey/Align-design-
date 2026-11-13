@@ -60,6 +60,7 @@
 // Everything is a pure function of t; nothing touches `document` at module top level (the sound build imports this
 // file in node through the films' scenes/index.js).
 // ═══════════════════════════════════════════════════════════════════════════════════════════════════
+import { SOCIAL, noScene } from './social.js'
 import { clamp, lerp, prog, ease, el, rng } from '../src/lib.js'
 import { W, H, A, fill } from '../src/scenes/common.js'
 import { drawPixelStar, layerCanvas } from './sky.js'
@@ -241,6 +242,7 @@ const SPAN = 0.28
 
 // ═══════════════════════════════════════════ cardCuts
 export function cardCuts(cuts, opts = {}) {
+  if (SOCIAL) return noScene
   const C = selectCuts(cuts, opts)
   return async function buildCardCuts(stage) {
     const root = fill(stage, { pointerEvents: 'none' })
@@ -329,6 +331,7 @@ export function cardCuts(cuts, opts = {}) {
 
 // ═══════════════════════════════════════════ cardCutCues (≈40% under the pilot's levels)
 export function cardCutCues(cuts, opts = {}) {
+  if (SOCIAL) return []
   const r3 = v => +v.toFixed(3)
   return selectCuts(cuts, opts).flatMap(c => {
     const t = c.t, pan = c.i % 2 ? 0.2 : -0.2
@@ -341,6 +344,7 @@ export function cardCutCues(cuts, opts = {}) {
 
 // ═══════════════════════════════════════════ cardFrame
 export function cardFrame({ start = 0, end, label = 'ALIGN · TONIGHT', numeral = null, fadeIn = 0.4, fadeOut = 0.4, opacity = 1, corners = 'tl tr bl br' } = {}) {
+  if (SOCIAL) return noScene
   // no season numbers on the cards: 'S9 E52' → 'E52', 'S2' / 'SEASON 3' → the plain star
   if (numeral) numeral = String(numeral).replace(/\b(SEASON|Season)\s*[0-9IVX]+\s*[·•:,-]?\s*/g, '').replace(/\bS\d+\s*[·•:,-]?\s*/g, '').trim() || null
   return async function buildCardFrame(stage) {

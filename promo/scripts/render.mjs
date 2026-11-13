@@ -46,7 +46,7 @@ const server = createServer(async (req, res) => {
 const port = server.address().port
 const URL_ = FILM ? `http://127.0.0.1:${port}/promo/film.html?render&f=${FILM}${VERT ? '&v' : ''}` : FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
-const URL2 = SPEED !== 1 ? `${URL_}&speed=${SPEED}` : URL_
+const URL2 = (SPEED !== 1 ? `${URL_}&speed=${SPEED}` : URL_) + (arg('social') ? '&social' : '')   // --social: OG films without end card / card cuts / border
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
   const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 })

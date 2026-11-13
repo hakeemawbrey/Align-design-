@@ -585,10 +585,21 @@ const film2 = process.argv.includes('--film2')
 const film3 = process.argv.includes('--film3')
 const film = (process.argv.find(a => a.startsWith('--film=')) || '').split('=')[1]
 if (!id && !film2 && !film3 && !film) { console.error('usage: --teaser=<id> | --film2'); process.exit(1) }
+if (process.argv.includes('--social')) process.env.SOCIAL = '1'   // OG films: no end-card / card-cut cues; score ends with the story
 const T = film ? (await import(`../films/${film}/cues.js`)).default : film3 ? (await import('../film3/cues.js')).default : film2 ? (await import('../film2/cues.js')).default : (await import(`../teasers/t${id}.js`)).default
 // --calm[=speed]: the social cut. Everything plays at `speed` (default 0.8, so 25% slower), the word pops, ticks and
 // other busy effects are dropped, the rest are thinned to one sound every ~1.4 s, and the mix is quieter (-20 LUFS,
 // music further under the effects). render.mjs --calm renders the matching picture.
+if (process.env.SOCIAL === '1') {
+  const { socialEnd } = await import('../films/social.js')
+  const e = Math.min(socialEnd.t, T.storyEnd ?? Infinity)
+  if (e < T.duration) {
+    T.duration = e
+    T.cues = (T.cues || []).filter(c => c[1] < e - 0.05)
+    if (T.music?.sections?.outroAt != null) T.music.sections = { ...T.music.sections, outroAt: Math.min(T.music.sections.outroAt, e - 2) }
+    if (T.endTagAt != null && T.endTagAt >= e) delete T.endTagAt
+  }
+}
 const calmArg = process.argv.find(a => a === '--calm' || a.startsWith('--calm='))
 if (calmArg) calmify(T, Number(calmArg.split('=')[1] || 0.8))
 function calmify(T, speed) {
