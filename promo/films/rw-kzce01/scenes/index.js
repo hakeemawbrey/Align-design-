@@ -7,7 +7,8 @@
 //              · ♍ exhibit A: the chat, read on Monday · ♊ then three days of silence (the calendar flips)
 //              · ♊ then a frog meme · ♓ Pisces cried so hard the jury got umbrellas
 //              · ♊ the defense: it was a GOOD meme · ♑ GUILTY stamp, sentence: one real reply. today.
-//  34.0        ending 'group': the four together, "A meme is not | a *reply.*"
+//  34.0        ending 'group': the four together, Gemini finally replies ("it went GREAT, sorry!!"),
+//              "A meme is not | a *reply.*"
 import { prog, lerp, ease, clamp } from '../../../src/lib.js'
 import {
   makeFilm, drawBits, sparkles, bubble, label, signChar, pop01,
@@ -252,7 +253,14 @@ const F = makeFilm({
   id: 'rw-kzce01', key: 'D', accent: '#7fd0ff', cast: ['capricorn', 'gemini', 'virgo', 'pisces'], ending: 'group',
   title: 'Gemini is on trial. | For a *meme.*',
   cameos: CAMEOS,
-  group: { cap: 'A meme is not | a *reply.*', moods: ['happy', 'wink', 'happy', 'heart'] },
+  group: {
+    cap: 'A meme is not | a *reply.*', moods: ['happy', 'wink', 'happy', 'heart'],
+    // the callback: Gemini serves the sentence, one real reply
+    draw(x, t, lt) {
+      bubble(x, 430, 665, 'it went GREAT, sorry!!', pop01(t, t - lt + 1.3, 0.3, 2.2), { size: 40, tail: 'bc', col: MINT })
+      sparkles(x, t, 430, 665, t - lt + 1.4, 6, 220, 0.2)
+    },
+  },
 })
 export const DURATION = F.DURATION
 export const SCENES = F.SCENES
