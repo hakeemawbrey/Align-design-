@@ -89,9 +89,9 @@ const CFG = {
 const EP = makeCourt(CFG)
 // social hook: static caption from frame 0 (the film's own animated slam title is removed above)
 export const HOOK = 'Gemini ghosted me, | then sent a *frog.*'
-export const HOOK_TOP = 150         // above the judge's wig, below the series bug
 export const HOOK_STYLE = 'box'
 export const HOOK_UNTIL = 2.8
+export const HOOK_TOP = 150         // clear of the judge's wig (the default 260 covers it on frame 0)
 export const DURATION = EP.DURATION
 export const SCENES = EP.SCENES
 export const CUES = EP.CUES

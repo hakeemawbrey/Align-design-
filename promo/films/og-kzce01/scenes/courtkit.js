@@ -374,7 +374,7 @@ export function makeCourt(cfg) {
     const boxes = BOXES.map(b => dialogueBox(hl, { lines: b.lines, y: b.y ?? 1400, open: b.open, close: b.close, cps: cfg.cps || 30, size: b.size ?? 48, height: b.height ?? 290 }))
     const top = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none' }, root)
     const ticker = cfg.ticker ? buildTicker(top, cfg.ticker) : null
-    const bug = buildBug(top, {})
+    // og-kzce01 (social): no series bug / header text at the top; the HOOK and the story's captions own the top
     const ov = layerCanvas(root, { pointerEvents: 'none' }), ox = ov.getContext('2d')
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const ctx = { assets }
@@ -443,7 +443,6 @@ export function makeCourt(cfg) {
         for (const [ft, col] of FX.flashes || []) { const d = t0 - ft; if (d >= 0 && d < 0.3) { ox.globalAlpha = 0.75 * (1 - d / 0.3); ox.fillStyle = col || '#fff'; ox.fillRect(0, 0, 1080, 1920); ox.globalAlpha = 1 } }
         cfg.overlay && cfg.overlay(ox, t0, t)
         ticker && ticker.update(t)
-        bug.update(t)
         drawGrain(gx, t0)
       },
     }
