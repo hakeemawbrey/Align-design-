@@ -9,7 +9,7 @@
 //              smokes · ♈ "you choose." Aries chose all five · ♎ option A: our first date spot (the rest flutter off,
 //              the scale settles level) · ♈ Aries said go, Libra said together (running in place, speed lines)
 //              · ♎ at their spot: a table, a cake with one candle, card A propped up. "Fast and fair."
-//  34.0        "Opposite signs. | *Perfectly* balanced."  Both stars back, side by side.
+//  34.0        "Opposite signs. | *Perfectly* balanced."  Both stars back, side by side, a level scale (FAST | FAIR) glowing between them.
 //  37.4        callback: "Next anniversary? | Options *B to E.*"  The four unused cards fan back in, Aries already
 //              cheering for all of them (beat 5's "all five", paid off).
 import { prog, lerp, ease, clamp } from '../../../src/lib.js'
@@ -55,7 +55,7 @@ function headScale(x, F, a, { sc = 1, glow = 0, alpha = 1 } = {}) {
 }
 
 /** a big balance scale prop with a word in each pan */
-function bigScale(x, cx, cy, a, k, left, right) {
+function bigScale(x, cx, cy, a, k, left, right, ls = 30) {
   if (k <= 0.01) return
   const c = 10, ARM = 190, HANG = 150
   x.save(); x.translate(cx, cy); x.scale(k, k)
@@ -73,7 +73,7 @@ function bigScale(x, cx, cy, a, k, left, right) {
     x.strokeStyle = 'rgba(255,241,200,0.9)'; x.lineWidth = 4
     x.beginPath(); x.moveTo(ex, ey); x.lineTo(ex - 60, by - 10); x.moveTo(ex, ey); x.lineTo(ex + 60, by - 10); x.stroke()
     drawBits(x, PAN, PAN_C, ex, by, 12)
-    label(x, ex, by - 56, word, 1, { size: 30, bg: s < 0 ? MINT : LAV, rot: s * 0.05, font: MONO, weight: 700 })
+    label(x, ex, by - 40 - ls / 2, word, 1, { size: ls, bg: s < 0 ? MINT : LAV, rot: s * 0.05, font: MONO, weight: 700 })
   })
   x.restore()
 }
@@ -229,7 +229,7 @@ const CAMEOS = [
       OPTS.slice(1).forEach((o, j) => {
         const i = j + 1, u = prog(lt, 0.5 + j * 0.06, 1.4)
         if (u >= 1) return
-        optCard(x, 760 + (i - 2) * 60 + u * (120 + i * 40), 840 - u * (380 + i * 40), 120 * (1 - 0.3 * u), (i - 2) * 0.22 + u * (i % 2 ? 5 : -5), o, 1 - ease.inQuad(u))
+        optCard(x, 760 + (i - 2) * 60 + u * (i - 2.5) * 50, 840 - u * 260, 120 * (1 - 0.3 * u), (i - 2) * 0.22 + u * (i % 2 ? 4 : -4), o, 1 - ease.outQuad(u))
       })
       const e = ease.outBack(prog(lt, 0.4, 1.0))
       optCard(x, lerp(640, 750, clamp(e)), lerp(860, 820, clamp(e)), lerp(120, 270, e), lerp(-0.4, -0.04, clamp(e)) + Math.sin(t * 1.6) * 0.02, OPTS[0], 1, true)
@@ -273,7 +273,15 @@ const F = makeFilm({
   title: 'Aries and Libra plan | *one* anniversary.',
   cameos: CAMEOS,
   group: {
-    cap: 'Opposite signs. | *Perfectly* balanced.', moods: ['heart', 'sparkle']
+    cap: 'Opposite signs. | *Perfectly* balanced.', moods: ['heart', 'sparkle'],
+    draw(x, t, lt) {
+      // a level scale glowing between them, FAST in one pan, FAIR in the other
+      const k = pop01(t, t - lt + 0.5, 0.4, 2)
+      if (k <= 0.01) return
+      drawPixelStar(x, 540, 470, 70 * k, 1, GOLD, '#fff6e6')
+      bigScale(x, 540, 470, 0.02 * Math.sin(t * 2), k * 0.62, 'FAST', 'FAIR', 50)
+      sparkles(x, t, 540, 520, t - lt + 0.9, 8, 170, 0.5)
+    },
   },
   last: {
     text: 'Next anniversary? | Options *B to E.*',
