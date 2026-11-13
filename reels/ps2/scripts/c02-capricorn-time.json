@@ -1,0 +1,61 @@
+{
+  "id": "c02-capricorn-time",
+  "format": "storytime",
+  "captions": "sub",
+  "music": "sunny",
+  "title": "my capricorn date has a very strange relationship with time",
+  "caption": "he brought a printed itinerary",
+  "hashtags": [
+    "capricorn",
+    "astrology",
+    "datingstories",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "shot": "wide",
+      "speaker": "her",
+      "text": "my capricorn date has a very strange relationship with time",
+      "dur": 3.4
+    },
+    {
+      "shot": "wide",
+      "speaker": "her",
+      "text": "he booked dinner for 7:00",
+      "dur": 2.2
+    },
+    {
+      "shot": "wide",
+      "speaker": "her",
+      "text": "and got there at 6:40 to check the table.",
+      "dur": 2.8
+    },
+    {
+      "shot": "wide",
+      "speaker": "her",
+      "text": "apparently, capricorns treat a first date like a job interview.",
+      "dur": 3.4
+    },
+    {
+      "shot": "herclose",
+      "speaker": "her",
+      "text": "i'm a pisces. i got there at 7:35 and cried at the bread.",
+      "dur": 3.6
+    },
+    {
+      "shot": "himclose",
+      "speaker": "him",
+      "text": "she was very late.",
+      "dur": 2.2,
+      "cue": "sting"
+    },
+    {
+      "shot": "end",
+      "dur": 3.2
+    }
+  ],
+  "end": {
+    "line": "dealbreakers up front.",
+    "sub": "a new deal at 11:11"
+  }
+}

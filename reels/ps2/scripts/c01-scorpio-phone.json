@@ -1,0 +1,68 @@
+{
+  "id": "c01-scorpio-phone",
+  "format": "storytime",
+  "captions": "sub",
+  "music": "sunny",
+  "title": "my scorpio date has a very strange relationship with my phone",
+  "caption": "date three. she still hasn't given it back",
+  "hashtags": [
+    "scorpio",
+    "astrology",
+    "datingstories",
+    "zodiac"
+  ],
+  "beats": [
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "my scorpio date has a very strange relationship with my phone",
+      "dur": 3.4
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "i put it face down at dinner",
+      "dur": 2.4
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "she turned it face up without saying a word.",
+      "dur": 3.0
+    },
+    {
+      "shot": "wide",
+      "speaker": "him",
+      "text": "apparently, scorpios don't trust a face-down phone.",
+      "dur": 3.2
+    },
+    {
+      "shot": "himclose",
+      "speaker": "him",
+      "text": "i'm a gemini. i have nothing to hide.",
+      "dur": 2.8
+    },
+    {
+      "shot": "himclose",
+      "speaker": "him",
+      "text": "i just have four group chats and i reply to none of them.",
+      "dur": 3.4,
+      "gesture": "shrug"
+    },
+    {
+      "shot": "herclose",
+      "speaker": "her",
+      "text": "that's worse.",
+      "dur": 2.2,
+      "cue": "sting"
+    },
+    {
+      "shot": "end",
+      "dur": 3.2
+    }
+  ],
+  "end": {
+    "line": "say the honest thing.",
+    "sub": "a new deal at 11:11"
+  }
+}
