@@ -1,4 +1,4 @@
-// guidefilm.js (og-guideair copy: S.hook optional, S.chip.at honoured) — the frame of one "Your Star Guide" film (Star Talk, promo/films/STARTALK13.md). A copy lives in each
+// guidefilm.js (og-guideair copy: S.hook and S.chip optional, S.chip.at honoured) — the frame of one "Your Star Guide" film (Star Talk, promo/films/STARTALK13.md). A copy lives in each
 // guide<sign><n> folder this session built (Libra, Scorpio, Sagittarius, air) so every film stands alone. It builds on the
 // shared kit stguide.js (hook, note chip, lantern, fact chip, chime) and on startalk/cardfx/endcard/sky; it edits none.
 //
@@ -139,7 +139,7 @@ export function guideFilm(S) {
     const K = { drawBits: (...a) => drawBits(x, ...a), sparkles: (...a) => sparkles(x, ...a), burst: (...a) => drawBurst(x, ...a), guide: (...a) => drawGuide(x, ...a), bubble: (...a) => drawBubble(x, ...a), talkCard: (...a) => drawTalkCard(x, ...a), pop01, popOut, outK, star, lantern, root, W, HOPS }
 
     const hook = S.hook ? guideHook(root, { accentColor: S.color, ...S.hook, at: 0 }) : null
-    const chip = noteChip(root, { at: 0, ...S.chip, out: S.chip.out ?? [STORY_END - 0.45, STORY_END - 0.15] })
+    const chip = S.chip ? noteChip(root, { at: 0, ...S.chip, out: S.chip.out ?? [STORY_END - 0.45, STORY_END - 0.15] }) : null
     const heads = (S.heads || []).map(H => [popText(root, H.text, { wobble: true, gap: 0.08, ...H }), H.out])
     const box = dialogueBox(root, { lines: LINES, y: S.boxY || 1470, width: 960, height: S.boxH || 260, open: S.open, close: S.close, cps: CPS })
     const extra = S.dom ? S.dom(root) : null
@@ -164,7 +164,7 @@ export function guideFilm(S) {
         if (S.drawFront) S.drawFront(x, t, K, r)
         if (S.fact) factChip(x, t, S.fact)
         if (hook) hook.update(t)
-        chip.update(t)
+        if (chip) chip.update(t)
         if (extra) extra.update(t)
         box.update(t)
         for (const [h, o] of heads) h.update(t, outK(t, o))

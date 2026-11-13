@@ -86,7 +86,6 @@ function guidePos(t) {
 
 const F = guideFilm({
   duration: 30, speaker: 'AIR · YOUR STAR', color: AIRC, accent: ACC, glyph: null,
-  chip: { label: 'STAR GUIDE · AIR SIGNS · PEP TALK', at: 3.2 },
   lines: LINES, open: T.open, close: T.close,
   fact: { text: 'THE AIR SIGNS:|GEMINI, LIBRA, AQUARIUS', at: T.fact, dur: T.l2 - T.fact - 0.25, x: 540, y: 1356 },
   heads: [{ text: 'Less *talk.* | More close.', at: T.last, out: T.out, top: 196, size: 120, accentSize: 176, accentColor: ACC, late: 2, lateAt: T.lastLand }],
