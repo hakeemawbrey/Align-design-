@@ -113,7 +113,7 @@ if (stills || sheet) {
   // blurred and darkened, and the box's edge is feathered into it through a rounded-corner alpha mask
   let vf = []
   if (CALM && VERT) {
-    const BOX = 0.74, BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = 210, R = 44, F = 22
+    const BOX = Number(arg('pad', 0.66)), BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = Math.round((VH - BH) / 2 - 30)   // --pad=<scale>: picture size inside the frame, R = 44, F = 22
     const mask = path.join(ROOT, `promo/out/calm-mask-${BW}x${BH}.png`)
     if (!existsSync(mask)) {
       await mkdir(path.dirname(mask), { recursive: true })

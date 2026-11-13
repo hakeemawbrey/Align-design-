@@ -29,6 +29,13 @@ async function boot() {
   //   export const HOOK = 'Gemini is on trial | for a *meme.*'   (' | ' = line break, *word* = yellow accent)
   //   export const HOOK_STYLE = 'outline' (white, thick black outline) | 'box' (white on a solid black box) | 'light' (black on white)
   //   export const HOOK_UNTIL = 3.5 · HOOK_TOP = 260 (px from the top of the 1080×1920 frame)
+  // social mode: a faint invite under the picture, the only Align mark (replaces end cards and CTAs)
+  if (params.has('social') && FILM.WATERMARK !== false) {
+    const wm = document.createElement('div')
+    wm.textContent = '✦ come align · join the beta ✦'
+    wm.style.cssText = "position:absolute;left:0;right:0;bottom:46px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
+    stage.appendChild(wm)
+  }
   if (FILM.HOOK) {
     const st = FILM.HOOK_STYLE || 'outline', esc = v => v.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
     const lines = String(FILM.HOOK).split('|').map(l => esc(l.trim()).replace(/\*([^*]+)\*/g, (_, w) => `<span class="hk-acc">${w}</span>`))
