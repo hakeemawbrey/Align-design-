@@ -279,7 +279,7 @@ export const CARD = 3.8                                     // seconds per sign
 const HOOK = 3.6
 export function makeFilm(S) {
   const CAM = S.cameos.map((c, i) => { const t0 = r3(HOOK + i * CARD); return { ...c, i, t0, t1: r3(t0 + CARD), st: signStar(c.sign) } })
-  const SOLO = S.solo || null, N = S.cameos.length          // solo: the whole film is one sign, N cards (6–10)
+  const SOLO = S.solo || (S.cast ? 'cast' : null), N = S.cameos.length   // story mode: S.cast = [2–4 sign ids], cards in any order          // solo: the whole film is one sign, N cards (6–10)
   const camEnd = HOOK + N * CARD                             // 49.2 for twelve
   const T = { title: 0.2, bug: 0.45, grid: 0.7, dive: [3.0, 3.6], group: r3(camEnd), lesson: r3(camEnd + 3.2) }
   // endings vary film to film (S.ending): 'lesson' = lesson beat + last line · 'callback' = straight to a last line that
@@ -335,7 +335,10 @@ export function makeFilm(S) {
       if (!inHook && !inGroup) return
       const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, FADE || T.out)
       const hops = inHook ? [T.grid + 0.6, T.grid + 1.6] : [T.group + 0.7, T.group + 1.9]
-      signChar(x, t, SOLO, 540, 860, 360, { mood: inGroup ? (S.group.mood || 'sparkle') : 'happy', pop: k, hops, seed: 7, tears: SOLO === 'pisces' ? 2 : 0 })
+      if (S.cast) {
+        const n = S.cast.length, size = n <= 2 ? 300 : n === 3 ? 240 : 200, gap = n <= 2 ? 330 : n === 3 ? 270 : 220
+        S.cast.forEach((id, i) => signChar(x, t, id, 540 + (i - (n - 1) / 2) * gap, 860, size, { mood: inGroup ? (S.group.moods?.[i] || S.group.mood || 'sparkle') : 'happy', pop: k, hops: hops.map(h => h + i * 0.12), seed: 7 + i, tears: id === 'pisces' ? 2 : 0 }))
+      } else signChar(x, t, SOLO, 540, 860, 360, { mood: inGroup ? (S.group.mood || 'sparkle') : 'happy', pop: k, hops, seed: 7, tears: SOLO === 'pisces' ? 2 : 0 })
     }
     function mini(t, i) {
       const id = SIGN_IDS[i]

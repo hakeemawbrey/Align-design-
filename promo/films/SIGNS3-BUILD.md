@@ -76,3 +76,14 @@ watermark. Pick the ending your batch item names:
   `group.draw` for one last visual gag. No lesson, no last line.
 - **'card'**: lesson + last line over the two-card match (`card: { a, b, chip }`). Only when the film is about
   matching/dating, and only if your batch item says 'card'.
+
+## Story films: an old Star Talk story, retold in the v3 look
+`makeFilm({ cast: ['<sign>', '<sign>', …], ... })` (2–4 signs) with 6–10 cameos; each cameo is one story beat and may
+use any `sign` from the cast (the panel's name tab shows whose beat it is; draw the other characters inside the panel
+with `signChar` in `back`/`front` when two signs share a beat). The hook and the group beat show the cast side by side.
+Timing is the same as solo (8 beats ≈ 47 s). In `cues.js` use `breakdown: [T.group]`.
+- Keep the original story's premise, characters, best jokes and payoff, but retell it in beats that are easy to
+  follow: one beat = one moment, one caption (≤ 9 words), one clear visual gag.
+- Hook: rewrite the original title into a 2-line hook (≤ 8 words) that makes people stay.
+- No episode/season numbers, no card transitions, no end card, no CTA. Ending per the batch item (callback / lesson /
+  group / card).
