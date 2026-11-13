@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--artifact-start-->
+<title>Align Wisdom</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
+<style>
+  /* Layout: one 9:16 pixel stage, centred, with a slim control deck under it. Single dark look: an arcade screen at night. */
+  :root {
+    --ink: #0b0716;
+    --panel: #150f26;
+    --bone: #efe6d6;
+    --muted: #9b90b4;
+    --sign: #e23d66;
+    --sign-light: #ff9fb7;
+    --sign-dark: #55102a;
+    --mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    color-scheme: dark;
+  }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--ink); color: var(--bone); font-family: var(--mono);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    padding-block: 12px; box-sizing: border-box;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  #stage {
+    position: relative; flex: 1 1 auto; min-height: 0; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+  }
+  #c {
+    height: 100%; max-height: calc(100vh - 150px); width: auto; max-width: 100%; aspect-ratio: 9 / 16;
+    image-rendering: pixelated; display: block; background: var(--ink);
+    box-shadow: 0 0 0 6px var(--sign-dark), 0 0 0 12px var(--sign), 0 0 60px color-mix(in srgb, var(--sign) 35%, transparent);
+    transition: box-shadow .6s;
+  }
+  #stage:fullscreen { background: var(--ink); }
+  #stage:fullscreen #c { max-height: 100vh; box-shadow: none; }
+  #gate {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  }
+  #play {
+    font: 700 22px/1 var(--mono); letter-spacing: .12em; color: var(--ink); background: var(--sign-light);
+    border: 0; padding: 18px 30px; cursor: pointer;
+    box-shadow: 0 6px 0 var(--sign), 0 12px 0 var(--sign-dark), 0 0 40px color-mix(in srgb, var(--sign) 50%, transparent);
+    clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  }
+  #play:active { transform: translateY(4px); }
+  #gate p { margin: 0; font-size: 12px; letter-spacing: .14em; color: var(--bone); text-shadow: 0 2px 0 var(--ink); text-align: center; }
+  .deck {
+    width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 10px; transition: opacity .5s;
+  }
+  body.quiet .deck { opacity: 0.12; }
+  body.quiet .deck:hover, body.quiet .deck:focus-within { opacity: 1; }
+  #signs { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .chip {
+    --c: var(--bone);
+    font: 700 18px/1 var(--mono); width: 40px; height: 40px; padding: 0; cursor: pointer;
+    color: var(--c); background: var(--panel); border: 3px solid color-mix(in srgb, var(--c) 45%, var(--panel));
+    font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', 'Apple Symbols', var(--mono);
+  }
+  .chip.all { width: auto; padding: 0 12px; font: 700 13px/1 var(--mono); letter-spacing: .1em; }
+  .chip[aria-pressed="true"] { background: var(--c); color: var(--ink); border-color: var(--bone); }
+  .chip.all[aria-pressed="true"] { --c: var(--bone); }
+  .chip.now:not([aria-pressed="true"]) { border-color: var(--c); box-shadow: 0 0 12px color-mix(in srgb, var(--c) 60%, transparent); }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; }
+  .tog {
+    font: 700 12px/1 var(--mono); letter-spacing: .12em; color: var(--bone); background: var(--panel);
+    border: 3px solid #2c2347; padding: 9px 12px; cursor: pointer;
+  }
+  .tog[aria-pressed="true"] { border-color: var(--sign); color: var(--sign-light); }
+  #voice-pick { font: 400 12px var(--mono); color: var(--bone); background: var(--panel); border: 3px solid #2c2347; padding: 6px; max-width: 220px; }
+  button:focus-visible, select:focus-visible { outline: 3px solid var(--sign-light); outline-offset: 2px; }
+  #caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  @media (max-width: 420px) { .chip { width: 34px; height: 34px; font-size: 15px; } #c { max-height: calc(100vh - 190px); } }
+  @media (prefers-reduced-motion: reduce) { #c { transition: none; } }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1080" height="1920" aria-label="A pixel star reading wisdom to one zodiac sign at a time"></canvas>
+  <div id="gate">
+    <button id="play" type="button">▶ PLAY FOREVER</button>
+    <p>ONE SIGN AT A TIME · SOUND ON</p>
+  </div>
+  <div id="caption" aria-live="polite"></div>
+</div>
+
+<div class="deck">
+  <div id="signs" role="group" aria-label="Which signs to play"></div>
+  <div class="row">
+    <button class="tog" id="t-pause" type="button" aria-pressed="false">PAUSE</button>
+    <button class="tog" id="t-skip" type="button">NEXT ▸</button>
+    <button class="tog" id="t-voice" type="button" aria-pressed="true">VOICE</button>
+    <button class="tog" id="t-music" type="button" aria-pressed="true">MUSIC</button>
+    <button class="tog" id="t-full" type="button">FULL SCREEN</button>
+    <select id="voice-pick" aria-label="Voice"></select>
+  </div>
+</div>
+
+<script type="module" src="player.js"></script>
+<!--artifact-end-->
+</body>
+</html>
