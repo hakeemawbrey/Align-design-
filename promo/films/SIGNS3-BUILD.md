@@ -87,3 +87,6 @@ Timing is the same as solo (8 beats ≈ 47 s). In `cues.js` use `breakdown: [T.g
 - Hook: rewrite the original title into a 2-line hook (≤ 8 words) that makes people stay.
 - No episode/season numbers, no card transitions, no end card, no CTA. Ending per the batch item (callback / lesson /
   group / card).
+- Prop timing: `front`/`back` get the card's slowed clock: `t = P.t0 + lt`, with `lt` running 0→2.4 over the card's
+  first 3.1 s and then holding. Time every pop/label with `P.t0 + d` where d ≤ 2.4, or it never appears.
+- `group.draw(x, t, lt)` works in solo and story films too (drawn over the cast during the group beat).

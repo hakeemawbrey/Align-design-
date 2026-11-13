@@ -331,12 +331,12 @@ export function makeFilm(S) {
     // solo films: one big star instead of the twelve. It pops in for the hook, hides while the cards play (each card
     // has it), comes back for the group beat, and clears for the closing match card.
     function soloStar(t) {
-      const inHook = t < T.dive[1], inGroup = t >= T.group && t < (FADE ? FADE[1] : STORY_END)
+      const inHook = t < T.dive[1], inGroup = t >= T.group && t < (FADE ? FADE[1] : HAS_LESSON ? T.lesson + 0.4 : STORY_END)   // solo/story: clear the stage for the lesson
       if (!inHook && !inGroup) return
-      const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, FADE || T.out)
+      const k = inHook ? pop01(t, T.grid, 0.45, 1.8) * (1 - ease.inCubic(prog(t, T.dive[0], T.dive[1]))) : pop01(t, T.group, 0.45, 1.8) * popOut(t, FADE || (HAS_LESSON ? [T.lesson, T.lesson + 0.4] : T.out))
       const hops = inHook ? [T.grid + 0.6, T.grid + 1.6] : [T.group + 0.7, T.group + 1.9]
       if (S.cast) {
-        const n = S.cast.length, size = n <= 2 ? 300 : n === 3 ? 240 : 200, gap = n <= 2 ? 330 : n === 3 ? 270 : 220
+        const n = S.cast.length, size = n <= 2 ? 300 : n === 3 ? 240 : 180, gap = n <= 2 ? 330 : n === 3 ? 270 : 235
         S.cast.forEach((id, i) => signChar(x, t, id, 540 + (i - (n - 1) / 2) * gap, 860, size, { mood: inGroup ? (S.group.moods?.[i] || S.group.mood || 'sparkle') : 'happy', pop: k, hops: hops.map(h => h + i * 0.12), seed: 7 + i, tears: id === 'pisces' ? 2 : 0 }))
       } else signChar(x, t, SOLO, 540, 860, 360, { mood: inGroup ? (S.group.mood || 'sparkle') : 'happy', pop: k, hops, seed: 7, tears: SOLO === 'pisces' ? 2 : 0 })
     }
@@ -408,7 +408,7 @@ export function makeFilm(S) {
             x.restore()
             if (S.group.draw) { x.save(); S.group.draw(x, t, t - T.group); x.restore() }
           }
-          if (SOLO) soloStar(t)
+          if (SOLO) { soloStar(t); if (S.group.draw && t >= T.group && pop01(t, T.group, 0.5, 1.6) * popOut(t, FADE || T.out) > 0.01) { x.save(); S.group.draw(x, t, t - T.group); x.restore() } }
           else for (let i = 0; i < 12; i++) mini(t, i)
           if (S.last.draw && t >= T.last) { x.save(); S.last.draw(x, t, t - T.last); x.restore() }
           if (END === 'card' && t >= T.last) matchCard(x, t, t - T.last, S.card || {})
