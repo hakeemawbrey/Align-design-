@@ -20,7 +20,7 @@ import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
 import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
-import { drawSeedConstellation, drawGhostCameo, episodeNumeral } from '../../stlore.js'
+import { drawGhostCameo, episodeNumeral } from '../../stlore.js'
 
 export const DURATION = 20
 export const HOOK = 'Aries: already there. | Libra: still *deciding.*'
@@ -308,7 +308,7 @@ async function build(stage) {
     start: 0, end: STORY_END + 0.01, root,
     update(t) {
       drawSky(x, t, SKY_H)
-      drawSeedConstellation(x, t, EP)
+      // (no seed-of-life corner logo in the social cut)
       if (t < T.out[1] + 0.02) {
         const ok = popOut(t, T.out)
         drawFloor(t, t < T.cut ? 1 : clamp(ok))
