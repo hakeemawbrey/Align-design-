@@ -25,22 +25,23 @@ async function boot() {
   stage.appendChild(fx)
   // ?pad=<scale> (social cut): the film's sky fills the WHOLE frame, the story (every scene layer + fx) is scaled into the
   // middle and its edges fade into that full-frame sky, so the app's UI never covers the story. No blur, no box.
-  let padSky = null
+  let padSky = null, overlayParent = stage
   if (params.has('pad')) {
+    // the whole #stage (all scene layers, so show kits' own camera moves still work) is scaled into the middle and
+    // masked soft at the edges; a full-frame sky + grain sits behind it in <body>; hook + watermark go on top, full size
     const P = Number(params.get('pad')) || 0.66
     const { drawSky, drawGrain, layerCanvas } = await import('./sky.js')
     const { SKY_H, GRAIN_H } = await import('./wheel.js')
-    const box = document.createElement('div')
-    const fe = 130 // feather (px, in story coordinates)
+    const fe = 130
     const g = d => `linear-gradient(${d}, transparent 0, #000 ${fe}px, #000 calc(100% - ${fe}px), transparent 100%)`
-    Object.assign(box.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', transformOrigin: '50% 50%',
-      transform: `translateY(-30px) scale(${P})`, zIndex: '5', maskImage: `${g('to right')}, ${g('to bottom')}`, webkitMaskImage: `${g('to right')}, ${g('to bottom')}`,
-      maskComposite: 'intersect', webkitMaskComposite: 'source-in' })
-    for (const el of [...stage.children]) box.appendChild(el)
-    stage.appendChild(box)
-    const skyC = layerCanvas(stage, { zIndex: '1' }), sk = skyC.getContext('2d')
-    const grC = layerCanvas(stage, { zIndex: '2', mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gk = grC.getContext('2d')
-    stage.insertBefore(grC, box); stage.insertBefore(skyC, grC)
+    Object.assign(stage.style, { transformOrigin: '50% 50%', transform: `translateY(-30px) scale(${P})`, zIndex: '5',
+      maskImage: `${g('to right')}, ${g('to bottom')}`, webkitMaskImage: `${g('to right')}, ${g('to bottom')}`, maskComposite: 'intersect', webkitMaskComposite: 'source-in' })
+    removeEventListener('resize', fit)
+    const back = document.createElement('div'); Object.assign(back.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', zIndex: '1', overflow: 'hidden' })
+    document.body.insertBefore(back, stage)
+    const sk = layerCanvas(back).getContext('2d'), gk = layerCanvas(back, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }).getContext('2d')
+    const front = document.createElement('div'); Object.assign(front.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', zIndex: '6', pointerEvents: 'none' })
+    document.body.appendChild(front); overlayParent = front
     padSky = t => { drawSky(sk, t, SKY_H); drawGrain(gk, t) }
   }
   // social mode: the film ends where its story ends (the end card's start); films may also export STORY_END
@@ -54,7 +55,7 @@ async function boot() {
     const wm = document.createElement('div')
     wm.textContent = '✦ come align · join the beta ✦'
     wm.style.cssText = "position:absolute;left:0;right:0;bottom:" + (params.has('pad') ? 250 : 46) + "px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
-    stage.appendChild(wm)
+    overlayParent.appendChild(wm)
   }
   if (FILM.HOOK) {
     const st = FILM.HOOK_STYLE || 'outline', esc = v => v.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
@@ -70,7 +71,7 @@ async function boot() {
       .hk-box .hk-acc{color:#ffd23a;padding:0;background:none}
       .hk-light span{display:inline;color:#111;background:#fff;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
       .hk-light .hk-acc{color:#b8008f;padding:0;background:none}`
-    document.head.appendChild(css); stage.appendChild(hk)
+    document.head.appendChild(css); overlayParent.appendChild(hk)
     window.__hook = { el: hk, until: FILM.HOOK_UNTIL ?? 3.5 }
   }
   await document.fonts.ready
