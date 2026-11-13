@@ -6,7 +6,7 @@ film's own characters, sets, art and story. Change only what makes it work on In
 | Change | How |
 |---|---|
 | No end card / CTA, no card flips, no tarot border with episode numbers | automatic: render with `--social` (endcard.js / cardfx.js switch off; the film ends where its story ends) |
-| Slower, padded, quieter | automatic: render with `--calm`, sound with `--calm --social` |
+| Slower, padded, quieter | automatic: render with `--social --calm` (the sky fills the full frame, the story is scaled into the middle with soft edges; the hook sits full-size just under the app's top bar), sound with `--calm --social` |
 | **Hook**: static TikTok-style caption on screen from frame 1 | you: `export const HOOK`, `HOOK_STYLE`, `HOOK_UNTIL` (see below) |
 | **Crazier personalities** | you: rewrite the signs' lines/captions/props to the most extreme, absurd-but-recognisable version of each trait |
 | No header text: series bugs/labels ("Zodiac Courtroom", "STAR GUIDE · AIR SIGNS · PEP TALK"), corner logos, top chips naming the show | you: remove them from the scene so the top of the frame only ever shows the HOOK (and later the story's own captions) |

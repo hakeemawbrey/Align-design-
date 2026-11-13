@@ -23,6 +23,26 @@ async function boot() {
   const scenes = []
   for (const [i, build] of SCENES.entries()) { const s = await build(stage); s.root && (s.root.style.zIndex = String(10 + i)); scenes.push(s) }
   stage.appendChild(fx)
+  // ?pad=<scale> (social cut): the film's sky fills the WHOLE frame, the story (every scene layer + fx) is scaled into the
+  // middle and its edges fade into that full-frame sky, so the app's UI never covers the story. No blur, no box.
+  let padSky = null
+  if (params.has('pad')) {
+    const P = Number(params.get('pad')) || 0.66
+    const { drawSky, drawGrain, layerCanvas } = await import('./sky.js')
+    const { SKY_H, GRAIN_H } = await import('./wheel.js')
+    const box = document.createElement('div')
+    const fe = 130 // feather (px, in story coordinates)
+    const g = d => `linear-gradient(${d}, transparent 0, #000 ${fe}px, #000 calc(100% - ${fe}px), transparent 100%)`
+    Object.assign(box.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', transformOrigin: '50% 50%',
+      transform: `translateY(-30px) scale(${P})`, zIndex: '5', maskImage: `${g('to right')}, ${g('to bottom')}`, webkitMaskImage: `${g('to right')}, ${g('to bottom')}`,
+      maskComposite: 'intersect', webkitMaskComposite: 'source-in' })
+    for (const el of [...stage.children]) box.appendChild(el)
+    stage.appendChild(box)
+    const skyC = layerCanvas(stage, { zIndex: '1' }), sk = skyC.getContext('2d')
+    const grC = layerCanvas(stage, { zIndex: '2', mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gk = grC.getContext('2d')
+    stage.insertBefore(grC, box); stage.insertBefore(skyC, grC)
+    padSky = t => { drawSky(sk, t, SKY_H); drawGrain(gk, t) }
+  }
   // social mode: the film ends where its story ends (the end card's start); films may also export STORY_END
   if (params.has('social')) { const e = Math.min(socialEnd.t, FILM.STORY_END ?? Infinity); if (e < DURATION) { DURATION = e; window.DURATION = DURATION / SPEED } }
   // HOOK: a TikTok/Instagram-style hook caption, fully on screen from frame 1 (no animation) until HOOK_UNTIL (film s).
@@ -33,7 +53,7 @@ async function boot() {
   if (params.has('social') && FILM.WATERMARK !== false) {
     const wm = document.createElement('div')
     wm.textContent = '✦ come align · join the beta ✦'
-    wm.style.cssText = "position:absolute;left:0;right:0;bottom:46px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
+    wm.style.cssText = "position:absolute;left:0;right:0;bottom:" + (params.has('pad') ? 250 : 46) + "px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
     stage.appendChild(wm)
   }
   if (FILM.HOOK) {
@@ -42,7 +62,7 @@ async function boot() {
     const hk = document.createElement('div'); hk.className = 'hk hk-' + st
     hk.innerHTML = lines.map(l => `<div class="hk-line"><span>${l}</span></div>`).join('')
     const css = document.createElement('style')
-    css.textContent = `.hk{position:absolute;left:0;right:0;top:${FILM.HOOK_TOP ?? 260}px;z-index:3000;text-align:center;font:900 84px/1.14 Inter,'Helvetica Neue',Arial,sans-serif;pointer-events:none}
+    css.textContent = `.hk{position:absolute;left:0;right:0;top:${params.has('pad') ? 232 : (FILM.HOOK_TOP ?? 260)}px;z-index:3000;text-align:center;font:900 84px/1.14 Inter,'Helvetica Neue',Arial,sans-serif;pointer-events:none}
       .hk-line{margin:0 auto 10px;max-width:960px}
       .hk-outline span{color:#fff;text-shadow:7.0px 0.0px 0 #000,6.5px 2.7px 0 #000,4.9px 4.9px 0 #000,2.7px 6.5px 0 #000,-0.0px 7.0px 0 #000,-2.7px 6.5px 0 #000,-4.9px 4.9px 0 #000,-6.5px 2.7px 0 #000,-7.0px -0.0px 0 #000,-6.5px -2.7px 0 #000,-4.9px -4.9px 0 #000,-2.7px -6.5px 0 #000,0.0px -7.0px 0 #000,2.7px -6.5px 0 #000,4.9px -4.9px 0 #000,6.5px -2.7px 0 #000,0 9px 0 #000}
       .hk-outline .hk-acc{color:#ffd23a}
@@ -65,6 +85,7 @@ async function boot() {
       if (s.root && s.fadeIn) s.root.style.opacity = String(prog(t, s.start, s.start + s.fadeIn))
     }
     ctx.clearRect(0, 0, W, H)
+    if (padSky) padSky(t)
     if (window.__hook) window.__hook.el.style.display = t < window.__hook.until ? 'block' : 'none'
     for (const s of scenes) if (s.fx && t >= (s.fxStart ?? s.start) && t < (s.fxEnd ?? s.end)) s.fx(ctx, t)
   }

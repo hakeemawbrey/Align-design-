@@ -46,7 +46,7 @@ const server = createServer(async (req, res) => {
 const port = server.address().port
 const URL_ = FILM ? `http://127.0.0.1:${port}/promo/film.html?render&f=${FILM}${VERT ? '&v' : ''}` : FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
-const URL2 = (SPEED !== 1 ? `${URL_}&speed=${SPEED}` : URL_) + (arg('social') ? '&social' : '')   // --social: OG films without end card / card cuts / border
+const URL2 = (SPEED !== 1 ? `${URL_}&speed=${SPEED}` : URL_) + (arg('social') ? '&social' : '') + (arg('social') && CALM && VERT ? `&pad=${arg('pad', 0.66)}` : '')   // --social: OG films without end card / card cuts / border
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
   const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 })
@@ -112,7 +112,7 @@ if (stills || sheet) {
   // the calm cut's safe area: picture at BOX scale, its top-left at (BX, BY); the rest of the frame is the same picture
   // blurred and darkened, and the box's edge is feathered into it through a rounded-corner alpha mask
   let vf = []
-  if (CALM && VERT) {
+  if (CALM && VERT && !arg('social')) {   // social films pad in the page instead (full-frame sky, see films/main.js ?pad)
     const BOX = Number(arg('pad', 0.66)), BW = 2 * Math.round(VW * BOX / 2), BH = 2 * Math.round(VH * BOX / 2), BX = (VW - BW) / 2, BY = Math.round((VH - BH) / 2 - 30), R = 90, F = 90   // --pad=<scale>: picture size inside the frame; R/F: corner radius and edge feather
     const mask = path.join(ROOT, `promo/out/calm-mask-${BW}x${BH}-soft.png`)
     if (!existsSync(mask)) {
