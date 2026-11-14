@@ -328,7 +328,7 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
                 <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 9 }}>{today.line}</div>
                 {onPlayCard && (
                   <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
-                    style={{ marginTop: 11, height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+                    style={{ display: 'block', margin: '12px auto 0', height: 36, padding: '0 22px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
                     PLAY CARD ›
                   </button>
                 )}
