@@ -127,17 +127,12 @@ export default function BetaYou({ go }: ScreenProps) {
             })}
           </div>
 
-          {/* block a sign */}
-          <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
-            style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
-            <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
-            {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}
-          </motion.button>
-
           {/* today's horoscope, kept small: one row that opens into the three cards */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span className="eyebrow" style={EYEBROW}>Today’s horoscope</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+              <span className="eyebrow" style={EYEBROW}>Today’s horoscope</span>
+              <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase()}</span>
+            </div>
             <div style={{ ...PANEL, overflow: 'hidden' }}>
               <button aria-expanded={skyOpen} onClick={() => { sfx.tap(); setSkyOpen((o) => !o) }}
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px', textAlign: 'left' }}>
@@ -161,6 +156,14 @@ export default function BetaYou({ go }: ScreenProps) {
               </AnimatePresence>
             </div>
           </section>
+
+          {/* block a sign */}
+          <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
+            style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
+            <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
+            {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}
+          </motion.button>
 
           {/* your sign */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
