@@ -36,7 +36,16 @@ const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me
 function seeded(id: string): Profile | undefined {
   const m = MATCHES.find((x) => x.id === id)
   if (!m) return profileById(id)
-  return { id: m.id, initial: m.name, name: m.name, age: m.age, sign: m.sign, moon: m.sign, rising: m.sign, serial: m.serial, pull: 'Steady pull', photo: m.photo, alignsBack: true, reading: [], dealbreakers: '' }
+  return { id: m.id, initial: m.name, name: m.name, age: m.age, sign: m.sign, moon: m.sign, rising: m.sign, serial: m.serial, pull: 'Steady pull', photo: m.photo, alignsBack: true, reading: [], dealbreakers: '', ...SEEDED_CARD[m.id] }
+}
+
+/** the flipped side of the seeded matches' cards, so their card opens from the chat like anyone's */
+const SEEDED_CARD: Record<string, Partial<Profile>> = {
+  t24: { moon: 'leo', rising: 'aries', bio: 'Line cook, vinyl digger, terrible at sitting still. I’ll argue about tacos and mean every word. Looking for someone who says yes to a last-minute plan.', religion: 'Not religious', lookingFor: 'Something real, no rush', height: '6′0″', work: 'Line cook', interests: ['Record stores', 'Tacos', 'Road trips', 'Live shows', 'Pickup basketball'] },
+  a31: { moon: 'virgo', rising: 'leo', bio: 'Architect. I plan the trip, book the table and still let you pick the playlist. Quiet until I’m not. Looking for someone steady.', religion: 'Spiritual', lookingFor: 'Long-term', height: '5′11″', work: 'Architect', interests: ['Hiking', 'Coffee', 'Design', 'Jazz', 'Cooking'] },
+  z26: { moon: 'libra', rising: 'gemini', bio: 'UX researcher and part-time DJ. I ask too many questions and remember all the answers. Looking for a friend first.', religion: 'Agnostic', lookingFor: 'Open to see', height: '5′5″', work: 'UX researcher', interests: ['DJ sets', 'Thrifting', 'Sci-fi', 'Rooftops', 'Board games'] },
+  m29: { moon: 'aries', rising: 'libra', bio: 'Event producer. I throw the party and stay to clean up. Loud laugh, soft heart. Looking for someone who shows up.', religion: 'Christian', lookingFor: 'Long-term', height: '5′7″', work: 'Event producer', interests: ['Dancing', 'Brunch', 'Karaoke', 'Fashion', 'Hosting'] },
+  s29: { moon: 'pisces', rising: 'leo', bio: 'Tattoo artist. I notice everything and say about half of it. Looking for honest, even when it’s awkward.', religion: 'Spiritual, not religious', lookingFor: 'Something deep', height: '5′4″', work: 'Tattoo artist', interests: ['Drawing', 'Night swims', 'Horror films', 'Tarot', 'Motorcycles'] },
 }
 
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
@@ -190,7 +199,7 @@ export default function Thread({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
       <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }}
-        onWho={veiled ? () => { sfx.tap(); (setCompatTab(0), setCompat(true)) } : them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
+        onWho={veiled ? () => { sfx.tap(); (setCompatTab(0), setCompat(true)) } : () => { sfx.flip(); setCardOpen(true) }}
         photo={veiled ? sign.auraImg : them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined}
         right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => (setCompatTab(0), setCompat(true))} /> : undefined} />
 
