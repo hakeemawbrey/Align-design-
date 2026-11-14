@@ -43,7 +43,7 @@ The sheet is built like the You screen, with no tabs:
 - **Who:** both sign orbs, "You & NAME" and one line.
 - **You two:** three little cards, Spark · Clash · Align (plus "Long game" for Juniper, who has a written one). Tap one and it comes up big: the two orbs acting it out, the headline, a short read, the line from their card when there is one, and a "try this". Swipe or use the arrows for the others.
 - **Your charts, together:** the zodiac wheel with both birth charts on it (yours on the outer ring, theirs on the inner, a line per pairing), then the chart pairings fanned like a hand (Sun, Moon, Rising, Pull, Home; two cards for a match whose card only shows a sun sign). Each little card shows both sign orbs and a neutral tag. Tap one for the big card: both orbs, what the pairing is about, one sentence on what it means for love, "In real life" (how that plays out day to day, from the matching area in `fitBetween`) and a "try this".
-- **Tonight:** one small row right under the header, with a "Play card" button on it; tapping the row opens the full line.
+- **Tonight:** a box right under the header, always open, with the full line for the two of you and a "Play card" button.
 
 Readings: Juniper's are written (`readings.ts`); other matches use their card's lines, or their element's (`BY_ELEMENT`). Pairings come from `chartRows` in `lib/compat.ts`. Pictures are in `GuideArt.tsx`.
 
