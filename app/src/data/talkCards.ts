@@ -168,3 +168,13 @@ export function answerLabel(card: TalkCard, answer: string, answeredBy: 'me' | '
   }
   return answer
 }
+
+/** what a match says after you've both answered a card, so the chat keeps moving */
+export const CARD_REACTIONS = [
+  'Ok I love that answer. Mine feels boring next to it',
+  'Wait, same. That’s a little spooky',
+  'I did not expect that from you. Tell me more?',
+  'Noted. I’m saving that one for later',
+  'That might be the best answer I’ve had on here',
+  'Ok now I have follow-up questions',
+]

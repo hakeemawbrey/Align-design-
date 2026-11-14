@@ -13,7 +13,7 @@ import { session, energize } from '../lib/session'
 import { api, type Message } from '../api'
 import { ME } from '../data/profiles'
 import { PERSONA, type PersonaId } from '../data/persona'
-import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
+import { answerMsg, cardById, parseTalk, playMsg, CARD_REACTIONS } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
@@ -342,7 +342,19 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       sfx.receive()
     }, 3200 + Math.random() * 1500)
   }
-  const answerCard = (cardId: string, a: string) => { energize(5); push({ from: 'me', text: answerMsg(cardId, a) }) }
+  const reactIdx = useRef(0)
+  const answerCard = (cardId: string, a: string) => {
+    energize(5)
+    push({ from: 'me', text: answerMsg(cardId, a) })
+    // she reacts to your answer, so the chat keeps moving after a card
+    const line = CARD_REACTIONS[(reactIdx.current++ + cardId.length) % CARD_REACTIONS.length]
+    void record('her', line)
+    void (async () => {
+      await wait(1600)
+      if (!alive.current) return
+      await herTypes(line, 1400, () => !alive.current)
+    })()
+  }
   const places = placeState(talkRows)
   const playPlace = (id: string, when: string) => {
     push({ from: 'me', text: placeMsg(id, when) })

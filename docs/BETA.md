@@ -36,7 +36,7 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 ## Cards in chat: today's three
 
-The cards button in a chat no longer opens a hand. It opens `components/talk/TodayThree.tsx`: the deck shuffles, deals three cards face down and turns them over. Tap one to read it, then play it; a played card is stamped and can't be played again that day. Each chat gets its own three, chosen at random from all the talk cards the first time you open the sheet that day, and they reset at 11:11 PM local time (`lib/chatDraw.ts`, stored on the device). "Your cards", "Places" and "Packs" are gone from the beta; the full demo keeps them.
+The cards button in a chat no longer opens a hand. It opens `components/talk/TodayThree.tsx`: the deck shuffles, deals three cards face down and turns them over. Tap one to read it, then play it; a played card is stamped and can't be played again that day. Each chat gets its own three, chosen at random from all the talk cards the first time you open the sheet that day, and they reset at 11:11 PM local time (`lib/chatDraw.ts`, stored on the device). "Your cards", "Places" and "Packs" are gone from the beta; the full demo keeps them. The chat keeps moving around a card: your match answers it, and once you answer too they react to what you said (`CARD_REACTIONS` in `data/talkCards.ts`). After a slow-reveal alignment card, a seeded match also speaks first when the chat opens.
 
 ## The background
 

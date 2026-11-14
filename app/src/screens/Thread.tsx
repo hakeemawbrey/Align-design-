@@ -14,7 +14,7 @@ import { session, useSession, energize } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
 import { ME, profileById, type Profile } from '../data/profiles'
 import { MATCHES, STARTER_CHATS, daysLeft } from '../data/matches'
-import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
+import { answerMsg, cardById, parseTalk, playMsg, CARD_REACTIONS } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
@@ -76,6 +76,7 @@ export default function Thread({ go }: ScreenProps) {
   const seen = useRef(new Set<string>())
   const seeding = useRef(false)
   const replyIdx = useRef(0)
+  const opened = useRef(false)
   const scroller = useRef<HTMLDivElement>(null)
 
   const add = (m: Message) => {
@@ -91,6 +92,12 @@ export default function Thread({ go }: ScreenProps) {
       if (off) return
       ms.forEach(add)
       if (ms.length || !script) setLoaded(true)
+      // slow reveal: once the card is answered and the chat opens, they speak first so it isn't silent
+      if (betaFlow.get(threadWith).stage === 'chat' && !api.person(threadWith)?.real && !opened.current
+        && !ms.some((m) => !parseTalk(m.body) && !parsePlace(m.body))) {
+        opened.current = true
+        void botSays('Ok, your answer got me. So what are you up to this week?', 2800)
+      }
       // first time in a seeded chat: the conversation you already had
       if (!ms.length && script && !seeding.current) {
         seeding.current = true
@@ -229,7 +236,7 @@ export default function Thread({ go }: ScreenProps) {
               return card ? (
                 <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'} playedBy={slow && card.id === flow.card ? 'The stars' : undefined}
                   mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
-                  names={{ me: ME.name, them: them.name }} onAnswer={(a) => { energize(5); void post(answerMsg(card.id, a)).catch(() => {}) }} />
+                  names={{ me: ME.name, them: them.name }} onAnswer={(a) => { energize(5); void post(answerMsg(card.id, a)).then(() => { if (bot) void botSays(CARD_REACTIONS[(replyIdx.current + card.id.length) % CARD_REACTIONS.length], 2600) }).catch(() => {}) }} />
               ) : null
             }
             return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
