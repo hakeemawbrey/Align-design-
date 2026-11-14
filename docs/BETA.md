@@ -38,10 +38,10 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 One guide, two places (`components/chat/Compat.tsx`). In the chat it is one quiet row in the card frame (`AlignGuideCard`): your two sign orbs, "You & NAME · alignment guide", the line that sums you up, and an arrow. Tapping it, or the top-right badge, opens the sheet (`CompatSheet`), which starts with the same orbs, name and line, then five tabs: Spark · Clash · Align · Relationship · Chart.
 
-- **Spark, Clash, Align:** one card each. With Juniper it's the long written reading, the line from her card and a "try this". With other matches it's the line from their card, or their element's line when their card has none.
+- **Spark, Clash, Align:** one card each, with four parts: a headline, a paragraph (Juniper's written reading, or a read of the other person's element), the line from their card when there is one, "In your charts" (the pairings behind it: attraction for Spark, the ones that take work for Clash, the easy ones for Align), and a "try this".
 - **Relationship:** the long game, then the four areas worked out from both charts (day to day, feelings, first impressions, feeling understood), with the astrology behind a "why" toggle.
 - **Chart:** your chart next to theirs, pairing by pairing, read for love (`chartRows` in `lib/compat.ts`): Sun × Sun (who you each are), Moon × Moon (how you each feel), Rising × Rising (how you come across), your Venus × their Sun (what you're drawn to), your Sun × their Moon (whether you feel like home). Each row shows both signs, a neutral tag for how they sit to each other, and one sentence. A match whose card only shows a sun sign gets the rows that need nothing else.
-- Under every tab: tonight's line for the two of you with "Play a talk card", and the disclaimer.
+- Under every tab: "Tonight" as one small row that opens to the full line and "Play a talk card", then the disclaimer.
 
 Words only, as before: no score, percentage, rating or strength dots anywhere in it. The old separate "full alignment" screen is no longer linked from the beta.
 

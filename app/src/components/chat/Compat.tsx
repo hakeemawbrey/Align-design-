@@ -6,6 +6,7 @@ import { SIGNS } from '../../data/signs'
 import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
 import CardFrame, { CardOrb } from '../CardFrame'
+import type { ChartRow } from '../../lib/compat'
 import { MY_READING_TITLE, READINGS } from './readings'
 
 /** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
@@ -42,12 +43,44 @@ type TabId = Exclude<(typeof TABS)[number]['id'], 'chart'>
 interface Part { headline: string; body?: string; tryLine?: string; card?: string }
 interface Guide { title: string; line: string; parts: Record<TabId, Part> }
 
-/** what each element tends to bring, for matches whose card doesn't say */
+/** what each element tends to bring: a headline (when their card has no line), a fuller read and something to try */
 const BY_ELEMENT = {
-  fire: { pull: 'They bring the heat and the plans.', push: 'They move fast. Say so if you need a minute.', align: 'You both like someone who shows up.' },
-  earth: { pull: 'Steady, warm, and they do what they say.', push: 'Neither of you likes to budge first.', align: 'You both build slowly and mean it.' },
-  air: { pull: 'Easy to talk to and full of ideas.', push: 'They think out loud when you may want an answer.', align: 'You both pick a good conversation over a big gesture.' },
-  water: { pull: 'They notice how you feel before you say it.', push: 'Moods run deep. Ask, don’t guess.', align: 'You both want it to be real.' },
+  fire: {
+    pull: 'They bring the heat and the plans.', push: 'They move fast. Say so if you need a minute.', align: 'You both like someone who shows up.',
+    more: {
+      pull: 'Fire signs say what they want and go after it, so you rarely have to guess where you stand. Dates feel like events, and their energy can pull you out of a rut.',
+      push: 'Their pace can run ahead of yours, and a flash of temper passes for them faster than it does for you. They can read a pause as a no.',
+      align: 'Under the speed, fire signs are loyal and direct. If you both keep your word, trust builds quickly.',
+    },
+    tryLine: { pull: 'Say yes to their plan once before you tweak it.', push: 'Tell them “give me a day” instead of going quiet.', align: 'Name one thing you’re both looking forward to.' },
+  },
+  earth: {
+    pull: 'Steady, warm, and they do what they say.', push: 'Neither of you likes to budge first.', align: 'You both build slowly and mean it.',
+    more: {
+      pull: 'Earth signs show interest by showing up: on time, with the thing you mentioned once. It’s quiet, and it’s hard to fake.',
+      push: 'They can dig in and go silent when something’s wrong, and they don’t love last-minute changes. A standoff can last longer than the problem.',
+      align: 'Earth signs want something that lasts and are happy to take the slow road. Shared routines become the glue.',
+    },
+    tryLine: { pull: 'Notice one thing they did for you and say it.', push: 'Be the first to say “ok, what do you need?”', align: 'Make one small plan and keep it.' },
+  },
+  air: {
+    pull: 'Easy to talk to and full of ideas.', push: 'They think out loud when you may want an answer.', align: 'You both pick a good conversation over a big gesture.',
+    more: {
+      pull: 'Air signs flirt with their mind. The conversation moves fast, they ask good questions, and you leave knowing something new.',
+      push: 'They weigh every side and can sound undecided, or go light when you want depth. It’s thinking, not avoiding.',
+      align: 'Air signs need room and a real friend in a partner. If you can talk about anything, most things get solved.',
+    },
+    tryLine: { pull: 'Ask what they changed their mind about lately.', push: 'Ask for a decision by a day, not right now.', align: 'Have one long talk with phones away.' },
+  },
+  water: {
+    pull: 'They notice how you feel before you say it.', push: 'Moods run deep. Ask, don’t guess.', align: 'You both want it to be real.',
+    more: {
+      pull: 'Water signs read the room and remember how things felt. Being around them, you feel understood without having to explain.',
+      push: 'Feelings come in waves, and they may hint instead of saying it straight. A throwaway comment can land harder than you meant.',
+      align: 'Water signs want depth and honesty over a good show. When it feels safe, they give a lot.',
+    },
+    tryLine: { pull: 'Tell them one thing you felt today, unprompted.', push: 'Ask “did that land wrong?” when the mood shifts.', align: 'Share something you don’t usually lead with.' },
+  },
 } as const
 
 /**
@@ -65,7 +98,7 @@ function guideFor(them: Profile, summary: string): Guide {
   }
   // a match whose card has no written lines gets their element's, so no part is ever empty
   const el = BY_ELEMENT[SIGNS[them.sign].element]
-  const part = (k: 'pull' | 'push' | 'align'): Part => ({ headline: says(k) ?? el[k] })
+  const part = (k: 'pull' | 'push' | 'align'): Part => ({ headline: says(k) ?? el[k], body: el.more[k], tryLine: el.tryLine[k] })
   return {
     title: summary,
     line: says('align') ?? el.align,
@@ -145,6 +178,16 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
   const t = TABS[tab]
   const part = t.id === 'chart' ? null : guide.parts[t.id]
   const chart = useMemo(() => chartRows(them), [them])
+  // which pairings back up each part: attraction for Spark, the ones that take work for Clash, the easy ones for Align
+  const partRows: ChartRow[] = useMemo(() => {
+    const core = chart.rows.filter((x) => x.id === 'sun' || x.id === 'moon' || x.id === 'home')
+    const smooth = (x: ChartRow) => x.feel === 'alike' || x.feel === 'easy'
+    if (t.id === 'pull') return chart.rows.filter((x) => x.id === 'venus' || x.id === 'rising')
+    if (t.id === 'push') return core.filter((x) => !smooth(x)).slice(0, 2)
+    if (t.id === 'align') return core.filter(smooth).slice(0, 2)
+    return []
+  }, [chart, t.id])
+  const [tonight, setTonight] = useState(false)
   return (
     <AnimatePresence>
       {open && (
@@ -195,6 +238,19 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                       <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
                         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>ON {them.name.toUpperCase()}’S CARD</div>
                         <div className="serif italic" style={{ fontSize: 16.5, lineHeight: 1.3, color: 'var(--label-1)', marginTop: 4 }}>{part.card}</div>
+                      </div>
+                    )}
+                    {partRows.length > 0 && (
+                      <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
+                        <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>IN YOUR CHARTS</div>
+                        {partRows.map((row) => (
+                          <div key={row.id} style={{ marginTop: 8 }}>
+                            <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-2)' }}>
+                              {SIGNS[row.mine.sign].glyph} YOUR {row.mine.planet.toUpperCase()} × {them.name.toUpperCase()}’S {row.theirs.planet.toUpperCase()} {SIGNS[row.theirs.sign].glyph}
+                            </div>
+                            <div style={{ fontSize: 14, lineHeight: 1.42, color: 'var(--label-1)', marginTop: 3 }}>{row.love}</div>
+                          </div>
+                        ))}
                       </div>
                     )}
                     {!part.body && !part.card && t.id !== 'relationship' && (
@@ -274,16 +330,33 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                 </motion.div>
               </AnimatePresence>
 
-              {/* tonight, and something to do about it */}
-              <CardFrame tint="#c9bedb" kicker="Tonight" title="You two, under this sky" orb={<CardOrb tint="#c9bedb">☾</CardOrb>} style={{ marginTop: 16 }}>
-                <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
-                {onPlayCard && (
-                  <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
-                    style={{ margin: '12px 0 4px', height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
-                    PLAY A TALK CARD WITH {them.name.toUpperCase()} ›
-                  </button>
-                )}
-              </CardFrame>
+              {/* tonight: one small row that opens */}
+              <div style={{ marginTop: 14, borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.2)' }}>
+                <button aria-expanded={tonight} onClick={() => { sfx.tap(); setTonight((o) => !o) }}
+                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', textAlign: 'left' }}>
+                  <CardOrb tint="#c9bedb" size={26}>☾</CardOrb>
+                  <span style={{ flex: 1, minWidth: 0 }}>
+                    <span className="mono" style={{ display: 'block', fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>TONIGHT · YOU TWO, UNDER THIS SKY</span>
+                    {!tonight && <span style={{ display: 'block', fontSize: 13.5, color: 'var(--label-2)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{today.line}</span>}
+                  </span>
+                  <motion.svg animate={{ rotate: tonight ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="m1 1.5 5 5 5-5" /></motion.svg>
+                </button>
+                <AnimatePresence initial={false}>
+                  {tonight && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden' }}>
+                      <div style={{ padding: '2px 14px 14px' }}>
+                        <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
+                        {onPlayCard && (
+                          <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
+                            style={{ marginTop: 12, height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+                            PLAY A TALK CARD WITH {them.name.toUpperCase()} ›
+                          </button>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '18px 4px 0' }}>
                 Astrology, for reflection and fun. It describes how two charts meet; it doesn’t measure or predict a relationship.
