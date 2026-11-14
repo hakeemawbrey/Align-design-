@@ -42,7 +42,7 @@ Widgets between two people and for self-discovery share one frame, `src/componen
 
 Aligning with Juniper no longer shows her face at once (`src/lib/betaFlow.ts`):
 
-1. **The stars align:** when you both say yes the deck carries on. The notification star on the deck (top right) gets a "1" and pulses, with a short toast. There is no banner.
+1. **The stars align:** when you both say yes the deck carries on. A pop-up appears in the middle of the screen (`BetaFlowPopup`): "The stars align · You and Juniper both said yes", with "Draw our card" and "Later". The notification star on the deck (top right) also gets a "1" and pulses, and keeps it if you choose Later. The same pop-up says "It's time" when the 33:33 ends while you're outside the chat.
 2. **The alignment card** (`src/pages/chat/AlignCard.tsx`, `x/align-card`): tapping the star opens its own screen. A deck of big cards shuffles, one lifts out and turns over to show the question, and you answer it there. Their answer arrives sealed.
 3. **Both answer:** sealing yours shows both answers and an "Open the chat" button. The chat opens veiled (their aura, not their photo) with a 33:33 countdown under the header (`RevealBar`). It survives leaving and reloading. In the demo, tap the clock to jump to its last five seconds.
 4. **The reveal:** at 00:00 the two cards flip (`BetaMatch`, "The veil lifts."). The big button is "See Juniper's card"; back in the chat her photo and full card are open. If you're on the deck when the clock ends, the star lights up again and takes you to the flip.

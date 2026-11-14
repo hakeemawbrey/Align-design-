@@ -504,7 +504,7 @@ export default function Deck({ go, sky }: ScreenProps & {
       const slow = BETA && profile.alignsBack && profile.id === 'j27'
       if (slow) {
         session.patch({ matchWith: profile.id, unseenMatch: true }); betaFlow.start(profile.id)
-        later(() => { sfx.match(); setStarPulse((n) => n + 1); showToast('The stars align · tap your star') }, 700)
+        later(() => setStarPulse((n) => n + 1), 700)
       }
       if (profile.alignsBack && !slow) {
         session.patch({ matchWith: profile.id })
