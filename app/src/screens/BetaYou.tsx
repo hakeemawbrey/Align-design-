@@ -9,7 +9,7 @@ import YourCardSheet, { type CardSide } from '../components/you/YourCardSheet'
 import { myProfile } from '../components/you/myCard'
 import { useAccount } from '../pages/account/store'
 import { ME } from '../data/profiles'
-import { SIGNS } from '../data/signs'
+import { SIGNS, type SignId } from '../data/signs'
 import { SIGN_FACTS } from '../data/signFacts'
 import { MOON_NOW } from '../data/sky'
 import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
@@ -27,6 +27,21 @@ import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
+/** one honest line about your sun sign: what drives you, and the catch */
+const INSIGHT: Record<SignId, string> = {
+  aries: 'You come alive when you start things. The growth is in staying once the rush wears off.',
+  taurus: 'You build trust slowly and keep it for good. Your calm is a strength, as long as it isn’t hiding what you want to say.',
+  gemini: 'Your mind needs more than one answer. You feel closest to people who can keep up, and to yourself when you slow down.',
+  cancer: 'You remember how everything felt. You protect people before they ask; let someone do that for you.',
+  leo: 'You give warmth freely and you notice when it isn’t returned. You shine most when you stop checking who’s watching.',
+  virgo: 'You show love by making things better. You’re allowed to be cared for before everything is fixed.',
+  libra: 'You see every side, which makes you fair and slow to choose. What you want counts as much as keeping the peace.',
+  scorpio: 'You feel everything at full depth and show a little of it. The people worth keeping are the ones you let see the rest.',
+  sagittarius: 'You need room, truth and something to look forward to. Freedom feels best when someone’s glad you came back.',
+  capricorn: 'You carry more than people know and rarely ask for help. You’re worth more than what you get done.',
+  aquarius: 'You think for yourself and guard your space. Letting someone close doesn’t cost you who you are.',
+  pisces: 'You feel what the room feels. Your softness is a gift when you remember which feelings are yours.',
+}
 const SCALE = 0.58
 /** the hand: card size */
 const MW = 80
@@ -111,8 +126,8 @@ export default function BetaYou({ go }: ScreenProps) {
           <div style={{ textAlign: 'center', marginTop: -8 }}>
             <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
             <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: SUN.light, marginTop: 8 }}>{SUN.name.toUpperCase()} {SUN.glyph} · {FACTS.element.toUpperCase()}</div>
-            <div className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '5px auto 0', maxWidth: 300 }}>
-              Most likely to {FACTS.likely.replace(/\.$/, '').replace(/^./, (c) => c.toLowerCase())}.{' '}
+            <div className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '6px auto 0', maxWidth: 318 }}>
+              {INSIGHT[ME.sign]}{' '}
               <button onClick={() => { sfx.tap(); go('chart') }} className="mono" style={{ fontStyle: 'normal', fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--align)', whiteSpace: 'nowrap' }}>LEARN MORE ›</button>
             </div>
           </div>
