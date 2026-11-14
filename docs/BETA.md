@@ -40,6 +40,8 @@ Every beta screen sits on the background from comealign.com and the feature film
 
 ## The card frame
 
+People's cards carry the same idea: in the beta the mystery card (`components/deck/ProfileCard.tsx`) and the revealed card (`components/reveal/ProfileFace.tsx`) have a thick foil border (about 7px) in the sign's colours, like a printed trading card. The face is drawn at its usual size and scaled to fit inside the border, so nothing moves.
+
 Widgets between two people and for self-discovery share one frame, `src/components/CardFrame.tsx`, so they read as cards from the same deck as the people: a thick (3px) foil border in the card's colour, a title bar with an orb, an optional "Try this" strip and a mono footer. It's used by How you fit, Your sign, the horoscope and calendar, and the profile's sign and sky panels. Colours follow the planet or sign (sun gold, moon blue, rising violet), never how a reading comes out. Plain lists (settings, demo tools) stay unframed.
 
 ## The slow reveal (every match)

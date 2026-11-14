@@ -38,6 +38,10 @@ const label: React.CSSProperties = {
 }
 const value: React.CSSProperties = { fontFamily: 'var(--serif)', fontSize: 15.5, color: 'var(--label-1)', marginTop: 4, lineHeight: 1.2 }
 
+/** beta: a thick foil border, matching the mystery card (the reveal card is drawn 358 wide) */
+const EDGE = 7.5
+const FIT = (358 - EDGE * 2) / (358 - 3)
+
 /** The fully revealed profile card (S-08 / S-09h). Sized for a 358×625 card. */
 export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }: Props) {
   const sign = SIGNS[p.sign]
@@ -52,14 +56,16 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
 
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 24, padding: 1.5,
+      position: 'absolute', inset: 0, borderRadius: 24, padding: BETA ? EDGE : 1.5,
       background: sign.foil, backgroundSize: '200% 100%', animation: 'rv-foil 6s linear infinite',
       boxShadow: `0 0 28px ${sign.color}66, 0 0 70px ${sign.color}22, 0 30px 60px rgba(0,0,0,0.5)`,
     }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 22.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: BETA ? 24 - EDGE : 22.5, overflow: 'hidden',
         background: 'linear-gradient(180deg, #1b0d38 0%, #150a2e 60%, #120826 100%)',
       }}>
+       {/* beta: thicker border, face scaled to fit inside it */}
+       <div style={BETA ? { position: 'absolute', left: 0, top: 0, width: `${100 / FIT}%`, height: `${100 / FIT}%`, transform: `scale(${FIT})`, transformOrigin: '0 0' } : undefined}>
         {/* name row */}
         <div style={{ height: 54, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '4px 12px 0 16px' }}>
           <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 29, color: 'var(--label-1)', letterSpacing: '-0.01em' }}>
@@ -148,6 +154,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
             ))}
           </div>
         </motion.div>
+       </div>
       </div>
     </div>
   )

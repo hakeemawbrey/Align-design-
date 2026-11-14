@@ -19,6 +19,9 @@ interface Props {
   glow?: boolean
 }
 
+/** beta: a thick foil border, like a printed trading card (the full demo keeps its hairline) */
+const EDGE = 7
+const FIT = (CARD_W - EDGE * 2) / (CARD_W - 5)
 const KIND_COLOR = { push: 'var(--rub)', pull: 'var(--spark)', align: 'var(--align)' } as const
 /** room for the sign row: card width minus both 32px insets */
 const ROW_MAX = CARD_W - 64
@@ -90,16 +93,18 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
 
   return (
     <div className={profile.founder ? 'holo-frame' : undefined} style={{
-      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: 20, padding: profile.founder ? 3 : 2.5,
+      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: BETA ? 22 : 20, padding: BETA ? EDGE : profile.founder ? 3 : 2.5,
       ...(profile.founder ? {} : { background: foil }),
       boxShadow: glow
         ? `0 0 26px ${sign.color}66, 0 0 2px ${sign.light}, 0 18px 40px rgba(5,2,15,0.6)`
         : '0 10px 30px rgba(5,2,15,0.5)',
     }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 17.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: BETA ? 22 - EDGE : 17.5, overflow: 'hidden',
         background: `radial-gradient(120% 60% at 50% 0%, ${sign.dark}55 0%, transparent 60%), linear-gradient(180deg, #160e28 0%, #100a1d 55%, #0e0919 100%)`,
       }}>
+       {/* beta: the thicker border leaves a little less room, so the face is drawn at its usual size and scaled to fit */}
+       <div style={BETA ? { position: 'absolute', left: 0, top: 0, width: `${100 / FIT}%`, height: `${100 / FIT}%`, transform: `scale(${FIT})`, transformOrigin: '0 0' } : { position: 'absolute', inset: 0 }}>
         {/* name + age */}
         <div className="serif italic" style={{ position: 'absolute', left: 36, top: 16, fontSize: 23, color: 'var(--label-1)' }}>
           {profile.initial}, {profile.age}
@@ -241,6 +246,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           <span style={{ color: 'var(--label-2)' }}>ALIGN · {profile.serial}/∞</span>
           <span style={{ color: 'var(--label-3)' }}>MYSTERY CARD</span>
         </div>
+       </div>
       </div>
     </div>
   )
