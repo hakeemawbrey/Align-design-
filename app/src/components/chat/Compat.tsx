@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FEEL_TAG, chartRows, fitWith } from '../../lib/compat'
 import { ME, type Profile } from '../../data/profiles'
@@ -7,7 +7,7 @@ import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
 import CardFrame, { CardOrb } from '../CardFrame'
 import type { ChartRow } from '../../lib/compat'
-import { ChartWheel, PairArt, PairChip } from './GuideArt'
+import { ChartWheel, PairArt } from './GuideArt'
 import { MY_READING_TITLE, READINGS } from './readings'
 
 /** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
@@ -156,6 +156,60 @@ export function AlignGuideCard({ them, onOpen }: { them: Profile; onOpen: (tab: 
   )
 }
 
+/** every section card in a rail is the same size, so the row reads as a deck */
+const CARD: React.CSSProperties = { width: '100%', minHeight: 330, display: 'flex', flexDirection: 'column' }
+
+/** section cards side by side: swipe through them, dots show where you are */
+function Rail({ children, tint }: { children: React.ReactNode[]; tint: string }) {
+  const cards = children.filter(Boolean)
+  const ref = useRef<HTMLDivElement>(null)
+  const [at, setAt] = useState(0)
+  const W = 296, GAP = 12
+  const onScroll = () => { const el = ref.current; if (el) setAt(Math.max(0, Math.min(cards.length - 1, Math.round(el.scrollLeft / (W + GAP))))) }
+  return (
+    <div>
+      <div ref={ref} onScroll={onScroll} className="no-scrollbar"
+        style={{ display: 'flex', gap: GAP, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '0 -20px', padding: '4px 20px 8px', scrollPaddingLeft: 20 }}>
+        {cards.map((c, i) => <div key={i} style={{ flex: `0 0 ${W}px`, scrollSnapAlign: 'start', display: 'flex' }}>{c}</div>)}
+      </div>
+      {cards.length > 1 && (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 6, marginTop: 4 }}>
+          {cards.map((_, i) => (
+            <button key={i} aria-label={`Card ${i + 1} of ${cards.length}`} onClick={() => { sfx.tap(); ref.current?.scrollTo({ left: i * (W + GAP), behavior: 'smooth' }) }}
+              style={{ width: i === at ? 18 : 7, height: 7, borderRadius: 4, background: i === at ? tint : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />
+          ))}
+          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-3)', marginLeft: 8 }}>SWIPE · {at + 1}/{cards.length}</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** one pairing from the two charts, as a card: both signs big, what it's about, what it means for love */
+function PairCard({ row, tint, kicker, name }: { row: ChartRow; tint: string; kicker: string; name: string }) {
+  const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
+  return (
+    <CardFrame tint={tint} kicker={kicker} title={row.title} style={CARD}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0 14px', margin: '2px 0 12px', borderRadius: 14,
+        background: `radial-gradient(60% 120% at 28% 50%, color-mix(in srgb, ${a.color} 24%, transparent), transparent 70%), radial-gradient(60% 120% at 72% 50%, color-mix(in srgb, ${b.color} 24%, transparent), transparent 70%), rgba(10,5,24,0.5)` }}>
+        <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, width: 104 }}>
+          <CardOrb tint={a.color} size={44}>{a.glyph}</CardOrb>
+          <span className="mono" style={{ fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)' }}>YOUR {row.mine.planet.toUpperCase()}</span>
+          <span className="serif italic" style={{ fontSize: 16, lineHeight: 1, color: 'var(--label-1)' }}>{a.name}</span>
+        </span>
+        <span style={{ width: 26, height: 2, marginBottom: 34, background: `linear-gradient(90deg, ${a.color}, ${b.color})` }} />
+        <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, width: 104 }}>
+          <CardOrb tint={b.color} size={44}>{b.glyph}</CardOrb>
+          <span className="mono" style={{ fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)', whiteSpace: 'nowrap' }}>{name.toUpperCase()}’S {row.theirs.planet.toUpperCase()}</span>
+          <span className="serif italic" style={{ fontSize: 16, lineHeight: 1, color: 'var(--label-1)' }}>{b.name}</span>
+        </span>
+      </div>
+      <span className="mono" style={{ alignSelf: 'flex-start', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[row.feel].toUpperCase()}</span>
+      <p style={{ margin: '10px 0 0', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{row.love}</p>
+    </CardFrame>
+  )
+}
+
 /**
  * The alignment guide, open: the same header as the card in the chat, then
  * the part you picked. Spark, Clash and Align are one card each; Relationship
@@ -173,7 +227,6 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
   const fit = useMemo(() => fitWith(them), [them])
   const guide = useMemo(() => guideFor(them, fit.summary), [them, fit])
   const today = useMemo(() => usToday(them.sign), [them])
-  const [why, setWhy] = useState(false)
   const [tab, setTab] = useState(startTab)
   useEffect(() => { if (open) setTab(startTab) }, [open, startTab])
   const t = TABS[tab]
@@ -189,8 +242,6 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
     return []
   }, [chart, t.id])
   const [tonight, setTonight] = useState(false)
-  const [more, setMore] = useState(false)
-  useEffect(() => { setMore(false) }, [tab])
   return (
     <AnimatePresence>
       {open && (
@@ -229,114 +280,59 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
               </p>
               <div style={{ marginTop: 14 }}><GuideTabs tab={tab} onTab={setTab} /></div>
 
+              {/* the part, as section cards to swipe through */}
               <AnimatePresence mode="wait" initial={false}>
-                <motion.div key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}
-                  style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 16 }}>
-                  {part && (<>
-                  <CardFrame tint={t.color} kicker={`${t.label} · ${t.eyebrow}`} title={part.headline}
-                    strip={part.tryLine ? { label: 'Try this', text: part.tryLine } : undefined}
-                    footer={['Align · alignment guide', `${tab + 1}/${TABS.length}`]}>
-                    <PairArt kind={t.id as 'pull' | 'push' | 'align' | 'relationship'} mine={ME.sign} theirs={them.sign} />
-                    {part.body && (
-                      <>
-                        <p style={{ margin: '0 0 2px', fontSize: 15, lineHeight: 1.5, color: 'var(--label-1)', ...(more ? {} : { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }) }}>{part.body}</p>
-                        <button className="mono" onClick={() => { sfx.tap(); setMore((m) => !m) }} aria-expanded={more} style={{ height: 26, fontSize: 9, letterSpacing: '0.16em', color: t.color }}>{more ? 'LESS ‹' : 'MORE ›'}</button>
-                      </>
-                    )}
-                    {part.card && (
-                      <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
-                        <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>ON {them.name.toUpperCase()}’S CARD</div>
-                        <div className="serif italic" style={{ fontSize: 16.5, lineHeight: 1.3, color: 'var(--label-1)', marginTop: 4 }}>{part.card}</div>
-                      </div>
-                    )}
-                    {partRows.length > 0 && (
-                      <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
-                        <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>IN YOUR CHARTS</div>
-                        {partRows.map((row) => (
-                          <div key={row.id} style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 10 }}>
-                            <PairChip row={row} />
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div className="mono" style={{ fontSize: 8, letterSpacing: '0.12em', color: 'var(--label-3)' }}>YOUR {row.mine.planet.toUpperCase()} × THEIR {row.theirs.planet.toUpperCase()}</div>
-                              <div style={{ fontSize: 13.5, lineHeight: 1.38, color: 'var(--label-1)', marginTop: 2 }}>{row.love}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {!part.body && !part.card && t.id !== 'relationship' && (
-                      <p style={{ margin: 0, fontSize: 13, lineHeight: 1.4, color: 'var(--label-3)' }}>{them.reading?.length ? `From ${them.name}’s card.` : `From ${them.name}’s sign: ${SIGNS[them.sign].name}, ${SIGNS[them.sign].element}.`}</p>
-                    )}
-                  </CardFrame>
-
-                  </>)}
-
-                  {/* your chart next to theirs, read for love */}
-                  {t.id === 'chart' && (
-                    <CardFrame tint={t.color} kicker={`Chart · ${t.eyebrow}`} title="How your charts meet, for love" padding="14px 14px 6px" footer={['Align · alignment guide', `${tab + 1}/${TABS.length}`]}>
-                      <ChartWheel rows={chart.rows} mine={ME.sign} theirs={them.sign} name={them.name} />
-                      <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)', padding: '0 2px 2px' }}>
-                        <span>YOU</span><span>{them.name.toUpperCase()}</span>
-                      </div>
-                      {chart.rows.map((row) => {
-                        const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
-                        return (
-                          <div key={row.id} style={{ padding: '12px 0', borderTop: '1px solid rgba(179,166,196,0.14)' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                              <span style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
-                                <CardOrb tint={a.color} size={30}>{a.glyph}</CardOrb>
-                                <span style={{ minWidth: 0 }}>
-                                  <span className="mono" style={{ display: 'block', fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)' }}>{row.mine.planet.toUpperCase()}</span>
-                                  <span className="serif italic" style={{ display: 'block', fontSize: 15.5, lineHeight: 1.1, color: 'var(--label-1)' }}>{a.name}</span>
-                                </span>
-                              </span>
-                              <span aria-hidden style={{ fontSize: 13, color: 'var(--label-3)' }}>×</span>
-                              <span style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8, textAlign: 'right' }}>
-                                <span style={{ minWidth: 0 }}>
-                                  <span className="mono" style={{ display: 'block', fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)' }}>{row.theirs.planet.toUpperCase()}</span>
-                                  <span className="serif italic" style={{ display: 'block', fontSize: 15.5, lineHeight: 1.1, color: 'var(--label-1)' }}>{b.name}</span>
-                                </span>
-                                <CardOrb tint={b.color} size={30}>{b.glyph}</CardOrb>
-                              </span>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 9 }}>
-                              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', fontWeight: 700, color: t.color }}>{row.title.toUpperCase()}</span>
-                              <span className="mono" style={{ fontSize: 8, letterSpacing: '0.1em', color: 'var(--label-3)' }}>· {FEEL_TAG[row.feel].toUpperCase()}</span>
-                            </div>
-                            <div style={{ fontSize: 14.5, lineHeight: 1.42, color: 'var(--label-1)', marginTop: 4 }}>{row.love}</div>
-                          </div>
-                        )
-                      })}
-                      {chart.sunOnly && (
-                        <div style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', padding: '10px 0 8px', borderTop: '1px solid rgba(179,166,196,0.14)' }}>
-                          {them.name}’s card only shows a sun sign. Their moon and rising need a birth time.
-                        </div>
-                      )}
-                    </CardFrame>
-                  )}
-
-                  {/* the relationship, area by area */}
-                  {t.id === 'relationship' && (
-                    <>
-                      {fit.areas.map((a, i) => (
-                        <CardFrame key={a.id} tint={AREA_TINT[a.id]} kicker={a.sub} title={a.title}
-                          orb={<CardOrb tint={AREA_TINT[a.id]}>{a.glyph}</CardOrb>}
-                          strip={{ label: 'Try this', text: a.tryThis }}
-                          footer={[why ? a.from : 'Align · alignment guide', `${i + 1}/${fit.areas.length}`]}>
-                          <span className="mono" style={{ display: 'inline-block', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[a.feel].toUpperCase()}</span>
-                          <p style={{ margin: '10px 0 2px', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{a.body}</p>
+                <motion.div key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }} style={{ marginTop: 16 }}>
+                  <Rail tint={t.color}>
+                    {[
+                      // 1. the read: the picture, the headline, the paragraph
+                      part && (
+                        <CardFrame key="read" tint={t.color} kicker={`${t.label} · ${t.eyebrow}`} title={part.headline} style={CARD}>
+                          <PairArt kind={t.id as 'pull' | 'push' | 'align' | 'relationship'} mine={ME.sign} theirs={them.sign} />
+                          {part.body && <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.48, color: 'var(--label-1)' }}>{part.body}</p>}
+                          {!part.body && <p style={{ margin: 0, fontSize: 13, lineHeight: 1.4, color: 'var(--label-3)' }}>From {them.name}’s sign: {SIGNS[them.sign].name}, {SIGNS[them.sign].element}.</p>}
                         </CardFrame>
-                      ))}
-                      {fit.sunOnly ? (
-                        <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '-2px 4px 0' }}>
-                          {them.name}’s card only shows a sun sign. Feelings and first impressions need a birth time.
-                        </p>
-                      ) : (
-                        <button className="mono" onClick={() => { sfx.tap(); setWhy((w) => !w) }} aria-expanded={why}
-                          style={{ alignSelf: 'flex-start', margin: '-4px 4px 0', height: 30, fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-2)' }}>
-                          {why ? 'HIDE THE ASTROLOGY ‹' : 'WHY? SHOW THE ASTROLOGY ›'}
-                        </button>
-                      )}
-                    </>
+                      ),
+                      // 2. what their card says
+                      part?.card && (
+                        <CardFrame key="card" tint={SIGNS[them.sign].color} kicker={`${t.label} · on ${them.name}’s card`} title="In their words" orb={<CardOrb tint={SIGNS[them.sign].color}>{SIGNS[them.sign].glyph}</CardOrb>} style={CARD}>
+                          <div style={{ flex: 1, display: 'grid', placeItems: 'center', padding: '10px 4px' }}>
+                            <div className="serif italic" style={{ fontSize: 24, lineHeight: 1.25, color: 'var(--label-1)', textAlign: 'center' }}>“{part.card}”</div>
+                          </div>
+                        </CardFrame>
+                      ),
+                      // 3. the pairings in your charts behind it, one card each
+                      ...partRows.map((row) => <PairCard key={row.id} row={row} tint={t.color} kicker={`${t.label} · in your charts`} name={them.name} />),
+                      // the chart tab: the wheel, then every pairing
+                      t.id === 'chart' && (
+                        <CardFrame key="wheel" tint={t.color} kicker="Chart · both of you" title="Your charts on one wheel" style={CARD}>
+                          <ChartWheel rows={chart.rows} mine={ME.sign} theirs={them.sign} name={them.name} />
+                          {chart.sunOnly && <div style={{ fontSize: 12, lineHeight: 1.4, color: 'var(--label-3)', textAlign: 'center' }}>{them.name}’s card only shows a sun sign. Their moon and rising need a birth time.</div>}
+                        </CardFrame>
+                      ),
+                      ...(t.id === 'chart' ? chart.rows.map((row) => <PairCard key={row.id} row={row} tint={t.color} kicker="Chart · for love" name={them.name} />) : []),
+                      // the relationship tab: the four areas
+                      ...(t.id === 'relationship' ? fit.areas.map((a) => (
+                        <CardFrame key={a.id} tint={AREA_TINT[a.id]} kicker={a.sub} title={a.title} orb={<CardOrb tint={AREA_TINT[a.id]}>{a.glyph}</CardOrb>}
+                          strip={{ label: 'Try this', text: a.tryThis }} style={CARD}>
+                          <span className="mono" style={{ alignSelf: 'flex-start', display: 'inline-block', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[a.feel].toUpperCase()}</span>
+                          <p style={{ margin: '10px 0 0', fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)' }}>{a.body}</p>
+                          <div className="mono" style={{ fontSize: 8, letterSpacing: '0.1em', color: 'var(--label-3)', marginTop: 10 }}>{a.from.toUpperCase()}</div>
+                        </CardFrame>
+                      )) : []),
+                      // last: something to do about it
+                      part?.tryLine && (
+                        <CardFrame key="try" tint={t.color} kicker={`${t.label} · try this`} title="One thing to do" style={CARD}>
+                          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, padding: '6px 4px' }}>
+                            <span style={{ fontSize: 34, lineHeight: 1, color: t.color, textShadow: `0 0 18px ${t.color}` }}>✦</span>
+                            <div className="serif italic" style={{ fontSize: 23, lineHeight: 1.25, color: 'var(--label-1)', textAlign: 'center' }}>{part.tryLine}</div>
+                          </div>
+                        </CardFrame>
+                      ),
+                    ]}
+                  </Rail>
+                  {t.id === 'relationship' && fit.sunOnly && (
+                    <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '8px 4px 0' }}>{them.name}’s card only shows a sun sign. Feelings and first impressions need a birth time.</p>
                   )}
                 </motion.div>
               </AnimatePresence>
