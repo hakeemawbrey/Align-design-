@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
-import AlignMark from '../components/intro/AlignMark'
 import TabBar from '../components/TabBar'
 import ProfileCard from '../components/deck/ProfileCard'
 import { CARD_W, CARD_H } from '../components/deck/fx'
@@ -183,7 +182,7 @@ export default function BetaYou({ go }: ScreenProps) {
                     background: `radial-gradient(90% 60% at 50% 36%, color-mix(in srgb, ${row.color} 26%, #1b112f), #120b22)` }}>
                     <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
                     {row.k === 'align'
-                      ? <AlignMark size={46} strokeOpacity={0.9} strokeWidth={0.9} dotRadius={4.2} style={{ margin: '-6px 0', filter: `drop-shadow(0 0 8px ${row.color})` }} />
+                      ? <SeedOfLife size={44} color={row.color} />
                       : <span style={{ fontSize: 30, lineHeight: 1, color: row.color, textShadow: `0 0 16px ${row.color}` }}>{row.glyph}{'\uFE0E'}</span>}
                     <span className="serif italic" style={{ fontSize: 13.5, lineHeight: 1.15, color: 'var(--label-1)', textAlign: 'center' }}>{row.what}</span>
                   </span>
@@ -222,14 +221,6 @@ export default function BetaYou({ go }: ScreenProps) {
             </div>
           </section>
 
-          {/* block a sign */}
-          <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
-            style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
-            <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
-            {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}
-          </motion.button>
-
           {/* your month */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
@@ -259,6 +250,14 @@ export default function BetaYou({ go }: ScreenProps) {
               ))}
             </CardFrame>
           </section>
+
+          {/* block a sign */}
+          <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
+            style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
+            <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
+            {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}
+          </motion.button>
 
           {/* app */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -363,6 +362,23 @@ function Reader({ start, onClose }: { start: number; onClose: () => void }) {
   )
 }
 
+/** the seed of life: seven circles, one in the middle and six around it, inside a ring */
+function SeedOfLife({ size, color, draw }: { size: number; color: string; draw?: boolean }) {
+  const R = 20
+  const pts: [number, number][] = [[0, 0], ...Array.from({ length: 6 }, (_, k): [number, number] => {
+    const a = (-90 + k * 60) * (Math.PI / 180)
+    return [Math.cos(a) * R, Math.sin(a) * R]
+  })]
+  return (
+    <svg width={size} height={size} viewBox="-44 -44 88 88" fill="none" stroke={color} strokeWidth={size > 60 ? 1 : 1.6} style={{ filter: `drop-shadow(0 0 ${size > 60 ? 10 : 5}px ${color})`, overflow: 'visible' }}>
+      {pts.map(([x, y], k) => (
+        <motion.circle key={k} cx={x} cy={y} r={R} initial={draw ? { pathLength: 0, opacity: 0 } : false} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 0.7, delay: 0.25 + k * 0.09, ease: 'easeOut' }} />
+      ))}
+      <motion.circle cx={0} cy={0} r={R * 2} initial={draw ? { pathLength: 0, opacity: 0 } : false} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 0.9, delay: 0.9, ease: 'easeOut' }} />
+    </svg>
+  )
+}
+
 /** spark, clash, align about your own sign, big: swipe or tap the arrows for the next one */
 function SelfReader({ start, onClose }: { start: number; onClose: () => void }) {
   const [i, setI] = useState(start)
@@ -388,7 +404,7 @@ function SelfReader({ start, onClose }: { start: number; onClose: () => void }) 
               <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{SUN.name.toUpperCase()} {SUN.glyph}</span>
             </div>
             {row.k === 'align'
-              ? <div style={{ display: 'grid', placeItems: 'center', margin: '8px 0 6px' }}><AlignMark size={116} animate strokeOpacity={0.9} strokeWidth={0.7} style={{ filter: `drop-shadow(0 0 14px ${row.color})` }} /></div>
+              ? <div style={{ display: 'grid', placeItems: 'center', margin: '12px 0 10px' }}><SeedOfLife size={108} color={row.color} draw /></div>
               : <div style={{ textAlign: 'center', fontSize: 64, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '26px 0 22px' }}>{row.glyph}{'\uFE0E'}</div>}
             <div className="mono" style={{ textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>{row.what.toUpperCase()}</div>
             <div className="serif italic" style={{ textAlign: 'center', fontSize: 25, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 10, flex: 1 }}>{SELF[ME.sign][row.k]}</div>
