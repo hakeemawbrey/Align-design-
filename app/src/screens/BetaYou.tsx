@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
-import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import ProfileCard from '../components/deck/ProfileCard'
+import ProfileFace from '../components/reveal/ProfileFace'
 import { CARD_W, CARD_H } from '../components/deck/fx'
 import { myProfile } from '../components/you/myCard'
 import { useAccount } from '../pages/account/store'
@@ -19,14 +20,18 @@ import SkySpread from '../components/sky/SkySpread'
 import MoonPhase from '../components/sky/MoonPhase'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
-import CardFrame, { foil } from '../components/CardFrame'
+import CardFrame from '../components/CardFrame'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
 const SCALE = 0.6
+/** the reveal card is drawn at 358 × 625; both sides share the deck card's width (as in YourCardSheet) */
+const FACE_W = 358
+const FACE_H = 625
+const BOX_H = Math.round(FACE_H * (CARD_W / FACE_W))
 const HW = CARD_W * SCALE
-const HH = CARD_H * SCALE
+const HH = BOX_H * SCALE
 const side: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
 
 const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
@@ -51,10 +56,9 @@ export default function BetaYou({ go }: ScreenProps) {
   const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
   const events = useMemo(() => upcoming(3), [])
   const [flipped, setFlipped] = useState(false)
-  // tilt: the card leans toward your finger and the foil catches the light
+  // tilt: the card leans toward your finger
   const rx = useSpring(useMotionValue(0), { stiffness: 200, damping: 18 })
   const ry = useSpring(useMotionValue(0), { stiffness: 200, damping: 18 })
-  const shine = useTransform(ry, [-14, 14], ['0% 0%', '100% 100%'])
   const tilt = (e: React.PointerEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect()
     ry.set(((e.clientX - r.left) / r.width - 0.5) * 24)
@@ -93,15 +97,18 @@ export default function BetaYou({ go }: ScreenProps) {
                 style={{ width: HW, height: HH, rotateX: rx, rotateY: ry, transformStyle: 'preserve-3d', cursor: 'pointer' }}>
                 <motion.div animate={{ rotateY: flipped ? 180 : 0 }} transition={{ duration: 0.7, ease: [0.3, 1.25, 0.5, 1] }}
                   style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>
+                  {/* front: the mystery card, exactly as it's dealt into other people's decks */}
                   <div style={side}>
-                    <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
-                      <ProfileCard profile={me} glow />
+                    <div style={{ position: 'absolute', left: 0, top: ((BOX_H - CARD_H) / 2) * SCALE, width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
+                      <ProfileCard profile={me} peek="none" glow />
                     </div>
                   </div>
-                  <div style={{ ...side, transform: 'rotateY(180deg)' }}><PhotoFace /></div>
-                  {/* the foil catching the light */}
-                  <motion.div aria-hidden style={{ ...side, borderRadius: 18, pointerEvents: 'none', mixBlendMode: 'color-dodge', opacity: 0.35,
-                    backgroundImage: 'linear-gradient(115deg, transparent 30%, rgba(255,240,200,0.9) 45%, rgba(190,160,255,0.8) 52%, transparent 66%)', backgroundSize: '250% 250%', backgroundPosition: shine }} />
+                  {/* back: the full reveal card a match sees */}
+                  <div style={{ ...side, transform: 'rotateY(180deg)' }}>
+                    <div style={{ width: FACE_W, height: FACE_H, transform: `scale(${HW / FACE_W})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
+                      <ProfileFace p={me} shown lift revealed />
+                    </div>
+                  </div>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -259,21 +266,6 @@ export default function BetaYou({ go }: ScreenProps) {
 
       <TabBar active="you" go={go} />
 
-    </div>
-  )
-}
-
-/** the back of your card, after the reveal: your photo, full bleed, in your sign's foil */
-function PhotoFace() {
-  return (
-    <div style={{ width: '100%', height: '100%', borderRadius: 18, padding: 4, background: foil(SUN.color), boxShadow: `0 0 30px ${SUN.color}77` }}>
-      <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 14, overflow: 'hidden', background: '#07040f' }}>
-        <img src={ME.photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '40px 14px 12px', background: 'linear-gradient(transparent, rgba(7,4,15,0.92))' }}>
-          <div className="serif italic" style={{ fontSize: 24, color: '#fff' }}>{ME.name}, {ME.age}</div>
-          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: SUN.light, marginTop: 2 }}>{SUN.name.toUpperCase()} {SUN.glyph} · REVEALED</div>
-        </div>
-      </div>
     </div>
   )
 }
