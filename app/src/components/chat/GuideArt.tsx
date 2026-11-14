@@ -132,24 +132,25 @@ export function ChartWheel({ rows, mine, theirs, name }: { rows: ChartRow[]; min
             initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 0.85 }} transition={{ duration: 0.7, delay: 0.35 + i * 0.14 }} />
         })}
         <defs><linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={mineCol} /><stop offset="1" stopColor={theirCol} /></linearGradient></defs>
-        {mineDots.map((d, i) => {
-          const [x, y] = pt(d.sign, 78, d.nudge)
+        {([['m', mineDots, 78, 0.1], ['t', theirDots, 52, 0.2]] as const).map(([side, list, radius, wait]) => list.map((d, i) => {
+          const [x, y] = pt(d.sign, radius, d.nudge)
+          const col = SIGNS[d.sign]
+          const id = `orb-${side}${i}`
           return (
-            <motion.g key={`m${i}`} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.1 + i * 0.07 }} style={{ transformOrigin: `${x}px ${y}px` }}>
-              <circle cx={x} cy={y} r="9.5" fill={mineCol} stroke="#1a0f2e" strokeWidth="1.5" />
+            <motion.g key={id} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 18, delay: wait + i * 0.07 }} style={{ transformOrigin: `${x}px ${y}px` }}>
+              <defs>
+                {/* the same glossy orb as the sign orbs elsewhere: light at the top left, deep at the edge */}
+                <radialGradient id={id} cx="0.32" cy="0.28" r="0.8">
+                  <stop offset="0" stopColor={col.light} /><stop offset="0.55" stopColor={col.color} /><stop offset="1" stopColor={col.dark ?? col.color} />
+                </radialGradient>
+              </defs>
+              <circle cx={x} cy={y} r="14" fill={col.color} opacity="0.28" />
+              <circle cx={x} cy={y} r="11" fill={`url(#${id})`} stroke={side === 'm' ? mineCol : theirCol} strokeWidth="1.6" />
+              <ellipse cx={x - 3} cy={y - 4.5} rx="4" ry="2.2" fill="#fff" opacity="0.4" />
               <svg x={x - 6.5} y={y - 6.5} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a0f2e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" color="#1a0f2e">{planetShape(d.planet.toLowerCase() as PlanetKind)}</svg>
             </motion.g>
           )
-        })}
-        {theirDots.map((d, i) => {
-          const [x, y] = pt(d.sign, 52, d.nudge)
-          return (
-            <motion.g key={`t${i}`} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.2 + i * 0.07 }} style={{ transformOrigin: `${x}px ${y}px` }}>
-              <circle cx={x} cy={y} r="9.5" fill={theirCol} stroke="#1a0f2e" strokeWidth="1.5" />
-              <svg x={x - 6.5} y={y - 6.5} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a0f2e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" color="#1a0f2e">{planetShape(d.planet.toLowerCase() as PlanetKind)}</svg>
-            </motion.g>
-          )
-        })}
+        }))}
       </svg>
       <div className="mono" style={{ display: 'flex', gap: 16, fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-2)', marginTop: 2 }}>
         <span><span style={{ display: 'inline-block', width: 9, height: 9, borderRadius: 5, background: mineCol, marginRight: 6, verticalAlign: -1 }} />YOU · OUTER</span>
