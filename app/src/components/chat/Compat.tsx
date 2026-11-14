@@ -1,17 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FEEL_TAG, chartRows, fitWith } from '../../lib/compat'
 import { ME, type Profile } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
 import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
-import CardFrame, { CardOrb } from '../CardFrame'
+import { CardOrb, foil } from '../CardFrame'
 import type { ChartRow } from '../../lib/compat'
-import { ChartWheel, PairArt } from './GuideArt'
+import { PairArt } from './GuideArt'
 import { MY_READING_TITLE, READINGS } from './readings'
 
-/** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
-const AREA_TINT = { daily: '#f2c75c', feelings: '#8fb4ff', first: '#cdb0ff', understood: '#f0a8d8' } as const
 
 /**
  * The chat's top-right widget: how the two of you fit. Words only; there is
@@ -112,21 +110,6 @@ function guideFor(them: Profile, summary: string): Guide {
   }
 }
 
-/** the four parts, as a row of tabs */
-function GuideTabs({ tab, onTab }: { tab: number; onTab: (i: number) => void }) {
-  return (
-    <div role="tablist" style={{ display: 'flex', padding: 3, borderRadius: 999, background: 'rgba(20, 10, 46, 0.55)', border: '1px solid rgba(179,166,196,0.18)' }}>
-      {TABS.map((x, i) => (
-        <button key={x.id} role="tab" aria-selected={i === tab} onClick={() => { if (i !== tab) { sfx.tap(); onTab(i) } }}
-          style={{ position: 'relative', flex: x.id === 'relationship' ? 1.75 : 1, height: 34, display: 'grid', placeItems: 'center' }}>
-          {i === tab && <motion.div layoutId="guide-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 999, background: x.pill }} />}
-          <span className="mono" style={{ position: 'relative', fontSize: 8.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: i === tab ? x.color : 'var(--label-3)', fontWeight: 700 }}>{x.label}</span>
-        </button>
-      ))}
-    </div>
-  )
-}
-
 /**
  * The guide in the chat: one quiet row in the card frame. Your two signs, the
  * line that sums you up, and an arrow. Everything else is in the sheet.
@@ -156,92 +139,139 @@ export function AlignGuideCard({ them, onOpen }: { them: Profile; onOpen: (tab: 
   )
 }
 
-/** every section card in a rail is the same size, so the row reads as a deck */
-const CARD: React.CSSProperties = { width: '100%', minHeight: 330, display: 'flex', flexDirection: 'column' }
-
-/** section cards side by side: swipe through them, dots show where you are */
-function Rail({ children, tint }: { children: React.ReactNode[]; tint: string }) {
-  const cards = children.filter(Boolean)
-  const ref = useRef<HTMLDivElement>(null)
-  const [at, setAt] = useState(0)
-  const W = 296, GAP = 12
-  const onScroll = () => { const el = ref.current; if (el) setAt(Math.max(0, Math.min(cards.length - 1, Math.round(el.scrollLeft / (W + GAP))))) }
-  return (
-    <div>
-      <div ref={ref} onScroll={onScroll} className="no-scrollbar"
-        style={{ display: 'flex', gap: GAP, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '0 -20px', padding: '4px 20px 8px', scrollPaddingLeft: 20 }}>
-        {cards.map((c, i) => <div key={i} style={{ flex: `0 0 ${W}px`, scrollSnapAlign: 'start', display: 'flex' }}>{c}</div>)}
-      </div>
-      {cards.length > 1 && (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 6, marginTop: 4 }}>
-          {cards.map((_, i) => (
-            <button key={i} aria-label={`Card ${i + 1} of ${cards.length}`} onClick={() => { sfx.tap(); ref.current?.scrollTo({ left: i * (W + GAP), behavior: 'smooth' }) }}
-              style={{ width: i === at ? 18 : 7, height: 7, borderRadius: 4, background: i === at ? tint : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />
-          ))}
-          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-3)', marginLeft: 8 }}>SWIPE · {at + 1}/{cards.length}</span>
-        </div>
-      )}
-    </div>
-  )
+/** a drawn symbol for each part */
+function PartIcon({ id, size, color }: { id: TabId; size: number; color: string }) {
+  const glow = { filter: `drop-shadow(0 0 ${Math.round(size / 4)}px ${color})` }
+  if (id === 'pull') return <svg width={size} height={size} viewBox="0 0 24 24" style={glow}><path d="M12 1c.6 6.6 4.4 10.4 11 11-6.6.6-10.4 4.4-11 11-.6-6.6-4.4-10.4-11-11 6.6-.6 10.4-4.4 11-11Z" fill={color} /></svg>
+  if (id === 'push') return <svg width={size} height={size} viewBox="0 0 24 24" style={glow}><path d="M14 1 4 13.5h6L8 23l12-13.5h-6.5L14 1Z" fill={color} /></svg>
+  if (id === 'align') {
+    const pts = [[0, 0], ...Array.from({ length: 6 }, (_, k) => { const a = ((-90 + k * 60) * Math.PI) / 180; return [Math.cos(a) * 5, Math.sin(a) * 5] })]
+    return <svg width={size} height={size} viewBox="-12 -12 24 24" fill="none" stroke={color} strokeWidth="0.7" style={glow}>{pts.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="5" />)}<circle r="10" /></svg>
+  }
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" style={glow}><ellipse cx="12" cy="12" rx="10.5" ry="5" transform="rotate(-20 12 12)" /><circle cx="12" cy="12" r="3" fill={color} stroke="none" /></svg>
 }
 
-/** one pairing from the two charts, as a card: both signs big, what it's about, what it means for love */
-function PairCard({ row, tint, kicker, name }: { row: ChartRow; tint: string; kicker: string; name: string }) {
-  const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
+/** short names for the chart pairings, for the little cards */
+const PAIR_NAME: Record<ChartRow['id'], string> = { sun: 'Sun', moon: 'Moon', rising: 'Rising', venus: 'Pull', home: 'Home' }
+
+interface Big { key: string; tint: string; label: string; node: React.ReactNode }
+
+/** a card, big: swipe or tap the arrows for the next one (the same reader as the You screen's cards) */
+function BigCards({ cards, start, title, onClose }: { cards: Big[]; start: number; title: string; onClose: () => void }) {
+  const [i, setI] = useState(start)
+  const [dir, setDir] = useState(0)
+  const c = cards[i]
+  const to = (n: number) => { if (n < 0 || n >= cards.length) return; sfx.flip(); setDir(n > i ? 1 : -1); setI(n) }
   return (
-    <CardFrame tint={tint} kicker={kicker} title={row.title} style={CARD}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0 14px', margin: '2px 0 12px', borderRadius: 14,
-        background: `radial-gradient(60% 120% at 28% 50%, color-mix(in srgb, ${a.color} 24%, transparent), transparent 70%), radial-gradient(60% 120% at 72% 50%, color-mix(in srgb, ${b.color} 24%, transparent), transparent 70%), rgba(10,5,24,0.5)` }}>
-        <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, width: 104 }}>
-          <CardOrb tint={a.color} size={44}>{a.glyph}</CardOrb>
-          <span className="mono" style={{ fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)' }}>YOUR {row.mine.planet.toUpperCase()}</span>
-          <span className="serif italic" style={{ fontSize: 16, lineHeight: 1, color: 'var(--label-1)' }}>{a.name}</span>
-        </span>
-        <span style={{ width: 26, height: 2, marginBottom: 34, background: `linear-gradient(90deg, ${a.color}, ${b.color})` }} />
-        <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, width: 104 }}>
-          <CardOrb tint={b.color} size={44}>{b.glyph}</CardOrb>
-          <span className="mono" style={{ fontSize: 8, letterSpacing: '0.14em', color: 'var(--label-3)', whiteSpace: 'nowrap' }}>{name.toUpperCase()}’S {row.theirs.planet.toUpperCase()}</span>
-          <span className="serif italic" style={{ fontSize: 16, lineHeight: 1, color: 'var(--label-1)' }}>{b.name}</span>
-        </span>
+    <motion.div role="dialog" aria-label={c.label} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={onClose} style={{ position: 'absolute', inset: 0, zIndex: 95, background: 'rgba(5,2,15,0.88)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
+      <div aria-hidden style={{ position: 'absolute', left: '50%', top: '42%', width: 420, height: 420, marginLeft: -210, marginTop: -210, borderRadius: '50%', filter: 'blur(50px)', background: `radial-gradient(closest-side, color-mix(in srgb, ${c.tint} 40%, transparent), transparent)`, transition: 'background 0.4s' }} />
+      <div className="mono" style={{ position: 'absolute', top: 64, left: 0, right: 0, textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>{title.toUpperCase()} · {i + 1} OF {cards.length}</div>
+      <AnimatePresence initial={true} mode="popLayout" custom={dir}>
+        <motion.div key={c.key} custom={dir}
+          initial={{ rotateY: dir === 0 ? 180 : dir * 70, x: dir * 120, opacity: 0, scale: 0.9 }} animate={{ rotateY: 0, x: 0, opacity: 1, scale: 1 }} exit={{ rotateY: dir * -70, x: dir * -120, opacity: 0, scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 24 }}
+          drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.5}
+          onDragEnd={(_, d) => { if (d.offset.x < -70) to(i + 1); else if (d.offset.x > 70) to(i - 1) }}
+          onClick={(e) => e.stopPropagation()}
+          style={{ position: 'absolute', left: 34, right: 34, top: 110, borderRadius: 24, padding: 5, background: foil(c.tint), boxShadow: `0 0 40px color-mix(in srgb, ${c.tint} 45%, transparent), 0 24px 50px rgba(0,0,0,0.6)`, touchAction: 'pan-y' }}>
+          <div className="no-scrollbar" style={{ borderRadius: 19, minHeight: 420, maxHeight: 560, overflowY: 'auto', padding: '20px 20px 18px', display: 'flex', flexDirection: 'column', background: `radial-gradient(90% 45% at 50% 16%, color-mix(in srgb, ${c.tint} 22%, #1d1233), #120b22)` }}>
+            {c.node}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      <div onClick={(e) => e.stopPropagation()} style={{ position: 'absolute', left: 30, right: 30, bottom: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <button aria-label="Previous card" onClick={() => to(i - 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>‹</button>
+        <div style={{ display: 'flex', gap: 6 }}>
+          {cards.map((x, n) => <button key={x.key} aria-label={x.label} onClick={() => to(n)} style={{ width: n === i ? 18 : 7, height: 7, borderRadius: 4, background: n === i ? x.tint : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />)}
+        </div>
+        <button aria-label="Next card" onClick={() => to(i + 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i < cards.length - 1 ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>›</button>
       </div>
-      <span className="mono" style={{ alignSelf: 'flex-start', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[row.feel].toUpperCase()}</span>
-      <p style={{ margin: '10px 0 0', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{row.love}</p>
-    </CardFrame>
+      <button aria-label="Close card" onClick={onClose} style={{ position: 'absolute', right: 14, top: 52, width: 40, height: 40, display: 'grid', placeItems: 'center', fontSize: 22, color: 'var(--label-1)' }}>×</button>
+    </motion.div>
   )
 }
 
 /**
- * The alignment guide, open: the same header as the card in the chat, then
- * the part you picked. Spark, Clash and Align are one card each; Relationship
- * is the long game plus the four areas (day to day, feelings, first
- * impressions, feeling understood). The astrology sits under a "why" toggle.
- * Words only: no score, percentage or rating, on purpose.
+ * The alignment guide, open. Built like the You screen: a row of little cards
+ * (Spark, Clash, Align, and the long game when there is one) and a fanned
+ * hand of your chart pairings. Tap any of them and it comes up big; swipe for
+ * the rest. Words and pictures only: no score, percentage or rating.
  */
-export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
+export function CompatSheet({ them, open, onClose, onPlayCard }: {
   them: Profile; open: boolean; onClose: () => void
   /** open your talk cards, to act on it */
   onPlayCard?: () => void
-  /** which part to open on (the card in the chat passes the one it was showing) */
   startTab?: number
 }) {
   const fit = useMemo(() => fitWith(them), [them])
   const guide = useMemo(() => guideFor(them, fit.summary), [them, fit])
-  const today = useMemo(() => usToday(them.sign), [them])
-  const [tab, setTab] = useState(startTab)
-  useEffect(() => { if (open) setTab(startTab) }, [open, startTab])
-  const t = TABS[tab]
-  const part = t.id === 'chart' ? null : guide.parts[t.id]
   const chart = useMemo(() => chartRows(them), [them])
-  // which pairings back up each part: attraction for Spark, the ones that take work for Clash, the easy ones for Align
-  const partRows: ChartRow[] = useMemo(() => {
-    const core = chart.rows.filter((x) => x.id === 'sun' || x.id === 'moon' || x.id === 'home')
-    const smooth = (x: ChartRow) => x.feel === 'alike' || x.feel === 'easy'
-    if (t.id === 'pull') return chart.rows.filter((x) => x.id === 'venus' || x.id === 'rising')
-    if (t.id === 'push') return core.filter((x) => !smooth(x)).slice(0, 2)
-    if (t.id === 'align') return core.filter(smooth).slice(0, 2)
-    return []
-  }, [chart, t.id])
+  const today = useMemo(() => usToday(them.sign), [them])
   const [tonight, setTonight] = useState(false)
+  const [big, setBig] = useState<{ set: 'parts' | 'chart'; at: number } | null>(null)
+  useEffect(() => { if (!open) setBig(null) }, [open])
+  const mine = SIGNS[ME.sign], theirs = SIGNS[them.sign]
+
+  // the little cards: the long game only when someone wrote one (Juniper)
+  const parts = TABS.filter((t): t is (typeof TABS)[number] & { id: TabId } => t.id !== 'chart' && (t.id !== 'relationship' || them.id === 'j27'))
+  const partCards: Big[] = parts.map((t) => {
+    const p = guide.parts[t.id]
+    return {
+      key: t.id, tint: t.color, label: t.label,
+      node: (
+        <>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <span className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', fontWeight: 700, color: t.color }}>{t.label.toUpperCase()}</span>
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-3)' }}>{t.eyebrow.toUpperCase()}</span>
+          </div>
+          <div style={{ marginTop: 12 }}><PairArt kind={t.id} mine={ME.sign} theirs={them.sign} /></div>
+          <div className="serif italic" style={{ fontSize: 25, lineHeight: 1.18, color: 'var(--label-1)', textAlign: 'center', marginTop: 4 }}>{p.headline}</div>
+          {p.body && <p style={{ margin: '12px 0 0', fontSize: 14, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{p.body}</p>}
+          {p.card && <div className="serif italic" style={{ fontSize: 15.5, lineHeight: 1.3, color: 'var(--label-1)', textAlign: 'center', marginTop: 12 }}>{them.name}’s card: “{p.card}”</div>}
+          <div style={{ flex: 1 }} />
+          {p.tryLine && (
+            <div style={{ marginTop: 16, borderRadius: 14, padding: '10px 12px', background: `color-mix(in srgb, ${t.color} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${t.color} 40%, transparent)` }}>
+              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: t.color }}>TRY THIS </span>
+              <span className="serif italic" style={{ fontSize: 15.5, color: 'var(--label-1)' }}>{p.tryLine}</span>
+            </div>
+          )}
+        </>
+      ),
+    }
+  })
+  const chartCards: Big[] = chart.rows.map((row) => {
+    const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
+    return {
+      key: row.id, tint: '#c9bedb', label: row.title,
+      node: (
+        <>
+          <div className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', fontWeight: 700, color: '#c9bedb' }}>YOUR CHARTS · {PAIR_NAME[row.id].toUpperCase()}</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '18px 0 16px', margin: '14px 0 0', borderRadius: 16,
+            background: `radial-gradient(60% 120% at 28% 50%, color-mix(in srgb, ${a.color} 26%, transparent), transparent 70%), radial-gradient(60% 120% at 72% 50%, color-mix(in srgb, ${b.color} 26%, transparent), transparent 70%), rgba(10,5,24,0.5)` }}>
+            <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, width: 110 }}>
+              <CardOrb tint={a.color} size={58}>{a.glyph}</CardOrb>
+              <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.14em', color: 'var(--label-3)' }}>YOUR {row.mine.planet.toUpperCase()}</span>
+              <span className="serif italic" style={{ fontSize: 18, lineHeight: 1, color: 'var(--label-1)' }}>{a.name}</span>
+            </span>
+            <span style={{ width: 24, height: 2, marginBottom: 40, background: `linear-gradient(90deg, ${a.color}, ${b.color})` }} />
+            <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, width: 110 }}>
+              <CardOrb tint={b.color} size={58}>{b.glyph}</CardOrb>
+              <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.14em', color: 'var(--label-3)', whiteSpace: 'nowrap' }}>{them.name.toUpperCase()}’S {row.theirs.planet.toUpperCase()}</span>
+              <span className="serif italic" style={{ fontSize: 18, lineHeight: 1, color: 'var(--label-1)' }}>{b.name}</span>
+            </span>
+          </div>
+          <div className="serif italic" style={{ fontSize: 25, lineHeight: 1.18, color: 'var(--label-1)', textAlign: 'center', marginTop: 18 }}>{row.title}</div>
+          <p style={{ margin: '12px 0 0', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.love}</p>
+          <div style={{ flex: 1 }} />
+          <span className="mono" style={{ alignSelf: 'center', marginTop: 16, padding: '5px 11px', borderRadius: 999, fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[row.feel].toUpperCase()}</span>
+        </>
+      ),
+    }
+  })
+  const n = chart.rows.length
+  const spread = n > 4 ? 52 : n > 2 ? 64 : 84
+
   return (
     <AnimatePresence>
       {open && (
@@ -263,82 +293,66 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 3l10 10M13 3 3 13" /></svg>
               </button>
             </div>
-            <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', padding: '0 20px 40px' }}>
-              {/* the same who-and-what as the row in the chat, then the four parts */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '0 4px' }}>
-                <span style={{ display: 'flex', flexShrink: 0 }}>
-                  <CardOrb tint={SIGNS[ME.sign].color} size={42}>{SIGNS[ME.sign].glyph}</CardOrb>
-                  <span style={{ marginLeft: -12 }}><CardOrb tint={SIGNS[them.sign].color} size={42}>{SIGNS[them.sign].glyph}</CardOrb></span>
+            <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: '0 20px 40px' }}>
+              {/* who */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span style={{ display: 'flex' }}>
+                  <CardOrb tint={mine.color} size={54}>{mine.glyph}</CardOrb>
+                  <span style={{ marginLeft: -14 }}><CardOrb tint={theirs.color} size={54}>{theirs.glyph}</CardOrb></span>
                 </span>
-                <div style={{ minWidth: 0 }}>
-                  <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>ALIGNMENT GUIDE</div>
-                  <div className="h-display" style={{ fontSize: 28, lineHeight: 1.1, marginTop: 3 }}>You &amp; {them.name}</div>
-                </div>
+                <div className="h-display" style={{ fontSize: 30, lineHeight: 1.1, marginTop: 10 }}>You &amp; {them.name}</div>
+                <p className="serif italic" style={{ fontSize: 17.5, lineHeight: 1.3, color: 'var(--label-2)', margin: '6px 8px 0' }}>{guide.title}</p>
               </div>
-              <p className="serif italic" style={{ fontSize: 19, lineHeight: 1.3, color: 'var(--label-1)', margin: '14px 4px 0' }}>
-                {guide.title}{guide.line ? <span style={{ color: 'var(--label-2)' }}> {guide.line}</span> : null}
-              </p>
-              <div style={{ marginTop: 14 }}><GuideTabs tab={tab} onTab={setTab} /></div>
 
-              {/* the part, as section cards to swipe through */}
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }} style={{ marginTop: 16 }}>
-                  <Rail tint={t.color}>
-                    {[
-                      // 1. the read: the picture, the headline, the paragraph
-                      part && (
-                        <CardFrame key="read" tint={t.color} kicker={`${t.label} · ${t.eyebrow}`} title={part.headline} style={CARD}>
-                          <PairArt kind={t.id as 'pull' | 'push' | 'align' | 'relationship'} mine={ME.sign} theirs={them.sign} />
-                          {part.body && <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.48, color: 'var(--label-1)' }}>{part.body}</p>}
-                          {!part.body && <p style={{ margin: 0, fontSize: 13, lineHeight: 1.4, color: 'var(--label-3)' }}>From {them.name}’s sign: {SIGNS[them.sign].name}, {SIGNS[them.sign].element}.</p>}
-                        </CardFrame>
-                      ),
-                      // 2. what their card says
-                      part?.card && (
-                        <CardFrame key="card" tint={SIGNS[them.sign].color} kicker={`${t.label} · on ${them.name}’s card`} title="In their words" orb={<CardOrb tint={SIGNS[them.sign].color}>{SIGNS[them.sign].glyph}</CardOrb>} style={CARD}>
-                          <div style={{ flex: 1, display: 'grid', placeItems: 'center', padding: '10px 4px' }}>
-                            <div className="serif italic" style={{ fontSize: 24, lineHeight: 1.25, color: 'var(--label-1)', textAlign: 'center' }}>“{part.card}”</div>
-                          </div>
-                        </CardFrame>
-                      ),
-                      // 3. the pairings in your charts behind it, one card each
-                      ...partRows.map((row) => <PairCard key={row.id} row={row} tint={t.color} kicker={`${t.label} · in your charts`} name={them.name} />),
-                      // the chart tab: the wheel, then every pairing
-                      t.id === 'chart' && (
-                        <CardFrame key="wheel" tint={t.color} kicker="Chart · both of you" title="Your charts on one wheel" style={CARD}>
-                          <ChartWheel rows={chart.rows} mine={ME.sign} theirs={them.sign} name={them.name} />
-                          {chart.sunOnly && <div style={{ fontSize: 12, lineHeight: 1.4, color: 'var(--label-3)', textAlign: 'center' }}>{them.name}’s card only shows a sun sign. Their moon and rising need a birth time.</div>}
-                        </CardFrame>
-                      ),
-                      ...(t.id === 'chart' ? chart.rows.map((row) => <PairCard key={row.id} row={row} tint={t.color} kicker="Chart · for love" name={them.name} />) : []),
-                      // the relationship tab: the four areas
-                      ...(t.id === 'relationship' ? fit.areas.map((a) => (
-                        <CardFrame key={a.id} tint={AREA_TINT[a.id]} kicker={a.sub} title={a.title} orb={<CardOrb tint={AREA_TINT[a.id]}>{a.glyph}</CardOrb>}
-                          strip={{ label: 'Try this', text: a.tryThis }} style={CARD}>
-                          <span className="mono" style={{ alignSelf: 'flex-start', display: 'inline-block', padding: '4px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[a.feel].toUpperCase()}</span>
-                          <p style={{ margin: '10px 0 0', fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)' }}>{a.body}</p>
-                          <div className="mono" style={{ fontSize: 8, letterSpacing: '0.1em', color: 'var(--label-3)', marginTop: 10 }}>{a.from.toUpperCase()}</div>
-                        </CardFrame>
-                      )) : []),
-                      // last: something to do about it
-                      part?.tryLine && (
-                        <CardFrame key="try" tint={t.color} kicker={`${t.label} · try this`} title="One thing to do" style={CARD}>
-                          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, padding: '6px 4px' }}>
-                            <span style={{ fontSize: 34, lineHeight: 1, color: t.color, textShadow: `0 0 18px ${t.color}` }}>✦</span>
-                            <div className="serif italic" style={{ fontSize: 23, lineHeight: 1.25, color: 'var(--label-1)', textAlign: 'center' }}>{part.tryLine}</div>
-                          </div>
-                        </CardFrame>
-                      ),
-                    ]}
-                  </Rail>
-                  {t.id === 'relationship' && fit.sunOnly && (
-                    <p style={{ fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '8px 4px 0' }}>{them.name}’s card only shows a sun sign. Feelings and first impressions need a birth time.</p>
-                  )}
-                </motion.div>
-              </AnimatePresence>
+              {/* the little cards */}
+              <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '20px 2px 8px' }}>
+                <span>YOU TWO</span><span>TAP TO READ</span>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${parts.length}, 1fr)`, gap: 9 }}>
+                {parts.map((t, i) => (
+                  <motion.button key={t.id} onClick={() => { sfx.flip(); setBig({ set: 'parts', at: i }) }} whileTap={{ scale: 0.95, y: -4 }} aria-label={`${t.label}: ${t.eyebrow}`}
+                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.1 + i * 0.06 }}
+                    style={{ borderRadius: 16, padding: 3, background: foil(t.color), boxShadow: `0 8px 18px rgba(0,0,0,0.45), 0 0 14px color-mix(in srgb, ${t.color} 30%, transparent)` }}>
+                    <span style={{ height: 122, borderRadius: 13, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '10px 5px 11px',
+                      background: `radial-gradient(90% 60% at 50% 36%, color-mix(in srgb, ${t.color} 26%, #1b112f), #120b22)` }}>
+                      <span className="mono" style={{ fontSize: parts.length > 3 ? 8 : 9.5, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>{(t.id === 'relationship' ? 'Long game' : t.label).toUpperCase()}</span>
+                      <PartIcon id={t.id} size={34} color={t.color} />
+                      <span className="serif italic" style={{ fontSize: parts.length > 3 ? 12 : 13.5, lineHeight: 1.15, color: 'var(--label-1)', textAlign: 'center' }}>{t.eyebrow}</span>
+                    </span>
+                  </motion.button>
+                ))}
+              </div>
+
+              {/* your charts, as a hand */}
+              <div style={{ textAlign: 'center', marginTop: 26 }}>
+                <div className="h-display" style={{ fontSize: 24 }}>Your charts, together</div>
+                <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 3 }}>{chart.sunOnly ? `${them.name}’s card only shows a sun sign, so there are two.` : 'Five ways your signs meet. Pull a card.'}</div>
+              </div>
+              <div style={{ position: 'relative', height: 172, marginTop: 10 }}>
+                {chart.rows.map((row, i) => {
+                  const k = i - (n - 1) / 2
+                  const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
+                  return (
+                    <motion.button key={row.id} onClick={() => { sfx.flip(); setBig({ set: 'chart', at: i }) }} aria-label={row.title}
+                      initial={{ y: 60, opacity: 0, rotate: 0 }} animate={{ y: k * k * 4, opacity: 1, rotate: k * 7 }}
+                      whileTap={{ y: k * k * 4 - 20, scale: 1.05 }} transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.15 + i * 0.05 }}
+                      style={{ position: 'absolute', left: '50%', top: 8, width: 84, height: 128, marginLeft: -42 + k * spread, zIndex: i, transformOrigin: '50% 120%', borderRadius: 13, padding: 3,
+                        background: `linear-gradient(160deg, ${a.color}, ${a.light} 35%, ${b.light} 65%, ${b.color})`, boxShadow: '0 8px 18px rgba(0,0,0,0.5)' }}>
+                      <span style={{ width: '100%', height: '100%', borderRadius: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '9px 4px 10px', background: 'radial-gradient(90% 60% at 50% 40%, #2a1856, #120b22)' }}>
+                        <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', fontWeight: 700, color: '#d9cdf0' }}>{PAIR_NAME[row.id].toUpperCase()}</span>
+                        <span style={{ display: 'flex' }}>
+                          <CardOrb tint={a.color} size={30}>{a.glyph}</CardOrb>
+                          <span style={{ marginLeft: -9 }}><CardOrb tint={b.color} size={30}>{b.glyph}</CardOrb></span>
+                        </span>
+                        <span className="serif italic" style={{ fontSize: 11.5, lineHeight: 1.1, color: 'var(--label-1)', textAlign: 'center' }}>{FEEL_TAG[row.feel]}</span>
+                      </span>
+                    </motion.button>
+                  )
+                })}
+              </div>
 
               {/* tonight: one small row that opens */}
-              <div style={{ marginTop: 14, borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.2)' }}>
+              <div style={{ marginTop: 6, borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.2)' }}>
                 <button aria-expanded={tonight} onClick={() => { sfx.tap(); setTonight((o) => !o) }}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', textAlign: 'left' }}>
                   <CardOrb tint="#c9bedb" size={26}>☾</CardOrb>
@@ -364,12 +378,14 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                   )}
                 </AnimatePresence>
               </div>
-
-              <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '18px 4px 0' }}>
+              <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '16px 4px 0', textAlign: 'center' }}>
                 Astrology, for reflection and fun. It describes how two charts meet; it doesn’t measure or predict a relationship.
               </p>
             </div>
           </motion.div>
+          <AnimatePresence>
+            {big && <BigCards key={big.set} cards={big.set === 'parts' ? partCards : chartCards} start={big.at} title={big.set === 'parts' ? `You & ${them.name}` : 'Your charts'} onClose={() => setBig(null)} />}
+          </AnimatePresence>
         </>
       )}
     </AnimatePresence>
