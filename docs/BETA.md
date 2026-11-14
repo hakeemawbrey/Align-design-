@@ -36,7 +36,7 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 ## The alignment guide between two people
 
-One guide, two places (`components/chat/Compat.tsx`). The card at the top of every chat (`AlignGuideCard`) and the sheet behind the top-right badge (`CompatSheet`) share one header: "NAME × YOU · ALIGNMENT GUIDE", both auras, a title and four tabs, Spark · Clash · Align · Relationship. Tapping the card opens the sheet on the tab it was showing.
+One guide, two places (`components/chat/Compat.tsx`). In the chat it is one quiet row in the card frame (`AlignGuideCard`): your two sign orbs, "You & NAME · alignment guide", the line that sums you up, and an arrow. Tapping it, or the top-right badge, opens the sheet (`CompatSheet`), which starts with the same orbs, name and line, then four tabs: Spark · Clash · Align · Relationship.
 
 - **Spark, Clash, Align:** one card each. With Juniper it's the long written reading, the line from her card and a "try this". With other matches it's the line from their card, or their element's line when their card has none.
 - **Relationship:** the long game, then the four areas worked out from both charts (day to day, feelings, first impressions, feeling understood), with the astrology behind a "why" toggle.

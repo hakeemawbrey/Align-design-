@@ -6,7 +6,6 @@ import { SIGNS } from '../../data/signs'
 import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
 import CardFrame, { CardOrb } from '../CardFrame'
-import AuraPair from './AuraPair'
 import { MY_READING_TITLE, READINGS } from './readings'
 
 /** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
@@ -78,63 +77,46 @@ function guideFor(them: Profile, summary: string): Guide {
   }
 }
 
-/** the header both widgets share: who, the title, and the four tabs */
-function GuideHead({ them, guide, tab, onTab, big }: { them: Profile; guide: Guide; tab: number; onTab?: (i: number) => void; big?: boolean }) {
+/** the four parts, as a row of tabs */
+function GuideTabs({ tab, onTab }: { tab: number; onTab: (i: number) => void }) {
   return (
-    <>
-      <div className="mono" style={{ fontSize: big ? 9.5 : 8.5, letterSpacing: '0.26em', color: 'var(--label-2)' }}>
-        {them.name.toUpperCase()} × YOU · ALIGNMENT GUIDE
-      </div>
-      <div style={{ marginTop: big ? 10 : 6 }}>
-        <AuraPair left={them.sign} size={big ? 58 : 46} gap={big ? 48 : 38} />
-      </div>
-      <div className="serif italic" style={{ fontSize: big ? 26 : 21, lineHeight: 1.15, marginTop: big ? 10 : 6, color: 'var(--label-1)' }}>{guide.title}</div>
-      {guide.line && <div style={{ fontSize: big ? 14 : 12.5, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 3 }}>{guide.line}</div>}
-      <div role={onTab ? 'tablist' : undefined} style={{
-        display: 'flex', justifyContent: 'space-between', marginTop: big ? 14 : 10, padding: 3, borderRadius: 999,
-        background: 'rgba(20, 10, 46, 0.45)', border: '1px solid rgba(179,166,196,0.18)', position: 'relative',
-      }}>
-        {TABS.map((x, i) => {
-          const inner = (
-            <>
-              {i === tab && (
-                <motion.div layoutId={big ? 'guide-pill-sheet' : `guide-pill-${them.id}`} transition={{ type: 'spring', stiffness: 400, damping: 34 }}
-                  style={{ position: 'absolute', inset: 0, borderRadius: 999, background: x.pill }} />
-              )}
-              <span className="mono" style={{ position: 'relative', fontSize: big ? 9 : 7.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: i === tab ? x.color : 'var(--label-3)', fontWeight: 700 }}>{x.label}</span>
-            </>
-          )
-          const st: React.CSSProperties = { position: 'relative', flex: x.id === 'relationship' ? 1.7 : 1, height: big ? 32 : 20, display: 'grid', placeItems: 'center' }
-          return onTab
-            ? <button key={x.id} role="tab" aria-selected={i === tab} onClick={() => { if (i !== tab) { sfx.tap(); onTab(i) } }} style={st}>{inner}</button>
-            : <div key={x.id} style={st}>{inner}</div>
-        })}
-      </div>
-    </>
+    <div role="tablist" style={{ display: 'flex', padding: 3, borderRadius: 999, background: 'rgba(20, 10, 46, 0.55)', border: '1px solid rgba(179,166,196,0.18)' }}>
+      {TABS.map((x, i) => (
+        <button key={x.id} role="tab" aria-selected={i === tab} onClick={() => { if (i !== tab) { sfx.tap(); onTab(i) } }}
+          style={{ position: 'relative', flex: x.id === 'relationship' ? 1.7 : 1, height: 34, display: 'grid', placeItems: 'center' }}>
+          {i === tab && <motion.div layoutId="guide-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 999, background: x.pill }} />}
+          <span className="mono" style={{ position: 'relative', fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase', color: i === tab ? x.color : 'var(--label-3)', fontWeight: 700 }}>{x.label}</span>
+        </button>
+      ))}
+    </div>
   )
 }
 
-const SURFACE = 'radial-gradient(60% 80% at 50% 0%, rgba(150, 90, 240, 0.45), transparent 70%), linear-gradient(180deg, rgba(64, 34, 132, 0.92), rgba(44, 22, 96, 0.92))'
-
 /**
- * The guide as a card in the chat: the same header as the sheet, its tabs
- * turning over on their own. Tap it and the sheet opens on the tab showing.
+ * The guide in the chat: one quiet row in the card frame. Your two signs, the
+ * line that sums you up, and an arrow. Everything else is in the sheet.
  */
-export function AlignGuideCard({ them, onOpen, top = 12 }: { them: Profile; onOpen: (tab: number) => void; /** room above it (the "Us today" strip floats over the top of some chats) */ top?: number }) {
+export function AlignGuideCard({ them, onOpen }: { them: Profile; onOpen: (tab: number) => void }) {
   const fit = useMemo(() => fitWith(them), [them])
   const guide = useMemo(() => guideFor(them, fit.summary), [them, fit])
-  const [tab, setTab] = useState(0)
-  useEffect(() => {
-    const t = window.setInterval(() => setTab((x) => (x + 1) % TABS.length), 1600)
-    return () => clearInterval(t)
-  }, [])
+  const mine = SIGNS[ME.sign], theirs = SIGNS[them.sign]
   return (
-    <motion.button onClick={() => { sfx.tap(); onOpen(tab) }} aria-label={`Alignment guide: you and ${them.name}`}
-      initial={{ opacity: 0, y: 14, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }} whileTap={{ scale: 0.98 }}
-      style={{ position: 'relative', display: 'block', width: 300, margin: `${top}px auto 14px`, padding: '14px 14px 12px', borderRadius: 18, textAlign: 'center', overflow: 'hidden',
-        background: SURFACE, border: '1.5px solid rgba(214, 196, 245, 0.5)', boxShadow: '0 0 30px rgba(154, 123, 224, 0.28), inset 0 1px 0 rgba(255,255,255,0.12)' }}>
-      <GuideHead them={them} guide={guide} tab={tab} />
-      <div className="mono" style={{ marginTop: 9, fontSize: 8.5, letterSpacing: '0.2em', color: TABS[tab].color, transition: 'color .3s' }}>TAP TO READ ›</div>
+    <motion.button onClick={() => { sfx.tap(); onOpen(0) }} aria-label={`Alignment guide: you and ${them.name}`}
+      initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }} whileTap={{ scale: 0.98 }}
+      style={{ display: 'block', width: '100%', margin: '4px 0 16px', borderRadius: 18, padding: 3, textAlign: 'left',
+        background: `linear-gradient(120deg, ${mine.color}, ${mine.light} 30%, ${theirs.light} 70%, ${theirs.color})`,
+        boxShadow: `0 0 18px color-mix(in srgb, ${theirs.color} 28%, transparent)` }}>
+      <span style={{ display: 'flex', alignItems: 'center', gap: 12, borderRadius: 15, padding: '11px 14px 11px 12px', background: 'linear-gradient(180deg, #1b112f, #120b22)' }}>
+        <span style={{ display: 'flex', flexShrink: 0 }}>
+          <CardOrb tint={mine.color} size={32}>{mine.glyph}</CardOrb>
+          <span style={{ marginLeft: -9 }}><CardOrb tint={theirs.color} size={32}>{theirs.glyph}</CardOrb></span>
+        </span>
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <span className="mono" style={{ display: 'block', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>YOU &amp; {them.name.toUpperCase()} · ALIGNMENT GUIDE</span>
+          <span className="serif italic" style={{ display: 'block', fontSize: 18, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{guide.title}</span>
+        </span>
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="m1 1 5 5-5 5" /></svg>
+      </span>
     </motion.button>
   )
 }
@@ -182,10 +164,21 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
               </button>
             </div>
             <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', padding: '0 20px 40px' }}>
-              {/* the same header as the card in the chat */}
-              <div style={{ borderRadius: 20, padding: '16px 14px 12px', textAlign: 'center', background: SURFACE, border: '1.5px solid rgba(214, 196, 245, 0.5)', boxShadow: '0 0 30px rgba(154, 123, 224, 0.28), inset 0 1px 0 rgba(255,255,255,0.12)' }}>
-                <GuideHead them={them} guide={guide} tab={tab} onTab={setTab} big />
+              {/* the same who-and-what as the row in the chat, then the four parts */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '0 4px' }}>
+                <span style={{ display: 'flex', flexShrink: 0 }}>
+                  <CardOrb tint={SIGNS[ME.sign].color} size={42}>{SIGNS[ME.sign].glyph}</CardOrb>
+                  <span style={{ marginLeft: -12 }}><CardOrb tint={SIGNS[them.sign].color} size={42}>{SIGNS[them.sign].glyph}</CardOrb></span>
+                </span>
+                <div style={{ minWidth: 0 }}>
+                  <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>ALIGNMENT GUIDE</div>
+                  <div className="h-display" style={{ fontSize: 28, lineHeight: 1.1, marginTop: 3 }}>You &amp; {them.name}</div>
+                </div>
               </div>
+              <p className="serif italic" style={{ fontSize: 19, lineHeight: 1.3, color: 'var(--label-1)', margin: '14px 4px 0' }}>
+                {guide.title}{guide.line ? <span style={{ color: 'var(--label-2)' }}> {guide.line}</span> : null}
+              </p>
+              <div style={{ marginTop: 14 }}><GuideTabs tab={tab} onTab={setTab} /></div>
 
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}
