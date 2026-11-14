@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { CHAKRA } from './Rarity'
+import { BETA } from '../../lib/beta'
 
 interface Props {
   /** how many chakra centres are lit (0–7), bottom (red) up */
@@ -48,20 +49,20 @@ export default function CardBack({ lit, serial, initial }: Props) {
   const dots = [...CHAKRA].reverse()
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 24, padding: 1.5,
+      position: 'absolute', inset: 0, borderRadius: 24, padding: BETA ? 7.5 : 1.5,
       background: 'linear-gradient(90deg, #7a5ad0 0%, #dcbcff 22%, #ffffff 42%, #dcbcff 58%, #9a7be0 78%, #e9d6ff 100%)',
       backgroundSize: '200% 100%', animation: 'rv-foil 5s linear infinite',
       boxShadow: '0 0 40px rgba(154,123,224,0.45), 0 30px 60px rgba(0,0,0,0.5)',
     }}>
       <div className="grain" style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 22.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: BETA ? 16.5 : 22.5, overflow: 'hidden',
         background: 'radial-gradient(70% 55% at 50% 42%, #5b2bc4 0%, #3a1690 45%, #210a5a 80%, #170741 100%)',
       }}>
         {/* corner violet blooms like the kit */}
         <div style={{ position: 'absolute', right: -60, bottom: -60, width: 240, height: 240, borderRadius: '50%', background: 'radial-gradient(circle, rgba(163,92,240,0.55), transparent 70%)', filter: 'blur(10px)' }} />
         <div style={{ position: 'absolute', left: -50, top: -50, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(124,116,240,0.35), transparent 70%)', filter: 'blur(10px)' }} />
         {/* inner hairline frame */}
-        <div style={{ position: 'absolute', inset: 10, borderRadius: 16, border: '1px solid rgba(220,188,255,0.22)' }} />
+        {!BETA && <div style={{ position: 'absolute', inset: 10, borderRadius: 16, border: '1px solid rgba(220,188,255,0.22)' }} />}
 
         <div style={{ position: 'absolute', top: 26, left: 0, right: 0, textAlign: 'center', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 20, color: 'rgba(239,230,214,0.75)' }}>
           {initial}

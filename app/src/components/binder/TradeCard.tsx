@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { SIGNS, type SignId } from '../../data/signs'
+import { BETA } from '../../lib/beta'
 
 /** Designed at 200×280; pass `width` to scale. */
 export const TC_W = 200
@@ -34,13 +35,13 @@ function TradeCardImpl({ card, width = TC_W, glow = true }: Props) {
       <div style={{
         position: 'absolute', left: 0, top: 0, width: TC_W, height: TC_H,
         transform: `scale(${k})`, transformOrigin: 'top left',
-        borderRadius: 16, padding: 2.5,
+        borderRadius: 16, padding: BETA ? 5.5 : 2.5,
         background: s.foil.replace('90deg', '155deg'),
         backgroundSize: '200% 200%',
         boxShadow: glow ? `0 0 20px ${s.color}55, 0 10px 26px rgba(5,2,15,0.55)` : '0 6px 16px rgba(5,2,15,0.5)',
       }}>
         <div style={{
-          position: 'relative', width: '100%', height: '100%', borderRadius: 13.5, overflow: 'hidden',
+          position: 'relative', width: '100%', height: '100%', borderRadius: BETA ? 10.5 : 13.5, overflow: 'hidden',
           background: `radial-gradient(120% 50% at 50% 0%, ${s.dark}66, transparent 60%), linear-gradient(180deg, #170e2c, #0e0919)`,
         }}>
           <div className="grain" style={{ position: 'absolute', left: 8, right: 8, top: 8, height: 164, borderRadius: 9, overflow: 'hidden', border: `1px solid ${s.color}88` }}>
@@ -89,7 +90,7 @@ export function TradeCardBack({ width = TC_W, label }: { width?: number; label?:
     <div style={{ width, height: TC_H * k, position: 'relative' }}>
       <div style={{
         position: 'absolute', left: 0, top: 0, width: TC_W, height: TC_H, transform: `scale(${k})`, transformOrigin: 'top left',
-        borderRadius: 16, padding: 1.5,
+        borderRadius: 16, padding: BETA ? 5.5 : 1.5,
         background: 'linear-gradient(160deg, #c8b4ff 0%, #6b4bd0 30%, #f2d784 52%, #6b4bd0 72%, #c8b4ff 100%)',
         boxShadow: '0 0 22px rgba(154,123,224,0.45), 0 10px 26px rgba(5,2,15,0.55)',
       }}>
