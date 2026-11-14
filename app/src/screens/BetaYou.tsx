@@ -1,11 +1,10 @@
 import { useMemo, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import ProfileCard from '../components/deck/ProfileCard'
 import { CARD_W, CARD_H } from '../components/deck/fx'
-import YourCardSheet, { type CardSide } from '../components/you/YourCardSheet'
 import { myProfile } from '../components/you/myCard'
 import { useAccount } from '../pages/account/store'
 import { ME } from '../data/profiles'
@@ -20,12 +19,15 @@ import SkySpread from '../components/sky/SkySpread'
 import MoonPhase from '../components/sky/MoonPhase'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
-import CardFrame from '../components/CardFrame'
+import CardFrame, { foil } from '../components/CardFrame'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
-const SCALE = 0.58
+const SCALE = 0.6
+const HW = CARD_W * SCALE
+const HH = CARD_H * SCALE
+const side: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
 
 const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
 const EYEBROW: React.CSSProperties = { fontSize: 9.5, color: 'var(--label-3)', letterSpacing: '0.2em' }
@@ -43,19 +45,28 @@ function upcoming(n: number): (CosmicEvent & { date: Date })[] {
 export default function BetaYou({ go }: ScreenProps) {
   const { card: edits } = useAccount()
   const me = useMemo(() => myProfile({ ...edits, facts: edits.facts.map(([k, v]) => [k, v] as [string, string]) }), [edits])
-  const [sheet, setSheet] = useState<CardSide | null>(null)
   const { blockedSigns } = useSession()
   const [skyOpen, setSkyOpen] = useState(false)
   const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
   const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
   const events = useMemo(() => upcoming(3), [])
-  const open = (side: CardSide) => { sfx.flip(); setSheet(side) }
+  const [flipped, setFlipped] = useState(false)
+  // tilt: the card leans toward your finger and the foil catches the light
+  const rx = useSpring(useMotionValue(0), { stiffness: 200, damping: 18 })
+  const ry = useSpring(useMotionValue(0), { stiffness: 200, damping: 18 })
+  const shine = useTransform(ry, [-14, 14], ['0% 0%', '100% 100%'])
+  const tilt = (e: React.PointerEvent<HTMLDivElement>) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    ry.set(((e.clientX - r.left) / r.width - 0.5) * 24)
+    rx.set(-((e.clientY - r.top) / r.height - 0.5) * 18)
+  }
+  const still = () => { rx.set(0); ry.set(0) }
+  const flip = () => { sfx.flip(); setFlipped((f) => !f) }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora="#3a2390" warm="#4a2470" count={70} seed={44} />
-      <motion.div className="no-scrollbar" animate={{ x: sheet ? -90 : 0, opacity: sheet ? 0.35 : 1 }} transition={{ type: 'spring', stiffness: 320, damping: 36 }}
-        style={{
+      <motion.div className="no-scrollbar" style={{
           position: 'absolute', inset: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none',
           // fade under the status bar and above the tab bar instead of a hard cut
           maskImage: 'linear-gradient(to bottom, transparent 0, transparent 40px, #000 64px, #000 calc(100% - 118px), transparent calc(100% - 84px))',
@@ -73,25 +84,50 @@ export default function BetaYou({ go }: ScreenProps) {
             </button>
           </div>
 
-          {/* your card: face down as strangers see it, your aura photo tucked behind */}
-          <div style={{ position: 'relative', height: CARD_H * SCALE + 14, marginTop: -6 }}>
-            <motion.button aria-label="Your photo, flipped side" onClick={() => open('flipped')} whileTap={{ scale: 0.97 }}
-              initial={{ rotate: 10, x: 40 }} animate={{ rotate: 9, x: 70 }} transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.15 }}
-              style={{ position: 'absolute', left: '50%', top: 12, marginLeft: -(CARD_W * SCALE) / 2, width: CARD_W * SCALE * 0.86, height: CARD_H * SCALE * 0.9, borderRadius: 14, overflow: 'hidden',
-                border: `2px solid ${SUN.color}`, boxShadow: `0 0 24px ${SUN.color}66, 0 16px 30px rgba(0,0,0,0.5)`, background: '#07040f' }}>
-              <img src={ME.photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
-            </motion.button>
-            <motion.button aria-label="Your card, face down" onClick={() => open('down')} whileTap={{ scale: 0.97 }}
-              initial={{ rotate: -2, x: 0 }} animate={{ rotate: -4, x: -26 }} transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-              style={{ position: 'absolute', left: '50%', top: 0, marginLeft: -(CARD_W * SCALE) / 2, width: CARD_W * SCALE, height: CARD_H * SCALE }}>
-              <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
-                <ProfileCard profile={me} glow />
-              </div>
-            </motion.button>
+          {/* your card: tilt it, tap to flip */}
+          <div style={{ position: 'relative', height: HH + 20, marginTop: 4, display: 'grid', placeItems: 'center' }}>
+            <div aria-hidden style={{ position: 'absolute', width: HW * 1.5, height: HH * 0.9, borderRadius: '50%', filter: 'blur(40px)', background: `radial-gradient(closest-side, ${SUN.color}88, transparent)` }} />
+            <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} style={{ perspective: 900 }}>
+              <motion.div role="button" aria-label={flipped ? 'Your card, revealed. Tap to turn face down' : 'Your card, face down. Tap to flip'}
+                onClick={flip} onPointerMove={tilt} onPointerLeave={still} whileTap={{ scale: 0.97 }}
+                style={{ width: HW, height: HH, rotateX: rx, rotateY: ry, transformStyle: 'preserve-3d', cursor: 'pointer' }}>
+                <motion.div animate={{ rotateY: flipped ? 180 : 0 }} transition={{ duration: 0.7, ease: [0.3, 1.25, 0.5, 1] }}
+                  style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>
+                  <div style={side}>
+                    <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
+                      <ProfileCard profile={me} glow />
+                    </div>
+                  </div>
+                  <div style={{ ...side, transform: 'rotateY(180deg)' }}><PhotoFace /></div>
+                  {/* the foil catching the light */}
+                  <motion.div aria-hidden style={{ ...side, borderRadius: 18, pointerEvents: 'none', mixBlendMode: 'color-dodge', opacity: 0.35,
+                    backgroundImage: 'linear-gradient(115deg, transparent 30%, rgba(255,240,200,0.9) 45%, rgba(190,160,255,0.8) 52%, transparent 66%)', backgroundSize: '250% 250%', backgroundPosition: shine }} />
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* which side you're looking at */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: 10 }}>
+            <div style={{ display: 'flex', padding: 3, borderRadius: 999, background: 'rgba(20,12,40,0.7)', border: '1px solid rgba(179,166,196,0.2)' }}>
+              {(['Face down', 'Revealed'] as const).map((l, i) => {
+                const on = (i === 1) === flipped
+                return (
+                  <button key={l} onClick={() => { if (!on) flip() }} className="mono"
+                    style={{ height: 28, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700,
+                      color: on ? 'var(--chrome-ink)' : 'var(--label-2)', background: on ? 'var(--chrome)' : 'transparent', transition: 'background 0.2s, color 0.2s' }}>
+                    {l.toUpperCase()}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)', marginTop: 8, minHeight: 17 }}>
+            {flipped ? 'What a match sees when your 33:33 runs out.' : 'What strangers see in the deck tonight.'}
           </div>
 
           {/* name and big three */}
-          <div style={{ textAlign: 'center', marginTop: -8 }}>
+          <div style={{ textAlign: 'center', marginTop: -6 }}>
             <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 10, flexWrap: 'wrap' }}>
               {([['sun', '☉', ME.sign, 'Sun'], ['moon', '☽', ME.moon, 'Moon'], ['rising', '↑', ME.rising, 'Rising']] as const).map(([slug, glyph, s, label]) => (
@@ -223,9 +259,21 @@ export default function BetaYou({ go }: ScreenProps) {
 
       <TabBar active="you" go={go} />
 
-      <AnimatePresence>
-        {sheet && <YourCardSheet key="card" initial={sheet} onClose={() => setSheet(null)} onEdit={(side) => go(`x/edit-card/${side}`)} />}
-      </AnimatePresence>
+    </div>
+  )
+}
+
+/** the back of your card, after the reveal: your photo, full bleed, in your sign's foil */
+function PhotoFace() {
+  return (
+    <div style={{ width: '100%', height: '100%', borderRadius: 18, padding: 4, background: foil(SUN.color), boxShadow: `0 0 30px ${SUN.color}77` }}>
+      <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 14, overflow: 'hidden', background: '#07040f' }}>
+        <img src={ME.photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '40px 14px 12px', background: 'linear-gradient(transparent, rgba(7,4,15,0.92))' }}>
+          <div className="serif italic" style={{ fontSize: 24, color: '#fff' }}>{ME.name}, {ME.age}</div>
+          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: SUN.light, marginTop: 2 }}>{SUN.name.toUpperCase()} {SUN.glyph} · REVEALED</div>
+        </div>
+      </div>
     </div>
   )
 }
