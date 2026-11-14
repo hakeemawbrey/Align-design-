@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
@@ -16,13 +16,17 @@ import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { openCalendarOn } from '../components/you/origin'
 import SkySpread from '../components/sky/SkySpread'
+import { SkyCardBack } from '../components/sky/SkyCardFace'
+import { TODAY_READING } from '../data/skyReading'
+import { useTalk } from '../lib/talk'
 import CardFrame, { CardOrb } from '../components/CardFrame'
-import { Planet } from '../components/onboarding/shared'
-import { PARTS, Reading } from '../components/you/parts'
+import { PARTS } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const SCALE = 0.58
+/** width of one reading card in the swipe rail */
+const RAIL_W = 268
 
 const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
 const EYEBROW: React.CSSProperties = { fontSize: 9.5, color: 'var(--label-3)', letterSpacing: '0.2em' }
@@ -43,7 +47,11 @@ export default function BetaYou({ go }: ScreenProps) {
   const { blockedSigns } = useSession()
   const [sheet, setSheet] = useState<CardSide | null>(null)
   const [part, setPart] = useState(0)
-  const sel = PARTS[part]
+  const [skyOpen, setSkyOpen] = useState(false)
+  const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
+  const rail = useRef<HTMLDivElement>(null)
+  const toPart = (i: number) => { setPart(i); rail.current?.scrollTo({ left: i * (RAIL_W + 12), behavior: 'smooth' }) }
+  const onRail = () => { const el = rail.current; if (el) setPart(Math.max(0, Math.min(PARTS.length - 1, Math.round(el.scrollLeft / (RAIL_W + 12))))) }
   const events = useMemo(() => upcoming(3), [])
   const open = (side: CardSide) => { sfx.flip(); setSheet(side) }
 
@@ -114,14 +122,34 @@ export default function BetaYou({ go }: ScreenProps) {
             </motion.button>
           </div>
 
-          {/* today's horoscope: three cards from today's sky, turned over one at a time */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <span className="eyebrow" style={EYEBROW}>Today’s horoscope</span>
-              <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>THIS MONTH ›</button>
-            </div>
-            <SkySpread reward={false} />
-          </section>
+          {/* today's horoscope, kept small: one row that opens into the three cards */}
+          <CardFrame tint="#c9bedb" quiet={!skyOpen} padding="0" radius={18}>
+            <button aria-expanded={skyOpen} onClick={() => { sfx.tap(); setSkyOpen((o) => !o) }}
+              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px 10px 12px', textAlign: 'left' }}>
+              <span style={{ display: 'flex', flexShrink: 0 }}>
+                {TODAY_READING.cards.map((c, i) => (
+                  <span key={c.slot} style={{ marginLeft: i ? -10 : 0, transform: `rotate(${(i - 1) * 7}deg)`, borderRadius: 4, boxShadow: '0 2px 6px rgba(0,0,0,0.5)' }}><SkyCardBack slot={c.slot} width={26} /></span>
+                ))}
+              </span>
+              <span style={{ flex: 1, minWidth: 0 }}>
+                <span className="mono" style={{ display: 'block', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)' }}>TODAY’S HOROSCOPE</span>
+                <span className="serif italic" style={{ display: 'block', fontSize: 17, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {skyDrawn ? TODAY_READING.cards[0].headline : 'Draw your three cards'}
+                </span>
+              </span>
+              <motion.svg animate={{ rotate: skyOpen ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--align)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
+            </button>
+            <AnimatePresence initial={false}>
+              {skyOpen && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} style={{ overflow: 'hidden' }}>
+                  <div style={{ padding: '8px 0 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, borderTop: '1px solid rgba(179,166,196,0.14)' }}>
+                    <div style={{ width: 342, transform: 'scale(0.94)', transformOrigin: '50% 0', marginBottom: -24 }}><SkySpread reward={false} /></div>
+                    <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ height: 32, fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--align)' }}>SEE THIS MONTH ›</button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </CardFrame>
 
           {/* learn about yourself: six parts of your chart, one card at a time */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -129,33 +157,38 @@ export default function BetaYou({ go }: ScreenProps) {
               <span className="eyebrow" style={EYEBROW}>Learn about yourself</span>
               <div className="h-display" style={{ fontSize: 26, lineHeight: 1.1, marginTop: 6 }}>You’re more than one sign.</div>
             </div>
-            <div role="tablist" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+            {/* the six, as little tags: tap one to jump to its card */}
+            <div role="tablist" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               {PARTS.map((o, i) => {
                 const on = i === part
                 return (
-                  <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setPart(i) } }} whileTap={{ scale: 0.96 }}>
-                    <CardFrame tint={o.ink} quiet={!on} thick={on ? 3 : 2} radius={14} padding="8px 4px 9px" style={{ height: '100%' }}>
-                      <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                        <span style={{ height: 30, display: 'grid', placeItems: 'center', opacity: on ? 1 : 0.7 }}>
-                          <Planet size={o.size * 0.6} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.3} />
-                        </span>
-                        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: on ? o.ink : 'var(--label-2)' }}>{o.word.toUpperCase()}</span>
-                        <span className="serif italic" style={{ fontSize: 16, lineHeight: 1.1, color: 'var(--label-1)' }}>{o.value}</span>
-                      </span>
-                    </CardFrame>
-                  </motion.button>
+                  <button key={o.word} role="tab" aria-selected={on} onClick={() => { sfx.tap(); toPart(i) }} className="chip"
+                    style={{ height: 30, padding: '0 11px', gap: 6, fontSize: 12.5, color: on ? '#1a0f2e' : 'var(--label-1)', borderColor: on ? o.ink : `color-mix(in srgb, ${o.ink} 55%, transparent)`, background: on ? o.ink : `color-mix(in srgb, ${o.ink} 12%, transparent)`, transition: 'background 0.2s, color 0.2s' }}>
+                    <span className="mono" style={{ fontSize: 9, letterSpacing: '0.12em', fontWeight: 700, color: on ? '#1a0f2e' : o.ink }}>{o.word.toUpperCase()}</span>
+                    {o.value}
+                  </button>
                 )
               })}
             </div>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div key={sel.word} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}>
-                <CardFrame tint={sel.ink} kicker={`${sel.word === 'House' ? `${sel.value} house` : `${sel.word} in ${sel.value}`} · ${sel.plain}`} title={sel.read.headline}
-                  orb={<CardOrb tint={sel.ink}>{sel.glyph}</CardOrb>}
-                  strip={{ label: 'Try this', text: sel.read.tryLine }} footer={['Align · your chart', `${sel.word} · ${part + 1}/${PARTS.length}`]}>
-                  <Reading t={sel.read} go={go} />
-                </CardFrame>
-              </motion.div>
-            </AnimatePresence>
+            {/* the readings, as little cards you swipe through */}
+            <div ref={rail} role="tabpanel" className="no-scrollbar" onScroll={onRail}
+              style={{ display: 'flex', gap: 12, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '0 -24px', padding: '4px 24px 8px', scrollPaddingLeft: 24, WebkitOverflowScrolling: 'touch' }}>
+              {PARTS.map((o, i) => (
+                <div key={o.word} style={{ flex: `0 0 ${RAIL_W}px`, scrollSnapAlign: 'start', display: 'flex' }}>
+                  <CardFrame tint={o.ink} quiet={i !== part} kicker={`${o.word === 'House' ? `${o.value} house` : `${o.word} in ${o.value}`} · ${o.plain}`} title={o.read.headline}
+                    orb={<CardOrb tint={o.ink} size={30}>{o.glyph}</CardOrb>} padding="12px 14px 12px"
+                    strip={{ label: 'Try this', text: o.read.tryLine }} footer={['Align · your chart', `${i + 1}/${PARTS.length}`]} style={{ width: '100%' }}>
+                    <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>IN LOVE</div>
+                    <div style={{ fontSize: 14, lineHeight: 1.4, color: 'var(--label-1)', marginTop: 3 }}>{o.read.love}</div>
+                    <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink, marginTop: 10 }}>FOR YOU</div>
+                    <div style={{ fontSize: 14, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 3 }}>{o.read.self}</div>
+                  </CardFrame>
+                </div>
+              ))}
+            </div>
+            <div aria-hidden style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: -4 }}>
+              {PARTS.map((o, i) => <span key={o.word} style={{ width: i === part ? 16 : 6, height: 6, borderRadius: 3, background: i === part ? o.ink : 'rgba(179,166,196,0.3)', transition: 'width 0.2s' }} />)}
+            </div>
             <div style={{ ...PANEL, overflow: 'hidden' }}>
               <Link label={`More about ${SUN.name}`} sub="Your element, your planet, the quick facts" onClick={() => go('chart')} first />
               <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
