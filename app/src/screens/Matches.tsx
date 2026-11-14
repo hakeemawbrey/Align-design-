@@ -94,7 +94,8 @@ export default function Matches({ go }: ScreenProps) {
   const flowStatus = (m: Match): Match => {
     const f = flows[m.id]
     const pend = f && pendingOf(f, now)
-    if (!f || !pend) return m
+    // beta: nothing expires, so no "2 days left"
+    if (!f || !pend) return /left$/.test(m.status) ? { ...m, status: 'Quiet lately' } : m
     return { ...m, section: 'your-turn', when: 'NOW',
       status: pend === 'card' ? 'The stars dealt you a card' : pend === 'reveal' ? 'Time to flip your cards' : `Reveal in ${clock((f.revealAt ?? now) - now)}` }
   }

@@ -149,7 +149,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [compat, setCompat] = useState(false)
   const [compatTab, setCompatTab] = useState(0)
   const [cardOpen, setCardOpen] = useState(demo === 'card')
-  const daysLeft = demo === 'expiring' ? 2 : demo === 'closed' ? 0 : DAYS_LEFT
+  // beta: a match never expires or closes by itself; only you can unmatch
+  const daysLeft = BETA ? 7 : demo === 'expiring' ? 2 : demo === 'closed' ? 0 : DAYS_LEFT
   const closed = daysLeft <= 0
   /** my messages that didn't reach the server: tap to retry */
   const [failed, setFailed] = useState<Set<number>>(() => new Set(demo === 'failed' ? [SCRIPT.length] : []))
@@ -441,8 +442,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
         onWho={veiled ? () => { sfx.tap(); (setCompatTab(0), setCompat(true)) } : () => { sfx.flip(); setCardOpen(true) }} photo={veiled ? SIGNS[juniper.sign].auraImg : PHOTO} name={juniper.name}
         sub={empty ? 'Matched 2 minutes ago' : undefined} />
       {cardStage ? <RevealBar waiting />
-        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(MATCH) }} onDone={() => { betaFlow.reveal(MATCH); session.patch({ matchWith: MATCH }); go('match') }} />
-          : !empty && <ExpiryBar daysLeft={daysLeft} />}
+        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(MATCH) }} name={juniper.name} onReveal={() => { sfx.tap(); betaFlow.reveal(MATCH); session.patch({ matchWith: MATCH }); go('match') }} />
+          : !empty && !BETA && <ExpiryBar daysLeft={daysLeft} />}
 
       {empty && !composing && (
         <EmptyThread sign={juniper.sign} openers={OPENERS} picked={picked}
@@ -501,7 +502,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
                     ? <ThreadNote key="f" kind="failed" name={juniper.name} onTap={() => retry(m.id)} />
                     : receiptAfter === m.id && !closed && !expiring && (seen
                       ? <Receipt key="r" seen />
-                      : <ThreadNote key="u" kind="unread" name={juniper.name} daysLeft={daysLeft} />)}
+                      : <ThreadNote key="u" kind="unread" name={juniper.name} daysLeft={daysLeft} noDeadline={BETA} />)}
                 </AnimatePresence>
               </div>
             )

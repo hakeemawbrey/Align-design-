@@ -195,7 +195,7 @@ export default function Thread({ go }: ScreenProps) {
         right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => (setCompatTab(0), setCompat(true))} /> : undefined} />
 
       {cardStage ? <RevealBar waiting />
-        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(them.id) }} onDone={() => { betaFlow.reveal(them.id); session.patch({ matchWith: them.id }); go('match') }} />
+        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(them.id) }} name={them.name} onReveal={() => { sfx.tap(); betaFlow.reveal(them.id); session.patch({ matchWith: them.id }); go('match') }} />
           : null}
 
       {empty && !composing && (
@@ -251,7 +251,7 @@ export default function Thread({ go }: ScreenProps) {
           </div>
         ))}
         <AnimatePresence>{typing && <TypingIndicator key="typing" name={them.name} />}</AnimatePresence>
-        {left <= 2 && rows.length > 0 && <ThreadNote kind="expiring" name={them.name} pronoun={pronoun} daysLeft={left} />}
+        {!BETA && left <= 2 && rows.length > 0 && <ThreadNote kind="expiring" name={them.name} pronoun={pronoun} daysLeft={left} />}
       </div>
 
       <form onSubmit={(e) => { e.preventDefault(); void send() }} style={{

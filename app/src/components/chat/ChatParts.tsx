@@ -239,11 +239,13 @@ type NoteKind = 'unread' | 'failed' | 'expiring' | 'closed'
  * The small centred line under the thread: a status for your last message
  * (sent but unread, not sent) or for the card itself (closing soon, closed).
  */
-export function ThreadNote({ kind, name, pronoun = 'she', daysLeft = 0, onTap }: {
+export function ThreadNote({ kind, name, pronoun = 'she', daysLeft = 0, onTap, noDeadline }: {
   kind: NoteKind
   name: string
   pronoun?: 'he' | 'she' | 'they'
   daysLeft?: number
+  /** beta: matches never expire, so there's no countdown to mention */
+  noDeadline?: boolean
   /** failed: retry · closed: what this means */
   onTap?: () => void
 }) {
@@ -252,7 +254,7 @@ export function ThreadNote({ kind, name, pronoun = 'she', daysLeft = 0, onTap }:
   const quiet = Math.max(0, 7 - daysLeft)
   const days = `${inWords(daysLeft)} ${daysLeft === 1 ? 'day' : 'days'}`
   const copy: Record<NoteKind, { head: React.ReactNode; body: string; color: string }> = {
-    unread: { head: 'SENT · NOT READ YET', body: `${they} ${has} ${days} to answer.`, color: 'var(--label-2)' },
+    unread: { head: 'SENT · NOT READ YET', body: noDeadline ? 'No rush. This match stays until one of you ends it.' : `${they} ${has} ${days} to answer.`, color: 'var(--label-2)' },
     failed: {
       head: (<><svg width="9" height="8" viewBox="0 0 9 8" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" style={{ marginRight: 7, verticalAlign: '-0.5px' }}><path d="M4.5 0.8 8.3 7.3H0.7z" /></svg>NOT SENT · TAP TO RETRY</>),
       body: 'No connection. Your message is saved.', color: 'var(--rub)',

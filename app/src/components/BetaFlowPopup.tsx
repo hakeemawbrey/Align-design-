@@ -218,7 +218,7 @@ function Moment({ item, others, more, onOpen, onAll, onLater }: { item: Item; ot
         </motion.div>
         {shown.length === 0 && (
           <motion.p {...rise(0.28)} style={{ margin: '8px auto 0', maxWidth: 300, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
-            {kind === 'aligned' ? 'No faces yet. The stars deal you both one card first.' : 'Flip your cards and see each other.'}
+            {kind === 'aligned' ? 'No faces yet. The stars deal you both one card first.' : 'Flip your cards now, or keep chatting and reveal later.'}
           </motion.p>
         )}
       </div>
@@ -243,7 +243,7 @@ function Moment({ item, others, more, onOpen, onAll, onLater }: { item: Item; ot
           {kind === 'aligned' ? 'Draw our card' : 'Flip our cards'} <span className="spark">✦</span>
         </button>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 4, marginTop: 4 }}>
-          <button onClick={onLater} style={{ height: 40, padding: '0 12px', fontSize: 14, color: 'var(--label-2)' }}>Later · it stays on your star</button>
+          <button onClick={onLater} style={{ height: 40, padding: '0 12px', fontSize: 14, color: 'var(--label-2)' }}>{kind === 'reveal' ? 'Later · keep chatting' : 'Later · it stays on your star'}</button>
           {more > 0 && shown.length === 0 && <button onClick={onAll} style={{ height: 40, padding: '0 12px', fontSize: 14, color: 'var(--label-1)' }}>See all {more + 1} ›</button>}
         </div>
       </motion.div>

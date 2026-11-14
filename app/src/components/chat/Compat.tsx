@@ -7,7 +7,7 @@ import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
 import { CardOrb, foil } from '../CardFrame'
 import type { ChartRow } from '../../lib/compat'
-import { PairArt } from './GuideArt'
+import { ChartWheel, PairArt } from './GuideArt'
 import { MY_READING_TITLE, READINGS } from './readings'
 
 
@@ -151,6 +151,9 @@ function PartIcon({ id, size, color }: { id: TabId; size: number; color: string 
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" style={glow}><ellipse cx="12" cy="12" rx="10.5" ry="5" transform="rotate(-20 12 12)" /><circle cx="12" cy="12" r="3" fill={color} stroke="none" /></svg>
 }
 
+/** which everyday area each chart pairing speaks to */
+const AREA_OF: Partial<Record<ChartRow['id'], string>> = { sun: 'daily', moon: 'feelings', rising: 'first', home: 'understood' }
+
 /** short names for the chart pairings, for the little cards */
 const PAIR_NAME: Record<ChartRow['id'], string> = { sun: 'Sun', moon: 'Moon', rising: 'Rising', venus: 'Pull', home: 'Home' }
 
@@ -242,6 +245,9 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
   })
   const chartCards: Big[] = chart.rows.map((row) => {
     const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
+    // the everyday read of the same pairing, and one thing to try
+    const area = fit.areas.find((x) => x.id === AREA_OF[row.id])
+    const tryThis = area?.tryThis ?? 'Tell them one thing you like about them that isn’t your usual type.'
     return {
       key: row.id, tint: '#c9bedb', label: row.title,
       node: (
@@ -262,9 +268,19 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
             </span>
           </div>
           <div className="serif italic" style={{ fontSize: 25, lineHeight: 1.18, color: 'var(--label-1)', textAlign: 'center', marginTop: 18 }}>{row.title}</div>
-          <p style={{ margin: '12px 0 0', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.love}</p>
+          <span className="mono" style={{ alignSelf: 'center', marginTop: 10, padding: '5px 11px', borderRadius: 999, fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[row.feel].toUpperCase()}</span>
+          <p style={{ margin: '12px 0 0', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)', textAlign: 'center' }}>{row.love}</p>
+          {area && (
+            <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: '#c9bedb', textAlign: 'center' }}>IN REAL LIFE</div>
+              <p style={{ margin: '5px 0 0', fontSize: 14, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{area.body}</p>
+            </div>
+          )}
           <div style={{ flex: 1 }} />
-          <span className="mono" style={{ alignSelf: 'center', marginTop: 16, padding: '5px 11px', borderRadius: 999, fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-1)', border: '1px solid rgba(201,188,228,0.4)' }}>{FEEL_TAG[row.feel].toUpperCase()}</span>
+          <div style={{ marginTop: 14, borderRadius: 14, padding: '10px 12px', background: 'rgba(201,190,219,0.12)', border: '1px solid rgba(201,190,219,0.36)' }}>
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: '#c9bedb' }}>TRY THIS </span>
+            <span className="serif italic" style={{ fontSize: 15.5, color: 'var(--label-1)' }}>{tryThis}</span>
+          </div>
         </>
       ),
     }
@@ -326,9 +342,14 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
               {/* your charts, as a hand */}
               <div style={{ textAlign: 'center', marginTop: 26 }}>
                 <div className="h-display" style={{ fontSize: 24 }}>Your charts, together</div>
-                <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 3 }}>{chart.sunOnly ? `${them.name}’s card only shows a sun sign, so there are two.` : 'Five ways your signs meet. Pull a card.'}</div>
+                <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 3 }}>{chart.sunOnly ? `${them.name}’s card only shows a sun sign, so there are two pairings.` : 'Your birth chart and theirs, and the five places they meet.'}</div>
               </div>
-              <div style={{ position: 'relative', height: 172, marginTop: 10 }}>
+              {/* both birth charts on one wheel */}
+              <div style={{ marginTop: 12, borderRadius: 18, padding: '10px 0 2px', background: 'rgba(10,5,24,0.35)', border: '1px solid rgba(179,166,196,0.16)' }}>
+                <ChartWheel rows={chart.rows} mine={ME.sign} theirs={them.sign} name={them.name} />
+              </div>
+              <div className="mono" style={{ textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)', marginTop: 14 }}>EACH LINE IS A CARD · PULL ONE</div>
+              <div style={{ position: 'relative', height: 172, marginTop: 6 }}>
                 {chart.rows.map((row, i) => {
                   const k = i - (n - 1) / 2
                   const a = SIGNS[row.mine.sign], b = SIGNS[row.theirs.sign]
