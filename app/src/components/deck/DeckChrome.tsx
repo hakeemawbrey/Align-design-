@@ -4,7 +4,7 @@ import { useTalk } from '../../lib/talk'
 import { todayKey } from '../../data/skyReading'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
+import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, DROP } from './fx'
 import { HandIcon } from '../talk/CardsButton'
 import { sfx } from '../../lib/sfx'
 import { BETA } from '../../lib/beta'
@@ -114,7 +114,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
       transition={{ duration: 0.3 }}
-      style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
+      style={{ position: 'absolute', left: 0, right: 0, top: DROP, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
     >
       {eyebrow && (
         <motion.div className="mono" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
@@ -245,10 +245,10 @@ export function StackBacks({ bump = 0 }: { bump?: number }) {
 export function SwipeLabels({ alignStyle, releaseStyle, event = false }: { alignStyle?: object; releaseStyle?: object; event?: boolean }) {
   return (
     <>
-      <motion.div className="mono" style={{ position: 'absolute', left: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'left center', ...releaseStyle }}>
+      <motion.div className="mono" style={{ position: 'absolute', left: 28, top: 678 + DROP, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'left center', ...releaseStyle }}>
         ←&nbsp;&nbsp; {event ? 'SAVE' : 'RELEASE'}
       </motion.div>
-      <motion.div className="mono" style={{ position: 'absolute', right: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'right center', ...alignStyle }}>
+      <motion.div className="mono" style={{ position: 'absolute', right: 28, top: 678 + DROP, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'right center', ...alignStyle }}>
         {event ? 'PLAY' : 'ALIGN'}&nbsp;&nbsp; →
       </motion.div>
     </>

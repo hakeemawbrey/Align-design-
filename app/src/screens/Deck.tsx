@@ -27,7 +27,7 @@ import { betaFlow, inFlight, openStars, pendingOf, useBetaFlows } from '../lib/b
 import { todayKey } from '../data/skyReading'
 
 const SKY_READ_KEY = 'align:sky-read'
-import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, ELEMENT_INK, skyMood, starBurst, resetBurst, pronoun } from '../components/deck/fx'
+import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, DROP, ELEMENT_SKY, ELEMENT_INK, skyMood, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
 type Dir = 1 | -1
@@ -722,7 +722,7 @@ export default function Deck({ go, sky }: ScreenProps & {
             </motion.div>
           ) : (
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              style={{ position: 'absolute', top: 726, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
+              style={{ position: 'absolute', top: 726 + DROP / 3, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
               {slot?.kind === 'event' ? <>Event card&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>right to play it</span>&nbsp; · &nbsp;left to save it</>
                 : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left this week&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+</span></>
                 : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
@@ -733,7 +733,7 @@ export default function Deck({ go, sky }: ScreenProps & {
       <AnimatePresence>
         {peekUI && (
           <motion.div key="peekcap" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-            style={{ position: 'absolute', top: 664, left: 0, right: 0, textAlign: 'center', pointerEvents: 'none' }}>
+            style={{ position: 'absolute', top: 664 + DROP, left: 0, right: 0, textAlign: 'center', pointerEvents: 'none' }}>
             <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-2)' }}>Let go and the photo closes</div>
             <div style={{ marginTop: 8, fontSize: 13, color: 'var(--label-2)' }}>{alignPlus ? <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left this week&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+ ✦</span></> : <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left tonight</>}</div>
           </motion.div>

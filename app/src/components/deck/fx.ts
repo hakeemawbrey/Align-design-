@@ -2,13 +2,16 @@ import confetti from 'canvas-confetti'
 import { SIGNS, type Element, type SignId } from '../../data/signs'
 import { moonTonight } from '../../data/moon'
 import type { Profile } from '../../data/profiles'
+import { BETA } from '../../lib/beta'
 
 /** Layout constants shared by Dealing + Deck so the hand-off is seamless. */
 export const CARD_W = 330
 export const CARD_H = 527
 export const CARD_SCALE = 0.95
 /** top-left of the (scaled) card on the 390×844 canvas */
-export const CARD_TOP = 160
+/** the beta sits everything a little lower, for breathing room under the top edge */
+export const DROP = BETA ? 18 : 0
+export const CARD_TOP = 160 + DROP
 export const CARD_CX = 195
 export const CARD_CY = CARD_TOP + (CARD_H * CARD_SCALE) / 2
 
