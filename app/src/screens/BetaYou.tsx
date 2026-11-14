@@ -17,15 +17,13 @@ import { openCalendarOn } from '../components/you/origin'
 import { useSession } from '../lib/session'
 import SkySpread from '../components/sky/SkySpread'
 import MoonPhase from '../components/sky/MoonPhase'
+import PlanetIcon from '../components/sky/PlanetIcon'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
 import CardFrame, { foil } from '../components/CardFrame'
 import { Planet } from '../components/onboarding/shared'
 import { PARTS } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
-
-/** a symbol for each planet, for the event pictures */
-const PLANET_SYM: Record<string, string> = { sun: '☉', moon: '☽', mercury: '☿', venus: '♀', mars: '♂', jupiter: '♃', saturn: '♄' }
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
@@ -245,7 +243,7 @@ export default function BetaYou({ go }: ScreenProps) {
                     {/* a small picture for the kind of event: the moon at that phase, or the planet's symbol */}
                     <span style={{ width: 30, height: 30, borderRadius: 15, flexShrink: 0, display: 'grid', placeItems: 'center', background: `color-mix(in srgb, ${col} 16%, transparent)`, border: `1px solid color-mix(in srgb, ${col} 45%, transparent)` }}>
                       {m ? <MoonPhase size={18} lit={m.lit} waxing={m.waxing} glow={false} />
-                        : <span style={{ fontSize: 15, lineHeight: 1, color: col }}>{PLANET_SYM[e.planet ?? 'sun']}{'\uFE0E'}</span>}
+                        : <PlanetIcon kind={e.planet ?? 'sun'} size={17} color={col} />}
                     </span>
                     <span style={{ flex: 1, minWidth: 0 }}>
                       <span className="serif italic" style={{ display: 'block', fontSize: 16, color: 'var(--label-1)' }}>

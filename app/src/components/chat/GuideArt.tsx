@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { CardOrb } from '../CardFrame'
+import { planetShape, type PlanetKind } from '../sky/PlanetIcon'
 import { SIGN_ORDER } from '../../lib/astro'
 import type { ChartRow } from '../../lib/compat'
 import { SIGNS, type SignId } from '../../data/signs'
@@ -85,8 +86,6 @@ export function PairChip({ row }: { row: ChartRow }) {
   )
 }
 
-const PLANET_GLYPH: Record<string, string> = { Sun: '☉', Moon: '☽', Rising: '↑', Venus: '♀' }
-
 /**
  * Both charts on one zodiac wheel: your placements on the outer ring, theirs
  * on the inner, and a line for each pairing the guide reads.
@@ -138,7 +137,7 @@ export function ChartWheel({ rows, mine, theirs, name }: { rows: ChartRow[]; min
           return (
             <motion.g key={`m${i}`} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.1 + i * 0.07 }} style={{ transformOrigin: `${x}px ${y}px` }}>
               <circle cx={x} cy={y} r="9.5" fill={mineCol} stroke="#1a0f2e" strokeWidth="1.5" />
-              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="#1a0f2e">{PLANET_GLYPH[d.planet]}{'︎'}</text>
+              <svg x={x - 6.5} y={y - 6.5} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a0f2e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" color="#1a0f2e">{planetShape(d.planet.toLowerCase() as PlanetKind)}</svg>
             </motion.g>
           )
         })}
@@ -147,7 +146,7 @@ export function ChartWheel({ rows, mine, theirs, name }: { rows: ChartRow[]; min
           return (
             <motion.g key={`t${i}`} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.2 + i * 0.07 }} style={{ transformOrigin: `${x}px ${y}px` }}>
               <circle cx={x} cy={y} r="9.5" fill={theirCol} stroke="#1a0f2e" strokeWidth="1.5" />
-              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="#1a0f2e">{PLANET_GLYPH[d.planet]}{'︎'}</text>
+              <svg x={x - 6.5} y={y - 6.5} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a0f2e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" color="#1a0f2e">{planetShape(d.planet.toLowerCase() as PlanetKind)}</svg>
             </motion.g>
           )
         })}
