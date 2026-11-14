@@ -27,6 +27,23 @@ import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
+/** your sun sign, read for yourself: what lights you up, what trips you up, what brings you back to yourself */
+const SELF: Record<SignId, { spark: string; clash: string; align: string }> = {
+  aries: { spark: 'A fresh start, a dare, someone who says “let’s go” back.', clash: 'Waiting. You push when you’re bored and regret it later.', align: 'Move your body first, then decide. Finish one thing you started.' },
+  taurus: { spark: 'Good food, a slow morning, people who do what they said they would.', clash: 'Being rushed or surprised. You dig in instead of saying what’s wrong.', align: 'Say the uncomfortable thing early. Keep one routine that’s only yours.' },
+  gemini: { spark: 'A new idea, a quick back-and-forth, two plans at once.', clash: 'Being pinned to one answer. You go quiet by changing the subject.', align: 'Pick one thing and stay with it for an hour. Write it down, then talk.' },
+  cancer: { spark: 'Feeling at home with someone. Old songs, cooked meals, being remembered.', clash: 'Feeling left out. You pull back and hope they notice.', align: 'Ask for what you need in plain words. Make your space feel safe.' },
+  leo: { spark: 'Being seen doing what you love. Making someone’s day bigger.', clash: 'Being ignored or taken for granted. Pride keeps you from saying it hurt.', align: 'Make something just for you. Give praise without waiting for it back.' },
+  virgo: { spark: 'A problem you can fix. A plan that works. Being useful to someone you love.', clash: 'Mess, vagueness and your own inner critic.', align: 'Call it good enough once a day. Let someone help you.' },
+  libra: { spark: 'Beauty, good company and a conversation that flows.', clash: 'Conflict and choosing. You say “I don’t mind” when you do.', align: 'Decide first, ask second. Spend time alone so you can hear yourself.' },
+  scorpio: { spark: 'Real talk, loyalty and getting to the bottom of something.', clash: 'Half-truths and small talk. You test people instead of asking.', align: 'Say what you feel while it’s small. Let go of one thing you’re holding.' },
+  sagittarius: { spark: 'A trip, a big question, a laugh that goes on too long.', clash: 'Being boxed in. You leave before it gets hard.', align: 'Stay through one hard conversation. Keep something on the calendar to look forward to.' },
+  capricorn: { spark: 'A goal, a win, quiet respect from people you rate.', clash: 'Wasted time and feeling behind. You work instead of feeling it.', align: 'Rest before you’ve earned it. Tell one person how you’re really doing.' },
+  aquarius: { spark: 'A strange idea, a cause, a friend who gets it.', clash: 'Being told how to feel. You go distant when things get close.', align: 'Stay in the room when it’s emotional. Share the odd thought anyway.' },
+  pisces: { spark: 'Music, daydreams and people who are gentle with you.', clash: 'Harshness and too much noise. You disappear instead of saying no.', align: 'Say no once this week. Make something with your hands.' },
+}
+const SELF_ROWS = [['spark', 'Spark', 'var(--spark)', 'What lights you up'], ['clash', 'Clash', 'var(--rub)', 'What trips you up'], ['align', 'Align', 'var(--align)', 'What brings you back']] as const
+
 /** one honest line about your sun sign: what drives you, and the catch */
 const INSIGHT: Record<SignId, string> = {
   aries: 'You come alive when you start things. The growth is in staying once the rush wears off.',
@@ -127,8 +144,7 @@ export default function BetaYou({ go }: ScreenProps) {
             <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
             <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: SUN.light, marginTop: 8 }}>{SUN.name.toUpperCase()} {SUN.glyph} · {FACTS.element.toUpperCase()}</div>
             <div className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '6px auto 0', maxWidth: 318 }}>
-              {INSIGHT[ME.sign]}{' '}
-              <button onClick={() => { sfx.tap(); go('chart') }} className="mono" style={{ fontStyle: 'normal', fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--align)', whiteSpace: 'nowrap' }}>LEARN MORE ›</button>
+              {INSIGHT[ME.sign]}
             </div>
           </div>
           <div style={{ position: 'relative', height: MH + 40, marginTop: -8 }}>
@@ -145,6 +161,22 @@ export default function BetaYou({ go }: ScreenProps) {
               )
             })}
           </div>
+
+          {/* you, read like a card: spark, clash, align for your own sign */}
+          <CardFrame tint={SUN.color} kicker={`${SUN.name} · about you`} title="Your spark, clash and align" padding="14px 16px 6px" footer={['Align · your sign', ME.serial]}>
+            {SELF_ROWS.map(([k, label, color, what], i) => (
+              <div key={k} style={{ display: 'flex', gap: 12, padding: '11px 0', borderTop: i ? '1px solid rgba(179,166,196,0.14)' : undefined }}>
+                <span style={{ width: 54, flexShrink: 0 }}>
+                  <span className="mono" style={{ display: 'block', fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, color }}>{label.toUpperCase()}</span>
+                  <span style={{ display: 'flex', gap: 3, marginTop: 5 }}>{[0, 1, 2].map((d) => <span key={d} style={{ width: 5, height: 5, borderRadius: 3, background: color }} />)}</span>
+                </span>
+                <span style={{ flex: 1, minWidth: 0 }}>
+                  <span style={{ display: 'block', fontSize: 11.5, color: 'var(--label-3)' }}>{what}</span>
+                  <span className="serif" style={{ display: 'block', fontSize: 16.5, lineHeight: 1.3, color: 'var(--label-1)', marginTop: 2 }}>{SELF[ME.sign][k]}</span>
+                </span>
+              </div>
+            ))}
+          </CardFrame>
 
           {/* today's horoscope, kept small: one row that opens into the three cards */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -218,7 +250,8 @@ export default function BetaYou({ go }: ScreenProps) {
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <span className="eyebrow" style={EYEBROW}>App</span>
             <div style={{ ...PANEL, overflow: 'hidden' }}>
-              <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} first />
+              <Link label={`All about ${SUN.name}`} sub="Your element, your planet and the quick facts" onClick={() => go('chart')} first />
+              <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
               <Link label="Settings" onClick={() => go('x/settings')} />
               <Link label="Help & support" onClick={() => go('x/help')} />
             </div>
