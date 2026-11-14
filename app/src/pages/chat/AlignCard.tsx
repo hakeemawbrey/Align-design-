@@ -7,7 +7,7 @@ import { api } from '../../api'
 import { ME, profileById } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
 import { answerMsg, cardById, parseTalk, playMsg } from '../../data/talkCards'
-import { ALIGN_CARD, betaFlow, useBetaFlow } from '../../lib/betaFlow'
+import { betaFlow, useBetaFlow } from '../../lib/betaFlow'
 import { session } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
 import type { PageProps } from '../types'
@@ -28,9 +28,11 @@ const side: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisi
  * and you answer its question here. Their answer stays sealed until yours is
  * in; then both show, and the chat opens with the 33:33 running.
  */
-export default function AlignCard({ go, back }: PageProps) {
-  const flow = useBetaFlow()
-  const them = useMemo(() => profileById(flow.with ?? 'j27') ?? profileById('j27')!, [flow.with])
+export default function AlignCard({ go, back, arg }: PageProps) {
+  const [id] = useState(() => arg || session.get().matchWith || 'j27')
+  const flow = useBetaFlow(id)
+  const them = useMemo(() => profileById(id) ?? profileById('j27')!, [id])
+  const ALIGN_CARD = flow.card
   const card = cardById(ALIGN_CARD)!
   const theirs = SIGNS[them.sign]
   const [stage, setStage] = useState<Stage>('shuffle')
@@ -52,7 +54,7 @@ export default function AlignCard({ go, back }: PageProps) {
   useEffect(() => {
     if (setup.current) return
     setup.current = true
-    betaFlow.openCard()
+    betaFlow.openCard(them.id)
     void api.messages(them.id).then(async (rows) => {
       const talk = rows.map((r) => ({ from: r.from, t: parseTalk(r.body) })).filter((x) => x.t && x.t.cardId === ALIGN_CARD)
       if (!talk.some((x) => x.t!.type === 'play')) await api.send(them.id, 'them', playMsg(ALIGN_CARD))
@@ -88,7 +90,7 @@ export default function AlignCard({ go, back }: PageProps) {
   }
   const openChat = () => {
     sfx.tap()
-    betaFlow.openChat()
+    betaFlow.openChat(them.id)
     session.patch({ matchWith: them.id })
     if (them.id === 'j27') go('chat'); else { session.patch({ threadWith: them.id }); go('thread') }
   }

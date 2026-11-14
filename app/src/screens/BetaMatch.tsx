@@ -25,13 +25,13 @@ const side: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisi
  * no lights, no number: just the two cards.
  */
 export default function BetaMatch({ go }: ScreenProps) {
-  // whoever aligned back last (Juniper in the scripted demo)
+  // whoever's cards are flipping
   const [them] = useState(() => profileById(session.get().matchWith) ?? profileById('j27')!)
   const theirs = SIGNS[them.sign], mine = SIGNS[ME.sign]
   const pr = pronoun(them)
   const align = them.reading.find((r) => r.kind === 'align')?.text
   // arriving here from the slow reveal's countdown, the words are about the reveal
-  const [afterClock] = useState(() => betaFlow.get().with === them.id && betaFlow.get().stage === 'revealed')
+  const [afterClock] = useState(() => betaFlow.get(them.id).stage === 'revealed')
   const [stage, setStage] = useState(0) // 0 arrive · 1 lean · 2 flipped · 3 settled
   const timers = useRef<number[]>([])
   const fired = useRef(false)

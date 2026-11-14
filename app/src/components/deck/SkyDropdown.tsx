@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import MoonPhase from '../sky/MoonPhase'
-import { PLANET, TODAY_READING, readingFor } from '../../data/skyReading'
-import CardFrame, { CardOrb } from '../CardFrame'
+import { readingFor } from '../../data/skyReading'
+import SkySpread from '../sky/SkySpread'
+import CardFrame from '../CardFrame'
 import { SIGNS } from '../../data/signs'
 import { COSMIC_COLOR, cosmicMonth, runningRetrogrades, type CosmicDay } from '../../data/cosmicMonth'
 import { sfx } from '../../lib/sfx'
@@ -10,8 +11,6 @@ import { sfx } from '../../lib/sfx'
 /** fired to open the panel from elsewhere (the beta routes "today's sky" here) */
 export const OPEN_SKY_EVENT = 'align:open-sky'
 
-const SLOT_LABEL = { you: 'You', love: 'Love', move: 'Your move' } as const
-const SLOT_TINT = { you: '#f2c75c', love: '#f39ab8', move: '#7fd8b0' } as const
 const WEEK = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
 /**
@@ -47,7 +46,7 @@ export default function SkyDropdown({ open, onClose, onFullCalendar }: { open: b
                 </button>
               ))}
             </div>
-            <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', padding: '14px 16px 18px' }}>
+            <div className="no-scrollbar" style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: tab === 'today' ? '14px 7px 18px' : '14px 16px 18px' }}>
               {tab === 'today' ? <Today /> : <Month onFullCalendar={onFullCalendar} />}
             </div>
           </motion.div>
@@ -61,8 +60,8 @@ function Today() {
   const now = new Date()
   const moon = useMemo(() => cosmicMonth(now).days[now.getDate() - 1].moon, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-      <div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div style={{ padding: '0 9px' }}>
         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>
           {now.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()} · YOUR HOROSCOPE
         </div>
@@ -72,13 +71,8 @@ function Today() {
           {moon.name} in {SIGNS[moon.sign].name} · {Math.round(moon.lit * 100)}% lit
         </div>
       </div>
-      {TODAY_READING.cards.map((c, i) => (
-        <CardFrame key={c.slot} tint={SLOT_TINT[c.slot]} kicker={`${SLOT_LABEL[c.slot]} · ${c.title}`} title={c.headline}
-          orb={<CardOrb tint={SLOT_TINT[c.slot]}>{PLANET[c.planet].glyph}</CardOrb>}
-          strip={{ label: 'Try this', text: c.tryThis }} footer={['Align · today’s sky', `${i + 1}/3`]}>
-          <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>{c.story}</p>
-        </CardFrame>
-      ))}
+      {/* three cards from today's sky, face down: turn each one to read it */}
+      <div style={{ display: 'flex', justifyContent: 'center' }}><SkySpread reward={false} /></div>
     </div>
   )
 }

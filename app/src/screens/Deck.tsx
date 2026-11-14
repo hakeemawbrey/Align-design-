@@ -23,7 +23,7 @@ import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../com
 import { BETA } from '../lib/beta'
 import SkyDropdown, { OPEN_SKY_EVENT } from '../components/deck/SkyDropdown'
 import { openCalendarOn } from '../components/you/origin'
-import { betaFlow, useBetaFlow } from '../lib/betaFlow'
+import { betaFlow, inFlight, openStars, pendingOf, useBetaFlows } from '../lib/betaFlow'
 import { todayKey } from '../data/skyReading'
 
 const SKY_READ_KEY = 'align:sky-read'
@@ -264,21 +264,21 @@ export default function Deck({ go, sky }: ScreenProps & {
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
   // beta: the star holds the slow reveal's two moments (the stars align; it's time)
-  const flow = useBetaFlow()
-  const [revealDue, setRevealDue] = useState(false)
+  const flows = useBetaFlows()
+  const flying = inFlight(flows)
+  const counting = flying.some((f) => f.stage === 'chat')
+  const [now, setNow] = useState(() => Date.now())
   useEffect(() => {
-    if (flow.stage !== 'chat' || !flow.revealAt) { setRevealDue(false); return }
-    const tick = () => setRevealDue(Date.now() >= (flow.revealAt ?? 0))
-    tick()
-    const t = window.setInterval(tick, 1000)
+    if (!counting) return
+    const t = window.setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(t)
-  }, [flow.stage, flow.revealAt])
-  const starCount = flow.stage === 'aligned' || flow.stage === 'card' || revealDue ? 1 : 0
+  }, [counting])
+  // the star counts what's waiting on you: a card to draw, or cards to flip
+  const starCount = flying.filter((f) => pendingOf(f, now) !== 'chat').length
   const openStar = () => {
     if (!BETA) { go('notifications'); return }
-    if (flow.stage === 'aligned' || flow.stage === 'card') { go('x/align-card'); return }
-    if (revealDue && flow.with) { betaFlow.reveal(); session.patch({ matchWith: flow.with }); go('match'); return }
-    showToast(flow.stage === 'chat' ? 'Your cards flip when the 33:33 is up' : 'Nothing new yet. Your star lights up when the stars align')
+    if (flying.length) { sfx.tap(); openStars(); return }
+    showToast('Nothing new yet. Your star lights up when the stars align')
   }
   const [skyOpen, setSkyOpen] = useState(false)
   // the pill's dot: today's horoscope hasn't been opened yet (beta)
@@ -500,8 +500,8 @@ export default function Deck({ go, sky }: ScreenProps & {
     if (dir > 0) {
       sfx.align()
       setStarPulse((n) => n + 1)
-      // beta, Juniper: no reveal yet. The stars-align notification drops in and the deck carries on
-      const slow = BETA && profile.alignsBack && profile.id === 'j27'
+      // beta: no reveal yet. The stars-align notification takes over and the deck carries on
+      const slow = BETA && !!profile.alignsBack && !profile.real
       if (slow) {
         session.patch({ matchWith: profile.id, unseenMatch: true }); betaFlow.start(profile.id)
         later(() => setStarPulse((n) => n + 1), 700)
@@ -528,7 +528,8 @@ export default function Deck({ go, sky }: ScreenProps & {
   }
 
   const onSwiped = (dir: Dir) => {
-    if (dir > 0 && profile?.alignsBack) return
+    // the full demo leaves for the match screen here; the beta's slow reveal keeps dealing
+    if (dir > 0 && profile?.alignsBack && !(BETA && !profile.real)) return
     dragX.set(0)
     if (profile?.real) {
       const who = profile

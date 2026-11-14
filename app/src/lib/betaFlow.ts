@@ -11,50 +11,85 @@ import { RESET_EVENT } from './demo'
  *   chat      both answered: the chat opens and a 33:33 countdown starts
  *   revealed  the countdown ended: both cards flip, photos open
  *
- * One match at a time goes through it (Juniper, in the demo). Kept on the
- * device so the countdown survives leaving and coming back.
+ * Every match goes through it, each on its own clock. Kept on the device so
+ * the countdowns survive leaving and coming back.
  */
 export type BetaStage = 'none' | 'aligned' | 'card' | 'chat' | 'revealed'
-export interface BetaFlow { with: string | null; stage: BetaStage; revealAt: number | null }
+export interface BetaFlow { id: string; stage: BetaStage; revealAt: number | null; card: string; at: number }
+type Flows = Record<string, BetaFlow>
 
 /** how long the chat runs before the reveal: 33 minutes 33 seconds */
 export const REVEAL_MS = (33 * 60 + 33) * 1000
-/** the card the stars play: "What small, everyday thing makes you feel cared for?" */
-export const ALIGN_CARD = 'ro6'
+/** the cards the stars deal, one per match, in order (the first: "What small, everyday thing makes you feel cared for?") */
+const ALIGN_CARDS = ['ro6', 'ro5', 'ro3', 'ev2', 'ev5', 'ro1']
 
-const KEY = 'beta-flow:v1'
-const initial = (): BetaFlow => ({ with: null, stage: 'none', revealAt: null })
-let state: BetaFlow = { ...initial(), ...(load<Partial<BetaFlow>>(KEY) ?? {}) }
+const KEY = 'beta-flow:v2'
+const NONE: BetaFlow = { id: '', stage: 'none', revealAt: null, card: ALIGN_CARDS[0], at: 0 }
+let state: Flows = load<Flows>(KEY) ?? {}
 const subs = new Set<() => void>()
-const set = (p: Partial<BetaFlow>) => { state = { ...state, ...p }; save(KEY, state); subs.forEach((f) => f()) }
+const put = (id: string, p: Partial<BetaFlow>) => {
+  const cur = state[id]
+  if (!cur) return
+  state = { ...state, [id]: { ...cur, ...p } }
+  save(KEY, state)
+  subs.forEach((f) => f())
+}
 
 export const betaFlow = {
-  get: () => state,
+  all: () => state,
+  get: (id: string | null | undefined): BetaFlow => (id && state[id]) || NONE,
   /** you both aligned */
-  start: (id: string) => set({ with: id, stage: 'aligned', revealAt: null }),
+  start: (id: string) => {
+    if (state[id]) return
+    const card = ALIGN_CARDS[Object.keys(state).length % ALIGN_CARDS.length]
+    state = { ...state, [id]: { id, stage: 'aligned', revealAt: null, card, at: Date.now() } }
+    save(KEY, state)
+    subs.forEach((f) => f())
+  },
   /** you opened the card */
-  openCard: () => { if (state.stage === 'aligned') set({ stage: 'card' }) },
+  openCard: (id: string) => { if (state[id]?.stage === 'aligned') put(id, { stage: 'card' }) },
   /** both answered: the chat opens and the clock starts */
-  openChat: () => { if (state.stage === 'aligned' || state.stage === 'card') set({ stage: 'chat', revealAt: Date.now() + REVEAL_MS }) },
+  openChat: (id: string) => { const s = state[id]?.stage; if (s === 'aligned' || s === 'card') put(id, { stage: 'chat', revealAt: Date.now() + REVEAL_MS }) },
   /** demo: jump the clock to its last few seconds */
-  skipAhead: (ms = 5000) => { if (state.stage === 'chat') set({ revealAt: Date.now() + ms }) },
-  reveal: () => set({ stage: 'revealed', revealAt: null }),
+  skipAhead: (id: string, ms = 5000) => { if (state[id]?.stage === 'chat') put(id, { revealAt: Date.now() + ms }) },
+  reveal: (id: string) => put(id, { stage: 'revealed', revealAt: null }),
   /** is this match in the flow (at any stage)? */
-  has: (id: string) => state.with === id && state.stage !== 'none',
+  has: (id: string) => !!state[id],
   /** their photo is still veiled */
-  veiled: (id: string) => state.with === id && state.stage !== 'none' && state.stage !== 'revealed',
+  veiled: (id: string) => !!state[id] && state[id].stage !== 'revealed',
 }
 
 if (typeof window !== 'undefined') {
-  window.addEventListener(RESET_EVENT, () => { state = initial(); remove(KEY); subs.forEach((f) => f()) })
+  window.addEventListener(RESET_EVENT, () => { state = {}; remove(KEY); subs.forEach((f) => f()) })
 }
 
-export function useBetaFlow(): BetaFlow {
-  return useSyncExternalStore((f) => { subs.add(f); return () => subs.delete(f) }, () => state, () => state)
+const sub = (f: () => void) => { subs.add(f); return () => { subs.delete(f) } }
+/** every match in the flow */
+export function useBetaFlows(): Flows {
+  return useSyncExternalStore(sub, () => state, () => state)
 }
+/** one match's place in the flow */
+export function useBetaFlow(id: string | null | undefined): BetaFlow {
+  const all = useBetaFlows()
+  return (id && all[id]) || NONE
+}
+
+/** what a match is waiting on, for the star and the notification */
+export type Pending = 'card' | 'chat' | 'reveal'
+export const pendingOf = (f: BetaFlow, now = Date.now()): Pending | null =>
+  f.stage === 'aligned' || f.stage === 'card' ? 'card'
+    : f.stage === 'chat' ? (f.revealAt != null && now >= f.revealAt ? 'reveal' : 'chat')
+      : null
+/** matches still on their way to a reveal, newest first */
+export const inFlight = (all: Flows): BetaFlow[] =>
+  Object.values(all).filter((f) => f.stage !== 'none' && f.stage !== 'revealed').sort((a, b) => b.at - a.at)
 
 /** mm:ss left until the reveal */
 export const clock = (ms: number) => {
   const s = Math.max(0, Math.ceil(ms / 1000))
   return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`
 }
+
+/** the deck's star opens the overview of everyone the stars have aligned you with */
+export const STARS_EVENT = 'align:beta-stars'
+export const openStars = () => window.dispatchEvent(new Event(STARS_EVENT))

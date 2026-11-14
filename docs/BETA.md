@@ -13,7 +13,7 @@ npm run preview:beta   # http://localhost:4175
 
 1. **Onboarding:** ends on the deal (no founding offer).
 2. **The deck:** people only (no event cards). The card uses Spark / Clash / Align with strength dots, moon and rising tags, and the element orb. When you both align, the match moment (`src/screens/BetaMatch.tsx`) brings your card and theirs in face down and flips them together, then shows the Align line from their card. No pull badge or lights.
-3. **Today's horoscope and cosmic calendar:** the deck's horoscope pill drops down a panel. "Today" is your daily reading; "This month" is a real calendar of moon phases, planets changing sign, retrogrades and seasons, worked out from the ephemeris (`src/data/cosmicMonth.ts`).
+3. **Today's horoscope and cosmic calendar:** the deck's horoscope pill drops down a panel. "Today" is your daily reading, drawn as three face-down cards (You, Love, Move) you turn over one at a time (`components/sky/SkySpread.tsx`); "This month" is a real calendar of moon phases, planets changing sign, retrogrades and seasons, worked out from the ephemeris (`src/data/cosmicMonth.ts`).
 4. **Chat** with matches (Juniper's scripted chat and everyone else's thread).
 5. **Talk cards** in chat (no packs or binder).
 6. **How you fit:** the two-orb button top-right in every chat opens a sheet written for the relationship: Day to day, Feelings, First impressions and Feeling understood, each a plain sentence and one thing to try, then their card's Spark / Clash / Align, tonight's line and a button to play a talk card (`src/lib/compat.ts`, `src/components/chat/Compat.tsx`). The astrology behind each area sits under a "Why?" toggle. **There is no compatibility score, percentage or rating anywhere, on purpose (liability). Don't add one.**
@@ -38,13 +38,13 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 Widgets between two people and for self-discovery share one frame, `src/components/CardFrame.tsx`, so they read as cards from the same deck as the people: a thick (3px) foil border in the card's colour, a title bar with an orb, an optional "Try this" strip and a mono footer. It's used by How you fit, Your sign, the horoscope and calendar, and the profile's sign and sky panels. Colours follow the planet or sign (sun gold, moon blue, rising violet), never how a reading comes out. Plain lists (settings, demo tools) stay unframed.
 
-## The slow reveal (Juniper, in the demo)
+## The slow reveal (every match)
 
-Aligning with Juniper no longer shows her face at once (`src/lib/betaFlow.ts`):
+Aligning with someone who aligned back (Juniper, Sol, Amara, Bianca, Mina) no longer shows their face at once. Each match runs on its own clock (`src/lib/betaFlow.ts`):
 
 1. **The stars align:** when you both say yes the deck carries on. The notification takes over the screen (`BetaFlowPopup`): the reels' pixel stars gather, seven of them in the Align mark's colours fly into a column and burst (`PixelAlign`), the Align mark draws itself around them, and "The stars align." arrives with "Draw our card" and "Later". The notification star on the deck (top right) also gets a "1" and pulses, and keeps it if you choose Later. The same pop-up says "It's time" when the 33:33 ends while you're outside the chat.
 2. **The alignment card** (`src/pages/chat/AlignCard.tsx`, `x/align-card`): tapping the star opens its own screen. A deck of big cards shuffles, their backs the same violet Align card back as the main cards (`components/intro/CardBack`), one lifts out and turns over to show the question, and you answer it there. Their answer arrives sealed.
 3. **Both answer:** sealing yours shows both answers and an "Open the chat" button. The chat opens veiled (their aura, not their photo) with a 33:33 countdown under the header (`RevealBar`). It survives leaving and reloading. In the demo, tap the clock to jump to its last five seconds.
 4. **The reveal:** at 00:00 the two cards flip (`BetaMatch`, "The veil lifts."). The big button is "See Juniper's card"; back in the chat her photo and full card are open. If you're on the deck when the clock ends, the star lights up again and takes you to the flip.
 
-The other people who align back (Sol, Amara, Bianca, Mina) still go straight to the flip.
+**Several at once.** The flow store keeps one entry per match (`beta-flow:v2`), each with its own card and countdown. The notification leads with the sign: "The stars have aligned with a Libra." (name and age underneath). If others are still waiting, they're listed under it as "Also on your star", each one tappable. The deck's star counts what's waiting on you and opens the overview: "The stars have aligned with 3 signs.", then "Waiting on you" (a card to draw, or cards to flip) and "Counting down" (chat open, time left). The matches list shows the same status per row. Other matches use `screens/Thread.tsx`, which has the same veil, countdown and star-dealt card as Juniper's chat.

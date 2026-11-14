@@ -27,6 +27,8 @@ import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/pl
 import { BETA } from '../lib/beta'
 import { CompatBadge, CompatSheet } from '../components/chat/Compat'
 import { talk } from '../lib/talk'
+import { betaFlow, useBetaFlow } from '../lib/betaFlow'
+import { RevealBar } from '../components/chat/RevealBar'
 
 const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me' ? 'me' : 'her', text: m.body })
 
@@ -48,7 +50,13 @@ export default function Thread({ go }: ScreenProps) {
   useWorld()
   const them = api.person(threadWith) ?? seeded(threadWith)
   const bot = !!them && !them.real
-  const script = STARTER_CHATS[threadWith]
+  // beta slow reveal: the chat opens on the alignment card, photos stay veiled until the clock runs out
+  const flow = useBetaFlow(BETA ? threadWith : null)
+  const slow = flow.stage !== 'none'
+  const cardStage = flow.stage === 'aligned' || flow.stage === 'card'
+  const veiled = slow && flow.stage !== 'revealed'
+  useEffect(() => { if (cardStage) go(`x/align-card/${threadWith}`) }, [cardStage, go, threadWith])
+  const script = slow ? undefined : STARTER_CHATS[threadWith]
   const [typing, setTyping] = useState(false)
   const alive = useRef(true)
   useEffect(() => { alive.current = true; return () => { alive.current = false } }, [])
@@ -174,9 +182,13 @@ export default function Thread({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
       <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }}
-        onWho={them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
-        photo={them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined}
+        onWho={veiled ? () => { sfx.tap(); setCompat(true) } : them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
+        photo={veiled ? sign.auraImg : them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined}
         right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => setCompat(true)} /> : undefined} />
+
+      {cardStage ? <RevealBar waiting />
+        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(them.id) }} onDone={() => { betaFlow.reveal(them.id); session.patch({ matchWith: them.id }); go('match') }} />
+          : null}
 
       {empty && !composing && (
         <EmptyThread sign={them.sign} openers={openers} picked={picked}
@@ -186,7 +198,7 @@ export default function Thread({ go }: ScreenProps) {
       )}
 
       <div ref={scroller} style={{
-        position: 'absolute', top: 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 24px 14px', scrollbarWidth: 'none',
+        position: 'absolute', top: veiled ? 178 : 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 24px 14px', scrollbarWidth: 'none',
         display: empty ? 'none' : undefined,
       }}>
         <div style={{ textAlign: 'center', padding: '10px 0 16px' }}>
@@ -215,7 +227,7 @@ export default function Thread({ go }: ScreenProps) {
             if (t?.type === 'play') {
               const card = cardById(t.cardId)
               return card ? (
-                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'}
+                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'} playedBy={slow && card.id === flow.card ? 'The stars' : undefined}
                   mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
                   names={{ me: ME.name, them: them.name }} onAnswer={(a) => { energize(5); void post(answerMsg(card.id, a)).catch(() => {}) }} />
               ) : null

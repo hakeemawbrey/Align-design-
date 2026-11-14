@@ -17,6 +17,7 @@ import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
 import { binderNav } from '../lib/binderNav'
+import { betaFlow, clock, pendingOf, useBetaFlows } from '../lib/betaFlow'
 import { BETA } from '../lib/beta'
 import NoMatches from '../components/chat/NoMatches'
 
@@ -55,7 +56,7 @@ export default function Matches({ go }: ScreenProps) {
     .filter((id) => !MATCHES.some((m) => m.id === id) && !people.some((p) => p.id === id))
     .map((id) => profileById(id)).filter((p) => !!p)
     .map((p) => matchFromDeal(p, pronoun(p).subj as Match['pronoun']))
-  const visible = [...real, ...dealt, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
+  const listed = [...real, ...dealt, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
   const [view, setView] = useState<View>(() => (BETA ? 'list' : binderNav.takePages() || justTraded ? 'binder' : lastView))
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)
@@ -86,8 +87,21 @@ export default function Matches({ go }: ScreenProps) {
     return held
   }, [traded, justTraded, landed])
 
+  // beta: where each match is on the way to its reveal
+  const flows = useBetaFlows()
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => { const t = window.setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t) }, [])
+  const flowStatus = (m: Match): Match => {
+    const f = flows[m.id]
+    const pend = f && pendingOf(f, now)
+    if (!f || !pend) return m
+    return { ...m, section: 'your-turn', when: 'NOW',
+      status: pend === 'card' ? 'The stars dealt you a card' : pend === 'reveal' ? 'Time to flip your cards' : `Reveal in ${clock((f.revealAt ?? now) - now)}` }
+  }
+  const visible = BETA ? listed.map(flowStatus) : listed
   const openRow = (m: Match) => {
     sfx.tap()
+    if (BETA && flows[m.id] && pendingOf(flows[m.id], now) === 'reveal') { betaFlow.reveal(m.id); session.patch({ matchWith: m.id }); go('match'); return }
     // Juniper has the scripted chat; everyone else opens their own thread
     if (m.id === 'j27') { go('chat'); return }
     session.patch({ threadWith: m.id }); go('thread')

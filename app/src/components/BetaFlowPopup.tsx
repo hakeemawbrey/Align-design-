@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import AlignMark from './intro/AlignMark'
 import PixelAlign, { ALIGN_AT } from './PixelAlign'
-import { foil } from './CardFrame'
-import { betaFlow, useBetaFlow } from '../lib/betaFlow'
-import { profileById } from '../data/profiles'
+import { CardOrb, foil } from './CardFrame'
+import { STARS_EVENT, betaFlow, clock, inFlight, pendingOf, useBetaFlows, type BetaFlow, type Pending } from '../lib/betaFlow'
+import { profileById, type Profile } from '../data/profiles'
+import { SIGNS } from '../data/signs'
 import { session } from '../lib/session'
 import { sfx } from '../lib/sfx'
 import type { ScreenId } from '../screens/types'
@@ -21,46 +22,119 @@ const CX = 195
 const CY = 258
 const GAP = (10.6 / 88) * MARK
 
+interface Item { flow: BetaFlow; them: Profile; pend: Pending }
+const an = (word: string) => (/^[aeiou]/i.test(word) ? 'an' : 'a')
+
+/** "a Libra", in the sign's own colour with its glyph */
+function SignName({ them, article = true }: { them: Profile; article?: boolean }) {
+  const s = SIGNS[them.sign]
+  return <>{article ? `${an(s.name)} ` : ''}<span style={{ color: s.light, whiteSpace: 'nowrap' }}>{s.name} {s.glyph}</span></>
+}
+
 /**
- * The beta's in-app notification, played big: the screen goes dark, pixel
- * stars gather, seven of them fly into line and burst, the Align mark draws
- * itself around them, and then the words arrive. Shown when the stars align
- * and again when the 33:33 is up. "Later" closes it and leaves the deck's
- * star lit.
+ * The beta's in-app notifications.
+ *
+ * The moment, played big when the stars align and again when a 33:33 is up:
+ * the screen goes dark, pixel stars gather, seven fly into line and burst,
+ * the Align mark draws itself around them, and the words say which sign the
+ * stars have aligned you with. If others are waiting too, they're listed
+ * under it.
+ *
+ * The overview, opened from the deck's star: everyone the stars have aligned
+ * you with, by sign, and what each is waiting on.
  */
 export default function BetaFlowPopup({ go, screen }: { go: (id: ScreenId) => void; screen: ScreenId }) {
-  const flow = useBetaFlow()
-  const them = flow.with ? profileById(flow.with) : undefined
-  const [due, setDue] = useState(false)
+  const flows = useBetaFlows()
+  const [now, setNow] = useState(() => Date.now())
   const [, bump] = useState(0)
+  const [overview, setOverview] = useState(false)
+  const flying = inFlight(flows)
+  const counting = flying.some((f) => f.stage === 'chat')
   useEffect(() => {
-    if (flow.stage !== 'chat' || !flow.revealAt) { setDue(false); return }
-    const tick = () => setDue(Date.now() >= (flow.revealAt ?? 0))
-    tick()
-    const t = window.setInterval(tick, 1000)
+    if (!counting) return
+    const t = window.setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(t)
-  }, [flow.stage, flow.revealAt])
+  }, [counting])
+  useEffect(() => {
+    const open = () => { setNow(Date.now()); setOverview(true) }
+    window.addEventListener(STARS_EVENT, open)
+    return () => window.removeEventListener(STARS_EVENT, open)
+  }, [])
+  const allowed = OVER.includes(screen)
+  useEffect(() => { if (!allowed) setOverview(false) }, [allowed])
 
-  const kind = !them || !OVER.includes(screen) ? null : flow.stage === 'aligned' ? 'aligned' : due ? 'reveal' : null
-  const key = kind && them ? `${kind}:${them.id}` : null
-  const show = !!key && !later.has(key)
+  const items: Item[] = flying.flatMap((flow) => {
+    const them = profileById(flow.id), pend = pendingOf(flow, now)
+    return them && pend ? [{ flow, them, pend }] : []
+  })
+  // the moment plays once for a fresh align, and once when a clock runs out
+  const keyOf = (i: Item) => `${i.pend}:${i.flow.id}`
+  const fresh = items.filter((i) => (i.pend === 'reveal' || i.flow.stage === 'aligned') && !later.has(keyOf(i)))
+  const lead = allowed && !overview ? fresh.find((i) => i.pend === 'reveal') ?? fresh[0] : undefined
 
-  const open = () => {
-    if (!them || !kind) return
+  const open = (i: Item) => {
     sfx.tap()
-    session.patch({ matchWith: them.id })
-    if (kind === 'reveal') { betaFlow.reveal(); go('match') } else go('x/align-card')
+    setOverview(false)
+    session.patch({ matchWith: i.flow.id })
+    if (i.pend === 'reveal') { betaFlow.reveal(i.flow.id); go('match') }
+    else if (i.pend === 'card') go(`x/align-card/${i.flow.id}` as ScreenId)
+    else if (i.flow.id === 'j27') go('chat')
+    else { session.patch({ threadWith: i.flow.id }); go('thread') }
   }
-  const dismiss = () => { if (key) { sfx.tap(); later.add(key); bump((n) => n + 1) } }
+  const dismiss = () => { sfx.tap(); fresh.forEach((i) => later.add(keyOf(i))); bump((n) => n + 1) }
 
   return (
     <AnimatePresence>
-      {show && them && kind && <Moment key={key} kind={kind} name={them.name} onOpen={open} onLater={dismiss} />}
+      {lead && (
+        <Moment key={keyOf(lead)} item={lead} others={items.filter((i) => i !== lead && i.pend !== 'chat')} more={items.length - 1}
+          onOpen={open} onAll={() => { dismiss(); setOverview(true) }} onLater={dismiss} />
+      )}
+      {allowed && overview && <Overview key="overview" items={items} now={now} onOpen={open} onClose={() => { sfx.tap(); setOverview(false) }} />}
     </AnimatePresence>
   )
 }
 
-function Moment({ kind, name, onOpen, onLater }: { kind: 'aligned' | 'reveal'; name: string; onOpen: () => void; onLater: () => void }) {
+const STATUS: Record<Pending, string> = { card: 'A card is waiting', chat: 'Chat open', reveal: 'Time to flip your cards' }
+const ACTION: Record<Pending, string> = { card: 'Draw', chat: 'Chat', reveal: 'Flip' }
+
+/** one match in a list: the sign first, the name second, then what it's waiting on */
+function Row({ item, now, onOpen, compact }: { item: Item; now: number; onOpen: () => void; compact?: boolean }) {
+  const s = SIGNS[item.them.sign]
+  const hot = item.pend !== 'chat'
+  return (
+    <button onClick={onOpen} style={{ width: '100%', borderRadius: 18, padding: compact ? 2 : 3, background: foil(s.color), textAlign: 'left', display: 'block' }}>
+      <span style={{ display: 'flex', alignItems: 'center', gap: 12, borderRadius: compact ? 16 : 15, padding: compact ? '7px 12px 7px 9px' : '11px 14px 11px 11px', background: 'linear-gradient(180deg, #1b112f, #120b22)' }}>
+        <CardOrb tint={s.color} size={compact ? 32 : 42}>{s.glyph}</CardOrb>
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <span className="serif italic" style={{ display: 'block', fontSize: compact ? 17 : 21, lineHeight: 1.15, color: 'var(--label-1)' }}>
+            {s.name} <span style={{ fontSize: compact ? 13 : 15, color: 'var(--label-2)' }}>· {item.them.name}, {item.them.age}</span>
+          </span>
+          <span style={{ display: 'block', fontSize: compact ? 12 : 13.5, color: hot ? 'var(--align)' : 'var(--label-2)', marginTop: 2, fontVariantNumeric: 'tabular-nums' }}>
+            {item.pend === 'chat' && item.flow.revealAt ? `Chat open · ${clock(item.flow.revealAt - now)} until the reveal` : STATUS[item.pend]}
+          </span>
+        </span>
+        <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, padding: '7px 10px', borderRadius: 12, whiteSpace: 'nowrap',
+          color: hot ? 'var(--chrome-ink)' : 'var(--label-1)', background: hot ? 'var(--chrome)' : 'rgba(179,166,196,0.16)' }}>
+          {ACTION[item.pend].toUpperCase()} ›
+        </span>
+      </span>
+    </button>
+  )
+}
+
+/** the thick foil frame both notifications sit in, like a card */
+function Frame({ bright }: { bright: boolean }) {
+  return (
+    <motion.div aria-hidden initial={{ opacity: 0 }} animate={{ opacity: bright ? 1 : 0.35 }} transition={{ duration: 0.8 }}
+      style={{ position: 'absolute', inset: 8, borderRadius: 40, padding: 3.5, pointerEvents: 'none', background: foil('#f2c75c'),
+        WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)', WebkitMaskComposite: 'xor', mask: 'linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)',
+        boxShadow: '0 0 30px rgba(242,199,92,0.35)' }} />
+  )
+}
+
+function Moment({ item, others, more, onOpen, onAll, onLater }: { item: Item; others: Item[]; more: number; onOpen: (i: Item) => void; onAll: () => void; onLater: () => void }) {
+  const kind = item.pend === 'reveal' ? 'reveal' : 'aligned'
+  const { name } = item.them
   // a beat after the swipe before the sky takes over, so the two don't collide
   const lead = kind === 'aligned' ? 0.7 : 0.1
   const [on, setOn] = useState(false)
@@ -79,15 +153,16 @@ function Moment({ kind, name, onOpen, onLater }: { kind: 'aligned' | 'reveal'; n
     animate: { opacity: words ? 1 : 0, y: words ? 0 : 18 },
     transition: { delay: words ? delay : 0, duration: 0.6, ease: [0.2, 0.8, 0.2, 1] as const },
   })
+  const shown = others.slice(0, 2)
 
   return (
-    <motion.div role="dialog" aria-label={kind === 'aligned' ? 'The stars align' : 'It’s time'}
+    <motion.div role="dialog" aria-label={kind === 'aligned' ? 'The stars have aligned' : 'It’s time'}
       initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: lead, duration: 0.5 } }} exit={{ opacity: 0, transition: { duration: 0.25 } }}
       style={{ position: 'absolute', inset: 0, zIndex: 90, overflow: 'hidden', background: 'radial-gradient(90% 55% at 50% 30%, #2a1556 0%, #0d0620 55%, #05020f 100%)' }}>
       {/* a warm light behind the mark, swelling when the seven line up */}
       <motion.div animate={{ opacity: burst ? 0.95 : 0.25, scale: burst ? 1.25 : 0.8 }} transition={{ duration: 1.2, ease: 'easeOut' }}
         style={{ position: 'absolute', left: CX - 220, top: CY - 220, width: 440, height: 440, borderRadius: '50%', pointerEvents: 'none', filter: 'blur(26px)',
-          background: 'radial-gradient(closest-side, rgba(242,199,92,0.5), rgba(180,92,255,0.28) 55%, transparent)' }} />
+          background: `radial-gradient(closest-side, rgba(242,199,92,0.5), color-mix(in srgb, ${SIGNS[item.them.sign].color} 40%, transparent) 55%, transparent)` }} />
 
       {on && <PixelAlign cx={CX} cy={CY} gap={GAP} quietBelow={410} onBurst={() => { setBurst(true); sfx.match() }} />}
 
@@ -113,36 +188,99 @@ function Moment({ kind, name, onOpen, onLater }: { kind: 'aligned' | 'reveal'; n
         {kind === 'aligned' ? 'SOMETHING IS LINING UP…' : 'THE CLOCK HAS RUN OUT…'}
       </motion.div>
 
-      {/* the words */}
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 438, textAlign: 'center', padding: '0 26px', pointerEvents: words ? 'auto' : 'none' }}>
+      {/* the words: the sign first */}
+      <div style={{ position: 'absolute', left: 0, right: 0, top: shown.length ? 414 : 424, textAlign: 'center', padding: '0 24px', pointerEvents: words ? 'auto' : 'none' }}>
         <motion.div {...rise(0)} className="mono" style={{ fontSize: 11, letterSpacing: '0.34em', fontWeight: 700, color: 'var(--align)' }}>
           ✦ {kind === 'aligned' ? 'MUTUAL ALIGN' : '33:33 IS UP'} ✦
         </motion.div>
-        <motion.h1 {...rise(0.08)} className="h-display" style={{ margin: '12px 0 0', fontSize: 50, lineHeight: 1.02, textShadow: '0 0 30px rgba(242,199,92,0.45)' }}>
-          {kind === 'aligned' ? <>The stars<br />align.</> : <>The veil<br />lifts.</>}
+        <motion.h1 {...rise(0.08)} className="h-display" style={{ margin: shown.length ? '9px 0 0' : '12px 0 0', fontSize: shown.length ? 34 : 39, lineHeight: 1.06, textShadow: '0 0 30px rgba(242,199,92,0.45)' }}>
+          {kind === 'aligned' ? <>The stars have aligned<br />with <SignName them={item.them} />.</> : <>The veil lifts<br />on your <SignName them={item.them} article={false} />.</>}
         </motion.h1>
-        <motion.div {...rise(0.2)} className="serif italic" style={{ fontSize: 21, lineHeight: 1.25, color: 'var(--label-1)', marginTop: 14 }}>
-          {kind === 'aligned' ? `You and ${name} both said yes.` : `It’s time to see ${name}.`}
+        <motion.div {...rise(0.2)} className="serif italic" style={{ fontSize: shown.length ? 18 : 20, lineHeight: 1.25, color: 'var(--label-1)', marginTop: shown.length ? 8 : 12 }}>
+          {kind === 'aligned' ? `${name}, ${item.them.age}. You both said yes.` : `It’s time to see ${name}.`}
         </motion.div>
-        <motion.p {...rise(0.28)} style={{ margin: '8px auto 0', maxWidth: 300, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
-          {kind === 'aligned' ? 'No faces yet. The stars deal you both one card first.' : 'Flip your cards and see each other.'}
-        </motion.p>
+        {shown.length === 0 && (
+          <motion.p {...rise(0.28)} style={{ margin: '8px auto 0', maxWidth: 300, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
+            {kind === 'aligned' ? 'No faces yet. The stars deal you both one card first.' : 'Flip your cards and see each other.'}
+          </motion.p>
+        )}
       </div>
 
-      <motion.div {...rise(0.4)} style={{ position: 'absolute', left: 38, right: 38, top: 694, pointerEvents: words ? 'auto' : 'none' }}>
-        <button className="chrome-cta" onClick={onOpen} style={{ width: '100%' }}>
+      {/* who else is waiting on your star */}
+      {shown.length > 0 && (
+        <motion.div {...rise(0.3)} style={{ position: 'absolute', left: 30, right: 30, top: 552, pointerEvents: words ? 'auto' : 'none' }}>
+          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.24em', color: 'var(--label-2)', textAlign: 'center', marginBottom: 7 }}>ALSO ON YOUR STAR</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {shown.slice(0, others.length > 2 ? 1 : 2).map((o) => <Row key={o.flow.id} item={o} now={Date.now()} onOpen={() => onOpen(o)} compact />)}
+            {others.length > 2 && (
+              <button onClick={onAll} className="mono" style={{ height: 40, borderRadius: 16, fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-1)', background: 'rgba(179,166,196,0.14)', border: '1px solid rgba(179,166,196,0.25)' }}>
+                + {others.length - 1} MORE SIGNS WAITING ›
+              </button>
+            )}
+          </div>
+        </motion.div>
+      )}
+
+      <motion.div {...rise(0.4)} style={{ position: 'absolute', left: 38, right: 38, top: 700, pointerEvents: words ? 'auto' : 'none' }}>
+        <button className="chrome-cta" onClick={() => onOpen(item)} style={{ width: '100%' }}>
           {kind === 'aligned' ? 'Draw our card' : 'Flip our cards'} <span className="spark">✦</span>
         </button>
-        <button onClick={onLater} style={{ display: 'block', margin: '6px auto 0', height: 40, padding: '0 16px', fontSize: 14, color: 'var(--label-2)' }}>
-          Later · it stays on your star
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 4, marginTop: 4 }}>
+          <button onClick={onLater} style={{ height: 40, padding: '0 12px', fontSize: 14, color: 'var(--label-2)' }}>Later · it stays on your star</button>
+          {more > 0 && shown.length === 0 && <button onClick={onAll} style={{ height: 40, padding: '0 12px', fontSize: 14, color: 'var(--label-1)' }}>See all {more + 1} ›</button>}
+        </div>
       </motion.div>
 
-      {/* the whole moment sits in a thick foil frame, like a card */}
-      <motion.div aria-hidden initial={{ opacity: 0 }} animate={{ opacity: burst ? 1 : 0.35 }} transition={{ duration: 0.8 }}
-        style={{ position: 'absolute', inset: 8, borderRadius: 40, padding: 3.5, pointerEvents: 'none', background: foil('#f2c75c'),
-          WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)', WebkitMaskComposite: 'xor', mask: 'linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)',
-          boxShadow: '0 0 30px rgba(242,199,92,0.35)' }} />
+      <Frame bright={burst} />
+    </motion.div>
+  )
+}
+
+/** Everyone the stars have aligned you with, by sign. Opened from the deck's star. */
+function Overview({ items, now, onOpen, onClose }: { items: Item[]; now: number; onOpen: (i: Item) => void; onClose: () => void }) {
+  const waiting = items.filter((i) => i.pend !== 'chat')
+  const talking = items.filter((i) => i.pend === 'chat')
+  const signs = [...new Set(items.map((i) => i.them.sign))]
+  const section = (label: string, list: Item[]) => list.length > 0 && (
+    <div style={{ marginTop: 18 }}>
+      <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', fontWeight: 700, color: 'var(--label-2)', marginBottom: 8 }}>{label} · {list.length}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+        {list.map((i) => <Row key={i.flow.id} item={i} now={now} onOpen={() => onOpen(i)} />)}
+      </div>
+    </div>
+  )
+  return (
+    <motion.div role="dialog" aria-label="Your star" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
+      style={{ position: 'absolute', inset: 0, zIndex: 90, overflow: 'hidden', background: 'radial-gradient(90% 45% at 50% 16%, #2a1556 0%, #0d0620 55%, #05020f 100%)' }}>
+      <div style={{ position: 'absolute', left: CX - 120, top: 8, width: 240, height: 240, borderRadius: '50%', pointerEvents: 'none', filter: 'blur(24px)', background: 'radial-gradient(closest-side, rgba(242,199,92,0.4), rgba(180,92,255,0.22) 55%, transparent)' }} />
+      <div style={{ position: 'absolute', left: CX - 52, top: 76, width: 104, height: 104, pointerEvents: 'none' }}>
+        <AlignMark size={104} strokeOpacity={0.9} strokeWidth={0.8} />
+      </div>
+      <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.1 }}
+        style={{ position: 'absolute', left: 0, right: 0, top: 206, bottom: 104, overflowY: 'auto', scrollbarWidth: 'none', padding: '0 28px 16px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <div className="mono" style={{ fontSize: 10.5, letterSpacing: '0.32em', fontWeight: 700, color: 'var(--align)' }}>✦ YOUR STAR ✦</div>
+          <h1 className="h-display" style={{ margin: '10px 0 0', fontSize: 31, lineHeight: 1.1 }}>
+            {items.length === 1
+              ? <>The stars have aligned<br />with <SignName them={items[0].them} />.</>
+              : <>The stars have aligned<br />with {signs.length === 1 ? `${items.length} ${SIGNS[signs[0]].name}s` : `${signs.length} signs`}.</>}
+          </h1>
+          {items.length > 1 && (
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 12 }}>
+              {items.map((i) => <CardOrb key={i.flow.id} tint={SIGNS[i.them.sign].color} size={30}>{SIGNS[i.them.sign].glyph}</CardOrb>)}
+            </div>
+          )}
+          <div style={{ fontSize: 14, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 10 }}>
+            {waiting.length ? `${waiting.length} waiting on you. ` : ''}Photos stay veiled until each 33:33 is up.
+          </div>
+        </div>
+        {section('WAITING ON YOU', waiting)}
+        {section('COUNTING DOWN', talking)}
+      </motion.div>
+      <div style={{ position: 'absolute', left: 38, right: 38, bottom: 34 }}>
+        <button className="chrome-cta" onClick={onClose} style={{ width: '100%' }}>Back to the deck</button>
+      </div>
+      <Frame bright />
     </motion.div>
   )
 }

@@ -25,7 +25,7 @@ import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
 import { BETA } from '../lib/beta'
 import { CompatBadge, CompatSheet } from '../components/chat/Compat'
-import { ALIGN_CARD, betaFlow, useBetaFlow } from '../lib/betaFlow'
+import { betaFlow, useBetaFlow } from '../lib/betaFlow'
 import { RevealBar } from '../components/chat/RevealBar'
 import { SIGNS } from '../data/signs'
 import { talk } from '../lib/talk'
@@ -141,8 +141,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   // the scripted intro plays once per demo run; afterwards the thread is just there
   // beta slow reveal: this chat opens on an alignment card, not the scripted intro
-  const flow = useBetaFlow()
-  const slow = BETA && !demo && flow.with === MATCH && flow.stage !== 'none'
+  const flow = useBetaFlow(MATCH)
+  const slow = BETA && !demo && flow.stage !== 'none'
   const cardStage = slow && (flow.stage === 'aligned' || flow.stage === 'card')
   const veiled = slow && flow.stage !== 'revealed'
   const [replay] = useState(() => !demo && !session.get().chatPlayed && !(BETA && betaFlow.has(MATCH)))
@@ -318,7 +318,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const talkRows = msgs.filter((m) => m.from !== 'card').map((m) => ({ from: m.from === 'me' ? 'me' as const : 'them' as const, body: m.text }))
   const { answers } = talkState(talkRows)
   // slow reveal: the alignment card is answered on its own screen, before this chat opens
-  useEffect(() => { if (cardStage) go('x/align-card') }, [cardStage, go])
+  useEffect(() => { if (cardStage) go(`x/align-card/${MATCH}`) }, [cardStage, go])
   const playCard = (cardId: string) => {
     push({ from: 'me', text: playMsg(cardId) })
     sfx.send()
@@ -368,7 +368,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
         onWho={veiled ? () => { sfx.tap(); setCompat(true) } : () => { sfx.flip(); setCardOpen(true) }} photo={veiled ? SIGNS[juniper.sign].auraImg : PHOTO} name={juniper.name}
         sub={empty ? 'Matched 2 minutes ago' : undefined} />
       {cardStage ? <RevealBar waiting />
-        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead() }} onDone={() => { betaFlow.reveal(); session.patch({ matchWith: MATCH }); go('match') }} />
+        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(MATCH) }} onDone={() => { betaFlow.reveal(MATCH); session.patch({ matchWith: MATCH }); go('match') }} />
           : !empty && <ExpiryBar daysLeft={daysLeft} />}
 
       {empty && !composing && (
@@ -411,7 +411,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
             if (t?.type === 'play') {
               const card = cardById(t.cardId)
               return card ? (
-                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'} playedBy={slow && card.id === ALIGN_CARD ? 'The stars' : undefined}
+                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'} playedBy={slow && card.id === flow.card ? 'The stars' : undefined}
                   mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
                   names={{ me: ME.name, them: juniper.name }} onAnswer={(a) => answerCard(card.id, a)} />
               ) : null

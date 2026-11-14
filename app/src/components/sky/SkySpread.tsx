@@ -24,7 +24,7 @@ const LANDS: Record<SkyReading['reward']['kind'], string> = {
  * the real sky against your birth chart. Turn them over one at a time; when
  * the third turns, the reading goes in your binder and its reward in your hand.
  */
-export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyReading }) {
+export default function SkySpread({ reading = TODAY_READING, reward = true }: { reading?: SkyReading; reward?: boolean }) {
   const { skyDays } = useTalk()
   const drawn = skyDays.includes(reading.date)
   const [up, setUp] = useState<boolean[]>(() => (drawn ? [true, true, true] : [false, false, false]))
@@ -108,7 +108,7 @@ export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyRe
       </div>
 
       {/* the reward, once all three are turned */}
-      {allUp && (
+      {allUp && reward && (
         <motion.div initial={justClaimed ? { opacity: 0, scale: 0.9 } : false} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 18, delay: justClaimed ? 0.4 : 0 }}
           style={{ marginTop: 10, padding: '11px 14px', borderRadius: 16, display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(48,32,92,0.6)', border: '1px solid rgba(248,237,255,0.3)' }}>
           <span style={{ width: 34, height: 34, borderRadius: 17, flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 15, color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 14px rgba(248,237,255,0.45)' }}>✦</span>
