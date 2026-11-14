@@ -38,6 +38,9 @@ const label: React.CSSProperties = {
 }
 const value: React.CSSProperties = { fontFamily: 'var(--serif)', fontSize: 15.5, color: 'var(--label-1)', marginTop: 4, lineHeight: 1.2 }
 
+/** photos whose subject sits low in the picture: frame them further down so the face isn't at the bottom edge */
+const FOCUS_Y: Record<string, string> = { j27: '64%' }
+
 /** beta: a thick foil border, matching the mystery card (the reveal card is drawn 358 wide) */
 const EDGE = 7.5
 const FIT = (358 - EDGE * 2) / (358 - 3)
@@ -89,7 +92,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
               animation: 'rv-spin 6s linear infinite', opacity: 0.75,
             }} />
           </motion.div>
-          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} onPeak={onPeak} onDone={onDone}>
+          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} focusY={FOCUS_Y[p.id]} onPeak={onPeak} onDone={onDone}>
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
               animate={revealed ? { opacity: 1, scale: [1.35, 0.95, 1] } : { opacity: 0, scale: 0.6 }}

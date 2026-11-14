@@ -19,11 +19,11 @@ export default function CardBack({ width = 160, height = 262, style }: Props) {
         boxShadow: '0 12px 30px rgba(10, 4, 30, 0.55)', ...style }}>
         <div className="grain" style={{ position: 'relative', width: '100%', height: '100%', borderRadius: Math.max(2, radius - edge), overflow: 'hidden',
           background: 'radial-gradient(90% 60% at 30% 10%, rgba(140, 80, 220, 0.55) 0%, transparent 60%), radial-gradient(80% 50% at 80% 100%, rgba(110, 50, 200, 0.45) 0%, transparent 70%), linear-gradient(160deg, #3b1d78 0%, #2a1460 45%, #3a1a7a 100%)' }}>
-          <div style={{ position: 'absolute', left: '50%', top: width >= 120 ? '45%' : '50%', transform: 'translate(-50%, -50%)' }}>
+          <div style={{ position: 'absolute', left: '50%', top: width >= 80 ? '44%' : '50%', transform: 'translate(-50%, -50%)' }}>
             <AlignMark size={width * 0.72} strokeOpacity={0.32} strokeWidth={0.5} glow={0.55} dotRadius={2.3} />
           </div>
-          {width >= 120 && (
-            <div className="serif italic" style={{ position: 'absolute', left: 0, right: 0, top: '74%', textAlign: 'center', fontSize: width * 0.13, lineHeight: 1, color: 'rgba(241,233,255,0.92)' }}>Align</div>
+          {width >= 80 && (
+            <div className="serif italic" style={{ position: 'absolute', left: 0, right: 0, top: width >= 120 ? '74%' : '71%', textAlign: 'center', fontSize: Math.max(13, width * 0.13), lineHeight: 1, color: 'rgba(241,233,255,0.92)' }}>Align</div>
           )}
         </div>
       </div>

@@ -49,7 +49,7 @@ export function SkyCardBack({ slot, width = 104 }: { slot: SkyCard['slot']; widt
   return (
     <div style={{ position: 'relative' }}>
       <TalkCardBack width={width} color="#9fd8ff" />
-      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: 16, textAlign: 'center', fontSize: 8, letterSpacing: '0.26em', color: GOLD }}>
+      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: 13, textAlign: 'center', fontSize: 8, letterSpacing: '0.26em', color: GOLD }}>
         {SLOT_LABEL[slot].toUpperCase()}
       </div>
     </div>
