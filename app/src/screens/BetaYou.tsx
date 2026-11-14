@@ -10,17 +10,17 @@ import { myProfile } from '../components/you/myCard'
 import { useAccount } from '../pages/account/store'
 import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
-import { SIGN_FACTS } from '../data/signFacts'
 import { MOON_NOW } from '../data/sky'
 import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
 import { openCalendarOn } from '../components/you/origin'
-import CardFrame from '../components/CardFrame'
+import CardFrame, { CardOrb } from '../components/CardFrame'
+import { Planet } from '../components/onboarding/shared'
+import { PARTS, Reading } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
-const FACTS = SIGN_FACTS[ME.sign]
-const SCALE = 0.58
+const SCALE = 0.4
 
 const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
 const EYEBROW: React.CSSProperties = { fontSize: 9.5, color: 'var(--label-3)', letterSpacing: '0.2em' }
@@ -34,11 +34,13 @@ function upcoming(n: number): (CosmicEvent & { date: Date })[] {
     .slice(0, n)
 }
 
-/** Your profile (beta): your card first, then your sign, your month, the app. */
+/** Your profile (beta): you and your card, then six tabs that teach you about yourself, your month, the app. */
 export default function BetaYou({ go }: ScreenProps) {
   const { card: edits } = useAccount()
   const me = useMemo(() => myProfile({ ...edits, facts: edits.facts.map(([k, v]) => [k, v] as [string, string]) }), [edits])
   const [sheet, setSheet] = useState<CardSide | null>(null)
+  const [part, setPart] = useState(0)
+  const sel = PARTS[part]
   const events = useMemo(() => upcoming(3), [])
   const open = (side: CardSide) => { sfx.flip(); setSheet(side) }
 
@@ -64,65 +66,68 @@ export default function BetaYou({ go }: ScreenProps) {
             </button>
           </div>
 
-          {/* your card: face down as strangers see it, your aura photo tucked behind */}
-          <div style={{ position: 'relative', height: CARD_H * SCALE + 14, marginTop: -6 }}>
-            <motion.button aria-label="Your photo, flipped side" onClick={() => open('flipped')} whileTap={{ scale: 0.97 }}
-              initial={{ rotate: 10, x: 40 }} animate={{ rotate: 9, x: 70 }} transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.15 }}
-              style={{ position: 'absolute', left: '50%', top: 12, marginLeft: -(CARD_W * SCALE) / 2, width: CARD_W * SCALE * 0.86, height: CARD_H * SCALE * 0.9, borderRadius: 14, overflow: 'hidden',
-                border: `2px solid ${SUN.color}`, boxShadow: `0 0 24px ${SUN.color}66, 0 16px 30px rgba(0,0,0,0.5)`, background: '#07040f' }}>
-              <img src={ME.photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
-            </motion.button>
-            <motion.button aria-label="Your card, face down" onClick={() => open('down')} whileTap={{ scale: 0.97 }}
-              initial={{ rotate: -2, x: 0 }} animate={{ rotate: -4, x: -26 }} transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-              style={{ position: 'absolute', left: '50%', top: 0, marginLeft: -(CARD_W * SCALE) / 2, width: CARD_W * SCALE, height: CARD_H * SCALE }}>
+          {/* you: your card, your name, the two things you do here */}
+          <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginTop: -4 }}>
+            <motion.button aria-label="Your card, as others see it" onClick={() => open('down')} whileTap={{ scale: 0.97 }}
+              initial={{ rotate: 0 }} animate={{ rotate: -3 }} transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+              style={{ width: CARD_W * SCALE, height: CARD_H * SCALE, flexShrink: 0 }}>
               <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
                 <ProfileCard profile={me} glow />
               </div>
             </motion.button>
-          </div>
-
-          {/* name and big three */}
-          <div style={{ textAlign: 'center', marginTop: -8 }}>
-            <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 10, flexWrap: 'wrap' }}>
-              {([['sun', '☉', ME.sign, 'Sun'], ['moon', '☽', ME.moon, 'Moon'], ['rising', '↑', ME.rising, 'Rising']] as const).map(([slug, glyph, s, label]) => (
-                <button key={slug} onClick={() => { sfx.tap(); go(`x/term/${slug}`) }} aria-label={`${label} in ${SIGNS[s].name}: what it means`}
-                  className="chip" style={{ height: 28, padding: '0 11px', gap: 6, color: 'var(--label-1)', borderColor: `${SIGNS[s].color}99`, background: `${SIGNS[s].color}18` }}>
-                  <span style={{ color: SIGNS[s].color, fontSize: 12 }}>{glyph}</span>
-                  <span style={{ color: 'var(--label-3)' }}>{label}</span> {SIGNS[s].name}
-                </button>
-              ))}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className="h-display" style={{ fontSize: 32, lineHeight: 1.05 }}>{ME.name}, {ME.age}</div>
+              <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: SUN.light, marginTop: 6 }}>{SUN.name.toUpperCase()} {SUN.glyph} · {ME.serial}</div>
+              <div style={{ fontSize: 12.5, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 6 }}>This is the card people see in the deck. Tap it to look.</div>
+              <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
+                style={{ width: '100%', height: 44, fontSize: 17, marginTop: 12 }}>
+                Edit card
+              </motion.button>
+              <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
+                style={{ width: '100%', height: 44, marginTop: 8, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
+                <img src={ME.photo} alt="" style={{ width: 24, height: 24, borderRadius: 12, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
+                <span className="serif italic" style={{ fontSize: 17 }}>Aura photo</span>
+              </motion.button>
             </div>
           </div>
 
-          {/* the two things you do here */}
-          <div style={{ display: 'flex', gap: 10 }}>
-            <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-              style={{ flex: 1, width: 'auto', height: 50, fontSize: 18 }}>
-              Edit card
-            </motion.button>
-            <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-              style={{ flex: 1, height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
-              <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
-              <span className="serif italic" style={{ fontSize: 18 }}>Aura photo</span>
-            </motion.button>
-          </div>
-
-          {/* your sign */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span className="eyebrow" style={EYEBROW}>Your sign</span>
-            <CardFrame tint={SUN.color} padding="0" footer={['Align · your sign', ME.serial]}>
-              <button onClick={() => { sfx.tap(); go('chart') }} style={{ width: '100%', display: 'flex', gap: 14, padding: 14, textAlign: 'left', alignItems: 'center' }}>
-                <img src={SUN.figureImg} alt="" style={{ width: 64, height: 64, borderRadius: 14, objectFit: 'cover', flexShrink: 0, boxShadow: `0 0 18px ${SUN.color}55` }} />
-                <span style={{ flex: 1, minWidth: 0 }}>
-                  <span className="mono" style={{ display: 'block', fontSize: 9, letterSpacing: '0.16em', color: SUN.color }}>{SUN.name.toUpperCase()} {SUN.glyph} · {FACTS.dates.toUpperCase()}</span>
-                  <span className="serif italic" style={{ display: 'block', fontSize: 18, lineHeight: 1.2, marginTop: 4, color: 'var(--label-1)' }}>Most likely to: {FACTS.likely.replace(/\.$/, '').toLowerCase()}.</span>
-                  <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 5 }}>{FACTS.element} · {FACTS.mode} · ruled by {FACTS.ruler}</span>
-                </span>
-              </button>
-              <Link label="Learn your sign" sub="Your sun, moon, rising, element and planet" onClick={() => go('chart')} />
+          {/* learn about yourself: six parts of your chart, one card at a time */}
+          <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div>
+              <span className="eyebrow" style={EYEBROW}>Learn about yourself</span>
+              <div className="h-display" style={{ fontSize: 26, lineHeight: 1.1, marginTop: 6 }}>You’re more than one sign.</div>
+            </div>
+            <div role="tablist" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+              {PARTS.map((o, i) => {
+                const on = i === part
+                return (
+                  <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setPart(i) } }} whileTap={{ scale: 0.96 }}>
+                    <CardFrame tint={o.ink} quiet={!on} thick={on ? 3 : 2} radius={14} padding="8px 4px 9px" style={{ height: '100%' }}>
+                      <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+                        <span style={{ height: 30, display: 'grid', placeItems: 'center', opacity: on ? 1 : 0.7 }}>
+                          <Planet size={o.size * 0.6} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.3} />
+                        </span>
+                        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: on ? o.ink : 'var(--label-2)' }}>{o.word.toUpperCase()}</span>
+                        <span className="serif italic" style={{ fontSize: 16, lineHeight: 1.1, color: 'var(--label-1)' }}>{o.value}</span>
+                      </span>
+                    </CardFrame>
+                  </motion.button>
+                )
+              })}
+            </div>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div key={sel.word} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}>
+                <CardFrame tint={sel.ink} kicker={`${sel.word === 'House' ? `${sel.value} house` : `${sel.word} in ${sel.value}`} · ${sel.plain}`} title={sel.read.headline}
+                  orb={<CardOrb tint={sel.ink}>{sel.glyph}</CardOrb>}
+                  strip={{ label: 'Try this', text: sel.read.tryLine }} footer={['Align · your chart', `${sel.word} · ${part + 1}/${PARTS.length}`]}>
+                  <Reading t={sel.read} go={go} />
+                </CardFrame>
+              </motion.div>
+            </AnimatePresence>
+            <div style={{ ...PANEL, overflow: 'hidden' }}>
+              <Link label={`More about ${SUN.name}`} sub="Your element, your planet, the quick facts" onClick={() => go('chart')} first />
               <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
-            </CardFrame>
+            </div>
           </section>
 
           {/* your month */}

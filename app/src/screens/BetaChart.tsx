@@ -3,57 +3,34 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import { Planet } from '../components/onboarding/shared'
-import TermText from '../pages/plus/TermText'
 import { openCalendarOn } from '../components/you/origin'
 import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { SIGN_FACTS } from '../data/signFacts'
 import { sfx } from '../lib/sfx'
-import { TABS, type ChartTab } from './Chart'
+import { TABS } from './Chart'
+import { PARTS, Reading } from '../components/you/parts'
 import CardFrame, { CardOrb } from '../components/CardFrame'
-
-/** the big three, said the way a friend would explain them */
-const BIG3 = [
-  { tab: 0, word: 'Sun', sign: ME.sign, plain: 'Who you are', size: 44, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', ink: '#f2d76a' },
-  { tab: 1, word: 'Moon', sign: ME.moon, plain: 'How you feel', size: 36, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', ring: undefined, ink: '#8fb4ff' },
-  { tab: 2, word: 'Rising', sign: ME.rising, plain: 'How you come across', size: 36, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', ring: undefined, ink: '#cdb0ff' },
-] as const
 
 /** the rest of the chart, as questions */
 const MORE: Record<string, { title: string; q: string }> = {
   traits: { title: 'Outside vs inside', q: 'How people read you, and what’s really going on' },
   element: { title: 'Your element', q: 'What kind of love feels right to you' },
   ruler: { title: 'Your planet', q: 'What your sign wants most' },
-  house: { title: 'Your house', q: 'Where in life your energy goes' },
 }
 
 const EYEBROW: React.CSSProperties = { fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-3)' }
 
-/** the body of a chart card: what it is, in love, for you (the card's strip carries "try this") */
-function Reading({ t, go }: { t: ChartTab; go: ScreenProps['go'] }) {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingBottom: 4 }}>
-      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--label-2)' }}><TermText text={t.meaning} go={go} /></p>
-      {([['In love', t.love], ['For you', t.self]] as const).map(([k, v]) => (
-        <div key={k} style={{ paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
-          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: t.color }}>{k.toUpperCase()}</div>
-          <div style={{ fontSize: 15.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}><TermText text={v} go={go} /></div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
 /**
  * Your sign (beta): the same reading as the chart card, laid out to be read.
- * Pick Sun, Moon or Rising at the top; the rest of the chart opens below as
- * plain questions.
+ * Six tabs at the top (Sun, Moon, Rising, Venus, Jupiter, House), each with
+ * what it teaches you about yourself; the rest opens below as plain questions.
  */
 export default function BetaChart({ go }: ScreenProps) {
   const [tab, setTab] = useState(0)
   const [open, setOpen] = useState<string | null>(null)
-  const sel = BIG3[tab]
-  const t = TABS[tab]
+  const sel = PARTS[tab]
+  const t = sel.read
   const facts = SIGN_FACTS[ME.sign]
 
   return (
@@ -75,25 +52,25 @@ export default function BetaChart({ go }: ScreenProps) {
           </div>
 
           <div style={{ marginTop: -8 }}>
-            <div className="h-display" style={{ fontSize: 32, lineHeight: 1.1 }}>You’re three signs,<br />not one.</div>
+            <div className="h-display" style={{ fontSize: 32, lineHeight: 1.1 }}>You’re more than<br />one sign.</div>
             <p style={{ margin: '8px 0 0', fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
-              Most people only know their Sun sign. Your Moon and Rising matter just as much in love. Tap each one.
+              Most people only know their Sun sign. Each of these says something different about you. Tap one to learn it.
             </p>
           </div>
 
           {/* the big three */}
           <div role="tablist" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
-            {BIG3.map((o) => {
-              const on = o.tab === tab
+            {PARTS.map((o, i) => {
+              const on = i === tab
               return (
-                <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setTab(o.tab) } }} whileTap={{ scale: 0.96 }} animate={{ y: on ? -4 : 0 }}>
+                <motion.button key={o.word} role="tab" aria-selected={on} onClick={() => { if (!on) { sfx.tap(); setTab(i) } }} whileTap={{ scale: 0.96 }} animate={{ y: on ? -4 : 0 }}>
                   <CardFrame tint={o.ink} quiet={!on} radius={16} padding="12px 4px 12px" style={{ height: '100%' }}>
                     <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
                       <span style={{ height: 48, display: 'grid', placeItems: 'center', opacity: on ? 1 : 0.75 }}>
                         <Planet size={o.size} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.35} />
                       </span>
                       <span className="mono" style={{ fontSize: 10, letterSpacing: '0.16em', fontWeight: 700, color: on ? o.ink : 'var(--label-2)' }}>{o.word.toUpperCase()}</span>
-                      <span className="serif italic" style={{ fontSize: 18, lineHeight: 1.1, color: 'var(--label-1)' }}>{SIGNS[o.sign].name}</span>
+                      <span className="serif italic" style={{ fontSize: 18, lineHeight: 1.1, color: 'var(--label-1)' }}>{o.value}</span>
                       <span style={{ fontSize: 11.5, lineHeight: 1.25, color: 'var(--label-2)', textAlign: 'center' }}>{o.plain}</span>
                     </span>
                   </CardFrame>
@@ -105,9 +82,9 @@ export default function BetaChart({ go }: ScreenProps) {
           {/* the one you picked */}
           <AnimatePresence mode="wait" initial={false}>
             <motion.section key={t.id} role="tabpanel" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}>
-              <CardFrame tint={sel.ink} kicker={`${sel.word} in ${SIGNS[sel.sign].name} · ${sel.plain}`} title={t.headline}
-                orb={<CardOrb tint={sel.ink}>{SIGNS[sel.sign].glyph}</CardOrb>}
-                strip={{ label: 'Try this', text: t.tryLine }} footer={['Align · your chart', `${sel.word} · ${tab + 1}/3`]}>
+              <CardFrame tint={sel.ink} kicker={`${sel.word === 'House' ? `${sel.value} house` : `${sel.word} in ${sel.value}`} · ${sel.plain}`} title={t.headline}
+                orb={<CardOrb tint={sel.ink}>{sel.glyph}</CardOrb>}
+                strip={{ label: 'Try this', text: t.tryLine }} footer={['Align · your chart', `${sel.word} · ${tab + 1}/${PARTS.length}`]}>
                 <Reading t={t} go={go} />
               </CardFrame>
             </motion.section>
@@ -117,7 +94,7 @@ export default function BetaChart({ go }: ScreenProps) {
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 6 }}>
             <span className="mono" style={EYEBROW}>MORE ABOUT {SIGNS[ME.sign].name.toUpperCase()}</span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {TABS.slice(3).map((x) => {
+              {TABS.slice(3).filter((x) => MORE[x.id]).map((x) => {
                 const m = MORE[x.id], on = open === x.id
                 return (
                   <CardFrame key={x.id} tint={x.color} quiet={!on} padding="0" strip={on ? { label: 'Try this', text: x.tryLine } : undefined} footer={on ? ['Align · your chart', m.title] : undefined}>
