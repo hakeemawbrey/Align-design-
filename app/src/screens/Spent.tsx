@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
+import CardBack from '../components/intro/CardBack'
 import { BETA } from '../lib/beta'
 import { sfx } from '../lib/sfx'
 
@@ -10,6 +11,15 @@ const OUTLINES = [
   { x: 56, y: 205, w: 172, h: 238, r: -9, op: 0.45, dur: 7, delay: 0 },
   { x: 136, y: 168, w: 172, h: 238, r: 8, op: 0.5, dur: 8, delay: 0.6 },
   { x: 108, y: 196, w: 176, h: 244, r: 0, op: 1, dur: 6, delay: 0.3 },
+]
+
+/** the beta's resting deck: three card backs, the top one square to you */
+const BW = 170
+const BH = 266
+const STACK = [
+  { x: -44, y: 22, r: -11, float: -5 },
+  { x: 44, y: 14, r: 10, float: -7 },
+  { x: 0, y: 8, r: -1.5, float: -9 },
 ]
 
 function Sparkle({ x, y, s, d }: { x: number; y: number; s: number; d: number }) {
@@ -35,6 +45,27 @@ export default function Spent({ go }: ScreenProps) {
       <Sparkle x={352} y={176} s={8} d={0.6} />
       <Sparkle x={20} y={404} s={7} d={2} />
 
+      {BETA ? (
+        /* beta: tomorrow's deck, face down and waiting. Real card backs, not empty outlines */
+        <div style={{ position: 'absolute', left: 0, right: 0, top: 150, height: 300 }}>
+          <motion.div aria-hidden animate={{ opacity: [0.55, 0.9, 0.55], scale: [0.95, 1.05, 0.95] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ position: 'absolute', left: '50%', top: 30, width: 300, height: 260, marginLeft: -150, borderRadius: '50%', filter: 'blur(34px)', background: 'radial-gradient(closest-side, rgba(154,123,224,0.6), rgba(242,199,92,0.18) 60%, transparent)' }} />
+          {STACK.map((c, i) => (
+            <motion.div key={i}
+              initial={{ opacity: 0, y: -60, rotate: c.r * 3, scale: 0.9 }}
+              animate={{ opacity: 1, y: [0, c.float, 0], rotate: c.r, scale: 1 }}
+              transition={{
+                opacity: { duration: 0.5, delay: 0.1 + i * 0.12 },
+                rotate: { type: 'spring', stiffness: 90, damping: 13, delay: 0.1 + i * 0.12 },
+                scale: { type: 'spring', stiffness: 90, damping: 13, delay: 0.1 + i * 0.12 },
+                y: { duration: 5 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 },
+              }}
+              style={{ position: 'absolute', left: '50%', top: c.y, marginLeft: -BW / 2 + c.x, zIndex: i, filter: i < STACK.length - 1 ? 'brightness(0.72)' : 'none' }}>
+              <CardBack width={BW} height={BH} style={{ borderRadius: 16 }} />
+            </motion.div>
+          ))}
+        </div>
+      ) : (<>
       {/* empty card outlines, floating */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
@@ -65,6 +96,8 @@ export default function Spent({ go }: ScreenProps) {
           </svg>
         </motion.div>
       ))}
+
+      </>)}
 
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}
         className="mono" style={{ position: 'absolute', top: 466, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-3)' }}>
