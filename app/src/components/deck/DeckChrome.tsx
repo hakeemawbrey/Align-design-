@@ -4,7 +4,7 @@ import { useTalk } from '../../lib/talk'
 import { todayKey } from '../../data/skyReading'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, DROP } from './fx'
+import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, DROP, HEAD_DROP } from './fx'
 import { HandIcon } from '../talk/CardsButton'
 import { sfx } from '../../lib/sfx'
 import { BETA } from '../../lib/beta'
@@ -114,7 +114,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
       transition={{ duration: 0.3 }}
-      style={{ position: 'absolute', left: 0, right: 0, top: DROP, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
+      style={{ position: 'absolute', left: 0, right: 0, top: HEAD_DROP, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
     >
       {eyebrow && (
         <motion.div className="mono" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}

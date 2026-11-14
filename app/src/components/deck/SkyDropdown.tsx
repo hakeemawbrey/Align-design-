@@ -7,7 +7,7 @@ import CardFrame from '../CardFrame'
 import { SIGNS } from '../../data/signs'
 import { COSMIC_COLOR, cosmicMonth, runningRetrogrades, type CosmicDay } from '../../data/cosmicMonth'
 import { sfx } from '../../lib/sfx'
-import { DROP } from './fx'
+import { HEAD_DROP } from './fx'
 
 /** fired to open the panel from elsewhere (the beta routes "today's sky" here) */
 export const OPEN_SKY_EVENT = 'align:open-sky'
@@ -30,7 +30,7 @@ export default function SkyDropdown({ open, onClose, onFullCalendar }: { open: b
             initial={{ opacity: 0, y: -14, scaleY: 0.96 }} animate={{ opacity: 1, y: 0, scaleY: 1 }} exit={{ opacity: 0, y: -10, scaleY: 0.97 }}
             transition={{ type: 'spring', stiffness: 380, damping: 34 }}
             style={{
-              position: 'absolute', left: 16, right: 16, top: 154 + DROP, bottom: 104, zIndex: 26, transformOrigin: 'top center',
+              position: 'absolute', left: 16, right: 16, top: 154 + HEAD_DROP, bottom: 104, zIndex: 26, transformOrigin: 'top center',
               borderRadius: 22, background: 'linear-gradient(180deg, rgba(36,22,72,0.98), rgba(20,12,40,0.98))',
               border: '1px solid rgba(179,166,196,0.24)', boxShadow: '0 24px 60px rgba(0,0,0,0.55)',
               display: 'flex', flexDirection: 'column', overflow: 'hidden',

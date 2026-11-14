@@ -11,6 +11,8 @@ export const CARD_SCALE = 0.95
 /** top-left of the (scaled) card on the 390×844 canvas */
 /** the beta sits everything a little lower, for breathing room under the top edge */
 export const DROP = BETA ? 18 : 0
+/** the header (title, star, horoscope pill) drops less than the card, so the two have air between them */
+export const HEAD_DROP = BETA ? 8 : 0
 export const CARD_TOP = 160 + DROP
 export const CARD_CX = 195
 export const CARD_CY = CARD_TOP + (CARD_H * CARD_SCALE) / 2
