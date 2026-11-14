@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { BETA } from '../lib/beta'
 
 interface Props {
   count?: number
@@ -39,6 +40,15 @@ export default function Starfield({ count = 70, aurora = '#5b2fb8', warm = '#7a3
     }
     return groups.map((g) => g.join(','))
   }, [count, seed])
+
+  // beta: the background from comealign.com and the feature film (nebula and pixel stars) sits behind every screen
+  if (BETA) {
+    return (
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', background: '#120a28' }}>
+        <img src="img/align-bg-mobile.svg" alt="" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+    )
+  }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', background: 'var(--void)' }}>

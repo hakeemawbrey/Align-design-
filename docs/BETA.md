@@ -34,6 +34,10 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 - **Welcome:** the main button goes straight into the app; "New here — read my chart" under it starts onboarding. A first visit says "Welcome to Align", later ones "Welcome back".
 - **The horoscope pill's dot** clears once you've opened today's reading.
 
+## The background
+
+Every beta screen sits on the background from comealign.com and the feature film: the grainy violet nebula with four-point stars (`app/public/img/align-bg-mobile.svg`, 390 × 844, drawn by `components/Starfield.tsx` when `BETA`). The file's pixel moon is left out in the app copy, because it sat under the deck's star and the You screen's buttons. The full demo keeps its own starfield.
+
 ## The card frame
 
 Widgets between two people and for self-discovery share one frame, `src/components/CardFrame.tsx`, so they read as cards from the same deck as the people: a thick (3px) foil border in the card's colour, a title bar with an orb, an optional "Try this" strip and a mono footer. It's used by How you fit, Your sign, the horoscope and calendar, and the profile's sign and sky panels. Colours follow the planet or sign (sun gold, moon blue, rising violet), never how a reading comes out. Plain lists (settings, demo tools) stay unframed.
