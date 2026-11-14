@@ -131,13 +131,13 @@ export default function BetaMatch({ go }: ScreenProps) {
       )}
 
       <motion.div {...rise(0.3)} style={{ position: 'absolute', top: 640, left: 0, right: 0, display: 'flex', justifyContent: 'center', pointerEvents: settled ? 'auto' : 'none' }}>
-        <button className="chrome-cta rv-cta" onClick={(e) => { e.stopPropagation(); toChat() }}>
-          Say something <span className="spark">✦</span>
+        <button className="chrome-cta rv-cta" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('reveal') }}>
+          See {them.name}’s card <span className="spark">✦</span>
         </button>
       </motion.div>
       <motion.div {...rise(0.4)} style={{ position: 'absolute', top: 712, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, pointerEvents: settled ? 'auto' : 'none' }}>
-        <button className="rv-link" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('reveal') }} style={{ fontSize: 14.5, padding: '8px 10px', color: 'var(--label-1)' }}>
-          See {them.name}’s full card ›
+        <button className="rv-link" onClick={(e) => { e.stopPropagation(); toChat() }} style={{ fontSize: 14.5, padding: '8px 10px', color: 'var(--label-1)' }}>
+          {afterClock ? 'Back to the chat ›' : 'Say something ›'}
         </button>
         <button className="rv-link" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('deck') }} style={{ fontSize: 14, padding: '8px 10px' }}>
           Keep dealing — {pr.subj} {pr.subj === 'they' ? 'wait' : 'waits'} in matches

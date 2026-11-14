@@ -1,9 +1,11 @@
 import type { CaptureShot, PageDef } from '../types'
 import ChatState from './ChatState'
 import MatchExpired from './MatchExpired'
+import AlignCard from './AlignCard'
 
 export const PAGES: Record<string, PageDef> = {
   'chat-state': { ref: 'S-09c…h — Chat states', Component: ChatState, home: 'matches' },
+  'align-card': { ref: 'Beta — The alignment card', Component: AlignCard, home: 'deck' },
   'match-expired': { ref: 'G-12 — Match Expired', Component: MatchExpired, home: 'matches' },
 }
 

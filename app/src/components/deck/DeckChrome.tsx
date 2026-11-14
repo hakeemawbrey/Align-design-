@@ -13,13 +13,18 @@ import { BETA } from '../../lib/beta'
  * Notifications: a four-point star, taller than it is wide, with an unread badge.
  * Pulses when you align (pulse bumps).
  */
-export function NotifStar({ pulse = 0, onClick }: { pulse?: number; onClick?: () => void }) {
+export function NotifStar({ pulse = 0, onClick, count }: { pulse?: number; onClick?: () => void; /** overrides the unread count (the beta counts its own) */ count?: number }) {
   const { notifsSeen } = useSession()
-  const unread = notifsSeen ? 0 : UNREAD_COUNT
+  const unread = count ?? (notifsSeen ? 0 : UNREAD_COUNT)
   return (
     <motion.button onClick={() => { sfx.tap(); onClick?.() }} aria-label={unread ? `Notifications, ${unread} new` : 'Notifications'}
       whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.06 }}
       style={{ position: 'absolute', right: 18, top: 62, width: 48, height: 48, display: 'grid', placeItems: 'center' }}>
+      {/* something is waiting: the star breathes until you tap it */}
+      {count != null && count > 0 && (
+        <motion.span aria-hidden animate={{ scale: [0.7, 1.5], opacity: [0.7, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
+          style={{ position: 'absolute', inset: 6, borderRadius: '50%', border: '2px solid #f2c75c' }} />
+      )}
       <motion.svg key={pulse} width="26" height="38" viewBox="0 0 20 30"
         initial={pulse ? { scale: 1.45, rotate: -18 } : false} animate={{ scale: 1, rotate: 0 }}
         transition={{ type: 'spring', stiffness: 380, damping: 12 }}
@@ -90,6 +95,8 @@ interface HeaderProps {
   skyUnread?: boolean
   /** open Notifications */
   onNotifs?: () => void
+  /** beta: how many things the star is holding for you */
+  notifCount?: number
   /** your hand: saved event cards plus packs to open; the widget beside the sky pill */
   saved?: number
   onSaved?: () => void
@@ -101,7 +108,7 @@ interface HeaderProps {
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, skyOpen, skyUnread, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, skyOpen, skyUnread, onNotifs, notifCount, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
   const skyDrawn = useTalk().skyDays.includes(todayKey())
   return (
     <motion.div
@@ -139,7 +146,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           </motion.div>
         </AnimatePresence>
       </div>
-      {!BETA && <NotifStar pulse={starPulse} onClick={onNotifs} />}
+      <NotifStar pulse={starPulse} onClick={onNotifs} count={BETA ? notifCount ?? 0 : undefined} />
       {/* Today's Sky pill */}
       <motion.button onClick={() => { sfx.tap(); onSky?.() }} aria-label={BETA ? 'Today’s horoscope and cosmic calendar' : "Open today's sky"} aria-expanded={BETA ? !!skyOpen : undefined}
         initial={false} animate={{ right: BETA ? 24 : 80 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}

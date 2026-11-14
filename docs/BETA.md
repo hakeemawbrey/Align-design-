@@ -42,9 +42,9 @@ Widgets between two people and for self-discovery share one frame, `src/componen
 
 Aligning with Juniper no longer shows her face at once (`src/lib/betaFlow.ts`):
 
-1. **The stars align:** when you both say yes the deck carries on and a notification drops in (`BetaFlowBanner`): "You and Juniper both said yes. A card is waiting for you two."
-2. **The alignment card:** tapping it opens the chat, veiled (her aura, not her photo), with nothing in it but a talk card "the stars dealt you both". The message box is locked. Her answer arrives sealed.
-3. **Both answer:** sealing yours reveals both answers, the chat opens and a 33:33 countdown starts under the header (`RevealBar`). It survives leaving and reloading. In the demo, tap the clock to jump to its last five seconds.
-4. **The reveal:** at 00:00 the two cards flip (`BetaMatch`, "The veil lifts."), and back in the chat her photo and full card are open. If you're elsewhere when the clock ends, an "It's time" notification takes you to the flip.
+1. **The stars align:** when you both say yes the deck carries on. The notification star on the deck (top right) gets a "1" and pulses, with a short toast. There is no banner.
+2. **The alignment card** (`src/pages/chat/AlignCard.tsx`, `x/align-card`): tapping the star opens its own screen. A deck of big cards shuffles, one lifts out and turns over to show the question, and you answer it there. Their answer arrives sealed.
+3. **Both answer:** sealing yours shows both answers and an "Open the chat" button. The chat opens veiled (their aura, not their photo) with a 33:33 countdown under the header (`RevealBar`). It survives leaving and reloading. In the demo, tap the clock to jump to its last five seconds.
+4. **The reveal:** at 00:00 the two cards flip (`BetaMatch`, "The veil lifts."). The big button is "See Juniper's card"; back in the chat her photo and full card are open. If you're on the deck when the clock ends, the star lights up again and takes you to the flip.
 
 The other people who align back (Sol, Amara, Bianca, Mina) still go straight to the flip.

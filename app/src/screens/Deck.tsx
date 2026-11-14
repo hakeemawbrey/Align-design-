@@ -23,7 +23,7 @@ import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../com
 import { BETA } from '../lib/beta'
 import SkyDropdown, { OPEN_SKY_EVENT } from '../components/deck/SkyDropdown'
 import { openCalendarOn } from '../components/you/origin'
-import { betaFlow } from '../lib/betaFlow'
+import { betaFlow, useBetaFlow } from '../lib/betaFlow'
 import { todayKey } from '../data/skyReading'
 
 const SKY_READ_KEY = 'align:sky-read'
@@ -263,6 +263,23 @@ export default function Deck({ go, sky }: ScreenProps & {
   const [matching, setMatching] = useState(false)
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
+  // beta: the star holds the slow reveal's two moments (the stars align; it's time)
+  const flow = useBetaFlow()
+  const [revealDue, setRevealDue] = useState(false)
+  useEffect(() => {
+    if (flow.stage !== 'chat' || !flow.revealAt) { setRevealDue(false); return }
+    const tick = () => setRevealDue(Date.now() >= (flow.revealAt ?? 0))
+    tick()
+    const t = window.setInterval(tick, 1000)
+    return () => clearInterval(t)
+  }, [flow.stage, flow.revealAt])
+  const starCount = flow.stage === 'aligned' || flow.stage === 'card' || revealDue ? 1 : 0
+  const openStar = () => {
+    if (!BETA) { go('notifications'); return }
+    if (flow.stage === 'aligned' || flow.stage === 'card') { go('x/align-card'); return }
+    if (revealDue && flow.with) { betaFlow.reveal(); session.patch({ matchWith: flow.with }); go('match'); return }
+    showToast(flow.stage === 'chat' ? 'Your cards flip when the 33:33 is up' : 'Nothing new yet. Your star lights up when the stars align')
+  }
   const [skyOpen, setSkyOpen] = useState(false)
   // the pill's dot: today's horoscope hasn't been opened yet (beta)
   const [skyRead, setSkyRead] = useState(() => { try { return localStorage.getItem(SKY_READ_KEY) === todayKey() } catch { return false } })
@@ -485,7 +502,10 @@ export default function Deck({ go, sky }: ScreenProps & {
       setStarPulse((n) => n + 1)
       // beta, Juniper: no reveal yet. The stars-align notification drops in and the deck carries on
       const slow = BETA && profile.alignsBack && profile.id === 'j27'
-      if (slow) { session.patch({ matchWith: profile.id, unseenMatch: true }); betaFlow.start(profile.id) }
+      if (slow) {
+        session.patch({ matchWith: profile.id, unseenMatch: true }); betaFlow.start(profile.id)
+        later(() => { sfx.match(); setStarPulse((n) => n + 1); showToast('The stars align · tap your star') }, 700)
+      }
       if (profile.alignsBack && !slow) {
         session.patch({ matchWith: profile.id })
         setMatching(true)
@@ -602,7 +622,7 @@ export default function Deck({ go, sky }: ScreenProps & {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => (BETA ? setSkyOpen((o) => !o) : go('sky'))} skyOpen={skyOpen} skyUnread={!skyRead} onNotifs={() => go('notifications')} energy={BETA ? undefined : energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => (BETA ? setSkyOpen((o) => !o) : go('sky'))} skyOpen={skyOpen} skyUnread={!skyRead} onNotifs={openStar} notifCount={starCount} energy={BETA ? undefined : energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
       {BETA && <SkyDropdown open={skyOpen && !peekOpen} onClose={() => setSkyOpen(false)} onFullCalendar={() => openCalendarOn(go, 'deck')} />}
 
       {/* peek header */}

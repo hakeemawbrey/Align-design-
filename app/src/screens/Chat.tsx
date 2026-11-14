@@ -317,28 +317,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   /* ---------- talk cards ---------- */
   const talkRows = msgs.filter((m) => m.from !== 'card').map((m) => ({ from: m.from === 'me' ? 'me' as const : 'them' as const, body: m.text }))
   const { answers } = talkState(talkRows)
-  // slow reveal: the stars play one card to you both; hers is sealed until you answer yours
-  const alignPlayed = msgs.some((m) => m.from !== 'card' && parseTalk(m.text)?.type === 'play' && (parseTalk(m.text) as { cardId: string }).cardId === ALIGN_CARD)
-  const alignMine = answers[ALIGN_CARD]?.me, alignHers = answers[ALIGN_CARD]?.them
-  useEffect(() => {
-    if (!cardStage || !loaded) return
-    betaFlow.openCard()
-    if (alignPlayed) return
-    const t = window.setTimeout(() => { if (alive.current) { push({ from: 'her', text: playMsg(ALIGN_CARD) }); sfx.sparkle() } }, 900)
-    return () => clearTimeout(t)
-  }, [cardStage, loaded, alignPlayed]) // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (!cardStage || !alignPlayed || alignHers != null) return
-    const sample = cardById(ALIGN_CARD)?.sample ?? ''
-    const t = window.setTimeout(() => { if (alive.current) { push({ from: 'her', text: answerMsg(ALIGN_CARD, sample) }); sfx.receive() } }, 3200)
-    return () => clearTimeout(t)
-  }, [cardStage, alignPlayed, alignHers]) // eslint-disable-line react-hooks/exhaustive-deps
-  // both answered: the chat opens and the 33:33 starts
-  useEffect(() => {
-    if (!cardStage || alignMine == null || alignHers == null) return
-    const t = window.setTimeout(() => { betaFlow.openChat(); sfx.match() }, 1400)
-    return () => clearTimeout(t)
-  }, [cardStage, alignMine, alignHers])
+  // slow reveal: the alignment card is answered on its own screen, before this chat opens
+  useEffect(() => { if (cardStage) go('x/align-card') }, [cardStage, go])
   const playCard = (cardId: string) => {
     push({ from: 'me', text: playMsg(cardId) })
     sfx.send()
@@ -458,12 +438,6 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
         {/* outside the dimmed thread so it reads at full strength */}
         {closed && <ThreadNote kind="closed" name={juniper.name} onTap={() => { sfx.tap(); go(`x/match-expired/${MATCH}`) }} />}
       </div>
-
-      {cardStage && (
-        <div className="mono" style={{ position: 'absolute', left: 24, right: 24, top: 690, textAlign: 'center', fontSize: 9.5, letterSpacing: '0.18em', lineHeight: 1.7, color: 'var(--label-2)', zIndex: 6 }}>
-          {alignMine == null ? <>ANSWER THE CARD TO OPEN THE CHAT</> : alignHers == null ? <>WAITING FOR {juniper.name.toUpperCase()}’S ANSWER…</> : <><span style={{ color: 'var(--align)' }}>✦</span> YOU BOTH ANSWERED · OPENING THE CHAT</>}
-        </div>
-      )}
 
       {/* composer */}
       <form

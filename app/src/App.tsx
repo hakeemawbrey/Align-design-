@@ -42,7 +42,6 @@ import BetaCalendar from './screens/BetaCalendar'
 import BetaYou from './screens/BetaYou'
 import BetaChart from './screens/BetaChart'
 import BetaMatch from './screens/BetaMatch'
-import BetaFlowBanner from './components/BetaFlowBanner'
 
 const SCREENS: Record<Exclude<ScreenId, `x/${string}`>, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: BETA ? BetaMatch : Match,
@@ -156,7 +155,6 @@ export default function App() {
         </motion.div>
       </AnimatePresence>
       <NoticeBanner go={go} />
-      {BETA && <BetaFlowBanner go={go} screen={screen} />}
       {!APP && <StatusBar />}
       {!APP && <HomeIndicator />}
     </PhoneFrame>
