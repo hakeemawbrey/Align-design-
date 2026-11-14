@@ -10,37 +10,36 @@ import { myProfile } from '../components/you/myCard'
 import { useAccount } from '../pages/account/store'
 import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
-import { MOON_NOW } from '../data/sky'
-import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
+import { cosmicMonth } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { openCalendarOn } from '../components/you/origin'
 import SkySpread from '../components/sky/SkySpread'
-import { SkyCardBack } from '../components/sky/SkyCardFace'
+import MoonPhase from '../components/sky/MoonPhase'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
-import CardFrame, { CardOrb } from '../components/CardFrame'
+import CardFrame from '../components/CardFrame'
 import { PARTS } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
-const SCALE = 0.58
-/** width of one reading card in the swipe rail */
-const RAIL_W = 268
+const SCALE = 0.52
+/** width of one reading card in the swipe rail, and the gap between cards */
+const RAIL_W = 262
+const RAIL_GAP = 10
 
-const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
-const EYEBROW: React.CSSProperties = { fontSize: 9.5, color: 'var(--label-3)', letterSpacing: '0.2em' }
+/** one surface for every panel on this screen */
+const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.16)' }
+const LABEL: React.CSSProperties = { fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }
 
-/** the next few sky events from today, running into next month if this one is nearly over */
-function upcoming(n: number): (CosmicEvent & { date: Date })[] {
-  const now = new Date()
-  const months = [cosmicMonth(now), cosmicMonth(new Date(now.getFullYear(), now.getMonth() + 1, 1))]
-  return months.flatMap((m) => m.events.map((e) => ({ ...e, date: new Date(m.year, m.month, e.day) })))
-    .filter((e) => e.date >= new Date(now.getFullYear(), now.getMonth(), now.getDate()))
-    .slice(0, n)
-}
-
-/** Your profile (beta): you and your card, then six tabs that teach you about yourself, your month, the app. */
+/**
+ * Your profile (beta), top to bottom:
+ *   your card (both sides) · name · the six parts of your chart as tags
+ *   three actions: edit card, aura photo, block signs
+ *   today's horoscope, one row that opens into the three cards
+ *   your chart, as small cards you swipe through
+ *   one list for everything else
+ */
 export default function BetaYou({ go }: ScreenProps) {
   const { card: edits } = useAccount()
   const me = useMemo(() => myProfile({ ...edits, facts: edits.facts.map(([k, v]) => [k, v] as [string, string]) }), [edits])
@@ -49,10 +48,15 @@ export default function BetaYou({ go }: ScreenProps) {
   const [part, setPart] = useState(0)
   const [skyOpen, setSkyOpen] = useState(false)
   const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
+  const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
   const rail = useRef<HTMLDivElement>(null)
-  const toPart = (i: number) => { setPart(i); rail.current?.scrollTo({ left: i * (RAIL_W + 12), behavior: 'smooth' }) }
-  const onRail = () => { const el = rail.current; if (el) setPart(Math.max(0, Math.min(PARTS.length - 1, Math.round(el.scrollLeft / (RAIL_W + 12))))) }
-  const events = useMemo(() => upcoming(3), [])
+  const chartRef = useRef<HTMLDivElement>(null)
+  const toPart = (i: number, scrollPage = false) => {
+    setPart(i)
+    rail.current?.scrollTo({ left: i * (RAIL_W + RAIL_GAP), behavior: 'smooth' })
+    if (scrollPage) chartRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+  const onRail = () => { const el = rail.current; if (el) setPart(Math.max(0, Math.min(PARTS.length - 1, Math.round(el.scrollLeft / (RAIL_W + RAIL_GAP))))) }
   const open = (side: CardSide) => { sfx.flip(); setSheet(side) }
 
   return (
@@ -61,22 +65,22 @@ export default function BetaYou({ go }: ScreenProps) {
       <motion.div className="no-scrollbar" animate={{ x: sheet ? -90 : 0, opacity: sheet ? 0.35 : 1 }} transition={{ type: 'spring', stiffness: 320, damping: 36 }}
         style={{
           position: 'absolute', inset: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none',
-          // fade under the status bar and above the tab bar instead of a hard cut
           maskImage: 'linear-gradient(to bottom, transparent 0, transparent 40px, #000 64px, #000 calc(100% - 118px), transparent calc(100% - 84px))',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, transparent 40px, #000 64px, #000 calc(100% - 118px), transparent calc(100% - 84px))',
         }}>
-        <div style={{ position: 'relative', padding: '58px 24px 120px', display: 'flex', flexDirection: 'column', gap: 22 }}>
+        <div style={{ position: 'relative', padding: '56px 24px 124px', display: 'flex', flexDirection: 'column' }}>
 
           {/* header */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span className="eyebrow" style={EYEBROW}>Your profile</span>
-            <button aria-label="Settings" onClick={() => { sfx.tap(); go('x/settings') }} style={{ width: 40, height: 40, margin: '-8px -8px -8px 0', display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 40 }}>
+            <span className="h-display" style={{ fontSize: 28 }}>You</span>
+            <button aria-label="Settings" onClick={() => { sfx.tap(); go('x/settings') }} style={{ width: 40, height: 40, marginRight: -8, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
               </svg>
             </button>
           </div>
 
+          <div style={{ marginTop: 10 }}>
           {/* your card: face down as strangers see it, your aura photo tucked behind */}
           <div style={{ position: 'relative', height: CARD_H * SCALE + 14, marginTop: -6 }}>
             <motion.button aria-label="Your photo, flipped side" onClick={() => open('flipped')} whileTap={{ scale: 0.97 }}
@@ -94,156 +98,108 @@ export default function BetaYou({ go }: ScreenProps) {
             </motion.button>
           </div>
 
-          {/* name, then the three things you do here */}
-          <div style={{ textAlign: 'center', marginTop: -8 }}>
-            <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
-            <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: SUN.light, marginTop: 6 }}>{SUN.name.toUpperCase()} {SUN.glyph} · {ME.serial}</div>
-            <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 6 }}>Tap a card: face down is what strangers see, flipped is after the reveal.</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div style={{ display: 'flex', gap: 10 }}>
-              <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-                style={{ flex: 1, width: 'auto', height: 50, fontSize: 18 }}>
-                Edit card
-              </motion.button>
-              <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-                style={{ flex: 1, height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
-                <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
-                <span className="serif italic" style={{ fontSize: 18 }}>Aura photo</span>
-              </motion.button>
-            </div>
-            <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
-              style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.55)', background: 'rgba(84,28,56,0.45)' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
-              <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
-              <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>
-                {blockedSigns.length ? `· ${blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}` : '· NONE BLOCKED'}
-              </span>
-            </motion.button>
+          <div className="mono" style={{ ...LABEL, fontSize: 8.5, textAlign: 'center', marginTop: 8 }}>TAP · FACE DOWN AND AFTER THE REVEAL</div>
+
+          {/* name and the six parts of you */}
+          <div style={{ textAlign: 'center', marginTop: 14 }}>
+            <div className="h-display" style={{ fontSize: 34, lineHeight: 1.05 }}>{ME.name}, {ME.age}</div>
+          </div>
+          <div role="tablist" aria-label="Your chart" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, marginTop: 14 }}>
+            {PARTS.map((o, i) => {
+              const on = i === part
+              return (
+                <button key={o.word} role="tab" aria-selected={on} onClick={() => { sfx.tap(); toPart(i, true) }}
+                  style={{ height: 44, borderRadius: 12, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1,
+                    border: `1px solid color-mix(in srgb, ${o.ink} ${on ? 80 : 35}%, transparent)`, background: `color-mix(in srgb, ${o.ink} ${on ? 22 : 8}%, rgba(20,12,40,0.6))`, transition: 'background 0.2s, border-color 0.2s' }}>
+                  <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', fontWeight: 700, color: o.ink }}>{o.word.toUpperCase()}</span>
+                  <span style={{ fontSize: 13.5, color: 'var(--label-1)', whiteSpace: 'nowrap' }}>{o.value}</span>
+                </button>
+              )
+            })}
           </div>
 
-          {/* today's horoscope, kept small: one row that opens into the three cards */}
-          <CardFrame tint="#c9bedb" quiet={!skyOpen} padding="0" radius={18}>
+          {/* the three things you do with your card */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 18 }}>
+            <Action label="Edit card" primary onClick={() => go('x/edit-card/down')}
+              icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></svg>} />
+            <Action label="Aura photo" onClick={() => go('x/aura-photo')}
+              icon={<img src={ME.photo} alt="" style={{ width: 22, height: 22, borderRadius: 11, objectFit: 'cover', boxShadow: `0 0 8px ${SUN.color}` }} />} />
+            <Action label={blockedSigns.length ? `Blocked · ${blockedSigns.length}` : 'Block signs'} onClick={() => go('block')}
+              icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="8.5" /><path d="M6 6l12 12" /></svg>} />
+          </div>
+
+          {/* today's horoscope: one row, opens into the three cards */}
+          <div style={{ ...PANEL, marginTop: 22, overflow: 'hidden' }}>
             <button aria-expanded={skyOpen} onClick={() => { sfx.tap(); setSkyOpen((o) => !o) }}
-              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px 10px 12px', textAlign: 'left' }}>
-              <span style={{ display: 'flex', flexShrink: 0 }}>
-                {TODAY_READING.cards.map((c, i) => (
-                  <span key={c.slot} style={{ marginLeft: i ? -10 : 0, transform: `rotate(${(i - 1) * 7}deg)`, borderRadius: 4, boxShadow: '0 2px 6px rgba(0,0,0,0.5)' }}><SkyCardBack slot={c.slot} width={26} /></span>
-                ))}
-              </span>
+              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px', textAlign: 'left' }}>
+              <MoonPhase size={30} lit={moon.lit} waxing={moon.waxing} />
               <span style={{ flex: 1, minWidth: 0 }}>
-                <span className="mono" style={{ display: 'block', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)' }}>TODAY’S HOROSCOPE</span>
-                <span className="serif italic" style={{ display: 'block', fontSize: 17, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {skyDrawn ? TODAY_READING.cards[0].headline : 'Draw your three cards'}
+                <span className="mono" style={{ ...LABEL, display: 'block', fontSize: 8.5 }}>TODAY’S HOROSCOPE · {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase()}</span>
+                <span className="serif italic" style={{ display: 'block', fontSize: 17, lineHeight: 1.25, color: 'var(--label-1)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {skyDrawn ? TODAY_READING.cards[0].headline : 'Three cards are waiting'}
                 </span>
               </span>
-              <motion.svg animate={{ rotate: skyOpen ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--align)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
+              <motion.svg animate={{ rotate: skyOpen ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
             </button>
             <AnimatePresence initial={false}>
               {skyOpen && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} style={{ overflow: 'hidden' }}>
-                  <div style={{ padding: '8px 0 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, borderTop: '1px solid rgba(179,166,196,0.14)' }}>
-                    <div style={{ width: 342, transform: 'scale(0.94)', transformOrigin: '50% 0', marginBottom: -24 }}><SkySpread reward={false} /></div>
-                    <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ height: 32, fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--align)' }}>SEE THIS MONTH ›</button>
+                  <div style={{ borderTop: '1px solid rgba(179,166,196,0.14)', padding: '14px 0 6px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <div style={{ width: 342, transform: 'scale(0.96)', transformOrigin: '50% 0', marginBottom: -12 }}><SkySpread reward={false} /></div>
+                    <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ height: 36, fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--align)' }}>SEE YOUR MONTH ›</button>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
-          </CardFrame>
+          </div>
 
-          {/* learn about yourself: six parts of your chart, one card at a time */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div>
-              <span className="eyebrow" style={EYEBROW}>Learn about yourself</span>
-              <div className="h-display" style={{ fontSize: 26, lineHeight: 1.1, marginTop: 6 }}>You’re more than one sign.</div>
-            </div>
-            {/* the six, as little tags: tap one to jump to its card */}
-            <div role="tablist" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {PARTS.map((o, i) => {
-                const on = i === part
-                return (
-                  <button key={o.word} role="tab" aria-selected={on} onClick={() => { sfx.tap(); toPart(i) }} className="chip"
-                    style={{ height: 30, padding: '0 11px', gap: 6, fontSize: 12.5, color: on ? '#1a0f2e' : 'var(--label-1)', borderColor: on ? o.ink : `color-mix(in srgb, ${o.ink} 55%, transparent)`, background: on ? o.ink : `color-mix(in srgb, ${o.ink} 12%, transparent)`, transition: 'background 0.2s, color 0.2s' }}>
-                    <span className="mono" style={{ fontSize: 9, letterSpacing: '0.12em', fontWeight: 700, color: on ? '#1a0f2e' : o.ink }}>{o.word.toUpperCase()}</span>
-                    {o.value}
-                  </button>
-                )
-              })}
-            </div>
-            {/* the readings, as little cards you swipe through */}
-            <div ref={rail} role="tabpanel" className="no-scrollbar" onScroll={onRail}
-              style={{ display: 'flex', gap: 12, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '0 -24px', padding: '4px 24px 8px', scrollPaddingLeft: 24, WebkitOverflowScrolling: 'touch' }}>
-              {PARTS.map((o, i) => (
-                <div key={o.word} style={{ flex: `0 0 ${RAIL_W}px`, scrollSnapAlign: 'start', display: 'flex' }}>
-                  <CardFrame tint={o.ink} quiet={i !== part} kicker={`${o.word === 'House' ? `${o.value} house` : `${o.word} in ${o.value}`} · ${o.plain}`} title={o.read.headline}
-                    orb={<CardOrb tint={o.ink} size={30}>{o.glyph}</CardOrb>} padding="12px 14px 12px"
-                    strip={{ label: 'Try this', text: o.read.tryLine }} footer={['Align · your chart', `${i + 1}/${PARTS.length}`]} style={{ width: '100%' }}>
-                    <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>IN LOVE</div>
-                    <div style={{ fontSize: 14, lineHeight: 1.4, color: 'var(--label-1)', marginTop: 3 }}>{o.read.love}</div>
-                    <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink, marginTop: 10 }}>FOR YOU</div>
-                    <div style={{ fontSize: 14, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 3 }}>{o.read.self}</div>
-                  </CardFrame>
-                </div>
-              ))}
-            </div>
-            <div aria-hidden style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: -4 }}>
-              {PARTS.map((o, i) => <span key={o.word} style={{ width: i === part ? 16 : 6, height: 6, borderRadius: 3, background: i === part ? o.ink : 'rgba(179,166,196,0.3)', transition: 'width 0.2s' }} />)}
-            </div>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
-              <Link label={`More about ${SUN.name}`} sub="Your element, your planet, the quick facts" onClick={() => go('chart')} first />
-              <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
-            </div>
-          </section>
+          {/* your chart, as small cards */}
+          <div ref={chartRef} style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 28 }}>
+            <span className="h-display" style={{ fontSize: 24 }}>Your chart</span>
+            <span className="mono" style={{ ...LABEL, fontSize: 9 }}>SWIPE · {part + 1}/{PARTS.length}</span>
+          </div>
+          <div ref={rail} className="no-scrollbar" onScroll={onRail}
+            style={{ display: 'flex', gap: RAIL_GAP, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '10px -24px 0', padding: '4px 24px 6px', scrollPaddingLeft: 24 }}>
+            {PARTS.map((o, i) => (
+              <button key={o.word} onClick={() => { if (i !== part) { sfx.tap(); toPart(i) } }}
+                style={{ flex: `0 0 ${RAIL_W}px`, scrollSnapAlign: 'start', textAlign: 'left', display: 'flex' }}>
+                <CardFrame tint={o.ink} quiet={i !== part} radius={18} padding="14px 16px 14px" style={{ width: '100%', height: 262 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink, whiteSpace: 'nowrap' }}>{o.word.toUpperCase()} · {o.value.toUpperCase()}</div>
+                    <div style={{ fontSize: 12, color: 'var(--label-3)', marginTop: 2 }}>{o.plain}</div>
+                    <div className="serif italic" style={{ fontSize: 21, lineHeight: 1.15, color: 'var(--label-1)', marginTop: 8 }}>{o.read.headline}</div>
+                    <div style={{ fontSize: 13.5, lineHeight: 1.42, color: 'var(--label-2)', marginTop: 8, flex: 1, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{o.read.love}</div>
+                    <div style={{ borderTop: '1px solid rgba(179,166,196,0.16)', paddingTop: 9, marginTop: 8 }}>
+                      <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>TRY </span>
+                      <span className="serif italic" style={{ fontSize: 14.5, color: 'var(--label-1)' }}>{o.read.tryLine}</span>
+                    </div>
+                  </div>
+                </CardFrame>
+              </button>
+            ))}
+          </div>
+          <div aria-hidden style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 8 }}>
+            {PARTS.map((o, i) => <span key={o.word} style={{ width: i === part ? 16 : 6, height: 6, borderRadius: 3, background: i === part ? o.ink : 'rgba(179,166,196,0.3)', transition: 'width 0.2s' }} />)}
+          </div>
 
-          {/* your month */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <span className="eyebrow" style={EYEBROW}>Your sky this month</span>
-              <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>OPEN CALENDAR ›</button>
-            </div>
-            <CardFrame tint="#c9bedb" padding="0" footer={['Align · cosmic calendar', new Date().toLocaleDateString('en-US', { month: 'long' })]}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', fontSize: 13, color: 'var(--label-2)' }}>
-                <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-3)' }}>TONIGHT</span>
-                {MOON_NOW.phase} in {MOON_NOW.sign} {MOON_NOW.glyph}
-              </div>
-              {events.map((e, i) => (
-                <button key={i} onClick={() => { sfx.tap(); openCalendarOn(go, 'you', e.date) }}
-                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', textAlign: 'left', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
-                  <span style={{ width: 38, flexShrink: 0, textAlign: 'center' }}>
-                    <span className="mono" style={{ display: 'block', fontSize: 8, letterSpacing: '0.12em', color: 'var(--label-3)' }}>{e.date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()}</span>
-                    <span className="serif" style={{ display: 'block', fontSize: 20, lineHeight: 1.1, color: 'var(--label-1)' }}>{e.date.getDate()}</span>
-                  </span>
-                  <span style={{ width: 8, height: 8, borderRadius: 4, flexShrink: 0, background: COSMIC_COLOR[e.kind], boxShadow: `0 0 6px ${COSMIC_COLOR[e.kind]}` }} />
-                  <span style={{ flex: 1, minWidth: 0 }}>
-                    <span className="serif italic" style={{ display: 'block', fontSize: 16, color: 'var(--label-1)' }}>
-                      {e.title}{e.yours && <span className="mono" style={{ fontStyle: 'normal', fontSize: 8, letterSpacing: '0.14em', color: 'var(--align)', marginLeft: 6 }}>YOURS</span>}
-                    </span>
-                    <span style={{ display: 'block', fontSize: 12, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 2 }}>{e.note}</span>
-                  </span>
-                </button>
-              ))}
-            </CardFrame>
-          </section>
-
-          {/* app */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span className="eyebrow" style={EYEBROW}>App</span>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
-              <Link label="Settings" onClick={() => go('x/settings')} first />
-              <Link label="Help & support" onClick={() => go('x/help')} />
-            </div>
-          </section>
+          {/* everything else, in one list */}
+          <div style={{ ...PANEL, overflow: 'hidden', marginTop: 24 }}>
+            <Link label={`More about ${SUN.name}`} sub="Element, planet and the quick facts" onClick={() => go('chart')} first />
+            <Link label="Cosmic calendar" sub="Your whole month in the sky" onClick={() => openCalendarOn(go, 'you')} />
+            <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
+            <Link label="Settings" onClick={() => go('x/settings')} />
+            <Link label="Help & support" onClick={() => go('x/help')} />
+          </div>
 
           {/* demo tools: play as another founder, start over */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span className="eyebrow" style={EYEBROW}>Demo</span>
-            <div style={{ ...PANEL, overflow: 'hidden' }}>
-              <SwitchRows />
-              <ResetRow />
-            </div>
-          </section>
+          <div className="mono" style={{ ...LABEL, marginTop: 24, marginBottom: 8 }}>DEMO</div>
+          <div style={{ ...PANEL, overflow: 'hidden' }}>
+            <SwitchRows />
+            <ResetRow />
+          </div>
 
-          <div className="mono" style={{ textAlign: 'center', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>ALIGN · {ME.serial} · BETA</div>
+          <div className="mono" style={{ textAlign: 'center', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)', marginTop: 20 }}>ALIGN · {ME.serial} · BETA</div>
         </div>
       </motion.div>
 
@@ -253,6 +209,21 @@ export default function BetaYou({ go }: ScreenProps) {
         {sheet && <YourCardSheet key="card" initial={sheet} onClose={() => setSheet(null)} onEdit={(side) => go(`x/edit-card/${side}`)} />}
       </AnimatePresence>
     </div>
+  )
+}
+
+/** one of the three actions under your name: same size, icon over label */
+function Action({ label, icon, onClick, primary }: { label: string; icon: React.ReactNode; onClick: () => void; primary?: boolean }) {
+  return (
+    <motion.button whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); onClick() }}
+      style={{ height: 68, borderRadius: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
+        color: primary ? 'var(--chrome-ink)' : 'var(--label-1)',
+        background: primary ? 'var(--chrome)' : 'rgba(30,18,64,0.72)',
+        border: primary ? 'none' : '1px solid rgba(179,166,196,0.22)',
+        boxShadow: primary ? '0 0 18px rgba(248,237,255,0.25)' : 'none' }}>
+      {icon}
+      <span style={{ fontSize: 13, fontWeight: 500 }}>{label}</span>
+    </motion.button>
   )
 }
 
