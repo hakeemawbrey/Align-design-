@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Starfield from '../../components/Starfield'
-import TalkCardFace, { TalkCardBack, TAROT_RATIO } from '../../components/talk/TalkCardFace'
+import TalkCardFace, { TAROT_RATIO } from '../../components/talk/TalkCardFace'
+import AlignMark from '../../components/intro/AlignMark'
 import { api } from '../../api'
 import { ME, profileById } from '../../data/profiles'
 import { SIGNS } from '../../data/signs'
@@ -20,6 +21,31 @@ const AT = { pick: 2300, flip: 3300, ready: 4100 }
 
 type Stage = 'shuffle' | 'pick' | 'flip' | 'ready'
 const side: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
+
+/**
+ * The back of an alignment card: the gilt frame of a talk card around the
+ * Align mark (seed of life, seven lit centres). The riffling deck uses a
+ * quieter version without the glow, which keeps the shuffle smooth.
+ */
+function AlignBack({ width, quiet = false }: { width: number; quiet?: boolean }) {
+  const s = width / 150
+  return (
+    <div style={{ width, height: width * TAROT_RATIO, borderRadius: 12 * s, padding: 3 * s, background: 'linear-gradient(155deg, #f8e7b0, #b08a3a 45%, #f8e7b0)', boxShadow: '0 10px 24px rgba(0,0,0,0.5)' }}>
+      <div style={{
+        position: 'relative', width: '100%', height: '100%', borderRadius: 9.5 * s, overflow: 'hidden', display: 'grid', placeItems: 'center',
+        background: 'radial-gradient(60% 42% at 50% 50%, rgba(150,100,240,0.5), transparent 72%), linear-gradient(175deg, #2a1462, #120930)',
+      }}>
+        <div style={{ position: 'absolute', inset: 5 * s, borderRadius: 7 * s, border: `${Math.max(0.6, s)}px solid rgba(242,199,92,0.67)`, pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 8 * s, borderRadius: 5 * s, border: `${Math.max(0.4, 0.6 * s)}px solid rgba(242,199,92,0.27)`, pointerEvents: 'none' }} />
+        {(['top', 'bottom'] as const).map((v) => (['left', 'right'] as const).map((h) => (
+          <span key={v + h} style={{ position: 'absolute', [v]: 10 * s, [h]: 12 * s, fontSize: 7 * s, lineHeight: 1, color: '#f2c75c' }}>✦</span>
+        )))}
+        <AlignMark size={width * 0.74} glow={quiet ? 0.35 : 1} strokeOpacity={quiet ? 0.6 : 0.85} strokeWidth={0.7} />
+        <div className="mono" style={{ position: 'absolute', bottom: 16 * s, left: 0, right: 0, textAlign: 'center', fontSize: 6.5 * s, letterSpacing: '0.3em', color: 'rgba(242,199,92,0.8)' }}>ALIGN</div>
+      </div>
+    </div>
+  )
+}
 
 /**
  * The alignment card (beta): when you both said yes, the stars deal one card
@@ -132,7 +158,7 @@ export default function AlignCard({ go, back }: PageProps) {
                 : { x: [0, dir * (70 + i * 5), 0, dir * -(40 + i * 4), 0], y: [i * -2, i * -2 - 8, i * -2, i * -2 - 4, i * -2], rotate: [dir * i * 0.8, dir * 9, 0, dir * -6, dir * i * 0.8] }}
               transition={picked ? { duration: 0.55, ease: 'easeIn' } : { duration: 1.1, repeat: Infinity, delay: i * 0.07, ease: 'easeInOut' }}
               style={{ position: 'absolute', inset: 0, zIndex: i }}>
-              <TalkCardBack width={W} color={i % 2 ? '#f2c75c' : '#b18cff'} />
+              <AlignBack width={W} quiet />
             </motion.div>
           )
         })}
@@ -141,7 +167,7 @@ export default function AlignCard({ go, back }: PageProps) {
           style={{ position: 'absolute', inset: 0, zIndex: DECK, perspective: 1000 }}>
           <motion.div animate={{ rotateY: turned ? 180 : 0 }} transition={{ duration: 0.75, ease: [0.3, 0.7, 0.2, 1] }}
             style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>
-            <div style={side}><TalkCardBack width={W} color="#f2c75c" /></div>
+            <div style={side}><AlignBack width={W} /></div>
             <div style={{ ...side, transform: 'rotateY(180deg)' }}><TalkCardFace card={card} width={W} /></div>
           </motion.div>
         </motion.div>
