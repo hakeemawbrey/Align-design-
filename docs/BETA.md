@@ -34,6 +34,10 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 - **Welcome:** the main button goes straight into the app; "New here — read my chart" under it starts onboarding. A first visit says "Welcome to Align", later ones "Welcome back".
 - **The horoscope pill's dot** clears once you've opened today's reading.
 
+## Cards in chat: today's three
+
+The cards button in a chat no longer opens a hand. It opens `components/talk/TodayThree.tsx`: the deck shuffles, deals three cards face down and turns them over. Tap one to read it, then play it; a played card is stamped and can't be played again that day. Each chat gets its own three, chosen at random from all the talk cards the first time you open the sheet that day, and they reset at 11:11 PM local time (`lib/chatDraw.ts`, stored on the device). "Your cards", "Places" and "Packs" are gone from the beta; the full demo keeps them.
+
 ## The background
 
 Every beta screen sits on the background from comealign.com and the feature film: the grainy violet nebula with four-point stars (`app/public/img/align-bg-mobile.svg`, 390 × 844, drawn by `components/Starfield.tsx` when `BETA`). The file's pixel moon is left out in the app copy, because it sat under the deck's star and the You screen's buttons. Over it run the site's shooting stars (`components/FallingStars.tsx`): a pixel streak every 4 to 10 seconds, ported from comealign.com with the same timing, size and colours. They stop for reduced motion and while the tab is hidden. The full demo keeps its own starfield.

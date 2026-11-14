@@ -8,6 +8,7 @@ import { sfx } from '../../lib/sfx'
 import TalkCardFace, { TalkCardBack } from './TalkCardFace'
 import PackOpen from './PackOpen'
 import { BETA } from '../../lib/beta'
+import TodayThree from './TodayThree'
 import { PLACES, WHENS } from '../../data/places'
 
 type Tab = 'today' | 'hand' | 'places' | 'packs'
@@ -28,6 +29,12 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
   /** open straight to your cards in this topic (from Us today) */
   startTopic?: TalkTopic
 }) {
+  // beta: no hand to manage. Three cards are dealt per chat each day (BETA never changes, so the hooks below stay in order)
+  if (BETA) return <TodayThree them={them} onPlay={onPlay} onClose={onClose} />
+  return <FullHand them={them} onPlay={onPlay} onPlace={onPlace} onBinder={onBinder} onClose={onClose} onUpgrade={onUpgrade} startTopic={startTopic} />
+}
+
+function FullHand({ them, onPlay, onPlace, onBinder, onClose, onUpgrade, startTopic }: Parameters<typeof HandSheet>[0]) {
   const { owned, packs, places: talkPlaces } = useTalk()
   const { alignPlus } = useSession()
   const [tab, setTab] = useState<Tab>(startTopic ? 'hand' : talk.dailyAvailable() ? 'today' : 'hand')
