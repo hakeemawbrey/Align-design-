@@ -72,7 +72,17 @@ export default function BetaYou({ go }: ScreenProps) {
 
           {/* header */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span className="eyebrow" style={EYEBROW}>Your profile</span>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <motion.button className="chrome-cta" whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
+                style={{ width: 'auto', height: 38, padding: '0 18px', fontSize: 16 }}>
+                Edit card
+              </motion.button>
+              <motion.button whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
+                style={{ height: 38, padding: '0 14px 0 6px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
+                <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
+                <span className="serif italic" style={{ fontSize: 16 }}>Aura photo</span>
+              </motion.button>
+            </div>
             <button aria-label="Settings" onClick={() => { sfx.tap(); go('x/settings') }} style={{ width: 40, height: 40, margin: '-8px -8px -8px 0', display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
@@ -111,22 +121,9 @@ export default function BetaYou({ go }: ScreenProps) {
             </div>
           </div>
 
-          {/* the two things you do here */}
-          <div style={{ display: 'flex', gap: 10 }}>
-            <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-              style={{ flex: 1, width: 'auto', height: 50, fontSize: 18 }}>
-              Edit card
-            </motion.button>
-            <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-              style={{ flex: 1, height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
-              <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
-              <span className="serif italic" style={{ fontSize: 18 }}>Aura photo</span>
-            </motion.button>
-          </div>
-
           {/* block a sign */}
           <motion.button whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); go('block') }}
-            style={{ width: '100%', height: 50, marginTop: -10, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
+            style={{ width: '100%', height: 50, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, color: 'var(--label-1)', border: '1px solid rgba(255,138,160,0.5)', background: 'rgba(84,28,56,0.4)' }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg>
             <span className="serif italic" style={{ fontSize: 18 }}>Block a sign</span>
             {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}

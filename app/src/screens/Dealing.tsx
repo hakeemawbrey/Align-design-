@@ -103,7 +103,7 @@ export default function Dealing({ go }: ScreenProps) {
           }}
           style={{ position: 'absolute', left: SLEFT, top: CARD_TOP, width: SW, height: SH, zIndex: 2 + i }}
         >
-          <Scaled>{d.event ? <EventCard event={EVENTS[EVENT_ORDER[0]]} draw={1} of={3} glow={false} /> : i === 4 && settled ? <ProfileCard profile={DECK[1]} glow={false} /> : <CardBack glow={i >= 3} />}</Scaled>
+          <Scaled>{d.event && !BETA ? <EventCard event={EVENTS[EVENT_ORDER[0]]} draw={1} of={3} glow={false} /> : i === 4 && settled ? <ProfileCard profile={DECK[1]} glow={false} /> : <CardBack glow={i >= 3} />}</Scaled>
           {i === 4 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: settled ? 0.6 : 0 }}
               style={{ position: 'absolute', inset: 0, borderRadius: 19, background: '#0b0620' }} />
@@ -144,6 +144,8 @@ export default function Dealing({ go }: ScreenProps) {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: settled ? 1 : 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         <SwipeLabels />
+        {/* draws and the event star only exist in the full game */}
+        {!BETA && (
         <div style={{ position: 'absolute', top: 703, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 7 }}>
           <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)', marginRight: 2 }}>DRAW 1/{dealSession.get().alignPlus ? PLUS_DRAWS : Math.ceil(Math.min(DECK.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)}</span>
           {Array.from({ length: PEOPLE_PER_DRAW }, (_, i) => (
@@ -154,6 +156,7 @@ export default function Dealing({ go }: ScreenProps) {
           ))}
           <span style={{ fontSize: 12, lineHeight: 1, color: 'rgba(242,199,92,0.45)' }}>✦</span>
         </div>
+        )}
       </motion.div>
 
       <TabBar active="deck" go={go} />
