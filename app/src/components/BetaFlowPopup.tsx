@@ -3,10 +3,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import AlignMark from './intro/AlignMark'
 import PixelAlign, { ALIGN_AT } from './PixelAlign'
 import { CardOrb, foil } from './CardFrame'
-import { STARS_EVENT, betaFlow, clock, inFlight, pendingOf, useBetaFlows, type BetaFlow, type Pending } from '../lib/betaFlow'
+import { STARS_EVENT, betaFlow, clock, inFlight, pendingOf, useBetaFlows, type BetaFlow, type BetaStage, type Pending } from '../lib/betaFlow'
 import { profileById, type Profile } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { session } from '../lib/session'
+import { api as backend } from '../api'
 import { sfx } from '../lib/sfx'
 import type { ScreenId } from '../screens/types'
 
@@ -21,6 +22,15 @@ const MARK = 236
 const CX = 195
 const CY = 258
 const GAP = (10.6 / 88) * MARK
+
+/** sample matches for the notification screen: two cards waiting, one ready to reveal, two counting down */
+const DEMO_FLOWS: { id: string; stage: BetaStage; inMs?: number }[] = [
+  { id: 'j27', stage: 'card' },
+  { id: 's26', stage: 'card' },
+  { id: 'm27', stage: 'chat', inMs: -1000 },
+  { id: 'a29', stage: 'chat', inMs: 21 * 60_000 + 14_000 },
+  { id: 'b25', stage: 'chat', inMs: 8 * 60_000 + 40_000 },
+]
 
 interface Item { flow: BetaFlow; them: Profile; pend: Pending }
 const an = (word: string) => (/^[aeiou]/i.test(word) ? 'an' : 'a')
@@ -56,7 +66,14 @@ export default function BetaFlowPopup({ go, screen }: { go: (id: ScreenId) => vo
     return () => clearInterval(t)
   }, [counting])
   useEffect(() => {
-    const open = () => { setNow(Date.now()); setOverview(true) }
+    const open = () => {
+      // demo: nothing waiting yet, so fill the screen with matches at every stage
+      if (inFlight(betaFlow.all()).length === 0) {
+        betaFlow.seed(DEMO_FLOWS)
+        DEMO_FLOWS.forEach((d) => { void backend.swipe(d.id, 'align'); later.add(`reveal:${d.id}`); later.add(`card:${d.id}`) })
+      }
+      setNow(Date.now()); setOverview(true)
+    }
     window.addEventListener(STARS_EVENT, open)
     return () => window.removeEventListener(STARS_EVENT, open)
   }, [])
@@ -89,7 +106,7 @@ export default function BetaFlowPopup({ go, screen }: { go: (id: ScreenId) => vo
         <Moment key={keyOf(lead)} item={lead} others={items.filter((i) => i !== lead && i.pend !== 'chat')} more={items.length - 1}
           onOpen={open} onAll={() => { dismiss(); setOverview(true) }} onLater={dismiss} />
       )}
-      {allowed && overview && <Overview key="overview" items={items} now={now} onOpen={open} onClose={() => { sfx.tap(); setOverview(false) }} />}
+      {allowed && overview && <Overview key="overview" items={items} now={now} onOpen={open} onClose={() => { sfx.tap(); setOverview(false) }} onSky={() => { sfx.tap(); setOverview(false); go('sky') }} />}
     </AnimatePresence>
   )
 }
@@ -237,7 +254,22 @@ function Moment({ item, others, more, onOpen, onAll, onLater }: { item: Item; ot
 }
 
 /** Everyone the stars have aligned you with, by sign. Opened from the deck's star. */
-function Overview({ items, now, onOpen, onClose }: { items: Item[]; now: number; onOpen: (i: Item) => void; onClose: () => void }) {
+/** a plain reminder row */
+function Note({ glyph, title, sub, action, onClick, last }: { glyph: string; title: string; sub: string; action?: string; onClick?: () => void; last?: boolean }) {
+  const Tag = onClick ? 'button' : 'div'
+  return (
+    <Tag onClick={onClick} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '11px 14px', textAlign: 'left', borderBottom: last ? 'none' : '1px solid rgba(179,166,196,0.12)' }}>
+      <span style={{ width: 30, height: 30, borderRadius: 15, flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 14, color: 'var(--align)', background: 'rgba(242,199,92,0.12)', border: '1px solid rgba(242,199,92,0.35)' }}>{glyph}{'\uFE0E'}</span>
+      <span style={{ flex: 1, minWidth: 0 }}>
+        <span style={{ display: 'block', fontSize: 14.5, color: 'var(--label-1)' }}>{title}</span>
+        <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 1 }}>{sub}</span>
+      </span>
+      {action && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--align)' }}>{action.toUpperCase()} ›</span>}
+    </Tag>
+  )
+}
+
+function Overview({ items, now, onOpen, onClose, onSky }: { items: Item[]; now: number; onOpen: (i: Item) => void; onClose: () => void; onSky: () => void }) {
   const waiting = items.filter((i) => i.pend !== 'chat')
   const talking = items.filter((i) => i.pend === 'chat')
   const signs = [...new Set(items.map((i) => i.them.sign))]
@@ -276,6 +308,15 @@ function Overview({ items, now, onOpen, onClose }: { items: Item[]; now: number;
         </div>
         {section('WAITING ON YOU', waiting)}
         {section('COUNTING DOWN', talking)}
+        {/* the day's other reminders */}
+        <div style={{ marginTop: 18 }}>
+          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', fontWeight: 700, color: 'var(--label-2)', marginBottom: 8 }}>TODAY</div>
+          <div style={{ borderRadius: 18, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.18)' }}>
+            <Note glyph="☾" title="Your horoscope is ready" sub="Three cards from today’s sky" action="Read" onClick={onSky} />
+            <Note glyph="✦" title="Three new cards in every chat" sub="Today’s three reset at 11:11 PM" />
+            <Note glyph="◎" title="Tonight’s deck resets at 11:11" sub="Fifteen new people, dealt by the stars" last />
+          </div>
+        </div>
       </motion.div>
       <div style={{ position: 'absolute', left: 38, right: 38, bottom: 34 }}>
         <button className="chrome-cta" onClick={onClose} style={{ width: '100%' }}>Back to the deck</button>

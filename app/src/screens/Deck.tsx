@@ -277,8 +277,8 @@ export default function Deck({ go, sky }: ScreenProps & {
   const starCount = flying.filter((f) => pendingOf(f, now) !== 'chat').length
   const openStar = () => {
     if (!BETA) { go('notifications'); return }
-    if (flying.length) { sfx.tap(); openStars(); return }
-    showToast('Nothing new yet. Your star lights up when the stars align')
+    // always opens; with nothing waiting yet, the screen fills itself with sample matches (see BetaFlowPopup)
+    sfx.tap(); openStars()
   }
   const [skyOpen, setSkyOpen] = useState(false)
   // the pill's dot: today's horoscope hasn't been opened yet (beta)

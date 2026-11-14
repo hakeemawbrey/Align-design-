@@ -46,6 +46,17 @@ export const betaFlow = {
     save(KEY, state)
     subs.forEach((f) => f())
   },
+  /** demo: put a few matches at different stages, so the notification screen has something on it */
+  seed: (rows: { id: string; stage: BetaStage; inMs?: number }[]) => {
+    const next = { ...state }
+    rows.forEach((r, i) => {
+      if (next[r.id]) return
+      next[r.id] = { id: r.id, stage: r.stage, revealAt: r.inMs == null ? null : Date.now() + r.inMs, card: ALIGN_CARDS[(Object.keys(next).length) % ALIGN_CARDS.length], at: Date.now() - i * 60_000 }
+    })
+    state = next
+    save(KEY, state)
+    subs.forEach((f) => f())
+  },
   /** you opened the card */
   openCard: (id: string) => { if (state[id]?.stage === 'aligned') put(id, { stage: 'card' }) },
   /** both answered: the chat opens and the clock starts */
