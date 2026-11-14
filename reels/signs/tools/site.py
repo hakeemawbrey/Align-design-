@@ -13,7 +13,7 @@ from PIL import Image, ImageOps
 import catalog, scripts
 
 OUT = os.path.join(HERE, "out", "site")
-TW, TH, COLS = 150, 267, 12
+TW, TH, COLS = 180, 180, 12
 LABELS = {"portrait-her": "portraits (her)", "portrait-him": "portraits (him)", "city-night": "city at night"}
 
 
@@ -50,25 +50,52 @@ def sprites():
     return data
 
 
+PW = 240          # poster tile size in the per-sign poster sheets
+
+
 def reels(limit):
+    """Small previews (480px) for the page, and one poster sheet per sign instead of a
+    poster file per reel, so hundreds of reels stay within the page's file limits."""
     os.makedirs(os.path.join(OUT, "reels"), exist_ok=True)
+    os.makedirs(os.path.join(OUT, "posters"), exist_ok=True)
     metas = sorted(glob.glob(os.path.join(HERE, "out", "*-s*.json")), key=os.path.getmtime, reverse=True)
     metas = [m for m in metas if os.path.exists(m[:-5] + ".mp4")][: limit or None]
+
+    def enc(m):
+        web = os.path.join(OUT, "reels", os.path.basename(m)[:-5] + ".mp4")
+        if not os.path.exists(web) or os.path.getmtime(web) < os.path.getmtime(m[:-5] + ".mp4"):
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m[:-5] + ".mp4", "-vf", "scale=480:-2", "-r", "15",
+                            "-c:v", "libx264", "-crf", "30", "-preset", "slow", "-tune", "stillimage",
+                            "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", web], check=True)
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(4) as ex:
+        list(ex.map(enc, metas))
     out = []
     for m in metas:
         j = json.load(open(m))
         base = os.path.basename(m)[:-5]
-        web = os.path.join(OUT, "reels", base + ".mp4")
-        poster = os.path.join(OUT, "reels", base + ".jpg")
-        if not os.path.exists(web):
-            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m[:-5] + ".mp4", "-vf", "scale=540:-2", "-c:v", "libx264",
-                            "-crf", "27", "-preset", "slow", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", web], check=True)
-            Image.open(m[:-5] + ".cover.jpg").resize((360, 640), Image.LANCZOS).save(poster, quality=80)
         cap = open(m[:-5] + ".txt").read().split("----- NOT FOR POSTING")[0].strip()
         s = scripts.build(j["id"]) if j["format"] != "custom" else None
         out.append({"id": base, "title": j["title"], "sign": j["sign"], "format": j["format"], "sec": j["seconds"],
-                    "cards": [c["text"] for c in s["cards"]] if s else [], "caption": cap})
+                    "music": j.get("music") or "", "cards": [c["text"] for c in s["cards"]] if s else [], "caption": cap,
+                    "_cover": m[:-5] + ".cover.jpg"})
     out.sort(key=lambda r: (scripts.ORDER.index(r["sign"]), r["id"]))
+    # poster sheets
+    rows_by = {}
+    for sign in scripts.ORDER:
+        mine = [r for r in out if r["sign"] == sign]
+        if not mine:
+            continue
+        rows = (len(mine) + COLS - 1) // COLS
+        sheet = Image.new("RGB", (COLS * PW, rows * PW))
+        for i, r in enumerate(mine):
+            sheet.paste(Image.open(r["_cover"]).convert("RGB").resize((PW, PW), Image.LANCZOS), ((i % COLS) * PW, (i // COLS) * PW))
+            r["pi"] = i
+        sheet.save(os.path.join(OUT, "posters", f"{sign}.jpg"), quality=78, optimize=True, progressive=True)
+        rows_by[sign] = rows
+    for r in out:
+        r.pop("_cover")
+        r["prow"] = rows_by[r["sign"]]
     return out
 
 

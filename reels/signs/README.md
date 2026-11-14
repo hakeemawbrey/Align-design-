@@ -24,10 +24,9 @@ The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLD
 
 ## The reel
 
-1080×1920, 30 fps, 12–22 s. A full-bleed painting, graded toward dusk and darkened
-where the type sits, pushes in slowly; each card gets its own picture and crossfades
-to the next. Up top: the sign's glyph and name and story-style progress ticks. At the
-bottom: a small *align*. The hook and the call to action are EB Garamond italic; the
+Square 1080×1080, 30 fps, 10–20 s. Each card is a still: one painting, graded toward
+dusk and darkened where the type sits, with the line on top. Cards change with a hard
+cut, no transitions, motion, progress bar or header. At the bottom, small and quiet: COME ALIGN · JOIN THE BETA. The hook and the call to action are EB Garamond italic; the
 body is Sofia Sans Condensed.
 
 | Format | Hook | Ends on |
@@ -75,9 +74,23 @@ lines below "NOT FOR POSTING" list every image's source for your records.
 
 ## Music
 
-`music.py` is the Visions score engine with a `soft` mode (no kick or clap, a sparser
-arpeggio): a minor pad loop with a plucked arpeggio and sub bass, keyed per sign, faded
-in and out and mastered to −14 LUFS.
+`score.py` has eight styles, and a batch rotates through them so they're heard evenly:
+
+| Style | Sound | Tempo |
+| --- | --- | --- |
+| `piano` | felt piano, broken chords and a slow melody | 66–80 |
+| `lofi` | dusty Rhodes 7ths, swung hats, soft kick and snare, vinyl crackle | 70–86 |
+| `rnb` | slow Rhodes 9ths, deep sub bass, finger snaps on 2 and 4 | 62–72 |
+| `guitar` | nylon-string fingerpicking with a soft bass | 78–96 |
+| `musicbox` | music-box melody over a warm pad | 88–108 |
+| `ambient` | slow string swells and far-off bells, no beat | 56–66 |
+| `dream` | the Visions synth: pads and plucked arpeggio, no drums | 120 |
+| `pulse` | the Visions synth with kick, clap and hats | 120 |
+
+The seed picks the key, major or minor, chord loop, melody, tempo and tone, so no two reels
+sound alike. `--music piano` on `render.py` or `make.py` fixes the style;
+`python3 score.py --all` writes a 16-second demo of each to `out/music/`. Everything is
+synthesized, so there's nothing to license. Mastered to −14 LUFS.
 
 ## Fonts
 

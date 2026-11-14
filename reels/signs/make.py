@@ -5,6 +5,7 @@
   python3 make.py --sign scorpio --count 6
   python3 make.py --format invite --count 12
   python3 make.py --forever --jobs 4    # never stop: when every script is made, seeds go up
+  python3 make.py --music piano         # one music style for the whole batch
 
 Progress is kept in out/state.json, so it picks up where it stopped.
 """
@@ -47,8 +48,12 @@ def queue(sign=None, fmt=None):
     return out
 
 
-def one(sid, seed):
-    r = subprocess.run([sys.executable, os.path.join(HERE, "render.py"), sid, "--seed", str(seed)],
+MUSIC = None
+
+
+def one(sid, seed, style=None):
+    extra = ["--music", style] if style else []
+    r = subprocess.run([sys.executable, os.path.join(HERE, "render.py"), sid, "--seed", str(seed), *extra],
                        capture_output=True, text=True)
     return sid, seed, r.returncode, (r.stdout.strip() or r.stderr.strip()[-300:])
 
@@ -60,6 +65,7 @@ def main():
     ap.add_argument("--sign")
     ap.add_argument("--format")
     ap.add_argument("--forever", action="store_true")
+    ap.add_argument("--music", help="one music style for the whole batch (default: varied)")
     a = ap.parse_args()
     os.makedirs(os.path.dirname(STATE), exist_ok=True)
     state = json.load(open(STATE)) if os.path.exists(STATE) else {}
@@ -68,7 +74,10 @@ def main():
         q.sort(key=lambda i: state.get(i, 0))       # stable: keeps the sign interleave among equals
         batch = [(i, state.get(i, 0)) for i in q[:a.count]]
         with cf.ProcessPoolExecutor(a.jobs) as ex:
-            futs = [ex.submit(one, *b) for b in batch]
+            import score
+            # rotate the music styles through the batch so every style is heard evenly
+            off = sum(state.values()) % len(score.ORDER)
+            futs = [ex.submit(one, *b, a.music or score.ORDER[(k + off) % len(score.ORDER)]) for k, b in enumerate(batch)]
             for f in cf.as_completed(futs):
                 sid, seed, rc, msg = f.result()
                 print(("ok " if rc == 0 else "FAIL ") + f"{sid} s{seed}: {msg}", flush=True)
