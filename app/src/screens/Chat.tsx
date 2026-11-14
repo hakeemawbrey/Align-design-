@@ -97,6 +97,25 @@ const REPLIES = [
   'Ok I have to get back to work but I’m looking forward to Thursday',
 ]
 
+/**
+ * Beta: after the opening, the demo keeps talking by itself. More back-and-forth,
+ * then she plays a card, you both answer, and she reacts. Written to fit any
+ * of the four founders. It stops the moment the presenter types or plays something.
+ */
+const DEMO_CARD = 'ev2' // "What does a perfect lazy Sunday look like for you?"
+const MORE: ({ k: 'her' | 'me'; text: string } | { k: 'herCard' } | { k: 'myAnswer'; text: string })[] = [
+  { k: 'her', text: 'Ok real question before Thursday. What are you listening to right now?' },
+  { k: 'me', text: 'An old soul playlist on repeat. You?' },
+  { k: 'her', text: 'The same three songs for a week. I have a problem' },
+  { k: 'me', text: 'Send me one. I’ll judge you gently' },
+  { k: 'her', text: 'Deal. Also, I’m playing us a card. Hold on' },
+  { k: 'herCard' },
+  { k: 'myAnswer', text: 'Slow coffee, a long walk, then cooking something that takes all afternoon.' },
+  { k: 'her', text: 'Ok that’s basically my Sunday too. Thursday can’t come fast enough' },
+  { k: 'me', text: 'Counting it down with the clock up there' },
+  { k: 'her', text: 'Don’t skip ahead. I want to be surprised' },
+]
+
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
 const MATCH = juniper.id
@@ -284,9 +303,34 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       setSeen(true)
       sfx.tap()
       await wait(900)
-      if (dead() || slowAtOpen) return
-      show({ from: 'card', text: '' })
-      sfx.sparkle()
+      if (dead()) return
+      if (!slowAtOpen) { show({ from: 'card', text: '' }); sfx.sparkle(); return }
+      // beta: carry on without the presenter, until they type or play something themselves
+      const stop = () => dead() || handsOn.current
+      for (const m of MORE) {
+        await wait(m.k === 'myAnswer' ? 3200 : m.k === 'me' ? 1900 : 1500)
+        if (stop()) return
+        if (m.k === 'her') {
+          void record('her', m.text)
+          await herTypes(m.text, 1200, stop)
+        } else if (m.k === 'me') {
+          setSeen(false)
+          void sendMine(m.text)
+          sfx.send()
+        } else if (m.k === 'herCard') {
+          const card = cardById(DEMO_CARD)
+          if (!card) continue
+          push({ from: 'her', text: playMsg(DEMO_CARD) })
+          sfx.sparkle()
+          await wait(1800)
+          if (stop()) return
+          push({ from: 'her', text: answerMsg(DEMO_CARD, card.sample) })
+          sfx.receive()
+        } else {
+          push({ from: 'me', text: answerMsg(DEMO_CARD, m.text) })
+          sfx.match()
+        }
+      }
     })()
     return () => { cancelled = true; alive.current = false }
   }, [replay])
@@ -303,6 +347,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
     if (closed) return
     const text = (said ?? draft).trim()
     if (!text) return
+    handsOn.current = true
     setDraft('')
     setPicked(null)
     setComposing(true)
@@ -331,6 +376,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   // slow reveal: the alignment card is answered on its own screen, before this chat opens
   useEffect(() => { if (cardStage) go(`x/align-card/${MATCH}`) }, [cardStage, go])
   const playCard = (cardId: string) => {
+    handsOn.current = true
     push({ from: 'me', text: playMsg(cardId) })
     sfx.send()
     // Juniper answers hers after a moment; it stays sealed until you answer yours
@@ -343,7 +389,10 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
     }, 3200 + Math.random() * 1500)
   }
   const reactIdx = useRef(0)
+  /** the presenter has taken over: typed, played or answered something themselves */
+  const handsOn = useRef(false)
   const answerCard = (cardId: string, a: string) => {
+    handsOn.current = true
     energize(5)
     push({ from: 'me', text: answerMsg(cardId, a) })
     // she reacts to your answer, so the chat keeps moving after a card
