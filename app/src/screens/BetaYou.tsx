@@ -107,24 +107,17 @@ export default function BetaYou({ go }: ScreenProps) {
         }}>
         <div style={{ position: 'relative', padding: '58px 24px 120px', display: 'flex', flexDirection: 'column', gap: 22 }}>
 
-          {/* header */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <motion.button className="chrome-cta" whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-                style={{ width: 'auto', height: 38, padding: '0 18px', fontSize: 16 }}>
-                Edit card
-              </motion.button>
-              <motion.button whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-                style={{ height: 38, padding: '0 14px 0 6px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
-                <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
-                <span className="serif italic" style={{ fontSize: 16 }}>Aura photo</span>
-              </motion.button>
-            </div>
-            <button aria-label="Settings" onClick={() => { sfx.tap(); go('x/settings') }} style={{ width: 40, height: 40, margin: '-8px -8px -8px 0', display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
-              </svg>
-            </button>
+          {/* header: the two things you do with your card, side by side */}
+          <div style={{ display: 'flex', gap: 10 }}>
+            <motion.button className="chrome-cta" whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
+              style={{ flex: 1, width: 'auto', height: 44, fontSize: 17 }}>
+              Edit card
+            </motion.button>
+            <motion.button whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
+              style={{ flex: 1, height: 44, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
+              <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
+              <span className="serif italic" style={{ fontSize: 17 }}>Aura photo</span>
+            </motion.button>
           </div>
 
           {/* your card: face down as strangers see it, your aura photo tucked behind */}
@@ -138,7 +131,7 @@ export default function BetaYou({ go }: ScreenProps) {
             <motion.button aria-label="Your card, face down" onClick={() => open('down')} whileTap={{ scale: 0.97 }}
               initial={{ rotate: -2, x: 0 }} animate={{ rotate: -4, x: -26 }} transition={{ type: 'spring', stiffness: 200, damping: 20 }}
               style={{ position: 'absolute', left: '50%', top: 0, marginLeft: -(CARD_W * SCALE) / 2, width: CARD_W * SCALE, height: CARD_H * SCALE }}>
-              <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
+              <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none', textAlign: 'left' }}>
                 <ProfileCard profile={me} glow />
               </div>
             </motion.button>
