@@ -107,19 +107,6 @@ export default function BetaYou({ go }: ScreenProps) {
         }}>
         <div style={{ position: 'relative', padding: '58px 24px 120px', display: 'flex', flexDirection: 'column', gap: 22 }}>
 
-          {/* header: the two things you do with your card, side by side */}
-          <div style={{ display: 'flex', gap: 10 }}>
-            <motion.button className="chrome-cta" whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-              style={{ flex: 1, width: 'auto', height: 44, fontSize: 17 }}>
-              Edit card
-            </motion.button>
-            <motion.button whileTap={{ scale: 0.96 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-              style={{ flex: 1, height: 44, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.55)' }}>
-              <img src={ME.photo} alt="" style={{ width: 26, height: 26, borderRadius: 13, objectFit: 'cover', boxShadow: `0 0 10px ${SUN.color}` }} />
-              <span className="serif italic" style={{ fontSize: 17 }}>Aura photo</span>
-            </motion.button>
-          </div>
-
           {/* your card: face down as strangers see it, your aura photo tucked behind */}
           <div style={{ position: 'relative', height: CARD_H * SCALE + 14, marginTop: -6 }}>
             <motion.button aria-label="Your photo, flipped side" onClick={() => open('flipped')} whileTap={{ scale: 0.97 }}
@@ -134,6 +121,22 @@ export default function BetaYou({ go }: ScreenProps) {
               <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${SCALE})`, transformOrigin: '0 0', pointerEvents: 'none', textAlign: 'left' }}>
                 <ProfileCard profile={me} glow />
               </div>
+            </motion.button>
+          </div>
+
+          {/* under the cards: a small edit button, and your aura photo with a camera on it */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, marginTop: -6 }}>
+            <motion.button whileTap={{ scale: 0.95 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
+              style={{ height: 36, padding: '0 16px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 7, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.35)', background: 'rgba(52,35,95,0.6)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></svg>
+              <span className="serif italic" style={{ fontSize: 16 }}>Edit card</span>
+            </motion.button>
+            <motion.button aria-label="Aura photo: take a new one" whileTap={{ scale: 0.92 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
+              style={{ position: 'relative', width: 44, height: 44, borderRadius: 22, flexShrink: 0 }}>
+              <img src={ME.photo} alt="" style={{ width: 44, height: 44, borderRadius: 22, objectFit: 'cover', border: `1.5px solid ${SUN.color}`, boxShadow: `0 0 14px ${SUN.color}88` }} />
+              <span style={{ position: 'absolute', right: -5, bottom: -4, width: 22, height: 22, borderRadius: 11, display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 2px 6px rgba(0,0,0,0.5)' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4V8Z" /><circle cx="12" cy="13.2" r="3.4" /></svg>
+              </span>
             </motion.button>
           </div>
 
