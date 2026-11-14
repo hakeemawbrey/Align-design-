@@ -145,7 +145,9 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const slow = BETA && !demo && flow.stage !== 'none'
   const cardStage = slow && (flow.stage === 'aligned' || flow.stage === 'card')
   const veiled = slow && flow.stage !== 'revealed'
-  const [replay] = useState(() => !demo && !session.get().chatPlayed && !(BETA && betaFlow.has(MATCH)))
+  // (in the beta it plays once the alignment card is answered and the chat is open)
+  const [slowAtOpen] = useState(() => BETA && betaFlow.has(MATCH))
+  const [replay] = useState(() => !demo && !session.get().chatPlayed && !(BETA && ['aligned', 'card'].includes(betaFlow.get(MATCH).stage)))
   const [msgs, setMsgs] = useState<Msg[]>(() =>
     demo && demo !== 'empty' ? SCRIPT.map((m, i) => ({ ...m, id: i + 1 })) : [])
   const [typing, setTyping] = useState(false)
@@ -249,13 +251,22 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
     const dead = () => cancelled
     if (!replay) return () => { alive.current = false }
     // save the whole opening now, so leaving halfway never replays or duplicates it
-    if (!scriptSaved.current) {
-      scriptSaved.current = true // effects run twice in dev; save once
-      session.patch({ chatPlayed: true })
-      SCRIPT.forEach((m) => { void record(m.from === 'me' ? 'me' : 'her', m.text) })
-    }
+    const first = !scriptSaved.current
+    scriptSaved.current = true // effects run twice in dev; save once
     ;(async () => {
-      await wait(650)
+      if (first) {
+        // slow reveal: the alignment card and both answers are already in the thread; show them first
+        if (slowAtOpen) {
+          const rows = await api.messages(MATCH).catch(() => [])
+          const t = threadFrom(rows, true)
+          idRef.current = t.length
+          setMsgs(t.map((m, i) => ({ ...m, id: i + 1 })))
+        }
+        setLoaded(true)
+        session.patch({ chatPlayed: true })
+        SCRIPT.forEach((m) => { void record(m.from === 'me' ? 'me' : 'her', m.text) })
+      }
+      await wait(slowAtOpen ? 1400 : 650)
       for (const m of SCRIPT) {
         if (dead()) return
         if (m.from === 'her') {
@@ -273,7 +284,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       setSeen(true)
       sfx.tap()
       await wait(900)
-      if (dead()) return
+      if (dead() || slowAtOpen) return
       show({ from: 'card', text: '' })
       sfx.sparkle()
     })()
