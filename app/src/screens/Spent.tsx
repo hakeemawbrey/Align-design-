@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import CardBack from '../components/intro/CardBack'
+import SkyDropdown from '../components/deck/SkyDropdown'
+import { HEAD_DROP } from '../components/deck/fx'
+import { openCalendarOn } from '../components/you/origin'
 import { BETA } from '../lib/beta'
 import { sfx } from '../lib/sfx'
 
@@ -14,8 +17,8 @@ const OUTLINES = [
 ]
 
 /** the beta's resting deck: three card backs, the top one square to you */
-const BW = 170
-const BH = 266
+const BW = 156
+const BH = 244
 const STACK = [
   { x: -44, y: 22, r: -11, float: -5 },
   { x: 44, y: 14, r: 10, float: -7 },
@@ -36,6 +39,7 @@ function Sparkle({ x, y, s, d }: { x: number; y: number; s: number; d: number })
 /** S-10 — the deck is spent. */
 export default function Spent({ go }: ScreenProps) {
   useEffect(() => { const t = window.setTimeout(() => sfx.sparkle(), 300); return () => clearTimeout(t) }, [])
+  const [skyOpen, setSkyOpen] = useState(false)
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -47,7 +51,7 @@ export default function Spent({ go }: ScreenProps) {
 
       {BETA ? (
         /* beta: tomorrow's deck, face down and waiting. Real card backs, not empty outlines */
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 150, height: 300 }}>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: 168, height: 300 }}>
           <motion.div aria-hidden animate={{ opacity: [0.2, 0.34, 0.2], scale: [0.95, 1.05, 0.95] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             style={{ position: 'absolute', left: '50%', top: 30, width: 300, height: 260, marginLeft: -150, borderRadius: '50%', filter: 'blur(34px)', background: 'radial-gradient(closest-side, rgba(154,123,224,0.6), rgba(242,199,92,0.18) 60%, transparent)' }} />
           {STACK.map((c, i) => (
@@ -124,6 +128,24 @@ export default function Spent({ go }: ScreenProps) {
         style={{ position: 'absolute', top: 710, left: 80, right: 80, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
         Wait for the 11:11 deal
       </motion.button>}
+
+      {/* beta: the horoscope stays within reach when the deck is spent, same pill and panel as the deck */}
+      {BETA && (
+        <>
+          <motion.button onClick={() => { sfx.tap(); setSkyOpen((o) => !o) }} aria-label="Today’s horoscope and cosmic calendar" aria-expanded={skyOpen}
+            initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }}
+            style={{ position: 'absolute', left: 24, right: 24, top: 108 + HEAD_DROP, height: 39, borderRadius: 999, zIndex: 20, overflow: 'hidden',
+              background: 'linear-gradient(90deg, rgba(52,35,95,0.62), rgba(40,26,78,0.5))', border: '1px solid rgba(179,166,196,0.28)',
+              backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', padding: '0 14px 0 11px', gap: 10 }}>
+            <span style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, background: 'radial-gradient(circle at 32% 28%, #fff4cf 0%, #e8c070 30%, #9a6a2a 75%, #5a3a14 100%)', boxShadow: '0 0 8px rgba(242,199,92,0.4)' }} />
+            <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, minWidth: 0, textAlign: 'left' }}>Read today’s horoscope</span>
+            <motion.span animate={{ rotate: skyOpen ? 180 : 0 }} style={{ display: 'grid', placeItems: 'center' }}>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="#f2c75c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></svg>
+            </motion.span>
+          </motion.button>
+          <SkyDropdown open={skyOpen} onClose={() => setSkyOpen(false)} onFullCalendar={() => openCalendarOn(go, 'spent')} />
+        </>
+      )}
 
       <TabBar active="deck" go={go} />
     </div>
