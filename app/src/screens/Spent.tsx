@@ -48,7 +48,7 @@ export default function Spent({ go }: ScreenProps) {
       {BETA ? (
         /* beta: tomorrow's deck, face down and waiting. Real card backs, not empty outlines */
         <div style={{ position: 'absolute', left: 0, right: 0, top: 150, height: 300 }}>
-          <motion.div aria-hidden animate={{ opacity: [0.55, 0.9, 0.55], scale: [0.95, 1.05, 0.95] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+          <motion.div aria-hidden animate={{ opacity: [0.2, 0.34, 0.2], scale: [0.95, 1.05, 0.95] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             style={{ position: 'absolute', left: '50%', top: 30, width: 300, height: 260, marginLeft: -150, borderRadius: '50%', filter: 'blur(34px)', background: 'radial-gradient(closest-side, rgba(154,123,224,0.6), rgba(242,199,92,0.18) 60%, transparent)' }} />
           {STACK.map((c, i) => (
             <motion.div key={i}
@@ -60,7 +60,7 @@ export default function Spent({ go }: ScreenProps) {
                 scale: { type: 'spring', stiffness: 90, damping: 13, delay: 0.1 + i * 0.12 },
                 y: { duration: 5 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 },
               }}
-              style={{ position: 'absolute', left: '50%', top: c.y, marginLeft: -BW / 2 + c.x, zIndex: i, filter: i < STACK.length - 1 ? 'brightness(0.72)' : 'none' }}>
+              style={{ position: 'absolute', left: '50%', top: c.y, marginLeft: -BW / 2 + c.x, zIndex: i, filter: i < STACK.length - 1 ? 'saturate(0.3) brightness(0.5)' : 'saturate(0.38) brightness(0.68)' }}>
               <CardBack width={BW} height={BH} style={{ borderRadius: 16 }} />
             </motion.div>
           ))}
