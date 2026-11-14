@@ -320,6 +320,36 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
                 <p className="serif italic" style={{ fontSize: 17.5, lineHeight: 1.3, color: 'var(--label-2)', margin: '6px 8px 0' }}>{guide.title}</p>
               </div>
 
+              {/* tonight, you two under this sky: at the top, with a way to act on it */}
+              <div style={{ marginTop: 16, borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.2)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px 9px 12px' }}>
+                  <button aria-expanded={tonight} aria-label="Tonight, you two under this sky" onClick={() => { sfx.tap(); setTonight((o) => !o) }}
+                    style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 10, textAlign: 'left' }}>
+                    <CardOrb tint="#c9bedb" size={26}>☾</CardOrb>
+                    <span style={{ flex: 1, minWidth: 0 }}>
+                      <span className="mono" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
+                        TONIGHT · YOU TWO
+                        <motion.svg animate={{ rotate: tonight ? 180 : 0 }} width="9" height="6" viewBox="0 0 12 8" fill="none" stroke="var(--label-2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m1 1.5 5 5 5-5" /></motion.svg>
+                      </span>
+                      {!tonight && <span style={{ display: 'block', fontSize: 13.5, color: 'var(--label-2)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{today.line}</span>}
+                    </span>
+                  </button>
+                  {onPlayCard && (
+                    <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
+                      style={{ flexShrink: 0, height: 34, padding: '0 13px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', whiteSpace: 'nowrap' }}>
+                      PLAY CARD ›
+                    </button>
+                  )}
+                </div>
+                <AnimatePresence initial={false}>
+                  {tonight && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden' }}>
+                      <div style={{ padding: '2px 14px 14px', fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* the little cards */}
               <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)', margin: '20px 2px 8px' }}>
                 <span>YOU TWO</span><span>TAP TO READ</span>
@@ -372,33 +402,6 @@ export function CompatSheet({ them, open, onClose, onPlayCard }: {
                 })}
               </div>
 
-              {/* tonight: one small row that opens */}
-              <div style={{ marginTop: 6, borderRadius: 16, overflow: 'hidden', background: 'rgba(30,18,64,0.72)', border: '1px solid rgba(179,166,196,0.2)' }}>
-                <button aria-expanded={tonight} onClick={() => { sfx.tap(); setTonight((o) => !o) }}
-                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', textAlign: 'left' }}>
-                  <CardOrb tint="#c9bedb" size={26}>☾</CardOrb>
-                  <span style={{ flex: 1, minWidth: 0 }}>
-                    <span className="mono" style={{ display: 'block', fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>TONIGHT · YOU TWO, UNDER THIS SKY</span>
-                    {!tonight && <span style={{ display: 'block', fontSize: 13.5, color: 'var(--label-2)', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{today.line}</span>}
-                  </span>
-                  <motion.svg animate={{ rotate: tonight ? 180 : 0 }} width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="m1 1.5 5 5 5-5" /></motion.svg>
-                </button>
-                <AnimatePresence initial={false}>
-                  {tonight && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden' }}>
-                      <div style={{ padding: '2px 14px 14px' }}>
-                        <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-1)' }}>{today.line}</div>
-                        {onPlayCard && (
-                          <button className="mono" onClick={() => { sfx.tap(); onPlayCard() }}
-                            style={{ marginTop: 12, height: 34, padding: '0 14px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
-                            PLAY A TALK CARD WITH {them.name.toUpperCase()} ›
-                          </button>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
               <p style={{ fontSize: 11.5, lineHeight: 1.4, color: 'var(--label-3)', margin: '16px 4px 0', textAlign: 'center' }}>
                 Astrology, for reflection and fun. It describes how two charts meet; it doesn’t measure or predict a relationship.
               </p>
