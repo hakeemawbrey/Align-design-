@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { CARD_W, CARD_H } from './fx'
+import { BETA } from '../../lib/beta'
 
 const CHAKRAS = ['#b06cff', '#5b6cff', '#3fb6f0', '#4fd27a', '#f2cf4a', '#f39a3a', '#f0383a']
 
@@ -52,7 +53,10 @@ function CardBackImpl({ glow = true }: { glow?: boolean }) {
         {CHAKRAS.map((_, i) => (
           <circle key={i} cx={cx - 1.2} cy={cy - r * 1.5 + i * (r / 2) - 1.2} r={1.3} fill="#fff" opacity="0.8" />
         ))}
-        <text x={cx} y={CARD_H - 30} textAnchor="middle" fontFamily="Space Mono, monospace" fontSize="9" letterSpacing="3" fill="#c8b4ff" fillOpacity="0.55">ALIGN · ✦ · TONIGHT</text>
+        {BETA
+          // beta: just the name, under the mark
+          ? <text x={cx + 4} y={cy + r * 2 + 44} textAnchor="middle" fontFamily="Space Mono, monospace" fontSize="15" letterSpacing="9" fill="#e6dcff" fillOpacity="0.85">ALIGN</text>
+          : <text x={cx} y={CARD_H - 30} textAnchor="middle" fontFamily="Space Mono, monospace" fontSize="9" letterSpacing="3" fill="#c8b4ff" fillOpacity="0.55">ALIGN · ✦ · TONIGHT</text>}
       </svg>
     </div>
   )
