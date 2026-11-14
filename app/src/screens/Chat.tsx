@@ -25,6 +25,9 @@ import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
 import { BETA } from '../lib/beta'
 import { CompatBadge, CompatSheet } from '../components/chat/Compat'
+import { ALIGN_CARD, betaFlow, useBetaFlow } from '../lib/betaFlow'
+import { RevealBar } from '../components/chat/RevealBar'
+import { SIGNS } from '../data/signs'
 import { talk } from '../lib/talk'
 
 export type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
@@ -100,9 +103,9 @@ const MATCH = juniper.id
 const key = (from: Msg['from'], text: string) => `${from}|${text}`
 
 /** Saved messages → thread, with the alignment card after the opening script. */
-function threadFrom(rows: Message[]): Omit<Msg, 'id'>[] {
+function threadFrom(rows: Message[], slow = false): Omit<Msg, 'id'>[] {
   const out: Omit<Msg, 'id'>[] = rows.map((r) => ({ from: r.from === 'me' ? 'me' : 'her', text: r.body }))
-  if (out.length >= SCRIPT.length) out.splice(SCRIPT.length, 0, { from: 'card', text: '' })
+  if (!slow && out.length >= SCRIPT.length) out.splice(SCRIPT.length, 0, { from: 'card', text: '' })
   return out
 }
 
@@ -137,7 +140,12 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [hand, setHand] = useState(false)
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   // the scripted intro plays once per demo run; afterwards the thread is just there
-  const [replay] = useState(() => !demo && !session.get().chatPlayed)
+  // beta slow reveal: this chat opens on an alignment card, not the scripted intro
+  const flow = useBetaFlow()
+  const slow = BETA && !demo && flow.with === MATCH && flow.stage !== 'none'
+  const cardStage = slow && (flow.stage === 'aligned' || flow.stage === 'card')
+  const veiled = slow && flow.stage !== 'revealed'
+  const [replay] = useState(() => !demo && !session.get().chatPlayed && !(BETA && betaFlow.has(MATCH)))
   const [msgs, setMsgs] = useState<Msg[]>(() =>
     demo && demo !== 'empty' ? SCRIPT.map((m, i) => ({ ...m, id: i + 1 })) : [])
   const [typing, setTyping] = useState(false)
@@ -207,7 +215,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
     api.messages(MATCH).then((rows) => {
       if (off) return
       setLoaded(true)
-      const t = threadFrom(rows)
+      const t = threadFrom(rows, BETA && betaFlow.has(MATCH))
       idRef.current = t.length
       replyIdx.current = Math.max(0, rows.filter((r) => r.from === 'them').length - SCRIPT.filter((m) => m.from === 'her').length)
       setMsgs(t.map((m, i) => ({ ...m, id: i + 1 })))
@@ -309,6 +317,28 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   /* ---------- talk cards ---------- */
   const talkRows = msgs.filter((m) => m.from !== 'card').map((m) => ({ from: m.from === 'me' ? 'me' as const : 'them' as const, body: m.text }))
   const { answers } = talkState(talkRows)
+  // slow reveal: the stars play one card to you both; hers is sealed until you answer yours
+  const alignPlayed = msgs.some((m) => m.from !== 'card' && parseTalk(m.text)?.type === 'play' && (parseTalk(m.text) as { cardId: string }).cardId === ALIGN_CARD)
+  const alignMine = answers[ALIGN_CARD]?.me, alignHers = answers[ALIGN_CARD]?.them
+  useEffect(() => {
+    if (!cardStage || !loaded) return
+    betaFlow.openCard()
+    if (alignPlayed) return
+    const t = window.setTimeout(() => { if (alive.current) { push({ from: 'her', text: playMsg(ALIGN_CARD) }); sfx.sparkle() } }, 900)
+    return () => clearTimeout(t)
+  }, [cardStage, loaded, alignPlayed]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!cardStage || !alignPlayed || alignHers != null) return
+    const sample = cardById(ALIGN_CARD)?.sample ?? ''
+    const t = window.setTimeout(() => { if (alive.current) { push({ from: 'her', text: answerMsg(ALIGN_CARD, sample) }); sfx.receive() } }, 3200)
+    return () => clearTimeout(t)
+  }, [cardStage, alignPlayed, alignHers]) // eslint-disable-line react-hooks/exhaustive-deps
+  // both answered: the chat opens and the 33:33 starts
+  useEffect(() => {
+    if (!cardStage || alignMine == null || alignHers == null) return
+    const t = window.setTimeout(() => { betaFlow.openChat(); sfx.match() }, 1400)
+    return () => clearTimeout(t)
+  }, [cardStage, alignMine, alignHers])
   const playCard = (cardId: string) => {
     push({ from: 'me', text: playMsg(cardId) })
     sfx.send()
@@ -344,8 +374,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const last = bubbles[bubbles.length - 1]
   const receiptAfter = last && last.from === 'me' ? last.id : -1
   const expiring = !closed && daysLeft <= 2
-  const empty = !replay && loaded && msgs.length === 0 && !typing
-  const showComposer = !empty || composing
+  const empty = !replay && loaded && msgs.length === 0 && !typing && !cardStage
+  const showComposer = (!empty || composing) && !cardStage
   const backTo = () => { sfx.tap(); go(demo || BETA ? 'matches' : 'reveal') }
 
   return (
@@ -355,9 +385,11 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
 
       <ChatHeader onBack={backTo} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }}
         right={BETA ? <CompatBadge them={juniper} onClick={() => setCompat(true)} /> : undefined}
-        onWho={() => { sfx.flip(); setCardOpen(true) }} photo={PHOTO} name={juniper.name}
+        onWho={veiled ? () => { sfx.tap(); setCompat(true) } : () => { sfx.flip(); setCardOpen(true) }} photo={veiled ? SIGNS[juniper.sign].auraImg : PHOTO} name={juniper.name}
         sub={empty ? 'Matched 2 minutes ago' : undefined} />
-      {!empty && <ExpiryBar daysLeft={daysLeft} />}
+      {cardStage ? <RevealBar waiting />
+        : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead() }} onDone={() => { betaFlow.reveal(); session.patch({ matchWith: MATCH }); go('match') }} />
+          : !empty && <ExpiryBar daysLeft={daysLeft} />}
 
       {empty && !composing && (
         <EmptyThread sign={juniper.sign} openers={OPENERS} picked={picked}
@@ -399,7 +431,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
             if (t?.type === 'play') {
               const card = cardById(t.cardId)
               return card ? (
-                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'}
+                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'} playedBy={slow && card.id === ALIGN_CARD ? 'The stars' : undefined}
                   mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
                   names={{ me: ME.name, them: juniper.name }} onAnswer={(a) => answerCard(card.id, a)} />
               ) : null
@@ -426,6 +458,12 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
         {/* outside the dimmed thread so it reads at full strength */}
         {closed && <ThreadNote kind="closed" name={juniper.name} onTap={() => { sfx.tap(); go(`x/match-expired/${MATCH}`) }} />}
       </div>
+
+      {cardStage && (
+        <div className="mono" style={{ position: 'absolute', left: 24, right: 24, top: 690, textAlign: 'center', fontSize: 9.5, letterSpacing: '0.18em', lineHeight: 1.7, color: 'var(--label-2)', zIndex: 6 }}>
+          {alignMine == null ? <>ANSWER THE CARD TO OPEN THE CHAT</> : alignHers == null ? <>WAITING FOR {juniper.name.toUpperCase()}’S ANSWER…</> : <><span style={{ color: 'var(--align)' }}>✦</span> YOU BOTH ANSWERED · OPENING THE CHAT</>}
+        </div>
+      )}
 
       {/* composer */}
       <form

@@ -139,6 +139,8 @@ type Props = {
   theirs?: string
   names: { me: string; them: string }
   playedByMe: boolean
+  /** played by neither of you (the beta's alignment card): centred, with a line saying who dealt it */
+  playedBy?: string
   onAnswer: (answer: string) => void
 }
 
@@ -147,7 +149,7 @@ type Props = {
  * things stand. Tap it to open the full card, where you answer.
  */
 export default function ChatTalkCard(props: Props) {
-  const { card, mine, theirs, names, playedByMe } = props
+  const { card, mine, theirs, names, playedByMe, playedBy } = props
   const t = TOPICS[card.topic]
   const a = ARCANA[card.topic]
   const [open, setOpen] = useState(false)
@@ -161,12 +163,15 @@ export default function ChatTalkCard(props: Props) {
 
   return (
     <>
+      {playedBy && (
+        <div className="mono" style={{ textAlign: 'center', fontSize: 9, letterSpacing: '0.2em', color: GOLD, margin: '10px 0 2px' }}>✦ {playedBy.toUpperCase()} DEALT YOU BOTH A CARD ✦</div>
+      )}
       <motion.button
         onClick={() => { sfx.flip(); setOpen(true) }}
         initial={{ opacity: 0, y: 12, rotate: playedByMe ? 2 : -2, scale: 0.94 }} animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-        style={{ display: 'block', margin: playedByMe ? '8px 0 10px auto' : '8px auto 10px 0', width: 262, textAlign: 'left' }}
+        style={{ display: 'block', margin: playedBy ? '8px auto 10px' : playedByMe ? '8px 0 10px auto' : '8px auto 10px 0', width: 262, textAlign: 'left' }}
       >
         <Gilt rarity={card.rarity} topic={card.topic} s={0.8}>
           <div style={{

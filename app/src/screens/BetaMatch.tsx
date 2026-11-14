@@ -10,6 +10,7 @@ import { ME, profileById } from '../data/profiles'
 import { pronoun } from '../components/deck/fx'
 import { session } from '../lib/session'
 import { sfx } from '../lib/sfx'
+import { betaFlow } from '../lib/betaFlow'
 
 const W = 164
 const H = (TC_H / TC_W) * W
@@ -29,6 +30,8 @@ export default function BetaMatch({ go }: ScreenProps) {
   const theirs = SIGNS[them.sign], mine = SIGNS[ME.sign]
   const pr = pronoun(them)
   const align = them.reading.find((r) => r.kind === 'align')?.text
+  // arriving here from the slow reveal's countdown, the words are about the reveal
+  const [afterClock] = useState(() => betaFlow.get().with === them.id && betaFlow.get().stage === 'revealed')
   const [stage, setStage] = useState(0) // 0 arrive · 1 lean · 2 flipped · 3 settled
   const timers = useRef<number[]>([])
   const fired = useRef(false)
@@ -101,13 +104,13 @@ export default function BetaMatch({ go }: ScreenProps) {
 
       <motion.div className="mono" animate={{ opacity: flipped ? 0 : 1 }}
         style={{ position: 'absolute', top: 104, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: '0.24em', color: 'var(--label-2)' }}>
-        TWO CARDS · BOTH SAID YES
+        {afterClock ? '33:33 IS UP · TWO CARDS, FACE DOWN' : 'TWO CARDS · BOTH SAID YES'}
       </motion.div>
       <motion.div {...rise(0)} className="mono" style={{ position: 'absolute', top: 86, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: '0.24em', color: 'var(--align)' }}>
-        ✦ MUTUAL ALIGN ✦
+        {afterClock ? '✦ THE REVEAL ✦' : '✦ MUTUAL ALIGN ✦'}
       </motion.div>
       <motion.h1 {...rise(0.05)} className="h-display" style={{ position: 'absolute', top: 106, left: 0, right: 0, textAlign: 'center', fontSize: 38, margin: 0 }}>
-        You both aligned.
+        {afterClock ? 'The veil lifts.' : 'You both aligned.'}
       </motion.h1>
 
       {/* the cards */}

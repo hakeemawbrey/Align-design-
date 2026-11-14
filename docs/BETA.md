@@ -37,3 +37,14 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 ## The card frame
 
 Widgets between two people and for self-discovery share one frame, `src/components/CardFrame.tsx`, so they read as cards from the same deck as the people: a thick (3px) foil border in the card's colour, a title bar with an orb, an optional "Try this" strip and a mono footer. It's used by How you fit, Your sign, the horoscope and calendar, and the profile's sign and sky panels. Colours follow the planet or sign (sun gold, moon blue, rising violet), never how a reading comes out. Plain lists (settings, demo tools) stay unframed.
+
+## The slow reveal (Juniper, in the demo)
+
+Aligning with Juniper no longer shows her face at once (`src/lib/betaFlow.ts`):
+
+1. **The stars align:** when you both say yes the deck carries on and a notification drops in (`BetaFlowBanner`): "You and Juniper both said yes. A card is waiting for you two."
+2. **The alignment card:** tapping it opens the chat, veiled (her aura, not her photo), with nothing in it but a talk card "the stars dealt you both". The message box is locked. Her answer arrives sealed.
+3. **Both answer:** sealing yours reveals both answers, the chat opens and a 33:33 countdown starts under the header (`RevealBar`). It survives leaving and reloading. In the demo, tap the clock to jump to its last five seconds.
+4. **The reveal:** at 00:00 the two cards flip (`BetaMatch`, "The veil lifts."), and back in the chat her photo and full card are open. If you're elsewhere when the clock ends, an "It's time" notification takes you to the flip.
+
+The other people who align back (Sol, Amara, Bianca, Mina) still go straight to the flip.

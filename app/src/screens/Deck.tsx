@@ -23,6 +23,7 @@ import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../com
 import { BETA } from '../lib/beta'
 import SkyDropdown, { OPEN_SKY_EVENT } from '../components/deck/SkyDropdown'
 import { openCalendarOn } from '../components/you/origin'
+import { betaFlow } from '../lib/betaFlow'
 import { todayKey } from '../data/skyReading'
 
 const SKY_READ_KEY = 'align:sky-read'
@@ -482,7 +483,10 @@ export default function Deck({ go, sky }: ScreenProps & {
     if (dir > 0) {
       sfx.align()
       setStarPulse((n) => n + 1)
-      if (profile.alignsBack) {
+      // beta, Juniper: no reveal yet. The stars-align notification drops in and the deck carries on
+      const slow = BETA && profile.alignsBack && profile.id === 'j27'
+      if (slow) { session.patch({ matchWith: profile.id, unseenMatch: true }); betaFlow.start(profile.id) }
+      if (profile.alignsBack && !slow) {
         session.patch({ matchWith: profile.id })
         setMatching(true)
         starBurst(canvasRef.current, 300, CARD_CY - 40, 1.8)
@@ -494,7 +498,7 @@ export default function Deck({ go, sky }: ScreenProps & {
       streakRef.current += 1
       starBurst(canvasRef.current, 310, CARD_CY - 30, 1)
       pop('align', streakRef.current)
-      later(() => showToast(`Aligned — ${pronoun(profile).subj}’ll see your card tonight`), 250)
+      if (!slow) later(() => showToast(`Aligned — ${pronoun(profile).subj}’ll see your card tonight`), 250)
     } else {
       sfx.release()
       streakRef.current = 0
