@@ -132,11 +132,11 @@ export default function BetaYou({ go }: ScreenProps) {
               <span className="serif italic" style={{ fontSize: 16 }}>Edit card</span>
             </motion.button>
             <motion.button aria-label="Aura photo: take a new one" whileTap={{ scale: 0.92 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-              style={{ position: 'relative', width: 44, height: 44, borderRadius: 22, flexShrink: 0 }}>
-              <img src={ME.photo} alt="" style={{ width: 44, height: 44, borderRadius: 22, objectFit: 'cover', border: `1.5px solid ${SUN.color}`, boxShadow: `0 0 14px ${SUN.color}88` }} />
-              <span style={{ position: 'absolute', right: -5, bottom: -4, width: 22, height: 22, borderRadius: 11, display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 2px 6px rgba(0,0,0,0.5)' }}>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4V8Z" /><circle cx="12" cy="13.2" r="3.4" /></svg>
-              </span>
+              style={{ width: 40, height: 40, borderRadius: 20, flexShrink: 0, display: 'grid', placeItems: 'center', color: '#fff',
+                // the aura itself: warm in the middle, running out through rose and violet to blue
+                background: 'radial-gradient(circle at 50% 55%, #ffe08a 0%, #ff9a5c 26%, #ff5fa2 48%, #a45cff 70%, #4a8cff 100%)',
+                border: '1.5px solid rgba(255,255,255,0.55)', boxShadow: '0 0 16px rgba(255,120,180,0.55)' }}>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2px rgba(40,10,60,0.6))' }}><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4V8Z" /><circle cx="12" cy="13.2" r="3.4" /></svg>
             </motion.button>
           </div>
 
