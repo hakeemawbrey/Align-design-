@@ -42,7 +42,11 @@ const SELF: Record<SignId, { spark: string; clash: string; align: string }> = {
   aquarius: { spark: 'A strange idea, a cause, a friend who gets it.', clash: 'Being told how to feel. You go distant when things get close.', align: 'Stay in the room when it’s emotional. Share the odd thought anyway.' },
   pisces: { spark: 'Music, daydreams and people who are gentle with you.', clash: 'Harshness and too much noise. You disappear instead of saying no.', align: 'Say no once this week. Make something with your hands.' },
 }
-const SELF_ROWS = [['spark', 'Spark', 'var(--spark)', 'What lights you up'], ['clash', 'Clash', 'var(--rub)', 'What trips you up'], ['align', 'Align', 'var(--align)', 'What brings you back']] as const
+const SELF_ROWS = [
+  { k: 'spark', label: 'Spark', color: '#7fe0b4', what: 'What lights you up', why: 'Notice who and what brings this out in you. That’s where your energy comes from.', glyph: '✦' },
+  { k: 'clash', label: 'Clash', color: '#ff8fb1', what: 'What trips you up', why: 'Everyone has one. Knowing yours means you can name it before it runs the night.', glyph: '⚡' },
+  { k: 'align', label: 'Align', color: '#f2c75c', what: 'What brings you back', why: 'Your reset. Come back to this when you feel off, with or without a match.', glyph: '◎' },
+] as const
 
 /** one honest line about your sun sign: what drives you, and the catch */
 const INSIGHT: Record<SignId, string> = {
@@ -85,6 +89,7 @@ export default function BetaYou({ go }: ScreenProps) {
   const { blockedSigns } = useSession()
   const [skyOpen, setSkyOpen] = useState(false)
   const [reader, setReader] = useState<number | null>(null)
+  const [self, setSelf] = useState<number | null>(null)
   const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
   const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
   const events = useMemo(() => upcoming(3), [])
@@ -162,21 +167,27 @@ export default function BetaYou({ go }: ScreenProps) {
             })}
           </div>
 
-          {/* you, read like a card: spark, clash, align for your own sign */}
-          <CardFrame tint={SUN.color} kicker={`${SUN.name} · about you`} title="Your spark, clash and align" padding="14px 16px 6px" footer={['Align · your sign', ME.serial]}>
-            {SELF_ROWS.map(([k, label, color, what], i) => (
-              <div key={k} style={{ display: 'flex', gap: 12, padding: '11px 0', borderTop: i ? '1px solid rgba(179,166,196,0.14)' : undefined }}>
-                <span style={{ width: 54, flexShrink: 0 }}>
-                  <span className="mono" style={{ display: 'block', fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, color }}>{label.toUpperCase()}</span>
-                  <span style={{ display: 'flex', gap: 3, marginTop: 5 }}>{[0, 1, 2].map((d) => <span key={d} style={{ width: 5, height: 5, borderRadius: 3, background: color }} />)}</span>
-                </span>
-                <span style={{ flex: 1, minWidth: 0 }}>
-                  <span style={{ display: 'block', fontSize: 11.5, color: 'var(--label-3)' }}>{what}</span>
-                  <span className="serif" style={{ display: 'block', fontSize: 16.5, lineHeight: 1.3, color: 'var(--label-1)', marginTop: 2 }}>{SELF[ME.sign][k]}</span>
-                </span>
-              </div>
-            ))}
-          </CardFrame>
+          {/* you, read like a card: three little cards that open big */}
+          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+              <span className="eyebrow" style={EYEBROW}>About you · {SUN.name}</span>
+              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>TAP TO READ</span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 9 }}>
+              {SELF_ROWS.map((row, i) => (
+                <motion.button key={row.k} onClick={() => { sfx.flip(); setSelf(i) }} whileTap={{ scale: 0.95, y: -4 }} aria-label={`${row.label}: ${row.what}`}
+                  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.1 + i * 0.06 }}
+                  style={{ borderRadius: 16, padding: 3, background: foil(row.color), boxShadow: `0 8px 18px rgba(0,0,0,0.45), 0 0 14px color-mix(in srgb, ${row.color} 30%, transparent)` }}>
+                  <span style={{ height: 118, borderRadius: 13, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '10px 6px 11px',
+                    background: `radial-gradient(90% 60% at 50% 36%, color-mix(in srgb, ${row.color} 26%, #1b112f), #120b22)` }}>
+                    <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
+                    <span style={{ fontSize: 30, lineHeight: 1, color: row.color, textShadow: `0 0 16px ${row.color}` }}>{row.glyph}{'\uFE0E'}</span>
+                    <span className="serif italic" style={{ fontSize: 13.5, lineHeight: 1.15, color: 'var(--label-1)', textAlign: 'center' }}>{row.what}</span>
+                  </span>
+                </motion.button>
+              ))}
+            </div>
+          </section>
 
           {/* today's horoscope, kept small: one row that opens into the three cards */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -274,6 +285,7 @@ export default function BetaYou({ go }: ScreenProps) {
 
       <AnimatePresence>
         {reader != null && <Reader key="reader" start={reader} onClose={() => setReader(null)} />}
+        {self != null && <SelfReader key="self" start={self} onClose={() => setSelf(null)} />}
         {sheet && <YourCardSheet key="card" initial={sheet} onClose={() => setSheet(null)} onEdit={(side) => go(`x/edit-card/${side}`)} />}
       </AnimatePresence>
     </div>
@@ -342,6 +354,49 @@ function Reader({ start, onClose }: { start: number; onClose: () => void }) {
           {PARTS.map((p, n) => <button key={p.word} aria-label={p.word} onClick={() => to(n)} style={{ width: n === i ? 18 : 7, height: 7, borderRadius: 4, background: n === i ? p.ink : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />)}
         </div>
         <button aria-label="Next card" onClick={() => to(i + 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i < PARTS.length - 1 ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>›</button>
+      </div>
+      <button aria-label="Close" onClick={onClose} style={{ position: 'absolute', right: 14, top: 52, width: 40, height: 40, display: 'grid', placeItems: 'center', fontSize: 22, color: 'var(--label-1)' }}>×</button>
+    </motion.div>
+  )
+}
+
+/** spark, clash, align about your own sign, big: swipe or tap the arrows for the next one */
+function SelfReader({ start, onClose }: { start: number; onClose: () => void }) {
+  const [i, setI] = useState(start)
+  const [dir, setDir] = useState(0)
+  const row = SELF_ROWS[i]
+  const to = (n: number) => { if (n < 0 || n >= SELF_ROWS.length) return; sfx.flip(); setDir(n > i ? 1 : -1); setI(n) }
+  return (
+    <motion.div role="dialog" aria-label={`${row.label}: ${row.what}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={onClose} style={{ position: 'absolute', inset: 0, zIndex: 60, background: 'rgba(5,2,15,0.86)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
+      <div aria-hidden style={{ position: 'absolute', left: '50%', top: '42%', width: 420, height: 420, marginLeft: -210, marginTop: -210, borderRadius: '50%', filter: 'blur(50px)', background: `radial-gradient(closest-side, color-mix(in srgb, ${row.color} 40%, transparent), transparent)`, transition: 'background 0.4s' }} />
+      <div className="mono" style={{ position: 'absolute', top: 64, left: 0, right: 0, textAlign: 'center', ...LABEL, color: 'var(--label-2)' }}>ABOUT YOU · {i + 1} OF {SELF_ROWS.length}</div>
+      <AnimatePresence initial={true} mode="popLayout" custom={dir}>
+        <motion.div key={row.k} custom={dir}
+          initial={{ rotateY: dir === 0 ? 180 : dir * 70, x: dir * 120, opacity: 0, scale: 0.9 }} animate={{ rotateY: 0, x: 0, opacity: 1, scale: 1 }} exit={{ rotateY: dir * -70, x: dir * -120, opacity: 0, scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 24 }}
+          drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.5}
+          onDragEnd={(_, d) => { if (d.offset.x < -70) to(i + 1); else if (d.offset.x > 70) to(i - 1) }}
+          onClick={(e) => e.stopPropagation()}
+          style={{ position: 'absolute', left: 36, right: 36, top: 150, borderRadius: 24, padding: 4, background: foil(row.color), boxShadow: `0 0 40px color-mix(in srgb, ${row.color} 45%, transparent), 0 24px 50px rgba(0,0,0,0.6)`, touchAction: 'pan-y' }}>
+          <div style={{ borderRadius: 20, minHeight: 400, padding: '22px 22px 20px', display: 'flex', flexDirection: 'column', background: `radial-gradient(90% 45% at 50% 18%, color-mix(in srgb, ${row.color} 22%, #1d1233), #120b22)` }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+              <span className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
+              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{SUN.name.toUpperCase()} {SUN.glyph}</span>
+            </div>
+            <div style={{ textAlign: 'center', fontSize: 64, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '26px 0 22px' }}>{row.glyph}{'\uFE0E'}</div>
+            <div className="mono" style={{ textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>{row.what.toUpperCase()}</div>
+            <div className="serif italic" style={{ textAlign: 'center', fontSize: 25, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 10, flex: 1 }}>{SELF[ME.sign][row.k]}</div>
+            <div style={{ marginTop: 18, paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.18)', fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.why}</div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      <div onClick={(e) => e.stopPropagation()} style={{ position: 'absolute', left: 30, right: 30, bottom: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <button aria-label="Previous card" onClick={() => to(i - 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>‹</button>
+        <div style={{ display: 'flex', gap: 6 }}>
+          {SELF_ROWS.map((p, n) => <button key={p.k} aria-label={p.label} onClick={() => to(n)} style={{ width: n === i ? 18 : 7, height: 7, borderRadius: 4, background: n === i ? p.color : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />)}
+        </div>
+        <button aria-label="Next card" onClick={() => to(i + 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i < SELF_ROWS.length - 1 ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>›</button>
       </div>
       <button aria-label="Close" onClick={onClose} style={{ position: 'absolute', right: 14, top: 52, width: 40, height: 40, display: 'grid', placeItems: 'center', fontSize: 22, color: 'var(--label-1)' }}>×</button>
     </motion.div>
