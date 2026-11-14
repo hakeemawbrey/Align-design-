@@ -15,7 +15,7 @@ const STARFIELD = 'radial-gradient(1px 1px at 18% 22%, #fff9 50%, transparent 51
 /** Gilt outer edge: topic-tinted gold, full gold foil for rare, holo for legendary. */
 export function Gilt({ rarity, topic, s, children, style }: { rarity: TalkCard['rarity']; topic: TalkTopic; s: number; children: React.ReactNode; style?: React.CSSProperties }) {
   const t = TOPICS[topic]
-  const box: React.CSSProperties = { borderRadius: 12 * s, padding: 3 * s, flexShrink: 0, ...style }
+  const box: React.CSSProperties = { borderRadius: 12 * s, padding: (BETA ? 5 : 3) * s, flexShrink: 0, ...style }
   if (rarity === 'legendary') return <div className="holo-frame" style={{ ...box, boxShadow: '0 0 24px rgba(255,140,220,0.45)' }}>{children}</div>
   return (
     <div style={{
@@ -45,14 +45,16 @@ export default function TalkCardFace({ card, width = 150, dim = false }: { card:
   return (
     <Gilt rarity={card.rarity} topic={card.topic} s={s} style={{ width, height: width * TAROT_RATIO, opacity: dim ? 0.38 : 1 }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 9.5 * s, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: (BETA ? 7.5 : 9.5) * s, overflow: 'hidden',
         background: `${STARFIELD}, radial-gradient(90% 55% at 50% 30%, ${t.color}40 0%, transparent 70%), linear-gradient(175deg, #241252 0%, #140a33 55%, #0d0724 100%)`,
         display: 'flex', flexDirection: 'column', alignItems: 'center', padding: `${12 * s}px ${12 * s}px ${10 * s}px`,
       }}>
         {/* engraved inner rules */}
-        <div style={{ position: 'absolute', inset: 5 * s, borderRadius: 7 * s, border: `${Math.max(0.6, 1 * s)}px solid ${GOLD}aa`, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 8 * s, borderRadius: 5 * s, border: `${Math.max(0.4, 0.6 * s)}px solid ${GOLD}44`, pointerEvents: 'none' }} />
-        <Corners s={s} />
+        {!BETA && <>
+          <div style={{ position: 'absolute', inset: 5 * s, borderRadius: 7 * s, border: `${Math.max(0.6, 1 * s)}px solid ${GOLD}aa`, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 8 * s, borderRadius: 5 * s, border: `${Math.max(0.4, 0.6 * s)}px solid ${GOLD}44`, pointerEvents: 'none' }} />
+          <Corners s={s} />
+        </>}
 
         {/* numeral */}
         <div className="serif" style={{ display: 'flex', alignItems: 'center', gap: 6 * s, fontSize: 11 * s, letterSpacing: '0.18em', color: GOLD, marginTop: 1 * s }}>

@@ -5,6 +5,9 @@ import { BETA } from '../../lib/beta'
 const CHAKRAS = ['#b06cff', '#5b6cff', '#3fb6f0', '#4fd27a', '#f2cf4a', '#f39a3a', '#f0383a']
 
 /** Face-down card (Kit): indigo/violet glass, seed-of-life linework, chakra column. */
+/** beta: the same thick foil border as the face of the card */
+const EDGE = 7
+
 function CardBackImpl({ glow = true }: { glow?: boolean }) {
   const cx = CARD_W / 2
   const cy = CARD_H / 2 - 10
@@ -15,11 +18,11 @@ function CardBackImpl({ glow = true }: { glow?: boolean }) {
   })
   return (
     <div style={{
-      width: CARD_W, height: CARD_H, borderRadius: 20, padding: 1.5,
+      width: CARD_W, height: CARD_H, borderRadius: BETA ? 22 : 20, padding: BETA ? EDGE : 1.5,
       background: 'linear-gradient(160deg, #c8b4ff 0%, #6b4bd0 30%, #f2d784 52%, #6b4bd0 72%, #c8b4ff 100%)',
       boxShadow: glow ? '0 0 24px rgba(154,123,224,0.45), 0 18px 40px rgba(5,2,15,0.6)' : '0 10px 30px rgba(5,2,15,0.5)',
     }}>
-      <svg width={CARD_W - 3} height={CARD_H - 3} viewBox={`0 0 ${CARD_W} ${CARD_H}`} style={{ display: 'block', borderRadius: 18.5 }}>
+      <svg width={CARD_W - (BETA ? EDGE * 2 : 3)} height={CARD_H - (BETA ? EDGE * 2 : 3)} viewBox={`0 0 ${CARD_W} ${CARD_H}`} preserveAspectRatio="xMidYMid slice" style={{ display: 'block', borderRadius: BETA ? 22 - EDGE : 18.5 }}>
         <defs>
           <linearGradient id="cb-bg" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#2a1260" />
@@ -37,7 +40,7 @@ function CardBackImpl({ glow = true }: { glow?: boolean }) {
         </defs>
         <rect width={CARD_W} height={CARD_H} fill="url(#cb-bg)" />
         <rect width={CARD_W} height={CARD_H} fill="url(#cb-bloom)" />
-        <rect x="12" y="12" width={CARD_W - 24} height={CARD_H - 24} rx="12" fill="none" stroke="#c8b4ff" strokeOpacity="0.28" />
+        {!BETA && <rect x="12" y="12" width={CARD_W - 24} height={CARD_H - 24} rx="12" fill="none" stroke="#c8b4ff" strokeOpacity="0.28" />}
         <g fill="none" stroke="#d9c9ff" strokeOpacity="0.5" strokeWidth="1">
           <circle cx={cx} cy={cy} r={r * 2} strokeOpacity="0.35" />
           <circle cx={cx} cy={cy} r={r * 2 + 6} strokeOpacity="0.18" />
@@ -55,7 +58,7 @@ function CardBackImpl({ glow = true }: { glow?: boolean }) {
         ))}
         {BETA
           // beta: just the name, under the mark
-          ? <text x={cx + 4} y={cy + r * 2 + 44} textAnchor="middle" fontFamily="Space Mono, monospace" fontSize="15" letterSpacing="9" fill="#e6dcff" fillOpacity="0.85">ALIGN</text>
+          ? <text x={cx} y={cy + r * 2 + 54} textAnchor="middle" fontFamily="'EB Garamond', 'Cormorant Garamond', Georgia, serif" fontStyle="italic" fontSize="38" fill="#f1e9ff" fillOpacity="0.92">Align</text>
           : <text x={cx} y={CARD_H - 30} textAnchor="middle" fontFamily="Space Mono, monospace" fontSize="9" letterSpacing="3" fill="#c8b4ff" fillOpacity="0.55">ALIGN · ✦ · TONIGHT</text>}
       </svg>
     </div>

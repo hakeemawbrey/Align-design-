@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Corners, TAROT_RATIO, TalkCardBack } from '../talk/TalkCardFace'
 import { PLANET, type SkyCard } from '../../data/skyReading'
+import { BETA } from '../../lib/beta'
 
 const GOLD = '#f2d58a'
 export const SLOT_LABEL = { you: 'You', love: 'Love', move: 'Move' } as const
@@ -11,17 +12,19 @@ export function SkyCardFace({ card, width = 104, active = false }: { card: SkyCa
   const p = PLANET[card.planet]
   return (
     <div style={{
-      width, height: width * TAROT_RATIO, borderRadius: 10 * s, padding: 2.5 * s,
+      width, height: width * TAROT_RATIO, borderRadius: 10 * s, padding: (BETA ? 5 : 2.5) * s,
       background: `linear-gradient(155deg, #f8edff 0%, ${p.color} 38%, #4a3a7a 66%, #f8edff 100%)`,
       boxShadow: active ? `0 0 ${22 * s}px ${p.color}aa, 0 ${8 * s}px ${20 * s}px rgba(0,0,0,0.5)` : `0 ${6 * s}px ${16 * s}px rgba(0,0,0,0.45)`,
       transition: 'box-shadow .3s',
     }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 8 * s, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: (BETA ? 5.5 : 8) * s, overflow: 'hidden',
         background: `radial-gradient(90% 55% at 50% 38%, ${p.color}55 0%, transparent 70%), linear-gradient(180deg, #24124f, #0f0826)`,
       }}>
-        <div style={{ position: 'absolute', inset: 4 * s, borderRadius: 6 * s, border: `${Math.max(0.6, 0.8 * s)}px solid ${GOLD}77` }} />
-        <Corners s={s * 0.7} />
+        {!BETA && <>
+          <div style={{ position: 'absolute', inset: 4 * s, borderRadius: 6 * s, border: `${Math.max(0.6, 0.8 * s)}px solid ${GOLD}77` }} />
+          <Corners s={s * 0.7} />
+        </>}
         <div className="mono" style={{ position: 'absolute', top: 10 * s, left: 0, right: 0, textAlign: 'center', fontSize: 7 * s, letterSpacing: '0.24em', color: 'var(--label-2)', textTransform: 'uppercase' }}>
           {SLOT_LABEL[card.slot]}
         </div>
