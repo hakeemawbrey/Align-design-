@@ -36,7 +36,7 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 
 ## The background
 
-Every beta screen sits on the background from comealign.com and the feature film: the grainy violet nebula with four-point stars (`app/public/img/align-bg-mobile.svg`, 390 × 844, drawn by `components/Starfield.tsx` when `BETA`). The file's pixel moon is left out in the app copy, because it sat under the deck's star and the You screen's buttons. The full demo keeps its own starfield.
+Every beta screen sits on the background from comealign.com and the feature film: the grainy violet nebula with four-point stars (`app/public/img/align-bg-mobile.svg`, 390 × 844, drawn by `components/Starfield.tsx` when `BETA`). The file's pixel moon is left out in the app copy, because it sat under the deck's star and the You screen's buttons. Over it run the site's shooting stars (`components/FallingStars.tsx`): a pixel streak every 4 to 10 seconds, ported from comealign.com with the same timing, size and colours. They stop for reduced motion and while the tab is hidden. The full demo keeps its own starfield.
 
 ## The card frame
 
