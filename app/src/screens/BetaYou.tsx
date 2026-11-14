@@ -20,12 +20,18 @@ import SkySpread from '../components/sky/SkySpread'
 import MoonPhase from '../components/sky/MoonPhase'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
-import CardFrame from '../components/CardFrame'
+import CardFrame, { foil } from '../components/CardFrame'
+import { Planet } from '../components/onboarding/shared'
+import { PARTS } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
 const SCALE = 0.58
+/** the hand: card size */
+const MW = 80
+const MH = 124
+const LABEL: React.CSSProperties = { fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }
 
 const PANEL: React.CSSProperties = { borderRadius: 18, background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)' }
 const EYEBROW: React.CSSProperties = { fontSize: 9.5, color: 'var(--label-3)', letterSpacing: '0.2em' }
@@ -46,6 +52,7 @@ export default function BetaYou({ go }: ScreenProps) {
   const [sheet, setSheet] = useState<CardSide | null>(null)
   const { blockedSigns } = useSession()
   const [skyOpen, setSkyOpen] = useState(false)
+  const [reader, setReader] = useState<number | null>(null)
   const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
   const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
   const events = useMemo(() => upcoming(3), [])
@@ -152,6 +159,26 @@ export default function BetaYou({ go }: ScreenProps) {
             </div>
           </section>
 
+          {/* your hand: six cards from your birth chart */}
+          <div style={{ marginTop: 6, textAlign: 'center' }}>
+            <div className="h-display" style={{ fontSize: 26 }}>Your hand</div>
+            <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 4 }}>Six cards from your birth chart. Pull one to learn it.</div>
+          </div>
+          <div style={{ position: 'relative', height: MH + 46, marginTop: -8 }}>
+            {PARTS.map((o, i) => {
+              const k = i - (PARTS.length - 1) / 2
+              return (
+                <motion.button key={o.word} onClick={() => { sfx.flip(); setReader(i) }} aria-label={`${o.word} in ${o.value}`}
+                  initial={{ y: 60, opacity: 0, rotate: 0 }} animate={{ y: k * k * 4, opacity: 1, rotate: k * 7 }}
+                  whileHover={{ y: k * k * 4 - 18, zIndex: 10 }} whileTap={{ y: k * k * 4 - 22, scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 20, delay: i * 0.05 }}
+                  style={{ position: 'absolute', left: '50%', top: 8, width: MW, height: MH, marginLeft: -MW / 2 + k * 45, zIndex: i, transformOrigin: '50% 120%' }}>
+                  <MiniCard o={o} />
+                </motion.button>
+              )
+            })}
+          </div>
+
           {/* your sign */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <span className="eyebrow" style={EYEBROW}>Your sign</span>
@@ -164,7 +191,7 @@ export default function BetaYou({ go }: ScreenProps) {
                   <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 5 }}>{FACTS.element} · {FACTS.mode} · ruled by {FACTS.ruler}</span>
                 </span>
               </button>
-              <Link label="Learn your sign" sub="Sun, moon, rising, Venus, Jupiter, your house" onClick={() => go('chart')} />
+              <Link label="Learn your sign" sub="Your element, your planet and the quick facts" onClick={() => go('chart')} />
               <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
             </CardFrame>
           </section>
@@ -224,9 +251,78 @@ export default function BetaYou({ go }: ScreenProps) {
       <TabBar active="you" go={go} />
 
       <AnimatePresence>
+        {reader != null && <Reader key="reader" start={reader} onClose={() => setReader(null)} />}
         {sheet && <YourCardSheet key="card" initial={sheet} onClose={() => setSheet(null)} onEdit={(side) => go(`x/edit-card/${side}`)} />}
       </AnimatePresence>
     </div>
+  )
+}
+
+/** one card in your hand */
+function MiniCard({ o }: { o: (typeof PARTS)[number] }) {
+  return (
+    <div style={{ width: '100%', height: '100%', borderRadius: 12, padding: 3, background: foil(o.ink), boxShadow: `0 8px 18px rgba(0,0,0,0.5), 0 0 14px color-mix(in srgb, ${o.ink} 35%, transparent)` }}>
+      <div style={{ width: '100%', height: '100%', borderRadius: 9, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '8px 4px 9px',
+        background: `radial-gradient(90% 60% at 50% 40%, color-mix(in srgb, ${o.color} 40%, #1b112f), #120b22)` }}>
+        <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', fontWeight: 700, color: o.ink }}>{o.word.toUpperCase()}</span>
+        <Planet size={Math.min(44, o.size)} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={0.6} />
+        <span className="serif italic" style={{ fontSize: 14, lineHeight: 1.05, color: 'var(--label-1)', textAlign: 'center' }}>{o.value}</span>
+      </div>
+    </div>
+  )
+}
+
+/** a card from your hand, big: swipe or tap the arrows for the next one */
+function Reader({ start, onClose }: { start: number; onClose: () => void }) {
+  const [i, setI] = useState(start)
+  const [dir, setDir] = useState(0)
+  const o = PARTS[i]
+  const to = (n: number) => { if (n < 0 || n >= PARTS.length) return; sfx.flip(); setDir(n > i ? 1 : -1); setI(n) }
+  return (
+    <motion.div role="dialog" aria-label={`${o.word} in ${o.value}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={onClose} style={{ position: 'absolute', inset: 0, zIndex: 60, background: 'rgba(5,2,15,0.86)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
+      <div aria-hidden style={{ position: 'absolute', left: '50%', top: '42%', width: 420, height: 420, marginLeft: -210, marginTop: -210, borderRadius: '50%', filter: 'blur(50px)', background: `radial-gradient(closest-side, color-mix(in srgb, ${o.ink} 45%, transparent), transparent)`, transition: 'background 0.4s' }} />
+      <div className="mono" style={{ position: 'absolute', top: 64, left: 0, right: 0, textAlign: 'center', ...LABEL, color: 'var(--label-2)' }}>YOUR HAND · {i + 1} OF {PARTS.length}</div>
+      <AnimatePresence initial={true} mode="popLayout" custom={dir}>
+        <motion.div key={o.word} custom={dir}
+          initial={{ rotateY: dir === 0 ? 180 : dir * 70, x: dir * 120, opacity: 0, scale: 0.9 }} animate={{ rotateY: 0, x: 0, opacity: 1, scale: 1 }} exit={{ rotateY: dir * -70, x: dir * -120, opacity: 0, scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 24 }}
+          drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.5}
+          onDragEnd={(_, d) => { if (d.offset.x < -70) to(i + 1); else if (d.offset.x > 70) to(i - 1) }}
+          onClick={(e) => e.stopPropagation()}
+          style={{ position: 'absolute', left: 30, right: 30, top: 96, borderRadius: 24, padding: 4, background: foil(o.ink), boxShadow: `0 0 40px color-mix(in srgb, ${o.ink} 45%, transparent), 0 24px 50px rgba(0,0,0,0.6)`, touchAction: 'pan-y' }}>
+          <div style={{ borderRadius: 20, padding: '18px 20px 16px', background: 'linear-gradient(180deg, #1d1233, #120b22)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              <Planet size={o.size + 8} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={0.8} />
+              <div style={{ minWidth: 0 }}>
+                <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>{o.word.toUpperCase()} · {o.value.toUpperCase()}</div>
+                <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 2 }}>{o.plain}</div>
+              </div>
+            </div>
+            <div className="serif italic" style={{ fontSize: 27, lineHeight: 1.12, color: 'var(--label-1)', marginTop: 14 }}>{o.read.headline}</div>
+            <p style={{ margin: '10px 0 0', fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)' }}>{o.read.meaning}</p>
+            {([['In love', o.read.love], ['For you', o.read.self]] as const).map(([k, v]) => (
+              <div key={k} style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
+                <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>{k.toUpperCase()}</div>
+                <div style={{ fontSize: 14.5, lineHeight: 1.42, color: 'var(--label-1)', marginTop: 3 }}>{v}</div>
+              </div>
+            ))}
+            <div style={{ marginTop: 14, borderRadius: 14, padding: '10px 12px', background: `color-mix(in srgb, ${o.ink} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${o.ink} 40%, transparent)` }}>
+              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: o.ink }}>TRY THIS </span>
+              <span className="serif italic" style={{ fontSize: 15.5, color: 'var(--label-1)' }}>{o.read.tryLine}</span>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      <div onClick={(e) => e.stopPropagation()} style={{ position: 'absolute', left: 30, right: 30, bottom: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <button aria-label="Previous card" onClick={() => to(i - 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>‹</button>
+        <div style={{ display: 'flex', gap: 6 }}>
+          {PARTS.map((p, n) => <button key={p.word} aria-label={p.word} onClick={() => to(n)} style={{ width: n === i ? 18 : 7, height: 7, borderRadius: 4, background: n === i ? p.ink : 'rgba(179,166,196,0.35)', transition: 'width 0.2s' }} />)}
+        </div>
+        <button aria-label="Next card" onClick={() => to(i + 1)} style={{ width: 48, height: 48, borderRadius: 24, display: 'grid', placeItems: 'center', fontSize: 20, color: 'var(--label-1)', opacity: i < PARTS.length - 1 ? 1 : 0.3, background: 'rgba(52,35,95,0.7)' }}>›</button>
+      </div>
+      <button aria-label="Close" onClick={onClose} style={{ position: 'absolute', right: 14, top: 52, width: 40, height: 40, display: 'grid', placeItems: 'center', fontSize: 22, color: 'var(--label-1)' }}>×</button>
+    </motion.div>
   )
 }
 
