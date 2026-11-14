@@ -1,0 +1,20 @@
+{
+  "id": "02-brain-in-love",
+  "title": "What happens to your brain when you fall for someone",
+  "caption": "the chemistry is real. it's just not the whole story",
+  "cta": "comment MARS and we'll send you what your spark sign says",
+  "hashtags": ["love", "astrology", "mars", "venus", "zodiac"],
+  "cast": {"you": {"skin": "#f1c6a2", "shirt": "#e2556f", "pants": "#2f3557", "hair": "#c9772f", "style": "long", "sign": "aries"}, "them": {"skin": "#b47a52", "shirt": "#6a6fd8", "pants": "#26263a", "hair": "#1c120c", "style": "short", "sign": "libra"}},
+  "end": "it has to be mutual",
+  "scenes": [
+    {"text": "When you fall for someone, your brain does something kind of *terrifying.*", "set": "cafe", "shot": "slow", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smitten"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "smile"}], "fx": ["slowmo"], "sfx": "heartbeat", "cut": 5, "b": {"set": "lab", "shot": "push", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "neutral", "xray": "brain"}], "fx": [], "sfx": "cut"}},
+    {"text": "It floods itself with *dopamine,* the same reward chemical behind a sugar rush.", "set": "studio", "shot": "push", "focus": "center", "fx": ["organ:brain"], "impact": true, "tag": "dopamine", "sfx": "sparkle", "cut": 5, "b": {"set": "lab", "shot": "close", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "smitten", "xray": "brain"}], "fx": ["sparks"]}},
+    {"text": "Your heart rate jumps. Your palms sweat. And then it gets worse.", "set": "studio", "shot": "slow", "focus": "center", "fx": ["organ:heart"], "sfx": "heartbeat", "cut": 6, "b": {"set": "lab", "shot": "snap", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "shock", "expr": "shock", "xray": "heart"}], "fx": ["sweat"]}},
+    {"text": "The part of your brain that judges people goes *quiet.*", "set": "studio", "shot": "push", "focus": "center", "fx": ["organ:brain-dim", "zzz"], "sfx": "pop"},
+    {"text": "That's why they seem perfect. You literally stopped checking.", "set": "cafe", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smitten"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "smug"}], "fx": ["hearts"], "sfx": "boing"},
+    {"text": "Astrologers have a name for this rush. *Mars.*", "set": "space", "shot": "orbit", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "shock"}], "fx": ["planet:mars"], "sfx": "whoosh", "cut": 6, "b": {"set": "studio", "shot": "push", "focus": "center", "cast": [], "fx": ["big:mars"], "impact": true, "tag": "mars = the spark", "sfx": "cut"}},
+    {"text": "But Mars is only the spark. *Venus* is how you want to be loved.", "set": "space", "shot": "wide", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "smile"}], "fx": ["planet:mars", "planet:venus"], "sfx": "whoosh"},
+    {"text": "So what's left when the rush fades? *Alignment.*", "set": "room", "shot": "push", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "stand", "expr": "smile", "look": "them"}, {"who": "them", "mark": "right", "pose": "stand", "expr": "smile", "look": "you"}], "fx": ["hearts"], "sfx": "ding"},
+    {"text": "Feel the spark. Then check if it's mutual.", "set": "space", "shot": "pull", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "smile"}, {"who": "them", "mark": "right", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}

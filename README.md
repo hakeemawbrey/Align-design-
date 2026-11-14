@@ -101,6 +101,8 @@ For Align Town reels (a walk through a 3D astrology town, one card per line), se
 
 For spoken love-and-zodiac affirmation reels (line art that draws itself in, word-by-word captions, a "Comment WORD" ending) and the Instagram page that posts them, see [reels/affirm/README.md](reels/affirm/README.md) and [reels/affirm/PROFILE.md](reels/affirm/PROFILE.md).
 
+For "How you…" reels (3D story explainers in the style of Zack D. Films shorts: clay characters, a deadpan narrator, x-ray cutaways and word-by-word captions, each explaining one love idea through astrology), see [reels/howyou/README.md](reels/howyou/README.md).
+
 For "What's the difference?" reels (two words people mix up, two framed Align cards, Star Talk's pixel star shrugging until the answer lands), see [reels/difference/README.md](reels/difference/README.md).
 
 For Align Signs reels (cards that talk straight to each zodiac sign: letters, love advice, relatable lines, alignment and invites, over a catalogue of ~900 free public-domain paintings), see [reels/signs/README.md](reels/signs/README.md).

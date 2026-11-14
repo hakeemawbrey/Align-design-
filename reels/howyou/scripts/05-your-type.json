@@ -1,0 +1,20 @@
+{
+  "id": "05-your-type",
+  "title": "How you dated the same sign five times",
+  "caption": "it's not your type. it's your seventh house",
+  "cta": "comment SEVENTH and we'll send you what's in yours",
+  "hashtags": ["seventhhouse", "astrology", "dating", "zodiac", "gemini"],
+  "cast": {"you": {"skin": "#e8b48c", "shirt": "#4f7ee0", "pants": "#2b2b44", "hair": "#3a2416", "style": "short", "sign": "sagittarius"}, "ex1": {"skin": "#c78a62", "shirt": "#f2c94c", "pants": "#3a3a52", "hair": "#1a110c", "style": "curly", "sign": "gemini"}, "ex2": {"skin": "#f3d1b5", "shirt": "#f2c94c", "pants": "#3a3a52", "hair": "#d9a441", "style": "long", "sign": "gemini"}, "ex3": {"skin": "#8c5b3e", "shirt": "#f2c94c", "pants": "#3a3a52", "hair": "#0e0a08", "style": "bun", "sign": "gemini"}, "ex4": {"skin": "#dba27a", "shirt": "#f2c94c", "pants": "#3a3a52", "hair": "#7a3b1c", "style": "short", "sign": "gemini"}, "ex5": {"skin": "#b37650", "shirt": "#f2c94c", "pants": "#3a3a52", "hair": "#241510", "style": "long", "sign": "gemini"}},
+  "end": "dealbreakers up front",
+  "scenes": [
+    {"text": "Why do you keep dating the same person in a different body?", "set": "street", "shot": "pull", "focus": "line", "cast": [{"who": "ex1", "mark": "line1", "pose": "wave", "expr": "smile"}, {"who": "ex2", "mark": "line2", "pose": "stand", "expr": "smug"}, {"who": "ex3", "mark": "line3", "pose": "wave", "expr": "smile"}, {"who": "ex4", "mark": "line4", "pose": "stand", "expr": "smile"}, {"who": "ex5", "mark": "line5", "pose": "phone", "expr": "smug"}], "sfx": "whoosh"},
+    {"text": "Ex number one. A *Gemini.* Funny, chaotic, gone by June.", "set": "cafe", "shot": "medium", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smitten"}, {"who": "ex1", "mark": "seatR", "pose": "sit", "expr": "grin"}], "fx": ["glyph:gemini@ex1"], "sfx": "pop"},
+    {"text": "Ex number two. Also a Gemini.", "set": "cafe", "shot": "snap", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smitten"}, {"who": "ex2", "mark": "seatR", "pose": "sit", "expr": "grin"}], "fx": ["glyph:gemini@ex2"], "impact": true, "sfx": "boing"},
+    {"text": "By number five, your friends had a group chat about it.", "set": "phone", "shot": "phone", "screen": {"name": "the girls + kev", "msgs": [["them", "another gemini??"], ["them", "it's a pattern at this point"], ["them", "someone check their chart"]]}, "sfx": "pop"},
+    {"text": "Astrology says it's not your type. It's your *seventh house.*", "set": "space", "shot": "top", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "shock"}], "fx": ["wheel", "house7"], "tag": "the 7th house", "impact": true, "sfx": "swell"},
+    {"text": "It's the part of your chart about partners. And whatever sign sits there pulls you in.", "set": "space", "shot": "orbit", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "point", "expr": "neutral"}], "fx": ["wheel", "house7"], "sfx": "whoosh", "cut": 8, "b": {"shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "worried"}], "fx": ["glyph:gemini", "pull"]}},
+    {"text": "So what's in yours? Gemini. Of course it is.", "set": "room", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "think", "expr": "worried"}], "fx": ["question"], "sfx": "pop", "cut": 3, "b": {"shot": "snap", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "shrug", "expr": "smug"}], "fx": ["glyph:gemini"], "impact": true, "sfx": "boing"}},
+    {"text": "A type is a pattern. *Alignment* is a choice.", "set": "street", "shot": "slow", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "smile"}], "sfx": "ding"},
+    {"text": "So put your dealbreakers up front.", "set": "space", "shot": "pull", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "04-mercury-retrograde",
+  "title": "How Mercury retrograde ruined your text",
+  "caption": "mercury didn't send it. but it was watching",
+  "cta": "comment RETRO and we'll send you the dates for the next one",
+  "hashtags": ["mercuryretrograde", "astrology", "mercury", "texting", "zodiac"],
+  "cast": {"you": {"skin": "#a8704c", "shirt": "#3fae8c", "pants": "#2b2e4a", "hair": "#140d0a", "style": "curly", "sign": "gemini"}, "them": {"skin": "#f2c8a6", "shirt": "#c64a5c", "pants": "#2f2f3f", "hair": "#5a3418", "style": "long", "sign": "scorpio"}},
+  "end": "say the honest thing",
+  "scenes": [
+    {"text": "Every few months, Mercury goes *backwards.* And everyone blames it for everything.", "set": "space", "shot": "orbit", "focus": "center", "cast": [], "fx": ["planet:mercury", "retro"], "tag": "mercury retrograde", "sfx": "rewind", "cut": 5, "b": {"set": "room", "shot": "push", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "phone", "expr": "worried"}], "fx": []}},
+    {"text": "But here's the thing. Mercury never actually turns around.", "set": "studio", "shot": "push", "focus": "center", "fx": ["big:mercury"], "impact": true, "sfx": "whoosh"},
+    {"text": "Earth is just passing it, like overtaking a car on the highway. From here, it looks like it's reversing.", "set": "space", "shot": "top", "focus": "center", "cast": [], "fx": ["orbits"], "sfx": "whoosh", "cut": 12, "b": {"set": "space", "shot": "orbit", "focus": "center", "cast": [], "fx": ["retro"], "sfx": "rewind"}},
+    {"text": "But Mercury rules talking and texting. So astrologers say, slow down.", "set": "space", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "phone", "expr": "worried"}], "fx": ["planet:mercury"], "sfx": "pop"},
+    {"text": "You type, *I miss you.*", "set": "phone", "shot": "phone", "screen": {"name": "Sam", "msgs": [["them", "see you saturday"], ["me", "I miss you"]]}, "sfx": "pop"},
+    {"text": "And you send it to the wrong person. Your *ex.*", "set": "phone", "shot": "phone", "screen": {"name": "do not text", "msgs": [["them", "please stop"], ["me", "I miss you"]]}, "impact": true, "sfx": "thud"},
+    {"text": "They reply in four seconds.", "set": "room", "shot": "snap", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "shock", "expr": "shock"}], "fx": ["exclaim", "sweat"], "sfx": "boing"},
+    {"text": "Retrograde didn't send it. But it's a good time to reread.", "set": "street", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "think", "expr": "worried"}], "fx": ["retro"], "sfx": "whoosh"},
+    {"text": "And say what you mean, to the right person.", "set": "space", "shot": "pull", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "smile"}, {"who": "them", "mark": "right", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}

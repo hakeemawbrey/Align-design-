@@ -1,0 +1,20 @@
+{
+  "id": "03-rising-sign",
+  "title": "Why your first date never met the real you",
+  "caption": "they fell for the capricorn rising. then they met the pisces",
+  "cta": "comment RISING and we'll send you yours. you'll need your birth time",
+  "hashtags": ["risingsign", "astrology", "firstdate", "zodiac", "birthchart"],
+  "cast": {"you": {"skin": "#c98c63", "shirt": "#7c6bd6", "pants": "#2a2d48", "hair": "#2a1810", "style": "bun", "sign": "pisces"}, "them": {"skin": "#f0c9a8", "shirt": "#e88a3c", "pants": "#33364f", "hair": "#e3c06a", "style": "short", "sign": "taurus"}},
+  "end": "say the honest thing",
+  "scenes": [
+    {"text": "Your first date never actually met you. They met your *rising sign.*", "set": "cafe", "shot": "push", "focus": "both", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smug"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "smitten"}], "sfx": "whoosh", "cut": 6, "b": {"set": "studio", "shot": "push", "focus": "center", "cast": [{"who": "you", "mark": "center", "pose": "stand", "expr": "smug"}], "fx": ["glyph:capricorn"], "impact": true}},
+    {"text": "Here's how. You were born at *7:42* in the morning.", "set": "room", "shot": "snap", "focus": "clock", "cast": [], "fx": ["clock"], "sfx": "tick"},
+    {"text": "At that exact minute, one sign was coming up over the eastern horizon.", "set": "space", "shot": "low", "focus": "horizon", "cast": [], "fx": ["rise:capricorn"], "tag": "your rising sign", "sfx": "swell"},
+    {"text": "That's your *rising.* And it changes about every two hours.", "set": "space", "shot": "orbit", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "shock"}], "fx": ["wheel", "glyph:capricorn"], "sfx": "whoosh"},
+    {"text": "It's how strangers see you. So on the date, you were calm and put together.", "set": "street", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "wave", "expr": "smile"}], "fx": ["glyph:capricorn"], "sfx": "pop", "cut": 5, "b": {"set": "cafe", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "seatL", "pose": "sit", "expr": "smug"}, {"who": "them", "mark": "seatR", "pose": "sit", "expr": "smitten"}], "fx": ["sparks"], "sfx": "ding"}},
+    {"text": "But your sun is *Pisces.* At home, you cry at dog videos.", "set": "room", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "phone", "expr": "sad"}], "fx": ["tears", "glyph:pisces"], "sfx": "boing"},
+    {"text": "They fell for the Capricorn. Then they met the Pisces.", "set": "room", "shot": "medium", "focus": "you", "cast": [{"who": "you", "mark": "bed", "pose": "phone", "expr": "sad"}], "fx": ["tears"], "sfx": "whoosh", "cut": 5, "b": {"shot": "snap", "focus": "them", "cast": [{"who": "you", "mark": "bed", "pose": "phone", "expr": "sad"}, {"who": "them", "mark": "door", "pose": "shock", "expr": "shock", "look": "you"}], "fx": ["exclaim"], "impact": true, "sfx": "thud"}},
+    {"text": "Your rising gets you the date. Your sun and moon decide if it lasts.", "set": "space", "shot": "wide", "focus": "you", "cast": [{"who": "you", "mark": "center", "pose": "float", "expr": "smile"}], "fx": ["planet:sun", "planet:moon"], "sfx": "whoosh"},
+    {"text": "So say the honest thing early.", "set": "space", "shot": "pull", "focus": "both", "cast": [{"who": "you", "mark": "left", "pose": "float", "expr": "smile"}, {"who": "them", "mark": "right", "pose": "float", "expr": "smile"}], "fx": ["link"], "sfx": "swell"}
+  ]
+}
