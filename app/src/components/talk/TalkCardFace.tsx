@@ -1,4 +1,6 @@
 import { ARCANA, TOPICS, type TalkCard, type TalkTopic } from '../../data/talkCards'
+import { BETA } from '../../lib/beta'
+import CardBack from '../intro/CardBack'
 import TarotEmblem from './TarotEmblem'
 
 export const KIND_LABEL = { ask: 'Question', pick: 'This or that', who: 'Who’s more likely' } as const
@@ -96,6 +98,8 @@ export default function TalkCardFace({ card, width = 150, dim = false }: { card:
 /** The back of every talk card: sun, moon and star in gold. */
 export function TalkCardBack({ width = 150, color = '#b18cff' }: { width?: number; color?: string }) {
   const s = width / 150
+  // the beta's communication cards share the main Align card back
+  if (BETA) return <CardBack width={width} height={width * TAROT_RATIO} style={{ borderRadius: 12 * s }} />
   return (
     <div style={{ width, height: width * TAROT_RATIO, borderRadius: 12 * s, padding: 3 * s, background: `linear-gradient(155deg, #f8e7b0, #b08a3a 45%, #f8e7b0)`, boxShadow: '0 10px 24px rgba(0,0,0,0.5)' }}>
       <div style={{
