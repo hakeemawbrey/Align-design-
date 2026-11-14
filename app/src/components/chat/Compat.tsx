@@ -7,6 +7,7 @@ import { usToday } from '../../data/skyReading'
 import { sfx } from '../../lib/sfx'
 import CardFrame, { CardOrb } from '../CardFrame'
 import type { ChartRow } from '../../lib/compat'
+import { ChartWheel, PairArt, PairChip } from './GuideArt'
 import { MY_READING_TITLE, READINGS } from './readings'
 
 /** each area's card colour follows its planet (sun gold, moon blue, rising violet), not how it reads */
@@ -188,6 +189,8 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
     return []
   }, [chart, t.id])
   const [tonight, setTonight] = useState(false)
+  const [more, setMore] = useState(false)
+  useEffect(() => { setMore(false) }, [tab])
   return (
     <AnimatePresence>
       {open && (
@@ -233,7 +236,13 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                   <CardFrame tint={t.color} kicker={`${t.label} · ${t.eyebrow}`} title={part.headline}
                     strip={part.tryLine ? { label: 'Try this', text: part.tryLine } : undefined}
                     footer={['Align · alignment guide', `${tab + 1}/${TABS.length}`]}>
-                    {part.body && <p style={{ margin: '0 0 2px', fontSize: 15, lineHeight: 1.5, color: 'var(--label-1)' }}>{part.body}</p>}
+                    <PairArt kind={t.id as 'pull' | 'push' | 'align' | 'relationship'} mine={ME.sign} theirs={them.sign} />
+                    {part.body && (
+                      <>
+                        <p style={{ margin: '0 0 2px', fontSize: 15, lineHeight: 1.5, color: 'var(--label-1)', ...(more ? {} : { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }) }}>{part.body}</p>
+                        <button className="mono" onClick={() => { sfx.tap(); setMore((m) => !m) }} aria-expanded={more} style={{ height: 26, fontSize: 9, letterSpacing: '0.16em', color: t.color }}>{more ? 'LESS ‹' : 'MORE ›'}</button>
+                      </>
+                    )}
                     {part.card && (
                       <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
                         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>ON {them.name.toUpperCase()}’S CARD</div>
@@ -244,11 +253,12 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                       <div style={{ marginTop: 12, paddingTop: 11, borderTop: '1px solid rgba(179,166,196,0.16)' }}>
                         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: t.color }}>IN YOUR CHARTS</div>
                         {partRows.map((row) => (
-                          <div key={row.id} style={{ marginTop: 8 }}>
-                            <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-2)' }}>
-                              {SIGNS[row.mine.sign].glyph} YOUR {row.mine.planet.toUpperCase()} × {them.name.toUpperCase()}’S {row.theirs.planet.toUpperCase()} {SIGNS[row.theirs.sign].glyph}
+                          <div key={row.id} style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 10 }}>
+                            <PairChip row={row} />
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div className="mono" style={{ fontSize: 8, letterSpacing: '0.12em', color: 'var(--label-3)' }}>YOUR {row.mine.planet.toUpperCase()} × THEIR {row.theirs.planet.toUpperCase()}</div>
+                              <div style={{ fontSize: 13.5, lineHeight: 1.38, color: 'var(--label-1)', marginTop: 2 }}>{row.love}</div>
                             </div>
-                            <div style={{ fontSize: 14, lineHeight: 1.42, color: 'var(--label-1)', marginTop: 3 }}>{row.love}</div>
                           </div>
                         ))}
                       </div>
@@ -263,6 +273,7 @@ export function CompatSheet({ them, open, onClose, onPlayCard, startTab = 0 }: {
                   {/* your chart next to theirs, read for love */}
                   {t.id === 'chart' && (
                     <CardFrame tint={t.color} kicker={`Chart · ${t.eyebrow}`} title="How your charts meet, for love" padding="14px 14px 6px" footer={['Align · alignment guide', `${tab + 1}/${TABS.length}`]}>
+                      <ChartWheel rows={chart.rows} mine={ME.sign} theirs={them.sign} name={them.name} />
                       <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)', padding: '0 2px 2px' }}>
                         <span>YOU</span><span>{them.name.toUpperCase()}</span>
                       </div>

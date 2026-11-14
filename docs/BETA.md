@@ -43,7 +43,9 @@ One guide, two places (`components/chat/Compat.tsx`). In the chat it is one quie
 - **Chart:** your chart next to theirs, pairing by pairing, read for love (`chartRows` in `lib/compat.ts`): Sun × Sun (who you each are), Moon × Moon (how you each feel), Rising × Rising (how you come across), your Venus × their Sun (what you're drawn to), your Sun × their Moon (whether you feel like home). Each row shows both signs, a neutral tag for how they sit to each other, and one sentence. A match whose card only shows a sun sign gets the rows that need nothing else.
 - Under every tab: "Tonight" as one small row that opens to the full line and "Play a talk card", then the disclaimer.
 
-Words only, as before: no score, percentage, rating or strength dots anywhere in it. The old separate "full alignment" screen is no longer linked from the beta.
+Pictures carry it, not paragraphs (`components/chat/GuideArt.tsx`): each part opens with the two sign orbs acting it out (leaning in with sparks, bumping with a crack, coming to rest overlapped, circling each other), the pairings in a part are shown as two small sign orbs, the long paragraph shows two lines with a "More" toggle, and the Chart tab leads with a zodiac wheel: your placements on the outer ring, theirs on the inner, a line for each pairing. The pictures illustrate; none of them is a meter.
+
+No score, percentage, rating or strength dots anywhere in it. The old separate "full alignment" screen is no longer linked from the beta.
 
 ## Cards in chat: today's three
 
