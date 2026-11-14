@@ -5,6 +5,7 @@ import Starfield from '../components/Starfield'
 import { SIGNS, type SignId } from '../data/signs'
 import { session, useSession } from '../lib/session'
 import { sfx } from '../lib/sfx'
+import { BETA } from '../lib/beta'
 
 const ORDER: SignId[] = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve']
@@ -51,7 +52,7 @@ export default function Block({ go }: ScreenProps) {
         <motion.div key={choosing ? 'c' : 'v'} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }}
           style={{ position: 'absolute', left: 24, right: 24, top: 100 }}>
           <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>
-            ALIGN+ · {choosing ? 'CHOOSE SIGNS' : 'BLOCK A SIGN'}
+            {BETA ? '' : 'ALIGN+ · '}{choosing ? 'CHOOSE SIGNS' : 'BLOCK A SIGN'}
           </div>
           <div className="h-display" style={{ fontSize: 30, marginTop: 8, lineHeight: 1.1 }}>
             {choosing ? <>Which signs are<br />off the table?</> : <>Take a whole sign<br />off the table.</>}
@@ -112,12 +113,14 @@ export default function Block({ go }: ScreenProps) {
               <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>{names.length ? names.join(' · ') : 'Nothing blocked'}</span>
               <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>{names.length ? `since ${blockedSince} ›` : '›'}</span>
             </button>
+            {!BETA && <>
             <div className="mono" style={{ marginTop: 18, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-2)' }}>ALSO WITH ALIGN+</div>
             <button onClick={() => { sfx.tap(); go('x/priority') }}
               style={{ marginTop: 8, width: '100%', height: 46, borderRadius: 16, padding: '0 16px', display: 'flex', alignItems: 'center', background: 'rgba(52,35,95,0.6)', border: '1px solid rgba(179,166,196,0.18)', textAlign: 'left' }}>
               <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>Priority in tonight’s decks</span>
               <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>›</span>
             </button>
+            </>}
           </>
         )}
       </div>
