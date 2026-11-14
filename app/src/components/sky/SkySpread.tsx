@@ -64,8 +64,8 @@ export default function SkySpread({ reading = TODAY_READING, reward = true }: { 
             style={{ width: W, height: W * TAROT_RATIO, perspective: 800, cursor: 'pointer' }}>
             <motion.div animate={{ rotateY: up[i] ? 0 : 180 }} initial={false} transition={{ duration: 0.6, ease: [0.3, 1.3, 0.5, 1] }}
               style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>
-              <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}><SkyCardFace card={c} width={W} active={sel === i} /></div>
-              <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+              <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}><SkyCardFace card={c} width={W} active={sel === i} /></div>
+              <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                 <motion.div animate={up[i] ? {} : { y: [0, -3, 0] }} transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.3 }} style={{ willChange: 'transform' }}>
                   <SkyCardBack slot={c.slot} width={W} />
                 </motion.div>

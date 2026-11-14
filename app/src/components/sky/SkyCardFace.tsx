@@ -28,16 +28,17 @@ export function SkyCardFace({ card, width = 104, active = false }: { card: SkyCa
         <div className="mono" style={{ position: 'absolute', top: 10 * s, left: 0, right: 0, textAlign: 'center', fontSize: 7 * s, letterSpacing: '0.24em', color: 'var(--label-2)', textTransform: 'uppercase' }}>
           {SLOT_LABEL[card.slot]}
         </div>
-        <motion.div animate={{ scale: [1, 1.06, 1] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ position: 'absolute', top: 34 * s, left: 0, right: 0, willChange: 'transform', textAlign: 'center', fontSize: 50 * s, lineHeight: 1, color: p.color, textShadow: `0 0 ${18 * s}px ${p.color}` }}>
-          {p.glyph}{'︎'}
-        </motion.div>
         <div className="serif" style={{ position: 'absolute', top: 98 * s, left: 0, right: 0, textAlign: 'center', fontSize: 9 * s, letterSpacing: '0.22em', textTransform: 'uppercase', color: GOLD }}>
           {p.name}
         </div>
         <div className="serif italic" style={{ position: 'absolute', top: 116 * s, left: 8 * s, right: 8 * s, textAlign: 'center', fontSize: 10.5 * s, lineHeight: 1.2, color: 'var(--label-1)' }}>
           {card.headline}
         </div>
+        {/* the glyph pulses, so it's drawn last: in Safari, anything painted after an animated layer inside a flipping card can disappear */}
+        <motion.div animate={{ scale: [1, 1.06, 1] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ position: 'absolute', top: 34 * s, left: 0, right: 0, textAlign: 'center', fontSize: 50 * s, lineHeight: 1, color: p.color, textShadow: `0 0 ${18 * s}px ${p.color}` }}>
+          {p.glyph}{'︎'}
+        </motion.div>
       </div>
     </div>
   )
