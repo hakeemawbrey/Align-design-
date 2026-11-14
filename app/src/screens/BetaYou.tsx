@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
+import AlignMark from '../components/intro/AlignMark'
 import TabBar from '../components/TabBar'
 import ProfileCard from '../components/deck/ProfileCard'
 import { CARD_W, CARD_H } from '../components/deck/fx'
@@ -181,7 +182,9 @@ export default function BetaYou({ go }: ScreenProps) {
                   <span style={{ height: 118, borderRadius: 13, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '10px 6px 11px',
                     background: `radial-gradient(90% 60% at 50% 36%, color-mix(in srgb, ${row.color} 26%, #1b112f), #120b22)` }}>
                     <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
-                    <span style={{ fontSize: 30, lineHeight: 1, color: row.color, textShadow: `0 0 16px ${row.color}` }}>{row.glyph}{'\uFE0E'}</span>
+                    {row.k === 'align'
+                      ? <AlignMark size={46} strokeOpacity={0.9} strokeWidth={0.9} dotRadius={4.2} style={{ margin: '-6px 0', filter: `drop-shadow(0 0 8px ${row.color})` }} />
+                      : <span style={{ fontSize: 30, lineHeight: 1, color: row.color, textShadow: `0 0 16px ${row.color}` }}>{row.glyph}{'\uFE0E'}</span>}
                     <span className="serif italic" style={{ fontSize: 13.5, lineHeight: 1.15, color: 'var(--label-1)', textAlign: 'center' }}>{row.what}</span>
                   </span>
                 </motion.button>
@@ -384,7 +387,9 @@ function SelfReader({ start, onClose }: { start: number; onClose: () => void }) 
               <span className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
               <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{SUN.name.toUpperCase()} {SUN.glyph}</span>
             </div>
-            <div style={{ textAlign: 'center', fontSize: 64, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '26px 0 22px' }}>{row.glyph}{'\uFE0E'}</div>
+            {row.k === 'align'
+              ? <div style={{ display: 'grid', placeItems: 'center', margin: '8px 0 6px' }}><AlignMark size={116} animate strokeOpacity={0.9} strokeWidth={0.7} style={{ filter: `drop-shadow(0 0 14px ${row.color})` }} /></div>
+              : <div style={{ textAlign: 'center', fontSize: 64, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '26px 0 22px' }}>{row.glyph}{'\uFE0E'}</div>}
             <div className="mono" style={{ textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>{row.what.toUpperCase()}</div>
             <div className="serif italic" style={{ textAlign: 'center', fontSize: 25, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 10, flex: 1 }}>{SELF[ME.sign][row.k]}</div>
             <div style={{ marginTop: 18, paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.18)', fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.why}</div>
