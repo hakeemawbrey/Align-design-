@@ -110,7 +110,11 @@ export default function BetaYou({ go }: ScreenProps) {
           {/* your name, then your hand: six cards from your birth chart, fanned */}
           <div style={{ textAlign: 'center', marginTop: -8 }}>
             <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
-            <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 4 }}>Six cards from your birth chart. Tap one to learn it.</div>
+            <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: SUN.light, marginTop: 8 }}>{SUN.name.toUpperCase()} {SUN.glyph} · {FACTS.element.toUpperCase()}</div>
+            <div className="serif italic" style={{ fontSize: 17, lineHeight: 1.3, color: 'var(--label-1)', margin: '5px auto 0', maxWidth: 300 }}>
+              Most likely to {FACTS.likely.replace(/\.$/, '').replace(/^./, (c) => c.toLowerCase())}.{' '}
+              <button onClick={() => { sfx.tap(); go('chart') }} className="mono" style={{ fontStyle: 'normal', fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--align)', whiteSpace: 'nowrap' }}>LEARN MORE ›</button>
+            </div>
           </div>
           <div style={{ position: 'relative', height: MH + 40, marginTop: -8 }}>
             {PARTS.map((o, i) => {
@@ -165,23 +169,6 @@ export default function BetaYou({ go }: ScreenProps) {
             {blockedSigns.length > 0 && <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>· {blockedSigns.map((x) => SIGNS[x].glyph).join(' ')}</span>}
           </motion.button>
 
-          {/* your sign */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span className="eyebrow" style={EYEBROW}>Your sign</span>
-            <CardFrame tint={SUN.color} padding="0" footer={['Align · your sign', ME.serial]}>
-              <button onClick={() => { sfx.tap(); go('chart') }} style={{ width: '100%', display: 'flex', gap: 14, padding: 14, textAlign: 'left', alignItems: 'center' }}>
-                <img src={SUN.figureImg} alt="" style={{ width: 64, height: 64, borderRadius: 14, objectFit: 'cover', flexShrink: 0, boxShadow: `0 0 18px ${SUN.color}55` }} />
-                <span style={{ flex: 1, minWidth: 0 }}>
-                  <span className="mono" style={{ display: 'block', fontSize: 9, letterSpacing: '0.16em', color: SUN.color }}>{SUN.name.toUpperCase()} {SUN.glyph} · {FACTS.dates.toUpperCase()}</span>
-                  <span className="serif italic" style={{ display: 'block', fontSize: 18, lineHeight: 1.2, marginTop: 4, color: 'var(--label-1)' }}>Most likely to: {FACTS.likely.replace(/\.$/, '').toLowerCase()}.</span>
-                  <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 5 }}>{FACTS.element} · {FACTS.mode} · ruled by {FACTS.ruler}</span>
-                </span>
-              </button>
-              <Link label="Learn your sign" sub="Your element, your planet and the quick facts" onClick={() => go('chart')} />
-              <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} />
-            </CardFrame>
-          </section>
-
           {/* your month */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
@@ -216,7 +203,8 @@ export default function BetaYou({ go }: ScreenProps) {
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <span className="eyebrow" style={EYEBROW}>App</span>
             <div style={{ ...PANEL, overflow: 'hidden' }}>
-              <Link label="Settings" onClick={() => go('x/settings')} first />
+              <Link label="The language" sub="Every astro word in plain English" onClick={() => go('x/glossary')} first />
+              <Link label="Settings" onClick={() => go('x/settings')} />
               <Link label="Help & support" onClick={() => go('x/help')} />
             </div>
           </section>
