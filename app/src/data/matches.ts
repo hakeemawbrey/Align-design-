@@ -6,7 +6,7 @@ import { PERSONA, type PersonaId } from './persona'
 /** Days two people must stay aligned before they can trade copies of their cards. */
 export const TRADE_UNLOCK_DAYS = 3
 
-export type MatchSection = 'your-turn' | 'waiting' | 'quiet'
+export type MatchSection = 'veiled' | 'your-turn' | 'waiting' | 'quiet'
 
 export interface Match {
   id: string
@@ -50,6 +50,8 @@ export function matchFromDeal(p: Profile, pronoun: Match['pronoun']): Match {
 }
 
 export const SECTION_LABEL: Record<MatchSection, string> = {
+  /** beta: aligned, but the cards haven't flipped yet */
+  veiled: 'Not revealed yet',
   'your-turn': 'Your turn',
   waiting: 'Waiting on them',
   quiet: 'Going quiet',

@@ -17,7 +17,7 @@ import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
 import { binderNav } from '../lib/binderNav'
-import { betaFlow, clock, pendingOf, useBetaFlows } from '../lib/betaFlow'
+import { clock, pendingOf, useBetaFlows } from '../lib/betaFlow'
 import { BETA } from '../lib/beta'
 import NoMatches from '../components/chat/NoMatches'
 
@@ -96,13 +96,13 @@ export default function Matches({ go }: ScreenProps) {
     const pend = f && pendingOf(f, now)
     // beta: nothing expires, so no "2 days left"
     if (!f || !pend) return /left$/.test(m.status) ? { ...m, status: 'Quiet lately' } : m
-    return { ...m, section: 'your-turn', when: 'NOW',
-      status: pend === 'card' ? 'The stars dealt you a card' : pend === 'reveal' ? 'Time to flip your cards' : `Reveal in ${clock((f.revealAt ?? now) - now)}` }
+    // still veiled: these sit in their own section until the cards flip
+    return { ...m, section: 'veiled', when: 'NOW',
+      status: pend === 'card' ? 'The stars dealt you a card' : pend === 'reveal' ? 'Ready to reveal' : `Reveal in ${clock((f.revealAt ?? now) - now)}` }
   }
   const visible = BETA ? listed.map(flowStatus) : listed
   const openRow = (m: Match) => {
     sfx.tap()
-    if (BETA && flows[m.id] && pendingOf(flows[m.id], now) === 'reveal') { betaFlow.reveal(m.id); session.patch({ matchWith: m.id }); go('match'); return }
     // Juniper has the scripted chat; everyone else opens their own thread
     if (m.id === 'j27') { go('chat'); return }
     session.patch({ threadWith: m.id }); go('thread')
@@ -147,7 +147,8 @@ export default function Matches({ go }: ScreenProps) {
     )
   }
 
-  const summary = `${visible.length} aligned · ${visible.filter((m) => m.section === 'your-turn').length} waiting on you · ${visible.filter((m) => m.section === 'quiet').length} going quiet`
+  const veiledN = visible.filter((m) => m.section === 'veiled').length
+  const summary = `${visible.length} aligned · ${veiledN ? `${veiledN} not revealed · ` : ''}${visible.filter((m) => m.section === 'your-turn').length} waiting on you · ${visible.filter((m) => m.section === 'quiet').length} going quiet`
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -176,8 +177,9 @@ export default function Matches({ go }: ScreenProps) {
         {view === 'list' ? (
           <motion.div key="list" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}
             style={{ position: 'absolute', left: 0, right: 0, top: BETA ? 142 : 186, bottom: 96, overflowY: 'auto', padding: '0 24px', scrollbarWidth: 'none' }}>
-            {(['your-turn', 'waiting', 'quiet'] as MatchSection[]).map((sec) => {
+            {((BETA ? ['veiled', 'your-turn', 'waiting', 'quiet'] : ['your-turn', 'waiting', 'quiet']) as MatchSection[]).map((sec) => {
               const rows = visible.filter((m) => m.section === sec)
+              if (sec === 'veiled' && !rows.length) return null
               return (
                 <div key={sec} style={{ marginBottom: 6 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '8px 0 4px' }}>
