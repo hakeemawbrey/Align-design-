@@ -107,18 +107,24 @@ export default function BetaYou({ go }: ScreenProps) {
             </motion.button>
           </div>
 
-          {/* name and big three */}
+          {/* your name, then your hand: six cards from your birth chart, fanned */}
           <div style={{ textAlign: 'center', marginTop: -8 }}>
             <div className="h-display" style={{ fontSize: 34 }}>{ME.name}, {ME.age}</div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 10, flexWrap: 'wrap' }}>
-              {([['sun', '☉', ME.sign, 'Sun'], ['moon', '☽', ME.moon, 'Moon'], ['rising', '↑', ME.rising, 'Rising']] as const).map(([slug, glyph, s, label]) => (
-                <button key={slug} onClick={() => { sfx.tap(); go(`x/term/${slug}`) }} aria-label={`${label} in ${SIGNS[s].name}: what it means`}
-                  className="chip" style={{ height: 28, padding: '0 11px', gap: 6, color: 'var(--label-1)', borderColor: `${SIGNS[s].color}99`, background: `${SIGNS[s].color}18` }}>
-                  <span style={{ color: SIGNS[s].color, fontSize: 12 }}>{glyph}</span>
-                  <span style={{ color: 'var(--label-3)' }}>{label}</span> {SIGNS[s].name}
-                </button>
-              ))}
-            </div>
+            <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 4 }}>Six cards from your birth chart. Tap one to learn it.</div>
+          </div>
+          <div style={{ position: 'relative', height: MH + 40, marginTop: -8 }}>
+            {PARTS.map((o, i) => {
+              const k = i - (PARTS.length - 1) / 2
+              return (
+                <motion.button key={o.word} onClick={() => { sfx.flip(); setReader(i) }} aria-label={`${o.word} in ${o.value}`}
+                  initial={{ y: 60, opacity: 0, rotate: 0 }} animate={{ y: k * k * 4, opacity: 1, rotate: k * 7 }}
+                  whileHover={{ y: k * k * 4 - 18, zIndex: 10 }} whileTap={{ y: k * k * 4 - 22, scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 20, delay: i * 0.05 }}
+                  style={{ position: 'absolute', left: '50%', top: 8, width: MW, height: MH, marginLeft: -MW / 2 + k * 45, zIndex: i, transformOrigin: '50% 120%' }}>
+                  <MiniCard o={o} />
+                </motion.button>
+              )
+            })}
           </div>
 
           {/* block a sign */}
@@ -155,26 +161,6 @@ export default function BetaYou({ go }: ScreenProps) {
               </AnimatePresence>
             </div>
           </section>
-
-          {/* your hand: six cards from your birth chart */}
-          <div style={{ marginTop: 6, textAlign: 'center' }}>
-            <div className="h-display" style={{ fontSize: 26 }}>Your hand</div>
-            <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 4 }}>Six cards from your birth chart. Pull one to learn it.</div>
-          </div>
-          <div style={{ position: 'relative', height: MH + 46, marginTop: -8 }}>
-            {PARTS.map((o, i) => {
-              const k = i - (PARTS.length - 1) / 2
-              return (
-                <motion.button key={o.word} onClick={() => { sfx.flip(); setReader(i) }} aria-label={`${o.word} in ${o.value}`}
-                  initial={{ y: 60, opacity: 0, rotate: 0 }} animate={{ y: k * k * 4, opacity: 1, rotate: k * 7 }}
-                  whileHover={{ y: k * k * 4 - 18, zIndex: 10 }} whileTap={{ y: k * k * 4 - 22, scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 20, delay: i * 0.05 }}
-                  style={{ position: 'absolute', left: '50%', top: 8, width: MW, height: MH, marginLeft: -MW / 2 + k * 45, zIndex: i, transformOrigin: '50% 120%' }}>
-                  <MiniCard o={o} />
-                </motion.button>
-              )
-            })}
-          </div>
 
           {/* your sign */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
