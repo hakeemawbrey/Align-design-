@@ -23,6 +23,12 @@ import { useTalk } from '../lib/talk'
 import CardFrame, { foil } from '../components/CardFrame'
 import { Planet } from '../components/onboarding/shared'
 import { PARTS } from '../components/you/parts'
+import { SELF_MORE } from '../data/selfReadings'
+import { JUPITER_IN, VENUS_IN } from '../data/planetReadings'
+import { MY_CHART } from '../data/myBirth'
+import { signOf } from '../lib/astro'
+
+const JUP_SIGN = signOf(MY_CHART.jupiter)
 import { Chevron, ResetRow, SwitchRows } from './You'
 
 const SUN = SIGNS[ME.sign]
@@ -47,6 +53,13 @@ const SELF_ROWS = [
   { k: 'clash', label: 'Clash', color: '#ff8fb1', what: 'What trips you up', why: 'Everyone has one. Knowing yours means you can name it before it runs the night.', glyph: '⚡' },
   { k: 'align', label: 'Align', color: '#f2c75c', what: 'What brings you back', why: 'Your reset. Come back to this when you feel off, with or without a match.', glyph: '◎' },
 ] as const
+
+/** what the rest of your chart adds to each: Venus for spark, Moon for clash, Jupiter for align */
+const CHART_ADDS = {
+  spark: { label: `Your Venus in ${SIGNS[ME.venus].name} adds`, text: VENUS_IN[ME.venus].love },
+  clash: { label: `Your Moon in ${SIGNS[ME.moon].name} adds`, text: PARTS[1].read.self },
+  align: { label: `Your Jupiter in ${PARTS[4].value} adds`, text: JUPITER_IN[JUP_SIGN].self },
+} as const
 
 /** one honest line about your sun sign: what drives you, and the catch */
 const INSIGHT: Record<SignId, string> = {
@@ -403,18 +416,32 @@ function SelfReader({ start, onClose }: { start: number; onClose: () => void }) 
           drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.5}
           onDragEnd={(_, d) => { if (d.offset.x < -70) to(i + 1); else if (d.offset.x > 70) to(i - 1) }}
           onClick={(e) => e.stopPropagation()}
-          style={{ position: 'absolute', left: 36, right: 36, top: 150, borderRadius: 24, padding: 4, background: foil(row.color), boxShadow: `0 0 40px color-mix(in srgb, ${row.color} 45%, transparent), 0 24px 50px rgba(0,0,0,0.6)`, touchAction: 'pan-y' }}>
-          <div style={{ borderRadius: 20, minHeight: 400, padding: '22px 22px 20px', display: 'flex', flexDirection: 'column', background: `radial-gradient(90% 45% at 50% 18%, color-mix(in srgb, ${row.color} 22%, #1d1233), #120b22)` }}>
+          style={{ position: 'absolute', left: 30, right: 30, top: 96, borderRadius: 24, padding: 4, background: foil(row.color), boxShadow: `0 0 40px color-mix(in srgb, ${row.color} 45%, transparent), 0 24px 50px rgba(0,0,0,0.6)`, touchAction: 'pan-y' }}>
+          <div className="no-scrollbar" style={{ borderRadius: 20, minHeight: 400, maxHeight: 590, overflowY: 'auto', padding: '20px 20px 18px', display: 'flex', flexDirection: 'column', background: `radial-gradient(90% 45% at 50% 18%, color-mix(in srgb, ${row.color} 22%, #1d1233), #120b22)` }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
               <span className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', fontWeight: 700, color: row.color }}>{row.label.toUpperCase()}</span>
               <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{SUN.name.toUpperCase()} {SUN.glyph}</span>
             </div>
             {row.k === 'align'
-              ? <div style={{ display: 'grid', placeItems: 'center', margin: '12px 0 10px' }}><SeedOfLife size={108} color={row.color} draw /></div>
-              : <div style={{ textAlign: 'center', fontSize: 64, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '26px 0 22px' }}>{row.glyph}{'\uFE0E'}</div>}
+              ? <div style={{ display: 'grid', placeItems: 'center', margin: '12px 0 10px' }}><SeedOfLife size={74} color={row.color} draw /></div>
+              : <div style={{ textAlign: 'center', fontSize: 46, lineHeight: 1, color: row.color, textShadow: `0 0 30px ${row.color}`, margin: '14px 0 12px' }}>{row.glyph}{'\uFE0E'}</div>}
             <div className="mono" style={{ textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>{row.what.toUpperCase()}</div>
-            <div className="serif italic" style={{ textAlign: 'center', fontSize: 25, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 10, flex: 1 }}>{SELF[ME.sign][row.k]}</div>
-            <div style={{ marginTop: 18, paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.18)', fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.why}</div>
+            <div className="serif italic" style={{ textAlign: 'center', fontSize: 22, lineHeight: 1.22, color: 'var(--label-1)', marginTop: 8 }}>{SELF[ME.sign][row.k]}</div>
+            <div style={{ marginTop: 14, fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)', textAlign: 'center' }}>{row.why}</div>
+            {/* how it shows up when you're dating */}
+            <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.18)' }}>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>WHEN YOU’RE DATING</div>
+              <div style={{ fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}>{SELF_MORE[ME.sign][row.k].dating}</div>
+            </div>
+            {/* what the rest of your chart adds */}
+            <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid rgba(179,166,196,0.18)' }}>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>{CHART_ADDS[row.k].label.toUpperCase()}</div>
+              <div style={{ fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-1)', marginTop: 4 }}>{CHART_ADDS[row.k].text}</div>
+            </div>
+            <div style={{ marginTop: 14, borderRadius: 14, padding: '10px 12px', background: `color-mix(in srgb, ${row.color} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${row.color} 40%, transparent)` }}>
+              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 700, color: row.color }}>TRY THIS </span>
+              <span className="serif italic" style={{ fontSize: 15.5, color: 'var(--label-1)' }}>{SELF_MORE[ME.sign][row.k].tryThis}</span>
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>
