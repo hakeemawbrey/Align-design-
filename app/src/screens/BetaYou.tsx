@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
@@ -11,7 +11,6 @@ import { useAccount } from '../pages/account/store'
 import { ME } from '../data/profiles'
 import { SIGNS, type SignId } from '../data/signs'
 import { SIGN_FACTS } from '../data/signFacts'
-import { MOON_NOW } from '../data/sky'
 import { COSMIC_COLOR, cosmicMonth, type CosmicEvent } from '../data/cosmicMonth'
 import { sfx } from '../lib/sfx'
 import { openCalendarOn } from '../components/you/origin'
@@ -20,10 +19,13 @@ import SkySpread from '../components/sky/SkySpread'
 import MoonPhase from '../components/sky/MoonPhase'
 import { TODAY_READING } from '../data/skyReading'
 import { useTalk } from '../lib/talk'
-import CardFrame, { foil } from '../components/CardFrame'
+import CardFrame, { CardOrb, foil } from '../components/CardFrame'
 import { Planet } from '../components/onboarding/shared'
 import { PARTS } from '../components/you/parts'
 import { Chevron, ResetRow, SwitchRows } from './You'
+
+/** a symbol for each planet, for the event pictures */
+const PLANET_SYM: Record<string, string> = { sun: '☉', moon: '☽', mercury: '☿', venus: '♀', mars: '♂', jupiter: '♃', saturn: '♄' }
 
 const SUN = SIGNS[ME.sign]
 const FACTS = SIGN_FACTS[ME.sign]
@@ -92,7 +94,17 @@ export default function BetaYou({ go }: ScreenProps) {
   const [self, setSelf] = useState<number | null>(null)
   const skyDrawn = useTalk().skyDays.includes(TODAY_READING.date)
   const moon = useMemo(() => { const d = new Date(); return cosmicMonth(d).days[d.getDate() - 1].moon }, [])
-  const events = useMemo(() => upcoming(3), [])
+  const events = useMemo(() => upcoming(6), [])
+  const month = useMemo(() => cosmicMonth(), [])
+  const todayNum = new Date().getDate()
+  const stripRef = useRef<HTMLDivElement>(null)
+  // open the strip on today, a few nights in from the left edge
+  useEffect(() => {
+    const el = stripRef.current, t = el?.querySelector<HTMLElement>('[data-today]')
+    if (el && t) el.scrollLeft = Math.max(0, t.offsetLeft - 96)
+  }, [])
+  /** the moon on an event's night (for the picture on a moon event) */
+  const month2Moon = (e: { date: Date }) => cosmicMonth(e.date).days[e.date.getDate() - 1].moon
   const open = (side: CardSide) => { sfx.flip(); setSheet(side) }
 
   return (
@@ -215,34 +227,77 @@ export default function BetaYou({ go }: ScreenProps) {
             </div>
           </section>
 
-          {/* your month */}
-          <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {/* your month, in pictures: every night's moon, tonight's big, and what's coming as cards */}
+          <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
               <span className="eyebrow" style={EYEBROW}>Your sky this month</span>
               <button className="mono" onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--align)' }}>OPEN CALENDAR ›</button>
             </div>
-            <CardFrame tint="#c9bedb" padding="0" footer={['Align · cosmic calendar', new Date().toLocaleDateString('en-US', { month: 'long' })]}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', fontSize: 13, color: 'var(--label-2)' }}>
-                <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-3)' }}>TONIGHT</span>
-                {MOON_NOW.phase} in {MOON_NOW.sign} {MOON_NOW.glyph}
+            <CardFrame tint="#c9bedb" padding="0" footer={['Align · cosmic calendar', month.title]}>
+              {/* tonight's moon */}
+              <button onClick={() => { sfx.tap(); openCalendarOn(go, 'you') }} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 16, padding: '16px 16px 12px', textAlign: 'left' }}>
+                <motion.span animate={{ y: [0, -4, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} style={{ flexShrink: 0, filter: 'drop-shadow(0 0 16px rgba(201,190,219,0.55))' }}>
+                  <MoonPhase size={74} lit={moon.lit} waxing={moon.waxing} />
+                </motion.span>
+                <span style={{ flex: 1, minWidth: 0 }}>
+                  <span className="mono" style={{ display: 'block', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>TONIGHT</span>
+                  <span className="serif italic" style={{ display: 'block', fontSize: 23, lineHeight: 1.1, color: 'var(--label-1)', marginTop: 3 }}>{moon.name}</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, color: 'var(--label-2)', marginTop: 5 }}>
+                    <CardOrb tint={SIGNS[moon.sign].color} size={20}>{SIGNS[moon.sign].glyph}</CardOrb>
+                    in {SIGNS[moon.sign].name} · {Math.round(moon.lit * 100)}% lit
+                  </span>
+                </span>
+              </button>
+              {/* the whole month, one moon a night */}
+              <div ref={stripRef} className="no-scrollbar" style={{ display: 'flex', gap: 2, overflowX: 'auto', scrollbarWidth: 'none', padding: '6px 12px 12px', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
+                {month.days.map((d) => {
+                  const isToday = d.day === todayNum
+                  const ev = d.events[0]
+                  return (
+                    <button key={d.day} data-today={isToday || undefined} onClick={() => { sfx.tap(); openCalendarOn(go, 'you', d.date) }}
+                      aria-label={`${d.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}: ${d.moon.name}${d.events.length ? `, ${d.events.map((e) => e.title).join(', ')}` : ''}`}
+                      style={{ flex: '0 0 30px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '6px 0 4px', borderRadius: 10,
+                        background: isToday ? 'rgba(242,199,92,0.16)' : 'transparent', border: isToday ? '1px solid var(--align)' : '1px solid transparent', opacity: d.day < todayNum ? 0.45 : 1 }}>
+                      <span className="mono" style={{ fontSize: 7.5, color: isToday ? 'var(--align)' : 'var(--label-3)' }}>{'SMTWTFS'[d.weekday]}</span>
+                      <MoonPhase size={18} lit={d.moon.lit} waxing={d.moon.waxing} glow={false} />
+                      <span style={{ fontSize: 11, color: isToday ? 'var(--align)' : 'var(--label-1)', fontVariantNumeric: 'tabular-nums' }}>{d.day}</span>
+                      <span style={{ width: 5, height: 5, borderRadius: 3, background: ev ? COSMIC_COLOR[ev.kind] : 'transparent', boxShadow: ev?.yours ? `0 0 6px ${COSMIC_COLOR[ev.kind]}` : 'none' }} />
+                    </button>
+                  )
+                })}
               </div>
-              {events.map((e, i) => (
-                <button key={i} onClick={() => { sfx.tap(); openCalendarOn(go, 'you', e.date) }}
-                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', textAlign: 'left', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
-                  <span style={{ width: 38, flexShrink: 0, textAlign: 'center' }}>
-                    <span className="mono" style={{ display: 'block', fontSize: 8, letterSpacing: '0.12em', color: 'var(--label-3)' }}>{e.date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()}</span>
-                    <span className="serif" style={{ display: 'block', fontSize: 20, lineHeight: 1.1, color: 'var(--label-1)' }}>{e.date.getDate()}</span>
-                  </span>
-                  <span style={{ width: 8, height: 8, borderRadius: 4, flexShrink: 0, background: COSMIC_COLOR[e.kind], boxShadow: `0 0 6px ${COSMIC_COLOR[e.kind]}` }} />
-                  <span style={{ flex: 1, minWidth: 0 }}>
-                    <span className="serif italic" style={{ display: 'block', fontSize: 16, color: 'var(--label-1)' }}>
-                      {e.title}{e.yours && <span className="mono" style={{ fontStyle: 'normal', fontSize: 8, letterSpacing: '0.14em', color: 'var(--align)', marginLeft: 6 }}>YOURS</span>}
-                    </span>
-                    <span style={{ display: 'block', fontSize: 12, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 2 }}>{e.note}</span>
-                  </span>
-                </button>
-              ))}
             </CardFrame>
+
+            {/* what's coming, as little picture cards */}
+            <div className="no-scrollbar" style={{ display: 'flex', gap: 10, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', margin: '0 -24px', padding: '2px 24px 6px', scrollPaddingLeft: 24 }}>
+              {events.map((e, i) => {
+                const col = COSMIC_COLOR[e.kind]
+                const sign = e.sign ? SIGNS[e.sign] : undefined
+                return (
+                  <motion.button key={i} whileTap={{ scale: 0.97 }} onClick={() => { sfx.tap(); openCalendarOn(go, 'you', e.date) }}
+                    style={{ flex: '0 0 164px', scrollSnapAlign: 'start', textAlign: 'left', borderRadius: 18, padding: 3, background: foil(col) }}>
+                    <span style={{ display: 'flex', flexDirection: 'column', height: 208, borderRadius: 15, overflow: 'hidden', background: 'linear-gradient(180deg, #1b112f, #120b22)' }}>
+                      {/* the picture: the moon at that phase, or the planet's symbol over its sign */}
+                      <span style={{ position: 'relative', height: 92, display: 'grid', placeItems: 'center', background: `radial-gradient(70% 90% at 50% 55%, color-mix(in srgb, ${col} 34%, transparent), transparent 75%), rgba(10,5,24,0.5)` }}>
+                        {e.kind === 'moon'
+                          ? <MoonPhase size={52} lit={month2Moon(e).lit} waxing={month2Moon(e).waxing} />
+                          : <span style={{ fontSize: 44, lineHeight: 1, color: col, textShadow: `0 0 18px ${col}` }}>{PLANET_SYM[e.planet ?? 'sun']}{'\uFE0E'}</span>}
+                        {sign && <span style={{ position: 'absolute', right: 8, bottom: 8 }}><CardOrb tint={sign.color} size={24}>{sign.glyph}</CardOrb></span>}
+                        {e.kind === 'retro' && <span className="mono" style={{ position: 'absolute', left: 9, bottom: 9, fontSize: 13, color: col }}>℞</span>}
+                        <span className="mono" style={{ position: 'absolute', left: 9, top: 8, fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-1)' }}>
+                          {e.date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()} {e.date.getDate()}
+                        </span>
+                        {e.yours && <span className="mono" style={{ position: 'absolute', right: 8, top: 7, padding: '2px 6px', borderRadius: 6, fontSize: 7.5, letterSpacing: '0.14em', fontWeight: 700, color: '#1a0f2e', background: 'var(--align)' }}>YOURS</span>}
+                      </span>
+                      <span style={{ flex: 1, padding: '9px 11px 10px', display: 'block' }}>
+                        <span className="serif italic" style={{ display: 'block', fontSize: 17, lineHeight: 1.15, color: 'var(--label-1)' }}>{e.title}</span>
+                        <span style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden', fontSize: 12, lineHeight: 1.35, color: 'var(--label-2)', marginTop: 5 }}>{e.note}</span>
+                      </span>
+                    </span>
+                  </motion.button>
+                )
+              })}
+            </div>
           </section>
 
           {/* block a sign */}
