@@ -155,3 +155,77 @@ export function fitWith(them: Pick<Profile, 'id' | 'sign' | 'name'> & Partial<Pr
   const fit = fitBetween(ME, { sign: them.sign, moon: full?.moon ?? them.sign, rising: full?.rising ?? them.sign }, them.name)
   return full?.moon && full.rising ? { ...fit, sunOnly: false } : { ...fit, areas: fit.areas.filter((a) => a.id === 'daily'), sunOnly: true }
 }
+
+/* ───────────── the two charts, side by side ───────────── */
+
+export interface ChartRow {
+  id: 'sun' | 'moon' | 'rising' | 'venus' | 'home'
+  /** what this pairing is about, in love */
+  title: string
+  /** the placement on each side */
+  mine: { planet: string; sign: SignId }
+  theirs: { planet: string; sign: SignId }
+  feel: Feel
+  /** what it means for the two of you */
+  love: string
+}
+
+/** what each pairing means for love, by how the two signs sit to each other (descriptions, never grades) */
+const CHART_LOVE: Record<ChartRow['id'], Record<Feel, string>> = {
+  sun: {
+    alike: 'Same sun sign. You want the same kind of life, and you share the same blind spots.',
+    easy: 'Your suns are in step. Day-to-day life together takes little effort.',
+    opposite: 'Opposite suns. Each of you has what the other is missing, which pulls you in and takes some meeting halfway.',
+    friction: 'Your suns pull in different directions. It keeps things alive, and it means talking about how you each do things.',
+    different: 'Your suns work differently. You’ll learn each other on purpose, not by instinct.',
+  },
+  moon: {
+    alike: 'Same moon sign. You need the same things to feel safe, so comfort comes quickly.',
+    easy: 'Your moons get along. You tend to soothe each other without trying.',
+    opposite: 'Opposite moons. What calms one of you is what the other reaches for last, so say what you need.',
+    friction: 'Your moons react differently under stress. Naming a feeling early saves a long night.',
+    different: 'Your moons speak different emotional languages. Ask, don’t assume.',
+  },
+  rising: {
+    alike: 'Same rising sign. You come across the same way, so strangers assume you’re a pair.',
+    easy: 'Your first impressions fit. Meeting each other’s friends should be easy.',
+    opposite: 'Opposite risings. One of you leads a room and the other reads it; together you cover both.',
+    friction: 'You come across very differently at first. Give each other a second look.',
+    different: 'Different first impressions. The real person shows up a few dates in.',
+  },
+  venus: {
+    alike: 'Your Venus is in their sun sign. Who they are is close to what you’re drawn to.',
+    easy: 'What you’re drawn to sits easily with who they are.',
+    opposite: 'They’re the opposite of your usual type, which is often the pull.',
+    friction: 'They aren’t your usual type. The attraction may build slower and surprise you.',
+    different: 'What you’re drawn to and who they are don’t line up neatly. Let them show you.',
+  },
+  home: {
+    alike: 'Their moon is in your sun sign. Just being yourself tends to feel like home to them.',
+    easy: 'Who you are sits well with what they need to feel safe.',
+    opposite: 'You’re the opposite of what usually comforts them. It can feel exciting and new.',
+    friction: 'Your natural way and their comfort zone differ. Check in more than you think you need to.',
+    different: 'What settles them isn’t your default. Learn the small things that do.',
+  },
+}
+
+/**
+ * Your chart next to theirs, pairing by pairing, read for love. A match whose
+ * card only shows a sun sign gets the rows that need nothing else.
+ */
+export function chartRows(them: Pick<Profile, 'id' | 'sign'> & Partial<Profile>): { rows: ChartRow[]; sunOnly: boolean } {
+  const full = profileById(them.id) ?? (them.real ? them : undefined)
+  const known = !!(full?.moon && full.rising)
+  const row = (id: ChartRow['id'], title: string, mine: ChartRow['mine'], theirs: ChartRow['theirs']): ChartRow => {
+    const feel = feelOf(mine.sign, theirs.sign)
+    return { id, title, mine, theirs, feel, love: CHART_LOVE[id][feel] }
+  }
+  const rows: ChartRow[] = [row('sun', 'Who you each are', { planet: 'Sun', sign: ME.sign }, { planet: 'Sun', sign: them.sign })]
+  if (known) {
+    rows.push(row('moon', 'How you each feel', { planet: 'Moon', sign: ME.moon }, { planet: 'Moon', sign: full!.moon! }))
+    rows.push(row('rising', 'How you each come across', { planet: 'Rising', sign: ME.rising }, { planet: 'Rising', sign: full!.rising! }))
+  }
+  rows.push(row('venus', 'What you’re drawn to', { planet: 'Venus', sign: ME.venus }, { planet: 'Sun', sign: them.sign }))
+  if (known) rows.push(row('home', 'Whether you feel like home', { planet: 'Sun', sign: ME.sign }, { planet: 'Moon', sign: full!.moon! }))
+  return { rows, sunOnly: !known }
+}
