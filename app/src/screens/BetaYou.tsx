@@ -122,21 +122,19 @@ export default function BetaYou({ go }: ScreenProps) {
                 <ProfileCard profile={me} glow />
               </div>
             </motion.button>
-          </div>
-
-          {/* under the cards: a small edit button, and your aura photo with a camera on it */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: -8 }}>
-            <motion.button whileTap={{ scale: 0.95 }} onClick={() => { sfx.tap(); go('x/edit-card/down') }}
-              style={{ height: 26, padding: '0 11px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 5, color: 'var(--label-1)', border: '1px solid rgba(248,237,255,0.3)', background: 'rgba(52,35,95,0.6)' }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></svg>
-              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em' }}>EDIT CARD</span>
+            {/* each control sits on the card it changes: the pencil on your card, the camera on your photo */}
+            <motion.button aria-label="Edit card" onClick={() => { sfx.tap(); go('x/edit-card/down') }} whileTap={{ scale: 0.88 }}
+              initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 320, damping: 18, delay: 0.45 }}
+              style={{ position: 'absolute', left: 'calc(50% - 129px)', top: 290, width: 38, height: 38, borderRadius: 19, zIndex: 3, display: 'grid', placeItems: 'center',
+                color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 16px rgba(248,237,255,0.45), 0 4px 10px rgba(0,0,0,0.5)' }}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></svg>
             </motion.button>
-            <motion.button aria-label="Aura photo: take a new one" whileTap={{ scale: 0.92 }} onClick={() => { sfx.tap(); go('x/aura-photo') }}
-              style={{ width: 26, height: 26, borderRadius: 13, flexShrink: 0, display: 'grid', placeItems: 'center', color: '#fff',
-                // the aura itself: warm in the middle, running out through rose and violet to blue
+            <motion.button aria-label="Aura photo: take a new one" onClick={() => { sfx.tap(); go('x/aura-photo') }} whileTap={{ scale: 0.88 }}
+              initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 320, damping: 18, delay: 0.55 }}
+              style={{ position: 'absolute', left: 'calc(50% + 97px)', top: 276, width: 38, height: 38, borderRadius: 19, zIndex: 3, display: 'grid', placeItems: 'center', color: '#fff',
                 background: 'radial-gradient(circle at 50% 55%, #ffe08a 0%, #ff9a5c 26%, #ff5fa2 48%, #a45cff 70%, #4a8cff 100%)',
-                border: '1px solid rgba(255,255,255,0.55)', boxShadow: '0 0 10px rgba(255,120,180,0.5)' }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2px rgba(40,10,60,0.6))' }}><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4V8Z" /><circle cx="12" cy="13.2" r="3.4" /></svg>
+                border: '1.5px solid rgba(255,255,255,0.6)', boxShadow: '0 0 16px rgba(255,120,180,0.55), 0 4px 10px rgba(0,0,0,0.5)' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2px rgba(40,10,60,0.6))' }}><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4V8Z" /><circle cx="12" cy="13.2" r="3.4" /></svg>
             </motion.button>
           </div>
 
