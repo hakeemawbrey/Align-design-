@@ -25,7 +25,7 @@ import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
 import { BETA } from '../lib/beta'
-import { CompatBadge, CompatSheet } from '../components/chat/Compat'
+import { AlignGuideCard, CompatBadge, CompatSheet } from '../components/chat/Compat'
 import { talk } from '../lib/talk'
 import { betaFlow, useBetaFlow } from '../lib/betaFlow'
 import { RevealBar } from '../components/chat/RevealBar'
@@ -66,6 +66,7 @@ export default function Thread({ go }: ScreenProps) {
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   const [report, setReport] = useState(false)
   const [compat, setCompat] = useState(false)
+  const [compatTab, setCompatTab] = useState(0)
   const [cardOpen, setCardOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   /** messages that didn't send, shown at the end with "tap to retry" */
@@ -189,9 +190,9 @@ export default function Thread({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
       <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }}
-        onWho={veiled ? () => { sfx.tap(); setCompat(true) } : them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
+        onWho={veiled ? () => { sfx.tap(); (setCompatTab(0), setCompat(true)) } : them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
         photo={veiled ? sign.auraImg : them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined}
-        right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => setCompat(true)} /> : undefined} />
+        right={BETA ? <CompatBadge them={profileById(them.id) ?? them} onClick={() => (setCompatTab(0), setCompat(true))} /> : undefined} />
 
       {cardStage ? <RevealBar waiting />
         : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(them.id) }} onDone={() => { betaFlow.reveal(them.id); session.patch({ matchWith: them.id }); go('match') }} />
@@ -215,6 +216,7 @@ export default function Thread({ go }: ScreenProps) {
           </div>
         </div>
         <UsToday them={them.name} sign={them.sign} onPlay={(t) => { setHandTopic(t); setHand(true) }} />
+        {BETA && !cardStage && <AlignGuideCard them={profileById(them.id) ?? them} onOpen={(i) => { setCompatTab(i); setCompat(true) }} />}
         <AnimatePresence initial={false}>
           {rows.map((m, i) => {
             const pl = parsePlace(m.body)
@@ -273,9 +275,9 @@ export default function Thread({ go }: ScreenProps) {
         {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
-        {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), setCompat(true)) : go('alignment'))} />}
+        {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), (setCompatTab(0), setCompat(true))) : go('alignment'))} />}
       </AnimatePresence>
-      {BETA && <CompatSheet them={profileById(them.id) ?? them} open={compat} onClose={() => setCompat(false)} onPlayCard={() => { setCompat(false); setHand(true) }} />}
+      {BETA && <CompatSheet them={profileById(them.id) ?? them} open={compat} onClose={() => setCompat(false)} startTab={compatTab} onPlayCard={() => { setCompat(false); setHand(true) }} />}
       <AnimatePresence>
         {report && (
           <ReportSheet name={them.name} pronoun="them" onClose={() => setReport(false)}

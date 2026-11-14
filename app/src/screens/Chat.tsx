@@ -24,7 +24,7 @@ import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
 import { BETA } from '../lib/beta'
-import { CompatBadge, CompatSheet } from '../components/chat/Compat'
+import { AlignGuideCard, CompatBadge, CompatSheet } from '../components/chat/Compat'
 import { betaFlow, useBetaFlow } from '../lib/betaFlow'
 import { RevealBar } from '../components/chat/RevealBar'
 import { SIGNS } from '../data/signs'
@@ -147,6 +147,7 @@ const OPENERS = ['Being honest first: your playlist made me miss my stop.', 'The
 export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [report, setReport] = useState(false)
   const [compat, setCompat] = useState(false)
+  const [compatTab, setCompatTab] = useState(0)
   const [cardOpen, setCardOpen] = useState(demo === 'card')
   const daysLeft = demo === 'expiring' ? 2 : demo === 'closed' ? 0 : DAYS_LEFT
   const closed = daysLeft <= 0
@@ -436,8 +437,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       <div style={{ position: 'absolute', inset: 0, background: '#150b35', mixBlendMode: 'lighten', pointerEvents: 'none' }} />
 
       <ChatHeader onBack={backTo} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }}
-        right={BETA ? <CompatBadge them={juniper} onClick={() => setCompat(true)} /> : undefined}
-        onWho={veiled ? () => { sfx.tap(); setCompat(true) } : () => { sfx.flip(); setCardOpen(true) }} photo={veiled ? SIGNS[juniper.sign].auraImg : PHOTO} name={juniper.name}
+        right={BETA ? <CompatBadge them={juniper} onClick={() => (setCompatTab(0), setCompat(true))} /> : undefined}
+        onWho={veiled ? () => { sfx.tap(); (setCompatTab(0), setCompat(true)) } : () => { sfx.flip(); setCardOpen(true) }} photo={veiled ? SIGNS[juniper.sign].auraImg : PHOTO} name={juniper.name}
         sub={empty ? 'Matched 2 minutes ago' : undefined} />
       {cardStage ? <RevealBar waiting />
         : veiled && flow.revealAt ? <RevealBar revealAt={flow.revealAt} onSkip={() => { sfx.tap(); betaFlow.skipAhead(MATCH) }} onDone={() => { betaFlow.reveal(MATCH); session.patch({ matchWith: MATCH }); go('match') }} />
@@ -465,6 +466,8 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
         <div style={{ textAlign: 'center', fontSize: 12, color: 'var(--label-3)', padding: '10px 0 14px' }}>Today</div>
         <div style={{ opacity: closed ? 0.5 : 1 }}>
         <UsToday them={juniper.name} sign={juniper.sign} onPlay={(t) => { setHandTopic(t); setHand(true) }} />
+        {/* beta: the alignment guide sits at the top of the chat and opens the same guide as the badge */}
+        {BETA && !cardStage && <AlignGuideCard them={juniper} onOpen={(i) => { setCompatTab(i); setCompat(true) }} />}
         <AnimatePresence initial={false}>
           {msgs.map((m) => {
             const pl = m.from === 'card' ? null : parsePlace(m.text)
@@ -489,7 +492,7 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
               ) : null
             }
             return m.from === 'card' ? (
-              <InlineAlignmentCard key={m.id} onOpen={() => { sfx.tap(); go('alignment') }} />
+              BETA ? null : <InlineAlignmentCard key={m.id} onOpen={() => { sfx.tap(); go('alignment') }} />
             ) : (
               <div key={m.id}>
                 <Bubble msg={m} />
@@ -559,10 +562,10 @@ export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
       </AnimatePresence>
       <AnimatePresence>
         {cardOpen && (
-          <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), setCompat(true)) : go('alignment'))} />
+          <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => (BETA ? (setCardOpen(false), (setCompatTab(0), setCompat(true))) : go('alignment'))} />
         )}
       </AnimatePresence>
-      {BETA && <CompatSheet them={juniper} open={compat} onClose={() => setCompat(false)} onFullReading={() => go('alignment')} onPlayCard={closed ? undefined : () => { setCompat(false); setHand(true) }} />}
+      {BETA && <CompatSheet them={juniper} open={compat} onClose={() => setCompat(false)} startTab={compatTab} onPlayCard={closed ? undefined : () => { setCompat(false); setHand(true) }} />}
       <AnimatePresence>
         {report && (
           <ReportSheet name={juniper.name} pronoun="her" onClose={() => setReport(false)}

@@ -34,6 +34,16 @@ The photo check's WebAssembly is copied into `dist-beta/mp/wasm` by the Vite plu
 - **Welcome:** the main button goes straight into the app; "New here — read my chart" under it starts onboarding. A first visit says "Welcome to Align", later ones "Welcome back".
 - **The horoscope pill's dot** clears once you've opened today's reading.
 
+## The alignment guide between two people
+
+One guide, two places (`components/chat/Compat.tsx`). The card at the top of every chat (`AlignGuideCard`) and the sheet behind the top-right badge (`CompatSheet`) share one header: "NAME × YOU · ALIGNMENT GUIDE", both auras, a title and four tabs, Spark · Clash · Align · Relationship. Tapping the card opens the sheet on the tab it was showing.
+
+- **Spark, Clash, Align:** one card each. With Juniper it's the long written reading, the line from her card and a "try this". With other matches it's the line from their card, or their element's line when their card has none.
+- **Relationship:** the long game, then the four areas worked out from both charts (day to day, feelings, first impressions, feeling understood), with the astrology behind a "why" toggle.
+- Under every tab: tonight's line for the two of you with "Play a talk card", and the disclaimer.
+
+Words only, as before: no score, percentage, rating or strength dots anywhere in it. The old separate "full alignment" screen is no longer linked from the beta.
+
 ## Cards in chat: today's three
 
 The cards button in a chat no longer opens a hand. It opens `components/talk/TodayThree.tsx`: the deck shuffles, deals three cards face down and turns them over. Tap one to read it, then play it; a played card is stamped and can't be played again that day. Each chat gets its own three, chosen at random from all the talk cards the first time you open the sheet that day, and they reset at 11:11 PM local time (`lib/chatDraw.ts`, stored on the device). "Your cards", "Places" and "Packs" are gone from the beta; the full demo keeps them. The chat keeps moving around a card: your match answers it, and once you answer too they react to what you said (`CARD_REACTIONS` in `data/talkCards.ts`). After a slow-reveal alignment card, a seeded match also speaks first when the chat opens.
