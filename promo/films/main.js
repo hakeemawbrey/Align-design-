@@ -34,7 +34,7 @@ async function boot() {
     const { SKY_H, GRAIN_H } = await import('./wheel.js')
     const fe = 130
     const g = d => `linear-gradient(${d}, transparent 0, #000 ${fe}px, #000 calc(100% - ${fe}px), transparent 100%)`
-    Object.assign(stage.style, { transformOrigin: '50% 50%', transform: `translateY(-30px) scale(${P})`, zIndex: '5',
+    if (P < 1) Object.assign(stage.style, { transformOrigin: '50% 50%', transform: `translateY(-30px) scale(${P})`, zIndex: '5',
       maskImage: `${g('to right')}, ${g('to bottom')}`, webkitMaskImage: `${g('to right')}, ${g('to bottom')}`, maskComposite: 'intersect', webkitMaskComposite: 'source-in' })
     removeEventListener('resize', fit)
     const back = document.createElement('div'); Object.assign(back.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', zIndex: '1', overflow: 'hidden' })
@@ -42,7 +42,7 @@ async function boot() {
     const sk = layerCanvas(back).getContext('2d'), gk = layerCanvas(back, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }).getContext('2d')
     const front = document.createElement('div'); Object.assign(front.style, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', zIndex: '6', pointerEvents: 'none' })
     document.body.appendChild(front); overlayParent = front
-    padSky = t => { drawSky(sk, t, SKY_H); drawGrain(gk, t) }
+    padSky = P < 1 ? (t => { drawSky(sk, t, SKY_H); drawGrain(gk, t) }) : null   // pad=1: full frame on the film's own background (seamless)
   }
   // social mode: the film ends where its story ends (the end card's start); films may also export STORY_END
   if (params.has('social')) { const e = Math.min(socialEnd.t, FILM.STORY_END ?? Infinity); if (e < DURATION) { DURATION = e; window.DURATION = DURATION / SPEED } }

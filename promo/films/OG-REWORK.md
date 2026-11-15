@@ -6,7 +6,7 @@ film's own characters, sets, art and story. Change only what makes it work on In
 | Change | How |
 |---|---|
 | No end card / CTA, no card flips, no tarot border with episode numbers | automatic: render with `--social` (endcard.js / cardfx.js switch off; the film ends where its story ends) |
-| Slower, padded, quieter | automatic: render with `--social --calm` (the sky fills the full frame, the story is scaled into the middle with soft edges; the hook sits full-size just under the app's top bar), sound with `--calm --social` |
+| Slower, quieter, seamless | automatic: render with `--social --calm` (0.8× speed; the film stays FULL FRAME on its own background, no shrink, no shared sky; the hook sits full-size just under the app's top bar), sound with `--calm --social` |
 | **Hook**: static TikTok-style caption on screen from frame 1 | you: `export const HOOK`, `HOOK_STYLE`, `HOOK_UNTIL` (see below) |
 | **Crazier personalities** | you: rewrite the signs' lines/captions/props to the most extreme, absurd-but-recognisable version of each trait |
 | No header text: series bugs/labels ("Zodiac Courtroom", "STAR GUIDE · AIR SIGNS · PEP TALK"), corner logos, top chips naming the show | you: remove them from the scene so the top of the frame only ever shows the HOOK (and later the story's own captions) |
@@ -33,6 +33,11 @@ kit does something you must change, copy that kit into your folder and import th
    corner logos (the automatic watermark is the only Align mark). Keep the original's last story beat as the ending (no end card).
 4. **Sound.** Keep the film's own cues.js; the calm/social switches thin and quiet it. Remove any word-pop/tick cue
    bursts you added.
+
+**Safe zones (full frame, so you move things instead of shrinking):** keep important text and characters inside
+x 60–960 and between y 470 and 1560. The hook covers y ~232–460 while it is up; the faint watermark sits at y ~1600–1690;
+the app's buttons cover the right edge (x 960–1080, y 1000–1600) and its caption covers the bottom ~300 px. Backgrounds
+and sets stay full frame; nudge labels, tags and captions that land in those zones (in your kit copy).
 
 **Lessons from the first reworks:**
 - Many old kits pop/fade everything OUT in the last second because the end card used to follow. In social mode that leaves an empty sky as the last frame: push that `out` time past the end (in your kit copy) so the film ends ON its last story beat.
