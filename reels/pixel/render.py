@@ -78,10 +78,11 @@ def sprite_fns():
         return (lambda s, t: ph), None
 
 
-def music(sign, seed, reel):
+def music(sign, seed, reel, style="frame"):
     try:
         import chip
-        return chip.render(sign, seed, reel.duration, cues=reel.cues, ticks=reel.ticks), chip
+        sound = "chip" if style == "scene" else "dream"
+        return chip.render(sign, seed, reel.duration, cues=reel.cues, ticks=reel.ticks, style=sound), chip
     except Exception as e:
         print("chip.py unavailable, silent reel:", e, file=sys.stderr)
         return None, None
@@ -129,7 +130,7 @@ def render_one(sign, seed, scene=None, force=False, style="frame", web=True):
     nframes = int(round(reel.duration * engine.FPS))
     with tempfile.TemporaryDirectory() as td:
         wav = Path(td) / "a.wav"
-        audio, chip = music(sign, seed, reel)
+        audio, chip = music(sign, seed, reel, style)
         cmd = ["ffmpeg", "-y", "-loglevel", "error",
                "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{mod.W * mod.SCALE}x{mod.H * mod.SCALE}",
                "-r", str(engine.FPS), "-i", "-"]

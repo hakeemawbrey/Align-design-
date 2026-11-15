@@ -1,29 +1,39 @@
 #!/usr/bin/env python3
-"""Procedural lo-fi chiptune scores for the pixel zodiac reels.
+"""Procedural scores for the zodiac reels: "dream" (default) and "chip".
 
-  python3 chip.py pisces --seed 3 --seconds 20 -o /tmp/pisces.wav
+  python3 chip.py pisces --seed 3 --seconds 20 -o /tmp/pisces.wav          # dream
+  python3 chip.py leo --style chip --seed 7 -o /tmp/leo.wav                 # chiptune
 
-Every (sign, seed) pair gives a new, original track: the seed picks the key, the mode
+Every (sign, seed, style) gives a new, original track: the seed picks the key, the mode
 (from the sign's element), a 4-chord loop, an 8-bar melody (a motif, its variations and a
 cadence, mostly stepwise and landing on chord tones) and the instrument details. Nothing
 here quotes an existing song; all melodies come from scales, chords and dice.
 
-  fire  (aries, leo, sagittarius)    warm and bright, major/lydian, a little bouncy
+  fire  (aries, leo, sagittarius)    warm and bright, major/lydian
   earth (taurus, virgo, capricorn)   grounded and mellow, major/mixolydian, steady
   air   (gemini, libra, aquarius)    light, sus chords, lots of arpeggios
   water (cancer, scorpio, pisces)    dreamy, minor/dorian, slower, more reverb
 
-Instruments are all band-limited wavetables (harmonics stop below ~9 kHz, then a soft
-low-pass roll-off), so the pulses never fizz: pulse lead with delayed vibrato, a ping-pong
-echo and an optional glide; a triangle bass; a quiet detuned pulse pad; pulse arpeggios;
-soft noise hats or a shaker (sometimes absent); a small stereo convolution reverb.
+style="dream" (mystic quote cards, 60-72 BPM with a gently breathing beat): a music-box /
+celesta lead (sine with a little decaying FM), slow detuned string-like or glassy pads, a soft
+sub note per chord, slow drifting bell arpeggios, a faint high twinkle, no drums, a long hall.
+Each cue gets a glissando of high bells.
+
+style="chip" (cozy pixel game scenes, 72-92 BPM): band-limited pulse lead with delayed
+vibrato, echo and optional glide; triangle bass; quiet detuned pulse pad; pulse arpeggios;
+soft noise hats or shaker (sometimes absent). Cues get a sparkly chime arpeggio, ticks get
+RPG-style text blips about 15 dB under the music.
+
+All oscillators are band-limited (harmonics stop below ~9 kHz) and the master rolls off
+above 8 kHz, so nothing fizzes. Fade in 0.3 s, fade out 1.2 s, about -16 LUFS, peak -1 dBFS.
 
 API (other code imports these):
   SR = 44100
-  render(sign, seed, seconds, cues=(), ticks=()) -> float32 (n, 2), peak about -1 dBFS
-      cues:  times (s) of new text cards  -> a soft sparkly chime arpeggio
+  render(sign, seed, seconds, cues=(), ticks=(), style="dream") -> float32 (n, 2)
+      cues:  times (s) of new text cards  -> a soft sparkly chime / bell glissando
       ticks: times (s) of typed characters -> very quiet, short "text blips"
   write_wav(path, audio)  16-bit PCM stereo
+  describe(sign, seed, style="dream") -> one-line summary of the seed's choices
 """
 import argparse
 import os
@@ -293,16 +303,22 @@ def _convolve(x, ir):
     return np.stack([np.fft.irfft(X * np.fft.rfft(ir[:, c], nf), nf)[:n] for c in range(2)], 1)
 
 
+def _kfilter(x):
+    """Approximate BS.1770 K-weighting (high-pass ~38 Hz, +4 dB shelf above ~1.5 kHz)."""
+    return _spectral(x, lambda f: _hp(f, 38, 1) * 10 ** (4 / 20 * (f ** 2 / (f ** 2 + 1500 ** 2))))
+
+
 def _kweight_ms(x):
-    """Mean square after an approximate K-weighting with BS.1770-style gating."""
-    m = x.mean(1) if x.ndim == 2 else x
-    if len(m) < SR // 2:
-        return float(np.mean(m * m)) + 1e-12
-    y = _spectral(m, lambda f: _hp(f, 38, 1) * 10 ** (4 / 20 * (f ** 2 / (f ** 2 + 1500 ** 2))))
+    """BS.1770-style loudness power (channel powers summed, gated); LUFS = -0.691 + 10 log10."""
+    x = x if x.ndim == 2 else x[:, None]
+    y = _kfilter(x)
+    p = np.sum(y * y, 1)
+    if len(p) < SR // 2:
+        return float(np.mean(p)) + 1e-12
     b = int(0.1 * SR)
-    sub = np.mean(y[:len(y) // b * b].reshape(-1, b) ** 2, 1)
+    sub = np.mean(p[:len(p) // b * b].reshape(-1, b), 1)
     blk = np.convolve(sub, np.ones(4) / 4, mode="valid")
-    blk = blk[blk > 10 ** (-70 / 10)]
+    blk = blk[blk > 10 ** ((-70 + 0.691) / 10)]
     if len(blk) == 0:
         return 1e-12
     blk = blk[blk > np.mean(blk) * 0.1]
@@ -950,7 +966,7 @@ def _dream(sign, seed, seconds, N, cues):
 def _master(mix, N, P, sign, seed, ticks):
     """Clean lows, soft top, loudness, ticks, limiter, fades."""
     mix = _spectral(mix, lambda f: _hp(f, 32, 2) * _lp(f, 8000, 4))[:N]
-    target = 10 ** (-16.0 / 10)
+    target = 10 ** ((-16.0 + 0.691) / 10)          # -16 LUFS
     ms = _kweight_ms(mix)
     mix *= np.sqrt(target / ms)
 
@@ -971,7 +987,7 @@ def _master(mix, N, P, sign, seed, ticks):
     mix = _limit(mix, ceil * 0.995)
     pk = np.abs(mix).max()
     if pk > 0:
-        mix *= min(ceil / pk, 10 ** (2.0 / 20))       # raise at most 2 dB to reach -1 dBFS
+        mix *= min(ceil / pk, 10 ** (1.0 / 20))       # stay near -16 LUFS: raise at most 1 dB
     return np.nan_to_num(mix).astype(np.float32)
 
 
@@ -1006,9 +1022,8 @@ def _ticks(P, sign, seed, ticks, N):
 
 
 def _kweight_ms_raw(tk, ticks):
-    """Mean square of the blip track while typing (each tick owns ~1/14 s)."""
-    m = tk.mean(1)
-    y = _spectral(m, lambda f: _hp(f, 38, 1) * 10 ** (4 / 20 * (f ** 2 / (f ** 2 + 1500 ** 2))))
+    """Loudness power of the blip track while typing (each tick owns one typing interval)."""
+    y = _kfilter(tk)
     ts = np.sort(np.asarray(ticks, float))
     if len(ts) == 0:
         return 0.0
