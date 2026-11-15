@@ -24,7 +24,7 @@ kit does something you must change, copy that kit into your folder and import th
    export const HOOK_STYLE = 'outline'   // 'outline' (white text, black outline) or 'box' (white text on black boxes)
    export const HOOK_UNTIL = 3.5         // film seconds it stays (it is on screen fully from frame 1, no animation)
    ```
-   The hook is static (no animation at all) from frame 1 until HOOK_UNTIL. Write a hook that stops the scroll: ≤ 10 words, 2 short lines (each ≤ ~22 characters so it doesn't wrap), relatable or
+   The hook is static (no animation at all) from frame 1 until HOOK_UNTIL. Write a hook that stops the scroll: ≤ 10 words, 2 short lines (each ≤ 20 characters so it doesn't wrap at 84 px), relatable or
    provocative, like the best TikTok text hooks. Then REMOVE or delay the film's own animated title/hook so nothing
    overlaps the hook while it is up, and make sure frame 0 already shows the scene (no fade-in from black under the hook).
 2. **Crazier personalities.** Rewrite the dialogue, captions and labels so each sign is pushed to the extreme
@@ -33,6 +33,12 @@ kit does something you must change, copy that kit into your folder and import th
    corner logos (the automatic watermark is the only Align mark). Keep the original's last story beat as the ending (no end card).
 4. **Sound.** Keep the film's own cues.js; the calm/social switches thin and quiet it. Remove any word-pop/tick cue
    bursts you added.
+
+**Lessons from the first reworks:**
+- Many old kits pop/fade everything OUT in the last second because the end card used to follow. In social mode that leaves an empty sky as the last frame: push that `out` time past the end (in your kit copy) so the film ends ON its last story beat.
+- Remove fade-ins from black, white flashes, screen shakes, slam titles and word-pop sound bursts; soften whip zooms.
+- Emoji inside scene text: replace with words (house rule: no emoji).
+- If the opening beat is too quick to read under the hook, stretch it a little (the hook needs ~3 s).
 
 ## Check and render
 ```bash

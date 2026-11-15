@@ -67,10 +67,10 @@ async function boot() {
       .hk-line{margin:0 auto 10px;max-width:960px}
       .hk-outline span{color:#fff;text-shadow:7.0px 0.0px 0 #000,6.5px 2.7px 0 #000,4.9px 4.9px 0 #000,2.7px 6.5px 0 #000,-0.0px 7.0px 0 #000,-2.7px 6.5px 0 #000,-4.9px 4.9px 0 #000,-6.5px 2.7px 0 #000,-7.0px -0.0px 0 #000,-6.5px -2.7px 0 #000,-4.9px -4.9px 0 #000,-2.7px -6.5px 0 #000,0.0px -7.0px 0 #000,2.7px -6.5px 0 #000,4.9px -4.9px 0 #000,6.5px -2.7px 0 #000,0 9px 0 #000}
       .hk-outline .hk-acc{color:#ffd23a}
-      .hk-box span{display:inline;color:#fff;background:#000;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
-      .hk-box .hk-acc{color:#ffd23a;padding:0;background:none}
-      .hk-light span{display:inline;color:#111;background:#fff;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
-      .hk-light .hk-acc{color:#b8008f;padding:0;background:none}`
+      .hk-box .hk-line>span{display:inline;color:#fff;background:#000;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
+      .hk-box .hk-acc{color:#ffd23a}
+      .hk-light .hk-line>span{display:inline;color:#111;background:#fff;padding:6px 22px;border-radius:18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.42}
+      .hk-light .hk-acc{color:#b8008f}`
     document.head.appendChild(css); overlayParent.appendChild(hk)
     window.__hook = { el: hk, until: FILM.HOOK_UNTIL ?? 3.5 }
   }
