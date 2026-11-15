@@ -588,7 +588,7 @@ if (!id && !film2 && !film3 && !film) { console.error('usage: --teaser=<id> | --
 if (process.argv.includes('--social')) process.env.SOCIAL = '1'   // OG films: no end-card / card-cut cues; score ends with the story
 const T = film ? (await import(`../films/${film}/cues.js`)).default : film3 ? (await import('../film3/cues.js')).default : film2 ? (await import('../film2/cues.js')).default : (await import(`../teasers/t${id}.js`)).default
 // --calm[=speed]: the social cut. Everything plays at `speed` (default 0.8, so 25% slower), the word pops, ticks and
-// other busy effects are dropped, the rest are thinned to one sound every ~1.4 s, and the mix is quieter (-20 LUFS,
+// other busy effects are dropped, the rest are thinned to one soft sound every ~2.5 s, and the mix is quiet (-24 LUFS,
 // music further under the effects). render.mjs --calm renders the matching picture.
 if (process.env.SOCIAL === '1') {
   const { socialEnd } = await import('../films/social.js')
@@ -611,12 +611,12 @@ function calmify(T, speed) {
   delete mu.hits
   for (const k of ['beatFrom', 'beatTo', 'arpFrom', 'arpTo']) if (mu[k] != null) mu[k] *= S
   if (mu.chords) mu.chords = mu.chords.map(([a, b, c]) => [a * S, b * S, c])
-  mu.lufs = Math.min(mu.lufs ?? -15, -20); mu.musicRel = Math.min(mu.musicRel ?? -4.5, -6)
-  const DROP = new Set(['pop', 'tick', 'crash', 'clap', 'snare', 'kick', 'hat', 'shaker', 'tapeStop', 'brass'])
+  mu.lufs = Math.min(mu.lufs ?? -15, -24); mu.musicRel = Math.min(mu.musicRel ?? -4.5, -9)
+  const DROP = new Set(['pop', 'tick', 'crash', 'clap', 'snare', 'kick', 'hat', 'shaker', 'tapeStop', 'brass', 'boom', 'whoosh', 'riser', 'glitter'])
   const RANK = { bell: 1, pluck: 2, chip: 3, glitter: 4, tom: 5, whoosh: 6, boom: 7, riser: 8 }
   const TWO = new Set(['glitter', 'riser', 'vinyl', 'swell', 'strings'])   // (t0, t1, …)
   const cues = (T.cues || []).filter(([k]) => !DROP.has(k)).map(([k, ...a]) => { a[0] *= S; if (TWO.has(k) && typeof a[1] === 'number') a[1] *= S; return [k, ...a] })
-  const keep = [], GAP = 1.4
+  const keep = [], GAP = 2.5
   for (const c of [...cues].sort((x, y) => (RANK[x[0]] ?? 0) - (RANK[y[0]] ?? 0) || x[1] - y[1])) {
     if (!(c[0] in RANK) || !keep.some(d => d[0] in RANK && Math.abs(d[1] - c[1]) < GAP)) keep.push(c)
   }
