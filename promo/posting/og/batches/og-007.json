@@ -1,0 +1,72 @@
+[
+ {
+  "id": "sxfieldair",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Dating an Air Sign.",
+  "old_caption": "First date with an air sign? Pick somewhere to think, skip the small talk and ask the strange question. Then really listen. Curiosity is the way in."
+ },
+ {
+  "id": "sxfieldearth",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Dating an Earth Sign.",
+  "old_caption": "Planning a date with an Earth sign? Think cozy dinner or a market stroll, ask about their plans and comfort food, and arrive on time.\nSteady effort is how they feel cared for."
+ },
+ {
+  "id": "sxfieldfire",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Dating a Fire Sign.",
+  "old_caption": "Taking a Fire sign out? Pick somewhere with energy, ask about their biggest dreams, and maybe skip the slow silent movie.\nMatch their spark with enthusiasm, and you'll both have fun."
+ },
+ {
+  "id": "sxfieldwater",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Dating a Water Sign.",
+  "old_caption": "First date with a water sign? Choose somewhere quiet, ask how they're feeling and let the answer run long. Skip the rush. With water signs, slow and gentle is the way in."
+ },
+ {
+  "id": "sxfriendafter",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "After the Breakup.",
+  "old_caption": "Day one is a blanket burrito. Day twelve brings a setback. Day twenty brings the first real laugh.\nHealing after a breakup isn't a straight line, and good friends stay with you through every step."
+ },
+ {
+  "id": "sxfriendhype",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "The Hype Friend.",
+  "old_caption": "Pre-date nerves meet one best friend with pom-poms, a pep talk and snacks for any outcome.\nThe friend who hypes you up and waits for the debrief is a love story too. Send this to yours."
+ },
+ {
+  "id": "sxfriendmirror",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Your Own Biggest Fan.",
+  "old_caption": "That inner voice that critiques your outfit and your texts? It's usually trying to protect you. Talk back to it kindly, the way you'd talk to a good friend."
+ },
+ {
+  "id": "sxhoodeado",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "EaDo.",
+  "old_caption": "EaDo's star paints three murals before lunch and hides the sketchbook under its beret. Even camouflage didn't work, Libra saw the eyes. What do you hide from your date?"
+ },
+ {
+  "id": "sxhoodmidtown",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Midtown.",
+  "old_caption": "Midtown's star: brunch at 11, rooftop at 4, table for forty. Then one person sits down to share something real and the phone keeps buzzing. Tag your friend who is always out."
+ },
+ {
+  "id": "sxhoodthirdward",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Third Ward.",
+  "old_caption": "Date three, and Capricorn meets the porch committee: auntie wants to know if you ate, unc wants to know who your people are, and the baby pictures come out. Who's on your porch committee?"
+ }
+]

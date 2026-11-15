@@ -1,0 +1,72 @@
+[
+ {
+  "id": "sxseasonsag",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Sagittarius Season.",
+  "old_caption": "Tonight's forecast: adventure, blunt honesty and a giant YES stamp. The date is across town, and they packed three bags plus a pouch of tissues. Happy Sagittarius season. Where should the next date be?"
+ },
+ {
+  "id": "sxseasonscorpio",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Scorpio Season.",
+  "old_caption": "Tonight's love forecast for Scorpio season: heavy eye contact, diaries locked, and 'maybe' not found. Expect long stares and zero small talk. Scorpios, is this accurate?"
+ },
+ {
+  "id": "sxsignaricap",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Aries × Cancer: A Survival Guide.",
+  "old_caption": "One of you is already outside, the other is still under a blanket. Different speeds can still meet in the middle.\nSlow down a little, ask for a minute when you need one, and find your shared pace."
+ },
+ {
+  "id": "sxsignscolib",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Scorpio × Libra: A Survival Guide.",
+  "old_caption": "Scorpio wants depth, Libra wants harmony. Libra, share what you actually think. Scorpio, not everything is a test. Depth and balance can make a lovely pair."
+ },
+ {
+  "id": "sxsignvirsag",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Virgo × Sagittarius: A Survival Guide.",
+  "old_caption": "A planner and a free spirit. Virgo, leave one blank square for fun. Sagittarius, text when you land. Structure and adventure can make a wonderful road trip together."
+ },
+ {
+  "id": "stabducted",
+  "account": "star_advice",
+  "series": "02 Seasons 1–3",
+  "title": "Abducted.",
+  "old_caption": "Mixed signals confuse even a lab full of aliens. If you like them, say it plainly: clear is kind, to them and to you. Save this for the next time you type \"whatever :)\"."
+ },
+ {
+  "id": "stair",
+  "account": "star_talk",
+  "series": "02 Seasons 1–3",
+  "title": "The air signs draft a text.",
+  "old_caption": "Gemini wants a joke, Libra wants it deleted, Aquarius wants to send a cat meme, and somehow it became a 412-word essay. Which air sign is drafting your texts?"
+ },
+ {
+  "id": "staraqua",
+  "account": "star_talk",
+  "series": "02 Seasons 1–3",
+  "title": "Dear Aquarius…",
+  "old_caption": "Aquarius floating alone in the corner with headphones on, being different on purpose. Then Leo waves, and suddenly the headphones are off. Aquarius, who got you to take them off?"
+ },
+ {
+  "id": "starcancer",
+  "account": "star_talk",
+  "series": "02 Seasons 1–3",
+  "title": "Dear Cancer…",
+  "old_caption": "Dear Cancer: the shell is cute, we made it. Peeking out with teary eyes is also very cute. Tag the Cancer who needs a gentle nudge out of the shell."
+ },
+ {
+  "id": "starcap",
+  "account": "star_talk",
+  "series": "02 Seasons 1–3",
+  "title": "Dear Capricorn…",
+  "old_caption": "Every square on Capricorn's calendar says WORK, except one tiny pink one that says LOVE (Q3). The stars don't do calendar invites. Capricorn, when did you last close the laptop?"
+ }
+]

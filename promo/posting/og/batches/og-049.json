@@ -1,0 +1,72 @@
+[
+ {
+  "id": "st12venus",
+  "account": "star_advice",
+  "series": "05 Seasons 10–12",
+  "title": "Check their Venus sign, not their sun.",
+  "old_caption": "Do you know your partner's Venus sign?\nCharts help, but asking \"how do you like to be loved?\" helps more."
+ },
+ {
+  "id": "st12virgo",
+  "account": "star_advice",
+  "series": "05 Seasons 10–12",
+  "title": "Virgos aren't picky. They have standards.",
+  "old_caption": "Ever re-folded someone else's laundry because it was wrong?\nStandards are good. So is letting the small things go. High standards, soft hands."
+ },
+ {
+  "id": "tr2ambedtime",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "My bedtime, ruined by one good conversation",
+  "old_caption": "2 PM Taurus: in bed by 10, non-negotiable. 2 AM Taurus: on topic nine (best cloud), two snort-laughs and fake goodnight number six. Zero sleep, zero regrets. Who's worth staying up for?"
+ },
+ {
+  "id": "tr2amcalm",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "My plan to play it cool",
+  "old_caption": "2 PM Aquarius: super chill, will reply in three business days. 2 AM Aquarius: read 'haha' 41 times and named the future dog. Turns out they were playing it cool too."
+ },
+ {
+  "id": "tr2amconfidence",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "My confidence",
+  "old_caption": "2 PM Leo: I'm a catch, and the mirror agrees. 2 AM Leo: replaying an accidental 'you too!' and rating its own laugh 4 out of 10. Pisces, sobbing, says yes. What does 2 AM tell you?"
+ },
+ {
+  "id": "tr2amlove",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "My belief in love",
+  "old_caption": "2 PM Capricorn: romance is not in the budget, I have meetings. 2 AM Capricorn: draft eleven of an ode to your laugh, rhyming moon with soon. Ever written something your daytime self would never see?"
+ },
+ {
+  "id": "tr2amtext",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "The text I drafted",
+  "old_caption": "2 PM Cancer drafted 'hey.' 2 AM Cancer wrote a director's cut covering the weather, our future, and signed 'no pressure :)'. Morning Cancer sent two kind lines instead. Ever been saved by sleeping on it?"
+ },
+ {
+  "id": "trdaycard",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "A blind mystery card's day",
+  "old_caption": "A blind card wakes at 7, gets shuffled on the commute, survives a near-skip at 9:14 and clocks out loved. Honestly a better work week than mine. Would you have flipped it?"
+ },
+ {
+  "id": "trdaymoon",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "The moon on date night",
+  "old_caption": "A day in the life of the moon on date night: clock in, hover (sorry, orbit), dim the other stars, and definitely not eavesdrop. Overtime gladly. Has the moon ever helped you out?"
+ },
+ {
+  "id": "trdayphone",
+  "account": "star_talk",
+  "series": "08 Trends",
+  "title": "A phone waiting for a text back",
+  "old_caption": "Shift report from a phone waiting for a text back: six checks in two minutes, three false alarms (battery, plant reminder, mom), then the right buzz. Who checked their phone just now?"
+ }
+]

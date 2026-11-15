@@ -1,0 +1,72 @@
+[
+ {
+  "id": "guidewater",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Water signs, gather round.",
+  "old_caption": "Water signs, feeling everything is your power. But you were never meant to carry the whole ocean alone. Let the people who love you take a bucket or two."
+ },
+ {
+  "id": "sxcount1",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "1.",
+  "old_caption": "One sleep to go. All twelve signs hold hands in a line, and it stops dead at Scorpio. Eye roll, blush, both hands. Who in your crew always needs the extra 'yes, you too'?"
+ },
+ {
+  "id": "sxcount2",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "2.",
+  "old_caption": "Two sleeps to go and the stars are totally calm. The deck went flying, a card landed on Virgo's head, Virgo offered to alphabetize them calmly. Who else has nervous butterflies?"
+ },
+ {
+  "id": "sxcount3",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "3.",
+  "old_caption": "Three sleeps to go, so the stars called mandatory warm-ups. Toe touches, jumping jacks, and Taurus asleep mid-jack because it's training for the sleeps. Who's counting down with us?"
+ },
+ {
+  "id": "sxdebatebill",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Split it, or I've got this?",
+  "old_caption": "Leo wants to treat, Virgo itemized Leo's love language, and the gold card turned out to be a library card. Who wins this one, Leo or Virgo?"
+ },
+ {
+  "id": "sxdebatephone",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Phone face-up, or face-down?",
+  "old_caption": "Gemini keeps the phone face-up in case it's urgent. Taurus hid theirs in the bread basket. Seventeen buzzes later, guess who was texting from across the table. Which side are you on?"
+ },
+ {
+  "id": "sxdebatetext",
+  "account": "star_talk",
+  "series": "01 Shows",
+  "title": "Text first, or wait?",
+  "old_caption": "Aries: text now, feelings expire. Capricorn: wait 48 hours, there's a spreadsheet. Aries already sent it twice. Capricorn's draft is from May. Which side are you on?"
+ },
+ {
+  "id": "sxdiary1",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Day 1: What's my birth time?",
+  "old_caption": "Day one of the diary: a Taurus learns their birth time is a mystery, so they call the only witness. Mom and the baby book come through.\nKnowing where you came from can be a sweet way to start."
+ },
+ {
+  "id": "sxdiary2",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Day 2: My first blind card.",
+  "old_caption": "Day two of the diary: a blind card with no photo, an overthinking list, and three outfit changes. Then the words win them over.\nGetting to know someone before you see them can be a brave, lovely thing."
+ },
+ {
+  "id": "sxdiary3",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Day 3: We matched answers.",
+  "old_caption": "Day three: same answer to the same question, and it was fresh bread. It's sweet how much a tiny shared thing can mean. Small things are big things when you're getting to know someone."
+ }
+]

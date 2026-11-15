@@ -1,0 +1,72 @@
+[
+ {
+  "id": "kaue16",
+  "account": "star_talk",
+  "series": "Achievement Unlocked: Single Life",
+  "title": "Single Saturday: the full playthrough",
+  "old_caption": "A whole single Saturday, played like a game: snooze boss, brunch co-op, errands speedrun and the final boss, the wedding seating plan. Watch what happens at table nine."
+ },
+ {
+  "id": "kaue17",
+  "account": "star_talk",
+  "series": "Achievement Unlocked: Single Life",
+  "title": "The holiday party, solo mode",
+  "old_caption": "Holiday party, solo mode. Three rounds of \"still single?\", a photo booth for two used by one, and an exit on their own terms. Which level is hardest for you?"
+ },
+ {
+  "id": "kaue18",
+  "account": "star_talk",
+  "series": "Achievement Unlocked: Single Life",
+  "title": "Week one after the breakup: the run",
+  "old_caption": "Week one after a breakup, played day by day: eat something, skip the sad songs, don't send the text, let friends in. Day 7 is the good part."
+ },
+ {
+  "id": "kaue19",
+  "account": "star_talk",
+  "series": "Achievement Unlocked: Single Life",
+  "title": "New Year's Eve with no one at midnight",
+  "old_caption": "No one to kiss at midnight? Aquarius found everyone else who was solo and made a crew. Best countdown of the night."
+ },
+ {
+  "id": "kaue20",
+  "account": "star_talk",
+  "series": "Achievement Unlocked: Single Life",
+  "title": "Every sign's single-life achievement",
+  "old_caption": "Twelve signs, twelve small wins of single life, one per sign, and Pisces saved for last. Which one is yours?"
+ },
+ {
+  "id": "naske01",
+  "account": "star_advice",
+  "series": "Ask the Stars, Volume 2",
+  "title": "How do I slow down when I really like someone?",
+  "old_caption": "Liking someone fast is not a problem. Let the plans grow one date at a time, and ask what pace feels good to them too."
+ },
+ {
+  "id": "naske02",
+  "account": "star_advice",
+  "series": "Ask the Stars, Volume 2",
+  "title": "They love new things. I love my routine.",
+  "old_caption": "Your routine is allowed to be your comfort. Try a trade: one old favorite, one new thing. Small yeses count."
+ },
+ {
+  "id": "naske03",
+  "account": "star_advice",
+  "series": "Ask the Stars, Volume 2",
+  "title": "I lose interest after the first few dates.",
+  "old_caption": "The first spark always changes shape. Sometimes bored just means not curious yet, so bring a deeper question to date four."
+ },
+ {
+  "id": "naske04",
+  "account": "star_advice",
+  "series": "Ask the Stars, Volume 2",
+  "title": "How do I let them take care of me?",
+  "old_caption": "If you are always the one tucking everyone in, let some of that care come back. When they offer, try just saying thank you."
+ },
+ {
+  "id": "naske05",
+  "account": "star_advice",
+  "series": "Ask the Stars, Volume 2",
+  "title": "What if they don't like my friends?",
+  "old_caption": "First hangouts are awkward for everyone. Ask what felt off and listen first. You do not have to choose; let your worlds blend slowly."
+ }
+]
