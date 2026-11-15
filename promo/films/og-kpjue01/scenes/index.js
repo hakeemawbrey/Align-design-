@@ -10,8 +10,8 @@ import { whipZoom, whipZoomCues, screenShake, shakeCues } from '../../hookkit.js
 import { jupFilm, drawJupiter, pisces, sticker, pr, easeOut, easeInOut, rr, INK, BONE, GOLD } from '../jupkit.js'
 
 export const DURATION = 24
-const JS = planetSize('jupiter', 540)
-const IN = { at: -0.42, x: 360, y: 640, size: JS }
+const JS = planetSize('jupiter', 540) * 0.85     // og full frame: a bit smaller and lower so the hook never covers it
+const IN = { at: -0.42, x: 380, y: 730, size: JS }
 export const HOOK = 'Date two? Planned. | *During date one.*'
 export const HOOK_STYLE = 'outline'
 export const HOOK_UNTIL = 2.9
@@ -46,7 +46,7 @@ function ariesPose(t) {
   if (t < 1.1) { X = 780 + 30 * Math.sin(t * 30) * (1 - pr(t, 0.6, 1.1)) ; rot = 0.18 * (1 - pr(t, 0.7, 1.1)) }
   if (t > 16.4 && t < 21) { X = 790 - (t - 16.4) * 14; Y = 1440 + Math.sin(t * 70) * 5 }
   if (t >= 21 && t <= BOLT) X = 790 - 4.6 * 14
-  if (t > 7.6 && t < 16.4) X = 790 + 120 * Math.min(pr(t, 7.6, 8.1), 1 - pr(t, 15.9, 16.4))
+  if (t > 7.6 && t < 16.4) X = 790 + 30 * Math.min(pr(t, 7.6, 8.1), 1 - pr(t, 15.9, 16.4))
   return { X, Y, rot, run }
 }
 
@@ -112,7 +112,7 @@ function draw(x, t, H) {
   const pk = easeOut(pr(t, 18.5, 18.9)) * (1 - pr(t, 20.9, 21.2))
   if (pk > 0) pisces(x, 230, 1440, 270, t, { pop: pk, hops: [19.4, 20.1] })
   // slow-walk sticker
-  if (t > 16.8 && t < 20.9) sticker(x, 'SPEED: 0.1×', 820, 1250, { rot: 0.07, size: 36, bg: '#7dffb0', scale: easeOut(pr(t, 16.8, 17.1)) })
+  if (t > 16.8 && t < 20.9) sticker(x, 'SPEED: 0.1×', 760, 1250, { rot: 0.07, size: 36, bg: '#7dffb0', scale: easeOut(pr(t, 16.8, 17.1)) })
 }
 
 const film = jupFilm({

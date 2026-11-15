@@ -54,7 +54,7 @@ async function boot() {
   if (params.has('social') && FILM.WATERMARK !== false) {
     const wm = document.createElement('div')
     wm.textContent = '✦ come align · join the beta ✦'
-    wm.style.cssText = "position:absolute;left:0;right:0;bottom:" + (params.has('pad') ? 250 : 46) + "px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
+    wm.style.cssText = "position:absolute;left:0;right:0;bottom:" + (params.has("pad") ? (Number(params.get("pad")) >= 1 ? 150 : 250) : 46) + "px;z-index:2999;text-align:center;font:700 34px 'Space Mono',ui-monospace,monospace;letter-spacing:.16em;color:#efe6d6;opacity:.34;pointer-events:none;white-space:nowrap"
     overlayParent.appendChild(wm)
   }
   if (FILM.HOOK) {

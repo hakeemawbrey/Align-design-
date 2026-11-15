@@ -35,7 +35,7 @@ export const THEM = '#b7a6f2', SNOW = '#f4f6ff', ICE = '#bfe3ff'
 const PIS = signStar('pisces')
 
 // ─────────────────────────────────────────────── the stage
-export const ACT_Y = 1210, GROUND = 1292, SM = 170
+export const ACT_Y = 1080, GROUND = 1162, SM = 170   // og full frame: the stage sits higher so the box clears the watermark band
 const HERO = { x: 540, y: 900, size: 340 }
 const UP = { x: 540, y: 575, size: 250 }
 
@@ -196,7 +196,7 @@ export function guideFilm(spec) {
   const HOPS = talkHops(LINES, SPEAK, { cps: CPS })
   const Kf = { ...K, ME, T, appear: appear(T) }
   const G_ = gag(T, Kf)
-  const pisX = spec.pisX ?? 968, pisY = spec.pisY ?? ACT_Y + 4
+  const pisX = spec.pisX ?? 890, pisY = spec.pisY ?? ACT_Y + 4
 
   async function build(stage) {
     await loadGuideFonts()
@@ -206,8 +206,8 @@ export function guideFilm(spec) {
     const CHIP = { update() {} }; void noteChip   // og (social): no 'note 1 of 4' chip
     void (root, { sign: S.name, glyph: S.glyph, n: note, of, color: GOLD, top: 128, out: T.out })
     const HOOK = { update() {} }; void guideHook   // og (social): the static HOOK (main.js) replaces the animated hook
-    const H2 = popText(root, last, { top: 1430, size: lastSize, accentSize: Math.round(lastSize * 1.4), at: T.h2, gap: 0.08, late, lateAt: T.h2Land, lateGap: 0.14, accentColor: ME.color, lineHeight: 1.0 })
-    const box = dialogueBox(root, { lines: LINES, y: 1450, width: 960, height: 300, open: T.open, close: T.close, cps: CPS })
+    const H2 = popText(root, last, { top: 1250, size: lastSize, accentSize: Math.round(lastSize * 1.4), at: T.h2, gap: 0.08, late, lateAt: T.h2Land, lateGap: 0.14, accentColor: ME.color, lineHeight: 1.0 })
+    const box = dialogueBox(root, { lines: LINES, y: 1240, width: 900, height: 290, open: T.open, close: T.close, cps: CPS })
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
 
     function guidePos(t) {
@@ -271,7 +271,7 @@ export function guideFilm(spec) {
         drawStage(t)
         drawTheGuide(t)
         if (t > T.scene) { G_.draw(x, t); drawPisces(t); if (G_.front) G_.front(x, t) }
-        factChip(x, t, { text: chip, at: T.chip, dur: 4.4, x: 540, y: 850, color: GOLD, size: 30 })
+        factChip(x, t, { text: chip, at: T.chip, dur: 4.4, x: 540, y: 810, color: GOLD, size: 30 })
         snowLayer(x, t, { n: 16, seed: 9, sizeMin: 8, sizeMax: 12, speed: 120, alpha: 0.85 })
         BUG.update(t, 0)                                // og (social): no series bug
         CHIP.update(t)

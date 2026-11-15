@@ -311,7 +311,7 @@ export function beforeChrome(x, t, { alpha = 1, tag = 'BEFORE' } = {}) {
   const band = ((t * 0.37) % 1) * 2200 - 140
   x.fillStyle = 'rgba(255,255,255,0.06)'; x.fillRect(0, band, 1080, 60)
   // the tag: red box, white letters, top-right under the bug line
-  x.translate(200, 1700); x.rotate(-0.06)
+  x.translate(220, 1470); x.rotate(-0.06)   // og full frame: above the watermark band
   R(x, INK, -150, -46, 300, 92); R(x, '#d8263a', -142, -38, 284, 76)
   x.font = `900 48px ${INTER}`; x.fillStyle = '#ffffff'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(tag, 0, 3)
   x.restore()
@@ -351,14 +351,14 @@ export function buildHead(root, text, { top = 170, size = 92, accent = YEL, colo
   }
 }
 /** a lower third: coloured bar with a name + a line */
-export function buildLower(root, name, line, { top = 1630, col = HOT } = {}) {
+export function buildLower(root, name, line, { top = 1400, col = HOT } = {}) {
   const box = el('div', { position: 'absolute', left: '0px', top: top + 'px', display: 'none', zIndex: 4 }, root)
   el('div', { display: 'inline-block', background: col, color: '#fff', font: `900 40px ${INTER}`, letterSpacing: '0.06em', padding: '10px 28px 10px 64px', boxShadow: `8px 8px 0 ${INK}` }, box, name)
   el('div', { background: BONE, color: INK, font: `700 32px ${INTER}`, padding: '10px 28px 12px 64px', marginTop: '6px', display: 'inline-block', boxShadow: `8px 8px 0 ${INK}`, fontStyle: 'italic' }, el('div', {}, box), line)
   return { update(t, k) { box.style.display = k <= 0.01 ? 'none' : 'block'; box.style.transform = `translateX(${((1 - k) * -900).toFixed(1)}px)`; box.style.opacity = String(clamp(k * 2)) } }
 }
 /** the fine print strip (bottom, small mono, scrolls fast like real fine print) */
-export function buildFine(root, text, { top = 1830 } = {}) {
+export function buildFine(root, text, { top = 1556 } = {}) {
   const box = el('div', { position: 'absolute', left: '40px', right: '40px', top: top + 'px', font: `700 27px ${MONO}`, color: 'rgba(239,230,214,0.92)', textAlign: 'center', textShadow: SHADOW, display: 'none', zIndex: 4, letterSpacing: '0.02em' }, root, text)
   return { update(t, k) { box.style.display = k <= 0.01 ? 'none' : 'block'; box.style.opacity = String(clamp(k)); box.style.transform = `translateY(${((1 - k) * 40).toFixed(1)}px)` } }
 }
@@ -405,7 +405,7 @@ export function adTimes(D) {
 export function makeAd(cfg) {
   const D = cfg.dur, T = { ...adTimes(D), ...(cfg.times || {}) }
   const LOOP = cfg.ending === 'loop'
-  const PIS = cfg.pis || { x: 850, y: 1470, s: 200 }
+  const PIS = cfg.pis || { x: 790, y: 1350, s: 170 }   // og full frame: inside the safe area
   const HERO = cfg.heroPos || { x: 540, y: 1060, s: 330 }
   const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 250, size: cfg.hookSize || 108, accentColor: YEL, out: [T.flip - 0.06, T.flip] }
   const REC = { at: T.freeze, len: T.flip - T.freeze, caption: cfg.rec || 'sound *familiar?*', top: cfg.recTop || 1480 }
@@ -438,7 +438,7 @@ export function makeAd(cfg) {
       // the box: slams in, opens, then becomes the product shot bottom-left
       const slam = easeOutBack(prog(t, T.box, T.box + 0.3), 1.2)
       const shrink = ease.inOutCubic(prog(t, T.after - 0.3, T.after + 0.1))
-      const bp = { x: lerp(540, 200, shrink), y: lerp(lerp(-400, 1120, slam), 1520, shrink), k: lerp(1, 0.46, shrink) }
+      const bp = { x: lerp(540, 210, shrink), y: lerp(lerp(-400, 1120, slam), 1290, shrink), k: lerp(1, 0.46, shrink) }
       const lid = ease.outCubic(prog(t, T.open, T.open + 0.25))
       if (t >= T.box) {
         drawBox(x, t, bp.x, bp.y, { name: cfg.product, sub: cfg.sub, icon: cfg.icon, col: cfg.col, col2: cfg.col2, lid, k: bp.k, rot: -0.03 + 0.02 * Math.sin(t * 3), badge: cfg.badge })

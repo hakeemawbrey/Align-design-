@@ -35,7 +35,7 @@ kit does something you must change, copy that kit into your folder and import th
    bursts you added.
 
 **Safe zones (full frame, so you move things instead of shrinking):** keep important text and characters inside
-x 60–960 and between y 470 and 1560. The hook covers y ~232–460 while it is up; the faint watermark sits at y ~1600–1690;
+x 60–960 and between y 470 and 1560. The hook covers y ~232–460 while it is up; the faint watermark sits at y ~1730–1770 (bottom 150 px);
 the app's buttons cover the right edge (x 960–1080, y 1000–1600) and its caption covers the bottom ~300 px. Backgrounds
 and sets stay full frame; nudge labels, tags and captions that land in those zones (in your kit copy).
 

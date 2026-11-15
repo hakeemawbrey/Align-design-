@@ -158,10 +158,10 @@ const EP = makeTell({
   ],
   finale(x, t, S) {
     const { hero, date, ok, HERO_FIN_HOPS } = S
-    shadow(x, 400, 1070, 220 * ok); shadow(x, 690, 1080, 200 * ok)
-    const o = { x: 400, y: 880, s: 260, pop: ok, mood: t > T.stamp + 0.15 ? 'sparkle' : 'wide', look: [1, 0], hops: HERO_FIN_HOPS }
+    shadow(x, 400, 930, 220 * ok); shadow(x, 690, 940, 200 * ok)   // og full frame: finale lifted above the box
+    const o = { x: 400, y: 740, s: 260, pop: ok, mood: t > T.stamp + 0.15 ? 'sparkle' : 'wide', look: [1, 0], hops: HERO_FIN_HOPS }
     hero(x, t, o); crown(x, t, o)
-    date(x, t, { x: 690, y: 900, s: 220, pop: ok, mood: 'heart', look: [-1, 0], hops: [T.stamp + 0.1, T.last + 1.7] })
+    date(x, t, { x: 690, y: 760, s: 220, pop: ok, mood: 'heart', look: [-1, 0], hops: [T.stamp + 0.1, T.last + 1.7] })
   },
   last: 'Main character, *generous* edition.',
 })

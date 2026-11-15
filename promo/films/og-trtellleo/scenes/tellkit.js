@@ -223,7 +223,7 @@ function buildBug(root, at) {
 
 // ── the caption sticker: a tilted bone sticker, numbered badge, Inter 800 + one *italic* accent
 function buildSticker(root, { n, text, deep, badge, at, out, tilt }) {
-  const wrap = el('div', { position: 'absolute', left: '0', top: '1330px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
+  const wrap = el('div', { position: 'absolute', left: '0', top: '1250px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
   const st = el('div', { display: 'flex', alignItems: 'center', gap: '22px', maxWidth: '940px', padding: '18px 34px 20px 22px', background: BONE, border: `6px solid ${INK}`, borderRadius: '14px',
     boxShadow: `10px 10px 0 rgba(6,4,18,0.7)`, transformOrigin: '50% 50%' }, wrap)
   el('div', { flex: '0 0 auto', width: '74px', height: '74px', borderRadius: '50%', background: badge, border: `5px solid ${INK}`, display: 'grid', placeItems: 'center', font: `800 40px ${INTER}`, color: INK }, st, String(n))
@@ -305,7 +305,7 @@ export function makeTell(cfg) {
   const STARS_HOPS = [T.starsIn + 0.3, ...talkHops(LINES, SPEAK, { cps: CPS })]
   const HERO_HOOK_HOPS = [T.heroIn + 0.35, T.wink - 0.05]
   const HERO_FIN_HOPS = [T.stamp + 0.04, T.stamp + 0.5, T.last + 1.6]
-  const PIS_DEF = { x: 940, y: 1650, s: 130 }
+  const PIS_DEF = { x: 840, y: 1490, s: 120 }   // og full frame: clear of the watermark band and the side buttons
 
   // hero / date draw helpers handed to the tells
   const hero = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: HERO.color, glyph: o.s >= 150 ? HERO.glyph : null, seed: 3, glow: 1.1, ...o })
@@ -335,7 +335,7 @@ export function makeTell(cfg) {
     const stickers = cfg.tells.map((tl, i) => buildSticker(root, { n: i + 1, text: tl.caption, deep: cfg.deep, badge: i === 2 ? PINK : (cfg.badge || HERO.color), at: T.tells[i][0] + (i === 2 ? 0.55 : 0.35), out: [T.tells[i][1] - 0.18, T.tells[i][1]], tilt: [-2.2, 1.8, -1.4][i] }))
     const stamp = buildStamp(root, { name: cfg.name, ink: cfg.stampInk || RED })
     const top = layerCanvas(root), tx = top.getContext('2d')
-    const box1 = dialogueBox(root, { lines: LINES, y: 1420, open: T.last - 0.22, close: T.boxClose, cps: CPS })
+    const box1 = dialogueBox(root, { lines: LINES, y: 1250, open: T.last - 0.22, close: T.boxClose, cps: CPS })
     const bug = buildBug(root, T.bug)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
@@ -359,19 +359,19 @@ export function makeTell(cfg) {
       const S = { hero, date, ok, HERO_FIN_HOPS }
       if (cfg.finale) cfg.finale(x, t, S)
       else {
-        shadow(x, 540, 1060, 240 * ok)
-        hero(x, t, { x: 540, y: 860, s: 290, pop: ok, mood: t > T.stamp + 0.15 ? 'sparkle' : 'wide', look: [0, 0], hops: HERO_FIN_HOPS })
+        shadow(x, 540, 920, 240 * ok)
+        hero(x, t, { x: 540, y: 720, s: 290, pop: ok, mood: t > T.stamp + 0.15 ? 'sparkle' : 'wide', look: [0, 0], hops: HERO_FIN_HOPS })
       }
       // THE STARS
       const sk = pop01(t, T.starsIn, 0.38, 2.1) * ok
-      if (sk > 0.01) drawStarChar(x, 190, 1220, 170, t, { color: STAR.sky, mood: t > T.last + 1.4 ? 'happy' : 'neutral', look: [1, -0.3], hops: STARS_HOPS, pop: sk, seed: 2, glow: 1.05 })
+      if (sk > 0.01) drawStarChar(x, 200, 1060, 170, t, { color: STAR.sky, mood: t > T.last + 1.4 ? 'happy' : 'neutral', look: [1, -0.3], hops: STARS_HOPS, pop: sk, seed: 2, glow: 1.05 })
       // Pisces: impressed (a 10/10 card, happy-tear fountains)
       const pk = pop01(t, T.pisIn, 0.36, 2.2) * ok
       if (pk > 0.01) {
-        const F = pisces(x, t, { x: 890, y: 1225, s: 160, pop: pk, hops: [T.pisIn + 0.3, T.score + 0.02, T.score + 0.6] }, t > T.score ? 3 : 2, 'sparkle', [-1, -1])
+        const F = pisces(x, t, { x: 860, y: 1065, s: 160, pop: pk, hops: [T.pisIn + 0.3, T.score + 0.02, T.score + 0.6] }, t > T.score ? 3 : 2, 'sparkle', [-1, -1])
         const ck = pop01(t, T.score, 0.3, 2.6) * ok
         if (ck > 0.01) {
-          x.save(); x.translate(890 + 4, F.cy - 150 - 8 * Math.sin(t * 5)); x.rotate(0.08 * Math.sin(t * 4)); x.scale(ck, ck)
+          x.save(); x.translate(860 + 4, F.cy - 150 - 8 * Math.sin(t * 5)); x.rotate(0.08 * Math.sin(t * 4)); x.scale(ck, ck)
           box(x, -78, -50, 156, 100, BONE, { b: 6 }); R(x, INK, -6, 50, 12, 70)
           x.font = `800 52px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = RED; x.fillText('10/10', 0, 4)
           x.restore()

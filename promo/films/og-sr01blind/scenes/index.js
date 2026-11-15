@@ -47,7 +47,7 @@ const LINES = [
 const CPS = 27
 
 // ── layout
-const ST = { x: 540, y: 1200, size: 320 }
+const ST = { x: 540, y: 1040, size: 320 }          // full frame: lifted so the box clears the watermark band
 const VP = { x: 540, y: 640 }                       // where the cards come out of the dark
 const CARD_AR = 2238 / 1496
 const CW = 300                                     // the hero card's width when it lands
@@ -55,7 +55,7 @@ const CW = 300                                     // the hero card's width when
 // star moves: the lunge (miss), bonk recoil, the wobble while holding still
 function starOffset(t) {
   const l = prog(t, ...T.lunge), lk = Math.sin(Math.PI * l)
-  return { dx: 290 * lk, rot: 0, sq: t > T.lunge[0] && t < T.lunge[1] ? -0.08 * lk : 0 }
+  return { dx: 230 * lk, rot: 0, sq: t > T.lunge[0] && t < T.lunge[1] ? -0.08 * lk : 0 }
 }
 const HOPS = [T.gIn + 0.3, T.h0Land, ...talkHops(LINES, 'THE STARS', { cps: CPS }).filter(h => h < T.a[0] || h > T.c[1] + 0.3), T.heart + 0.1, T.bounce[0], T.bounce[0] + 0.5]
 function sState(t) {
@@ -67,8 +67,8 @@ function sState(t) {
 
 // the three catches: start time, end time, where they end, what happens after
 const FLY = [
-  { n: 1, ...{ t0: T.a[0], t1: T.a[1] }, to: { x: -360, y: 1250 }, s1: 2.4, rot: -0.5, kind: 'past' },
-  { n: 4, ...{ t0: T.b[0], t1: T.b[1] }, to: { x: 540, y: 1150 }, s1: 1.0, rot: 0.15, kind: 'bonk' },
+  { n: 1, ...{ t0: T.a[0], t1: T.a[1] }, to: { x: -360, y: 1090 }, s1: 2.4, rot: -0.5, kind: 'past' },
+  { n: 4, ...{ t0: T.b[0], t1: T.b[1] }, to: { x: 540, y: 990 }, s1: 1.0, rot: 0.15, kind: 'bonk' },
   { n: 3, ...{ t0: T.c[0], t1: T.c[1] }, to: null, s1: 1.0, rot: 0, kind: 'hero' },
 ]
 // background cards drifting past (atmosphere) while the catches happen
@@ -90,7 +90,7 @@ async function build(stage) {
   const H3 = popText(root, 'Dealt *blind.*', { top: 250, size: 128, accentSize: 192, at: T.h3, late: 1, lateAt: T.h3Land, wobble: true, accentColor: LAV })
   const H4 = popText(root, 'Take the | *chance.*', { top: 200, size: 124, accentSize: 196, at: T.h4, late: 1, lateAt: T.h4Land, wobble: true, accentColor: GOLD, lineHeight: 0.96 })
   const HEADS = [[H1, T.h1Out], [H2, T.h2Out], [H3, T.h3Out], [H4, T.h4Out]]
-  const box = dialogueBox(root, { lines: LINES, y: 1440, width: 960, height: 280, open: T.open, close: T.close, cps: CPS })
+  const box = dialogueBox(root, { lines: LINES, y: 1270, width: 900, height: 280, open: T.open, close: T.close, cps: CPS })
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
@@ -213,7 +213,7 @@ async function build(stage) {
         const pp = pop01(t, T.pis, 0.4, 2) * popOut(t, T.out)
         if (pp > 0.02) {
           const ph = [T.pis + 0.3, T.pis + 1.0]
-          const r = drawStarChar(x, 1040 - 90 * pp, 1020, 180, t, { color: PIS.color, mood: 'happy', seed: 9, glow: 0.7, hops: ph })
+          const r = drawStarChar(x, 900 - 60 * pp, 860, 180, t, { color: PIS.color, mood: 'happy', seed: 9, glow: 0.7, hops: ph })
           tears(x, t, starGeom(t, r, 180, { seed: 9, hops: ph }), r.x, T.pis + 0.2)
         }
         const s = starNow(t)

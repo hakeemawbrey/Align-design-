@@ -220,11 +220,11 @@ export function tissues(x, cx, cy, s) {
 }
 
 // ── geometry
-export const PANEL = { x: 56, y: 420, w: 968, h: 1040 }
+export const PANEL = { x: 80, y: 530, w: 900, h: 760 }   // og full frame: below the hook, above the stage
 const HEAD_H = 98, PIN_H = 70
 const AV = 60, BX = PANEL.x + 112, BMAXW = PANEL.x + PANEL.w - 34 - BX
 const FS = 38, LH = 48, PADX = 22, PADY = 14, NAME_H = 36, GAP = 16, REACT_H = 46
-export const STAGE = { y: 1700, x: 300, s: 230, x2: 560, s2: 190, pisX: 918, pisY: 1735, pisS: 160 }
+export const STAGE = { y: 1400, x: 300, s: 200, x2: 560, s2: 170, pisX: 850, pisY: 1425, pisS: 140 }   // og full frame: clear of the watermark band and the side buttons
 
 /** split '*accent*' text into runs → [{ s, acc }] */
 function runs(text) {

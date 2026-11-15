@@ -34,7 +34,7 @@ const AD = makeAd({
   after(x, t, S) {
     const u = S.u
     S.hero(x, t, { x: 330, y: 1060, s: 300, mood: u > 1.0 ? 'heart' : 'happy', look: [1, 0], hops: [S.T.after + 0.1, S.T.after + 1.0] })
-    drawPhone(x, 760, 1000, { w: 400, h: 500, rot: 0.05, k: ease.outBack(prog(t, S.T.after, S.T.after + 0.3)), t, screen: (c, W, H, tt) => chat(c, tt, W, H, [
+    drawPhone(x, 740, 900, { w: 400, h: 500, rot: 0.05, k: ease.outBack(prog(t, S.T.after, S.T.after + 0.3)), t, screen: (c, W, H, tt) => chat(c, tt, W, H, [
       { side: 'R', text: 'hey, what did you mean by that?', at: S.T.after + 0.25 },
       { side: 'L', text: 'oh! I meant I want to see you again', at: S.T.after + 0.95 },
     ], { size: 34 }) })
