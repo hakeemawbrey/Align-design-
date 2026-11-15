@@ -446,7 +446,8 @@ class Card:
 class FrameReel:
     GROW = 2.6   # seconds for the frame to grow in
 
-    def __init__(self, sign, cards, seed=0, glyph_fn=None, end_tag="align", **_):
+    def __init__(self, sign, cards, seed=0, glyph_fn=None, end_tag="align", sprite_fn=None, **_):
+        self.sprite_fn = sprite_fn
         self.sign, self.seed = sign, seed
         tall = any(len(balanced_wrap(c.text, SERIF, 70 * 2 - 42)) > 4 for c in cards)
         self.orn = Ornament(sign, seed, tall)
@@ -492,6 +493,11 @@ class FrameReel:
         cd = next((c for c in self.cards if c.start <= t < c.start + c.dur), self.cards[0])
         ih = self._block(cd).height
         return CY - (ih + 14) // 2 - 4
+
+    def _sky_mask(self, t):
+        if not hasattr(self, "_skym"):
+            self._skym = np.zeros((H, W), bool)
+        return self._skym
 
     def _ry(self):
         k = self.orn.ring_kind
@@ -548,6 +554,28 @@ class FrameReel:
             dd.text(((60 - tw) / 2, 0), self.end_tag, font=TAG, fill=mix(GOLD, BG, 0.25) + (255,))
             self._tag = np.asarray(ti)
         ty = CY + int(self._ry()) + 7
+        if self.sprite_fn and t > 2.0:
+            sp = np.asarray(self.sprite_fn(self.sign, t).convert("RGBA"))
+            local = t - 2.0
+            hop = int(round(12 * (1 - local / 0.45) ** 2)) if local < 0.45 else 0
+            for cd in self.cards[1:]:
+                k = t - cd.start
+                if 0 <= k < 0.3:
+                    hop = int(round(3 * math.sin(math.pi * k / 0.3)))
+            sh, sw = sp.shape[:2]
+            feet = ty + 4 + sh
+            # clear a soft pocket of sky behind the creature so vines don't tangle with it
+            pocket = ((np.mgrid[0:H, 0:W][1] - CX) / (sw * 0.75)) ** 2 + \
+                     ((np.mgrid[0:H, 0:W][0] - (feet - sh / 2)) / (sh * 0.8)) ** 2 < 1
+            a[pocket & (np.abs(a.astype(int) - BG).sum(axis=2) > 0) & ~self._sky_mask(t)] = BG
+            sx, sy = CX - sw // 2, feet - sh - hop
+            sm = sp[..., 3] > 127
+            if local < 0.25:
+                sm &= BAY[sy:sy + sh, sx:sx + sw] < local / 0.25
+            a[sy:sy + sh, sx:sx + sw][sm] = sp[..., :3][sm]
+            for x in range(CX - sw // 3, CX + sw // 3, 2):
+                a[feet + 1, x] = mix(self.orn.light, BG, 0.5)
+            ty = feet + 5
         tm = self._tag[..., 3] > 0
         a[ty:ty + 10, CX - 30:CX + 30][tm] = self._tag[..., :3][tm]
 

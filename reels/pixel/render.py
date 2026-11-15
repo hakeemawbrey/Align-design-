@@ -93,7 +93,7 @@ def build(sign, seed, scene=None, bank=None, style="frame"):
     spr, gly = sprite_fns()
     tag = bank.get("_end", {}).get("tag", "align")
     if style == "frame":
-        reel = framestyle.FrameReel(sign, cards, seed=seed, glyph_fn=gly, end_tag=tag)
+        reel = framestyle.FrameReel(sign, cards, seed=seed, glyph_fn=gly, end_tag=tag, sprite_fn=spr)
     else:
         reel = engine.Reel(sign, cards, seed=seed, scene=scene, sprite_fn=spr, glyph_fn=gly, end_tag=tag)
     return reel, caption, tags
