@@ -30,6 +30,9 @@ from PIL import Image
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import engine  # noqa: E402
+import frame as framestyle  # noqa: E402
+
+STYLES = {"frame": framestyle, "scene": engine}
 
 OUT = HERE / "out"
 SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
@@ -84,45 +87,50 @@ def music(sign, seed, reel):
         return None, None
 
 
-def build(sign, seed, scene=None, bank=None):
+def build(sign, seed, scene=None, bank=None, style="frame"):
     bank = bank or load_bank()
     cards, caption, tags = plan(sign, seed, bank, scene)
     spr, gly = sprite_fns()
-    reel = engine.Reel(sign, cards, seed=seed, scene=scene, sprite_fn=spr, glyph_fn=gly,
-                       end_tag=bank.get("_end", {}).get("tag", "align"))
+    tag = bank.get("_end", {}).get("tag", "align")
+    if style == "frame":
+        reel = framestyle.FrameReel(sign, cards, seed=seed, glyph_fn=gly, end_tag=tag)
+    else:
+        reel = engine.Reel(sign, cards, seed=seed, scene=scene, sprite_fn=spr, glyph_fn=gly, end_tag=tag)
     return reel, caption, tags
 
 
-def stills(sign, seed, scene=None):
-    reel, *_ = build(sign, seed, scene)
-    times = [0.6, 1.8]
+def stills(sign, seed, scene=None, style="frame"):
+    mod = STYLES[style]
+    reel, *_ = build(sign, seed, scene, style=style)
+    times = [0.6, 1.8] if style == "scene" else [1.0, 2.2]
     for cd in reel.cards[1:]:
         times.append(cd.type_end + 0.3)
-    ims = [Image.fromarray(engine.upscale(reel.frame(t))).resize((540, 960), Image.NEAREST) for t in times]
+    ims = [Image.fromarray(mod.upscale(reel.frame(t))).resize((540, 960), Image.NEAREST) for t in times]
     sheet = Image.new("RGB", (540 * len(ims) + 10 * (len(ims) - 1), 960), (0, 0, 0))
     for i, im in enumerate(ims):
         sheet.paste(im, (i * 550, 0))
     OUT.mkdir(exist_ok=True, parents=True)
-    p = OUT / "stills" / f"{sign}-s{seed}-{reel.scene.kind}.png"
+    p = OUT / "stills" / f"{sign}-s{seed}-{style}-{reel.scene.kind}.png"
     p.parent.mkdir(exist_ok=True)
     sheet.save(p)
     return p
 
 
-def render_one(sign, seed, scene=None, force=False, web=True):
+def render_one(sign, seed, scene=None, force=False, style="frame", web=True):
+    mod = STYLES[style]
     OUT.mkdir(parents=True, exist_ok=True)
-    name = f"{sign}-s{seed}" + (f"-{scene}" if scene else "")
+    name = f"{sign}-s{seed}" + ("-scene" if style == "scene" else "") + (f"-{scene}" if scene else "")
     mp4 = OUT / f"{name}.mp4"
     if mp4.exists() and not force:
         return f"skip {mp4.name}"
     t0 = time.time()
-    reel, caption, tags = build(sign, seed, scene)
+    reel, caption, tags = build(sign, seed, scene, style=style)
     nframes = int(round(reel.duration * engine.FPS))
     with tempfile.TemporaryDirectory() as td:
         wav = Path(td) / "a.wav"
         audio, chip = music(sign, seed, reel)
         cmd = ["ffmpeg", "-y", "-loglevel", "error",
-               "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{engine.W * engine.SCALE}x{engine.H * engine.SCALE}",
+               "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{mod.W * mod.SCALE}x{mod.H * mod.SCALE}",
                "-r", str(engine.FPS), "-i", "-"]
         if audio is not None:
             chip.write_wav(str(wav), audio)
@@ -135,13 +143,13 @@ def render_one(sign, seed, scene=None, force=False, web=True):
         for i in range(nframes):
             t = i / engine.FPS
             f = reel.frame(t)
-            if cover is None and t >= 1.8:
+            if cover is None and t >= reel.cards[0].start + 1.0:
                 cover = f
-            p.stdin.write(engine.upscale(f).tobytes())
+            p.stdin.write(mod.upscale(f).tobytes())
         p.stdin.close()
         if p.wait() != 0:
             raise RuntimeError(f"ffmpeg failed for {name}")
-    Image.fromarray(engine.upscale(cover)).save(OUT / f"{name}.cover.png")
+    Image.fromarray(mod.upscale(cover)).save(OUT / f"{name}.cover.png")
     lines = [c.text for c in reel.cards]
     (OUT / f"{name}.txt").write_text(f"{caption}\n\n{tags}\n\n---\nscene: {reel.scene.kind}\n" +
                                      "\n".join(lines) + "\n")
@@ -167,6 +175,8 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--scene", choices=engine.Scene.KINDS)
     ap.add_argument("--stills", action="store_true")
+    ap.add_argument("--style", choices=list(STYLES), default="frame",
+                    help="frame: the mystic card (default). scene: the little RPG night scene")
     ap.add_argument("--forever", action="store_true", help="every sign at seed N, then N+1, ... until stopped")
     ap.add_argument("--count", type=int, help="with --forever: stop after this many new reels")
     ap.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) // 2))
@@ -180,14 +190,14 @@ def main():
 
     if a.stills:
         for s in signs:
-            print(stills(s, a.seed, a.scene))
+            print(stills(s, a.seed, a.scene, a.style))
         return
 
     def jobs():
         seed = a.seed
         while True:
             for s in signs:
-                yield (s, seed, a.scene, a.force)
+                yield (s, seed, a.scene, a.force, a.style)
             if not a.forever:
                 return
             seed += 1
