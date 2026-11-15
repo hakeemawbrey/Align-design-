@@ -274,7 +274,7 @@ def _echo(x, d, fb, taps=5):
 
 
 def _reverb_ir(rng, t60, predelay, damp):
-    n = int(min(t60 * 1.15, 4.0) * SR)
+    n = int(min(t60 * 1.15, 6.0) * SR)
     t = np.arange(n) / SR
     ir = np.zeros((n, 2))
     for c in range(2):
@@ -359,10 +359,10 @@ def _chord_shape(mode, d, kind):
     return (0, 2, 4)
 
 
-def _plan(sign, rng):
+def _plan(sign, rng, over=None):
     P = _Plan()
     el = ELEMENT[sign]
-    E = ELEMENTS[el]
+    E = dict(ELEMENTS[el], **(over or {}))
     P.el = el
     names, probs = E["modes"]
     P.mode = str(rng.choice(names, p=probs))
@@ -402,7 +402,7 @@ def _plan(sign, rng):
     P.glide = rng.random() < (0.5 if el == "water" else 0.35)
     P.lead_pan = float(rng.uniform(-0.15, 0.15))
     P.lead_gain = E["lead_gain"]
-    P.intro = int(rng.random() < 0.45)
+    P.intro = int(rng.random() < E.get("intro", 0.45))
     P.delay = float(rng.choice([0.75, 0.5, 1.0, 1.5], p=[0.45, 0.25, 0.2, 0.1])) * P.beat
     P.fb = float(rng.uniform(0.32, 0.45)) if el == "water" else float(rng.uniform(0.25, 0.38))
     P.echo_wet = float(rng.uniform(0.22, 0.32))
@@ -548,13 +548,32 @@ def _midi(P, base, s):
 
 # ------------------------------------------------------------------ render
 
-def render(sign: str, seed: int, seconds: float, cues=(), ticks=()) -> np.ndarray:
+STYLES = ("dream", "chip")
+
+
+def render(sign: str, seed: int, seconds: float, cues=(), ticks=(), style: str = "dream") -> np.ndarray:
+    """Stereo float32 (round(seconds*SR), 2), peak about -1 dBFS, about -16 LUFS.
+
+    style="dream" (default): slow, ethereal music-box/celesta over warm pads, for the
+    mystic quote-card reels. style="chip": the cozy lo-fi chiptune for the pixel game reels.
+    """
     sign = str(sign).strip().lower()
     if sign not in ELEMENT:
         raise ValueError(f"unknown sign {sign!r}; one of {', '.join(SIGNS)}")
+    style = str(style).strip().lower()
+    if style not in STYLES:
+        raise ValueError(f"unknown style {style!r}; one of {', '.join(STYLES)}")
     N = int(round(seconds * SR))
     if N <= 0:
         return np.zeros((0, 2), np.float32)
+    if style == "chip":
+        mix, P = _chip(sign, seed, seconds, N, cues)
+    else:
+        mix, P = _dream(sign, seed, seconds, N, cues)
+    return _master(mix, N, P, sign, seed, ticks)
+
+
+def _chip(sign, seed, seconds, N, cues):
     rng = np.random.default_rng(zlib.crc32(f"chip|{sign}|{int(seed)}".encode()))
     P = _plan(sign, rng)
     L = N + int(4.0 * SR)
@@ -731,8 +750,205 @@ def render(sign: str, seed: int, seconds: float, cues=(), ticks=()) -> np.ndarra
                     0.018 + 0.01 * (P.el == "water"), 5200 if P.el != "water" else 4200)
     wet = _convolve(rev_send, ir) * P.rev * 1.6
     mix = dry + lead_st + arp_st + chime_st + echo + wet + _convolve(echo.mean(1) * 0.4, ir) * P.rev
+    return mix, P
 
-    # ---- master: clean lows, soft top, loudness, ticks, limiter, fades
+
+# ------------------------------------------------------------------ dream style
+
+DREAM = {
+    #        bpm        reverb T60   wet           bell octave up  FM index    pad cutoff     arps
+    "fire":  dict(bpm=(66, 72), t60=(3.0, 3.8), rev=(0.30, 0.36), up=0.7, fm=(1.0, 1.5),
+                  pad_fc=(1300, 1800), arp_rate=(0.5, 0.6), arp_bars=0.75, intro=0.6),
+    "earth": dict(bpm=(62, 68), t60=(3.2, 4.0), rev=(0.30, 0.36), up=0.4, fm=(0.7, 1.1),
+                  pad_fc=(900, 1300), arp_rate=(1.0, 0.5), arp_bars=0.5, intro=0.7),
+    "air":   dict(bpm=(64, 70), t60=(3.6, 4.4), rev=(0.33, 0.38), up=0.6, fm=(0.9, 1.3),
+                  pad_fc=(1100, 1500), arp_rate=(0.5, 0.9), arp_bars=1.0, intro=0.6),
+    "water": dict(bpm=(60, 65), t60=(4.4, 5.4), rev=(0.38, 0.44), up=0.5, fm=(0.7, 1.1),
+                  pad_fc=(800, 1200), arp_rate=(1.0, 0.6), arp_bars=0.5, intro=0.8),
+}
+
+
+def _saw_tab(f0, fc, cap=6000.0):
+    key = ("s", round(f0, 1), int(fc))
+    if key not in _TABLES:
+        K = int(max(1, min(48, cap // f0)))
+        k = np.arange(1, K + 1)
+        _TABLES[key] = _table((1.0 / k) / np.sqrt(1 + (k * f0 / fc) ** 4))
+    return _TABLES[key]
+
+
+def _fm_bell(f, tau, index, ratio, att=0.003, length=None):
+    """Sine with a little FM: bright strike that mellows into a pure ring (celesta/music box)."""
+    n = int((length if length else min(6.0, 5.0 * tau)) * SR)
+    t = np.arange(n) / SR
+    idx = index * min(1.0, 650.0 / f)                     # high notes get less FM: never harsh
+    I = idx * (0.15 + 0.85 * np.exp(-t / 0.18))
+    y = np.sin(2 * np.pi * f * t + I * np.sin(2 * np.pi * f * ratio * t))
+    y += 0.12 * np.sin(4 * np.pi * f * t) * np.exp(-t / (0.35 * tau))   # glassy 2nd partial
+    env = np.sin(0.5 * np.pi * np.clip(t / att, 0, 1)) ** 2 * np.exp(-t / tau)
+    fade = min(n, int(0.08 * SR))
+    env[n - fade:] *= np.linspace(1, 0, fade)
+    return y * env
+
+
+def _dream(sign, seed, seconds, N, cues):
+    rng = np.random.default_rng(zlib.crc32(f"dream|{sign}|{int(seed)}".encode()))
+    el = ELEMENT[sign]
+    D = DREAM[el]
+    P = _plan(sign, rng, over=dict(bpm=D["bpm"], intro=D["intro"]))
+    P.style = "dream"
+    P.t60 = float(rng.uniform(*D["t60"]))
+    P.rev = float(rng.uniform(*D["rev"]))
+    P.up = 12 if rng.random() < D["up"] else 0
+    P.fm = float(rng.uniform(*D["fm"]))
+    P.ratio = float(rng.choice([2.0, 3.0, 4.0], p=[0.45, 0.3, 0.25]))
+    P.tau = float(rng.uniform(0.9, 1.4)) * (1.2 if el == "water" else 1.0)
+    P.pad_kind = str(rng.choice(["strings", "glass"], p=[0.65, 0.35]))
+    P.pad_fc = float(rng.uniform(*D["pad_fc"]))
+    P.arp_unit = float(rng.choice([0.5, 1.0], p=[D["arp_rate"][1], 1 - D["arp_rate"][1]]))
+    P.arp_mask = [rng.random() < D["arp_bars"] for _ in range(4)]
+    P.arp_mask[int(rng.integers(4))] = True
+    P.twinkle = rng.random() < (0.75 if el in ("water", "air") else 0.45)
+    P.delay = float(rng.choice([1.0, 0.75, 1.5], p=[0.5, 0.3, 0.2])) * P.beat
+    P.fb = float(rng.uniform(0.3, 0.42))
+    P.drift = float(rng.uniform(0.015, 0.035))           # rubato: the beat breathes a little
+    P.lead_pan = float(rng.uniform(-0.12, 0.12))
+
+    L = N + int(6.0 * SR)
+    nbars = int(np.ceil(seconds / P.bar)) + 1
+    dry = np.zeros((L, 2))
+    rev_send = np.zeros(L)
+    lead = np.zeros(L)
+    arps = np.zeros(L)
+    sparkle = np.zeros((L, 2))
+
+    def warp(t):
+        return t + P.drift * np.sin(2 * np.pi * t / (2 * P.bar)) + float(rng.uniform(-0.008, 0.008))
+
+    def put(i0, sig, pan, gain, rsend):
+        if i0 >= L:
+            return
+        l, r = _pan(pan)
+        i1 = min(L, i0 + len(sig))
+        s = sig[:i1 - i0] * gain
+        dry[i0:i1, 0] += s * l
+        dry[i0:i1, 1] += s * r
+        rev_send[i0:i1] += s * rsend
+
+    # ---- pad: slow string-like swells (detuned saws) or a glassy soft-square pad
+    b = 0
+    while b < nbars:
+        pcs = _chord_pcs(P, b)
+        span = 1
+        while b + span < nbars and _chord_pcs(P, b + span) == pcs and span < 2:
+            span += 1
+        t0 = b * P.bar - 0.25                            # swell in just ahead of the bar
+        for pc in pcs:
+            m = 53 + (pc - 53) % 12
+            for dt, pan in ((-9.0, -0.6), (0.0, 0.0), (9.0, 0.6)):
+                f = _hz(m) * 2 ** (dt / 1200)
+                tab = _saw_tab(f, P.pad_fc) if P.pad_kind == "strings" else _pulse_tab(f, 0.5, P.pad_fc * 0.8)
+                sig = _note(tab, f, span * P.bar + 0.25, 1.8, 1.3, 2.5, 0.8,
+                            vib=(5.0, float(rng.uniform(0.15, 0.35)), 0.0, float(rng.uniform(0, 6.3))),
+                            phase0=float(rng.random()))
+                put(int(max(0, t0) * SR), sig, pan, 0.034, 0.8)
+        b += span
+
+    # ---- soft sub: one long note per chord
+    for b in range(nbars):
+        d, _ = _chord_at(P, b)
+        m = P.bass_root + P.iv[d]
+        if m > 45:
+            m -= 12
+        f = _hz(m)
+        sig = _note(_tri_tab(f, 180, 600), f, P.bar * 0.95, 0.9, 0.25, 2.0, 0.6)
+        put(int(b * P.bar * SR), sig, 0.0, 0.26, 0.1)
+
+    # ---- music-box / celesta lead
+    for b in range(P.intro, nbars):
+        j = (b - P.intro) % 8
+        for (slot, ln, s) in P.melody[j]:
+            m = _midi(P, P.lead_root + P.up, s)
+            while m > 93:
+                m -= 12
+            f = _hz(m)
+            t = warp(b * P.bar + slot * P.eighth)
+            sig = _fm_bell(f, P.tau * (1.3 if ln >= 3 else 1.0), P.fm, P.ratio)
+            vel = float(rng.uniform(0.8, 1.0)) * (1.0 if slot in (0, 4) else 0.85)
+            _add(lead, int(t * SR), sig, 0.15 * vel)
+
+    # ---- slow arpeggios that drift up and settle back
+    pats = [[0, 1, 2, 3, 2, 1, 0, 1], [0, 2, 1, 3, 2, 1, 2, 0], [0, 1, 2, 3, 4, 3, 2, 1]]
+    pat = pats[int(rng.integers(len(pats)))]
+    low = P.lead_root - 5
+    for b in range(nbars):
+        if not P.arp_mask[b % 4]:
+            continue
+        pcs = _chord_pcs(P, b)
+        tones = sorted(low + (pc - low) % 12 for pc in pcs[:3])
+        tones += [tones[0] + 12, tones[1] + 12]
+        steps = int(round(4 / P.arp_unit))
+        for k in range(steps):
+            m = tones[pat[k % len(pat)] % len(tones)]
+            f = _hz(m)
+            t = warp(b * P.bar + k * P.arp_unit * P.beat)
+            sig = _fm_bell(f, 0.8, 0.35, 2.0, att=0.006)
+            acc = 1.0 if k == 0 else 0.75
+            _add(arps, int(t * SR), sig, 0.05 * acc * float(rng.uniform(0.8, 1.0)))
+
+    # ---- faint shimmer: rare, very quiet high bell twinkles from the chord
+    if P.twinkle:
+        for b in range(nbars):
+            pcs = _chord_pcs(P, b)
+            for beat in range(4):
+                if rng.random() < 0.22:
+                    m = 86 + (pcs[int(rng.integers(len(pcs)))] - 86) % 12
+                    f = _hz(m)
+                    sig = _fm_bell(f, 0.7, 0.2, 2.0, att=0.004)
+                    i0 = int(warp(b * P.bar + (beat + float(rng.uniform(0, 0.5))) * P.beat) * SR)
+                    pan = float(rng.uniform(-0.7, 0.7))
+                    l, r = _pan(pan)
+                    _add(sparkle[:, 0], i0, sig, 0.018 * l)
+                    _add(sparkle[:, 1], i0, sig, 0.018 * r)
+
+    # ---- cue: a gentle glissando of high bells over the current chord
+    chime = np.zeros(L)
+    chime_st = np.zeros((L, 2))
+    crng = np.random.default_rng(zlib.crc32(f"dcue|{sign}|{int(seed)}".encode()))
+    for tc in cues:
+        if not (0 <= tc < seconds):
+            continue
+        pcs = _chord_pcs(P, int(tc // P.bar))
+        base = 79
+        tones = sorted(base + (pc - base) % 12 for pc in pcs[:3])
+        seq = tones + [x + 12 for x in tones]
+        seq = [m for m in seq if m <= 98][:int(crng.choice([5, 6, 7]))]
+        gap = float(crng.uniform(0.055, 0.08))
+        for k, m in enumerate(seq):
+            f = _hz(m) * 2 ** (float(crng.uniform(-3, 3)) / 1200)
+            last = k == len(seq) - 1
+            sig = _fm_bell(f, 1.2 if last else 0.6, 0.3, 2.0, att=0.003)
+            vel = (0.5 + 0.5 * k / max(1, len(seq) - 1)) * 0.75
+            pan = -0.5 + 1.0 * k / max(1, len(seq) - 1)
+            i0 = int((tc + 0.02 + k * gap) * SR)
+            l, r = _pan(pan)
+            _add(chime, i0, sig, 0.1 * vel)
+            _add(chime_st[:, 0], i0, sig, 0.1 * vel * l)
+            _add(chime_st[:, 1], i0, sig, 0.1 * vel * r)
+
+    # ---- effects: echo on the bells, a long soft hall
+    lead_st = np.array(_pan(P.lead_pan))[None, :] * lead[:, None]
+    arp_st = np.array(_pan(-0.3 if P.lead_pan >= 0 else 0.3))[None, :] * arps[:, None]
+    echo = _echo(lead * 0.28 + arps * 0.15 + chime * 0.35, int(P.delay * SR), P.fb, taps=6)
+    rev_send += lead * 0.7 + arps * 0.8 + chime * 1.1 + sparkle.mean(1) * 1.5
+    ir = _reverb_ir(np.random.default_rng(int(rng.integers(1 << 30))), P.t60, 0.03, 4200)
+    wet = _convolve(rev_send + echo.mean(1) * 0.5, ir) * P.rev * 1.8
+    mix = dry + lead_st + arp_st + chime_st + sparkle + echo + wet
+    return mix, P
+
+
+def _master(mix, N, P, sign, seed, ticks):
+    """Clean lows, soft top, loudness, ticks, limiter, fades."""
     mix = _spectral(mix, lambda f: _hp(f, 32, 2) * _lp(f, 8000, 4))[:N]
     target = 10 ** (-16.0 / 10)
     ms = _kweight_ms(mix)
@@ -815,15 +1031,33 @@ def write_wav(path, audio):
         w.writeframes(pcm.tobytes())
 
 
-def describe(sign, seed):
-    """Human-readable summary of what a (sign, seed) picks."""
+def describe(sign, seed, style="dream"):
+    """Human-readable summary of what a (sign, seed, style) picks."""
     sign = sign.lower()
-    P = _plan(sign, np.random.default_rng(zlib.crc32(f"chip|{sign}|{int(seed)}".encode())))
+    if style == "dream":
+        rng = np.random.default_rng(zlib.crc32(f"dream|{sign}|{int(seed)}".encode()))
+        D = DREAM[ELEMENT[sign]]
+        P = _plan(sign, rng, over=dict(bpm=D["bpm"], intro=D["intro"]))
+    else:
+        P = _plan(sign, np.random.default_rng(zlib.crc32(f"chip|{sign}|{int(seed)}".encode())))
     names = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
     roman = ["I", "II", "III", "IV", "V", "VI", "VII"]
     prog = "-".join(roman[d] + ("" if s == (0, 2, 4) else {(0, 1, 4): "sus2", (0, 3, 4): "sus4",
                                 (0, 2, 4, 8): "add9", (0, 2, 4, 6): "7"}[s])
                     for d, s in zip(P.prog, P.shapes))
+    if style == "dream":
+        # replay the dream-only choices in the same order _dream draws them
+        t60 = float(rng.uniform(*D["t60"])); rng.uniform(*D["rev"])
+        up = 12 if rng.random() < D["up"] else 0
+        fm = float(rng.uniform(*D["fm"]))
+        ratio = float(rng.choice([2.0, 3.0, 4.0], p=[0.45, 0.3, 0.25]))
+        rng.uniform(0.9, 1.4)
+        pad = str(rng.choice(["strings", "glass"], p=[0.65, 0.35]))
+        rng.uniform(*D["pad_fc"])
+        unit = float(rng.choice([0.5, 1.0], p=[D["arp_rate"][1], 1 - D["arp_rate"][1]]))
+        return (f"{sign}/{seed} dream: {P.el} {names[P.root_pc]} {P.mode} {P.bpm:.0f}bpm {prog} "
+                f"bell=FM{ratio:.0f}:1 idx{fm:.1f}{' +8va' if up else ''} pad={pad} "
+                f"arps={'8ths' if unit == 0.5 else 'quarters'} intro={P.intro} t60={t60:.1f}")
     lead = "tri" if P.lead_tri else f"pulse{int(P.lead_duty * 100)}%"
     return (f"{sign}/{seed}: {P.el} {names[P.root_pc]} {P.mode} {P.bpm:.0f}bpm {prog} lead={lead} "
             f"bass={P.bass_pat} arp={'16th' if P.arp16 else '8th' if P.arp_on else 'off'}"
@@ -848,18 +1082,21 @@ def main(argv=None):
     ap.add_argument("sign", choices=SIGNS)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--seconds", type=float, default=20.0)
+    ap.add_argument("--style", choices=STYLES, default="dream")
     ap.add_argument("-o", "--out", default=None)
     a = ap.parse_args(argv)
     out = a.out or os.path.join(os.path.dirname(os.path.abspath(__file__)), "out",
-                                f"chip-{a.sign}-{a.seed}.wav")
+                                f"{a.style}-{a.sign}-{a.seed}.wav")
     cues, ticks = demo_events(a.seconds)
+    if a.style == "dream":
+        ticks = []                       # the quote-card reels type nothing
     t0 = time.time()
-    audio = render(a.sign, a.seed, a.seconds, cues, ticks)
+    audio = render(a.sign, a.seed, a.seconds, cues, ticks, style=a.style)
     dt = time.time() - t0
     write_wav(out, audio)
     pk = 20 * np.log10(np.abs(audio).max() + 1e-12)
     rms = 20 * np.log10(np.sqrt(np.mean(audio.astype(np.float64) ** 2)) + 1e-12)
-    print(describe(a.sign, a.seed))
+    print(describe(a.sign, a.seed, a.style))
     print(f"{out}  {len(audio) / SR:.2f}s  peak {pk:.2f} dBFS  rms {rms:.2f} dBFS  render {dt:.2f}s")
 
 
