@@ -102,10 +102,11 @@ def build(sign, seed, scene=None, bank=None, style="frame"):
 def stills(sign, seed, scene=None, style="frame"):
     mod = STYLES[style]
     reel, *_ = build(sign, seed, scene, style=style)
-    times = [0.6, 1.8] if style == "scene" else [1.0, 2.2]
+    times = [0.6, 1.8] if style == "scene" else [1.0, 2.6]
     for cd in reel.cards[1:]:
         times.append(cd.type_end + 0.3)
-    ims = [Image.fromarray(mod.upscale(reel.frame(t))).resize((540, 960), Image.NEAREST) for t in times]
+    up = getattr(reel, 'upscale', mod.upscale)
+    ims = [Image.fromarray(up(reel.frame(t))).resize((540, 960), Image.LANCZOS) for t in times]
     sheet = Image.new("RGB", (540 * len(ims) + 10 * (len(ims) - 1), 960), (0, 0, 0))
     for i, im in enumerate(ims):
         sheet.paste(im, (i * 550, 0))
@@ -139,17 +140,19 @@ def render_one(sign, seed, scene=None, force=False, style="frame", web=True):
         cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "16", "-tune", "animation",
                 "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(mp4)]
         p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+        up = getattr(reel, "upscale", mod.upscale)
         cover = None
         for i in range(nframes):
             t = i / engine.FPS
             f = reel.frame(t)
-            if cover is None and t >= reel.cards[0].start + 1.0:
-                cover = f
-            p.stdin.write(mod.upscale(f).tobytes())
+            big = up(f)
+            if cover is None and t >= reel.cards[1].start + 1.0:
+                cover = big
+            p.stdin.write(big.tobytes())
         p.stdin.close()
         if p.wait() != 0:
             raise RuntimeError(f"ffmpeg failed for {name}")
-    Image.fromarray(mod.upscale(cover)).save(OUT / f"{name}.cover.png")
+    Image.fromarray(cover).save(OUT / f"{name}.cover.png")
     lines = [c.text for c in reel.cards]
     (OUT / f"{name}.txt").write_text(f"{caption}\n\n{tags}\n\n---\nscene: {reel.scene.kind}\n" +
                                      "\n".join(lines) + "\n")
