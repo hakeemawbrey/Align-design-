@@ -1,0 +1,5 @@
+// og-nole10 score: cinematic, Dm (arranged by the style engine in promo/scripts/teaser-sound.mjs).
+//   drop 2.0: Q4 OUTLOOK · lift at the cut into THE LINE · outro at the last beat (social: no end card).
+import { DURATION, CUES, CUT } from './scenes/index.js'
+
+export default { id: 'og-nole10', duration: DURATION, music: { style: 'cinematic', key: 'Dm', seed: 4210, sections: { drop: 2.0, lift: [CUT], outroAt: DURATION - 0.6 }, hits: [CUT] }, cues: CUES }
