@@ -165,17 +165,17 @@ const F = makeM47({
     // G · the mend (69–90): back to the frame-0 room (so the loop lands home)
     { at: 69.0, set: 'room', setOpts: { couch: false, lamp: false }, rug: true, cam: [1.1, 540, 900], push: 0.0,
       draw(x, t, S) {
-        const z = ease.inOutCubic(prog(t, 87.0, 89.55))
+        const z = 0   // og: no morph back into the frame-0 pose (no loop): the film ends on the made-up beat
         mendHeart(x, t, 540, lerp(560, 470, z), lerp(13, 10, z), MEND, { k: outK(t, [87.1, 87.5]) })   // og: clears for the last line
         sparkles(x, t, 540, 560, MEND, 14, 200, 1, [GOLD, '#fff1c8', PINK])
         hearts(x, t, MEND + 0.2, 540, 520, { n: 6, cell: 7, spread: 260 })
         spotlight(x, t, 300, 1180, prog(t, 72.8, 73.6))
         if (t > 72.8) twinkles(x, t, 300, 980)
         star(x, t, LEO, { x: 300, y: lerp(1010, 1000, z), s: lerp(250, 270, z), mood: t < 72.6 ? 'wide' : 'sparkle', look: [1, -0.5], hops: [...S.hopsFor(LEO), MEND + 0.1, 83.6, 84.0], squash: t > 72.8 ? 0.07 * Math.sin(t * 14) : 0 })
-        star(x, t, CAP, { x: 750, y: lerp(1010, 1020, z), s: lerp(240, 240, z), mood: t < 86.6 ? 'happy' : 'squint', look: t < 86.6 ? [-1, 0] : [0, 1], hops: [...S.hopsFor(CAP), MEND + 0.15] })
+        star(x, t, CAP, { x: 750, y: lerp(1010, 1020, z), s: lerp(240, 240, z), mood: 'happy', look: [-1, 0],   /* og: stays on Leo (no loop back to the laptop) */ hops: [...S.hopsFor(CAP), MEND + 0.15] })
         laptop(x, t, 910, 1250, { s: 0.72 })
       },
-      pis: t => ({ x: 980, y: 1300, s: 100, tears: 3, mood: t < MEND || t > 87 ? 'wide' : 'happy', look: [-1, -1], hops: t > MEND && t < 86 ? [MEND + 0.2, 82.0] : null }) },
+      pis: t => ({ x: 980, y: 1300, s: 100, tears: 3, mood: t < MEND ? 'wide' : 'happy', look: [-1, -1], hops: t > MEND ? [MEND + 0.2, 82.0] : null }) },
   ],
   overlay(x, t) {
     if (inR(t, 14.8, 18.9)) sheet(x, t, pop01(t, 14.8, 0.35, 2) * outK(t, [18.5, 18.9]), ROWS, { blurRow: 3 })
