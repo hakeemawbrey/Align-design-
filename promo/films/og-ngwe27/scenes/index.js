@@ -16,7 +16,7 @@ const F = winterGuide({
     { t: 3.0, text: 'you ran a *group vote* on which soup to get.' },
     { t: 6.6, text: 'the gift? someone *else* deciding, with love.' },
   ],
-  fact: 'LIBRA IS RULED BY VENUS', factAt: 8.6, factDur: 1.8,
+  // og: the 'LIBRA IS RULED BY VENUS' fact chip is dropped (no free safe-zone spot under the note and over the box)
   last: 'Let *someone* | pick for you.',
   guide(t) {
     const melt = t > T0.melt && t < T0.melt + 0.8 ? 0.22 * Math.sin(Math.PI * prog(t, T0.melt, T0.melt + 0.8)) : 0

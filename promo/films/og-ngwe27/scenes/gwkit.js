@@ -443,6 +443,11 @@ export function winterGuide(S) {
         drawSnow(x, t, { n: S.snow?.n ?? 70, speed: S.snow?.speed ?? 1 })
         if (S.drawBack) S.drawBack(x, t, K)
         if (S.bank !== false) drawSnowBank(x, t, { y0: S.bankY || 1290 })
+        // og: when the last line sits low on the pale snow, a soft night shade fades in behind it so it reads
+        if ((S.lastTop || 0) > 1000) {
+          const k = 0.72 * ease.inOutCubic(prog(t, T.last - 0.4, T.last + 0.2))
+          if (k > 0.01) { const g = x.createLinearGradient(0, 1215, 0, 1330); g.addColorStop(0, 'rgba(8,6,28,0)'); g.addColorStop(1, `rgba(8,6,28,${k})`); x.fillStyle = g; x.fillRect(0, 1215, 1080, 705) }
+        }
         if (S.drawMid) S.drawMid(x, t, K)
         // the corner Pisces with its tissues (unless the film moves or hides it)
         const P = S.pisces === null ? null : (S.pisces ? S.pisces(t, pisDefault(t)) : pisDefault(t))
@@ -454,7 +459,7 @@ export function winterGuide(S) {
         }
         const r = guideNow(t)
         if (S.drawFront) S.drawFront(x, t, K, r)
-        if (S.fact) factChip(x, t, { text: S.fact, at: S.factAt ?? T.l1 + 1.6, dur: S.factDur ?? 3.2, x: 540, y: S.factY || 1240, color: '#bfe8ff', size: 28 })
+        if (S.fact) factChip(x, t, { text: S.fact, at: S.factAt ?? T.l1 + 1.6, dur: S.factDur ?? 3.2, x: 540, y: S.factY || 545, color: '#bfe8ff', size: 28 })
         hook.update(t)
         chip.update(t)
         bug.update(t, 1 - clamp(prog(t, STORY_END - 0.4, STORY_END - 0.1)))
