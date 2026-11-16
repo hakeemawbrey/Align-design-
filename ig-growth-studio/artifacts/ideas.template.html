@@ -1,0 +1,276 @@
+<title>Reel Ideas Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one working column. Account picker, the evidence (patterns and Reels), then Claude's ideas and a follow-up box. */
+:root {
+  --bg: #f7f6fb; --surface: #ffffff; --ink: #1d1b2b; --muted: #676383; --line: #e3e0ef;
+  --accent: #5b3fd6; --accent-ink: #ffffff; --good: #1f8a5b; --bad: #c2453a; --chip: #efecfa;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #13121b; --surface: #1c1a27; --ink: #ecebf5; --muted: #a29fbd; --line: #2d2a3d;
+  --accent: #a895ff; --accent-ink: #15131f; --good: #5fd39c; --bad: #ff8a7d; --chip: #29253a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #13121b; --surface: #1c1a27; --ink: #ecebf5; --muted: #a29fbd; --line: #2d2a3d;
+  --accent: #a895ff; --accent-ink: #15131f; --good: #5fd39c; --bad: #ff8a7d; --chip: #29253a; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 20px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: 30px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; }
+h3 { font-size: 15px; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
+.grid2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { font: 500 14px var(--body); padding: 7px 12px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.stats { display: flex; flex-wrap: wrap; gap: 24px; }
+.stat b { display: block; font: 600 24px var(--display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+ul.findings { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.tag { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--chip); color: var(--muted); white-space: nowrap; }
+.good { color: var(--good); font-weight: 600; }
+.bad { color: var(--bad); font-weight: 600; }
+.reels { display: grid; gap: 10px; }
+.reel { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; font-size: 14px; }
+.reel .x { font: 600 18px var(--display); font-variant-numeric: tabular-nums; }
+.reel .meta { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { font: 600 15px var(--body); padding: 10px 16px; border-radius: 10px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn[disabled] { opacity: 0.5; cursor: default; }
+.answer { font-size: 15px; display: grid; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
+.answer h3 { margin-top: 6px; }
+.answer ul, .answer ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.chat { display: grid; gap: 10px; }
+.turn { padding: 10px 12px; border-radius: 10px; background: var(--chip); font-size: 14px; }
+.turn.me { justify-self: end; max-width: 85%; background: var(--accent); color: var(--accent-ink); }
+textarea { width: 100%; box-sizing: border-box; min-height: 64px; font: 15px var(--body); padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; }
+.note { font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .btn { transition: opacity .15s; } }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:6px">
+    <h1>Reel Ideas Lab</h1>
+    <p class="muted" id="sub"></p>
+  </header>
+
+  <div class="tabs" id="tabs" role="group" aria-label="Account"></div>
+
+  <section class="panel">
+    <div class="stats" id="stats"></div>
+    <div class="grid2">
+      <div style="display:grid;gap:8px;min-width:0"><h3>What's working</h3><ul class="findings" id="working"></ul></div>
+      <div style="display:grid;gap:8px;min-width:0"><h3>What's holding views back</h3><ul class="findings" id="holding"></ul></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel"><h2>Biggest hits</h2><div class="reels" id="top"></div></div>
+    <div class="panel"><h2>Furthest below usual</h2><div class="reels" id="bottom"></div></div>
+  </section>
+
+  <section class="panel" id="ideasPanel">
+    <h2>Ideas from Claude</h2>
+    <p class="muted small">Claude reads the numbers above, plus the format, sign, length and timing tables, and suggests what to make next. It runs on your Claude plan and asks your permission the first time.</p>
+    <div class="actions">
+      <button class="btn" id="ask" type="button">Get ideas for this account</button>
+      <button class="btn ghost" id="stop" type="button" hidden>Stop</button>
+      <span class="note" id="status"></span>
+    </div>
+    <div class="answer" id="answer"></div>
+    <div class="chat" id="chat"></div>
+    <form id="followup" hidden style="display:grid;gap:8px">
+      <label for="q" class="small muted">Ask a follow-up, for example "Write 5 hooks for the roll-call format" or "What should star_advice.md stop doing?"</label>
+      <textarea id="q" name="q"></textarea>
+      <div class="actions"><button class="btn" type="submit" id="send">Send</button></div>
+    </form>
+  </section>
+
+  <p class="note" id="foot"></p>
+</div>
+
+<script type="application/json" id="data">/*DATA*/</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const $ = (id) => document.getElementById(id);
+  const fmt = new Intl.NumberFormat("en-US");
+  const x = (v) => (v >= 10 ? v.toFixed(0) : v >= 3 ? v.toFixed(1) : v.toFixed(2)) + "×";
+  const pct = (v) => Math.round(v * 100) + "%";
+  const views = [{ key: "all", label: "All accounts", data: DATA.all }, ...DATA.accounts.map((a) => ({ key: a.account, label: "@" + a.account, data: a }))];
+  let current = views[0];
+  let turns = [];
+  let ctl = null;
+  let sample = null;
+
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
+
+  $("sub").textContent = `Your Reels from the last ${DATA.days} days, compared at 24 hours old with the same account's Reels from nearby days. Numbers from ${new Date(DATA.generatedAt).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })}.`;
+  $("foot").textContent = "1.00× is a usual Reel for that account; 2× or more is a hit. The numbers on this page are a snapshot from IG Growth Studio; the app's Analyze page always has the latest.";
+
+  function finding(f, good) {
+    const li = el("li");
+    const hits = Math.round(f.hitRate * f.count);
+    li.append(el("span", good ? "good" : "bad", x(f.index)), document.createTextNode(` ${f.dimension.toLowerCase()}: ${f.value} `), el("span", "muted", good ? `(${hits} of ${f.count} were hits)` : `(${f.count} Reels)`));
+    return li;
+  }
+
+  function reelRow(r) {
+    const row = el("div", "reel");
+    row.append(el("div", "x", x(r.timesUsual)));
+    const body = el("div");
+    body.append(el("div", "", r.title));
+    const meta = el("div", "meta");
+    for (const v of [current.key === "all" ? "@" + r.account : null, r.format, r.sign, r.theme, r.ending, r.length, fmt.format(r.viewsAt24h) + " views at 24 h"]) if (v) meta.append(el("span", "tag", v));
+    body.append(meta);
+    row.append(body);
+    return row;
+  }
+
+  function render() {
+    const d = current.data;
+    $("tabs").replaceChildren(...views.map((v) => {
+      const b = el("button", "", v.label);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(v === current));
+      b.onclick = () => { if (v === current) return; ctl?.abort(); current = v; turns = []; $("answer").replaceChildren(); $("chat").replaceChildren(); $("followup").hidden = true; $("status").textContent = ""; render(); };
+      return b;
+    }));
+    const stats = [["Reels compared", fmt.format(d.reels)], ["Hits (2× or more)", pct(d.hitRate)], ["Best Reel", d.topReels[0] ? x(d.topReels[0].timesUsual) : "—"]];
+    $("stats").replaceChildren(...stats.map(([l, v]) => { const s = el("div", "stat"); s.append(el("b", "", v), el("span", "", l)); return s; }));
+    $("working").replaceChildren(...(d.working.length ? d.working.map((f) => finding(f, true)) : [el("li", "muted", "Nothing stands clearly above the usual yet. The wins are single hits.")]));
+    $("holding").replaceChildren(...(d.holdingBack.length ? d.holdingBack.map((f) => finding(f, false)) : [el("li", "muted", "Nothing stands clearly below the usual.")]));
+    $("top").replaceChildren(...d.topReels.slice(0, 8).map(reelRow));
+    $("bottom").replaceChildren(...d.bottomReels.slice(0, 6).map(reelRow));
+    $("ask").textContent = current.key === "all" ? "Get ideas for all accounts" : `Get ideas for ${current.label}`;
+  }
+
+  // Minimal Markdown: headings, bullets, numbered lists, bold. Text only, never HTML.
+  function markdown(target, text) {
+    const out = [];
+    let list = null;
+    const inline = (s) => {
+      const frag = document.createDocumentFragment();
+      s.split(/(\*\*[^*]+\*\*)/g).forEach((part) => {
+        if (/^\*\*[^*]+\*\*$/.test(part)) frag.append(el("strong", "", part.slice(2, -2)));
+        else if (part) frag.append(document.createTextNode(part));
+      });
+      return frag;
+    };
+    for (const raw of text.split("\n")) {
+      const line = raw.trimEnd();
+      const h = line.match(/^#{1,4}\s+(.*)/);
+      const ul = line.match(/^\s*[-*•]\s+(.*)/);
+      const ol = line.match(/^\s*\d+[.)]\s+(.*)/);
+      if (ul || ol) {
+        const tag = ul ? "ul" : "ol";
+        if (!list || list.tagName.toLowerCase() !== tag) { list = el(tag); out.push(list); }
+        const li = el("li"); li.append(inline((ul || ol)[1])); list.append(li);
+        continue;
+      }
+      list = null;
+      if (!line.trim()) continue;
+      if (h) { const e = el("h3"); e.append(inline(h[1])); out.push(e); }
+      else { const p = el("p"); p.append(inline(line)); out.push(p); }
+    }
+    target.replaceChildren(...out);
+  }
+
+  function context() {
+    const d = current.data;
+    const scope = current.key === "all" ? "all three accounts together (@star_talk.md: funny, relatable zodiac entertainment; @star_advice.md: warm zodiac advice; @zodiac.advice444: calm astrology and love-advice lines over moonlit paintings)" : current.label;
+    return [
+      "You are a short-form video strategist for small Instagram astrology accounts that post many Reels a day through a scheduler.",
+      `Here is performance data for ${scope}, from the last ${DATA.days} days. ${DATA.howToRead}`,
+      "Patterns need several Reels across several days before they mean much; treat groups under 8 Reels, and single hits, as hints rather than proof, and say so.",
+      "",
+      "DATA:",
+      JSON.stringify({ reels: d.reels, hitRate: d.hitRate, working: d.working, holdingBack: d.holdingBack, byDimension: d.byDimension, topReels: d.topReels, mostSaved: d.mostSaved, mostShared: d.mostShared, bottomReels: d.bottomReels }),
+    ].join("\n");
+  }
+
+  const ASK = [
+    "Using only this data, write a short, practical plan in Markdown with these sections:",
+    "## What's working: 3 to 5 bullets, each naming the evidence (format, sign, ending, length or timing, with its ×usual and number of Reels).",
+    "## Make more of: 5 specific Reel ideas to make next. For each, the format, a hook line people would see on screen, and one sentence on why the data supports it.",
+    "## New formats to test: 3 formats these accounts haven't tried, adapted from what the hits have in common, each with an example hook.",
+    "## Stop or change: up to 3 bullets.",
+    "## One experiment for next week: what to post, how many, and how to tell if it worked using the ×usual score.",
+    "Write plainly and briefly. Don't invent numbers that aren't in the data. Don't suggest buying followers, engagement pods or follow/unfollow tactics.",
+  ].join("\n");
+
+  function busy(on) {
+    $("ask").disabled = on; $("send").disabled = on; $("stop").hidden = !on;
+    if (on) $("status").textContent = "Thinking… this usually takes under a minute.";
+  }
+
+  const COPY = {
+    not_granted: "Claude isn't allowed on this page. You can allow it from the page's permissions.",
+    sampling_disabled: "Claude isn't available on this account.",
+    rate_limited: "Too many requests just now. Try again in a minute.",
+    session_expired: "Sign in to Claude again, then try once more.",
+    refused: "Claude couldn't answer that. Try asking differently.",
+    prompt_too_large: "That was too much at once. Pick one account and try again.",
+  };
+  const fail = (e) => COPY[e && e.code] || "Something went wrong reaching Claude. Try again.";
+
+  async function run(messages, target) {
+    ctl = new AbortController();
+    busy(true);
+    try {
+      const { text, truncated } = await sample(messages, { signal: ctl.signal, cache: false, onText: ({ text }) => { $("status").textContent = ""; markdown(target, text); } });
+      markdown(target, text);
+      $("status").textContent = truncated ? "The answer was cut short. Ask for less at a time." : "";
+      return text;
+    } catch (e) {
+      if (e && e.text) markdown(target, e.text);
+      if (!e || e.code !== "cancelled") $("status").textContent = fail(e);
+      else $("status").textContent = "";
+      if (e && (e.code === "not_granted" || e.code === "sampling_disabled")) $("ask").hidden = true;
+      return null;
+    } finally {
+      busy(false);
+    }
+  }
+
+  $("stop").onclick = () => ctl?.abort();
+
+  $("ask").onclick = async () => {
+    $("chat").replaceChildren();
+    turns = [{ role: "user", content: context() + "\n\n" + ASK }];
+    const text = await run(turns, $("answer"));
+    if (text) { turns.push({ role: "assistant", content: text }); $("followup").hidden = false; }
+    else turns = [];
+  };
+
+  $("followup").onsubmit = async (ev) => {
+    ev.preventDefault();
+    const q = $("q").value.trim();
+    if (!q || !turns.length) return;
+    $("q").value = "";
+    $("chat").append(el("div", "turn me", q));
+    const bubble = el("div", "turn answer");
+    $("chat").append(bubble);
+    const asked = [...turns, { role: "user", content: q }];
+    const text = await run(asked, bubble);
+    if (text) turns = [...asked, { role: "assistant", content: text }];
+  };
+
+  render();
+  $("ask").disabled = true;
+  $("status").textContent = "Connecting to Claude…";
+  window.claude?.use("sample").then((s) => {
+    sample = s;
+    if (!s) { $("ask").hidden = true; $("status").textContent = "Claude ideas work when this page is opened on claude.ai or in the Claude app."; return; }
+    $("ask").disabled = false; $("status").textContent = "";
+  }) ?? ($("ask").hidden = true, $("status").textContent = "Claude ideas work when this page is opened on claude.ai or in the Claude app.");
+})();
+</script>

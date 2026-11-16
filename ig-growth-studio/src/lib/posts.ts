@@ -15,6 +15,12 @@ export const PostFields = z.object({
   coverOffsetMs: z.number().int().min(0).max(15 * 60_000).nullable().optional(),
   /** Reels: also post to the Facebook Page linked to the account. */
   facebook: z.boolean().optional(),
+  /** What the video is (film id, title, format, sign, topic…), so the Analyze page can compare. Up to 20 short fields. */
+  meta: z
+    .record(z.string().max(40), z.union([z.string().max(300), z.number()]))
+    .refine((m) => Object.keys(m).length <= 20, "meta: at most 20 fields")
+    .nullable()
+    .optional(),
 });
 export type PostFields = z.infer<typeof PostFields>;
 
@@ -45,6 +51,7 @@ export async function queuePost(
     trial: fields.trial,
     coverOffsetMs: fields.coverOffsetMs ?? null,
     facebook: fields.facebook ?? false,
+    meta: fields.meta ?? null,
     scheduledAt,
     source,
   });
@@ -79,5 +86,17 @@ export function publicPost(p: PostRow, accounts: Map<string, Account>) {
     permalink: p.permalink,
     error: p.error,
     facebook: p.fb_status ? { status: p.fb_status, permalink: p.fb_permalink, error: p.fb_error } : null,
+    meta: parseMeta(p.meta),
   };
+}
+
+/** A post's meta JSON as an object; empty when missing or unreadable. */
+export function parseMeta(raw: string | null | undefined): Record<string, string | number> {
+  if (!raw) return {};
+  try {
+    const v = JSON.parse(raw);
+    return v && typeof v === "object" && !Array.isArray(v) ? v : {};
+  } catch {
+    return {};
+  }
 }

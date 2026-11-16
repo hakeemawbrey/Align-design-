@@ -83,6 +83,7 @@ async function main() {
         scheduledAt: isoWithOffset(when),
         shareToFeed: true,
         trial: kind.startsWith("trial") ? trial : null,
+        meta: metaFrom(r),
       },
     });
   });
@@ -111,6 +112,17 @@ async function main() {
     }
   }
   console.log(`Queued ${ok} of ${plan.length}.`);
+}
+
+/** Columns that describe the video (film id, title, format, sign…) are kept with the post for the Analyze page. */
+const NOT_META = new Set(["account", "day", "date", "time", "type", "caption", "media_url", "drive_link", "repost", "posted", "keywords", "on-screen line"]);
+function metaFrom(r: Record<string, string | undefined>) {
+  const meta: Record<string, string> = {};
+  for (const [k, v] of Object.entries(r)) {
+    if (NOT_META.has(k) || !v || !v.trim() || Object.keys(meta).length >= 20) continue;
+    meta[k.slice(0, 40)] = v.trim().slice(0, 300);
+  }
+  return Object.keys(meta).length ? meta : null;
 }
 
 /** "2026-11-03T20:30:00-06:00" in this computer's time zone. */

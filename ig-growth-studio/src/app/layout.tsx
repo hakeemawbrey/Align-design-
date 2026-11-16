@@ -23,6 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <span className="brand">IG Growth Studio</span>
             <nav>
               <Link href="/">Dashboard</Link>
+              <Link href="/analyze">Analyze</Link>
               <Link href="/schedule">Schedule</Link>
               <Link href="/engage">Engage</Link>
               <Link href="/settings">Settings</Link>

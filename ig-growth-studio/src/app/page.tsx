@@ -278,6 +278,9 @@ async function AccountDetail({ account, colorIndex }: { account: Account; colorI
       </div>
 
       <h2>Top videos, last 7 days</h2>
+      <p className="small" style={{ margin: "-4px 0 8px" }}>
+        <Link href={`/analyze?account=${encodeURIComponent(account.username)}`}>Analyze what this account&apos;s best Reels have in common →</Link>
+      </p>
       <TopVideos videos={await topVideos(db, { igUserId: account.igUserId, since: new Date(Date.now() - 7 * 86_400_000) })} />
 
       {hasFacebookPage(account) && <FacebookSection account={account} />}
@@ -404,6 +407,9 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
       </ChartCard>
 
       <h2>Top videos, last 7 days</h2>
+      <p className="small" style={{ margin: "-4px 0 8px" }}>
+        <Link href="/analyze">Analyze what your best Reels have in common →</Link>
+      </p>
       <TopVideos videos={top} usernames={new Map(accounts.map((a) => [a.igUserId, a.username]))} />
 
       <h2>Followers</h2>

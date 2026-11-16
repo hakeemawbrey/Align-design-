@@ -15,6 +15,9 @@
     "experiment": "tsx scripts/experiment-report.ts",
     "report": "tsx scripts/weekly-report.ts",
     "ticks": "tsx scripts/sheet-ticks.ts",
+    "tag": "tsx scripts/tag-posts.ts",
+    "analysis": "tsx scripts/analysis-export.ts",
+    "ideas-page": "tsx scripts/build-ideas.ts",
     "copy-to-cloud": "tsx scripts/copy-to-cloud.ts"
   },
   "dependencies": {

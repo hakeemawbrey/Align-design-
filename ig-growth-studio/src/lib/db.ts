@@ -46,6 +46,8 @@ export interface PostRow {
   /** When the Facebook upload started (for the 30-per-24-hours Page limit). */
   fb_started_at: string | null;
   started_at: string | null;
+  /** JSON: what the video is (film id, title, format, sign, topic, ending…), for the Analyze page. */
+  meta: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -265,6 +267,8 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
       PRIMARY KEY (ig_user_id, day)
     )`,
   ],
+  // v10: what each video is (format, sign, topic…), for comparing what performs.
+  async () => ["ALTER TABLE posts ADD COLUMN meta TEXT"],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -433,13 +437,15 @@ export interface NewPost {
   /** Reels only: also post to the linked Facebook Page. */
   facebook?: boolean;
   source?: PostSource;
+  /** What the video is: film id, title, format, sign, topic… */
+  meta?: Record<string, string | number> | null;
 }
 
 export async function createPost(db: DB, p: NewPost): Promise<number> {
   const res = await run(
     db,
-    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, cover_offset_ms, source, scheduled_at, fb_status)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, cover_offset_ms, source, scheduled_at, fb_status, meta)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       p.igUserId,
       p.type,
@@ -451,6 +457,7 @@ export async function createPost(db: DB, p: NewPost): Promise<number> {
       p.source ?? "you",
       p.scheduledAt.toISOString(),
       p.type === "REELS" && p.facebook ? "pending" : null,
+      p.meta && Object.keys(p.meta).length ? JSON.stringify(p.meta) : null,
     ],
   );
   return Number(res.lastInsertRowid);
