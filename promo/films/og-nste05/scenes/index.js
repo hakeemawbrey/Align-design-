@@ -75,7 +75,7 @@ const EP = makeSingle({
   last: 'Bring yourself. *Glow* anyway.',
   bubbles: [
     { t0: 1.0, t1: 3.6, x: 780, y: 1150, text: 'one more! cuter! AGAIN!', size: 38, tail: 0 },
-    { t0: 3.85, t1: 6.6, x: 540, y: 940, text: 'who takes MY picture?? I’m the main event!', size: 42, tail: 0 },
+    { t0: 3.85, t1: 6.6, x: 540, y: 940, text: 'who takes MY picture?? I’m the star!', size: 42, tail: 0 },
     { t0: 13.85, t1: 15.4, x: 420, y: 950, text: 'could you take one? or twelve?', size: 40, tail: 0 },
     { t0: 15.5, t1: 17.3, x: 760, y: 970, text: 'sure! then me? jump shot!', size: 40, tail: 0.1, col: '#ffe2c4' },
   ],
