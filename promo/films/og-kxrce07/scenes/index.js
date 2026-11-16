@@ -158,7 +158,7 @@ function over(x, t) {
   }
   speech(x, t, 560, 800, T.ask[1] - 0.3, 'table for a couple?', { size: 36, life: 2.2, col: BONE })
   speech(x, t, 320, 1050, T.almost, 'so, um—', { size: 36, life: 0.9, col: '#fff3c8' })
-  speech(x, t, 700, 660, T.bells, 'BONG. BONG. BONG.', { size: 40, life: 2.6, col: '#fff3c8', shake: 3 })
+  speech(x, t, 700, 800, T.bells, 'BONG. BONG. BONG.', { size: 40, life: 2.6, col: '#fff3c8', shake: 3 })
 }
 
 export const HOOK = 'Three months of | *“hanging out.”*'
