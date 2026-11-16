@@ -1,0 +1,3 @@
+// nsage08 score: house, A. drop 2.6: the door keeps opening · breakdown 14.6: the kitchen · lift 21.0: THE STARS · outro under the end card.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nsage08', duration: DURATION, music: { style: 'house', key: 'A', seed: 1008, sections: { drop: 3.2, breakdown: [15.2], lift: [21.6], outroAt: DURATION - 2.4 }, hits: [12.8] }, cues: CUES }
