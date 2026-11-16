@@ -71,7 +71,7 @@ function s3(x, t, S) {
   const blink = u < 2.2 ? Math.floor(u * 3) % 2 : 0
   camera(x, t, 230, 1100, { blink })
   const fl = clamp(1 - Math.abs(u - 2.2) / 0.25)
-  if (fl > 0) { x.save(); x.globalCompositeOperation = 'lighter'; glow(x, 230, 1080, 700, 0.22 * fl, '255,255,255')   // og: a soft camera flash; x.restore() }
+  if (fl > 0) { x.save(); x.globalCompositeOperation = 'lighter'; glow(x, 230, 1080, 700, 0.22 * fl, '255,255,255') /* og: a soft camera flash */; x.restore() }
   polaroid(x, t, 330, lerp(1100, 860, ease.outCubic(prog(u, 2.4, 3.0))), pop01(t, S.t0 + 2.4, 0.35, 2), star, -0.08)
   ;['3', '2', '1'].forEach((n, i) => { const a = S.t0 + 0.6 + i * 0.5; if (t > a && t < a + 0.45) ink(x, n, 230, 940, { size: 90, col: '#ff4f6e' }) })
 }

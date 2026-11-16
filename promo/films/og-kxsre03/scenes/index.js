@@ -71,7 +71,7 @@ const EP = makeSR({
       face: [[0, 'wide'], [2.5, 'scream'], [3.6, 'poker'], [5.6, 'poker'], [7.4, 'fight']],
       date: (u, t, t0) => ({ x: lerp(650, DATE.x, ease.inOutCubic(prog(u, 4.8, 5.6))), mood: u < 5.6 ? 'wide' : 'happy', look: [-1, 0], hops: [t0 + 3.7, t0 + 5.6, t0 + 7.6] }),
       bubbles: [[3.7, 5.3, 'hug? handshake? high five? bow?']],
-      over(tx, t, P) { if (P.u < 2.5) label(tx, 'SLOW-MO ×0.25', 940, 1360, { size: 34, col: GOLD, align: 'right' })   // og: no blink, safe zone },
+      over(tx, t, P) { if (P.u < 2.5) label(tx, 'SLOW-MO ×0.25', 940, 1360, { size: 34, col: GOLD, align: 'right' }) /* og: no blink, safe zone */ },
       card: '5/10', pis: { at: 6.0, tears: 1, mood: 'wide' },
       cues: [['whoosh', 0.1, 1.2, 0.03], ['pluck', 2.5, 1567.98, 0.04, 0.3, 0], ['pop', 3.7, 880, 0.035, 0.3], ['tick', 5.6, 0.05]] },
     { title: 'COFFEE',

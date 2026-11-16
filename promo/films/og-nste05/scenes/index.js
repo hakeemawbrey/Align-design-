@@ -26,7 +26,7 @@ function arch(x, t, on = 1) {
 function phoneUp(x, cx, cy, rot = 0, flash = 0) {
   x.save(); x.translate(cx, cy); x.rotate(rot)
   R(x, INK, -26, -44, 52, 88); R(x, '#2a2148', -21, -39, 42, 78); R(x, '#7fd0ff', -16, -32, 32, 56)
-  if (flash > 0) { x.globalCompositeOperation = 'lighter'; glow(x, 0, -30, 220, 0.25 * flash, '255,255,255')   // og: a soft phone flash }
+  if (flash > 0) { x.globalCompositeOperation = 'lighter'; glow(x, 0, -30, 220, 0.25 * flash, '255,255,255') /* og: a soft phone flash */ }
   x.restore()
 }
 const SET = (x, t) => { street(x, t, { groundY: 1420, lamps: [90, 990], houses: true }); arch(x, t) }
