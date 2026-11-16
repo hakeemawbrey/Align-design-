@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Align Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=block">
+<style>
+/* One idea per slide. 1920 × 1080. Night sky from comealign.com, plum glow from the pitch deck. */
+:root {
+  --void: #100b21; --canvas: #140a2e; --raised: #1e1240; --glass: rgba(20, 10, 46, .58); --edge: rgba(237, 230, 216, .13);
+  --bone: #ede6d8; --bone-2: #b3a6c4; --bone-3: #7d6f94;
+  --rub: #e8628a; --pink: #f08fb4; --spark: #7fd8b0; --gold: #f2c75c; --violet: #9a7be0; --lav: #b7a6ff;
+  --chrome: linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%); --chrome-ink: #3a2c4e;
+  --serif: "EB Garamond", Georgia, serif; --sans: "Inter", system-ui, sans-serif; --mono: "Space Mono", ui-monospace, monospace;
+}
+@page { size: 1920px 1080px; margin: 0 }
+* { box-sizing: border-box }
+html, body { margin: 0; background: #000 }
+body { color: var(--bone); font-family: var(--sans); -webkit-font-smoothing: antialiased }
+.s { width: 1920px; height: 1080px; position: relative; overflow: hidden; break-after: page; page-break-after: always;
+  padding: 120px 150px 110px; display: flex; flex-direction: column; justify-content: center; gap: 36px;
+  background-color: var(--void);
+  background-image: radial-gradient(60% 75% at 92% 108%, rgba(176, 72, 150, .40), transparent 62%), radial-gradient(55% 70% at 4% -8%, rgba(70, 48, 140, .45), transparent 60%), var(--neb, none);
+  background-size: cover }
+.s::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 95% at 50% 50%, transparent 58%, rgba(8, 4, 20, .55) 100%) }
+.s > * { position: relative; z-index: 2 }
+.sky-layer { position: absolute !important; inset: 0; z-index: 1 !important; pointer-events: none }
+.spark { position: absolute }
+.foot { position: absolute !important; left: 150px; right: 150px; bottom: 48px; display: flex; justify-content: space-between; align-items: center; font: 400 15px var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--bone-3) }
+.foot .moon { display: flex; align-items: center; gap: 14px }
+
+/* type */
+.ey { font: 400 20px/1.3 var(--mono); letter-spacing: .34em; text-transform: uppercase; color: var(--bone-2) }
+.ey.pink { color: var(--pink) } .ey.gold { color: var(--gold) } .ey.teal { color: var(--spark) } .ey.lav { color: var(--lav) }
+h1, h2 { margin: 0; font: italic 400 112px/1.02 var(--serif); letter-spacing: -.015em; text-wrap: balance }
+h2 { font-size: 92px }
+h1 em, h2 em { color: var(--pink); font-style: italic }
+.lead { margin: 0; font: 300 36px/1.4 var(--sans); color: var(--bone-2); max-width: 30ch; text-wrap: pretty }
+.lead b { color: var(--bone); font-weight: 400 }
+.serif-lead { margin: 0; font: italic 400 44px/1.3 var(--serif); color: var(--bone-2); max-width: 34ch }
+.center { align-items: center; text-align: center }
+.center .lead, .center .serif-lead { margin-inline: auto }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center }
+.row.wide-l { grid-template-columns: 1.15fr .85fr }
+.stack { display: flex; flex-direction: column; gap: 30px }
+.glass { background: var(--glass); border: 1.5px solid var(--edge); border-radius: 28px }
+.pill { display: inline-block; padding: 12px 24px; border-radius: 999px; background: var(--chrome); color: var(--chrome-ink); font: 700 17px var(--mono); letter-spacing: .24em; text-transform: uppercase }
+
+/* cover */
+.cover .mark { width: 330px; filter: drop-shadow(0 0 60px rgba(180, 92, 255, .45)) }
+.cover .word { font: italic 400 220px/.85 var(--serif); margin: 6px 0 0; text-shadow: 0 0 60px rgba(237, 230, 216, .25) }
+.cover .tag { font: 400 26px var(--mono); letter-spacing: .6em; padding-left: .6em; text-transform: uppercase }
+.cover .sub { font: 400 18px var(--mono); letter-spacing: .4em; text-transform: uppercase; color: var(--bone-3); margin-top: 18px }
+
+/* disposable */
+.cycle { display: flex; gap: 28px; align-items: baseline; font: italic 400 76px var(--serif); color: var(--bone-3) }
+.cycle span:last-child { color: var(--pink) }
+.cycle i { font: 400 34px var(--mono); color: var(--bone-3); font-style: normal }
+
+/* three beats */
+.beats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
+.beat { padding: 44px 40px; display: flex; flex-direction: column; gap: 18px }
+.beat .k { font: 400 17px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--pink) }
+.beat b { font: italic 400 50px/1.1 var(--serif) }
+.beat p { margin: 0; font: 300 26px/1.45 var(--sans); color: var(--bone-2) }
+.insight { display: flex; gap: 30px; align-items: center; padding: 34px 44px; border-left: 3px solid var(--gold); background: rgba(242, 199, 92, .06); border-radius: 0 24px 24px 0 }
+.insight p { margin: 0; font: italic 400 42px/1.3 var(--serif) }
+.insight p em { color: var(--gold) }
+
+/* principles */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
+.tc { padding: 48px 44px; display: flex; flex-direction: column; gap: 18px; border-color: color-mix(in srgb, var(--c) 55%, transparent); box-shadow: 0 0 50px color-mix(in srgb, var(--c) 16%, transparent) }
+.tc i { font: italic 400 110px/.8 var(--serif); color: var(--c) }
+.tc b { font: italic 500 52px/1.1 var(--serif) }
+.tc p { margin: 0; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
+
+/* parts map */
+.parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px }
+.part { padding: 34px 36px; display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: center }
+.part .vis { width: 120px; height: 120px; display: grid; place-items: center; border-radius: 22px; background: rgba(237, 230, 216, .04) }
+.part b { display: block; font: italic 500 42px/1.1 var(--serif) }
+.part span { display: block; margin-top: 8px; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
+.part small { display: block; margin-bottom: 6px; font: 400 14px var(--mono); letter-spacing: .3em; color: var(--gold) }
+
+/* name */
+.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 32px }
+.vcol { padding: 44px; display: flex; flex-direction: column; gap: 16px }
+.vcol .w { font: italic 400 72px/1 var(--serif) }
+.vcol.no .w { color: var(--bone-3); text-decoration: line-through; text-decoration-color: var(--rub); text-decoration-thickness: 3px }
+.vcol.yes { border-color: rgba(127, 216, 176, .55); box-shadow: 0 0 50px rgba(127, 216, 176, .14) }
+.vcol p { margin: 0; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
+
+/* mark */
+.markbig { width: 560px; justify-self: center; filter: drop-shadow(0 0 80px rgba(180, 92, 255, .4)) }
+.meaning { display: flex; flex-direction: column; gap: 34px }
+.mn { display: grid; grid-template-columns: 74px 1fr; gap: 26px; align-items: start }
+.mn .dot { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--edge); background: var(--glass) }
+.mn b { display: block; font: italic 500 46px/1.1 var(--serif) }
+.mn span { display: block; margin-top: 6px; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
+.chakra { display: flex; gap: 14px; margin-top: 4px }
+.chakra i { width: 30px; height: 30px; border-radius: 50%; background: var(--c); box-shadow: 0 0 18px var(--c) }
+
+/* card */
+.cards { position: relative; height: 820px }
+.cards img { position: absolute; height: 720px; filter: drop-shadow(0 30px 60px rgba(0, 0, 0, .5)) }
+.cards .a { left: 0; top: 70px; transform: rotate(-7deg); opacity: .9 }
+.cards .b { left: 270px; top: 20px; transform: rotate(5deg) }
+.ticks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; font: 300 32px/1.4 var(--sans) }
+.ticks li { position: relative; padding-left: 44px } .ticks li::before { content: "✦"; position: absolute; left: 0; top: 4px; color: var(--pink); font-size: 24px }
+
+/* sky */
+.skyshow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px }
+.sk { padding: 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start }
+.sk .art { width: 100%; height: 200px; border-radius: 20px; display: grid; place-items: center; overflow: hidden; position: relative; background: #120a28 }
+.sk b { font: italic 500 42px var(--serif) }
+.sk p { margin: 0; font: 300 25px/1.45 var(--sans); color: var(--bone-2) }
+
+/* colour */
+.sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px }
+.swc { overflow: hidden; display: flex; flex-direction: column }
+.swc .c { height: 190px }
+.swc .t { padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 8px }
+.swc b { font: italic 500 38px var(--serif) }
+.swc code { font: 400 18px var(--mono); color: var(--bone-3); letter-spacing: .08em }
+.swc p { margin: 0; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
+.rule-line { font: 300 28px/1.4 var(--sans); color: var(--bone-2) } .rule-line b { color: var(--bone); font-weight: 500 }
+
+/* type */
+.spec { display: grid; grid-template-columns: 360px 1fr; gap: 50px; align-items: baseline; padding: 34px 0; border-bottom: 1.5px solid var(--edge) }
+.spec:last-child { border-bottom: 0 }
+.spec .l b { display: block; font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--gold) }
+.spec .l span { display: block; margin-top: 10px; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
+
+/* voice */
+.say { display: grid; grid-template-columns: 1fr 70px 1fr; row-gap: 0; align-items: center }
+.say > div { padding: 24px 0; border-bottom: 1.5px solid var(--edge); font: 300 32px var(--sans) }
+.say .no { color: var(--bone-3); text-decoration: line-through; text-decoration-color: var(--rub) }
+.say .ar { color: var(--bone-3); font-family: var(--mono); text-align: center }
+.say .yes { font: italic 400 38px var(--serif) }
+.say .hd { font: 400 17px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--bone-3); border-bottom: 0; padding-bottom: 6px }
+
+/* words */
+.words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px }
+.wd { padding: 36px 38px; display: flex; flex-direction: column; gap: 12px }
+.wd b { font: italic 500 46px var(--serif) }
+.wd p { margin: 0; font: 300 24px/1.45 var(--sans); color: var(--bone-2) }
+
+/* partners */
+.lock { display: flex; align-items: center; justify-content: center; gap: 44px; padding: 70px; border-radius: 32px }
+.lock .al { display: flex; align-items: center; gap: 20px; font: italic 400 96px/1 var(--serif) }
+.lock .x { font: 400 44px var(--mono); color: var(--bone-2) }
+.lock .yl { height: 110px; padding: 0 44px; border: 2px dashed rgba(237, 230, 216, .45); border-radius: 22px; display: grid; place-items: center; font: 400 20px var(--mono); letter-spacing: .3em; color: var(--bone-2) }
+.dd { display: grid; grid-template-columns: 1fr 1fr; gap: 30px }
+.dd .glass { padding: 36px 40px; display: flex; flex-direction: column; gap: 16px }
+.dd ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font: 300 27px/1.4 var(--sans) }
+.dd .do li::before { content: "✓"; color: var(--spark); margin-right: 16px }
+.dd .dont li::before { content: "✕"; color: var(--rub); margin-right: 16px }
+
+/* close */
+.contact { display: flex; gap: 60px; justify-content: center; font: 400 24px var(--mono); letter-spacing: .24em; color: var(--bone-2) }
+.contact b { color: var(--bone); font-weight: 400 }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="s center cover">
+  <img class="mark" src="img/align-mark.png" alt="">
+  <div class="word">Align</div>
+  <div class="tag">Put your faith in the stars</div>
+  <div class="sub">Brand kit · 2026</div>
+</section>
+
+<!-- 02 WHY -->
+<section class="s center">
+  <div class="ey pink">Why Align exists</div>
+  <h1>People have been made <em>disposable.</em></h1>
+  <div class="cycle"><span>Swipe</span><i>→</i><span>Match</span><i>→</i><span>Ghost</span><i>→</i><span>Replace</span></div>
+  <p class="lead">Dating apps turned people into a feed. Everyone can feel it.</p>
+</section>
+
+<!-- 03 HOW IT HAPPENED -->
+<section class="s">
+  <div class="ey pink">How it happened</div>
+  <h2>Built to keep you searching.</h2>
+  <div class="beats">
+    <div class="beat glass"><span class="k">Photo first</span><b>Judged in half a second.</b><p>A face and a height decide before a word is said.</p></div>
+    <div class="beat glass"><span class="k">Left on read</span><b>Never answered.</b><p>Chats fizzle. Ghosting is normal. Nobody owes anyone a reply.</p></div>
+    <div class="beat glass"><span class="k">Always another</span><b>Easy to replace.</b><p>There's a new stack tomorrow, so no one is worth the effort today.</p></div>
+  </div>
+  <div class="insight"><p>Most dating apps earn the most when you <em>almost</em> find someone.</p></div>
+</section>
+
+<!-- 04 OUR ANSWER -->
+<section class="s center">
+  <div class="ey gold">Our answer</div>
+  <h1>Nobody is disposable.</h1>
+  <p class="lead">Align is a dating app where you meet <b>who someone is</b> before what they look like, both people have to <b>choose each other</b>, and every match is meant to end in <b>a real, safe date</b>.</p>
+</section>
+
+<!-- 05 VISION & MISSION -->
+<section class="s">
+  <div class="ey gold">North star</div>
+  <div class="stack">
+    <div class="ey" style="font-size:17px">Vision</div>
+    <h1 style="font-size:124px">To make people feel happy, safe, and loved.</h1>
+  </div>
+  <div class="stack" style="gap:16px;margin-top:20px">
+    <div class="ey" style="font-size:17px">Mission</div>
+    <p class="serif-lead" style="max-width:44ch;color:var(--bone)">To create, maintain, and promote alignment of people through technology, events, and real-life interaction.</p>
+  </div>
+</section>
+
+<!-- 06 PRINCIPLES -->
+<section class="s">
+  <div class="ey pink">How we decide</div>
+  <h2>Three principles.</h2>
+  <div class="trio">
+    <div class="tc glass" style="--c:var(--rub)"><i>1</i><b>Put people first.</b><p>Everybody has a story. We make sure theirs can be told.</p></div>
+    <div class="tc glass" style="--c:var(--spark)"><i>2</i><b>Help people align.</b><p>Quality over quantity. Real conversations lead to real relationships.</p></div>
+    <div class="tc glass" style="--c:var(--gold)"><i>3</i><b>Keep people safe.</b><p>Dating is vulnerable. We make safe spaces for it, online and in person.</p></div>
+  </div>
+</section>
+
+<!-- 07 THE PARTS -->
+<section class="s">
+  <div class="ey lav">The parts of the brand</div>
+  <h2>Six parts. One message.</h2>
+  <div class="parts">
+    <div class="part glass"><div class="vis" data-part="name"></div><div><small>01</small><b>The name</b><span>Two people align. It has to be mutual.</span></div></div>
+    <div class="part glass"><div class="vis"><img src="img/align-mark.png" alt="" style="width:96px"></div><div><small>02</small><b>The mark</b><span>Seven lights that line up.</span></div></div>
+    <div class="part glass"><div class="vis"><img src="img/card-profile-3.png" alt="" style="height:108px"></div><div><small>03</small><b>The card</b><span>Who you are, before your face.</span></div></div>
+    <div class="part glass"><div class="vis" data-part="sky"></div><div><small>04</small><b>The sky</b><span>Night, soft and never black.</span></div></div>
+    <div class="part glass"><div class="vis" data-part="colour"></div><div><small>05</small><b>Colour &amp; type</b><span>Indigo, bone and starlight.</span></div></div>
+    <div class="part glass"><div class="vis" data-part="voice"></div><div><small>06</small><b>The voice</b><span>Plain, warm, a little 2am.</span></div></div>
+  </div>
+</section>
+
+<!-- 08 NAME -->
+<section class="s">
+  <div class="ey lav">01 · The name</div>
+  <h2>Two people <em>align</em>.</h2>
+  <div class="versus">
+    <div class="vcol glass no"><div class="ey" style="font-size:16px;color:var(--rub)">We never say</div><div class="w">compatibility</div><p>A score treats people like a product, and pretends a number can decide for you.</p></div>
+    <div class="vcol glass yes"><div class="ey teal" style="font-size:16px">We say</div><div class="w">alignment</div><p>Something two people choose together. It has to be mutual. The stars read; they never decide.</p></div>
+  </div>
+</section>
+
+<!-- 09 MARK -->
+<section class="s">
+  <div class="row">
+    <img class="markbig" src="img/align-mark.png" alt="The Align mark">
+    <div class="meaning">
+      <div class="ey lav">02 · The mark</div>
+      <h2 style="font-size:84px">Seven lights that line up.</h2>
+      <div class="mn"><div class="dot"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="none" stroke="#d9cdee" stroke-width="1.6"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="8"/><circle cx="20" cy="12" r="8"/><circle cx="20" cy="28" r="8"/><circle cx="13" cy="16" r="8"/><circle cx="27" cy="16" r="8"/><circle cx="13" cy="24" r="8"/><circle cx="27" cy="24" r="8"/></g></svg></div><div><b>The seed of life</b><span>Everyone is connected. Every person is part of the pattern.</span></div></div>
+      <div class="mn"><div class="dot"><svg width="14" height="44" viewBox="0 0 14 44"><g><circle cx="7" cy="40" r="3.4" fill="#ff2d3a"/><circle cx="7" cy="34" r="3.4" fill="#ff7a2e"/><circle cx="7" cy="28" r="3.4" fill="#ffd23f"/><circle cx="7" cy="22" r="3.4" fill="#5fdc54"/><circle cx="7" cy="16" r="3.4" fill="#2fd0e6"/><circle cx="7" cy="10" r="3.4" fill="#4a72ff"/><circle cx="7" cy="4" r="3.4" fill="#b45cff"/></g></svg></div><div><b>Seven lights</b><span>When two people choose each other, everything lines up.</span>
+        <div class="chakra" style="margin-top:14px"><i style="--c:#ff2d3a"></i><i style="--c:#ff7a2e"></i><i style="--c:#ffd23f"></i><i style="--c:#5fdc54"></i><i style="--c:#2fd0e6"></i><i style="--c:#4a72ff"></i><i style="--c:#b45cff"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 CARD -->
+<section class="s">
+  <div class="row wide-l">
+    <div class="stack">
+      <div class="ey lav">03 · The card</div>
+      <h2>Chart first. <em>Face last.</em></h2>
+      <ul class="ticks">
+        <li>Your sky, your own words and your dealbreakers come first.</li>
+        <li>An aura stands in for the photo.</li>
+        <li>The veil lifts only when you both choose each other.</li>
+      </ul>
+      <p class="serif-lead" style="color:var(--bone)">The card is how someone matters before they're seen.</p>
+    </div>
+    <div class="cards"><img class="a" src="img/card-back.png" alt=""><img class="b" src="img/card-profile-3.png" alt="Juniper's mystery card"></div>
+  </div>
+</section>
+
+<!-- 11 SKY -->
+<section class="s">
+  <div class="ey lav">04 · The sky</div>
+  <h2>Night, never black.</h2>
+  <div class="skyshow">
+    <div class="sk glass"><div class="art" data-art="nebula"></div><b>A soft violet sky</b><p>A grainy nebula behind everything. Calm, never busy.</p></div>
+    <div class="sk glass"><div class="art" data-art="moon"></div><b>One pixel moon</b><p>Always one moon, never two. It waxes as a story moves forward.</p></div>
+    <div class="sk glass"><div class="art" data-art="stars"></div><b>Pixel starlight</b><p>Four-point stars that twinkle, and shooting stars that cross the sky.</p></div>
+  </div>
+</section>
+
+<!-- 12 COLOUR -->
+<section class="s">
+  <div class="ey lav">05 · Colour</div>
+  <h2>Indigo, bone and starlight.</h2>
+  <div class="sw">
+    <div class="swc glass"><div class="c" style="background:linear-gradient(135deg,#100b21,#281a4e)"></div><div class="t"><b>Night</b><code>#100B21 · #281A4E</code><p>Every surface. Indigo, never black or grey.</p></div></div>
+    <div class="swc glass"><div class="c" style="background:#ede6d8"></div><div class="t"><b>Bone</b><code>#EDE6D8</code><p>All text. Warm, never pure white.</p></div></div>
+    <div class="swc glass"><div class="c" style="background:var(--chrome)"></div><div class="t"><b>Pearl</b><code>Chrome gradient</code><p>Buttons and badges only.</p></div></div>
+    <div class="swc glass"><div class="c" style="background:linear-gradient(90deg,#e8628a 0 33.3%,#7fd8b0 33.3% 66.6%,#f2c75c 66.6%)"></div><div class="t"><b>Starlight</b><code>Pink · Teal · Gold</code><p>Small accents. Gold is a glint, never a button.</p></div></div>
+  </div>
+</section>
+
+<!-- 13 TYPE -->
+<section class="s">
+  <div class="ey lav">05 · Type</div>
+  <h2 style="margin-bottom:6px">Three voices on the page.</h2>
+  <div>
+    <div class="spec"><div class="l"><b>EB Garamond Italic</b><span>Feeling: headlines, names, the lines people remember</span></div><div style="font:italic 400 88px/1 var(--serif)">The stars aligned.</div></div>
+    <div class="spec"><div class="l"><b>Inter</b><span>Information: everything people read to understand</span></div><div style="font:300 40px/1.35 var(--sans);color:var(--bone)">Book a date at a partner spot that knows it's a first date.</div></div>
+    <div class="spec"><div class="l"><b>Space Mono</b><span>Labels: small, uppercase, widely spaced</span></div><div style="font:400 26px var(--mono);letter-spacing:.4em;text-transform:uppercase;color:var(--bone-2)">No photo until you both align</div></div>
+  </div>
+</section>
+
+<!-- 14 VOICE -->
+<section class="s">
+  <div class="row" style="align-items:start;gap:110px">
+    <div class="stack">
+      <div class="ey lav">06 · The voice</div>
+      <h2>Plain, warm, <em>a little 2am.</em></h2>
+      <p class="lead" style="font-size:31px">Like a friend who reads your chart late at night. Short sentences. Honest, never harsh. Astrology is a way into a conversation, never a verdict.</p>
+    </div>
+    <div class="say">
+      <div class="hd">Not this</div><div class="hd"></div><div class="hd">This</div>
+      <div class="no">Compatibility score</div><div class="ar">→</div><div class="yes">How you align</div>
+      <div class="no">Swipe left</div><div class="ar">→</div><div class="yes">Release</div>
+      <div class="no">Profile</div><div class="ar">→</div><div class="yes">Mystery card</div>
+      <div class="no">Find your soulmate</div><div class="ar">→</div><div class="yes">Meet someone real</div>
+      <div class="no">Download now!</div><div class="ar">→</div><div class="yes">Come align</div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 WORDS -->
+<section class="s">
+  <div class="ey lav">06 · Our words</div>
+  <h2>Words that carry the idea.</h2>
+  <div class="words">
+    <div class="wd glass"><b>Tonight's deck</b><p>A small hand of people, dealt every night. Quality, not quantity.</p></div>
+    <div class="wd glass"><b>Mystery card</b><p>Someone's chart and words, with an aura for a photo.</p></div>
+    <div class="wd glass"><b>Release</b><p>Letting someone go cleanly. Never ghosting.</p></div>
+    <div class="wd glass"><b>The veil lifts</b><p>The moment both people align and faces are shown.</p></div>
+    <div class="wd glass"><b>Talk cards</b><p>Real questions. Both answer before either sees.</p></div>
+    <div class="wd glass"><b>A real date</b><p>Booked at a partner spot that knows it's a first date.</p></div>
+  </div>
+</section>
+
+<!-- 16 PARTNERS -->
+<section class="s">
+  <div class="ey gold">With partners</div>
+  <h2>Two names, one sky.</h2>
+  <div class="lock glass">
+    <div class="al"><img src="img/align-mark.png" alt="" style="width:110px">Align</div>
+    <div class="x">×</div>
+    <div class="yl">YOUR LOGO</div>
+  </div>
+  <div class="dd">
+    <div class="glass do"><div class="ey teal" style="font-size:16px">Do</div><ul><li>Match both logos by height</li><li>Use your logo in bone on our night sky</li><li>Keep the promise: safe, real, mutual</li></ul></div>
+    <div class="glass dont"><div class="ey" style="font-size:16px;color:var(--rub)">Don't</div><ul><li>Recolour, crop or redraw the mark</li><li>Say "compatibility" or "soulmate"</li><li>Show anyone's face before they align</li></ul></div>
+  </div>
+</section>
+
+<!-- 17 CLOSE -->
+<section class="s center cover">
+  <img class="mark" src="img/align-mark.png" alt="" style="width:220px">
+  <h1 style="font-size:130px">Nobody is disposable.</h1>
+  <p class="serif-lead" style="color:var(--gold)">Put your faith in the stars.</p>
+  <div class="contact"><span><b>comealign.com</b></span><span>hakeem@comealign.com</span></div>
+</section>
+
+<script src="sky.js"></script>
+<script>
+const SPARK = 'M5 0 L5.9 4.1 L10 5 L5.9 5.9 L5 10 L4.1 5.9 L0 5 L4.1 4.1 Z'
+const COLS = ['#f8edff', '#c9b6f0', '#ffbdf6', '#ede6d8']
+function rng(seed) { let s = seed; return () => (s = s * 16807 % 2147483647) / 2147483647 }
+// one nebula, reused on every slide with a different crop
+const neb = document.createElement('canvas'); drawNebula(neb)
+const nebURL = neb.toDataURL('image/jpeg', .9)
+const slides = [...document.querySelectorAll('section.s')]
+slides.forEach((sl, i) => {
+  const r = rng(11 + i * 7)
+  sl.style.setProperty('--neb', `url(${nebURL})`)
+  sl.style.backgroundPosition = `center, center, ${Math.round(r() * 100)}% ${Math.round(r() * 100)}%`
+  sl.style.backgroundSize = `auto, auto, ${130 + Math.round(r() * 50)}%`
+  const layer = document.createElement('div'); layer.className = 'sky-layer'
+  for (let k = 0; k < 11; k++) {
+    const sz = 8 + Math.round(r() * 12), x = r() * 100, y = r() * 100
+    if (x > 12 && x < 88 && y > 15 && y < 85) continue // keep the middle clear
+    layer.insertAdjacentHTML('beforeend', `<svg class="spark" width="${sz}" height="${sz}" viewBox="0 0 10 10" style="left:${x}%;top:${y}%;opacity:${.45 + r() * .55};color:${COLS[k % 4]}"><path d="${SPARK}" fill="currentColor"/></svg>`)
+  }
+  sl.prepend(layer)
+  if (i > 0 && i < slides.length - 1) {
+    const f = document.createElement('div'); f.className = 'foot'
+    const m = document.createElement('span'); m.className = 'moon'
+    m.append(pixelMoon({ size: 26, grid: 14, lit: i / (slides.length - 1), glow: false }))
+    m.append(Object.assign(document.createElement('span'), { textContent: 'Align · Brand kit' }))
+    f.append(m, Object.assign(document.createElement('span'), { textContent: String(i + 1).padStart(2, '0') }))
+    sl.append(f)
+  }
+})
+// part icons
+const nameV = document.querySelector('[data-part="name"]'); nameV.innerHTML = '<span style="font:italic 400 52px var(--serif)">Aa</span>'
+const skyV = document.querySelector('[data-part="sky"]'); skyV.append(pixelMoon({ size: 64, grid: 18, lit: .55, glow: true }))
+document.querySelector('[data-part="colour"]').innerHTML = '<div style="display:grid;grid-template-columns:repeat(2,34px);gap:8px"><i style="height:34px;border-radius:50%;background:#281a4e;border:1px solid #574b6d"></i><i style="height:34px;border-radius:50%;background:#ede6d8"></i><i style="height:34px;border-radius:50%;background:#e8628a"></i><i style="height:34px;border-radius:50%;background:#f2c75c"></i></div>'
+document.querySelector('[data-part="voice"]').innerHTML = '<span style="font:italic 400 64px/1 var(--serif);color:var(--pink)">“</span>'
+// sky slide art
+const nA = document.querySelector('[data-art="nebula"]'); nA.style.background = `url(${nebURL}) 40% 40% / 260%`
+const mA = document.querySelector('[data-art="moon"]'); mA.append(pixelMoon({ size: 120, grid: 22, lit: .62, glow: true }))
+const sA = document.querySelector('[data-art="stars"]'); sA.style.background = '#120a28'
+const r2 = rng(5); for (let k = 0; k < 9; k++) { const sz = 10 + Math.round(r2() * 20); sA.insertAdjacentHTML('beforeend', `<svg width="${sz}" height="${sz}" viewBox="0 0 10 10" style="position:absolute;left:${8 + r2() * 84}%;top:${10 + r2() * 75}%;color:${COLS[k % 4]}"><path d="${SPARK}" fill="currentColor"/></svg>`) }
+const streak = document.createElement('canvas'); streak.width = 60; streak.height = 24; streak.style.cssText = 'position:absolute;left:18%;top:22%;width:240px;height:96px;image-rendering:pixelated'
+const sc = streak.getContext('2d'), T = ['#ffffff', '#f8edff', '#ddd0ff', '#c9b6f0', '#9a7be0', '#6b4bd0']
+for (let k = 0; k <= 16; k++) { const t = k / 16; sc.fillStyle = T[Math.min(5, Math.floor(t * 6))]; sc.globalAlpha = (1 - t) * .9 + .1; sc.fillRect(Math.round(44 - k * 2.4), Math.round(16 - k * 1.1), 1, 1) }
+sc.globalAlpha = 1; sc.fillStyle = '#fff'; sc.fillRect(43, 16, 3, 1); sc.fillRect(44, 15, 1, 3)
+sA.append(streak)
+window.__ready = true
+</script>
+</body>
+</html>
