@@ -1,0 +1,3 @@
+// og-nffe04 (social: no end card) score: jazzy, F. drop 5.0: the hard cut into THE STARS · lift 9.8: movie night · hit 11.3: MOVIE 2 OF 2 · outro.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nffe04', duration: DURATION, music: { style: 'jazzy', key: 'F', seed: 3404, sections: { drop: 5.0, lift: [9.8], outroAt: DURATION - 2.4 }, hits: [11.3] }, cues: CUES }

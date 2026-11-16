@@ -1,0 +1,3 @@
+// og-nffe03 (social: no end card) score: dreamy, Db. drop 7.4: the hard cut into THE STARS · lift 13.8: the room, softer · hit 16.7: the ornament · outro.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nffe03', duration: DURATION, music: { style: 'dreamy', key: 'Db', seed: 3403, sections: { drop: 7.4, lift: [13.8], outroAt: DURATION - 2.4 }, hits: [16.7] }, cues: CUES }

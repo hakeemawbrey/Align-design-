@@ -1,0 +1,3 @@
+// og-nffe02 (social: no end card) score: chiptune, C. drop 5.2: the hard cut into THE STARS · lift 10.0: the calm café · outro under the end card.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nffe02', duration: DURATION, music: { style: 'chiptune', key: 'C', seed: 3402, sections: { drop: 5.2, lift: [10.0], outroAt: DURATION - 2.4 } }, cues: CUES }
