@@ -15,7 +15,7 @@
 import { makeXThread, shot, R, label, drawStarChar, signStar, hearts, BONE, GOLD, INK, MONO, INTER, prog, ease } from '../xthread.js'
 import { xfx } from '../xfx.js'
 
-export const HOOK = 'The aunt asked: | *"So, seeing anyone?"*'
+export const HOOK = 'The aunt asked: | *"Seeing anyone?"*'
 export const HOOK_STYLE = 'box'
 export const HOOK_UNTIL = 3.0
 
