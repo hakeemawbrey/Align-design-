@@ -31,6 +31,7 @@ body { color: var(--bone); font-family: var(--sans); -webkit-font-smoothing: ant
   background-size: cover }
 .s::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 95% at 50% 50%, transparent 60%, rgba(8, 4, 20, .3) 100%) }
 .s > * { position: relative; z-index: 2 }
+.s:last-of-type { break-after: auto; page-break-after: auto }
 .s.mid { justify-content: center; padding-top: 110px }
 .sky-layer { position: absolute !important; inset: 0; z-index: 1 !important; pointer-events: none }
 .spark { position: absolute }
