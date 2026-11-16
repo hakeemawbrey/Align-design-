@@ -1,0 +1,3 @@
+// nffe19 score: dreamy, F. drop 8.6: the hard cut into THE STARS · lift 15.8: the specific invite · hit 19.6: the name card · outro.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nffe19', duration: DURATION, music: { style: 'dreamy', key: 'F', seed: 3419, sections: { drop: 8.6, lift: [15.8], outroAt: DURATION - 2.4 }, hits: [19.6] }, cues: CUES }
