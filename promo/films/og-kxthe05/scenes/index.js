@@ -155,7 +155,7 @@ const EP = makeXThread({
     counter: { label: 'QUESTIONS ANSWERED', steps: [[-1, 41], [3.4, 44], [8.2, 45], [10.6, 46], [15.2, 47], [72.6, 47], [76.8, 42, 'QUESTION']] },
     promise: { at: 1.3, text: 'wait for *question 42*' },
     chapters: [[0.0, '7 PM'], [18.0, '9 PM'], [38.0, '11 PM'], [58.0, '1 AM'], [72.0, '3 AM']],
-    caught: [{ at: 23.15, x: 592, y: 648, rx: 105, ry: 40, text: '7 HOURS', arrow: 'tl' }],
+    caught: [{ at: 23.15, x: 300, y: 1115, rx: 105, ry: 40, text: '7 HOURS', arrow: 'tr' }],
     shakes: [18.6, 20.4, 62.0],
     flashes: [[18.6, '#ff5c7a'], [62.0, '#9fe6b0'], [75.2, '#f2c75c']],
   }),
