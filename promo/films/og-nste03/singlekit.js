@@ -477,8 +477,8 @@ export function makeSingle(cfg) {
     const H3 = popText(root, `${cfg.name}: | *thriving.*`, { top: cfg.capTop ?? 480, size: 76, accentSize: 110, at: T.h3, gap: 0, accentColor: BUG_COL, fit: true })
     const top = layerCanvas(root), tx = top.getContext('2d')
     // og: the dialogue box inside x 70–950, y 1290–1550 (was 1400–1700, full width)
-    const box1 = dialogueBox(root, { lines: LINES1, y: 1290, width: 880, height: 260, size: 44, W: 1020, open: T.box1[0], close: T.box1[1], cps: CPS })
-    const box2 = dialogueBox(root, { lines: LINES2, y: 1290, width: 880, height: 260, size: 44, W: 1020, open: T.box2[0], close: 100, cps: CPS })
+    const box1 = dialogueBox(root, { lines: LINES1, y: 1320, width: 880, height: 240, size: 44, W: 1020, open: T.box1[0], close: T.box1[1], cps: CPS })
+    const box2 = dialogueBox(root, { lines: LINES2, y: 1320, width: 880, height: 240, size: 44, W: 1020, open: T.box2[0], close: 100, cps: CPS })
     void buildBug   // og: no series bug
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const img = n => imgs[n] || null
