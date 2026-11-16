@@ -521,7 +521,7 @@ export function simFilm(C) {
   for (const n of C.notifs || []) { const o = { at: n.t, out: [n.t + (n.d || 2.2) - 0.25, n.t + (n.d || 2.2)], title: n.from, body: n.text, glyph: signStar(n.sign || 'leo').glyph, color: signStar(n.sign || 'leo').color, time: n.time || 'now', y: n.y ?? 250 }; K.push([notification(o), notificationCues(o)]) }
   for (const c of C.chapters || []) { const o = { at: c.t, out: [c.t + (c.d || 3) - 0.25, c.t + (c.d || 3)], n: c.n, title: c.text, x: c.x ?? 70, y: c.y ?? 392, color: c.color || GOLD }; K.push([chapter(o), chapterCues(o)]) }
   ;(C.heads || []).forEach((h, i) => {
-    if (!h.slam) return
+    return   // og: no slam titles (word shake + drum per word); every headline uses the soft pop below
     const nx = C.heads[i + 1]
     const o = { at: h.t, text: h.text, top: h.top ?? 250, size: h.size || 92, accentColor: h.color || GOLD, out: nx ? [nx.t - 0.2, nx.t] : null, width: 960, gap: h.gap ?? 0.07 }
     K.push([slamTitle(o), slamTitleCues(o)])
@@ -591,7 +591,7 @@ export function simFilm(C) {
     const wrap = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', transformOrigin: '50% 45%' }, root)
     const cv = layerCanvas(wrap), x = cv.getContext('2d')
     const heads = [...(C.heads || [])]
-    const HD = heads.map((h, i) => ({ h, slam: h.slam, end: heads[i + 1] ? heads[i + 1].t : (h.end ?? 1e9), P: popText(wrap, h.text, { top: h.top ?? 250, size: h.size || 88, accentSize: h.acc || (h.size || 88) * 1.28, at: h.t, gap: 0.06, accentColor: h.color || GOLD, fit: true }) }))
+    const HD = heads.map((h, i) => ({ h, slam: false, end: heads[i + 1] ? heads[i + 1].t : (h.end ?? 1e9), P: popText(wrap, h.text, { top: h.top ?? 250, size: h.size || 88, accentSize: h.acc || (h.size || 88) * 1.28, at: h.t, gap: 0.06, accentColor: h.color || GOLD, fit: true }) }))
     const H0 = { P: null }
     const bug = null; void buildBug   // og: no series bug
     const top = layerCanvas(root), tx = top.getContext('2d')
