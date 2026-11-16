@@ -1,0 +1,234 @@
+// OG SOCIAL CUT copy of kpure01/urkit.js (this film's own kit copy; the original stays untouched).
+// Social changes: no 'PLANET TALK · URANUS' bug; no frame-0 glitch break; no slammed hook (the film's static HOOK
+// replaces it); story captions (heads) are calm static text inside the safe zone; no loop-back, nothing fades out in
+// the last beat; screen shakes dropped, whip zooms softened; the cast, bubbles and notifications are moved into the
+// safe zone (x 60–960, y 470–1560) without shrinking anything.
+//
+// urkit — the shared look of "Planet Talk: Uranus" (batch p08, kpure01–kpure12). Built on promo/films/planetkit.js
+// (the cast, space, bubbles, entrances) and promo/films/hookkit.js (slam titles, glitch, whip, chapters, loop-back).
+// Imported read-only by every Uranus film. No end card, no card cut, no logo: DURATION is the story.
+//
+//   import { urFilm } from '../../kpure01/urkit.js'
+//   const F = urFilm({ ...cfg });  export const DURATION = F.DURATION, SCENES = F.SCENES, CUES = F.CUES, MUSIC = F.MUSIC
+//
+// cfg: {
+//   id, sign, dur, ending: 'cut' | 'loop',
+//   hook:   { text, top?, size?, out? }            the call-out line, on screen at frame 0 (hookkit slamTitle, at −1)
+//   entry:  { kind, at, len?, from?: 'left'|'right', roll?: true, x, y, size }
+//           Uranus mid-entrance at frame 0 (planetkit entrance kinds; roll = a 'slide' that spins like a bowling ball,
+//           because Uranus really does go round the Sun tipped on its side). x, y, size = where it lands.
+//   debris: [{ label?, w, h, color, x, y, vx, vy, spin?, t0? }]   things that "went flying" (already mid-air at t = 0)
+//   bg(x, t, K)      the set (default: Uranus-tinted space)
+//   paint(x, t, K)   the characters + props (world = screen, 1080×1920). K.uranus(x, t, o) draws Uranus with the
+//                    entrance applied; K.sign / K.pisces / K.planet draw the others.
+//   over(x, t, K)    screen overlays above the cast (phones, cards, HUDs), under the bubbles
+//   lines:  [{ t0, t1, who, text, x, y, tail?, tailUp?, size?, maxW? }]   speech bubbles (planetkit speech)
+//   heads:  [{ at, text, out?, top?, size? }]     pop captions (hookkit slamTitle)
+//   fx:     [{ f, c, o }]                         extra hookkit effects (factory, cue fn, opts)
+//   brk:    pattern-break glitch opts (default { at: 0.45, len: 0.5 }); false = none
+//   cues, music
+// }
+// Pure f(t). Nothing touches `document` at module top level.
+import { clamp, lerp, prog, ease } from '../../src/lib.js'
+import { fill } from '../../src/scenes/common.js'
+import { drawGrain, layerCanvas } from '../sky.js'
+import { GRAIN_H, easeOutBack } from '../wheel.js'
+import { drawPlanet, drawSign, drawSpace, speech, speechCues, entrance, drawEntranceFx, entranceCues, entranceLand, planetSize, PLANETS } from '../planetkit.js'
+import { screenShake, whipZoom } from '../hookkit.js'
+import { box, rect, rrect, txt, rich, phone, label, loading, pop01, outK, inOut } from '../kdwe01/dwkit.js'
+export * as HK from '../hookkit.js'
+
+export const GOLD = '#f2c75c', BONE = '#efe6d6', INK = '#140c28', RED = '#ff3b4e', PINK = '#ff8fb1'
+export const CYAN = PLANETS.uranus.color, TEAL = PLANETS.uranus.rim, ZAP = '#e9fdff'
+export const INTER = "'Inter', system-ui, sans-serif", MONO = "'Space Mono', ui-monospace, monospace", SERIF = "'EB Garamond', Georgia, serif"
+const TAU = Math.PI * 2
+export const r3 = v => +v.toFixed(3)
+const fr = (n, s = 1) => { const v = Math.sin(n * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v) }
+
+/** keyframe track: keys = [[t, { x, y, size, … }], …]; numbers ease between keys, other values switch at the key */
+export function track(t, keys) {
+  if (t <= keys[0][0]) return { ...keys[0][1] }
+  for (let i = 0; i < keys.length - 1; i++) {
+    const [ta, a] = keys[i], [tb, b] = keys[i + 1]
+    if (t < tb) {
+      const dur = b.dur ?? Math.min(0.45, tb - ta), k = ease.inOutCubic(prog(t, tb - dur, tb))
+      const o = { ...a }
+      for (const kk of Object.keys(b)) if (typeof b[kk] === 'number' && typeof a[kk] === 'number') o[kk] = lerp(a[kk], b[kk], k); else if (k >= 1) o[kk] = b[kk]
+      return o
+    }
+  }
+  return { ...keys[keys.length - 1][1] }
+}
+/** in a window [a, b] with pop in / out: 0…1 */
+export const win = (t, a, b, d = 0.3) => (t < a || t > b + 0.3) ? 0 : pop01(t, a, d) * outK(t, [b, b + 0.25])
+
+/** Uranus's static: little cyan lightning zigzags crackling round it (the chaotic-genius energy) */
+function sparks(x, t, X, Y, r, k = 1, seed = 3) {
+  if (k <= 0) return
+  x.save(); x.lineCap = 'round'; x.lineJoin = 'round'
+  for (let i = 0; i < 5; i++) {
+    const ph = (t * 1.7 + fr(i, seed)) % 1
+    if (ph > 0.45) continue
+    const a = fr(i + Math.floor(t * 1.7 + fr(i, seed)) * 7, seed + 1) * TAU
+    const r0 = r * 1.08, r1 = r * (1.35 + 0.2 * fr(i, seed + 2))
+    x.globalAlpha = k * (1 - ph / 0.45)
+    x.beginPath()
+    for (let j = 0; j <= 4; j++) {
+      const rr = lerp(r0, r1, j / 4), off = (j % 2 ? 1 : -1) * 0.07 * (j > 0 && j < 4 ? 1 : 0)
+      const px = X + Math.cos(a + off) * rr, py = Y + Math.sin(a + off) * rr
+      j ? x.lineTo(px, py) : x.moveTo(px, py)
+    }
+    x.strokeStyle = INK; x.lineWidth = 14; x.stroke()
+    x.strokeStyle = ZAP; x.lineWidth = 7; x.stroke()
+  }
+  x.restore()
+}
+
+function buildBug(root) {
+  const c = layerCanvas(root, { pointerEvents: 'none' }); c.dataset.hookcam = 'off'
+  const x = c.getContext('2d')
+  return {
+    draw() {
+      x.clearRect(0, 0, 1080, 200)
+      x.save(); x.font = `800 26px ${INTER}`; x.letterSpacing = '6px'; x.textBaseline = 'middle'
+      x.shadowColor = 'rgba(6,4,18,0.95)'; x.shadowBlur = 12
+      x.fillStyle = CYAN; x.beginPath(); x.arc(70, 84, 13, 0, TAU); x.fill()
+      x.shadowBlur = 0; x.strokeStyle = '#dff8f9'; x.lineWidth = 3; x.beginPath(); x.ellipse(70, 84, 6, 21, 0.15, 0, TAU); x.stroke()
+      x.fillStyle = '#dff8f9'; x.fillText('PLANET TALK · URANUS', 98, 84)
+      x.restore()
+    },
+  }
+}
+
+
+/** a talk card (the app's talk cards, shown as an object only): face down, flips at flipAt to show `text` */
+export function talkCard(x, t, { X = 540, Y = 1000, w = 520, h = 700, rot = 0, pop = 1, flipAt = 1e9, text = '', size = 46, kicker = 'TALK CARD' } = {}) {
+  if (pop <= 0.01) return
+  const f = prog(t, flipAt, flipAt + 0.4), sx = Math.abs(Math.cos(f * Math.PI)) * (1 + 0.1 * Math.sin(f * Math.PI)), face = f >= 0.5
+  x.save(); x.translate(X, Y); x.rotate(rot); x.scale(pop * Math.max(0.02, sx), pop)
+  rrect(x, -w / 2 - 8, -h / 2 - 8, w + 16, h + 16, 36, INK)
+  if (!face) {
+    rrect(x, -w / 2, -h / 2, w, h, 30, '#3b2a6e')
+    x.strokeStyle = GOLD; x.lineWidth = 6; x.beginPath(); x.roundRect(-w / 2 + 24, -h / 2 + 24, w - 48, h - 48, 20); x.stroke()
+    for (let i = 0; i < 6; i++) { x.beginPath(); x.arc(0, 0, 40 + i * 26, 0, TAU); x.globalAlpha = 0.25; x.stroke(); x.globalAlpha = 1 }
+    txt(x, '?', 0, 6, { size: 120, font: SERIF, italic: true, weight: 600, color: GOLD })
+  } else {
+    rrect(x, -w / 2, -h / 2, w, h, 30, '#fffaf0')
+    txt(x, kicker, 0, -h / 2 + 60, { size: 26, color: '#7a5cc0' })
+    rich(x, text, 0, -h / 2 + 170, { size, accentSize: Math.round(size * 1.2), color: INK, accent: '#7a5cc0', stroke: null, lh: 1.25, maxW: w - 70 })
+  }
+  x.restore()
+}
+
+/** og: map a cast position into the safe zone (moves, never scales) */
+export const ogX = X => X > 840 ? Math.round(840 + (X - 840) * 0.3) : X < 140 ? Math.round(140 - (140 - X) * 0.3) : X
+export const ogY = Y => Y > 1150 ? Math.round(1150 + (Y - 1150) * 0.7) : Y
+const ogLine = (l, D, HOLD) => {
+  const o = { ...l }
+  if (o.y !== undefined) o.y = o.y < 540 ? 540 : o.y > 1470 ? 1470 : o.y
+  if (o.x !== undefined && o.x > 640) o.x = 640
+  if (o.x !== undefined && o.x < 420 && (o.maxW ?? 700) >= 600) o.x = 420
+  if (o.t1 !== undefined && o.t1 >= HOLD) o.t1 = D + 1
+  return o
+}
+
+export function urFilm(cfg) {
+  const D = cfg.dur, SIGN = cfg.sign, LOOP = false   // og: never loops (ends on the last beat)
+  const HOLD = D - 1.6
+  const E = { kind: 'slide', at: -0.3, x: 540, y: 640, size: planetSize('uranus', 560), from: 'right', ...cfg.entry }
+  const kitKind = E.roll ? 'slide' : E.kind
+  const LAND = entranceLand(kitKind, E)
+  const lines = (cfg.lines || []).map(l => cfg.og?.rawLines ? l : ogLine(l, D, D - 1.0))   // og: only a bubble still up in the last second is held
+  const uLines = lines.filter(l => l.who === 'uranus').map(l => ({ t: l.t0, who: 'uranus', text: l.text }))
+  // og: no slammed hook, no glitch break; heads become calm static captions at cfg.og.headY (default 560)
+  const heads = (cfg.heads || []).map(h => ({ size: 84, ...h, y: h.ogY ?? cfg.og?.headY ?? 560, out: h.out && h.out[0] < HOLD ? h.out : null }))
+
+  /** Uranus with the entrance applied (o.x, o.y, o.size = where it is after landing) */
+  function uranus(x, t, o = {}) {
+    const X = o.x ?? E.x, Y = o.y ?? E.y, S = o.size ?? E.size
+    let P = { x: X, y: Y, size: S, rot: 0, squash: 0, alpha: 1 }
+    if (t < LAND + 1.2 && !o.noEntry) {
+      const IN = { at: E.at, len: E.len, x: X, y: Y, size: S }
+      const fx = () => drawEntranceFx(x, 'uranus', kitKind, t, IN)
+      if (E.from === 'left') { x.save(); x.translate(2 * X, 0); x.scale(-1, 1); fx(); x.restore() } else fx()
+      P = entrance(kitKind, t, IN)
+      if (E.from === 'left') P.x = 2 * X - P.x
+      if (E.roll) P.rot += (E.from === 'left' ? 1 : -1) * (1 - ease.outCubic(prog(t, E.at, LAND))) * 9
+      if (E.flip) P.rot += Math.PI * (1 - ease.outBack(prog(t, LAND - 0.1, LAND + 0.35)))
+    }
+    const { x: _x, y: _y, size: _s, noEntry, spark = 1, ...rest } = o
+    sparks(x, t, P.x, P.y, P.size / 2, spark * (t < LAND ? 1 : 0.9))
+    return drawPlanet(x, 'uranus', P.x, P.y, P.size, t, { lines: uLines, cps: 32, mood: 'sly', ...rest, rot: (rest.rot ?? 0) + P.rot, squash: (rest.squash ?? 0) + P.squash, alpha: (rest.alpha ?? 1) * P.alpha })
+  }
+  const sign = (x, t, id, o = {}) => { const { x: X, y: Y, s, ...r } = o; return o.raw ? drawSign(x, id, X, Y, s ?? 300, t, r) : drawSign(x, id, ogX(X), ogY(Y), s ?? 300, t, r) }
+  const pisces = (x, t, o = {}) => sign(x, t, 'pisces', { mood: 'sparkle', tears: 3, look: [0, -1], seed: 6, ...o })
+  const planet = (x, t, id, o = {}) => { const { x: X, y: Y, size, ...r } = o; return drawPlanet(x, id, X, Y, size, t, r) }
+
+  function debris(x, t, front = false) {
+    for (const [i, d] of (cfg.debris || []).entries()) {
+      if (!!d.front !== front) continue
+      const dt = t - (d.t0 ?? -0.4)
+      if (dt < 0 || dt > 2.6) continue
+      const X = d.x + d.vx * dt, Y = d.y + d.vy * dt + 1600 * dt * dt
+      if (Y > 2200 || X < -400 || X > 1480) continue
+      x.save(); x.translate(X, Y); x.rotate((d.spin ?? 6) * dt + i)
+      if (d.draw) d.draw(x, t)
+      else {
+        box(x, -d.w / 2, -d.h / 2, d.w, d.h, d.color || BONE, { o: 5 })
+        if (d.label) txt(x, d.label, 0, 2, { size: d.size ?? 26, color: d.ink ?? INK, font: INTER, weight: 900 })
+      }
+      x.restore()
+    }
+  }
+
+  const K = { talkCard, D, SIGN, LAND, E, uranus, sign, pisces, planet, track, win, box, rect, rrect, txt, rich, phone, label, loading, pop01, outK, inOut, drawSpace, GOLD, BONE, INK, RED, PINK, CYAN, TEAL, MONO, INTER, SERIF, sparks }
+
+  async function build(stage) {
+    try { await Promise.all(['800 60px Inter', '900 60px Inter', "italic 600 60px 'EB Garamond'", "700 30px 'Space Mono'"].map(f => document.fonts.load(f))) } catch (_) { /* fonts optional */ }
+    const root = fill(stage, { background: '#07041a' })
+    const cv = layerCanvas(root), x = cv.getContext('2d')
+    const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
+    void buildBug   // og social: no series bug
+    return {
+      start: 0, end: D + 0.01, root,
+      update(t) {
+        x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, 1080, 1920)
+        if (cfg.bg) cfg.bg(x, t, K); else drawSpace(x, t, { planet: 'uranus', seed: 8 })
+        debris(x, t)
+        cfg.paint(x, t, K)
+        debris(x, t, true)
+        if (cfg.over) cfg.over(x, t, K)
+        for (const l of lines) speech(x, t, { size: 44, maxW: 700, ...l })
+        if (cfg.top) cfg.top(x, t, K)
+        for (const h of heads) {                                   // og: calm static story captions
+          const a = clamp((t - h.at) / 0.25) * (h.out ? 1 - prog(t, h.out[0], h.out[1]) : 1)
+          if (a > 0.01) rich(x, h.text, 540, h.y, { size: h.size, accentSize: Math.round(h.size * 1.2), accent: GOLD, stroke: INK, lw: 16, lh: 1.12, alpha: a, maxW: 900 })
+        }
+        drawGrain(gx, t)
+      },
+    }
+  }
+
+  // og: no shakes; whip zooms softened; notifications inside the safe zone and kept up through the last beat
+  const fx = (cfg.fx || []).filter(e => e.f !== screenShake).map(e => {
+    const o = { ...e.o }
+    if (e.f === whipZoom) o.from = Math.min(o.from ?? 1.5, 1.25)
+    if (o.y !== undefined && o.y < 500) o.y = 500
+    if (o.out && o.out[0] >= HOLD) o.out = [D + 1, D + 1.2]
+    return { ...e, o }
+  })
+  const SCENES = [
+    build,
+    ...fx.map(e => e.f(e.o)),
+  ]
+  const CUES = [
+    ...entranceCues(kitKind, E),
+    ...(cfg.debris || []).slice(0, 4).map((d, i) => ['pop', r3(Math.max(0.02, 0.05 + i * 0.07)), 700 + i * 150, 0.03, (i % 2 ? 0.3 : -0.3)]),
+    ...fx.flatMap(e => e.c ? e.c(e.o) : []),
+    ...heads.map(h => ['pluck', r3(h.at + 0.02), 783.99, 0.03, 0.6, 0]),
+    ...speechCues(lines),
+    ...(cfg.cues || []),
+  ].filter(c => c[1] >= 0 && c[1] < D)
+  const MUSIC = { ...cfg.music, sections: { ...(cfg.music.sections || {}), outroAt: cfg.music.sections?.outroAt ?? Math.max(1.5, D - 1.6) } }
+  return { DURATION: D, SCENES, CUES, MUSIC, K }
+}
