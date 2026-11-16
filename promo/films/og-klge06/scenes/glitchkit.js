@@ -1,7 +1,7 @@
 // og social copy of ../../klge01/scenes/glitchkit.js: the static HOOK comes from index.js (render --social), so this copy
 // draws no kit hook / promise and no LOVE GLITCH bug; no opening RGB tearing, camera shake, dialog shake or white/pink
 // flashes; whips softened; captions / last line sit just under the app's top bar; Pisces' popup clears the app's side
-// buttons; no bottom taskbar; no loop-back (every film ends on its last story beat); no opening crash/glitch noise or last-line word pops.
+// buttons; THE STARS box lifted to y 1330 (out of the app caption zone); no bottom taskbar; no loop-back (every film ends on its last story beat); no opening crash/glitch noise or last-line word pops.
 // Original header:
 // YOUR SIGN'S LOVE GLITCH (Month 2 boost, batch m18, star_advice posts) — the shared look of klge01–klge20.
 // Owned by batch m18; other films import it read-only from '../../klge01/scenes/glitchkit.js'.
@@ -373,7 +373,7 @@ export function typeTimes(lines, cps = CPS) {
     return { start: l.t, done: tt, chars }
   })
 }
-function starsBox(x, t, lines, { open, close, y = 1484, h = 270, speaker = 'THE STARS', tag = GOLD } = {}) {
+function starsBox(x, t, lines, { open, close, y = 1330, h = 225, speaker = 'THE STARS', tag = GOLD } = {}) {
   if (!lines.length) return
   const k = pop01(t, open, 0.26, 2.2) * outK(t, [close - 0.2, close])
   if (k <= 0.01) return
@@ -435,7 +435,7 @@ function pisPopup(x, t, p) {
   const k = win01(t, p.at, p.out, 0.34)
   if (k <= 0.01) return
   const rise = (1 - ease.outCubic(prog(t, p.at, p.at + 0.34))) * 260
-  const X = Math.min(p.x ?? 400, 420), Y = (p.y ?? 1230) + rise, w = 520, h = 520   // og: clear of the app side buttons (x 960+)
+  const X = Math.min(p.x ?? 400, 420), Y = (p.y ?? 1020) + rise, w = 520, h = 520   // og: clear of the app side buttons (x 960+) and the app caption (bottom 1540)
   x.save(); x.globalAlpha = clamp(k)
   osWindow(x, X, Y, w, h, 'PISCES.EXE', { accent: '#3a63c9', body: '#101b3a', k: Math.min(1, k) })
   pisces(x, t, X + w / 2, Y + 330, 250, p.tears ?? 3, { mood: p.mood ?? 'wide', look: p.look ?? [0, 0], hops: [p.at + 0.4, p.at + 0.9] })
