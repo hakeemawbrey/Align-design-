@@ -49,7 +49,7 @@ function sceneA(x, t) {
     // backpack
     R(x, INK, sx - 130, sy - 40 + 6 * Math.sin(t * 16), 64, 90); R(x, '#e05a3a', sx - 124, sy - 34 + 6 * Math.sin(t * 16), 52, 78)
     if (t > A.land) phone(x, sx + 120, sy - 80, { s: 0.6, rot: 0.2 })
-    if (t > A.snap && t < A.snap + 0.25) { x.save(); x.globalAlpha = 1 - prog(t, A.snap, A.snap + 0.25); R(x, '#ffffff', 0, 0, SW, SH); x.restore() }
+    if (t > A.snap && t < A.snap + 0.25) { x.save(); x.globalAlpha = 0.22 * (1 - prog(t, A.snap, A.snap + 0.25)); R(x, '#ffffff', 0, 0, SW, SH); x.restore() }   // og (calm): soft blink, no white flash
     if (t > A.back) for (let i = 0; i < 3; i++) { const k = pop01(t, A.miss + i * 0.35, 0.25) * outK(t, [A.miss + i * 0.35 + 0.6, A.miss + i * 0.35 + 0.8]); if (k > 0.02) { x.save(); x.globalAlpha = 1 - i * 0.3; speech(x, t, 560 + i * 90 - 220, 430 - i * 70, A.miss + i * 0.35, i ? 'miss you…' : 'MISS YOU!!', { size: 44 - i * 8, tail: 0, life: 0.9, col: i ? '#e9f6ff' : '#ffe36a' }); x.restore() } }
     snowfall(x, t, { n: 18, seed: 9 })
   } else {
