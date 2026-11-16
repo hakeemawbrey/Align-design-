@@ -399,13 +399,32 @@ export function roundCues({ R0, clueTs = [], buzzAt = [], lastAt }) {
 // ═══════════════════════════════════════════════════════════════════════════ the short episode
 /** the first-second pattern break, built from the hook kit. Returns { wins (freeze windows), scenes, cues, draw(x, t) } */
 export function patternBreak(kind, at, { caption = 'wait. *who is this?*', col = PINK } = {}) {
-  if (kind === 'scratch') { const REC = { at, len: 0.9, caption, top: 1330 }; return { wins: [REC], scenes: [recordScratch(REC)], cues: recordScratchCues(REC) } }
+  if (kind === 'scratch') {   // og: freeze + caption sticker only (no white flash, no 'PAUSED' chip in the top bar, no camera punch)
+    const REC = { at, len: 0.9, caption, top: 1330 }; void recordScratch; const D_MAX = 600
+    // drawn on its own overlay scene (the frozen build only ever sees t = at during the freeze)
+    const drawCap = (x, t) => {
+        if (t < at || t >= at + REC.len) return
+        const k = pop01(t, at + 0.06, 0.3, 2.2) * outK(t, [at + REC.len - 0.12, at + REC.len])
+        x.save(); x.globalAlpha = 0.28 * clamp(k * 2); x.fillStyle = '#05030c'; x.fillRect(0, 0, 1080, 1920); x.restore()
+        if (k <= 0.01) return
+        const h = richText(x, caption, 390, 0, { size: 50, acc: 1.2, width: 600, draw: false })
+        x.save(); x.translate(390, REC.top); x.rotate(-0.015); x.scale(k, k)   // left of Pisces' podium
+        box(x, -325, -h / 2 - 26, 650, h + 52, '#14102a', { b: 6 })
+        richText(x, caption, 0, -h / 2, { size: 50, acc: 1.2, width: 600 })
+        x.restore()
+      }
+    const capScene = async stage => {
+      const root = fill(stage, { pointerEvents: 'none' }), cv = layerCanvas(root), x = cv.getContext('2d')
+      return { start: 0, end: D_MAX, root, update(t) { x.clearRect(0, 0, 1080, 1920); drawCap(x, t) } }
+    }
+    return { wins: [REC], scenes: [capScene], cues: recordScratchCues(REC) }
+  }
   if (kind === 'silence') {
     const W = { at, len: 0.6 }
     return { wins: [W], scenes: [], cues: [['tapeStop', at, 0.3], ['tick', at, 0.06]],
       draw(x, t) { if (t < at || t >= at + 0.6) return; x.save(); x.globalAlpha = 0.4; x.fillStyle = '#000'; x.fillRect(0, 0, 1080, 1920); x.restore(); label(x, '…', 540, 1180, { size: 140, col: BONE, font: INTER, weight: 900 }) } }
   }
-  if (kind === 'whip') { const WH = { at, len: 0.5, from: 1.18 }; return { wins: [], scenes: [whipZoom(WH)], cues: whipZoomCues(WH) } }
+  // og: no whip zoom (its blur smears the static hook); 'whip' falls through to the soft colour wash below
   // og: 'glitch' and 'flash' (colour flash + screen shake) become a soft colour wash and one quiet pluck
   void glitch; void glitchCues; void screenShake; void shakeCues
   return { wins: [], scenes: [], cues: [['pluck', r3(at), 1567.98, 0.025, 0, 0.3]],
