@@ -55,8 +55,8 @@ function s3(x, t, S) {
   hero(x, t, { x: 330, y: fy(280), s: 280, mood: u < 2.4 ? 'neutral' : 'happy', look: [1, -0.2], hops: [S.t0 + 2.5, S.t0 + 2.9] })
   if (u < 2.3) bigPhone(x, t, 470, 1180, { w: 130, h: 220, rot: 0.1, mode: 'chat', scroll: 200 })
   const vk = pop01(t, S.t0 + 2.4, 0.35, 2.2), pk = pop01(t, S.t0 + 2.7, 0.35, 2.2)
-  if (vk > 0.01) { shadow(x, 640, FLOOR + 4, 230); star(x, t, 'virgo', { x: 640, y: fy(230), s: 230, pop: vk, mood: 'happy', look: [-1, 0], seed: 11 }); bowl(x, 700, 1350, vk) }
-  if (pk > 0.01) { shadow(x, 900, FLOOR + 4, 200); crier(x, t, 'pisces', { x: 900, y: fy(200), s: 200, pop: pk, mood: 'sparkle', look: [-1, 0] }, 3); bowl(x, 860, 1360, pk * 0.9) }
+  if (vk > 0.01) { shadow(x, 590, FLOOR + 4, 230); star(x, t, 'virgo', { x: 590, y: fy(230), s: 230, pop: vk, mood: 'happy', look: [-1, 0], seed: 11 }); bowl(x, 650, 1350, vk) }
+  if (pk > 0.01) { shadow(x, 810, FLOOR + 4, 200); crier(x, t, 'pisces', { x: 810, y: fy(200), s: 200, pop: pk, mood: 'sparkle', look: [-1, 0] }, 3); bowl(x, 770, 1360, pk * 0.9) }
 }
 function fin(x, t, S) {
   const { u, hero, star, crier } = S
@@ -64,8 +64,8 @@ function fin(x, t, S) {
   candle(x, t, 580, 1050, 1)
   shadow(x, 420, 1290, 280); shadow(x, 680, 1300, 220); shadow(x, 900, 1310, 190)
   hero(x, t, { x: 420, y: 1160, s: 300, mood: u > 1 ? 'happy' : 'sparkle', look: [0, 0], hops: [S.t0 + 0.1, S.T.lastAt + 0.05] })
-  star(x, t, 'virgo', { x: 680, y: 1200, s: 220, mood: 'happy', look: [-1, 0], seed: 11 }); bowl(x, 735, 1265, 0.9)
-  crier(x, t, 'pisces', { x: 900, y: 1225, s: 190, mood: 'happy', look: [-1, 0], hops: [S.T.lastAt + 0.1] }, 3); bowl(x, 860, 1285, 0.8)
+  star(x, t, 'virgo', { x: 620, y: 1200, s: 220, mood: 'happy', look: [-1, 0], seed: 11 }); bowl(x, 675, 1265, 0.9)
+  crier(x, t, 'pisces', { x: 810, y: 1225, s: 190, mood: 'happy', look: [-1, 0], hops: [S.T.lastAt + 0.1] }, 3); bowl(x, 770, 1285, 0.8)  // og full frame: guests clear of the side buttons
 }
 
 const EP = makeHeal({
