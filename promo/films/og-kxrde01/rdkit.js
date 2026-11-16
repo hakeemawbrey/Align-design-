@@ -242,7 +242,8 @@ export function makeRD(cfg) {
       for (const [u0, u1, text, o] of CH[P.i].bubbles || []) {
         tx.font = `800 40px ${INTER}`
         const hw = Math.min(640, tx.measureText(text).width) / 2 + 30   // og: the whole bubble stays inside x 60–960, y ≥ 500
-        bubble(tx, t, clamp(o?.x ?? 540, 60 + hw, 960 - hw), Math.max(540, o?.y ?? 760), P.t0 + u0, P.t0 + u1, text, { size: 40, tail: o?.tail ?? 0, maxW: 640 })
+        const dy = P.t0 + u0 < T.pitch[1] ? 70 : 0   // og: bubbles that start under the pitch sticker sit a little lower
+        bubble(tx, t, clamp(o?.x ?? 540, 60 + hw, 960 - hw), Math.max(540, o?.y ?? 760) + dy, P.t0 + u0, P.t0 + u1, text, { size: 40, tail: o?.tail ?? 0, maxW: 640 })
       }
     }
     function pisCorner(t, P) {
