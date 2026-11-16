@@ -560,7 +560,7 @@ export function drawFreeze(x, t, t0, { W = 1080, H = 1920 } = {}) {
   x.globalCompositeOperation = 'multiply'; x.fillStyle = `rgba(200,140,220,${0.5 * k})`; x.fillRect(0, 0, W, H)
   x.globalCompositeOperation = 'source-over'
   x.fillStyle = `rgba(20,0,20,${0.16 * k})`; for (let y = 0; y < H; y += 6) x.fillRect(0, y, W, 2)
-  if (dt < 0.16) { x.fillStyle = `rgba(255,255,255,${0.75 * (1 - dt / 0.16)})`; x.fillRect(0, 0, W, H) }
+  // og: no white flash on the freeze
   x.restore()
 }
 
