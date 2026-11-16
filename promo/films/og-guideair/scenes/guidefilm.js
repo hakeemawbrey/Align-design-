@@ -141,7 +141,7 @@ export function guideFilm(S) {
     const hook = S.hook ? guideHook(root, { accentColor: S.color, ...S.hook, at: 0 }) : null
     const chip = S.chip ? noteChip(root, { at: 0, ...S.chip, out: S.chip.out ?? [STORY_END - 0.45, STORY_END - 0.15] }) : null
     const heads = (S.heads || []).map(H => [popText(root, H.text, { wobble: true, gap: 0.08, ...H }), H.out])
-    const box = dialogueBox(root, { lines: LINES, y: S.boxY || 1470, width: 960, height: S.boxH || 260, open: S.open, close: S.close, cps: CPS })
+    const box = dialogueBox(root, { lines: LINES, y: S.boxY || 1470, width: S.boxW || 960, W: S.boxWW || 1080, height: S.boxH || 260, size: S.boxSize || 52, open: S.open, close: S.close, cps: CPS })
     const extra = S.dom ? S.dom(root) : null
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
 

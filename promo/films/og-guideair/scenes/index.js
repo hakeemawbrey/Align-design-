@@ -17,7 +17,7 @@ const AIRC = '#bfe3ff', ACC = '#8fd3ff'
 const SIGNS = [
   { ...signStar('gemini'), id: 'gemini', x0: 275, x1: 385, chat: ['ok so—', 'wait, new topic—', 'ok SO—'], hush: '…(typing)', seed: 2 },
   { ...signStar('libra'), id: 'libra', x0: 540, x1: 540, chat: ['but what if—', 'or… you pick?', 'no wait, I pick'], hush: '…is this ok?', seed: 5 },
-  { ...signStar('aquarius'), id: 'aquarius', x0: 805, x1: 695, chat: ['fun fact—', 'ok but aliens—', 'counterpoint—'], hush: '…(fact pending)', seed: 8 },
+  { ...signStar('aquarius'), id: 'aquarius', x0: 780, x1: 695, chat: ['fun fact—', 'ok but aliens—', 'counterpoint—'], hush: '…(fact pending)', seed: 8 },
 ]
 const T = {
   open: 3.0, l1: 3.2, fact: 4.7,
@@ -73,22 +73,24 @@ function cards(x, t, K) {
   const a = 1 - ease.inCubic(prog(t, ...T.tieOut))
   const p1 = K.pop01(t, T.tie, 0.45, 1.6), p2 = K.pop01(t, T.card2, 0.45, 1.6)
   const fl = prog(t, ...T.flip)
-  K.talkCard(lerp(-200, 345, p1), 680, 300, { rot: lerp(-0.5, -0.06, p1), kicker: 'YOUR CARD', text: 'when did you feel close to me?', foot: 'PLAYED ✓', color: ACC, alpha: a })
+  K.talkCard(lerp(-200, 305, p1), 760, 270,   // og full frame: cards below the hook band, clear of the parked guide
+    { rot: lerp(-0.5, -0.06, p1), kicker: 'YOUR CARD', text: 'when did you feel close to me?', foot: 'PLAYED ✓', color: ACC, alpha: a })
   const wob = fl <= 0 ? Math.sin(t * 3) * 0.02 : 0
-  K.talkCard(lerp(1280, 735, p2), 680, 300, { rot: lerp(0.5, 0.06, p2) + wob, flip: 1 - fl, text: fl < 0.5 ? 'their turn' + '...'.slice(0, 1 + Math.floor(t * 3) % 3) : 'when you just sat with me.', kicker: 'THEIR CARD', foot: fl >= 1 ? 'PLAYED ✓' : '', color: '#e163d6', alpha: a })
-  K.sparkles(t, 735, 680, T.flip[1], 12, 260, 0.3, [GOLD, BONE, ACC])
+  K.talkCard(lerp(1280, 660, p2), 760, 270, { rot: lerp(0.5, 0.06, p2) + wob, flip: 1 - fl, text: fl < 0.5 ? 'their turn' + '...'.slice(0, 1 + Math.floor(t * 3) % 3) : 'when you just sat with me.', kicker: 'THEIR CARD', foot: fl >= 1 ? 'PLAYED ✓' : '', color: '#e163d6', alpha: a })
+  K.sparkles(t, 660, 760, T.flip[1], 12, 260, 0.3, [GOLD, BONE, ACC])
 }
 
 function guidePos(t) {
   const up = ease.inOutCubic(prog(t, ...T.guideUp)) * (1 - ease.inOutCubic(prog(t, ...T.guideDown)))
-  return { x: lerp(540, 900, up), y: lerp(720, 470, up), size: lerp(240, 150, up) }
+  return { x: lerp(540, 870, up), y: lerp(735, 548, up), size: lerp(240, 150, up) }   // og full frame: parks inside the safe zone
 }
 
 const F = guideFilm({
   duration: 30, speaker: 'AIR · YOUR STAR', color: AIRC, accent: ACC, glyph: null,
-  lines: LINES, open: T.open, close: T.close,
-  fact: { text: 'THE AIR SIGNS:|GEMINI, LIBRA, AQUARIUS', at: T.fact, dur: T.l2 - T.fact - 0.25, x: 540, y: 1356 },
-  heads: [{ text: 'Less *talk.* | More close.', at: T.last, out: T.out, top: 196, size: 120, accentSize: 176, accentColor: ACC, late: 2, lateAt: T.lastLand }],
+  lines: LINES, open: T.open, close: T.close, boxY: 1330, boxH: 230, boxW: 900, boxWW: 1020, boxSize: 44,   // og full frame: box inside the safe zone
+  fact: { text: 'THE AIR SIGNS:|GEMINI, LIBRA, AQUARIUS', at: T.fact, dur: T.l2 - T.fact - 0.25, x: 510, y: 540 },   // og full frame: above the guide (the box now sits where it was)
+  heads: [{ text: 'Less *talk.* | More close.', at: T.last, out: T.out, top: 1320, size: 100, accentSize: 146,   // og full frame: under the cloud, inside the safe zone
+    accentColor: ACC, late: 2, lateAt: T.lastLand }],
   guide(t) {
     const g = guidePos(t)
     const mood = t < T.l1 ? { mood: 'happy' } : t < T.l2 ? { mood: 'happy', look: [0, 0.5] } : t < T.l3 ? { mood: 'neutral', look: [0, 0.6] } : t < T.tie ? { mood: 'sparkle', look: [0, 0.6] } : t < T.flip[1] ? { mood: 'neutral', look: [-1, 0.5] } : { mood: 'heart' }
