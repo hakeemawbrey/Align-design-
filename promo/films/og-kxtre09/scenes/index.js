@@ -131,7 +131,7 @@ C.push({ name: 'THE PARTY', dur: 14, stamp: 'SATURDAY', caption: 'the party. Cap
     ;[['taurus', 220], ['cancer', 380], ['leo', 700], ['gemini', 860]].forEach(([id, px], i) => star(x, t, id, { x: px, y: 1080, s: 150, mood: S.u > 8 ? 'wide' : 'neutral', look: [px < 540 ? 1 : -1, -0.5], squash: S.u > 8 ? 0.03 * Math.sin(t * 20 + i) : 0 }))
     star(x, t, CAP, { x: 540, y: 880, s: 220, mood: 'neutral', look: [0, 0.4], hops: S.hops(3.0) })
     x.save(); x.translate(540, 1000); x.rotate(-0.05); box(x, -90, -60, 180, 120, '#ffffff', { b: 5 }); for (let i = 0; i < 5; i++) R(x, '#2a9a5a', -80, -50 + i * 22, 160, 6); x.restore()
-    pisces(x, t, { x: 860, y: 1300, s: 130, tears: 2, look: [-1, -1] })
+    pisces(x, t, { x: 860, y: 1180, s: 120, tears: 2, look: [-1, -1] })
     if (S.u > 8) tag(x, 'DRUMROLL', 540, 560, S.w(8, 14), { bg: GOLD, size: 44 })
   } })
 C.push({ name: 'WAIT FOR IT…', dur: 15, caption: 'every row… *was a gift.*', captionAt: 1.0,
