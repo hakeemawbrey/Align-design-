@@ -63,10 +63,10 @@ const T = {
 const LESSON = { at: T.lesson, out: T.lessonOut, text: 'Nervous means | it *matters.*', chip: '+1 EXTRA BLOCK' }
 
 const CPS = 28
-const L0 = [{ t: 2.75, speaker: SG, color: SG_C, text: 'long way. obviously. it’s *snowing.* I’d walk to the moon.' }]
+const L0 = [{ t: 2.75, speaker: SG, color: SG_C, text: 'long way. it’s *snowing.* I’d walk to the moon.' }]
 const L1 = [
   { t: 11.2, speaker: CA, color: CA_C, text: 'let’s do the *map* route.' },
-  { t: 14.0, speaker: SG, color: SG_C, text: 'fun fact: snow makes the lane *quieter.* fact two: *owls!*' },
+  { t: 14.0, speaker: SG, color: SG_C, text: 'fun fact: snow makes the lane *quieter.* also: *owls!*' },
   { t: 17.6, speaker: CA, color: CA_C, text: 'it does. it’s… *nice.*' },
   { t: 20.4, speaker: SG, color: SG_C, text: 'stop one: our *snow-star!*' },
 ]

@@ -74,7 +74,7 @@ const LESSON = { at: T.lesson, out: T.lessonOut, text: 'Meaningful isn’t | a *
 const CPS = 28
 const L0 = [{ t: 2.75, speaker: AQ, color: AQ_C, text: 'it’s not too much. it only weighs *as much as me.*' }]
 const L1 = [
-  { t: 10.6, speaker: TA, color: TA_C, text: 'lane gift swap! keep it *small.* cookie small. *tiny* cookie.' },
+  { t: 10.6, speaker: TA, color: TA_C, text: 'gift swap! keep it *small.* cookie small. *tiny* cookie.' },
   { t: 16.3, speaker: AQ, color: AQ_C, text: 'small. right. *totally.* (it has a frame.)' },
   { t: 19.6, speaker: SG, color: SG_C, text: 'who’d you get? …don’t tell me! *surprise!*' },
 ]

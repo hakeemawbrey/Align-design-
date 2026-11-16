@@ -68,8 +68,8 @@ const LESSON = { at: T.lesson, out: T.lessonOut, text: 'Half here | is *nowhere.
 const CPS = 28
 const L0 = [{ t: 0.6, speaker: LI, color: LIB_C, text: 'I said yes to *both.* and a third. fair, right?' }]
 const L1 = [
-  { t: 11.0, speaker: LS, color: LEO_C, text: 'my party, saturday. you’re my *plus-fun.* there’s a spotlight.' },
-  { t: 14.2, speaker: SC, color: SCO_C, text: 'midnight bake. come alone. I’ll show you my *favourite* oven.' },
+  { t: 11.0, speaker: LS, color: LEO_C, text: 'saturday party. you’re my *plus-fun.* bring applause.' },
+  { t: 14.2, speaker: SC, color: SCO_C, text: 'midnight bake. come alone. meet my *favourite* oven.' },
 ]
 const L2 = [{ t: 27.6, speaker: LI, color: LIB_C, text: 'I’ll just… *alternate.* every twenty minutes. forever.' }]
 const L3 = [{ t: 46.6, speaker: LS, color: LEO_C, text: 'where do you keep *going?*' }]

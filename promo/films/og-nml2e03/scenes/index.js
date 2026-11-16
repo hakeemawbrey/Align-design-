@@ -67,7 +67,7 @@ const LESSON = { at: T.lesson, out: T.lessonOut, text: 'A scarf can’t | *say i
 const CPS = 28
 const L0 = [{ t: 0.6, speaker: CS, color: CAN_C, text: 'I’ll give it back. in *seven to ten years.*' }]
 const L1 = [{ t: 17.0, speaker: CS, color: CAN_C, text: 'it has its own *pillow* now. totally normal.' }]
-const L2 = [{ t: 34.2, speaker: CS, color: CAN_C, text: 'card one of nine. *laminated.* “Dear Sagittarius…”' }]
+const L2 = [{ t: 34.2, speaker: CS, color: CAN_C, text: 'card one of nine. *laminated.* “Dear Sag…”' }]
 const L3 = [{ t: 63.0, speaker: CS, color: CAN_C, text: 'the scarf was supposed to *say* it.' }, { t: 66.4, speaker: CS, color: CAN_C, text: '(I live in the snowbank now. it’s fine.)' }]
 const L4 = [
   { t: 91.6, speaker: CS, color: CAN_C, text: 'thanks for keeping me warm. walk home *tomorrow?*' },
