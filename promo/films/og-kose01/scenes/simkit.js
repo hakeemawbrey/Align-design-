@@ -521,7 +521,7 @@ export function simFilm(C) {
   for (const n of C.notifs || []) { const o = { at: n.t, out: [n.t + (n.d || 2.2) - 0.25, n.t + (n.d || 2.2)], title: n.from, body: n.text, glyph: signStar(n.sign || 'leo').glyph, color: signStar(n.sign || 'leo').color, time: n.time || 'now', y: n.y ?? 250 }; K.push([notification(o), notificationCues(o)]) }
   for (const c of C.chapters || []) { const o = { at: c.t, out: [c.t + (c.d || 3) - 0.25, c.t + (c.d || 3)], n: c.n, title: c.text, x: c.x ?? 70, y: c.y ?? 392, color: c.color || GOLD }; K.push([chapter(o), chapterCues(o)]) }
   ;(C.heads || []).forEach((h, i) => {
-    if (!h.slam) return
+    return   // og: no slam titles (word shake + drum per word); every headline uses the soft pop below
     const nx = C.heads[i + 1]
     const o = { at: h.t, text: h.text, top: h.top ?? 250, size: h.size || 92, accentColor: h.color || GOLD, out: nx ? [nx.t - 0.2, nx.t] : null, width: 960, gap: h.gap ?? 0.07 }
     K.push([slamTitle(o), slamTitleCues(o)])
@@ -591,7 +591,7 @@ export function simFilm(C) {
     const wrap = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', transformOrigin: '50% 45%' }, root)
     const cv = layerCanvas(wrap), x = cv.getContext('2d')
     const heads = [...(C.heads || [])]
-    const HD = heads.map((h, i) => ({ h, slam: h.slam, end: heads[i + 1] ? heads[i + 1].t : (h.end ?? 1e9), P: popText(wrap, h.text, { top: h.top ?? 250, size: h.size || 88, accentSize: h.acc || (h.size || 88) * 1.28, at: h.t, gap: 0.06, accentColor: h.color || GOLD, fit: true }) }))
+    const HD = heads.map((h, i) => ({ h, slam: false, end: heads[i + 1] ? heads[i + 1].t : (h.end ?? 1e9), P: popText(wrap, h.text, { top: h.top ?? 250, size: h.size || 88, accentSize: h.acc || (h.size || 88) * 1.28, at: h.t, gap: 0.06, accentColor: h.color || GOLD, fit: true }) }))
     const H0 = { P: null }
     const bug = null; void buildBug   // og: no series bug
     const top = layerCanvas(root), tx = top.getContext('2d')
@@ -683,3 +683,23 @@ export function simFilm(C) {
   return { DURATION: D, SCENES, CUES: ALL, cuesDefault: cuesDefault2, world }
 }
 export { drawBits, lineTimes, signStar, STAR, drawStarChar, drawPixelStar, easeOutBack, clamp, lerp, prog, ease }
+
+// og: stretch a film's opening beat so the static HOOK can be read: every time at or after `from` moves `by` seconds later
+export function shiftAfter(C, from, by) {
+  const f = v => (typeof v === 'number' && v >= from ? +(v + by).toFixed(3) : v)
+  const keys = a => (a || []).map(e => [f(e[0]), ...e.slice(1)])
+  const span = a => (a || []).map(([a0, b0]) => [f(a0), f(b0)])
+  const out = { ...C, duration: +(C.duration + by).toFixed(3) }
+  out.heads = (C.heads || []).map(h => ({ ...h, t: f(h.t) }))
+  if (C.bar) out.bar = { ...C.bar, keys: keys(C.bar.keys), err: span(C.bar.err), labels: keys(C.bar.labels), from: f(C.bar.from), till: f(C.bar.till) }
+  out.panels = (C.panels || []).map(p => ({ ...p, t0: f(p.t0), t1: f(p.t1), del: f(p.del), msgs: p.msgs && p.msgs.map(m => ({ ...m, at: f(m.at) })), seen: p.seen && { ...p.seen, at: f(p.seen.at) }, typing: p.typing && span(p.typing) }))
+  for (const k of ['notifs', 'says', 'fx', 'stamps', 'chapters']) if (C[k]) out[k] = C[k].map(e => ({ ...e, t: f(e.t) }))
+  for (const k of ['moods', 'tears', 'squash']) if (C[k]) out[k] = keys(C[k])
+  for (const k of ['steam', 'panic', 'noWindow', 'signOff', 'supHide']) if (C[k]) out[k] = Array.isArray(C[k][0]) ? span(C[k]) : C[k].map(f)
+  if (C.sup) out.sup = { ...C.sup, moods: keys(C.sup.moods), tears: keys(C.sup.tears) }
+  if (C.promise) out.promise = { ...C.promise, t: f(C.promise.t) }
+  if (C.hops) out.hops = C.hops.map(f)
+  if (C.cues) out.cues = C.cues.map(c => [c[0], f(c[1]), ...c.slice(2)])
+  if (C.music) { const m = C.music, sec = {}; for (const [k, v] of Object.entries(m.sections || {})) sec[k] = Array.isArray(v) ? v.map(f) : f(v); out.music = { ...m, drop: f(m.drop), sections: sec, hits: (m.hits || []).map(f) } }
+  return out
+}
