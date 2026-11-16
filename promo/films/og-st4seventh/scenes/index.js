@@ -112,7 +112,7 @@ const YOU = { x: 165, y: 1255, size: 175 }
 function cam(t) {
   if (t >= T.cut - 0.06) {          // last beat (the box is shut): closer, the street at the bottom of the frame
     const e = ease.inOutCubic(prog(t, T.cut - 0.06, T.cut + 0.06))
-    return { z: lerp(2.3, 1.22, e), fx: lerp(F7.x, 500, e), fy: lerp(F7.y, 1330, e), sx: 540, sy: lerp(960, 1560, e) }
+    return { z: lerp(2.3, 1.06, e), fx: lerp(F7.x, 540, e), fy: lerp(F7.y, 1330, e), sx: 540, sy: lerp(960, 1560, e) }
   }
   if (t < T.zoom[0]) return { z: 1, fx: 540, fy: 1000, sx: 540, sy: 1000 }
   const e = ease.inOutCubic(prog(t, ...T.zoom))
