@@ -85,10 +85,10 @@ const CAKE = [
 const CAKE_C = { F: '#ffd24a', f: '#ff8a3a', C: '#9ff3ff', S: '#fff4f0', s: PINK, B: '#ff9ab8', h: '#ffffff', p: '#d9a35e' }
 
 // ── layout
-const ARI_A = { x: 255, y: 1070, s: 280 }, LIB_A = { x: 825, y: 1070, s: 280 }
-const ARI_F = { x: 200, y: 1170, s: 260 }, LIB_F = { x: 880, y: 1170, s: 260 }
+const ARI_A = { x: 255, y: 1070, s: 280 }, LIB_A = { x: 770, y: 1070, s: 280 }   // og full frame: Libra + its cards clear of the side buttons (x 960+)
+const ARI_F = { x: 200, y: 1170, s: 260 }, LIB_F = { x: 830, y: 1170, s: 260 }
 const FLOOR = 1330
-const BIG_A = { x: 540, y: 880, w: 300 }
+const BIG_A = { x: 520, y: 900, w: 300 }
 const ARM = 78, HANG = 70
 
 function ariState(t) {
@@ -120,10 +120,10 @@ async function build(stage) {
   const cv = layerCanvas(root), x = cv.getContext('2d')
 
   // ── type
-  const H1 = popText(root, 'Option *A.*', { top: 230, size: 136, accentSize: 200, at: T.h1, late: 1, lateAt: T.h1Land, wobble: true, accentColor: GOLD })
-  const H2 = popText(root, 'Fast *and* fair.', { top: 250, size: 132, accentSize: 186, at: T.h2, late: 2, lateAt: T.h2Land, lateGap: 0.14, wobble: true, gap: 0.1, accentColor: PINK })
+  const H1 = popText(root, 'Option *A.*', { top: 470, size: 120, accentSize: 170, at: T.h1, late: 1, lateAt: T.h1Land, wobble: true, accentColor: GOLD })
+  const H2 = popText(root, 'Fast *and* fair.', { top: 500, size: 118, accentSize: 166, left: 60, width: 900, at: T.h2, late: 2, lateAt: T.h2Land, lateGap: 0.14, wobble: true, gap: 0.1, accentColor: PINK })
   const HEADS = [[H1, T.h1Out], [H2, T.h2Out]]
-  const box = dialogueBox(root, { lines: LINES, y: 1400, width: 960, height: 300, open: T.open, close: T.close, cps: CPS })
+  const box = dialogueBox(root, { lines: LINES, y: 1330, width: 900, height: 230, W: 1020, open: T.open, close: T.close, cps: CPS })
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
@@ -285,15 +285,15 @@ async function build(stage) {
     const k = pop01(t, T.cut + 0.05, 0.4, 1.6) * popOut(t, T.out)
     if (k <= 0.01) return
     const S = 1.3 * k
-    x.save(); x.translate(540, FLOOR); x.scale(S, S)
+    x.save(); x.translate(520, FLOOR); x.scale(S, S)
     x.fillStyle = 'rgba(10,6,24,0.95)'; x.fillRect(-170, -150, 340, 34); x.fillRect(-26, -120, 52, 120)
     x.fillStyle = '#b07a3a'; x.fillRect(-164, -144, 328, 22); x.fillStyle = '#d9a35e'; x.fillRect(-164, -144, 328, 6)
     x.fillStyle = '#8a5a2a'; x.fillRect(-20, -122, 40, 122)
     x.restore()
     const top = FLOOR - 144 * S
-    drawBits(x, CAKE, CAKE_C, 470, top - 5 * 13 * k, 13 * k)
-    glow(470, top - 130 * k, 140, GOLD, 0.5 * k)
-    drawOptCard(625, top - 100 * k, 150 * k, 0.12, OPTS[0], 1, true)
+    drawBits(x, CAKE, CAKE_C, 450, top - 5 * 13 * k, 13 * k)
+    glow(450, top - 130 * k, 140, GOLD, 0.5 * k)
+    drawOptCard(605, top - 100 * k, 150 * k, 0.12, OPTS[0], 1, true)
   }
   function floatHearts(t, cx, cy, t0) {
     for (let i = 0; i < 8; i++) {
