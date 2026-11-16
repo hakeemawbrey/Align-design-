@@ -154,8 +154,9 @@ function castOverTrain(x, t) {
 function over(x, t) {
   // the LAST TRAIN countdown (whole film)
   const left = Math.max(0, LEFT(t)), mm = Math.floor(left / 60), ss = Math.floor(left % 60)
-  const urgent = left < 10 * 60, k = pop01(t, -1, 0.3), kick = bump(t, S.shop, 0.4) + bump(t, S.plat, 0.4)
-  x.save(); x.translate(640, 800);   // og: under the route strip (the picture sits 230 px higher) x.scale(k * (1 + 0.1 * kick), k * (1 + 0.1 * kick)); x.rotate(-0.02)
+  const urgent = left < 10 * 60, k = pop01(t, -1, 0.3) * outK(t, [S.last - 0.3, S.last]),   // og: leaves for the last line
+    kick = bump(t, S.shop, 0.4) + bump(t, S.plat, 0.4)
+  x.save(); x.translate(640, 840); x.scale(k * (1 + 0.1 * kick), k * (1 + 0.1 * kick)); x.rotate(-0.02)   // og: under the route strip (the picture sits 230 px higher)
   R(x, INK, -300, -62, 600, 124); R(x, urgent && Math.sin(t * 10) > 0 ? '#5a0a1a' : '#12082a', -294, -56, 588, 112); R(x, urgent ? '#ff3b3b' : '#7fd0ff', -294, 48, 588, 8)
   x.font = `700 26px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = urgent ? '#ffb0b0' : '#bfe6ff'; x.fillText('LAST TRAIN IN', 0, -28)
   x.font = `700 56px ${MONO}`; x.fillStyle = urgent ? '#ff6a6a' : BONE; x.fillText(left <= 0 ? 'MISSED IT' : `00:${String(mm).padStart(2, '0')}:${String(ss).padStart(2, '0')}`, 0, 16)
