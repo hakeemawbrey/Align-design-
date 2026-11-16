@@ -703,7 +703,7 @@ function _hotEpisode(C) {
       },
     }
   }
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END })   // og: no CTA (social mode drops the end card anyway), cardFrame({ start: 0, end: STORY_END, numeral: C.numeral, corners: 'tl bl br' })]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }) /* og: no CTA */, cardFrame({ start: 0, end: STORY_END, numeral: C.numeral, corners: 'tl bl br' })]
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const nLast = tokens(LAST.text).filter(k => !k.br).length
   const CUES = [
