@@ -67,13 +67,13 @@ const LESSON = { at: T.lesson, out: T.lessonOut, text: 'Skip the fun fact. | *Sa
 
 const CPS = 28
 const L0 = [{ t: 0.5, speaker: TS, color: TAU_C, text: 'nobody’s walking home in this. I made *nine* soups.' }]
-const L1 = [{ t: 16.8, speaker: TS, color: TAU_C, text: 'last blanket. you two *share.* I’m guarding the soup.' }]
+const L1 = [{ t: 16.8, speaker: TS, color: TAU_C, text: 'last blanket. you *share.* I guard the soup.' }]
 const L2 = [
   { t: 20.6, speaker: GE, color: GEM_C, text: 'talk card! everyone answers. *I’m keeping score.*' },
   { t: 26.2, speaker: GE, color: GEM_C, text: 'Sagittarius, *you’re up.*' },
 ]
 const L3 = [
-  { t: 30.6, speaker: GS, color: SAG_C, text: 'fun fact: snow has *six* sides! fun fact two: *penguins!*' },
+  { t: 30.6, speaker: GS, color: SAG_C, text: 'fun fact: snow has *six* sides! also: *penguins!*' },
   { t: 35.6, speaker: GS, color: SAG_C, text: 'knock knock.' },
   { t: 37.0, speaker: CS, color: CAN_C, text: '…who’s there?' },
   { t: 38.4, speaker: GS, color: SAG_C, text: 'snow.' },
