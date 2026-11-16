@@ -31,7 +31,7 @@ const GOLD = '#f2c75c', BONE = '#efe6d6', PINK = '#ff8fb1', INK = '#1b1236', LAV
 const MOONC = '#e9e4ff', MOONLIGHT = '#bcd2ff', SKYBLUE = '#8fd8f6'
 
 const T = {
-  h0: 0.12, h0Out: [5.32, 5.5], rise: [0.2, 2.2], moonIn: 1.6, crowd: -0.7,   // social: the crowd is already on the ridge at frame 0 feels: 2.2, sob: 3.1,
+  h0: 0.12, h0Out: [5.32, 5.5], rise: [0.2, 2.2], moonIn: 1.6, crowd: -0.7, feels: 2.2, sob: 3.1,   // social: the crowd is already on the ridge at frame 0
   open: 2.66, l1: 2.85,
   h1: 5.58, h1Land: 5.98, l2: 5.9, calm: 7.6, h1Out: [9.22, 9.4],
   h2: 9.46, h2Land: 9.86, l3: 9.6, virgoSoft: 11.6, nod: [11.7, 12.2], scoot: [12.1, 12.7], close: 13.0, h2Out: [12.92, 13.1],
