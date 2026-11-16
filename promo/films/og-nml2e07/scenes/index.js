@@ -89,7 +89,7 @@ const L3 = [
   { t: T.wow, speaker: MO, color: MO_C, text: 'you finish each other’s *sentences!*' },
 ]
 const L4 = [
-  { t: 52.9, speaker: MO, color: MO_C, text: 'I did your Push / Pull reading! look!' },
+  { t: 52.9, speaker: MO, color: MO_C, text: 'I did your *star reading!* I laminated it!' },
   { t: T.snap, speaker: SG, color: SG_C, text: 'we are NOT *together,* ok?' },
   { t: T.quiet, speaker: CA, color: CA_C, text: '…yeah. just *friends.*' },
 ]
@@ -276,7 +276,7 @@ async function build(stage) {
     // Mom's phone: the reading
     if (t > T.phone[0] && t < T.phoneOut[1]) {
       const pin = ease.outBack(prog(t, ...T.phone)), po = ease.inCubic(prog(t, ...T.phoneOut))
-      drawPhone(x, 330, 880 + (1 - pin) * 1100 + po * 1100, 380, 520, t, { title: 'tonight’s reading', msgs: [{ at: 53.2, side: 'L', text: 'PUSH · PULL · …' }, { at: T.align, side: 'L', text: 'ALIGN!' }] })
+      drawPhone(x, 330, 880 + (1 - pin) * 1100 + po * 1100, 380, 520, t, { title: 'tonight’s reading', msgs: [{ at: 53.2, side: 'L', text: 'PUSH · PULL · …' }, { at: T.align, side: 'L', text: 'SOULMATES!!' }   /* og: no app name in the scene; Mom is extra */] })
     }
     if (t > T.snap && t < T.snap + 0.5) { x.save(); x.globalAlpha = bump(t, T.snap, 0.5); x.fillStyle = '#ff7a7a'; x.font = `800 70px ${MONO}`; x.textAlign = 'center'; x.fillText('!!', sx, 1030); x.restore() }
     if (t > T.quiet + 1) { x.save(); x.globalAlpha = 0.5 * outK(t, [69, 69.6]); x.fillStyle = BONE; x.font = `700 34px ${MONO}`; x.textAlign = 'center'; x.fillText('slurp.', 300, 1260); x.fillText('…slurp.', 800, 1270); x.restore() }
