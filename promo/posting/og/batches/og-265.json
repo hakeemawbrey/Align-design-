@@ -1,0 +1,26 @@
+[
+ {
+  "id": "kzce01",
+  "account": "star_talk",
+  "series": "Zodiac Courtroom",
+  "title": "Three Days, Then a Meme",
+  "old_caption": "Three days on read, then a frog meme. The court was not amused.\nA meme says hi. A reply says I saw you. Who in your chat replies in memes only?",
+  "existing": true
+ },
+ {
+  "id": "st4anniversary",
+  "account": "star_advice",
+  "series": "03 Seasons 4–6",
+  "title": "Aries and Libra's anniversary.",
+  "old_caption": "One of you plans in five minutes, the other brings five options?\nAries and Libra prove fast and fair can share one anniversary.",
+  "existing": true
+ },
+ {
+  "id": "guideair",
+  "account": "star_advice",
+  "series": "01 Shows",
+  "title": "Air signs, gather round.",
+  "old_caption": "Air signs, your gift is words. But closeness doesn't always need them. Sometimes the most loving thing is to stop talking and just sit next to someone.",
+  "existing": true
+ }
+]

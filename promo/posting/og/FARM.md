@@ -14,6 +14,9 @@ python3 promo/scripts/farm/gdrive.py folder "Star Talk/OG Social Cut/<account>" 
 Drive credentials are environment variables; never print them.
 
 ## 1. Rework each film
+If a batch item has `"existing": true`, `promo/films/og-<id>/` is already reworked: do NOT copy over it. Only redo the
+full-frame safe-zone check (OG-REWORK.md "Safe zones"), fix what it finds in that folder, then render, upload and record.
+
 Read `promo/films/OG-REWORK.md` (all of it) and follow it exactly. Look at the approved reworks first:
 `promo/films/og-kzce01`, `og-st4anniversary`, `og-guideair`, `og-sr01blind`, `og-nthe01`, `og-kpjue01`, `og-trtellleo`,
 `og-ngwe01`, `og-kfae01` (diff each against its original to see exactly what changed). In short: `cp -r` the film to
