@@ -368,7 +368,7 @@ async function build(stage) {
         scorecard(gxs, 940, Math.floor(sc / 2), '#ffe27a', sk)
         // Leo's (bad) advice by text
         const pk = pop01(tt, T.leoText, 0.35, 1.8) * outK(tt, [59.0, 59.4])
-        if (pk > 0.01) { x.save(); x.translate(540, 680); x.scale(pk * 1.3, pk * 1.3); x.translate(-540, -680); drawPhone(x, 540, 700, 420, 420, tt, { title: `${G('leo')} Leo`, msgs: [{ at: T.leoText + 0.2, side: 'L', text: 'just win the argument lol' }] }); x.restore() }
+        if (pk > 0.01) { x.save(); x.translate(540, 900); x.scale(pk * 1.15, pk * 1.15); x.translate(-540, -680) /* og: below the caption */; drawPhone(x, 540, 700, 420, 420, tt, { title: `${G('leo')} Leo`, msgs: [{ at: T.leoText + 0.2, side: 'L', text: 'just win the argument lol' }] }); x.restore() }
         // the low point: the clock, the gap
         clock(540, 900, tt, pop01(tt, T.ticks, 0.3, 2) * outK(tt, [69.3, 69.6]))
       },
