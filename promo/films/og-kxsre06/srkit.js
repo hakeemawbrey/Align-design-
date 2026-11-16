@@ -560,7 +560,7 @@ export function makeSR(cfg) {
         let sx = 540 + (wx - Cm.fx) * Cm.z, sy = FY + (wy - Cm.fy) * Cm.z
         tx.font = `800 40px ${INTER}`
         const w = Math.min(600, Math.max(...wrap(tx, text, 600).map(l => tx.measureText(l).width))) + 60
-        sx = clamp(sx, w / 2 + 70, 950 - w / 2); sy = clamp(sy, 560, 1360)   // og: safe zone
+        sx = clamp(sx, w / 2 + 70, 950 - w / 2); sy = clamp(sy, 660, 1360)   // og: safe zone, below the counters
         bubble(tx, t, sx, sy, P.t0 + u0, P.t0 + u1, text, { size: 40, tail: o?.tail ?? 0.4, maxW: 600 })
       }
     }
