@@ -1,0 +1,5 @@
+// og-nhce01 score: social cut of nhce01 (no end card).
+// nhce01 score: pop, C (arranged by the style engine in promo/scripts/teaser-sound.mjs).
+//   drop 2.4: the hot take's jump cut · breakdown 5.3: the cold take · lift 8.2: the warm take · outro under the end card.
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'og-nhce01', duration: DURATION, music: { style: 'pop', key: 'C', seed: 4401, sections: { drop: 2.4, breakdown: [5.3], lift: [8.2], outroAt: 11.6 - 0.6 }, hits: [8.2] }, cues: CUES }
