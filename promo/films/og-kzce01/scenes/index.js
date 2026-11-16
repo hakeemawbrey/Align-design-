@@ -28,6 +28,7 @@ const CFG = {
   fx: { whips: [{ at: -0.08, from: 1.3, blur: 0, flash: 0, len: 0.5 }, { at: T.guilty + 0.08, from: 1.22 }], recs: [{ at: T.gasp + 0.2, len: 1.0, caption: 'yes. *a frog.* that was it.', top: 1450 }], flashes: [[T.guilty + 0.1, '#ffe9a8']] },
   gavels: [0.06, 1.55, T.guilty],
   gasps: [-0.25, T.gasp, T.guilty + 0.1],
+  juryDx: -90,   // og full frame: the jury box clears the app's side buttons (x 960+)
   jury: ['leo', 'virgo', 'aries', 'pisces', 'libra', 'capricorn'],
   tears: () => 3,
   juryMood: (t, id) => {
@@ -47,12 +48,13 @@ const CFG = {
     hops: [11.7, 12.0],
   }],
   heads: [
-    { text: 'A meme is not | a *reply.*', at: T.last, late: 1, lateAt: T.last + 0.3, accent: '#7fd0ff', size: 96 },
+    { text: 'A meme is not | a *reply.*', at: T.last, late: 1, lateAt: T.last + 0.3, accent: '#7fd0ff', size: 96, top: 1330 },   // og full frame: the last line sits in the empty floor, inside the safe zone
   ],
-  ticker: { at: 1.0, out: [12.4, 12.7], label: 'CHARGE', text: 'LEFT THEIR BEST FRIEND ON READ FOR THREE DAYS, THEN SENT ONE (1) FROG' },
+  ticker: { at: 2.9, out: [12.4, 12.7], y: 392, label: 'CHARGE',   // og full frame: top band once the hook is gone (the bottom band sat under the app caption)
+    text: 'LEFT THEIR BEST FRIEND ON READ FOR THREE DAYS, THEN SENT ONE (1) FROG' },
   boxes: [
-    { open: 1.4, close: 2.85, lines: [{ t: 1.55, who: 'JUDGE', text: 'ORDER!! bring in exhibit *FROG.*' }] },
-    { open: 6.85, close: 10.3, lines: [{ t: 7.0, who: 'gemini', text: 'my OTHER twin was supposed to *reply.*' }, { t: 8.9, who: 'JUDGE', text: 'you have ONE phone. *ONE.*' }] },
+    { open: 1.4, close: 2.85, y: 1330, height: 230, width: 900, W: 1020, lines: [{ t: 1.55, who: 'JUDGE', text: 'ORDER!! bring in exhibit *FROG.*' }] },
+    { open: 6.85, close: 10.3, y: 1330, height: 230, width: 900, W: 1020, lines: [{ t: 7.0, who: 'gemini', text: 'my OTHER twin was supposed to *reply.*' }, { t: 8.9, who: 'JUDGE', text: 'you have ONE phone. *ONE.*' }] },
   ],
   exhibits: [{
     at: 2.9, out: [6.45, 6.75], label: 'EXHIBIT A',

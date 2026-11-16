@@ -371,7 +371,7 @@ export function makeCourt(cfg) {
     const cv = layerCanvas(cam), x = cv.getContext('2d')
     const hl = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none' }, root)
     const heads = (cfg.heads || []).map(h => ({ h, P: popText(hl, h.text, { top: h.top ?? 176, size: h.size ?? 92, accentSize: h.accentSize ?? (h.size ?? 92) * 1.32, at: h.at, late: h.late || 0, lateAt: h.lateAt, wobble: h.wobble ?? true, accentColor: h.accent || GOLD, fit: true }) }))
-    const boxes = BOXES.map(b => dialogueBox(hl, { lines: b.lines, y: b.y ?? 1400, open: b.open, close: b.close, cps: cfg.cps || 30, size: b.size ?? 48, height: b.height ?? 290 }))
+    const boxes = BOXES.map(b => dialogueBox(hl, { lines: b.lines, y: b.y ?? 1400, open: b.open, close: b.close, cps: cfg.cps || 30, size: b.size ?? 48, height: b.height ?? 290, width: b.width ?? 960, W: b.W ?? 1080 }))
     const top = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none' }, root)
     const ticker = cfg.ticker ? buildTicker(top, cfg.ticker) : null
     // og-kzce01 (social): no series bug / header text at the top; the HOOK and the story's captions own the top
@@ -415,7 +415,7 @@ export function makeCourt(cfg) {
         }
       }
       // the jury
-      if (!hide.jury) drawJuryBox(x, t, typeof cfg.jury === 'function' ? cfg.jury(t) : (cfg.jury || ['pisces']), { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears, allTears: cfg.juryTears })
+      if (!hide.jury) drawJuryBox(x, t, typeof cfg.jury === 'function' ? cfg.jury(t) : (cfg.jury || ['pisces']), { mood: cfg.juryMood, gasps: cfg.gasps, tears: cfg.tears, allTears: cfg.juryTears, dx: cfg.juryDx || 0 })
       cfg.front && cfg.front(x, t, ctx)
       // exhibits
       for (const E of cfg.exhibits || []) {
