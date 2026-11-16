@@ -35,7 +35,7 @@ const EP = makeFriends({
         const steps = Array.from({ length: 10 }, (_, i) => 5.0 + i * 0.35)
         S.star(x, t, VIR, { x: vx, y: 1060, s: 230, mood: 'sparkle', look: [1, 0], hops: steps })
         pot(x, t, vx + 90, 1110, 0.7)
-        label(x, 'LABELLED + DATED', vx + 90, 1190, { size: 22, col: '#d6f0b0' })   // og: Virgo's soup
+        label(x, 'LABELLED + DATED', vx + 90, 1158, { size: 22, col: '#d6f0b0' })   // og: Virgo's soup
       } },
     { at: 9.8, set: 'street', pis: { x: 930, y: 1280, s: 100, tears: 3, mood: 'happy', tissues: false },
       draw(x, t, S) {
