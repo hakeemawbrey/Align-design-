@@ -83,7 +83,7 @@ function crowd(x, t, t0) {
   })
 }
 
-const ACH = { at: WIN + 2.7, out: [WIN + 5.0, WIN + 5.3], text: 'won a *tiny star.*', y: 1360 }
+const ACH = { at: WIN + 2.7, out: [WIN + 5.0, WIN + 5.3], text: 'won a *tiny star.*', y: 1250 }   // og: above the CC strip
 
 const EP = makeSR({
   id: 'og-kxsre06', reviewer: 'aries', date: 'cancer', accent: GOLD,
