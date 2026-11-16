@@ -253,6 +253,18 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
     "ALTER TABLE posts ADD COLUMN audio_title TEXT",
     "ALTER TABLE posts ADD COLUMN audio_error TEXT",
   ],
+  // v9: account-wide views, reach and interactions per day, for the views-over-time chart.
+  async () => [
+    `CREATE TABLE account_days (
+      ig_user_id TEXT NOT NULL,
+      day TEXT NOT NULL,
+      views INTEGER NOT NULL,
+      reach INTEGER,
+      interactions INTEGER,
+      saved_at TEXT NOT NULL,
+      PRIMARY KEY (ig_user_id, day)
+    )`,
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
@@ -623,6 +635,44 @@ export async function listSnapshots(db: DB, igUserId: string, limit = 90): Promi
 
 export async function hasSnapshot(db: DB, igUserId: string, day: string): Promise<boolean> {
   return (await one(db, "SELECT 1 AS x FROM follower_snapshots WHERE ig_user_id = ? AND day = ?", [igUserId, day])) !== undefined;
+}
+
+// ---- account views per day ----
+
+export interface AccountDay {
+  igUserId: string;
+  day: string;
+  views: number;
+  reach: number | null;
+  interactions: number | null;
+  savedAt: string;
+}
+
+export async function saveAccountDay(db: DB, d: Omit<AccountDay, "savedAt">, at: Date) {
+  await run(
+    db,
+    `INSERT INTO account_days (ig_user_id, day, views, reach, interactions, saved_at) VALUES (?, ?, ?, ?, ?, ?)
+     ON CONFLICT(ig_user_id, day) DO UPDATE SET views = excluded.views, reach = excluded.reach,
+       interactions = excluded.interactions, saved_at = excluded.saved_at`,
+    [d.igUserId, d.day, d.views, d.reach, d.interactions, at.toISOString()],
+  );
+}
+
+/** Saved days from `from` (a "YYYY-MM-DD" key) onwards, oldest first. */
+export async function listAccountDays(db: DB, from: string, igUserId?: string): Promise<AccountDay[]> {
+  const rows = await all<{ ig_user_id: string; day: string; views: number; reach: number | null; interactions: number | null; saved_at: string }>(
+    db,
+    `SELECT * FROM account_days WHERE day >= ?${igUserId ? " AND ig_user_id = ?" : ""} ORDER BY day`,
+    igUserId ? [from, igUserId] : [from],
+  );
+  return rows.map((r) => ({
+    igUserId: r.ig_user_id,
+    day: r.day,
+    views: Number(r.views),
+    reach: r.reach === null ? null : Number(r.reach),
+    interactions: r.interactions === null ? null : Number(r.interactions),
+    savedAt: r.saved_at,
+  }));
 }
 
 // ---- video view history ----

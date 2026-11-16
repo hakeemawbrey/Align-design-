@@ -331,7 +331,7 @@ export function ColumnChart({ labels, series, unit = "count", height = 220, labe
           width={width}
           title={labels[hover]}
           rows={[
-            ...series.map((s) => ({ name: s.name, color: s.color, value: formatValue(s.values[hover] ?? 0, unit) })),
+            ...series.map((s) => ({ name: s.name, color: s.color, value: s.values[hover] == null ? "—" : formatValue(s.values[hover]!, unit) })),
             ...(series.length > 1 && showTotal ? [{ name: "Total", color: "transparent", value: formatValue(totals[hover], unit) }] : []),
           ]}
         />

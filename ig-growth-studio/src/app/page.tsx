@@ -7,8 +7,8 @@ import { Sparkline } from "@/components/Sparkline";
 import { FbPage } from "@/components/FbPage";
 import { TopVideos } from "@/components/TopVideos";
 import { facebookPages } from "@/lib/pages";
-import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos, totalVideoViews } from "@/lib/db";
-import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
+import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos, totalVideoViews, listAccountDays } from "@/lib/db";
+import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor, viewsPerDay } from "@/lib/charts";
 import { GraphClient } from "@/lib/graph";
 import { hasFacebookPage } from "@/lib/posts";
 import { type PostStats, type Profile, accountStats } from "@/lib/insights";
@@ -379,10 +379,30 @@ async function OverviewCharts({ accounts, rows, posts, now }: { accounts: Accoun
   const scheduled = posts.filter((p) => p.status === "scheduled");
   const count = (f: (p: PostRow) => boolean, list = posts) => list.filter(f).length;
 
-  const top = await topVideos(await getDb(), { since: new Date(now.getTime() - 7 * 86_400_000) });
+  const db = await getDb();
+  const top = await topVideos(db, { since: new Date(now.getTime() - 7 * 86_400_000) });
+  const viewDays = dayRange(now, -30, 0);
+  const views = viewsPerDay(viewDays, ids, await listAccountDays(db, viewDays[0]), rows.map((r) => r.today?.views));
 
   return (
     <>
+      <h2>Views over time</h2>
+      <ChartCard
+        title="Views per day"
+        sub="Every view of each account's posts and Reels, by day (this computer's time zone). Today is so far. A dash means Instagram hasn't sent that day yet."
+      >
+        {views.days.length > 1 ? (
+          <ColumnChart
+            label="Views per day by account"
+            labels={views.days.map(dayLabel)}
+            marker={{ index: views.days.length - 1, label: "Today" }}
+            series={accounts.map((a, i) => ({ name: `@${a.username}`, color: seriesColor(i), values: views.values[i] }))}
+          />
+        ) : (
+          <p className="muted small">Daily views appear here after the publishing worker's next check with Instagram.</p>
+        )}
+      </ChartCard>
+
       <h2>Top videos, last 7 days</h2>
       <TopVideos videos={top} usernames={new Map(accounts.map((a) => [a.igUserId, a.username]))} />
 

@@ -52,3 +52,24 @@ export const HOUR_LABELS = Array.from({ length: 24 }, (_, h) => `${h % 12 || 12}
 
 /** Categorical colours in fixed order; colour follows the account, not its rank. */
 export const seriesColor = (i: number) => `var(--series-${(i % 8) + 1})`;
+
+/**
+ * Views per day for each account: saved finished days, plus today's live number as the last day.
+ * Days with no number are null. Leading days before any account had views are trimmed off.
+ */
+export function viewsPerDay(
+  days: string[],
+  ids: string[],
+  saved: { igUserId: string; day: string; views: number }[],
+  today: (number | null | undefined)[],
+): { days: string[]; values: (number | null)[][] } {
+  const at = new Map(saved.map((d) => [`${d.igUserId}|${d.day}`, d.views]));
+  const last = days.length - 1;
+  const values = ids.map((id, a) => days.map((day, i) => (i === last ? (today[a] ?? null) : (at.get(`${id}|${day}`) ?? null))));
+  // Start at the first day any account had views; if none had any yet, at the first day with a saved number.
+  const firstWhere = (ok: (v: number | null) => boolean) => days.findIndex((_, i) => i < last && values.some((v) => ok(v[i])));
+  let first = firstWhere((v) => !!v);
+  if (first < 0) first = firstWhere((v) => v !== null);
+  if (first < 0) first = last;
+  return { days: days.slice(first), values: values.map((v) => v.slice(first)) };
+}
