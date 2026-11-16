@@ -76,7 +76,7 @@ function fin(x, t, S) {
   const { hero, ok, u } = S
   shadow(x, 540, 1150, 260 * ok)
   hero(x, t, { x: 540, y: 960, s: 300, pop: ok, mood: u > 1.6 ? 'happy' : 'sparkle', look: [0, 0], hops: [S.t0 + 0.1, S.t0 + 0.6, T.last + 1.5] })
-  bowl(x, t, 760, 1140, ok * 0.8)
+  bowl(x, t, 760, 1030, ok * 0.8)   // og: clear of Pisces
 }
 
 const EP = makeSingle({
