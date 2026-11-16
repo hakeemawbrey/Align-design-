@@ -24,7 +24,7 @@ const EP = makeFriends({
   id: 'og-nffe02', dur: 20, cut: 5.2,
   lines: [stars(5.6, 'Gemini. ONE soft question. then let the *quiet* work.')],
   boxes: [{ from: 0, to: 1, close: 9.8 }],
-  last: { at: 12.6, text: 'Ask once. *Hear everything.*', color: '#ffe58a', size: 104, accentSize: 150 },
+  last: { at: 12.6, text: 'Ask once. *Hear everything.*', color: '#ffe58a', size: 96, accentSize: 136, top: 470 },
   shots: [
     { at: 0, set: 'cafe', pis: { x: 210, y: 1270, s: 110, tears: 3, mood: 'wide', look: [1, -1] },
       draw(x, t, S) {
@@ -44,8 +44,8 @@ const EP = makeFriends({
       draw(x, t, S) {
         S.star(x, t, GEM, { x: 330, y: 1010, s: 260, mood: t < 11.5 ? 'neutral' : 'happy', look: [1, 0], hops: [10.3, 12.0] })
         S.star(x, t, CAP, { x: 760, y: 1015, s: 260, mood: t < 11.4 ? 'neutral' : t < 12.2 ? 'squint' : 'happy', look: [-1, 0], hops: [11.6, 12.1] })
-        bubble(x, t, 380, 820, 10.25, 15.4, 'how are you, really?', { size: 38, tail: -0.3 })
-        bubble(x, t, 700, 680, 11.5, 15.4, 'honestly? tired. can I tell you about it?', { size: 34, tail: 0.4, col: '#e9d9a8', maxW: 520 })
+        bubble(x, t, 330, 830, 10.25, 15.4, 'how are you, really?', { size: 36, tail: -0.1, maxW: 400 })
+        bubble(x, t, 745, 790, 11.5, 15.4, 'honestly? tired. can I tell you about it?', { size: 32, tail: 0.1, col: '#e9d9a8', maxW: 360 })   /* og: clear of the last line */
         hearts(x, t, 12.3, 330, 860, { n: 5 })
         sparkles(x, t, 760, 930, 11.55, 8, 120, 2)
       },
