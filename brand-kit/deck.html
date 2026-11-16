@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Align Brand Kit</title>
+<title>Align · Why we exist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=block">
 <style>
-/* One idea per slide. 1920 × 1080. Night sky from comealign.com, plum glow from the pitch deck. */
+/* One idea per slide, 1920 × 1080. The comealign.com night sky under the pitch deck's plum glow.
+   Content slides share one frame: label at 130px, headline under it, the visual below. */
 :root {
-  --void: #100b21; --canvas: #140a2e; --raised: #1e1240; --glass: rgba(20, 10, 46, .58); --edge: rgba(237, 230, 216, .13);
-  --bone: #ede6d8; --bone-2: #b3a6c4; --bone-3: #7d6f94;
+  --void: #1a1035; --edge: rgba(183, 166, 255, .22); --glass: rgba(22, 12, 48, .62);
+  --bone: #ede6d8; --bone-2: #cfc3dd; --bone-3: #9b8fb2;
   --rub: #e8628a; --pink: #f08fb4; --spark: #7fd8b0; --gold: #f2c75c; --violet: #9a7be0; --lav: #b7a6ff;
   --chrome: linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%); --chrome-ink: #3a2c4e;
   --serif: "EB Garamond", Georgia, serif; --sans: "Inter", system-ui, sans-serif; --mono: "Space Mono", ui-monospace, monospace;
@@ -18,148 +19,173 @@
 * { box-sizing: border-box }
 html, body { margin: 0; background: #000 }
 body { color: var(--bone); font-family: var(--sans); -webkit-font-smoothing: antialiased }
+
 .s { width: 1920px; height: 1080px; position: relative; overflow: hidden; break-after: page; page-break-after: always;
-  padding: 120px 150px 110px; display: flex; flex-direction: column; justify-content: center; gap: 36px;
+  padding: 130px 150px 120px; display: flex; flex-direction: column; justify-content: flex-start; gap: 40px;
   background-color: var(--void);
-  background-image: radial-gradient(60% 75% at 92% 108%, rgba(176, 72, 150, .40), transparent 62%), radial-gradient(55% 70% at 4% -8%, rgba(70, 48, 140, .45), transparent 60%), var(--neb, none);
+  background-image:
+    radial-gradient(70% 60% at 60% 72%, rgba(150, 70, 170, .34), transparent 70%),
+    radial-gradient(60% 70% at 82% 102%, rgba(190, 80, 160, .55), transparent 62%),
+    radial-gradient(55% 70% at 4% -8%, rgba(80, 56, 160, .5), transparent 60%),
+    var(--neb, none);
   background-size: cover }
-.s::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 95% at 50% 50%, transparent 58%, rgba(8, 4, 20, .55) 100%) }
+.s::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 95% at 50% 50%, transparent 60%, rgba(8, 4, 20, .3) 100%) }
 .s > * { position: relative; z-index: 2 }
+.s.mid { justify-content: center; padding-top: 110px }
 .sky-layer { position: absolute !important; inset: 0; z-index: 1 !important; pointer-events: none }
 .spark { position: absolute }
-.foot { position: absolute !important; left: 150px; right: 150px; bottom: 48px; display: flex; justify-content: space-between; align-items: center; font: 400 15px var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--bone-3) }
+.foot { position: absolute !important; left: 150px; right: 150px; bottom: 50px; display: flex; justify-content: space-between; align-items: center; font: 400 16px var(--mono); letter-spacing: .34em; text-transform: uppercase; color: var(--bone-2); opacity: .7 }
 .foot .moon { display: flex; align-items: center; gap: 14px }
 
 /* type */
-.ey { font: 400 20px/1.3 var(--mono); letter-spacing: .34em; text-transform: uppercase; color: var(--bone-2) }
-.ey.pink { color: var(--pink) } .ey.gold { color: var(--gold) } .ey.teal { color: var(--spark) } .ey.lav { color: var(--lav) }
-h1, h2 { margin: 0; font: italic 400 112px/1.02 var(--serif); letter-spacing: -.015em; text-wrap: balance }
-h2 { font-size: 92px }
-h1 em, h2 em { color: var(--pink); font-style: italic }
-.lead { margin: 0; font: 300 36px/1.4 var(--sans); color: var(--bone-2); max-width: 30ch; text-wrap: pretty }
-.lead b { color: var(--bone); font-weight: 400 }
-.serif-lead { margin: 0; font: italic 400 44px/1.3 var(--serif); color: var(--bone-2); max-width: 34ch }
+.ey { font: 400 22px/1.3 var(--mono); letter-spacing: .34em; text-transform: uppercase; color: var(--pink) }
+.ey.gold { color: var(--gold) } .ey.teal { color: var(--spark) } .ey.rub { color: var(--rub) }
+.ey.sm { font-size: 18px; letter-spacing: .3em }
+h1, h2 { margin: 0; font: italic 400 120px/1.02 var(--serif); letter-spacing: -.015em; text-wrap: balance }
+h2 { font-size: 104px }
+h1 em, h2 em { color: var(--pink) }
+.head { display: flex; flex-direction: column; gap: 22px }
+.lead { margin: 0; font: 400 40px/1.4 var(--sans); color: var(--bone-2); text-wrap: pretty }
+.serif-lead { margin: 0; font: italic 400 50px/1.3 var(--serif); color: var(--bone) }
 .center { align-items: center; text-align: center }
-.center .lead, .center .serif-lead { margin-inline: auto }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center }
-.row.wide-l { grid-template-columns: 1.15fr .85fr }
-.stack { display: flex; flex-direction: column; gap: 30px }
-.glass { background: var(--glass); border: 1.5px solid var(--edge); border-radius: 28px }
-.pill { display: inline-block; padding: 12px 24px; border-radius: 999px; background: var(--chrome); color: var(--chrome-ink); font: 700 17px var(--mono); letter-spacing: .24em; text-transform: uppercase }
+.glass { background: var(--glass); border: 1.5px solid var(--edge); border-radius: 30px }
+.glow { --c: var(--pink); border-color: color-mix(in srgb, var(--c) 62%, transparent); box-shadow: 0 0 60px color-mix(in srgb, var(--c) 22%, transparent), inset 0 0 40px color-mix(in srgb, var(--c) 8%, transparent) }
+.ic { --c: var(--pink); flex: none; width: 72px; height: 72px; border-radius: 18px; display: grid; place-items: center; color: var(--c); border: 1.5px solid color-mix(in srgb, var(--c) 65%, transparent); background: color-mix(in srgb, var(--c) 9%, rgba(22, 12, 48, .7)); box-shadow: 0 0 26px color-mix(in srgb, var(--c) 26%, transparent) }
+.ic svg { width: 34px; height: 34px }
+.ic.lg { width: 96px; height: 96px; border-radius: 24px } .ic.lg svg { width: 46px; height: 46px }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px }
+.card { padding: 38px 42px 42px; display: flex; flex-direction: column; gap: 18px }
+.card b { font: italic 500 50px/1.08 var(--serif) }
+.card p { margin: 0; font: 400 31px/1.4 var(--sans); color: var(--bone-2) }
+.card .k { font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--bone-3) }
 
-/* cover */
-.cover .mark { width: 330px; filter: drop-shadow(0 0 60px rgba(180, 92, 255, .45)) }
-.cover .word { font: italic 400 220px/.85 var(--serif); margin: 6px 0 0; text-shadow: 0 0 60px rgba(237, 230, 216, .25) }
-.cover .tag { font: 400 26px var(--mono); letter-spacing: .6em; padding-left: .6em; text-transform: uppercase }
-.cover .sub { font: 400 18px var(--mono); letter-spacing: .4em; text-transform: uppercase; color: var(--bone-3); margin-top: 18px }
+/* 01 cover */
+.cover { justify-content: center; padding-top: 80px; gap: 26px }
+.cover .mark { width: 300px; filter: drop-shadow(0 0 60px rgba(180, 92, 255, .5)) }
+.cover .word { font: italic 400 210px/.85 var(--serif); text-shadow: 0 0 60px rgba(237, 230, 216, .25) }
+.cover .desc { font: italic 400 50px/1.25 var(--serif); color: var(--bone); max-width: 30ch }
+.cover .tag { margin-top: 10px; font: 400 24px var(--mono); letter-spacing: .6em; padding-left: .6em; text-transform: uppercase; color: var(--bone-2) }
 
-/* disposable */
-.cycle { display: flex; gap: 28px; align-items: baseline; font: italic 400 76px var(--serif); color: var(--bone-3) }
-.cycle span:last-child { color: var(--pink) }
-.cycle i { font: 400 34px var(--mono); color: var(--bone-3); font-style: normal }
+/* 02 disposable */
+.cycle { display: flex; gap: 22px; align-items: center; justify-content: center; margin-top: 10px }
+.cycle .st { padding: 22px 40px; border-radius: 999px; font: italic 400 58px/1 var(--serif); color: var(--bone-2); background: var(--glass); border: 1.5px solid var(--edge) }
+.cycle .st.last { --c: var(--rub); color: var(--pink) }
+.cycle i { font: 400 40px var(--mono); color: var(--bone-3); font-style: normal }
 
-/* three beats */
-.beats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
-.beat { padding: 44px 40px; display: flex; flex-direction: column; gap: 18px }
-.beat .k { font: 400 17px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--pink) }
-.beat b { font: italic 400 50px/1.1 var(--serif) }
-.beat p { margin: 0; font: 300 26px/1.45 var(--sans); color: var(--bone-2) }
-.insight { display: flex; gap: 30px; align-items: center; padding: 34px 44px; border-left: 3px solid var(--gold); background: rgba(242, 199, 92, .06); border-radius: 0 24px 24px 0 }
-.insight p { margin: 0; font: italic 400 42px/1.3 var(--serif) }
-.insight p em { color: var(--gold) }
+/* 03 insight */
+.proof { display: flex; flex-direction: column; gap: 8px; padding: 22px 36px; border-left: 3px solid var(--gold); background: rgba(242, 199, 92, .08); border-radius: 0 24px 24px 0; box-shadow: 0 0 60px rgba(242, 199, 92, .1) }
+.proof q { font: italic 400 38px/1.25 var(--serif); quotes: "“" "”" }
+.proof cite { font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--bone-3); font-style: normal }
 
-/* principles */
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
-.tc { padding: 48px 44px; display: flex; flex-direction: column; gap: 18px; border-color: color-mix(in srgb, var(--c) 55%, transparent); box-shadow: 0 0 50px color-mix(in srgb, var(--c) 16%, transparent) }
-.tc i { font: italic 400 110px/.8 var(--serif); color: var(--c) }
-.tc b { font: italic 500 52px/1.1 var(--serif) }
-.tc p { margin: 0; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
+/* 04 answer */
+.three-pills { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; margin-top: 16px }
+.tp { display: flex; align-items: center; gap: 22px; padding: 22px 40px 22px 22px; border-radius: 999px; font: 500 36px var(--sans) }
 
-/* parts map */
-.parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px }
-.part { padding: 34px 36px; display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: center }
-.part .vis { width: 120px; height: 120px; display: grid; place-items: center; border-radius: 22px; background: rgba(237, 230, 216, .04) }
-.part b { display: block; font: italic 500 42px/1.1 var(--serif) }
-.part span { display: block; margin-top: 8px; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
-.part small { display: block; margin-bottom: 6px; font: 400 14px var(--mono); letter-spacing: .3em; color: var(--gold) }
+/* 05 loop */
+.loop { display: grid; grid-template-columns: 1fr 100px 1fr 100px 1fr; align-items: start; margin-top: 30px }
+.step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 30px }
+.orb { width: 230px; height: 230px; border-radius: 50%; display: grid; place-items: center; font: 400 30px var(--mono); letter-spacing: .34em; padding-left: .34em; text-transform: uppercase; background: radial-gradient(circle at 50% 40%, rgba(60, 34, 110, .9), rgba(20, 10, 46, .9)); border: 2px solid color-mix(in srgb, var(--c) 70%, transparent); box-shadow: 0 0 60px color-mix(in srgb, var(--c) 35%, transparent), inset 0 0 50px color-mix(in srgb, var(--c) 18%, transparent) }
+.step p { margin: 0; font: 400 34px/1.35 var(--sans); color: var(--bone-2); max-width: 15ch }
+.arrow { font: 300 60px var(--sans); color: var(--bone-3); text-align: center; padding-top: 80px }
+.tagline-p { text-align: center; font: italic 400 50px var(--serif); color: var(--pink); margin-top: 10px }
 
-/* name */
-.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 32px }
-.vcol { padding: 44px; display: flex; flex-direction: column; gap: 16px }
-.vcol .w { font: italic 400 72px/1 var(--serif) }
-.vcol.no .w { color: var(--bone-3); text-decoration: line-through; text-decoration-color: var(--rub); text-decoration-thickness: 3px }
-.vcol.yes { border-color: rgba(127, 216, 176, .55); box-shadow: 0 0 50px rgba(127, 216, 176, .14) }
-.vcol p { margin: 0; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
+/* lists with icon tiles */
+.ilist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 34px }
+.ilist li { display: flex; gap: 30px; align-items: center }
+.ilist b { display: block; font: 500 40px/1.2 var(--sans) }
+.ilist span { display: block; margin-top: 6px; font: 400 30px/1.35 var(--sans); color: var(--bone-2) }
+.two { display: grid; grid-template-columns: 1.05fr .95fr; gap: 90px; align-items: center; flex: 1 }
 
-/* mark */
-.markbig { width: 560px; justify-self: center; filter: drop-shadow(0 0 80px rgba(180, 92, 255, .4)) }
-.meaning { display: flex; flex-direction: column; gap: 34px }
-.mn { display: grid; grid-template-columns: 74px 1fr; gap: 26px; align-items: start }
-.mn .dot { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--edge); background: var(--glass) }
-.mn b { display: block; font: italic 500 46px/1.1 var(--serif) }
-.mn span { display: block; margin-top: 6px; font: 300 27px/1.45 var(--sans); color: var(--bone-2) }
-.chakra { display: flex; gap: 14px; margin-top: 4px }
-.chakra i { width: 30px; height: 30px; border-radius: 50%; background: var(--c); box-shadow: 0 0 18px var(--c) }
+/* 07 vision */
+.vm { display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: center; flex: 1 }
+.vm .faint { width: 560px; opacity: .3; justify-self: end; filter: drop-shadow(0 0 60px rgba(180, 92, 255, .5)) }
+.vm h1 { font-size: 130px }
 
-/* card */
-.cards { position: relative; height: 820px }
-.cards img { position: absolute; height: 720px; filter: drop-shadow(0 30px 60px rgba(0, 0, 0, .5)) }
-.cards .a { left: 0; top: 70px; transform: rotate(-7deg); opacity: .9 }
-.cards .b { left: 270px; top: 20px; transform: rotate(5deg) }
-.ticks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; font: 300 32px/1.4 var(--sans) }
-.ticks li { position: relative; padding-left: 44px } .ticks li::before { content: "✦"; position: absolute; left: 0; top: 4px; color: var(--pink); font-size: 24px }
+/* 08 principles */
+.tc { padding: 48px 46px 50px; display: flex; flex-direction: column; gap: 20px }
+.tc i { font: italic 400 120px/.8 var(--serif); color: var(--c) }
+.tc b { font: italic 500 58px/1.08 var(--serif) }
+.tc p { margin: 0; font: 400 32px/1.4 var(--sans); color: var(--bone-2) }
+.tc .seen { margin-top: auto; padding-top: 20px; border-top: 1.5px solid var(--edge); font: 400 18px/1.5 var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--c) }
 
-/* sky */
-.skyshow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px }
-.sk { padding: 40px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start }
-.sk .art { width: 100%; height: 200px; border-radius: 20px; display: grid; place-items: center; overflow: hidden; position: relative; background: #120a28 }
-.sk b { font: italic 500 42px var(--serif) }
-.sk p { margin: 0; font: 300 25px/1.45 var(--sans); color: var(--bone-2) }
+/* 09 parts */
+.parts { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 30px; flex: 1 }
+.part { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; gap: 20px }
+.part .row1 { display: flex; align-items: center; gap: 26px }
+.part .vis { width: 110px; height: 110px; display: grid; place-items: center; border-radius: 26px; background: rgba(237, 230, 216, .05); border: 1.5px solid var(--edge); flex: none }
+.part b { font: italic 500 56px/1 var(--serif) }
+.part .serves { font: 400 18px/1.5 var(--mono); letter-spacing: .26em; text-transform: uppercase; color: var(--bone-3) }
+.part .serves em { font-style: normal; color: var(--gold) }
 
-/* colour */
-.sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px }
+/* 10 name */
+.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; flex: 1; align-content: center }
+.vcol { padding: 50px; display: flex; flex-direction: column; gap: 22px }
+.vcol .w { font: italic 400 96px/1 var(--serif) }
+.vcol.no .w { color: var(--bone-3); text-decoration: line-through; text-decoration-color: var(--rub); text-decoration-thickness: 4px }
+.vcol p { margin: 0; font: 400 34px/1.4 var(--sans); color: var(--bone-2) }
+
+/* 11 mark */
+.markbig { width: 600px; justify-self: center; filter: drop-shadow(0 0 80px rgba(180, 92, 255, .45)) }
+
+/* 12 card */
+.mcard { width: 540px; justify-self: center; border-radius: 36px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: linear-gradient(180deg, #1c1036, #120a26); border: 3px solid #e86fb0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .05), 0 0 70px rgba(232, 98, 170, .5), inset 0 0 40px rgba(232, 98, 170, .12); transform: rotate(2.5deg) }
+.mcard .top { display: flex; justify-content: space-between; align-items: center }
+.mcard .nm { font: italic 400 46px var(--serif) }
+.mcard .orbi { width: 58px; height: 58px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ff9bd8, #d13fa0 70%); box-shadow: 0 0 22px rgba(232, 98, 170, .7) }
+.mcard .aura { height: 190px; border-radius: 22px; border: 2px solid rgba(232, 111, 176, .8); position: relative; overflow: hidden; background: radial-gradient(34% 62% at 50% 78%, #ffd4f3, #c85cff 38%, #6b2bb8 64%, transparent 84%), radial-gradient(80% 90% at 50% 100%, #3a1460, #120a26) }
+.mcard .aura span { position: absolute; left: 18px; bottom: 14px; font: 400 14px var(--mono); letter-spacing: .26em; color: rgba(237, 230, 216, .8) }
+.mcard .sign { display: flex; gap: 12px; align-items: center }
+.mcard .sign b { font: 400 40px var(--serif); letter-spacing: .08em; color: #f08fb4 }
+.chip { display: inline-flex; align-items: center; gap: 10px; height: 42px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid currentColor; font: 400 16px var(--mono); letter-spacing: .16em; text-transform: uppercase }
+.chip i { width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, currentColor 70%) }
+.mcard .bio { font: italic 400 28px/1.3 var(--serif) }
+.mcard .rd { display: grid; grid-template-columns: 96px 1fr; gap: 14px; font: 400 24px/1.3 var(--serif) }
+.mcard .rd span { font: 700 16px/1.6 var(--mono); letter-spacing: .16em }
+.mcard .db { border-top: 1.5px solid var(--edge); padding-top: 16px; display: flex; flex-direction: column; gap: 6px }
+.mcard .db small { font: 400 15px var(--mono); letter-spacing: .26em; color: var(--rub) }
+.mcard .db p { margin: 0; font: italic 400 28px/1.3 var(--serif); color: var(--bone-2) }
+
+/* 13 look */
+.look { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center }
+.sw { display: grid; grid-template-columns: 1fr 1fr; gap: 26px }
 .swc { overflow: hidden; display: flex; flex-direction: column }
-.swc .c { height: 190px }
-.swc .t { padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 8px }
-.swc b { font: italic 500 38px var(--serif) }
-.swc code { font: 400 18px var(--mono); color: var(--bone-3); letter-spacing: .08em }
-.swc p { margin: 0; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
-.rule-line { font: 300 28px/1.4 var(--sans); color: var(--bone-2) } .rule-line b { color: var(--bone); font-weight: 500 }
+.swc .c { height: 140px; position: relative }
+.swc .t { padding: 18px 26px 22px; display: flex; justify-content: space-between; align-items: baseline }
+.swc b { font: italic 500 42px var(--serif) }
+.swc code { font: 400 18px var(--mono); color: var(--bone-3) }
+.types { display: flex; flex-direction: column; gap: 0 }
+.ty { padding: 22px 0; border-bottom: 1.5px solid var(--edge); display: flex; flex-direction: column; gap: 12px }
+.ty:last-child { border-bottom: 0 }
+.ty small { font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--gold) }
 
-/* type */
-.spec { display: grid; grid-template-columns: 360px 1fr; gap: 50px; align-items: baseline; padding: 34px 0; border-bottom: 1.5px solid var(--edge) }
-.spec:last-child { border-bottom: 0 }
-.spec .l b { display: block; font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--gold) }
-.spec .l span { display: block; margin-top: 10px; font: 300 22px/1.4 var(--sans); color: var(--bone-2) }
+/* 14 voice */
+.say { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center }
+.say > div { padding: 22px 0; border-bottom: 1.5px solid var(--edge) }
+.say .no { font: 400 32px var(--sans); color: var(--bone-2); text-decoration: line-through; text-decoration-color: var(--rub); text-decoration-thickness: 2px }
+.say .ar { font: 400 30px var(--mono); color: var(--bone-3); text-align: center }
+.say .yes { font: italic 400 44px var(--serif) }
+.say .hd { font: 400 18px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--bone-3); padding-bottom: 8px }
 
-/* voice */
-.say { display: grid; grid-template-columns: 1fr 70px 1fr; row-gap: 0; align-items: center }
-.say > div { padding: 24px 0; border-bottom: 1.5px solid var(--edge); font: 300 32px var(--sans) }
-.say .no { color: var(--bone-3); text-decoration: line-through; text-decoration-color: var(--rub) }
-.say .ar { color: var(--bone-3); font-family: var(--mono); text-align: center }
-.say .yes { font: italic 400 38px var(--serif) }
-.say .hd { font: 400 17px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--bone-3); border-bottom: 0; padding-bottom: 6px }
+/* 16 co-brand */
+.locks { display: grid; grid-template-columns: 1fr 1fr; gap: 34px }
+.lockbox { height: 270px; border-radius: 30px; display: flex; align-items: center; justify-content: center; gap: 36px; position: relative }
+.lockbox.dark { background: radial-gradient(70% 90% at 30% 30%, rgba(154, 123, 224, .45), transparent 70%), linear-gradient(#1a1035, #2a1647); border: 1.5px solid var(--edge) }
+.lockbox.light { background: #f6f1e8; color: #100b21 }
+.lockbox .al { display: flex; align-items: center; gap: 18px; font: italic 400 84px/1 var(--serif) }
+.lockbox .x { font: 400 38px var(--mono); opacity: .6 }
+.lockbox .yl { height: 96px; padding: 0 34px; border: 2px dashed currentColor; opacity: .55; border-radius: 20px; display: grid; place-items: center; font: 400 18px var(--mono); letter-spacing: .3em }
+.lockbox .lbl { position: absolute; left: 26px; top: 20px; font: 400 15px var(--mono); letter-spacing: .3em; opacity: .6 }
+.rules2 { display: grid; grid-template-columns: 1fr 1fr; gap: 34px }
+.rules2 .glass { padding: 34px 40px; display: flex; flex-direction: column; gap: 18px }
+.rules2 ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; font: 400 30px/1.35 var(--sans) }
+.rules2 li { display: flex; gap: 18px } .rules2 .do li::before { content: "✓"; color: var(--spark) } .rules2 .dont li::before { content: "✕"; color: var(--rub) }
 
-/* words */
-.words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px }
-.wd { padding: 36px 38px; display: flex; flex-direction: column; gap: 12px }
-.wd b { font: italic 500 46px var(--serif) }
-.wd p { margin: 0; font: 300 24px/1.45 var(--sans); color: var(--bone-2) }
-
-/* partners */
-.lock { display: flex; align-items: center; justify-content: center; gap: 44px; padding: 70px; border-radius: 32px }
-.lock .al { display: flex; align-items: center; gap: 20px; font: italic 400 96px/1 var(--serif) }
-.lock .x { font: 400 44px var(--mono); color: var(--bone-2) }
-.lock .yl { height: 110px; padding: 0 44px; border: 2px dashed rgba(237, 230, 216, .45); border-radius: 22px; display: grid; place-items: center; font: 400 20px var(--mono); letter-spacing: .3em; color: var(--bone-2) }
-.dd { display: grid; grid-template-columns: 1fr 1fr; gap: 30px }
-.dd .glass { padding: 36px 40px; display: flex; flex-direction: column; gap: 16px }
-.dd ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font: 300 27px/1.4 var(--sans) }
-.dd .do li::before { content: "✓"; color: var(--spark); margin-right: 16px }
-.dd .dont li::before { content: "✕"; color: var(--rub); margin-right: 16px }
-
-/* close */
-.contact { display: flex; gap: 60px; justify-content: center; font: 400 24px var(--mono); letter-spacing: .24em; color: var(--bone-2) }
-.contact b { color: var(--bone); font-weight: 400 }
+/* 17 close */
+.close h1 { font-size: 150px }
+.cta-line { font: 400 40px var(--sans); color: var(--bone-2) }
+.cta-line b { color: var(--bone); font-weight: 500 }
+.pillmail { display: inline-block; padding: 22px 46px; border-radius: 999px; background: var(--chrome); color: var(--chrome-ink); font: italic 500 46px var(--serif); box-shadow: 0 0 50px rgba(248, 237, 255, .35) }
+.site { font: 400 24px var(--mono); letter-spacing: .34em; color: var(--bone-3); text-transform: uppercase }
 </style>
 </head>
 <body>
@@ -168,251 +194,267 @@ h1 em, h2 em { color: var(--pink); font-style: italic }
 <section class="s center cover">
   <img class="mark" src="img/align-mark.png" alt="">
   <div class="word">Align</div>
+  <div class="desc">The dating app where you meet who someone is, before what they look like.</div>
   <div class="tag">Put your faith in the stars</div>
-  <div class="sub">Brand kit · 2026</div>
 </section>
 
 <!-- 02 WHY -->
-<section class="s center">
-  <div class="ey pink">Why Align exists</div>
+<section class="s center mid">
+  <div class="ey">Why Align exists</div>
   <h1>People have been made <em>disposable.</em></h1>
-  <div class="cycle"><span>Swipe</span><i>→</i><span>Match</span><i>→</i><span>Ghost</span><i>→</i><span>Replace</span></div>
-  <p class="lead">Dating apps turned people into a feed. Everyone can feel it.</p>
+  <div class="cycle"><span class="st">Swipe</span><i>→</i><span class="st">Match</span><i>→</i><span class="st">Ghost</span><i>→</i><span class="st last glow">Replace</span></div>
+  <p class="lead" style="max-width:34ch">Dating apps turned people into a feed. Scroll past one, and there's always another.</p>
 </section>
 
-<!-- 03 HOW IT HAPPENED -->
+<!-- 03 INSIGHT -->
 <section class="s">
-  <div class="ey pink">How it happened</div>
-  <h2>Built to keep you searching.</h2>
-  <div class="beats">
-    <div class="beat glass"><span class="k">Photo first</span><b>Judged in half a second.</b><p>A face and a height decide before a word is said.</p></div>
-    <div class="beat glass"><span class="k">Left on read</span><b>Never answered.</b><p>Chats fizzle. Ghosting is normal. Nobody owes anyone a reply.</p></div>
-    <div class="beat glass"><span class="k">Always another</span><b>Easy to replace.</b><p>There's a new stack tomorrow, so no one is worth the effort today.</p></div>
+  <div class="head"><div class="ey gold">The insight</div><h2 style="font-size:92px">They earn more when you <em>almost</em> find someone.</h2></div>
+  <div class="grid3">
+    <div class="card glass"><div class="ic" style="--c:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17c1-2.4 2.6-3.5 4.5-3.5s3.5 1.1 4.5 3.5"/></svg></div><b>Judged on a photo.</b><p>A face decides before a word is said.</p></div>
+    <div class="card glass"><div class="ic" style="--c:var(--rub)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="8" width="12" height="10" rx="2"/><path d="M12 4v4M9 13h.01M15 13h.01M10 16h4"/></svg></div><b>Never sure who's real.</b><p>Bots, fakes, and things people would never say to your face.</p></div>
+    <div class="card glass"><div class="ic" style="--c:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 10h8"/></svg></div><b>Never get to the date.</b><p>Weeks of chat that fizzle out with no plan.</p></div>
   </div>
-  <div class="insight"><p>Most dating apps earn the most when you <em>almost</em> find someone.</p></div>
+  <div class="proof"><q>Members finding meaningful relationships</q><cite>Listed as a risk to their business · Bumble, FY2025 annual report</cite></div>
 </section>
 
-<!-- 04 OUR ANSWER -->
-<section class="s center">
+<!-- 04 ANSWER -->
+<section class="s center mid">
   <div class="ey gold">Our answer</div>
   <h1>Nobody is disposable.</h1>
-  <p class="lead">Align is a dating app where you meet <b>who someone is</b> before what they look like, both people have to <b>choose each other</b>, and every match is meant to end in <b>a real, safe date</b>.</p>
-</section>
-
-<!-- 05 VISION & MISSION -->
-<section class="s">
-  <div class="ey gold">North star</div>
-  <div class="stack">
-    <div class="ey" style="font-size:17px">Vision</div>
-    <h1 style="font-size:124px">To make people feel happy, safe, and loved.</h1>
-  </div>
-  <div class="stack" style="gap:16px;margin-top:20px">
-    <div class="ey" style="font-size:17px">Mission</div>
-    <p class="serif-lead" style="max-width:44ch;color:var(--bone)">To create, maintain, and promote alignment of people through technology, events, and real-life interaction.</p>
+  <p class="lead" style="max-width:32ch">Align is a dating app that works like real life.</p>
+  <div class="three-pills">
+    <div class="tp glass glow" style="--c:var(--lav)"><span class="ic" style="--c:var(--lav)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>Who you are, first</div>
+    <div class="tp glass glow" style="--c:var(--pink)"><span class="ic" style="--c:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></span>Both have to choose</div>
+    <div class="tp glass glow" style="--c:var(--gold)"><span class="ic" style="--c:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6.5-5.4-6.5-11a6.5 6.5 0 0 1 13 0c0 5.6-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span>A real, safe date</div>
   </div>
 </section>
 
-<!-- 06 PRINCIPLES -->
+<!-- 05 HOW IT WORKS -->
 <section class="s">
-  <div class="ey pink">How we decide</div>
-  <h2>Three principles.</h2>
-  <div class="trio">
-    <div class="tc glass" style="--c:var(--rub)"><i>1</i><b>Put people first.</b><p>Everybody has a story. We make sure theirs can be told.</p></div>
-    <div class="tc glass" style="--c:var(--spark)"><i>2</i><b>Help people align.</b><p>Quality over quantity. Real conversations lead to real relationships.</p></div>
-    <div class="tc glass" style="--c:var(--gold)"><i>3</i><b>Keep people safe.</b><p>Dating is vulnerable. We make safe spaces for it, online and in person.</p></div>
+  <div class="head"><div class="ey">How it works</div><h2>From match to a real date.</h2></div>
+  <div class="loop">
+    <div class="step"><div class="orb" style="--c:var(--violet)">Align</div><p>You see someone's story and sky first. You both choose.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="orb" style="--c:var(--pink)">Book</div><p>Pick a partner venue and a night, right in the app.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="orb" style="--c:var(--gold)">Meet</div><p>At a venue that knows it's an Align date.</p></div>
+  </div>
+  <p class="tagline-p">Off the app, into the real world.</p>
+</section>
+
+<!-- 06 SAFETY -->
+<section class="s">
+  <div class="two">
+    <div class="head" style="gap:44px">
+      <div class="head"><div class="ey teal">Safe by design</div><h2>Real people. <em>Safe</em> first dates.</h2></div>
+      <p class="lead" style="max-width:24ch">Dating is vulnerable. Safety is built into every step, not added on.</p>
+    </div>
+    <ul class="ilist">
+      <li><span class="ic lg" style="--c:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2.5"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8.5 7l1.5-2.5h4L15.5 7"/></svg></span><div><b>Verified real people</b><span>Every photo is checked live. Bots and deepfakes are blocked.</span></div></li>
+      <li><span class="ic lg" style="--c:var(--spark)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5 12 4l9 6.5V20H3Z"/><path d="M9.5 20v-5.5h5V20"/></svg></span><div><b>Venues that know</b><span>Partner spots know it's a first date.</span></div></li>
+      <li><span class="ic lg" style="--c:var(--lav)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6.5-5.4-6.5-11a6.5 6.5 0 0 1 13 0c0 5.6-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span><div><b>Someone always knows</b><span>Check in and out, and share your live location with a friend.</span></div></li>
+    </ul>
   </div>
 </section>
 
-<!-- 07 THE PARTS -->
+<!-- 07 VISION & MISSION -->
 <section class="s">
-  <div class="ey lav">The parts of the brand</div>
-  <h2>Six parts. One message.</h2>
+  <div class="vm">
+    <div class="head" style="gap:60px">
+      <div class="head"><div class="ey">Our vision</div><h1>To make people feel happy, safe, and loved.</h1></div>
+      <div class="head" style="gap:18px"><div class="ey">Our mission</div><p class="serif-lead" style="max-width:36ch">To create, maintain, and promote alignment of people through technology, events, and real-life interaction.</p></div>
+    </div>
+    <img class="faint" src="img/align-mark.png" alt="">
+  </div>
+</section>
+
+<!-- 08 PRINCIPLES -->
+<section class="s">
+  <div class="head"><div class="ey">How we decide</div><h2>Three principles.</h2></div>
+  <div class="grid3" style="flex:1">
+    <div class="tc glass glow" style="--c:var(--rub)"><i>1</i><b>Put people first.</b><p>Everybody has a story. We make sure theirs can be told.</p><div class="seen">Seen in: the card</div></div>
+    <div class="tc glass glow" style="--c:var(--spark)"><i>2</i><b>Help people align.</b><p>Quality interaction matters. It leads to deeper relationships.</p><div class="seen">Seen in: tonight's deck, talk cards</div></div>
+    <div class="tc glass glow" style="--c:var(--gold)"><i>3</i><b>Keep people safe.</b><p>Dating is vulnerable. We create safe spaces for it.</p><div class="seen">Seen in: partner venues, check-ins</div></div>
+  </div>
+</section>
+
+<!-- 09 PARTS -->
+<section class="s">
+  <div class="head"><div class="ey">The parts of the brand</div><h2>Six parts. One idea.</h2></div>
   <div class="parts">
-    <div class="part glass"><div class="vis" data-part="name"></div><div><small>01</small><b>The name</b><span>Two people align. It has to be mutual.</span></div></div>
-    <div class="part glass"><div class="vis"><img src="img/align-mark.png" alt="" style="width:96px"></div><div><small>02</small><b>The mark</b><span>Seven lights that line up.</span></div></div>
-    <div class="part glass"><div class="vis"><img src="img/card-profile-3.png" alt="" style="height:108px"></div><div><small>03</small><b>The card</b><span>Who you are, before your face.</span></div></div>
-    <div class="part glass"><div class="vis" data-part="sky"></div><div><small>04</small><b>The sky</b><span>Night, soft and never black.</span></div></div>
-    <div class="part glass"><div class="vis" data-part="colour"></div><div><small>05</small><b>Colour &amp; type</b><span>Indigo, bone and starlight.</span></div></div>
-    <div class="part glass"><div class="vis" data-part="voice"></div><div><small>06</small><b>The voice</b><span>Plain, warm, a little 2am.</span></div></div>
+    <div class="part glass"><div class="row1"><div class="vis"><span style="font:italic 400 58px var(--serif)">Aa</span></div><b>The name</b></div><div class="serves">Serves <em>help people align</em></div></div>
+    <div class="part glass"><div class="row1"><div class="vis"><img src="img/align-mark.png" alt="" style="width:84px"></div><b>The mark</b></div><div class="serves">Serves <em>nobody is extra</em></div></div>
+    <div class="part glass glow" style="--c:var(--pink)"><div class="row1"><div class="vis" data-part="card"></div><b>The card</b></div><div class="serves">Serves <em>put people first</em></div></div>
+    <div class="part glass"><div class="row1"><div class="vis" data-part="look"></div><b>The look</b></div><div class="serves">Serves <em>a calm, safe space</em></div></div>
+    <div class="part glass"><div class="row1"><div class="vis"><span style="font:italic 400 84px/1 var(--serif);color:var(--pink);margin-top:30px">“</span></div><b>The voice</b></div><div class="serves">Serves <em>honest, never harsh</em></div></div>
+    <div class="part glass"><div class="row1"><div class="vis"><span style="font:400 40px var(--mono);color:var(--bone-2)">×</span></div><b>Partners</b></div><div class="serves">Serves <em>keep people safe</em></div></div>
   </div>
 </section>
 
-<!-- 08 NAME -->
+<!-- 10 NAME -->
 <section class="s">
-  <div class="ey lav">01 · The name</div>
-  <h2>Two people <em>align</em>.</h2>
+  <div class="head"><div class="ey">01 · The name</div><h2>Two people <em>align</em>.</h2></div>
   <div class="versus">
-    <div class="vcol glass no"><div class="ey" style="font-size:16px;color:var(--rub)">We never say</div><div class="w">compatibility</div><p>A score treats people like a product, and pretends a number can decide for you.</p></div>
-    <div class="vcol glass yes"><div class="ey teal" style="font-size:16px">We say</div><div class="w">alignment</div><p>Something two people choose together. It has to be mutual. The stars read; they never decide.</p></div>
+    <div class="vcol glass no"><div class="ey rub sm">We never say</div><div class="w">compatibility</div><p>A score treats people like a product, as if a number could decide for you.</p></div>
+    <div class="vcol glass glow" style="--c:var(--spark)"><div class="ey teal sm">We say</div><div class="w">alignment</div><p>Something two people choose together. The stars start the conversation. You decide.</p></div>
   </div>
 </section>
 
-<!-- 09 MARK -->
+<!-- 11 MARK -->
 <section class="s">
-  <div class="row">
+  <div class="two">
     <img class="markbig" src="img/align-mark.png" alt="The Align mark">
-    <div class="meaning">
-      <div class="ey lav">02 · The mark</div>
-      <h2 style="font-size:84px">Seven lights that line up.</h2>
-      <div class="mn"><div class="dot"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="none" stroke="#d9cdee" stroke-width="1.6"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="8"/><circle cx="20" cy="12" r="8"/><circle cx="20" cy="28" r="8"/><circle cx="13" cy="16" r="8"/><circle cx="27" cy="16" r="8"/><circle cx="13" cy="24" r="8"/><circle cx="27" cy="24" r="8"/></g></svg></div><div><b>The seed of life</b><span>Everyone is connected. Every person is part of the pattern.</span></div></div>
-      <div class="mn"><div class="dot"><svg width="14" height="44" viewBox="0 0 14 44"><g><circle cx="7" cy="40" r="3.4" fill="#ff2d3a"/><circle cx="7" cy="34" r="3.4" fill="#ff7a2e"/><circle cx="7" cy="28" r="3.4" fill="#ffd23f"/><circle cx="7" cy="22" r="3.4" fill="#5fdc54"/><circle cx="7" cy="16" r="3.4" fill="#2fd0e6"/><circle cx="7" cy="10" r="3.4" fill="#4a72ff"/><circle cx="7" cy="4" r="3.4" fill="#b45cff"/></g></svg></div><div><b>Seven lights</b><span>When two people choose each other, everything lines up.</span>
-        <div class="chakra" style="margin-top:14px"><i style="--c:#ff2d3a"></i><i style="--c:#ff7a2e"></i><i style="--c:#ffd23f"></i><i style="--c:#5fdc54"></i><i style="--c:#2fd0e6"></i><i style="--c:#4a72ff"></i><i style="--c:#b45cff"></i></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 CARD -->
-<section class="s">
-  <div class="row wide-l">
-    <div class="stack">
-      <div class="ey lav">03 · The card</div>
-      <h2>Chart first. <em>Face last.</em></h2>
-      <ul class="ticks">
-        <li>Your sky, your own words and your dealbreakers come first.</li>
-        <li>An aura stands in for the photo.</li>
-        <li>The veil lifts only when you both choose each other.</li>
+    <div class="head" style="gap:46px">
+      <div class="head"><div class="ey">02 · The mark</div><h2 style="font-size:92px">Seven lights that line up.</h2></div>
+      <ul class="ilist">
+        <li><span class="ic lg" style="--c:var(--lav)"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="8"/><circle cx="20" cy="12" r="8"/><circle cx="20" cy="28" r="8"/><circle cx="13" cy="16" r="8"/><circle cx="27" cy="16" r="8"/><circle cx="13" cy="24" r="8"/><circle cx="27" cy="24" r="8"/></svg></span><div><b>The seed of life</b><span>Everyone belongs to the pattern. Nobody is extra.</span></div></li>
+        <li><span class="ic lg" style="--c:var(--gold)"><svg viewBox="0 0 14 44" style="width:16px;height:52px"><circle cx="7" cy="40" r="3.6" fill="#ff2d3a"/><circle cx="7" cy="34" r="3.6" fill="#ff7a2e"/><circle cx="7" cy="28" r="3.6" fill="#ffd23f"/><circle cx="7" cy="22" r="3.6" fill="#5fdc54"/><circle cx="7" cy="16" r="3.6" fill="#2fd0e6"/><circle cx="7" cy="10" r="3.6" fill="#4a72ff"/><circle cx="7" cy="4" r="3.6" fill="#b45cff"/></svg></span><div><b>Seven lights</b><span>Two people choose each other, and everything lines up.</span></div></li>
       </ul>
-      <p class="serif-lead" style="color:var(--bone)">The card is how someone matters before they're seen.</p>
     </div>
-    <div class="cards"><img class="a" src="img/card-back.png" alt=""><img class="b" src="img/card-profile-3.png" alt="Juniper's mystery card"></div>
   </div>
 </section>
 
-<!-- 11 SKY -->
+<!-- 12 CARD -->
 <section class="s">
-  <div class="ey lav">04 · The sky</div>
-  <h2>Night, never black.</h2>
-  <div class="skyshow">
-    <div class="sk glass"><div class="art" data-art="nebula"></div><b>A soft violet sky</b><p>A grainy nebula behind everything. Calm, never busy.</p></div>
-    <div class="sk glass"><div class="art" data-art="moon"></div><b>One pixel moon</b><p>Always one moon, never two. It waxes as a story moves forward.</p></div>
-    <div class="sk glass"><div class="art" data-art="stars"></div><b>Pixel starlight</b><p>Four-point stars that twinkle, and shooting stars that cross the sky.</p></div>
+  <div class="two" style="grid-template-columns:1.1fr .9fr">
+    <div class="head" style="gap:44px">
+      <div class="head"><div class="ey">03 · The card</div><h2>Story first. <em>Face last.</em></h2></div>
+      <ul class="ilist" style="gap:26px">
+        <li><span class="ic" style="--c:var(--lav)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v16H5Z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><div><span style="margin:0;color:var(--bone);font-size:34px">Their own words and dealbreakers come first.</span></div></li>
+        <li><span class="ic" style="--c:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg></span><div><span style="margin:0;color:var(--bone);font-size:34px">A soft aura stands in for the photo.</span></div></li>
+        <li><span class="ic" style="--c:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></span><div><span style="margin:0;color:var(--bone);font-size:34px">Faces show only when you both choose.</span></div></li>
+      </ul>
+      <p class="serif-lead" style="font-size:44px;color:var(--gold)">The card lets someone matter before they're seen.</p>
+    </div>
+    <article class="mcard">
+      <div class="top"><span class="nm">Juniper, 27</span><span class="orbi"></span></div>
+      <div class="aura"><span>NO PHOTO UNTIL YOU BOTH ALIGN</span></div>
+      <div class="sign"><b>LIBRA</b><span class="chip" style="color:#bfe8ff"><i></i>Air</span><span class="chip" style="color:#b7a6ff"><i></i>Gemini moon</span></div>
+      <div class="bio">“Assistant curator. Playlist archivist. Cries at planetariums.”</div>
+      <div class="rd"><span style="color:var(--rub)">PUSH</span>Give her two options, not ten.</div>
+      <div class="rd"><span style="color:var(--spark)">PULL</span>Easy to talk to from the first text.</div>
+      <div class="rd"><span style="color:var(--gold)">ALIGN</span>Same taste, same values.</div>
+      <div class="db"><small>DEALBREAKERS</small><p>One-word texts. Hating my group chats.</p></div>
+    </article>
   </div>
 </section>
 
-<!-- 12 COLOUR -->
+<!-- 13 LOOK -->
 <section class="s">
-  <div class="ey lav">05 · Colour</div>
-  <h2>Indigo, bone and starlight.</h2>
-  <div class="sw">
-    <div class="swc glass"><div class="c" style="background:linear-gradient(135deg,#100b21,#281a4e)"></div><div class="t"><b>Night</b><code>#100B21 · #281A4E</code><p>Every surface. Indigo, never black or grey.</p></div></div>
-    <div class="swc glass"><div class="c" style="background:#ede6d8"></div><div class="t"><b>Bone</b><code>#EDE6D8</code><p>All text. Warm, never pure white.</p></div></div>
-    <div class="swc glass"><div class="c" style="background:var(--chrome)"></div><div class="t"><b>Pearl</b><code>Chrome gradient</code><p>Buttons and badges only.</p></div></div>
-    <div class="swc glass"><div class="c" style="background:linear-gradient(90deg,#e8628a 0 33.3%,#7fd8b0 33.3% 66.6%,#f2c75c 66.6%)"></div><div class="t"><b>Starlight</b><code>Pink · Teal · Gold</code><p>Small accents. Gold is a glint, never a button.</p></div></div>
+  <div class="head"><div class="ey">04 · The look</div><h2>Night, never black.</h2></div>
+  <div class="look">
+    <div class="sw">
+      <div class="swc glass"><div class="c" data-sw="night" style="border-bottom:1.5px solid var(--edge)"></div><div class="t"><b>Night</b><code>#1A1035</code></div></div>
+      <div class="swc glass"><div class="c" style="background:#ede6d8"></div><div class="t"><b>Bone</b><code>#EDE6D8</code></div></div>
+      <div class="swc glass"><div class="c" style="background:var(--chrome)"></div><div class="t"><b>Pearl</b><code>Buttons</code></div></div>
+      <div class="swc glass"><div class="c" style="background:linear-gradient(90deg,#f08fb4 0 33.3%,#7fd8b0 33.3% 66.6%,#f2c75c 66.6%)"></div><div class="t"><b>Starlight</b><code>Accents</code></div></div>
+    </div>
+    <div class="types">
+      <div class="ty"><small>Feeling · EB Garamond Italic</small><div style="font:italic 400 92px/1 var(--serif)">The stars aligned.</div></div>
+      <div class="ty"><small>Information · Inter</small><div style="font:400 40px/1.35 var(--sans)">Book a date at a partner venue.</div></div>
+      <div class="ty"><small>Labels · Space Mono</small><div style="font:400 30px var(--mono);letter-spacing:.36em;text-transform:uppercase">No photo until you align</div></div>
+    </div>
   </div>
-</section>
-
-<!-- 13 TYPE -->
-<section class="s">
-  <div class="ey lav">05 · Type</div>
-  <h2 style="margin-bottom:6px">Three voices on the page.</h2>
-  <div>
-    <div class="spec"><div class="l"><b>EB Garamond Italic</b><span>Feeling: headlines, names, the lines people remember</span></div><div style="font:italic 400 88px/1 var(--serif)">The stars aligned.</div></div>
-    <div class="spec"><div class="l"><b>Inter</b><span>Information: everything people read to understand</span></div><div style="font:300 40px/1.35 var(--sans);color:var(--bone)">Book a date at a partner spot that knows it's a first date.</div></div>
-    <div class="spec"><div class="l"><b>Space Mono</b><span>Labels: small, uppercase, widely spaced</span></div><div style="font:400 26px var(--mono);letter-spacing:.4em;text-transform:uppercase;color:var(--bone-2)">No photo until you both align</div></div>
-  </div>
+  <p class="lead" style="font-size:32px;margin-bottom:10px">Calm and warm, so it feels safe. One moon, pixel stars, a soft violet sky.</p>
 </section>
 
 <!-- 14 VOICE -->
 <section class="s">
-  <div class="row" style="align-items:start;gap:110px">
-    <div class="stack">
-      <div class="ey lav">06 · The voice</div>
-      <h2>Plain, warm, <em>a little 2am.</em></h2>
-      <p class="lead" style="font-size:31px">Like a friend who reads your chart late at night. Short sentences. Honest, never harsh. Astrology is a way into a conversation, never a verdict.</p>
+  <div class="two" style="grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start;margin-top:10px">
+    <div class="head" style="gap:40px">
+      <div class="head"><div class="ey">05 · The voice</div><h2>Plain, warm, <em>honest.</em></h2></div>
+      <p class="lead" style="font-size:36px">Talk like a good friend. Short sentences. Honest, never harsh.</p>
     </div>
     <div class="say">
       <div class="hd">Not this</div><div class="hd"></div><div class="hd">This</div>
       <div class="no">Compatibility score</div><div class="ar">→</div><div class="yes">How you align</div>
-      <div class="no">Swipe left</div><div class="ar">→</div><div class="yes">Release</div>
-      <div class="no">Profile</div><div class="ar">→</div><div class="yes">Mystery card</div>
+      <div class="no">Ghosting</div><div class="ar">→</div><div class="yes">Release</div>
+      <div class="no">Endless swiping</div><div class="ar">→</div><div class="yes">Tonight's deck</div>
       <div class="no">Find your soulmate</div><div class="ar">→</div><div class="yes">Meet someone real</div>
       <div class="no">Download now!</div><div class="ar">→</div><div class="yes">Come align</div>
     </div>
   </div>
 </section>
 
-<!-- 15 WORDS -->
+<!-- 15 PARTNER VENUES -->
 <section class="s">
-  <div class="ey lav">06 · Our words</div>
-  <h2>Words that carry the idea.</h2>
-  <div class="words">
-    <div class="wd glass"><b>Tonight's deck</b><p>A small hand of people, dealt every night. Quality, not quantity.</p></div>
-    <div class="wd glass"><b>Mystery card</b><p>Someone's chart and words, with an aura for a photo.</p></div>
-    <div class="wd glass"><b>Release</b><p>Letting someone go cleanly. Never ghosting.</p></div>
-    <div class="wd glass"><b>The veil lifts</b><p>The moment both people align and faces are shown.</p></div>
-    <div class="wd glass"><b>Talk cards</b><p>Real questions. Both answer before either sees.</p></div>
-    <div class="wd glass"><b>A real date</b><p>Booked at a partner spot that knows it's a first date.</p></div>
+  <div class="head"><div class="ey gold">For partner venues</div><h2>New guests, on purpose.</h2></div>
+  <div class="grid3">
+    <div class="card glass glow" style="--c:var(--gold)"><div class="ic" style="--c:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></div><b>First dates at your place</b><p>Two people who chose each other book your venue in the app.</p></div>
+    <div class="card glass"><div class="ic" style="--c:var(--lav)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2.5"/><path d="M12 8.5l.7 2.8 2.8.7-2.8.7-.7 2.8-.7-2.8-2.8-.7 2.8-.7Z" fill="currentColor"/></svg></div><b>Limited edition cards</b><p>Handed out at your venue and scanned when a date is booked.</p></div>
+    <div class="card glass"><div class="ic" style="--c:var(--spark)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 4-6"/></svg></div><b>See who we bring</b><p>You see the new customers Align sent you, and pay for those.</p></div>
   </div>
+  <div class="ey sm" style="color:var(--bone-2)">Houston first · Beta launches January 2027</div>
 </section>
 
-<!-- 16 PARTNERS -->
+<!-- 16 CO-BRANDING -->
 <section class="s">
-  <div class="ey gold">With partners</div>
-  <h2>Two names, one sky.</h2>
-  <div class="lock glass">
-    <div class="al"><img src="img/align-mark.png" alt="" style="width:110px">Align</div>
-    <div class="x">×</div>
-    <div class="yl">YOUR LOGO</div>
+  <div class="head"><div class="ey">With partners</div><h2>Two names, one sky.</h2></div>
+  <div class="locks">
+    <div class="lockbox dark"><span class="lbl">ON DARK</span><div class="al"><svg width="96" height="96" viewBox="0 0 100 100"><use href="#mk-dark"/></svg>Align</div><div class="x">×</div><div class="yl">YOUR LOGO</div></div>
+    <div class="lockbox light"><span class="lbl">ON LIGHT</span><div class="al"><svg width="96" height="96" viewBox="0 0 100 100"><use href="#mk-light"/></svg>Align</div><div class="x">×</div><div class="yl">YOUR LOGO</div></div>
   </div>
-  <div class="dd">
-    <div class="glass do"><div class="ey teal" style="font-size:16px">Do</div><ul><li>Match both logos by height</li><li>Use your logo in bone on our night sky</li><li>Keep the promise: safe, real, mutual</li></ul></div>
-    <div class="glass dont"><div class="ey" style="font-size:16px;color:var(--rub)">Don't</div><ul><li>Recolour, crop or redraw the mark</li><li>Say "compatibility" or "soulmate"</li><li>Show anyone's face before they align</li></ul></div>
+  <div class="rules2">
+    <div class="glass do"><div class="ey teal sm">Do</div><ul><li>Use your logo as it is, at the same height</li><li>Leave clear space as wide as the mark</li><li>Ask before posting any guest's photo</li></ul></div>
+    <div class="glass dont"><div class="ey rub sm">Don't</div><ul><li>Recolour, stretch or redraw the mark</li><li>Say "compatibility" or "soulmate"</li><li>Promise outcomes or quote made-up numbers</li></ul></div>
   </div>
 </section>
 
 <!-- 17 CLOSE -->
-<section class="s center cover">
-  <img class="mark" src="img/align-mark.png" alt="" style="width:220px">
-  <h1 style="font-size:130px">Nobody is disposable.</h1>
-  <p class="serif-lead" style="color:var(--gold)">Put your faith in the stars.</p>
-  <div class="contact"><span><b>comealign.com</b></span><span>hakeem@comealign.com</span></div>
+<section class="s center cover close">
+  <img class="mark" src="img/align-mark.png" alt="" style="width:200px">
+  <h1>Nobody is disposable.</h1>
+  <div class="cta-line">Want to host first dates, or build something together?</div>
+  <div class="pillmail">hakeem@comealign.com</div>
+  <div class="site">comealign.com</div>
 </section>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="mk-dark" viewBox="0 0 100 100"><g fill="none" stroke="#d9cdee" stroke-width="2.4"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="20"/><circle cx="50" cy="30" r="20"/><circle cx="50" cy="70" r="20"/><circle cx="32.68" cy="40" r="20"/><circle cx="67.32" cy="40" r="20"/><circle cx="32.68" cy="60" r="20"/><circle cx="67.32" cy="60" r="20"/></g><g><circle cx="50" cy="86" r="5" fill="#ff2d3a"/><circle cx="50" cy="74" r="5" fill="#ff7a2e"/><circle cx="50" cy="62" r="5" fill="#ffd23f"/><circle cx="50" cy="50" r="5" fill="#5fdc54"/><circle cx="50" cy="38" r="5" fill="#2fd0e6"/><circle cx="50" cy="26" r="5" fill="#4a72ff"/><circle cx="50" cy="14" r="5" fill="#b45cff"/></g></symbol>
+    <symbol id="mk-light" viewBox="0 0 100 100"><g fill="none" stroke="#2a1647" stroke-width="2.4"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="20"/><circle cx="50" cy="30" r="20"/><circle cx="50" cy="70" r="20"/><circle cx="32.68" cy="40" r="20"/><circle cx="67.32" cy="40" r="20"/><circle cx="32.68" cy="60" r="20"/><circle cx="67.32" cy="60" r="20"/></g><g><circle cx="50" cy="86" r="5" fill="#ff2d3a"/><circle cx="50" cy="74" r="5" fill="#ff7a2e"/><circle cx="50" cy="62" r="5" fill="#e0b000"/><circle cx="50" cy="50" r="5" fill="#3fbf3a"/><circle cx="50" cy="38" r="5" fill="#1fb3c8"/><circle cx="50" cy="26" r="5" fill="#4a72ff"/><circle cx="50" cy="14" r="5" fill="#9a45e6"/></g></symbol>
+  </defs>
+</svg>
 
 <script src="sky.js"></script>
 <script>
 const SPARK = 'M5 0 L5.9 4.1 L10 5 L5.9 5.9 L5 10 L4.1 5.9 L0 5 L4.1 4.1 Z'
 const COLS = ['#f8edff', '#c9b6f0', '#ffbdf6', '#ede6d8']
 function rng(seed) { let s = seed; return () => (s = s * 16807 % 2147483647) / 2147483647 }
-// one nebula, reused on every slide with a different crop
 const neb = document.createElement('canvas'); drawNebula(neb)
 const nebURL = neb.toDataURL('image/jpeg', .9)
 const slides = [...document.querySelectorAll('section.s')]
 slides.forEach((sl, i) => {
   const r = rng(11 + i * 7)
   sl.style.setProperty('--neb', `url(${nebURL})`)
-  sl.style.backgroundPosition = `center, center, ${Math.round(r() * 100)}% ${Math.round(r() * 100)}%`
-  sl.style.backgroundSize = `auto, auto, ${130 + Math.round(r() * 50)}%`
+  sl.style.backgroundPosition = `center, center, center, ${Math.round(r() * 100)}% ${Math.round(r() * 100)}%`
+  sl.style.backgroundSize = `auto, auto, auto, ${130 + Math.round(r() * 50)}%`
+  sl.style.backgroundBlendMode = 'normal, normal, normal, normal'
   const layer = document.createElement('div'); layer.className = 'sky-layer'
-  for (let k = 0; k < 11; k++) {
+  for (let k = 0; k < 12; k++) {
     const sz = 8 + Math.round(r() * 12), x = r() * 100, y = r() * 100
-    if (x > 12 && x < 88 && y > 15 && y < 85) continue // keep the middle clear
+    if (x > 8 && x < 92 && y > 10 && y < 88) continue
     layer.insertAdjacentHTML('beforeend', `<svg class="spark" width="${sz}" height="${sz}" viewBox="0 0 10 10" style="left:${x}%;top:${y}%;opacity:${.45 + r() * .55};color:${COLS[k % 4]}"><path d="${SPARK}" fill="currentColor"/></svg>`)
   }
   sl.prepend(layer)
   if (i > 0 && i < slides.length - 1) {
     const f = document.createElement('div'); f.className = 'foot'
     const m = document.createElement('span'); m.className = 'moon'
-    m.append(pixelMoon({ size: 26, grid: 14, lit: i / (slides.length - 1), glow: false }))
-    m.append(Object.assign(document.createElement('span'), { textContent: 'Align · Brand kit' }))
+    m.append(pixelMoon({ size: 28, grid: 14, lit: i / (slides.length - 1), glow: false }))
+    m.append(Object.assign(document.createElement('span'), { textContent: 'Align' }))
     f.append(m, Object.assign(document.createElement('span'), { textContent: String(i + 1).padStart(2, '0') }))
     sl.append(f)
   }
 })
 // part icons
-const nameV = document.querySelector('[data-part="name"]'); nameV.innerHTML = '<span style="font:italic 400 52px var(--serif)">Aa</span>'
-const skyV = document.querySelector('[data-part="sky"]'); skyV.append(pixelMoon({ size: 64, grid: 18, lit: .55, glow: true }))
-document.querySelector('[data-part="colour"]').innerHTML = '<div style="display:grid;grid-template-columns:repeat(2,34px);gap:8px"><i style="height:34px;border-radius:50%;background:#281a4e;border:1px solid #574b6d"></i><i style="height:34px;border-radius:50%;background:#ede6d8"></i><i style="height:34px;border-radius:50%;background:#e8628a"></i><i style="height:34px;border-radius:50%;background:#f2c75c"></i></div>'
-document.querySelector('[data-part="voice"]').innerHTML = '<span style="font:italic 400 64px/1 var(--serif);color:var(--pink)">“</span>'
-// sky slide art
-const nA = document.querySelector('[data-art="nebula"]'); nA.style.background = `url(${nebURL}) 40% 40% / 260%`
-const mA = document.querySelector('[data-art="moon"]'); mA.append(pixelMoon({ size: 120, grid: 22, lit: .62, glow: true }))
-const sA = document.querySelector('[data-art="stars"]'); sA.style.background = '#120a28'
-const r2 = rng(5); for (let k = 0; k < 9; k++) { const sz = 10 + Math.round(r2() * 20); sA.insertAdjacentHTML('beforeend', `<svg width="${sz}" height="${sz}" viewBox="0 0 10 10" style="position:absolute;left:${8 + r2() * 84}%;top:${10 + r2() * 75}%;color:${COLS[k % 4]}"><path d="${SPARK}" fill="currentColor"/></svg>`) }
-const streak = document.createElement('canvas'); streak.width = 60; streak.height = 24; streak.style.cssText = 'position:absolute;left:18%;top:22%;width:240px;height:96px;image-rendering:pixelated'
-const sc = streak.getContext('2d'), T = ['#ffffff', '#f8edff', '#ddd0ff', '#c9b6f0', '#9a7be0', '#6b4bd0']
-for (let k = 0; k <= 16; k++) { const t = k / 16; sc.fillStyle = T[Math.min(5, Math.floor(t * 6))]; sc.globalAlpha = (1 - t) * .9 + .1; sc.fillRect(Math.round(44 - k * 2.4), Math.round(16 - k * 1.1), 1, 1) }
-sc.globalAlpha = 1; sc.fillStyle = '#fff'; sc.fillRect(43, 16, 3, 1); sc.fillRect(44, 15, 1, 3)
-sA.append(streak)
+const pc = document.querySelector('[data-part="card"]')
+pc.innerHTML = '<div style="width:56px;height:80px;border-radius:9px;border:2px solid #e86fb0;box-shadow:0 0 16px rgba(232,98,170,.6);background:radial-gradient(40% 50% at 50% 45%,#ffc9f0,#a04ad6 60%,#1c1036 90%)"></div>'
+document.querySelector('[data-part="look"]').append(pixelMoon({ size: 66, grid: 18, lit: .6, glow: true }))
+// night swatch: real sky with a moon and stars
+const ns = document.querySelector('[data-sw="night"]')
+ns.style.background = `radial-gradient(70% 90% at 30% 70%, rgba(150,70,170,.45), transparent 70%), url(${nebURL}) 30% 40% / 300%, #1a1035`
+const mm = pixelMoon({ size: 54, grid: 16, lit: .55, glow: true }); mm.style.position = 'absolute'; mm.style.right = '30px'; mm.style.top = '26px'; ns.append(mm)
+ns.insertAdjacentHTML('beforeend', `<svg width="16" height="16" viewBox="0 0 10 10" style="position:absolute;left:34px;top:40px;color:#f8edff"><path d="${SPARK}" fill="currentColor"/></svg><svg width="11" height="11" viewBox="0 0 10 10" style="position:absolute;left:120px;top:100px;color:#ffbdf6"><path d="${SPARK}" fill="currentColor"/></svg>`)
 window.__ready = true
 </script>
 </body>
