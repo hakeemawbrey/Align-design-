@@ -5,7 +5,7 @@ import { VERT, W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCa
 // card-reveal.png 1560×2740: card body x 66..1494; photo window x 118..1443, y 314..1207.
 // The window shows juniper.jpg cover-fitted to the window width (1325px → image
 // 1325×1767), with the window top sitting 312px below the image top.
-const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop: 582 } // imgTop raised (was 312) so her head sits higher in the window with headroom, chin clear
+const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop: 629 } // 72% down the photo, matching card-reveal.png: her head near the top, framed past the shoulders instead of at the neck
 const D = VERT ? 0.53 : 0.35 // display scale → card body ≈ 500px wide, 959px PNG tall (vertical: ≈ 757px wide)
 // card-back.png 1528×2347: body x 120..1439 (1320 wide) → match the front body width
 const BACK = { w: 1528, h: 2347, markX: 782, markY: 1134 }
@@ -216,6 +216,96 @@ const SQ = VERT ? 1.5 : 0.62                                  // orbit ellipse s
 const SZ = VERT ? 1.35 : 1                       // star size multiplier
 const Z_PUSH = VERT ? 1.42 : 1.6                 // camera zoom when parked on the photo window
 
+// ── "the stars aligned", ported from the beta website (same sprites, beats and 15 fps stepping) ──
+// t0 is set so the rings burst exactly on LOCK. All coords are art pixels on a 1/PIX grid over the frame.
+const PIX = VERT ? 7 : 4                         // screen px per art pixel
+const PA = { t0: LOCK - 1.6, first: 1.05, step: 0.07, beam: 1.54, rings: 1.6, end: 3.5, fps: 15 }
+const PA_SPARKS = ['#f2c75c', '#fff4cf', '#ffbdf6', '#c9b6f0', '#efe6d6']
+const PA_SPRITES = [
+  ['X'],
+  ['.X.', 'XWX', '.X.'],
+  ['..X..', '..X..', 'XXWXX', '..X..', '..X..'],
+  ['...X...', '...X...', '..XWX..', 'XXWWWXX', '..XWX..', '...X...', '...X...'],
+  ['....X....', '....X....', '...XWX...', '..X.W.X..', 'XXWWWWWXX', '..X.W.X..', '...XWX...', '....X....', '....X....'],
+].map((rows) => rows.map((r) => [...r]))
+function paStar(ctx, x, y, size, color) {
+  const s = PA_SPRITES[Math.max(0, Math.min(PA_SPRITES.length - 1, size))]
+  const o = (s.length - 1) / 2, cx = Math.round(x), cy = Math.round(y)
+  for (let r = 0; r < s.length; r++) for (let c = 0; c < s[r].length; c++) {
+    const ch = s[r][c]; if (ch === '.') continue
+    ctx.fillStyle = ch === 'W' ? '#ffffff' : color; ctx.fillRect(cx + c - o, cy + r - o, 1, 1)
+  }
+}
+function paRing(ctx, x, y, rad, color) {
+  const n = Math.max(12, Math.round(rad * 2.2)); ctx.fillStyle = color
+  for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2; ctx.fillRect(Math.round(x + Math.cos(a) * rad), Math.round(y + Math.sin(a) * rad * 0.86), 1, 1) }
+}
+// the card the moment plays over (screen px): sets how far the swirl and twinkles reach
+const PA_CARD = VERT ? { w: 700, h: 1100 } : { w: 460, h: 720 }
+const PA_SET = (() => {
+  const r = rng(17 + 13)
+  const cx = CC.x / PIX, cy = CC.y / PIX
+  const gap = Math.round(((COL_Y(0) - COL_Y(1))) / PIX)
+  const seven = CHAKRA_HEX.map((c, i) => ({ x: cx, y: COL_Y(i) / PIX, c, at: PA.first + i * PA.step }))
+  const swirl = Array.from({ length: 28 }, (_, i) => ({ a: r() * Math.PI * 2, d: 0.6 + r() * 0.4, spin: (r() < 0.5 ? -1 : 1) * (1.6 + r() * 1.4), slot: seven[i % 7], c: PA_SPARKS[i % 5], born: r() * 0.35, ph: Math.floor(r() * 4) }))
+  const debris = seven.flatMap((s) => Array.from({ length: 9 }, () => { const a = r() * Math.PI * 2, v = 40 + r() * 70; return { x: s.x, y: s.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 14, c: r() < 0.3 ? '#fff4cf' : s.c, life: 0.9 + r() * 0.9 } }))
+  const twinkles = Array.from({ length: 14 }, () => ({ x: cx + (r() - 0.5) * (PA_CARD.w / PIX) * 1.3, y: cy + (r() - 0.5) * (PA_CARD.h / PIX) * 1.05, c: PA_SPARKS[Math.floor(r() * 5)], ph: Math.floor(r() * 6), at: 0.25 + r() * 0.9 }))
+  return { cx, cy, gap, seven, swirl, debris, twinkles, rx: PA_CARD.w / PIX, ry: (PA_CARD.h * 0.725) / PIX }
+})()
+/** draws the pixel moment for time t on ctx (art-pixel grid); marks ctx.canvas._on when anything is drawn */
+function drawPixelAlign(ctx, time) {
+  const cv = ctx.canvas
+  ctx.clearRect(0, 0, cv.width, cv.height); cv._on = false
+  const local = time - PA.t0
+  if (local < 0 || local >= PA.end || time > FLIP_IN.m + 0.12) return   // clear the photo before the veil lifts
+  cv._on = true
+  const f = Math.floor(local * PA.fps), t = f / PA.fps
+  const { cx, cy, gap, seven, swirl, debris, twinkles, rx, ry } = PA_SET
+  if (t < PA.rings) {
+    for (const s of swirl) {
+      if (t < s.born || t >= s.slot.at) continue
+      const p = clamp((t - s.born) / (s.slot.at - s.born)) ** 2.4
+      const a = s.a + s.spin * p * Math.PI
+      paStar(ctx, s.slot.x + Math.cos(a) * rx * s.d * (1 - p), s.slot.y + Math.sin(a) * ry * s.d * (1 - p), p > 0.7 ? 2 : [1, 2, 3, 2][(f + s.ph) % 4], p > 0.55 ? s.slot.c : s.c)
+    }
+    for (const s of seven) {
+      if (t < s.at) continue
+      const since = t - s.at
+      paStar(ctx, s.x, s.y, since < 0.07 ? 4 : 3, s.c)
+      if (since < 0.2) { const k = 6 + Math.round(since * 60); ctx.fillStyle = s.c; ctx.fillRect(s.x - k, s.y, 2, 1); ctx.fillRect(s.x + k - 1, s.y, 2, 1) }
+    }
+    if (t >= PA.beam) {
+      const top = seven[6].y - gap * 0.9, bot = seven[0].y + gap * 0.9, even = f % 2 === 0
+      ctx.fillStyle = even ? '#ffffff' : '#fff4cf'; ctx.fillRect(Math.round(cx), Math.round(top), 1, Math.round(bot - top))
+      ctx.fillStyle = even ? 'rgba(242,199,92,0.9)' : 'rgba(255,255,255,0.7)'
+      ctx.fillRect(Math.round(cx) - 1, Math.round(top + gap * 0.4), 1, Math.round(bot - top - gap * 0.8))
+      ctx.fillRect(Math.round(cx) + 1, Math.round(top + gap * 0.4), 1, Math.round(bot - top - gap * 0.8))
+      for (const s of seven) paStar(ctx, s.x, s.y, 4, s.c)
+    }
+  } else {
+    const tb = t - PA.rings
+    // rings grow at the website's rate relative to the card (its card was 110 art px wide)
+    const k = rx / 110
+    if (tb < 0.6) {
+      paRing(ctx, cx, cy, (8 + tb * 230) * k, tb < 0.3 ? '#fff4cf' : '#f2c75c')
+      if (tb > 0.08) paRing(ctx, cx, cy, (4 + (tb - 0.08) * 170) * k, '#ffbdf6')
+    }
+    for (const d of debris) {
+      const life = 1 - tb / d.life
+      if (life <= 0 || (life < 0.25 && f % 2)) continue
+      const x = d.x + d.vx * k * tb, y = d.y + (d.vy * tb + 26 * tb * tb) * k
+      ctx.fillStyle = d.c
+      for (let j = 1; j <= 3; j++) ctx.fillRect(Math.round(x - d.vx * k * 0.022 * j), Math.round(y - (d.vy + 52 * tb) * k * 0.022 * j), 1, 1)
+      paStar(ctx, x, y, life > 0.7 ? 3 : life > 0.4 ? 2 : 1, d.c)
+    }
+    if (tb < 0.2) for (const s of seven) paStar(ctx, s.x, s.y, 4, s.c)
+    for (const s of twinkles) {
+      if (tb < s.at || (tb > 1.55 && f % 2)) continue
+      paStar(ctx, s.x, s.y, [0, 1, 2, 3, 2, 1][(f + s.ph) % 6], s.c)
+    }
+  }
+}
+
 function starState(i, t) {
   const L = STAR_LOCK[i]
   const e = STAR_IN + ENTER_ORDER[i] * 0.065
@@ -419,6 +509,8 @@ export function sceneVeil(stage) {
   const fxCv = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, shakeBox)
   fxCv.width = W; fxCv.height = H
   const fx = fxCv.getContext('2d')
+  const pxCv = document.createElement('canvas'); pxCv.width = Math.ceil(W / PIX); pxCv.height = Math.ceil(H / PIX)
+  const px = pxCv.getContext('2d')
   const DUST = (() => { const r = rng(515); return Array.from({ length: 170 }, (_, i) => ({ x: r() * W, y: r() * H, s: 0.7 + r() * 1.8, a: 0.35 + r() * 0.65, col: i % 5 === 0 ? '242,199,92' : i % 7 === 0 ? CHAKRA[i % 7].join(',') : '255,246,234', ph: r() * 6.28 })) })()
   const SPK2 = (() => { const r = rng(616); return Array.from({ length: 18 }, () => ({ a: r() * 6.2832, r0: 380 + r() * 80, r1: 560 + r() * 160, d: r() * 0.16, s: 10 + r() * 16, gold: r() < 0.45 })) })()
 
@@ -518,7 +610,7 @@ export function sceneVeil(stage) {
       const fl = t < LOCK ? ease.inQuad(prog(t, LOCK - 0.06, LOCK)) * 0.5 : 0.78 * (1 - ease.outCubic(prog(t, LOCK, LOCK + 0.32)))
       bigFlash.style.opacity = String(fl)
       const rayO = t < LOCK ? 0.2 * ease.inQuad(prog(t, 8.4, LOCK)) : 0.7 * (1 - ease.inOutQuad(prog(t, LOCK + 0.05, 9.6)))
-      rays.style.opacity = String(rayO)
+      rays.style.opacity = String(0 * rayO)
       rays.style.transform = `rotate(${(t - 8) * 7}deg) scale(${t < LOCK ? 0.7 : lerp(0.75, 1.15, ease.outCubic(prog(t, LOCK, 9.6)))})`
 
       // ══ reveal card: flip in, veil lift, aura-cam, resolve ══
@@ -605,102 +697,12 @@ export function sceneVeil(stage) {
       // ══ canvas: dust, trails, lines, stars, rings, resolve sparkles ══
       fx.setTransform(1, 0, 0, 1, 0, 0); fx.clearRect(0, 0, W, H)
       fx.globalCompositeOperation = 'lighter'
-      // dust pulled toward the line, then blown out by the shockwave
-      const dustIn = prog(t, 7.75, 8.1) * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.45)))
-      if (dustIn > 0) {
-        const pullAt = (tt) => ease.inCubic(prog(tt, 7.9, LOCK)) * 0.94
-        const blow = ease.outCubic(prog(t, LOCK, LOCK + 0.75))
-        for (const d of DUST) {
-          const pos = (tt) => {
-            const pl = pullAt(tt)
-            let x = lerp(d.x, CC.x + (d.x - CC.x) * 0.03, pl), y = lerp(d.y, lerp(d.y, CC.y, 0.25), pl)
-            if (tt > LOCK) { const dx = x - CC.x, dy = y - CC.y, l = Math.hypot(dx, dy) || 1; x += dx / l * 900 * blow; y += dy / l * 900 * blow }
-            return [x, y]
-          }
-          const [x, y] = pos(t), [px, py] = pos(t - (t > LOCK ? 0.012 : 0.05))
-          const al = d.a * dustIn * (0.35 + 0.65 * ten + 0.6 * post) * (0.6 + 0.4 * Math.sin(t * 6 + d.ph))
-          if (al < 0.02) continue
-          fx.strokeStyle = `rgba(${d.col},${al.toFixed(3)})`; fx.lineWidth = d.s; fx.lineCap = 'round'
-          fx.beginPath(); fx.moveTo(px, py); fx.lineTo(x + (x === px ? 0.01 : 0), y); fx.stroke()
-        }
-      }
-      // stars
-      const collapse = ease.inCubic(prog(t, FLIP_IN.a, FLIP_IN.m + 0.04))
-      if (t < FLIP_IN.m + 0.05) {
-        const SS = CHAKRA_HEX.map((_, i) => starState(i, t))
-        // constellation lines snapping between neighbours, then the column beam
-        for (let i = 0; i < 6; i++) {
-          const A1 = SS[i], B1 = SS[i + 1]
-          if (!A1 || !B1) continue
-          const mc = Math.min(A1.c, B1.c)
-          const lockT = Math.max(STAR_LOCK[i], STAR_LOCK[i + 1])
-          let al = 0.4 * clamp((mc - 0.4) / 0.45)
-          if (t >= lockT) al = lerp(1, 0.45, ease.outQuad(prog(t, lockT, lockT + 0.3)))
-          if (t >= LOCK) al = Math.max(al, lerp(1, 0.55, ease.outQuad(prog(t, LOCK, LOCK + 0.4))))
-          al *= 1 - collapse
-          if (al < 0.01) continue
-          fx.strokeStyle = `rgba(255,236,200,${(al * 0.35).toFixed(3)})`; fx.lineWidth = 7
-          fx.beginPath(); fx.moveTo(A1.x, A1.y); fx.lineTo(B1.x, B1.y); fx.stroke()
-          fx.strokeStyle = `rgba(255,248,236,${al.toFixed(3)})`; fx.lineWidth = 1.6
-          fx.beginPath(); fx.moveTo(A1.x, A1.y); fx.lineTo(B1.x, B1.y); fx.stroke()
-        }
-        // column beam after the lock
-        if (t >= LOCK - 0.04) {
-          const bo = (t < LOCK ? prog(t, LOCK - 0.04, LOCK) : lerp(1, 0.35, ease.outQuad(prog(t, LOCK, LOCK + 0.45)))) * (1 - collapse)
-          const BW = VERT ? 85 : 60
-          const bg = fx.createLinearGradient(CC.x - BW, 0, CC.x + BW, 0)
-          bg.addColorStop(0, 'rgba(255,240,214,0)'); bg.addColorStop(0.5, `rgba(255,244,226,${(0.55 * bo).toFixed(3)})`); bg.addColorStop(1, 'rgba(255,240,214,0)')
-          fx.fillStyle = bg; fx.fillRect(CC.x - BW, -20, BW * 2, H + 40)
-        }
-        SS.forEach((s, i) => {
-          if (!s) return
-          const rgb = CHAKRA[i].join(',')
-          // trail
-          const e0 = STAR_IN + ENTER_ORDER[i] * 0.065
-          let prev = [s.x, s.y]
-          for (let j = 1; j <= 14; j++) {
-            const tj = t - j * 0.016
-            if (tj < e0) break
-            const q = starState(i, tj); if (!q) break
-            const al = (1 - j / 15) * 0.7 * (1 - collapse)
-            fx.strokeStyle = `rgba(${rgb},${al.toFixed(3)})`; fx.lineWidth = lerp(7, 1, j / 14) * SZ
-            fx.beginPath(); fx.moveTo(prev[0], prev[1]); fx.lineTo(q.x, q.y); fx.stroke()
-            prev = [q.x, q.y]
-          }
-          const L = STAR_LOCK[i]
-          const flare = t >= L ? 1 - ease.outQuad(prog(t, L, L + 0.35)) : 0
-          const lockFlare = t >= LOCK ? 1 - ease.outQuad(prog(t, LOCK, LOCK + 0.6)) : 0
-          let sz = SZ * (1 + 0.14 * Math.sin(t * 9 + i * 1.7)) * (0.85 + 0.35 * ten) * (1 + 0.9 * flare + 1.2 * lockFlare)
-          let x = s.x, y = s.y
-          if (collapse > 0) { x = lerp(x, CC.x, collapse); y = lerp(y, CC.y - 40, collapse * 0.6); sz *= 1 - collapse }
-          const ent = Math.min(1, s.enter * 3)
-          if (sz <= 0.01) return
-          const G = 46 * sz
-          const gg = fx.createRadialGradient(x, y, 0, x, y, G)
-          gg.addColorStop(0, `rgba(${rgb},${0.75 * ent})`); gg.addColorStop(0.3, `rgba(${rgb},${0.28 * ent})`); gg.addColorStop(1, `rgba(${rgb},0)`)
-          fx.fillStyle = gg; fx.fillRect(x - G, y - G, G * 2, G * 2)
-          // diffraction spikes
-          const sp = (22 + 30 * ten + 70 * flare + 90 * lockFlare) * sz
-          fx.strokeStyle = `rgba(255,250,240,${(0.55 * ent).toFixed(3)})`; fx.lineWidth = 1.4
-          fx.beginPath(); fx.moveTo(x - sp, y); fx.lineTo(x + sp, y); fx.moveTo(x, y - sp * 0.7); fx.lineTo(x, y + sp * 0.7); fx.stroke()
-          const cg = fx.createRadialGradient(x, y, 0, x, y, 10 * sz)
-          cg.addColorStop(0, `rgba(255,255,255,${ent})`); cg.addColorStop(0.45, `rgba(${rgb},${0.9 * ent})`); cg.addColorStop(1, `rgba(${rgb},0)`)
-          fx.fillStyle = cg; fx.beginPath(); fx.arc(x, y, 10 * sz, 0, 6.2832); fx.fill()
-        })
-      }
-      // shockwave rings
-      if (t >= LOCK && t < LOCK + 0.9) {
-        const RINGS = VERT ? [[0, 1250, 34, '255,246,230'], [0.07, 1000, 20, '201,166,255'], [0.15, 780, 9, '242,199,92']]
-          : [[0, 1150, 30, '255,246,230'], [0.07, 900, 18, '201,166,255'], [0.15, 700, 8, '242,199,92']]
-        const RY = VERT ? 1.3 : 0.92, R0 = VERT ? 130 : 90
-        RINGS.forEach(([d, R1, w0, rgb]) => {
-          const q = prog(t, LOCK + d, LOCK + d + 0.7)
-          if (q <= 0 || q >= 1) return
-          const R = lerp(R0, R1, ease.outCubic(q))
-          fx.strokeStyle = `rgba(${rgb},${(0.85 * (1 - ease.inQuad(q))).toFixed(3)})`; fx.lineWidth = lerp(w0, 1.5, q)
-          fx.beginPath(); fx.ellipse(CC.x, CC.y, R, R * RY, 0, 0, 6.2832); fx.stroke()
-        })
-      }
+      // the stars align: the beta website's pixel moment (sparkle swirls in, the seven drop into a
+      // column with a beam, then dotted rings, debris and twinkles), drawn on a coarse grid and blown up
+      fx.globalCompositeOperation = 'source-over'
+      drawPixelAlign(px, t)
+      if (px.canvas._on) { fx.imageSmoothingEnabled = false; fx.drawImage(px.canvas, 0, 0, px.canvas.width * PIX, px.canvas.height * PIX) }
+      fx.globalCompositeOperation = 'lighter'
       // resolve sparkles around the photo window (camera is parked on it: window centre = screen centre)
       const rk = prog(t, RES.peak - 0.03, RES.peak + 0.75)
       if (rk > 0 && rk < 1) {
