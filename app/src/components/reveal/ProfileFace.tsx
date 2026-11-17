@@ -39,7 +39,7 @@ const label: React.CSSProperties = {
 const value: React.CSSProperties = { fontFamily: 'var(--serif)', fontSize: 15.5, color: 'var(--label-1)', marginTop: 4, lineHeight: 1.2 }
 
 /** photos whose subject sits low in the picture: frame them further down so the face isn't at the bottom edge */
-const FOCUS_Y: Record<string, string> = { j27: '76%' }
+const FOCUS_Y: Record<string, string> = { j27: '64%' }
 
 /** beta: a thick foil border, matching the mystery card (the reveal card is drawn 358 wide) */
 const EDGE = 7.5

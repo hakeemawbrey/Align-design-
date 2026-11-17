@@ -9,13 +9,15 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import CardBack from '../components/reveal/CardBack'
 import ProfileFace from '../components/reveal/ProfileFace'
-import PixelStarsAligned from '../components/reveal/PixelStarsAligned'
+import Burst from '../components/reveal/Burst'
 import RevealStyles from '../components/reveal/RevealStyles'
+import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 
 
 // card geometry (phone px) — matches S-08
 const CARD = { x: 16, y: 90, w: 358, h: 625 }
 const CENTER = { x: CARD.x + CARD.w / 2, y: CARD.y + CARD.h / 2 }
+const PHOTO_CY = CARD.y + 1.5 + 54 + 108
 
 const AUTO_FLIP_MS = 1850
 const TILT = 8
@@ -38,8 +40,9 @@ export default function Reveal({ go }: ScreenProps) {
   const [flipped, setFlipped] = useState(false)
   const [lift, setLift] = useState(false)
   const [revealed, setRevealed] = useState(false)
-  const [aligned, setAligned] = useState(0)
+  const [burstKey, setBurstKey] = useState(0)
   const timers = useRef<number[]>([])
+  const { canvasRef, fire } = useConfetti()
 
   // ---- holographic tilt -------------------------------------------------
   const hovering = useRef(false)
@@ -86,8 +89,6 @@ export default function Reveal({ go }: ScreenProps) {
     timers.current = []
     setLit(7)
     setFlipping(true)
-    // the website's pixel moment: the seven line up over the card as it turns, then burst
-    setAligned((k) => k + 1)
     sfx.flip()
   }, [])
 
@@ -102,10 +103,14 @@ export default function Reveal({ go }: ScreenProps) {
   const onFlipDone = () => {
     if (!flipping || flipped) return
     setFlipped(true)
+    setBurstKey((k) => k + 1)
     window.setTimeout(() => { setLift(true); sfx.reveal() }, 260)
   }
 
-  const onPeak = useCallback(() => { sfx.sparkle() }, [])
+  const onPeak = useCallback(() => {
+    sfx.sparkle()
+    fire({ x: CENTER.x / 390, y: PHOTO_CY / 844, power: 0.45 })
+  }, [fire])
   const onDone = useCallback(() => setRevealed(true), [])
 
   return (
@@ -174,9 +179,8 @@ export default function Reveal({ go }: ScreenProps) {
         </div>
       </motion.div>
 
-      <div style={{ position: 'absolute', left: CARD.x, top: CARD.y, width: CARD.w, height: CARD.h, pointerEvents: 'none', zIndex: 6 }}>
-        <PixelStarsAligned fire={aligned} w={CARD.w} h={CARD.h} />
-      </div>
+      <Burst x={CENTER.x} y={CENTER.y} fireKey={burstKey} power={0.55} colors={[SIGN.light, '#f2c75c', '#fff4cf', SIGN.color]} />
+      <ConfettiCanvas canvasRef={canvasRef} />
 
       {/* tap hint (face-down) */}
       <motion.div
