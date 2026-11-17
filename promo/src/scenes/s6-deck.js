@@ -7,7 +7,7 @@ import { VERT, W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCa
 // iw/ih = PNG size, b = opaque card-body box [l, t, r, b] in PNG px (the rest is the baked glow, which reads
 // dirty on paper — we crop to the body and give each card a clean shadow instead). k = body height vs a profile card.
 const PROF = { iw: 1496, ih: 2238, b: [120, 114, 1374, 2116], k: 1 }
-const TALK = { iw: 732, ih: 1170, b: [60, 60, 672, 1110], k: 0.96 }
+const TALK = { iw: 744, ih: 1194, b: [60, 60, 684, 1134], k: 0.96 }
 const CARD = {
   p1: { src: 'card-profile-1.png', ...PROF },
   p2: { src: 'card-profile-2.png', ...PROF },
@@ -21,10 +21,10 @@ const CARD = {
   t1: { src: 'card-talk-1.png', ...TALK },
   t2: { src: 'card-talk-2.png', ...TALK },
   t3: { src: 'card-talk-3.png', ...TALK },
-  t4: { src: 'card-talk-4.png', ...TALK, b: [60, 60, 672, 1116] },
-  t5: { src: 'card-talk-5.png', ...TALK, b: [60, 60, 672, 1116] },
-  t6: { src: 'card-talk-6.png', ...TALK, b: [60, 60, 672, 1116] },
-  td: { src: 'card-talk-daily.png', iw: 1176, ih: 1884, b: [96, 91, 1080, 1782], k: 0.96 },
+  t4: { src: 'card-talk-4.png', ...TALK },
+  t5: { src: 'card-talk-5.png', ...TALK },
+  t6: { src: 'card-talk-6.png', ...TALK },
+  td: { src: 'card-talk-daily.png', iw: 1178, ih: 1891, b: [96, 96, 1082, 1795], k: 0.96 },
   sign: { src: 'card-sign.png', iw: 848, ih: 1152, b: [120, 121, 727, 1032], k: 0.92 },
   rev: { src: 'card-reveal.png', iw: 1560, ih: 2740, b: [64, 123, 1495, 2622], k: 1.08 },
 }

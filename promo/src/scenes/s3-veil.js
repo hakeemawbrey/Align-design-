@@ -5,7 +5,7 @@ import { VERT, W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCa
 // card-reveal.png 1560×2740: card body x 66..1494; photo window x 118..1443, y 314..1207.
 // The window shows juniper.jpg cover-fitted to the window width (1325px → image
 // 1325×1767), with the window top sitting 312px below the image top.
-const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop: 629 } // 72% down the photo, matching card-reveal.png: her head near the top, framed past the shoulders instead of at the neck
+const REV = { w: 1560, h: 2740, win: { x: 141, y: 331, w: 1278, h: 864 }, imgTop: 605 } // beta card (thick border): window inset to match; photo 72% down, past her shoulders
 const D = VERT ? 0.53 : 0.35 // display scale → card body ≈ 500px wide, 959px PNG tall (vertical: ≈ 757px wide)
 // card-back.png 1528×2347: body x 120..1439 (1320 wide) → match the front body width
 const BACK = { w: 1528, h: 2347, markX: 782, markY: 1134 }

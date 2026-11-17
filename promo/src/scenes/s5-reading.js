@@ -13,7 +13,7 @@ const VIOLET_HI = '#b9a2f0'
 const MOON_P = 0.36
 const STRIP = [0, 0.0625, 0.125, 0.25, 0.36, 0.5, 0.625, 0.75]   // new → … → full → waning; index 4 = tonight
 const STRIP_CUR = 4
-const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [116, 124, 724, 1042] }
+const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [121, 125, 727, 1035] }
 // 9:16 cut: title on top, the sign card large in the middle with the phase strip under it, the list below
 // (16:9 keeps its original side-by-side numbers in the else branch)
 const V5 = VERT ? { titleTop: 236, cardBody: 600, cardCY: 682, stripTop: 1004, stripScale: 1.3, listTop: 1164, ROW: 82, icon: 52, iconFS: 32, iconR: 12, labFS: 54, subFS: 46, gap: 20, titleFS: 104 } : null
