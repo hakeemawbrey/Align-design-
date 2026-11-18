@@ -614,6 +614,8 @@ function yearBars(el, rows, fmt = money) {
 
 /* ---------- derived helpers ---------- */
 const sumR = (a, s, e) => a.slice(s, e).reduce((p, v) => p + v, 0);
+const subMRR = t => R.rev['Subscriptions'][t] || 0;
+const decT = y => y * 12 + 11;
 function cityAnnual(x, key) { return [0, 1, 2, 3, 4].map(y => sumR(x[key], y * 12, y * 12 + 12)); }
 function regions() { const m = {}; for (const x of R.cities) { const r = x.c.region || 'Other'; (m[r] ||= []).push(x); } return m; }
 function nationalRev() { return R.revenue.map((v, i) => v - R.cities.reduce((a, x) => a + x.rev[i], 0)); }
@@ -721,6 +723,7 @@ function annualCsv() {
   const Y = R.years; const rows = [['', ...Y.map(y => `${y.label} (${y.cal})`)]];
   const add = (n, f) => rows.push([n, ...Y.map(f)]);
   add('Live cities', y => y.liveCities); add('Registered users (all-time)', y => Math.round(y.registered)); add('Active users (end)', y => Math.round(y.mau)); add('Paying members (end)', y => Math.round(y.pay)); add('Signups', y => Math.round(y.signups));
+  add('Subscription MRR (Dec)', y => Math.round(subMRR(decT(y.y)))); add('Subscription ARR (Dec)', y => Math.round(subMRR(decT(y.y)) * 12)); add('Total run-rate ARR (Dec)', y => Math.round(y.exitMRR * 12));
   add('Revenue', y => Math.round(y.revenue)); for (const k of REV_CATS) add('  ' + k, y => Math.round(y.rev[k]));
   add('COGS', y => Math.round(y.cogs)); add('Gross profit', y => Math.round(y.gross)); add('Gross margin %', y => (y.gross / (y.revenue || 1) * 100).toFixed(1));
   for (const k of COST_CATS) if (k !== 'COGS') add('  ' + k, y => Math.round(y.cost[k]));
@@ -735,6 +738,7 @@ TABS.overview = {
   <div style="display:grid;gap:6px"><h1>Align, Y1 to Y5</h1><p class="lede">Houston beta in January, Austin in February, Dallas and San Antonio this summer, all of Texas in August, LA in Q4, then the US, India and Asia in Y3 and Y4. Every number below recalculates as you change the inputs in the other tabs.</p></div>
   <div class="kpis" id="o-kpis"></div>
   <div class="card"><header><h2>Monthly revenue</h2><div class="row"><div class="seg" id="o-by">${['city', 'region', 'stream'].map(v => `<button data-act="revBy" data-v="${v}" aria-pressed="${ui.revBy === v}">By ${v}</button>`).join('')}</div><button class="btn" data-act="revLog" id="o-log">${ui.revLog ? 'Linear scale' : 'Log scale'}</button></div></header><div class="chart" id="o-rev"></div></div>
+  <div class="card"><header><h2>MRR and ARR</h2><span class="hint" id="o-arr-h"></span></header><div class="chart" id="o-mrr"></div><div class="scroll" id="o-mrr-t" style="margin-top:12px"></div></div>
   <div class="card"><header><h2>Year by year</h2><button class="btn" data-act="copyCsv">Copy table for Sheets</button></header><div class="scroll" id="o-table"></div><p class="hint" style="margin-top:8px">${DEFS.mau}. ${DEFS.reg}. ${DEFS.pay}. The same three numbers appear on every tab.</p></div>
   <div class="grid2">
     <div class="card"><header><h2>Users</h2><span class="hint">end of each month</span></header><div class="chart" id="o-users"></div></div>
@@ -745,7 +749,8 @@ TABS.overview = {
     const be = R.breakeven >= 0 ? `${ML(R.breakeven)} · ${yearOf(R.breakeven)}` : 'Not in 5 years';
     const runway = R.firstNeg >= 0 ? `<span class="neg">Cash runs out ${ML(R.firstNeg)}</span>` : `Lowest ${money(R.lowCash)} in ${ML(R.lowCashAt)}`;
     document.getElementById('o-kpis').innerHTML = [
-      ['Y1 revenue', money(Y[0].revenue), `${money(Y[0].exitMRR)}/mo by Dec`, ''],
+      ['Y1 revenue', money(Y[0].revenue), `${money(subMRR(11))} MRR · ${money(subMRR(11) * 12)} ARR by Dec`, ''],
+      ['ARR, end of Y5', money(subMRR(N - 1) * 12), `subscriptions · ${money(Y[4].exitMRR * 12)} total run-rate`, 'violet'],
       ['Y5 revenue', money(Y[4].revenue), `${money(Y[4].exitMRR * 12)} run-rate in Dec`, 'violet'],
       ['Users, end of Y5', num(Y[4].mau) + ' active', `${num(Y[4].registered)} registered · ${num(Y[4].pay)} paying`, 'violet'],
       ['Y1 burn', money(-Y[0].ebitda), `EBITDA ${money(Y[0].ebitda)}`, ''],
@@ -768,7 +773,12 @@ TABS.overview = {
       ${row('Paying members, end of year', y => y.pay, '', num)}
       ${row('Paying share of active users', y => y.pay / (y.mau || 1), 'sub', v => pct(v, 1))}
       ${row('Beta members still free, end of year', y => y.comp, 'sub', num)}
-      ${row('Monthly revenue in December', y => y.exitMRR)}
+      <tr class="sec"><td colspan="6">MRR and ARR, December of each year</td></tr>
+      ${row('Subscription MRR (Align+)', y => subMRR(decT(y.y)), 'tot')}
+      ${row('Subscription ARR (MRR × 12)', y => subMRR(decT(y.y)) * 12, 'tot')}
+      ${row('Subscription ARR growth vs. last year', y => y.y ? subMRR(decT(y.y)) / (subMRR(decT(y.y - 1)) || 1) - 1 : NaN, 'sub', v => isFinite(v) ? '+' + pct(v) : '·')}
+      ${row('Total monthly revenue (all streams)', y => y.exitMRR)}
+      ${row('Total run-rate ARR (× 12)', y => y.exitMRR * 12)}
       <tr class="sec"><td colspan="6">Profit and loss</td></tr>
       ${row('Revenue', y => y.revenue, 'tot')}
       ${REV_CATS.map(k => row(k, y => y.rev[k], 'sub')).join('')}
@@ -782,6 +792,20 @@ TABS.overview = {
       <tr class="sec"><td colspan="6">Cash</td></tr>
       ${row('Funding raised', y => y.funding)}
       ${row('Cash at end of year', y => y.cash, 'cash')}
+    </tbody></table>`;
+    const sub = R.rev['Subscriptions'];
+    chart(document.getElementById('o-mrr'), [
+      { name: 'Total monthly revenue', color: 'var(--s2)', values: R.revenue, area: true },
+      { name: 'Subscription MRR', color: 'var(--s1)', values: sub, w: 2.5 },
+    ], { h: 280, label: 'MRR', markers: (S.funding || []).map(f => ({ t: mIdx(f.date, S.meta.startMonth), label: f.name })).filter(m => m.t >= 0 && m.t < N) });
+    document.getElementById('o-arr-h').textContent = `ARR = MRR × 12 · Dec ${+S.meta.startMonth.slice(0, 4) + 4}: ${money(sub[N - 1] * 12)} subscription, ${money(R.revenue[N - 1] * 12)} total`;
+    const qs = Array.from({ length: 20 }, (_, q) => q * 3 + 2);
+    document.getElementById('o-mrr-t').innerHTML = `<table><thead><tr><th>End of quarter</th>${qs.map(t => `<th>${ML(t)}</th>`).join('')}</tr></thead><tbody>
+      <tr><td>Subscription MRR</td>${qs.map(t => `<td class="num">${money(sub[t])}</td>`).join('')}</tr>
+      <tr class="tot"><td>Subscription ARR</td>${qs.map(t => `<td class="num">${money(sub[t] * 12)}</td>`).join('')}</tr>
+      <tr><td>Total monthly revenue</td>${qs.map(t => `<td class="num">${money(R.revenue[t])}</td>`).join('')}</tr>
+      <tr><td>Total run-rate ARR</td>${qs.map(t => `<td class="num">${money(R.revenue[t] * 12)}</td>`).join('')}</tr>
+      <tr class="sub"><td>MRR growth per month (qtr avg)</td>${qs.map(t => { const g = t >= 3 && sub[t - 3] > 0 ? Math.pow(sub[t] / sub[t - 3], 1 / 3) - 1 : NaN; return `<td class="num">${isFinite(g) ? pct(g, 1) : '·'}</td>`; }).join('')}</tr>
     </tbody></table>`;
     chart(document.getElementById('o-users'), [
       { name: 'Active users', color: 'var(--s1)', values: R.mau, area: true },
@@ -1077,9 +1101,9 @@ TABS.raise = {
       ['You give up', pct(first.dil, 1), `you keep ${pct(1 - first.dil, 1)}`, ''],
       ['Runway on this round alone', first.runway == null ? '5+ years' : first.runway + ' months', first.neg >= 0 ? `cash out ${ML(first.neg)}` : 'never runs out', first.runway != null && first.runway < 18 ? 'gold' : ''],
       ['Average burn, first 12 months', money(first.burn) + '/mo', 'costs minus revenue', ''],
-      [first.next ? `By ${esc(first.next.name)} (${ML(first.tn)})` : `18 months in (${ML(first.tn)})`, money(first.mrr * 12) + ' ARR', `${num(first.mau)} active users · ${num(first.pay)} paying`, 'gold'],
+      [first.next ? `By ${esc(first.next.name)} (${ML(first.tn)})` : `18 months in (${ML(first.tn)})`, money(subMRR(first.tn) * 12) + ' ARR', `${money(subMRR(first.tn))} MRR · ${money(first.mrr * 12)} total run-rate · ${num(first.mau)} active`, 'gold'],
     ].map(([l, v, sb, c]) => `<div class="kpi ${c}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${sb}</span></div>`).join('') : '<p class="muted">Add your first round below.</p>';
-    document.getElementById('f-table').innerHTML = `<table><thead><tr><th>Round</th><th>Month</th><th>Amount</th><th>Post-money</th><th>Dilution</th><th>Founders keep</th><th>Runway alone</th><th>Burn/mo after</th><th>At next raise: active users</th><th>Paying</th><th>ARR</th><th>Revenue growth/mo</th><th>Live cities</th></tr></thead><tbody>${rows.map(r => `<tr><td>${esc(r.f.name)}</td><td>${ML(r.f.t)}</td><td class="num">${money(r.f.amount)}</td><td class="num">${r.f.postMoney ? money(r.f.postMoney) : '—'}</td><td class="num">${pct(r.dil, 1)}</td><td class="num">${pct(r.own, 1)}</td><td class="num">${r.runway == null ? '5+ yrs' : r.runway + ' mo'}</td><td class="num">${money(r.burn)}</td><td class="num">${num(r.mau)}</td><td class="num">${num(r.pay)}</td><td class="num">${money(r.mrr * 12)}</td><td class="num">${isFinite(r.g3) ? pct(r.g3, 0) : '—'}</td><td class="num">${r.cities}</td></tr>`).join('')}</tbody></table>`;
+    document.getElementById('f-table').innerHTML = `<table><thead><tr><th>Round</th><th>Month</th><th>Amount</th><th>Post-money</th><th>Dilution</th><th>Founders keep</th><th>Runway alone</th><th>Burn/mo after</th><th>At next raise: active users</th><th>Paying</th><th>MRR</th><th>ARR</th><th>Total run-rate</th><th>Revenue growth/mo</th><th>Live cities</th></tr></thead><tbody>${rows.map(r => `<tr><td>${esc(r.f.name)}</td><td>${ML(r.f.t)}</td><td class="num">${money(r.f.amount)}</td><td class="num">${r.f.postMoney ? money(r.f.postMoney) : '—'}</td><td class="num">${pct(r.dil, 1)}</td><td class="num">${pct(r.own, 1)}</td><td class="num">${r.runway == null ? '5+ yrs' : r.runway + ' mo'}</td><td class="num">${money(r.burn)}</td><td class="num">${num(r.mau)}</td><td class="num">${num(r.pay)}</td><td class="num">${money(subMRR(r.tn))}</td><td class="num">${money(subMRR(r.tn) * 12)}</td><td class="num">${money(r.mrr * 12)}</td><td class="num">${isFinite(r.g3) ? pct(r.g3, 0) : '—'}</td><td class="num">${r.cities}</td></tr>`).join('')}</tbody></table>`;
     if (first) {
       const e = Math.min(N, first.f.t + 18); const cats = COST_CATS.map((k, i) => ({ k, i, v: sumR(R.cost[k], first.f.t, e) })).filter(c => c.v > 0);
       const tot = cats.reduce((a, c) => a + c.v, 0) || 1; const rev = sumR(R.revenue, first.f.t, e);
