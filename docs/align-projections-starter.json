@@ -1,71 +1,1124 @@
 {
-  "version": 1,
-  "meta": { "startMonth": "2027-01", "startCash": 250000, "scenario": "base", "note": "Starter assumptions. Replace with real numbers." },
-  "pricing": { "monthly": 23.33, "annual": 122.22, "introMonthly": 14.44, "introAnnual": 88.88, "annualShare": 0.55, "introShare": 0.6, "feePct": 0.15 },
-  "growth": { "conv": 0.05, "freeToPaid": 0.008, "freeChurn": 0.14, "paidChurn": 0.07, "betaFreeMonths": 6, "betaConv": 0.22, "betaChurn": 0.10 },
-  "markets": [
-    { "id": "hou", "name": "Houston", "region": "Texas", "betaStart": "2027-01", "launch": "2027-08", "tam": 900000, "betaSignups": 400, "betaGrowth": 0.28, "launchSignups": 3500, "growth": 0.07, "betaBudget": 15000, "launchBudget": 40000 },
-    { "id": "aus", "name": "Austin", "region": "Texas", "betaStart": "2027-02", "launch": "2027-08", "tam": 450000, "betaSignups": 300, "betaGrowth": 0.28, "launchSignups": 2500, "growth": 0.07, "betaBudget": 12000, "launchBudget": 30000 },
-    { "id": "dfw", "name": "Dallas–Fort Worth", "region": "Texas", "betaStart": "2027-06", "launch": "2027-08", "tam": 1000000, "betaSignups": 600, "betaGrowth": 0.35, "launchSignups": 3500, "growth": 0.07, "betaBudget": 15000, "launchBudget": 40000 },
-    { "id": "sat", "name": "San Antonio", "region": "Texas", "betaStart": "2027-06", "launch": "2027-08", "tam": 500000, "betaSignups": 350, "betaGrowth": 0.35, "launchSignups": 1800, "growth": 0.065, "betaBudget": 10000, "launchBudget": 25000 },
-    { "id": "la", "name": "Los Angeles", "region": "West", "betaStart": "2027-11", "launch": "2028-02", "tam": 2200000, "betaSignups": 1200, "betaGrowth": 0.3, "launchSignups": 7000, "growth": 0.07, "betaBudget": 40000, "launchBudget": 120000 },
-    { "id": "nyc", "name": "New York", "region": "Northeast", "betaStart": "2028-03", "launch": "2028-05", "tam": 2600000, "betaSignups": 1500, "betaGrowth": 0.3, "launchSignups": 8000, "growth": 0.07, "betaBudget": 50000, "launchBudget": 150000 },
-    { "id": "atl", "name": "Atlanta", "region": "Southeast", "betaStart": "2028-08", "launch": "2028-10", "tam": 700000, "betaSignups": 700, "betaGrowth": 0.3, "launchSignups": 3500, "growth": 0.065, "betaBudget": 20000, "launchBudget": 60000 },
-    { "id": "chi", "name": "Chicago", "region": "Midwest", "betaStart": "2029-01", "launch": "2029-03", "tam": 1100000, "betaSignups": 900, "betaGrowth": 0.3, "launchSignups": 5000, "growth": 0.065, "betaBudget": 30000, "launchBudget": 90000 },
-    { "id": "mia", "name": "Miami", "region": "Southeast", "betaStart": "2029-04", "launch": "2029-06", "tam": 650000, "betaSignups": 700, "betaGrowth": 0.3, "launchSignups": 3500, "growth": 0.065, "betaBudget": 20000, "launchBudget": 60000 },
-    { "id": "sf", "name": "SF Bay Area", "region": "West", "betaStart": "2029-09", "launch": "2029-11", "tam": 900000, "betaSignups": 800, "betaGrowth": 0.3, "launchSignups": 4000, "growth": 0.06, "betaBudget": 25000, "launchBudget": 80000 },
-    { "id": "dc", "name": "Washington DC", "region": "Northeast", "betaStart": "2030-02", "launch": "2030-04", "tam": 700000, "betaSignups": 700, "betaGrowth": 0.3, "launchSignups": 3500, "growth": 0.06, "betaBudget": 20000, "launchBudget": 60000 },
-    { "id": "den", "name": "Denver + Phoenix", "region": "West", "betaStart": "2030-06", "launch": "2030-08", "tam": 900000, "betaSignups": 800, "betaGrowth": 0.3, "launchSignups": 4000, "growth": 0.06, "betaBudget": 25000, "launchBudget": 70000 },
-    { "id": "bos", "name": "Boston + Philly", "region": "Northeast", "betaStart": "2031-01", "launch": "2031-03", "tam": 900000, "betaSignups": 800, "betaGrowth": 0.3, "launchSignups": 4000, "growth": 0.06, "betaBudget": 25000, "launchBudget": 70000 }
-  ],
-  "milestones": [
-    { "id": "m1", "date": "2027-01", "type": "event", "name": "Houston beta launch party", "city": "hou", "signups": 500, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 6000 },
-    { "id": "m2", "date": "2027-02", "type": "event", "name": "Austin beta launch party", "city": "aus", "signups": 400, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 5000 },
-    { "id": "m3", "date": "2027-03", "type": "event", "name": "SXSW activation", "city": "aus", "signups": 1500, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 15000 },
-    { "id": "m4", "date": "2027-04", "type": "feature", "name": "Aura photo + talk cards v2", "city": "all", "signups": 0, "convLift": 0, "churnDelta": -0.5, "revenue": 0, "cost": 0 },
-    { "id": "m5", "date": "2027-06", "type": "feature", "name": "Date bookings with venue partners", "city": "all", "signups": 0, "convLift": 0.5, "churnDelta": -0.5, "revenue": 0, "cost": 0 },
-    { "id": "m6", "date": "2027-08", "type": "event", "name": "All-Texas launch tour", "city": "all", "signups": 6000, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 35000 },
-    { "id": "m7", "date": "2027-10", "type": "feature", "name": "Packs + binder go live in app", "city": "all", "signups": 0, "convLift": 1, "churnDelta": -0.5, "revenue": 0, "cost": 0 },
-    { "id": "m8", "date": "2028-02", "type": "event", "name": "LA launch week", "city": "la", "signups": 4000, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 40000 },
-    { "id": "m9", "date": "2028-03", "type": "product", "name": "First printed season: Align+ starter box", "city": "all", "signups": 0, "convLift": 1, "churnDelta": -1, "revenue": 0, "cost": 60000 },
-    { "id": "m10", "date": "2028-09", "type": "product", "name": "Sign boxes in retail", "city": "all", "signups": 3000, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 80000 },
-    { "id": "m11", "date": "2029-01", "type": "feature", "name": "Card marketplace (trading fees)", "city": "all", "signups": 0, "convLift": 0.5, "churnDelta": -0.5, "revenue": 0, "cost": 0 },
-    { "id": "m12", "date": "2030-01", "type": "product", "name": "Align IP: licensing + collabs", "city": "all", "signups": 5000, "convLift": 0, "churnDelta": 0, "revenue": 0, "cost": 50000 }
-  ],
-  "streams": [
-    { "id": "s1", "name": "Date bookings (take rate)", "cat": "Dates & events", "driver": "per_mau", "start": "2027-06", "end": "", "qty": 0.02, "price": 6, "unitCost": 0.5, "growth": 0.03, "capX": 3 },
-    { "id": "s2", "name": "Align nights (ticketed events)", "cat": "Dates & events", "driver": "per_city", "start": "2027-03", "end": "", "qty": 2, "price": 1200, "unitCost": 700, "growth": 0.04, "capX": 4 },
-    { "id": "s3", "name": "Venue partner placements", "cat": "Venue partners", "driver": "per_live_city", "start": "2027-08", "end": "", "qty": 8, "price": 300, "unitCost": 0, "growth": 0.04, "capX": 6 },
-    { "id": "s4", "name": "Season pass (free users)", "cat": "Cards & products", "driver": "per_free", "start": "2027-10", "end": "", "qty": 0.015, "price": 9.99, "unitCost": 1.5, "growth": 0.01, "capX": 2 },
-    { "id": "s5", "name": "Digital packs (in-app)", "cat": "Cards & products", "driver": "per_mau", "start": "2027-10", "end": "", "qty": 0.03, "price": 2.99, "unitCost": 0.45, "growth": 0.02, "capX": 2.5 },
-    { "id": "s6", "name": "IRL packs + sign boxes (DTC)", "cat": "Cards & products", "driver": "per_mau", "start": "2028-03", "end": "", "qty": 0.03, "price": 6.99, "unitCost": 2.4, "growth": 0.03, "capX": 3 },
-    { "id": "s7", "name": "Retail sign boxes (wholesale)", "cat": "Cards & products", "driver": "flat", "start": "2028-09", "end": "", "qty": 4000, "price": 3.6, "unitCost": 1.4, "growth": 0.08, "capX": 25 },
-    { "id": "s8", "name": "Talk decks (couples)", "cat": "Cards & products", "driver": "flat", "start": "2028-02", "end": "", "qty": 800, "price": 24.99, "unitCost": 7, "growth": 0.05, "capX": 10 },
-    { "id": "s9", "name": "TCG league nights", "cat": "Dates & events", "driver": "per_live_city", "start": "2029-03", "end": "", "qty": 4, "price": 500, "unitCost": 200, "growth": 0.03, "capX": 4 },
-    { "id": "s10", "name": "Marketplace fees", "cat": "Marketplace", "driver": "per_mau", "start": "2029-01", "end": "", "qty": 0.06, "price": 0.75, "unitCost": 0.08, "growth": 0.03, "capX": 3 },
-    { "id": "s11", "name": "IP licensing + collabs", "cat": "IP & licensing", "driver": "flat", "start": "2030-01", "end": "", "qty": 1, "price": 60000, "unitCost": 5000, "growth": 0.05, "capX": 6 }
-  ],
-  "costs": [
-    { "id": "c1", "name": "Founders' pay", "cat": "Team", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 6000 }, { "from": "2027-08", "amt": 16000 }, { "from": "2028-06", "amt": 30000 } ] },
-    { "id": "c2", "name": "Engineering", "cat": "Team", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 12000 }, { "from": "2027-08", "amt": 35000 }, { "from": "2028-01", "amt": 80000 }, { "from": "2029-01", "amt": 160000 }, { "from": "2030-01", "amt": 260000 }, { "from": "2031-01", "amt": 360000 } ] },
-    { "id": "c3", "name": "Card art, design + content", "cat": "Team", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 4000 }, { "from": "2028-01", "amt": 18000 }, { "from": "2029-01", "amt": 40000 }, { "from": "2030-01", "amt": 70000 } ] },
-    { "id": "c4", "name": "City leads + community", "cat": "Team", "driver": "per_city", "steps": [ { "from": "2027-01", "amt": 2500 }, { "from": "2027-08", "amt": 7000 }, { "from": "2029-01", "amt": 12000 } ] },
-    { "id": "c5", "name": "Hosting + database", "cat": "Infrastructure", "driver": "per_mau", "steps": [ { "from": "2027-01", "amt": 0.06 }, { "from": "2029-01", "amt": 0.045 } ] },
-    { "id": "c6", "name": "AI readings + aura photo", "cat": "Infrastructure", "driver": "per_mau", "steps": [ { "from": "2027-01", "amt": 0.04 } ] },
-    { "id": "c7", "name": "Align+ extras (peeks, 45/night, deals)", "cat": "Infrastructure", "driver": "per_member", "steps": [ { "from": "2027-01", "amt": 0.15 } ] },
-    { "id": "c8", "name": "Verification, SMS + moderation", "cat": "Infrastructure", "driver": "per_new_user", "steps": [ { "from": "2027-01", "amt": 0.3 } ] },
-    { "id": "c9", "name": "Software + tools", "cat": "Infrastructure", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 800 }, { "from": "2028-01", "amt": 4000 }, { "from": "2030-01", "amt": 12000 } ] },
-    { "id": "c10", "name": "Paid acquisition (per signup)", "cat": "Marketing", "driver": "per_new_user", "steps": [ { "from": "2027-01", "amt": 2 }, { "from": "2027-08", "amt": 3.5 }, { "from": "2029-01", "amt": 4.5 } ] },
-    { "id": "c11", "name": "Creators + brand content", "cat": "Marketing", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 3000 }, { "from": "2027-08", "amt": 12000 }, { "from": "2028-01", "amt": 35000 }, { "from": "2029-01", "amt": 80000 } ] },
-    { "id": "c12", "name": "Support", "cat": "Ops", "driver": "per_payer", "steps": [ { "from": "2027-08", "amt": 0.25 } ] },
-    { "id": "c13", "name": "Starter box (new Align+ members)", "cat": "COGS", "driver": "per_new_payer", "steps": [ { "from": "2028-03", "amt": 6 } ] },
-    { "id": "c14", "name": "Season packs shipped (3/season)", "cat": "COGS", "driver": "per_payer", "steps": [ { "from": "2028-03", "amt": 2.67 } ] },
-    { "id": "c15", "name": "Legal, accounting, insurance", "cat": "G&A", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 2500 }, { "from": "2028-01", "amt": 9000 }, { "from": "2030-01", "amt": 25000 } ] },
-    { "id": "c16", "name": "Office + travel", "cat": "G&A", "driver": "fixed", "steps": [ { "from": "2027-01", "amt": 1000 }, { "from": "2028-01", "amt": 6000 }, { "from": "2029-01", "amt": 15000 } ] }
-  ],
-  "funding": [
-    { "id": "f1", "date": "2027-03", "name": "Pre-seed", "amount": 750000 },
-    { "id": "f2", "date": "2027-10", "name": "Seed", "amount": 3000000 },
-    { "id": "f3", "date": "2028-09", "name": "Series A", "amount": 12000000 }
-  ]
+ "version": 2,
+ "meta": {
+  "startMonth": "2027-01",
+  "startCash": 25000,
+  "scenario": "base",
+  "note": "Built from the pricing sheet, the Nov 2026 deck and 2025 benchmarks. Replace placeholders with real numbers."
+ },
+ "pricing": {
+  "monthly": 23.33,
+  "annual": 122.22,
+  "introMonthly": 14.44,
+  "introAnnual": 88.88,
+  "annualShare": 0.5,
+  "introShare": 0.5,
+  "feePct": 0.15
+ },
+ "growth": {
+  "conv": 0.04,
+  "freeToPaid": 0.006,
+  "freeChurn": 0.15,
+  "paidChurn": 0.1,
+  "betaFreeMonths": 6,
+  "betaConv": 0.2,
+  "betaChurn": 0.1
+ },
+ "markets": [
+  {
+   "id": "hou",
+   "name": "Houston",
+   "region": "Texas",
+   "betaStart": "2027-01",
+   "launch": "2027-08",
+   "tam": 400000,
+   "betaSignups": 400,
+   "betaGrowth": 0.28,
+   "launchSignups": 3000,
+   "growth": 0.07,
+   "betaBudget": 10000,
+   "launchBudget": 20000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "aus",
+   "name": "Austin",
+   "region": "Texas",
+   "betaStart": "2027-02",
+   "launch": "2027-08",
+   "tam": 220000,
+   "betaSignups": 250,
+   "betaGrowth": 0.28,
+   "launchSignups": 1800,
+   "growth": 0.07,
+   "betaBudget": 6000,
+   "launchBudget": 15000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "dfw",
+   "name": "Dallas\u2013Fort Worth",
+   "region": "Texas",
+   "betaStart": "2027-06",
+   "launch": "2027-08",
+   "tam": 450000,
+   "betaSignups": 500,
+   "betaGrowth": 0.35,
+   "launchSignups": 2500,
+   "growth": 0.07,
+   "betaBudget": 8000,
+   "launchBudget": 20000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "sat",
+   "name": "San Antonio",
+   "region": "Texas",
+   "betaStart": "2027-06",
+   "launch": "2027-08",
+   "tam": 200000,
+   "betaSignups": 250,
+   "betaGrowth": 0.35,
+   "launchSignups": 1200,
+   "growth": 0.065,
+   "betaBudget": 5000,
+   "launchBudget": 12000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "la",
+   "name": "Los Angeles",
+   "region": "US West",
+   "betaStart": "2027-10",
+   "launch": "2028-01",
+   "tam": 1100000,
+   "betaSignups": 1000,
+   "betaGrowth": 0.3,
+   "launchSignups": 5000,
+   "growth": 0.07,
+   "betaBudget": 20000,
+   "launchBudget": 60000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "nyc",
+   "name": "New York",
+   "region": "US Northeast",
+   "betaStart": "2028-02",
+   "launch": "2028-04",
+   "tam": 1300000,
+   "betaSignups": 1200,
+   "betaGrowth": 0.3,
+   "launchSignups": 6000,
+   "growth": 0.07,
+   "betaBudget": 25000,
+   "launchBudget": 80000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "atl",
+   "name": "Atlanta",
+   "region": "US Southeast",
+   "betaStart": "2028-06",
+   "launch": "2028-08",
+   "tam": 350000,
+   "betaSignups": 500,
+   "betaGrowth": 0.3,
+   "launchSignups": 2500,
+   "growth": 0.065,
+   "betaBudget": 10000,
+   "launchBudget": 30000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "chi",
+   "name": "Chicago",
+   "region": "US Midwest",
+   "betaStart": "2028-08",
+   "launch": "2028-10",
+   "tam": 500000,
+   "betaSignups": 600,
+   "betaGrowth": 0.3,
+   "launchSignups": 3000,
+   "growth": 0.065,
+   "betaBudget": 12000,
+   "launchBudget": 40000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "mia",
+   "name": "Miami",
+   "region": "US Southeast",
+   "betaStart": "2028-10",
+   "launch": "2028-12",
+   "tam": 320000,
+   "betaSignups": 500,
+   "betaGrowth": 0.3,
+   "launchSignups": 2500,
+   "growth": 0.065,
+   "betaBudget": 10000,
+   "launchBudget": 30000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "sf",
+   "name": "SF Bay Area",
+   "region": "US West",
+   "betaStart": "2029-03",
+   "launch": "2029-05",
+   "tam": 400000,
+   "betaSignups": 500,
+   "betaGrowth": 0.3,
+   "launchSignups": 2500,
+   "growth": 0.06,
+   "betaBudget": 12000,
+   "launchBudget": 40000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1
+  },
+  {
+   "id": "sg",
+   "name": "Singapore",
+   "region": "Asia",
+   "betaStart": "2029-01",
+   "launch": "2029-03",
+   "tam": 350000,
+   "betaSignups": 1500,
+   "betaGrowth": 0.12,
+   "launchSignups": 4000,
+   "growth": 0.05,
+   "betaBudget": 25000,
+   "launchBudget": 60000,
+   "priceX": 0.85,
+   "cacX": 0.9,
+   "opsX": 0.9,
+   "convX": 0.9
+  },
+  {
+   "id": "blr",
+   "name": "Bangalore",
+   "region": "India",
+   "betaStart": "2029-04",
+   "launch": "2029-06",
+   "tam": 1100000,
+   "betaSignups": 3000,
+   "betaGrowth": 0.15,
+   "launchSignups": 10000,
+   "growth": 0.06,
+   "betaBudget": 15000,
+   "launchBudget": 40000,
+   "priceX": 0.28,
+   "cacX": 0.2,
+   "opsX": 0.3,
+   "convX": 0.55
+  },
+  {
+   "id": "bom",
+   "name": "Mumbai",
+   "region": "India",
+   "betaStart": "2029-07",
+   "launch": "2029-09",
+   "tam": 1200000,
+   "betaSignups": 3000,
+   "betaGrowth": 0.14,
+   "launchSignups": 10000,
+   "growth": 0.06,
+   "betaBudget": 15000,
+   "launchBudget": 40000,
+   "priceX": 0.25,
+   "cacX": 0.2,
+   "opsX": 0.3,
+   "convX": 0.5
+  },
+  {
+   "id": "del",
+   "name": "Delhi NCR",
+   "region": "India",
+   "betaStart": "2029-09",
+   "launch": "2029-11",
+   "tam": 1600000,
+   "betaSignups": 3500,
+   "betaGrowth": 0.14,
+   "launchSignups": 12000,
+   "growth": 0.06,
+   "betaBudget": 18000,
+   "launchBudget": 45000,
+   "priceX": 0.25,
+   "cacX": 0.2,
+   "opsX": 0.3,
+   "convX": 0.5
+  },
+  {
+   "id": "sel",
+   "name": "Seoul",
+   "region": "Asia",
+   "betaStart": "2030-01",
+   "launch": "2030-03",
+   "tam": 1000000,
+   "betaSignups": 2000,
+   "betaGrowth": 0.1,
+   "launchSignups": 6000,
+   "growth": 0.04,
+   "betaBudget": 40000,
+   "launchBudget": 120000,
+   "priceX": 0.85,
+   "cacX": 1.15,
+   "opsX": 0.8,
+   "convX": 0.9
+  },
+  {
+   "id": "tyo",
+   "name": "Tokyo",
+   "region": "Asia",
+   "betaStart": "2030-04",
+   "launch": "2030-07",
+   "tam": 2000000,
+   "betaSignups": 2500,
+   "betaGrowth": 0.1,
+   "launchSignups": 8000,
+   "growth": 0.04,
+   "betaBudget": 60000,
+   "launchBudget": 180000,
+   "priceX": 0.95,
+   "cacX": 1.6,
+   "opsX": 1.1,
+   "convX": 1.2
+  }
+ ],
+ "milestones": [
+  {
+   "id": "m1",
+   "date": "2027-01",
+   "type": "event",
+   "name": "Houston beta launch party (matches meet IRL)",
+   "city": "hou",
+   "signups": 500,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 4000
+  },
+  {
+   "id": "m2",
+   "date": "2027-01",
+   "type": "press",
+   "name": "Zodiac creator content (50M+ views)",
+   "city": "hou",
+   "signups": 800,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 3000
+  },
+  {
+   "id": "m3",
+   "date": "2027-02",
+   "type": "event",
+   "name": "Austin beta launch party",
+   "city": "aus",
+   "signups": 350,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 3000
+  },
+  {
+   "id": "m4",
+   "date": "2027-03",
+   "type": "event",
+   "name": "SXSW activation",
+   "city": "aus",
+   "signups": 1200,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 8000
+  },
+  {
+   "id": "m5",
+   "date": "2027-03",
+   "type": "feature",
+   "name": "AI verification (Aura Cam liveness) live",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0.3,
+   "churnDelta": -0.5,
+   "revenue": 0,
+   "cost": 0
+  },
+  {
+   "id": "m6",
+   "date": "2027-06",
+   "type": "feature",
+   "name": "Date bookings with partner venues",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0.5,
+   "churnDelta": -0.5,
+   "revenue": 0,
+   "cost": 0
+  },
+  {
+   "id": "m7",
+   "date": "2027-08",
+   "type": "event",
+   "name": "All-Texas launch tour",
+   "city": "all",
+   "signups": 5000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 20000
+  },
+  {
+   "id": "m8",
+   "date": "2027-10",
+   "type": "feature",
+   "name": "Packs + binder in app",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0.5,
+   "churnDelta": -0.5,
+   "revenue": 0,
+   "cost": 0
+  },
+  {
+   "id": "m9",
+   "date": "2028-01",
+   "type": "event",
+   "name": "LA launch week",
+   "city": "la",
+   "signups": 3000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 25000
+  },
+  {
+   "id": "m10",
+   "date": "2028-03",
+   "type": "product",
+   "name": "First printed season: Align+ starter box",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0.5,
+   "churnDelta": -1,
+   "revenue": 0,
+   "cost": 40000
+  },
+  {
+   "id": "m11",
+   "date": "2028-04",
+   "type": "event",
+   "name": "NYC launch week",
+   "city": "nyc",
+   "signups": 3500,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 30000
+  },
+  {
+   "id": "m12",
+   "date": "2028-09",
+   "type": "product",
+   "name": "Sign boxes in retail + game stores",
+   "city": "all",
+   "signups": 2000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 60000
+  },
+  {
+   "id": "m16",
+   "date": "2028-10",
+   "type": "other",
+   "name": "Asia hub: Singapore entity, payments, team",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 120000
+  },
+  {
+   "id": "m13",
+   "date": "2029-01",
+   "type": "feature",
+   "name": "Card marketplace (trading fees)",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0.5,
+   "churnDelta": -0.5,
+   "revenue": 0,
+   "cost": 0
+  },
+  {
+   "id": "m17",
+   "date": "2029-04",
+   "type": "event",
+   "name": "India launch: kundli \u00d7 Align creator campaign",
+   "city": "blr",
+   "signups": 8000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 40000
+  },
+  {
+   "id": "m14",
+   "date": "2029-06",
+   "type": "product",
+   "name": "Align TCG: standalone game + organized play",
+   "city": "all",
+   "signups": 5000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 80000
+  },
+  {
+   "id": "m19",
+   "date": "2029-10",
+   "type": "other",
+   "name": "Korean build + PASS 19+ ID checks",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 150000
+  },
+  {
+   "id": "m18",
+   "date": "2029-11",
+   "type": "event",
+   "name": "Delhi paid launch in Diwali / wedding season",
+   "city": "del",
+   "signups": 10000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 40000
+  },
+  {
+   "id": "m20",
+   "date": "2030-01",
+   "type": "other",
+   "name": "Japan: full localization + police registration",
+   "city": "all",
+   "signups": 0,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 250000
+  },
+  {
+   "id": "m15",
+   "date": "2030-06",
+   "type": "product",
+   "name": "Align IP: licensing, collabs, digital game",
+   "city": "all",
+   "signups": 10000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 150000
+  },
+  {
+   "id": "m21",
+   "date": "2030-08",
+   "type": "product",
+   "name": "Japan TCG edition + gachapon packs",
+   "city": "tyo",
+   "signups": 6000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 120000
+  }
+ ],
+ "streams": [
+  {
+   "id": "s1",
+   "name": "Date bookings, free users ($4/date)",
+   "cat": "Dates & events",
+   "driver": "per_free",
+   "start": "2027-06",
+   "end": "",
+   "qty": 0.03,
+   "price": 4,
+   "unitCost": 0.4,
+   "growth": 0.03,
+   "capX": 3
+  },
+  {
+   "id": "s2",
+   "name": "Date bookings, Align+ ($1/date, 1st free)",
+   "cat": "Dates & events",
+   "driver": "per_payer",
+   "start": "2027-06",
+   "end": "",
+   "qty": 0.3,
+   "price": 1,
+   "unitCost": 0.1,
+   "growth": 0.02,
+   "capX": 2
+  },
+  {
+   "id": "s3",
+   "name": "Venue per-head fees ($2\u20135/head)",
+   "cat": "Venue partners",
+   "driver": "per_mau",
+   "start": "2027-08",
+   "end": "",
+   "qty": 0.04,
+   "price": 3,
+   "unitCost": 0,
+   "growth": 0.03,
+   "capX": 3
+  },
+  {
+   "id": "s4",
+   "name": "Limited-edition venue cards ($1/card)",
+   "cat": "Venue partners",
+   "driver": "per_city",
+   "start": "2027-03",
+   "end": "",
+   "qty": 1500,
+   "price": 1,
+   "unitCost": 0.12,
+   "growth": 0.05,
+   "capX": 6
+  },
+  {
+   "id": "s5",
+   "name": "Featured venue placements",
+   "cat": "Venue partners",
+   "driver": "per_live_city",
+   "start": "2027-10",
+   "end": "",
+   "qty": 6,
+   "price": 250,
+   "unitCost": 0,
+   "growth": 0.04,
+   "capX": 5
+  },
+  {
+   "id": "s6",
+   "name": "Align nights (ticketed events)",
+   "cat": "Dates & events",
+   "driver": "per_city",
+   "start": "2027-03",
+   "end": "",
+   "qty": 2,
+   "price": 900,
+   "unitCost": 550,
+   "growth": 0.04,
+   "capX": 4
+  },
+  {
+   "id": "s7",
+   "name": "Season pass (free users)",
+   "cat": "Cards & products",
+   "driver": "per_free",
+   "start": "2027-10",
+   "end": "",
+   "qty": 0.012,
+   "price": 9.99,
+   "unitCost": 1.5,
+   "growth": 0.01,
+   "capX": 2
+  },
+  {
+   "id": "s8",
+   "name": "Digital packs (in-app)",
+   "cat": "Cards & products",
+   "driver": "per_mau",
+   "start": "2027-10",
+   "end": "",
+   "qty": 0.03,
+   "price": 2.99,
+   "unitCost": 0.45,
+   "growth": 0.02,
+   "capX": 2.5
+  },
+  {
+   "id": "s9",
+   "name": "IRL packs + sign boxes (DTC)",
+   "cat": "Cards & products",
+   "driver": "per_mau",
+   "start": "2028-03",
+   "end": "",
+   "qty": 0.025,
+   "price": 5.99,
+   "unitCost": 1.6,
+   "growth": 0.03,
+   "capX": 3
+  },
+  {
+   "id": "s10",
+   "name": "Retail + game-store packs (wholesale)",
+   "cat": "Cards & products",
+   "driver": "flat",
+   "start": "2028-09",
+   "end": "",
+   "qty": 4000,
+   "price": 2.25,
+   "unitCost": 0.8,
+   "growth": 0.08,
+   "capX": 25
+  },
+  {
+   "id": "s11",
+   "name": "Talk decks (couples)",
+   "cat": "Cards & products",
+   "driver": "flat",
+   "start": "2028-02",
+   "end": "",
+   "qty": 600,
+   "price": 24.99,
+   "unitCost": 7,
+   "growth": 0.05,
+   "capX": 10
+  },
+  {
+   "id": "s12",
+   "name": "TCG league nights",
+   "cat": "Dates & events",
+   "driver": "per_live_city",
+   "start": "2029-06",
+   "end": "",
+   "qty": 4,
+   "price": 400,
+   "unitCost": 150,
+   "growth": 0.03,
+   "capX": 4
+  },
+  {
+   "id": "s13",
+   "name": "Marketplace fees",
+   "cat": "Marketplace",
+   "driver": "per_mau",
+   "start": "2029-01",
+   "end": "",
+   "qty": 0.06,
+   "price": 0.75,
+   "unitCost": 0.08,
+   "growth": 0.03,
+   "capX": 3
+  },
+  {
+   "id": "s14",
+   "name": "IP licensing + collabs",
+   "cat": "IP & licensing",
+   "driver": "flat",
+   "start": "2030-06",
+   "end": "",
+   "qty": 1,
+   "price": 50000,
+   "unitCost": 5000,
+   "growth": 0.05,
+   "capX": 6
+  },
+  {
+   "id": "s15",
+   "name": "Align digital card game (standalone)",
+   "cat": "IP & licensing",
+   "driver": "flat",
+   "start": "2030-09",
+   "end": "",
+   "qty": 15000,
+   "price": 4.99,
+   "unitCost": 1.5,
+   "growth": 0.06,
+   "capX": 8
+  }
+ ],
+ "costs": [
+  {
+   "id": "c1",
+   "name": "Founders' pay (3)",
+   "cat": "Team",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 18000
+    },
+    {
+     "from": "2028-01",
+     "amt": 36000
+    },
+    {
+     "from": "2029-06",
+     "amt": 50000
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "name": "Engineering + design hires",
+   "cat": "Team",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-06",
+     "amt": 9000
+    },
+    {
+     "from": "2028-01",
+     "amt": 40000
+    },
+    {
+     "from": "2028-09",
+     "amt": 90000
+    },
+    {
+     "from": "2029-06",
+     "amt": 200000
+    },
+    {
+     "from": "2030-01",
+     "amt": 320000
+    },
+    {
+     "from": "2031-01",
+     "amt": 420000
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "name": "Card art + content",
+   "cat": "Team",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 1500
+    },
+    {
+     "from": "2028-01",
+     "amt": 8000
+    },
+    {
+     "from": "2029-01",
+     "amt": 25000
+    },
+    {
+     "from": "2030-01",
+     "amt": 60000
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "name": "City leads + ambassadors",
+   "cat": "Team",
+   "driver": "per_city",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 1000
+    },
+    {
+     "from": "2027-08",
+     "amt": 3000
+    },
+    {
+     "from": "2028-06",
+     "amt": 8000
+    },
+    {
+     "from": "2029-06",
+     "amt": 12000
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "name": "Hosting, CDN, email (Supabase, Cloudflare, Expo, SES)",
+   "cat": "Infrastructure",
+   "driver": "per_mau",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 0.18
+    },
+    {
+     "from": "2029-01",
+     "amt": 0.1
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "name": "AI readings + Aura Cam inference",
+   "cat": "Infrastructure",
+   "driver": "per_mau",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 0.03
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "name": "Align+ extras (peeks, 45/night, deals)",
+   "cat": "Infrastructure",
+   "driver": "per_member",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 0.1
+    }
+   ]
+  },
+  {
+   "id": "c8",
+   "name": "Verification, SMS + moderation",
+   "cat": "Infrastructure",
+   "driver": "per_new_user",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 0.3
+    }
+   ]
+  },
+  {
+   "id": "c9",
+   "name": "Tools (AI coding, Workspace)",
+   "cat": "Infrastructure",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 399
+    },
+    {
+     "from": "2027-08",
+     "amt": 5500
+    },
+    {
+     "from": "2029-01",
+     "amt": 12000
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "name": "Paid acquisition (per signup)",
+   "cat": "Marketing",
+   "driver": "per_new_user",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 1.5
+    },
+    {
+     "from": "2027-08",
+     "amt": 3
+    },
+    {
+     "from": "2028-06",
+     "amt": 5
+    },
+    {
+     "from": "2029-06",
+     "amt": 6
+    }
+   ]
+  },
+  {
+   "id": "c11",
+   "name": "Creators + brand content",
+   "cat": "Marketing",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 1500
+    },
+    {
+     "from": "2027-08",
+     "amt": 5000
+    },
+    {
+     "from": "2028-01",
+     "amt": 20000
+    },
+    {
+     "from": "2029-01",
+     "amt": 60000
+    },
+    {
+     "from": "2030-01",
+     "amt": 120000
+    }
+   ]
+  },
+  {
+   "id": "c12",
+   "name": "Support",
+   "cat": "Ops",
+   "driver": "per_payer",
+   "steps": [
+    {
+     "from": "2027-08",
+     "amt": 0.25
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "name": "Starter box (new Align+ members)",
+   "cat": "COGS",
+   "driver": "per_new_payer",
+   "steps": [
+    {
+     "from": "2028-03",
+     "amt": 6
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "name": "Season packs shipped (3/season)",
+   "cat": "COGS",
+   "driver": "per_payer",
+   "steps": [
+    {
+     "from": "2028-03",
+     "amt": 2.67
+    }
+   ]
+  },
+  {
+   "id": "c15",
+   "name": "Legal, accounting, insurance",
+   "cat": "G&A",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 1500
+    },
+    {
+     "from": "2028-01",
+     "amt": 6000
+    },
+    {
+     "from": "2029-06",
+     "amt": 20000
+    },
+    {
+     "from": "2030-01",
+     "amt": 35000
+    }
+   ]
+  },
+  {
+   "id": "c16",
+   "name": "Office + travel",
+   "cat": "G&A",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2027-01",
+     "amt": 500
+    },
+    {
+     "from": "2028-01",
+     "amt": 4000
+    },
+    {
+     "from": "2029-06",
+     "amt": 15000
+    }
+   ]
+  },
+  {
+   "id": "c17",
+   "name": "International entities, tax + localization",
+   "cat": "G&A",
+   "driver": "fixed",
+   "steps": [
+    {
+     "from": "2028-10",
+     "amt": 15000
+    },
+    {
+     "from": "2029-06",
+     "amt": 40000
+    },
+    {
+     "from": "2030-01",
+     "amt": 70000
+    }
+   ]
+  }
+ ],
+ "funding": [
+  {
+   "id": "f1",
+   "date": "2027-01",
+   "name": "Pre-seed",
+   "amount": 1000000,
+   "postMoney": 8000000
+  },
+  {
+   "id": "f2",
+   "date": "2028-01",
+   "name": "Seed",
+   "amount": 3500000,
+   "postMoney": 18000000
+  },
+  {
+   "id": "f3",
+   "date": "2029-04",
+   "name": "Series A",
+   "amount": 15000000,
+   "postMoney": 75000000
+  },
+  {
+   "id": "f4",
+   "date": "2030-06",
+   "name": "Series B (global)",
+   "amount": 40000000,
+   "postMoney": 250000000
+  }
+ ]
 }
