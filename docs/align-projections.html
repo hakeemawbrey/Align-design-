@@ -351,7 +351,7 @@ function run(S, o = {}) {
     cost: Object.fromEntries(COST_CATS.map(k => [k, sumY(R.cost[k], y)])),
     avgMau: sumY(R.mau, y) / 12, registered: endY(R.registered, y), betaCash: sumY(R.betaCash, y), betaList: sumY(R.betaList, y),
   }));
-  R.breakeven = R.ebitda.findIndex((v, i) => v > 0 && R.ebitda.slice(i, i + 3).every(w => w > 0));
+  R.breakeven = -1; for (let i = N - 1; i >= 0 && R.ebitda[i] > 0; i--) R.breakeven = i;
   R.lowCash = Math.min(...R.cash); R.lowCashAt = R.cash.indexOf(R.lowCash);
   R.firstNeg = R.cash.findIndex(v => v < 0);
   return R;
