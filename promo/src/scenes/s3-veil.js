@@ -57,6 +57,12 @@ const LIFT = { a: 9.5, b: 9.95 }          // veil lift inside the reveal card's 
 const SWEEP = { a: 9.56, b: 10.02 }         // aura-cam hue sweep red → violet
 const RES = { a: 10.0, peak: 10.07, b: 10.22 } // resolve to real colour with a bloom flash at peak
 const BACK_FLIP = 11.1
+// side by side: at the flip, the mystery card slides left and the revealed card comes in on the right,
+// so both faces of Juniper's card are on screen together; they rejoin as the card turns to its back
+const SPLIT_K = VERT ? 0.6 : 0.82                // both cards' scale while side by side
+const SPLIT_DX = VERT ? 248 : 290                // each card's offset from centre (screen px)
+const SPLIT_DY = VERT ? 110 : 0                  // and down a little, into the space the captions leave
+const splitAt = (t) => ease.inOutCubic(prog(t, FLIP_IN.a - 0.05, FLIP_IN.b + 0.1)) * (1 - ease.inOutCubic(prog(t, BACK_FLIP - 0.12, BACK_FLIP + 0.1)))
 const CHAKRA = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff'].map((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)))
 const LAG = 1.25                          // outer aura lags the body's colour by this many hues (colour radiates outward)
 /** chakra colour at continuous position x (0 = red … 6 = violet) */
@@ -571,10 +577,11 @@ export function sceneVeil(stage) {
       const trem = ten * ten * 4.5 * (t < LOCK ? 1 : 0)
       const jx = (noise1(t * 38, 5) - 0.5) * 2 * trem, jy = (noise1(t * 41, 9) - 0.5) * 2 * trem, jr = (noise1(t * 33, 13) - 0.5) * 1.2 * trem / 4.5
       // flip-out: mystery card turns edge-on (then the reveal card turns in)
-      const fo = ease.inQuad(prog(t, FLIP_IN.a, FLIP_IN.m))
-      pre.style.display = t >= FLIP_IN.m ? 'none' : 'block'
+      const spl = splitAt(t)
       const kick = t >= LOCK ? 0.035 * Math.sin(Math.PI * prog(t, LOCK, LOCK + 0.3)) : 0
-      mHolder.style.transform = `translate(${cx + jx}px, ${cy + jy + bob}px) perspective(1600px) rotateY(${90 * fo}deg) rotate(${jr}deg) scale(${m * (1 + kick + 0.04 * fo)})`
+      const mFade = ease.inOutQuad(prog(t, BACK_FLIP - 0.16, BACK_FLIP - 0.02))
+      mHolder.style.opacity = String(1 - mFade)
+      mHolder.style.transform = `translate(${cx + jx - SPLIT_DX * spl}px, ${cy + jy + bob + SPLIT_DY * spl}px) rotate(${jr - 2.5 * spl}deg) scale(${m * (1 + kick) * lerp(1, SPLIT_K, spl)})`
       const glow = Math.max(ten, post)
       mCard.style.filter = glow > 0.002 ? `brightness(${1 + 0.22 * glow + 0.5 * post})` : 'none'
       mGlow.style.boxShadow = `0 0 ${(lerp(36, 110, glow) / m).toFixed(1)}px ${(lerp(4, 22, glow) / m).toFixed(1)}px rgba(255,${Math.round(lerp(150, 228, glow))},${Math.round(lerp(232, 246, glow))},${(0.4 + 0.5 * glow).toFixed(3)}), 0 ${(30 / m).toFixed(1)}px ${(80 / m).toFixed(1)}px rgba(5,2,18,0.55)`
@@ -592,11 +599,9 @@ export function sceneVeil(stage) {
       moonGlow.style.transform = `scale(${mScale * (1 + 0.15 * post)})`
 
       // ══ camera ══
-      const push = ease.inOutCubic(prog(t, 9.4, 9.7)), pull = ease.inOutCubic(prog(t, 10.12, 10.44))
-      const winCy = WIN.y + WIN.h / 2
-      const Z = lerp(lerp(1, Z_PUSH, push), 1, pull)
-      // camera focus fy = world point placed at screen centre; the mystery phase puts world origin at CC.y
-      const fyUse = t < 9.4 ? -(CC.y - H / 2) : lerp(lerp(-(CC.y - H / 2), winCy, push), 0, pull)
+      // side by side, the camera stays put (both cards in view); it centres the card as the pair rejoins
+      const Z = 1
+      const fyUse = lerp(-(CC.y - H / 2), 0, ease.inOutCubic(prog(t, BACK_FLIP - 0.12, BACK_FLIP + 0.1)))
       cam.style.transform = `translate(0px, ${-Z * fyUse}px) scale(${Z})`
       // shake (3 frames) + chromatic punch on the lock
       const sf = fi - lockF
@@ -615,7 +620,7 @@ export function sceneVeil(stage) {
 
       // ══ reveal card: flip in, veil lift, aura-cam, resolve ══
       const fin = ease.outCubic(prog(t, FLIP_IN.m, FLIP_IN.b))
-      const aIn = t < FLIP_IN.m ? -90 : -90 * (1 - fin)
+      const aIn = 0 * fin
       const tiltU = prog(t, 10.3, BACK_FLIP)
       const tilt = 7 * Math.sin(Math.PI * tiltU) * Math.sin(2 * Math.PI * 0.75 * tiltU)
       const tiltX = 2.5 * Math.sin(Math.PI * tiltU) * Math.cos(2 * Math.PI * 0.6 * tiltU)
@@ -623,7 +628,8 @@ export function sceneVeil(stage) {
       const ang = aIn + tilt + a
       front.style.transform = `perspective(1800px) rotateX(${tiltX}deg) rotateY(${ang}deg)`
       back.style.transform = `perspective(1800px) rotateY(${ang - 180}deg)`
-      const showCard = t >= FLIP_IN.m
+      const showCard = t >= FLIP_IN.a
+      world.style.opacity = String(ease.outQuad(prog(t, FLIP_IN.a, FLIP_IN.m + 0.06)))
       front.style.visibility = showCard && Math.abs(ang) < 90 ? 'visible' : 'hidden'
       back.style.visibility = showCard && ang >= 90 ? 'visible' : 'hidden'
       world.style.display = showCard ? 'block' : 'none'
@@ -691,8 +697,10 @@ export function sceneVeil(stage) {
       const life = lerp(1, 0.97, ease.inOutQuad(prog(t, 10.6, BACK_FLIP)))
       const c2 = ease.inOutQuad(prog(t, 11.14, 11.44))
       const pop = t < FLIP_IN.b + 0.25 ? 1 + 0.05 * Math.sin(Math.PI * prog(t, FLIP_IN.m, FLIP_IN.b + 0.25)) : 1
-      const S = ps * life * pop
-      world.style.transform = `translate(${MARK.x * life * (1 - c2) - S * MARK.x}px, ${MARK.y * life * (1 - c2) - S * MARK.y}px) scale(${S})`
+      const spR = splitAt(t), slideIn = 1 - ease.outCubic(prog(t, FLIP_IN.a, FLIP_IN.b + 0.1))
+      const S0 = ps * life * pop, S = S0 * lerp(1, SPLIT_K, spR)
+      const sx = SPLIT_DX * spR + 260 * slideIn
+      world.style.transform = `translate(${MARK.x * life * (1 - c2) - S0 * MARK.x + sx}px, ${MARK.y * life * (1 - c2) - S0 * MARK.y + SPLIT_DY * spR}px) rotate(${2.5 * spR}deg) scale(${S})`
 
       // ══ canvas: dust, trails, lines, stars, rings, resolve sparkles ══
       fx.setTransform(1, 0, 0, 1, 0, 0); fx.clearRect(0, 0, W, H)
@@ -710,7 +718,8 @@ export function sceneVeil(stage) {
           const q = prog(rk, k.d, k.d + 0.75)
           if (q <= 0 || q >= 1) return
           const R = VERT ? lerp(k.r0 * 1.15, k.r1 * 1.1, ease.outCubic(q)) : lerp(k.r0, k.r1, ease.outCubic(q))
-          const x = W / 2 + Math.cos(k.a) * R * (VERT ? 0.98 : 1), y = H / 2 + Math.sin(k.a) * R * (VERT ? 0.85 : 0.66)
+          const wx = W / 2 + SPLIT_DX, wy = CC.y + SPLIT_DY + (WIN.y + WIN.h / 2) * SPLIT_K
+          const x = wx + Math.cos(k.a) * R * SPLIT_K * (VERT ? 0.98 : 1), y = wy + Math.sin(k.a) * R * SPLIT_K * (VERT ? 0.85 : 0.66)
           sparkle(fx, x, y, k.s * SZ * Math.sin(Math.PI * q), k.gold ? '255,226,150' : '255,244,236', Math.min(1, Math.sin(Math.PI * q) * 1.5))
         })
       }
