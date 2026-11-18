@@ -723,10 +723,10 @@
    "id": "m6",
    "date": "2027-06",
    "type": "feature",
-   "name": "Date bookings with partner venues",
+   "name": "Date bookings: Align+ only, both people need it",
    "city": "all",
    "signups": 0,
-   "convLift": 0.5,
+   "convLift": 2.5,
    "churnDelta": -0.5,
    "revenue": 0,
    "cost": 0
@@ -950,21 +950,8 @@
  ],
  "streams": [
   {
-   "id": "s1",
-   "name": "Date bookings, free users ($4/date)",
-   "cat": "Dates & events",
-   "driver": "per_free",
-   "start": "2027-06",
-   "end": "",
-   "qty": 0.03,
-   "price": 4,
-   "unitCost": 0.4,
-   "growth": 0.03,
-   "capX": 3
-  },
-  {
    "id": "s2",
-   "name": "Date bookings, Align+ ($1/date, 1st free)",
+   "name": "Date bookings ($1 from each Align+ member, 2 per date)",
    "cat": "Dates & events",
    "driver": "per_payer",
    "start": "2027-06",
@@ -977,16 +964,16 @@
   },
   {
    "id": "s3",
-   "name": "Venue per-head fees ($2\u20135/head)",
+   "name": "Venue per-head fees ($3 \u00d7 2 diners per date)",
    "cat": "Venue partners",
-   "driver": "per_mau",
+   "driver": "per_payer",
    "start": "2027-08",
    "end": "",
-   "qty": 0.04,
+   "qty": 0.3,
    "price": 3,
    "unitCost": 0,
-   "growth": 0.03,
-   "capX": 3
+   "growth": 0.02,
+   "capX": 2
   },
   {
    "id": "s4",
