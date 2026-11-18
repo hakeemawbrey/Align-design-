@@ -5,7 +5,10 @@
   "startCash": 25000,
   "scenario": "base",
   "note": "Built from the pricing sheet, the Nov 2026 deck and 2025 benchmarks. Replace placeholders with real numbers.",
-  "targetUsers": 4820000
+  "targetUsers": 4820000,
+  "arrMultiple": 8,
+  "revMultiple": 3,
+  "ebitdaMultiple": 20
  },
  "pricing": {
   "monthly": 23.33,
