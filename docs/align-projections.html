@@ -211,7 +211,7 @@ function run(S, o = {}) {
     revenue: zeros(), cogs: zeros(), gross: zeros(), opex: zeros(), totalCost: zeros(), ebitda: zeros(), cash: zeros(), funding: zeros(),
     mau: zeros(), pay: zeros(), free: zeros(), comp: zeros(), signups: zeros(), newPay: zeros(), activeCities: zeros(), liveCities: zeros(),
     unitMau: zeros(), unitMember: zeros(), unitPayer: zeros(), mktg: zeros(), betaCash: zeros(), betaList: zeros(), betaConverted: zeros(),
-    oneTimeRev: zeros(), subPayerMonths: zeros(), liveByRegion: {}, cities: C,
+    oneTimeRev: zeros(), subPayerMonths: zeros(), liveByRegion: {}, waiting: zeros(), cities: C,
   };
 
   let betaCount = 0; const fee1 = +G.betaFee1 || 0, feeN = +G.betaFeeN || 0, feeCap = +G.betaFeeCount || 0;
@@ -235,11 +235,13 @@ function run(S, o = {}) {
         if (m.t === t) bump += (+m.signups || 0) / (m.city === c.id ? 1 : Math.max(1, active.length));
         if (t >= m.t) { lift += (+m.convLift || 0) / 100; dChurn += (+m.churnDelta || 0) / 100; }
       }
-      let s = (base * mult + bump) * sat;
+      const sAll = (base * mult + bump) * sat;   // everyone who signs up this month
+      let s = sAll;                                // people who start using Align this month
       const bcap = +c.betaCap || 0;
       if (inBeta && bcap > 0) { const room = Math.max(0, bcap - (x.betaCum || 0)); if (s > room) { x.wait = (x.wait || 0) + (s - room); s = room; } x.betaCum = (x.betaCum || 0) + s; }
+      x.waitList = x.waitList || zeros(); x.waitList[t] = x.wait || 0;
       if (t === x.l && x.wait) { s += x.wait; x.waitJoined = x.wait; x.wait = 0; }
-      x.cum += s; x.signups[t] = s;
+      x.cum += sAll; x.signups[t] = sAll;
       const cvx = +c.convX || 1; const conv = clamp((G.conv + lift) * cx * cvx, 0, 0.95);
       const paidChurn = clamp((G.paidChurn * scenCh + dChurn) * chx, 0.003, 1);
       // beta comp cohorts
@@ -268,6 +270,7 @@ function run(S, o = {}) {
       mau += x.mau[t]; pay += x.pay_[t]; free += x.free_[t]; comp += x.comp_[t]; sg += x.signups[t]; np += x.newPay[t];
       if (t >= x.b) act += nC(x); if (t >= x.l) { live += nC(x); const rg = x.c.region || 'Other'; (R.liveByRegion[rg] ||= zeros())[t] += nC(x); } subRev += x.subRev[t]; budgets += x.budget[t];
       R.betaConverted[t] += x.betaConverted[t];
+      R.waiting[t] += x.waitList ? x.waitList[t] : 0;
     }
     Object.assign(R, {}); R.mau[t] = mau; R.pay[t] = pay; R.free[t] = free; R.comp[t] = comp; R.signups[t] = sg; R.newPay[t] = np; R.activeCities[t] = act; R.liveCities[t] = live;
     R.rev['Subscriptions'][t] += subRev;
@@ -857,7 +860,7 @@ TABS.plan = {
     document.getElementById('p-months').innerHTML = `<table><thead><tr><th></th>${cols.map(i => `<th>${ML(i)}</th>`).join('')}</tr></thead><tbody>
       <tr><td>What happens</td>${evs.map(e => `<td style="white-space:normal;min-width:110px;text-align:left;font-size:12px">${e || '<span class="muted">·</span>'}</td>`).join('')}</tr>
       ${r('Cities in beta / live', cols.map(i => `${R.activeCities[i] - R.liveCities[i]} / ${R.liveCities[i]}`), v => v)}
-      ${r('Signups', R.signups)}${r('Active users', R.mau)}${r('Beta members (free)', R.comp)}${r('Paying members', R.pay)}
+      ${r('Signups', R.signups)}${r('Waiting for launch (past the beta cap)', R.waiting)}${r('Active users', R.mau)}${r('Beta members (free)', R.comp)}${r('Paying members', R.pay)}
       ${r('Revenue', R.revenue, money, 'tot')}${r('Costs', R.totalCost.map(v => -v), money)}${r('EBITDA', R.ebitda, money, 'tot')}${r('Cash', R.cash, money)}
     </tbody></table>`;
   }
@@ -895,6 +898,7 @@ TABS.revenue = {
   html: () => `
   <div style="display:grid;gap:6px"><h1>Revenue</h1><p class="lede">Align+ is the base. Everything else is a stream you can switch on in a given month: date bookings in summer, events, venue partners, then printed cards, retail, the marketplace and licensing in Y2 to Y5.</p></div>
   <div class="card"><header><h2>Align+ pricing</h2><span class="hint" id="r-arppu"></span></header>
+    <div class="scroll" id="r-plans" style="margin-bottom:14px"></div>
     <div class="fields">
       <div class="field"><label for="i-pricing-monthly">Monthly price</label>${inp('pricing.monthly')}</div>
       <div class="field"><label for="i-pricing-annual">Yearly price</label>${inp('pricing.annual')}</div>
@@ -915,6 +919,9 @@ TABS.revenue = {
   <div class="card"><header><h2>Every stream, by year</h2></header><div class="scroll" id="r-table"></div></div></div>`,
   out() {
     const P = S.pricing; const a = R.arppu;
+    const ys = P.annualShare, is = P.introShare;
+    const plans = [['Intro monthly (discounted)', P.introMonthly, P.introMonthly, is * (1 - ys)], ['Intro yearly (discounted)', P.introAnnual, P.introAnnual / 12, is * ys], ['Regular monthly', P.monthly, P.monthly, (1 - is) * (1 - ys)], ['Regular yearly', P.annual, P.annual / 12, (1 - is) * ys]];
+    document.getElementById('r-plans').innerHTML = `<table><thead><tr><th>Plan</th><th>Price</th><th>Per month</th><th>Share of members</th><th>Adds to average</th></tr></thead><tbody>${plans.map(([n, pr, pm, sh]) => `<tr><td>${n}</td><td class="num">${money(pr, 2)}</td><td class="num">${money(pm, 2)}</td><td class="num">${pct(sh)}</td><td class="num">${money(pm * sh, 2)}</td></tr>`).join('')}<tr class="tot"><td>Average paid per member</td><td></td><td></td><td class="num">100%</td><td class="num">${money(a, 2)}</td></tr></tbody></table><p class="hint" style="margin-top:6px">The intro prices are the discount; nothing else is taken off them. The average sits below $14.44 because yearly plans cost less per month ($88.88 ÷ 12 = $7.41).</p>`;
     document.getElementById('r-arppu').innerHTML = `Average paid per member: <b class="mono">${money(a, 2)}/mo</b> · after fees <b class="mono">${money(a * (1 - P.feePct), 2)}</b>`;
     yearBars(document.getElementById('r-bars'), REV_CATS.map((k, i) => ({ name: k, color: SER[i], values: R.years.map(y => y.rev[k]) })));
     const yr = arr => [0, 1, 2, 3, 4].map(y => sumR(arr, y * 12, y * 12 + 12));
