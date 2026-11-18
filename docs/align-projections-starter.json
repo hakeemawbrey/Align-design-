@@ -24,7 +24,10 @@
   "betaFreeMonths": 6,
   "betaConv": 0.2,
   "betaChurn": 0.1,
-  "maxActive": 0.3
+  "maxActive": 0.3,
+  "betaFee1": 15.55,
+  "betaFeeCount": 100,
+  "betaFeeN": 22.22
  },
  "markets": [
   {
@@ -67,7 +70,7 @@
   },
   {
    "id": "dfw",
-   "name": "Dallas–Fort Worth",
+   "name": "Dallas\u2013Fort Worth",
    "region": "Texas",
    "betaStart": "2027-06",
    "launch": "2027-08",
@@ -105,7 +108,7 @@
   },
   {
    "id": "tx2",
-   "name": "Rest of Texas · El Paso, RGV, college towns",
+   "name": "Rest of Texas \u00b7 El Paso, RGV, college towns",
    "region": "Texas",
    "betaStart": "",
    "launch": "2027-08",
@@ -219,7 +222,7 @@
   },
   {
    "id": "us1",
-   "name": "US wave 1 · Denver, Phoenix, Seattle, Boston, DC, Nashville",
+   "name": "US wave 1 \u00b7 Denver, Phoenix, Seattle, Boston, DC, Nashville",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2028-10",
@@ -257,7 +260,7 @@
   },
   {
    "id": "us2",
-   "name": "US wave 2 · Philly, San Diego, Portland, Vegas, Orlando, Charlotte +6",
+   "name": "US wave 2 \u00b7 Philly, San Diego, Portland, Vegas, Orlando, Charlotte +6",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2029-01",
@@ -352,7 +355,7 @@
   },
   {
    "id": "us3",
-   "name": "US wave 3 · 20 metros",
+   "name": "US wave 3 \u00b7 20 metros",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2029-09",
@@ -390,7 +393,7 @@
   },
   {
    "id": "in2",
-   "name": "India wave 2 · Hyderabad, Pune, Chennai, Kolkata, Ahmedabad",
+   "name": "India wave 2 \u00b7 Hyderabad, Pune, Chennai, Kolkata, Ahmedabad",
    "region": "India",
    "betaStart": "",
    "launch": "2030-03",
@@ -428,7 +431,7 @@
   },
   {
    "id": "us4",
-   "name": "US wave 4 · 20 metros",
+   "name": "US wave 4 \u00b7 20 metros",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2030-04",
@@ -447,7 +450,7 @@
   },
   {
    "id": "kr2",
-   "name": "Korea wave 2 · Busan, Incheon, Daegu",
+   "name": "Korea wave 2 \u00b7 Busan, Incheon, Daegu",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-09",
@@ -466,7 +469,7 @@
   },
   {
    "id": "sea",
-   "name": "SE Asia · Manila, Bangkok",
+   "name": "SE Asia \u00b7 Manila, Bangkok",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-09",
@@ -485,7 +488,7 @@
   },
   {
    "id": "jp2",
-   "name": "Japan wave 2 · Osaka, Nagoya, Fukuoka",
+   "name": "Japan wave 2 \u00b7 Osaka, Nagoya, Fukuoka",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-10",
@@ -504,7 +507,7 @@
   },
   {
    "id": "in3",
-   "name": "India tier 2a · 10 cities",
+   "name": "India tier 2a \u00b7 10 cities",
    "region": "India",
    "betaStart": "",
    "launch": "2030-10",
@@ -523,7 +526,7 @@
   },
   {
    "id": "eng",
-   "name": "English markets · London, Toronto, Sydney, Melbourne",
+   "name": "English markets \u00b7 London, Toronto, Sydney, Melbourne",
    "region": "Global English",
    "betaStart": "",
    "launch": "2031-03",
@@ -542,7 +545,7 @@
   },
   {
    "id": "in4",
-   "name": "India tier 2b · 10 cities",
+   "name": "India tier 2b \u00b7 10 cities",
    "region": "India",
    "betaStart": "",
    "launch": "2031-03",
@@ -561,7 +564,7 @@
   },
   {
    "id": "as3",
-   "name": "Asia wave 3 · Taipei, Kuala Lumpur, Hong Kong, Ho Chi Minh City",
+   "name": "Asia wave 3 \u00b7 Taipei, Kuala Lumpur, Hong Kong, Ho Chi Minh City",
    "region": "Asia",
    "betaStart": "",
    "launch": "2031-04",
@@ -580,7 +583,7 @@
   },
   {
    "id": "us5",
-   "name": "US wave 5 · 15 college towns + small metros",
+   "name": "US wave 5 \u00b7 15 college towns + small metros",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2031-06",
@@ -599,7 +602,7 @@
   },
   {
    "id": "jp3",
-   "name": "Japan wave 3 · Sapporo, Kyoto–Kobe, Sendai, Hiroshima",
+   "name": "Japan wave 3 \u00b7 Sapporo, Kyoto\u2013Kobe, Sendai, Hiroshima",
    "region": "Asia",
    "betaStart": "",
    "launch": "2031-06",
@@ -618,7 +621,7 @@
   },
   {
    "id": "in5",
-   "name": "India tier 3 · 15 cities",
+   "name": "India tier 3 \u00b7 15 cities",
    "region": "India",
    "betaStart": "",
    "launch": "2031-09",
@@ -637,7 +640,7 @@
   },
   {
    "id": "en2",
-   "name": "English wave 2 · Manchester, Dublin, Edinburgh, Vancouver, Montreal, Auckland",
+   "name": "English wave 2 \u00b7 Manchester, Dublin, Edinburgh, Vancouver, Montreal, Auckland",
    "region": "Global English",
    "betaStart": "",
    "launch": "2031-09",
@@ -840,7 +843,7 @@
    "id": "m17",
    "date": "2029-04",
    "type": "event",
-   "name": "India launch: kundli × Align creator campaign",
+   "name": "India launch: kundli \u00d7 Align creator campaign",
    "city": "blr",
    "signups": 8000,
    "convLift": 0,
@@ -974,7 +977,7 @@
   },
   {
    "id": "s3",
-   "name": "Venue per-head fees ($2–5/head)",
+   "name": "Venue per-head fees ($2\u20135/head)",
    "cat": "Venue partners",
    "driver": "per_mau",
    "start": "2027-08",
