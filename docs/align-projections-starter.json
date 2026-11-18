@@ -41,7 +41,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "aus",
@@ -59,7 +60,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "dfw",
@@ -77,7 +79,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "sat",
@@ -95,7 +98,27 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
+  },
+  {
+   "id": "tx2",
+   "name": "Rest of Texas \u00b7 El Paso, RGV, college towns",
+   "region": "Texas",
+   "betaStart": "",
+   "launch": "2027-08",
+   "tam": 300000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 1500,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 20000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 0.35,
+   "convX": 1,
+   "cities": 8
   },
   {
    "id": "la",
@@ -113,7 +136,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "nyc",
@@ -131,7 +155,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "atl",
@@ -149,7 +174,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "chi",
@@ -167,7 +193,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "mia",
@@ -185,25 +212,8 @@
    "priceX": 1,
    "cacX": 1,
    "opsX": 1,
-   "convX": 1
-  },
-  {
-   "id": "sf",
-   "name": "SF Bay Area",
-   "region": "US West",
-   "betaStart": "",
-   "launch": "2029-03",
-   "tam": 400000,
-   "betaSignups": 500,
-   "betaGrowth": 0.3,
-   "launchSignups": 2500,
-   "growth": 0.06,
-   "betaBudget": 0,
-   "launchBudget": 52000,
-   "priceX": 1,
-   "cacX": 1,
-   "opsX": 1,
-   "convX": 1
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "sg",
@@ -221,7 +231,46 @@
    "priceX": 0.85,
    "cacX": 0.9,
    "opsX": 0.9,
-   "convX": 0.9
+   "convX": 0.9,
+   "cities": 1
+  },
+  {
+   "id": "us2",
+   "name": "US wave 2 \u00b7 Phoenix, Denver, Seattle, Boston, DC, Philly, Nashville +8",
+   "region": "US (more metros)",
+   "betaStart": "",
+   "launch": "2029-01",
+   "tam": 3500000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 15000,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 250000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 0.5,
+   "convX": 1,
+   "cities": 15
+  },
+  {
+   "id": "sf",
+   "name": "SF Bay Area",
+   "region": "US West",
+   "betaStart": "",
+   "launch": "2029-03",
+   "tam": 400000,
+   "betaSignups": 500,
+   "betaGrowth": 0.3,
+   "launchSignups": 2500,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 52000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 1,
+   "convX": 1,
+   "cities": 1
   },
   {
    "id": "blr",
@@ -239,7 +288,8 @@
    "priceX": 0.28,
    "cacX": 0.2,
    "opsX": 0.3,
-   "convX": 0.55
+   "convX": 0.55,
+   "cities": 1
   },
   {
    "id": "bom",
@@ -257,7 +307,8 @@
    "priceX": 0.25,
    "cacX": 0.2,
    "opsX": 0.3,
-   "convX": 0.5
+   "convX": 0.5,
+   "cities": 1
   },
   {
    "id": "del",
@@ -275,7 +326,27 @@
    "priceX": 0.25,
    "cacX": 0.2,
    "opsX": 0.3,
-   "convX": 0.5
+   "convX": 0.5,
+   "cities": 1
+  },
+  {
+   "id": "us3",
+   "name": "US wave 3 \u00b7 40 more metros + college towns",
+   "region": "US (more metros)",
+   "betaStart": "",
+   "launch": "2029-09",
+   "tam": 4000000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 12000,
+   "growth": 0.055,
+   "betaBudget": 0,
+   "launchBudget": 300000,
+   "priceX": 1,
+   "cacX": 1,
+   "opsX": 0.3,
+   "convX": 1,
+   "cities": 40
   },
   {
    "id": "sel",
@@ -293,7 +364,27 @@
    "priceX": 0.85,
    "cacX": 1.15,
    "opsX": 0.8,
-   "convX": 0.9
+   "convX": 0.9,
+   "cities": 1
+  },
+  {
+   "id": "in2",
+   "name": "India wave 2 \u00b7 Hyderabad, Pune, Chennai, Kolkata, Ahmedabad",
+   "region": "India",
+   "betaStart": "",
+   "launch": "2030-03",
+   "tam": 2500000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 15000,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 60000,
+   "priceX": 0.25,
+   "cacX": 0.2,
+   "opsX": 0.25,
+   "convX": 0.5,
+   "cities": 5
   },
   {
    "id": "tyo",
@@ -311,7 +402,103 @@
    "priceX": 0.95,
    "cacX": 1.6,
    "opsX": 1.1,
-   "convX": 1.2
+   "convX": 1.2,
+   "cities": 1
+  },
+  {
+   "id": "kr2",
+   "name": "Korea wave 2 \u00b7 Busan, Incheon, Daegu",
+   "region": "Asia",
+   "betaStart": "",
+   "launch": "2030-09",
+   "tam": 700000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 3000,
+   "growth": 0.04,
+   "betaBudget": 0,
+   "launchBudget": 60000,
+   "priceX": 0.85,
+   "cacX": 1.1,
+   "opsX": 0.7,
+   "convX": 0.9,
+   "cities": 3
+  },
+  {
+   "id": "sea",
+   "name": "SE Asia \u00b7 Manila, Bangkok",
+   "region": "Asia",
+   "betaStart": "",
+   "launch": "2030-09",
+   "tam": 1400000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 10000,
+   "growth": 0.05,
+   "betaBudget": 0,
+   "launchBudget": 60000,
+   "priceX": 0.3,
+   "cacX": 0.27,
+   "opsX": 0.3,
+   "convX": 0.5,
+   "cities": 2
+  },
+  {
+   "id": "in3",
+   "name": "India tier 2 \u00b7 20 cities",
+   "region": "India",
+   "betaStart": "",
+   "launch": "2030-10",
+   "tam": 3000000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 12000,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 80000,
+   "priceX": 0.2,
+   "cacX": 0.15,
+   "opsX": 0.15,
+   "convX": 0.4,
+   "cities": 20
+  },
+  {
+   "id": "jp2",
+   "name": "Japan wave 2 \u00b7 Osaka, Nagoya, Fukuoka",
+   "region": "Asia",
+   "betaStart": "",
+   "launch": "2030-10",
+   "tam": 1200000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 5000,
+   "growth": 0.04,
+   "betaBudget": 0,
+   "launchBudget": 120000,
+   "priceX": 0.95,
+   "cacX": 1.5,
+   "opsX": 1,
+   "convX": 1.2,
+   "cities": 3
+  },
+  {
+   "id": "eng",
+   "name": "English markets \u00b7 London, Toronto, Sydney, Melbourne",
+   "region": "Global English",
+   "betaStart": "",
+   "launch": "2031-03",
+   "tam": 2500000,
+   "betaSignups": 0,
+   "betaGrowth": 0,
+   "launchSignups": 12000,
+   "growth": 0.06,
+   "betaBudget": 0,
+   "launchBudget": 400000,
+   "priceX": 1,
+   "cacX": 1.1,
+   "opsX": 1.1,
+   "convX": 1,
+   "cities": 4
   }
  ],
  "milestones": [
@@ -484,6 +671,18 @@
    "cost": 0
   },
   {
+   "id": "m22",
+   "date": "2029-01",
+   "type": "event",
+   "name": "US-wide launch campaign",
+   "city": "all",
+   "signups": 20000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 150000
+  },
+  {
    "id": "m17",
    "date": "2029-04",
    "type": "event",
@@ -544,6 +743,18 @@
    "cost": 250000
   },
   {
+   "id": "m23",
+   "date": "2030-03",
+   "type": "event",
+   "name": "India nationwide push",
+   "city": "in2",
+   "signups": 15000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 60000
+  },
+  {
    "id": "m15",
    "date": "2030-06",
    "type": "product",
@@ -562,6 +773,18 @@
    "name": "Japan TCG edition + gachapon packs",
    "city": "tyo",
    "signups": 6000,
+   "convLift": 0,
+   "churnDelta": 0,
+   "revenue": 0,
+   "cost": 120000
+  },
+  {
+   "id": "m24",
+   "date": "2031-03",
+   "type": "event",
+   "name": "London + Toronto + Sydney launch",
+   "city": "eng",
+   "signups": 10000,
    "convLift": 0,
    "churnDelta": 0,
    "revenue": 0,
@@ -1108,10 +1331,10 @@
   },
   {
    "id": "f3",
-   "date": "2029-04",
+   "date": "2029-01",
    "name": "Series A",
-   "amount": 15000000,
-   "postMoney": 75000000
+   "amount": 20000000,
+   "postMoney": 90000000
   },
   {
    "id": "f4",
