@@ -47,7 +47,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 1111
   },
   {
    "id": "aus",
@@ -66,7 +67,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "dfw",
@@ -85,7 +87,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "sat",
@@ -104,7 +107,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "tx2",
@@ -123,7 +127,8 @@
    "cacX": 1,
    "opsX": 0.35,
    "convX": 1,
-   "cities": 8
+   "cities": 8,
+   "betaCap": 0
   },
   {
    "id": "la",
@@ -142,7 +147,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "nyc",
@@ -161,7 +167,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "atl",
@@ -180,7 +187,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "chi",
@@ -199,7 +207,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "mia",
@@ -218,7 +227,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "us1",
@@ -237,7 +247,8 @@
    "cacX": 1,
    "opsX": 0.6,
    "convX": 1,
-   "cities": 6
+   "cities": 6,
+   "betaCap": 0
   },
   {
    "id": "sg",
@@ -256,7 +267,8 @@
    "cacX": 0.9,
    "opsX": 0.9,
    "convX": 0.9,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "us2",
@@ -275,7 +287,8 @@
    "cacX": 1,
    "opsX": 0.5,
    "convX": 1,
-   "cities": 12
+   "cities": 12,
+   "betaCap": 0
   },
   {
    "id": "sf",
@@ -294,7 +307,8 @@
    "cacX": 1,
    "opsX": 1,
    "convX": 1,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "blr",
@@ -313,7 +327,8 @@
    "cacX": 0.2,
    "opsX": 0.3,
    "convX": 0.55,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "bom",
@@ -332,7 +347,8 @@
    "cacX": 0.2,
    "opsX": 0.3,
    "convX": 0.5,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "del",
@@ -351,7 +367,8 @@
    "cacX": 0.2,
    "opsX": 0.3,
    "convX": 0.5,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "us3",
@@ -370,7 +387,8 @@
    "cacX": 1,
    "opsX": 0.35,
    "convX": 1,
-   "cities": 20
+   "cities": 20,
+   "betaCap": 0
   },
   {
    "id": "sel",
@@ -389,7 +407,8 @@
    "cacX": 1.15,
    "opsX": 0.8,
    "convX": 0.9,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "in2",
@@ -408,7 +427,8 @@
    "cacX": 0.2,
    "opsX": 0.25,
    "convX": 0.5,
-   "cities": 5
+   "cities": 5,
+   "betaCap": 0
   },
   {
    "id": "tyo",
@@ -427,7 +447,8 @@
    "cacX": 1.6,
    "opsX": 1.1,
    "convX": 1.2,
-   "cities": 1
+   "cities": 1,
+   "betaCap": 0
   },
   {
    "id": "us4",
@@ -446,7 +467,8 @@
    "cacX": 1,
    "opsX": 0.3,
    "convX": 1,
-   "cities": 20
+   "cities": 20,
+   "betaCap": 0
   },
   {
    "id": "kr2",
@@ -465,7 +487,8 @@
    "cacX": 1.1,
    "opsX": 0.7,
    "convX": 0.9,
-   "cities": 3
+   "cities": 3,
+   "betaCap": 0
   },
   {
    "id": "sea",
@@ -484,7 +507,8 @@
    "cacX": 0.27,
    "opsX": 0.3,
    "convX": 0.5,
-   "cities": 2
+   "cities": 2,
+   "betaCap": 0
   },
   {
    "id": "jp2",
@@ -503,7 +527,8 @@
    "cacX": 1.5,
    "opsX": 1,
    "convX": 1.2,
-   "cities": 3
+   "cities": 3,
+   "betaCap": 0
   },
   {
    "id": "in3",
@@ -522,7 +547,8 @@
    "cacX": 0.15,
    "opsX": 0.15,
    "convX": 0.4,
-   "cities": 10
+   "cities": 10,
+   "betaCap": 0
   },
   {
    "id": "eng",
@@ -541,7 +567,8 @@
    "cacX": 1.1,
    "opsX": 1.1,
    "convX": 1,
-   "cities": 4
+   "cities": 4,
+   "betaCap": 0
   },
   {
    "id": "in4",
@@ -560,7 +587,8 @@
    "cacX": 0.15,
    "opsX": 0.15,
    "convX": 0.4,
-   "cities": 10
+   "cities": 10,
+   "betaCap": 0
   },
   {
    "id": "as3",
@@ -579,7 +607,8 @@
    "cacX": 0.6,
    "opsX": 0.5,
    "convX": 0.7,
-   "cities": 4
+   "cities": 4,
+   "betaCap": 0
   },
   {
    "id": "us5",
@@ -598,7 +627,8 @@
    "cacX": 0.9,
    "opsX": 0.25,
    "convX": 1,
-   "cities": 15
+   "cities": 15,
+   "betaCap": 0
   },
   {
    "id": "jp3",
@@ -617,7 +647,8 @@
    "cacX": 1.5,
    "opsX": 0.8,
    "convX": 1.2,
-   "cities": 4
+   "cities": 4,
+   "betaCap": 0
   },
   {
    "id": "in5",
@@ -636,7 +667,8 @@
    "cacX": 0.12,
    "opsX": 0.12,
    "convX": 0.35,
-   "cities": 15
+   "cities": 15,
+   "betaCap": 0
   },
   {
    "id": "en2",
@@ -655,7 +687,8 @@
    "cacX": 1.1,
    "opsX": 0.7,
    "convX": 1,
-   "cities": 6
+   "cities": 6,
+   "betaCap": 0
   }
  ],
  "milestones": [
