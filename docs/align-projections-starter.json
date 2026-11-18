@@ -19,7 +19,7 @@
   "conv": 0.04,
   "freeToPaid": 0.006,
   "freeChurn": 0.15,
-  "paidChurn": 0.1,
+  "paidChurn": 0.2,
   "betaFreeMonths": 6,
   "betaConv": 0.2,
   "betaChurn": 0.1
