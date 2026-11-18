@@ -67,7 +67,7 @@
   },
   {
    "id": "dfw",
-   "name": "Dallas–Fort Worth",
+   "name": "Dallas\u2013Fort Worth",
    "region": "Texas",
    "betaStart": "2027-06",
    "launch": "2027-08",
@@ -105,7 +105,7 @@
   },
   {
    "id": "tx2",
-   "name": "Rest of Texas · El Paso, RGV, college towns",
+   "name": "Rest of Texas \u00b7 El Paso, RGV, college towns",
    "region": "Texas",
    "betaStart": "",
    "launch": "2027-08",
@@ -238,7 +238,7 @@
   },
   {
    "id": "us2",
-   "name": "US wave 2 · Phoenix, Denver, Seattle, Boston, DC, Philly, Nashville +8",
+   "name": "US wave 2 \u00b7 Phoenix, Denver, Seattle, Boston, DC, Philly, Nashville +8",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2029-01",
@@ -333,7 +333,7 @@
   },
   {
    "id": "us3",
-   "name": "US wave 3 · 40 more metros + college towns",
+   "name": "US wave 3 \u00b7 40 more metros + college towns",
    "region": "US (more metros)",
    "betaStart": "",
    "launch": "2029-09",
@@ -371,7 +371,7 @@
   },
   {
    "id": "in2",
-   "name": "India wave 2 · Hyderabad, Pune, Chennai, Kolkata, Ahmedabad",
+   "name": "India wave 2 \u00b7 Hyderabad, Pune, Chennai, Kolkata, Ahmedabad",
    "region": "India",
    "betaStart": "",
    "launch": "2030-03",
@@ -409,7 +409,7 @@
   },
   {
    "id": "kr2",
-   "name": "Korea wave 2 · Busan, Incheon, Daegu",
+   "name": "Korea wave 2 \u00b7 Busan, Incheon, Daegu",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-09",
@@ -428,7 +428,7 @@
   },
   {
    "id": "sea",
-   "name": "SE Asia · Manila, Bangkok",
+   "name": "SE Asia \u00b7 Manila, Bangkok",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-09",
@@ -447,7 +447,7 @@
   },
   {
    "id": "in3",
-   "name": "India tier 2 · 20 cities",
+   "name": "India tier 2 \u00b7 20 cities",
    "region": "India",
    "betaStart": "",
    "launch": "2030-10",
@@ -466,7 +466,7 @@
   },
   {
    "id": "jp2",
-   "name": "Japan wave 2 · Osaka, Nagoya, Fukuoka",
+   "name": "Japan wave 2 \u00b7 Osaka, Nagoya, Fukuoka",
    "region": "Asia",
    "betaStart": "",
    "launch": "2030-10",
@@ -485,7 +485,7 @@
   },
   {
    "id": "eng",
-   "name": "English markets · London, Toronto, Sydney, Melbourne",
+   "name": "English markets \u00b7 London, Toronto, Sydney, Melbourne",
    "region": "Global English",
    "betaStart": "",
    "launch": "2031-03",
@@ -589,18 +589,6 @@
    "cost": 20000
   },
   {
-   "id": "m8",
-   "date": "2027-10",
-   "type": "feature",
-   "name": "Packs + binder in app",
-   "city": "all",
-   "signups": 0,
-   "convLift": 0.5,
-   "churnDelta": -0.5,
-   "revenue": 0,
-   "cost": 0
-  },
-  {
    "id": "m9",
    "date": "2027-10",
    "type": "event",
@@ -609,6 +597,18 @@
    "signups": 3000,
    "convLift": 0,
    "churnDelta": 0,
+   "revenue": 0,
+   "cost": 25000
+  },
+  {
+   "id": "m8",
+   "date": "2028-01",
+   "type": "feature",
+   "name": "Digital packs + binder launch (Y2)",
+   "city": "all",
+   "signups": 8000,
+   "convLift": 0.5,
+   "churnDelta": -0.5,
    "revenue": 0,
    "cost": 25000
   },
@@ -688,7 +688,7 @@
    "id": "m17",
    "date": "2029-04",
    "type": "event",
-   "name": "India launch: kundli × Align creator campaign",
+   "name": "India launch: kundli \u00d7 Align creator campaign",
    "city": "blr",
    "signups": 8000,
    "convLift": 0,
@@ -822,7 +822,7 @@
   },
   {
    "id": "s3",
-   "name": "Venue per-head fees ($2–5/head)",
+   "name": "Venue per-head fees ($2\u20135/head)",
    "cat": "Venue partners",
    "driver": "per_mau",
    "start": "2027-08",
@@ -887,16 +887,29 @@
   },
   {
    "id": "s8",
-   "name": "Digital packs (in-app)",
+   "name": "Digital packs (in-app, Y2)",
    "cat": "Cards & products",
    "driver": "per_mau",
-   "start": "2027-10",
+   "start": "2028-01",
    "end": "",
-   "qty": 0.03,
+   "qty": 0.05,
    "price": 2.99,
    "unitCost": 0.45,
-   "growth": 0.02,
+   "growth": 0.03,
    "capX": 2.5
+  },
+  {
+   "id": "s16",
+   "name": "Digital season bundles (Align+, $9.99)",
+   "cat": "Cards & products",
+   "driver": "per_payer",
+   "start": "2028-03",
+   "end": "",
+   "qty": 0.25,
+   "price": 9.99,
+   "unitCost": 1.5,
+   "growth": 0.01,
+   "capX": 1.5
   },
   {
    "id": "s9",
