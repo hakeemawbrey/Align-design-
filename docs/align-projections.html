@@ -1,0 +1,1017 @@
+<title>Align Projections</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sticky header + tab rail, one working sheet per tab; inputs on top, results under them. */
+:root {
+  --bg: #F5F4FA; --panel: #FFFFFF; --panel2: #F0EEF8; --ink: #1B1630; --muted: #6A6484; --line: #E2DFEC;
+  --accent: #5A3FD0; --accent-soft: #ECE7FF; --gold: #A9780F; --gold-soft: #FBF1D9;
+  --good: #1D8653; --bad: #C0392F; --warn: #A86A12;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --s1:#6D4AFF; --s2:#D0951C; --s3:#13998A; --s4:#D6457A; --s5:#2E8BD6; --s6:#E0662A; --s7:#4C9C3B; --s8:#9A4CC9; --s9:#5C6D90; --s10:#B4503A; --s11:#8A8A26; --s12:#1EA5C7; --s13:#E06AAE;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #100D1B; --panel: #181428; --panel2: #201B33; --ink: #ECE8FA; --muted: #9D97B8; --line: #2D2843;
+  --accent: #A28EFF; --accent-soft: #2A2250; --gold: #E5B54D; --gold-soft: #3A2E12;
+  --good: #4CC28A; --bad: #F2766C; --warn: #E9A94A; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #100D1B; --panel: #181428; --panel2: #201B33; --ink: #ECE8FA; --muted: #9D97B8; --line: #2D2843;
+  --accent: #A28EFF; --accent-soft: #2A2250; --gold: #E5B54D; --gold-soft: #3A2E12;
+  --good: #4CC28A; --bad: #F2766C; --warn: #E9A94A; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel) }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line) }
+.bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-block: 10px }
+.brand { display: flex; align-items: baseline; gap: 10px; margin-right: auto; min-width: 0 }
+.brand b { font: 800 22px/1 var(--display); letter-spacing: -0.02em }
+.brand span { color: var(--muted); font-size: 12.5px }
+.seg { display: inline-flex; background: var(--panel2); border-radius: 9px; padding: 3px; gap: 2px }
+.seg button { border: 0; background: transparent; color: var(--muted); font: 500 12.5px var(--body); padding: 5px 10px; border-radius: 7px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12) }
+.save { font: 12px var(--mono); color: var(--muted); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap }
+.save i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); display: inline-block }
+.save[data-s="ok"] i { background: var(--good) } .save[data-s="busy"] i { background: var(--warn) } .save[data-s="err"] i { background: var(--bad) }
+nav.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin-bottom: -1px }
+nav.tabs::-webkit-scrollbar { display: none }
+nav.tabs a { text-decoration: none; color: var(--muted); font: 500 13.5px var(--body); padding: 9px 12px 10px; border-bottom: 2px solid transparent; white-space: nowrap }
+nav.tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent) }
+nav.tabs a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+main { padding-block: 22px 60px }
+section.tab { display: grid; gap: 22px }
+h1, h2, h3 { font-family: var(--display); letter-spacing: -0.015em; text-wrap: balance; margin: 0 }
+h1 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800 }
+h2 { font-size: 19px; font-weight: 700 }
+h3 { font-size: 15px; font-weight: 700 }
+p { margin: 0 } .muted { color: var(--muted) } .small { font-size: 12.5px }
+.lede { color: var(--muted); max-width: 72ch }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; min-width: 0 }
+.card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 12px }
+.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px; align-content: start }
+.kpi .l { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600 }
+.kpi .v { font: 700 24px/1.15 var(--display); font-variant-numeric: tabular-nums }
+.kpi .s { font-size: 12px; color: var(--muted) }
+.kpi.gold { background: var(--gold-soft); border-color: transparent }
+.kpi.violet { background: var(--accent-soft); border-color: transparent }
+.pos { color: var(--good) } .neg { color: var(--bad) }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums }
+th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap }
+th:first-child, td:first-child { text-align: left }
+thead th { font: 600 11.5px var(--body); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); position: sticky; top: 0; background: var(--panel) }
+td.num, .mono { font-family: var(--mono); font-size: 12.5px }
+tr.sub td:first-child { padding-left: 24px; color: var(--muted) }
+tr.tot td { font-weight: 700; border-top: 1.5px solid var(--ink) }
+tr.sec td { background: var(--panel2); font: 600 11.5px var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted) }
+table.ed td { padding: 4px 4px; text-align: left }
+table.ed th { text-align: left; padding: 6px 4px }
+input, select { font: 13px var(--body); color: var(--ink); background: var(--panel2); border: 1px solid transparent; border-radius: 7px; padding: 6px 8px; width: 100%; min-width: 0 }
+input:hover, select:hover { border-color: var(--line) }
+input:focus, select:focus { background: var(--panel); border-color: var(--accent); outline: none }
+input[type="number"] { font-family: var(--mono); font-size: 12.5px; text-align: right }
+input.w-name { min-width: 170px } input.w-num { min-width: 82px } input.w-sm { min-width: 64px } input[type="month"] { min-width: 132px } select { min-width: 110px }
+.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); font: 500 13px var(--body); padding: 7px 12px; border-radius: 8px; cursor: pointer }
+.btn:hover { border-color: var(--accent); color: var(--accent) }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff }
+.btn.primary:hover { filter: brightness(1.08); color: #fff }
+.x { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1; padding: 6px 8px; border-radius: 6px }
+.x:hover { color: var(--bad); background: var(--panel2) }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
+.field { display: grid; gap: 4px; min-width: 0 }
+.field label { font-size: 12px; color: var(--muted); font-weight: 500 }
+.fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap: 12px 14px }
+.hint { font-size: 12px; color: var(--muted) }
+.chip { display: inline-flex; align-items: center; gap: 6px; font: 600 11px var(--body); text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 999px; background: var(--panel2); color: var(--muted) }
+.chip.beta { background: var(--gold-soft); color: var(--gold) } .chip.live { background: var(--accent-soft); color: var(--accent) }
+.dot { width: 9px; height: 9px; border-radius: 3px; display: inline-block; flex: none }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); margin-top: 8px }
+.legend span { display: inline-flex; align-items: center; gap: 6px }
+.chart { position: relative; width: 100% }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible }
+.chart text { fill: var(--muted); font: 10.5px var(--mono) }
+.chart .grid line { stroke: var(--line) }
+.tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 9px; padding: 8px 10px; font-size: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.14); z-index: 3; min-width: 170px; max-width: 260px }
+.tip b { font-family: var(--display) } .tip .r { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums } .tip .r span:first-child { display: inline-flex; gap: 6px; align-items: center; color: var(--muted) }
+.note { background: var(--gold-soft); color: var(--ink); border-radius: 10px; padding: 10px 14px; font-size: 13px }
+.note b { color: var(--gold) }
+/* timeline */
+.tl { display: grid; gap: 6px; min-width: 760px }
+.tl-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 10px }
+.tl-lab { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.tl-track { position: relative; height: 22px; background: repeating-linear-gradient(90deg, transparent 0 calc(20% - 1px), var(--line) calc(20% - 1px) 20%); border-radius: 4px }
+.tl-bar { position: absolute; top: 3px; bottom: 3px; border-radius: 4px }
+.tl-bar.beta { background: repeating-linear-gradient(135deg, var(--gold) 0 4px, color-mix(in srgb, var(--gold) 55%, transparent) 4px 8px) }
+.tl-bar.live { background: var(--accent) }
+.tl-ms { position: absolute; top: 2px; width: 14px; height: 14px; margin-left: -7px; transform: rotate(45deg); border-radius: 3px; border: 2px solid var(--panel) }
+.tl-years { display: grid; grid-template-columns: 150px 1fr; gap: 10px; font: 600 11px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.tl-years div:last-child { display: grid; grid-template-columns: repeat(5, 1fr) } .tl-years div:last-child span { padding-left: 6px }
+.steps { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.step { display: inline-flex; align-items: center; gap: 4px; background: var(--panel2); border-radius: 9px; padding: 3px 3px 3px 8px }
+.step span { font-size: 11px; color: var(--muted) }
+.step input { background: var(--panel); width: auto }
+.step input[type="number"] { width: 100px; min-width: 0 }
+.costline { display: grid; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line) }
+.costline:last-child { border-bottom: 0 }
+.costline .head { display: grid; grid-template-columns: minmax(160px, 2fr) minmax(120px, 1fr) minmax(180px, 1.4fr) auto; gap: 8px; align-items: center }
+@media (max-width: 640px) { .costline .head { grid-template-columns: 1fr 1fr } .tl-row, .tl-years { grid-template-columns: 110px 1fr } }
+.yrs { display: flex; gap: 14px; flex-wrap: wrap; font: 12px var(--mono); color: var(--muted) } .yrs b { color: var(--ink); font-weight: 600 }
+.big { font: 800 clamp(28px, 4vw, 40px)/1.1 var(--display); font-variant-numeric: tabular-nums }
+.funnel { display: grid; gap: 8px }
+.funnel div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: 9px; background: var(--panel2); font-variant-numeric: tabular-nums }
+.funnel div b { font-family: var(--mono) }
+textarea { width: 100%; min-height: 120px; font: 12px var(--mono); color: var(--ink); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 10px }
+@media (prefers-reduced-motion: no-preference) { .tab { animation: fade .25s ease } @keyframes fade { from { opacity: .4 } to { opacity: 1 } } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand"><b>Align</b><span>5-year projections · Y1 = <span id="y1lab">2027</span></span></div>
+      <div class="seg" role="group" aria-label="Scenario" id="scen">
+        <button data-scen="conservative">Conservative</button><button data-scen="base">Base</button><button data-scen="aggressive">Aggressive</button>
+      </div>
+      <span class="save" id="save" data-s="busy"><i></i><span>Loading…</span></span>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a href="#overview">Overview</a><a href="#plan">Launch plan</a><a href="#cities">Cities</a><a href="#revenue">Revenue</a><a href="#costs">Costs</a><a href="#unit">Unit economics</a><a href="#goals">Work backwards</a><a href="#assumptions">Assumptions</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+/*ENGINE-START*/
+const N = 60;
+const SCEN = { conservative: 0.6, base: 1, aggressive: 1.5 };
+const REV_CATS = ['Subscriptions', 'Dates & events', 'Venue partners', 'Cards & products', 'Marketplace', 'IP & licensing'];
+const COST_CATS = ['COGS', 'Team', 'Infrastructure', 'Marketing', 'Ops', 'G&A'];
+
+function mIdx(s, start) {
+  if (!s || typeof s !== 'string' || s.length < 7) return Infinity;
+  const y = +s.slice(0, 4), m = +s.slice(5, 7), y0 = +start.slice(0, 4), m0 = +start.slice(5, 7);
+  if (!y || !m) return Infinity;
+  return (y - y0) * 12 + (m - m0);
+}
+function mStr(i, start) {
+  const y0 = +start.slice(0, 4), m0 = +start.slice(5, 7) - 1;
+  const tot = y0 * 12 + m0 + i; const y = Math.floor(tot / 12), m = tot % 12 + 1;
+  return y + '-' + String(m).padStart(2, '0');
+}
+const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function mLabel(i, start) { const s = mStr(i, start); return MN[+s.slice(5) - 1] + ' ' + s.slice(2, 4); }
+function stepAt(steps, t, start) {
+  let v = 0, best = -Infinity;
+  for (const s of steps || []) { const k = mIdx(s.from, start); if (k <= t && k >= best) { best = k; v = +s.amt || 0; } }
+  return v;
+}
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const zeros = () => new Array(N).fill(0);
+function arppuOf(P) {
+  const reg = P.annualShare * (P.annual / 12) + (1 - P.annualShare) * P.monthly;
+  const intro = P.annualShare * (P.introAnnual / 12) + (1 - P.annualShare) * P.introMonthly;
+  return P.introShare * intro + (1 - P.introShare) * reg;
+}
+
+function run(S, o = {}) {
+  const st = S.meta.startMonth;
+  const sx = o.signupX ?? 1, cx = o.convX ?? 1, chx = o.churnX ?? 1, scope = o.cityId || null;
+  const scen = SCEN[S.meta.scenario] ?? 1;
+  const P = S.pricing, G = S.growth;
+  const arppu = arppuOf(P);
+  const fee = P.feePct;
+  const F = Math.max(0, Math.round(G.betaFreeMonths));
+  const ms = (S.milestones || []).map(m => ({ ...m, t: mIdx(m.date, st) }));
+
+  const C = S.markets.map(c => {
+    const l = mIdx(c.launch, st); let b = mIdx(c.betaStart, st); if (b > l) b = l;
+    return { c, b, l, free: 0, pay: 0, cum: 0, cohorts: [],
+      signups: zeros(), free_: zeros(), pay_: zeros(), comp_: zeros(), mau: zeros(), newPay: zeros(),
+      rev: zeros(), subRev: zeros(), varCost: zeros(), budget: zeros(), phase: new Array(N).fill('pre'), compExpired: zeros(), betaConverted: zeros() };
+  });
+
+  const R = {
+    N, start: st, arppu,
+    rev: Object.fromEntries(REV_CATS.map(k => [k, zeros()])),
+    cost: Object.fromEntries(COST_CATS.map(k => [k, zeros()])),
+    streamRev: {}, costLine: {},
+    revenue: zeros(), cogs: zeros(), gross: zeros(), opex: zeros(), totalCost: zeros(), ebitda: zeros(), cash: zeros(), funding: zeros(),
+    mau: zeros(), pay: zeros(), free: zeros(), comp: zeros(), signups: zeros(), newPay: zeros(), activeCities: zeros(), liveCities: zeros(),
+    unitMau: zeros(), unitMember: zeros(), unitPayer: zeros(), mktg: zeros(), betaCash: zeros(), betaList: zeros(), betaConverted: zeros(),
+    oneTimeRev: zeros(), cities: C,
+  };
+
+  for (let t = 0; t < N; t++) {
+    const active = C.filter(x => t >= x.b);
+    for (const x of C) {
+      const c = x.c;
+      if (t < x.b) continue;
+      const inBeta = t < x.l;
+      x.phase[t] = inBeta ? 'beta' : 'live';
+      const mult = scen * (!scope || scope === c.id ? sx : 1);
+      const base = inBeta ? (+c.betaSignups || 0) * Math.pow(1 + (+c.betaGrowth || 0), t - x.b)
+                          : (+c.launchSignups || 0) * Math.pow(1 + (+c.growth || 0), t - x.l);
+      const sat = Math.max(0, 1 - x.cum / Math.max(1, +c.tam || 1));
+      let bump = 0, lift = 0, dChurn = 0;
+      for (const m of ms) {
+        const hit = m.city === c.id || m.city === 'all' || !m.city;
+        if (!hit) continue;
+        if (m.t === t) bump += (+m.signups || 0) / (m.city === c.id ? 1 : Math.max(1, active.length));
+        if (t >= m.t) { lift += (+m.convLift || 0) / 100; dChurn += (+m.churnDelta || 0) / 100; }
+      }
+      const s = (base * mult + bump) * sat;
+      x.cum += s; x.signups[t] = s;
+      const conv = clamp((G.conv + lift) * cx, 0, 0.95);
+      const paidChurn = clamp((G.paidChurn + dChurn) * chx, 0.003, 1);
+      // beta comp cohorts
+      let expired = 0;
+      for (const k of x.cohorts) { k.n *= (1 - G.betaChurn); k.age++; }
+      x.cohorts = x.cohorts.filter(k => { if (k.age >= F) { expired += k.n; return false; } return true; });
+      let newPay = 0, newFree = 0;
+      if (inBeta && F > 0) x.cohorts.push({ age: 0, n: s });
+      else if (inBeta) newFree = s;
+      else { newPay = s * conv; newFree = s * (1 - conv); }
+      const f2p = inBeta ? 0 : x.free * G.freeToPaid * cx;
+      const fromBeta = expired * G.betaConv;
+      x.pay = x.pay * (1 - paidChurn) + newPay + f2p + fromBeta;
+      x.free = Math.max(0, x.free * (1 - G.freeChurn) - f2p + newFree + expired * (1 - G.betaConv));
+      const comp = x.cohorts.reduce((a, k) => a + k.n, 0);
+      x.pay_[t] = x.pay; x.free_[t] = x.free; x.comp_[t] = comp; x.mau[t] = x.pay + x.free + comp;
+      x.newPay[t] = newPay + f2p + fromBeta; x.compExpired[t] = expired; x.betaConverted[t] = fromBeta;
+      x.subRev[t] = x.pay * arppu; x.rev[t] += x.subRev[t];
+      if (t === x.b) x.budget[t] += +c.betaBudget || 0;
+      if (t === x.l) x.budget[t] += +c.launchBudget || 0;
+    }
+    // totals for drivers
+    let mau = 0, pay = 0, free = 0, comp = 0, sg = 0, np = 0, act = 0, live = 0, subRev = 0, budgets = 0;
+    for (const x of C) {
+      mau += x.mau[t]; pay += x.pay_[t]; free += x.free_[t]; comp += x.comp_[t]; sg += x.signups[t]; np += x.newPay[t];
+      if (t >= x.b) act++; if (t >= x.l) live++; subRev += x.subRev[t]; budgets += x.budget[t];
+      R.betaConverted[t] += x.betaConverted[t];
+    }
+    Object.assign(R, {}); R.mau[t] = mau; R.pay[t] = pay; R.free[t] = free; R.comp[t] = comp; R.signups[t] = sg; R.newPay[t] = np; R.activeCities[t] = act; R.liveCities[t] = live;
+    R.rev['Subscriptions'][t] += subRev;
+    R.cost['COGS'][t] += subRev * fee;
+    R.cost['Marketing'][t] += budgets;
+
+    // revenue streams
+    for (const sr of S.streams || []) {
+      const s0 = mIdx(sr.start, st), e0 = sr.end ? mIdx(sr.end, st) : Infinity;
+      if (!R.streamRev[sr.id]) R.streamRev[sr.id] = zeros();
+      if (t < s0 || t > e0) continue;
+      const q = (+sr.qty || 0) * Math.min(+sr.capX || 1, Math.pow(1 + (+sr.growth || 0), t - s0));
+      const price = +sr.price || 0, uc = +sr.unitCost || 0;
+      const per = x => {
+        switch (sr.driver) {
+          case 'per_payer': return x.pay_[t];
+          case 'per_mau': return x.mau[t];
+          case 'per_free': return x.free_[t];
+          case 'per_city': return t >= x.b ? 1 : 0;
+          case 'per_live_city': return t >= x.l ? 1 : 0;
+          case 'per_new_payer': return x.newPay[t];
+          default: return 0;
+        }
+      };
+      let units = 0;
+      if (sr.driver === 'flat') units = q;
+      else for (const x of C) { const u = per(x) * q; units += u; x.rev[t] += u * price; x.varCost[t] += u * uc; }
+      const r = units * price;
+      R.streamRev[sr.id][t] = r;
+      const cat = REV_CATS.includes(sr.cat) ? sr.cat : 'Cards & products';
+      R.rev[cat][t] += r;
+      R.cost['COGS'][t] += units * uc;
+    }
+    // milestone one-offs
+    for (const m of ms) if (m.t === t) {
+      R.rev['Dates & events'][t] += +m.revenue || 0; R.oneTimeRev[t] += +m.revenue || 0;
+      R.cost[m.type === 'event' || m.type === 'press' ? 'Marketing' : 'Ops'][t] += +m.cost || 0;
+    }
+    // cost lines
+    let uMau = 0, uMem = 0, uPay = 0;
+    let revSoFar = 0; for (const k of REV_CATS) revSoFar += R.rev[k][t];
+    for (const cl of S.costs || []) {
+      if (!R.costLine[cl.id]) R.costLine[cl.id] = zeros();
+      const a = stepAt(cl.steps, t, st); if (!a) continue;
+      let v = 0; const perCity = d => { for (const x of C) { const u = d(x); x.varCost[t] += u * a; v += u * a; } };
+      switch (cl.driver) {
+        case 'fixed': v = a; break;
+        case 'per_mau': perCity(x => x.mau[t]); uMau += a; break;
+        case 'per_member': perCity(x => x.pay_[t] + x.comp_[t]); uMem += a; break;
+        case 'per_payer': perCity(x => x.pay_[t]); uPay += a; break;
+        case 'per_new_user': perCity(x => x.signups[t]); break;
+        case 'per_new_payer': perCity(x => x.newPay[t]); break;
+        case 'per_city': perCity(x => t >= x.b ? 1 : 0); break;
+        case 'per_live_city': perCity(x => t >= x.l ? 1 : 0); break;
+        case 'pct_rev': v = a / 100 * revSoFar; break;
+      }
+      R.costLine[cl.id][t] = v;
+      R.cost[COST_CATS.includes(cl.cat) ? cl.cat : 'Ops'][t] += v;
+    }
+    for (const x of C) x.varCost[t] += x.subRev[t] * fee + x.budget[t];
+    R.unitMau[t] = uMau; R.unitMember[t] = uMau + uMem; R.unitPayer[t] = uMau + uMem + uPay + arppu * fee;
+    R.betaCash[t] = comp * (uMau + uMem); R.betaList[t] = comp * arppu;
+    let rv = 0; for (const k of REV_CATS) rv += R.rev[k][t];
+    R.revenue[t] = rv; R.cogs[t] = R.cost['COGS'][t]; R.gross[t] = rv - R.cogs[t];
+    let ox = 0; for (const k of COST_CATS) if (k !== 'COGS') ox += R.cost[k][t];
+    R.opex[t] = ox; R.totalCost[t] = ox + R.cogs[t]; R.ebitda[t] = R.gross[t] - ox; R.mktg[t] = R.cost['Marketing'][t];
+    for (const f of S.funding || []) if (mIdx(f.date, st) === t) R.funding[t] += +f.amount || 0;
+    R.cash[t] = (t ? R.cash[t - 1] : +S.meta.startCash || 0) + R.ebitda[t] + R.funding[t];
+  }
+  // annual
+  const sumY = (a, y) => a.slice(y * 12, y * 12 + 12).reduce((p, v) => p + v, 0);
+  const endY = (a, y) => a[y * 12 + 11];
+  R.years = [0, 1, 2, 3, 4].map(y => ({
+    y, label: 'Y' + (y + 1), cal: +st.slice(0, 4) + y,
+    revenue: sumY(R.revenue, y), cogs: sumY(R.cogs, y), gross: sumY(R.gross, y), opex: sumY(R.opex, y), ebitda: sumY(R.ebitda, y),
+    funding: sumY(R.funding, y), cash: endY(R.cash, y), mau: endY(R.mau, y), pay: endY(R.pay, y), comp: endY(R.comp, y),
+    signups: sumY(R.signups, y), newPay: sumY(R.newPay, y), mktg: sumY(R.mktg, y), exitMRR: endY(R.revenue, y),
+    liveCities: endY(R.liveCities, y), rev: Object.fromEntries(REV_CATS.map(k => [k, sumY(R.rev[k], y)])),
+    cost: Object.fromEntries(COST_CATS.map(k => [k, sumY(R.cost[k], y)])),
+    avgMau: sumY(R.mau, y) / 12, betaCash: sumY(R.betaCash, y), betaList: sumY(R.betaList, y),
+  }));
+  R.breakeven = R.ebitda.findIndex((v, i) => v > 0 && R.ebitda.slice(i, i + 3).every(w => w > 0));
+  R.lowCash = Math.min(...R.cash); R.lowCashAt = R.cash.indexOf(R.lowCash);
+  R.firstNeg = R.cash.findIndex(v => v < 0);
+  return R;
+}
+/*ENGINE-END*/
+
+const SEED = {"version":1,"meta":{"startMonth":"2027-01","startCash":250000,"scenario":"base","note":"Starter assumptions. Replace with real numbers."},"pricing":{"monthly":23.33,"annual":122.22,"introMonthly":14.44,"introAnnual":88.88,"annualShare":0.55,"introShare":0.6,"feePct":0.15},"growth":{"conv":0.05,"freeToPaid":0.008,"freeChurn":0.14,"paidChurn":0.07,"betaFreeMonths":6,"betaConv":0.22,"betaChurn":0.1},"markets":[{"id":"hou","name":"Houston","region":"Texas","betaStart":"2027-01","launch":"2027-08","tam":900000,"betaSignups":400,"betaGrowth":0.28,"launchSignups":3500,"growth":0.07,"betaBudget":15000,"launchBudget":40000},{"id":"aus","name":"Austin","region":"Texas","betaStart":"2027-02","launch":"2027-08","tam":450000,"betaSignups":300,"betaGrowth":0.28,"launchSignups":2500,"growth":0.07,"betaBudget":12000,"launchBudget":30000},{"id":"dfw","name":"Dallas\u2013Fort Worth","region":"Texas","betaStart":"2027-06","launch":"2027-08","tam":1000000,"betaSignups":600,"betaGrowth":0.35,"launchSignups":3500,"growth":0.07,"betaBudget":15000,"launchBudget":40000},{"id":"sat","name":"San Antonio","region":"Texas","betaStart":"2027-06","launch":"2027-08","tam":500000,"betaSignups":350,"betaGrowth":0.35,"launchSignups":1800,"growth":0.065,"betaBudget":10000,"launchBudget":25000},{"id":"la","name":"Los Angeles","region":"West","betaStart":"2027-11","launch":"2028-02","tam":2200000,"betaSignups":1200,"betaGrowth":0.3,"launchSignups":7000,"growth":0.07,"betaBudget":40000,"launchBudget":120000},{"id":"nyc","name":"New York","region":"Northeast","betaStart":"2028-03","launch":"2028-05","tam":2600000,"betaSignups":1500,"betaGrowth":0.3,"launchSignups":8000,"growth":0.07,"betaBudget":50000,"launchBudget":150000},{"id":"atl","name":"Atlanta","region":"Southeast","betaStart":"2028-08","launch":"2028-10","tam":700000,"betaSignups":700,"betaGrowth":0.3,"launchSignups":3500,"growth":0.065,"betaBudget":20000,"launchBudget":60000},{"id":"chi","name":"Chicago","region":"Midwest","betaStart":"2029-01","launch":"2029-03","tam":1100000,"betaSignups":900,"betaGrowth":0.3,"launchSignups":5000,"growth":0.065,"betaBudget":30000,"launchBudget":90000},{"id":"mia","name":"Miami","region":"Southeast","betaStart":"2029-04","launch":"2029-06","tam":650000,"betaSignups":700,"betaGrowth":0.3,"launchSignups":3500,"growth":0.065,"betaBudget":20000,"launchBudget":60000},{"id":"sf","name":"SF Bay Area","region":"West","betaStart":"2029-09","launch":"2029-11","tam":900000,"betaSignups":800,"betaGrowth":0.3,"launchSignups":4000,"growth":0.06,"betaBudget":25000,"launchBudget":80000},{"id":"dc","name":"Washington DC","region":"Northeast","betaStart":"2030-02","launch":"2030-04","tam":700000,"betaSignups":700,"betaGrowth":0.3,"launchSignups":3500,"growth":0.06,"betaBudget":20000,"launchBudget":60000},{"id":"den","name":"Denver + Phoenix","region":"West","betaStart":"2030-06","launch":"2030-08","tam":900000,"betaSignups":800,"betaGrowth":0.3,"launchSignups":4000,"growth":0.06,"betaBudget":25000,"launchBudget":70000},{"id":"bos","name":"Boston + Philly","region":"Northeast","betaStart":"2031-01","launch":"2031-03","tam":900000,"betaSignups":800,"betaGrowth":0.3,"launchSignups":4000,"growth":0.06,"betaBudget":25000,"launchBudget":70000}],"milestones":[{"id":"m1","date":"2027-01","type":"event","name":"Houston beta launch party","city":"hou","signups":500,"convLift":0,"churnDelta":0,"revenue":0,"cost":6000},{"id":"m2","date":"2027-02","type":"event","name":"Austin beta launch party","city":"aus","signups":400,"convLift":0,"churnDelta":0,"revenue":0,"cost":5000},{"id":"m3","date":"2027-03","type":"event","name":"SXSW activation","city":"aus","signups":1500,"convLift":0,"churnDelta":0,"revenue":0,"cost":15000},{"id":"m4","date":"2027-04","type":"feature","name":"Aura photo + talk cards v2","city":"all","signups":0,"convLift":0,"churnDelta":-0.5,"revenue":0,"cost":0},{"id":"m5","date":"2027-06","type":"feature","name":"Date bookings with venue partners","city":"all","signups":0,"convLift":0.5,"churnDelta":-0.5,"revenue":0,"cost":0},{"id":"m6","date":"2027-08","type":"event","name":"All-Texas launch tour","city":"all","signups":6000,"convLift":0,"churnDelta":0,"revenue":0,"cost":35000},{"id":"m7","date":"2027-10","type":"feature","name":"Packs + binder go live in app","city":"all","signups":0,"convLift":1,"churnDelta":-0.5,"revenue":0,"cost":0},{"id":"m8","date":"2028-02","type":"event","name":"LA launch week","city":"la","signups":4000,"convLift":0,"churnDelta":0,"revenue":0,"cost":40000},{"id":"m9","date":"2028-03","type":"product","name":"First printed season: Align+ starter box","city":"all","signups":0,"convLift":1,"churnDelta":-1,"revenue":0,"cost":60000},{"id":"m10","date":"2028-09","type":"product","name":"Sign boxes in retail","city":"all","signups":3000,"convLift":0,"churnDelta":0,"revenue":0,"cost":80000},{"id":"m11","date":"2029-01","type":"feature","name":"Card marketplace (trading fees)","city":"all","signups":0,"convLift":0.5,"churnDelta":-0.5,"revenue":0,"cost":0},{"id":"m12","date":"2030-01","type":"product","name":"Align IP: licensing + collabs","city":"all","signups":5000,"convLift":0,"churnDelta":0,"revenue":0,"cost":50000}],"streams":[{"id":"s1","name":"Date bookings (take rate)","cat":"Dates & events","driver":"per_mau","start":"2027-06","end":"","qty":0.02,"price":6,"unitCost":0.5,"growth":0.03,"capX":3},{"id":"s2","name":"Align nights (ticketed events)","cat":"Dates & events","driver":"per_city","start":"2027-03","end":"","qty":2,"price":1200,"unitCost":700,"growth":0.04,"capX":4},{"id":"s3","name":"Venue partner placements","cat":"Venue partners","driver":"per_live_city","start":"2027-08","end":"","qty":8,"price":300,"unitCost":0,"growth":0.04,"capX":6},{"id":"s4","name":"Season pass (free users)","cat":"Cards & products","driver":"per_free","start":"2027-10","end":"","qty":0.015,"price":9.99,"unitCost":1.5,"growth":0.01,"capX":2},{"id":"s5","name":"Digital packs (in-app)","cat":"Cards & products","driver":"per_mau","start":"2027-10","end":"","qty":0.03,"price":2.99,"unitCost":0.45,"growth":0.02,"capX":2.5},{"id":"s6","name":"IRL packs + sign boxes (DTC)","cat":"Cards & products","driver":"per_mau","start":"2028-03","end":"","qty":0.03,"price":6.99,"unitCost":2.4,"growth":0.03,"capX":3},{"id":"s7","name":"Retail sign boxes (wholesale)","cat":"Cards & products","driver":"flat","start":"2028-09","end":"","qty":4000,"price":3.6,"unitCost":1.4,"growth":0.08,"capX":25},{"id":"s8","name":"Talk decks (couples)","cat":"Cards & products","driver":"flat","start":"2028-02","end":"","qty":800,"price":24.99,"unitCost":7,"growth":0.05,"capX":10},{"id":"s9","name":"TCG league nights","cat":"Dates & events","driver":"per_live_city","start":"2029-03","end":"","qty":4,"price":500,"unitCost":200,"growth":0.03,"capX":4},{"id":"s10","name":"Marketplace fees","cat":"Marketplace","driver":"per_mau","start":"2029-01","end":"","qty":0.06,"price":0.75,"unitCost":0.08,"growth":0.03,"capX":3},{"id":"s11","name":"IP licensing + collabs","cat":"IP & licensing","driver":"flat","start":"2030-01","end":"","qty":1,"price":60000,"unitCost":5000,"growth":0.05,"capX":6}],"costs":[{"id":"c1","name":"Founders' pay","cat":"Team","driver":"fixed","steps":[{"from":"2027-01","amt":6000},{"from":"2027-08","amt":16000},{"from":"2028-06","amt":30000}]},{"id":"c2","name":"Engineering","cat":"Team","driver":"fixed","steps":[{"from":"2027-01","amt":12000},{"from":"2027-08","amt":35000},{"from":"2028-01","amt":80000},{"from":"2029-01","amt":160000},{"from":"2030-01","amt":260000},{"from":"2031-01","amt":360000}]},{"id":"c3","name":"Card art, design + content","cat":"Team","driver":"fixed","steps":[{"from":"2027-01","amt":4000},{"from":"2028-01","amt":18000},{"from":"2029-01","amt":40000},{"from":"2030-01","amt":70000}]},{"id":"c4","name":"City leads + community","cat":"Team","driver":"per_city","steps":[{"from":"2027-01","amt":2500},{"from":"2027-08","amt":7000},{"from":"2029-01","amt":12000}]},{"id":"c5","name":"Hosting + database","cat":"Infrastructure","driver":"per_mau","steps":[{"from":"2027-01","amt":0.06},{"from":"2029-01","amt":0.045}]},{"id":"c6","name":"AI readings + aura photo","cat":"Infrastructure","driver":"per_mau","steps":[{"from":"2027-01","amt":0.04}]},{"id":"c7","name":"Align+ extras (peeks, 45/night, deals)","cat":"Infrastructure","driver":"per_member","steps":[{"from":"2027-01","amt":0.15}]},{"id":"c8","name":"Verification, SMS + moderation","cat":"Infrastructure","driver":"per_new_user","steps":[{"from":"2027-01","amt":0.3}]},{"id":"c9","name":"Software + tools","cat":"Infrastructure","driver":"fixed","steps":[{"from":"2027-01","amt":800},{"from":"2028-01","amt":4000},{"from":"2030-01","amt":12000}]},{"id":"c10","name":"Paid acquisition (per signup)","cat":"Marketing","driver":"per_new_user","steps":[{"from":"2027-01","amt":2},{"from":"2027-08","amt":3.5},{"from":"2029-01","amt":4.5}]},{"id":"c11","name":"Creators + brand content","cat":"Marketing","driver":"fixed","steps":[{"from":"2027-01","amt":3000},{"from":"2027-08","amt":12000},{"from":"2028-01","amt":35000},{"from":"2029-01","amt":80000}]},{"id":"c12","name":"Support","cat":"Ops","driver":"per_payer","steps":[{"from":"2027-08","amt":0.25}]},{"id":"c13","name":"Starter box (new Align+ members)","cat":"COGS","driver":"per_new_payer","steps":[{"from":"2028-03","amt":6}]},{"id":"c14","name":"Season packs shipped (3/season)","cat":"COGS","driver":"per_payer","steps":[{"from":"2028-03","amt":2.67}]},{"id":"c15","name":"Legal, accounting, insurance","cat":"G&A","driver":"fixed","steps":[{"from":"2027-01","amt":2500},{"from":"2028-01","amt":9000},{"from":"2030-01","amt":25000}]},{"id":"c16","name":"Office + travel","cat":"G&A","driver":"fixed","steps":[{"from":"2027-01","amt":1000},{"from":"2028-01","amt":6000},{"from":"2029-01","amt":15000}]}],"funding":[{"id":"f1","date":"2027-03","name":"Pre-seed","amount":750000},{"id":"f2","date":"2027-10","name":"Seed","amount":3000000},{"id":"f3","date":"2028-09","name":"Series A","amount":12000000}]};
+
+/* ---------- state ---------- */
+const clone = o => JSON.parse(JSON.stringify(o));
+let S = clone(SEED);
+let R = null;
+let tab = 'overview';
+const ui = { revBy: 'city', revLog: false, unitYear: 0, goal: { metric: 'pay', value: 10000, month: '2027-12', scope: 'all', lever: 'signups' }, goalResult: null,
+  napkin: { target: 10000, months: 12 } };
+try { const u = JSON.parse(localStorage.getItem('align-proj-ui') || 'null'); if (u) { Object.assign(ui, u, { goalResult: null }); } } catch (e) {}
+const saveUi = () => { try { localStorage.setItem('align-proj-ui', JSON.stringify({ ...ui, goalResult: null })); } catch (e) {} };
+
+/* ---------- format ---------- */
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function money(v, d) {
+  if (!isFinite(v)) return '—';
+  const a = Math.abs(v), sg = v < 0 ? '−' : '';
+  if (a >= 1e9) return sg + '$' + (a / 1e9).toFixed(2) + 'B';
+  if (a >= 1e6) return sg + '$' + (a / 1e6).toFixed(a >= 1e8 ? 0 : a >= 1e7 ? 1 : 2) + 'M';
+  if (a >= 1e4) return sg + '$' + Math.round(a / 1e3) + 'K';
+  if (a >= 1e3) return sg + '$' + (a / 1e3).toFixed(1) + 'K';
+  if (d != null) return sg + '$' + a.toFixed(d);
+  if (a >= 100) return sg + '$' + Math.round(a);
+  if (a >= 1) return sg + '$' + a.toFixed(2);
+  if (a === 0) return '$0';
+  return sg + '$' + a.toPrecision(2);
+}
+function num(v) {
+  if (!isFinite(v)) return '—';
+  const a = Math.abs(v), sg = v < 0 ? '−' : '';
+  if (a >= 1e6) return sg + (a / 1e6).toFixed(a >= 1e7 ? 1 : 2) + 'M';
+  if (a >= 1e4) return sg + Math.round(a / 1e3) + 'K';
+  if (a >= 1e3) return sg + (a / 1e3).toFixed(1) + 'K';
+  return sg + Math.round(a).toLocaleString();
+}
+const pct = (v, d = 0) => isFinite(v) ? (v * 100).toFixed(d) + '%' : '—';
+const cls = v => v < 0 ? 'neg' : v > 0 ? 'pos' : '';
+const ML = i => mLabel(i, S.meta.startMonth);
+const MS = i => mStr(i, S.meta.startMonth);
+const yearOf = i => 'Y' + (Math.floor(i / 12) + 1);
+const SER = Array.from({ length: 13 }, (_, i) => `var(--s${i + 1})`);
+
+/* ---------- labels ---------- */
+const STREAM_DRIVERS = { per_mau: 'per active user / mo', per_payer: 'per paying member / mo', per_free: 'per free user / mo', per_city: 'per city in beta or live / mo', per_live_city: 'per live city / mo', per_new_payer: 'per new paying member', flat: 'units / mo, company-wide' };
+const COST_DRIVERS = { fixed: 'flat $ / mo', per_mau: 'per active user / mo', per_member: 'per Align+ member (paid + beta) / mo', per_payer: 'per paying member / mo', per_new_user: 'per signup', per_new_payer: 'per new paying member', per_city: 'per city in beta or live / mo', per_live_city: 'per live city / mo', pct_rev: '% of revenue' };
+const MS_TYPES = { event: 'Event', feature: 'Feature release', product: 'Product / cards', press: 'Press / partnership', other: 'Other' };
+const MS_COLORS = { event: 'var(--s4)', feature: 'var(--s3)', product: 'var(--s2)', press: 'var(--s5)', other: 'var(--s9)' };
+const opts = (o, v) => Object.entries(o).map(([k, l]) => `<option value="${esc(k)}"${k === v ? ' selected' : ''}>${esc(l)}</option>`).join('');
+const cityOpts = (v, all = true) => (all ? `<option value="all"${v === 'all' ? ' selected' : ''}>All cities</option>` : '') + S.markets.map(c => `<option value="${esc(c.id)}"${c.id === v ? ' selected' : ''}>${esc(c.name)}</option>`).join('');
+const monthOpts = v => Array.from({ length: N }, (_, i) => `<option value="${MS(i)}"${MS(i) === v ? ' selected' : ''}>${ML(i)} · ${yearOf(i)}</option>`).join('');
+
+/* ---------- inputs ---------- */
+function getP(path) { return path.split('.').reduce((o, k) => o?.[k], S); }
+function setP(path, v) { const ks = path.split('.'); let o = S; for (let i = 0; i < ks.length - 1; i++) o = o[ks[i]]; o[ks.at(-1)] = v; }
+function inp(path, type = 'num', cls = '', extra = '') {
+  const v = getP(path); const id = 'i-' + path.replace(/\./g, '-');
+  if (type === 'pct') return `<input id="${id}" type="number" step="any" class="${cls || 'w-sm'}" data-p="${path}" data-t="pct" value="${v == null ? '' : +(v * 100).toFixed(4)}" ${extra}>`;
+  if (type === 'num') return `<input id="${id}" type="number" step="any" class="${cls || 'w-num'}" data-p="${path}" data-t="num" value="${v ?? ''}" ${extra}>`;
+  if (type === 'month') return `<input id="${id}" type="month" data-p="${path}" data-t="month" value="${esc(v || '')}" ${extra}>`;
+  return `<input id="${id}" type="text" class="${cls || 'w-name'}" data-p="${path}" data-t="text" value="${esc(v)}" ${extra}>`;
+}
+function sel(path, o) { return `<select id="i-${path.replace(/\./g, '-')}" data-p="${path}" data-t="text">${o}</select>`; }
+const uid = p => p + Math.random().toString(36).slice(2, 8);
+
+/* ---------- persistence ---------- */
+let db = null, docRef = null, saveTimer = null, saving = false, pendingSave = false, lastSaved = '', localOnly = false;
+const saveEl = document.getElementById('save');
+function status(s, t) { saveEl.dataset.s = s; saveEl.lastElementChild.textContent = t; }
+function scheduleSave() {
+  status('busy', 'Unsaved changes'); clearTimeout(saveTimer); saveTimer = setTimeout(doSave, 900);
+}
+async function doSave() {
+  const body = JSON.stringify(S);
+  if (localOnly || !docRef) { try { localStorage.setItem('align-proj-state', body); status('ok', 'Saved in this browser'); } catch (e) { status('err', 'Not saved'); } return; }
+  if (saving) { pendingSave = true; return; }
+  saving = true; status('busy', 'Saving…');
+  try { await docRef.set({ state: S, savedAt: new Date().toISOString() }); lastSaved = body; status('ok', 'Saved'); }
+  catch (e) { status('err', e?.code === 'not_granted' || e?.code === 'permission_denied' ? 'View only: changes not saved' : 'Save failed, will retry on next edit'); }
+  saving = false; if (pendingSave) { pendingSave = false; doSave(); }
+}
+function normalize(st) {
+  const d = clone(SEED);
+  const out = { ...d, ...st };
+  for (const k of ['meta', 'pricing', 'growth']) out[k] = { ...d[k], ...(st[k] || {}) };
+  for (const k of ['markets', 'milestones', 'streams', 'costs', 'funding']) if (!Array.isArray(out[k])) out[k] = [];
+  return out;
+}
+async function connect() {
+  const timer = setTimeout(() => { if (!docRef && !localOnly) status('busy', 'Still connecting…'); }, 10000);
+  try { db = window.claude?.use ? await window.claude.use('db') : null; } catch (e) { db = null; }
+  if (!db) {
+    clearTimeout(timer); localOnly = true;
+    try { const l = localStorage.getItem('align-proj-state'); if (l) { S = normalize(JSON.parse(l)); full(); } } catch (e) {}
+    status('ok', 'Saving in this browser only'); return;
+  }
+  docRef = db.doc('model/main');
+  let first = true;
+  docRef.onSnapshot(snap => {
+    if (!snap.metadata.fromCache) clearTimeout(timer);
+    if (snap.metadata.hasPendingWrites) return;
+    if (snap.exists) {
+      const st = snap.data().state; const body = JSON.stringify(st);
+      if (body !== lastSaved && body !== JSON.stringify(S)) {
+        lastSaved = body; S = normalize(clone(st));
+        const a = document.activeElement; if (a && a.dataset?.p && !first) { pendingRemote = true; } else full();
+      } else lastSaved = body;
+      status('ok', 'Saved');
+    } else if (first) status('ok', 'Starter numbers · edits save');
+    first = false;
+  }, err => { clearTimeout(timer); status('err', 'Can’t reach saved data'); });
+}
+let pendingRemote = false;
+document.addEventListener('focusout', () => { if (pendingRemote) { pendingRemote = false; setTimeout(full, 0); } });
+
+/* ---------- recompute + render ---------- */
+let raf = 0;
+function recompute() { R = run(S); }
+function queue() { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { recompute(); TABS[tab].out?.(); }); }
+const main = document.getElementById('main');
+function full() {
+  recompute();
+  document.getElementById('y1lab').textContent = S.meta.startMonth.slice(0, 4);
+  for (const b of document.querySelectorAll('#scen button')) b.setAttribute('aria-pressed', String(b.dataset.scen === S.meta.scenario));
+  for (const a of document.querySelectorAll('#tabs a')) { if (a.getAttribute('href') === '#' + tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }
+  main.innerHTML = `<section class="tab">${TABS[tab].html()}</section>`;
+  TABS[tab].out?.();
+}
+main.addEventListener('input', e => {
+  const el = e.target; const p = el.dataset.p; if (!p) return;
+  if (el.dataset.ui) return;
+  const t = el.dataset.t; let v = el.value;
+  if (t === 'num') v = v === '' ? 0 : +v; else if (t === 'pct') v = v === '' ? 0 : +v / 100;
+  if ((t === 'num' || t === 'pct') && !isFinite(v)) return;
+  setP(p, v); queue(); scheduleSave();
+});
+main.addEventListener('change', e => {
+  const el = e.target;
+  if (el.dataset.ui) { setP2(ui, el.dataset.ui, el.type === 'checkbox' ? el.checked : el.dataset.t === 'num' ? +el.value : el.value); saveUi(); TABS[tab].out?.(); return; }
+  if (el.tagName === 'SELECT' && el.dataset.p) { setP(el.dataset.p, el.value); if (el.dataset.full) full(); else queue(); scheduleSave(); }
+});
+function setP2(o, path, v) { const ks = path.split('.'); for (let i = 0; i < ks.length - 1; i++) o = o[ks[i]]; o[ks.at(-1)] = v; }
+main.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const a = b.dataset.act, p = b.dataset.p;
+  ACTS[a]?.(b, p);
+});
+const ACTS = {
+  del(b, p) { const ks = p.split('.'); const i = +ks.pop(); const arr = getP(ks.join('.')); arr.splice(i, 1); full(); scheduleSave(); },
+  addMarket() { const last = S.markets.at(-1); S.markets.push({ id: uid('c'), name: 'New city', region: last?.region || 'Texas', betaStart: MS(12), launch: MS(14), tam: 500000, betaSignups: 400, betaGrowth: 0.3, launchSignups: 2500, growth: 0.06, betaBudget: 15000, launchBudget: 40000 }); full(); scheduleSave(); },
+  addMs() { S.milestones.push({ id: uid('m'), date: MS(6), type: 'event', name: 'New milestone', city: 'all', signups: 0, convLift: 0, churnDelta: 0, revenue: 0, cost: 0 }); S.milestones.sort((a, b) => a.date.localeCompare(b.date)); full(); scheduleSave(); },
+  sortMs() { S.milestones.sort((a, b) => (a.date || '').localeCompare(b.date || '')); full(); scheduleSave(); },
+  addStream() { S.streams.push({ id: uid('s'), name: 'New revenue stream', cat: 'Cards & products', driver: 'per_mau', start: MS(12), end: '', qty: 0.02, price: 5, unitCost: 1, growth: 0.02, capX: 3 }); full(); scheduleSave(); },
+  addCost() { S.costs.push({ id: uid('c'), name: 'New cost', cat: 'Ops', driver: 'fixed', steps: [{ from: MS(0), amt: 1000 }] }); full(); scheduleSave(); },
+  addStep(b, p) { const c = getP(p); const lastFrom = c.steps.at(-1)?.from; const k = lastFrom ? Math.min(N - 1, mIdx(lastFrom, S.meta.startMonth) + 12) : 0; c.steps.push({ from: MS(k), amt: c.steps.at(-1)?.amt || 0 }); full(); scheduleSave(); },
+  addFund() { S.funding.push({ id: uid('f'), date: MS(12), name: 'New round', amount: 1000000 }); full(); scheduleSave(); },
+  revBy(b) { ui.revBy = b.dataset.v; saveUi(); TABS[tab].out(); },
+  revLog() { ui.revLog = !ui.revLog; saveUi(); TABS[tab].out(); },
+  unitYear(b) { ui.unitYear = +b.dataset.v; saveUi(); TABS[tab].out(); },
+  solve() { solveGoal(); TABS.goals.out(); },
+  apply() { applyGoal(); },
+  copyJson(b) { const t = JSON.stringify(S, null, 2); copy(t, b, 'Copied model JSON'); },
+  copyCsv(b) { copy(annualCsv(), b, 'Copied Y1–Y5 table'); },
+  loadJson() { const ta = document.getElementById('paste'); try { const st = JSON.parse(ta.value); if (!st.markets) throw 0; S = normalize(st); full(); scheduleSave(); } catch (e) { document.getElementById('pasteMsg').textContent = 'That isn’t a model JSON. Paste the whole thing you copied with “Copy model JSON”.'; } },
+  resetAsk() { document.getElementById('resetBox').hidden = false; },
+  resetNo() { document.getElementById('resetBox').hidden = true; },
+  resetYes() { S = clone(SEED); full(); scheduleSave(); },
+};
+function copy(text, btn, msg) {
+  const done = () => { const o = btn.textContent; btn.textContent = msg; setTimeout(() => btn.textContent = o, 1600); };
+  try { navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done)); } catch (e) { fallbackCopy(text, done); }
+}
+function fallbackCopy(text, done) { const ta = document.getElementById('paste'); if (ta) { ta.value = text; ta.select(); } done(); }
+document.getElementById('scen').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.meta.scenario = b.dataset.scen; full(); scheduleSave(); });
+
+/* ---------- charts ---------- */
+const tip = document.getElementById('tip');
+function niceMax(v) { if (v <= 0) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))); const n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p; }
+function chart(el, series, o = {}) {
+  const W = o.w || 900, H = o.h || 300, L = 62, Rr = 14, T = 12, B = 28;
+  const iw = W - L - Rr, ih = H - T - B; const n = N;
+  const x = i => L + (i + 0.5) * iw / n;
+  const fmt = o.fmt || money;
+  let ymin = 0, ymax, y;
+  const stack = !!o.stack && !o.log;
+  const tops = Array.from({ length: n }, (_, i) => series.reduce((a, s) => a + Math.max(0, s.values[i]), 0));
+  if (o.log) {
+    const vals = series.flatMap(s => s.values).filter(v => v > 0);
+    const lo = vals.length ? Math.pow(10, Math.floor(Math.log10(Math.max(1, Math.min(...vals))))) : 1;
+    const hi = Math.pow(10, Math.ceil(Math.log10(Math.max(10, ...vals))));
+    ymin = lo; ymax = hi; y = v => T + ih - (Math.log10(Math.max(v, lo)) - Math.log10(lo)) / (Math.log10(hi) - Math.log10(lo)) * ih;
+  } else {
+    const all = stack ? tops : series.flatMap(s => s.values);
+    ymax = niceMax(Math.max(...all, 1)); ymin = Math.min(0, ...series.flatMap(s => s.values));
+    if (ymin < 0) ymin = -niceMax(-ymin);
+    y = v => T + ih - (v - ymin) / (ymax - ymin) * ih;
+  }
+  let g = '<g class="grid">';
+  const ticks = [];
+  if (o.log) { for (let v = ymin; v <= ymax * 1.001; v *= 10) ticks.push(v); }
+  else { const step = (ymax - ymin) / 4; for (let k = 0; k <= 4; k++) ticks.push(ymin + step * k); }
+  for (const v of ticks) g += `<line x1="${L}" x2="${W - Rr}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 8}" y="${y(v) + 3.5}" text-anchor="end">${fmt(v)}</text>`;
+  for (let k = 0; k <= 5; k++) { const xx = L + k * iw / 5; g += `<line x1="${xx}" x2="${xx}" y1="${T}" y2="${T + ih}" stroke-dasharray="2 4"/>`; if (k < 5) g += `<text x="${xx + iw / 10}" y="${H - 8}" text-anchor="middle">Y${k + 1} · ${+S.meta.startMonth.slice(0, 4) + k}</text>`; }
+  g += '</g>';
+  let marks = '';
+  if (stack) {
+    const acc = new Array(n).fill(0);
+    for (const s of series) {
+      const lo = acc.slice(); for (let i = 0; i < n; i++) acc[i] += Math.max(0, s.values[i]);
+      if (acc.every((v, i) => v === lo[i])) continue;
+      let d = `M${x(0)},${y(acc[0])}`; for (let i = 1; i < n; i++) d += `L${x(i)},${y(acc[i])}`;
+      for (let i = n - 1; i >= 0; i--) d += `L${x(i)},${y(lo[i])}`;
+      marks += `<path d="${d}Z" fill="${s.color}" fill-opacity=".82" stroke="${s.color}" stroke-width=".6"/>`;
+    }
+  } else {
+    if (ymin < 0) marks += `<line x1="${L}" x2="${W - Rr}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink)" stroke-width="1" opacity=".5"/>`;
+    for (const s of series) {
+      let d = ''; let started = false;
+      for (let i = 0; i < n; i++) { const v = s.values[i]; if (o.log && v <= 0) { started = false; continue; } d += (started ? 'L' : 'M') + x(i) + ',' + y(v); started = true; }
+      if (s.area && !o.log) { marks += `<path d="M${x(0)},${y(Math.max(ymin, 0))}${d.replace(/^M/, 'L')}L${x(n - 1)},${y(Math.max(ymin, 0))}Z" fill="${s.color}" fill-opacity=".12"/>`; }
+      marks += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.w || 2}" ${s.dash ? 'stroke-dasharray="4 4"' : ''} stroke-linejoin="round"/>`;
+      const li = n - 1; if (!o.log || s.values[li] > 0) marks += `<circle cx="${x(li)}" cy="${y(s.values[li])}" r="3.5" fill="${s.color}"/>`;
+    }
+  }
+  if (o.markers) for (const m of o.markers) marks += `<g><line x1="${x(m.t)}" x2="${x(m.t)}" y1="${T}" y2="${T + ih}" stroke="${m.color || 'var(--gold)'}" stroke-dasharray="3 3"/><text x="${x(m.t) + 4}" y="${T + 10}" style="fill:${m.color || 'var(--gold)'}">${esc(m.label)}</text></g>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.label || 'chart')}">${g}${marks}<line class="cross" x1="0" x2="0" y1="${T}" y2="${T + ih}" stroke="var(--ink)" stroke-opacity=".35" visibility="hidden"/><rect x="${L}" y="${T}" width="${iw}" height="${ih}" fill="transparent"/></svg>` +
+    (o.legend === false ? '' : `<div class="legend">${series.filter(s => s.values.some(v => v)).map(s => `<span><i class="dot" style="background:${s.color}"></i>${esc(s.name)}</span>`).join('')}</div>`);
+  const svg = el.querySelector('svg'), cross = svg.querySelector('.cross');
+  const move = ev => {
+    const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) / r.width * W;
+    const i = clamp(Math.floor((px - L) / iw * n), 0, n - 1);
+    cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('visibility', 'visible');
+    const rows = series.filter(s => s.values[i]).slice().reverse().map(s => `<div class="r"><span><i class="dot" style="background:${s.color}"></i>${esc(s.name)}</span><span class="mono">${fmt(s.values[i])}</span></div>`).join('');
+    const tot = stack ? `<div class="r" style="border-top:1px solid var(--line);margin-top:4px;padding-top:4px"><span>Total</span><span class="mono"><b>${fmt(tops[i])}</b></span></div>` : '';
+    tip.innerHTML = `<b>${ML(i)}</b> <span class="muted small">${yearOf(i)}</span>${rows || '<div class="muted">Nothing yet</div>'}${tot}`;
+    tip.hidden = false;
+    const tw = tip.offsetWidth, th = tip.offsetHeight; let lx = ev.pageX + 14, ly = ev.pageY - th - 10;
+    if (lx + tw > window.scrollX + document.documentElement.clientWidth - 8) lx = ev.pageX - tw - 14;
+    if (ly < window.scrollY + 70) ly = ev.pageY + 16;
+    tip.style.left = lx + 'px'; tip.style.top = ly + 'px';
+  };
+  svg.addEventListener('pointermove', move); svg.addEventListener('pointerdown', move);
+  svg.addEventListener('pointerleave', () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); });
+}
+function yearBars(el, rows, fmt = money) {
+  // rows: [{name,color,values:[5]}] stacked horizontal-ish columns per year
+  const W = 600, H = 220, L = 56, B = 26, T = 14, iw = W - L - 10, ih = H - T - B;
+  const tot = [0, 1, 2, 3, 4].map(y => rows.reduce((a, r) => a + Math.max(0, r.values[y]), 0));
+  const ymax = niceMax(Math.max(...tot, 1)); const bw = iw / 5 * 0.56;
+  const y = v => T + ih - v / ymax * ih;
+  let s = '<g class="grid">'; for (let k = 0; k <= 4; k++) { const v = ymax * k / 4; s += `<line x1="${L}" x2="${W - 10}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 8}" y="${y(v) + 3.5}" text-anchor="end">${fmt(v)}</text>`; } s += '</g>';
+  for (let yy = 0; yy < 5; yy++) {
+    const cx = L + (yy + 0.5) * iw / 5; let acc = 0;
+    for (const r of rows) { const v = Math.max(0, r.values[yy]); if (!v) continue; s += `<rect x="${cx - bw / 2}" y="${y(acc + v)}" width="${bw}" height="${Math.max(0.5, y(acc) - y(acc + v))}" fill="${r.color}"><title>${esc(r.name)}: ${fmt(v)}</title></rect>`; acc += v; }
+    s += `<text x="${cx}" y="${y(acc) - 5}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${fmt(acc)}</text><text x="${cx}" y="${H - 8}" text-anchor="middle">Y${yy + 1}</text>`;
+  }
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}">${s}</svg><div class="legend">${rows.filter(r => r.values.some(v => v)).map(r => `<span><i class="dot" style="background:${r.color}"></i>${esc(r.name)}</span>`).join('')}</div>`;
+}
+
+/* ---------- derived helpers ---------- */
+const sumR = (a, s, e) => a.slice(s, e).reduce((p, v) => p + v, 0);
+function cityAnnual(x, key) { return [0, 1, 2, 3, 4].map(y => sumR(x[key], y * 12, y * 12 + 12)); }
+function regions() { const m = {}; for (const x of R.cities) { const r = x.c.region || 'Other'; (m[r] ||= []).push(x); } return m; }
+function nationalRev() { return R.revenue.map((v, i) => v - R.cities.reduce((a, x) => a + x.rev[i], 0)); }
+function revSeries() {
+  if (ui.revBy === 'stream') return REV_CATS.map((k, i) => ({ name: k, color: SER[i], values: R.rev[k] }));
+  const nat = { name: 'National (retail, licensing, one-offs)', color: 'var(--s9)', values: nationalRev() };
+  if (ui.revBy === 'region') { const rg = regions(); return Object.entries(rg).map(([k, xs], i) => ({ name: k, color: SER[i], values: Array.from({ length: N }, (_, t) => xs.reduce((a, x) => a + x.rev[t], 0)) })).concat([nat]); }
+  return R.cities.map((x, i) => ({ name: x.c.name, color: SER[i % 13], values: x.rev })).concat([{ ...nat, color: 'var(--muted)' }]);
+}
+function unitStats(y) {
+  const s = y * 12, e = s + 12; const um = sumR(R.mau, s, e) || 1, up = sumR(R.pay, s, e) || 1;
+  const avg = a => sumR(a, s, e) / 12;
+  const sub = sumR(R.rev['Subscriptions'], s, e);
+  const G = S.growth; const arppu = R.arppu;
+  const unitPayer = avg(R.unitPayer); const margin = arppu - unitPayer;
+  const cacSign = sumR(R.mktg, s, e) / (sumR(R.signups, s, e) || 1);
+  const cacPay = sumR(R.mktg, s, e) / (sumR(R.newPay, s, e) || 1);
+  const ltv = margin / Math.max(0.003, G.paidChurn);
+  return {
+    um, up, free: avg(R.unitMau), member: avg(R.unitMember), payer: unitPayer,
+    loaded: sumR(R.totalCost, s, e) / um, loadedNoMk: (sumR(R.totalCost, s, e) - sumR(R.mktg, s, e)) / um,
+    arpu: sumR(R.revenue, s, e) / um, arppu: sub / up, margin, cacSign, cacPay, ltv, ltvcac: ltv / cacPay, payback: cacPay / margin,
+    gm: sumR(R.gross, s, e) / (sumR(R.revenue, s, e) || 1), em: sumR(R.ebitda, s, e) / (sumR(R.revenue, s, e) || 1),
+    avgMau: um / 12,
+  };
+}
+function betaStats() {
+  let enrolled = 0; for (const x of R.cities) for (let t = 0; t < N; t++) if (x.phase[t] === 'beta') enrolled += x.signups[t];
+  const compMonths = sumR(R.comp, 0, N), cash = sumR(R.betaCash, 0, N), list = sumR(R.betaList, 0, N), conv = sumR(R.betaConverted, 0, N);
+  const u = unitStats(1);
+  return { enrolled, compMonths, cash, list, conv, ltvBack: conv * Math.max(0, u.ltv), perUser: cash / (enrolled || 1), perUserDay: cash / (compMonths || 1) / 30.42, perUserMonth: cash / (compMonths || 1) };
+}
+const per = v => ({ day: v / 30.42, week: v * 7 / 30.42, month: v, year: v * 12 });
+
+/* ---------- goal solving ---------- */
+const METRICS = { pay: 'Paying members', mau: 'Active users', mrr: 'Monthly revenue (MRR)', arr: 'Annual run-rate (ARR)', subMrr: 'Subscription MRR', yrev: 'Revenue for that year', signups: 'Signups that month' };
+const LEVERS = { signups: 'More signups (scale signup inputs)', conv: 'Better conversion to paid', churn: 'Lower paid churn' };
+function metricVal(r, g) {
+  const t = mIdx(g.month, S.meta.startMonth); const city = g.scope !== 'all' ? r.cities.find(x => x.c.id === g.scope) : null;
+  switch (g.metric) {
+    case 'pay': return city ? city.pay_[t] : r.pay[t];
+    case 'mau': return city ? city.mau[t] : r.mau[t];
+    case 'mrr': return city ? city.rev[t] : r.revenue[t];
+    case 'arr': return (city ? city.rev[t] : r.revenue[t]) * 12;
+    case 'subMrr': return city ? city.subRev[t] : r.rev['Subscriptions'][t];
+    case 'signups': return city ? city.signups[t] : r.signups[t];
+    case 'yrev': { const y = Math.floor(t / 12); return city ? sumR(city.rev, y * 12, y * 12 + 12) : r.years[y].revenue; }
+  }
+}
+function solveGoal() {
+  const g = ui.goal; const t = mIdx(g.month, S.meta.startMonth);
+  if (!(t >= 0 && t < N)) { ui.goalResult = { err: 'Pick a month inside the 5 years.' }; return; }
+  const sc = g.scope !== 'all' ? g.scope : null;
+  const mk = f => g.lever === 'signups' ? { signupX: f, cityId: sc } : g.lever === 'conv' ? { convX: f } : { churnX: 1 / f };
+  const val = f => metricVal(run(S, mk(f)), g);
+  const base = val(1); const target = +g.value;
+  let lo = 0.02, hi = g.lever === 'signups' ? 200 : g.lever === 'conv' ? 15 : 12;
+  if (val(hi) < target) { ui.goalResult = { base, target, f: null, err: `Even ${hi}× on this lever doesn’t reach it by ${ML(t)}. Try a later month, a bigger lever, or pull a launch date earlier.` }; return; }
+  if (val(lo) > target) { ui.goalResult = { base, target, f: lo, t }; }
+  for (let k = 0; k < 50; k++) { const m = Math.sqrt(lo * hi); if (val(m) >= target) hi = m; else lo = m; }
+  const f = hi; const r1 = run(S, mk(f)); const r0 = R;
+  const city0 = sc ? r0.cities.find(x => x.c.id === sc) : null, city1 = sc ? r1.cities.find(x => x.c.id === sc) : null;
+  const pick = (r, c, k, kc) => c ? c[kc][t] : r[k][t];
+  ui.goalResult = { base, target, f, t, lever: g.lever,
+    rows: [
+      ['Signups that month', pick(r0, city0, 'signups', 'signups'), pick(r1, city1, 'signups', 'signups'), num],
+      ['Signups per day', pick(r0, city0, 'signups', 'signups') / 30.42, pick(r1, city1, 'signups', 'signups') / 30.42, num],
+      ['Active users', pick(r0, city0, 'mau', 'mau'), pick(r1, city1, 'mau', 'mau'), num],
+      ['Paying members', pick(r0, city0, 'pay', 'pay_'), pick(r1, city1, 'pay', 'pay_'), num],
+      ['Monthly revenue', pick(r0, city0, 'revenue', 'rev'), pick(r1, city1, 'revenue', 'rev'), money],
+      ['Marketing spend that month (all cities)', r0.mktg[t], r1.mktg[t], money],
+      ['Marketing spend to date (all cities)', sumR(r0.mktg, 0, t + 1), sumR(r1.mktg, 0, t + 1), money],
+      ['Cash at that month', r0.cash[t], r1.cash[t], money],
+    ] };
+}
+function applyGoal() {
+  const g = ui.goal, r = ui.goalResult; if (!r?.f) return;
+  if (r.lever === 'signups') { for (const c of S.markets) if (g.scope === 'all' || c.id === g.scope) { c.betaSignups = Math.round(c.betaSignups * r.f); c.launchSignups = Math.round(c.launchSignups * r.f); } }
+  else if (r.lever === 'conv') { S.growth.conv = +(S.growth.conv * r.f).toFixed(4); S.growth.freeToPaid = +(S.growth.freeToPaid * r.f).toFixed(4); }
+  else S.growth.paidChurn = +(S.growth.paidChurn / r.f).toFixed(4);
+  ui.goalResult = null; full(); scheduleSave();
+}
+
+/* ---------- CSV ---------- */
+function annualCsv() {
+  const Y = R.years; const rows = [['', ...Y.map(y => `${y.label} (${y.cal})`)]];
+  const add = (n, f) => rows.push([n, ...Y.map(f)]);
+  add('Live cities', y => y.liveCities); add('Active users (end)', y => Math.round(y.mau)); add('Paying members (end)', y => Math.round(y.pay)); add('Signups', y => Math.round(y.signups));
+  add('Revenue', y => Math.round(y.revenue)); for (const k of REV_CATS) add('  ' + k, y => Math.round(y.rev[k]));
+  add('COGS', y => Math.round(y.cogs)); add('Gross profit', y => Math.round(y.gross)); add('Gross margin %', y => (y.gross / (y.revenue || 1) * 100).toFixed(1));
+  for (const k of COST_CATS) if (k !== 'COGS') add('  ' + k, y => Math.round(y.cost[k]));
+  add('Operating costs', y => Math.round(y.opex)); add('EBITDA', y => Math.round(y.ebitda)); add('Funding', y => Math.round(y.funding)); add('Ending cash', y => Math.round(y.cash));
+  return rows.map(r => r.join('\t')).join('\n');
+}
+
+/* ---------- tabs ---------- */
+const TABS = {};
+TABS.overview = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Align, Y1 to Y5</h1><p class="lede">Houston beta in January, Austin in February, Dallas and San Antonio this summer, all of Texas in August, then the next region. Every number below recalculates as you change the inputs in the other tabs.</p></div>
+  <div class="kpis" id="o-kpis"></div>
+  <div class="card"><header><h2>Monthly revenue</h2><div class="row"><div class="seg" id="o-by">${['city', 'region', 'stream'].map(v => `<button data-act="revBy" data-v="${v}" aria-pressed="${ui.revBy === v}">By ${v}</button>`).join('')}</div><button class="btn" data-act="revLog" id="o-log">${ui.revLog ? 'Linear scale' : 'Log scale'}</button></div></header><div class="chart" id="o-rev"></div></div>
+  <div class="card"><header><h2>Year by year</h2><button class="btn" data-act="copyCsv">Copy table for Sheets</button></header><div class="scroll" id="o-table"></div></div>
+  <div class="grid2">
+    <div class="card"><header><h2>Users</h2><span class="hint">end of each month</span></header><div class="chart" id="o-users"></div></div>
+    <div class="card"><header><h2>Cash in the bank</h2><span class="hint">with funding rounds</span></header><div class="chart" id="o-cash"></div></div>
+  </div>`,
+  out() {
+    const Y = R.years; const u1 = unitStats(0); const b = betaStats();
+    const be = R.breakeven >= 0 ? `${ML(R.breakeven)} · ${yearOf(R.breakeven)}` : 'Not in 5 years';
+    const runway = R.firstNeg >= 0 ? `<span class="neg">Cash runs out ${ML(R.firstNeg)}</span>` : `Lowest ${money(R.lowCash)} in ${ML(R.lowCashAt)}`;
+    document.getElementById('o-kpis').innerHTML = [
+      ['Y1 revenue', money(Y[0].revenue), `${money(Y[0].exitMRR)}/mo by Dec`, ''],
+      ['Y5 revenue', money(Y[4].revenue), `${num(Y[4].pay)} paying members`, 'violet'],
+      ['Y1 burn', money(-Y[0].ebitda), `EBITDA ${money(Y[0].ebitda)}`, ''],
+      ['Break-even month', be, runway, ''],
+      ['Cost per user, per day', money(u1.loaded / 30.42, 3), `Y1 fully loaded · ${money(u1.free / 30.42, 4)} to serve`, 'gold'],
+      ['Beta offer cost', money(b.cash), `${num(b.enrolled)} beta users · ${money(b.list)} list value`, 'gold'],
+    ].map(([l, v, s, c]) => `<div class="kpi ${c}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
+    for (const bt of document.querySelectorAll('#o-by button')) bt.setAttribute('aria-pressed', String(bt.dataset.v === ui.revBy));
+    document.getElementById('o-log').textContent = ui.revLog ? 'Linear scale' : 'Log scale';
+    chart(document.getElementById('o-rev'), revSeries(), { stack: true, log: ui.revLog, h: 320, label: 'Monthly revenue' });
+    const row = (n, f, c = '', fm = money) => `<tr class="${c}"><td>${n}</td>${Y.map(y => { const v = f(y); return `<td class="num ${c === 'tot' || c === 'cash' ? cls(v) : ''}">${fm(v)}</td>`; }).join('')}</tr>`;
+    document.getElementById('o-table').innerHTML = `<table><thead><tr><th></th>${Y.map(y => `<th>${y.label} · ${y.cal}</th>`).join('')}</tr></thead><tbody>
+      <tr class="sec"><td colspan="6">Growth</td></tr>
+      ${row('Live cities', y => y.liveCities, '', v => v)}
+      ${row('Signups', y => y.signups, '', num)}
+      ${row('Active users, end of year', y => y.mau, '', num)}
+      ${row('Paying members, end of year', y => y.pay, '', num)}
+      ${row('Beta members still free, end of year', y => y.comp, 'sub', num)}
+      ${row('Monthly revenue in December', y => y.exitMRR)}
+      <tr class="sec"><td colspan="6">Profit and loss</td></tr>
+      ${row('Revenue', y => y.revenue, 'tot')}
+      ${REV_CATS.map(k => row(k, y => y.rev[k], 'sub')).join('')}
+      ${row('Cost of revenue (fees, cards, shipping)', y => -y.cogs)}
+      ${row('Gross profit', y => y.gross, 'tot')}
+      ${row('Gross margin', y => y.gross / (y.revenue || 1), 'sub', v => pct(v))}
+      ${COST_CATS.filter(k => k !== 'COGS').map(k => row(k, y => -y.cost[k], 'sub')).join('')}
+      ${row('Operating costs', y => -y.opex)}
+      ${row('EBITDA', y => y.ebitda, 'tot')}
+      ${row('EBITDA margin', y => y.ebitda / (y.revenue || 1), 'sub', v => pct(v))}
+      <tr class="sec"><td colspan="6">Cash</td></tr>
+      ${row('Funding raised', y => y.funding)}
+      ${row('Cash at end of year', y => y.cash, 'cash')}
+    </tbody></table>`;
+    chart(document.getElementById('o-users'), [
+      { name: 'Active users', color: 'var(--s1)', values: R.mau, area: true },
+      { name: 'Paying members', color: 'var(--s3)', values: R.pay },
+      { name: 'Beta members (free Align+)', color: 'var(--s2)', values: R.comp },
+    ], { fmt: num, h: 300, w: 560, label: 'Users' });
+    chart(document.getElementById('o-cash'), [{ name: 'Cash', color: 'var(--s5)', values: R.cash, area: true }, { name: 'EBITDA per month', color: 'var(--s4)', values: R.ebitda, w: 1.5 }],
+      { h: 300, w: 560, label: 'Cash', markers: (S.funding || []).map(f => ({ t: mIdx(f.date, S.meta.startMonth), label: f.name })).filter(m => m.t >= 0 && m.t < N) });
+  }
+};
+
+TABS.plan = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Launch plan</h1><p class="lede">Cities come from the Cities tab. Add events, feature releases and card drops here; each one can bring signups, lift conversion, cut churn, or cost money in its month.</p></div>
+  <div class="card"><header><h2>Timeline</h2><div class="legend" style="margin:0"><span><i class="dot" style="background:var(--gold)"></i>Beta (free Align+)</span><span><i class="dot" style="background:var(--accent)"></i>Live and charging</span>${Object.entries(MS_TYPES).map(([k, l]) => `<span><i class="dot" style="background:${MS_COLORS[k]};transform:rotate(45deg)"></i>${l}</span>`).join('')}</div></header><div class="scroll" id="p-tl"></div></div>
+  <div class="card"><header><h2>Milestones</h2><div class="row"><button class="btn" data-act="sortMs">Sort by date</button><button class="btn primary" data-act="addMs">Add milestone</button></div></header>
+    <p class="hint" style="margin-bottom:10px">Signups land in that month (split across live cities when set to All cities). Conversion lift and churn change are in percentage points and last from that month on. Revenue and cost are one-time.</p>
+    <div class="scroll"><table class="ed"><thead><tr><th>Month</th><th>Type</th><th>Milestone</th><th>City</th><th>+ Signups</th><th>Conv. lift, pts</th><th>Paid churn Δ, pts</th><th>One-time revenue</th><th>One-time cost</th><th></th></tr></thead><tbody>
+    ${S.milestones.map((m, i) => `<tr><td>${inp(`milestones.${i}.date`, 'month')}</td><td>${sel(`milestones.${i}.type`, opts(MS_TYPES, m.type))}</td><td>${inp(`milestones.${i}.name`, 'text', 'w-name', 'style="min-width:230px"')}</td><td>${sel(`milestones.${i}.city`, cityOpts(m.city || 'all'))}</td><td>${inp(`milestones.${i}.signups`)}</td><td>${inp(`milestones.${i}.convLift`, 'num', 'w-sm')}</td><td>${inp(`milestones.${i}.churnDelta`, 'num', 'w-sm')}</td><td>${inp(`milestones.${i}.revenue`)}</td><td>${inp(`milestones.${i}.cost`)}</td><td><button class="x" data-act="del" data-p="milestones.${i}" aria-label="Delete milestone">×</button></td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="card"><header><h2>Month by month</h2><span class="hint">first 24 months</span></header><div class="scroll" id="p-months"></div></div>`,
+  out() {
+    const st = S.meta.startMonth; const pc = t => clamp(t / N * 100, 0, 100);
+    const msRow = `<div class="tl-row"><div class="tl-lab"><b>Milestones</b></div><div class="tl-track">${S.milestones.map(m => { const t = mIdx(m.date, st); if (!(t >= 0 && t < N)) return ''; return `<i class="tl-ms" style="left:${pc(t + 0.5)}%;background:${MS_COLORS[m.type] || 'var(--s9)'}" title="${esc(ML(t) + ' · ' + m.name)}"></i>`; }).join('')}</div></div>`;
+    const fRow = `<div class="tl-row"><div class="tl-lab"><b>Funding</b></div><div class="tl-track">${(S.funding || []).map(f => { const t = mIdx(f.date, st); if (!(t >= 0 && t < N)) return ''; return `<i class="tl-ms" style="left:${pc(t + 0.5)}%;background:var(--good)" title="${esc(ML(t) + ' · ' + f.name + ' ' + money(f.amount))}"></i>`; }).join('')}</div></div>`;
+    const rows = R.cities.map(x => { const b = Math.max(0, x.b), l = Math.min(N, x.l); return `<div class="tl-row"><div class="tl-lab" title="${esc(x.c.name)}">${esc(x.c.name)}</div><div class="tl-track">${x.b < N && l > b ? `<i class="tl-bar beta" style="left:${pc(b)}%;width:${pc(l) - pc(b)}%" title="Beta ${ML(b)}"></i>` : ''}${x.l < N ? `<i class="tl-bar live" style="left:${pc(Math.max(0, x.l))}%;width:${100 - pc(Math.max(0, x.l))}%" title="Live ${ML(x.l)}"></i>` : ''}</div></div>`; }).join('');
+    document.getElementById('p-tl').innerHTML = `<div class="tl"><div class="tl-years"><div></div><div>${[0, 1, 2, 3, 4].map(y => `<span>Y${y + 1} · ${+st.slice(0, 4) + y}</span>`).join('')}</div></div>${msRow}${fRow}${rows}</div>`;
+    const M = 24; const cols = Array.from({ length: M }, (_, i) => i);
+    const r = (n, a, f = num, c = '') => `<tr class="${c}"><td>${n}</td>${cols.map(i => `<td class="num">${f(a[i])}</td>`).join('')}</tr>`;
+    const evs = cols.map(i => S.milestones.filter(m => mIdx(m.date, st) === i).map(m => esc(m.name)).join('<br>'));
+    document.getElementById('p-months').innerHTML = `<table><thead><tr><th></th>${cols.map(i => `<th>${ML(i)}</th>`).join('')}</tr></thead><tbody>
+      <tr><td>What happens</td>${evs.map(e => `<td style="white-space:normal;min-width:110px;text-align:left;font-size:12px">${e || '<span class="muted">·</span>'}</td>`).join('')}</tr>
+      ${r('Cities in beta / live', cols.map(i => `${R.activeCities[i] - R.liveCities[i]} / ${R.liveCities[i]}`), v => v)}
+      ${r('Signups', R.signups)}${r('Active users', R.mau)}${r('Beta members (free)', R.comp)}${r('Paying members', R.pay)}
+      ${r('Revenue', R.revenue, money, 'tot')}${r('Costs', R.totalCost.map(v => -v), money)}${r('EBITDA', R.ebitda, money, 'tot')}${r('Cash', R.cash, money)}
+    </tbody></table>`;
+  }
+};
+
+TABS.cities = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Cities</h1><p class="lede">One row per city. Beta signups grow each month until launch; after launch, signups start at the launch number and grow monthly, slowing as the city fills up its addressable singles.</p></div>
+  <div class="card"><header><h2>City inputs</h2><button class="btn primary" data-act="addMarket">Add city</button></header>
+  <div class="scroll"><table class="ed"><thead><tr><th>City</th><th>Region</th><th>Beta starts</th><th>Live (paid) from</th><th>Addressable singles</th><th>Beta signups, month 1</th><th>Beta growth %/mo</th><th>Launch-month signups</th><th>Growth %/mo after</th><th>Beta budget</th><th>Launch budget</th><th></th></tr></thead><tbody>
+  ${S.markets.map((c, i) => `<tr><td>${inp(`markets.${i}.name`, 'text', 'w-name', 'style="min-width:150px"')}</td><td>${inp(`markets.${i}.region`, 'text', '', 'style="min-width:100px"')}</td><td>${inp(`markets.${i}.betaStart`, 'month')}</td><td>${inp(`markets.${i}.launch`, 'month')}</td><td>${inp(`markets.${i}.tam`, 'num', '', 'style="min-width:100px"')}</td><td>${inp(`markets.${i}.betaSignups`)}</td><td>${inp(`markets.${i}.betaGrowth`, 'pct')}</td><td>${inp(`markets.${i}.launchSignups`)}</td><td>${inp(`markets.${i}.growth`, 'pct')}</td><td>${inp(`markets.${i}.betaBudget`)}</td><td>${inp(`markets.${i}.launchBudget`)}</td><td><button class="x" data-act="del" data-p="markets.${i}" aria-label="Delete city">×</button></td></tr>`).join('')}
+  </tbody></table></div></div>
+  <div class="card"><header><h2>Revenue by city</h2><span class="hint">subscriptions plus per-user and per-city streams</span></header><div class="scroll" id="c-table"></div></div>
+  <div class="grid2"><div class="card"><header><h2>Revenue by region</h2></header><div id="c-reg"></div></div><div class="card"><header><h2>Active users by city</h2></header><div class="chart" id="c-users"></div></div></div>`,
+  out() {
+    const tbl = R.cities.map((x, i) => {
+      const rv = cityAnnual(x, 'rev'), vc = cityAnnual(x, 'varCost');
+      const contrib = rv.reduce((a, v) => a + v, 0) - vc.reduce((a, v) => a + v, 0);
+      const phase = x.l < N && x.l >= 0 ? `<span class="chip live">Live ${ML(x.l)}</span>` : x.b < N ? `<span class="chip beta">Beta ${ML(x.b)}</span>` : '<span class="chip">After Y5</span>';
+      return `<tr><td><span class="row" style="gap:8px;flex-wrap:nowrap"><i class="dot" style="background:${SER[i % 13]}"></i>${esc(x.c.name)}</span></td><td style="text-align:left">${phase}</td>${rv.map(v => `<td class="num">${money(v)}</td>`).join('')}<td class="num">${num(x.pay_[N - 1])}</td><td class="num ${cls(contrib)}">${money(contrib)}</td></tr>`;
+    }).join('');
+    const nat = nationalRev(); const natY = [0, 1, 2, 3, 4].map(y => sumR(nat, y * 12, y * 12 + 12));
+    document.getElementById('c-table').innerHTML = `<table><thead><tr><th>City</th><th style="text-align:left">Status</th>${R.years.map(y => `<th>${y.label}</th>`).join('')}<th>Payers, Y5 end</th><th>5-yr contribution</th></tr></thead><tbody>${tbl}
+      <tr class="sub"><td>National (retail, licensing, one-offs)</td><td></td>${natY.map(v => `<td class="num">${money(v)}</td>`).join('')}<td></td><td></td></tr>
+      <tr class="tot"><td>Total</td><td></td>${R.years.map(y => `<td class="num">${money(y.revenue)}</td>`).join('')}<td class="num">${num(R.pay[N - 1])}</td><td></td></tr></tbody></table>
+      <p class="hint" style="margin-top:8px">Contribution = city revenue minus that city’s variable costs (fees, per-user and per-city costs, launch budgets), before shared team and overhead.</p>`;
+    const rg = regions();
+    yearBars(document.getElementById('c-reg'), Object.entries(rg).map(([k, xs], i) => ({ name: k, color: SER[i], values: [0, 1, 2, 3, 4].map(y => xs.reduce((a, x) => a + sumR(x.rev, y * 12, y * 12 + 12), 0)) })).concat([{ name: 'National', color: 'var(--s9)', values: natY }]));
+    chart(document.getElementById('c-users'), R.cities.map((x, i) => ({ name: x.c.name, color: SER[i % 13], values: x.mau })), { stack: true, fmt: num, h: 300, w: 560, label: 'Active users by city' });
+  }
+};
+
+TABS.revenue = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Revenue</h1><p class="lede">Align+ is the base. Everything else is a stream you can switch on in a given month: date bookings in summer, events, venue partners, then printed cards, retail, the marketplace and licensing in Y2 to Y5.</p></div>
+  <div class="card"><header><h2>Align+ pricing</h2><span class="hint" id="r-arppu"></span></header>
+    <div class="fields">
+      <div class="field"><label for="i-pricing-monthly">Monthly price</label>${inp('pricing.monthly')}</div>
+      <div class="field"><label for="i-pricing-annual">Yearly price</label>${inp('pricing.annual')}</div>
+      <div class="field"><label for="i-pricing-introMonthly">Intro monthly price</label>${inp('pricing.introMonthly')}</div>
+      <div class="field"><label for="i-pricing-introAnnual">Intro yearly price</label>${inp('pricing.introAnnual')}</div>
+      <div class="field"><label for="i-pricing-annualShare">Members on yearly, %</label>${inp('pricing.annualShare', 'pct')}</div>
+      <div class="field"><label for="i-pricing-introShare">Members on intro price, %</label>${inp('pricing.introShare', 'pct')}</div>
+      <div class="field"><label for="i-pricing-feePct">App store + payment fees, %</label>${inp('pricing.feePct', 'pct')}</div>
+    </div>
+    <p class="hint" style="margin-top:10px">Apple and Google take 15% under $1M a year per developer (Small Business Program), 30% above unless subscribers stay past a year. Revenue here is counted monthly, so a yearly plan counts as 1/12 a month.</p>
+  </div>
+  <div class="card"><header><h2>Other revenue streams</h2><button class="btn primary" data-act="addStream">Add stream</button></header>
+    <p class="hint" style="margin-bottom:10px">Each stream: how many units per driver each month × price. Growth raises the units per driver every month, up to the cap (3 = at most 3× the starting rate).</p>
+    <div class="scroll"><table class="ed"><thead><tr><th>Stream</th><th>Group</th><th>Driver</th><th>Starts</th><th>Ends</th><th>Units</th><th>Price</th><th>Unit cost</th><th>Growth %/mo</th><th>Cap ×</th><th></th></tr></thead><tbody>
+    ${S.streams.map((s, i) => `<tr><td>${inp(`streams.${i}.name`, 'text', 'w-name', 'style="min-width:200px"')}</td><td>${sel(`streams.${i}.cat`, opts(Object.fromEntries(REV_CATS.slice(1).map(k => [k, k])), s.cat))}</td><td>${sel(`streams.${i}.driver`, opts(STREAM_DRIVERS, s.driver))}</td><td>${inp(`streams.${i}.start`, 'month')}</td><td>${inp(`streams.${i}.end`, 'month')}</td><td>${inp(`streams.${i}.qty`)}</td><td>${inp(`streams.${i}.price`)}</td><td>${inp(`streams.${i}.unitCost`)}</td><td>${inp(`streams.${i}.growth`, 'pct')}</td><td>${inp(`streams.${i}.capX`, 'num', 'w-sm')}</td><td><button class="x" data-act="del" data-p="streams.${i}" aria-label="Delete stream">×</button></td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="grid2"><div class="card"><header><h2>Revenue mix by year</h2></header><div id="r-bars"></div></div>
+  <div class="card"><header><h2>Every stream, by year</h2></header><div class="scroll" id="r-table"></div></div></div>`,
+  out() {
+    const P = S.pricing; const a = R.arppu;
+    document.getElementById('r-arppu').innerHTML = `Average paid per member: <b class="mono">${money(a, 2)}/mo</b> · after fees <b class="mono">${money(a * (1 - P.feePct), 2)}</b>`;
+    yearBars(document.getElementById('r-bars'), REV_CATS.map((k, i) => ({ name: k, color: SER[i], values: R.years.map(y => y.rev[k]) })));
+    const yr = arr => [0, 1, 2, 3, 4].map(y => sumR(arr, y * 12, y * 12 + 12));
+    const rows = [['Align+ subscriptions', yr(R.rev['Subscriptions'])], ...S.streams.map(s => [s.name, yr(R.streamRev[s.id] || [])])];
+    if (R.oneTimeRev.some(v => v)) rows.push(['Milestone one-offs', yr(R.oneTimeRev)]);
+    document.getElementById('r-table').innerHTML = `<table><thead><tr><th>Stream</th>${R.years.map(y => `<th>${y.label}</th>`).join('')}</tr></thead><tbody>${rows.map(([n, v]) => `<tr><td>${esc(n)}</td>${v.map(x => `<td class="num">${x ? money(x) : '<span class="muted">·</span>'}</td>`).join('')}</tr>`).join('')}<tr class="tot"><td>Total</td>${R.years.map(y => `<td class="num">${money(y.revenue)}</td>`).join('')}</tr></tbody></table>`;
+  }
+};
+
+TABS.costs = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Costs</h1><p class="lede">Each cost has a driver and a schedule. Add a step whenever the cost changes with scale: “Engineering is $12K/mo from Jan, $35K from Aug, $80K from next Jan.”</p></div>
+  <div class="kpis" id="k-kpis"></div>
+  <div class="card"><header><h2>Cost lines</h2><button class="btn primary" data-act="addCost">Add cost</button></header>
+  ${S.costs.map((c, i) => `<div class="costline">
+    <div class="head">${inp(`costs.${i}.name`, 'text')}${sel(`costs.${i}.cat`, opts(Object.fromEntries(COST_CATS.map(k => [k, k === 'COGS' ? 'Cost of revenue' : k])), c.cat))}${sel(`costs.${i}.driver`, opts(COST_DRIVERS, c.driver))}<button class="x" data-act="del" data-p="costs.${i}" aria-label="Delete cost">×</button></div>
+    <div class="steps">${c.steps.map((s, j) => `<span class="step"><span>from</span>${inp(`costs.${i}.steps.${j}.from`, 'month')}<span>${c.driver === 'pct_rev' ? '%' : '$'}</span>${inp(`costs.${i}.steps.${j}.amt`)}<button class="x" data-act="del" data-p="costs.${i}.steps.${j}" aria-label="Delete step">×</button></span>`).join('')}<button class="btn" data-act="addStep" data-p="costs.${i}">+ Step</button></div>
+    <div class="yrs" id="k-y-${i}"></div></div>`).join('')}
+  </div>
+  <div class="grid2"><div class="card"><header><h2>Costs by category</h2></header><div id="k-bars"></div></div><div class="card"><header><h2>Monthly costs</h2></header><div class="chart" id="k-chart"></div></div></div>`,
+  out() {
+    S.costs.forEach((c, i) => { const el = document.getElementById('k-y-' + i); if (!el) return; const a = R.costLine[c.id] || []; el.innerHTML = [0, 1, 2, 3, 4].map(y => `<span>Y${y + 1} <b>${money(sumR(a, y * 12, y * 12 + 12))}</b></span>`).join(''); });
+    const Y = R.years;
+    document.getElementById('k-kpis').innerHTML = [0, 1, 2, 3, 4].map(y => `<div class="kpi"><span class="l">Y${y + 1} total costs</span><span class="v">${money(Y[y].cogs + Y[y].opex)}</span><span class="s">${money((Y[y].cogs + Y[y].opex) / 12)}/mo average</span></div>`).join('');
+    yearBars(document.getElementById('k-bars'), COST_CATS.map((k, i) => ({ name: k === 'COGS' ? 'Cost of revenue' : k, color: SER[i], values: Y.map(y => y.cost[k]) })));
+    chart(document.getElementById('k-chart'), COST_CATS.map((k, i) => ({ name: k === 'COGS' ? 'Cost of revenue' : k, color: SER[i], values: R.cost[k] })), { stack: true, h: 300, w: 560, label: 'Monthly costs' });
+  }
+};
+
+TABS.unit = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Unit economics</h1><p class="lede">What one user costs you and earns you, per day, week, month and year, and what the free beta offer really costs.</p></div>
+  <div class="row"><div class="seg" id="u-years">${[0, 1, 2, 3, 4].map(y => `<button data-act="unitYear" data-v="${y}" aria-pressed="${ui.unitYear === y}">Y${y + 1}</button>`).join('')}</div><span class="hint">averages over the year</span></div>
+  <div class="card"><header><h2>What a user costs</h2></header><div class="scroll" id="u-cost"></div></div>
+  <div class="kpis" id="u-kpis"></div>
+  <div class="card" style="border-color:var(--gold)"><header><h2>The beta offer</h2><span class="hint" id="u-beta-h"></span></header><div id="u-beta"></div></div>
+  <div class="card"><header><h2>Unit metrics by year</h2></header><div class="scroll" id="u-years-t"></div></div>`,
+  out() {
+    for (const bt of document.querySelectorAll('#u-years button')) bt.setAttribute('aria-pressed', String(+bt.dataset.v === ui.unitYear));
+    const u = unitStats(ui.unitYear);
+    const rows = [
+      ['Cost to serve a free user', u.free, 'Per-active-user costs only: hosting, AI readings.'],
+      ['Cost to serve an Align+ member (beta, unpaid)', u.member, 'Adds the Align+ extras. This is what each free-for-6-months beta user costs.'],
+      ['Cost to serve a paying member', u.payer, 'Adds support, card shipping and the app store cut of their payment.'],
+      ['Fully loaded cost per active user', u.loaded, 'All costs, team and marketing included, divided by active users.'],
+      ['Fully loaded, without marketing', u.loadedNoMk, 'All costs except marketing.'],
+      ['Revenue per active user', u.arpu, 'All revenue divided by active users.'],
+      ['Revenue per paying member', u.arppu, 'Subscription revenue only.'],
+    ];
+    document.getElementById('u-cost').innerHTML = `<table><thead><tr><th></th><th>Per day</th><th>Per week</th><th>Per month</th><th>Per year</th></tr></thead><tbody>${rows.map(([n, v, h]) => { const p = per(v); return `<tr><td style="white-space:normal;min-width:260px">${n}<div class="hint">${h}</div></td><td class="num">${money(p.day, p.day < 1 ? 4 : 2)}</td><td class="num">${money(p.week, 3)}</td><td class="num">${money(p.month, 2)}</td><td class="num">${money(p.year)}</td></tr>`; }).join('')}</tbody></table>`;
+    document.getElementById('u-kpis').innerHTML = [
+      ['Margin per paying member', money(u.margin, 2) + '/mo', 'price minus cost to serve'],
+      ['Lifetime value', money(u.ltv), `at ${pct(S.growth.paidChurn, 1)} monthly paid churn`],
+      ['Cost to acquire a signup', money(u.cacSign, 2), 'marketing ÷ signups'],
+      ['Cost to acquire a payer', money(u.cacPay), 'marketing ÷ new payers'],
+      ['LTV to CAC', isFinite(u.ltvcac) ? u.ltvcac.toFixed(1) + '×' : '—', u.ltvcac >= 3 ? '<span class="pos">healthy, 3× or better</span>' : '<span class="neg">under 3×</span>'],
+      ['Payback', isFinite(u.payback) && u.payback > 0 ? u.payback.toFixed(1) + ' months' : '—', 'months of margin to earn back CAC'],
+      ['Gross margin', pct(u.gm), 'after fees, cards, shipping'],
+      ['EBITDA margin', pct(u.em), ''],
+    ].map(([l, v, s]) => `<div class="kpi"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
+    const b = betaStats(); const G = S.growth;
+    document.getElementById('u-beta-h').textContent = `${G.betaFreeMonths} months of free Align+ for everyone who joins during a city’s beta`;
+    const roi = b.ltvBack - b.cash;
+    document.getElementById('u-beta').innerHTML = `<div class="kpis">
+      <div class="kpi gold"><span class="l">Beta users enrolled</span><span class="v">${num(b.enrolled)}</span><span class="s">across all beta cities</span></div>
+      <div class="kpi gold"><span class="l">Cash it costs you</span><span class="v">${money(b.cash)}</span><span class="s">${num(b.compMonths)} free member-months</span></div>
+      <div class="kpi"><span class="l">Per beta user</span><span class="v">${money(b.perUser, 2)}</span><span class="s">${money(b.perUserDay, 4)}/day · ${money(b.perUserMonth, 2)}/mo</span></div>
+      <div class="kpi"><span class="l">List value given away</span><span class="v">${money(b.list)}</span><span class="s">what those months would sell for</span></div>
+      <div class="kpi"><span class="l">Convert to paid after</span><span class="v">${num(b.conv)}</span><span class="s">at ${pct(G.betaConv)} of those still around</span></div>
+      <div class="kpi violet"><span class="l">Value of those payers</span><span class="v">${money(b.ltvBack)}</span><span class="s ${cls(roi)}">${roi >= 0 ? 'Pays back' : 'Short by'} ${money(Math.abs(roi))} vs. cash cost</span></div>
+    </div><p class="hint" style="margin-top:10px">Cash cost counts serving costs only. Launch budgets and party costs for beta cities sit in Marketing. Change the free months, beta churn and conversion in Assumptions.</p>`;
+    const all = [0, 1, 2, 3, 4].map(unitStats);
+    const r = (n, f, fm) => `<tr><td>${n}</td>${all.map(x => `<td class="num">${fm(f(x))}</td>`).join('')}</tr>`;
+    document.getElementById('u-years-t').innerHTML = `<table><thead><tr><th></th>${R.years.map(y => `<th>${y.label}</th>`).join('')}</tr></thead><tbody>
+      ${r('Average active users', x => x.avgMau, num)}
+      ${r('Fully loaded cost per user per day', x => x.loaded / 30.42, v => money(v, 3))}
+      ${r('Fully loaded cost per user per month', x => x.loaded, v => money(v, 2))}
+      ${r('Cost to serve a free user per month', x => x.free, v => money(v, 3))}
+      ${r('Cost to serve a paying member per month', x => x.payer, v => money(v, 2))}
+      ${r('Revenue per active user per month', x => x.arpu, v => money(v, 2))}
+      ${r('Cost to acquire a payer', x => x.cacPay, v => money(v))}
+      ${r('LTV to CAC', x => x.ltvcac, v => isFinite(v) ? v.toFixed(1) + '×' : '—')}
+      ${r('Gross margin', x => x.gm, v => pct(v))}
+      ${r('EBITDA margin', x => x.em, v => pct(v))}
+    </tbody></table>`;
+  }
+};
+
+TABS.goals = {
+  html: () => { const g = ui.goal; return `
+  <div style="display:grid;gap:6px"><h1>Work backwards</h1><p class="lede">Set a goal and a date. The planner finds how much a lever has to move to hit it, then shows the signups per day and the spend it takes. Apply it to update the model.</p></div>
+  <div class="card"><header><h2>Goal</h2></header>
+    <div class="fields">
+      <div class="field"><label for="g-metric">I want</label><select id="g-metric" data-ui="goal.metric">${opts(METRICS, g.metric)}</select></div>
+      <div class="field"><label for="g-value">to reach</label><input id="g-value" type="number" step="any" data-ui="goal.value" data-t="num" value="${g.value}"></div>
+      <div class="field"><label for="g-month">by</label><select id="g-month" data-ui="goal.month">${monthOpts(g.month)}</select></div>
+      <div class="field"><label for="g-scope">in</label><select id="g-scope" data-ui="goal.scope">${cityOpts(g.scope)}</select></div>
+      <div class="field"><label for="g-lever">by moving</label><select id="g-lever" data-ui="goal.lever">${opts(LEVERS, g.lever)}</select></div>
+      <div class="field" style="align-self:end"><button class="btn primary" data-act="solve">Find what it takes</button></div>
+    </div>
+    <div id="g-out" style="margin-top:16px"></div>
+  </div>
+  <div class="card"><header><h2>Napkin math</h2><span class="hint">no model, just the funnel</span></header>
+    <div class="fields" style="margin-bottom:14px">
+      <div class="field"><label for="n-target">Paying members I want</label><input id="n-target" type="number" data-ui="napkin.target" data-t="num" value="${ui.napkin.target}"></div>
+      <div class="field"><label for="n-months">in this many months</label><input id="n-months" type="number" data-ui="napkin.months" data-t="num" value="${ui.napkin.months}"></div>
+    </div>
+    <div id="n-out"></div>
+  </div>`; },
+  out() {
+    const g = ui.goal, r = ui.goalResult; const el = document.getElementById('g-out');
+    const cur = metricVal(R, g); const fm = ['mrr', 'arr', 'subMrr', 'yrev'].includes(g.metric) ? money : num;
+    if (!r) el.innerHTML = `<p class="muted">Right now the model gets you <b class="mono" style="color:var(--ink)">${fm(cur)}</b> ${esc(METRICS[g.metric].toLowerCase())} by ${ML(mIdx(g.month, S.meta.startMonth))}${g.scope !== 'all' ? ' in ' + esc(S.markets.find(c => c.id === g.scope)?.name || '') : ''}.</p>`;
+    else if (r.err) el.innerHTML = `<div class="note">${esc(r.err)}</div>`;
+    else {
+      const what = r.lever === 'signups' ? `${r.f.toFixed(2)}× the signups you planned${g.scope !== 'all' ? ' in ' + esc(S.markets.find(c => c.id === g.scope)?.name) : ''}` : r.lever === 'conv' ? `conversion to paid at ${r.f.toFixed(2)}× (${pct(S.growth.conv * r.f, 1)} of signups)` : `paid churn at ${pct(S.growth.paidChurn / r.f, 1)} a month`;
+      el.innerHTML = `<div style="display:grid;gap:12px"><div><span class="hint">To hit ${fm(r.target)} by ${ML(r.t)}, you need</span><div class="big">${what}</div><span class="hint">Today’s plan gets ${fm(r.base)}.</span></div>
+      <div class="scroll"><table><thead><tr><th>At ${ML(r.t)}</th><th>Current plan</th><th>Needed</th></tr></thead><tbody>${r.rows.map(([n, a, b, f]) => `<tr><td>${n}</td><td class="num">${f(a)}</td><td class="num"><b>${f(b)}</b></td></tr>`).join('')}</tbody></table></div>
+      <div class="row"><button class="btn primary" data-act="apply">Apply to model</button><span class="hint">${r.lever === 'signups' ? 'Multiplies beta and launch signups' + (g.scope !== 'all' ? ' for that city.' : ' for every city.') : r.lever === 'conv' ? 'Updates conversion and free-to-paid in Assumptions.' : 'Updates paid churn in Assumptions.'}</span></div></div>`;
+    }
+    const G = S.growth; const P = +ui.napkin.target || 0, M = Math.max(1, +ui.napkin.months || 1), c = G.paidChurn;
+    const nPay = P * c / (1 - Math.pow(1 - c, M));
+    const eff = G.conv + (1 - G.conv) * G.freeToPaid / (G.freeChurn + G.freeToPaid);
+    const sign = nPay / eff; const u = unitStats(0);
+    const mrr = P * R.arppu;
+    document.getElementById('n-out').innerHTML = `<div class="funnel">
+      <div><span>New paying members each month</span><b>${num(nPay)}</b></div>
+      <div><span>Signups each month (at ${pct(eff, 1)} who ever pay)</span><b>${num(sign)}</b></div>
+      <div><span>Signups per week</span><b>${num(sign / 4.345)}</b></div>
+      <div><span>Signups per day</span><b>${num(sign / 30.42)}</b></div>
+      <div><span>Marketing per month at Y1 cost per signup (${money(u.cacSign, 2)})</span><b>${money(sign * u.cacSign)}</b></div>
+      <div><span>Subscription revenue once you get there</span><b>${money(mrr)}/mo · ${money(mrr * 12)}/yr</b></div>
+      <div><span>Members you must replace every month to stay there</span><b>${num(P * c)}</b></div>
+    </div><p class="hint" style="margin-top:8px">Uses ${pct(c, 1)} monthly paid churn, ${pct(G.conv, 1)} paying in month one and ${pct(G.freeToPaid, 1)} of free users converting each month.</p>`;
+  }
+};
+
+TABS.assumptions = {
+  html: () => `
+  <div style="display:grid;gap:6px"><h1>Assumptions</h1><p class="lede">The behaviour numbers behind every city, your cash, and the model’s data.</p></div>
+  <div class="card"><header><h2>Users and conversion</h2></header>
+    <div class="fields">
+      <div class="field"><label for="i-growth-conv">New signups who pay in month one, %</label>${inp('growth.conv', 'pct')}</div>
+      <div class="field"><label for="i-growth-freeToPaid">Free users who convert each month, %</label>${inp('growth.freeToPaid', 'pct')}</div>
+      <div class="field"><label for="i-growth-freeChurn">Free users who leave each month, %</label>${inp('growth.freeChurn', 'pct')}</div>
+      <div class="field"><label for="i-growth-paidChurn">Paying members who cancel each month, %</label>${inp('growth.paidChurn', 'pct')}</div>
+    </div></div>
+  <div class="card"><header><h2>Beta offer</h2></header>
+    <div class="fields">
+      <div class="field"><label for="i-growth-betaFreeMonths">Free Align+ months for beta joiners</label>${inp('growth.betaFreeMonths')}</div>
+      <div class="field"><label for="i-growth-betaChurn">Beta users who leave each month, %</label>${inp('growth.betaChurn', 'pct')}</div>
+      <div class="field"><label for="i-growth-betaConv">Still-active beta users who pay when free ends, %</label>${inp('growth.betaConv', 'pct')}</div>
+    </div><p class="hint" style="margin-top:10px">Anyone who signs up while their city is in beta gets free Align+ for this many months from the day they join, even if the city goes live sooner. Set 0 for no free period.</p></div>
+  <div class="card"><header><h2>Cash and funding</h2><button class="btn primary" data-act="addFund">Add round</button></header>
+    <div class="fields" style="margin-bottom:12px"><div class="field"><label for="i-meta-startCash">Cash in the bank at start</label>${inp('meta.startCash')}</div><div class="field"><label for="i-meta-startMonth">Model starts (Y1 month 1)</label>${inp('meta.startMonth', 'month')}</div></div>
+    <div class="scroll"><table class="ed"><thead><tr><th>Month</th><th>Round</th><th>Amount</th><th></th></tr></thead><tbody>${S.funding.map((f, i) => `<tr><td>${inp(`funding.${i}.date`, 'month')}</td><td>${inp(`funding.${i}.name`, 'text')}</td><td>${inp(`funding.${i}.amount`)}</td><td><button class="x" data-act="del" data-p="funding.${i}" aria-label="Delete round">×</button></td></tr>`).join('')}</tbody></table></div>
+    <p class="hint" style="margin-top:8px" id="a-cash"></p></div>
+  <div class="card"><header><h2>Model data</h2></header>
+    <div style="display:grid;gap:10px">
+      <div class="row"><button class="btn" data-act="copyJson">Copy model JSON</button><button class="btn" data-act="copyCsv">Copy Y1–Y5 table for Sheets</button><button class="btn" data-act="resetAsk">Reset to starter numbers</button></div>
+      <div class="note" id="resetBox" hidden>This replaces every input with the starter numbers for everyone who opens this page. <span class="row" style="margin-top:8px"><button class="btn primary" data-act="resetYes">Reset everything</button><button class="btn" data-act="resetNo">Keep my numbers</button></span></div>
+      <label for="paste" class="hint">Paste a model JSON here to load it</label><textarea id="paste" spellcheck="false"></textarea>
+      <div class="row"><button class="btn" data-act="loadJson">Load pasted model</button><span class="hint" id="pasteMsg"></span></div>
+    </div></div>`,
+  out() {
+    const el = document.getElementById('a-cash'); if (!el) return;
+    el.innerHTML = R.firstNeg >= 0 ? `<span class="neg">Cash goes below zero in ${ML(R.firstNeg)}.</span> Add a round before then or cut burn.` : `Lowest cash point: ${money(R.lowCash)} in ${ML(R.lowCashAt)}.`;
+  }
+};
+
+/* ---------- routing ---------- */
+function route() { const h = location.hash.slice(1); tab = TABS[h] ? h : 'overview'; full(); window.scrollTo(0, 0); }
+window.addEventListener('hashchange', route);
+const h0 = location.hash.slice(1); if (TABS[h0]) tab = h0;
+full();
+connect();
+
+</script>
