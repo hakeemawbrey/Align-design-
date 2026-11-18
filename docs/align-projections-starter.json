@@ -15,7 +15,7 @@
   "annual": 188.88,
   "introMonthly": 14.44,
   "introAnnual": 122.22,
-  "annualShare": 0.3,
+  "annualShare": 0.55,
   "feePct": 0.15,
   "introMonths": 12
  },
@@ -23,14 +23,16 @@
   "conv": 0.0068,
   "freeToPaid": 0.006,
   "freeChurn": 0.15,
-  "paidChurn": 0.2,
+  "paidChurn": 0.15,
   "betaFreeMonths": 6,
   "betaConv": 0.2,
   "betaChurn": 0.1,
   "maxActive": 0.3,
   "betaFee1": 15.55,
   "betaFeeCount": 100,
-  "betaFeeN": 22.22
+  "betaFeeN": 22.22,
+  "yearlyRenew": 0.4,
+  "inviteShare": 0.3
  },
  "markets": [
   {
@@ -762,7 +764,7 @@
    "name": "Date bookings: Align+ only, both people need it",
    "city": "all",
    "signups": 0,
-   "convLift": 2.5,
+   "convLift": 1.39,
    "churnDelta": -0.5,
    "revenue": 0,
    "cost": 0
