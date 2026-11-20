@@ -109,6 +109,8 @@ For frequency reels (hypnotic 3D alignments scored with real planet tones: seven
 
 To post reels to one or more Instagram accounts as trial reels and see how they did, see [instagram/README.md](instagram/README.md).
 
+For the "screenshot your card" reel (stop scrolling, close your eyes, and screenshot one of the 51 talk cards as they flash: that's your question for tonight; comment your number), see [reels/screenshot/README.md](reels/screenshot/README.md).
+
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.
 
 To study a creator's whole Instagram page (download every post on your Mac, transcribe it and read the on-screen text, then send it privately to Claude for a breakdown and Align versions), see [study/README.md](study/README.md).
