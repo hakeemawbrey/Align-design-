@@ -107,6 +107,8 @@ For Align Signs reels (cards that talk straight to each zodiac sign: letters, lo
 
 For frequency reels (hypnotic 3D alignments scored with real planet tones: seven planets clicking into line, a fly-through of the twelve sign gates, Venus and the Moon in each ear, the 639 Hz heart) and the **Align · Frequencies** page that posts them, see [reels/frequency/README.md](reels/frequency/README.md) and [reels/frequency/PROFILE.md](reels/frequency/PROFILE.md).
 
+For "screenshot" reels (stop scrolling, close your eyes and screenshot: the deck flicks through Align love-number cards, and you comment the number you landed on), see [reels/screenshot/README.md](reels/screenshot/README.md).
+
 To post reels to one or more Instagram accounts as trial reels and see how they did, see [instagram/README.md](instagram/README.md).
 
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.
