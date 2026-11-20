@@ -1,10 +1,8 @@
 // marblerace: "12 signs. 1 marble race." The twelve Star Talk stars race down a tall marble run (deterministic physics,
 // race.js), the camera rides the lead pack, each sign reacts in character, then a podium. Social cut only (full frame).
 
-//   ~5–15     Aries leads ("GO GO GO", "Lapping you all.")           15.5 Scorpio slides past, quietly
-//   ~18       the fork: Aries takes the "shortcut" (the long lane, alone)
-//   27.8      Scorpio wins · 30.1 Libra · 30.5 Sagittarius             31.0 "Meanwhile…" Cancer, way back up the track
-//   37.8      Cancer finally lands (last, checked on everyone)         38.6 podium
+//   Race 1 (seed 1): Taurus offers Cancer half a snack at the back · Leo leads early · Capricorn takes over at ~15 s and wins
+//   · "Meanwhile…" Cancer waits up for Taurus; they finish last, together · podium · lesson: "Fastest isn't the point. Who you finish with is."
 import { prog, lerp, ease, clamp, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
@@ -17,7 +15,7 @@ export const HOOK = '12 signs. 1 race. | Who wins?'
 export const HOOK_STYLE = 'box'
 export const HOOK_UNTIL = 2.6
 
-const SIM = simulate({ seed: 4, ids: SIGN_IDS, drag: { taurus: 0.35, pisces: 0.25 }, kick: { aries: 300 } })
+const SIM = simulate({ seed: 1, ids: SIGN_IDS, drag: { taurus: 0.35, cancer: 0.36, pisces: 0.25 }, kick: { aries: 300 } })
 const N = SIM.n, NF = SIM.frames.length / (N * 2)
 const SIGN = Object.fromEntries(SIGNS.map(s => [s.id, s]))
 const fi = t => Math.max(0, Math.min(NF - 1, t * FPS))
@@ -30,7 +28,7 @@ const FIN = SIM.finishT, ORDER = SIM.order
 const LAST = ORDER[ORDER.length - 1], T_LAST = FIN[LAST]
 export const T = { gate: GATE, win: FIN[ORDER[0]], meanwhile: r2(Math.max(FIN[ORDER[2]] + 0.5, T_LAST - 7)), last: T_LAST, podium: r2(T_LAST + 0.8) }
 function r2(v) { return Math.round(v * 100) / 100 }
-export const DURATION = r2(T.podium + 6.4)
+export const DURATION = r2(T.podium + 8.2)
 export const STORY_END = DURATION
 
 // ── camera (world y at the top of the frame), precomputed and smoothed
@@ -44,7 +42,7 @@ const CAM = (() => {
       return Math.max(ys[0] - 1500, Math.min(pack - 950, ys[0] - 700))
     }
     if (t < T.meanwhile) return FINISH_Y - 980
-    return Math.min(pos(t, ID(LAST))[1], FINISH_Y + 60) - 1000
+    return (Math.min(pos(t, ID('taurus'))[1], FINISH_Y + 60) + Math.min(pos(t, ID('cancer'))[1], FINISH_Y + 60)) / 2 - 960   // the back pair
   }
   let c = -330
   for (let f = 0; f < NF; f++) {
@@ -60,33 +58,33 @@ const camAt = t => { const f = fi(t), a = Math.floor(f), b = Math.min(NF - 1, a 
 // ── reactions: [t0, seconds, sign, text, opts]
 const SAY = [
   [GATE + 0.15, 1.8, 'aries', 'GO GO GO!!'],
-  [5.0, 2.2, 'taurus', 'is there a | snack stop?'],
-  [7.4, 2.2, 'leo', 'is the camera | on me?'],
-  [10.2, 2.3, 'aries', 'Lapping | you all.'],
-  [14.2, 2.4, 'capricorn', 'excuse me. | business.'],
-  [17.4, 2.4, 'libra', 'left? right? | ...right.'],
-  [19.4, 2.0, 'virgo', 'optimal | line.'],
-  [21.4, 2.4, 'pisces', "it's all so | beautiful"],
-  [23.2, 2.2, 'aries', "this isn't | over!!"],
-  [24.6, 1.8, 'sagittarius', 'WHEEEEE'],
+  [4.5, 2.2, 'taurus', 'want half | my snack?'],
+  [6.5, 2.0, 'cancer', '...for me?'],
+  [8.6, 2.2, 'leo', 'is the camera | on me?'],
+  [11.0, 2.2, 'leo', 'Lapping | you all.'],
+  [14.6, 2.4, 'capricorn', 'excuse me. | business.'],
+  [17.2, 1.8, 'sagittarius', 'WHEEEEE'],
+  [19.2, 2.0, 'virgo', 'optimal | line.'],
+  [21.6, 2.4, 'pisces', "it's all so | beautiful"],
+  [24.2, 2.2, 'aries', "this isn't | over!!"],
   [T.win + 0.15, 2.5, 'capricorn', 'slow. steady. | CEO.'],
-  [30.0, 2.3, 'cancer', 'is everyone | okay??'],
-  [33.7, 2.3, 'scorpio', 'I let | them win.'],
-  [T.meanwhile + 0.9, 2.6, 'taurus', 'I stopped | for snacks.'],
-  [T.meanwhile + 4.0, 2.4, 'taurus', 'still | counts.'],
+  [32.9, 2.3, 'scorpio', 'I let | them win.'],
+  [T.meanwhile + 0.9, 2.4, 'cancer', "where's | Taurus??"],
+  [T.meanwhile + 3.4, 2.4, 'cancer', 'I waited | for you.'],
+  [T.meanwhile + 5.4, 2.6, 'taurus', 'saved you | the last bite.'],
 ]
 const WIN_LINE = { capricorn: 'Slow. Steady. CEO.', scorpio: 'Nobody saw it coming.' }
-const LAST_LINE = { taurus: 'Stopped for snacks. Worth it.', cancer: 'Checked on everyone, though.' }
+const SNACK = [[4.4, 8.6], [T.meanwhile + 5.2, 1e9]]           // Taurus holds the cookie out to Cancer
 const ORD = n => n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th')
 
 function mood(id, t) {
   const p = ORDER.indexOf(id), fin = FIN[id]
-  if (fin !== null && t > fin) return p === 0 ? 'heart' : p < 3 ? 'happy' : 'wink'
+  if (fin !== null && t > fin) return p === 0 ? 'heart' : id === 'taurus' || id === 'cancer' ? 'heart' : p < 3 ? 'happy' : 'wink'
   if (t < GATE) return id === 'aries' ? 'squint' : id === 'libra' ? 'neutral' : 'happy'
   if (id === 'capricorn') return 'squint'
   if (id === 'aries') return t > 18 ? 'wide' : 'squint'
-  if (id === 'cancer') return 'wide'
-  if (id === 'taurus') return 'sleepy'
+  if (id === 'cancer') return (t > 6.5 && t < 8.6) || t > T.meanwhile + 3.2 ? 'heart' : 'wide'
+  if (id === 'taurus') return (t > 4.4 && t < 8.6) || t > T.meanwhile + 5.2 ? 'happy' : 'sleepy'
   return 'happy'
 }
 
@@ -125,7 +123,12 @@ async function build(stage) {
       const bounce = t > GATE && (fin === null || t < fin) ? Math.sin(t * 9 + i) * 0.04 : 0
       drawStarChar(x, wx, sy - 4, 92, t, { color: s.color, glyph: s.glyph, mood: mood(id, t), seed: i + 2, hops, squash: bounce, look: [Math.sign(Math.sin(t * 0.7 + i)) * 0.6, 0.6] })
       if (id === 'pisces' && t > GATE) tears(wx, sy - 4, t)
+      if (id === 'taurus' && SNACK.some(([a, b]) => t > a && t < b)) cookie(wx + 46, sy + 6)
     }
+  }
+  function cookie(cx, cy) {
+    const C = ['.KKKK.', 'KccdcK', 'KcccdK', 'KdcccK', 'KccdcK', '.KKKK.'], col = { K: INK, c: '#d9a55a', d: '#6b3b1f' }, s = 6
+    C.forEach((row, j) => [...row].forEach((ch, i) => { if (ch !== '.') { x.fillStyle = col[ch]; x.fillRect(cx + (i - 3) * s, cy + (j - 3) * s, s, s) } }))
   }
   function tears(cx, cy, t) {
     for (const d of [-1, 1]) for (let q = 0; q < 4; q++) {
@@ -137,7 +140,7 @@ async function build(stage) {
     for (const [t0, d, id, text] of SAY) {
       if (t < t0 || t > t0 + d) continue
       const [wx, wy] = pos(t, ID(id)), sy = wy - cam
-      if (sy < 520 || sy > 1560) continue
+      if (sy < 330 || sy > 1560) continue
       const k = pop01(t, t0, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.25, t0 + d)))
       const bx = clamp(wx, 250, 820)
       bubble(x, bx, sy - 128, text, k, { size: 42, col: BONE, tail: wx < bx - 40 ? 'bl' : wx > bx + 40 ? 'br' : 'bc' })
@@ -187,14 +190,23 @@ async function build(stage) {
     })
     if (t > t0 + 0.6) sparkles(x, t, 540, 900, t0 + 0.6, 14, 260, 7)
     // headline + the last-place hero
-    const hk = pop01(t, t0 + 0.2, 0.4, 1.6)
+    const hk = pop01(t, t0 + 0.2, 0.4, 1.6) * (1 - ease.inQuad(prog(t, t0 + 3.4, t0 + 3.8)))
     if (hk > 0) { x.save(); x.globalAlpha = clamp(hk); x.font = `800 72px ${INTER}`; x.fillStyle = BONE; x.textAlign = 'center'; x.fillText(`${SIGN[ORDER[0]].name} wins.`, 540, 560); x.font = `italic 500 56px 'EB Garamond', Georgia, serif`; x.fillStyle = GOLD; x.fillText(WIN_LINE[ORDER[0]] || 'Nobody saw it coming.', 540, 640); x.restore() }
     const lk = pop01(t, t0 + 1.6, 0.4, 1.7)
     if (lk > 0) {
-      drawStarChar(x, 330, 1585, 120, t, { color: SIGN[LAST].color, glyph: SIGN[LAST].glyph, mood: 'happy', seed: 9, pop: clamp(lk), hops: [t0 + 2.4, t0 + 3.6] })
+      drawStarChar(x, 250, 1610, 112, t, { color: SIGN.taurus.color, glyph: SIGN.taurus.glyph, mood: 'heart', seed: 9, pop: clamp(lk), hops: [t0 + 2.4, t0 + 3.6] })
+      drawStarChar(x, 370, 1610, 112, t, { color: SIGN.cancer.color, glyph: SIGN.cancer.glyph, mood: 'heart', seed: 10, pop: clamp(lk), hops: [t0 + 2.6, t0 + 3.8] })
+      if (lk > 0.5) cookie(310, 1655)
       x.save(); x.globalAlpha = clamp(lk); x.textAlign = 'left'; x.textBaseline = 'middle'
-      x.font = `800 38px ${INTER}`; x.fillStyle = BONE; x.fillText(`${SIGN[LAST].name}: last.`, 410, 1560)
-      x.font = `italic 500 40px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText(LAST_LINE[LAST] || 'Still smiling, though.', 410, 1612)
+      x.font = `800 38px ${INTER}`; x.fillStyle = BONE; x.fillText('Taurus & Cancer: last.', 450, 1588)
+      x.font = `italic 500 40px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText('Together. Worth it.', 450, 1638)
+      x.restore()
+    }
+    const ek = pop01(t, t0 + 3.8, 0.45, 1.5)        // the lesson
+    if (ek > 0) {
+      x.save(); x.globalAlpha = clamp(ek); x.textAlign = 'center'; x.textBaseline = 'middle'
+      x.font = `800 50px ${INTER}`; x.fillStyle = BONE; x.fillText("Fastest isn't the point.", 540, 1500 - 990)
+      x.font = `italic 500 60px 'EB Garamond', Georgia, serif`; x.fillStyle = GOLD; x.fillText('Who you finish with is.', 540, 1570 - 990)
       x.restore()
     }
   }
@@ -205,7 +217,7 @@ async function build(stage) {
       const cam = camAt(t)
       drawSky(sx, t, { ...SKY_H, dy: -cam * 0.04 })
       x.clearRect(0, 0, 1080, 1920)
-      track(cam, t); stars(cam, t); says(cam, t); board(t); meanwhile(t); podium(t)
+      track(cam, t); stars(cam, t); board(t); says(cam, t); meanwhile(t); podium(t)
       drawGrain(gx, t)
     },
   }
