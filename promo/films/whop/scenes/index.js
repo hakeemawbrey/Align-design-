@@ -1,5 +1,5 @@
 // whop · Align Houston Beta, product-page film (22.5s, 16:9 or 9:16 with &v)
-//   0.0–5.2   intro: pixel stars swirl in, the seven chakra stars line up, rings burst, the Align mark draws in,
+//   0.0–5.2   intro: "The stars have aligned in Space City." while pixel stars swirl in, the seven chakra stars line up, rings burst, the Align mark draws in,
 //             "Align" + HOUSTON BETA
 //   5.0–9.6   shot 1 · Juniper's mystery card turning slowly in 3D · "Card first. Face last."
 //   9.4–14.0  shot 2 · three talk cards drifting at different depths · "Then you talk in cards."
@@ -192,11 +192,18 @@ function intro(stage) {
   const mark = markSVG(lock, 88 * MARK_S, W / 2, MARK_CY, 'im')
   const wordY = MARK_CY + 44 * MARK_S + (VERT ? 40 : 20)
   const word = el('div', { position: 'absolute', left: 0, width: W + 'px', top: wordY + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? 190 : 150) * U + 'px', lineHeight: 1, color: BONE, textShadow: '0 0 50px rgba(239,230,214,0.3)', opacity: 0 }, lock, 'Align')
+  // the opening line, in the wordmark's place until the mark arrives
+  const open_ = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (wordY + (VERT ? 10 : 0) * U) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? 92 : 84) * U + 'px', lineHeight: 1.08, color: '#fff6ea', textShadow: '0 0 30px rgba(8,4,24,0.85)', opacity: 0 }, root,
+    VERT ? 'The stars have aligned<br>in Space City.' : 'The stars have aligned in Space City.')
   const tag = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (wordY + (VERT ? 230 : 180) * U) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: (VERT ? 40 : 34) * U + 'px', letterSpacing: '0.42em', textIndent: '0.42em', color: '#f2c75c', textShadow: '0 0 24px rgba(242,199,92,0.45)', opacity: 0 }, lock, 'HOUSTON BETA')
   return {
     start: 0, end: T.s1 + X, root,
     update(t) {
       drawPixels(pctx, t)
+      const oi = ease.outCubic(prog(t, 0.25, 0.95)), oo = ease.inQuad(prog(t, 2.15, 2.55))
+      open_.style.opacity = String(Math.min(oi, 1 - oo))
+      open_.style.transform = `translateY(${lerp(18, 0, oi) - 14 * oo}px)`
+      open_.style.filter = `blur(${lerp(8, 0, oi) + 6 * oo}px)`
       const lt = t - 2.05
       mark.draw(lt)
       mark.m.style.opacity = String(prog(t, 2.0, 2.2))
@@ -289,7 +296,7 @@ function shot3(stage) {
     padding: (0.034 * cw) + 'px', WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude',
     background: 'conic-gradient(from 0deg, rgba(255,255,255,0) 0deg, rgba(255,255,255,0.9) 18deg, rgba(255,255,255,0) 40deg, rgba(255,255,255,0) 360deg)' }, c.body)
   // camera path in card coords (0..1 across the card body): [time from shot start, x, y, zoom, turn (deg)]
-  const BADGE = [0.287, 0.152], HOLO = [0.9, 0.07]
+  const BADGE = [0.27, 0.152], HOLO = [0.9, 0.07]
   const KEYS = [[0, 0.5, 0.5, 0.9, -24], [2.6, 0.5, 0.5, 1.0, 12], [3.6, BADGE[0], BADGE[1], 2.9, 4], [4.9, BADGE[0] + 0.04, BADGE[1] + 0.01, 3.1, 2],
     [5.9, HOLO[0], HOLO[1], 2.8, -4], [6.6, HOLO[0] + 0.04, HOLO[1] + 0.12, 2.8, -6], [7.7, 0.5, 0.5, 1.0, 8]]
   const camAt = (lt) => {
