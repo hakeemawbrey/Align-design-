@@ -3,17 +3,18 @@
 //             "Align" + HOUSTON BETA
 //   5.0–9.6   shot 1 · Juniper's mystery card turning slowly in 3D · "Card first. Face last."
 //   9.4–14.0  shot 2 · three talk cards drifting at different depths · "Then you talk in cards."
-//  13.8–18.8  shot 3 · two cards flip in slow motion to reveal both photos · "Both align. Then you see them."
-//  18.6–22.5  end: mark + wordmark, HOUSTON BETA · NOW OPEN, "Dating, dealt by the stars." → black
+//  13.8–21.7  shot 3 · Juniper's founders card, photo open: a slow turn, then the camera glides into the
+//             FOUNDER № 0112 badge, along the holo border, and back out
+//  21.5–25.4  end: mark + wordmark, HOUSTON BETA · NOW OPEN, "Dating, dealt by the stars." → black
 import { clamp, lerp, prog, ease, rng, el } from '../../../src/lib.js'
 import { W, H, VERT, A, SERIF, MONO, fill, img, spaceBackdrop } from '../../../src/scenes/common.js'
 
-export const DURATION = 22.5
+export const DURATION = 25.4
 const BONE = '#efe6d6'
 const CHAKRAS = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 const SPARKS = ['#f2c75c', '#fff4cf', '#ffbdf6', '#c9b6f0', '#efe6d6']
 const U = Math.min(W, H) / 1080                       // layout unit: 1 at 1080 on the short side
-const T = { s1: 5.0, s2: 9.4, s3: 13.8, end: 18.6 }   // shot starts
+const T = { s1: 5.0, s2: 9.4, s3: 13.8, end: 21.5 }   // shot starts
 const X = 0.5                                          // crossfade length
 
 // ── card geometry (measured in the PNGs: body box inside the glow padding) ──
@@ -22,9 +23,7 @@ const G = {
   talk2: { src: 'card-talk-2.png', iw: 744, ih: 1194, b: [60, 60, 684, 1134], r: 0.075 },
   talk3: { src: 'card-talk-3.png', iw: 744, ih: 1194, b: [60, 60, 684, 1134], r: 0.075 },
   talk4: { src: 'card-talk-4.png', iw: 744, ih: 1194, b: [60, 60, 684, 1134], r: 0.075 },
-  back: { src: 'card-match-back.png', iw: 1152, ih: 1548, b: [84, 84, 1068, 1461], r: 0.08 },
-  me: { src: 'card-match-me.png', iw: 1152, ih: 1548, b: [84, 84, 1068, 1461], r: 0.08 },
-  them: { src: 'card-match-them.png', iw: 1152, ih: 1548, b: [84, 84, 1068, 1461], r: 0.08 },
+  founder: { src: 'card-founder-juniper.png', iw: 2992, ih: 4466, b: [240, 218, 2748, 4223], r: 0.075 },
 }
 const bodyH = (g, w) => w * (g.b[3] - g.b[1]) / (g.b[2] - g.b[0])
 
@@ -278,41 +277,62 @@ function shot2(stage) {
 
 function shot3(stage) {
   const root = fill(stage, { background: 'transparent' })
-  const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: (2400 * U) + 'px' }, root)
-  const cw = VERT ? 440 * U : 360 * U, ch = bodyH(G.back, cw), gap = 40 * U
-  const cy = VERT ? H * 0.42 : H * 0.47
-  const glowL = el('div', { position: 'absolute', left: (W / 2 - 900 * U) + 'px', top: (cy - 600 * U) + 'px', width: 1800 * U + 'px', height: 1200 * U + 'px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
-    background: 'radial-gradient(40% 50% at 32% 50%, rgba(242,199,92,0.5), rgba(242,199,92,0) 70%), radial-gradient(40% 50% at 68% 50%, rgba(255,140,220,0.5), rgba(255,140,220,0) 70%)' }, persp)
-  const pair = el('div', { position: 'absolute', left: (W / 2) + 'px', top: cy + 'px', width: 0, height: 0, transformStyle: 'preserve-3d' }, persp)
-  const cards = [G.me, G.them].map((g, i) => {
-    const box = el('div', { position: 'absolute', left: (i ? gap / 2 : -gap / 2 - cw) + 'px', top: -ch / 2 + 'px', width: cw + 'px', height: ch + 'px', transformStyle: 'preserve-3d' }, pair)
-    const fl = el('div', { position: 'absolute', inset: 0, transformStyle: 'preserve-3d' }, box)
-    el('div', { position: 'absolute', inset: 0, borderRadius: G.back.r * cw + 'px', boxShadow: `0 0 ${50 * U}px ${6 * U}px rgba(214,170,255,0.28), 0 ${36 * U}px ${80 * U}px rgba(4,2,14,0.6)` }, fl)
-    const back = face(fl, G.back, cw, { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' })
-    const front = face(fl, g, cw, { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' })
-    return { box, fl, back, front }
-  })
-  const cap = caption(root, 'It’s mutual', 'Both align.<br>Then you see them.',
-    VERT ? { left: 0, width: W + 'px', top: (cy + ch / 2 + 80 * U) + 'px', textAlign: 'center' } : { left: 0, width: W + 'px', top: (cy + ch / 2 + 46 * U) + 'px', textAlign: 'center' })
-  if (!VERT) cap.querySelector('div:last-child').innerHTML = 'Both align. Then you see them.'
-  const FLIP = T.s3 + 1.3, FD = 2.2                       // the flip, in slow motion
+  const g = G.founder
+  const cw = VERT ? 640 * U : 520 * U, ch = bodyH(g, cw)
+  const FX = VERT ? W / 2 : W * 0.38, FY = VERT ? H * 0.43 : H / 2       // where the camera's focus sits on screen
+  // camera rig: `cam` places the focus point; `rig` scales; the card turns in 3D inside it
+  const cam = el('div', { position: 'absolute', left: FX + 'px', top: FY + 'px', width: 0, height: 0 }, root)
+  const rig = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, perspective: (3000 * U) + 'px' }, cam)
+  const c = card3d(rig, g, cw)
+  // a slow holo shimmer travelling round the border (screen-blended rainbow band, clipped to a ring)
+  const ring = el('div', { position: 'absolute', inset: 0, borderRadius: g.r * cw + 'px', pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0.55,
+    padding: (0.034 * cw) + 'px', WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude',
+    background: 'conic-gradient(from 0deg, rgba(255,255,255,0) 0deg, rgba(255,255,255,0.9) 18deg, rgba(255,255,255,0) 40deg, rgba(255,255,255,0) 360deg)' }, c.body)
+  // camera path in card coords (0..1 across the card body): [time from shot start, x, y, zoom, turn (deg)]
+  const BADGE = [0.287, 0.152], HOLO = [0.9, 0.07]
+  const KEYS = [[0, 0.5, 0.5, 0.9, -24], [2.6, 0.5, 0.5, 1.0, 12], [3.6, BADGE[0], BADGE[1], 2.9, 4], [4.9, BADGE[0] + 0.04, BADGE[1] + 0.01, 3.1, 2],
+    [5.9, HOLO[0], HOLO[1], 2.8, -4], [6.6, HOLO[0] + 0.04, HOLO[1] + 0.12, 2.8, -6], [7.7, 0.5, 0.5, 1.0, 8]]
+  const camAt = (lt) => {
+    let i = 0; while (i < KEYS.length - 2 && lt > KEYS[i + 1][0]) i++
+    const [t0, x0, y0, z0, r0] = KEYS[i], [t1, x1, y1, z1, r1] = KEYS[i + 1]
+    const e = (ease.inOutSine || ease.inOutCubic)(prog(lt, t0, t1))
+    // zoom on a log scale so the push reads evenly
+    return { x: lerp(x0, x1, e), y: lerp(y0, y1, e), z: Math.exp(lerp(Math.log(z0), Math.log(z1), e)), r: lerp(r0, r1, e) }
+  }
+  const capFull = caption(root, 'It’s mutual', VERT ? 'Both align.<br>Then you see them.' : 'Both align.<br>Then you<br>see them.',
+    VERT ? { left: 0, width: W + 'px', top: (FY + ch / 2 + 70 * U) + 'px', textAlign: 'center' } : { left: W * 0.66 + 'px', top: (H / 2 - 160 * U) + 'px', textAlign: 'left' })
+  const tagBox = (txt, sub) => {
+    const b = el('div', { position: 'absolute', opacity: 0, isolation: 'isolate', ...(VERT ? { left: 0, width: W + 'px', top: (H * 0.80) + 'px', textAlign: 'center' } : { left: (W * 0.6) + 'px', top: (H * 0.72) + 'px', textAlign: 'left' }) }, root)
+    // a soft dark pool behind the words: the zoomed card is busy underneath
+    el('div', { position: 'absolute', left: -140 * U + 'px', right: -140 * U + 'px', top: -90 * U + 'px', bottom: -90 * U + 'px', zIndex: -1,
+      background: 'radial-gradient(closest-side, rgba(11,6,32,0.92), rgba(11,6,32,0.78) 55%, rgba(11,6,32,0) 100%)' }, b)
+    el('div', { fontFamily: MONO, fontSize: (VERT ? 30 : 26) * U + 'px', letterSpacing: '0.3em', color: '#f2c75c', textShadow: '0 0 20px rgba(8,4,24,0.9)', marginBottom: 12 * U + 'px' }, b, txt)
+    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? 62 : 56) * U + 'px', color: '#fff6ea', textShadow: '0 0 26px rgba(8,4,24,0.9)' }, b, sub)
+    return b
+  }
+  const capBadge = tagBox('✦ FOUNDERS EDITION', 'Numbered, Houston first.')
+  const capHolo = tagBox('✦ HOLO BORDER', 'Founders shine different.')
+  const S0 = T.s3, S1 = T.end + X
   return {
-    start: T.s3, end: T.end + X, root,
+    start: S0, end: S1, root,
     update(t) {
-      root.style.opacity = String(shotAlpha(t, T.s3, T.end + X))
-      const lt = t - T.s3, p = lt / (T.end + X - T.s3)
-      pair.style.transform = `rotateY(${lerp(-10, 8, ease.inOutQuad(p))}deg) rotateX(${lerp(10, 2, p)}deg) translateZ(${lerp(-60, 60, ease.outQuad(p)) * U}px)`
-      cards.forEach((c, i) => {
-        const f0 = FLIP + i * 0.25, fp = ease.inOutSine ? ease.inOutSine(prog(t, f0, f0 + FD)) : ease.inOutQuad(prog(t, f0, f0 + FD))
-        const lift = Math.sin(Math.PI * fp)
-        c.fl.style.transform = `translateZ(${90 * U * lift}px) rotateY(${180 * fp}deg)`
-        c.box.style.transform = `translateY(${-10 * U * Math.sin(lt * 0.8 + i * 1.6) - 26 * U * lift}px) rotateZ(${(i ? 1 : -1) * lerp(5, 2.5, fp)}deg)`
-        sweep(c.front.glint, cw, prog(t, f0 + FD - 0.2, f0 + FD + 1.4))
-      })
-      glowL.style.opacity = String(ease.inOutQuad(prog(t, FLIP + 1.2, FLIP + 2.6)) * 0.85)
-      capIn(cap, t, FLIP + FD - 0.3, T.end + X * 0.6)
+      root.style.opacity = String(shotAlpha(t, S0, S1))
+      const lt = t - S0, k = camAt(lt)
+      // point (k.x, k.y) of the card goes to the focus point, at zoom k.z
+      rig.style.transform = `scale(${k.z}) translate(${-k.x * cw}px, ${-k.y * ch}px)`
+      const flat = clamp((k.z - 1) / 1.2)                    // the closer the camera, the flatter the card turns
+      c.body.style.transform = `rotateY(${k.r * (1 - 0.7 * flat)}deg) rotateX(${(5 * Math.sin(lt * 0.6) - 2) * (1 - flat)}deg) translateY(${-10 * Math.sin(lt * 0.8) * (1 - flat)}px)`
+      c.shadow.style.opacity = String(0.8 * (1 - flat))
+      ring.style.transform = `rotate(0deg)`; ring.style.background = `conic-gradient(from ${(lt * 70) % 360}deg, rgba(255,255,255,0) 0deg, rgba(255,255,255,0.95) 16deg, rgba(255,255,255,0) 38deg, rgba(255,255,255,0) 360deg)`
+      sweep(c.glint, cw, prog(lt, 0.8, 2.6))
+      capIn(capFull, t, S0 + 0.6, S0 + 2.9)
+      capIn(capBadge, t, S0 + 3.3, S0 + 5.3)
+      capIn(capHolo, t, S0 + 5.6, S0 + 7.0)
     },
-    fx(ctx, t) { twinkleField(ctx, t, FLIP + FD - 0.4, T.end + 0.2, [W / 2 - cw - gap - 80 * U, cy - ch / 2 - 60 * U, (cw + gap) * 2 + 160 * U, ch + 120 * U], 89, 18) },
+    fx(ctx, t) {
+      const lt = t - S0
+      if (lt < 2.8 || lt > 7.2) twinkleField(ctx, t, S0 + 0.3, S1 - 0.2, [FX - cw * 0.75, FY - ch * 0.6, cw * 1.5, ch * 1.2], 89, 16)
+    },
   }
 }
 
@@ -388,9 +408,12 @@ export const CUES = [
   ['whoosh', T.s2 - 0.3, 0.9, 0.12],
   ['glitter', T.s2 + 1.1, T.s2 + 2.4],
   ['whoosh', T.s3 - 0.3, 0.9, 0.12],
-  ['whoosh', T.s3 + 1.3, 2.2, 0.08],
+  ['glitter', T.s3 + 0.8, T.s3 + 2.2],
+  ['whoosh', T.s3 + 2.6, 1.0, 0.08],
   ['bell', T.s3 + 3.5, 587.33, 0.06, 2.4, -0.3], ['bell', T.s3 + 3.75, 739.99, 0.05, 2.4, 0.3],
-  ['glitter', T.s3 + 3.4, T.s3 + 4.6],
+  ['whoosh', T.s3 + 4.9, 1.0, 0.07],
+  ['glitter', T.s3 + 5.7, T.s3 + 6.8],
+  ['whoosh', T.s3 + 6.6, 1.1, 0.07],
   ['whoosh', T.end - 0.3, 0.8, 0.1],
   ...CHAKRAS.map((_, i) => ['bell', T.end + 0.3 + i * 0.05, [293.66, 369.99, 440, 554.37, 587.33, 739.99, 880][i], 0.05, 2.2, (i - 3) * 0.12]),
 ]
