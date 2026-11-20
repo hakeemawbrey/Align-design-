@@ -1,0 +1,26 @@
+{
+  "id": "01-love-numbers",
+  "hook": "STOP SCROLLING",
+  "sub": ["close your eyes, take a breath", "& screenshot"],
+  "foot": "comment the number you got",
+  "kicker": "ALIGN · LOVE NUMBER",
+  "intro": 1.1,
+  "hold": 4,
+  "duration": 12,
+  "cards": [
+    { "big": "000", "title": "Full circle", "color": "lilac", "line": "Someone from an old chapter comes back. This time you get to choose differently." },
+    { "big": "111", "title": "A fresh start", "color": "gold", "line": "The next person you meet starts a new pattern, not a repeat of the last one." },
+    { "big": "222", "title": "Aligning", "color": "rose", "line": "What you want is already moving toward you. Stay patient, it's lining up." },
+    { "big": "333", "title": "Be seen", "color": "peach", "line": "Let them see the real you. The right one falls for exactly that." },
+    { "big": "444", "title": "Protected", "color": "mint", "line": "You're not behind. You're being kept away from the wrong person on purpose." },
+    { "big": "555", "title": "Big change", "color": "blue", "line": "Your love life is about to move fast. Say yes to the plan you'd usually skip." },
+    { "big": "666", "title": "Choose you", "color": "rose", "line": "Stop shrinking to be chosen. Choose yourself first and watch who stays." },
+    { "big": "777", "title": "Lucky timing", "color": "gold", "line": "Someone is closer than you think. A small hello turns into something real." },
+    { "big": "888", "title": "Overflowing", "color": "peach", "line": "Love is coming from more than one direction. Get ready to be chosen." },
+    { "big": "999", "title": "Let it end", "color": "lilac", "line": "Release the one you keep checking on. You're making room for someone new." },
+    { "big": "1111", "title": "Make a wish", "color": "blue", "line": "Someone is thinking about you right now. Make the wish, they're aligning too." },
+    { "big": "1212", "title": "Step forward", "color": "mint", "line": "Stop waiting for a sign. This is the sign. Send the message." }
+  ],
+  "caption": "Close your eyes, take a breath and screenshot. Which love number did you land on? Drop it in the comments and claim it.\n\nWant to know who's aligning with you? Your chart and your matches are on Align, link in bio.",
+  "hashtags": ["angelnumbers", "111", "222", "444", "1111", "lovenumbers", "manifestlove", "astrology", "zodiac", "align"]
+}
