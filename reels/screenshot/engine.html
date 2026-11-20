@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Garamond'; src: url('FONTS/eb-garamond/files/eb-garamond-latin-500-normal.woff2'); font-weight: 500; }
+  @font-face { font-family: 'Garamond'; src: url('FONTS/eb-garamond/files/eb-garamond-latin-500-italic.woff2'); font-weight: 500; font-style: italic; }
+  @font-face { font-family: 'Poppins'; src: url('FONTS/poppins/files/poppins-latin-400-normal.woff2'); font-weight: 400; }
+  @font-face { font-family: 'Poppins'; src: url('FONTS/poppins/files/poppins-latin-600-normal.woff2'); font-weight: 600; }
+  @font-face { font-family: 'Mono'; src: url('FONTS/space-mono/files/space-mono-latin-400-normal.woff2'); }
+  :root { --gold: #f2d58a; --ink: #0b0620; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: radial-gradient(120% 70% at 50% 38%, #3a1f80 0%, #1e0f4a 45%, #0b0620 100%); color: #fff; font-family: 'Poppins'; }
+  #sky { position: absolute; inset: 0; }
+  #halo { position: absolute; left: 50%; top: 46%; width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,199,92,.30), rgba(242,199,92,0) 65%); }
+  .scene { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; opacity: 0; }
+  .serif { font-family: 'Garamond'; font-weight: 500; }
+  .mono { font-family: 'Mono'; letter-spacing: .22em; text-transform: uppercase; }
+  .big { font-size: 150px; line-height: .95; color: var(--gold); text-shadow: 0 0 40px rgba(242,199,92,.45); letter-spacing: .01em; }
+  .mid { font-size: 92px; line-height: 1.05; }
+  .sub { margin-top: 44px; font-size: 44px; color: #e9e2ff; opacity: .85; }
+  .tag { font-size: 26px; color: #f2d58acc; }
+  em { font-style: italic; color: var(--gold); }
+
+  /* talk card, after app/src/components/talk/ChatTalkCard.tsx */
+  #card { position: absolute; left: 50%; top: 50%; width: 780px; height: 1170px; margin: -585px 0 0 -390px; border-radius: 40px; padding: 7px; }
+  #card .face { position: relative; width: 100%; height: 100%; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 70px 64px 60px; }
+  .frame1 { position: absolute; inset: 16px; border-radius: 26px; border: 2.5px solid #f2d58a99; }
+  .frame2 { position: absolute; inset: 24px; border-radius: 20px; border: 1.5px solid #f2d58a40; }
+  .corner { position: absolute; width: 22px; height: 22px; color: var(--gold); font-size: 30px; line-height: 22px; text-align: center; }
+  .arch { margin-top: 26px; width: 300px; height: 240px; border-radius: 160px 160px 16px 16px; border: 2.5px solid #f2d58acc; display: grid; place-items: center; font-size: 170px; line-height: 1; }
+  .arcana { margin-top: 26px; padding: 8px 30px; font-size: 32px; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); border-top: 2px solid #f2d58a88; border-bottom: 2px solid #f2d58a88; }
+  .q { flex: 1; justify-content: center; display: flex; align-items: center; font-size: 74px; line-height: 1.12; color: #fff; padding: 0 6px; }
+  .opts { display: flex; gap: 28px; margin-bottom: 20px; }
+  .opt { padding: 18px 40px; border-radius: 999px; border: 2px solid #f2d58a88; font-size: 34px; color: #fff; background: #ffffff10; }
+  .num { margin-top: 6px; font-size: 64px; color: var(--gold); letter-spacing: .06em; text-shadow: 0 0 24px rgba(242,199,92,.5); }
+  .rar { position: absolute; top: 58px; left: 0; right: 0; text-align: center; font-size: 22px; color: #f2d58aee; }
+  .brand { margin-top: 2px; font-size: 20px; color: #f2d58a88; }
+
+  #hint { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-size: 34px; color: var(--gold); opacity: 0; }
+  #wordmark { position: absolute; left: 0; right: 0; bottom: 120px; text-align: center; font-size: 30px; color: #f2d58a99; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="sky" width="1080" height="1920"></canvas>
+  <div id="halo"></div>
+
+  <div class="scene" id="s-stop">
+    <div class="mono tag">✦ align ✦</div>
+    <div class="serif big" style="margin-top:40px">STOP<br>SCROLLING</div>
+    <div class="serif sub">this deck has a question for you</div>
+  </div>
+  <div class="scene" id="s-breath">
+    <div class="serif mid">close your eyes</div>
+    <div class="serif sub"><em>breathe in…</em> &nbsp;and out</div>
+  </div>
+  <div class="scene" id="s-ready">
+    <div class="serif mid">think of the person<br>you're <em>talking to</em></div>
+    <div class="serif sub">screenshot when it feels right</div>
+  </div>
+  <div class="scene" id="s-flash"><div id="card"></div></div>
+  <div class="scene" id="s-reveal">
+    <div class="serif mid">the card you caught<br>is your question<br>for <em>tonight</em></div>
+    <div class="serif sub">ask them. see what they say.</div>
+  </div>
+  <div class="scene" id="s-comment">
+    <div class="mono tag">↓ &nbsp;comment&nbsp; ↓</div>
+    <div class="serif big" style="margin-top:40px;font-size:128px">your card's<br>number</div>
+    <div class="serif sub">then send this to them</div>
+  </div>
+  <div class="scene" id="s-end">
+    <svg width="220" height="220" viewBox="0 0 512 512"><defs><linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4cf"/><stop offset="1" stop-color="#f2c75c"/></linearGradient></defs>
+      <path d="M256 76 Q270 230 356 256 Q270 282 256 436 Q242 282 156 256 Q242 230 256 76 Z" fill="url(#st)"/></svg>
+    <div class="serif big" style="margin-top:30px;font-size:170px;letter-spacing:.04em">Align</div>
+    <div class="serif sub">51 talk cards. play them with your match.</div>
+  </div>
+
+  <div id="hint" class="mono">✦ screenshot now ✦</div>
+  <div id="wordmark" class="mono">align</div>
+</div>
+<script>
+const W = 1080, H = 1920
+const { TIMELINE, CARDS, TOPICS, ARCANA, CARD_SEC } = window.__REEL
+const KIND = { ask: 'Open question', pick: 'This or that', who: 'Who’s more likely' }
+
+// seeded stars
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647
+const stars = Array.from({ length: 260 }, () => ({ x: rnd() * W, y: rnd() * H, r: rnd() * 2.2 + .4, p: rnd() * 6.28, s: rnd() * 1.5 + .4 }))
+const sky = document.getElementById('sky').getContext('2d')
+function drawSky(t, drift) {
+  sky.clearRect(0, 0, W, H)
+  for (const s of stars) {
+    const a = .35 + .55 * (.5 + .5 * Math.sin(t * s.s + s.p))
+    const y = ((s.y - t * 18 * s.s * drift) % H + H) % H
+    sky.globalAlpha = a; sky.fillStyle = '#fff'
+    sky.beginPath(); sky.arc(s.x, y, s.r, 0, 6.283); sky.fill()
+  }
+  sky.globalAlpha = 1
+}
+
+function cardHTML(c, i) {
+  const t = TOPICS[c.topic], a = ARCANA[c.topic]
+  const edge = c.rarity === 'legendary'
+    ? 'conic-gradient(from 0deg, #f2d58a, #f08aa8, #7fc8f0, #b18cff, #9fd86a, #f2d58a)'
+    : c.rarity === 'rare' ? 'linear-gradient(160deg, #fff2c4, #c99a3c 45%, #f2d58a)' : 'linear-gradient(160deg, #f2d58a66, #f2d58a22)'
+  const glow = c.rarity === 'common' ? `0 0 60px ${t.color}44` : `0 0 90px ${t.color}88, 0 0 30px #f2d58a66`
+  const opts = c.kind === 'pick' ? c.opts : c.kind === 'who' ? ['Me', 'You'] : null
+  return `<div style="position:absolute;inset:0;border-radius:40px;background:${edge};box-shadow:${glow}"></div>
+  <div class="face" style="background:
+    radial-gradient(90% 40% at 50% 20%, ${t.color}44 0%, transparent 70%), linear-gradient(175deg, #241252, #120930 70%)">
+    <div class="frame1"></div><div class="frame2"></div>
+    <div class="corner" style="top:34px;left:34px">✦</div><div class="corner" style="top:34px;right:34px">✦</div>
+    <div class="corner" style="bottom:34px;left:34px">✦</div><div class="corner" style="bottom:34px;right:34px">✦</div>
+    <div class="mono rar">${c.rarity === 'common' ? '' : c.rarity}</div>
+    <div class="mono" style="font-size:20px;letter-spacing:.16em;color:#f2d58abb;margin-top:34px;white-space:nowrap">${t.label} · ${KIND[c.kind]}</div>
+    <div class="arch" style="color:${t.color};text-shadow:0 0 40px ${t.color};
+      background:radial-gradient(70% 60% at 50% 45%, ${t.color}55, ${t.color}14 60%, transparent), linear-gradient(180deg, #1c0e44, #120930);
+      box-shadow: inset 0 0 40px ${t.color}55, 0 0 50px ${t.color}33">${t.glyph}</div>
+    <div class="serif arcana">${a.numeral} · ${a.name}</div>
+    <div class="serif q"><span>${c.q}</span></div>
+    ${opts ? `<div class="opts">${opts.map(o => `<div class="opt">${o}</div>`).join('')}</div>` : ''}
+    <div class="serif num">No. ${i + 1}</div>
+    <div class="mono brand">align talk cards</div>
+  </div>`
+}
+
+const el = id => document.getElementById(id)
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x)
+let lastCard = -1
+
+window.seek = (t) => {
+  const flash = TIMELINE.find(s => s.id === 'flash')
+  const inFlash = t >= flash.start && t < flash.end
+  drawSky(t, inFlash ? 0 : 1)
+  for (const s of TIMELINE) {
+    const e = el('s-' + s.id)
+    const fi = s.id === 'flash' ? 1 : ease((t - s.start) / .45)
+    const fo = s.id === 'flash' ? 1 : ease((s.end - t) / .35)
+    const on = t >= s.start && t < s.end
+    e.style.opacity = on ? Math.min(fi, s.last ? 1 : fo) : 0
+    if (on && s.id !== 'flash') e.style.transform = `translateY(${(1 - fi) * 30}px) scale(${1 + (t - s.start) * .006})`
+  }
+  // breathing halo
+  const br = TIMELINE.find(s => s.id === 'breath')
+  const halo = el('halo')
+  if (t >= br.start && t < br.end) {
+    const k = (t - br.start) / (br.end - br.start)
+    halo.style.transform = `scale(${.7 + .55 * Math.sin(Math.PI * k)})`; halo.style.opacity = 1
+  } else { halo.style.transform = 'scale(.9)'; halo.style.opacity = inFlash ? .5 : .7 }
+
+  if (inFlash) {
+    const i = Math.min(CARDS.length - 1, Math.floor((t - flash.start) / CARD_SEC))
+    if (i !== lastCard) { el('card').innerHTML = cardHTML(CARDS[i], i); lastCard = i }
+  }
+  el('hint').style.opacity = inFlash ? (.55 + .45 * Math.sin(t * 6)) : 0
+  el('wordmark').style.opacity = inFlash || t >= TIMELINE.find(s => s.id === 'end').start ? 0 : .8
+}
+window.ready = document.fonts.ready.then(() => true)
+</script>
+</body>
+</html>
