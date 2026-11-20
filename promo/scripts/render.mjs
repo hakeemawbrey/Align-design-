@@ -28,7 +28,7 @@ const FILM2 = !!arg('film2')
 const FILM3 = !!arg('film3')
 const FILM = arg('film')   // --film=<name> → promo/films/<name>
 const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), WORKERS = Number(arg('workers', 4))
-let TO = Number(arg('to', TEASER || FILM2 || FILM3 || FILM ? 0 : 31.5))
+let TO = Number(arg('to', 0))
 const VERT = !!arg('vertical') || !!TEASER
 const [VW, VH] = VERT ? [1080, 1920] : [1920, 1080]
 const OUT = path.resolve(arg('out', path.join(ROOT, FILM ? `promo/out/films/${FILM}/align-${FILM}.mp4` : FILM3 ? 'promo/out/film3/align-rigged.mp4' : FILM2 ? 'promo/out/film2/align-flip-it.mp4' : TEASER ? `promo/out/teasers/${TEASER}.mp4` : VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
@@ -57,7 +57,7 @@ async function shoot(page, t, file, type = 'jpeg') {
 }
 
 let LOOPING = false
-if ((FILM2 || FILM3 || FILM) && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
+if (!TEASER && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
 if (TEASER) { const p = await newPage(); const info = await p.evaluate(() => ({ d: window.DURATION, l: window.LOOP })); if (!TO) TO = info.d; LOOPING = info.l; await p.close() }
 const stills = arg('stills')
 const sheet = arg('sheet')

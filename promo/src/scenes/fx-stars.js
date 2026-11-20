@@ -295,7 +295,7 @@ export function fxStardust(ctx, tr) {
     if (w > 0.005) drawField(ctx, P, t, w)
   }
   ctx.globalAlpha = 1
-  for (const B of BURSTS) { const t = T(B.t); if (t > B.t && t < B.t + B.life + 0.15) drawBurst(ctx, B, t) }
+  for (const B of BURSTS) { if (B.t === 8.72) continue /* S3: s3-veil.js draws the website's pixel burst */; const t = T(B.t); if (t > B.t && t < B.t + B.life + 0.15) drawBurst(ctx, B, t) }
   if (tl > 27.4 && tl < 28.4) drawChakra(ctx, tl)
   for (const S of SHOOTS) drawShoot(ctx, S, T(S.t0))
   ctx.restore()

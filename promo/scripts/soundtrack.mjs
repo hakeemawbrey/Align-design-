@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { CUES } from '../src/cues.js'
 import { birthTypedAt } from '../src/scenes/s4-birth.js'
 import { rng } from '../src/lib.js'
-import { DURATION, shift } from '../src/timing.js'
+import { DURATION, shift, unwarp } from '../src/timing.js'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const SR = 48000, DUR = DURATION, N = Math.round(SR * DUR)
@@ -18,7 +18,7 @@ const add = (i, l, r = l, rev = 0) => { if (i >= 0 && i < N) { L[i] += l; R[i] +
 
 // ── pad: detuned saws through a slowly opening low-pass, per section
 for (const [a0, a1, chord] of CUES.sections) {
-  const s0 = shift(a0), s1 = a1 >= 30 ? DUR : shift(a1)
+  const s0 = shift(a0), s1 = a1 >= 30 ? DUR : shift(a1)  // shift() includes the slow opening
   const i0 = Math.floor(s0 * SR), i1 = Math.min(N, Math.floor((s1 + 0.9) * SR))
   chord.forEach((f, v) => {
     const voices = [0.996, 1.004]
@@ -114,12 +114,12 @@ const bell = (t, ...a) => bellR(shift(t), ...a)
 const boom = (t, ...a) => boomR(shift(t), ...a)
 const glitter = (a, b) => glitterR(shift(a), shift(b))
 ;(CUES.moonReal ? [CUES.moonReal] : []).forEach(m => {
-  m.ticks.forEach((t, i) => { for (let k = 0; k < 4; k++) tickR(t + k * 0.17, 0.025) ; bellR(t + 0.7, [392, 440, 493.88, 587.33][i], 0.03, 1.4) })
-  bellR(m.fullBloom, 293.66, 0.05, 3); bellR(m.fullBloom + 0.02, 587.33, 0.04, 3); bellR(m.fullBloom + 0.04, 880, 0.025, 3)
-  bellR(m.strip, 1174.66, 0.03, 1.0)
-  for (let k = 0; k < m.row.count; k++) bellR(m.row.start + k * m.row.step, [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99][k], 0.025, 1.2, (k - 4) * 0.12)
+  m.ticks.forEach((t, i) => { for (let k = 0; k < 4; k++) tickR(unwarp(t + k * 0.17), 0.025) ; bellR(unwarp(t + 0.7), [392, 440, 493.88, 587.33][i], 0.03, 1.4) })
+  bellR(unwarp(m.fullBloom), 293.66, 0.05, 3); bellR(unwarp(m.fullBloom + 0.02), 587.33, 0.04, 3); bellR(unwarp(m.fullBloom + 0.04), 880, 0.025, 3)
+  bellR(unwarp(m.strip), 1174.66, 0.03, 1.0)
+  for (let k = 0; k < m.row.count; k++) bellR(unwarp(m.row.start + k * m.row.step), [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99][k], 0.025, 1.2, (k - 4) * 0.12)
 })
-;(CUES.real || []).forEach(([kind, t, ...a]) => ({ tick: tickR, whoosh: whooshR, bell: bellR, boom: boomR, glitter: glitterR })[kind](t, ...a))
+;(CUES.real || []).forEach(([kind, t, ...a]) => ({ tick: tickR, whoosh: whooshR, bell: bellR, boom: boomR, glitter: glitterR })[kind](unwarp(t), ...(kind === 'glitter' ? [unwarp(a[0])] : a)))
 
 const s1 = CUES.typeS1;[...s1.text].forEach((c, i) => c !== ' ' && tick(s1.start + i * s1.perChar, 0.05))
 const s7 = CUES.typeS7;[...s7.text].forEach((c, i) => c !== ' ' && tick(s7.start + i * s7.perChar, 0.04))
