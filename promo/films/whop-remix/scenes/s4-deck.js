@@ -1,4 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../../../src/lib.js'
+import { makeSun, makeWheel, makeSkyline, makeEggs } from './houston.js'
 import { VERT, W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from '../../../src/scenes/common.js'
 
 // ──────────────────────────────────────── S6 · a new deck, every night
@@ -60,6 +61,9 @@ export function sceneDeck(stage) {
   const SH = (x) => x  // (times below are the remix's own)
   const root = fill(stage, { background: 'transparent' })
   const bg = spaceBackdrop(root, 'amber', { seed: 6 })   // deep-space ground (first child)
+  // the sun rises slowly behind the deck (tarot line-art, like The Sun card); a few zodiac glyphs drift in the field
+  const sun = makeSun(root, VERT ? 120 : 110)
+  const eggs = makeEggs(root, { seed: 44, glyphs: 5, planets: 1, keep: VERT ? [[0, 200, W, 1500], [560, 1500, 520, 420]] : [[200, 60, 1500, 1000], [0, 0, 500, 480]] })
   const persp = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const mk = (key, kind, at) => {
     const c = CARD[key]
@@ -111,6 +115,9 @@ export function sceneDeck(stage) {
       bg.update(t)
       // cross-fade from s5's teal space (still drawn underneath until 17.6) — no ground pop at the cut
       bg.root.style.opacity = String(ease.inOutQuad(prog(t, D0, D0 + 0.35)))
+      const rise = ease.outCubic(prog(t, D0, D1))
+      sun.update(t, VERT ? { x: W * 0.84, y: lerp(1930, 1790, rise), a: 0.62 * ease.inOutQuad(prog(t, D0 + 0.2, D0 + 1.4)), rot: t * 4 } : { x: W * 0.15, y: lerp(330, 200, rise), a: 0.62 * ease.inOutQuad(prog(t, D0 + 0.2, D0 + 1.4)), rot: t * 4 })
+      eggs.update(t, ease.inOutQuad(prog(t, D0 + 0.5, D0 + 1.5)))
       const pull = ease.inOutCubic(prog(t, 10.9, 12.3))     // camera pulls back, stack fans out
       const center = 0
       const push = lerp(1, 1.06, ease.inOutQuad(prog(t, 12.3, D1)))

@@ -1,4 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../../../src/lib.js'
+import { makeSkyline, makeEggs } from './houston.js'
 import { W, H, VERT, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, spaceBackdrop } from '../../../src/scenes/common.js'
 
 // ──────────────────────────────────────── S7 · deep-space aurora tagline + payoff beats
@@ -119,6 +120,9 @@ export function sceneTagline(stage) {
     background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.4}) 48%, rgba(${b.c},0) 100%)` }, sky) }))
   // dark scrim right behind the tagline so bone type keeps ≥7:1 against the band
   const SCR = VERT ? [1060, 600] : [1800, 460]
+  // the pixel-star skyline returns along the bottom; a few zodiac glyphs, planets and a shooting star in the sky
+  const skyline = makeSkyline(sky, { y: H + 4, h: VERT ? 260 : 170, seed: 713 })
+  const eggs = makeEggs(sky, { seed: 77, glyphs: 4, planets: 2, shoots: [24.1], keep: VERT ? [[0, 700, W, 520]] : [[300, 400, 1320, 280]] })
   const tScrim = el('div', { position: 'absolute', left: (W / 2 - SCR[0] / 2) + 'px', top: (H / 2 - SCR[1] / 2) + 'px', width: SCR[0] + 'px', height: SCR[1] + 'px', borderRadius: '50%',
     background: 'radial-gradient(closest-side, rgba(11,6,32,0.55), rgba(11,6,32,0.38) 45%, rgba(11,6,32,0.12) 75%, rgba(11,6,32,0) 100%)', opacity: 0 }, sky)
 
@@ -217,6 +221,8 @@ export function sceneTagline(stage) {
         sky.style.webkitMaskImage = m; sky.style.maskImage = m
       }
       space.update(t)
+      skyline.update(t, 0.85)
+      eggs.update(t, ease.inOutQuad(prog(t, 22.8, 23.6)))
       GA.style.opacity = String(0.85 * ease.inOutQuad(prog(t, 22.6, 23.4)))
       GA.style.transform = `rotate(${(t - 22.4) * 0.9}deg) translateY(${(1 - rp) * 120}px)`
       drawAurora(t, ease.inOutQuad(prog(t, 22.45, 23.15)))

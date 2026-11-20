@@ -22,6 +22,7 @@ import { sceneTalk } from './s6-talk.js'
 import { sceneTagline } from './s7-tagline.js'
 import { sceneEnd } from './s8-end.js'
 import { fxMound } from './kit.js'
+import { sceneHud } from './houston.js'
 import { CUES as C } from './cues-list.js'
 
 export const DURATION = 29.1
@@ -42,6 +43,7 @@ export const SCENES = [
   sceneTalk,
   sceneTagline,
   sceneEnd,
+  sceneHud,   // corner readout: Houston coordinates + the section's nickname
   // transitions on the fx canvas (above everything)
   () => ({
     start: 0, end: DURATION, root: null, update() {},

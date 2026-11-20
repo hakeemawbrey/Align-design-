@@ -1,6 +1,7 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../../../src/lib.js'
 import { W, H, VERT, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from '../../../src/scenes/common.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
+import { makeSun, makeWheel, makeSkyline, makeEggs } from './houston.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
 // Register the 500 face locally (shared guard with s2) — document.fonts.ready waits for it.
@@ -215,6 +216,9 @@ export function sceneHook(stage) {
   const root = fill(stage, { background: C.void })
   const bgC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
   bgC.width = W; bgC.height = H
+  // Houston easter eggs: the skyline traced in pixel stars along the bottom, zodiac glyphs + planets in the field, a shooting star
+  const skyline = makeSkyline(root, { y: H + 6, h: VERT ? 300 : 210, seed: 713 })
+  const eggs = makeEggs(root, { seed: 21, glyphs: VERT ? 5 : 6, planets: 2, shoots: [1.2], keep: VERT ? [[0, 700, W, 520], [0, H - 360, W, 360]] : [[160, 380, 1600, 330], [0, H - 240, W, 240], [1380, 120, 360, 260]] })
   const bx = bgC.getContext('2d')
   const scratch = canvas(W, H), sx = scratch.getContext('2d')
 
@@ -339,6 +343,9 @@ export function sceneHook(stage) {
         bx.globalCompositeOperation = 'source-over'
       }
       // the caption jitters with the glitch too (tiny, horizontal)
+      skyline.update(t, ease.inOutQuad(prog(t, 0.3, 1.4)) * 0.95)
+      skyline.root.style.transform = `translateY(${lerp(30, 0, ease.outCubic(prog(t, 0, S1_END)))}px) scale(${lerp(1, 1.03, k)})`
+      eggs.update(t, ease.inOutQuad(prog(t, 0.6, 1.6)))
       line.root.style.transform = g ? `translate(calc(-50% + ${(rng(frame * 13 + 1)() - 0.5) * 16}px),-50%)` : 'translate(-50%,-50%)'
       {
         const lt = t - TYPE_START, acc = [C.rub, C.amber, C.gold, C.plum]

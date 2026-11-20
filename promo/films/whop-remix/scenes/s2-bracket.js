@@ -1,4 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../../../src/lib.js'
+import { makeSun, makeWheel, makeSkyline, makeEggs } from './houston.js'
 import { W, H, VERT, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from '../../../src/scenes/common.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
@@ -79,6 +80,7 @@ export const T = {
 export function sceneBracket(stage) {
   const root = fill(stage, { background: 'transparent' })
   const bg = spaceBackdrop(root, 'rose', { seed: 2 })   // deep-space ground (first child)
+  const wheel = makeWheel(root, VERT ? 480 : 470)   // a slow zodiac wheel turning behind the bracket line
   const mid = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const row = el('div', {
     position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', display: 'flex', alignItems: 'center',
@@ -166,6 +168,7 @@ export function sceneBracket(stage) {
       // the space ground eases in over the wipe's last frames (the wipe is a dark indigo close to it)
       bg.root.style.opacity = String(ease.inOutQuad(prog(t, 3.45, 3.56)))
       bg.update(t)
+      wheel.update(t, { x: W / 2, y: H / 2, a: 0.17 * ease.inOutQuad(prog(t, 3.6, 4.4)) * (1 - ease.inQuad(prog(t, T.conv, T.conv + 0.4))), rot: -20 + (t - 3.5) * 5 })
       root.style.zIndex = early ? '1001' : '21'
       const st = state(t)
       setW(wIn, 'wIn', st.f.wIn); setW(wYour, 'wYour', st.f.wYour); setW(wStars, 'wStars', st.f.wStars)

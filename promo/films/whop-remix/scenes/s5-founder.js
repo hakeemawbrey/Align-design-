@@ -2,7 +2,9 @@
 // card: photo open, holo border, FOUNDER № 0112. A gold sweep, a pixel burst, "Both align. Then you see them.",
 // then a slow camera push onto the founder badge, and out.
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
+import { MONO, SERIF } from '../../../src/scenes/common.js'
 import { W, H, VERT, fill, spaceBackdrop } from '../../../src/scenes/common.js'
+import { makeEggs, ZODIAC } from './houston.js'
 import { U, G, bodyH, face, foil, foilAt, sweep, caption, capIn, twinkles, burst } from './kit.js'
 
 export const S5 = { start: 14.05, end: 19.05, flip: [14.75, 15.55] }
@@ -13,6 +15,7 @@ const DECK = VERT ? { x: W / 2 + 90, y: H / 2 + 150, h: 1000 * 0.8 } : { x: W / 
 export function sceneFounder(stage) {
   const root = fill(stage, { background: 'transparent' })
   const bg = spaceBackdrop(root, 'aurora', { seed: 11, grain: 0.18, stars: 200 })
+  const eggs = makeEggs(root, { seed: 55, glyphs: 4, planets: 2, keep: VERT ? [[60, 100, W - 120, 1700]] : [[250, 80, 1500, 920]] })
   const deep = fill(root, { background: 'radial-gradient(70% 60% at 50% 48%, rgba(11,6,32,0.35) 0%, rgba(11,6,32,0.6) 100%)' })
   const g = G.founder
   const cw = VERT ? 700 : 520, ch = bodyH(g, cw)
@@ -39,7 +42,7 @@ export function sceneFounder(stage) {
     const e = ease.inOutCubic(prog(lt, t0, t1))
     return { x: lerp(x0, x1, e), y: lerp(y0, y1, e), z: Math.exp(lerp(Math.log(z0), Math.log(z1), e)) }
   }
-  const capA = caption(root, 'It’s mutual', VERT ? 'Both align.<br>Then you see them.' : 'Both align.<br>Then you<br>see them.',
+  const capA = caption(root, 'Houston, we have a match', VERT ? 'Both align.<br>Then you see them.' : 'Both align.<br>Then you<br>see them.',
     VERT ? { left: 0, width: W + 'px', top: (FY + ch / 2 + 70) + 'px', textAlign: 'center' } : { left: W * 0.6 + 'px', top: (H / 2 - 150) + 'px', textAlign: 'left' })
   // badge beat: horizontal moves the card left so the caption sits on clear sky; vertical backs it with a glass plate
   const FX2 = VERT ? W / 2 - (0.5 - BADGE[0] - 0.06) * cw * 1.53 : W * 0.25
@@ -47,6 +50,15 @@ export function sceneFounder(stage) {
     VERT ? { left: 170 + 'px', right: 170 + 'px', top: (H * 0.75) + 'px', textAlign: 'center' } : { left: 1370 + 'px', top: (H / 2 - 150) + 'px', textAlign: 'left' }, 0, VERT)
 
   const S0 = S5.start, S1 = S5.end
+  const PLACE = [[ZODIAC[6], 'SUN', 'LIBRA'], [ZODIAC[2], 'MOON', 'GEMINI'], [ZODIAC[10], 'RISING', 'AQUARIUS']]
+  const PL = PLACE.map(([gl, lab, sign], i) => {
+    const x = VERT ? W / 2 + (i - 1) * 290 : FX - cw / 2 - 170, y = VERT ? H - 190 : H / 2 + (i - 1) * 230
+    const e = el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '220px', textAlign: 'center', opacity: 0 }, root)
+    const ring = el('div', { width: '92px', height: '92px', margin: '0 auto', borderRadius: '50%', border: '1.5px solid rgba(242,199,92,0.7)', background: 'radial-gradient(closest-side, rgba(242,199,92,0.16), rgba(11,6,32,0.55))', display: 'flex', alignItems: 'center', justifyContent: 'center' }, e)
+    const g = el('div', { fontFamily: '"DejaVu Sans", sans-serif', fontSize: '50px', lineHeight: 1, color: '#f6dc9a' }, ring, gl)
+    el('div', { fontFamily: MONO, fontSize: '17px', letterSpacing: '0.24em', textIndent: '0.24em', color: 'rgba(239,230,214,0.85)', marginTop: '12px', textShadow: '0 0 10px rgba(8,4,24,0.9)' }, e, `${sign}<br><span style="color:rgba(242,199,92,0.85)">${lab}</span>`)
+    return { e, g }
+  })
   const st = (t) => {
     const lt = t - S0
     const glide = ease.inOutCubic(prog(t, S0 + 0.15, S5.flip[1]))
@@ -59,6 +71,16 @@ export function sceneFounder(stage) {
       root.style.zIndex = '25'
       const { lt, glide, fp, k } = st(t)
       bg.update(t)
+      eggs.update(t, ease.inOutQuad(prog(t, S0 + 0.4, S0 + 1.4)))
+      // Juniper's placements glint in beside her card: Libra sun, Gemini moon, Aquarius rising
+      PL.forEach((p, i) => {
+        const a0 = S5.flip[1] + 0.55 + i * 0.22
+        const pin = ease.outBack(prog(t, a0, a0 + 0.5)), po = ease.inQuad(prog(t, S0 + 2.55, S0 + 2.9))
+        p.e.style.opacity = String(Math.min(clamp(pin * 1.5), 1 - po))
+        p.e.style.transform = `translate(-50%, -50%) scale(${lerp(0.6, 1, clamp(pin))}) translateY(${Math.sin((t - a0) * 1.4 + i) * 5}px)`
+        const gl = Math.sin(Math.PI * prog(t, a0 + 0.1, a0 + 0.7))
+        p.g.style.textShadow = `0 0 ${10 + 26 * gl}px rgba(242,199,92,${0.5 + 0.5 * gl})`
+      })
       root.style.opacity = String(ease.inOutQuad(prog(t, S0, S0 + 0.3)) * (1 - ease.inQuad(prog(t, S1 - 0.4, S1))))
       bg.root.style.opacity = deep.style.opacity = String(ease.inOutQuad(prog(t, S0 + 0.05, S0 + 0.5)))
       // camera: from the deck's front-card pose to the focus point, then the badge push

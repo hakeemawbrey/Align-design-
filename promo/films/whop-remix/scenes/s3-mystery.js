@@ -3,6 +3,7 @@
 // Then the camera pushes into the card and the deck (S4) is dealt underneath.
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { W, H, VERT, fill, spaceBackdrop } from '../../../src/scenes/common.js'
+import { makeSun, makeWheel, makeSkyline, makeEggs } from './houston.js'
 import { U, G, bodyH, face, foil, foilAt, sweep, caption, capIn, twinkles } from './kit.js'
 
 export const S3 = { start: 6.9, end: 10.6 }
@@ -15,6 +16,7 @@ const BG_TOP = '#0b0620', BG_BOT = '#1c0d3a'
 export function sceneMystery(stage) {
   const root = fill(stage, { background: `linear-gradient(180deg, ${BG_TOP} 0%, ${BG_BOT} 100%)` })
   const bg = spaceBackdrop(root, 'rose', { seed: 3, grain: 0.18, stars: 170 })
+  const eggs = makeEggs(root, { seed: 33, glyphs: 5, planets: 2, shoots: [9.35], keep: VERT ? [[60, 120, W - 120, 1500]] : [[300, 120, 1560, 840]] })
   const cw = H0 * (g.b[2] - g.b[0]) / (g.b[3] - g.b[1]), ch = bodyH(g, cw)
   const cam = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, perspective: 2600 * U + 'px' }, root)
   const body = el('div', { position: 'absolute', left: -cw / 2 + 'px', top: -ch / 2 + 'px', width: cw + 'px', height: ch + 'px', transformStyle: 'preserve-3d' }, cam)
@@ -42,6 +44,7 @@ export function sceneMystery(stage) {
       bg.update(t)
       bg.root.style.opacity = String(ease.inOutQuad(prog(t, S3.start, S3.start + 0.5)))
       const lt = t - S3.start
+      eggs.update(t, ease.inOutQuad(prog(t, S3.start + 0.8, S3.start + 1.8)))
       const back = ease.inOutCubic(prog(lt, 0.1, 1.9))                  // pull back to the settled pose
       const push = ease.inCubic(prog(t, S3.end - 0.6, S3.end))           // exit: push into the card
       const sc = lerp(1, S(1), back) * (1 + 0.04 * prog(lt, 1.9, 3.1)) * (1 + 0.9 * push)
