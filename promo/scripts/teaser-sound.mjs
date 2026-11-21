@@ -453,7 +453,7 @@ function scoreStyle(m, T) {
   for (const s of S) if (s.t0 > 0.3) for (const f of (st.fills?.[s.type] || [])) FILLS[f](c, s.t0)
   if (st.swell) for (const s of S) if (s.type === 'build' && s.t1 - s.t0 >= BEAT * 0.99) m.swell(s.t0, s.t1, { gain: st.swell })
   for (const t of (mu.hits || []).map(snap)) (st.hit || ((c, t) => c.m.crash(t, { gain: 0.05, len: 2.6 })))(c, t)
-  st.extras?.(c)
+  if (mu.crackle !== false) st.extras?.(c)      // music.crackle: false → no vinyl crackle / tape hiss
 
   // drums
   for (const [part, d] of Object.entries(st.drums || {})) {

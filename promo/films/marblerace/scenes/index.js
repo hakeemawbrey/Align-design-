@@ -130,7 +130,6 @@ async function build(stage) {
   const root = fill(stage, { background: '#05040c' })
   const skyC = layerCanvas(root), sx = skyC.getContext('2d')
   const cv = layerCanvas(root), x = cv.getContext('2d')
-  const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   const { S, P, M, W, SHELF, SIGNS: SECTIONS } = COURSE
 
   const px = (cx, cy, s, col) => { x.fillStyle = col; x.fillRect(Math.round(cx - s / 2), Math.round(cy - s / 2), s, s) }
@@ -320,7 +319,6 @@ async function build(stage) {
       drawSky(sx, t, { ...SKY_H, dy: -cam * 0.04 })
       x.clearRect(0, 0, 1080, 1920)
       track(cam, t); stars(cam, t); board(t); says(cam, t); stickers(t); podium(t)
-      drawGrain(gx, t)
     },
   }
 }
