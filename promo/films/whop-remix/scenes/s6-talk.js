@@ -3,7 +3,6 @@
 // types, eases back out, a pearl tap presses send.
 import { clamp, lerp, prog, ease, el, C } from '../../../src/lib.js'
 import { W, H, VERT, SANS, MONO, fill, spaceBackdrop } from '../../../src/scenes/common.js'
-import { makeSun, makeEggs } from './houston.js'
 import { U, G, bodyH, face, sweep, caption, capIn, twinkles } from './kit.js'
 
 export const S6 = { start: 18.75, end: 23.0 }
@@ -18,15 +17,12 @@ export function answerTypedAt() {
 }
 // layout
 const L = VERT
-  ? { cx: W / 2, cy: 620, cw: 440, capTop: 1080, PW: 860, PH: 92, FS: 36, px: W / 2, py: 1460, ZMAX: 1.5, ANCHOR: 0.6 }
+  ? { cx: W / 2, cy: 620, cw: 440, capTop: 1080, PW: 860, PH: 92, FS: 36, px: W / 2, py: 1460, ZMAX: 1.75, ANCHOR: 0.62 }
   : { cx: W * 0.25, cy: H / 2 + 10, cw: 380, capTop: 250, PW: 700, PH: 84, FS: 32, px: W * 0.71, py: 640, ZMAX: 2.7, ANCHOR: 0.62 }
 
 export function sceneTalk(stage) {
   const root = fill(stage, { background: 'transparent' })
   const bg = spaceBackdrop(root, 'teal', { seed: 14, grain: 0.18, stars: 180 })
-  // The Sun, big and soft, low behind everything (it fills the sky the pill zooms into); zodiac glyphs + a planet in the field
-  const sun = makeSun(root, VERT ? 170 : 150)
-  const eggs = makeEggs(root, { seed: 66, glyphs: 5, planets: 2, keep: VERT ? [[0, 120, W, 1050], [0, 1150, W, 800]] : [[100, 100, 1750, 880], [1450, 650, 470, 430]] })
   const world = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', transformOrigin: '0 0' }, root)
   // talk cards in a small 3D constellation
   const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: 2200 * U + 'px', perspectiveOrigin: `${L.cx}px ${L.cy}px` }, world)
@@ -81,10 +77,6 @@ export function sceneTalk(stage) {
       root.style.zIndex = '24'
       if (!xs) measure()
       bg.update(t)
-      const sr = ease.outCubic(prog(t, S0, S1))
-      sun.update(t, VERT ? { x: W * 0.5, y: lerp(H * 0.9, H * 0.8, sr), a: 0.5 * ease.inOutQuad(prog(t, S0 + 0.2, S0 + 1.4)), rot: t * 3.5 }
-        : { x: W * 0.9, y: lerp(H * 1.0, H * 0.9, sr), a: 0.5 * ease.inOutQuad(prog(t, S0 + 0.2, S0 + 1.4)), rot: t * 3.5 })
-      eggs.update(t, ease.inOutQuad(prog(t, S0 + 0.5, S0 + 1.5)))
       const lt = t - S0, p = lt / (S1 - S0)
       // cards: the little constellation turns slowly as the camera drifts past
       scene.style.transform = `rotateY(${lerp(18, -14, ease.inOutQuad(p))}deg) rotateX(${lerp(6, -3, p)}deg) translateZ(${lerp(-140, 30, ease.outQuad(p))}px)`
@@ -114,7 +106,7 @@ export function sceneTalk(stage) {
       const cx = n > 0 ? lerp(xs[n - 1], xs[n], kp) : 0
       const caretX = L.px - PW / 2 + 34 + cx
       const focusX = lerp(L.px, caretX, zf), focusY = L.py
-      const anchorX = lerp(L.px, W * L.ANCHOR, zf), anchorY = lerp(L.py, VERT ? H * 0.72 : H / 2, zf)
+      const anchorX = lerp(L.px, W * L.ANCHOR, zf), anchorY = lerp(L.py, VERT ? H * 0.66 : H / 2, zf)
       world.style.transform = `translate(${anchorX - focusX * z}px, ${anchorY - focusY * z}px) scale(${z})`
       eyebrow.style.opacity = String(ease.outQuad(prog(t, S0 + 1.3, S0 + 1.6)) * (1 - zf))
       cap.style.opacity = String(Number(cap.style.opacity) * (1 - clamp(zf * 1.5)))

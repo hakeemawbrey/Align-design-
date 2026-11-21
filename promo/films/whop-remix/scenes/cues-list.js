@@ -29,7 +29,6 @@ export const CUES = [
   ...hookCharT.map((t0, i) => [t0, i]).filter(([t0, i]) => t0 >= 0 && (i === 0 || hookCharT[i - 1] < 0)).map(([t0], k) => ['pluck', HOOK_START + t0, [293.66, 369.99, 440, 493.88, 587.33, 659.25, 739.99][k % 7], 0.035, 0.7, ((k % 3) - 1) * 0.3]),
   ...GLITCH.map(([a]) => ['tick', a, 0.05]),
   ['whoosh', 2.9, 0.75, 0.1], ...[0, 1, 2, 3, 4].map(k => ['tick', 3.0 + k * 0.11, 0.03]),
-  ...[1.2, 9.35, 24.1].map(t => ['whoosh', t, 0.6, 0.025]),   // shooting stars
   // S2 · bracket line
   ['pop', B.wIn, 660, 0.04, -0.2], ['pop', B.wYour, 740, 0.035, 0], ['pop', B.wStars, 880, 0.04, 0.2],
   ...[0, 1, 2, 3, 4, 5].map(i => ['bell', 3.8 + i * 0.06 + 0.1, PENTA[i + 1], 0.016, 0.8, (i - 2.5) * 0.25]),
@@ -52,7 +51,6 @@ export const CUES = [
   ...[293.66, 329.63, 369.99, 440, 493.88, 587.33, 659.25].map((f, i) => ['bell', S5.flip[1] - 0.05 + i * 0.055, f * 2, 0.03, 1.8, (i - 3) * 0.14]),
   ['glitter', S5.flip[1], S5.flip[1] + 1.1],
   ['bell', S5.flip[1] + 0.2, 739.99, 0.03, 2.0, 0],
-  ...[0, 1, 2].map(i => ['bell', S5.flip[1] + 0.6 + i * 0.22, [1174.66, 1318.51, 1479.98][i], 0.022, 1.4, (i - 1) * 0.4]),   // Libra · Gemini · Aquarius glyphs
   ['whoosh', S5.start + 2.9, 1.1, 0.06], ['bell', S5.start + 3.6, 587.33, 0.04, 2.2, -0.3], ['bell', S5.start + 3.75, 880, 0.03, 2.2, 0.3],
   ['whoosh', S5.end - 0.45, 0.6, 0.07],
   // S6 · talk cards + the pill

@@ -1,6 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../../../src/lib.js'
 import { W, H, VERT, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from '../../../src/scenes/common.js'
-import { makeSkyline, makeEggs } from './houston.js'
 import { drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
 
 // ──────────────────────────────────────────────────────── S8 · end card
@@ -47,8 +46,6 @@ export function sceneEnd(stage) {
     img(g, OSRC[pi], { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pi === 12 ? '50% 30%' : '50% 40%', transform: 'scale(1.3)', transformOrigin: '50% 42%' })
     return { g, a0: -Math.PI / 2 + (k / ORB_N) * Math.PI * 2 + 0.13, t0: 27.62 + ((k * 5) % ORB_N) * 0.06, ph: k * 1.91 }
   })
-  const skyline = makeSkyline(root, { y: H + 4, h: VERT ? 240 : 150, seed: 713 })
-  const eggs = makeEggs(root, { seed: 88, glyphs: 0, planets: 0, shoots: [27.0] })
   const glow = fill(root, { background: L.glow })
   // everything in the lockup lives in `lock` so the slow push scales it as one
   const lock = fill(root, { background: 'transparent', transformOrigin: `50% ${L.origin}px` })
@@ -111,8 +108,6 @@ export function sceneEnd(stage) {
           alpha: a * (0.4 + 0.5 * on + (full ? 0.1 * on : 0)), fillAlpha: on, lw: VERT ? 1.6 : 1.3, discAlpha: 0.08, glow: full ? 0.6 * on + 1.4 * bloom : 0.35 * on })
       }
       stars.style.opacity = String(prog(t, 26.95, 27.35))
-      skyline.update(t, 0.55 * ease.inOutQuad(prog(t, 27.2, 28.2)))
-      eggs.update(t, 1)
       // twinkle field
       tctx.clearRect(0, 0, W, H)
       const fin = ease.outQuad(prog(t, 27.0, 27.6))

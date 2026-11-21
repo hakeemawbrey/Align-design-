@@ -12,8 +12,6 @@
 import { clamp, lerp, prog, ease, rng, el, mix, C } from '../../../src/lib.js'
 import { W, H, VERT, A, SANS, SERIF, MONO, fill, img, spaceBackdrop } from '../../../src/scenes/common.js'
 import { fxStairWipe } from '../../../src/scenes/s1-imagine.js'
-import { drawMoon, drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
-import { skyCanvas, drawShoot, fade, ZODIAC, GLYPH_FONT } from './sky.js'
 
 export const DURATION = 29.8
 const U = Math.min(W, H) / 1080
@@ -315,11 +313,6 @@ function opener(stage) {
         bx.globalAlpha = fade * tw; bx.drawImage(spr, x - sz / 2, y - sz / 2, sz, sz)
       }
       bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
-      // Space City's moon: a thin crescent rising upper-right, and one shooting star
-      const mk = ease.outCubic(prog(t, 0, 3.4))
-      drawMoon(bx, (VERT ? lerp(800, 780, mk) : lerp(1580, 1552, mk)) + dx * 1.3, (VERT ? lerp(470, 380, mk) : lerp(300, 214, mk)) + dy * 1.3, (VERT ? 78 : 70) * cam, lerp(0.075, 0.11, mk),
-        { alpha: fade * ease.inOutQuad(prog(t, 0.15, 1.1)), glow: 3.2, earthshine: 1, darkAlpha: 0.6 })
-      drawShoot(bx, t, 2.15, VERT ? 0.12 : 0.1, VERT ? 0.12 : 0.16, 0.38, 0.75, 0.18)
       // word by word: each rises out of a blur, its letters shimmering accent → final
       words.forEach((w) => {
         const p = ease.outCubic(prog(t, w.at, w.at + 0.55))
@@ -479,11 +472,6 @@ export const DEAL_SOUNDS = DEAL_T.slice(1)
 function deckScene(stage) {
   const root = fill(stage, { background: C.void })
   const space = spaceBackdrop(root, 'amber', { seed: 6, grain: 0.18 })
-  const dsky = skyCanvas(root, (t) => ({
-    skyline: 0.95, glyphs: 0.8, planets: { a: 0.8, y0: VERT ? 0.06 : 0.1, bow: 0.05 },
-    sun: { x: VERT ? W * 0.22 : W * 0.16, y: VERT ? H * 0.8 : H * 0.78, R: VERT ? 200 : 210, a: 0.5 },
-    shoots: [[12.15, VERT ? 0.5 : 0.55, 0.06, 0.4]],
-  }))
   const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
   const BODY = VERT ? 900 : 620, ENTER = 0.42
   const cards = DEAL.map((k, i) => {
@@ -498,7 +486,7 @@ function deckScene(stage) {
   return {
     start: T.deck, end: T.br2 + 0.25, root,
     update(t) {
-      space.update(t); dsky.update(t)
+      space.update(t)
       // the pill's disc opens into the deck
       const cp = ease.inOutQuad(prog(t, T.deck, T.deck + 0.55))
       root.style.clipPath = cp >= 1 ? 'none' : `circle(${36 + cp * Math.hypot(W, H) * 0.55}px at 50% 50%)`
@@ -670,16 +658,6 @@ function juniper(stage) {
     return { x: lerp(a[1], b[1], e), y: lerp(a[2], b[2], e), z: Math.exp(lerp(Math.log(a[3]), Math.log(b[3]), e)), r: lerp(a[4], b[4], e), sx: lerp(a[5], b[5], e), sy: lerp(a[6], b[6], e) }
   }
   const IN = 15.3
-  // Juniper's placements glint in round the card as the founders card settles (card-relative positions)
-  const PL = [['♎', 'LIBRA SUN'], ['♊', 'GEMINI MOON'], ['♒', 'AQUARIUS RISING']].map(([gl, label], i) => {
-    const pos = VERT ? [[0.12, -0.12], [0.5, -0.16], [0.88, -0.12]][i] : [[-0.32, 0.26], [1.32, 0.2], [1.32, 0.6]][i]
-    const align = VERT ? 'center' : i === 0 ? 'right' : 'left'
-    const e = el('div', { position: 'absolute', left: 0, top: 0, width: '0px', height: '0px', opacity: 0, zIndex: 55 }, root)
-    const inner = el('div', { position: 'absolute', top: '-40px', [align === 'right' ? 'right' : 'left']: align === 'center' ? '-150px' : '0px', width: align === 'center' ? '300px' : 'auto', textAlign: align, whiteSpace: 'nowrap' }, e)
-    el('div', { fontFamily: GLYPH_FONT, fontSize: (VERT ? 46 : 44) + 'px', lineHeight: 1, color: GOLD, textShadow: '0 0 18px rgba(242,199,92,0.75), 0 0 4px rgba(120,60,10,0.6)' }, inner, gl + '\uFE0E')
-    el('div', { fontFamily: MONO, fontSize: (VERT ? 17 : 17) + 'px', letterSpacing: '0.2em', color: 'rgba(239,230,214,0.9)', marginTop: '10px', textShadow: '0 0 14px rgba(8,4,24,0.95)' }, inner, label)
-    return { e, pos, i }
-  })
   return {
     start: T.br2, end: 22.2, root,
     update(t) {
@@ -722,14 +700,6 @@ function juniper(stage) {
         : `0 0 ${60 * U}px ${8 * U}px rgba(214,170,255,0.30), 0 ${40 * U}px ${90 * U}px rgba(4,2,14,0.6)`
       capIn(capM, t, 16.15, 17.95)
       capIn(capF, t, 20.25, 21.75)
-      PL.forEach((c) => {
-        const a0 = 18.75 + c.i * 0.12, p = ease.outCubic(prog(t, a0, a0 + 0.5)), o = ease.inQuad(prog(t, 19.55, 19.85))
-        c.e.style.left = (k.sx + (c.pos[0] - k.x) * cw * k.z) + 'px'
-        c.e.style.top = (k.sy + (c.pos[1] - k.y) * ch * k.z) + 'px'
-        c.e.style.opacity = String(Math.min(p, 1 - o))
-        c.e.style.transform = `translateY(${lerp(14, 0, p)}px) scale(${lerp(0.85, 1, p)})`
-        c.e.style.filter = p < 1 || o > 0 ? `blur(${(lerp(5, 0, p) + 4 * o).toFixed(2)}px)` : 'none'
-      })
     },
     fx(ctx, t) {
       if (t > 16.2 && t < 19.4) { const k = camAt(t); twinkleField(ctx, t, 16.2, 19.4, [k.sx - cw * 0.85, k.sy - ch * 0.62, cw * 1.7, ch * 1.24], 61, 16) }
@@ -754,7 +724,6 @@ function talkScene(stage) {
   })
   const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontWeight: 500, fontSize: (VERT ? 92 : 74) + 'px', color: BONE, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1, textShadow: '0 2px 22px rgba(8,4,24,0.8)' }, root, txt)
   const wA = word('then you talk'), wB = word('in cards')
-  const brow = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 170 : 92) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: (VERT ? 28 : 24) + 'px', letterSpacing: '0.3em', textIndent: '0.3em', color: GOLD, opacity: 0, textShadow: '0 0 18px rgba(8,4,24,0.9)' }, root, 'HOUSTON, WE HAVE A MATCH')
   wB.style.fontFamily = SERIF; wB.style.fontStyle = 'italic'; wB.style.fontSize = (VERT ? 112 : 94) + 'px'; wB.style.letterSpacing = '0'; wB.style.color = ROSE
   const S = T.talk
   return {
@@ -786,7 +755,6 @@ function talkScene(stage) {
         wB.style.transform = `translateX(${(1 - show(S + 1.25)) * 30}px)`
       }
       wA.style.opacity = String(show(S + 0.9) * (1 - out)); wB.style.opacity = String(show(S + 1.25) * (1 - out))
-      brow.style.opacity = String(show(S + 0.45) * (1 - out)); brow.style.letterSpacing = lerp(0.42, 0.3, show(S + 0.45)) + 'em'
       persp.style.filter = out > 0.001 ? `blur(${(24 * out).toFixed(2)}px)` : 'none'
       persp.style.opacity = String(1 - out * 0.9)
     },
@@ -808,7 +776,6 @@ function taglineScene(stage) {
   const plain = el('div', { ...base, textShadow: '0 0 38px rgba(232,98,138,0.28), 0 2px 18px rgba(8,4,24,0.75)' }, root)
   const chars = [...TXT].map(ch => ch === '\n' ? (plain.appendChild(el('br')), null) : el('span', { opacity: 0 }, plain, ch === ' ' ? ' ' : ch)).filter(Boolean)
   const grad = el('div', { ...base, color: 'transparent', backgroundImage: 'linear-gradient(90deg, #ff8fb1 0%, #ffd9a0 30%, #f2c75c 50%, #e3c8ff 72%, #b9a0ff 100%)', backgroundSize: '220% 100%', WebkitBackgroundClip: 'text', backgroundClip: 'text', opacity: 0 }, root, TXT.replace('\n', '<br>'))
-  const tsky = skyCanvas(sky, () => ({ skyline: 0.8, glyphs: 0.7, shoots: [[25.55, VERT ? 0.55 : 0.62, 0.08, 0.45]] }))
   const ticks = makeTicks(root, BONE, VERT ? 20 : 16)
   const S = T.tag, TY = S + 0.35, PER = 0.032
   let tw = 0, th = 0
@@ -818,7 +785,7 @@ function taglineScene(stage) {
       const rp = ease.outCubic(prog(t, S - 0.1, S + 0.6))
       if (rp >= 1) sky.style.webkitMaskImage = sky.style.maskImage = 'none'
       else { const e1 = lerp(-32, 100, rp), m = `linear-gradient(0deg, #000 ${e1.toFixed(1)}%, transparent ${(e1 + 32).toFixed(1)}%)`; sky.style.webkitMaskImage = sky.style.maskImage = m }
-      aur.update(t); tsky.update(t)
+      aur.update(t)
       BLOOM.forEach(b => {
         const up = ease.outCubic(prog(t, S + b.i * 0.06, S + 0.9 + b.i * 0.06))
         b.e.style.transform = `translate(${b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 60}px, ${lerp(1.5, VERT ? 0.95 : 1.05, up) * H - b.r}px)`
@@ -852,8 +819,6 @@ function endCard(stage) {
   { const x = stars.getContext('2d'), r = rng(77); for (let i = 0; i < 160; i++) { x.fillStyle = `rgba(255,247,236,${0.15 + r() * 0.5})`; x.beginPath(); x.arc(r() * W, r() * H, 0.4 + r() * 1.3, 0, 7); x.fill() } }
   const cy = VERT ? 700 : 380
   const S = (VERT ? 460 : 330) / 88
-  const esky = skyCanvas(root, (t) => ({ skyline: 0.5 * ease.inOutQuad(prog(t, T.end, T.end + 0.8)), glyphs: 0.45,
-    moon: { x: VERT ? W * 0.8 : W * 0.86, y: VERT ? H * 0.12 : H * 0.18, R: VERT ? 46 : 40, p: 0.13, a: 0.8 * ease.inOutQuad(prog(t, T.end + 0.3, T.end + 1.2)) } }))
   const glow = el('div', { position: 'absolute', left: (W / 2 - 800 * U) + 'px', top: (cy - 700 * U) + 'px', width: 1600 * U + 'px', height: 1400 * U + 'px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
     background: 'radial-gradient(closest-side, rgba(201,166,255,0.32), rgba(180,92,255,0) 100%)' }, root)
   const lock = fill(root, { background: 'transparent', transformOrigin: `50% ${cy + 120}px` })
@@ -867,7 +832,7 @@ function endCard(stage) {
     start: E, end: DURATION, root,
     update(t) {
       const lt = t - E
-      mark.draw(lt - 0.1); esky.update(t)
+      mark.draw(lt - 0.1)
       glow.style.opacity = String(ease.outQuad(prog(lt, 0.4, 1.4)))
       const wp = ease.outCubic(prog(lt, 0.95, 1.6))
       word.style.opacity = String(wp); word.style.letterSpacing = lerp(0.14, 0.01, wp) + 'em'; word.style.filter = wp < 1 ? `blur(${lerp(8, 0, wp)}px)` : 'none'
@@ -897,63 +862,11 @@ function fxScene(built) {
   }
 }
 
-// the zodiac sky behind the type and card beats (sun, wheel, glyphs, planets, skyline, shooting stars)
-function skyScene(stage) {
-  const root = fill(stage, { background: 'transparent' })
-  const TCY = VERT ? H * 0.5 : H * 0.52
-  const sky = skyCanvas(root, (t) => {
-    const tk = ease.inOutCubic(prog(t, 21.6, 22.8))
-    const sunA = Math.max(fade(t, 3.35, 4.4, 9.6, 10.0) * 0.75, fade(t, 21.7, 22.9, 24.55, 25.1) * 0.9)
-    return {
-      sun: {
-        x: lerp(VERT ? W * 0.5 : W * 0.83, W / 2, tk),
-        y: lerp(VERT ? H * 0.16 : H * 0.24, TCY - 30 - 60 * ease.inOutQuad(prog(t, 22, 24.9)), tk),
-        R: lerp(VERT ? 210 : 230, VERT ? 470 : 400, tk), a: sunA,
-      },
-      wheel: { x: W / 2, y: H / 2, R: VERT ? 500 : 470, a: fade(t, 13.3, 14.2, 19.1, 19.8) * 0.85, rot: t * 0.045 },
-      glyphs: Math.max(fade(t, 3.4, 4.3, 9.7, 10), fade(t, 13.3, 14.2, 24.6, 25)) * 0.9,
-      planets: { a: Math.max(fade(t, 3.4, 4.4, 9.7, 10), fade(t, 13.3, 14.4, 24.6, 25)), y0: VERT ? 0.08 : 0.12, bow: 0.06 },
-      skyline: fade(t, 3.35, 4.2, 9.7, 10.0),
-      shoots: [[5.0, VERT ? 0.1 : 0.12, 0.1, 0.35], [16.9, VERT ? 0.5 : 0.6, 0.07, 0.5], [23.4, 0.08, 0.08, 0.3]],
-    }
-  })
-  return { start: 3.3, end: T.tag + 0.6, root, update(t) { sky.update(t) } }
-}
-
-/** small mission-control readout, top-left, with a waxing moon glyph (the feature's corner moon clock) */
-const HUD = [
-  [3.8, 6.1, 'SPACE CITY', '29.76° N · 95.37° W'],
-  [10.3, 12.95, 'H-TOWN · 713', 'DEALT OVER HOUSTON'],
-  [13.5, 16.0, 'INSIDE THE LOOP', '♎\uFE0E ♊\uFE0E ♒\uFE0E'],
-  [24.9, 26.65, 'BAYOU CITY', '29.76° N · 95.37° W'],
-]
-function hudScene(stage) {
-  const root = fill(stage, { background: 'transparent' })
-  const X = VERT ? 56 : 56, Y = VERT ? 64 : 50
-  const mc = el('canvas', { position: 'absolute', left: X + 'px', top: Y + 'px', width: '40px', height: '40px' }, root); mc.width = mc.height = 80
-  const mctx = mc.getContext('2d')
-  const rows = HUD.map(([a, b, l1, l2]) => {
-    const box = el('div', { position: 'absolute', left: (X + 56) + 'px', top: (Y - 1) + 'px', opacity: 0, fontFamily: MONO, letterSpacing: '0.24em', whiteSpace: 'nowrap', textShadow: '0 0 12px rgba(8,4,24,0.9)' }, root)
-    el('div', { fontSize: (VERT ? 21 : 19) + 'px', color: 'rgba(239,230,214,0.92)' }, box, l1)
-    el('div', { fontSize: (VERT ? 16 : 14) + 'px', color: 'rgba(242,199,92,0.85)', marginTop: '6px' }, box, l2)
-    return { box, a, b }
-  })
-  return {
-    start: 3.7, end: 26.8, root,
-    update(t) {
-      let on = 0
-      rows.forEach((r) => { const v = fade(t, r.a, r.a + 0.45, r.b - 0.35, r.b); on = Math.max(on, v); r.box.style.opacity = String(v); r.box.style.transform = `translateX(${lerp(-10, 0, ease.outCubic(prog(t, r.a, r.a + 0.5)))}px)` })
-      mctx.clearRect(0, 0, 80, 80)
-      drawMoonGlyph(mctx, 40, 40, 26, lerp(0.08, 0.48, prog(t, 3.7, 26.8)), { lw: 2.5, alpha: on, discAlpha: 0.12, glow: 0.8 })
-    },
-  }
-}
-
-const builders = [bg, skyScene, hudScene, bracket1, pillScene, deckScene, juniper, talkScene, taglineScene, opener, endCard]
+const builders = [bg, bracket1, pillScene, deckScene, juniper, talkScene, taglineScene, opener, endCard]
 export const SCENES = [
   (stage) => {
     // build every scene here so z-order is explicit (main.js only sets it for top-level scenes)
-    const Z = { bg: 1, skyScene: 5, hudScene: 35, bracket1: 20, pillScene: 21, deckScene: 22, juniper: 24, talkScene: 25, taglineScene: 26, opener: 30, endCard: 40 }
+    const Z = { bg: 1, bracket1: 20, pillScene: 21, deckScene: 22, juniper: 24, talkScene: 25, taglineScene: 26, opener: 30, endCard: 40 }
     const built = builders.map((b) => { const s = b(stage); s.root.style.zIndex = String(Z[b.name]); return s })
     const fx = fxScene(built)
     return {
@@ -1008,10 +921,6 @@ export const CUES = [
   ...'Dating, dealt by the stars'.split('').map((ch, i) => ch === ' ' ? null : ['tick', T.tag + 0.35 + i * 0.032, 0.05]).filter(Boolean),
   ['glitter', T.tag + 1.4, T.tag + 2.0],
   ['whoosh', T.wipe3 + 0.2, 0.5, 0.1],
-  // zodiac easter eggs: shooting stars, Juniper's placements, the mission-control nod
-  ...[2.15, 5.0, 12.15, 16.9, 23.4, 25.55].flatMap((t0) => [['whoosh', t0 + 0.35, 0.6, 0.035], ['bell', t0 + 0.4, 2637.02, 0.012, 1.2, 0.3]]),
-  ...[0, 1, 2].map((i) => ['bell', 18.8 + i * 0.12, [880, 1108.73, 1318.51][i], 0.03, 1.6, (i - 1) * 0.4]),
-  ['bell', T.talk + 0.5, 587.33, 0.03, 1.8, 0], ['bell', T.talk + 0.62, 880, 0.025, 1.8, 0.2],
   // S10: end mark
   ...D.map((f, i) => ['bell', T.end + 0.35 + i * 0.07, f, 0.05, 2.4, (i - 3) * 0.12]),
   ['bell', T.end + 1.0, 293.66, 0.05, 3.2, 0], ['bell', T.end + 1.0, 440, 0.04, 3.2, 0],
