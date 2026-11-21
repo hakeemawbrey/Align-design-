@@ -56,9 +56,15 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
    - Virgo builds a spreadsheet.
    - Sagittarius gets lost on the way to practice.
    - Aquarius invents a new marble.
-4. **Race 2: pairs**: signs race tied in twos (compatibility pairs). The setups pay off: Capricorn asks someone to
-   race with them, and Libra has to commit to a partner.
-5. **More races and the finale**: Taurus's arc lands when Taurus and Cancer win the pairs race at their own pace.
+4. **The night before Race 2** (one per pair, ~40 s, done: `promo/films/starrace-night-<pair>`, scripts in
+   `starrace/episodes.js` NIGHT). Each plants a Race 2 beat: the scarf rope, "I lead, you shine" and the left/left
+   tangle, the straight route vs. the shortcut, Scorpio's jump plan, the lane Libra can't pick, the paper-plane map.
+5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~90 s). Same course, pairs tied with 150 px ropes, and the wormhole
+   now spits you out back at the start. Baked in `marblerace/scenes/race2.js` (seed 98, `bake2.mjs`). Result:
+   1 Taurus & Cancer · 2 Capricorn & Aquarius · 3 Leo & Aries · 4 Pisces & Scorpio · 5 Sagittarius & Virgo ·
+   6 Libra & Gemini (caught between the binary suns, swallowed, back to the start; everyone waits at the line).
+   Lesson: "Fastest isn't the point. Your pace, together, is."
+6. **Next**: Taurus's arc landed in Race 2 (the pairs race). Open threads for Race 3: Capricorn second twice, Libra & Gemini's comeback, Leo & Aries taking turns.
 
 **Later:** a prequel season (how the stars met, old rivalries). Races and episodes are timed to real sky events
 (each sign's season, Mercury retrograde as a chaos race, eclipses). Look up and check the exact dates before
