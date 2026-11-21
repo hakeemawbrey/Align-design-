@@ -8,29 +8,33 @@ any sign's point of view and every version matches frame for frame.
 alignment lesson. Align nods stay thematic (pace, compatibility, who you show up for); the only Align mark is the
 faint "come align · join the beta" line. No CTAs, no episode numbers on screen.
 
-**Main character: Taurus.** Slow, loyal, stops for what matters. Comes last in Race 1 because Taurus spent it sharing a
-snack with Cancer. Taurus never wins by speeding up; Taurus wins (finale) by finding the right pace *with someone*.
+**Main character: Taurus.** Slow, loyal, stops for what matters. Finishes at the back in Race 1 because Taurus spent it
+sharing a snack with Cancer. Taurus never wins by speeding up; Taurus wins (finale) by finding the right pace *with someone*.
 
-## Race 1: "Fastest isn't the point." (seed 1, done: `promo/films/marblerace`)
+## Race 1: "Fastest isn't the point." (seed 38, space course, done: `promo/films/marblerace`, ~83 s)
 
-| Place | Sign | Their race in one line | Love lesson (POV ending) |
+The course, top to bottom: asteroid belt (drifting rocks), binary stars (two orbiting suns), zodiac wheel (12 spinning
+spokes), black hole (it pulls you in; cross the horizon and you're spat out of a wormhole near the finish), stardust
+plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, final plinko.
+
+| Place | Sign | Their race | Love lesson (POV ending) |
 |---|---|---|---|
-| 1 | Capricorn | 6th early, took the lead at 15 s, never looked back. "excuse me. business." | First across the line. Nobody waiting there. Winning isn't the same as being met. |
-| 2 | Sagittarius | 9th early, then "WHEEEEE" through Plinko to 2nd. | Fun gets you far. Will someone ride along? |
-| 3 | Aries | Bolted at the gate ("GO GO GO!!"), stayed top 4 all race. | Fast is a gift. Look back once in a while. |
-| 4 | Virgo | Steady "optimal line", 4th–6th all race. | Perfect line, no one to share it with. Let someone mess up your route. |
-| 5 | Leo | Led for 15 s ("is the camera on me?"), then faded to 5th. | The spotlight moves. Who's still clapping when it does? |
-| 6 | Pisces | 2nd early, cried the whole way ("it's all so beautiful"). | Feeling everything is not a weakness. |
-| 7 | Aquarius | 4th, fell to 10th, climbed back to 7th. | Your own route is fine. Tell people where you went. |
-| 8 | Scorpio | Started 11th, quietly climbed. "I let them win." | Pretending you don't care is still caring. |
-| 9 | Libra | Hovered 8th–10th, took the right lane at the fork. | You can't take both lanes. Choose, and choose someone. |
-| 10 | Gemini | Up to 5th, then fell back to 10th. | Half in two races is all in none. |
-| 11 | Cancer | Back of the pack, got half of Taurus's snack, waited up for Taurus. | Waiting for someone isn't losing. |
-| 12 | Taurus | Last all race. "want half my snack?" … "saved you the last bite." | Fastest isn't the point. Who you finish with is. |
+| 1 | Gemini | "ooh, shiny." Fell into the black hole first and came out of the wormhole leading. "BOTH of us won." | Luck got you here. Who are you sharing it with? |
+| 2 | Capricorn | Led early, bounced off a binary star ("excuse me. business."), swallowed second, lost by 0.3 s. "requesting a recount." | You planned everything except being happy. |
+| 3 | Scorpio | Went into the black hole "on purpose." | Pretending you meant it is still pretending. |
+| 4 | Sagittarius | "WHEEEEE." First to finish the honest way. "wait, you guys skipped?" | The long way was the fun part. |
+| 5 | Leo | "I AM the star." (bounced off an actual star) | The spotlight moves. Who's still clapping? |
+| 6 | Aquarius | "new route. trust me." Hit by the comet. "I meant to do that." | Your own route is fine. Tell people where you went. |
+| 7 | Aries | "GO GO GO!!" | Fast is a gift. Look back once in a while. |
+| 8 | Pisces | Cried the whole way. "it's all so beautiful" | Feeling everything is not a weakness. |
+| 9 | Libra | Mid-pack all race. | You can't take both lanes. Choose. |
+| 10 | Cancer | "...for me?" Got half of Taurus's snack. "why is gravity going UP??" "I'll wait for you." | Waiting for someone isn't losing. |
+| 11 | Taurus | "want half my snack?" … "saved you the last bite." Finished right beside Cancer. | Fastest isn't the point. Who you finish with is. |
+| 12 | Virgo | "this was NOT in the plan." Stuck in Mercury retrograde. "still in retrograde." "optimal line." | Even the best plan meets retrograde. Let someone help. |
 
 ## Episode plan
 
-1. **Race 1** (the main video, ~63 s, done).
+1. **Race 1** (the main video, ~83 s, done).
 2. **Race 1: 12 POVs** (~60 s each, full race). Same race, camera locked on one sign, its inner monologue as
    bubbles, one rival/crush moment, its lesson line at the end. Order: Taurus, Cancer, Capricorn, Leo, Aries, Pisces,
    Scorpio, Libra, Sagittarius, Virgo, Gemini, Aquarius.
