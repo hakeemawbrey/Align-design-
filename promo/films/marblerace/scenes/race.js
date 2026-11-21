@@ -82,10 +82,14 @@ export const retroOn = (z, t) => (((t % z.period) + z.period) % z.period) < z.on
 
 function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296) }
 
-export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90 } = {}) {
+// Race 2 options: links = [[idA, idB, len]] ties two marbles with a rope (max distance len; a swallowed marble takes its
+// partner through the wormhole too) and starts them side by side in the given order; exit = [x, y] moves the wormhole.
+export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90, links = null, exit = null } = {}) {
   const C = COURSE, r = rng(seed), n = ids.length
   const slots = ids.map((_, i) => i)
-  for (let i = slots.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [slots[i], slots[j]] = [slots[j], slots[i]] }
+  if (!links) for (let i = slots.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [slots[i], slots[j]] = [slots[j], slots[i]] }
+  const LK = (links || []).map(([a, b, len]) => [ids.indexOf(a), ids.indexOf(b), len])
+  const mate = {}; for (const [a, b] of LK) { mate[a] = b; mate[b] = a }
   const B = ids.map((id, i) => { const s = slots[i]; return { id, x: 150 + (s % 6) * 150 + (s >= 6 ? 75 : 0) + r() * 10, y: 640 - R - 14 - (s >= 6 ? 2 * R + 6 : 0), vx: 0, vy: 0, fin: null } })
   const G = 1900, DT = 1 / 480, SUB = 480 / FPS
   const frames = new Float32Array(Math.ceil(T * FPS) * n * 2)
@@ -125,7 +129,11 @@ export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90 } = {}) {
         b.vy += g * DT
         for (const a of C.A) {
           const ex = a.x - b.x, ey = a.y - b.y, d = hyp(ex, ey)
-          if (d < a.horizon) { events.push({ t: ts, id: b.id, kind: 'swallow', from: [b.x, b.y] }); b.x = a.exit[0]; b.y = a.exit[1]; b.vx = (b.x < 540 ? -1 : 1) * 120; b.vy = 380; continue }
+          if (d < a.horizon) {
+            const ex0 = exit || a.exit, bi = B.indexOf(b), group = bi in mate ? [b, B[mate[bi]]] : [b]
+            group.forEach((q, gi) => { events.push({ t: ts, id: q.id, kind: 'swallow', from: [q.x, q.y] }); q.x = ex0[0] + (gi ? 70 : 0); q.y = ex0[1]; q.vx = (q.x < 540 ? -1 : 1) * 120; q.vy = 380 })
+            continue
+          }
           if (d < a.rmax) { const acc = a.k / (d * d + 900); b.vx += acc * ex / d * DT; b.vy += acc * ey / d * DT }
         }
         const dr = 1 - (drag[b.id] ?? 0.12) * DT; b.vx *= dr; b.vy *= dr
@@ -137,6 +145,14 @@ export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90 } = {}) {
         for (const p of C.P) { if (Math.abs(b.y - p[1]) > p[2] + 40) continue; hitCircle(b, p[0], p[1], p[2], 1.55) }
         for (const [m, [mx, my], [mvx, mvy]] of movers) { if (Math.abs(b.y - my) > m.r + 40) continue; if (hitCircle(b, mx, my, m.r, m.e, mvx, mvy) && m.kind !== 'rock') events.push({ t: ts, id: b.id, kind: m.kind }) }
         if (b.fin === null && b.y > FINISH_Y) { b.fin = ts; order.push(b.id) }
+      }
+      for (const [i, j, len] of LK) {                     // ropes: pull back to len, drop the separating speed
+        const a = B[i], c = B[j], ex = c.x - a.x, ey = c.y - a.y, d = hyp(ex, ey)
+        if (d <= len || d === 0) continue
+        const nx = ex / d, ny = ey / d, o = (d - len) / 2
+        a.x += nx * o; a.y += ny * o; c.x -= nx * o; c.y -= ny * o
+        const rv = (c.vx - a.vx) * nx + (c.vy - a.vy) * ny
+        if (rv > 0) { a.vx += rv / 2 * nx; a.vy += rv / 2 * ny; c.vx -= rv / 2 * nx; c.vy -= rv / 2 * ny }
       }
       for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
         const a = B[i], c = B[j], ex = c.x - a.x, ey = c.y - a.y
