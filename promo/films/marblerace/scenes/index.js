@@ -11,13 +11,14 @@ import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, SIGNS } from '../../wheel.js'
 import { drawStarChar } from '../../startalk.js'
 import { bubble, label, sparkles, pop01, GOLD, BONE, PINK, INK, INTER, MONO, SIGN_IDS } from '../../signs3kit.js'
-import { simulate, R, FPS, GATE, FINISH_Y, COURSE, wheelSpokes, retroOn } from './race.js'
+import { R, FPS, GATE, FINISH_Y, COURSE, wheelSpokes, retroOn } from './race.js'
 
 export const HOOK = '12 signs. 1 space race. | Who wins?'
 export const HOOK_STYLE = 'box'
 export const HOOK_UNTIL = 2.6
 
-const SIM = simulate({ seed: 38, ids: SIGN_IDS, drag: { taurus: 0.35, cancer: 0.36, pisces: 0.25 }, kick: { aries: 300 }, T: 75 })
+import { RACE1, RACE1_FRAMES } from './race1.js'           // the baked race (bake.mjs): identical in node and the browser
+const SIM = (() => { const bin = atob(RACE1_FRAMES), u8 = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) u8[k] = bin.charCodeAt(k); return { ...RACE1, frames: new Float32Array(u8.buffer), course: COURSE } })()
 const N = SIM.n, NF = SIM.frames.length / (N * 2)
 const SIGN = Object.fromEntries(SIGNS.map(s => [s.id, s]))
 const ID = id => SIGN_IDS.indexOf(id)
@@ -36,7 +37,7 @@ const T_LAST = FIN[ORDER[ORDER.length - 1]]
 const SW1 = Math.min(...Object.values(SWALLOW).map(e => e.t))          // first swallow
 export const T = {
   gate: GATE, swallow: r2(SW1), worm: r2(SW1 + 1.0), win: FIN[ORDER[0]],
-  meanwhile: r2(FIN[ORDER[1]] + 1.0), pair: r2(FIN[ORDER[3]] + 3.2), virgo: r2(Math.max(FIN.taurus, FIN.cancer) + 0.6),
+  meanwhile: r2(FIN[ORDER[1]] + 3.0), pair: r2(FIN[ORDER[3]] + 3.2), virgo: r2(Math.max(FIN.taurus, FIN.cancer) + 0.6),
   last: T_LAST,
 }
 T.podium = r2(T_LAST + 0.9)
@@ -89,8 +90,8 @@ const SAY = [
   [T.worm + 2.6, 2.2, 'capricorn', 'this counts. | check the rules.'],
   [25.4, 2.2, 'scorpio', 'went in | on purpose.'],
   [27.6, 2.2, 'gemini', 'which one of me | is winning?'],
-  [T.win + 0.15, 2.0, 'gemini', 'BOTH of us | won.'],
-  [FIN.capricorn + 0.1, 2.0, 'capricorn', 'requesting | a recount.'],
+  [T.win + 0.15, 1.5, 'gemini', 'BOTH of us | won.'],
+  [T.win + 1.7, 1.6, 'capricorn', 'requesting | a recount.'],
   [T.meanwhile + 1.0, 2.4, 'cancer', 'why is gravity | going UP??'],
   [T.meanwhile + 3.6, 2.4, 'virgo', 'this was NOT | in the plan.'],
   [T.meanwhile + 6.2, 2.2, 'pisces', "it's all so | beautiful"],
@@ -125,7 +126,10 @@ function mood(id, t) {
   return 'happy'
 }
 
-async function build(stage) {
+function makeBuild(cfg) {
+  const { camAt, SAY, STICK, focus = null, end = null, endT = T.podium } = cfg
+  const FOC = focus ? ID(focus) : -1
+  return async function build(stage) {
   try { await Promise.all(["800 34px Inter", "800 42px Inter", "800 64px Inter", "700 26px 'Space Mono'", "italic 500 56px 'EB Garamond'"].map(f => document.fonts.load(f))) } catch (_) {}
   const root = fill(stage, { background: '#05040c' })
   const skyC = layerCanvas(root), sx = skyC.getContext('2d')
@@ -230,6 +234,7 @@ async function build(stage) {
       const sy = wy - cam; if (sy < -80 || sy > 2000) continue
       const sw = SWALLOW[id]; if (sw && t > sw.t && t < sw.t + 0.02) continue
       const s = SIGN[id], fin = FIN[id]
+      if (i === FOC) { x.save(); x.globalAlpha = 0.5 + 0.2 * Math.sin(t * 4); x.strokeStyle = s.color; x.lineWidth = 6; x.setLineDash([14, 10]); x.beginPath(); x.arc(wx, sy - 4, 74, t * 0.8, t * 0.8 + Math.PI * 2); x.stroke(); x.setLineDash([]); x.restore() }
       const hops = fin !== null && t > fin ? [fin + 0.3, fin + 1.0, fin + 1.7] : sw ? [sw.t + 0.05] : null
       const bounce = t > GATE && (fin === null || t < fin) ? Math.sin(t * 9 + i) * 0.04 : 0
       drawStarChar(x, wx, sy - 4, 92, t, { color: s.color, glyph: s.glyph, mood: mood(id, t), seed: i + 2, hops, squash: bounce, look: [Math.sign(Math.sin(t * 0.7 + i)) * 0.6, 0.6] })
@@ -238,8 +243,15 @@ async function build(stage) {
     }
   }
   function says(cam, t) {
-    for (const [t0, d, id, text] of SAY) {
+    const focusTalk = focus && SAY.some(([t0, d, id]) => id === focus && t > t0 - 0.2 && t < t0 + d + 0.2)
+    for (const [t0, d, id, text, own] of SAY) {
       if (t < t0 || t > t0 + d) continue
+      if (focus && focusTalk && id !== focus && !own) continue
+      if (id === focus && FIN[focus] !== null && t0 > FIN[focus] + 1.1) {        // after the line: the focus sign comments from the corner
+        const k = pop01(t, t0, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.25, t0 + d)))
+        bubble(x, 360, 1110, text, k, { size: 42, col: BONE, tail: 'bl' })
+        continue
+      }
       const [wx, wy] = pos(t, ID(id)), sy = wy - cam
       if (sy < 330 || sy > 1560) continue
       const k = pop01(t, t0, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.25, t0 + d)))
@@ -259,17 +271,19 @@ async function build(stage) {
     }
   }
   function board(t) {
-    const k = clamp((t - GATE - 0.6) / 0.4) * (1 - clamp((t - T.podium + 0.4) / 0.3))
+    const k = clamp((t - GATE - 0.6) / 0.4) * (1 - clamp((t - endT + 0.4) / 0.3))
     if (k <= 0) return
     const rank = SIGN_IDS.map((id, i) => { const f = FIN[id]; return [id, f !== null && t >= f ? 1e6 - f : pos(t, i)[1]] }).sort((a, b) => b[1] - a[1]).map(r => r[0])
-    const rows = [[1, rank[0]], [2, rank[1]], [3, rank[2]], [12, rank[11]]]
+    const fp = focus ? rank.indexOf(focus) : -1
+    const rows = [[1, rank[0]], [2, rank[1]], [3, rank[2]], fp > 2 ? [fp + 1, focus, 1] : [12, rank[11]]]
     x.save(); x.globalAlpha = k
     const X = 110, Y = 300, Wd = 300, H = 46
     x.fillStyle = 'rgba(14,9,32,0.86)'; x.fillRect(X - 12, Y - 52, Wd + 24, 52 + rows.length * H + 24)
     x.font = `700 24px ${MONO}`; x.fillStyle = GOLD; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText('LIVE', X, Y - 24)
     rows.forEach(([n, id], r) => {
       const y = Y + 20 + r * H + (n === 12 ? 12 : 0)
-      x.fillStyle = BONE; x.font = `800 28px ${INTER}`; x.fillText(n === 12 ? 'last' : ORD(n), X, y)
+      if (rows[r][1] === focus) { x.fillStyle = 'rgba(242,199,92,0.22)'; x.fillRect(X - 8, y - 21, Wd + 16, 42) }
+      x.fillStyle = BONE; x.font = `800 28px ${INTER}`; x.fillText(n === 12 && rows[r][2] !== 1 ? 'last' : ORD(n), X, y)
       x.fillStyle = SIGN[id].color; x.fillRect(X + 78, y - 12, 24, 24)
       x.fillStyle = BONE; x.fillText(SIGN[id].name, X + 116, y)
     })
@@ -318,11 +332,14 @@ async function build(stage) {
       const cam = camAt(t)
       drawSky(sx, t, { ...SKY_H, dy: -cam * 0.04 })
       x.clearRect(0, 0, 1080, 1920)
-      track(cam, t); stars(cam, t); board(t); says(cam, t); stickers(t); podium(t)
+      track(cam, t); stars(cam, t); board(t); says(cam, t); stickers(t)
+      if (end) end(x, t, { cookie }); else podium(t)
     },
   }
+  }
 }
-export const SCENES = [build]
+export { makeBuild, camAt as mainCam, SAY as MAIN_SAY, mood, SIM, pos, FIN, ORDER, SWALLOW, HOLE, RETRO, ID, SIGN, ORD, clampY, NF, r2, T_LAST, SNACK }
+export const SCENES = [makeBuild({ camAt, SAY, STICK })]
 
 // quiet cue sheet: gate, a soft knock for each binary-star / comet hit, a low whoomp for each swallow, pops at the line
 const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]

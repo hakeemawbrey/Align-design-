@@ -35,9 +35,10 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
 ## Episode plan
 
 1. **Race 1** (the main video, ~83 s, done).
-2. **Race 1: 12 POVs** (~60 s each, full race). Same race, camera locked on one sign, its inner monologue as
-   bubbles, one rival/crush moment, its lesson line at the end. Order: Taurus, Cancer, Capricorn, Leo, Aries, Pisces,
-   Scorpio, Libra, Sagittarius, Virgo, Gemini, Aquarius.
+2. **Race 1: 12 POVs** (~65 s each, full race, done: `promo/films/marblerace-<sign>`). Same race, camera locked
+   on one sign, its inner monologue as bubbles, one rival/crush moment; once it finishes it comments from the corner
+   while the camera follows whoever is still racing; end card with its place and lesson. Posting order: Taurus,
+   Cancer, Capricorn, Leo, Aries, Pisces, Scorpio, Libra, Sagittarius, Virgo, Gemini, Aquarius.
 3. **Between races, one per sign** (~30–45 s): how each prepares for Race 2.
    - Capricorn hires a coach and is lonely at the top.
    - Taurus and Cancer bake for the next race.
@@ -62,5 +63,9 @@ scheduling; never guess them.
 - Film: `promo/films/marblerace` (race.js = course + physics, scenes/index.js = camera, reactions, podium).
 - New race = new seed (and course tweaks). Search seeds in node for the story you want, then write the reactions
   against the real timeline. Only `+ - * / sqrt` in the physics, so node and the browser agree.
-- POV episode = same `simulate()` call, a camera that follows one sign, and that sign's bubbles and lesson.
+- The race is **baked** (`scenes/race1.js`, made by `node scenes/bake.mjs`): the physics is chaotic and node and
+  Chromium differ by a hair in Math.sin/cos, so the race is simulated once in node and both the picture and the cue
+  sheet replay the same frames. A new race = new seed → bake a new file.
+- POV episode = `makePOV(sign)` in `scenes/pov.js` (camera, the sign's extra lines in `LINES`, hook and lesson in
+  `CARD`). Render POVs at `--calm=1` (~65 s); the main film at `--calm` (0.8).
 - House rules apply (Pisces cries, kind humour, no real brands, no emoji in captions).
