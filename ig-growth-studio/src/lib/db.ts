@@ -269,6 +269,16 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
   ],
   // v10: what each video is (format, sign, topic…), for comparing what performs.
   async () => ["ALTER TABLE posts ADD COLUMN meta TEXT"],
+  // v11: saved Analyze results ("rounds"), so each new round can say what changed since the last one.
+  async () => [
+    `CREATE TABLE analysis_rounds (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      at TEXT NOT NULL,
+      days INTEGER NOT NULL,
+      source TEXT NOT NULL,
+      summary TEXT NOT NULL
+    )`,
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */

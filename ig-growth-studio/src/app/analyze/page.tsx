@@ -3,6 +3,8 @@ import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { LocalTime } from "@/components/LocalTime";
 import { type Finding, type Scored, HIT, MIN_DAYS, MIN_GROUP } from "@/lib/analysis";
 import { loadAnalysis } from "@/lib/analysisData";
+import { type RoundBlock, compareRounds, listRounds, roundBlock } from "@/lib/analysisRounds";
+import { runAnalysisRound } from "@/app/actions";
 import { getDb, getSetting, listAccounts } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -88,6 +90,10 @@ export default async function AnalyzePage({ searchParams }: { searchParams: Prom
   const days = PERIODS.includes(Number(q.days)) ? Number(q.days) : 30;
   const a = await loadAnalysis(db, { days, igUserId: chosen?.igUserId });
   const ideasUrl = await getSetting(db, "ideas_artifact_url");
+  // Saved rounds for this period and view, newest first; the latest two give "since the last round".
+  const rounds = (await listRounds(db, 60)).filter((r) => r.days === days).map((r) => ({ r, b: roundBlock(r, chosen?.username) })).filter((x): x is { r: typeof x.r; b: RoundBlock } => !!x.b);
+  const latest = rounds[0];
+  const changes = latest ? compareRounds(rounds[1]?.b, latest.b) : null;
   const link = (p: { account?: string | null; days?: number }) => {
     const sp = new URLSearchParams();
     const acc = p.account === undefined ? chosen?.username : p.account;
@@ -124,6 +130,115 @@ export default async function AnalyzePage({ searchParams }: { searchParams: Prom
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: 12 }}>
+        <div className="row" style={{ justifyContent: "space-between" }}>
+          <div>
+            <h3 style={{ margin: 0 }}>Analysis rounds</h3>
+            <p className="sub" style={{ margin: "2px 0 0" }}>
+              The numbers on this page are always live. A round saves them, so the next one can show what changed. One
+              is saved every morning automatically.
+              {latest ? (
+                <>
+                  {" "}
+                  Last round: <LocalTime iso={latest.r.at} />.
+                </>
+              ) : (
+                " No rounds saved yet."
+              )}
+            </p>
+          </div>
+          <form action={runAnalysisRound}>
+            <input type="hidden" name="days" value={days} />
+            <button type="submit">Run a new round now</button>
+          </form>
+        </div>
+        {latest && !changes && <p className="muted small">Changes show from the second round.</p>}
+        {changes && (
+          <div className="chart-grid" style={{ marginTop: 10 }}>
+            <div>
+              <h3>Since the round before ({rounds[1] && <LocalTime iso={rounds[1].r.at} />})</h3>
+              <ul className="small">
+                <li>
+                  {changes.reelsAdded >= 0 ? "+" : ""}
+                  {fmt.format(changes.reelsAdded)} Reels compared; hit rate {pct(latest.b.hitRate)} (
+                  {changes.hitRateChange >= 0 ? "+" : ""}
+                  {Math.round(changes.hitRateChange * 1000) / 10} points)
+                </li>
+                {changes.nowWorking.map((f) => (
+                  <li key={"w" + f.dimension + f.value} className="ok">
+                    Now working: {f.dimension.toLowerCase()}: {f.value} ({times(f.index)}, {f.count} Reels)
+                  </li>
+                ))}
+                {changes.noLongerWorking.map((f) => (
+                  <li key={"nw" + f.dimension + f.value}>No longer standing out: {f.dimension.toLowerCase()}: {f.value}</li>
+                ))}
+                {changes.nowDragging.map((f) => (
+                  <li key={"d" + f.dimension + f.value} className="error">
+                    Now holding views back: {f.dimension.toLowerCase()}: {f.value} ({times(f.index)})
+                  </li>
+                ))}
+                {changes.noLongerDragging.map((f) => (
+                  <li key={"nd" + f.dimension + f.value}>Recovered: {f.dimension.toLowerCase()}: {f.value}</li>
+                ))}
+                {!changes.nowWorking.length && !changes.noLongerWorking.length && !changes.nowDragging.length && !changes.noLongerDragging.length && (
+                  <li className="muted">No pattern changed.</li>
+                )}
+              </ul>
+            </div>
+            <div>
+              <h3>New biggest hits</h3>
+              {changes.newHits.length ? (
+                <ul className="small">
+                  {changes.newHits.slice(0, 6).map((t) => (
+                    <li key={t.postId}>
+                      {t.permalink ? (
+                        <a href={t.permalink} target="_blank" rel="noreferrer">
+                          {t.title}
+                        </a>
+                      ) : (
+                        t.title
+                      )}{" "}
+                      <span className="muted">
+                        @{t.account} · {times(t.index)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="muted small">No new Reels in the top 10.</p>
+              )}
+            </div>
+          </div>
+        )}
+        {rounds.length > 1 && (
+          <details className="data-table">
+            <summary>All rounds ({rounds.length})</summary>
+            <table>
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th className="num">Reels</th>
+                  <th className="num">Hits</th>
+                  <th>What&apos;s working</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rounds.map(({ r, b }) => (
+                  <tr key={r.id}>
+                    <td>
+                      <LocalTime iso={r.at} /> <span className="muted small">{r.source === "manual" ? "(run by hand)" : ""}</span>
+                    </td>
+                    <td className="num">{fmt.format(b.reels)}</td>
+                    <td className="num">{pct(b.hitRate)}</td>
+                    <td className="small">{b.working.slice(0, 3).map((f) => f.value).join(", ") || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </details>
+        )}
       </div>
 
       {a.reels === 0 ? (

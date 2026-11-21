@@ -73,3 +73,37 @@ describe("analysis", () => {
     expect(a.top[0].features.format).toBe("All the signs (roll call)");
   });
 });
+
+import { compareRounds, saveDailyRoundIfDue, listRounds } from "../src/lib/analysisRounds";
+import { openDb } from "../src/lib/db";
+
+describe("analysis rounds", () => {
+  const f = (value: string, index = 1.5) => ({ dimension: "Format", value, count: 10, index, hitRate: 0.2 });
+  const block = (working: string[], dragging: string[], top: number[], reels = 100, hitRate = 0.05) => ({
+    reels,
+    hitRate,
+    working: working.map((v) => f(v)),
+    dragging: dragging.map((v) => f(v, 0.7)),
+    top: top.map((postId) => ({ postId, account: "star", title: `Reel ${postId}`, index: 3, permalink: null })),
+  });
+
+  it("says what started and stopped standing out since the round before", () => {
+    const c = compareRounds(block(["solo", "rollcall"], ["remix"], [1, 2]), block(["rollcall", "be like"], [], [2, 3], 130, 0.07))!;
+    expect(c.reelsAdded).toBe(30);
+    expect(c.hitRateChange).toBeCloseTo(0.02);
+    expect(c.nowWorking.map((x) => x.value)).toEqual(["be like"]);
+    expect(c.noLongerWorking.map((x) => x.value)).toEqual(["solo"]);
+    expect(c.noLongerDragging.map((x) => x.value)).toEqual(["remix"]);
+    expect(c.newHits.map((x) => x.postId)).toEqual([3]);
+    expect(compareRounds(undefined, block([], [], []))).toBeNull();
+  });
+
+  it("saves one round a day, after 6 AM", async () => {
+    const db = await openDb(":memory:");
+    expect(await saveDailyRoundIfDue(db, new Date(2026, 10, 20, 5, 0))).toBe(false);
+    expect(await saveDailyRoundIfDue(db, new Date(2026, 10, 20, 6, 5))).toBe(true);
+    expect(await saveDailyRoundIfDue(db, new Date(2026, 10, 20, 18, 0))).toBe(false);
+    expect(await saveDailyRoundIfDue(db, new Date(2026, 10, 21, 6, 1))).toBe(true);
+    expect((await listRounds(db)).map((r) => r.source)).toEqual(["daily", "daily"]);
+  });
+});

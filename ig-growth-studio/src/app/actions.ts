@@ -17,6 +17,7 @@ import {
   setActiveAccount,
   updatePost,
 } from "@/lib/db";
+import { saveRound } from "@/lib/analysisRounds";
 import { setAudioSetting } from "@/lib/audio";
 import { GraphClient } from "@/lib/graph";
 import { PostFields, queuePost } from "@/lib/posts";
@@ -156,4 +157,11 @@ export async function setReelAudio(form: FormData) {
     // Search mode without a term: leave the setting as it was.
   }
   revalidatePath("/settings");
+}
+
+/** Analyze: save a new round with the latest numbers now. */
+export async function runAnalysisRound(form: FormData) {
+  const days = Number(form.get("days")) === 14 ? 14 : 30;
+  await saveRound(await getDb(), { source: "manual", days });
+  revalidatePath("/analyze");
 }

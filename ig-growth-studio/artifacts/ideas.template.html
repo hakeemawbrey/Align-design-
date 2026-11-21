@@ -193,13 +193,14 @@ textarea { width: 100%; box-sizing: border-box; min-height: 64px; font: 15px var
       "Patterns need several Reels across several days before they mean much; treat groups under 8 Reels, and single hits, as hints rather than proof, and say so.",
       "",
       "DATA:",
-      JSON.stringify({ reels: d.reels, hitRate: d.hitRate, working: d.working, holdingBack: d.holdingBack, byDimension: d.byDimension, topReels: d.topReels, mostSaved: d.mostSaved, mostShared: d.mostShared, bottomReels: d.bottomReels }),
+      JSON.stringify({ reels: d.reels, hitRate: d.hitRate, working: d.working, holdingBack: d.holdingBack, byDimension: d.byDimension, topReels: d.topReels, mostSaved: d.mostSaved, mostShared: d.mostShared, bottomReels: d.bottomReels, changesSinceLastRound: current.key === "all" ? DATA.sinceLastRound : d.sinceLastRound }),
     ].join("\n");
   }
 
   const ASK = [
     "Using only this data, write a short, practical plan in Markdown with these sections:",
     "## What's working: 3 to 5 bullets, each naming the evidence (format, sign, ending, length or timing, with its ×usual and number of Reels).",
+    "## What changed: if changesSinceLastRound is present, 2 or 3 bullets on what started or stopped working since the last analysis round, and what that suggests. Skip this section if it is null.",
     "## Make more of: 5 specific Reel ideas to make next. For each, the format, a hook line people would see on screen, and one sentence on why the data supports it.",
     "## New formats to test: 3 formats these accounts haven't tried, adapted from what the hits have in common, each with an example hook.",
     "## Stop or change: up to 3 bullets.",

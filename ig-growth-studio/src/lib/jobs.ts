@@ -1,4 +1,5 @@
 import { type Account, type DB, getSetting, listAccountDays, saveAccountDay, hasSnapshot, listAccounts, markVideoChecked, markVideoGone, saveMediaSnapshots, saveSnapshot, setPageName, setSetting, videosDueForRefresh } from "./db";
+import { saveDailyRoundIfDue } from "./analysisRounds";
 import { type FbRunResult, publishFacebookDue } from "./facebook";
 import { GraphClient, GraphError } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
@@ -38,6 +39,11 @@ export async function runScheduledWork(
     }
   }
   await saveAccountDaysIfDue(db, now);
+  try {
+    await saveDailyRoundIfDue(db, now);
+  } catch (err) {
+    console.error("analysis round:", err instanceof Error ? err.message : err);
+  }
   const videos = await snapshotVideosIfDue(db, now);
   return { ...result, snapshots, ...(videos ? { videos } : {}), ...(facebook ? { facebook } : {}) };
 }

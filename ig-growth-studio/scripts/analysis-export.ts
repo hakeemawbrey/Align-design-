@@ -9,6 +9,7 @@
 import path from "node:path";
 import { type Analysis, type Scored } from "../src/lib/analysis";
 import { loadAnalysis } from "../src/lib/analysisData";
+import { compareRounds, listRounds } from "../src/lib/analysisRounds";
 import { listAccounts, openDb } from "../src/lib/db";
 
 const reel = (s: Scored, captions: Map<number, string>) => ({
@@ -57,9 +58,20 @@ async function main() {
     const analysis = await loadAnalysis(db, { days, igUserId: a.igUserId });
     if (analysis.reels) accounts.push({ account: a.username, ...block(analysis, captions) });
   }
+  // What changed between the last two saved rounds for this period, so ideas can follow the trend.
+  const rounds = (await listRounds(db, 60)).filter((r) => r.days === days);
+  const since = (acct?: string) => {
+    const [cur, prev] = rounds.map((r) => (acct ? r.summary.accounts[acct] : r.summary.all));
+    const c = cur ? compareRounds(prev, cur) : null;
+    return c && rounds[1]
+      ? { comparedWith: rounds[1].at, ...c, newHits: c.newHits.map((t) => ({ title: t.title, account: t.account, timesUsual: Number(t.index.toFixed(2)) })) }
+      : null;
+  };
+  for (const a of accounts) Object.assign(a, { sinceLastRound: since(a.account) });
   const out = {
     generatedAt: new Date().toISOString(),
     days,
+    sinceLastRound: since(),
     howToRead:
       "timesUsual = views at 24 hours ÷ the median for the same account's Reels from nearby days (1.0 = usual). A hit is 2× or more. Saves and shares per 1,000 views.",
     all: block(await loadAnalysis(db, { days }), captions),
