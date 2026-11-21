@@ -284,7 +284,7 @@ export const EPISODES = {
     hook: 'Race 2 is a pairs race. | Gemini signs up | twice.', pair: ['gemini', 'libra'],
     lesson: ['Two of you is fun.', 'Someone else is better.'],
     scenes: [
-      { dur: 5, title: 'RACE 2 SIGN-UP', set: (x, t) => signupBooth(x),
+      { dur: 5, set: (x, t) => signupBooth(x),
         cast: { gemini: [[0, 300, Y]], virgo: [[0, 780, 1110, 200]] }, mood: { gemini: 'sparkle', virgo: 'neutral' },
         front: (x, t, lt, P) => clipboard(x, P, 'virgo', -0.6),
         lines: [[0.5, 1.8, 'gemini', 'name: | Gemini.'], [2.7, 2.0, 'gemini', 'partner: | also Gemini.']] },

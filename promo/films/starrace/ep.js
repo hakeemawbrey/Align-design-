@@ -146,7 +146,7 @@ export function makeEpisode(E) {
         const k = pop01(t, s.t0 + l0, 0.3, 1.8) * (1 - ease.inQuad(prog(lt, l0 + d - 0.25, l0 + d)))
         bubble(x, bx, cy - size * 0.62 - 70, text, k, { size: 44, col: BONE, tail: cx < bx - 40 ? 'bl' : cx > bx + 40 ? 'br' : 'bc' })
       }
-      if (s.title) { const a = s.t0 === 0 ? 2.7 : 0.1, k = pop01(t, s.t0 + a, 0.3, 1.8) * (1 - ease.inQuad(prog(lt, a + 1.9, a + 2.2))); if (k > 0) label(x, 540, 640, s.title, k, { size: 46, bg: GOLD, rot: -0.04 }) }
+      if (s.title) { const a = s.t0 === 0 ? 2.7 : 0.1, k = pop01(t, s.t0 + a, 0.3, 1.8) * (1 - ease.inQuad(prog(lt, a + 1.9, a + 2.2))); if (k > 0) label(x, 540, 430, s.title, k, { size: 46, bg: GOLD, rot: -0.04 }) }
       for (const [l0, d, text, bg] of s.stick || []) { if (lt < l0 || lt > l0 + d) continue; label(x, 540, 640, text, pop01(t, s.t0 + l0, 0.3, 1.8) * (1 - ease.inQuad(prog(lt, l0 + d - 0.3, l0 + d))), { size: 50, bg: bg || PINK, rot: -0.04 }) }
       const fin = 1 - ease.outCubic(prog(lt, 0, 0.18)); if (fin > 0 && s.t0 > 0) { x.fillStyle = `rgba(5,4,12,${fin.toFixed(3)})`; x.fillRect(0, 0, 1080, 1920) }
     }
