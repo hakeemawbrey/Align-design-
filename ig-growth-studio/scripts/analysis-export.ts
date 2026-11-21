@@ -8,7 +8,8 @@
  */
 import path from "node:path";
 import { type Analysis, type Scored } from "../src/lib/analysis";
-import { loadAnalysis } from "../src/lib/analysisData";
+import { analyse, scoreReels } from "../src/lib/analysis";
+import { loadAnalysis, loadAnalysisInputs } from "../src/lib/analysisData";
 import { compareRounds, listRounds } from "../src/lib/analysisRounds";
 import { listAccounts, openDb } from "../src/lib/db";
 
@@ -29,6 +30,8 @@ function block(a: Analysis, captions: Map<number, string>) {
     hitRate: Number(a.hitRate.toFixed(3)),
     working: a.working,
     holdingBack: a.dragging,
+    learnings: a.learnings.map(({ weight: _w, ...l }) => l),
+    titleWords: a.words,
     byDimension: a.dimensions.map((d) => ({
       dimension: d.label,
       groups: d.groups.slice(0, 12).map((g) => ({
@@ -58,6 +61,8 @@ async function main() {
     const analysis = await loadAnalysis(db, { days, igUserId: a.igUserId });
     if (analysis.reels) accounts.push({ account: a.username, ...block(analysis, captions) });
   }
+  const scoreAll = scoreReels(await loadAnalysisInputs(db, { days }));
+  const allAnalysis = analyse(scoreAll);
   // What changed between the last two saved rounds for this period, so ideas can follow the trend.
   const rounds = (await listRounds(db, 60)).filter((r) => r.days === days);
   const since = (acct?: string) => {
@@ -68,13 +73,26 @@ async function main() {
       : null;
   };
   for (const a of accounts) Object.assign(a, { sinceLastRound: since(a.account) });
+  // Every Reel, compact, so Claude can look for patterns the summary doesn't list.
+  const everyReel = scoreAll.map((x) => ({
+    t: x.title,
+    a: x.account,
+    x: Number(x.index.toFixed(2)),
+    f: x.features.format,
+    s: x.features.sign ?? null,
+    h: x.features.hook ?? null,
+    e: x.features.ending ?? null,
+    sv: x.saves,
+    sh: x.shares,
+  }));
   const out = {
     generatedAt: new Date().toISOString(),
     days,
+    reels: everyReel,
     sinceLastRound: since(),
     howToRead:
       "timesUsual = views at 24 hours ÷ the median for the same account's Reels from nearby days (1.0 = usual). A hit is 2× or more. Saves and shares per 1,000 views.",
-    all: block(await loadAnalysis(db, { days }), captions),
+    all: block(allAnalysis, captions),
     accounts,
   };
   process.stdout.write(JSON.stringify(out));

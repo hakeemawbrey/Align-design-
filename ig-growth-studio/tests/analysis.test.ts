@@ -78,7 +78,7 @@ import { compareRounds, saveDailyRoundIfDue, listRounds } from "../src/lib/analy
 import { openDb } from "../src/lib/db";
 
 describe("analysis rounds", () => {
-  const f = (value: string, index = 1.5) => ({ dimension: "Format", value, count: 10, index, hitRate: 0.2 });
+  const f = (value: string, index = 1.5) => ({ dimension: "Format", value, count: 10, index, hitRate: 0.2, days: 4, confidence: "moderate" as const });
   const block = (working: string[], dragging: string[], top: number[], reels = 100, hitRate = 0.05) => ({
     reels,
     hitRate,

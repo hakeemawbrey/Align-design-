@@ -18,6 +18,7 @@
     "tag": "tsx scripts/tag-posts.ts",
     "analysis": "tsx scripts/analysis-export.ts",
     "ideas-page": "tsx scripts/build-ideas.ts",
+    "production-batch": "tsx scripts/production-batch.ts",
     "copy-to-cloud": "tsx scripts/copy-to-cloud.ts"
   },
   "dependencies": {

@@ -262,6 +262,101 @@ export default async function AnalyzePage({ searchParams }: { searchParams: Prom
             </div>
           </div>
 
+          <h2>Learnings</h2>
+          <div className="card">
+            <p className="sub">
+              Everything the numbers say, ranked: how sure it is first, then how big. &quot;Strong&quot; holds up when the Reels are
+              resampled 400 times; &quot;weak&quot; is a hint to test, not a rule.
+            </p>
+            {a.learnings.length ? (
+              <div className="scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Lesson</th>
+                      <th>Evidence</th>
+                      <th>What to do</th>
+                      <th>How sure</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {a.learnings.map((l) => (
+                      <tr key={l.headline}>
+                        <td>
+                          <span className={`badge ${l.kind === "do" ? "published" : l.kind === "avoid" ? "failed" : "scheduled"}`}>
+                            {l.kind === "do" ? "Do more" : l.kind === "avoid" ? "Do less" : "Test"}
+                          </span>{" "}
+                          {l.headline}
+                        </td>
+                        <td className="small">{l.evidence}</td>
+                        <td className="small">{l.action}</td>
+                        <td className={`small ${l.confidence === "strong" ? "ok" : l.confidence === "weak" ? "muted" : ""}`}>{l.confidence}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <p className="muted small">Not enough Reels yet.</p>
+            )}
+          </div>
+
+          <div className="chart-grid" style={{ marginTop: 12 }}>
+            <div className="card">
+              <h3>Words in titles that do well</h3>
+              <p className="sub">Each word needs 10+ Reels across 3+ days.</p>
+              {a.words.best.length ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Word</th>
+                      <th className="num">Reels</th>
+                      <th className="num">Typical</th>
+                      <th className="num">Hits</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {a.words.best.map((w) => (
+                      <tr key={w.word}>
+                        <td>{w.word}</td>
+                        <td className="num">{w.count}</td>
+                        <td className="num">{times(w.index)}</td>
+                        <td className="num">{pct(w.hitRate)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p className="muted small">None stand out yet.</p>
+              )}
+            </div>
+            <div className="card">
+              <h3>Words in titles that fall short</h3>
+              {a.words.worst.length ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Word</th>
+                      <th className="num">Reels</th>
+                      <th className="num">Typical</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {a.words.worst.map((w) => (
+                      <tr key={w.word}>
+                        <td>{w.word}</td>
+                        <td className="num">{w.count}</td>
+                        <td className="num">{times(w.index)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p className="muted small">None stand out yet.</p>
+              )}
+            </div>
+          </div>
+
           <div className="chart-grid" style={{ marginTop: 12 }}>
             <div className="card">
               <h3>What&apos;s working</h3>
