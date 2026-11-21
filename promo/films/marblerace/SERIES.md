@@ -39,7 +39,12 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
    on one sign, its inner monologue as bubbles, one rival/crush moment; once it finishes it comments from the corner
    while the camera follows whoever is still racing; end card with its place and lesson. Posting order: Taurus,
    Cancer, Capricorn, Leo, Aries, Pisces, Scorpio, Libra, Sagittarius, Virgo, Gemini, Aquarius.
-3. **Between races, one per sign** (~30–45 s): how each prepares for Race 2.
+3. **Between races, one per sign** (~43 s, done: `promo/films/starrace-<sign>`, scripts in `promo/films/starrace/
+   episodes.js`, engine in `starrace/ep.js`): how each prepares for Race 2, and each sets up its Race 2 partner.
+   Six pairs: **Taurus & Cancer · Leo & Aries · Capricorn & Aquarius · Pisces & Scorpio · Libra & Gemini ·
+   Sagittarius & Virgo**. Paired episodes show the same moment from both sides (Taurus's PARTNERS? cookie and
+   Cancer's scarves meet at the same door; both ask at the same time). Posting order: Taurus, Cancer, Capricorn,
+   Aquarius, Leo, Aries, Pisces, Scorpio, Libra, Gemini, Sagittarius, Virgo. Original idea list:
    - Capricorn hires a coach and is lonely at the top.
    - Taurus and Cancer bake for the next race.
    - Leo designs a victory pose.
