@@ -73,19 +73,99 @@ export const COURSE = (() => {
   return { S, P, M, W, A, Z, SHELF, SIGNS }
 })()
 
+
+// ── COURSE 2 (Race 2): longer and wilder. Extra kinds: meteors (falling rocks), pulsar beams (fast 2-spoke wheels),
+// solar-flare wind (Z with wx), twin black holes (one back to the start, one a shortcut), a supernova (X: a timed blast),
+// pinball bumpers (pegs with their own bounce, P[3]), Jupiter (a pull with no horizon) with orbiting moons, two comets,
+// and the event horizon (a black hole right before the finish that throws you back up to the meteor shower).
+export const FINISH_Y2 = 17600
+export const COURSE2 = (() => {
+  const S = [], P = [], M = [], W = [], A = [], Z = [], X = [], SIGNS = []
+  const seg = (x1, y1, x2, y2, th = 10) => S.push([x1, y1, x2, y2, th])
+  const sign = (y, text, kind) => SIGNS.push([y, text, kind])
+  seg(L, 300, L, FINISH_Y2 + 500, 14); seg(RW, 300, RW, FINISH_Y2 + 500, 14)
+  const SHELF = [L, 640, RW, 640, 12]
+  seg(L, 900, 500, 1180); seg(RW, 900, 600, 1180)
+  // BIG BANG: three steep drops
+  sign(1260, 'BIG BANG', 'bang')
+  seg(L, 1350, 880, 1620); seg(RW, 1820, 200, 2090); seg(L, 2290, 880, 2560)
+  // METEOR SHOWER: rocks falling down through the field, plus a few pegs
+  sign(2720, 'METEOR SHOWER', 'meteor')
+  for (let k = 0; k < 6; k++) { const x0 = 190 + k * 140, per = 2.2 + (k % 3) * 0.45, ph = k * 0.37, y0 = 2700, y1 = 3700
+    M.push({ kind: 'meteor', r: 30, e: 1.5, p: t => { const u = (((t + ph * per) % per) + per) % per / per; return [x0, y0 + (y1 - y0) * u] }, v: () => [0, (y1 - y0) / per] }) }
+  for (let row = 0; row < 4; row++) for (let x = 230 + (row % 2) * 90; x < 900; x += 180) P.push([x, 2900 + row * 220, 12])
+  seg(L, 3780, 470, 3960); seg(RW, 3780, 610, 3960)
+  // PULSAR: two fast spinning beams
+  sign(4080, 'PULSAR', 'pulsar')
+  W.push({ cx: 330, cy: 4450, r0: 30, r1: 230, n: 2, w: 1.9, th: 14, beam: true })
+  W.push({ cx: 750, cy: 4700, r0: 30, r1: 230, n: 2, w: -1.6, th: 14, beam: true })
+  seg(L, 5000, 470, 5160); seg(RW, 5000, 610, 5160)
+  // SOLAR FLARE: wind bursts push everything right, between staggered ramps
+  sign(5300, 'SOLAR FLARE', 'flare')
+  Z.push({ x0: L, x1: RW, y0: 5380, y1: 6300, period: 3.0, on: 1.1, g: 1, wx: 2300 })
+  seg(L, 5560, 700, 5720); seg(RW, 5900, 380, 6060); for (let x = 220; x < 900; x += 160) P.push([x, 6200, 12])
+  seg(L, 6380, 480, 6520); seg(RW, 6380, 600, 6520)
+  // TWIN BLACK HOLES: left → back to the start · right → a shortcut far below (into comet alley)
+  sign(6640, 'TWIN BLACK HOLES', 'void')
+  A.push({ x: 300, y: 7050, k: 1.5e7, rmax: 330, horizon: 40, exit: [540, 1150], name: 'start' })
+  A.push({ x: 780, y: 7050, k: 1.5e7, rmax: 330, horizon: 40, exit: [735, 14700], name: 'shortcut' })
+  P.push([540, 6880, 22])
+  seg(L, 7450, 470, 7600); seg(RW, 7450, 610, 7600)
+  // SUPERNOVA: a star in the middle that blows everything outwards for 0.35 s every 4 s
+  sign(7740, 'SUPERNOVA', 'nova')
+  X.push({ x: 540, y: 8250, r: 420, period: 4.0, on: 0.35, k: 5.5e6, core: 60 })
+  P.push([540, 8250, 60]); for (const [a, b] of [[250, 8050], [830, 8050], [250, 8480], [830, 8480]]) P.push([a, b, 14])
+  seg(L, 8700, 470, 8860); seg(RW, 8700, 610, 8860)
+  // MERCURY RETROGRADE (as in Race 1)
+  sign(8980, 'MERCURY RETROGRADE', 'retro')
+  Z.push({ x0: L, x1: RW, y0: 9100, y1: 9960, period: 3.4, on: 1.3, g: -1.15 })
+  seg(L, 9280, 800, 9420); seg(RW, 9640, 280, 9780)
+  seg(L, 9980, 470, 10140); seg(RW, 9980, 610, 10140)
+  // ASTEROID PINBALL: very bouncy bumpers
+  sign(10260, 'ASTEROID PINBALL', 'pinball')
+  for (let row = 0; row < 5; row++) { const off = row % 2 ? 110 : 0; for (let x = 200 + off; x < 900; x += 220) P.push([x, 10450 + row * 190, 26, 2.05]) }
+  seg(L, 11450, 470, 11610); seg(RW, 11450, 610, 11610)
+  // JUPITER: a giant that pulls (no horizon), two moons in orbit around it
+  sign(11740, 'JUPITER', 'jupiter')
+  P.push([540, 12250, 135]); A.push({ x: 540, y: 12250, k: 6e6, rmax: 520, horizon: 0, exit: null, name: 'jupiter' })
+  { const cx = 540, cy = 12250, Ro = 260, w = 1.3
+    for (const ph of [0, Math.PI]) M.push({ kind: 'moon', r: 40, e: 1.6, p: t => [cx + Ro * Math.cos(w * t + ph), cy + Ro * 0.6 * Math.sin(w * t + ph)], v: t => [-Ro * w * Math.sin(w * t + ph), Ro * 0.6 * w * Math.cos(w * t + ph)] }) }
+  seg(L, 12700, 470, 12860); seg(RW, 12700, 610, 12860)
+  // COMET ALLEY: two comets, opposite ways
+  sign(13000, 'COMET ALLEY', 'comet')
+  { const per = 3.4; M.push({ kind: 'comet', r: 44, e: 1.8, p: t => { const u = ((t % per) + per) % per / per; return [-200 + 1480 * u, 13300] }, v: () => [1480 / per, 0] }) }
+  { const per = 2.9; M.push({ kind: 'comet', r: 44, e: 1.8, p: t => { const u = ((t % per) + per) % per / per; return [1280 - 1480 * u, 13750] }, v: () => [-1480 / per, 0] }) }
+  seg(L, 13500, 800, 13620); seg(RW, 13960, 280, 14080)
+  seg(L, 14300, 470, 14440); seg(RW, 14300, 610, 14440)
+  sign(14560, 'SHORTCUT EXIT', 'worm')
+  // EVENT HORIZON: the last black hole, just off the racing line, throws you back to the meteor shower
+  sign(15000, 'EVENT HORIZON', 'void')
+  seg(L, 14900, 650, 15080)
+  A.push({ x: 790, y: 15330, k: 1.7e7, rmax: 320, horizon: 40, exit: [540, 2650], name: 'horizon' })
+  seg(L, 15700, 470, 15860); seg(RW, 15700, 610, 15860)
+  // final plinko + funnel
+  for (let row = 0; row < 6; row++) { const y = 16050 + row * 120, off = row % 2 ? 65 : 0; for (let x = 200 + off; x < 900; x += 130) P.push([x, y, 14]) }
+  seg(L, 16850, 480, 17080); seg(RW, 16850, 600, 17080)
+  seg(L, 17200, 800, 17330); seg(RW, 17420, 300, 17520)
+  seg(L, FINISH_Y2 + 230, RW, FINISH_Y2 + 310, 14)
+  return { S, P, M, W, A, Z, X, SHELF, SIGNS, FINISH: FINISH_Y2 }
+})()
+
 export function wheelSpokes(wh, t) {
   const out = [], a0 = wh.w * t
   for (let i = 0; i < wh.n; i++) { const a = a0 + i * 2 * Math.PI / wh.n, c = Math.cos(a), s = Math.sin(a); out.push([wh.cx + wh.r0 * c, wh.cy + wh.r0 * s, wh.cx + wh.r1 * c, wh.cy + wh.r1 * s, wh.th]) }
   return out
 }
 export const retroOn = (z, t) => (((t % z.period) + z.period) % z.period) < z.on
+const retoOn2 = retroOn
 
 function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296) }
 
 // Race 2 options: links = [[idA, idB, len]] ties two marbles with a rope (max distance len; a swallowed marble takes its
 // partner through the wormhole too) and starts them side by side in the given order; exit = [x, y] moves the wormhole.
-export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90, links = null, exit = null } = {}) {
-  const C = COURSE, r = rng(seed), n = ids.length
+// course = COURSE2 for Race 2; aim = { id: [x, y0, y1, acc] } a gentle sideways steer (a sign choosing its line).
+export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90, links = null, exit = null, course = COURSE, aim = {} } = {}) {
+  const C = course, FIN_Y = C.FINISH ?? FINISH_Y, r = rng(seed), n = ids.length
   const slots = ids.map((_, i) => i)
   if (!links) for (let i = slots.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [slots[i], slots[j]] = [slots[j], slots[i]] }
   const LK = (links || []).map(([a, b, len]) => [ids.indexOf(a), ids.indexOf(b), len])
@@ -125,13 +205,15 @@ export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90, links = 
       for (const b of B) {
         if (ts < GATE && kick[b.id] && ts > GATE - 0.02) b.vx += kick[b.id]
         let g = G
-        for (const z of C.Z) if (b.x > z.x0 && b.x < z.x1 && b.y > z.y0 && b.y < z.y1 && retroOn(z, ts)) g = G * z.g
+        for (const z of C.Z) if (b.x > z.x0 && b.x < z.x1 && b.y > z.y0 && b.y < z.y1 && retroOn(z, ts)) { g = G * z.g; if (z.wx) b.vx += z.wx * DT }
         b.vy += g * DT
+        const am = aim[b.id]; if (am && b.y > am[1] && b.y < am[2]) b.vx += (am[0] > b.x ? 1 : -1) * am[3] * DT
+        for (const xb of C.X || []) if (retoOn2(xb, ts)) { const ex = b.x - xb.x, ey = b.y - xb.y, d = hyp(ex, ey); if (d < xb.r && d > 0) { const acc = xb.k / (d + 80); b.vx += acc * ex / d * DT; b.vy += acc * ey / d * DT } }
         for (const a of C.A) {
           const ex = a.x - b.x, ey = a.y - b.y, d = hyp(ex, ey)
-          if (d < a.horizon) {
-            const ex0 = exit || a.exit, bi = B.indexOf(b), group = bi in mate ? [b, B[mate[bi]]] : [b]
-            group.forEach((q, gi) => { events.push({ t: ts, id: q.id, kind: 'swallow', from: [q.x, q.y] }); q.x = ex0[0] + (gi ? 70 : 0); q.y = ex0[1]; q.vx = (q.x < 540 ? -1 : 1) * 120; q.vy = 380 })
+          if (a.horizon > 0 && d < a.horizon) {
+            const ex0 = (C === COURSE && exit) || a.exit, bi = B.indexOf(b), group = bi in mate ? [b, B[mate[bi]]] : [b]
+            group.forEach((q, gi) => { events.push({ t: ts, id: q.id, kind: 'swallow', hole: a.name || 'hole', from: [q.x, q.y] }); q.x = ex0[0] + (gi ? 70 : 0); q.y = ex0[1]; q.vx = (q.x < 540 ? -1 : 1) * 120; q.vy = 380 })
             continue
           }
           if (d < a.rmax) { const acc = a.k / (d * d + 900); b.vx += acc * ex / d * DT; b.vy += acc * ey / d * DT }
@@ -142,9 +224,9 @@ export function simulate({ seed = 7, ids, drag = {}, kick = {}, T = 90, links = 
         if (ts < GATE) hitSeg(b, ...C.SHELF)
         for (const s of C.S) { if (b.y < Math.min(s[1], s[3]) - 60 || b.y > Math.max(s[1], s[3]) + 60) continue; hitSeg(b, ...s) }
         for (const [wh, sk] of spokes) { if (Math.abs(b.y - wh.cy) > wh.r1 + 60) continue; for (const s of sk) hitSeg(b, ...s, wh) }
-        for (const p of C.P) { if (Math.abs(b.y - p[1]) > p[2] + 40) continue; hitCircle(b, p[0], p[1], p[2], 1.55) }
+        for (const p of C.P) { if (Math.abs(b.y - p[1]) > p[2] + 40) continue; if (hitCircle(b, p[0], p[1], p[2], p[3] ?? 1.55) && p[3]) events.push({ t: ts, id: b.id, kind: 'bumper' }) }
         for (const [m, [mx, my], [mvx, mvy]] of movers) { if (Math.abs(b.y - my) > m.r + 40) continue; if (hitCircle(b, mx, my, m.r, m.e, mvx, mvy) && m.kind !== 'rock') events.push({ t: ts, id: b.id, kind: m.kind }) }
-        if (b.fin === null && b.y > FINISH_Y) { b.fin = ts; order.push(b.id) }
+        if (b.fin === null && b.y > FIN_Y) { b.fin = ts; order.push(b.id) }
       }
       for (const [i, j, len] of LK) {                     // ropes: pull back to len, drop the separating speed
         const a = B[i], c = B[j], ex = c.x - a.x, ey = c.y - a.y, d = hyp(ex, ey)

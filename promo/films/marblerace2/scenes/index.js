@@ -1,28 +1,31 @@
-// marblerace2 · Race 2 "Your pace, together." The pairs race: the twelve stars race tied in twos with 150 px ropes,
-// same space course as Race 1, one change: the wormhole now spits you out back at the START.
-// Story (seed 98, baked in marblerace/scenes/race2.js): Leo & Aries lead the first half ("I lead, you shine") · Libra &
-// Gemini get caught between the two binary suns, then swallowed by the black hole and sent back to the start ·
-// Scorpio & Pisces try Scorpio's plan (jump in) and miss · MEANWHILE in Mercury retrograde Leo & Aries argue, Taurus &
-// Cancer float calmly past · Taurus & Cancer (last in Race 1) win · everyone waits at the line for Libra & Gemini.
+// marblerace2 · Race 2 "Your pace, together." The pairs race on a new, wilder course (COURSE2): the twelve stars race
+// tied in twos with 150 px ropes through BIG BANG drops · a METEOR SHOWER · PULSAR beams · SOLAR FLARE wind · TWIN BLACK
+// HOLES (left: back to the start · right: a shortcut) · a SUPERNOVA · MERCURY RETROGRADE · ASTEROID PINBALL · JUPITER
+// and its moons · COMET ALLEY · and the EVENT HORIZON, a last black hole that throws you back up to the meteors.
+// Story (seed 44, baked in marblerace/scenes/race2.js): Leo & Aries fall into the left hole (back to the start) ·
+// Scorpio's plan: the right hole, the shortcut… and 0.6 s later the event horizon (back to the meteors) · Sagittarius &
+// Virgo and Capricorn & Aquarius trade the lead for twenty seconds · the event horizon takes Sagittarius & Virgo too ·
+// Taurus & Cancer, behind all race, pass Capricorn & Aquarius at the very end and win by 0.12 s.
 import { prog, lerp, ease, clamp } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, layerCanvas } from '../../sky.js'
 import { SKY_H, SIGNS } from '../../wheel.js'
 import { drawStarChar } from '../../startalk.js'
 import { bubble, label, sparkles, pop01, GOLD, BONE, PINK, INK, INTER, MONO } from '../../signs3kit.js'
-import { R, FPS, GATE, FINISH_Y, COURSE, wheelSpokes, retroOn } from '../../marblerace/scenes/race.js'
+import { FPS, GATE, COURSE2, FINISH_Y2, wheelSpokes, retroOn } from '../../marblerace/scenes/race.js'
 import { RACE2, RACE2_FRAMES } from '../../marblerace/scenes/race2.js'
 
-export const HOOK = 'Race 2: pairs. | 12 signs, tied together.'
+export const HOOK = 'Race 2: pairs. | New course. No mercy.'
 export const HOOK_STYLE = 'box'
 export const HOOK_UNTIL = 2.6
 
+const C = COURSE2, FINISH_Y = FINISH_Y2
 const SIM = (() => { const bin = atob(RACE2_FRAMES), u8 = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) u8[k] = bin.charCodeAt(k); return { ...RACE2, frames: new Float32Array(u8.buffer) } })()
 const IDS = SIM.ids, N = SIM.n, NF = SIM.frames.length / (N * 2)
 const SIGN = Object.fromEntries(SIGNS.map(s => [s.id, s]))
 const ID = id => IDS.indexOf(id)
 const fi = t => Math.max(0, Math.min(NF - 1, t * FPS))
-function pos(t, i) {          // interpolated world position (no smear across a wormhole jump)
+function pos(t, i) {          // interpolated world position (no smear across a black-hole jump)
   const f = fi(t), a = Math.floor(f), b = Math.min(NF - 1, a + 1), u = f - a, A = (a * N + i) * 2, B = (b * N + i) * 2
   const fr = SIM.frames
   if (Math.abs(fr[B + 1] - fr[A + 1]) > 900) return u < 0.5 ? [fr[A], fr[A + 1]] : [fr[B], fr[B + 1]]
@@ -34,39 +37,48 @@ const PNAME = ([a, b]) => `${SIGN[a].name} & ${SIGN[b].name}`
 const PFIN = PAIRS.map(p => Math.max(FIN[p[0]], FIN[p[1]]))
 const PORDER = PAIRS.map((p, i) => i).sort((a, b) => PFIN[a] - PFIN[b])            // pair indices, winner first
 const PI_OF = id => PAIRS.findIndex(p => p.includes(id))
-const SWALLOW = {}; for (const e of SIM.events) if (e.kind === 'swallow' && !(e.id in SWALLOW)) SWALLOW[e.id] = e
-const HOLE = COURSE.A[0], RETRO = COURSE.Z[0], EXIT = [540, 1150]
+const SWALLOWS = SIM.events.filter(e => e.kind === 'swallow')                        // every gulp: { t, id, hole }
+const HOLES = C.A.filter(a => a.horizon > 0), JUP = C.A.find(a => a.name === 'jupiter')
+const HOLE = HOLES[0], RETRO = C.Z.find(z => z.g < 0), FLARE = C.Z.find(z => z.wx), NOVA = C.X[0]
+const EXITS = HOLES.map(a => ({ at: a.exit, from: a.name }))
 const r2 = v => Math.round(v * 100) / 100
-const T_LAST = Math.max(...PFIN)
+const sw = (id, hole) => SWALLOWS.find(e => e.id === id && e.hole === hole)?.t
+const PODIUM_AFTER = PFIN[PORDER[2]]                                                  // the podium is set once 3rd is home
+const T_LAST = PODIUM_AFTER
 export const T = {
-  gate: GATE, suns: 11.2, sunsOut: 13.8, plan: 18.0, swallow: SWALLOW.libra.t, start: r2(SWALLOW.libra.t + 1.0), meanwhile: r2(SWALLOW.libra.t + 3.6),
-  lead: 32.3, follow: 33.6, win: PFIN[PORDER[0]], line: r2(PFIN[PORDER[0]] + 0.4), mid: 48.6, back: 52.6, last: T_LAST,
+  gate: GATE, holes: 16.0, left: sw('leo', 'start'), right: sw('scorpio', 'shortcut'), exitCut: 19.95, horizon1: sw('scorpio', 'horizon'),
+  meteors: 21.6, meanwhile: 23.2, horizonHold: 43.9, horizon2: sw('sagittarius', 'horizon'), final: 45.2,
+  win: PFIN[PORDER[0]], second: PFIN[PORDER[1]], line: 53.0, again: 54.4, again2: sw('sagittarius', 'start'), third: 56.6, thirdT: PFIN[PORDER[2]],
 }
-T.podium = r2(T_LAST + 0.9)
-export const DURATION = r2(T.podium + 9.0)
+T.podium = r2(PODIUM_AFTER + 1.2)
+export const DURATION = r2(T.podium + 9.2)
 export const STORY_END = DURATION
 
 // ── camera (world y at the top of the frame), precomputed and smoothed; hard cuts between story beats
 const clampY = y => Math.min(y, FINISH_Y + 60)
 const yOf = id => t => clampY(pos(t, ID(id))[1])
 const mid2 = (a, b) => t => (yOf(a)(t) + yOf(b)(t)) / 2
+const pairY = (pi, t) => mid2(...PAIRS[pi])(t)
 const CAM = (() => {
   const out = new Float32Array(NF)
+  const lead = (t, pis) => { const y = pis.map(pi => pairY(pi, t)).sort((a, b) => b - a); return Math.max(y[0] - 1350, Math.min((y[0] + y[1]) / 2 - 1000, y[0] - 700)) }
+  const front3 = [PI_OF('sagittarius'), PI_OF('capricorn'), PI_OF('taurus')]
   const target = t => {
     if (t < GATE + 0.2) return -330
-    if (t < T.suns) { const y = IDS.map(id => yOf(id)(t)).sort((a, b) => b - a), pack = (y[1] + y[2] + y[3] + y[4]) / 4; return Math.max(y[0] - 1500, Math.min(pack - 950, y[0] - 700)) }
-    if (t < T.sunsOut) return 3900 - 980                                              // between two suns
-    if (t < T.plan) return mid2('leo', 'aries')(t) - 900                               // the leaders
-    if (t < T.start) return HOLE.y - 1080                                              // Scorpio's plan · the gulp
-    if (t < T.meanwhile) return EXIT[1] - 900                                          // …back at the start
-    if (t < T.follow) return (mid2('leo', 'aries')(t) + mid2('taurus', 'cancer')(t)) / 2 - 960   // retrograde: the pass
-    if (t < T.line) return mid2('taurus', 'cancer')(t) - 1000                          // the new leaders to the line
-    if (t < T.mid) return FINISH_Y - 1150                                              // at the line
-    if (t < T.back) return Math.min(mid2('pisces', 'scorpio')(t), mid2('sagittarius', 'virgo')(t)) - 900
-    return Math.min(mid2('libra', 'gemini')(t) - 1000, FINISH_Y - 1150)                // the last pair, all the way home
+    if (t < T.holes) return lead(t, PAIRS.map((p, i) => i))
+    if (t < T.exitCut) return 7050 - 1080                                              // the twin black holes
+    if (t < T.meteors) return C.A.find(a => a.name === 'shortcut').exit[1] - 880         // the shortcut… and the horizon
+    if (t < T.meanwhile) return 2650 - 1000                                            // back with the meteors
+    if (t < T.horizonHold) return lead(t, front3)                                      // the duel at the front
+    if (t < T.final) return HOLES.find(a => a.name === 'horizon').y - 1050               // the event horizon again
+    if (t < T.line) return (pairY(PI_OF('taurus'), t) + pairY(PI_OF('capricorn'), t)) / 2 - 1000   // the final stretch
+    if (t < T.again) return FINISH_Y - 1150                                            // the line
+    if (t < T.third) return 7050 - 1080                                                // Sagittarius & Virgo: the left hole
+    if (t < T.podium) return Math.min(pairY(PI_OF('libra'), t) - 1000, FINISH_Y - 1150)
+    return FINISH_Y - 1150
   }
   let c = -330
-  const cuts = [T.suns, T.sunsOut, T.plan, T.start, T.meanwhile, T.follow, T.line, T.mid, T.back]
+  const cuts = [T.holes, T.exitCut, T.meteors, T.meanwhile, T.horizonHold, T.final, T.line, T.again, T.third]
   for (let f = 0; f < NF; f++) {
     const t = f / FPS, tg = target(t)
     if (cuts.some(k => Math.abs(t - k) < 0.5 / FPS)) c = tg
@@ -77,172 +89,192 @@ const CAM = (() => {
 })()
 const camAt = t => { const f = fi(t), a = Math.floor(f), b = Math.min(NF - 1, a + 1); return lerp(CAM[a], CAM[b], f - a) }
 
-// ── reactions: [t0, seconds, sign, text]
-const W = PFIN[PORDER[0]], C2 = PFIN[PORDER[1]], L3 = PFIN[PORDER[2]]
+// ── reactions: [t0, seconds, sign, text] (shown only while the speaker is on screen)
 const SAY = [
   [GATE + 0.15, 1.7, 'aries', 'GO GO GO!!'],
-  [4.6, 1.8, 'leo', 'I lead, | you shine!'],
-  [6.5, 1.4, 'aries', 'deal!'],
-  [7.2, 2.0, 'taurus', 'our pace. | ready?'],
-  [9.3, 1.4, 'cancer', 'ready.'],
-  [11.6, 1.5, 'libra', 'which sun?? | which sun??'],
-  [13.15, 1.5, 'gemini', 'BOTH suns!'],
-  [14.6, 1.6, 'leo', 'still | leading!'],
-  [18.3, 1.6, 'scorpio', 'on three, | we jump.'],
-  [19.95, 1.4, 'pisces', '...we missed!'],
-  [T.start + 0.25, 1.8, 'libra', 'is this... | the start?'],
-  [T.start + 1.6, 1.0, 'gemini', 'AGAIN!'],
-  [T.meanwhile + 0.6, 1.8, 'aries', "gravity's | going UP??"],
-  [T.meanwhile + 2.6, 1.8, 'cancer', 'just float. | with me.'],
-  [T.meanwhile + 4.6, 1.5, 'leo', 'you go left!'],
-  [T.meanwhile + 6.2, 1.5, 'aries', 'no, YOU | go left!'],
-  [T.lead + 0.15, 1.4, 'taurus', 'excuse us.'],
-  [35.0, 1.8, 'capricorn', 'we can | catch them.'],
-  [37.0, 1.5, 'aquarius', 'shortcut?'],
-  [38.7, 1.2, 'capricorn', '...no.'],
-  [W + 0.15, 1.8, 'cancer', 'we... | won?'],
-  [C2 + 0.1, 1.5, 'capricorn', '2nd. | again.'],
-  [L3 + 0.1, 1.4, 'aries', 'third! | together!'],
-  [L3 + 1.6, 2.2, 'taurus', 'at our | own pace.'],
-  [PFIN[PI_OF('pisces')] + 0.1, 1.8, 'pisces', 'we made it!'],
-  [PFIN[PI_OF('virgo')] + 0.1, 1.6, 'virgo', 'on | schedule.'],
-  [T.back + 0.5, 2.0, 'gemini', 'we hit the | suns TWICE.'],
-  [T.back + 2.9, 2.0, 'libra', 'was that | the right way?'],
-  [T.back + 5.3, 2.0, 'gemini', "there's only | one way: ours!"],
-  [T.last - 1.4, 1.6, 'cancer', 'we waited!'],
+  [4.6, 1.6, 'scorpio', 'follow | the plan.'],
+  [6.4, 1.5, 'pisces', "we're | FIRST!"],
+  [9.6, 1.4, 'libra', 'left? | right?'],
+  [12.2, 1.6, 'leo', 'I lead, | you shine!'],
+  [14.0, 1.2, 'aries', 'deal!'],
+  [16.3, 1.6, 'libra', 'left hole | or right?'],
+  [18.0, 1.0, 'scorpio', 'right. | on three.'],
+  [T.left + 0.1, 0.9, 'aries', 'LEFT??'],
+  [T.exitCut + 0.02, 0.55, 'scorpio', "we're | winni—"],
+  [T.meteors + 0.25, 1.4, 'pisces', 'that was | so fast.'],
+  [T.meanwhile + 0.9, 1.5, 'cancer', "gravity's | going UP!"],
+  [T.meanwhile + 2.6, 1.4, 'taurus', 'just | float.'],
+  [T.meanwhile + 4.2, 1.6, 'virgo', 'this is | not the plan.'],
+  [T.meanwhile + 6.0, 1.6, 'capricorn', "we're first. | hold it."],
+  [T.meanwhile + 7.8, 1.6, 'sagittarius', "no, WE'RE | first!"],
+  [T.meanwhile + 9.6, 1.2, 'aquarius', 'boing!'],
+  [34.2, 1.4, 'virgo', 'a MOON?!'],
+  [36.4, 1.4, 'capricorn', 'focus.'],
+  [39.1, 1.3, 'aquarius', 'COMET!'],
+  [41.3, 1.2, 'taurus', 'ow.'],
+  [42.6, 1.3, 'sagittarius', "we're | winning!"],
+  [T.final + 0.5, 1.6, 'capricorn', 'not 2nd | again.'],
+  [T.final + 2.4, 1.6, 'cancer', "they're | so fast."],
+  [T.final + 4.3, 1.4, 'taurus', 'our pace.'],
+  [T.win - 1.4, 0.9, 'cancer', '...now?'],
+  [T.win - 0.45, 0.8, 'taurus', 'now.'],
+  [T.win + 0.15, 1.3, 'cancer', 'did we...?'],
+  [T.third + 0.2, 1.0, 'libra', 'we never | chose!'],
+  [T.thirdT + 0.15, 1.3, 'gemini', '3rd!!'],
 ]
 const STICK = [            // big story stickers (screen space)
-  [T.suns + 0.1, 1.8, 'BETWEEN TWO SUNS…', GOLD, INK],
-  [T.plan + 0.05, 1.6, "SCORPIO'S PLAN…", PINK, INK],
-  [T.swallow + 0.02, 0.95, 'BLACK HOLE!!', PINK, INK],
-  [T.start + 0.05, 1.6, '…BACK TO THE START.', GOLD, INK],
-  [T.meanwhile, 2.0, 'MEANWHILE…', GOLD, INK],
-  [T.lead, 1.8, 'NEW LEADERS.', GOLD, INK],
-  [T.back, 2.2, 'AND LIBRA & GEMINI…', BONE, INK],
+  [8.8, 1.6, 'METEOR SHOWER!', GOLD, INK],
+  [T.holes + 0.05, 1.6, 'TWIN BLACK HOLES.', PINK, INK],
+  [T.left + 0.02, 0.48, 'LEFT HOLE!!', PINK, INK],
+  [T.right + 0.02, 0.32, 'SHORTCUT!!', GOLD, INK],
+  [T.exitCut + 0.02, 0.27, 'SHORTCUT!!', GOLD, INK],
+  [T.horizon1 + 0.02, 1.3, '…EVENT HORIZON.', PINK, INK],
+  [T.meteors + 0.02, 1.5, '…BACK TO THE METEORS.', GOLD, INK],
+  [T.meanwhile, 1.8, 'MEANWHILE, UP FRONT…', GOLD, INK],
+  [T.horizon2 + 0.02, 1.0, 'EVENT HORIZON!!', PINK, INK],
+  [T.final + 0.02, 1.6, 'FINAL STRETCH.', GOLD, INK],
+  [T.line + 0.05, 2.0, 'BY 0.12 SECONDS.', GOLD, INK],
+  [T.again + 0.05, 0.8, 'SAGITTARIUS & VIRGO…', BONE, INK],
+  [T.again2 + 0.03, 1.2, '…AGAIN.', PINK, INK],
 ]
 const ORD = n => n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th')
 
 function mood(id, t) {
   const pi = PI_OF(id), fin = PFIN[pi], place = PORDER.indexOf(pi)
-  if (t > fin) return place === 0 || id === 'pisces' || id === 'scorpio' ? 'heart' : place < 3 ? 'happy' : 'wink'
+  if (t > fin) return place === 0 ? 'heart' : place < 3 ? 'happy' : 'wink'
   if (t < GATE) return id === 'aries' || id === 'leo' ? 'squint' : 'happy'
-  if (id in SWALLOW && t > SWALLOW[id].t && t < SWALLOW[id].t + 2.4) return 'wide'
-  if ((id === 'libra' || id === 'gemini') && t > 11.4 && t < 13.2) return 'wide'
-  if (id === 'taurus' || id === 'cancer') return t > T.meanwhile ? 'heart' : 'happy'
-  if (id === 'leo' || id === 'aries') return t > T.meanwhile + 4.4 && t < T.lead + 2 ? 'eyeroll' : 'squint'
-  if (id === 'capricorn') return 'squint'
+  if (SWALLOWS.some(e => e.id === id && t > e.t && t < e.t + 2.2)) return 'wide'
+  if (id === 'taurus' || id === 'cancer') return t > T.final ? 'squint' : 'happy'
+  if (id === 'capricorn' || id === 'sagittarius') return 'squint'
   if (RETRO && retroOn(RETRO, t)) { const y = pos(t, ID(id))[1]; if (y > RETRO.y0 && y < RETRO.y1) return 'wide' }
   return 'happy'
 }
+
 function makeBuild(cfg) {
-  const { camAt, SAY, STICK, focus = null, end = null, endT = T.podium } = cfg
+  const { camAt, SAY, STICK, focus = null, end = null, endT = T.podium, dur = DURATION } = cfg
   const FP = focus ? PI_OF(focus[0]) : -1
   return async function build(stage) {
   try { await Promise.all(["800 34px Inter", "800 42px Inter", "800 64px Inter", "700 26px 'Space Mono'", "italic 500 56px 'EB Garamond'"].map(f => document.fonts.load(f))) } catch (_) {}
   const root = fill(stage, { background: '#05040c' })
   const skyC = layerCanvas(root), sx = skyC.getContext('2d')
   const cv = layerCanvas(root), x = cv.getContext('2d')
-  const { S, P, M, W, SHELF, SIGNS: SECTIONS } = COURSE
-  const SECTIONS2 = [...SECTIONS.filter(q => q[1] !== 'WORMHOLE EXIT'), [EXIT[1] - 150, 'WORMHOLE EXIT (MOVED!)']]
+  const { S, P, M, W, SHELF, SIGNS: SECTIONS } = C
 
   const px = (cx, cy, s, col) => { x.fillStyle = col; x.fillRect(Math.round(cx - s / 2), Math.round(cy - s / 2), s, s) }
   function rail(s, col, cam) { const [x1, y1, x2, y2, th] = s; x.lineWidth = th + 10; x.strokeStyle = INK; x.beginPath(); x.moveTo(x1, y1 - cam); x.lineTo(x2, y2 - cam); x.stroke(); x.lineWidth = th; x.strokeStyle = col; x.stroke() }
   const vis = (y, m = 200) => y > -m && y < 1920 + m
+  const disc = (cx, cy, r, col) => { x.fillStyle = INK; x.beginPath(); x.arc(cx, cy, r + 6, 0, Math.PI * 2); x.fill(); x.fillStyle = col; x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fill() }
 
-  function retroZone(cam, t) {
-    const y0 = RETRO.y0 - cam, y1 = RETRO.y1 - cam; if (y1 < -50 || y0 > 1970) return
-    const on = retroOn(RETRO, t)
-    x.fillStyle = on ? 'rgba(255,120,190,0.18)' : 'rgba(255,120,190,0.07)'; x.fillRect(97, y0, 886, y1 - y0)
-    x.strokeStyle = 'rgba(255,143,177,0.5)'; x.lineWidth = 4; x.setLineDash([18, 14]); x.strokeRect(97, y0, 886, y1 - y0); x.setLineDash([])
-    if (on) { x.fillStyle = PINK; x.font = `800 44px ${INTER}`; x.textAlign = 'center'; for (let k = 0; k < 4; k++) { const ay = y1 - ((t * 260 + k * 215) % (y1 - y0)); x.fillText('↑', 200 + k * 230, ay) } }
+  function zones(cam, t) {
+    if (RETRO) { const y0 = RETRO.y0 - cam, y1 = RETRO.y1 - cam; if (y1 > -50 && y0 < 1970) {
+      const on = retroOn(RETRO, t)
+      x.fillStyle = on ? 'rgba(255,120,190,0.18)' : 'rgba(255,120,190,0.07)'; x.fillRect(97, y0, 886, y1 - y0)
+      x.strokeStyle = 'rgba(255,143,177,0.5)'; x.lineWidth = 4; x.setLineDash([18, 14]); x.strokeRect(97, y0, 886, y1 - y0); x.setLineDash([])
+      if (on) { x.fillStyle = PINK; x.font = `800 44px ${INTER}`; x.textAlign = 'center'; for (let k = 0; k < 4; k++) { const ay = y1 - ((t * 260 + k * 215) % (y1 - y0)); x.fillText('↑', 200 + k * 230, ay) } } } }
+    if (FLARE) { const y0 = FLARE.y0 - cam, y1 = FLARE.y1 - cam; if (y1 > -50 && y0 < 1970) {
+      const on = retroOn(FLARE, t)
+      x.fillStyle = on ? 'rgba(255,150,60,0.20)' : 'rgba(255,150,60,0.06)'; x.fillRect(97, y0, 886, y1 - y0)
+      x.strokeStyle = 'rgba(255,170,90,0.5)'; x.lineWidth = 4; x.setLineDash([18, 14]); x.strokeRect(97, y0, 886, y1 - y0); x.setLineDash([])
+      if (on) for (let k = 0; k < 14; k++) { const ax = 100 + ((t * 900 + k * 173) % 880), ay = y0 + 40 + (k * 61) % (y1 - y0 - 80); x.fillStyle = k % 2 ? '#ffb35c' : '#ffd36b'; x.fillRect(ax, ay, 70, 8); x.fillRect(ax + 60, ay - 6, 12, 20) } } }
   }
-  function blackHole(cam, t) {
-    const cy = HOLE.y - cam; if (!vis(cy, 300)) return
-    for (let k = 0; k < 46; k++) {                      // accretion swirl
-      const a = t * (1.6 + (k % 5) * 0.25) + k * 0.73, rr = 58 + (k * 37 % 90)
-      px(HOLE.x + Math.cos(a) * rr, cy + Math.sin(a) * rr * 0.45, 10, k % 3 ? '#ff9a3c' : '#c9a6ff')
+  function holes(cam, t) {
+    for (const h of HOLES) {
+      const cy = h.y - cam; if (!vis(cy, 300)) continue
+      const hot = h.name === 'horizon' ? '#ff5a7a' : h.name === 'shortcut' ? '#7dffb0' : '#ff9a3c'
+      for (let k = 0; k < 42; k++) { const a = t * (1.6 + (k % 5) * 0.25) + k * 0.73, rr = 52 + (k * 37 % 80); px(h.x + Math.cos(a) * rr, cy + Math.sin(a) * rr * 0.45, 10, k % 3 ? hot : '#c9a6ff') }
+      for (let k = 4; k >= 1; k--) { x.fillStyle = `rgba(120,60,200,${0.07 * k})`; x.beginPath(); x.arc(h.x, cy, 48 + k * 24, 0, Math.PI * 2); x.fill() }
+      x.fillStyle = '#000'; x.beginPath(); x.arc(h.x, cy, 48, 0, Math.PI * 2); x.fill()
+      x.strokeStyle = hot; x.lineWidth = 5; x.beginPath(); x.arc(h.x, cy, 52, 0, Math.PI * 2); x.stroke()
+      const tag = h.name === 'start' ? 'TO START' : h.name === 'shortcut' ? 'SHORTCUT' : null
+      if (tag) label(x, h.x, cy + 120, tag, 1, { size: 24, bg: hot, rot: 0.03 })
+      for (const e of SWALLOWS) {                         // the gulp: a shrinking spiral ghost
+        if (e.hole !== h.name) continue
+        const d = t - e.t; if (d < 0 || d > 0.7) continue
+        const k = 1 - d / 0.7, a = d * 14
+        drawStarChar(x, h.x + Math.cos(a) * 60 * k, cy + Math.sin(a) * 30 * k, 92 * k, t, { color: SIGN[e.id].color, mood: 'wide', seed: 3 })
+      }
     }
-    for (let k = 4; k >= 1; k--) { x.fillStyle = `rgba(120,60,200,${0.07 * k})`; x.beginPath(); x.arc(HOLE.x, cy, 52 + k * 26, 0, Math.PI * 2); x.fill() }
-    x.fillStyle = '#000'; x.beginPath(); x.arc(HOLE.x, cy, 52, 0, Math.PI * 2); x.fill()
-    x.strokeStyle = 'rgba(255,190,120,0.9)'; x.lineWidth = 5; x.beginPath(); x.arc(HOLE.x, cy, 56, 0, Math.PI * 2); x.stroke()
-    for (const [id, e] of Object.entries(SWALLOW)) {      // the gulp: a shrinking spiral ghost
-      const d = t - e.t; if (d < 0 || d > 0.7) continue
-      const k = 1 - d / 0.7, a = d * 14
-      drawStarChar(x, HOLE.x + Math.cos(a) * 60 * k, cy + Math.sin(a) * 30 * k, 92 * k, t, { color: SIGN[id].color, mood: 'wide', seed: 3 })
+    for (const ex of EXITS) {                              // where each hole spits you out
+      const [wx, wy] = ex.at, cy = wy - cam; if (!vis(cy, 200)) continue
+      for (let k = 0; k < 24; k++) { const a = -t * 2.4 + k * 0.52, rr = 34 + (k % 6) * 10; px(wx + Math.cos(a) * rr, cy + Math.sin(a) * rr * 0.5, 8, k % 2 ? '#8fe3ff' : BONE) }
+      for (const e of SWALLOWS) { if (e.hole !== ex.from) continue; const d = t - e.t; if (d >= 0 && d < 0.6) sparkles(x, t, wx, cy, e.t, 12, 160, 5) }
     }
+    if (JUP) { const cy = JUP.y - cam; if (vis(cy, 500)) { for (let k = 0; k < 3; k++) { const rr = 200 + ((t * 60 + k * 100) % 300); x.strokeStyle = `rgba(242,199,92,${(0.25 * (1 - (rr - 200) / 300)).toFixed(3)})`; x.lineWidth = 4; x.beginPath(); x.arc(JUP.x, cy, rr, 0, Math.PI * 2); x.stroke() } } }
   }
-  function wormhole(cam, t) {
-    const [wx, wy] = EXIT, cy = wy - cam; if (!vis(cy, 200)) return
-    for (let k = 0; k < 30; k++) { const a = -t * 2.4 + k * 0.42, rr = 40 + (k % 6) * 12; px(wx + Math.cos(a) * rr, cy + Math.sin(a) * rr * 0.5, 9, k % 2 ? '#8fe3ff' : BONE) }
-    for (const e of Object.values(SWALLOW)) { const d = t - e.t; if (d >= 0 && d < 0.6) sparkles(x, t, wx, cy, e.t, 12, 160, 5) }
+  function nova(cam, t) {
+    if (!NOVA) return
+    const cy = NOVA.y - cam; if (!vis(cy, 500)) return
+    const ph = ((t % NOVA.period) + NOVA.period) % NOVA.period, on = ph < NOVA.on, warn = ph > NOVA.period - 0.8
+    if (on || ph < 0.7) { const rr = 70 + ph * 900; x.strokeStyle = `rgba(255,240,180,${(0.8 * (1 - ph / 0.7)).toFixed(3)})`; x.lineWidth = 16; x.beginPath(); x.arc(NOVA.x, cy, rr, 0, Math.PI * 2); x.stroke() }
+    const pulse = warn ? 1 + 0.12 * Math.sin(t * 40) : 1
+    for (let k = 0; k < 16; k++) { const a = k * Math.PI / 8 + t, rr = (NOVA.core + 20 + 10 * Math.sin(t * 6 + k)) * pulse; px(NOVA.x + Math.cos(a) * rr, cy + Math.sin(a) * rr, 14, warn ? '#ffffff' : '#ffd36b') }
   }
-  function saturn(cam, t) {
-    const p = P.find(q => q[2] > 100); if (!p) return
-    const cy = p[1] - cam; if (!vis(cy, 300)) return
-    x.strokeStyle = '#e9d39a'; x.lineWidth = 10; x.beginPath(); x.ellipse(p[0], cy, 330, 70, -0.12, Math.PI, Math.PI * 2); x.stroke()
-    x.fillStyle = INK; x.beginPath(); x.arc(p[0], cy, p[2] + 5, 0, Math.PI * 2); x.fill()
-    const bands = ['#e8c27a', '#d9a55a', '#f0d79c', '#c98e4a', '#e8c27a']
-    x.save(); x.beginPath(); x.arc(p[0], cy, p[2], 0, Math.PI * 2); x.clip()
-    bands.forEach((c, i) => { x.fillStyle = c; x.fillRect(p[0] - p[2], cy - p[2] + i * (2 * p[2] / 5), 2 * p[2], 2 * p[2] / 5 + 1) })
-    x.restore()
-    x.strokeStyle = '#e9d39a'; x.lineWidth = 10; x.beginPath(); x.ellipse(p[0], cy, 330, 70, -0.12, 0, Math.PI); x.stroke()
+  function planets(cam, t) {
+    for (const p of P) {
+      if (p[2] < 50) continue
+      const cy = p[1] - cam; if (!vis(cy, 300)) continue
+      if (p[2] > 100) {                                  // Jupiter: bands + the great red spot
+        x.fillStyle = INK; x.beginPath(); x.arc(p[0], cy, p[2] + 6, 0, Math.PI * 2); x.fill()
+        const bands = ['#e9d3b0', '#c98e5a', '#f0dcc0', '#b9774a', '#e8c8a0', '#c98e5a', '#f0dcc0']
+        x.save(); x.beginPath(); x.arc(p[0], cy, p[2], 0, Math.PI * 2); x.clip(); bands.forEach((c, i) => { x.fillStyle = c; x.fillRect(p[0] - p[2], cy - p[2] + i * (2 * p[2] / 7), 2 * p[2], 2 * p[2] / 7 + 1) })
+        x.fillStyle = '#c0503a'; x.beginPath(); x.ellipse(p[0] + 45, cy + 30, 34, 18, 0, 0, Math.PI * 2); x.fill(); x.restore()
+      } else {                                           // the supernova's core
+        const g = x.createRadialGradient(p[0], cy, 6, p[0], cy, p[2]); g.addColorStop(0, '#ffffff'); g.addColorStop(0.5, '#ffe08a'); g.addColorStop(1, '#ff8a3c')
+        x.fillStyle = INK; x.beginPath(); x.arc(p[0], cy, p[2] + 6, 0, Math.PI * 2); x.fill(); x.fillStyle = g; x.beginPath(); x.arc(p[0], cy, p[2], 0, Math.PI * 2); x.fill()
+      }
+    }
   }
   function movers(cam, t) {
     for (const m of M) {
       const [mx, my] = m.p(t), cy = my - cam; if (!vis(cy, 120)) continue
-      if (m.kind === 'rock') {
-        x.fillStyle = INK; x.beginPath(); x.arc(mx, cy, m.r + 5, 0, Math.PI * 2); x.fill()
-        x.fillStyle = '#8f88a8'; x.beginPath(); x.arc(mx, cy, m.r, 0, Math.PI * 2); x.fill()
-        px(mx - m.r * 0.3, cy - m.r * 0.2, m.r * 0.45, '#6d6688'); px(mx + m.r * 0.35, cy + m.r * 0.3, m.r * 0.3, '#6d6688')
-      } else if (m.kind === 'sun') {
-        for (let k = 0; k < 12; k++) { const a = k * Math.PI / 6 + t * 0.8, rr = m.r + 14 + 6 * Math.sin(t * 5 + k); px(mx + Math.cos(a) * rr, cy + Math.sin(a) * rr, 12, '#ffd36b') }
-        x.fillStyle = INK; x.beginPath(); x.arc(mx, cy, m.r + 5, 0, Math.PI * 2); x.fill()
-        const g = x.createRadialGradient(mx - 18, cy - 18, 6, mx, cy, m.r); g.addColorStop(0, '#fff6c9'); g.addColorStop(0.6, '#ffc24a'); g.addColorStop(1, '#f08a2c')
-        x.fillStyle = g; x.beginPath(); x.arc(mx, cy, m.r, 0, Math.PI * 2); x.fill()
+      if (m.kind === 'meteor') {
+        for (let k = 1; k < 9; k++) px(mx + Math.sin(k) * 4, cy - k * 24, Math.max(4, 24 - k * 2.4), k % 2 ? '#ffb35c' : '#ffd36b')
+        disc(mx, cy, m.r, '#9a7a6a'); px(mx - 8, cy - 6, 12, '#7a5a4a'); px(mx + 10, cy + 8, 8, '#7a5a4a')
+      } else if (m.kind === 'moon') {
+        disc(mx, cy, m.r, '#d8d4e8'); px(mx - 10, cy - 8, 12, '#a9a3c0'); px(mx + 12, cy + 10, 9, '#a9a3c0')
       } else if (m.kind === 'comet') {
-        for (let k = 1; k < 16; k++) px(mx - k * 26, cy + Math.sin(t * 9 + k) * 4, Math.max(4, 30 - k * 1.6), k % 2 ? '#8fe3ff' : BONE)
-        x.fillStyle = INK; x.beginPath(); x.arc(mx, cy, m.r + 5, 0, Math.PI * 2); x.fill()
-        x.fillStyle = '#eafcff'; x.beginPath(); x.arc(mx, cy, m.r, 0, Math.PI * 2); x.fill()
+        const dir = m.v(t)[0] > 0 ? -1 : 1
+        for (let k = 1; k < 16; k++) px(mx + dir * k * 26, cy + Math.sin(t * 9 + k) * 4, Math.max(4, 30 - k * 1.6), k % 2 ? '#8fe3ff' : BONE)
+        disc(mx, cy, m.r, '#eafcff')
       }
     }
   }
-  function wheel(cam, t) {
+  function beams(cam, t) {
     for (const wh of W) {
       const cy = wh.cy - cam; if (!vis(cy, 400)) continue
-      x.strokeStyle = 'rgba(242,199,92,0.35)'; x.lineWidth = 4; x.beginPath(); x.arc(wh.cx, cy, wh.r1 + 22, 0, Math.PI * 2); x.stroke()
-      for (const s of wheelSpokes(wh, t)) rail([s[0], s[1], s[2], s[3], s[4]], GOLD, cam)
-      SIGNS.forEach((sg, i) => { const a = wh.w * t + (i + 0.5) * 2 * Math.PI / 12; x.font = `700 34px 'Segoe UI Symbol', 'Noto Sans Symbols 2', serif`; x.fillStyle = sg.color; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(sg.glyph + '︎', wh.cx + Math.cos(a) * (wh.r1 + 22), cy + Math.sin(a) * (wh.r1 + 22)) })
-      x.fillStyle = INK; x.beginPath(); x.arc(wh.cx, cy, wh.r0 + 6, 0, Math.PI * 2); x.fill(); x.fillStyle = GOLD; x.beginPath(); x.arc(wh.cx, cy, wh.r0, 0, Math.PI * 2); x.fill()
+      x.strokeStyle = 'rgba(143,227,255,0.25)'; x.lineWidth = 4; x.beginPath(); x.arc(wh.cx, cy, wh.r1 + 18, 0, Math.PI * 2); x.stroke()
+      for (const s of wheelSpokes(wh, t)) rail([s[0], s[1], s[2], s[3], s[4]], '#8fe3ff', cam)
+      disc(wh.cx, cy, wh.r0 + 4, BONE)
     }
   }
   function track(cam, t) {
-    retroZone(cam, t); saturn(cam, t); wormhole(cam, t)
+    zones(cam, t); planets(cam, t)
     const fy = FINISH_Y - cam
     if (vis(fy, 60)) { for (let i = 0; i < 18; i++) for (let j = 0; j < 2; j++) { x.fillStyle = (i + j) % 2 ? INK : BONE; x.fillRect(97 + i * 49, fy - 24 + j * 24, 49, 24) } label(x, 540, fy - 70, 'FINISH', 1, { size: 34, bg: GOLD, rot: -0.03 }) }
-    for (const [y, txt] of SECTIONS2) { if (txt.startsWith('WORMHOLE') && t < T.swallow - 0.5) continue; const sy = y - cam; if (vis(sy, 60)) label(x, 540, sy, txt, 1, { size: 28, bg: PINK, rot: 0.02 }) }
+    for (const [y, txt] of SECTIONS) { const sy = y - cam; if (vis(sy, 60)) label(x, 540, sy, txt, 1, { size: 28, bg: PINK, rot: 0.02 }) }
     x.lineCap = 'round'
     for (const s of S) { if (Math.max(s[1], s[3]) - cam < -40 || Math.min(s[1], s[3]) - cam > 1960) continue; rail(s, BONE, cam) }
     if (t < GATE + 0.25) { x.save(); x.globalAlpha = clamp(1 - (t - GATE) / 0.25); rail(SHELF, GOLD, cam); x.restore() }
-    for (const [ppx, py, pr] of P) { if (pr > 100) continue; const sy = py - cam; if (sy < -30 || sy > 1950) continue; x.fillStyle = INK; x.fillRect(ppx - pr - 4, sy - pr - 4, 2 * pr + 8, 2 * pr + 8); x.fillStyle = GOLD; x.fillRect(ppx - pr, sy - pr, 2 * pr, 2 * pr); x.fillStyle = '#fff3c4'; x.fillRect(ppx - pr + 3, sy - pr + 3, 5, 5) }
-    wheel(cam, t); movers(cam, t); blackHole(cam, t)
-  }
-
-  function cookie(cx, cy) {
-    const C = ['.KKKK.', 'KccdcK', 'KcccdK', 'KdcccK', 'KccdcK', '.KKKK.'], col = { K: INK, c: '#d9a55a', d: '#6b3b1f' }, s = 6
-    C.forEach((row, j) => [...row].forEach((ch, i) => { if (ch !== '.') { x.fillStyle = col[ch]; x.fillRect(cx + (i - 3) * s, cy + (j - 3) * s, s, s) } }))
+    for (const p of P) {
+      const [ppx, py, pr, e] = p; if (pr >= 50) continue; const sy = py - cam; if (sy < -40 || sy > 1960) continue
+      if (e) { disc(ppx, sy, pr, PINK); x.fillStyle = '#ffd1e0'; x.beginPath(); x.arc(ppx - pr * 0.3, sy - pr * 0.3, pr * 0.3, 0, Math.PI * 2); x.fill() }    // pinball bumper
+      else { x.fillStyle = INK; x.fillRect(ppx - pr - 4, sy - pr - 4, 2 * pr + 8, 2 * pr + 8); x.fillStyle = GOLD; x.fillRect(ppx - pr, sy - pr, 2 * pr, 2 * pr); x.fillStyle = '#fff3c4'; x.fillRect(ppx - pr + 3, sy - pr + 3, 5, 5) }
+    }
+    beams(cam, t); movers(cam, t); nova(cam, t); holes(cam, t)
   }
   function tears(cx, cy, t) {
     for (const d of [-1, 1]) for (let q = 0; q < 4; q++) {
       const ph = ((t * 1.4 + q / 4) % 1), ppx = cx + d * (12 + 22 * ph), py = cy - 6 + 30 * ph * ph
       x.fillStyle = INK; x.fillRect(ppx - 4, py - 4, 9, 11); x.fillStyle = '#8fe3ff'; x.fillRect(ppx - 2, py - 2, 5, 7)
     }
-  }  function ropes(cam, t) {                 // the ties: a sagging rope, gold; Taurus & Cancer's is the striped scarf
+  }
+  function ropes(cam, t) {                 // the ties: a sagging rope, gold; Taurus & Cancer's is the striped scarf
     for (const [a, b] of PAIRS) {
       const [ax, ay] = pos(t, ID(a)), [bx, by] = pos(t, ID(b)), d = Math.sqrt((ax - bx) ** 2 + (ay - by) ** 2)
       if (d > 400 || Math.max(ay, by) - cam < -80 || Math.min(ay, by) - cam > 2000) continue
       const sag = Math.max(0, 150 - d) * 0.5, mx = (ax + bx) / 2, my = (ay + by) / 2 + sag - cam
       x.lineCap = 'round'; x.strokeStyle = INK; x.lineWidth = 14; x.beginPath(); x.moveTo(ax, ay - cam); x.quadraticCurveTo(mx, my, bx, by - cam); x.stroke()
-      if (a === 'taurus') { for (let k = 0; k < 8; k++) { const u0 = k / 8, u1 = (k + 1) / 8, q = u => [(1 - u) ** 2 * ax + 2 * u * (1 - u) * mx + u * u * bx, (1 - u) ** 2 * (ay - cam) + 2 * u * (1 - u) * my + u * u * (by - cam)]; const [p0x, p0y] = q(u0), [p1x, p1y] = q(u1); x.strokeStyle = k % 2 ? SIGN.taurus.color : SIGN.cancer.color; x.lineWidth = 8; x.beginPath(); x.moveTo(p0x, p0y); x.lineTo(p1x, p1y); x.stroke() } }
+      if (a === 'taurus') { for (let k = 0; k < 8; k++) { const q = u => [(1 - u) ** 2 * ax + 2 * u * (1 - u) * mx + u * u * bx, (1 - u) ** 2 * (ay - cam) + 2 * u * (1 - u) * my + u * u * (by - cam)]; const [p0x, p0y] = q(k / 8), [p1x, p1y] = q((k + 1) / 8); x.strokeStyle = k % 2 ? SIGN.taurus.color : SIGN.cancer.color; x.lineWidth = 8; x.beginPath(); x.moveTo(p0x, p0y); x.lineTo(p1x, p1y); x.stroke() } }
       else { x.strokeStyle = '#e9d39a'; x.lineWidth = 6; x.beginPath(); x.moveTo(ax, ay - cam); x.quadraticCurveTo(mx, my, bx, by - cam); x.stroke() }
     }
   }
@@ -251,10 +283,11 @@ function makeBuild(cfg) {
     const order = IDS.map((id, i) => [id, i, pos(t, i)]).sort((a, b) => a[2][1] - b[2][1])
     for (const [id, i, [wx, wy]] of order) {
       const sy = wy - cam; if (sy < -80 || sy > 2000) continue
-      const sw = SWALLOW[id]; if (sw && t > sw.t && t < sw.t + 0.02) continue
+      if (SWALLOWS.some(e => e.id === id && t > e.t && t < e.t + 0.02)) continue
       const s = SIGN[id], fin = FIN[id]
       if (focus && focus.includes(id)) { x.save(); x.globalAlpha = 0.5 + 0.2 * Math.sin(t * 4); x.strokeStyle = s.color; x.lineWidth = 6; x.setLineDash([14, 10]); x.beginPath(); x.arc(wx, sy - 4, 74, t * 0.8, t * 0.8 + Math.PI * 2); x.stroke(); x.setLineDash([]); x.restore() }
-      const hops = fin !== null && t > fin ? [fin + 0.3, fin + 1.0, fin + 1.7] : sw ? [sw.t + 0.05] : null
+      const last = SWALLOWS.filter(e => e.id === id && e.t <= t).pop()
+      const hops = fin !== null && t > fin ? [fin + 0.3, fin + 1.0, fin + 1.7] : last ? [last.t + 0.05] : null
       const bounce = t > GATE && (fin === null || t < fin) ? Math.sin(t * 9 + i) * 0.04 : 0
       drawStarChar(x, wx, sy - 4, 92, t, { color: s.color, glyph: s.glyph, mood: mood(id, t), seed: i + 2, hops, squash: bounce, look: [Math.sign(Math.sin(t * 0.7 + i)) * 0.6, 0.6] })
       if (id === 'pisces' && t > GATE) tears(wx, sy - 4, t)
@@ -286,7 +319,7 @@ function makeBuild(cfg) {
   function stickers(t) {
     for (const [t0, d, text, bg, ink] of STICK) {
       if (t < t0 || t > t0 + d) continue
-      label(x, 540, 560, text, pop01(t, t0 + 0.02, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.3, t0 + d))), { size: 50, bg, color: ink, rot: -0.04 })
+      label(x, 540, 560, text, pop01(t, t0 + 0.02, 0.25, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - Math.min(0.3, d / 3), t0 + d))), { size: 50, bg, color: ink, rot: -0.04 })
     }
   }
   function board(t) {                      // live pairs leaderboard: all six pairs
@@ -324,15 +357,15 @@ function makeBuild(cfg) {
     })
     if (t > t0 + 0.6) sparkles(x, t, 540, 900, t0 + 0.6, 14, 260, 7)
     const hk = pop01(t, t0 + 0.2, 0.4, 1.6) * (1 - ease.inQuad(prog(t, t0 + 4.2, t0 + 4.6)))
-    if (hk > 0) { x.save(); x.globalAlpha = clamp(hk); x.textAlign = 'center'; x.font = `800 60px ${INTER}`; x.fillStyle = BONE; x.fillText('Back of the pack in Race 1.', 540, 520); x.fillStyle = GOLD; x.fillText('First in Race 2.', 540, 596); x.restore() }
+    if (hk > 0) { x.save(); x.globalAlpha = clamp(hk); x.textAlign = 'center'; x.font = `800 60px ${INTER}`; x.fillStyle = BONE; x.fillText('Behind the whole race.', 540, 520); x.fillStyle = GOLD; x.fillText('Ahead by 0.12 seconds.', 540, 596); x.restore() }
     const lk = pop01(t, t0 + 1.8, 0.4, 1.7)
     if (lk > 0) {
-      const [la, lb] = PAIRS[PI_OF('libra')]
+      const [la, lb] = PAIRS[PI_OF('sagittarius')]
       drawStarChar(x, 230, 1610, 104, t, { color: SIGN[la].color, glyph: SIGN[la].glyph, mood: 'happy', seed: 9, pop: clamp(lk), hops: [t0 + 2.6, t0 + 3.8] })
-      drawStarChar(x, 340, 1610, 104, t, { color: SIGN[lb].color, glyph: SIGN[lb].glyph, mood: 'wink', seed: 10, pop: clamp(lk), hops: [t0 + 2.8, t0 + 4.0] })
+      drawStarChar(x, 340, 1610, 104, t, { color: SIGN[lb].color, glyph: SIGN[lb].glyph, mood: 'wide', seed: 10, pop: clamp(lk), hops: [t0 + 2.8, t0 + 4.0] })
       x.save(); x.globalAlpha = clamp(lk); x.textAlign = 'left'; x.textBaseline = 'middle'
-      x.font = `800 36px ${INTER}`; x.fillStyle = BONE; x.fillText('Libra & Gemini: last.', 410, 1588)
-      x.font = `italic 500 40px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText('Everyone waited.', 410, 1638)
+      x.font = `800 34px ${INTER}`; x.fillStyle = BONE; x.fillText('Sagittarius & Virgo: still racing.', 410, 1588)
+      x.font = `italic 500 40px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText('The long way. Twice.', 410, 1638)
       x.restore()
     }
     const ek = pop01(t, t0 + 4.6, 0.45, 1.5)
@@ -345,7 +378,7 @@ function makeBuild(cfg) {
   }
 
   return {
-    start: 0, end: DURATION, root,
+    start: 0, end: dur, root,
     update(t) {
       const cam = camAt(t)
       drawSky(sx, t, { ...SKY_H, dy: -cam * 0.04 })
@@ -357,17 +390,18 @@ function makeBuild(cfg) {
   }
 }
 export const SCENES = [makeBuild({ camAt, SAY, STICK })]
-export { makeBuild, SAY as MAIN_SAY, SIM, IDS, pos, FIN, PAIRS, PFIN, PORDER, PI_OF, SWALLOW, HOLE, EXIT, ID, SIGN, ORD, clampY, NF, r2, T_LAST, PNAME }
+export { makeBuild, SAY as MAIN_SAY, SIM, IDS, pos, FIN, PAIRS, PFIN, PORDER, PI_OF, SWALLOWS, HOLES, ID, SIGN, ORD, clampY, NF, r2, PNAME, C as COURSE, FINISH_Y }
 
-// quiet cue sheet: gate, a soft knock for each binary-star / comet hit, a low whoomp for the swallow, a pop per pair home
+// quiet cue sheet: gate, soft knocks for meteor / moon / comet hits, low whoomps for each gulp, a pop per pair home
 const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5]
-const hits = []; for (const e of SIM.events) if (e.kind === 'sun' || e.kind === 'comet') { if (!hits.some(h => Math.abs(h - e.t) < 1.2)) hits.push(e.t) }
+const hits = []; for (const e of SIM.events) if (['meteor', 'moon', 'comet'].includes(e.kind) && e.t < T.podium) { if (!hits.some(h => Math.abs(h - e.t) < 1.2)) hits.push(e.t) }
+const gulps = []; for (const e of SWALLOWS) if (e.t < T.podium && !gulps.some(g => Math.abs(g - e.t) < 0.3)) gulps.push(e.t)
 export const CUES = [
   ['pluck', r2(GATE), 784, 0.03, 0.4, 0],
   ['whoosh', r2(GATE + 0.05), 0.5, 0.02],
   ...hits.map(h => ['pluck', r2(h), 392, 0.02, 0.3, 0]),
-  ['whoosh', r2(T.swallow), 0.9, 0.03],
-  ...PORDER.map((pi, p) => ['pop', r2(PFIN[pi]), NOTE[(5 - p) % 6], 0.02, 0]),
+  ...gulps.map(g => ['whoosh', r2(g), 0.9, 0.03]),
+  ...PORDER.filter(pi => PFIN[pi] < T.podium).map((pi, p) => ['pop', r2(PFIN[pi]), NOTE[(5 - p) % 6], 0.02, 0]),
   ['bell', r2(T.win + 0.05), 1760, 0.02, 1.6, 0],
   ['glitter', r2(T.podium + 0.6), r2(T.podium + 1.4)],
   ['bell', r2(T.podium + 0.4), 1318.5, 0.018, 1.8, 0],

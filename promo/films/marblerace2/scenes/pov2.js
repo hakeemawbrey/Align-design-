@@ -1,49 +1,56 @@
 // marblerace2 · Race 2 from one pair's point of view. Same baked race as the main film (race2.js), so every version
-// matches frame for frame. The camera stays on the pair; their running conversation plays as bubbles (the main film's
-// lines plus their own); after they finish they comment from the corner while the camera follows whoever is still
-// racing; an end card gives their place and their lesson. Used by promo/films/marblerace2-<pair>/.
+// matches frame for frame. The camera stays on the pair (holding on a black hole for each gulp); their running
+// conversation plays as bubbles (the main film's lines plus their own); after they finish they comment from the corner
+// while the camera follows whoever is still racing; an end card gives their place and their lesson.
 import { clamp } from '../../../src/lib.js'
 import { drawStarChar } from '../../startalk.js'
 import { label, sparkles, pop01, GOLD, BONE, PINK, INK, INTER } from '../../signs3kit.js'
-import { FPS, GATE, FINISH_Y, COURSE } from '../../marblerace/scenes/race.js'
-import { makeBuild, MAIN_SAY, SIM, pos, FIN, PAIRS, PFIN, PORDER, PI_OF, SWALLOW, HOLE, ID, SIGN, ORD, clampY, NF, r2, T_LAST, PNAME } from './index.js'
+import { FPS, GATE } from '../../marblerace/scenes/race.js'
+import { makeBuild, MAIN_SAY, pos, PAIRS, PFIN, PORDER, PI_OF, SWALLOWS, HOLES, ID, SIGN, ORD, clampY, NF, r2, PNAME, COURSE, FINISH_Y } from './index.js'
 
-const RETRO = COURSE.Z[0]
+const RETRO = COURSE.Z.find(z => z.g < 0)
 // [t, seconds, sign, text]: this pair's own lines (film seconds), written against the baked race (bake2.mjs timeline)
 const LINES = {
-  'taurus-cancer': [[3.2, 1.6, 'cancer', 'is the scarf | tight enough?'], [5.0, 1.4, 'taurus', 'perfect.'], [13.4, 1.8, 'taurus', 'ow. rude sun. | again.'],
-    [15.6, 1.6, 'cancer', 'stay | close.'], [18.4, 1.8, 'taurus', 'black hole? | hard pass.'], [21.4, 1.8, 'cancer', 'was that... | Libra?'],
-    [24.8, 1.8, 'cancer', 'up ahead: | retrograde.'], [29.6, 1.6, 'taurus', 'see? | floating.'], [34.6, 1.8, 'cancer', "we're... | in front?"],
-    [36.8, 1.6, 'taurus', 'keep | our pace.'], [38.8, 1.6, 'cancer', 'almost | there.'], [43.6, 2.0, 'cancer', 'we | did it.'],
-    [49.0, 2.0, 'taurus', 'snacks | for everyone?'], [53.0, 2.0, 'cancer', 'go Libra! | go Gemini!'], [57.0, 1.8, 'taurus', "we'll wait."]],
-  'capricorn-aquarius': [[3.2, 1.6, 'capricorn', 'straight | down. go.'], [5.2, 1.8, 'aquarius', 'or a | loop-de-loop?'], [7.4, 1.2, 'capricorn', 'focus.'],
-    [14.9, 1.6, 'aquarius', 'sun! | hi sun!'], [17.0, 1.6, 'capricorn', 'stay | on the line.'], [21.8, 1.8, 'aquarius', 'we skipped | the black hole?'],
-    [24.0, 1.6, 'capricorn', 'rules are | rules.'], [28.6, 1.8, 'aquarius', "gravity's | flipping!"], [31.2, 1.8, 'capricorn', "we're 2nd. | hold it."],
-    [40.4, 1.6, 'aquarius', 'we can | still...'], [46.0, 2.2, 'aquarius', '2nd together. | best lap ever.'], [50.0, 2.0, 'capricorn', '...fine. | it was fun.'],
-    [54.4, 2.0, 'aquarius', 'next race: | MY route.'], [58.0, 1.6, 'capricorn', "...we'll see."]],
-  'leo-aries': [[8.4, 1.6, 'leo', 'smile for | the cameras!'], [10.6, 1.6, 'aries', 'was that | a STAR?'], [12.4, 1.6, 'leo', "we're | still first!"],
-    [17.0, 1.6, 'aries', 'black hole? | skip it!'], [19.6, 1.6, 'leo', 'leading | looks good.'], [22.4, 1.6, 'aries', "who's | behind us?"],
-    [27.4, 1.6, 'leo', 'why are we | going UP?'], [32.6, 1.6, 'aries', "they're | passing us!"], [34.6, 1.6, 'leo', '...take | turns?'],
-    [36.6, 1.8, 'aries', 'your turn. | lead.'], [39.0, 1.8, 'leo', 'together, | then.'], [41.6, 1.6, 'aries', 'GO GO GO!'],
-    [47.0, 2.0, 'leo', '3rd. | still iconic.'], [50.4, 2.0, 'aries', 'we took | turns!'], [54.0, 2.0, 'leo', 'next time: | I lead.'], [56.4, 1.6, 'aries', "we'll | see."]],
-  'pisces-scorpio': [[3.2, 1.6, 'pisces', "I'm so | proud of us."], [5.2, 1.6, 'scorpio', "we haven't | started."], [12.6, 1.6, 'pisces', 'the suns | waved at us!'],
-    [15.0, 1.4, 'scorpio', 'black hole | ahead.'], [16.6, 1.4, 'pisces', "I'm | ready."], [21.6, 1.8, 'scorpio', '...plan B: | just roll.'],
-    [23.8, 1.6, 'pisces', 'I like | plan B.'], [31.0, 1.8, 'pisces', 'floating! | like a dream!'], [33.6, 1.6, 'scorpio', 'hold on | to the rope.'],
-    [38.2, 1.8, 'pisces', 'Saturn has | a hula hoop!'], [41.0, 1.4, 'scorpio', "it's | a ring."], [44.0, 1.6, 'pisces', 'are we | winning?'],
-    [46.0, 1.6, 'scorpio', "we're | together."], [48.0, 1.4, 'pisces', '*sniff*'], [52.4, 2.0, 'scorpio', '4th. | the plan failed.'],
-    [55.0, 2.0, 'pisces', 'best | failure ever.'], [58.4, 1.6, 'scorpio', '...yeah.']],
-  'sagittarius-virgo': [[3.2, 1.8, 'sagittarius', 'which way? | all of them?'], [5.4, 1.6, 'virgo', 'down. | only down.'], [13.6, 1.6, 'sagittarius', 'a sun! | hello!'],
-    [15.8, 1.8, 'virgo', 'that was | not on the map.'], [18.6, 1.8, 'sagittarius', "the map's | a plane now."], [21.0, 1.2, 'virgo', 'I know.'],
-    [23.0, 1.6, 'sagittarius', 'souvenir | stop?'], [25.0, 1.0, 'virgo', 'no.'], [30.0, 1.8, 'sagittarius', 'upside down | is better!'],
-    [32.6, 1.8, 'virgo', 'this was | not the plan.'], [35.2, 1.6, 'sagittarius', 'but is it | fun?'], [37.4, 1.4, 'virgo', '...a little.'],
-    [40.0, 1.4, 'sagittarius', 'hi Saturn!'], [43.0, 1.4, 'virgo', 'left. | LEFT.'], [45.0, 1.2, 'sagittarius', 'right!'], [47.4, 1.6, 'virgo', '...okay. | right.'],
-    [54.0, 2.0, 'sagittarius', 'souvenirs | for everyone!'], [57.0, 2.0, 'virgo', '...it was | a good detour.']],
-  'libra-gemini': [[3.2, 1.6, 'gemini', 'left or | right?'], [5.0, 1.2, 'libra', '...yes?'], [8.0, 1.4, 'gemini', 'you pick!'], [9.6, 1.4, 'libra', "I can't!"],
-    [15.0, 1.4, 'libra', "we're | free!"], [17.2, 1.6, 'gemini', 'black hole! | ooh, shiny.'], [19.2, 1.6, 'libra', "don't look | at it."],
-    [26.0, 1.8, 'libra', "everyone's | so far ahead."], [28.0, 1.2, 'gemini', 'more race | for us!'], [29.6, 1.8, 'libra', 'the suns?? | AGAIN??'],
-    [31.8, 1.6, 'gemini', 'hi again, | suns!'], [35.0, 1.8, 'libra', 'should we have | gone left?'], [37.2, 1.8, 'gemini', 'we went | BOTH ways!'],
-    [40.4, 1.8, 'libra', "I'm sorry I | couldn't choose."], [43.0, 1.6, 'gemini', "I'm not | sorry."], [45.4, 1.2, 'libra', '...why?'],
-    [47.4, 1.8, 'gemini', 'more time | with you.'], [50.0, 1.2, 'libra', '...oh.']],
+  'taurus-cancer': [[3.2, 1.5, 'cancer', 'is the scarf | tight enough?'], [5.0, 1.2, 'taurus', 'perfect.'], [11.3, 1.4, 'taurus', 'meteor. | rude.'],
+    [13.0, 1.6, 'cancer', "everyone's | so far ahead."], [15.0, 1.4, 'taurus', 'our pace.'], [17.2, 1.4, 'cancer', 'which hole?'], [19.0, 1.2, 'taurus', 'neither.'],
+    [21.0, 1.6, 'cancer', 'Leo & Aries | went LEFT.'], [22.8, 1.1, 'taurus', 'noted.'], [28.0, 1.6, 'cancer', "we're | 3rd now!"], [30.4, 1.2, 'taurus', 'boing.'],
+    [32.4, 1.6, 'cancer', "they're | still fighting."], [35.0, 1.4, 'taurus', 'let them.'], [37.2, 1.6, 'cancer', 'is that | Jupiter?'], [39.0, 1.2, 'taurus', 'big.'],
+    [43.0, 1.6, 'cancer', 'Sagittarius | got eaten!'], [54.2, 1.8, 'taurus', 'we did.'], [56.6, 1.8, 'cancer', 'by a | crumb.']],
+  'capricorn-aquarius': [[3.2, 1.5, 'capricorn', 'straight | down. go.'], [5.0, 1.6, 'aquarius', 'or a | loop-de-loop?'], [7.0, 1.0, 'capricorn', 'focus.'],
+    [10.8, 1.4, 'aquarius', 'meteor! | cool!'], [12.6, 1.6, 'capricorn', "5th. | unacceptable."], [15.0, 1.2, 'aquarius', 'wind!'], [17.0, 1.6, 'capricorn', 'no holes. | rules.'],
+    [19.4, 1.4, 'aquarius', 'bye Leo!'], [21.2, 1.6, 'capricorn', 'first. | finally.'], [23.4, 1.6, 'aquarius', 'Sagittarius | is back.'], [26.0, 1.4, 'capricorn', 'not today.'],
+    [34.3, 1.4, 'aquarius', 'moon! | hi!'], [41.0, 1.6, 'capricorn', "we're | ahead!"], [42.8, 1.2, 'aquarius', 'by a lot?'], [44.4, 1.1, 'aquarius', '...whoa.'],
+    [47.6, 1.6, 'aquarius', "something's | behind us."], [49.6, 1.2, 'capricorn', 'who?'], [51.2, 1.1, 'aquarius', 'Taurus.'],
+    [54.4, 1.8, 'capricorn', '2nd. | AGAIN??'], [56.6, 2.0, 'aquarius', 'by 0.12. | so close!']],
+  'sagittarius-virgo': [[3.2, 1.6, 'sagittarius', 'which way? | all of them?'], [5.0, 1.4, 'virgo', 'down. | only down.'], [10.1, 1.3, 'virgo', 'METEOR.'],
+    [12.2, 1.6, 'sagittarius', "we're | winning!"], [14.2, 1.3, 'virgo', 'for now.'], [16.6, 1.6, 'sagittarius', 'a black hole! | two!'], [18.4, 1.4, 'virgo', 'we go | between.'],
+    [20.6, 1.6, 'sagittarius', 'still | winning!'], [22.6, 1.6, 'virgo', 'Capricorn | is close.'], [24.6, 1.6, 'sagittarius', "gravity's | upside down!"],
+    [36.2, 1.6, 'sagittarius', 'race you, | Capricorn!'], [38.4, 1.4, 'virgo', 'we ARE | racing them.'], [40.4, 1.2, 'sagittarius', 'comet!!'],
+    [45.3, 1.6, 'virgo', 'where... | are we?'], [47.2, 1.6, 'sagittarius', 'the meteors! | again!'], [49.4, 1.6, 'virgo', 'this was NOT | on the map.'],
+    [51.6, 1.3, 'sagittarius', 'souvenirs!'], [53.4, 1.6, 'virgo', 'left hole | or right?'], [55.5, 1.4, 'sagittarius', '...left.'], [57.6, 1.6, 'virgo', 'the START??'],
+    [59.6, 1.6, 'sagittarius', 'the long | way!'], [61.6, 1.6, 'sagittarius', 'pulsar! | again!'], [64.6, 1.6, 'virgo', 'I know | this part.'],
+    [67.6, 1.4, 'sagittarius', 'the holes...'], [69.2, 1.4, 'virgo', 'BETWEEN them.'], [71.4, 1.4, 'sagittarius', 'supernova!'], [74.0, 1.6, 'virgo', 'retrograde. | again.'],
+    [77.6, 1.6, 'sagittarius', "we're | experts now."], [81.0, 1.4, 'sagittarius', 'hi Jupiter!'], [84.4, 1.4, 'virgo', 'almost | there.'],
+    [87.2, 1.8, 'virgo', 'not the horizon. | please.'], [89.4, 1.4, 'sagittarius', 'they WAITED!']],
+  'libra-gemini': [[3.2, 1.5, 'gemini', 'left or | right?'], [5.0, 1.2, 'libra', '...yes?'], [7.4, 1.4, 'gemini', 'you pick!'], [11.4, 1.4, 'gemini', 'meteors! | pretty!'],
+    [13.4, 1.6, 'libra', "we're in | the middle."], [15.0, 1.1, 'gemini', 'perfect!'], [18.2, 1.6, 'gemini', 'left one! | no, right!'], [20.2, 1.6, 'libra', '...we went | between.'],
+    [22.2, 1.4, 'gemini', 'by accident!'], [24.4, 1.6, 'libra', "gravity's | flipping."], [26.6, 1.2, 'gemini', 'wheee!'], [29.0, 1.4, 'libra', "we're | 4th?"],
+    [31.0, 1.2, 'gemini', 'boing!'], [33.4, 1.6, 'libra', 'careful. | moons.'], [36.0, 1.6, 'gemini', 'left or right | of Jupiter?'], [38.0, 1.3, 'libra', '...middle.'],
+    [45.4, 1.6, 'gemini', "we're | 3rd now!"], [47.6, 1.6, 'libra', "don't look | at the hole."], [49.6, 1.6, 'gemini', 'we missed | everything!'],
+    [51.6, 1.6, 'libra', 'the middle | worked?'], [53.6, 1.4, 'gemini', 'it worked!']],
+  'pisces-scorpio': [[3.2, 1.3, 'pisces', "I'm so | proud of us."], [8.2, 1.3, 'scorpio', 'still | first.'], [9.8, 1.4, 'pisces', 'a meteor | hit me!'],
+    [11.8, 1.6, 'scorpio', "we're | slipping."], [14.0, 1.4, 'pisces', 'is it | time?'], [15.8, 1.2, 'scorpio', 'almost.'], [23.6, 1.6, 'scorpio', '...plan B: | just roll.'],
+    [25.6, 1.6, 'pisces', 'I like | plan B.'], [28.0, 1.4, 'scorpio', 'last place.'], [30.0, 1.6, 'pisces', 'together, | though.'], [33.0, 1.6, 'pisces', 'a supernova! | so pretty!'],
+    [35.6, 1.4, 'scorpio', "it's | exploding."], [38.0, 1.4, 'pisces', 'floating!'], [41.0, 1.4, 'scorpio', 'hold | the rope.'], [43.6, 1.2, 'pisces', 'boing!'],
+    [47.2, 1.4, 'pisces', 'comets!'], [50.0, 1.6, 'scorpio', 'the horizon. | NOT again.'], [52.6, 1.6, 'pisces', 'we made | it past!'], [56.0, 1.6, 'scorpio', '4th. | probably.'],
+    [58.6, 1.2, 'pisces', '*sniff*'], [60.4, 1.2, 'scorpio', 'almost.']],
+  'leo-aries': [[4.8, 1.4, 'leo', 'smile for | the cameras!'], [6.8, 1.2, 'aries', 'faster!'], [9.0, 1.4, 'leo', 'meteors? | rude.'], [10.6, 1.3, 'aries', "we're | 3rd!"],
+    [15.6, 1.4, 'leo', 'still | leading!'], [17.4, 1.4, 'aries', 'left? | right?'], [20.4, 1.6, 'leo', 'where | are we?'], [22.2, 1.6, 'aries', 'THE START??'],
+    [24.4, 1.2, 'leo', 'meteor!'], [26.2, 1.4, 'aries', "we're LAST."], [28.2, 1.4, 'leo', 'take turns?'], [30.0, 1.4, 'aries', 'your turn. | lead.'],
+    [32.0, 1.4, 'leo', 'together, | then.'], [34.4, 1.4, 'leo', 'between | the holes!'], [36.2, 1.3, 'aries', 'supernova!'], [38.4, 1.3, 'leo', 'floating...'],
+    [40.4, 1.4, 'aries', "we're | going UP."], [42.6, 1.3, 'leo', 'still up.'], [44.8, 1.6, 'aries', 'I hate | retrograde.'], [47.0, 1.3, 'leo', 'patience.'],
+    [49.0, 1.6, 'aries', 'LEO said | patience?'], [51.4, 1.4, 'leo', "I'm | growing."], [54.0, 1.2, 'aries', 'boing!'], [56.3, 1.3, 'leo', 'a moon?!'],
+    [58.6, 1.4, 'aries', 'comets!'], [61.0, 1.6, 'leo', 'the horizon. | go LEFT.'], [63.2, 1.3, 'aries', 'LEFT!'], [65.0, 1.4, 'leo', 'we made it!'], [67.4, 1.4, 'aries', 'almost | home.']],
 }
 const CARD = {
   'taurus-cancer': ["Taurus & Cancer's side.", ['Go at the pace', 'you can keep together.']],
@@ -56,13 +63,15 @@ const CARD = {
 export { LINES }
 
 export function makePOV2(key) {
-  const focus = key.split('-'), [A, B] = focus, P = PI_OF(A), place = PORDER.indexOf(P) + 1, fin = PFIN[P], sw = SWALLOW[A]
-  const END = r2(T_LAST + 0.9), DURATION = r2(END + 7.2)
+  const focus = key.split('-'), [A, B] = focus, P = PI_OF(A), place = PORDER.indexOf(P) + 1, fin = PFIN[P]
+  const mine = SWALLOWS.filter(e => e.id === A)
+  const END = r2(Math.max(fin, PFIN[PORDER[2]]) + 2.0), DURATION = r2(END + 7.2)
   const mid = t => (clampY(pos(t, ID(A))[1]) + clampY(pos(t, ID(B))[1])) / 2
+  const holeY = name => HOLES.find(h => h.name === name).y
   const CAM = new Float32Array(NF)
   const target = t => {
     if (t < GATE + 0.2) return Math.max(-330, mid(t) - 1050)
-    if (sw && t > sw.t - 1.4 && t < sw.t + 0.9) return HOLE.y - 1000
+    for (const e of mine) if (t > e.t - 1.2 && t < e.t + 0.25) return holeY(e.hole) - 1000
     if (t < fin + 1.2) return mid(t) - 1050
     const run = PAIRS.map((p, i) => i).filter(i => PFIN[i] > t).map(i => (clampY(pos(t, ID(PAIRS[i][0]))[1]) + clampY(pos(t, ID(PAIRS[i][1]))[1])) / 2)
     return (run.length ? Math.max(...run) : FINISH_Y + 60) - 1050
@@ -73,14 +82,13 @@ export function makePOV2(key) {
 
   const SAY = [...MAIN_SAY, ...LINES[key].map(l => [...l, true])].sort((a, b) => a[0] - b[0])
   const STICK = [[GATE + 0.05, 1.8, (PNAME([A, B]) + "'S RACE").toUpperCase(), GOLD, INK]]
-  const hits = []; for (const e of SIM.events) if (focus.includes(e.id) && e.kind === 'sun' && !hits.some(h => Math.abs(h - e.t) < 2.5)) hits.push(e.t)
-  for (const h of hits) STICK.push([h + 0.05, 1.3, 'BINARY STAR!', GOLD, INK])
-  if (sw) STICK.push([sw.t + 0.02, 0.9, 'BLACK HOLE!!', PINK, INK], [sw.t + 0.92, 1.6, '…BACK TO THE START.', GOLD, INK])
-  let rin = null; for (let f = 0; f < NF; f++) { const t = f / FPS; if (pos(t, ID(A))[1] > RETRO.y0 && (!sw || t > sw.t + 1)) { rin = t; break } }
-  if (rin !== null) STICK.push([rin + 0.7, 1.6, 'RETROGRADE…', PINK, INK])
+  const TXT = { start: ['LEFT HOLE!!', '…BACK TO THE START.'], shortcut: ['SHORTCUT!!', null], horizon: ['EVENT HORIZON!!', '…BACK TO THE METEORS.'] }
+  for (const e of mine) { const [a, b] = TXT[e.hole]; STICK.push([e.t + 0.02, 0.9, a, e.hole === 'shortcut' ? GOLD : PINK, INK]); if (b) STICK.push([e.t + 0.95, 1.5, b, GOLD, INK]) }
+  let rin = null; for (let f = 0; f < NF; f++) { const t = f / FPS, y = pos(t, ID(A))[1]; if (y > RETRO.y0 && y < RETRO.y1) { rin = t; break } }
+  if (rin !== null) STICK.push([rin + 0.5, 1.5, 'RETROGRADE…', PINK, INK])
   if (END - fin > 4) STICK.push([fin + 1.25, 1.8, 'MEANWHILE…', GOLD, INK])
   STICK.sort((a, b) => a[0] - b[0])
-  for (let k = 1; k < STICK.length; k++) if (STICK[k][0] < STICK[k - 1][0] + STICK[k - 1][1]) STICK[k - 1][1] = Math.max(0.6, STICK[k][0] - STICK[k - 1][0] - 0.05)
+  for (let k = 1; k < STICK.length; k++) if (STICK[k][0] < STICK[k - 1][0] + STICK[k - 1][1]) STICK[k - 1][1] = Math.max(0.3, STICK[k][0] - STICK[k - 1][0] - 0.03)
 
   function end(x, t) {
     const ck = clamp((t - fin - 1.2) / 0.4) * (1 - clamp((t - END) / 0.3))
@@ -105,11 +113,10 @@ export function makePOV2(key) {
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5]
   const CUES = [
     ['pluck', r2(GATE), 784, 0.03, 0.4, 0], ['whoosh', r2(GATE + 0.05), 0.5, 0.02],
-    ...hits.map(h => ['pluck', r2(h), 392, 0.025, 0.3, 0]),
-    ...(sw ? [['whoosh', r2(sw.t), 0.9, 0.035]] : []),
+    ...mine.map(e => ['whoosh', r2(e.t), 0.9, 0.035]),
     ['bell', r2(fin + 0.05), place === 1 ? 1760 : 1318.5, 0.022, 1.6, 0],
-    ...PORDER.filter(i => i !== P && PFIN[i] > fin).map(i => ['pop', r2(PFIN[i]), NOTE[(5 - PORDER.indexOf(i)) % 6], 0.015, 0]),
+    ...PORDER.filter(i => i !== P && PFIN[i] > fin && PFIN[i] < END).map(i => ['pop', r2(PFIN[i]), NOTE[(5 - PORDER.indexOf(i)) % 6], 0.015, 0]),
     ['glitter', r2(END + 0.6), r2(END + 1.4)], ['bell', r2(END + 1.45), 1046.5, 0.016, 1.8, 0],
   ].sort((a, b) => a[1] - b[1])
-  return { HOOK: 'Same pairs race. | ' + CARD[key][0], HOOK_STYLE: 'box', HOOK_UNTIL: 2.6, SCENES: [makeBuild({ camAt, SAY, STICK, focus, end, endT: END })], DURATION, STORY_END: DURATION, CUES, T: { gate: GATE, fin, end: END } }
+  return { HOOK: 'Same pairs race. | ' + CARD[key][0], HOOK_STYLE: 'box', HOOK_UNTIL: 2.6, SCENES: [makeBuild({ camAt, SAY, STICK, focus, end, endT: END, dur: DURATION })], DURATION, STORY_END: DURATION, CUES, T: { gate: GATE, fin, end: END } }
 }
