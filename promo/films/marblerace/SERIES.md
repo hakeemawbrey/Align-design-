@@ -59,13 +59,15 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
 4. **The night before Race 2** (one per pair, ~40 s, done: `promo/films/starrace-night-<pair>`, scripts in
    `starrace/episodes.js` NIGHT). Each plants a Race 2 beat: the scarf rope, "I lead, you shine" and the left/left
    tangle, the straight route vs. the shortcut, Scorpio's jump plan, the lane Libra can't pick, the paper-plane map.
-5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~90 s). Same course, pairs tied with 150 px ropes, and the wormhole
-   now spits you out back at the start. Baked in `marblerace/scenes/race2.js` (seed 98, `bake2.mjs`). Result:
-   1 Taurus & Cancer · 2 Capricorn & Aquarius · 3 Leo & Aries · 4 Pisces & Scorpio · 5 Sagittarius & Virgo ·
-   6 Libra & Gemini (caught between the binary suns, swallowed, back to the start; everyone waits at the line).
-   Lesson: "Fastest isn't the point. Your pace, together, is."
-   **Race 2 POVs** (done: `promo/films/marblerace2-<pair>`, ~70 s, `marblerace2/scenes/pov2.js`): the same race from each
-   pair's side, their running conversation, corner commentary after they finish, place out of 6 and their lesson.
+5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~85 s). A new, wilder course (`COURSE2` in race.js): Big Bang drops,
+   a meteor shower, pulsar beams, solar-flare wind, twin black holes (left: back to the start · right: a shortcut),
+   a supernova, Mercury retrograde, asteroid pinball, Jupiter and its moons, comet alley, and the event horizon (a last
+   black hole that throws you back to the meteors). Pairs tied with 150 px ropes. Baked in `race2.js` (seed 44,
+   `bake2.mjs`; Scorpio & Pisces steer for the shortcut hole). Result: 1 Taurus & Cancer (behind all race, won by
+   0.12 s) · 2 Capricorn & Aquarius · 3 Libra & Gemini (never chose, went between the holes) · 4 Pisces & Scorpio
+   (shortcut → event horizon in 0.6 s) · 5 Leo & Aries (left hole) · 6 Sagittarius & Virgo (led, then the event horizon
+   AND the left hole; still racing at the podium). Lesson: "Fastest isn't the point. Your pace, together, is."
+   **Race 2 POVs** (done: `promo/films/marblerace2-<pair>`, 67–100 s, `marblerace2/scenes/pov2.js`).
 6. **Next**: Taurus's arc landed in Race 2 (the pairs race). Open threads for Race 3: Capricorn second twice, Libra & Gemini's comeback, Leo & Aries taking turns.
 
 **Later:** a prequel season (how the stars met, old rivalries). Races and episodes are timed to real sky events
