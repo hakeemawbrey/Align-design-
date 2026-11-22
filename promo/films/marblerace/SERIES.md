@@ -62,10 +62,12 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
 5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~74 s at normal speed, one video). Course 3 (`COURSE3` in race.js):
    narrow, built and filmed close (1.38× zoom): HYPERSPACE boost ramps · AIRLOCK (laser door on a timer) · BOUNCE
    NEBULA trampolines · GALAXY WHEEL · TRAPDOORS · BLACK HOLE (back to the airlock) · SATURN'S RINGS spiral · SUPERNOVA ·
-   MERCURY RETROGRADE · ASTEROID PINBALL · FINAL AIRLOCK · FINAL SPRINT. Countdown, section banners, LEAD CHANGE counter,
-   trails, slow-motion photo finish. Baked in `race2.js` (seed 146, `bake2.mjs`). Result: 1 Taurus & Cancer (by 0.49 s,
-   after trading the lead with Sagittarius & Virgo) · 2 Sagittarius & Virgo · 3 Capricorn & Aquarius (by 0.25 s over
-   Leo & Aries) · 4 Leo & Aries · then Libra & Gemini and Pisces & Scorpio (both sent back by the black hole).
+   MERCURY RETROGRADE · ASTEROID PINBALL · FINAL SPRINT · **THE LAST DOOR** (a laser door right before the line holds
+   everyone, so no lead is safe; just past it a small black hole throws the unlucky back to the final sprint).
+   Baked in `race2.js` (seed 470, `bake2.mjs`; chosen so the pair leading 1.5 s before the end is NOT the winner).
+   Result: Libra & Gemini lead the final stretch and reach the last door first, get through, and the last-second black
+   hole takes them · 1 Taurus & Cancer by 0.008 s (slow motion + photo-finish freeze) · 2 Sagittarius & Virgo ·
+   3 Libra & Gemini (came back anyway) · then Pisces & Scorpio, Capricorn & Aquarius, Leo & Aries (3 black holes).
    Render with `--calm=1`. Lesson: "Fastest isn't the point. Your pace, together, is."
 6. **Next**: Taurus's arc landed in Race 2 (the pairs race). Open threads for Race 3: Capricorn second twice, Libra & Gemini's comeback, Leo & Aries taking turns.
 

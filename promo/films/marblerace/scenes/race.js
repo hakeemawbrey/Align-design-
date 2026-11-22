@@ -155,7 +155,7 @@ export const COURSE2 = (() => {
 // ── COURSE 3 (Race 2, final): a narrow, fast, built course (walls at 190 / 890, filmed close). Segment options (S[5]):
 // { boost } speed pad (px/s² along the rail) · { bounce } trampoline restitution · { gate: {period, on} } a door that is
 // OPEN (no collision) during its 'on' window. SECTIONS carries each section's span and colour for the film.
-export const FINISH_Y3 = 16400
+export const FINISH_Y3 = 16480
 export const COURSE3 = (() => {
   const S = [], P = [], M = [], W = [], A = [], Z = [], X = [], SIGNS = [], SECTIONS = []
   const Lw = 190, Rw = 890, CX = 540
@@ -207,14 +207,16 @@ export const COURSE3 = (() => {
   sec(12380, 13600, 'ASTEROID PINBALL', '#ff5a7a')
   for (let row = 0; row < 5; row++) { const xs = row % 2 ? [435, 645] : [330, 540, 750]; for (const x of xs) P.push([x, 12560 + row * 190, 24, 2.0]) }
   seg(Lw, 13500, 470, 13630); seg(Rw, 13500, 610, 13630)
-  // 11 AIRLOCK 2: everyone bunched up for the finale
-  sec(13640, 14100, 'FINAL AIRLOCK', '#ff5a6e')
-  seg(Lw, 13700, 470, 13840); seg(Rw, 13700, 610, 13840)
-  seg(450, 13880, 630, 13880, 14, { gate: { period: 3.0, on: 1.3 } })
-  // 12 FINAL SPRINT: boost rails to the line
-  sec(14100, FINISH_Y3 + 300, 'FINAL SPRINT', '#7dffb0')
-  seg(Lw, 14200, 760, 14460, 14, { boost: 1700 }); seg(Rw, 14700, 320, 14960, 14, { boost: 1700 }); seg(Lw, 15200, 760, 15460, 14, { boost: 1700 })
-  seg(Rw, 15700, 320, 15960, 14, { boost: 1700 })
+  // 11 FINAL SPRINT: boost rails
+  sec(13640, 15900, 'FINAL SPRINT', '#7dffb0')
+  seg(Lw, 13700, 760, 13960, 14, { boost: 1700 }); seg(Rw, 14200, 320, 14460, 14, { boost: 1700 }); seg(Lw, 14700, 760, 14960, 14, { boost: 1700 })
+  seg(Rw, 15200, 320, 15460, 14, { boost: 1700 })
+  // 12 THE LAST DOOR: a laser door right before the line holds EVERYONE (any lead is gone), then opens; just past it,
+  // a small black hole beside the gap throws the unlucky back to the start of the final sprint
+  sec(15900, FINISH_Y3 + 300, 'THE LAST DOOR', '#ff5a6e')
+  seg(Lw, 15950, 470, 16100); seg(Rw, 15950, 610, 16100)
+  seg(450, 16140, 630, 16140, 14, { gate: { period: 3.2, on: 0.9 } })
+  A.push({ x: 720, y: 16330, k: 7e6, rmax: 190, horizon: 36, exit: [CX, 13650], name: 'lastdoor' })
   seg(Lw, FINISH_Y3 + 230, Rw, FINISH_Y3 + 300, 14)
   return { S, P, M, W, A, Z, X, SHELF, SIGNS, SECTIONS, FINISH: FINISH_Y3, START: { x0: 246, dx: 112 }, LW: Lw, RW: Rw }
 })()

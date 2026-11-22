@@ -2,9 +2,10 @@
 // HYPERSPACE boost ramps · AIRLOCK door (the pack piles up, then pours) · BOUNCE NEBULA trampolines · GALAXY WHEEL ·
 // TRAPDOORS on timers · BLACK HOLE (back up to the airlock) · SATURN'S RINGS spiral (the overtaking zone) · SUPERNOVA ·
 // MERCURY RETROGRADE · ASTEROID PINBALL · FINAL AIRLOCK · FINAL SPRINT. Twelve stars tied in pairs with 150 px ropes.
-// Story (seed 146, baked in marblerace/scenes/race2.js): Leo & Aries lead early · Scorpio's plan: the black hole → back
-// to the airlock · Libra & Gemini follow them in · Taurus & Cancer and Sagittarius & Virgo trade the lead again and
-// again · the final airlock holds them both… Taurus & Cancer get through first and win by 0.49 s (in slow motion).
+// Story (seed 470, baked in marblerace/scenes/race2.js): Leo & Aries, then Pisces & Scorpio, then Capricorn &
+// Aquarius fall into the black hole (back to the airlock) · Libra & Gemini lead the whole final stretch and reach THE
+// LAST DOOR first · the door opens, they're through… and the last-second black hole takes them · Taurus & Cancer beat
+// Sagittarius & Virgo by 0.008 s (slow motion + a photo-finish freeze) · Libra & Gemini still come back for 3rd.
 // Film time ≠ race time: the race runs at full speed except a slow-motion window around the finish (simT / filmT).
 import { prog, lerp, ease, clamp } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
@@ -43,16 +44,20 @@ const sw = id => SWALLOWS.find(e => e.id === id)?.t
 
 // ── race beats (race seconds)
 const W1 = PFIN[0], W2 = PFIN[1], W3 = PFIN[2]
+const swOf = (id, k = 0) => SWALLOWS.filter(e => e.id === id)[k]?.t
 export const T = {
-  gate: GATE, ps: sw('scorpio'), lg: sw('libra'), duel: 37.0, lock: 46.8, win: W1, second: W2, third: W3, meanwhile: r2(W2 + 0.6),
+  gate: GATE, holes: 18.9, la: swOf('leo'), ps: swOf('scorpio'), ca: swOf('capricorn'), exitView: 23.6, again: swOf('leo', 1),
+  door: 50.5, lg: swOf('libra'), win: W1, second: W2, third: W3, meanwhile: 54.9,
 }
-T.podium = r2(PFIN[3] + 0.7)
-// ── slow motion: race time runs at SLOW× from just before the win to just after 2nd
-const SA = r2(W1 - 1.4), SB = r2(W2 + 0.3), SLOW = 0.3, EXTRA = (SB - SA) * (1 / SLOW - 1)
-export const simT = f => f < SA ? f : f < SA + (SB - SA) / SLOW ? SA + (f - SA) * SLOW : f - EXTRA
-export const filmT = s => s < SA ? s : s < SB ? SA + (s - SA) / SLOW : s + EXTRA
+T.podium = r2(W3 + 0.7)
+// ── time map: race time runs at SLOW× from just before the door opens to just after 2nd, with a FREEZE at the win
+const SA = r2(W1 - 1.4), SB = r2(W2 + 0.3), SLOW = 0.3, FZ = 1.6
+const A1 = SA + (W1 - SA) / SLOW, A2 = A1 + FZ + (SB - W1) / SLOW
+export const simT = f => f < SA ? f : f < A1 ? SA + (f - SA) * SLOW : f < A1 + FZ ? W1 : f < A2 ? W1 + (f - A1 - FZ) * SLOW : f - A2 + SB
+export const filmT = s => s < SA ? s : s < W1 ? SA + (s - SA) / SLOW : s < SB ? A1 + FZ + (s - W1) / SLOW : s - SB + A2
 export const DURATION = r2(filmT(T.podium) + 9.2)
 export const STORY_END = DURATION
+const MARGIN = (W2 - W1).toFixed(3)
 
 // lead changes between pairs (for the LEAD CHANGE! counter), from the baked race
 const LEADS = (() => {
@@ -70,18 +75,17 @@ const CAM = (() => {
   const lead = s => { const y = PAIRS.map((p, i) => s >= PFIN[i] ? -1 : pairY(i, s)).sort((a, b) => b - a); return Math.max(y[0] - VIEW * 0.78, Math.min((y[0] + y[2]) / 2 - VIEW * 0.55, y[0] - VIEW * 0.45)) }
   const target = s => {
     if (s < GATE + 0.3) return 280
-    if (s > T.ps - 1.4 && s < T.ps + 0.45) return HOLE.y - VIEW * 0.55                        // Scorpio's plan
-    if (s >= T.ps + 0.45 && s < T.ps + 2.4) return HOLE.exit[1] - VIEW * 0.35                // …back at the airlock
-    if (s > T.lg - 1.3 && s < T.lg + 0.5) return HOLE.y - VIEW * 0.55                         // Libra & Gemini follow
-    if (s < T.duel) return lead(s)
-    if (s < T.lock) return Math.max(...DUO.map(pi => pairY(pi, s))) - VIEW * 0.6           // the duel
-    if (s < W1 - 2.6) return 13880 - VIEW * 0.5                                              // the final airlock
-    if (s < T.meanwhile) return Math.min(Math.max(...DUO.map(pi => pairY(pi, s))) - VIEW * 0.6, FIN_Y + 150 - VIEW)
-    if (s < T.podium) return Math.min(Math.max(pairY(2, s), pairY(3, s)) - VIEW * 0.55, FIN_Y + 150 - VIEW)   // the fight for 3rd
+    if (s > T.holes && s < T.exitView) return HOLE.y - VIEW * 0.55                           // three pairs, one black hole
+    if (s >= T.exitView && s < T.exitView + 1.8) return HOLE.exit[1] - VIEW * 0.4            // …back at the airlock
+    if (s > T.again - 0.7 && s < T.again + 0.45) return HOLE.y - VIEW * 0.55                  // Leo & Aries: again
+    if (s < T.door) return lead(s)
+    if (s < W2 + 0.6) return 16480 + 150 - VIEW                                             // THE LAST DOOR → the line
+    if (s < T.meanwhile) return 16480 + 150 - VIEW
+    if (s < T.podium) return Math.min(pairY(2, s) - VIEW * 0.55, FIN_Y + 150 - VIEW)         // Libra & Gemini come back for 3rd
     return FIN_Y + 150 - VIEW
   }
   let c = 280
-  const cuts = [T.ps - 1.4, T.ps + 0.45, T.ps + 2.4, T.lg - 1.3, T.lg + 0.5, T.duel, T.lock, W1 - 2.6, T.meanwhile]
+  const cuts = [T.holes, T.exitView, T.exitView + 1.8, T.again - 0.7, T.again + 0.45, T.door, T.meanwhile]
   for (let f = 0; f < NF; f++) {
     const s = f / FPS, tg = target(s)
     if (cuts.some(k => Math.abs(s - k) < 0.5 / FPS) || Math.abs(tg - c) > 1600) c = tg
@@ -96,33 +100,29 @@ const camAt = s => { const f = fi(s), a = Math.floor(f), b = Math.min(NF - 1, a 
 const SAY = [
   [GATE + 0.15, 1.6, 'aries', 'GO GO GO!!'],
   [5.0, 1.6, 'leo', 'I lead, | you shine!'], [6.9, 1.2, 'aries', 'deal!'],
-  [9.6, 1.5, 'pisces', "we're | flying!"],
-  [12.2, 1.6, 'taurus', 'our pace.'],
-  [15.8, 1.7, 'scorpio', 'the plan: | the black hole.'], [17.8, 1.4, 'pisces', 'are you | SURE??'],
-  [T.ps - 1.2, 1.0, 'scorpio', 'on three...'],
-  [T.ps + 0.6, 1.5, 'pisces', 'the AIRLOCK??'],
-  [T.lg - 1.2, 1.0, 'gemini', 'ooh, | shiny.'],
-  [26.6, 1.5, 'cancer', "we're... | first?!"],
-  [28.6, 1.6, 'virgo', "Taurus is | AHEAD of us?"], [30.5, 1.4, 'sagittarius', 'not for long!'],
-  [33.6, 1.3, 'taurus', 'steady.'],
-  [T.duel + 0.4, 1.3, 'sagittarius', 'passing!'],
-  [39.6, 1.5, 'cancer', "gravity's | going UP!"], [41.4, 1.4, 'virgo', 'not in | the plan!'], [43.0, 1.0, 'taurus', 'float.'],
-  [44.6, 1.4, 'sagittarius', "we're | ahead!"],
-  [T.lock + 0.3, 1.4, 'cancer', 'the door!'], [T.lock + 0.9, 0.5, 'virgo', 'OPEN!'],
-  [48.7, 1.0, 'taurus', 'now.'],
-  [50.2, 1.3, 'sagittarius', 'catch | them!'], [51.3, 0.8, 'cancer', 'almost...'],
-  [W1 + 0.05, 0.75, 'cancer', 'we WON?!'],
-  [T.meanwhile + 0.5, 1.6, 'capricorn', 'race you, | Leo.'], [T.meanwhile + 2.3, 1.4, 'leo', "it's ON."],
-  [W3 + 0.1, 1.2, 'capricorn', '3rd!'],
+  [9.4, 1.5, 'pisces', "we're | flying!"], [12.0, 1.4, 'taurus', 'our pace.'], [14.5, 1.4, 'libra', 'left? | right?'],
+  [16.6, 1.7, 'scorpio', 'the plan: | the black hole.'],
+  [19.2, 0.9, 'leo', 'shortcut!'], [20.3, 0.9, 'aries', 'NOT a | shortcut!!'], [20.6, 0.7, 'scorpio', 'on three...'],
+  [22.2, 0.9, 'capricorn', 'what are | they DOING?'], [22.6, 0.6, 'aquarius', 'ooh, | can we?'],
+  [T.exitView + 0.2, 1.4, 'capricorn', 'WHY did we | do that?'],
+  [26.6, 1.4, 'gemini', "we're | FIRST!"], [28.4, 1.4, 'libra', 'is that... | good?'], [30.4, 1.2, 'taurus', 'steady.'], [32.2, 1.5, 'virgo', 'Libra is | leading??'],
+  [T.again - 0.6, 0.6, 'aries', 'not AGAIN'],
+  [37.0, 1.2, 'sagittarius', 'passing!'], [39.2, 1.4, 'cancer', "gravity's | going UP!"], [41.0, 1.4, 'virgo', 'not in | the plan!'], [42.8, 1.0, 'taurus', 'float.'],
+  [44.6, 1.3, 'sagittarius', 'catch | them!'], [46.8, 1.3, 'gemini', 'still | FIRST!'], [48.6, 1.3, 'libra', 'is that | a door?'],
+  [T.door + 0.1, 0.7, 'gemini', "we're | first!"], [T.door + 0.4, 0.5, 'cancer', 'the door!'],
+  [51.3, 0.35, 'virgo', 'OPEN!'], [51.6, 0.3, 'libra', 'we did it!'],
+  [51.92, 0.25, 'taurus', 'now.'], [52.17, 0.07, 'gemini', 'NOOO—'],
+  [W2 + 0.2, 1.0, 'cancer', 'we... | won?'], [W2 + 1.3, 1.1, 'virgo', 'by WHAT?'],
+  [T.meanwhile + 0.9, 1.3, 'libra', 'we were | FIRST.'], [T.meanwhile + 2.4, 1.2, 'gemini', 'still | 3rd!!'],
 ]
 const STICK = [            // story stickers (screen space): [race s, seconds, text, bg]
-  [T.ps + 0.02, 0.42, 'BLACK HOLE!!', PINK],
-  [T.ps + 0.47, 1.6, '…BACK TO THE AIRLOCK.', GOLD],
-  [T.lg + 0.02, 0.46, 'BLACK HOLE!!', PINK],
-  [T.lock + 0.02, 1.2, 'FINAL AIRLOCK…', '#ff5a6e'],
-  [W1 - 1.35, 0.9, 'PHOTO FINISH?', BONE],
-  [W1 + 0.02, 0.8, 'TAURUS & CANCER!!', GOLD],
-  [T.meanwhile + 0.05, 1.6, 'THE FIGHT FOR 3RD…', BONE],
+  [T.la + 0.02, 0.5, 'BLACK HOLE!!', PINK], [T.ps + 0.02, 0.5, 'BLACK HOLE!!', PINK], [T.ca + 0.02, 0.36, 'BLACK HOLE!!', PINK],
+  [T.exitView + 0.02, 1.7, '3 PAIRS: BACK TO THE AIRLOCK.', GOLD],
+  [T.again + 0.02, 0.4, 'LEO & ARIES… AGAIN.', PINK],
+  [T.door + 0.02, 0.32, 'THE LAST DOOR.', '#ff5a6e'],
+  [T.lg - 0.06, W1 - T.lg + 0.061, 'LAST-SECOND BLACK HOLE!!', PINK],
+  [W2 + 0.02, 0.6, `BY ${MARGIN} SECONDS.`, GOLD],
+  [T.meanwhile + 0.05, 1.6, 'MEANWHILE… LIBRA & GEMINI.', BONE],
 ]
 // section banners: when the race leader enters each section
 const BANNERS = (() => {
@@ -192,15 +192,19 @@ async function build(stage) {
       const pulse = warn ? 1 + 0.14 * Math.sin(s * 40) : 1
       for (let k = 0; k < 16; k++) { const a = k * Math.PI / 8 + s, rr = (NOVA.core + 22 + 10 * Math.sin(s * 6 + k)) * pulse; x.fillStyle = warn ? '#ffffff' : '#ffd36b'; x.fillRect(NOVA.x + Math.cos(a) * rr - 7, NOVA.y + Math.sin(a) * rr - 7, 14, 14) }
     }
-    if (HOLE && vis(HOLE.y, cam, 400)) {
-      for (let k = 0; k < 48; k++) { const a = s * (1.6 + (k % 5) * 0.25) + k * 0.73, rr = 52 + (k * 37 % 90); x.fillStyle = k % 3 ? '#ff9a3c' : '#c9a6ff'; x.fillRect(HOLE.x + Math.cos(a) * rr - 5, HOLE.y + Math.sin(a) * rr * 0.45 - 5, 10, 10) }
-      for (let k = 4; k >= 1; k--) { x.fillStyle = `rgba(120,60,200,${0.08 * k})`; x.beginPath(); x.arc(HOLE.x, HOLE.y, 48 + k * 26, 0, Math.PI * 2); x.fill() }
-      x.fillStyle = '#000'; x.beginPath(); x.arc(HOLE.x, HOLE.y, 48, 0, Math.PI * 2); x.fill(); x.strokeStyle = '#ffb35c'; x.lineWidth = 5; x.stroke()
-      for (const e of SWALLOWS) { const d = s - e.t; if (d < 0 || d > 0.7) continue; const k = 1 - d / 0.7, a = d * 14; drawStarChar(x, HOLE.x + Math.cos(a) * 60 * k, HOLE.y + Math.sin(a) * 30 * k, 92 * k, s, { color: SIGN[e.id].color, mood: 'wide', seed: 3 }) }
+    for (const H of C.A) {
+      if (!(H.horizon > 0)) continue
+      if (vis(H.y, cam, 400)) {
+        const hot = H.name === 'lastdoor' ? '#ff3a4e' : '#ff9a3c'
+        for (let k = 0; k < 48; k++) { const a = s * (1.6 + (k % 5) * 0.25) + k * 0.73, rr = 52 + (k * 37 % 90); x.fillStyle = k % 3 ? hot : '#c9a6ff'; x.fillRect(H.x + Math.cos(a) * rr - 5, H.y + Math.sin(a) * rr * 0.45 - 5, 10, 10) }
+        for (let k = 4; k >= 1; k--) { x.fillStyle = `rgba(120,60,200,${0.08 * k})`; x.beginPath(); x.arc(H.x, H.y, 48 + k * 26, 0, Math.PI * 2); x.fill() }
+        x.fillStyle = '#000'; x.beginPath(); x.arc(H.x, H.y, 48, 0, Math.PI * 2); x.fill(); x.strokeStyle = hot; x.lineWidth = 5; x.stroke()
+        for (const e of SWALLOWS) { if (e.hole !== H.name) continue; const d = s - e.t; if (d < 0 || d > 0.7) continue; const k = 1 - d / 0.7, a = d * 14; drawStarChar(x, H.x + Math.cos(a) * 60 * k, H.y + Math.sin(a) * 30 * k, 92 * k, s, { color: SIGN[e.id].color, mood: 'wide', seed: 3 }) }
+      }
+      const [ex, ey] = H.exit
+      if (vis(ey, cam, 300)) { for (let k = 0; k < 26; k++) { const a = -s * 2.4 + k * 0.48, rr = 36 + (k % 6) * 10; x.fillStyle = k % 2 ? '#8fe3ff' : BONE; x.fillRect(ex + Math.cos(a) * rr - 4, ey + Math.sin(a) * rr * 0.5 - 4, 8, 8) }
+        for (const e of SWALLOWS) { if (e.hole !== H.name) continue; const d = s - e.t; if (d >= 0 && d < 0.6) sparkles(x, s, ex, ey, e.t, 12, 160, 5) } }
     }
-    const [ex, ey] = HOLE.exit
-    if (vis(ey, cam, 300)) { for (let k = 0; k < 26; k++) { const a = -s * 2.4 + k * 0.48, rr = 36 + (k % 6) * 10; x.fillStyle = k % 2 ? '#8fe3ff' : BONE; x.fillRect(ex + Math.cos(a) * rr - 4, ey + Math.sin(a) * rr * 0.5 - 4, 8, 8) }
-      for (const e of SWALLOWS) { const d = s - e.t; if (d >= 0 && d < 0.6) sparkles(x, s, ex, ey, e.t, 12, 160, 5) } }
   }
   function rails(cam, s, t) {
     for (const sg of S) {
@@ -244,8 +248,8 @@ async function build(stage) {
     }
     if (vis(FIN_Y, cam, 80)) {
       for (let i = 0; i < 14; i++) for (let j = 0; j < 2; j++) { x.fillStyle = (i + j) % 2 ? INK : BONE; x.fillRect(LW + i * 50, FIN_Y - 26 + j * 26, 50, 26) }
-      x.save(); x.shadowColor = GOLD; x.shadowBlur = 30; x.fillStyle = GOLD; x.fillRect(LW - 20, FIN_Y - 230, 20, 230); x.fillRect(RW, FIN_Y - 230, 20, 230); x.fillRect(LW - 20, FIN_Y - 250, RW - LW + 40, 26); x.restore()
-      label(x, 540, FIN_Y - 237, 'FINISH', 1, { size: 34, bg: GOLD, rot: 0 })
+      x.save(); x.shadowColor = GOLD; x.shadowBlur = 24; x.fillStyle = GOLD; x.fillRect(LW, FIN_Y - 32, RW - LW, 6); x.restore()
+      label(x, 540, FIN_Y + 70, 'FINISH', 1, { size: 34, bg: GOLD, rot: 0 })
     }
   }
   function tears(cx, cy, s) {
@@ -297,10 +301,10 @@ async function build(stage) {
     })
   }
   function banners(s) {
-    for (const [s0, d, text, bg] of STICK) { if (s < s0 || s > s0 + d) continue; label(x, 540, 600, text, pop01(s, s0 + 0.02, 0.2, 1.8) * (1 - ease.inQuad(prog(s, s0 + d - Math.min(0.25, d / 3), s0 + d))), { size: 54, bg, color: INK, rot: -0.04 }) }
+    for (const [s0, d, text, bg] of STICK) { if (s < s0 || s > s0 + d) continue; label(x, 540, 600, text, pop01(s, s0 + 0.005, Math.min(0.2, d / 3), 1.8) * (1 - ease.inQuad(prog(s, s0 + d - Math.min(0.25, d / 3), s0 + d))), { size: 54, bg, color: INK, rot: -0.04 }) }
     for (const b of BANNERS) { const d = s - b.s; if (d < 0 || d > 1.3 || STICK.some(([s0, dd]) => s > s0 && s < s0 + dd)) continue
       const k = pop01(s, b.s, 0.2, 1.8) * (1 - ease.inQuad(prog(d, 1.0, 1.3))); label(x, 540, 600, '▸ ' + b.sec.name, k, { size: 46, bg: b.sec.col, color: INK, rot: -0.03 }) }
-    LEADS.forEach((l, n) => { const d = s - l.s; if (d < 0 || d > 1.1) return
+    LEADS.forEach((l, n) => { const d = s - l.s; if (d < 0 || d > 1.1 || s > SA) return
       const k = pop01(s, l.s, 0.18, 2) * (1 - ease.inQuad(prog(d, 0.85, 1.1))); label(x, 540, 700, `LEAD CHANGE #${n + 1}: ${PNAME(PAIRS[l.pi]).toUpperCase()}`, k, { size: 32, bg: BONE, color: INK, rot: 0.02 }) })
   }
   function countdown(s) {
@@ -326,10 +330,17 @@ async function build(stage) {
     x.restore()
   }
   function slowmo(t, s) {
-    if (s < SA || s > SB) return
+    if (t < SA || s > SB) return
     const k = clamp((t - SA) / 0.3) * (1 - clamp((s - SB + 0.08) / 0.08))
-    x.fillStyle = `rgba(0,0,0,${(0.28 * k).toFixed(3)})`; x.fillRect(0, 0, 1080, 150); x.fillRect(0, 1770, 1080, 150)
-    x.save(); x.globalAlpha = k; x.font = `700 30px ${MONO}`; x.fillStyle = BONE; x.textAlign = 'right'; x.fillText('SLOW MOTION ▸▸', 1040, 120); x.restore()
+    x.fillStyle = `rgba(0,0,0,${(0.3 * k).toFixed(3)})`; x.fillRect(0, 0, 1080, 150); x.fillRect(0, 1770, 1080, 150)
+    x.save(); x.globalAlpha = k; x.font = `700 30px ${MONO}`; x.fillStyle = BONE; x.textAlign = 'right'; x.fillText(t > A1 && t < A1 + FZ ? 'PHOTO FINISH ■' : 'SLOW MOTION ▸▸', 1040, 120); x.restore()
+    if (t > A1 && t < A1 + FZ) {                         // the freeze: a flash, the finish line lit, the gap
+      const d = t - A1, fl = clamp(1 - d / 0.25)
+      if (fl > 0) { x.fillStyle = `rgba(255,255,255,${(0.7 * fl).toFixed(3)})`; x.fillRect(0, 0, 1080, 1920) }
+      const cam = camAt(s), fy = (FIN_Y - cam) * ZOOM
+      x.save(); x.shadowColor = GOLD; x.shadowBlur = 30; x.strokeStyle = GOLD; x.lineWidth = 6; x.beginPath(); x.moveTo(0, fy); x.lineTo(1080, fy); x.stroke(); x.restore()
+      label(x, 540, 770, 'PHOTO FINISH', pop01(t, A1 + 0.1, 0.25, 2), { size: 60, bg: GOLD, rot: -0.03 })
+    }
   }
   function podium(t, s) {
     const t0 = filmT(T.podium); if (t < t0) return
@@ -345,14 +356,13 @@ async function build(stage) {
     })
     if (t > t0 + 0.6) sparkles(x, t, 540, 900, t0 + 0.6, 14, 260, 7)
     const hk = pop01(t, t0 + 0.2, 0.4, 1.6) * (1 - ease.inQuad(prog(t, t0 + 4.2, t0 + 4.6)))
-    if (hk > 0) { x.save(); x.globalAlpha = clamp(hk); x.textAlign = 'center'; x.font = `800 58px ${INTER}`; x.fillStyle = BONE; x.fillText('Back of the pack in Race 1.', 540, 520); x.fillStyle = GOLD; x.fillText('First in Race 2.', 540, 596); x.restore() }
+    if (hk > 0) { x.save(); x.globalAlpha = clamp(hk); x.textAlign = 'center'; x.font = `800 58px ${INTER}`; x.fillStyle = BONE; x.fillText('Back of the pack in Race 1.', 540, 520); x.fillStyle = GOLD; x.fillText(`First by ${MARGIN} seconds.`, 540, 596); x.restore() }
     const lk = pop01(t, t0 + 1.8, 0.4, 1.7)
     if (lk > 0) {
-      const sp = ['pisces', 'scorpio', 'libra', 'gemini']
-      sp.forEach((id, q) => drawStarChar(x, 170 + q * 82, 1610, 88, t, { color: SIGN[id].color, glyph: SIGN[id].glyph, mood: q % 2 ? 'wink' : 'happy', seed: 9 + q, pop: clamp(lk), hops: [t0 + 2.6 + q * 0.12, t0 + 3.8 + q * 0.12] }))
+      ;['leo', 'aries'].forEach((id, q) => drawStarChar(x, 220 + q * 110, 1610, 100, t, { color: SIGN[id].color, glyph: SIGN[id].glyph, mood: 'wide', seed: 9 + q, pop: clamp(lk), hops: [t0 + 2.6 + q * 0.12, t0 + 3.8 + q * 0.12] }))
       x.save(); x.globalAlpha = clamp(lk); x.textAlign = 'left'; x.textBaseline = 'middle'
-      x.font = `800 32px ${INTER}`; x.fillStyle = BONE; x.fillText('Two pairs: still racing.', 510, 1588)
-      x.font = `italic 500 38px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText('The black hole liked them.', 510, 1638); x.restore()
+      x.font = `800 34px ${INTER}`; x.fillStyle = BONE; x.fillText('Leo & Aries: 3 black holes.', 400, 1588)
+      x.font = `italic 500 40px 'EB Garamond', Georgia, serif`; x.fillStyle = PINK; x.fillText('Still racing.', 400, 1638); x.restore()
     }
     const ek = pop01(t, t0 + 4.6, 0.45, 1.5)
     if (ek > 0) { x.save(); x.globalAlpha = clamp(ek); x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = `800 54px ${INTER}`; x.fillStyle = BONE; x.fillText("Fastest isn't the point.", 540, 520); x.font = `italic 500 64px 'EB Garamond', Georgia, serif`; x.fillStyle = GOLD; x.fillText('Your pace, together, is.', 540, 596); x.restore() }
@@ -384,7 +394,7 @@ export const CUES = [
   ...gulps.map(g => ['whoosh', r2(filmT(g)), 0.9, 0.035]),
   ...LEADS.map(l => ['pluck', r2(filmT(l.s)), 784, 0.015, 0.25, 0]),
   ...PAIRS.map((p, pi) => PFIN[pi] < T.podium ? ['pop', r2(filmT(PFIN[pi])), NOTE[(5 - pi) % 6], 0.022, 0] : null).filter(Boolean),
-  ['bell', r2(filmT(W1) + 0.05), 1760, 0.024, 2.2, 0],
+  ['bell', r2(A1 + 0.05), 1760, 0.024, 2.2, 0], ['glitter', r2(A1 + 0.1), r2(A1 + 0.9)],
   ['glitter', r2(filmT(T.podium) + 0.6), r2(filmT(T.podium) + 1.4)],
   ['bell', r2(filmT(T.podium) + 0.4), 1318.5, 0.018, 1.8, 0],
 ].sort((a, b) => a[1] - b[1])
