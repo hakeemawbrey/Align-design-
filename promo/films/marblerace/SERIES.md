@@ -64,6 +64,8 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
    1 Taurus & Cancer · 2 Capricorn & Aquarius · 3 Leo & Aries · 4 Pisces & Scorpio · 5 Sagittarius & Virgo ·
    6 Libra & Gemini (caught between the binary suns, swallowed, back to the start; everyone waits at the line).
    Lesson: "Fastest isn't the point. Your pace, together, is."
+   **Race 2 POVs** (done: `promo/films/marblerace2-<pair>`, ~70 s, `marblerace2/scenes/pov2.js`): the same race from each
+   pair's side, their running conversation, corner commentary after they finish, place out of 6 and their lesson.
 6. **Next**: Taurus's arc landed in Race 2 (the pairs race). Open threads for Race 3: Capricorn second twice, Libra & Gemini's comeback, Leo & Aries taking turns.
 
 **Later:** a prequel season (how the stars met, old rivalries). Races and episodes are timed to real sky events
