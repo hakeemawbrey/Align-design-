@@ -134,7 +134,10 @@ function mood(id, t) {
   if (RETRO && retroOn(RETRO, t)) { const y = pos(t, ID(id))[1]; if (y > RETRO.y0 && y < RETRO.y1) return 'wide' }
   return 'happy'
 }
-async function build(stage) {
+function makeBuild(cfg) {
+  const { camAt, SAY, STICK, focus = null, end = null, endT = T.podium } = cfg
+  const FP = focus ? PI_OF(focus[0]) : -1
+  return async function build(stage) {
   try { await Promise.all(["800 34px Inter", "800 42px Inter", "800 64px Inter", "700 26px 'Space Mono'", "italic 500 56px 'EB Garamond'"].map(f => document.fonts.load(f))) } catch (_) {}
   const root = fill(stage, { background: '#05040c' })
   const skyC = layerCanvas(root), sx = skyC.getContext('2d')
@@ -216,7 +219,7 @@ async function build(stage) {
     retroZone(cam, t); saturn(cam, t); wormhole(cam, t)
     const fy = FINISH_Y - cam
     if (vis(fy, 60)) { for (let i = 0; i < 18; i++) for (let j = 0; j < 2; j++) { x.fillStyle = (i + j) % 2 ? INK : BONE; x.fillRect(97 + i * 49, fy - 24 + j * 24, 49, 24) } label(x, 540, fy - 70, 'FINISH', 1, { size: 34, bg: GOLD, rot: -0.03 }) }
-    for (const [y, txt] of SECTIONS2) { const sy = y - cam; if (vis(sy, 60)) label(x, 540, sy, txt, 1, { size: 28, bg: PINK, rot: 0.02 }) }
+    for (const [y, txt] of SECTIONS2) { if (txt.startsWith('WORMHOLE') && t < T.swallow - 0.5) continue; const sy = y - cam; if (vis(sy, 60)) label(x, 540, sy, txt, 1, { size: 28, bg: PINK, rot: 0.02 }) }
     x.lineCap = 'round'
     for (const s of S) { if (Math.max(s[1], s[3]) - cam < -40 || Math.min(s[1], s[3]) - cam > 1960) continue; rail(s, BONE, cam) }
     if (t < GATE + 0.25) { x.save(); x.globalAlpha = clamp(1 - (t - GATE) / 0.25); rail(SHELF, GOLD, cam); x.restore() }
@@ -250,6 +253,7 @@ async function build(stage) {
       const sy = wy - cam; if (sy < -80 || sy > 2000) continue
       const sw = SWALLOW[id]; if (sw && t > sw.t && t < sw.t + 0.02) continue
       const s = SIGN[id], fin = FIN[id]
+      if (focus && focus.includes(id)) { x.save(); x.globalAlpha = 0.5 + 0.2 * Math.sin(t * 4); x.strokeStyle = s.color; x.lineWidth = 6; x.setLineDash([14, 10]); x.beginPath(); x.arc(wx, sy - 4, 74, t * 0.8, t * 0.8 + Math.PI * 2); x.stroke(); x.setLineDash([]); x.restore() }
       const hops = fin !== null && t > fin ? [fin + 0.3, fin + 1.0, fin + 1.7] : sw ? [sw.t + 0.05] : null
       const bounce = t > GATE && (fin === null || t < fin) ? Math.sin(t * 9 + i) * 0.04 : 0
       drawStarChar(x, wx, sy - 4, 92, t, { color: s.color, glyph: s.glyph, mood: mood(id, t), seed: i + 2, hops, squash: bounce, look: [Math.sign(Math.sin(t * 0.7 + i)) * 0.6, 0.6] })
@@ -257,8 +261,15 @@ async function build(stage) {
     }
   }
   function says(cam, t) {
-    for (const [t0, d, id, text] of SAY) {
+    const focusTalk = focus && SAY.some(([t0, d, id]) => focus.includes(id) && t > t0 - 0.2 && t < t0 + d + 0.2)
+    for (const [t0, d, id, text, own] of SAY) {
       if (t < t0 || t > t0 + d) continue
+      if (focusTalk && !focus.includes(id) && !own) continue
+      if (focus && focus.includes(id) && t0 > PFIN[FP] + 1.1) {          // after they finish: the pair comments from the corner
+        const k = pop01(t, t0, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.25, t0 + d)))
+        bubble(x, id === focus[0] ? 320 : 450, 1110, text, k, { size: 42, col: BONE, tail: 'bl' })
+        continue
+      }
       const [wx, wy] = pos(t, ID(id)), sy = wy - cam
       if (sy < 330 || sy > 1560) continue
       const k = pop01(t, t0, 0.3, 1.8) * (1 - ease.inQuad(prog(t, t0 + d - 0.25, t0 + d)))
@@ -279,7 +290,7 @@ async function build(stage) {
     }
   }
   function board(t) {                      // live pairs leaderboard: all six pairs
-    const k = clamp((t - GATE - 0.6) / 0.4) * (1 - clamp((t - T.podium + 0.4) / 0.3))
+    const k = clamp((t - GATE - 0.6) / 0.4) * (1 - clamp((t - endT + 0.4) / 0.3))
     if (k <= 0) return
     const rank = PAIRS.map((p, pi) => [pi, t >= PFIN[pi] ? 1e6 - PFIN[pi] : (pos(t, ID(p[0]))[1] + pos(t, ID(p[1]))[1]) / 2]).sort((a, b) => b[1] - a[1]).map(r => r[0])
     x.save(); x.globalAlpha = k
@@ -288,6 +299,7 @@ async function build(stage) {
     x.font = `700 22px ${MONO}`; x.fillStyle = GOLD; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText('LIVE · PAIRS', X, Y - 24)
     rank.forEach((pi, r) => {
       const y = Y + 16 + r * H, [a, b] = PAIRS[pi]
+      if (pi === FP) { x.fillStyle = 'rgba(242,199,92,0.24)'; x.fillRect(X - 8, y - 19, Wd + 16, 38) }
       x.fillStyle = BONE; x.font = `800 24px ${INTER}`; x.fillText(ORD(r + 1), X, y)
       x.fillStyle = SIGN[a].color; x.fillRect(X + 58, y - 10, 20, 20); x.fillStyle = SIGN[b].color; x.fillRect(X + 80, y - 10, 20, 20)
       x.fillStyle = BONE; x.font = `800 24px ${INTER}`; x.fillText(PNAME(PAIRS[pi]), X + 112, y)
@@ -338,11 +350,14 @@ async function build(stage) {
       const cam = camAt(t)
       drawSky(sx, t, { ...SKY_H, dy: -cam * 0.04 })
       x.clearRect(0, 0, 1080, 1920)
-      track(cam, t); stars(cam, t); board(t); says(cam, t); stickers(t); podium(t)
+      track(cam, t); stars(cam, t); board(t); says(cam, t); stickers(t)
+      if (end) end(x, t); else podium(t)
     },
   }
+  }
 }
-export const SCENES = [build]
+export const SCENES = [makeBuild({ camAt, SAY, STICK })]
+export { makeBuild, SAY as MAIN_SAY, SIM, IDS, pos, FIN, PAIRS, PFIN, PORDER, PI_OF, SWALLOW, HOLE, EXIT, ID, SIGN, ORD, clampY, NF, r2, T_LAST, PNAME }
 
 // quiet cue sheet: gate, a soft knock for each binary-star / comet hit, a low whoomp for the swallow, a pop per pair home
 const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5]
