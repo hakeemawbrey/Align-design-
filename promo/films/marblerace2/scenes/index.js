@@ -70,11 +70,12 @@ const LEADS = (() => {
 
 // ── camera: world y at the top of the view (VIEW world px tall), precomputed per race frame; hard cuts on beats
 const DUO = [PI_OF('taurus'), PI_OF('sagittarius')]
+const START_CAM = Math.round(C.SHELF[1] - 1020 / ZOOM)              // opening shot: the shelf mid-frame, under the title
 const CAM = (() => {
   const out = new Float32Array(NF)
   const lead = s => { const y = PAIRS.map((p, i) => s >= PFIN[i] ? -1 : pairY(i, s)).sort((a, b) => b - a); return Math.max(y[0] - VIEW * 0.78, Math.min((y[0] + y[2]) / 2 - VIEW * 0.55, y[0] - VIEW * 0.45)) }
   const target = s => {
-    if (s < GATE + 0.3) return 280
+    if (s < GATE + 0.3) return START_CAM
     if (s > T.holes && s < T.exitView) return HOLE.y - VIEW * 0.55                           // three pairs, one black hole
     if (s >= T.exitView && s < T.exitView + 1.8) return HOLE.exit[1] - VIEW * 0.4            // …back at the airlock
     if (s > T.again - 0.7 && s < T.again + 0.45) return HOLE.y - VIEW * 0.55                  // Leo & Aries: again
@@ -84,7 +85,7 @@ const CAM = (() => {
     if (s < T.podium) return Math.min(pairY(2, s) - VIEW * 0.55, FIN_Y + 150 - VIEW)         // Libra & Gemini come back for 3rd
     return FIN_Y + 150 - VIEW
   }
-  let c = 280
+  let c = START_CAM
   const cuts = [T.holes, T.exitView, T.exitView + 1.8, T.again - 0.7, T.again + 0.45, T.door, T.meanwhile]
   for (let f = 0; f < NF; f++) {
     const s = f / FPS, tg = target(s)
@@ -312,7 +313,7 @@ async function build(stage) {
     for (const [s0, txt] of steps) {
       const d = s - s0; if (d < 0 || d > 0.62) continue
       const k = pop01(s, s0, 0.2, 2.2) * (1 - ease.inQuad(prog(d, 0.4, 0.62)))
-      x.save(); x.translate(540, 1080); x.scale(k, k); x.font = `800 ${txt === 'GO!' ? 200 : 260}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+      x.save(); x.translate(540, 1270); x.scale(k, k); x.font = `800 ${txt === 'GO!' ? 200 : 260}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
       x.lineWidth = 22; x.strokeStyle = INK; x.strokeText(txt, 0, 0); x.fillStyle = txt === 'GO!' ? GOLD : BONE; x.fillText(txt, 0, 0); x.restore()
     }
   }
