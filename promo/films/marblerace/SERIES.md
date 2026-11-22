@@ -59,15 +59,14 @@ plinko, Mercury retrograde (gravity flips upward on a timer), Saturn, comet, fin
 4. **The night before Race 2** (one per pair, ~40 s, done: `promo/films/starrace-night-<pair>`, scripts in
    `starrace/episodes.js` NIGHT). Each plants a Race 2 beat: the scarf rope, "I lead, you shine" and the left/left
    tangle, the straight route vs. the shortcut, Scorpio's jump plan, the lane Libra can't pick, the paper-plane map.
-5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~85 s). A new, wilder course (`COURSE2` in race.js): Big Bang drops,
-   a meteor shower, pulsar beams, solar-flare wind, twin black holes (left: back to the start · right: a shortcut),
-   a supernova, Mercury retrograde, asteroid pinball, Jupiter and its moons, comet alley, and the event horizon (a last
-   black hole that throws you back to the meteors). Pairs tied with 150 px ropes. Baked in `race2.js` (seed 44,
-   `bake2.mjs`; Scorpio & Pisces steer for the shortcut hole). Result: 1 Taurus & Cancer (behind all race, won by
-   0.12 s) · 2 Capricorn & Aquarius · 3 Libra & Gemini (never chose, went between the holes) · 4 Pisces & Scorpio
-   (shortcut → event horizon in 0.6 s) · 5 Leo & Aries (left hole) · 6 Sagittarius & Virgo (led, then the event horizon
-   AND the left hole; still racing at the podium). Lesson: "Fastest isn't the point. Your pace, together, is."
-   **Race 2 POVs** (done: `promo/films/marblerace2-<pair>`, 67–100 s, `marblerace2/scenes/pov2.js`).
+5. **Race 2: pairs** (done: `promo/films/marblerace2`, ~74 s at normal speed, one video). Course 3 (`COURSE3` in race.js):
+   narrow, built and filmed close (1.38× zoom): HYPERSPACE boost ramps · AIRLOCK (laser door on a timer) · BOUNCE
+   NEBULA trampolines · GALAXY WHEEL · TRAPDOORS · BLACK HOLE (back to the airlock) · SATURN'S RINGS spiral · SUPERNOVA ·
+   MERCURY RETROGRADE · ASTEROID PINBALL · FINAL AIRLOCK · FINAL SPRINT. Countdown, section banners, LEAD CHANGE counter,
+   trails, slow-motion photo finish. Baked in `race2.js` (seed 146, `bake2.mjs`). Result: 1 Taurus & Cancer (by 0.49 s,
+   after trading the lead with Sagittarius & Virgo) · 2 Sagittarius & Virgo · 3 Capricorn & Aquarius (by 0.25 s over
+   Leo & Aries) · 4 Leo & Aries · then Libra & Gemini and Pisces & Scorpio (both sent back by the black hole).
+   Render with `--calm=1`. Lesson: "Fastest isn't the point. Your pace, together, is."
 6. **Next**: Taurus's arc landed in Race 2 (the pairs race). Open threads for Race 3: Capricorn second twice, Libra & Gemini's comeback, Leo & Aries taking turns.
 
 **Later:** a prequel season (how the stars met, old rivalries). Races and episodes are timed to real sky events
