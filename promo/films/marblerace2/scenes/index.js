@@ -308,6 +308,12 @@ async function build(stage) {
     LEADS.forEach((l, n) => { const d = s - l.s; if (d < 0 || d > 1.1 || s > SA) return
       const k = pop01(s, l.s, 0.18, 2) * (1 - ease.inQuad(prog(d, 0.85, 1.1))); label(x, 540, 700, `LEAD CHANGE #${n + 1}: ${PNAME(PAIRS[l.pi]).toUpperCase()}`, k, { size: 32, bg: BONE, color: INK, rot: 0.02 }) })
   }
+  function prompts(s) {                    // comment prompts: pick a winner early, lock it in before the last door
+    const P2 = [[2.7, 7.0, 'COMMENT WHICH PAIR WINS ↓'], [T.door - 3.6, 3.4, 'LAST CHANCE: WHO WINS?']]
+    for (const [s0, d, text] of P2) { if (s < s0 || s > s0 + d) continue
+      const k = pop01(s, s0, 0.25, 1.8) * (1 - ease.inQuad(prog(s, s0 + d - 0.3, s0 + d)))
+      label(x, 540, 178, text, k, { size: 40, bg: BONE, color: INK, rot: -0.02 }) }
+  }
   function countdown(s) {
     const steps = [[0.35, '3'], [1.05, '2'], [1.75, '1'], [GATE, 'GO!']]
     for (const [s0, txt] of steps) {
@@ -380,7 +386,7 @@ async function build(stage) {
       x.save(); x.translate(540 + shx, shy); x.scale(ZOOM, ZOOM); x.translate(-540, -cam)
       backdrop(cam, s, t); zones(cam, s); rails(cam, s, t); stars(cam, s)
       x.restore()
-      board(s); says(cam, s); banners(s); countdown(s); slowmo(t, s); podium(t, s)
+      board(s); says(cam, s); banners(s); prompts(s); countdown(s); slowmo(t, s); podium(t, s)
     },
   }
 }
