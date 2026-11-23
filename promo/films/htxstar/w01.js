@@ -134,7 +134,7 @@ export const SETS = {
     x.fillStyle = '#efe8dc'; x.fillRect(0, 0, 1080, GY)
     const art = [[200, 360, 220, 280, ['#e05a3a', '#2b5fb0']], [540, 330, 240, 340, ['#ffd36b', '#1b1236']], [880, 360, 220, 280, ['#7dffb0', '#c9a6ff']]]
     for (const [cx, cy, w, h, [a, b]] of art) { box(x, cx - w / 2 - 16, cy - h / 2 - 16, w + 32, h + 32, '#c9a46a', 6); x.fillStyle = a; x.fillRect(cx - w / 2, cy - h / 2, w, h); x.fillStyle = b; x.fillRect(cx - w / 2, cy, w, h / 2) }
-    sign(x, 540, 640, o.sign || 'FREE THURSDAY', { bg: INK, col: GOLD, size: 34 })
+    if (o.sign !== '') sign(x, 540, 640, o.sign || 'FREE THURSDAY', { bg: INK, col: GOLD, size: 34 })
     x.fillStyle = '#c9bca6'; x.fillRect(0, 900, 1080, 10)
     ground(x, '#a88a6a')
   },
@@ -220,7 +220,7 @@ export const SETS = {
   pickle(x, t) {
     grad(x, '#8fd0ff', '#dff4ff', 0, 700); x.fillStyle = '#3a8a6a'; x.fillRect(0, 700, 1080, GY - 700); x.fillStyle = '#2b6fb0'; x.fillRect(100, 740, 880, GY - 760)
     x.fillStyle = BONE; x.fillRect(100, 740, 880, 6); x.fillRect(536, 740, 8, GY - 760)
-    box(x, 520, 660, 40, 140, '#8f96a0', 3); for (let k = 0; k < 6; k++) { x.fillStyle = 'rgba(255,255,255,0.6)'; x.fillRect(100, 670 + k * 16, 880, 3) }
+    box(x, 100, 726, 16, 80, '#8f96a0', 3); box(x, 964, 726, 16, 80, '#8f96a0', 3); for (let k = 0; k < 4; k++) { x.fillStyle = 'rgba(255,255,255,0.6)'; x.fillRect(100, 732 + k * 12, 880, 3) }
     const ph = (t * 0.7) % 1, bx = 160 + ph * 760, by = 640 - Math.sin(Math.PI * ph) * 260; x.fillStyle = INK; x.beginPath(); x.arc(bx, by, 22, 0, Math.PI * 2); x.fill(); x.fillStyle = '#e6f04a'; x.beginPath(); x.arc(bx, by, 17, 0, Math.PI * 2); x.fill()
     ground(x, '#3a8a6a')
   },
@@ -270,6 +270,17 @@ export const SETS = {
     x.fillStyle = o.wall || '#5a3a6a'; x.fillRect(0, 0, 1080, GY)
     box(x, 700, 220, 280, 640, '#c9a46a', 8); x.fillStyle = '#bfe6ff'; x.fillRect(716, 236, 248, 608); x.fillStyle = 'rgba(255,255,255,0.4)'; x.fillRect(740, 260, 30, 400)
     ground(x, '#3a2a4a')
+  },
+  texmex(x, t, lt, o = {}) {
+    x.fillStyle = o.wall || '#e8703a'; x.fillRect(0, 0, 1080, GY)
+    for (let row = 0; row < 2; row++) { const y = 140 + row * 170; x.strokeStyle = INK; x.lineWidth = 4; x.beginPath(); x.moveTo(0, y); x.lineTo(1080, y); x.stroke()
+      for (let k = 0; k < 12; k++) { const fx = 20 + k * 90, sw = Math.sin(t * 2 + k + row) * 4; x.fillStyle = [PINK, GOLD, MINT, SKYB, LAV, '#ff7a4a'][(k + row) % 6]; x.beginPath(); x.moveTo(fx, y); x.lineTo(fx + 70, y); x.lineTo(fx + 35 + sw, y + 80); x.fill() } }
+    box(x, 0, 880, 1080, 40, '#7a4a2c', 6)
+    x.fillStyle = INK; x.beginPath(); x.ellipse(180, 870, 120, 40, 0, 0, Math.PI); x.fill(); x.fillStyle = '#c0304a'; x.beginPath(); x.ellipse(180, 862, 110, 32, 0, 0, Math.PI); x.fill()
+    for (let k = 0; k < 7; k++) { x.fillStyle = INK; x.beginPath(); x.moveTo(100 + k * 26, 860); x.lineTo(118 + k * 26, 810 - (k % 2) * 16); x.lineTo(136 + k * 26, 860); x.fill(); x.fillStyle = '#f6d36a'; x.beginPath(); x.moveTo(104 + k * 26, 858); x.lineTo(118 + k * 26, 818 - (k % 2) * 16); x.lineTo(132 + k * 26, 858); x.fill() }
+    x.fillStyle = INK; x.beginPath(); x.ellipse(900, 870, 110, 46, 0, 0, Math.PI); x.fill(); x.fillStyle = '#f2c23a'; x.beginPath(); x.ellipse(900, 858, 100, 24, 0, 0, Math.PI * 2); x.fill(); x.fillStyle = '#ffe08a'; x.fillRect(860, 850, 40, 8)
+    for (let k = 0; k < 3; k++) { const ph = (t * 0.6 + k / 3) % 1; x.strokeStyle = `rgba(255,255,255,${(0.6 * (1 - ph)).toFixed(2)})`; x.lineWidth = 5; x.beginPath(); x.moveTo(870 + k * 30, 830 - ph * 120); x.quadraticCurveTo(886 + k * 30, 800 - ph * 120, 870 + k * 30, 770 - ph * 120); x.stroke() }
+    ground(x, '#5a3a2a')
   },
   sky(x, t) { /* just the nebula + a soft horizon */ x.fillStyle = 'rgba(20,12,40,0.5)'; x.fillRect(0, GY, 1080, 1920 - GY); x.fillStyle = INK; x.fillRect(0, GY - 5, 1080, 10) },
 }
