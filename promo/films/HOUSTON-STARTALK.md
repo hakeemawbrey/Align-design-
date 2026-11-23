@@ -132,6 +132,20 @@ The user asked: "make 250 very Houston specific Houston star talk videos, needs 
 - "Which sign brings crawfish to the cookout?"
 - "Day N until Jan 9: [sign] is ready"
 
+## The first 10 (sent for approval; 35–54 s each; scripts in htxstar/eps.js, eps2.js, eps3.js)
+| folder | hook | concept |
+|---|---|---|
+| hst001 | Houston neighborhoods as zodiac signs | list: 12 neighborhoods + bonus round (the suburbs) → "Wrong? Comment your sign + side of town." |
+| hst002 | POV: a Scorpio on the 610 at 5pm | skit: nine drivers in traffic (screwed sound) → green exit sign BETA PARTY · EXIT JAN 9 |
+| hst003 | How each sign RSVPs to the beta party | list: 12 RSVPs, then the night-of arrivals (Capricorn two hours early, Leo with valet, Gemini twice) |
+| hst004 | I got on the 610 in 2019. Still on it. | time loop: years flip, construction, the one cold day, summer forever → the gold exit |
+| hst005 | BREAKING: Houston hits 55 degrees | news parody: chyrons, a cold-front weather map, field reports → "UPDATE: 81° BY 3PM" |
+| hst006 | Virgo sued Houston over a kolache | courtroom: THE STARS v. THE KLOBASNEK, the defense, Exhibit B (a breakfast taco), the jury eats the evidence |
+| hst007 | Houston, we have a match. | mission control: a Heights–Katy match, go/no-go poll, the Katy Freeway problem, countdown → MATCH |
+| hst008 | Rare footage: a Katy cousin crossing the Loop | nature doc: Cousinus katyensis, the Beltway, a Montrose local, parking, humidity → a match inside the Loop |
+| hst009 | Leo spent all year on this trunk… for ONE message | slab culture (celebrated): candy paint, wax, two-tone, swangas, underglow, the cruise → the trunk sign |
+| hst010 | He lives in Katy. I live in Montrose. We tried. | long-distance romcom: three failed halfway attempts → same place, same night |
+
 ## The first 3
 | folder | hook | format | payoff |
 |---|---|---|---|

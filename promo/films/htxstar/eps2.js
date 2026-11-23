@@ -3,7 +3,7 @@
 import { clamp, prog, ease } from '../../src/lib.js'
 import { FLOOR, box, txt, outside } from '../starrace/ep.js'
 import { label, sparkles, pop01, GOLD, BONE, PINK, INK, MONO, SIGN_IDS } from '../signs3kit.js'
-import { skyline, car, freeway, sweat, partyCard, taco, BRAKE, overheadSign, calendar, cobweb, newsDesk, liveBug, chyron, puffer, phoneFlash, soupPot, plantBlanket, courtroom, gavel, kolache, klobasnek } from './kit.js'
+import { cones, skyline, car, freeway, sweat, partyCard, taco, BRAKE, overheadSign, calendar, cobweb, newsDesk, liveBug, chyron, puffer, phoneFlash, soupPot, plantBlanket, courtroom, gavel, kolache, klobasnek } from './kit.js'
 
 const Y = 1255
 const BADGE = { text: 'HOU BETA · JAN 9', x: 230, y: 150 }
@@ -32,6 +32,15 @@ const loop = (() => {
       { dur: 3.0, set: (x, t, lt) => road(x, t, lt, { year: String(2021 + Math.min(3, Math.floor(lt * 1.6))), flip: (lt * 1.6) % 1 }), front: (x, t, lt, P) => leoCar(x, t, lt, P, clamp(lt / 2)),
         cast: { leo: [[0, 380, lane - 115, 190]] }, mood: { leo: 'sleepy' },
         lines: [[0.4, 1.4, 'leo', 'there it | is again.'], [2.0, 0.9, 'leo', 'missed it.']], stick: [[1.2, 1.4, 'LAP 1,000.', GOLD]] },
+      { dur: 3.2, set: (x, t, lt) => { road(x, t, lt, { year: '2022' }); cones(x, FLOOR + 470, 6, t) }, front: (x, t, lt, P) => leoCar(x, t, lt, P, 1),
+        cast: { leo: [[0, 380, lane - 115, 190]] }, mood: { leo: 'eyeroll' },
+        lines: [[0.3, 2.5, 'leo', "they're widening it. | again."]], stick: [[0.2, 1.3, 'CONSTRUCTION: STILL', '#ff7a2a']] },
+      { dur: 3.2, set: (x, t, lt) => road(x, t, lt, { year: '2023' }), front: (x, t, lt, P) => leoCar(x, t, lt, P, 1),
+        cast: { leo: [[0, 380, lane - 115, 190]], gemini: [[0, -200, lane - 330, 150], [3.0, 1300, lane - 330, 150]] }, mood: { leo: 'neutral', gemini: 'sparkle' },
+        lines: [[1.0, 1.2, 'gemini', 'hi again!'], [2.2, 0.9, 'leo', 'every | lap.']] },
+      { dur: 3.2, set: (x, t, lt) => road(x, t, lt, { year: '2024' }), front: (x, t, lt, P) => { leoCar(x, t, lt, P, 1); if (lt < 1.6) puffer(x, P, 'leo') },
+        cast: { leo: [[0, 380, lane - 115, 190]] }, mood: { leo: lt => lt < 1.6 ? 'squint' : 'wide' },
+        lines: [[0.2, 1.3, 'leo', "it's 55! | coat!"], [1.7, 1.3, 'leo', "...it's 80."]], stick: [[0.1, 1.4, 'THE ONE COLD DAY', '#8fe3ff']] },
       { dur: 3.0, set: (x, t, lt) => road(x, t, lt, { year: '2025' }), front: (x, t, lt, P) => { leoCar(x, t, lt, P, 1); const [cx, cy, s] = P.at('leo'); sweat(x, cx + s * 0.3, cy - s * 0.3, t) },
         cast: { leo: [[0, 380, lane - 115, 190]] }, mood: { leo: 'wide' },
         lines: [[0.3, 2.4, 'leo', "it's been summer | the whole time."]], stick: [[0.2, 1.1, 'SEASON: SUMMER', BRAKE], [1.4, 1.4, 'SEASON: STILL SUMMER', BRAKE]] },
@@ -62,6 +71,15 @@ const news = (() => {
       { dur: 3.0, set: (x, t, lt) => street(x, t, lt, 'LIVE: MIDTOWN, 55°'), front: (x, t, lt, P) => puffer(x, P, 'leo'),
         cast: { leo: [[0, 540, Y - 60, 280]] }, mood: { leo: 'squint' }, hops: { leo: [0.1, 0.5, 0.9] },
         lines: [[0.3, 2.4, 'leo', "I'm wearing | everything I own."]] },
+      { dur: 3.6, set: (x, t, lt) => { desk(x, t, lt, 'FORECAST: COLD UNTIL THURSDAY'); box(x, 150, 420, 780, 520, '#0f3a5a', 8); for (let k = 0; k < 3; k++) { const r = 80 + k * 70; x.strokeStyle = 'rgba(242,199,92,0.7)'; x.lineWidth = 5; x.beginPath(); x.ellipse(540, 680, r * 1.8, r, 0, 0, Math.PI * 2); x.stroke() } const fx = 150 + clamp(lt / 2.5) * 640; for (let k = 0; k < 5; k++) { x.fillStyle = '#5ec8ff'; x.beginPath(); x.moveTo(fx, 450 + k * 100); x.lineTo(fx + 40, 470 + k * 100); x.lineTo(fx, 490 + k * 100); x.fill() } txt(x, 'COLD FRONT', 540, 470, { size: 40, col: '#8fe3ff', font: MONO, weight: 700 }) },
+        cast: { virgo: [[0, 820, 1090, 220]] }, mood: { virgo: 'squint' },
+        lines: [[0.3, 1.5, 'virgo', 'the front arrives | at 2:14 PM.'], [2.0, 1.5, 'virgo', 'leaves | Thursday.']] },
+      { dur: 3.0, set: (x, t, lt) => street(x, t, lt, 'LIVE: BUFFALO BAYOU, 55°'),
+        cast: { aries: [[0, -200, Y, 240], [1.2, 1300, Y, 240]] }, mood: { aries: 'squint' },
+        lines: [[0.4, 1.5, 'aries', 'running | in shorts.']] },
+      { dur: 3.0, set: (x, t, lt) => street(x, t, lt, 'LIVE: BELLAIRE BLVD, 55°'), front: (x, t) => soupPot(x, 760, 1180, t),
+        cast: { pisces: [[0, 330, Y, 250]] }, mood: { pisces: 'heart' },
+        lines: [[0.3, 2.3, 'pisces', 'pho weather. | finally.']] },
       { dur: 3.0, set: (x, t, lt) => { street(x, t, lt, 'THE PLANTS ARE BEING TUCKED IN'); plantBlanket(x, 760, FLOOR + 60) },
         cast: { cancer: [[0, 330, Y, 260]] }, mood: { cancer: 'wide' },
         lines: [[0.3, 2.3, 'cancer', 'the plants | need blankets.']] },
@@ -87,7 +105,7 @@ const trial = (() => {
   const room = (x, t, lt, head = 'THE STARS v. THE KLOBASNEK') => { courtroom(x); txt(x, head, 540, 1420, { size: head.length > 24 ? 42 : 50, col: GOLD, font: MONO, weight: 700 }) }
   const judge = { capricorn: [[0, 540, 600, 220]] }
   return {
-    hook: 'Virgo sued Houston | over a kolache', badge: BADGE, cues: [...STING, ['pluck', 16.55, 196, 0.05, 0.6, 0]], endLen: 6.2,
+    hook: 'Virgo sued Houston | over a kolache', badge: BADGE, cues: [...STING, ['pluck', 26.15, 196, 0.05, 0.6, 0]], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring both kinds. Jan 9.', stars: ['virgo', 'taurus', 'gemini', 'pisces'] }),
     scenes: [
       { dur: 2.8, set: (x, t, lt) => room(x, t, lt), front: (x, t, lt, P) => { gavel(x, 700, 600, t, (t * 3) % 1); const [cx, cy, s] = P.at('virgo'); klobasnek(x, cx + s * 0.55, cy - 20, 1) },
@@ -102,6 +120,15 @@ const trial = (() => {
       { dur: 3.0, set: (x, t, lt) => room(x, t, lt, 'WITNESS: GEMINI'), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('gemini'); kolache(x, cx - s * 0.6, cy - 10, 0.8); klobasnek(x, cx + s * 0.6, cy - 10, 0.8) },
         cast: { ...judge, gemini: [[0, 540, Y, 250]] }, mood: { gemini: 'sparkle' },
         lines: [[0.3, 2.3, 'gemini', "it's both. | I'm both."]] },
+      { dur: 3.2, set: (x, t, lt) => room(x, t, lt, 'FOR THE DEFENSE: SCORPIO'),
+        cast: { ...judge, scorpio: [[0, 760, Y, 250]] }, mood: { scorpio: 'squint' },
+        lines: [[0.3, 1.0, 'scorpio', 'objection.'], [1.5, 1.5, 'scorpio', "I'm | hungry."]] },
+      { dur: 3.2, set: (x, t, lt) => room(x, t, lt, 'EXHIBIT B'), front: (x, t, lt) => { const k = Kp(lt, 0.2); if (k > 0) taco(x, 540, 1060, 1.8 * k) },
+        cast: { ...judge, virgo: [[0, 260, Y, 220]] }, mood: { virgo: 'wide', capricorn: 'squint' },
+        lines: [[0.6, 1.2, 'virgo', 'a breakfast | taco?'], [2.0, 1.1, 'capricorn', 'irrelevant. | delicious.']] },
+      { dur: 3.2, set: (x, t, lt) => { room(x, t, lt, 'THE JURY'); box(x, 80, 1000, 920, 60, '#6b3b1f', 6) },
+        cast: Object.fromEntries(['aries', 'leo', 'libra', 'sagittarius', 'aquarius'].map((id, i) => [id, [[0, 160 + i * 190, 940, 150]]])), mood: { aries: 'happy', leo: 'happy', libra: 'wide', sagittarius: 'happy', aquarius: 'wink' },
+        lines: [[0.4, 1.2, 'libra', 'the jury | is eating...'], [1.9, 1.1, 'libra', '...the | evidence.']], stick: [[1.8, 1.2, 'ORDER!', BRAKE]] },
       { dur: 3.0, set: (x, t, lt) => room(x, t, lt, 'FROM THE GALLERY'),
         cast: { ...judge, pisces: [[0, 360, Y, 250]] }, mood: { pisces: 'heart' },
         lines: [[0.3, 2.3, 'pisces', "can't we all | just share?"]] },
