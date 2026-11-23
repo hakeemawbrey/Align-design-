@@ -151,13 +151,13 @@ function msgSize(x, m) {
   if (typeof m.body === 'function') return { w: IMG[0], h: IMG[1] + 20, lines: null }
   x.font = `800 ${MSG}px ${INTER}`
   const lines = wrap(x, m.body, MAXW), w = Math.max(...lines.map(l => x.measureText(l).width)) + 44
-  return { w, h: lines.length * MSG * 1.2 + 30, lines }
+  return { w, h: lines.length * MSG * 1.2 + 30 + (m.who.length > 1 ? 34 : 0), lines }
 }
 /** draw the phone and the thread as it stands at time t. thread = [{ at, who: 's' | 'y', body }] */
 export function phone(x, t, { sign, name, thread, scheme = {} }) {
-  const col = signStar(sign).color, glyph = signStar(sign).glyph
+  const col = scheme.col || signStar(sign).color, glyph = scheme.glyph || signStar(sign).glyph
   const L = PH.cx - PH.w / 2, T = PH.top, W = PH.w, H = PH.h
-  const lastIn = thread.filter(m => m.who === 's' && m.at <= t).map(m => m.at).pop() ?? -9
+  const lastIn = thread.filter(m => m.who !== 'y' && m.at <= t).map(m => m.at).pop() ?? -9
   const sh = t - lastIn < 0.3 ? Math.sin((t - lastIn) * 70) * 7 * (1 - (t - lastIn) / 0.3) : 0
   x.save(); x.translate(sh, 0)
   x.fillStyle = 'rgba(6,4,18,0.35)'; x.fillRect(L + 16, T + 22, W, H)
@@ -169,7 +169,7 @@ export function phone(x, t, { sign, name, thread, scheme = {} }) {
   txt(x, '‹', L + 40, T + 70, { size: 60, col: BONE })
   x.fillStyle = INK; x.beginPath(); x.arc(L + 120, T + 70, 40, 0, Math.PI * 2); x.fill(); x.fillStyle = col; x.beginPath(); x.arc(L + 120, T + 70, 34, 0, Math.PI * 2); x.fill()
   txt(x, glyph, L + 120, T + 72, { size: 40, col: INK, font: GLYPH_FONT, weight: 700 })
-  const typing = thread.some(m => m.who === 's' && t > m.at - 0.75 && t < m.at)
+  const typing = thread.some(m => m.who !== 'y' && t > m.at - 0.75 && t < m.at)
   txt(x, name || NAMES[sign], L + 180, T + 56, { size: 40, col: BONE, align: 'left' })
   txt(x, typing ? 'typing…' : (scheme.status || 'online'), L + 182, T + 94, { size: 24, col: typing ? MINT : 'rgba(239,230,214,0.6)', font: MONO, weight: 700, align: 'left' })
   // messages (newest at the bottom, the stack slides up as a new one lands)
@@ -190,9 +190,11 @@ export function phone(x, t, { sign, name, thread, scheme = {} }) {
     const me = m.who === 'y', bx = me ? L + W - 28 - s.w : L + 28
     x.save(); x.translate(me ? bx + s.w : bx, y + s.h); x.scale(k, k); x.translate(-(me ? bx + s.w : bx), -(y + s.h))
     if (s.lines) {
-      box(x, bx, y, s.w, s.h, me ? (scheme.me || SKYB) : col, 5)
+      const grp = m.who.length > 1, gc = grp ? signStar(m.who).color : col
+      box(x, bx, y, Math.max(s.w, grp ? 220 : 0), s.h, me ? (scheme.me || SKYB) : gc, 5)
+      if (grp) txt(x, signStar(m.who).glyph + ' ' + NAMES[m.who].toUpperCase(), bx + 18, y + 22, { size: 22, col: INK, font: MONO, weight: 700, align: 'left' })
       x.font = `800 ${MSG}px ${INTER}`; x.fillStyle = INK; x.textAlign = 'left'; x.textBaseline = 'middle'
-      s.lines.forEach((l, j) => x.fillText(l, bx + 22, y + 15 + MSG * 1.2 * (j + 0.5) + 2))
+      s.lines.forEach((l, j) => x.fillText(l, bx + 22, y + (grp ? 34 : 0) + 15 + MSG * 1.2 * (j + 0.5) + 2))
     } else {
       box(x, bx, y, s.w, s.h, BONE, 5)
       x.save(); x.beginPath(); x.rect(bx + 10, y + 10, s.w - 20, s.h - 20); x.clip(); m.body(x, bx + s.w / 2, y + s.h / 2, s.w - 20, s.h - 20, t); x.restore()
@@ -239,7 +241,7 @@ export function textsEp(E) {
       hops: { [E.sign]: msgsHere.map(a => a + 0.02), ...(b.hops || {}) }, lines: b.lines,
       front: (x, t, lt, P) => { b.front?.(x, t, lt, P); tags(x, t, lt) } }
   })
-  const cues = [...STING, ...thread.flatMap(m => m.who === 's' ? [['pop', r2(m.at), 1318.5, 0.02, 0], ['pop', r2(m.at + 0.09), 1760, 0.016, 0]] : [['whoosh', r2(m.at), 0.25, 0.05]]), ...(E.cues || [])]
+  const cues = [...STING, ...thread.flatMap(m => m.who !== 'y' ? [['pop', r2(m.at), 1318.5, 0.02, 0], ['pop', r2(m.at + 0.09), 1760, 0.016, 0]] : [['whoosh', r2(m.at), 0.25, 0.05]]), ...(E.cues || [])]
   return { hook: E.hook, badge: E.badge || BADGE, cues, endLen: 6.2, scenes,
     end: (x, t, lt) => partyCard(x, t, lt, { line: E.endLine, stars: E.endStars || [E.sign, 'leo', 'cancer', 'gemini'] }) }
 }
