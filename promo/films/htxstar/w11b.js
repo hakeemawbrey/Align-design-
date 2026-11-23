@@ -243,10 +243,10 @@ const e279 = T({
 
 // ── hst280 · Houston: the musical. Starring your sign.
 const e280 = T({
-  hook: 'Houston: the musical. | Starring your sign.',
+  hook: 'A Houston musical, | starring your sign.',
   end: (x, t, lt) => partyCard(x, t, lt, { line: 'Sing it with us. Jan 9.', stars: ['leo', 'libra', 'cancer', 'pisces'] }),
   scenes: [
-    { dur: 3.6, set: (x, t, lt) => { stage(x, t); skyline(x, FLOOR + 50, t, { alpha: 0.4 }); spotlight(x, 540, FLOOR + 60, 420) }, front: cin((x, t, lt) => { curtains(x, clamp(lt / 1.2) * 0.9 + 0.1, t); notes(x, t, 540, 900, { n: 5, seed: 1 }) }, 0.03),
+    { dur: 3.6, set: (x, t, lt) => { stage(x, t); skyline(x, FLOOR + 50, t, { alpha: 0.4 }); spotlight(x, 540, FLOOR + 60, 420) }, front: cin((x, t, lt) => { curtains(x, 0.5 + clamp(lt / 1.2) * 0.5, t); notes(x, t, 540, 900, { n: 5, seed: 1 }) }, 0.03),
       cast: { leo: [[0, 540, Y, 260]] }, mood: { leo: 'sparkle' }, hops: { leo: [0.05, 0.5, 1.0, 1.5] },
       lines: [[0.4, 2.4, 'leo', '♪ this one’s | for YOU, | Houston ♪']] },
     card(['THIS JANUARY…', 'A MUSICAL'], { size: 90 }),

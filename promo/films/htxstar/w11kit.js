@@ -262,6 +262,7 @@ export function tint(x, col) { x.fillStyle = col; x.fillRect(0, 0, 1080, 1920) }
 /** a full black title card: lines in gold serif, slow push-in; [col] per card */
 export function tcard(x, t, lt, lines, { col = GOLD, size = 96, bg = '#05040a', flicker = false, sub = null } = {}) {
   x.fillStyle = bg; x.fillRect(0, 0, 1080, 1920)
+  size = Math.min(size, Math.floor(1700 / Math.max(...lines.map(l => l.length))))
   const k = clamp(lt / 0.35), z = 1 + 0.05 * lt, fl = flicker && Math.sin(t * 37) > 0.6 ? 0.55 : 1
   x.save(); x.translate(540, 900); x.scale(z, z); x.globalAlpha = k * fl
   lines.forEach((ln, j) => txt(x, ln, 0, (j - (lines.length - 1) / 2) * size * 1.25, { size, col, font: SERIF, weight: 500 }))
