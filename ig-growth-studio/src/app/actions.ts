@@ -169,7 +169,8 @@ export async function runAnalysisRound(form: FormData) {
 
 /** Research: queue a creator study (the worker runs it, one step at a time). */
 export async function startStudyAction(_: unknown, form: FormData): Promise<{ error?: string; ok?: string }> {
-  const res = await startStudy(await getDb(), String(form.get("target") ?? ""));
+  const limit = Number(form.get("limit"));
+  const res = await startStudy(await getDb(), String(form.get("target") ?? ""), { limit: Number.isFinite(limit) && limit > 0 ? limit : null });
   revalidatePath("/research");
   return "error" in res ? { error: res.error } : { ok: "Queued. It starts within a minute; you can leave this page." };
 }

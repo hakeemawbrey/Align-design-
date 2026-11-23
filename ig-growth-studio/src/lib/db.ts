@@ -296,6 +296,8 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
       updated_at TEXT NOT NULL
     )`,
   ],
+  // v13: a study can be limited to the newest N posts (a quick test).
+  async () => ["ALTER TABLE research_jobs ADD COLUMN limit_posts INTEGER"],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */

@@ -1,7 +1,7 @@
 /**
  * Runs creator studies for the Research page, one step at a time, from the publishing worker. Each step is one of
  * the study tool's own scripts (../study/src), run on this Mac, slowly and resumably, exactly as the tool runs them:
- *   Instagram: check login → download → numbers → process → report
+ *   Instagram: log in (own window) → check → download → numbers → process → report
  *   Facebook:  facebook (download) → process → report
  * When Instagram or Facebook asks for a break (exit 75) the job waits 30 minutes and carries on. When the browser
  * isn't logged in (exit 77) it waits for the owner to log in and press Resume. Steps run detached, so a worker
@@ -30,6 +30,8 @@ export interface ResearchJob {
   waits: number;
   next_at: string | null;
   message: string | null;
+  /** Only the newest N posts (a quick test); null for everything. */
+  limit_posts: number | null;
   created_at: string;
   updated_at: string;
 }
@@ -41,17 +43,20 @@ interface Step {
   optional?: boolean;
 }
 
-const BROWSER = "chrome";
+/** The login the study's own Instagram window saves (study/src/instagram-login.mjs). */
+export const igCookies = () => path.join(process.env.STUDY_HOME ? path.resolve(process.env.STUDY_HOME) : path.join(os.homedir(), ".align-study"), "instagram-cookies.txt");
+const limit = (j: ResearchJob) => (j.limit_posts ? ["--limit", String(j.limit_posts)] : []);
 export const STEPS: Record<ResearchJob["site"], Step[]> = {
   instagram: [
-    { label: "Checking you're logged into Instagram in Chrome", args: (j) => ["src/download.mjs", j.handle!, "--check", "--cookies-from-browser", BROWSER] },
-    { label: "Downloading every post", args: (j) => ["src/download.mjs", j.handle!, "--cookies-from-browser", BROWSER], optional: true },
-    { label: "Reading views and comments", args: (j) => ["src/numbers.mjs", j.handle!, "--cookies-from-browser", BROWSER], optional: true },
+    { label: "Logging into Instagram (a window opens the first time)", args: () => ["src/instagram-login.mjs"] },
+    { label: "Checking the page can be read", args: (j) => ["src/download.mjs", j.handle!, "--check", "--cookies", igCookies()] },
+    { label: "Downloading every post", args: (j) => ["src/download.mjs", j.handle!, "--cookies", igCookies(), ...limit(j)], optional: true },
+    { label: "Reading views and comments", args: (j) => ["src/numbers.mjs", j.handle!, "--cookies", igCookies()], optional: true },
     { label: "Transcribing, reading on-screen text, making stills", args: (j) => ["src/process.mjs", j.handle!] },
     { label: "Packing it up", args: (j) => ["src/report.mjs", j.handle!, "--tz", "America/Chicago"] },
   ],
   facebook: [
-    { label: "Downloading the page's reels and videos", args: (j, hf) => ["src/facebook.mjs", j.target, "--handle-file", hf] },
+    { label: "Downloading the page's reels and videos", args: (j, hf) => ["src/facebook.mjs", j.target, "--handle-file", hf, ...limit(j)] },
     { label: "Transcribing, reading on-screen text, making stills", args: (j) => ["src/process.mjs", j.handle!] },
     { label: "Packing it up", args: (j) => ["src/report.mjs", j.handle!, "--tz", "America/Chicago"] },
   ],
@@ -101,15 +106,15 @@ async function update(db: DB, id: number, fields: Partial<ResearchJob>, from?: J
 }
 
 /** Queues a study unless the same page already has one in progress. */
-export async function startStudy(db: DB, input: string): Promise<{ id: number } | { error: string }> {
+export async function startStudy(db: DB, input: string, opts: { limit?: number | null } = {}): Promise<{ id: number } | { error: string }> {
   const t = parseTarget(input);
   if (!t) return { error: "Enter an Instagram handle (like @tylerinthemaking) or a Facebook page link." };
   const open = (await db.execute({ sql: "SELECT id FROM research_jobs WHERE target = ? AND status IN ('queued','running','waiting','needs_login')", args: [t.target] })).rows[0];
   if (open) return { error: "That page already has a study in progress." };
   const at = now();
   const res = await db.execute({
-    sql: "INSERT INTO research_jobs (site, target, handle, status, step, waits, created_at, updated_at) VALUES (?, ?, ?, 'queued', 0, 0, ?, ?)",
-    args: [t.site, t.target, t.handle, at, at],
+    sql: "INSERT INTO research_jobs (site, target, handle, status, step, waits, limit_posts, created_at, updated_at) VALUES (?, ?, ?, 'queued', 0, 0, ?, ?, ?)",
+    args: [t.site, t.target, t.handle, opts.limit && opts.limit > 0 ? Math.floor(opts.limit) : null, at, at],
   });
   return { id: Number(res.lastInsertRowid) };
 }
@@ -181,7 +186,8 @@ export async function researchTick(db: DB, at = new Date()): Promise<string | nu
   for (const job of jobs.filter((j) => j.status === "running")) {
     const steps = STEPS[job.site];
     if (!fs.existsSync(exitFile(job.id))) {
-      if (!alive(job)) await update(db, job.id, { status: "queued", pid: null, message: "Picked up again after an interruption." }, "running");
+      // Look again after the alive check: the step may have finished in between, and must not run twice.
+      if (!alive(job) && !fs.existsSync(exitFile(job.id))) await update(db, job.id, { status: "queued", pid: null, message: "Picked up again after an interruption." }, "running");
       continue;
     }
     const code = Number(fs.readFileSync(exitFile(job.id), "utf8").trim());
@@ -195,7 +201,8 @@ export async function researchTick(db: DB, at = new Date()): Promise<string | nu
       continue;
     }
     if (code === 77) {
-      await update(db, job.id, { status: "needs_login", pid: null, message: `Log into ${job.site === "facebook" ? "Facebook in the study's own Chrome window" : "Instagram in Chrome"}, then press Resume.` }, "running");
+      // Instagram: back to the login step, so Resume opens the study's own window again.
+      await update(db, job.id, { status: "needs_login", pid: null, ...(job.site === "instagram" ? { step: 0 } : {}), message: `Log into ${job.site === "facebook" ? "Facebook" : "Instagram"} in the study's own Chrome window, then press Resume.` }, "running");
       continue;
     }
     if (code !== 0 && !step.optional) {

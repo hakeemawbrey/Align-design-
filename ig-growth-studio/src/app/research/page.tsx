@@ -37,8 +37,8 @@ export default async function ResearchPage() {
         <h3 style={{ marginTop: 0 }}>Study a page</h3>
         <StartStudyForm />
         <p className="sub" style={{ marginTop: 8 }}>
-          The first time, your Mac asks to let the app use &quot;Chrome Safe Storage&quot; so it can use your Instagram login:
-          type your Mac password and press Always Allow. A page with a few hundred posts takes an hour or two, most of it
+          The first time, a small Chrome window of the study&apos;s own opens on Instagram: log in there yourself and the
+          study carries on (it remembers the login; your everyday Chrome isn&apos;t touched). A page with a few hundred posts takes an hour or two, most of it
           waiting politely between requests. The publishing worker runs it, so it keeps going if you close this page.
         </p>
       </div>
@@ -57,6 +57,7 @@ export default async function ResearchPage() {
                     <div>
                       <strong>{j.handle ? `@${j.handle}` : j.target}</strong>{" "}
                       <span className="badge">{j.site === "facebook" ? "Facebook" : "Instagram"}</span>{" "}
+                      {j.limit_posts ? <span className="badge">newest {j.limit_posts}</span> : null}{" "}
                       <span className={`badge ${j.status === "done" ? "published" : j.status === "failed" ? "failed" : "scheduled"}`}>{STATUS[j.status] ?? j.status}</span>
                       <div className="small muted">
                         {label} · started <LocalTime iso={j.created_at} />

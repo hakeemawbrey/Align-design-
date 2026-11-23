@@ -10,6 +10,7 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "research-test-"));
 const study = path.join(tmp, "study");
 process.env.STUDY_DIR = study;
 process.env.RESEARCH_DIR = path.join(tmp, "research");
+process.env.STUDY_HOME = path.join(tmp, "home");
 afterAll(() => fs.rmSync(tmp, { recursive: true, force: true }));
 
 /** A fake study step: exits with the code in codes/<script>, else 0. */
@@ -17,7 +18,7 @@ function fakeStudy() {
   fs.rmSync(study, { recursive: true, force: true });
   fs.mkdirSync(path.join(study, "src"), { recursive: true });
   fs.mkdirSync(path.join(study, "codes"), { recursive: true });
-  for (const s of ["download", "numbers", "process", "report", "facebook"]) {
+  for (const s of ["instagram-login", "download", "numbers", "process", "report", "facebook"]) {
     fs.writeFileSync(
       path.join(study, "src", `${s}.mjs`),
       `import fs from "node:fs";
@@ -69,8 +70,10 @@ describe("study runner", () => {
     }
     const job = (await listJobs(db))[0];
     expect(job.status).toBe("done");
-    expect(calls().map((c) => c.split(" ")[0])).toEqual(["download", "download", "numbers", "process", "report"]);
-    expect(calls()[0]).toContain("--check");
+    expect(calls().map((c) => c.split(" ")[0])).toEqual(["instagram-login", "download", "download", "numbers", "process", "report"]);
+    expect(calls()[1]).toContain("--check");
+    expect(calls()[1]).toContain(`--cookies ${path.join(tmp, "home", "instagram-cookies.txt")}`);
+    expect(calls().join("\n")).not.toContain("--cookies-from-browser");
   });
 
   it("takes a 30-minute break when asked, waits for a login, and carries on after an optional step fails", { timeout: 60_000 }, async () => {
@@ -96,7 +99,8 @@ describe("study runner", () => {
     const job = (await listJobs(db))[0];
     expect(job.status).toBe("failed");
     expect(job.message).toMatch(/Transcribing/);
-    expect(calls().map((c) => c.split(" ")[0])).toEqual(["download", "download", "download", "download", "numbers", "process"]);
+    // The login that lapsed sends it back to the login window before checking again.
+    expect(calls().map((c) => c.split(" ")[0])).toEqual(["instagram-login", "download", "instagram-login", "download", "download", "download", "numbers", "process"]);
     await stopStudy(db, job.id);
     expect((await listJobs(db))[0].status).toBe("failed");
   });
