@@ -119,3 +119,89 @@ export function taco(x, cx, cy, s = 1) {
   x.fillStyle = '#f2c75c'; x.fillRect(-30, -18, 22, 12); x.fillStyle = '#c9783a'; x.fillRect(-4, -24, 20, 14); x.fillStyle = '#7dbf5a'; x.fillRect(18, -16, 14, 10)
   x.restore()
 }
+
+// ── props for the story episodes (news parody, courtroom, time loop)
+/** an overhead green freeway sign (text + small sub line + arrow) */
+export function overheadSign(x, cx, cy, text, sub, k = 1, { gold = false } = {}) {
+  if (k <= 0) return
+  x.save(); x.translate(cx, cy); x.scale(k, k)
+  if (gold) { x.shadowColor = GOLD; x.shadowBlur = 40 }
+  box(x, -340, -95, 680, 190, gold ? '#1f6a3a' : HGREEN, 8); x.shadowBlur = 0
+  x.strokeStyle = gold ? GOLD : '#e8f1ea'; x.lineWidth = 5; x.strokeRect(-328, -83, 656, 166)
+  txt(x, text, -30, -26, { size: text.length > 12 ? 50 : 62, col: '#f4fbf6' })
+  if (sub) txt(x, sub, -30, 44, { size: 40, col: gold ? GOLD : '#f4fbf6', font: MONO, weight: 700 })
+  x.fillStyle = '#f4fbf6'; x.beginPath(); x.moveTo(260, -40); x.lineTo(310, 0); x.lineTo(260, 40); x.fill()
+  x.restore()
+}
+/** a tear-off calendar page with a year (or a date) */
+export function calendar(x, cx, cy, top, big, k = 1, flip = 0) {
+  if (k <= 0) return
+  x.save(); x.translate(cx, cy); x.scale(k, k * (1 - 0.8 * Math.sin(Math.PI * clamp(flip))))
+  box(x, -110, -120, 220, 240, BONE, 7); x.fillStyle = BRAKE; x.fillRect(-110, -120, 220, 62)
+  txt(x, top, 0, -88, { size: 32, col: BONE, font: MONO, weight: 700 }); txt(x, big, 0, 30, { size: 74, col: INK })
+  x.restore()
+}
+export function cobweb(x, cx, cy, s = 1, a = 1) {
+  x.save(); x.globalAlpha = a; x.strokeStyle = 'rgba(239,230,214,0.75)'; x.lineWidth = 3
+  for (let k = 0; k < 6; k++) { const ang = Math.PI / 2 * k / 5; x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + Math.cos(ang) * 120 * s, cy + Math.sin(ang) * 120 * s); x.stroke() }
+  for (let r = 30; r <= 120; r += 30) { x.beginPath(); x.arc(cx, cy, r * s, 0, Math.PI / 2); x.stroke() }
+  x.restore()
+}
+/** news: desk, LIVE bug, chyron with a scrolling ticker */
+export function newsDesk(x, t) {
+  x.fillStyle = '#16204a'; x.fillRect(0, 0, 1080, 1920)
+  for (let k = 0; k < 8; k++) { x.fillStyle = k % 2 ? '#1b2858' : '#14204e'; x.fillRect(k * 135, 380, 135, 900) }
+  box(x, 150, 1180, 780, 220, '#2b5fb0', 8); x.fillStyle = BONE; x.fillRect(150, 1180, 780, 14)
+  txt(x, 'STAR NEWS', 540, 1300, { size: 64, col: BONE })
+}
+export function liveBug(x, t) { box(x, 80, 260, 150, 64, BRAKE, 5); txt(x, '● LIVE', 155, 293, { size: 32, col: BONE, font: MONO, weight: 700 }) }
+export function chyron(x, t, head, ticker, k = 1) {
+  if (k <= 0) return
+  x.save(); x.globalAlpha = clamp(k)
+  box(x, 0, 1420, 1080, 110, BRAKE, 0); x.fillStyle = INK; x.fillRect(0, 1414, 1080, 8)
+  txt(x, head, 540, 1476, { size: head.length > 26 ? 44 : 54, col: BONE })
+  box(x, 0, 1530, 1080, 64, '#f4efe4', 0)
+  x.save(); x.beginPath(); x.rect(0, 1530, 1080, 64); x.clip()
+  x.font = `700 32px ${MONO}`; const w = x.measureText(ticker).width + 80, off = (t * 160) % w
+  for (let k2 = -1; k2 < 3; k2++) { x.fillStyle = INK; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText(ticker, k2 * w - off, 1563) }
+  x.restore(); x.restore()
+}
+/** a puffer coat + beanie worn by a star at [cx, cy, size] */
+export function puffer(x, P, id, col = '#e05a3a') {
+  const [cx, cy, s] = P.at(id)
+  for (let k = 0; k < 3; k++) box(x, cx - s * 0.36, cy + s * 0.02 + k * s * 0.13, s * 0.72, s * 0.12, col, 4)
+  box(x, cx - s * 0.3, cy - s * 0.62, s * 0.6, s * 0.16, '#2b5fb0', 4); x.fillStyle = BONE; x.beginPath(); x.arc(cx, cy - s * 0.66, s * 0.07, 0, Math.PI * 2); x.fill()
+}
+export function phoneFlash(x, cx, cy, t, text = '55°', lt = 0) {   // one soft camera flash (no strobing)
+  box(x, cx - 50, cy - 90, 100, 180, INK, 4); x.fillStyle = '#bfe6ff'; x.fillRect(cx - 40, cy - 78, 80, 150)
+  txt(x, text, cx, cy, { size: 36, col: INK }); const d = lt - 1.0; if (d > 0 && d < 0.3) { x.fillStyle = `rgba(255,255,255,${(0.35 * (1 - d / 0.3)).toFixed(3)})`; x.fillRect(0, 0, 1080, 1920) }
+}
+export function soupPot(x, cx, cy, t) {
+  box(x, cx - 120, cy - 60, 240, 130, '#8f96a0', 7); box(x, cx - 140, cy - 76, 280, 26, '#6d7480', 5)
+  for (let k = 0; k < 4; k++) { const ph = (t * 0.6 + k / 4) % 1; x.strokeStyle = `rgba(255,255,255,${(0.6 * (1 - ph)).toFixed(2)})`; x.lineWidth = 6; x.beginPath(); x.moveTo(cx - 60 + k * 40, cy - 90 - ph * 140); x.quadraticCurveTo(cx - 40 + k * 40, cy - 130 - ph * 140, cx - 60 + k * 40, cy - 170 - ph * 140); x.stroke() }
+}
+export function plantBlanket(x, cx, base) {
+  box(x, cx - 70, base - 90, 140, 90, '#c9783a', 6)
+  x.fillStyle = '#7dbf5a'; x.beginPath(); x.moveTo(cx - 90, base - 90); x.quadraticCurveTo(cx, base - 300, cx + 90, base - 90); x.fill()
+  box(x, cx - 110, base - 260, 220, 150, '#ff8fb1', 6); for (let k = 0; k < 3; k++) { x.fillStyle = '#ffd1e0'; x.fillRect(cx - 90 + k * 70, base - 230, 30, 30) }
+}
+/** courtroom: wood panelling, the bench, a seal-less banner */
+export function courtroom(x) {
+  x.fillStyle = '#3a2418'; x.fillRect(0, 0, 1080, 1920)
+  for (let k = 0; k < 9; k++) { x.fillStyle = k % 2 ? '#4a2e1e' : '#422818'; x.fillRect(k * 120, 300, 120, 1100) }
+  box(x, 220, 640, 640, 260, '#6b3b1f', 8); x.fillStyle = '#8a5530'; x.fillRect(220, 640, 640, 22)
+  x.fillStyle = '#2a1a10'; x.fillRect(0, 1340, 1080, 580)
+}
+export function gavel(x, cx, cy, t, hit = 0) {
+  x.save(); x.translate(cx, cy); x.rotate(-0.6 + 0.6 * clamp(hit))
+  box(x, -8, 0, 16, 110, '#8a5530', 4); box(x, -50, -30, 100, 50, '#6b3b1f', 5); x.restore()
+}
+export function kolache(x, cx, cy, s = 1) {   // the sweet one: round bun, fruit centre
+  x.save(); x.translate(cx, cy); x.scale(s, s)
+  x.fillStyle = INK; x.beginPath(); x.arc(0, 0, 56, 0, Math.PI * 2); x.fill(); x.fillStyle = '#e8b86a'; x.beginPath(); x.arc(0, 0, 50, 0, Math.PI * 2); x.fill()
+  x.fillStyle = '#c0304a'; x.beginPath(); x.arc(0, 0, 24, 0, Math.PI * 2); x.fill(); x.restore()
+}
+export function klobasnek(x, cx, cy, s = 1) {   // the sausage one: a roll with a sausage poking out
+  x.save(); x.translate(cx, cy); x.scale(s, s)
+  box(x, -70, -30, 140, 60, '#e8b86a', 6); box(x, 70, -16, 34, 32, '#a5452a', 5); box(x, -104, -16, 34, 32, '#a5452a', 5); x.restore()
+}
