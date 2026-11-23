@@ -48,4 +48,20 @@ if (T.endTagAt != null) {
 }
 const out = film ? path.join(here, `../out/films/${film}/soundtrack.wav`) : film3 ? path.join(here, '../out/film3/soundtrack.wav') : film2 ? path.join(here, '../out/film2/soundtrack.wav') : path.join(here, `../out/teasers/${id}.wav`)
 m.render(out)
+if (T.master) {
+  // opt-in loudness master: gain to target, gentle 4× oversampled peak limiter, then two-pass EBU R128 loudnorm (linear)
+  // e.g. master: { lufs: -14, tp: -1.5 }
+  const { spawnSync } = await import('node:child_process')
+  const { renameSync, unlinkSync } = await import('node:fs')
+  const { lufs = -14, tp = -1.5, lra = 11 } = T.master
+  const measure = (f) => { const r = spawnSync('ffmpeg', ['-hide_banner', '-i', f, '-af', `loudnorm=I=${lufs}:TP=${tp}:LRA=${lra}:print_format=json`, '-f', 'null', '-']); return JSON.parse(r.stderr.toString().match(/\{[\s\S]*?\}/g).pop()) }
+  const ff = (args) => { const r = spawnSync('ffmpeg', ['-v', 'error', '-y', ...args]); if (r.status) throw new Error(r.stderr.toString()) }
+  const j0 = measure(out), gain = lufs - Number(j0.input_i) + 0.4
+  const lim = out.replace(/\.wav$/, '.lim.wav'), tmp = out.replace(/\.wav$/, '.master.wav')
+  ff(['-i', out, '-af', `volume=${gain.toFixed(2)}dB,aresample=192000,alimiter=limit=${Math.pow(10, (tp - 0.6) / 20).toFixed(4)}:attack=4:release=90:level=disabled,aresample=48000`, '-c:a', 'pcm_f32le', lim])
+  const j = measure(lim)
+  ff(['-i', lim, '-af', `loudnorm=I=${lufs}:TP=${tp}:LRA=${lra}:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true:print_format=summary`, '-ar', '48000', '-c:a', 'pcm_s16le', tmp])
+  unlinkSync(lim); renameSync(tmp, out)
+  console.log(`mastered: mix ${j0.input_i} LUFS / ${j0.input_tp} dBTP → target ${lufs} LUFS / ${tp} dBTP (limiter in at +${gain.toFixed(1)} dB)`)
+}
 console.log('teaser sound →', path.relative(process.cwd(), out))

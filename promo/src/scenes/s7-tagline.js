@@ -217,8 +217,37 @@ export function sceneTagline(stage, assets) {
     const sp = sparkPos.map(([x, y, s]) => el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '60px', height: '60px', marginLeft: '-30px', marginTop: '-30px', textAlign: 'center', lineHeight: '60px', fontSize: s + 'px', color: C.gold, textShadow: '0 0 16px rgba(242,199,92,0.9), 0 0 3px rgba(120,60,10,0.6)', opacity: 0 }, g, '✦'))
     return { g, hs, sp }
   }
-  const pA = phone(A + 'screen-match.png', 3, [[-64, PH * 0.2, 44], [PW + 54, PH * 0.72, 32]])
-  const pB = phone(A + 'screen-chat-cards.png', 4, [[PW + 60, PH * 0.16, 44], [-56, PH * 0.8, 32]])
+  // beat A: your card and Juniper's arrive face down side by side and flip together (beta match moment)
+  // card-match-*.png 1152×1548, body 84..1067 × 84..1460 (983×1376)
+  const MC = { iw: 1152, ih: 1548, bx: 84, by: 84, bw: 983, bh: 1376 }
+  const CW = VERT ? 462 : 330, CK = CW / MC.bw, CH = MC.bh * CK, GAP = VERT ? 30 : 30
+  const GW = CW * 2 + GAP, GH = CH
+  function flipCard(parent, x, front) {
+    const box = el('div', { position: 'absolute', left: x + 'px', top: 0, width: CW + 'px', height: CH + 'px', perspective: '1400px' }, parent)
+    const fl = el('div', { position: 'absolute', inset: 0, transformStyle: 'preserve-3d', willChange: 'transform' }, box)
+    const face = (src, back) => {
+      const f = el('div', { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: back ? 'none' : 'rotateY(180deg)' }, fl)
+      img(f, src, { left: -MC.bx * CK + 'px', top: -MC.by * CK + 'px', width: MC.iw * CK + 'px', height: MC.ih * CK + 'px' })
+    }
+    face(A + 'card-match-back.png', true); face(A + front, false)
+    return { box, fl }
+  }
+  const pA = (() => {
+    const g = el('div', { position: 'absolute', left: -GW / 2 + 'px', top: (PCY - GH / 2) + 'px', width: GW + 'px', height: GH + 'px', opacity: 0, zIndex: 3, willChange: 'transform', transformStyle: 'preserve-3d' }, persp)
+    const cards = [flipCard(g, 0, 'card-match-me.png'), flipCard(g, CW + GAP, 'card-match-them.png')]
+    const sp = [[-50, GH * 0.18, 44], [GW + 44, GH * 0.78, 32]].map(([x, y, s]) => el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '60px', height: '60px', marginLeft: '-30px', marginTop: '-30px', textAlign: 'center', lineHeight: '60px', fontSize: s + 'px', color: C.gold, textShadow: '0 0 16px rgba(242,199,92,0.9), 0 0 3px rgba(120,60,10,0.6)', opacity: 0 }, g, '✦'))
+    return { g, hs: [], sp, cards }
+  })()
+  // beat B: one big talk card (card-talk-daily.png 1178×1891, body 96..1082 × 96..1795)
+  const TC = { iw: 1178, ih: 1891, bx: 96, by: 96, bw: 986, bh: 1699 }
+  const TW_ = VERT ? 640 : 470, TK = TW_ / TC.bw, TH_ = TC.bh * TK
+  const pB = (() => {
+    const g = el('div', { position: 'absolute', left: -TW_ / 2 + 'px', top: (PCY - TH_ / 2) + 'px', width: TW_ + 'px', height: TH_ + 'px', opacity: 0, zIndex: 4, willChange: 'transform' }, persp)
+    el('div', { position: 'absolute', inset: '-6px', borderRadius: (VERT ? 34 : 26) + 'px', boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 0 80px rgba(242,199,92,0.28)' }, g)
+    img(g, A + 'card-talk-daily.png', { left: -TC.bx * TK + 'px', top: -TC.by * TK + 'px', width: TC.iw * TK + 'px', height: TC.ih * TK + 'px' })
+    const sp = [[TW_ + 56, TH_ * 0.14, 44], [-52, TH_ * 0.82, 32]].map(([x, y, s]) => el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '60px', height: '60px', marginLeft: '-30px', marginTop: '-30px', textAlign: 'center', lineHeight: '60px', fontSize: s + 'px', color: C.gold, textShadow: '0 0 16px rgba(242,199,92,0.9), 0 0 3px rgba(120,60,10,0.6)', opacity: 0 }, g, '✦'))
+    return { g, hs: [], sp }
+  })()
 
   function caption(x, align, eyebrow, line, scrim) {
     // vertical: centred above the phone (x/align ignored)
@@ -329,6 +358,13 @@ export function sceneTagline(stage, assets) {
       const tyA = lerp(220, 0, La) + 5 * hold
       pA.g.style.opacity = String(ease.outQuad(prog(t, T_A, T_A + 0.12)))
       pA.g.style.transform = `translate(${ax}px, ${tyA}px) rotateX(${rxA}deg) rotateY(${ryA}deg) rotateZ(${rzA}deg) scale(${sA})`
+      // the two cards flip together once they've landed (left one a beat first), with a little lift
+      pA.cards.forEach((c, i) => {
+        const f0 = T_A_END - 0.1 + i * 0.06, fp = ease.inOutCubic(prog(t, f0, f0 + 0.5))
+        const lift = Math.sin(Math.PI * fp)
+        c.fl.style.transform = `translateZ(${60 * lift}px) rotateY(${180 * fp}deg) scale(${1 + 0.06 * lift})`
+        c.box.style.transform = `rotateZ(${(i ? 1 : -1) * lerp(4, 2.5, fp)}deg) translateY(${-14 * lift}px)`
+      })
       const hA = prog(t, T_A_END - 0.06, T_A_END + 0.04) * (1 - prog(t, T_SW, T_SW + 0.1))
       pA.hs.forEach(h => { h.style.opacity = String(hA) })
       pA.sp.forEach((s, i) => {

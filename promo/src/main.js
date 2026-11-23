@@ -1,9 +1,10 @@
 import { prog, ease } from './lib.js'
-import { EXTRA, DURATION as TOTAL, late } from './timing.js'
+import { EXTRA, DURATION as TOTAL, late, warp } from './timing.js'
 import * as S from './scenes/index.js'
 import { W, H, VERT } from './scenes/common.js'
 
 export const DURATION = TOTAL
+window.DURATION = TOTAL
 const stage = document.getElementById('stage')
 const fx = document.getElementById('fx')
 const ctx = fx.getContext('2d')
@@ -47,7 +48,9 @@ async function boot() {
   await document.fonts.ready
   await Promise.all([...document.images].map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r })))
 
-  window.seek = (t) => {
+  window.seek = (tPlay) => {
+    // the slow opening: playback time → S1–S3 time (everything below runs on that)
+    let t = warp(tPlay)
     const t0 = t
     for (const [i, s] of scenes.entries()) {
       // S1–S3 (0–2) run on real time; later scenes keep their authored times, shifted by EXTRA
