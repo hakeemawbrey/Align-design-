@@ -180,7 +180,7 @@ const e277 = (() => {
 // ── hst278 · The crew. The plan. The last kolache. (heist parody, for you)
 const e278 = (() => {
   const bakery = (x, t, open = false) => { night(x, t, '#22202e'); shop(x, 540, FLOOR + 60, 'KOLACHES', { col: '#c98e5a', awn: '#f2c75c', open: open ? 'OPEN 5AM' : 'CLOSED' }) }
-  const freeze = (x, lt, name, role, cx) => { const k = Kp(lt, 0.4); if (k > 0) { label(x, cx, 1480, name, k, { size: 46, bg: GOLD }); txt(x, role, cx, 1560, { size: 36, col: BONE, font: SERIF, weight: 500, italic: true }) } }
+  const freeze = (x, lt, name, role, cx) => { const k = Kp(lt, 0.4); if (k > 0) { label(x, cx, 1590, name, k, { size: 46, bg: GOLD }); txt(x, role, cx, 1655, { size: 36, col: BONE, font: SERIF, weight: 500, italic: true }) } }
   return T({
     hook: 'The crew. The plan. | The last kolache.',
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Sweet or sausage? Jan 9.', stars: ['virgo', 'gemini', 'taurus', 'capricorn'] }),
@@ -203,7 +203,7 @@ const e278 = (() => {
         lines: [[0.3, 1.3, 'taurus', "it's… | the sausage one."], [1.8, 1.8, 'virgo', "that's a | KLOBASNEK."]], stick: [[2.0, 1.6, 'TECHNICALLY', PINK]] },
       { dur: 3.2, set: (x, t) => { x.fillStyle = '#2a2240'; x.fillRect(0, 0, 1080, 1920) }, front: cin(), cast: { gemini: [[0, 300, Y, 230]], virgo: [[0, 780, Y, 230]] }, mood: { gemini: 'sparkle', virgo: 'eyeroll' },
         lines: [[0.2, 1.2, 'gemini', 'still | counts.'], [1.6, 1.4, 'virgo', 'it does | NOT.']] },
-      { dur: 3.4, set: (x, t, lt) => { night(x, t, '#22202e'); if (lt > 0.4) sparkles(x, t, 540, 1050, t - lt + 0.4, 12, 260, 5) }, front: cin((x, t, lt) => klobasnek(x, 540, 1060 - 40 * Math.sin(lt * 3), 1.5 + 0.2 * clamp(lt))),
+      { dur: 3.4, set: (x, t, lt) => { night(x, t, '#22202e'); if (lt > 0.4) sparkles(x, t, 540, 760, t - lt + 0.4, 12, 260, 5) }, front: cin((x, t, lt) => klobasnek(x, 540, 760 - 30 * Math.sin(lt * 3), 1.5 + 0.2 * clamp(lt))),
         cast: { taurus: [[0, 540, Y + 40, 230]] }, mood: { taurus: 'heart' },
         lines: [[0.3, 1.4, 'taurus', 'for you.'], [1.8, 1.4, 'taurus', "don't tell | Virgo."]] },
       rate('RATED K', 'for Kolache, Klobasnek | and Konfusion'),
