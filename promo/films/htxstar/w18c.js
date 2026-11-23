@@ -72,3 +72,47 @@ export const hst447 = {
       cast: Object.fromEntries(SIGN_IDS.map((id, i) => [id, [[0, 90 + (i % 6) * 180, i < 6 ? 1080 : 1280, 150]]])), hops: waveHops(SIGN_IDS, 0.1, 0.05), mood: allMood('heart') },
   ],
 }
+
+// ── hst448 · your hair vs Houston humidity, by sign (a humidity meter that only reads YES)
+const HAIR = [
+  ['aries', 'stepped outside. | it is over.', [['frizz', '#ff7a3a']], 'wide'], ['taurus', 'a hat. | problem solved.', [['hat', '#8a5a3a']], 'happy'],
+  ['gemini', 'half up, | half down. both frizz.', [['frizz', '#ffd36b'], ['bow', PINK]], 'wink'], ['leo', 'the mane | has doubled.', [['frizz', '#e0a030'], ['crown', GOLD]], 'sparkle'],
+  ['virgo', 'three products. | humidity: four.', [['frizz', '#7dbf5a']], 'squint'], ['libra', 'a scarf. | it is a look now.', [['scarf', PINK], ['flower', GOLD]], 'heart'],
+  ['sagittarius', 'embracing it. | big hair, big night.', [['frizz', '#b08aff']], 'sparkle'], ['pisces', "it's not rain. | I'm just emotional.", [['frizz', '#9a8aff']], 'heart'],
+]
+const muggy = (x, t, i) => { const cols = [['#7ab0c0', '#e8f0d0'], ['#8ab0a0', '#f0e8c0'], ['#a0a0c0', '#f0d8c0'], ['#80b0b0', '#f0f0d0']][i % 4]; daySky(x, t, { top: cols[0], bot: cols[1], ground: '#5a7a4a' }); for (let k = 0; k < 12; k++) { const ph = (t * 0.2 + k / 12) % 1; x.fillStyle = 'rgba(255,255,255,0.18)'; x.beginPath(); x.arc((k * 97) % 1080, 1200 - ph * 700, 30 + (k % 3) * 12, 0, Math.PI * 2); x.fill() } }
+const meter = (x, cx, cy, lt, k = 1) => { if (k <= 0) return; x.save(); x.translate(cx, cy); x.scale(k, k); box(x, -130, -110, 260, 220, '#1c3a4a', 7); txt(x, 'HUMIDITY', 0, -70, { size: 30, col: BONE, font: MONO, weight: 700 }); const a = -Math.PI + Math.min(Math.PI, Math.PI * (0.7 + 0.3 * Math.abs(Math.sin(lt * 3)))); x.strokeStyle = BONE; x.lineWidth = 8; x.beginPath(); x.arc(0, 40, 80, Math.PI, 0); x.stroke(); x.strokeStyle = BRAKE; x.lineWidth = 8; x.beginPath(); x.moveTo(0, 40); x.lineTo(Math.cos(a) * 70, 40 + Math.sin(a) * 70); x.stroke(); txt(x, 'YES', 0, 80, { size: 34, col: GOLD, font: MONO, weight: 700 }); x.restore() }
+export const hst448 = {
+  hook: 'Your hair vs Houston | humidity, by sign', badge: BADGE, cues: [...sting(739.99)], endLen: 6.2,
+  end: ticket('Come as you are, frizz and all.', ['leo', 'sagittarius', 'pisces', 'libra']),
+  scenes: [
+    { dur: 2.8, set: (x, t) => muggy(x, t, 0), front: (x, t, lt, P) => { meter(x, 860, 780, lt + 1); HAIR.slice(0, 4).forEach(([id, , w]) => w.forEach(([it, c]) => wear(x, P, id, it, c))) },
+      cast: Object.fromEntries(HAIR.slice(0, 4).map(([id], i) => [id, [[0, 150 + i * 200, Y, 190]]])), hops: waveHops(HAIR.slice(0, 4).map(h => h[0]), 0.02, 0.1), mood: Object.fromEntries(HAIR.slice(0, 4).map(([id]) => [id, 'wide'])) },
+    ...HAIR.map(([id, line, w, mood], i) => ({ dur: 3.0, set: (x, t) => muggy(x, t, i), front: (x, t, lt, P) => { meter(x, 860, 640, lt, Kp(lt, 0.02)); w.forEach(([it, c]) => { if (it !== 'frizz' || lt > 0.5) wear(x, P, id, it, c) }); sweat(x, P.at(id)[0], P.at(id)[1] - 150, t, 2) },
+      cast: { [id]: [[0, 380, Y, 290]] }, mood: { [id]: mood }, hops: { [id]: [0.5] }, lines: [[0.6, 2.2, id, line]] })),
+    { dur: 3.2, set: (x, t) => muggy(x, t, 1), front: (x, t, lt, P) => { HAIR.slice(4).forEach(([id, , w]) => w.forEach(([it, c]) => wear(x, P, id, it, c))); const k = Kp(lt, 0.1, 0.35); label(x, 540, 560, 'your humidity hair plan?', k, { size: 52, bg: GOLD }); label(x, 540, 670, 'comment your sign', k, { size: 44, bg: PINK, rot: 0.03 }) },
+      cast: Object.fromEntries(HAIR.slice(4).map(([id], i) => [id, [[0, 150 + i * 200, Y, 190]]])), hops: waveHops(HAIR.slice(4).map(h => h[0]), 0.1, 0.1), mood: Object.fromEntries(HAIR.slice(4).map(([id]) => [id, 'heart'])) },
+  ],
+}
+
+// ── hst449 · the signs pick a pre-party photo spot (a mural, the bats, paddle boats, the skyline; then the group photo)
+const spotScene = (dur, set, ids, cap, line, extra = {}) => ({ dur, set, front: (x, t, lt, P) => { photoFrame(x, 540, 980, 860, 760, Kp(lt, 0.02), cap); flash(x, lt, 1.6); extra.front?.(x, t, lt, P) }, cast: Object.fromEntries(ids.map((id, i) => [id, [[0, 540 + (i - (ids.length - 1) / 2) * 250, 1130, 230]]])),
+  mood: Object.fromEntries(ids.map(id => [id, lt => lt > 1.6 ? 'happy' : 'sparkle'])), hops: Object.fromEntries(ids.map((id, i) => [id, [1.6 + i * 0.05]])), lines: [[0.2, 1.3, ids[0], line]], ...extra.more })
+const paddle = (x, t) => { daySky(x, t, { top: '#7ac0ff', bot: '#e0f4ff', city: true, ground: '#4a8a5a' }); x.fillStyle = '#5ab0d0'; x.fillRect(0, 1000, 1080, 380); for (let k = 0; k < 3; k++) { const cx = 220 + k * 320 + Math.sin(t + k) * 20; box(x, cx - 90, 1220, 180, 50, ['#ffd36b', PINK, MINT][k], 5); box(x, cx - 50, 1180, 100, 40, BONE, 4) } }
+export const hst449 = {
+  hook: 'Your pre-party | photo spot, by sign', badge: BADGE, cues: [...sting(587.33), ['bell', 1.6 + 2.8, 1568, 0.01, 0.6, 0]], endLen: 6.2,
+  end: ticket('Save us a spot in the photo. Jan 9.', ['leo', 'libra', 'aquarius', 'sagittarius']),
+  scenes: [
+    { dur: 2.8, set: (x, t) => { daySky(x, t, { city: false }); mural(x, t); outside(x, { ground: '#3a2a4a' }) }, cast: Object.fromEntries(['leo', 'libra', 'aquarius', 'sagittarius', 'capricorn'].map((id, i) => [id, [[0, 130 + i * 205, Y, 180]]])), hops: waveHops(['leo', 'libra', 'aquarius', 'sagittarius', 'capricorn'], 0.02, 0.1), mood: allMood('sparkle') },
+    spotScene(3.4, (x, t) => { daySky(x, t, { city: false }); mural(x, t); outside(x, { ground: '#3a2a4a' }) }, ['aquarius'], 'the mural', 'a Montrose mural. | obviously.', { front: (x, t, lt, P) => wear(x, P, 'aquarius', 'headphones', MINT) }),
+    spotScene(3.4, (x, t, lt) => { bayou(x, t); box(x, -20, 980, 1120, 60, '#8f96a0', 6); for (let k = 0; k < 30; k++) { const ph = ((lt * 0.35 + k / 30) % 1), bx = 200 + (k * 37) % 600 + ph * 300, by = 960 - ph * 520 + Math.sin(k + lt * 6) * 24, w = Math.sin(lt * 18 + k) > 0 ? 12 : 5; x.fillStyle = INK; x.fillRect(bx - w, by - 3, w * 2, 6) } }, ['sagittarius'], 'bats at sunset', 'the bridge! | at bat o’clock!'),
+    spotScene(3.4, paddle, ['libra', 'pisces'], 'paddle boats', 'paddle boats. | so romantic.'),
+    spotScene(3.4, (x, t) => { nightCity(x, t, '#0e0b24', '#3a2a6a') }, ['capricorn'], 'the skyline', 'skyline. | from the bayou. classic.'),
+    spotScene(3.4, (x, t) => { nightCity(x, t, '#2a1a4a', '#6a2a5a'); }, ['leo'], 'just me', 'any spot. | I am the spot.', { front: (x, t, lt, P) => { wear(x, P, 'leo', 'crown'); wear(x, P, 'leo', 'shades') } }),
+    { dur: 3.6, set: (x, t) => { daySky(x, t, { city: false }); mural(x, t); outside(x, { ground: '#3a2a4a' }) }, front: (x, t, lt, P) => { photoFrame(x, 540, 1000, 960, 640, Kp(lt, 0.02), 'all of us · Jan 9'); flash(x, lt, 2.0); wear(x, P, 'leo', 'crown') },
+      cast: Object.fromEntries(['aquarius', 'sagittarius', 'libra', 'pisces', 'capricorn', 'leo'].map((id, i) => [id, [[0, 160 + i * 150, 1150 - (i % 2) * 60, 170]]])), mood: allMood('happy'), hops: waveHops(['aquarius', 'sagittarius', 'libra', 'pisces', 'capricorn', 'leo'], 1.9, 0.03),
+      stick: [[0.2, 1.6, 'ok, everyone: cheese', GOLD]] },
+    { dur: 3.0, set: (x, t) => nightCity(x, t), front: (x, t, lt) => { const k = Kp(lt, 0.1, 0.35); label(x, 540, 560, 'your Houston photo spot?', k, { size: 52, bg: GOLD }); label(x, 540, 670, 'comment it', k, { size: 44, bg: PINK, rot: 0.03 }) },
+      cast: Object.fromEntries(['aquarius', 'sagittarius', 'libra', 'pisces', 'capricorn', 'leo'].map((id, i) => [id, [[0, 130 + i * 165, Y, 160]]])), mood: allMood('heart'), hops: waveHops(['aquarius', 'sagittarius', 'libra', 'pisces', 'capricorn', 'leo'], 0.1, 0.05) },
+  ],
+}
