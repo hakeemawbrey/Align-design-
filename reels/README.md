@@ -96,7 +96,7 @@ The player is also the review desk:
 
 | file | what |
 | --- | --- |
-| `pfp-star.png` | one gold ✦ star with eyes, looking at you |
+| `pfp-star.png` | one solid gold ✦ star with eyes over the checker floor, looking at you |
 | `pfp-aura.png` | the holographic figure in its aura, a gold star over its head |
 | `pfp-popup.png` | the star inside the reels' Windows-98 popup, titled `align.exe` |
 | `pfp-gaze.png` | the figure from behind, looking up at a giant star |

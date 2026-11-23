@@ -10,9 +10,10 @@ import * as THREE from 'three'
 import { makeRng } from './rng.js'
 import { makeFigure, makeSpecies } from './actors.js'
 import { loadFonts } from './reel.js'
+import { checkerTexture } from './textures.js'
 
 const SIZE = 1080
-const GOLD = '#ffd23a'
+const GOLD = '#ffc61a'
 
 // A night-sky backdrop: deep violet to indigo, a soft glow behind the subject,
 // and a scatter of small stars.
@@ -40,6 +41,23 @@ function backdrop(seed, { glow = '#6b3cff', top = '#140a33', bottom = '#05040f' 
     ctx.arc(x, y, s, 0, Math.PI * 2)
     ctx.fill()
   }
+  const t = new THREE.CanvasTexture(c)
+  t.colorSpace = THREE.SRGBColorSpace
+  return t
+}
+
+function poolTexture(color) {
+  const c = document.createElement('canvas')
+  c.width = c.height = 128
+  const ctx = c.getContext('2d')
+  const col = new THREE.Color(color)
+  const rgb = `${Math.round(col.r * 255)},${Math.round(col.g * 255)},${Math.round(col.b * 255)}`
+  const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
+  g.addColorStop(0, `rgba(${rgb},0.55)`)
+  g.addColorStop(0.5, `rgba(${rgb},0.18)`)
+  g.addColorStop(1, `rgba(${rgb},0)`)
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, 128, 128)
   const t = new THREE.CanvasTexture(c)
   t.colorSpace = THREE.SRGBColorSpace
   return t
@@ -129,15 +147,40 @@ export async function renderPfp(variant = 'star', { seed = 'pfp', label = 'align
   renderer.setSize(SIZE, SIZE, false)
   renderer.outputColorSpace = THREE.SRGBColorSpace
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100)
+  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 200)
   const rng = makeRng('pfp/' + seed)
-  scene.add(new THREE.HemisphereLight('#cfd8ff', '#20143a', 1.2))
-  const sun = new THREE.DirectionalLight('#ffffff', 1.4)
-  sun.position.set(2, 4, 5)
-  scene.add(sun)
+  const warm = variant === 'popup' || variant === 'gaze'
+  const horizon = warm ? '#5a2a6e' : '#3a2380'
 
-  // the classic slim, curved ✦
-  const spawn = makeSpecies(rng.fork('species'), [], { eyes: 2, inner: 0.28, curve: 0.6, depth: 0.16 })
+  // ---- the world: a checker floor running to a foggy horizon, like the reels
+  scene.background = backdrop(seed, { glow: warm ? '#ff9f2e' : '#7a3cff', top: warm ? '#1d0f3a' : '#120833', bottom: horizon })
+  scene.fog = new THREE.Fog(horizon, 9, 34)
+  const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(240, 240),
+    new THREE.MeshPhongMaterial({ map: checkerTexture('#160d33', '#d9d2ff', 2, 70), shininess: 60, specular: '#8a7cff' }),
+  )
+  floor.rotation.x = -Math.PI / 2
+  scene.add(floor)
+  // a few low-poly shapes floating in the distance
+  const shapes = [() => new THREE.OctahedronGeometry(0.7, 0), () => new THREE.TorusGeometry(0.6, 0.2, 6, 12), () => new THREE.IcosahedronGeometry(0.6, 0)]
+  for (let i = 0; i < 5; i++) {
+    const m = new THREE.Mesh(rng.pick(shapes)(), new THREE.MeshPhongMaterial({ color: rng.pick(['#ff6ad5', '#9fd0ff', '#ffb347', '#b9a3ff']), flatShading: true, shininess: 80 }))
+    m.position.set(rng.sign() * rng.range(3, 8), rng.range(1.5, 5), rng.range(-14, -6))
+    m.rotation.set(rng.range(0, 3), rng.range(0, 3), 0)
+    scene.add(m)
+  }
+
+  // ---- light: soft fill, a warm key from the front, a coloured rim from behind
+  scene.add(new THREE.HemisphereLight('#b9b0ff', '#1a0f33', 0.55))
+  const key = new THREE.DirectionalLight('#fff1d6', 2.2)
+  key.position.set(-3, 5, 6)
+  scene.add(key)
+  const rim = new THREE.DirectionalLight(warm ? '#ff7ad9' : '#5ad8ff', 2.4)
+  rim.position.set(4, 3, -5)
+  scene.add(rim)
+
+  // chunky, faceted stars so they read as solid objects
+  const spawn = makeSpecies(rng.fork('species'), [], { eyes: 2, inner: 0.28, curve: 0.6, depth: 0.32 })
   const t = 1.3 // a moment where nobody is blinking
   // pos is where the star's centre should be; it hovers inside its group, so
   // place it, measure where it ended up, and shift it there
@@ -145,48 +188,63 @@ export async function renderPfp(variant = 'star', { seed = 'pfp', label = 'align
     const s = spawn(0, rng.fork('s' + pos.x + pos.y), { color })
     s.object.scale.setScalar(size)
     scene.add(s.object)
+    const body = s.object.children[0]
+    // lit gold instead of the reels' self-lit glow: facets, highlights, shadow side
+    body.children[0].material = new THREE.MeshPhongMaterial({
+      color, emissive: new THREE.Color(color).multiplyScalar(0.4), specular: '#fff6d8', shininess: 90, flatShading: true,
+    })
     s.update(t, {})
     s.object.updateMatrixWorld(true)
-    const at = s.object.children[0].getWorldPosition(new THREE.Vector3())
+    const at = body.getWorldPosition(new THREE.Vector3())
     s.object.position.add(pos.clone().sub(at))
+    // a pool of its light on the floor below it
+    const pool = new THREE.Mesh(
+      new THREE.CircleGeometry(1, 32),
+      new THREE.MeshBasicMaterial({ map: poolTexture(color), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }),
+    )
+    pool.rotation.x = -Math.PI / 2
+    pool.position.set(pos.x, 0.02, pos.z)
+    pool.scale.setScalar(size * 1.6)
+    scene.add(pool)
     return s
   }
   const stars = []
   let figure = null
+  // where each star looks: slightly past the camera, so it turns a little and
+  // shows its thickness
+  let lookOffset = new THREE.Vector3(-1.4, 0, 0)
 
   if (variant === 'star' || variant === 'popup') {
-    scene.background = backdrop(seed, { glow: variant === 'popup' ? '#ff9f2e' : '#7a3cff', top: variant === 'popup' ? '#1d0f3a' : '#120833' })
-    const s = star(GOLD, variant === 'popup' ? 1.25 : 1.45, new THREE.Vector3(0, 0.05, 0))
-    stars.push(s)
-    for (const [c, x, y, z, k] of [['#9fd0ff', -1.9, 1.5, -3, 0.5], ['#ff9d2e', 2.0, 1.2, -3.5, 0.45], ['#cfe6ff', 1.7, -1.6, -2.5, 0.35]]) {
-      if (variant === 'popup') break
-      stars.push(star(c, k, new THREE.Vector3(x, y, z)))
+    stars.push(star(GOLD, variant === 'popup' ? 1.25 : 1.45, new THREE.Vector3(0, 1.55, 0)))
+    if (variant === 'star') {
+      stars.push(star('#9fd0ff', 0.45, new THREE.Vector3(-2.2, 2.4, -4)))
+      stars.push(star('#ff9d2e', 0.4, new THREE.Vector3(2.4, 2.1, -5)))
     }
-    camera.position.set(0, 0.15, 4.4)
-    camera.lookAt(0, 0.15, 0)
+    camera.position.set(1.0, 1.05, 4.6)
+    camera.lookAt(0, 1.5, 0)
   } else if (variant === 'aura') {
-    scene.background = backdrop(seed, { glow: aura.color, top: '#0d0824', bottom: '#030208' })
     figure = makeFigure(rng.fork('fig'), { hue: 0.75, skyTop: '#bfa8ff', skyLow: '#1a1030', aura, glyph: '✦' })
+    figure.face(0.35)
     scene.add(figure.object)
-    stars.push(star(GOLD, 0.6, new THREE.Vector3(0, 2.45, 0.1)))
-    camera.position.set(0, 1.75, 5.2)
-    camera.lookAt(0, 1.6, 0)
+    stars.push(star(GOLD, 0.5, new THREE.Vector3(0, 2.4, 0.1)))
+    camera.position.set(0.9, 1.0, 5.0)
+    camera.lookAt(0, 1.45, 0)
   } else if (variant === 'gaze') {
-    scene.background = backdrop(seed, { glow: '#ff9f2e', top: '#160a30', bottom: '#05040f' })
     figure = makeFigure(rng.fork('fig'), { hue: 0.6, skyTop: '#ffd9a8', skyLow: '#1a1030', aura: { color: '#f39a3a', light: '#ffd09a' }, glyph: '✦' })
-    figure.face(Math.PI)
-    figure.object.position.set(-0.75, 0, 1.4)
+    figure.face(Math.PI - 0.3)
+    figure.object.position.set(-0.8, 0, 1.6)
     scene.add(figure.object)
-    stars.push(star(GOLD, 1.1, new THREE.Vector3(0.55, 2.55, -1.2)))
-    camera.position.set(-0.2, 1.0, 7.2)
-    camera.lookAt(0.05, 1.75, 0)
+    stars.push(star(GOLD, 1.25, new THREE.Vector3(0.7, 2.9, -2.4)))
+    camera.position.set(-0.4, 0.8, 7.2)
+    camera.lookAt(0.1, 1.9, 0)
+    lookOffset = new THREE.Vector3(0, 0, 0)
   }
 
   scene.updateMatrixWorld(true)
   if (figure) figure.update(t, { look: camera.position, power: variant === 'aura' ? 0.85 : 0.6 })
   stars.forEach((s, i) => {
     // look at the camera; in "gaze" the big star looks down at the figure
-    const look = variant === 'gaze' ? figure.object.position.clone().add(new THREE.Vector3(0, 1.3, 0)) : camera.position
+    const look = variant === 'gaze' ? figure.object.position.clone().add(new THREE.Vector3(0, 1.3, 0)) : camera.position.clone().add(lookOffset)
     // each star blinks on its own clock: find a moment its eyes are open
     const eyesOpen = () => {
       let open = true
@@ -204,6 +262,10 @@ export async function renderPfp(variant = 'star', { seed = 'pfp', label = 'align
     for (let k = 0; k < 60; k++) s.update(st, { look, alert: 1, talk: 0 })
     // the main star stands upright, facing you
     if (i === 0) s.object.children[0].children[0].rotation.z = 0
+    // keep the halo, but softer, so the star's own shape does the work
+    const glow = s.object.children[0].children[1]
+    glow.material.opacity *= 0.5
+    glow.scale.multiplyScalar(0.75)
   })
   renderer.render(scene, camera)
 
@@ -211,13 +273,10 @@ export async function renderPfp(variant = 'star', { seed = 'pfp', label = 'align
   out.width = out.height = SIZE
   const ctx = out.getContext('2d')
   if (variant === 'popup') {
+    // the world behind, dimmed, and the window on top showing the star
     ctx.drawImage(glCanvas, 0, 0)
-    // fill the background with the same sky, then the window on top
-    const bg = document.createElement('canvas')
-    bg.width = bg.height = SIZE
-    const bctx = bg.getContext('2d')
-    bctx.drawImage(scene.background.image, 0, 0, SIZE, SIZE)
-    ctx.drawImage(bg, 0, 0)
+    ctx.fillStyle = 'rgba(8,4,20,0.55)'
+    ctx.fillRect(0, 0, SIZE, SIZE)
     popupFrame(ctx, glCanvas, label)
   } else {
     ctx.drawImage(glCanvas, 0, 0)
