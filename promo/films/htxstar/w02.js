@@ -225,7 +225,7 @@ export function bats({ n = 46 } = {}) {
     ground(x, '#2c2338')
   }
 }
-function paddleBoat(x, cx, cy, col, t, k) { const b = Math.sin(t * 2 + k) * 6; box(x, cx - 90, cy - 30 + b, 180, 60, col, 6); box(x, cx - 70, cy - 110 + b, 140, 20, BONE, 5); box(x, cx - 66, cy - 92 + b, 10, 62, BONE, 3); box(x, cx + 56, cy - 92 + b, 10, 62, BONE, 3); x.fillStyle = INK; x.beginPath(); x.arc(cx + 92, cy + b, 22, 0, Math.PI * 2); x.fill(); x.strokeStyle = BONE; x.lineWidth = 5; x.beginPath(); x.arc(cx + 92, cy + b, 14, t * 4, t * 4 + 4); x.stroke() }
+export function paddleBoat(x, cx, cy, col, t, k, sc = 1) { x.save(); x.translate(cx, cy); x.scale(sc, sc); x.translate(-cx, -cy); const b = Math.sin(t * 2 + k) * 6; box(x, cx - 90, cy - 30 + b, 180, 60, col, 6); box(x, cx - 70, cy - 110 + b, 140, 20, BONE, 5); box(x, cx - 66, cy - 92 + b, 10, 62, BONE, 3); box(x, cx + 56, cy - 92 + b, 10, 62, BONE, 3); x.fillStyle = INK; x.beginPath(); x.arc(cx + 92, cy + b, 22, 0, Math.PI * 2); x.fill(); x.strokeStyle = BONE; x.lineWidth = 5; x.beginPath(); x.arc(cx + 92, cy + b, 14, t * 4, t * 4 + 4); x.stroke(); x.restore() }
 export function paddle() {
   return (x, t) => {
     grad(x, ['rgba(120,190,255,0.0)', 'rgba(140,210,255,0.35)'], 200, GY - 300)
@@ -303,10 +303,11 @@ export function bakery() {
   return (x, t) => {
     x.fillStyle = '#f6efe0'; x.fillRect(0, 260, 1080, GY - 260)
     for (let k = 0; k < 18; k++) for (let j = 0; j < 10; j++) if ((k + j) % 2) { x.fillStyle = 'rgba(80,140,200,0.12)'; x.fillRect(k * 60, 260 + j * 60, 60, 60) }
-    box(x, 220, 340, 640, 120, '#c0304a', 8); txt(x, 'KOLACHES', 540, 402, { size: 78, col: BONE })
-    box(x, 60, 720, 960, GY - 720, '#8a5530', 8)
-    box(x, 80, 560, 920, 180, 'rgba(200,240,255,0.55)', 6)
-    for (let k = 0; k < 5; k++) { kolache(x, 160 + k * 90, 650, 0.62) } for (let k = 0; k < 4; k++) klobasnek(x, 650 + k * 95, 655, 0.5)
+    box(x, 220, 420, 640, 110, '#c0304a', 8); txt(x, 'KOLACHES', 540, 477, { size: 74, col: BONE })
+    box(x, 60, 780, 960, GY - 780, '#8a5530', 8)
+    box(x, 80, 600, 920, 180, 'rgba(200,240,255,0.55)', 6)
+    for (let k = 0; k < 5; k++) { kolache(x, 160 + k * 90, 690, 0.62) } for (let k = 0; k < 4; k++) klobasnek(x, 650 + k * 95, 695, 0.5)
+    ground(x, '#6b4a30')
   }
 }
 /** an arctic office: AC vent with icicles, snow falling inside, heat outside the window */
@@ -339,7 +340,7 @@ export function museum({ sign = 'FREE THURSDAY' } = {}) {
   return (x, t) => {
     x.fillStyle = '#efeae0'; x.fillRect(0, 260, 1080, GY - 260)
     ;[[90, 380, 260, 330, ['#e8343c', '#2b5fb0']], [420, 420, 240, 240, ['#f2c75c', '#1b1236']], [730, 360, 270, 360, ['#7dbf5a', '#ff8fb1']]].forEach(([l, tp, w, h, c]) => { box(x, l, tp, w, h, '#c9a24a', 10); x.fillStyle = c[0]; x.fillRect(l + 16, tp + 16, w - 32, (h - 32) / 2); x.fillStyle = c[1]; x.fillRect(l + 16, tp + 16 + (h - 32) / 2, w - 32, (h - 32) / 2) })
-    box(x, 330, 780, 420, 70, INK, 4); txt(x, sign, 540, 816, { size: 40, col: GOLD, font: MONO, weight: 700 })
+    box(x, 760, 760, 290, 56, INK, 4); txt(x, sign, 905, 788, { size: 28, col: GOLD, font: MONO, weight: 700 })
     ground(x, '#b8a888')
   }
 }

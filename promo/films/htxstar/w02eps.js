@@ -1,6 +1,7 @@
 // Houston Star Talk · worker w02 · the ADVICE episodes hst036–hst060 (engine: ./w02.js; brief: promo/posting/htx/FARM.md).
 // Each: one sign's star looks at YOU, gives real, healthy dating advice with Houston jokes, ★ LESSON UNLOCKED, then the Jan 9 ticket.
-import { advice, GY, HERO, Kp, fwy, inCar, bayou, bats, paddle, neon, porch, muralWall, brunch, boil, boilTable, bakery, office, beach, museum, tunnel, lawn, danceHall, marina, karaoke, micStand, party, kitchen, bowl, cafe, mug, smallTable, coldDay, feeder, phone, dawnLoop, village, cruise, heatHaze, night, grad, ground, trees,
+import { clamp } from '../../src/lib.js'
+import { advice, paddleBoat, GY, HERO, Kp, fwy, inCar, bayou, bats, paddle, neon, porch, muralWall, brunch, boil, boilTable, bakery, office, beach, museum, tunnel, lawn, danceHall, marina, karaoke, micStand, party, kitchen, bowl, cafe, mug, smallTable, coldDay, feeder, phone, dawnLoop, village, cruise, heatHaze, night, grad, ground, trees,
   label, sparkles, hearts, signChar, pop01, txt, box, tinyStar, GOLD, BONE, PINK, INK, MONO, SERIF, kolache, klobasnek, taco, streetSign, overheadSign, shield, car, heatSun, sweat, skyline, BRAKE } from './w02.js'
 
 export const W02 = {}
@@ -32,10 +33,10 @@ const sign = (label0) => (x, t, lt) => { const k = Kp(lt, 0.2); if (k > 0) { x.s
 
 // ── hst037 · Scorpio, deep in their old posts (Montrose)
 W02.hst037 = advice({
-  sign: 'scorpio', hook: 'Scorpio, we saw you | scrolling their 2019 posts.', close: 'Meet them in person. Jan 9.', stars: ['scorpio', 'cancer', 'libra', 'pisces'],
+  sign: 'scorpio', hook: 'Scorpio, we saw you | scrolling their | 2019 posts.', close: 'Meet them in person. Jan 9.', stars: ['scorpio', 'cancer', 'libra', 'pisces'],
   lesson: ['Curious is cute.', 'Investigating is not.'],
   beats: [
-    { set: muralWall(), at: L(330), front: (x, t, lt) => phone(x, 820, 700, lt, [['l', 'beach day · 2019', 0.05], ['l', '♡ liked', 0.6]], { s: 0.75 }), lines: [['Scorpio. Put the phone *down*.', 'squint'], ['We saw you. Montrose saw you. | The *mural* saw you.', 'wide']] },
+    { set: muralWall(), at: L(330), front: (x, t, lt) => phone(x, 830, 830, lt, [['l', 'beach day · 2019', 0.05], ['l', '♡ liked', 0.6]], { s: 0.6 }), lines: [['Scorpio. Put the phone *down*.', 'squint'], ['We saw you. Montrose saw you. | The *mural* saw you.', 'wide']] },
     { set: cafe(), at: L(540), head: 'DEEP SCROLL DETECTED', lines: [['You are four years deep | in their photos. On a *Tuesday*.', 'eyeroll']] },
     { set: muralWall(), at: L(540), head: 'HERE IS THE THING', lines: [['You want to know them. | That part is *sweet*.', 'happy'], ['But their past is not | a *case file*.', 'neutral']] },
     { set: cafe(), at: L(300), cast: date('cancer'), front: (x) => { smallTable(x, 560); mug(x, 470, GY - 170); mug(x, 650, GY - 170, PINK) }, head: 'TRY THIS', lines: [['Ask them. Out loud. | Over coffee on Westheimer.', 'happy'], ['honestly? a whole era.', 'happy', 'cancer']] },
@@ -74,7 +75,7 @@ W02.hst039 = advice({
 
 // ── hst040 · Pisces at the bat bridge: say it plainly
 W02.hst040 = advice({
-  sign: 'pisces', hook: "If you're a Pisces, | your star needs a word.", close: 'Say it at the party. Jan 9.', stars: ['pisces', 'cancer', 'scorpio', 'libra'],
+  sign: 'pisces', hook: "If you're a Pisces, | your star | needs a word.", close: 'Say it at the party. Jan 9.', stars: ['pisces', 'cancer', 'scorpio', 'libra'],
   lesson: ['Hints are lovely.', 'Words are clearer.'],
   beats: [
     { set: bats(), at: L(540), lines: [['Pisces. Are you crying | at the *bats*?', 'wide'], ['They fly out at sunset. | It is beautiful. We know.', 'sparkle']] },
@@ -88,7 +89,7 @@ W02.hst040 = advice({
 
 // ── hst041 · Cancer from Katy dating inside the Loop
 W02.hst041 = advice({
-  sign: 'cancer', hook: 'Cancer in Katy, | dating inside the Loop?', close: 'Meet in the middle. Jan 9.', stars: ['cancer', 'scorpio', 'taurus', 'pisces'],
+  sign: 'cancer', hook: 'Cancer in Katy, | dating inside | the Loop?', close: 'Meet in the middle. Jan 9.', stars: ['cancer', 'scorpio', 'taurus', 'pisces'],
   lesson: ['Love meets', 'you halfway.'],
   beats: [
     { set: fwy({ num: '10' }), at: L(540, 820, 330), front: inCar('cancer', '#3a6ab0'), lines: [['Cancer. From *Katy*.', 'happy'], ['Dating someone inside | the Loop. *Brave*.', 'wide']] },
@@ -130,7 +131,7 @@ W02.hst043 = advice({
 
 // ── hst044 · Libra in Rice Village: pick the restaurant
 W02.hst044 = advice({
-  sign: 'libra', hook: "Libra, it's me, your star. | Pick the restaurant.", close: 'Easy pick: Jan 9.', stars: ['libra', 'scorpio', 'leo', 'pisces'],
+  sign: 'libra', hook: "Libra, it's me, | your star. Pick | the restaurant.", close: 'Easy pick: Jan 9.', stars: ['libra', 'scorpio', 'leo', 'pisces'],
   lesson: ['Your opinion', 'is part of the date.'],
   beats: [
     { set: village(), at: L(540), lines: [['Libra. It is me. Your *star*.', 'happy'], ['You have walked Rice Village | for forty minutes.', 'squint']] },
@@ -145,7 +146,7 @@ W02.hst044 = advice({
 // ── hst045 · Capricorn working late (the arctic office, the closed tunnel)
 const calendarGrid = (x, t, lt) => { const k = Kp(lt, 0.1); if (k <= 0) return; x.save(); x.translate(800, 640); x.scale(k, k); box(x, -200, -170, 400, 340, BONE, 6); for (let i = 0; i < 5; i++) for (let j = 0; j < 4; j++) { const d = i === 4 && j === 3; box(x, -180 + i * 74, -140 + j * 76, 64, 64, d ? PINK : '#9fb4c8', 3); txt(x, d ? 'date?' : 'work', -148 + i * 74, -108 + j * 76, { size: 16, col: INK, font: MONO, weight: 700 }) } x.restore() }
 W02.hst045 = advice({
-  sign: 'capricorn', hook: 'Capricorn, your star caught you | working late. Again.', close: 'Clock out for Jan 9.', stars: ['capricorn', 'virgo', 'cancer', 'pisces'],
+  sign: 'capricorn', hook: 'Capricorn, | your star caught | you working late.', close: 'Clock out for Jan 9.', stars: ['capricorn', 'virgo', 'cancer', 'pisces'],
   lesson: ['Be present.', 'That is the plan.'],
   beats: [
     { set: office(), at: L(330), lines: [['Capricorn. It is 7 p.m.', 'squint'], ['The office AC is arctic. | And you are *still* here.', 'wide']] },
@@ -187,7 +188,7 @@ W02.hst047 = advice({
 
 // ── hst048 · Taurus who never leaves the Heights
 W02.hst048 = advice({
-  sign: 'taurus', hook: 'Taurus, when did you last | leave the Heights?', close: 'Leave the porch for Jan 9.', stars: ['taurus', 'sagittarius', 'cancer', 'pisces'],
+  sign: 'taurus', hook: 'Taurus, when did | you last leave | the Heights?', close: 'Leave the porch for Jan 9.', stars: ['taurus', 'sagittarius', 'cancer', 'pisces'],
   lesson: ['Visit their world.', 'Then share yours.'],
   beats: [
     { set: porch(), at: L(600), lines: [['Taurus. Real question.', 'squint'], ['When did you last | leave the *Heights*?', 'wide']] },
@@ -215,7 +216,7 @@ W02.hst049 = advice({
 
 // ── hst050 · Scorpio at karaoke on Bellaire
 W02.hst050 = advice({
-  sign: 'scorpio', hook: "Scorpio, it's karaoke night. | Sing it. Mean it.", close: 'Sing it Jan 9.', stars: ['scorpio', 'leo', 'gemini', 'pisces'],
+  sign: 'scorpio', hook: "Scorpio, it's | karaoke night. | Sing it. Mean it.", close: 'Sing it Jan 9.', stars: ['scorpio', 'leo', 'gemini', 'pisces'],
   lesson: ['Say it plainly.', 'No mic needed.'],
   beats: [
     { set: karaoke(), at: L(540), front: (x) => micStand(x, 800, GY), lines: [['Scorpio. Karaoke on Bellaire.', 'squint'], ['You picked the *saddest* song.', 'wide']] },
@@ -229,7 +230,7 @@ W02.hst050 = advice({
 
 // ── hst051 · Gemini at a house party: ask the follow-up
 W02.hst051 = advice({
-  sign: 'gemini', hook: 'Gemini, they answered. | Ask a follow-up.', close: 'Ask more on Jan 9.', stars: ['gemini', 'virgo', 'leo', 'pisces'],
+  sign: 'gemini', hook: 'They answered, | Gemini. Ask | a follow-up.', close: 'Ask more on Jan 9.', stars: ['gemini', 'virgo', 'leo', 'pisces'],
   lesson: ['The follow-up', 'is the flirt.'],
   beats: [
     { set: party(), at: L(300), cast: date('virgo'), lines: [['Gemini. House party. | The Houston question:', 'happy'], ['"Where\'d you go to | *high school*?"', 'wink']] },
@@ -260,12 +261,12 @@ W02.hst053 = advice({
   sign: 'leo', hook: 'Leo, the trunk sign | is cute. But…', close: 'Pull up Jan 9.', stars: ['leo', 'scorpio', 'cancer', 'pisces'],
   lesson: ['Big gestures are fun.', 'Consistency is love.'],
   beats: [
-    { set: cruise({ trunk: lt => clamp(lt / 1.2) }), at: L(540, 640, 300), lines: [['Leo. The candy paint. | The *trunk* sign.', 'sparkle'], ['Big gesture. We love it.', 'happy']] },
+    { set: cruise({ trunk: lt => clamp(lt / 1.2) }), at: L(820, 620, 260), lines: [['Leo. The candy paint. | The *trunk* sign.', 'sparkle'], ['Big gesture. We love it.', 'happy']] },
     { set: (x, t) => night(x, t), at: L(330), front: (x, t, lt) => phone(x, 790, 660, lt, [['l', 'hey? haven\'t heard|from you', 0.3], ['l', 'all good?', 1.4]], { s: 0.8 }), head: 'BUT THEN', lines: [['Then three days. No text. | No call. *Nothing*.', 'neutral']] },
     { set: (x, t) => night(x, t), at: L(540), head: 'THE TRUTH', lines: [['One big gesture is not | the same as *showing up*.', 'squint']] },
     { set: (x, t) => night(x, t), at: L(330), front: (x, t, lt) => phone(x, 790, 660, lt, [['r', 'good morning ☀', 0.3], ['r', 'how did the|interview go?', 1.0]], { s: 0.8 }), head: 'TRY THIS', lines: [['Text good morning. | Remember their *small* things.', 'happy']] },
-    { set: cruise({ col: '#2b6ad0' }), at: L(540, 640, 300), lines: [['Small and steady, every week. | That is the real *shine*.', 'sparkle']] },
-    { set: cruise({ trunk: 1 }), at: L(540, 640, 300), lines: [['Keep the slab. | Add the *consistency*.', 'heart']] },
+    { set: cruise({ col: '#2b6ad0' }), at: L(820, 620, 260), lines: [['Small and steady, every week. | That is the real *shine*.', 'sparkle']] },
+    { set: cruise({ trunk: 1 }), at: L(820, 620, 260), lines: [['Keep the slab. | Add the *consistency*.', 'heart']] },
   ],
 })
 
@@ -286,7 +287,7 @@ W02.hst054 = advice({
 
 // ── hst055 · Libra at two-step night: take turns leading
 W02.hst055 = advice({
-  sign: 'libra', hook: 'Libra, somebody has to lead | the two-step.', close: 'Dance with us Jan 9.', stars: ['libra', 'capricorn', 'leo', 'pisces'],
+  sign: 'libra', hook: 'Libra, somebody | has to lead | the two-step.', close: 'Dance with us Jan 9.', stars: ['libra', 'capricorn', 'leo', 'pisces'],
   lesson: ['Take turns', 'leading.'],
   beats: [
     { set: danceHall(), at: L(540), lines: [['Libra. Two-step night.', 'happy'], ['You both stood there. Waiting | for the *other* to lead.', 'squint']] },
@@ -300,7 +301,7 @@ W02.hst055 = advice({
 
 // ── hst056 · Aries missed the exit: the Texas U-turn apology
 W02.hst056 = advice({
-  sign: 'aries', hook: 'Aries, missed the exit? | Take the U-turn.', close: 'Exit here: Jan 9.', stars: ['aries', 'libra', 'sagittarius', 'pisces'],
+  sign: 'aries', hook: 'Missed the exit, | Aries? Take | the U-turn.', close: 'Exit here: Jan 9.', stars: ['aries', 'libra', 'sagittarius', 'pisces'],
   lesson: ['Apologize first.', 'Then talk.'],
   beats: [
     { set: feeder({ sign: ['EXIT', 'MISSED IT'], shop: false }), at: L(540, 820, 330), front: inCar('aries', '#e0402a'), lines: [['Aries. You missed the *exit*.', 'wide'], ['On the argument, we mean.', 'squint']] },
@@ -315,7 +316,7 @@ W02.hst056 = advice({
 // ── hst057 · Capricorn's first date is not an interview
 const clipboard = (x, P, id) => { const [cx, cy, s] = P.at(id); x.save(); x.translate(cx + s * 0.42, cy + s * 0.05); x.rotate(0.12); box(x, -50, -66, 100, 132, '#a87a52', 5); box(x, -40, -50, 80, 106, BONE, 3); for (let k = 0; k < 4; k++) { x.fillStyle = INK; x.fillRect(-30, -34 + k * 22, 56, 6) } box(x, -20, -76, 40, 18, '#9aa0aa', 3); x.restore() }
 W02.hst057 = advice({
-  sign: 'capricorn', hook: "Capricorn, it's a first date. | Not an interview.", close: 'No interviews on Jan 9.', stars: ['capricorn', 'pisces', 'taurus', 'leo'],
+  sign: 'capricorn', hook: "Capricorn, it's | a first date. | Not an interview.", close: 'No interviews on Jan 9.', stars: ['capricorn', 'pisces', 'taurus', 'leo'],
   lesson: ['Ask to know them,', 'not to grade them.'],
   beats: [
     { set: cafe(), at: L(300), cast: date('pisces'), front: (x, t, lt, P) => { smallTable(x, 560); clipboard(x, P, 'capricorn') }, lines: [['Capricorn. First date.', 'happy'], ['You brought a *clipboard*.', 'wide']] },
@@ -327,17 +328,18 @@ W02.hst057 = advice({
   ],
 })
 
+const boats = (x, t, lt, P) => { for (const id of ['aquarius', 'leo']) { const p = P.at(id); if (p) paddleBoat(x, p[0], p[1] + p[2] * 0.42, id === 'leo' ? '#ffd36b' : '#8fe3ff', t, id.length, p[2] / 300) } }
 // ── hst058 · Aquarius pedaling the paddle boat alone
 W02.hst058 = advice({
-  sign: 'aquarius', hook: "Aquarius, you're pedaling | that boat alone.", close: 'Both of you: Jan 9.', stars: ['aquarius', 'leo', 'libra', 'pisces'],
+  sign: 'aquarius', hook: "Aquarius, you're | pedaling that | boat alone.", close: 'Both of you: Jan 9.', stars: ['aquarius', 'leo', 'libra', 'pisces'],
   lesson: ['Both people', 'pedal.'],
   beats: [
-    { set: paddle(), at: L(540), lines: [['Aquarius. Paddle boats | at the park.', 'happy'], ['You are doing all | the *pedaling*.', 'wide']] },
-    { set: paddle(), at: L(300), cast: date('leo'), mood: { leo: 'sleepy' }, head: 'AND THEM?', lines: [['wow. so pretty out here', 'sleepy', 'leo'], ['They are enjoying the view. | *Feet up*.', 'eyeroll']] },
-    { set: paddle(), at: L(540), head: 'THE PATTERN', lines: [['You plan. You text first. | You do *everything*.', 'neutral'], ['And you say "it\'s fine."', 'squint']] },
-    { set: paddle(), at: L(300), cast: date('leo'), mood: { leo: 'wide' }, head: 'TRY THIS', lines: [['Say it. "Hey, can you | pedal *too*?"', 'happy']] },
-    { set: paddle(), at: L(300), cast: date('leo'), mood: { leo: 'happy' }, lines: [['Asking is not needy. | It is *fair*.', 'sparkle']] },
-    { set: paddle(), at: L(330, 880, 330), cast: date('leo', 760, 300), mood: { leo: 'heart' }, lines: [['Both pedal. | The boat goes *straight*.', 'heart']] },
+    { set: paddle(), front: boats, at: L(540), lines: [['Aquarius. Paddle boats | at the park.', 'happy'], ['You are doing all | the *pedaling*.', 'wide']] },
+    { set: paddle(), front: boats, at: L(300), cast: date('leo'), mood: { leo: 'sleepy' }, head: 'AND THEM?', lines: [['wow. so pretty out here', 'sleepy', 'leo'], ['They are enjoying the view. | *Feet up*.', 'eyeroll']] },
+    { set: paddle(), front: boats, at: L(540), head: 'THE PATTERN', lines: [['You plan. You text first. | You do *everything*.', 'neutral'], ['And you say "it\'s fine."', 'squint']] },
+    { set: paddle(), front: boats, at: L(300), cast: date('leo'), mood: { leo: 'wide' }, head: 'TRY THIS', lines: [['Say it. "Hey, can you | pedal *too*?"', 'happy']] },
+    { set: paddle(), front: boats, at: L(300), cast: date('leo'), mood: { leo: 'happy' }, lines: [['Asking is not needy. | It is *fair*.', 'sparkle']] },
+    { set: paddle(), front: boats, at: L(330, 880, 330), cast: date('leo', 760, 300), mood: { leo: 'heart' }, lines: [['Both pedal. | The boat goes *straight*.', 'heart']] },
   ],
 })
 
@@ -357,7 +359,7 @@ W02.hst059 = advice({
 
 // ── hst060 · Taurus, the crawfish are small in January: patience
 W02.hst060 = advice({
-  sign: 'taurus', hook: "Taurus, it's January. | The crawfish are small.", close: 'Let it grow. Jan 9.', stars: ['taurus', 'leo', 'cancer', 'pisces'],
+  sign: 'taurus', hook: "Taurus, it's January. | The crawfish | are small.", close: 'Let it grow. Jan 9.', stars: ['taurus', 'leo', 'cancer', 'pisces'],
   lesson: ['Good things', 'take a season.'],
   beats: [
     { set: boil(), at: L(540, 820, 320), front: (x, t) => boilTable(x, t, { tiny: true }), lines: [['Taurus. It is *January*.', 'squint'], ['The crawfish are still | *tiny*. You know this.', 'wide']] },
