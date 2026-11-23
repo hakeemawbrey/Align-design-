@@ -197,7 +197,7 @@ function optCard(x, t, W, k, cx, cy, sc, { big = false, glow = false, dim = 0 } 
   circ(x, -w / 2 + band * 0.62, -h / 2 + band / 2, band * 0.36, INK, 0); txt(x, LET[k], -w / 2 + band * 0.62, -h / 2 + band / 2 + 3, { size: band * 0.5, col: BONE })
   fit(x, big ? `OPTION ${LET[k]}` : W.short || 'PICK ONE', 20, -h / 2 + band / 2 + 2, w - band * 2, big ? 40 : 24, { col: INK, font: MONO, weight: 700 })
   const L = title.split(' | ')
-  if (big) { L.forEach((l, i) => fit(x, l, 0, -h / 2 + band + 54 + i * 60, w - 60, 54, { col: INK })); icon(x, t, ic, 0, 96 + (L.length > 1 ? 20 : 0), 1.45) }
+  if (big) { L.forEach((l, i) => fit(x, l, 0, -h / 2 + band + 54 + i * 60, w - 60, 54, { col: INK })); icon(x, t, ic, 0, L.length > 1 ? 128 : 100, L.length > 1 ? 1.2 : 1.45) }
   else { icon(x, t, ic, -138, 30, 0.66); L.forEach((l, i) => fit(x, l, 50, (L.length > 1 ? 8 : 30) + i * 46, 280, 40, { col: INK })) }
   x.restore()
   if (dim > 0) { x.save(); x.translate(cx, cy); x.fillStyle = `rgba(8,5,22,${(0.55 * dim).toFixed(3)})`; x.fillRect(-w / 2 - 8, -h / 2 - 8, w + 16, h + 16); x.restore() }
