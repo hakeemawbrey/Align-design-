@@ -190,7 +190,8 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#07041a}
 .subj .bloom{filter:blur(60px) saturate(1.5) brightness(1.3);opacity:1;transform:scale(1.3)}
 .subj .body{filter:blur(2.2px) saturate(1.1) brightness(1.04);
   -webkit-mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%);mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%)}
-.subj.wide .body{-webkit-mask-image:none;mask-image:none;filter:blur(2.6px) saturate(1.1)}
+.subj.wide .body{-webkit-mask-image:radial-gradient(closest-side, #000 72%, transparent 99%);mask-image:radial-gradient(closest-side, #000 72%, transparent 99%);filter:blur(2.6px) saturate(1.1)}
+.subj .bloom{-webkit-mask-image:radial-gradient(closest-side, #000 40%, transparent 100%);mask-image:radial-gradient(closest-side, #000 40%, transparent 100%)}
 .subj .haze{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 38% 32%, rgba(255,250,240,.35), rgba(255,250,240,0) 60%);mix-blend-mode:screen;filter:blur(8px)}
 .subj svg{width:100%;height:100%}
 .figure{position:relative;overflow:hidden;border-radius:50%;
