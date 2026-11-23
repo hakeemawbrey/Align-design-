@@ -95,7 +95,7 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
   function paintSky() {
     const g = skyC.getContext('2d')
     const img = g.createImageData(LW, LH)
-    const stops = [[0, INK], [0.32, mix(INK, S.dark, 0.75)], [0.52, S.dark], [0.66, mix(S.dark, S.color, 0.45)], [0.72, mix(S.color, S.light, 0.25)]]
+    const stops = [[0, INK], [0.26, mix(INK, S.dark, 0.75)], [0.4, S.dark], [0.5, mix(S.dark, S.color, 0.45)], [0.56, mix(S.color, S.light, 0.25)]]
     const at = (v) => {
       for (let i = 1; i < stops.length; i++) if (v <= stops[i][0]) return mix(stops[i - 1][1], stops[i][1], (v - stops[i - 1][0]) / (stops[i][0] - stops[i - 1][0]))
       return stops[stops.length - 1][1]
@@ -114,7 +114,7 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
     }
     g.putImageData(img, 0, 0)
     // a planet with dithered shading, in the sign's light colour
-    const px = 142 + Math.floor(R() * 14), py = 70 + Math.floor(R() * 14), pr = 13
+    const px = 144 + Math.floor(R() * 12), py = 80 + Math.floor(R() * 8), pr = 12
     for (let y = -pr; y <= pr; y++) for (let x = -pr; x <= pr; x++) {
       const d = Math.hypot(x, y)
       if (d > pr) continue
@@ -139,7 +139,7 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
     STARS = Array.from({ length: 90 }, () => ({ x: Math.floor(R() * LW), y: Math.floor(R() ** 1.4 * LH * 0.6), ph: R(), sp: 0.3 + R() * 0.9, big: R() < 0.12, col: R() < 0.3 ? S.light : BONE }))
     // hills: three layers, each a looping heightline so they can scroll forever
     HILLS = [0, 1, 2].map((k) => {
-      const len = 360, amp = [16, 12, 9][k], base = [196, 208, 222][k]
+      const len = 360, amp = [16, 12, 9][k], base = [150, 163, 178][k]
       const harm = Array.from({ length: 4 }, (_, i) => ({ f: (i + 1) * (1 + Math.floor(R() * 2)), a: amp / (i + 1.3), p: R() * Math.PI * 2 }))
       const hts = Array.from({ length: len }, (_, x) => Math.round(base - harm.reduce((s, h) => s + h.a * Math.sin(h.f * x / len * Math.PI * 2 + h.p), 0)))
       const col = [mix(S.dark, INK, 0.25), mix(S.dark, INK, 0.5), mix(INK, '#000', 0.2)][k]
@@ -195,7 +195,9 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
     S = SIGNS.find((s) => s.id === reel.sign)
     R = rng((reel.seed + 7) * 7919 + S.id.length * 31)
     PAL = {}
-    LAYOUT = { star: { x: W / 2, y: 850, size: 420 }, box: { x: 54, y: 1290, w: 972, h: 420, padX: 56, padTop: 104, rowH: 72, font: 50 } }
+    // Reels and TikTok cover the top ~200 px (tabs), the bottom ~480 px (caption, audio, buttons) and a
+    // right rail ~130 px wide: the words and the call to action stay inside what's left.
+    LAYOUT = { star: { x: W / 2, y: 650, size: 360 }, box: { x: 60, y: 950, w: 880, h: 400, padX: 52, padTop: 100, rowH: 68, font: 48 } }
     makeWorld()
     paintSky()
     layoutText()
@@ -261,7 +263,7 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
     for (let i = 0; i < 14; i++) {
       const r2 = rng(i * 977 + 3)
       const fx = (r2() * LW + t * (2 + r2() * 3) + Math.sin(t * 0.8 + i) * 6) % LW
-      const fy = 196 + r2() * 60 + Math.sin(t * 1.3 + i * 2) * 4
+      const fy = 150 + r2() * 60 + Math.sin(t * 1.3 + i * 2) * 4
       const a = 0.5 + 0.5 * Math.sin(t * 2.2 + i * 1.7)
       if (a < 0.3) continue
       lg.globalAlpha = a
@@ -281,7 +283,7 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
 
   function drawHeader(t) {
     // "♏ SCORPIO" in chunky pixels, a pixel glyph to its left
-    const s = 10, y = 150
+    const s = 10, y = 220
     const name = S.name
     const tw = ptext(ctx, name, 0, 0, s, '', { measure: true })
     const gw = 90, gap = 34, total = gw + gap + tw
@@ -378,25 +380,14 @@ export function createEngine(canvas, { glyphs = {} } = {}) {
   }
 
   function drawFooter(t) {
+    // the call to action: small and quiet, tucked under the box, clear of the app's own buttons.
+    // It warms a little toward the sign's colour once the send-off has been said.
     const lastLine = TL.lines[TL.lines.length - 1]
     const at = lastLine.words[lastLine.words.length - 1].e + 0.15
-    // the pill after the send-off: a pixel button
-    const k = outBack(prog(t, at, at + 0.4))
-    const y = 1786
-    if (k > 0) {
-      const text = 'COME ALIGN · JOIN THE BETA'
-      const s = 5, tw = ptext(ctx, text, 0, 0, s, '', { measure: true })
-      const w = tw + 80, h = 76, x = W / 2 - w / 2
-      ctx.save()
-      ctx.translate(W / 2, y + h / 2); ctx.scale(k, k); ctx.translate(-W / 2, -(y + h / 2))
-      ctx.fillStyle = mix(S.dark, INK, 0.4); ctx.fillRect(x + 6, y + 6 + 6, w, h)
-      ctx.fillStyle = S.color; ctx.fillRect(x + 6, y, w - 12, h); ctx.fillRect(x, y + 6, w, h - 12)
-      ctx.fillStyle = S.light; ctx.fillRect(x + 12, y + 6, w - 24, 6)
-      ptext(ctx, text, W / 2, y + h / 2 - 17, s, INK, { align: 'center' })
-      ctx.restore()
-    } else {
-      ptext(ctx, 'COME ALIGN · JOIN THE BETA', W / 2, y + 22, 4, rgba(BONE, 0.5), { align: 'center' })
-    }
+    const k = clamp(prog(t, at, at + 0.8))
+    const B = LAYOUT.box
+    const col = k > 0 ? rgba(mix(BONE, S.light, k), 0.34 + 0.22 * k) : rgba(BONE, 0.34)
+    ptext(ctx, 'COME ALIGN · JOIN THE BETA', B.x + B.w / 2, B.y + B.h + 34, 4, col, { align: 'center' })
   }
 
   function drawWipe(t) {

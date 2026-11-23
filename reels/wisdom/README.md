@@ -7,8 +7,18 @@ and a retro RPG dialogue box types the words in as the voice says them.
 
 Every reel follows the same order: a hook ("Scorpio. The stars have something
 to tell you."), three pieces of wisdom, and a send-off ("Keep this one,
-Scorpio."). The reel ends on a pixel button that says COME ALIGN · JOIN THE BETA,
-and the star's eyes turn to hearts. Then the next sign starts.
+Scorpio."). At the end the star's eyes turn to hearts, and the next sign starts.
+A quiet COME ALIGN · JOIN THE BETA line sits under the dialogue box the whole
+time and warms toward the sign's colour after the send-off.
+
+## Safe zone
+
+Reels and TikTok draw their own UI over the video: the tabs across the top
+(about 200 px), the caption, audio and buttons across the bottom (about
+480 px), and the like/comment/share rail down the right side (about 130 px).
+The title, the star, the dialogue box and the call to action all sit inside
+the area that's left (y 200–1440, x up to 940 on the 1080 × 1920 frame).
+Only sky and hills reach into the covered areas.
 
 You can run it two ways:
 
@@ -90,7 +100,7 @@ modules directly, so serve `reels/` over HTTP to use it (for example
 | Planet | a dithered pixel planet in the sign's light colour, with the sign glyph carved into it |
 | Title | the sign name in a 5 × 7 pixel font, with a pixel glyph |
 | Star | Star Talk's pixel star (`../difference/vendor/films/startalk.js`) in the sign's colour with its glyph badge. It looks surprised at the hook, happy while it talks, looks down at the box while it gives advice, hops as it speaks, and gets heart eyes at the end |
-| Dialogue box | a stepped pixel panel with a border in the sign's colour and a name tag (THE STARS ★ SCORPIO). Each word types in while it's said. Words marked `*like this*` get a pixel highlighter. A ▼ blinks when a page is done, and pips show which page you're on |
+| Dialogue box | inside the safe zone, clear of the right rail: a stepped pixel panel with a border in the sign's colour and a name tag (THE STARS ★ SCORPIO). Each word types in while it's said. Words marked `*like this*` get a pixel highlighter. A ▼ blinks when a page is done, and pips show which page you're on |
 | Colours | the twelve aura colours from `app/src/data/signs.ts`: Aries Ember, Taurus Honey, Gemini Signal, Cancer Tide, Leo Goldleaf, Virgo Rose Quartz, Libra Orchid, Scorpio Garnet, Sagittarius Amethyst, Capricorn Jade, Aquarius Ion, Pisces Dusk |
 
 ## Sound
