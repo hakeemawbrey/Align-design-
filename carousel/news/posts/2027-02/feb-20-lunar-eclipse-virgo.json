@@ -1,98 +1,98 @@
 {
- "series": "sky news",
- "id": "feb-20-lunar-eclipse-virgo",
- "format": "moon-alert",
- "date": "2027-02-20",
- "signs": [
-  "virgo"
- ],
- "caption": "penumbral lunar eclipse 23:12 utc, full moon 23:24 utc, 2° virgo. look if you like. the honest truth: it's faint.",
- "hashtags": [
-  "lunareclipse",
-  "fullmoon",
-  "virgo",
-  "eclipse",
-  "astrology",
-  "zodiac"
- ],
- "facts": [
-  "2027-02-20 lunar eclipse virgo",
-  "2027-02-20 full moon virgo",
-  "2027-02-20 moon in virgo",
-  "2027-02-21 mars enters leo"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "kicker": "eclipse alert · tonight",
-   "headline": "full moon *eclipse* in virgo tonight. no red moon, still counts",
-   "dek": "23:12 utc · penumbral · 2° virgo",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "23:12 utc · 23:24 utc",
-   "tag": "the facts",
-   "sign": "virgo",
-   "headline": "the moon brushes earth's outer *shadow*",
-   "body": "greatest eclipse at 23:12 utc, exact full moon at 23:24 utc, at 2° virgo. it only touches the penumbra, so the moon stays bright. don't expect a show.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "the reading",
-   "tag": "full moon in virgo",
-   "sign": "virgo",
-   "headline": "let one *fix* go unfinished",
-   "body": "astrologers read a virgo full moon as the end of over-editing: yourself, your texts, the people you date. an eclipse makes it a faster close. mars leaves virgo tomorrow, too.",
-   "art": {
-    "kind": "figure",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "list",
-   "kicker": "what to release, by element",
-   "headline": "one *release*",
-   "rows": [
+  "series": "sky news",
+  "id": "feb-20-lunar-eclipse-virgo",
+  "format": "moon-alert",
+  "date": "2027-02-20",
+  "signs": [
+    "virgo"
+  ],
+  "caption": "penumbral lunar eclipse 23:12 utc, full moon 23:24 utc, 2° virgo. look if you like. the honest truth: it's faint.",
+  "hashtags": [
+    "lunareclipse",
+    "fullmoon",
+    "virgo",
+    "eclipse",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-20 lunar eclipse virgo",
+    "2027-02-20 full moon virgo",
+    "2027-02-20 moon in virgo",
+    "2027-02-21 mars enters leo"
+  ],
+  "slides": [
     {
-     "label": "fire",
-     "color": "leo",
-     "text": "winning every conversation."
+      "layout": "hero",
+      "kicker": "eclipse alert · tonight",
+      "headline": "full moon *eclipse* in virgo tonight. no red moon, still counts",
+      "dek": "23:12 utc · penumbral · 2° virgo",
+      "art": {
+        "kind": "eclipse",
+        "type": "penumbral",
+        "sign": "virgo"
+      }
     },
     {
-     "label": "earth",
-     "color": "virgo",
-     "text": "the checklist you hold dates to."
+      "layout": "story",
+      "kicker": "23:12 utc · 23:24 utc",
+      "tag": "the facts",
+      "sign": "virgo",
+      "headline": "the moon brushes earth's outer *shadow*",
+      "body": "greatest eclipse at 23:12 utc, exact full moon at 23:24 utc, at 2° virgo. it only touches the penumbra, so the moon stays bright. don't expect a show.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "virgo"
+      }
     },
     {
-     "label": "air",
-     "color": "gemini",
-     "text": "the overthinking after you hit send."
+      "layout": "story",
+      "kicker": "the reading",
+      "tag": "full moon in virgo",
+      "sign": "virgo",
+      "headline": "let one *fix* go unfinished",
+      "body": "astrologers read a virgo full moon as the end of over-editing: yourself, your texts, the people you date. an eclipse makes it a faster close. mars leaves virgo tomorrow, too.",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
     },
     {
-     "label": "water",
-     "color": "pisces",
-     "text": "waiting for them to guess."
+      "layout": "list",
+      "kicker": "what to release, by element",
+      "headline": "one *release*",
+      "rows": [
+        {
+          "label": "fire",
+          "color": "leo",
+          "text": "winning every conversation."
+        },
+        {
+          "label": "earth",
+          "color": "virgo",
+          "text": "the checklist you hold dates to."
+        },
+        {
+          "label": "air",
+          "color": "gemini",
+          "text": "the overthinking after you hit send."
+        },
+        {
+          "label": "water",
+          "color": "pisces",
+          "text": "waiting for them to guess."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "eclipses close doors. close yours *politely*.",
+      "body": "save this. mars backs into leo tomorrow.",
+      "art": {
+        "kind": "stars",
+        "tint": "virgo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "eclipses close doors. close yours *politely*.",
-   "body": "save this. mars backs into leo tomorrow.",
-   "art": {
-    "kind": "stars",
-    "tint": "virgo"
-   }
-  }
- ]
+  ]
 }

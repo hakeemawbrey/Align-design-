@@ -171,6 +171,12 @@ function eclipse(cx, cy, R, type, tint) {
     return `<defs><radialGradient id="eh"><stop offset=".4" stop-color="#e8628a" stop-opacity=".4"/><stop offset="1" stop-color="#e8628a" stop-opacity="0"/></radialGradient></defs>
       <circle cx="${cx}" cy="${cy}" r="${R * 2.4}" fill="url(#eh)"/>` + realPlanet('bl', cx, cy, R * 1.1, 'blood', { tilt: 0, seed: 21, rim: '#ff8a6a' })
   }
+  if (type === 'penumbral') {
+    // Barely dimmed: a full moon with a soft grey veil on one limb.
+    return realPlanet('pn', cx, cy, R * 1.1, 'moon', { tilt: 0, seed: 21, rim: '#efe6d6' })
+      + `<defs><radialGradient id="pv" cx="15%" cy="40%" r="90%"><stop offset="0" stop-color="#0b0620" stop-opacity=".55"/><stop offset=".6" stop-color="#0b0620" stop-opacity=".12"/><stop offset="1" stop-color="#0b0620" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="${cx}" cy="${cy}" r="${R * 1.1}" fill="url(#pv)"/>`
+  }
   if (type === 'lunar-old') {
     return `<defs><radialGradient id="eb" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#f6a27a"/><stop offset=".6" stop-color="#b3402e"/><stop offset="1" stop-color="#4a1020"/></radialGradient>
     <radialGradient id="eh"><stop offset=".4" stop-color="#e8628a" stop-opacity=".45"/><stop offset="1" stop-color="#e8628a" stop-opacity="0"/></radialGradient></defs>

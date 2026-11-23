@@ -85,7 +85,7 @@ characters (rank bodies ≤ 300), list row text ≤ 60.
 | `planet` | `body` (sun, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto), `sign?` (rim colour), `rx?` (retrograde arrow), `style?` (`gloss` for the app's orb, `pastel` for a dreamy iridescent planet), `size?` | textured planet on stars |
 | `pair` | `a`, `b` (planets) | two orbs: an aspect |
 | `moon` | `size?`, `phase` 0–1 (0 new, .25 first quarter, .5 full, .75 last quarter), `sign?` (glow) | |
-| `eclipse` | `type`: `solar` (ring of fire) or `lunar` (blood moon), `sign?` | |
+| `eclipse` | `type`: `solar` (ring of fire), `lunar` (blood moon) or `penumbral` (a full moon barely dimmed), `sign?` | |
 | `figure` / `aura` | `sign` | the app's sign art |
 | `stars` | `tint?` | |
 | `wheel` | `signs?` (lit ones), `tint?` | zodiac wheel |

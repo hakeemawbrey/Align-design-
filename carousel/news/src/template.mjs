@@ -92,8 +92,8 @@ const LAYOUTS = {
       <div class="rank-body">
         <div class="sign-name" style="color:${sc}">${esc(s.title ?? s.sign)}</div>
         ${s.dates ? `<div class="kicker small">${esc(s.dates)}</div>` : ''}
-        <p class="fit hook" data-max="160" data-big="46" data-small="32">${rich(s.headline)}</p>
-        <p class="fit body" data-max="330" data-big="34" data-small="25">${rich(s.body)}</p>
+        <p class="fit hook" data-max="190" data-big="54" data-small="32">${rich(s.headline)}</p>
+        <p class="fit body" data-max="360" data-big="40" data-small="25">${rich(s.body)}</p>
       </div>
     </div>`
   },
@@ -280,7 +280,7 @@ ${a2.css}
 .rank-art{left:0;top:0;width:984px;height:470px}
 .rank-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,46,0) 35%,rgba(26,15,58,.9) 88%,#1c1040 100%)}
 .rank .num{position:absolute;left:56px;top:300px}
-.rank-body{position:absolute;left:60px;right:60px;top:500px;bottom:48px}
+.rank-body{position:absolute;left:60px;right:60px;top:500px;bottom:56px;display:flex;flex-direction:column;justify-content:center}
 .num{font:italic 500 210px/0.9 'EB Garamond',serif;letter-spacing:-.03em;
   background:linear-gradient(90deg,#a9802e 0%,#f2c75c 22%,#fff4cf 44%,#f2c75c 62%,#b88a2c 82%,#f2d784 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sign-name{font:italic 500 112px/1 'EB Garamond',serif;letter-spacing:-.01em}
