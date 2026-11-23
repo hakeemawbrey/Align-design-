@@ -281,3 +281,18 @@ Astronomy fields (`at`, `from`, `to`, `visibility`) are filled by script from an
 The line sits on the last slide as the "one thing to do", in the same type as everything else. No logo lockup, no "download", no app screenshot. The only branding is `align ✦` mono and the `sky desk` eyebrow.
 
 **Captions.** Lowercase, ≤ 2 short sentences. First sentence repeats the hook or invites a save / tag; second carries the hard fact (date, time, source). 3–6 hashtags, no `#` in JSON.
+
+
+---
+
+## Addendum: second reference batch (planet heroes, sports news)
+
+What the second batch adds, and where it lives now:
+
+- **Planet hero** (collectiveworld, whisperwillow, "the internet celebrates the end of mercury retrograde"): one huge photoreal planet on black, 3–4 line headline under it, one or two words in gold, a thin divider carrying the wordmark. → `hero` layout with textured `planet` art. Best cover for `sign-callout`, stations and season posts. The "internet celebrates" angle is a good roundup hook: report the sky as culture ("mercury retrograde ends tonight. the group chat can come back").
+- **Breaking** (sports "BREAKING" behind the player): the event word set giant behind the subject. → `breaking` layout (`word`: retrograde, eclipse, full moon, direct). Use for stations and eclipses, at most 2–3 times a month so it stays loud.
+- **Split versus** (two photos over a cream panel with a round badge): → `split` layout, pearl ✦ badge where the logo sat. Venus vs Mars, the two signs of an opposition, fire vs water.
+- **Ranked table** (most profitable teams, highest paid): numbered rows with a value column. → `table` layout. "who handles mercury retrograde best", "the signs most likely to text first this week", values as words not money.
+- **Inset circle** (pubity medal photo, Apple hardware boss): a round second photo over the main one. → `story` with `inset` (planet + the sign it's in).
+- **Swipe tag and divider-with-logo above the headline**: already in `cover` (rule eyebrow) and `hero` (divider).
+- **Fear-bait to answer, not copy** ("your 300-year karmic debt is erased tomorrow", "luckiest season"): these are the claims our `sky-note` format checks. Keep the energy of the hook ("leo, about that 'karmic debt' post") and give the honest version.

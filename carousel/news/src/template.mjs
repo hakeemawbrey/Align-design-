@@ -74,6 +74,7 @@ const LAYOUTS = {
   story(s, c, ctx) {
     return `
     <div class="art frame-art">${ctx.art.html}${s.tag ? `<div class="tag">${esc(s.tag)}</div>` : ''}</div>
+    ${s.inset ? `<div class="art inset-art">${ctx.art2.html}</div>` : ''}
     <div class="story-text">
       ${s.kicker ? `<div class="kicker"><i style="background:${ctx.accent}"></i>${esc(s.kicker)}</div>` : ''}
       <h2 class="fit head" data-max="${s.body ? 250 : 380}" data-big="104" data-small="54">${rich(s.headline)}</h2>
@@ -140,6 +141,61 @@ const LAYOUTS = {
     </div>`
   },
 
+
+  // Planet hero: one huge body on black, headline under it, divider wordmark.
+  hero(s, c, ctx) {
+    return `
+    <div class="art hero-art">${ctx.art.html}<div class="hero-fade"></div></div>
+    <div class="hero-text">
+      ${s.kicker ? `<div class="kicker center">${esc(s.kicker)}</div>` : ''}
+      <h1 class="fit head center" data-max="${s.dek ? 300 : 360}" data-big="128" data-small="60">${rich(s.headline)}</h1>
+      <div class="divider"><span class="ln"></span><span class="dmark">align ${SPARK('#f2c75c', 16)}</span><span class="ln"></span></div>
+      ${s.dek ? `<p class="dek center">${rich(s.dek)}</p>` : ''}
+    </div>`
+  },
+
+  // Breaking: a giant outlined word behind the art, headline below.
+  breaking(s, c, ctx) {
+    return `
+    <div class="giant" style="font-size:${Math.min(330, Math.round(2050 / (s.word ?? 'breaking').length))}px">${esc(s.word ?? 'breaking')}</div>
+    <div class="art breaking-art">${ctx.art.html}</div>
+    <div class="cover-text">
+      ${eyebrowRule(s.kicker ?? 'sky news', ctx.accent)}
+      <h1 class="fit head center" data-max="${s.dek ? 300 : 360}" data-big="128" data-small="60">${rich(s.headline)}</h1>
+      ${s.dek ? `<p class="dek center">${rich(s.dek)}</p>` : ''}
+    </div>`
+  },
+
+  // Split: two arts side by side (two signs, two planets), a raised panel with the headline.
+  split(s, c, ctx) {
+    return `
+    <div class="art split-l">${ctx.art.html}${s.labels?.[0] ? `<div class="tag">${esc(s.labels[0])}</div>` : ''}</div>
+    <div class="art split-r">${ctx.art2.html}${s.labels?.[1] ? `<div class="tag tag-r">${esc(s.labels[1])}</div>` : ''}</div>
+    <div class="split-badge">${SPARK('#3a2c4e', 44)}</div>
+    <div class="split-panel">
+      ${s.kicker ? `<div class="kicker center">${esc(s.kicker)}</div>` : ''}
+      <h1 class="fit head center" data-max="300" data-big="110" data-small="56">${rich(s.headline)}</h1>
+      ${s.swipe === false ? '' : `<div class="swipe">${esc(s.swipe ?? 'swipe')} <span>→</span></div>`}
+    </div>`
+  },
+
+  // Table: a ranked list with a value column. rows: [{ rank?, label, sign?, color?, text?, value? }]
+  table(s, c, ctx) {
+    const rows = (s.rows ?? []).map((r, k) => {
+      const col = colorOf(r.color ?? r.sign ?? null, ctx.accent)
+      return `<div class="trow"><div class="trank" style="background:${col}">${esc(r.rank ?? k + 1)}</div>
+        <div class="tname"><b>${esc(r.label)}</b>${r.text ? `<span>${rich(r.text)}</span>` : ''}</div>
+        <div class="tval" style="color:${col}">${esc(r.value ?? '')}</div></div>`
+    }).join('')
+    return `
+    <div class="list-wrap">
+      ${s.kicker ? `<div class="kicker"><i style="background:${ctx.accent}"></i>${esc(s.kicker)}</div>` : ''}
+      ${s.headline ? `<h2 class="fit head" data-max="230" data-big="88" data-small="50">${rich(s.headline)}</h2>` : ''}
+      ${s.columns ? `<div class="thead"><span>${esc(s.columns[0] ?? '')}</span><span>${esc(s.columns[1] ?? '')}</span></div>` : ''}
+      <div class="rows fit-rows table">${rows}</div>
+    </div>`
+  },
+
   // Closing slide: small art, a line, the save/share prompt.
   end(s, c, ctx) {
     return `
@@ -156,6 +212,7 @@ export const LAYOUT_NAMES = Object.keys(LAYOUTS)
 // Art box size per layout, so the drawn art is laid out for its frame.
 const ART_BOX = {
   cover: [W, 800], story: [952, 620], rank: [984, 470], callout: [W, H], note: [0, 0], list: [0, 0], end: [W, 620],
+  hero: [W, 860], breaking: [W, 820], split: [W / 2, 760], table: [0, 0],
 }
 
 export function slideHtml(c, i) {
@@ -166,7 +223,9 @@ export function slideHtml(c, i) {
   const [aw, ah] = ART_BOX[layout]
   const a = aw ? art(s.art ?? defaultArt(s, c), aw, ah, (hashString(c.id) + i * 7919) >>> 0) : { css: '', html: '' }
   const glow = colorOf(s.sign ?? c.signs?.[0] ?? 'violet')
-  const inner = LAYOUTS[layout](s, c, { accent, art: a })
+  const second = s.art2 ?? s.inset
+  const a2 = second ? art(second, layout === 'split' ? W / 2 : 300, layout === 'split' ? 760 : 300, (hashString(c.id) + i * 31) >>> 0, '2') : { css: '', html: '' }
+  const inner = LAYOUTS[layout](s, c, { accent, art: a, art2: a2 })
 
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${fonts()}
@@ -202,6 +261,7 @@ ${OVERLAY_CSS}
 .rule .ln:last-child{background:linear-gradient(270deg,transparent,rgba(179,166,196,.45))}
 .art{position:absolute;overflow:hidden}
 ${a.css}
+${a2.css}
 /* cover */
 .cover-art{left:0;top:0;width:${W}px;height:800px}
 .cover-art .fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,6,32,.0) 45%,rgba(16,8,40,.85) 85%,#140a2e 100%)}
@@ -249,11 +309,43 @@ ${a.css}
   background:radial-gradient(circle at 35% 30%,#fff 0,color-mix(in srgb,var(--c) 55%,#fff) 18%,var(--c) 55%,color-mix(in srgb,var(--c) 40%,#000) 100%);box-shadow:0 0 16px var(--c)}
 .row-t{font:400 36px/1.32 'Inter',sans-serif;color:#b3a6c4}
 .row-t b{font-weight:500;color:#efe6d6}
+
+/* hero */
+.frame.hero-bg{background:#05030f}
+.hero-art{left:0;top:40px;width:${W}px;height:860px;background:radial-gradient(ellipse 70% 60% at 50% 50%, #120a2a 0%, #05030f 80%) !important}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,3,15,0) 75%,#07041a 100%)}
+.hero-text{position:absolute;left:64px;right:64px;bottom:90px}
+.divider{display:flex;align-items:center;gap:18px;margin-top:30px}
+.divider .ln{flex:1;height:2px;background:linear-gradient(90deg,transparent,#f2c75c 50%,transparent)}
+.dmark{font:400 20px 'Space Mono',monospace;letter-spacing:.3em;color:#efe6d6;opacity:.8;display:flex;gap:8px;align-items:center}
+/* breaking */
+.giant{position:absolute;left:-20px;right:-20px;top:120px;text-align:center;font:italic 500 330px/1 'EB Garamond',serif;letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:2px rgba(239,230,214,.22);background:linear-gradient(180deg,rgba(239,230,214,.16),rgba(239,230,214,0));-webkit-background-clip:text;background-clip:text;white-space:nowrap}
+.breaking-art{left:0;top:110px;width:${W}px;height:820px;background:transparent !important}
+.breaking-art .scene svg > rect:first-of-type{opacity:.6}
+/* split */
+.split-l,.split-r{top:0;width:${W / 2}px;height:760px}
+.split-l{left:0}.split-r{left:${W / 2}px;border-left:2px solid rgba(11,6,32,.9)}
+.split-l .tag,.split-r .tag{top:130px}
+.tag-r{left:auto;right:24px}
+.split-badge{position:absolute;left:${W / 2 - 52}px;top:708px;width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:3;
+  background:linear-gradient(100deg,#f8edff 0%,#fff7ec 38%,#eaf4ff 72%,#ffeff7 100%);box-shadow:0 0 40px rgba(248,237,255,.4)}
+.split-panel{position:absolute;left:0;right:0;top:760px;bottom:0;padding:90px 72px 70px;background:linear-gradient(180deg,#281a4e,#140a2e);border-top:1px solid rgba(179,166,196,.25)}
+/* table */
+.thead{display:flex;justify-content:space-between;font:400 18px 'Space Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7d6f94;margin:26px 0 -10px;padding-left:96px}
+.trow{display:grid;grid-template-columns:72px 1fr auto;gap:24px;align-items:center;padding:22px 0;border-top:1px solid rgba(179,166,196,.16)}
+.trow:last-child{border-bottom:1px solid rgba(179,166,196,.16)}
+.trank{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font:italic 500 44px 'EB Garamond',serif;color:#0b0620}
+.tname b{display:block;font:italic 500 46px/1.05 'EB Garamond',serif;color:#efe6d6}
+.tname span{display:block;font:400 26px/1.3 'Inter',sans-serif;color:#b3a6c4;margin-top:4px}
+.tval{font:400 26px 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;text-align:right}
+/* story inset */
+.inset-art{left:${W - 64 - 300 + 30}px;top:${130 + 620 - 300 + 40}px;width:300px;height:300px;border-radius:50%;border:4px solid #efe6d6;box-shadow:0 20px 60px rgba(5,2,15,.7);z-index:2}
 /* end */
 .end-art{left:0;top:110px;width:${W}px;height:620px}
 .end-text{position:absolute;left:72px;right:72px;bottom:110px}
 .end-mark{margin-top:42px;display:flex;justify-content:center;gap:12px;align-items:center;font:400 26px 'Space Mono',monospace;letter-spacing:.28em;color:#efe6d6;opacity:.8}
-</style></head><body><div class="frame">
+</style></head><body><div class="frame${layout === 'hero' || layout === 'breaking' ? ' hero-bg' : ''}">
 ${inner}
 ${OVERLAY_HTML}
 <div class="top"><div class="mark">align ${SPARK('#f2c75c', 18)} <b>${esc(c.series ?? 'sky news')}</b></div>${total > 1 ? `<div class="count">${i + 1}/${total}</div>` : ''}</div>

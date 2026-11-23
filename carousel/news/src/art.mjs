@@ -75,6 +75,72 @@ function orb(id, cx, cy, R, color, { bands = false, ring = false, rim = null } =
   ${ringFront}`
 }
 
+
+// Realistic-ish planets: fractal noise stretched into bands (or patches),
+// mapped through the planet's own palette, shaded as a sphere.
+const SURFACES = {
+  jupiter: { pal: ['#7a3a22', '#c0703f', '#e8b98a', '#f6ead6', '#fff8ec', '#d99a62', '#a4462c', '#f1dcc0'], freq: '0.0012 0.028', oct: 4, spot: '#c4492c' },
+  saturn: { pal: ['#8a6a3c', '#c9a66b', '#e9d3a2', '#f6e9c8', '#d9bb80', '#b8935a'], freq: '0.001 0.03', oct: 3, ring: true },
+  mars: { pal: ['#3a0e06', '#6e2010', '#a8381a', '#c44a22', '#b8401c', '#d8693a', '#8a2a12'], freq: '0.012 0.012', oct: 5, cap: true },
+  venus: { pal: ['#8a5e2a', '#c39550', '#e2bf7a', '#f3dcaa', '#d6ae68'], freq: '0.004 0.012', oct: 5 },
+  mercury: { pal: ['#3c3633', '#5f5752', '#8a817a', '#b2a99f', '#d6cdc2'], freq: '0.03 0.03', oct: 5, craters: true },
+  moon: { pal: ['#4b4650', '#6f6a73', '#a19ca3', '#cfcac9', '#ece7df'], freq: '0.008 0.008', oct: 5, craters: true },
+  uranus: { pal: ['#6fc6d6', '#8fd8e4', '#b5e9ef', '#a3e0ea', '#7fd0e0'], freq: '0.001 0.02', oct: 2 },
+  neptune: { pal: ['#1d2f86', '#2c49b8', '#4a6fd8', '#6f92ea', '#3554c4'], freq: '0.0015 0.02', oct: 3 },
+  pluto: { pal: ['#5a3f2e', '#8a6a52', '#c8a888', '#efdcc4', '#a8836a'], freq: '0.01 0.01', oct: 5 },
+  sun: { pal: ['#b8420f', '#ec7a1c', '#f9a93a', '#ffd36a', '#fff1b8'], freq: '0.02 0.02', oct: 4, glow: true },
+  blood: { pal: ['#2a0608', '#5e1210', '#8f2316', '#c2401f', '#e0663a'], freq: '0.008 0.008', oct: 5, craters: true },
+  pastel: { pal: ['#2e5c56', '#7fb3a0', '#c9e6d0', '#e9d8f0', '#b7a6e0', '#8fb6d8', '#f3e6f0'], freq: '0.0018 0.016', oct: 4 },
+}
+function table(pal, ch) {
+  return pal.map((h) => (rgb(h)[ch] / 255).toFixed(3)).join(' ')
+}
+export function realPlanet(id, cx, cy, R, name, { tilt = -18, seed = 3, rim = null } = {}) {
+  const S = SURFACES[name] ?? SURFACES.pastel
+  const x = cx - R, y = cy - R, d = R * 2
+  const r = rng(seed + 11)
+  let craters = ''
+  if (S.craters) {
+    for (let i = 0; i < 46; i++) {
+      const a = r() * Math.PI * 2, dist = Math.sqrt(r()) * R * 0.95
+      const cr = R * (0.01 + Math.pow(r(), 3) * 0.08)
+      const px = cx + Math.cos(a) * dist, py = cy + Math.sin(a) * dist
+      craters += `<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${cr.toFixed(1)}" fill="#000" opacity=".22"/><circle cx="${(px - cr * .25).toFixed(1)}" cy="${(py - cr * .25).toFixed(1)}" r="${(cr * .8).toFixed(1)}" fill="#fff" opacity=".08"/>`
+    }
+  }
+  const spot = S.spot ? `<ellipse cx="${cx + R * 0.28}" cy="${cy + R * 0.34}" rx="${R * 0.17}" ry="${R * 0.1}" fill="${S.spot}" opacity=".85"/><ellipse cx="${cx + R * 0.28}" cy="${cy + R * 0.34}" rx="${R * 0.1}" ry="${R * 0.055}" fill="#e8743f" opacity=".8"/>` : ''
+  const cap = S.cap ? `<ellipse cx="${cx - R * 0.1}" cy="${cy - R * 0.9}" rx="${R * 0.3}" ry="${R * 0.12}" fill="#fff4ec" opacity=".45" filter="url(#soft${id})"/>` : ''
+  const glow = S.glow ? `<circle cx="${cx}" cy="${cy}" r="${R * 1.9}" fill="url(#cor${id})"/>` : ''
+  const ringBack = S.ring ? `<ellipse cx="${cx}" cy="${cy}" rx="${R * 2.1}" ry="${R * 0.46}" fill="none" stroke="url(#rg${id})" stroke-width="${R * 0.34}" opacity=".85" transform="rotate(${tilt} ${cx} ${cy})"/>` : ''
+  const ringFront = S.ring ? `<path d="M${cx - R * 2.1} ${cy} A${R * 2.1} ${R * 0.46} 0 0 0 ${cx + R * 2.1} ${cy}" fill="none" stroke="url(#rg${id})" stroke-width="${R * 0.34}" opacity=".95" transform="rotate(${tilt} ${cx} ${cy})"/>` : ''
+  const rimC = rim ?? (S.glow ? '#ffb347' : '#cfe0ff')
+  return `
+  <defs>
+    <filter id="tx${id}" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="${S.freq}" numOctaves="${S.oct}" seed="${seed}" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1"/>
+      <feComponentTransfer><feFuncR type="table" tableValues="${table(S.pal, 0)}"/><feFuncG type="table" tableValues="${table(S.pal, 1)}"/><feFuncB type="table" tableValues="${table(S.pal, 2)}"/></feComponentTransfer>
+    </filter>
+    <filter id="soft${id}"><feGaussianBlur stdDeviation="${R * 0.03}"/></filter>
+    <radialGradient id="sh${id}" cx="34%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".8" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity=".92"/>
+    </radialGradient>
+    <radialGradient id="at${id}"><stop offset=".86" stop-color="${rimC}" stop-opacity="0"/><stop offset=".97" stop-color="${rimC}" stop-opacity=".35"/><stop offset="1" stop-color="${rimC}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cor${id}"><stop offset=".5" stop-color="#ffcf6a" stop-opacity=".7"/><stop offset=".75" stop-color="#f27a2a" stop-opacity=".25"/><stop offset="1" stop-color="#f27a2a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rg${id}" x1="0" x2="1"><stop offset="0" stop-color="#8d7550"/><stop offset=".3" stop-color="#e8d6ac"/><stop offset=".5" stop-color="#b59a6a"/><stop offset=".7" stop-color="#efe0bb"/><stop offset="1" stop-color="#8d7550"/></linearGradient>
+    <clipPath id="pc${id}"><circle cx="${cx}" cy="${cy}" r="${R}"/></clipPath>
+  </defs>
+  ${glow}${ringBack}
+  <g clip-path="url(#pc${id})">
+    <g transform="rotate(${tilt} ${cx} ${cy})"><rect x="${x - R * .5}" y="${y - R * .5}" width="${d * 1.5}" height="${d * 1.5}" filter="url(#tx${id})"/></g>
+    ${craters}${spot}${cap}
+    <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#sh${id})"/>
+  </g>
+  <circle cx="${cx}" cy="${cy}" r="${R * 1.04}" fill="url(#at${id})"/>
+  ${ringFront}`
+}
+
 function moonDisc(cx, cy, R, phase, tint) {
   // Lit part: half disc + terminator ellipse. phase 0 new → .5 full → 1 new.
   const k = Math.cos(2 * Math.PI * phase)
@@ -102,6 +168,10 @@ function moonDisc(cx, cy, R, phase, tint) {
 
 function eclipse(cx, cy, R, type, tint) {
   if (type === 'lunar') {
+    return `<defs><radialGradient id="eh"><stop offset=".4" stop-color="#e8628a" stop-opacity=".4"/><stop offset="1" stop-color="#e8628a" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="${cx}" cy="${cy}" r="${R * 2.4}" fill="url(#eh)"/>` + realPlanet('bl', cx, cy, R * 1.1, 'blood', { tilt: 0, seed: 21, rim: '#ff8a6a' })
+  }
+  if (type === 'lunar-old') {
     return `<defs><radialGradient id="eb" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#f6a27a"/><stop offset=".6" stop-color="#b3402e"/><stop offset="1" stop-color="#4a1020"/></radialGradient>
     <radialGradient id="eh"><stop offset=".4" stop-color="#e8628a" stop-opacity=".45"/><stop offset="1" stop-color="#e8628a" stop-opacity="0"/></radialGradient></defs>
     <circle cx="${cx}" cy="${cy}" r="${R * 2.4}" fill="url(#eh)"/>
@@ -137,48 +207,55 @@ function wheel(cx, cy, R, lit, tint) {
  * Returns { css, html } for an art box of size w×h (the box is
  * position:relative; this fills it).
  */
-export function art(a, w, h, seed = 1) {
+export function art(a, w, h, seed = 1, prefix = '') {
   if (!a) return { css: '', html: '' }
   const zoom = a.zoom ?? 1, focus = a.focus ?? '50% 50%'
   const tf = `transform:scale(${zoom}); transform-origin:${focus};`
   if (a.kind === 'figure' || a.kind === 'aura') {
     const crop = a.kind === 'aura' ? 1.22 : 1
     return {
-      css: `.art img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:${focus};
+      css: `.art img.im${prefix} { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:${focus};
         transform:scale(${(zoom * crop).toFixed(3)}); transform-origin:${focus}; filter: blur(${a.kind === 'aura' ? 4 : .5}px) saturate(1.08) contrast(1.06) brightness(.92); }`,
-      html: `<img src="${imageDataUri(`${a.kind}/${a.sign}.jpg`)}" alt="">`,
+      html: `<img class="im${prefix}" src="${imageDataUri(`${a.kind}/${a.sign}.jpg`)}" alt="">`,
     }
   }
   const tint = colorOf(a.tint ?? a.sign ?? (a.kind === 'planet' ? a.body : null) ?? 'violet')
   const cx = w / 2, cy = h / 2
   let body = ''
-  const R = Math.min(w, h) * 0.26
+  const R = Math.min(w, h) * 0.26 * (a.kind === 'planet' || a.kind === 'moon' ? 1 : (a.size ?? 1))
   if (a.kind === 'planet') {
     const c = colorOf(a.body)
-    body = orb('p', cx, cy, R, c, { bands: a.body === 'jupiter' || a.body === 'saturn', ring: a.body === 'saturn', rim: a.sign ? colorOf(a.sign) : null })
+    body = a.style === 'gloss'
+      ? orb('p', cx, cy, R, c, { bands: a.body === 'jupiter' || a.body === 'saturn', ring: a.body === 'saturn', rim: a.sign ? colorOf(a.sign) : null })
+      : realPlanet('p', cx, cy, R * (a.size ?? 1) * (a.body === 'saturn' ? 0.8 : 1.15), a.style === 'pastel' ? 'pastel' : a.body, { rim: a.sign ? colorOf(a.sign) : null, seed: (seed % 97) + 1 })
     if (a.rx) {
       // retrograde: a backward arc around the planet
       body += `<path d="M${cx + R * 1.55} ${cy - R * 0.5} A${R * 1.6} ${R * 1.6} 0 1 0 ${cx + R * 1.2} ${cy + R * 1.05}" fill="none" stroke="${rgba('#efe6d6', .55)}" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
       <path d="M${cx + R * 1.2} ${cy + R * 1.05} l-6 -34 m6 34 l-34 -2" stroke="${rgba('#efe6d6', .7)}" stroke-width="4" stroke-linecap="round" fill="none" transform="rotate(200 ${cx + R * 1.2} ${cy + R * 1.05})"/>`
     }
   } else if (a.kind === 'pair') {
-    body = orb('a', cx - R * 0.95, cy + R * 0.15, R * 0.78, colorOf(a.a)) + orb('b', cx + R * 0.95, cy - R * 0.15, R * 0.78, colorOf(a.b))
+    body = realPlanet('a', cx - R * 0.95, cy + R * 0.15, R * 0.72, a.a, { seed: 5 }) + realPlanet('b', cx + R * 0.95, cy - R * 0.15, R * 0.72, a.b, { seed: 9 })
       + `<line x1="${cx - R * 0.1}" y1="${cy}" x2="${cx + R * 0.1}" y2="${cy}" stroke="#fff4cf" stroke-width="3" opacity=".7"/>`
   } else if (a.kind === 'moon') {
-    body = moonDisc(cx, cy, R * 1.05, a.phase ?? 0.5, tint)
+    const ph = a.phase ?? 0.5
+    body = Math.abs(ph - 0.5) < 0.04
+      ? `<circle cx="${cx}" cy="${cy}" r="${R * 2.2}" fill="url(#neb)" opacity=".8"/>` + realPlanet('m', cx, cy, R * (a.size ?? 1) * 1.15, 'moon', { tilt: 0, seed: 21, rim: '#efe6d6' })
+      : moonDisc(cx, cy, R * (a.size ?? 1) * 1.05, ph, tint)
   } else if (a.kind === 'eclipse') {
     body = eclipse(cx, cy, R, a.type ?? 'solar', tint)
   } else if (a.kind === 'wheel') {
     body = wheel(cx, cy, Math.min(w, h) * 0.42, a.signs, tint)
   }
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
     <defs><radialGradient id="neb" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="${tint}" stop-opacity=".28"/><stop offset="1" stop-color="${tint}" stop-opacity="0"/></radialGradient></defs>
     <rect width="${w}" height="${h}" fill="url(#neb)"/>
     ${starfield(w, h, (seed ^ hashString(a.kind)) >>> 0)}
     ${body}</svg>`
+  // Two art boxes on one slide must not share SVG ids.
+  if (prefix) svg = svg.replace(/id="([^"]+)"/g, `id="${prefix}$1"`).replace(/url\(#([^)]+)\)/g, `url(#${prefix}$1)`)
   return {
-    css: `.art .scene { position:absolute; inset:0; ${tf} }
+    css: `.art .scene { position:absolute; inset:0; }
       .art { background: radial-gradient(ellipse 80% 70% at 50% 45%, #1e1240 0%, #0b0620 75%); }`,
-    html: `<div class="scene">${svg}</div>`,
+    html: `<div class="scene" style="${tf}">${svg}</div>`,
   }
 }

@@ -65,6 +65,12 @@ highlight bar behind them, `\n` breaks a line. No emoji, no `!`.
 | `note` | `kicker?`, `headline` (the claim, in quotes), `verdict`, `body` | sky notes. verdict: `true`, `misleading`, `false`, `context` |
 | `list` | `kicker?`, `headline?`, `rows: [{ label, text, sign? / color? }]` | calendars, who-this-hits, by-sign lists (max ~7 rows) |
 | `end` | `headline`, `body?`, `art?` | the last slide: one thing to do, the save prompt |
+| `hero` | `kicker?`, `headline`, `dek?`, `art` | one huge planet / moon on black, headline under it, gold divider with the align mark. The best cover for single-sign and single-planet posts |
+| `breaking` | `word` (e.g. `retrograde`, `eclipse`, `breaking`), `kicker?`, `headline`, `dek?`, `art` | a giant outlined word behind the art. Event covers |
+| `split` | `labels: [l, r]`, `kicker?`, `headline`, `art`, `art2` | two arts side by side over a raised panel: venus vs mars, two signs, before/after |
+| `table` | `kicker?`, `headline?`, `columns?: [l, r]`, `rows: [{ label, sign?/color?, text?, value? }]` | a numbered ranking with a value column, max 6 rows |
+
+`story` also takes `inset`: a second art shown as a circle over the frame's corner (a sign figure next to a planet).
 
 Optional on any slide: `sign` (sets the accent and default art), `accent`
 (a sign, planet or `gold`/`spark`/`rub`/`violet`/`tide`).
@@ -76,10 +82,10 @@ characters (rank bodies ≤ 300), list row text ≤ 60.
 
 | kind | fields | |
 | --- | --- | --- |
-| `planet` | `body`, `sign?` (rim colour), `rx?` (retrograde arrow) | glossy orb on stars |
+| `planet` | `body` (sun, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto), `sign?` (rim colour), `rx?` (retrograde arrow), `style?` (`gloss` for the app's orb, `pastel` for a dreamy iridescent planet), `size?` | textured planet on stars |
 | `pair` | `a`, `b` (planets) | two orbs: an aspect |
-| `moon` | `phase` 0–1 (0 new, .25 first quarter, .5 full, .75 last quarter), `sign?` (glow) | |
-| `eclipse` | `type`: `solar` or `lunar`, `sign?` | |
+| `moon` | `size?`, `phase` 0–1 (0 new, .25 first quarter, .5 full, .75 last quarter), `sign?` (glow) | |
+| `eclipse` | `type`: `solar` (ring of fire) or `lunar` (blood moon), `sign?` | |
 | `figure` / `aura` | `sign` | the app's sign art |
 | `stars` | `tint?` | |
 | `wheel` | `signs?` (lit ones), `tint?` | zodiac wheel |
