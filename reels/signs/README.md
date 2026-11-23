@@ -20,7 +20,8 @@ python3 make.py --forever --jobs 3             # endless: when every script is m
 python3 tools/site.py                          # out/site/: the reels + the whole catalogue as one page
 ```
 
-The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLDNdQTtQDwK2t
+The published pages (every reel + the catalogue): Aries–Virgo https://claude.ai/artifact/HNVXezdgMLDNdQTtQDwK2t · Libra–Pisces https://claude.ai/artifact/2dJvq2t7ucbRQ5W4zcjJup
+(a page holds at most ~480 reels, so `tools/site.py --signs … --out … --other <url>` builds one per half)
 
 ## The reel
 
