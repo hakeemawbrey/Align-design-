@@ -1446,6 +1446,27 @@ KIT.glyphs = (g, t, [str, color], key) => {
   glowLine(g, wheelPts(cx, 240, R), c, { w: 1, blur: 8, a: 0.4, dash: [4, 8] })
 }
 
+// a big glowing number or word, like a score on a screen
+KIT.big = (g, t, [text, color], key) => {
+  const c = colOf(color)
+  g.drawImage(sky(key, c), 0, 0)
+  dust(g, hash(key), 24, c, t, { speed: 3 })
+  g.save()
+  g.globalCompositeOperation = 'lighter'
+  g.font = '800 118px Poppins'
+  g.textAlign = 'center'
+  g.textBaseline = 'middle'
+  g.shadowColor = c
+  g.shadowBlur = 40
+  g.fillStyle = rgba(c, 0.8)
+  g.fillText(text, cx, 270)
+  g.shadowBlur = 0
+  g.fillStyle = rgba(COL.glow, 0.95)
+  g.fillText(text, cx, 270)
+  g.restore()
+  mono(g, 'MATCH · NO REASON GIVEN', cx, 370, { size: 15, color: c })
+}
+
 KIT.orbs = (g, t, [labels, colors], key) => {
   const L2 = labels.split(','), C2 = colors.split(',').map(colOf)
   g.drawImage(sky(key, C2[0]), 0, 0)

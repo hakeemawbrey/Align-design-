@@ -20,7 +20,7 @@
     {
       "a": {
         "label": "A percentage",
-        "art": "orbs:72%:gold"
+        "art": "big:72%:gold"
       },
       "b": {
         "label": "A reading",

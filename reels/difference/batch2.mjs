@@ -209,7 +209,7 @@ const APP = [
   ['Spark', 'Clash', 'spark', 'duo:wall:rose:rose', ['A *spark* is where your charts pull together.'], ['A *clash* is where they push apart.'], ['Every pair has *both.*', 'Align shows you *where.*'], ['a spark', 'a clash']],
   ['Clash', 'Dealbreaker', 'duo:wall:mint:mint', 'solo:shield:rose', ['A *clash* is friction you can work with.'], ['A *dealbreaker* is a line you won\'t cross.'], ['Clashes *grow* you.', 'Dealbreakers *protect* you.'], ['a clash', 'a dealbreaker']],
   ['An aura', 'A photo', 'sign:✦:lilac', 'solo:mirror:gold', ['On Align, a card starts with an *aura,*', 'in the colors of their sign.'], ['The *photo* stays veiled,', 'until you both align.'], ['The aura is the *first impression.*', 'The photo is the *second.*'], ['an aura', 'a photo']],
-  ['A percentage', 'A reading', 'orbs:72%:gold', 'chart', ['Most apps give you a *match percentage.*', 'A number, with no reason.'], ['Align gives you a *reading.*', 'Where you spark, clash, and align.'], ['A number *judges.*', 'A reading *explains.*'], ['a percentage', 'a reading']],
+  ['A percentage', 'A reading', 'big:72%:gold', 'chart', ['Most apps give you a *match percentage.*', 'A number, with no reason.'], ['Align gives you a *reading.*', 'Where you spark, clash, and align.'], ['A number *judges.*', 'A reading *explains.*'], ['a percentage', 'a reading']],
 ]
 for (const [a, b, artA, artB, ea, eb, diff, say] of APP) {
   const [sa, sb] = say ?? [a.toLowerCase(), b.toLowerCase()]
