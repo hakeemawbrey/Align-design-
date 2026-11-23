@@ -1,0 +1,2 @@
+import { DURATION, CUES } from './scenes/index.js'
+export default { id: 'hst002', duration: DURATION, music: { style: 'screwed', key: 'D', seed: 8635, lufs: -20, crackle: false, sections: { drop: 0.0, outroAt: DURATION - 2.4 } }, cues: CUES }

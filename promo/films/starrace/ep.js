@@ -105,7 +105,7 @@ export function marbleTrack(x, y, t) {        // a practice lane: a rail with pe
 export function makeEpisode(E) {
   let acc = 0
   const SC = E.scenes.map(s => { const o = { ...s, t0: r2(acc) }; acc += s.dur; o.t1 = r2(acc); return o })
-  const END = r2(acc), DURATION = r2(END + 6.4)
+  const END = r2(acc), DURATION = r2(END + (E.endLen ?? 6.4))
   const T = { end: END, cuts: SC.map(s => s.t0) }
 
   function at(s, id, lt) {         // keyframed position of a star in a scene: [[lt, x, y, size?], …], eased between keys
@@ -137,7 +137,7 @@ export function makeEpisode(E) {
         const talk = (s.lines || []).filter(l => l[2] === id).map(l => s.t0 + l[0])
         const m = s.mood?.[id], mood = typeof m === 'function' ? m(lt) : m || 'happy'
         const bob = moving(s, id, lt) ? Math.abs(Math.sin(lt * 9)) * -22 : 0
-        signChar(x, t, id, cx, cy + bob, size, { mood, hops: talk.slice(-3).filter(h => h <= t), seed: id.length + 3, tears: id === 'pisces' ? 2 : 0, look: s.look?.[id], pop: pop01(t, s.t0 - 0.2, 0.3, 1.6) })
+        signChar(x, t, id, cx, cy + bob, size, { mood, hops: [...(s.hops?.[id] || []).map(h => s.t0 + h), ...talk].filter(h => h <= t).slice(-3), seed: id.length + 3, tears: id === 'pisces' ? 2 : 0, look: s.look?.[id], pop: pop01(t, s.t0 - 0.2, 0.3, 1.6) })
       }
       if (s.front) { x.save(); s.front(x, t, lt, P); x.restore() }
       for (const [l0, d, id, text] of s.lines || []) {
@@ -152,6 +152,7 @@ export function makeEpisode(E) {
     }
     function endCard(t) {
       if (t < END) return
+      if (E.end) { x.save(); E.end(x, t, t - END); x.restore(); return }   // a custom closing card (e.g. the Houston party ticket)
       const a = clamp((t - END) / 0.5)
       x.fillStyle = `rgba(8,5,22,${(0.93 * a).toFixed(3)})`; x.fillRect(0, 0, 1080, 1920)
       const [p, q] = E.pair || []
@@ -178,6 +179,8 @@ export function makeEpisode(E) {
         x.clearRect(0, 0, 1080, 1920)
         const s = SC.find(s => t >= s.t0 && t < s.t1) || SC[SC.length - 1]
         scene(s, t)
+        if (E.badge && t < END + 0.3) label(x, E.badge.x ?? 250, E.badge.y ?? 150, E.badge.text, clamp((t - (E.badge.at ?? 2.7)) / 0.3), { size: E.badge.size || 34, bg: E.badge.bg || PINK, rot: -0.03, font: MONO, weight: 700 })   // persistent series badge
+        if (E.overlay) { x.save(); E.overlay(x, t); x.restore() }
         endCard(t)
       },
     }
@@ -191,5 +194,5 @@ export function makeEpisode(E) {
     ['glitter', r2(END + 0.5), r2(END + 1.3)],
     ['bell', r2(END + 1.25), 1046.5, 0.016, 1.8, 0],
   ].sort((a, b) => a[1] - b[1])
-  return { HOOK: E.hook, HOOK_STYLE: 'box', HOOK_UNTIL: 2.6, SCENES: [build], DURATION, STORY_END: DURATION, CUES, T }
+  return { HOOK: E.hook, HOOK_STYLE: E.hookStyle || 'box', HOOK_UNTIL: E.hookUntil ?? 2.6, SCENES: [build], DURATION, STORY_END: DURATION, CUES, T }
 }
