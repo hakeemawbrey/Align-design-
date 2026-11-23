@@ -1,3 +1,5 @@
+> **Look update:** the visual notes below describe the first, Stardust-panel look. The renderer now uses the aura look in README.md (soft light, one subject, one headline, no chrome). The editorial formats are unchanged.
+
 # Align sky news: carousel formats
 
 A news-style Instagram series for Align: what the sky is doing today, this

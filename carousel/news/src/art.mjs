@@ -266,3 +266,48 @@ export function art(a, w, h, seed = 1, prefix = '') {
     html: `<div class="scene" style="${tf}">${svg}</div>`,
   }
 }
+
+// ---- aura system ------------------------------------------------------------
+// The soft look: no starfield sparkles, no outlines, no dotted rings. A subject
+// (planet, moon, eclipse, a pair, a sign's aura figure) floats in blurred
+// colour light, like an aura photograph.
+
+/** The subject alone, centred in a size×size square, as an SVG string. */
+export function subjectSvg(a, size, seed = 1, prefix = 's') {
+  if (!a) return ''
+  const c = size / 2
+  const R = size * 0.3 * (a.size ?? 1)
+  let body = ''
+  if (a.kind === 'planet') {
+    body = realPlanet(prefix + 'p', c, c, R * (a.body === 'saturn' ? 0.72 : 1), a.style === 'pastel' ? 'pastel' : a.body, { seed: (seed % 97) + 1, rim: '#ffffff' })
+  } else if (a.kind === 'pair') {
+    const ra = R * (a.a === 'saturn' ? 0.42 : 0.6), rb = R * (a.b === 'saturn' ? 0.42 : 0.6)
+    body = realPlanet(prefix + 'a', c - R * 0.95, c + R * 0.12, ra, a.a, { seed: 5, rim: '#ffffff' }) + realPlanet(prefix + 'b', c + R * 0.95, c - R * 0.12, rb, a.b, { seed: 9, rim: '#ffffff' })
+  } else if (a.kind === 'moon') {
+    const ph = a.phase ?? 0.5
+    body = Math.abs(ph - 0.5) < 0.04 ? realPlanet(prefix + 'm', c, c, R, 'moon', { tilt: 0, seed: 21, rim: '#ffffff' }) : moonDisc(c, c, R, ph, '#efe6d6')
+  } else if (a.kind === 'eclipse') {
+    body = eclipse(c, c, R * 0.9, a.type ?? 'solar', colorOf(a.sign ?? 'gold'))
+  } else if (a.kind === 'wheel') {
+    body = wheel(c, c, size * 0.4, a.signs, colorOf(a.tint ?? 'violet'))
+  } else return ''
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${body}</svg>`
+  return svg.replace(/id="([^"]+)"/g, `id="${prefix}$1"`).replace(/url\(#([^)]+)\)/g, `url(#${prefix}$1)`)
+}
+
+/** Colours for the aura field behind a slide: [main, second, deep]. */
+export function auraColors(a, signColor) {
+  const k = a?.kind
+  const main = k === 'planet' ? colorOf(a.body) : k === 'pair' ? colorOf(a.a) : k === 'eclipse' ? (a.type === 'solar' ? '#f2a03a' : a.type === 'lunar' ? '#e8452e' : '#b3a6c4')
+    : k === 'moon' ? '#c9c2e8' : (a?.sign ? colorOf(a.sign) : signColor)
+  const second = k === 'pair' ? colorOf(a.b) : signColor ?? '#9a7be0'
+  return [main, second && second !== main ? second : '#9a7be0', '#3a1f7a']
+}
+
+/** A few tiny, soft dust specks: atmosphere without sparkle. */
+export function dust(w, h, seed, n = 70) {
+  const r = rng(seed)
+  let s = ''
+  for (let i = 0; i < n; i++) s += `<circle cx="${(r() * w).toFixed(0)}" cy="${(r() * h).toFixed(0)}" r="${(0.6 + r() * 1.4).toFixed(1)}" fill="#fff6ec" opacity="${(0.08 + r() * 0.3).toFixed(2)}"/>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" style="position:absolute;inset:0;filter:blur(.7px)">${s}</svg>`
+}

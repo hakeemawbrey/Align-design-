@@ -1,6 +1,7 @@
-// One news slide as a standalone 1080×1350 HTML page, in Align's Stardust
-// language: indigo surfaces, warm bone type, EB Garamond italic headlines,
-// Space Mono eyebrows, sign colours for highlights, gold only as a ✦ accent.
+// One news slide as a standalone 1080×1350 HTML page in Align's aura look:
+// every slide is soft coloured light (like an aura photograph) on deep indigo,
+// one glowing subject, a serif italic headline, and almost nothing else. No
+// borders, rules, frames, pills or sparkles.
 //
 // Headline markup: wrap words in *asterisks* to light them in the slide's
 // accent (the slide's sign colour, else the carousel's, else gold). Use
@@ -9,9 +10,9 @@
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
-import { OVERLAY_CSS, OVERLAY_HTML, hashString } from '../../src/backgrounds.mjs'
+import { hashString, imageDataUri } from '../../src/backgrounds.mjs'
 import { SIGN_COLORS } from '../../src/schema.mjs'
-import { art, colorOf } from './art.mjs'
+import { auraColors, colorOf, dust, subjectSvg } from './art.mjs'
 
 export const W = 1080
 export const H = 1350
@@ -50,353 +51,230 @@ const VERDICT = { true: ['true', '#7fd8b0'], misleading: ['half true', '#f2c75c'
 
 const accentOf = (slide, c) => colorOf(slide.accent ?? slide.sign ?? c.accent ?? c.signs?.[0] ?? 'gold', '#f2c75c')
 
-// ---- layouts --------------------------------------------------------------
-// Each returns inner HTML; boxes with class "fit" shrink to their max height.
+// ---- pieces ---------------------------------------------------------------
 
-function eyebrowRule(text, accent) {
-  return `<div class="rule"><span class="ln"></span>${SPARK('#f2c75c', 20)}<span>${esc(text)}</span>${SPARK('#f2c75c', 20)}<span class="ln"></span></div>`
+const VERDICT_WORD = { true: 'true', misleading: 'half true', false: 'not true', context: 'needs context' }
+const VERDICT_COL = { true: '#7fd8b0', misleading: '#f2c75c', false: '#e8628a', context: '#b9a2ff' }
+
+// Aura light: three big blurred blobs, placed by seed, glowing around `at`
+// (where the subject sits, as % of the frame).
+function auraField(cols, seed, at = [50, 36], strength = 1) {
+  const r = (() => { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } })()
+  const [x, y] = at
+  const blob = (c, cx, cy, w, h, o) => `<div class="blob" style="left:${cx}%;top:${cy}%;width:${w}px;height:${h}px;background:radial-gradient(closest-side, ${c} 0%, ${c}cc 35%, ${c}00 100%);opacity:${(o * strength).toFixed(2)}"></div>`
+  return `<div class="aura">
+    ${blob(cols[2], x + (r() - .5) * 30, y + 40, 1300, 1100, .9)}
+    ${blob(cols[1], x + (r() < .5 ? -22 : 22), y + 10 + r() * 14, 900, 900, .55)}
+    ${blob(cols[0], x, y, 820, 820, .85)}
+    ${blob('#fff4e6', x, y, 300, 300, .22)}
+  </div>`
 }
 
+// The subject: aura figure photo, or a drawn body with a bloom behind it.
+function subject(a, size, seed, cls = '', prefix = 's') {
+  if (!a || a.kind === 'stars') return ''
+  if (a.kind === 'figure' || a.kind === 'aura') {
+    return `<div class="figure ${cls}" style="width:${size}px;height:${size * 1.15}px"><img src="${imageDataUri(`aura/${a.sign}.jpg`)}" alt=""></div>`
+  }
+  const svg = subjectSvg(a, size, seed, prefix)
+  const wide = (a.kind === 'planet' && a.body === 'saturn') || a.kind === 'pair' || a.kind === 'wheel' || a.kind === 'eclipse'
+  return `<div class="subj ${wide ? 'wide ' : ''}${cls}" style="width:${size}px;height:${size}px"><div class="bloom">${svg.replace(/id="/g, 'id="b').replace(/url\(#/g, 'url(#b')}</div><div class="body">${svg}</div><div class="haze"></div></div>`
+}
+
+const kick = (k) => (k ? `<div class="kicker">${esc(k)}</div>` : '')
+const fitH = (cls, html, max, big, small) => `<h1 class="fit head ${cls}" data-max="${max}" data-big="${big}" data-small="${small}">${rich(html)}</h1>`
+const fitP = (cls, html, max, big, small) => (html ? `<p class="fit ${cls}" data-max="${max}" data-big="${big}" data-small="${small}">${rich(html)}</p>` : '')
+
+// ---- layouts ----------------------------------------------------------------
+// Each returns { at: [x%, y%] where the light gathers, html }.
+
 const LAYOUTS = {
-  // Big cover: art on top fading into the sky, rule eyebrow, huge headline.
-  cover(s, c, ctx) {
-    return `
-    <div class="art cover-art">${ctx.art.html}<div class="fade"></div></div>
-    <div class="cover-text">
-      ${eyebrowRule(s.kicker ?? c.eyebrow ?? 'sky news', ctx.accent)}
-      <h1 class="fit head center" data-max="${s.dek ? 330 : 400}" data-big="150" data-small="64">${rich(s.headline)}</h1>
-      ${s.dek ? `<p class="dek center">${rich(s.dek)}</p>` : ''}
-      ${s.swipe === false ? '' : `<div class="swipe">${esc(s.swipe ?? 'swipe')} <span>→</span></div>`}
-    </div>`
+  cover: (s, c, x) => ({ at: [50, 33], html: `
+    <div class="stage" style="top:120px;height:760px">${subject(x.art, 600, x.seed)}</div>
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 330, 132, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }),
+  story: (s, c, x) => ({ at: [50, 28], html: `
+    <div class="stage" style="top:110px;height:620px">${subject(x.art, 500, x.seed)}${s.inset ? subject(s.inset, 220, x.seed + 3, 'inset', 'i') : ''}</div>
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 260, 100, 56)}${fitP('body center', s.body, 190, 36, 28)}</div>` }),
+  rank: (s, c, x) => ({ at: [50, 30], html: `
+    <div class="stage" style="top:90px;height:560px">${subject(x.art ?? { kind: 'aura', sign: s.sign }, 470, x.seed)}</div>
+    <div class="rank-num">${esc(s.rank)}</div>
+    <div class="txt bottom">
+      <div class="sign" style="color:${x.signCol}">${esc(s.title ?? s.sign)}</div>
+      ${s.dates ? `<div class="kicker">${esc(s.dates)}</div>` : ''}
+      ${fitP('hook center', s.headline, 140, 46, 32)}${fitP('body center', s.body, 230, 34, 26)}</div>` }),
+  callout: (s, c, x) => ({ at: [50, 40], html: `
+    <div class="stage" style="top:60px;height:900px;opacity:.9">${subject(x.art, 720, x.seed)}</div>
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 400, 136, 64)}${fitP('dek center', s.body, 110, 34, 26)}</div>` }),
+  hero: (s, c, x) => ({ at: [50, 34], html: `
+    <div class="stage" style="top:90px;height:820px">${subject(x.art, 680, x.seed)}</div>
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 330, 128, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }),
+  breaking: (s, c, x) => {
+    const w = s.word ?? 'breaking'
+    return { at: [50, 34], html: `
+    <div class="giant" style="font-size:${Math.min(300, Math.round(1900 / w.length))}px">${esc(w)}</div>
+    <div class="stage" style="top:110px;height:800px">${subject(x.art, 620, x.seed)}</div>
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 320, 124, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }
   },
-
-  // One story: framed art card on top, kicker, headline, body.
-  story(s, c, ctx) {
-    return `
-    <div class="art frame-art">${ctx.art.html}${s.tag ? `<div class="tag">${esc(s.tag)}</div>` : ''}</div>
-    ${s.inset ? `<div class="art inset-art">${ctx.art2.html}</div>` : ''}
-    <div class="story-text">
-      ${s.kicker ? `<div class="kicker"><i style="background:${ctx.accent}"></i>${esc(s.kicker)}</div>` : ''}
-      <h2 class="fit head" data-max="${s.body ? 250 : 380}" data-big="104" data-small="54">${rich(s.headline)}</h2>
-      ${s.body ? `<p class="fit body" data-max="${s.headline ? 190 : 400}" data-big="36" data-small="26">${rich(s.body)}</p>` : ''}
-    </div>`
-  },
-
-  // Ranked sign: a raised card with a big gilt number.
-  rank(s, c, ctx) {
-    const sc = SIGN_COLORS[s.sign]?.color ?? ctx.accent
-    return `
-    <div class="card rank">
-      <div class="art rank-art">${ctx.art.html}<div class="rank-fade"></div></div>
-      <div class="num">#${esc(s.rank)}</div>
-      <div class="rank-body">
-        <div class="sign-name" style="color:${sc}">${esc(s.title ?? s.sign)}</div>
-        ${s.dates ? `<div class="kicker small">${esc(s.dates)}</div>` : ''}
-        <p class="fit hook" data-max="190" data-big="54" data-small="32">${rich(s.headline)}</p>
-        <p class="fit body" data-max="360" data-big="40" data-small="25">${rich(s.body)}</p>
-      </div>
-    </div>`
-  },
-
-  // Full-bleed sign art, one statement in the middle.
-  callout(s, c, ctx) {
-    return `
-    <div class="art full-art">${ctx.art.html}<div class="shade-mid"></div></div>
-    <div class="callout-text">
-      ${s.kicker ? `<div class="kicker center"><span class="pill">${esc(s.kicker)}</span></div>` : ''}
-      <h1 class="fit head center" data-max="520" data-big="140" data-small="62">${rich(s.headline)}</h1>
-      ${s.body ? `<p class="dek center">${rich(s.body)}</p>` : ''}
-    </div>`
-  },
-
-  // The viral claim, then Align's sky note under it.
-  note(s, c, ctx) {
-    const [label, vc] = VERDICT[s.verdict] ?? VERDICT.context
-    return `
-    <div class="note-wrap">
-      <div class="kicker">${esc(s.kicker ?? 'going around')}</div>
-      <h2 class="fit head claim" data-max="420" data-big="92" data-small="50">${rich(s.headline)}</h2>
-      <div class="note">
-        <div class="note-top">
-          <div class="note-title">${SPARK('#f2c75c', 22)} sky note</div>
-          <div class="verdict" style="color:${vc};border-color:${vc}"><i style="background:${vc}"></i>${label}</div>
-        </div>
-        <div class="note-by">written by align, checked against the ephemeris</div>
-        <p class="fit body bone" data-max="380" data-big="36" data-small="26">${rich(s.body)}</p>
-      </div>
-    </div>`
-  },
-
-  // Rows: a calendar of dates, or a list of signs. rows: [{ label, text, sign?, color? }]
-  list(s, c, ctx) {
-    const rows = (s.rows ?? []).map((r) => {
-      const col = colorOf(r.color ?? r.sign ?? null, ctx.accent)
-      return `<div class="row"><div class="row-l">${r.sign ? `<i class="orb" style="--c:${col}"></i>` : `<i class="dot" style="background:${col}"></i>`}<span>${esc(r.label)}</span></div><div class="row-t">${rich(r.text)}</div></div>`
-    }).join('')
-    return `
-    <div class="list-wrap">
-      ${s.kicker ? `<div class="kicker"><i style="background:${ctx.accent}"></i>${esc(s.kicker)}</div>` : ''}
-      ${s.headline ? `<h2 class="fit head" data-max="230" data-big="92" data-small="52">${rich(s.headline)}</h2>` : ''}
-      <div class="rows fit-rows">${rows}</div>
-    </div>`
-  },
-
-
-  // Planet hero: one huge body on black, headline under it, divider wordmark.
-  hero(s, c, ctx) {
-    return `
-    <div class="art hero-art">${ctx.art.html}<div class="hero-fade"></div></div>
-    <div class="hero-text">
-      ${s.kicker ? `<div class="kicker center">${esc(s.kicker)}</div>` : ''}
-      <h1 class="fit head center" data-max="${s.dek ? 300 : 360}" data-big="128" data-small="60">${rich(s.headline)}</h1>
-      <div class="divider"><span class="ln"></span><span class="dmark">align ${SPARK('#f2c75c', 16)}</span><span class="ln"></span></div>
-      ${s.dek ? `<p class="dek center">${rich(s.dek)}</p>` : ''}
-    </div>`
-  },
-
-  // Breaking: a giant outlined word behind the art, headline below.
-  breaking(s, c, ctx) {
-    return `
-    <div class="giant" style="font-size:${Math.min(330, Math.round(2050 / (s.word ?? 'breaking').length))}px">${esc(s.word ?? 'breaking')}</div>
-    <div class="art breaking-art">${ctx.art.html}</div>
-    <div class="cover-text">
-      ${eyebrowRule(s.kicker ?? 'sky news', ctx.accent)}
-      <h1 class="fit head center" data-max="${s.dek ? 300 : 360}" data-big="128" data-small="60">${rich(s.headline)}</h1>
-      ${s.dek ? `<p class="dek center">${rich(s.dek)}</p>` : ''}
-    </div>`
-  },
-
-  // Split: two arts side by side (two signs, two planets), a raised panel with the headline.
-  split(s, c, ctx) {
-    return `
-    <div class="art split-l">${ctx.art.html}${s.labels?.[0] ? `<div class="tag">${esc(s.labels[0])}</div>` : ''}</div>
-    <div class="art split-r">${ctx.art2.html}${s.labels?.[1] ? `<div class="tag tag-r">${esc(s.labels[1])}</div>` : ''}</div>
-    <div class="split-badge">${SPARK('#3a2c4e', 44)}</div>
-    <div class="split-panel">
-      ${s.kicker ? `<div class="kicker center">${esc(s.kicker)}</div>` : ''}
-      <h1 class="fit head center" data-max="300" data-big="110" data-small="56">${rich(s.headline)}</h1>
-      ${s.swipe === false ? '' : `<div class="swipe">${esc(s.swipe ?? 'swipe')} <span>→</span></div>`}
-    </div>`
-  },
-
-  // Table: a ranked list with a value column. rows: [{ rank?, label, sign?, color?, text?, value? }]
-  table(s, c, ctx) {
-    const rows = (s.rows ?? []).map((r, k) => {
-      const col = colorOf(r.color ?? r.sign ?? null, ctx.accent)
-      return `<div class="trow"><div class="trank" style="background:${col}">${esc(r.rank ?? k + 1)}</div>
-        <div class="tname"><b>${esc(r.label)}</b>${r.text ? `<span>${rich(r.text)}</span>` : ''}</div>
-        <div class="tval" style="color:${col}">${esc(r.value ?? '')}</div></div>`
-    }).join('')
-    return `
-    <div class="list-wrap">
-      ${s.kicker ? `<div class="kicker"><i style="background:${ctx.accent}"></i>${esc(s.kicker)}</div>` : ''}
-      ${s.headline ? `<h2 class="fit head" data-max="230" data-big="88" data-small="50">${rich(s.headline)}</h2>` : ''}
-      ${s.columns ? `<div class="thead"><span>${esc(s.columns[0] ?? '')}</span><span>${esc(s.columns[1] ?? '')}</span></div>` : ''}
-      <div class="rows fit-rows table">${rows}</div>
-    </div>`
-  },
-
-  // Closing slide: small art, a line, the save/share prompt.
-  end(s, c, ctx) {
-    return `
-    <div class="art end-art">${ctx.art.html}</div>
-    <div class="end-text">
-      <h2 class="fit head center" data-max="360" data-big="96" data-small="52">${rich(s.headline)}</h2>
-      ${s.body ? `<p class="dek center">${rich(s.body)}</p>` : ''}
-      <div class="end-mark">align ${SPARK('#f2c75c', 22)}</div>
-    </div>`
-  },
+  split: (s, c, x) => ({ at: [50, 34], two: true, html: `
+    <div class="stage" style="top:150px;height:640px;left:-250px">${subject(x.art, 470, x.seed)}</div>
+    <div class="stage" style="top:150px;height:640px;left:250px">${subject(x.art2, 470, x.seed + 9, '', 't')}</div>
+    ${s.labels ? `<div class="labels"><span>${esc(s.labels[0] ?? '')}</span><span>${esc(s.labels[1] ?? '')}</span></div>` : ''}
+    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 300, 120, 60)}</div>` }),
+  note: (s, c, x) => ({ at: [50, 22], html: `
+    <div class="txt top">${kick(s.kicker ?? 'going around')}${fitH('center quote', s.headline, 330, 92, 52)}</div>
+    <div class="note">
+      <div class="note-top"><span class="note-title">${SPARK('#f2c75c', 22)} sky note</span><span class="verdict" style="color:${VERDICT_COL[s.verdict]}">${VERDICT_WORD[s.verdict] ?? ''}</span></div>
+      ${fitP('body bone', s.body, 360, 38, 28)}
+    </div>` }),
+  list: (s, c, x) => ({ at: [50, 18], html: `
+    <div class="txt top">${kick(s.kicker)}${s.headline ? fitH('center', s.headline, 220, 92, 52) : ''}</div>
+    <div class="rows fit-rows">${(s.rows ?? []).map((r) => {
+      const col = colorOf(r.color ?? r.sign ?? null, x.accent)
+      return `<div class="row"><div class="row-l" style="color:${col}">${esc(r.label)}</div><div class="row-t">${rich(r.text)}</div></div>`
+    }).join('')}</div>` }),
+  table: (s, c, x) => ({ at: [50, 18], html: `
+    <div class="txt top">${kick(s.kicker)}${s.headline ? fitH('center', s.headline, 220, 88, 50) : ''}</div>
+    <div class="rows fit-rows">${(s.rows ?? []).map((r, k) => {
+      const col = colorOf(r.color ?? r.sign ?? null, x.accent)
+      return `<div class="row trow"><div class="tnum" style="color:${col}">${esc(r.rank ?? k + 1)}</div><div><div class="row-l" style="color:${col}">${esc(r.label)}${r.value ? ` <span class="tval">· ${esc(r.value)}</span>` : ''}</div>${r.text ? `<div class="row-t">${rich(r.text)}</div>` : ''}</div></div>`
+    }).join('')}</div>` }),
+  end: (s, c, x) => ({ at: [50, 40], html: `
+    <div class="stage" style="top:170px;height:560px;opacity:.85">${subject(x.art, 440, x.seed)}</div>
+    <div class="txt bottom">${fitH('center', s.headline, 300, 104, 56)}${fitP('dek center', s.body, 100, 32, 26)}<div class="endmark">align ${SPARK('#f2c75c', 20)}</div></div>` }),
 }
 export const LAYOUT_NAMES = Object.keys(LAYOUTS)
 
-// Art box size per layout, so the drawn art is laid out for its frame.
-const ART_BOX = {
-  cover: [W, 800], story: [952, 620], rank: [984, 470], callout: [W, H], note: [0, 0], list: [0, 0], end: [W, 620],
-  hero: [W, 860], breaking: [W, 820], split: [W / 2, 760], table: [0, 0],
+function defaultArt(s, c) {
+  const sign = s.sign ?? c.signs?.[0]
+  if (s.layout === 'rank' && s.sign) return { kind: 'aura', sign: s.sign }
+  if (sign && ['callout', 'cover', 'end'].includes(s.layout)) return { kind: 'aura', sign }
+  return null
 }
 
 export function slideHtml(c, i) {
   const s = c.slides[i]
   const total = c.slides.length
   const layout = LAYOUTS[s.layout] ? s.layout : 'story'
+  const seed = (hashString(c.id) + i * 7919) >>> 0
   const accent = accentOf(s, c)
-  const [aw, ah] = ART_BOX[layout]
-  const a = aw ? art(s.art ?? defaultArt(s, c), aw, ah, (hashString(c.id) + i * 7919) >>> 0) : { css: '', html: '' }
-  const glow = colorOf(s.sign ?? c.signs?.[0] ?? 'violet')
-  const second = s.art2 ?? s.inset
-  const a2 = second ? art(second, layout === 'split' ? W / 2 : 300, layout === 'split' ? 760 : 300, (hashString(c.id) + i * 31) >>> 0, '2') : { css: '', html: '' }
-  const inner = LAYOUTS[layout](s, c, { accent, art: a, art2: a2 })
+  const sign = s.sign ?? c.signs?.[0]
+  const signCol = SIGN_COLORS[s.sign]?.color ?? colorOf(sign ?? 'violet')
+  // figure → the soft aura photo; the old 'stars'/'wheel' art fall back to pure light.
+  let a = s.art ?? defaultArt(s, c)
+  if (a?.kind === 'figure') a = { ...a, kind: 'aura' }
+  if (a?.kind === 'stars') a = null
+  const out = LAYOUTS[layout](s, c, { art: a, art2: s.art2, accent, signCol, seed })
+  let cols = auraColors(a, signCol)
+  if (layout === 'rank') cols = [signCol, colorOf(s.sign), '#3a1f7a']
+  if (out.two) {
+    const c2 = auraColors(s.art2, signCol)
+    cols = [cols[0], c2[0], '#3a1f7a']
+  }
+  const field = out.two
+    ? auraField([cols[0], cols[0], cols[2]], seed, [28, 34], .8) + auraField([cols[1], cols[1], cols[2]], seed + 1, [72, 34], .8)
+    : auraField(cols, seed, out.at)
 
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${fonts()}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:${W}px;height:${H}px;overflow:hidden;background:#0b0620}
-.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;color:#efe6d6;
-  background:
-    radial-gradient(ellipse 90% 40% at 50% 104%, ${glow}33, transparent 70%),
-    linear-gradient(180deg,#0b0620 0%,#140a2e 55%,#1a0f38 100%);}
-${OVERLAY_CSS}
-.vignette{background:radial-gradient(ellipse 85% 75% at 50% 46%, transparent 60%, rgba(5,2,15,.45) 100%)}
-.grain{opacity:.32}
-/* chrome */
-.top{position:absolute;top:52px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center;z-index:5}
-.mark{font:400 22px 'Space Mono',monospace;letter-spacing:.24em;color:#efe6d6;opacity:.7;display:flex;gap:10px;align-items:center;text-transform:lowercase}
-.mark b{font-weight:400;color:#b3a6c4}
-.count{font:400 20px 'Space Mono',monospace;letter-spacing:.12em;color:#efe6d6;padding:10px 18px;border-radius:999px;
-  background:rgba(52,35,95,.6);border:1px solid rgba(179,166,196,.22)}
+html,body{width:${W}px;height:${H}px;overflow:hidden;background:#07041a}
+.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;color:#f3ebdd;background:#07041a}
+.aura{position:absolute;inset:-200px;filter:blur(70px) saturate(1.15)}
+.blob{position:absolute;transform:translate(-50%,-50%);border-radius:50%;mix-blend-mode:screen}
+.veil{position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 100%, rgba(7,4,26,.78) 0%, rgba(7,4,26,.35) 45%, rgba(7,4,26,0) 75%)}
+.grain{position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>")}
+/* subject */
+.stage{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:center}
+.subj{position:relative}
+.subj .bloom,.subj .body{position:absolute;inset:0}
+.subj .bloom{filter:blur(60px) saturate(1.5) brightness(1.3);opacity:1;transform:scale(1.3)}
+.subj .body{filter:blur(2.2px) saturate(1.1) brightness(1.04);
+  -webkit-mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%);mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%)}
+.subj.wide .body{-webkit-mask-image:none;mask-image:none;filter:blur(2.6px) saturate(1.1)}
+.subj .haze{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 38% 32%, rgba(255,250,240,.35), rgba(255,250,240,0) 60%);mix-blend-mode:screen;filter:blur(8px)}
+.subj svg{width:100%;height:100%}
+.figure{position:relative;overflow:hidden;border-radius:50%;
+  -webkit-mask-image:radial-gradient(closest-side, #000 35%, rgba(0,0,0,.5) 65%, transparent 100%);mask-image:radial-gradient(closest-side, #000 35%, rgba(0,0,0,.5) 65%, transparent 100%)}
+.figure img{position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(7px) saturate(1.25) brightness(1.1)}
+.inset{position:absolute;right:150px;bottom:20px;opacity:.95}
+.giant{position:absolute;left:-40px;right:-40px;top:150px;text-align:center;font:italic 500 300px/1 'EB Garamond',serif;letter-spacing:-.04em;
+  color:rgba(255,244,230,.16);filter:blur(1.5px);white-space:nowrap}
+.labels{position:absolute;top:780px;left:0;right:0;display:flex;justify-content:space-around;font:400 22px 'Space Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:rgba(243,235,221,.7)}
+/* chrome: just a quiet mark */
+.mark{position:absolute;top:56px;left:0;right:0;text-align:center;font:400 20px 'Space Mono',monospace;letter-spacing:.34em;color:rgba(243,235,221,.55);display:flex;justify-content:center;gap:10px;align-items:center}
+.count{position:absolute;top:58px;right:64px;font:400 18px 'Space Mono',monospace;letter-spacing:.14em;color:rgba(243,235,221,.4)}
 /* type */
-.head{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;line-height:1.02;letter-spacing:-.015em;color:#efe6d6;text-wrap:balance}
-.head em,.hook em,.body em,.dek em,.row-t em{font-style:inherit;color:${accent};text-shadow:0 0 36px ${accent}55}
-.head mark,.hook mark,.body mark{color:#efe6d6;background:linear-gradient(transparent 12%, ${accent}55 12%, ${accent}55 92%, transparent 92%);padding:0 .12em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.txt{position:absolute;left:84px;right:84px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.txt.bottom{bottom:110px}
+.txt.top{top:150px}
+.head{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;line-height:1.04;letter-spacing:-.012em;color:#f6eee1;text-wrap:balance;width:100%;
+  text-shadow:0 2px 30px rgba(7,4,26,.55)}
 .center{text-align:center}
-.dek{font:500 32px/1.35 'Inter',sans-serif;color:#b3a6c4;margin-top:22px}
-.body{font:400 34px/1.42 'Inter',sans-serif;color:#b3a6c4;margin-top:22px}
-.body.bone{color:#efe6d6}
-.kicker{font:400 22px 'Space Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#b3a6c4;display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.kicker.center{justify-content:center}
-.kicker i{width:14px;height:14px;border-radius:50%;box-shadow:0 0 14px currentColor}
-.kicker.small{font-size:20px;margin:22px 0 22px}
-.rule{display:flex;align-items:center;justify-content:center;gap:16px;font:400 22px 'Space Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#b3a6c4;margin-bottom:26px}
-.rule .ln{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(179,166,196,.45))}
-.rule .ln:last-child{background:linear-gradient(270deg,transparent,rgba(179,166,196,.45))}
-.art{position:absolute;overflow:hidden}
-${a.css}
-${a2.css}
-/* cover */
-.cover-art{left:0;top:0;width:${W}px;height:800px}
-.cover-art .fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,6,32,.0) 45%,rgba(16,8,40,.85) 85%,#140a2e 100%)}
-.cover-text{position:absolute;left:64px;right:64px;bottom:96px}
-.swipe{margin-top:30px;text-align:center;font:400 20px 'Space Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#7d6f94}
-.swipe span{color:#f2c75c}
-/* story */
-.frame-art{left:64px;top:130px;width:952px;height:620px;border-radius:36px;border:1px solid rgba(179,166,196,.22);box-shadow:0 30px 80px rgba(5,2,15,.6)}
-.tag{position:absolute;left:24px;top:24px;font:400 18px 'Space Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#efe6d6;padding:9px 16px;border-radius:999px;background:rgba(20,10,46,.7);border:1px solid rgba(179,166,196,.25)}
-.story-text{position:absolute;left:64px;right:64px;top:800px;bottom:80px}
+em{font-style:inherit;color:${accent};text-shadow:0 0 40px ${accent}aa,0 0 12px ${accent}66}
+mark{background:none;color:${accent};text-shadow:0 0 40px ${accent}aa}
+b{font-weight:500;color:#f6eee1}
+.kicker{font:400 20px 'Space Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:rgba(243,235,221,.62);margin-bottom:26px}
+.dek,.body{font:400 34px/1.45 'Inter',sans-serif;color:rgba(243,235,221,.72);margin-top:26px;width:100%;text-wrap:pretty}
+.body.bone{color:#f3ebdd}
+.hook{font:italic 400 46px/1.25 'EB Garamond',serif;color:#f6eee1;margin-top:18px;width:100%;text-wrap:balance}
+.quote{font-weight:400}
 /* rank */
-.card{position:absolute;left:48px;right:48px;top:128px;bottom:72px;border-radius:44px;padding:56px 60px;
-  background:linear-gradient(170deg,rgba(40,26,78,.92),rgba(20,10,46,.96));border:1px solid rgba(179,166,196,.2);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 40px 90px rgba(5,2,15,.55)}
-.card.rank{padding:0;overflow:hidden}
-.rank-art{left:0;top:0;width:984px;height:470px}
-.rank-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,46,0) 35%,rgba(26,15,58,.9) 88%,#1c1040 100%)}
-.rank .num{position:absolute;left:56px;top:300px}
-.rank-body{position:absolute;left:60px;right:60px;top:500px;bottom:56px;display:flex;flex-direction:column;justify-content:center}
-.num{font:italic 500 210px/0.9 'EB Garamond',serif;letter-spacing:-.03em;
-  background:linear-gradient(90deg,#a9802e 0%,#f2c75c 22%,#fff4cf 44%,#f2c75c 62%,#b88a2c 82%,#f2d784 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sign-name{font:italic 500 112px/1 'EB Garamond',serif;letter-spacing:-.01em}
-.hook{font:italic 600 44px/1.25 'Inter',sans-serif;color:#efe6d6;letter-spacing:-.01em}
-/* callout */
-.full-art{inset:0}
-.shade-mid{position:absolute;inset:0;background:radial-gradient(ellipse 90% 45% at 50% 62%, rgba(11,6,32,.82), rgba(11,6,32,.35) 70%, rgba(11,6,32,.15))}
-.callout-text{position:absolute;left:72px;right:72px;bottom:150px}
+.rank-num{position:absolute;top:120px;left:0;right:0;text-align:center;font:italic 400 220px/1 'EB Garamond',serif;color:rgba(255,244,230,.14);filter:blur(.5px)}
+.sign{font:italic 500 120px/1 'EB Garamond',serif;letter-spacing:-.01em;text-shadow:0 0 50px currentColor}
+.rank .kicker{margin:14px 0 0}
 /* note */
-.note-wrap{position:absolute;left:64px;right:64px;top:150px;bottom:80px;display:flex;flex-direction:column;justify-content:center}
-.claim{color:#efe6d6}
-.note{margin-top:56px;border-radius:36px;padding:40px 44px;background:rgba(52,35,95,.55);border:1px solid rgba(179,166,196,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.07)}
-.note-top{display:flex;justify-content:space-between;align-items:center}
-.note-title{font:italic 500 46px 'EB Garamond',serif;display:flex;gap:14px;align-items:center}
-.verdict{font:400 20px 'Space Mono',monospace;letter-spacing:.18em;text-transform:uppercase;border:1.5px solid;border-radius:999px;padding:10px 18px;display:flex;gap:10px;align-items:center}
-.verdict i{width:12px;height:12px;border-radius:50%}
-.note-by{font:400 26px 'Inter',sans-serif;color:#7d6f94;margin-top:6px}
-/* list */
-.list-wrap{position:absolute;left:64px;right:64px;top:150px;bottom:80px;display:flex;flex-direction:column;justify-content:center}
-.rows{margin-top:30px;display:flex;flex-direction:column}
-.row{display:grid;grid-template-columns:270px 1fr;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(179,166,196,.16)}
-.row:last-child{border-bottom:1px solid rgba(179,166,196,.16)}
-.row-l{display:flex;gap:14px;align-items:center;font:400 22px 'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#efe6d6}
-.row-l .dot{width:12px;height:12px;border-radius:50%;flex:none}
-.row-l .orb{width:26px;height:26px;border-radius:50%;flex:none;
-  background:radial-gradient(circle at 35% 30%,#fff 0,color-mix(in srgb,var(--c) 55%,#fff) 18%,var(--c) 55%,color-mix(in srgb,var(--c) 40%,#000) 100%);box-shadow:0 0 16px var(--c)}
-.row-t{font:400 36px/1.32 'Inter',sans-serif;color:#b3a6c4}
-.row-t b{font-weight:500;color:#efe6d6}
-
-/* hero */
-.frame.hero-bg{background:#05030f}
-.hero-art{left:0;top:40px;width:${W}px;height:860px;background:radial-gradient(ellipse 70% 60% at 50% 50%, #120a2a 0%, #05030f 80%) !important}
-.hero-fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,3,15,0) 75%,#07041a 100%)}
-.hero-text{position:absolute;left:64px;right:64px;bottom:90px}
-.divider{display:flex;align-items:center;gap:18px;margin-top:30px}
-.divider .ln{flex:1;height:2px;background:linear-gradient(90deg,transparent,#f2c75c 50%,transparent)}
-.dmark{font:400 20px 'Space Mono',monospace;letter-spacing:.3em;color:#efe6d6;opacity:.8;display:flex;gap:8px;align-items:center}
-/* breaking */
-.giant{position:absolute;left:-20px;right:-20px;top:96px;text-align:center;font:italic 500 330px/1 'EB Garamond',serif;letter-spacing:-.04em;
-  color:transparent;-webkit-text-stroke:3px rgba(239,230,214,.55);background:linear-gradient(180deg,rgba(239,230,214,.42),rgba(239,230,214,.05));-webkit-background-clip:text;background-clip:text;white-space:nowrap;z-index:2;mix-blend-mode:screen}
-.breaking-art{left:0;top:110px;width:${W}px;height:820px;background:transparent !important}
-.breaking-art .scene svg > rect:first-of-type{opacity:.6}
-/* split */
-.split-l,.split-r{top:0;width:${W / 2}px;height:760px}
-.split-l{left:0}.split-r{left:${W / 2}px;border-left:2px solid rgba(11,6,32,.9)}
-.split-l .tag,.split-r .tag{top:130px}
-.tag-r{left:auto;right:24px}
-.split-badge{position:absolute;left:${W / 2 - 52}px;top:708px;width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:3;
-  background:linear-gradient(100deg,#f8edff 0%,#fff7ec 38%,#eaf4ff 72%,#ffeff7 100%);box-shadow:0 0 40px rgba(248,237,255,.4)}
-.split-panel{position:absolute;left:0;right:0;top:760px;bottom:0;padding:90px 72px 70px;background:linear-gradient(180deg,#281a4e,#140a2e);border-top:1px solid rgba(179,166,196,.25)}
-/* table */
-.thead{display:flex;justify-content:space-between;font:400 18px 'Space Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7d6f94;margin:26px 0 -10px;padding-left:96px}
-.trow{display:grid;grid-template-columns:72px 1fr auto;gap:24px;align-items:center;padding:22px 0;border-top:1px solid rgba(179,166,196,.16)}
-.trow:last-child{border-bottom:1px solid rgba(179,166,196,.16)}
-.trank{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font:italic 500 44px 'EB Garamond',serif;color:#0b0620}
-.tname b{display:block;font:italic 500 46px/1.05 'EB Garamond',serif;color:#efe6d6}
-.tname span{display:block;font:400 26px/1.3 'Inter',sans-serif;color:#b3a6c4;margin-top:4px}
-.tval{font:400 26px 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;text-align:right}
-/* story inset */
-.inset-art{left:${W - 64 - 300 + 30}px;top:${130 + 620 - 300 + 40}px;width:300px;height:300px;border-radius:50%;border:4px solid #efe6d6;box-shadow:0 20px 60px rgba(5,2,15,.7);z-index:2}
-.pill{padding:10px 20px;border-radius:999px;background:rgba(11,6,32,.72);border:1px solid rgba(179,166,196,.28);color:#efe6d6}
-/* end */
-.end-art{left:0;top:110px;width:${W}px;height:620px}
-.end-text{position:absolute;left:72px;right:72px;bottom:110px}
-.end-mark{margin-top:42px;display:flex;justify-content:center;gap:12px;align-items:center;font:400 26px 'Space Mono',monospace;letter-spacing:.28em;color:#efe6d6;opacity:.8}
-</style></head><body><div class="frame${layout === 'hero' || layout === 'breaking' ? ' hero-bg' : ''}">
-${inner}
-${OVERLAY_HTML}
-<div class="top"><div class="mark">align ${SPARK('#f2c75c', 18)} <b>${esc(c.series ?? 'sky news')}</b></div>${total > 1 ? `<div class="count">${i + 1}/${total}</div>` : ''}</div>
+.note{position:absolute;left:84px;right:84px;bottom:110px;padding:44px 48px;border-radius:44px;background:rgba(20,10,46,.42);backdrop-filter:blur(24px)}
+.note-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.note-title{font:italic 500 44px 'EB Garamond',serif;display:flex;gap:12px;align-items:center}
+.verdict{font:400 20px 'Space Mono',monospace;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 0 20px currentColor}
+.note .body{text-align:left;margin-top:14px}
+/* rows */
+.rows{position:absolute;left:96px;right:96px;top:560px;bottom:110px;display:flex;flex-direction:column;justify-content:center;gap:40px}
+.row{text-align:left}
+.row-l{font:italic 500 46px/1.1 'EB Garamond',serif;text-shadow:0 0 30px currentColor}
+.row-t{font:400 32px/1.35 'Inter',sans-serif;color:rgba(243,235,221,.75);margin-top:6px}
+.trow{display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start}
+.tnum{font:italic 400 64px/1 'EB Garamond',serif;text-shadow:0 0 30px currentColor}
+.tval{font:400 20px 'Space Mono',monospace;letter-spacing:.2em;text-transform:uppercase;opacity:.8;text-shadow:none}
+.endmark{margin-top:44px;display:flex;gap:12px;align-items:center;font:400 22px 'Space Mono',monospace;letter-spacing:.34em;color:rgba(243,235,221,.7)}
+</style></head><body><div class="frame${layout === 'rank' ? ' rank' : ''}">
+${field}
+${dust(W, H, seed)}
+<div class="veil"></div>
+${out.html}
+<div class="grain"></div>
+<div class="mark">align ${SPARK('#f2c75c', 16)}</div>
+${total > 1 ? `<div class="count">${i + 1}/${total}</div>` : ''}
 </div>
 <script>
 (async () => {
   await document.fonts.ready
-  // Each .fit grows to the biggest size (data-big) that fits data-max px tall
-  // and its own width, down to data-small.
   for (const el of document.querySelectorAll('.fit')) {
     const max = +el.dataset.max, big = +el.dataset.big, small = +el.dataset.small
     let s = big
-    for (; s > small; s -= 2) {
-      el.style.fontSize = s + 'px'
-      if (el.scrollHeight <= max && el.scrollWidth <= el.clientWidth + 2) break
-    }
+    for (; s > small; s -= 2) { el.style.fontSize = s + 'px'; if (el.scrollHeight <= max && el.scrollWidth <= el.clientWidth + 2) break }
     el.style.fontSize = s + 'px'
   }
-  // Lists: shrink rows until they fit above the bottom margin.
-  const rows = document.querySelector('.fit-rows')
-  if (rows && rows.children.length <= 4 && !rows.classList.contains('table')) {
-    rows.querySelectorAll('.row-t').forEach((r) => (r.style.fontSize = '42px'))
-    rows.querySelectorAll('.row').forEach((r) => (r.style.padding = '44px 0'))
-    rows.querySelectorAll('.row-l').forEach((r) => (r.style.fontSize = '26px'))
-  }
-  if (rows) {
-    const wrap = rows.parentElement
-    let f = parseFloat(rows.querySelector('.row-t')?.style.fontSize) || 36, pad = parseFloat(rows.querySelector('.row')?.style.paddingTop) || 30
-    const over = () => rows.getBoundingClientRect().bottom > wrap.getBoundingClientRect().bottom
-    while (over() && f > 22) {
-      f -= 1; pad = Math.max(10, pad - 1)
+  // Lists: rows start under the heading, and shrink if they run long.
+  const rows = document.querySelector('.fit-rows'), top = document.querySelector('.txt.top')
+  if (rows && top) {
+    rows.style.top = (top.getBoundingClientRect().bottom + 50) + 'px'
+    let f = 32, g = 40
+    while (rows.scrollHeight > rows.clientHeight + 2 && f > 22) {
+      f -= 1; g = Math.max(14, g - 3); rows.style.gap = g + 'px'
       rows.querySelectorAll('.row-t').forEach((r) => (r.style.fontSize = f + 'px'))
-      rows.querySelectorAll('.row').forEach((r) => (r.style.padding = pad + 'px 0'))
+      rows.querySelectorAll('.row-l').forEach((r) => (r.style.fontSize = (f + 12) + 'px'))
     }
   }
-  // Report overflow so the renderer can flag it.
+  // Keep bottom text clear of the subject: if the text block is tall, fade the subject a little.
+  const txt = document.querySelector('.txt.bottom'), stage = document.querySelector('.stage')
+  if (txt && stage) {
+    const overlap = stage.getBoundingClientRect().bottom - txt.getBoundingClientRect().top
+    if (overlap > 120) stage.style.transform = 'translateY(' + (-Math.min(overlap - 120, 160)) + 'px)'
+  }
   const frame = document.querySelector('.frame').getBoundingClientRect()
-  const bad = [...document.querySelectorAll('.head,.body,.hook,.dek,.row')].filter((e) => {
-    const r = e.getBoundingClientRect(); return r.bottom > frame.bottom - 40 || e.scrollHeight > e.clientHeight + 4 && e.classList.contains('fit') && +getComputedStyle(e).fontSize.replace('px','') <= +e.dataset.small
-  }).map((e) => e.className)
-  window.__overflow = bad
+  window.__overflow = [...document.querySelectorAll('.head,.body,.hook,.dek,.row')].filter((e) => e.getBoundingClientRect().bottom > frame.bottom - 40).map((e) => e.className)
   window.__ready = true
 })()
 </script></body></html>`
-}
-
-// Art when a slide doesn't name any: the sign's figure, else a starfield.
-function defaultArt(s, c) {
-  const sign = s.sign ?? c.signs?.[0]
-  if (s.layout === 'rank') return { kind: 'figure', sign: s.sign, focus: '50% 35%' }
-  if (sign && (s.layout === 'callout' || s.layout === 'cover')) return { kind: 'figure', sign }
-  return { kind: 'stars', tint: sign ?? 'violet' }
 }

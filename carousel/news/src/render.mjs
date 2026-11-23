@@ -25,7 +25,7 @@ async function contactSheet(page, shots, file) {
   await page.setViewportSize({ width: W, height: H })
 }
 
-export async function renderNews(list, { out = path.join(ROOT, 'out'), log = console.log } = {}) {
+export async function renderNews(list, { out = path.join(ROOT, 'out'), log = console.log, force = false } = {}) {
   await mkdir(out, { recursive: true })
   const browser = await launch()
   const done = []
@@ -33,7 +33,7 @@ export async function renderNews(list, { out = path.join(ROOT, 'out'), log = con
     const page = await (await browser.newContext({ viewport: { width: W, height: H } })).newPage()
     for (const c of list) {
       const errs = validate(c)
-      if (errs.length) { log(`✗ ${c?.id}: ${errs.join('; ')}`); continue }
+      if (errs.length && !force) { log(`✗ ${c?.id}: ${errs.join('; ')}`); continue }
       const dir = path.join(out, c.id)
       await mkdir(dir, { recursive: true })
       const shots = []
@@ -58,11 +58,12 @@ export async function renderNews(list, { out = path.join(ROOT, 'out'), log = con
 
 async function main() {
   const args = process.argv.slice(2)
-  const opt = { inputs: [], out: path.join(ROOT, 'out'), only: null, month: null }
+  const opt = { inputs: [], out: path.join(ROOT, 'out'), only: null, month: null, force: false }
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--out') opt.out = path.resolve(args[++i])
     else if (args[i] === '--only') opt.only = args[++i]
     else if (args[i] === '--month') opt.month = args[++i]
+    else if (args[i] === '--force') opt.force = true
     else opt.inputs.push(args[i])
   }
   const files = opt.inputs.length
@@ -76,7 +77,7 @@ async function main() {
   if (opt.only) list = list.filter((c) => c.id === opt.only)
   if (opt.month) list = list.filter((c) => c.date?.startsWith(opt.month))
   console.log(`rendering ${list.length} → ${opt.out}`)
-  const done = await renderNews(list, { out: opt.out })
+  const done = await renderNews(list, { out: opt.out, force: opt.force })
   console.log(`done ${done.length}/${list.length}`)
   if (done.length < list.length) process.exitCode = 1
 }

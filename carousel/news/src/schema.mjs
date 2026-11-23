@@ -16,7 +16,8 @@ export function validate(c) {
   if (c.signs && c.signs.some((s) => !SIGNS.includes(s))) e.push('signs: sign ids')
   if (typeof c.caption !== 'string' || !c.caption.trim()) e.push('caption: required')
   if (!Array.isArray(c.hashtags) || c.hashtags.length < 3 || c.hashtags.length > 8 || c.hashtags.some((h) => !/^[a-z0-9_]+$/.test(h))) e.push('hashtags: 3–8, lowercase, no #')
-  if (!Array.isArray(c.slides) || c.slides.length < 1 || c.slides.length > 20) { e.push('slides: 1–20'); return e }
+  const maxSlides = c.format === 'ranked-twelve' ? 14 : 7
+  if (!Array.isArray(c.slides) || c.slides.length < 1 || c.slides.length > maxSlides) { e.push(`slides: 1–${maxSlides}`); return e }
   c.slides.forEach((s, i) => {
     const at = `slides[${i}]`
     if (!LAYOUT_NAMES.includes(s.layout)) e.push(`${at}.layout: one of ${LAYOUT_NAMES.join(', ')}`)
@@ -29,8 +30,15 @@ export function validate(c) {
     const txt = [s.headline, s.body, s.dek, ...(s.rows ?? []).map((r) => r.text)].filter(Boolean).join(' ')
     if (/!/.test(txt)) e.push(`${at}: no exclamation marks`)
     if (/\p{Extended_Pictographic}/u.test(txt)) e.push(`${at}: no emoji`)
-    if (s.headline && s.headline.replace(/[*[\]]/g, '').length > 120) e.push(`${at}.headline: over 120 chars`)
-    if (s.body && s.body.length > 420) e.push(`${at}.body: over 420 chars`)
+    // Lean limits: one idea per slide, room to breathe.
+    const plain = (t) => (t ?? '').replace(/[*[\]]/g, '')
+    const H = { cover: 72, hero: 72, breaking: 64, split: 64, callout: 72, end: 64 }[s.layout] ?? 90
+    if (s.headline && plain(s.headline).length > H) e.push(`${at}.headline: ${plain(s.headline).length} chars (max ${H} on ${s.layout})`)
+    const B = { rank: 170, note: 200, story: 150, callout: 90, end: 80 }[s.layout] ?? 0
+    if (s.body && plain(s.body).length > B) e.push(`${at}.body: ${plain(s.body).length} chars (max ${B} on ${s.layout})`)
+    if (s.dek && plain(s.dek).length > 48) e.push(`${at}.dek: max 48 chars`)
+    if (s.rows && s.rows.length > 5) e.push(`${at}.rows: max 5`)
+    for (const r of s.rows ?? []) if (plain(r.text).length > 44) e.push(`${at}.row "${r.label}": text max 44 chars`)
     for (const k of ['art2', 'inset']) if (s[k] && !ART_KINDS.includes(s[k].kind)) e.push(`${at}.${k}.kind`)
     if (s.art && !ART_KINDS.includes(s.art.kind)) e.push(`${at}.art.kind: one of ${ART_KINDS.join(', ')}`)
     if (s.art?.kind === 'planet' && !(s.art.body in PLANET_COLORS)) e.push(`${at}.art.body: planet name`)

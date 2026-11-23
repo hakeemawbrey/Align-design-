@@ -3,9 +3,12 @@
 An Instagram news series for Align: what the sky is doing today, this week
 and this month, and what it means for each sign. The editorial grammar
 comes from viral news carousels (cover hook, 1/N roundup, ranked twelve,
-community-note fact checks); the look is Align's Stardust language
-(indigo, warm bone, EB Garamond italic, Space Mono eyebrows, sign colours,
-gold only as a ✦ accent).
+community-note fact checks). The look is **aura**: every slide is soft
+coloured light on deep indigo, like an aura photograph, with one glowing
+subject (a planet, the moon, an eclipse, a sign's aura figure), one serif
+italic headline and a quiet `align ✦` mark. No borders, rules, frames, pills,
+sparkles or cards. Less is the rule: the checker caps every text field
+(see Lengths).
 
 | Path | What |
 | --- | --- |
@@ -75,8 +78,11 @@ highlight bar behind them, `\n` breaks a line. No emoji, no `!`.
 Optional on any slide: `sign` (sets the accent and default art), `accent`
 (a sign, planet or `gold`/`spark`/`rub`/`violet`/`tide`).
 
-Lengths: headlines ≤ 120 characters (cover ≤ 90 reads best), bodies ≤ 420
-characters (rank bodies ≤ 300), list row text ≤ 60.
+Lengths (enforced by `check.mjs`): headlines ≤ 72 characters on
+cover/hero/callout, ≤ 64 on breaking/split/end, ≤ 90 elsewhere; bodies ≤ 150
+on story, 170 on rank, 200 on note, 90 on callout, 80 on end; `dek` ≤ 48;
+lists and tables ≤ 5 rows of ≤ 44 characters; ≤ 7 slides a post (14 for
+ranked-twelve). One idea per slide.
 
 ### Art
 
