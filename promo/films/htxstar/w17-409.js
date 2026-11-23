@@ -6,7 +6,7 @@ const bridge = (x, t, lt) => batBridge(x, t, lt + 2)
 const glow = (x, t) => { skyFill(x, '#1a1040', '#ff7a6a', 0, 1390); skyline(x, 1390, t, { alpha: 0.95, col: '#2a1d48' }); outside(x, { ground: '#2a2040' }); x.fillStyle = 'rgba(255,150,120,0.18)'; x.fillRect(0, 300, 1080, 500) }
 
 export const EP = ep(20, {
-  hook: '20 days left and | Pisces is already crying',
+  hook: '20 days left | and Pisces is | already crying.',
   hookSet: (x, t, lt) => batBridge(x, t, lt + 1.5),
   hookCast: C({ pisces: [[0, M, Y, 280], [2.6, M, Y, 280]] }), hookMood: { pisces: 'heart' }, hookLook: { pisces: [0, 0] },
   calX: 840, calY: 1050, calS: 0.55,

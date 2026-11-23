@@ -215,11 +215,11 @@ export function bayou(x, t, { sunset = false } = {}) {
   for (const tx of [80, 1000]) { box(x, tx - 14, 760, 28, 220, '#6b3b1f', 4); x.fillStyle = INK; x.beginPath(); x.arc(tx, 740, 110, 0, Math.PI * 2); x.fill(); x.fillStyle = '#2f6a3a'; x.beginPath(); x.arc(tx, 740, 100, 0, Math.PI * 2); x.fill() }
 }
 export function batBridge(x, t, lt) {
-  sunsetSky(x); x.fillStyle = '#ffb35a'; x.beginPath(); x.arc(780, 820, 90, 0, Math.PI * 2); x.fill()
-  skyline(x, 960, t, { alpha: 0.9, col: '#3a2350' })
+  sunsetSky(x); x.fillStyle = '#ffb35a'; x.beginPath(); x.arc(780, 700, 90, 0, Math.PI * 2); x.fill()
+  x.save(); x.translate(540 * 0.45, 960 * 0.45); x.scale(0.55, 0.55); skyline(x, 960, t, { alpha: 0.9, col: '#3a2350' }); x.restore()
   x.fillStyle = '#6a4a6a'; x.fillRect(0, 960, 1080, 260); for (let k = 0; k < 10; k++) { x.fillStyle = 'rgba(255,200,150,0.35)'; x.fillRect(((k * 131 + t * 30) % 1180) - 100, 1000 + (k % 4) * 40, 80, 5) }
   box(x, -20, 860, 1120, 60, '#5a5060', 6); for (let k = 0; k < 6; k++) box(x, 60 + k * 190, 920, 40, 300, '#5a5060', 5)   // the bridge
-  for (let k = 0; k < 40; k++) { const ph = ((lt * 0.35 + k * 0.137) % 1), bx = 100 + (k * 223) % 900 + Math.sin(t * 2 + k) * 40, by = 900 - ph * 600; if (ph > 0.02) bat(x, bx, by, t + k, 1.2) }
+  for (let k = 0; k < 40; k++) { const ph = ((lt * 0.35 + k * 0.137) % 1), bx = 100 + (k * 223) % 900 + Math.sin(t * 2 + k) * 40, by = 900 - ph * 600; if (ph > 0.02) bat(x, bx, by, t + k, 2.0) }
   x.fillStyle = '#c9b48a'; x.fillRect(0, 1220, 1080, G - 1220); x.fillStyle = '#3f6a46'; x.fillRect(0, G, 1080, 1920 - G); x.fillStyle = INK; x.fillRect(0, G - 6, 1080, 8)
 }
 export function kitchen(x, t, { wall = '#f0d9a8' } = {}) {
@@ -362,3 +362,12 @@ export function countdown(n, spec) {
 }
 /** finish a spec: compute the story end (for the chip) */
 export function ep(n, spec) { const total = (spec.hookDur ?? 2.8) + spec.scenes.reduce((a, s) => a + s.dur, 0) + (spec.stamp.dur ?? 3.6); spec._end = total + 0.2; return countdown(n, spec) }
+/** a small "you're invited · Jan 9" card (no venue, no RSVP method) */
+export function inviteCardMini(x, t, cx, cy, k = 1) {
+  if (k <= 0) return
+  x.save(); x.translate(cx, cy); x.rotate(0.05 * Math.sin(t * 1.4)); x.scale(0.7 * k, 0.7 * k)
+  x.shadowColor = GOLD; x.shadowBlur = 24; x.fillStyle = INK; x.fillRect(-208, -128, 416, 256); x.shadowBlur = 0
+  x.fillStyle = '#1c1240'; x.fillRect(-200, -120, 400, 240); x.fillStyle = GOLD; x.fillRect(-200, -120, 400, 10); x.fillRect(-200, 110, 400, 10)
+  txt(x, "YOU'RE INVITED", 0, -60, { size: 32, col: GOLD, font: MONO, weight: 700 }); txt(x, 'JAN 9', 0, 30, { size: 96, col: BONE })
+  x.restore()
+}
