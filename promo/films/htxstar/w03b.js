@@ -41,7 +41,7 @@ const profile = {
   lesson: ['Specific is attractive.', 'Say what you actually love.'],
   lessonSet: room69, lessonCast: couch, lessonMood: { cancer: 'heart', taurus: 'heart' }, lessonWear: G,
   scenes: [
-    { dur: 3.6, set: room69, back: (x, t, lt) => profileCard(x, 540, 700, Kp(lt, 0.0, 0.25), { rows: ['LOOKING FOR:', 'inside the Loop ONLY'], hl: 1 }), cast: { cancer: [[0, 300, 1150, 280]], taurus: [[0, 780, 1150, 280]] }, mood: { cancer: 'squint', taurus: 'squint' }, hops: { cancer: [0.05], taurus: [0.15] }, wear: G,
+    { dur: 3.6, set: room69, back: (x, t, lt) => profileCard(x, 540, 700, Kp(lt, 2.5, 0.3), { rows: ['LOOKING FOR:', 'inside the Loop ONLY'], hl: 1 }), cast: { cancer: [[0, 300, 1150, 280]], taurus: [[0, 780, 1150, 280]] }, mood: { cancer: 'squint', taurus: 'squint' }, hops: { cancer: [0.05], taurus: [0.15] }, wear: G,
       lines: [[0.5, 2.8, 'cancer', 'Baby. We read | your profile.']] },
     { dur: 3.8, set: room69, back: (x, t, lt) => profileCard(x, 540, 700, 1, { rows: ['LOOKING FOR:', 'inside the Loop ONLY'], hl: 1 }), cast: couch, mood: { cancer: 'wide', taurus: 'squint' }, wear: G,
       lines: [[0.2, 1.5, 'taurus', '"Inside the | Loop ONLY"?'], [1.9, 1.7, 'cancer', 'Skip your soulmate | over the 610?']] },
@@ -138,7 +138,7 @@ const shade = {
     { dur: 3.6, set: (x, t) => { dayFill(x, '#8fd3ff', '#fff0c0', FLOOR + 60); for (const cx of [200, 520, 840]) tree(x, cx, 1200, 1.1, '#2f6a3a', t); x.fillStyle = '#2a2638'; x.fillRect(0, 1180, 1080, 740) },
       front: (x) => car(x, 520, 1290, '#7dffb0', { open: true }), cast: { capricorn: [[0, 540, 1180, 190]] }, mood: { capricorn: 'sparkle' }, hops: { capricorn: [0.4, 0.8] }, sfx: [[0.4, 'ding']],
       stick: [[0.1, 1.3, 'SHADE · 1 MILE AWAY', MINT]], lines: [[1.5, 1.9, 'capricorn', 'Shade. | Worth it.']] },
-    { dur: 3.8, set: (x, t) => { shopStreet(x, t); heatSun(x, 540, 330, t, 120) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); sweat(x, cx + s * 0.35, cy - s * 0.35, t, 5); sweat(x, cx - s * 0.35, cy - s * 0.3, t + 0.3, 3) },
+    { dur: 3.8, set: (x, t) => shopStreet(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); sweat(x, cx + s * 0.35, cy - s * 0.35, t, 5); sweat(x, cx - s * 0.35, cy - s * 0.3, t + 0.3, 3) },
       cast: { capricorn: [[0, -100, Y, 240], [3.8, 700, Y, 240]] }, mood: { capricorn: 'wide' },
       lines: [[1.2, 2.4, 'capricorn', 'Why is the | sidewalk SOUP?']] },
     { dur: 3.8, set: (x, t) => { x.fillStyle = '#3d2a4a'; x.fillRect(0, 0, 1080, 1920); box(x, 120, 520, 360, 140, '#c9c9d6', 8); for (let k = 0; k < 6; k++) { x.fillStyle = INK; x.fillRect(150 + k * 55, 560, 30, 60) } for (let k = 0; k < 5; k++) { const ph = (t * 0.8 + k / 5) % 1; x.fillStyle = `rgba(190,230,255,${(0.7 * (1 - ph)).toFixed(2)})`; x.fillRect(160 + k * 60, 680 + ph * 200, 30, 8) } table(x, 640, 480, FLOOR - 40, '#8a5530') },
@@ -164,7 +164,7 @@ const outfit = {
   lesson: ['Good friends hype', 'the real you.'],
   lessonSet: (x, t) => partySet(x, t), lessonCast: F4, lessonMood: { leo: 'heart', libra: 'heart', sagittarius: 'heart', virgo: 'heart' }, lessonWear: { leo: ['crown'], virgo: ['clipboard'] },
   scenes: [
-    { dur: 3.6, set: (x, t) => bedroom(x, t), back: (x, t, lt) => phone(x, 540, 720, lt, [['l', 'OUTFIT EMERGENCY', 0.0], ['l', 'for Jan 9', 0.3]], { w: 560, h: 380 }),
+    { dur: 3.6, set: (x, t) => bedroom(x, t), back: (x, t, lt) => phone(x, 540, 840, lt, [['l', 'OUTFIT EMERGENCY', 0.0], ['l', 'for Jan 9', 0.3]], { w: 560, h: 340 }),
       cast: { leo: [[0, -120, Y, 220], [0.5, 160, Y, 220]], libra: [[0, -120, Y, 220], [0.7, 400, Y, 220]], sagittarius: [[0, 1200, Y, 220], [0.6, 660, Y, 220]], virgo: [[0, 1200, Y, 220], [0.8, 910, Y, 220]] }, mood: { leo: 'sparkle', libra: 'happy', sagittarius: 'happy', virgo: 'squint' }, wear: { leo: ['crown'], virgo: ['clipboard'] }, sfx: [[0.1, 'buzz']],
       lines: [[1.0, 2.4, 'leo', 'Your outfit? | We have notes.']] },
     { dur: 3.8, set: br, cast: F4, mood: { leo: 'happy', libra: 'happy', sagittarius: 'happy', virgo: 'squint' }, wear: { leo: ['crown'], virgo: ['clipboard'] },

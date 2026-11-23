@@ -314,6 +314,7 @@ export function shopStreet(x, t, sun = true) {
   if (sun) heatSun(x, 900, 260, t, 80)
   const C = ['#e08a6a', '#7fa8c9', '#c9a6ff', '#f2c75c']; for (let k = 0; k < 4; k++) { box(x, 20 + k * 265, 640, 245, 520, C[k], 6); box(x, 50 + k * 265, 820, 185, 200, '#bfe6ff', 5); box(x, 40 + k * 265, 700, 205, 60, BONE, 4) }
   x.fillStyle = '#2a2638'; x.fillRect(0, 1180, 1080, 210); for (let k = 0; k < 1080; k += 200) { x.fillStyle = BONE; x.fillRect(k, 1280, 100, 8) }
+  x.fillStyle = '#c9bfae'; x.fillRect(0, 1390, 1080, 530); x.fillStyle = '#8f96a0'; x.fillRect(0, 1384, 1080, 10)
 }
 /** a backyard table at a family house (Katy) */
 export function familyYard(x, t) { dayFill(x, '#8fd3ff', '#ffe8c0', FLOOR + 60); houses(x, 1000, t); x.fillStyle = '#5a9a4a'; x.fillRect(0, 990, 1080, 930); for (let k = 0; k < 12; k++) box(x, k * 92, 860, 84, 140, '#b08a6a', 4) }
