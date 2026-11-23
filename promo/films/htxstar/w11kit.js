@@ -294,7 +294,7 @@ export function releaseCard(x, t, lt, { top = 'ONLY AT THE HOUSTON BETA PARTY', 
 export function laurel(x, cx, cy, lines, k = 1) {
   if (k <= 0) return
   x.save(); x.globalAlpha = clamp(k); x.translate(cx, cy)
-  for (const s of [-1, 1]) for (let j = 0; j < 7; j++) { const a = Math.PI / 2 + s * (0.4 + j * 0.28); x.save(); x.translate(Math.cos(a) * 200 * s * -1 * -1, Math.sin(a) * 160); x.rotate(a + s * 0.6); x.fillStyle = GOLD; x.beginPath(); x.ellipse(0, 0, 30, 12, 0, 0, Math.PI * 2); x.fill(); x.restore() }
+  for (const s of [-1, 1]) for (let j = 0; j < 8; j++) { const a = Math.PI / 2 + s * (0.35 + j * 0.27); x.save(); x.translate(Math.cos(a) * 250, Math.sin(a) * 170); x.rotate(a + Math.PI / 2 + s * 0.5); x.fillStyle = GOLD; x.beginPath(); x.ellipse(0, 0, 32, 12, 0, 0, Math.PI * 2); x.fill(); x.restore() }
   lines.forEach((ln, j) => txt(x, ln, 0, (j - (lines.length - 1) / 2) * 52, { size: j === 0 ? 34 : 44, col: GOLD, font: j === 0 ? MONO : SERIF, weight: j === 0 ? 700 : 500 }))
   x.restore()
 }

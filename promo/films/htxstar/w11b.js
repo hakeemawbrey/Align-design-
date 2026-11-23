@@ -276,10 +276,10 @@ const e280 = T({
 const e281 = (() => {
   const west = (x, t) => { duskSky(x, '#5a2a1a', '#d9703a', '#ffc46b'); skyline(x, FLOOR - 60, t, { col: '#3a1d1a', alpha: 0.7 }); x.fillStyle = '#a8703a'; x.fillRect(0, FLOOR + 60, 1080, 600) }
   return T({
-    hook: 'Boots are coming out. | Are you ready?',
+    hook: 'The boots are out. | Are you ready?',
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Boots on. Jan 9.', stars: ['taurus', 'leo', 'sagittarius', 'aquarius'] }),
     scenes: [
-      { dur: 3.6, set: (x, t) => { west(x, t); streetSign(x, 820, 600, 'WESTHEIMER', { k: 0.8 }) }, front: cin((x, t, lt, P) => { tumbleweed(x, -100 + ((t * 260) % 1300), FLOOR + 30 - Math.abs(Math.sin(t * 5)) * 60, t); cowboyHat(x, P, 'taurus') }),
+      { dur: 3.6, set: (x, t) => { west(x, t); streetSign(x, 800, 780, 'WESTHEIMER', { k: 0.8 }) }, front: cin((x, t, lt, P) => { tumbleweed(x, -100 + ((t * 260) % 1300), FLOOR + 30 - Math.abs(Math.sin(t * 5)) * 60, t); cowboyHat(x, P, 'taurus') }),
         cast: { taurus: [[0, 380, Y, 250]] }, mood: { taurus: 'squint' }, hops: { taurus: [0.05, 0.4] },
         lines: [[0.4, 1.4, 'taurus', 'you hear | that?'], [2.1, 1.2, 'taurus', '…boots.']] },
       card(['THIS JANUARY'], { col: '#ffc46b' }),
