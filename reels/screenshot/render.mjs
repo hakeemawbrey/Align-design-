@@ -30,10 +30,16 @@ const FONTS = [
   ['Poppins', dataUri(`${fd}/poppins/files/poppins-latin-600-normal.woff2`), 'normal', '600'],
   ['Poppins', dataUri(`${fd}/poppins/files/poppins-latin-700-normal.woff2`), 'normal', '700'],
   ['Poppins', dataUri(`${fd}/poppins/files/poppins-latin-800-normal.woff2`), 'normal', '800'],
+  ['Space Mono', dataUri(`${fd}/space-mono/files/space-mono-latin-400-normal.woff2`), 'normal', '400'],
   ['Space Mono', dataUri(`${fd}/space-mono/files/space-mono-latin-700-normal.woff2`), 'normal', '700'],
+  ['EB Garamond', dataUri(`${fd}/eb-garamond/files/eb-garamond-latin-400-normal.woff2`), 'normal', '400'],
+  ['EB Garamond', dataUri(`${fd}/eb-garamond/files/eb-garamond-latin-400-italic.woff2`), 'italic', '400'],
   ['EB Garamond', dataUri(`${fd}/eb-garamond/files/eb-garamond-latin-500-italic.woff2`), 'italic', '500'],
   ['EB Garamond', dataUri(`${fd}/eb-garamond/files/eb-garamond-latin-600-italic.woff2`), 'italic', '600'],
 ]
+// The aura art is the app's own (app/public/img/aura), so the cards match the deck.
+const AURA_DIR = path.join(REPO, 'app/public/img/aura')
+const auraUri = (id) => `data:image/jpeg;base64,${readFileSync(path.join(AURA_DIR, `${id}.jpg`)).toString('base64')}`
 const b64 = (s) => Buffer.from(s.split(',')[1], 'base64')
 
 async function launch() {
@@ -49,7 +55,7 @@ async function renderOne(browser, file) {
   page.on('pageerror', (e) => console.error(`[${script.id}]`, e.message))
   await page.setContent('<!doctype html><body style="margin:0;background:#000"><canvas id="c"></canvas></body>')
   await page.addScriptTag({ content: readFileSync(path.join(HERE, 'engine.js'), 'utf8') })
-  const { duration } = await page.evaluate(([script, fonts, fps]) => window.setup({ script, fonts, fps }), [script, FONTS, FPS])
+  const { duration } = await page.evaluate(([script, fonts, fps, auras]) => window.setup({ script, fonts, fps, auras }), [script, FONTS, FPS, Object.fromEntries([...new Set(script.cards.map((c) => c.sign))].map((id) => [id, auraUri(id)]))])
   mkdirSync(outDir, { recursive: true })
   writeFileSync(path.join(outDir, `${script.id}.cover.jpg`), b64(await page.evaluate(() => window.cover())))
 

@@ -10,11 +10,14 @@ The format was inspired by oracle-deck pages whose "screenshot your angel
 number" reels pull hundreds of comments, because each comment is just a
 number. The Align version keeps the mechanic and makes the rest its own:
 
-- **The cards are Align love numbers.** 000 to 999, 1111 and 1212, each one
-  read for your love life ("444 · Protected: you're not behind, you're being
-  kept away from the wrong person on purpose"). They're drawn in code on
-  Align's night sky, with gold numerals, an orbit with one lit planet per
-  digit sum, and the Align wordmark.
+- **The cards are real Align cards.** Each love number (000 to 999, 1111
+  and 1212) is drawn the way the app draws a deck card
+  (`app/src/components/deck/ProfileCard.tsx`, the beta look): the thick foil
+  border in a sign's colour, the element orb, the sign's own aura art from
+  `app/public/img/aura` with the number glowing in it, the sign and aura
+  chip, spark / clash / align rows with strength dots, the message under a
+  rule, and the `ALIGN · № 444/∞` footer. The intro is the app's face-down
+  card (`CardBack.tsx`): violet glass, seed of life, the chakra column.
 - **Hard cuts only.** No card is ever half-faded or moving when the frame
   is captured, so every screenshot lands on a whole, readable card.
 - **Fair deck.** The order is shuffled in bags of the whole deck and never
@@ -51,8 +54,11 @@ copy), `<id>.cover.jpg` (the face-down card under the hook) and
 ## Writing a new deck
 
 Copy a script and change the `cards`. Each card has a `big` (the number or
-word that gets commented), a `title`, a `line` (up to about 20 words) and a
-`color` (`gold`, `rose`, `lilac`, `mint`, `blue`, `peach` or a hex). Keep
+word that gets commented, shown in the aura), a `title` (top left, where a
+person's name goes), a `sign` (its colour, element orb and aura), `spark`,
+`clash` and `align` as `[text, strength 1–3]` (keep each under about 40
+characters so it stays on one line), and a `line` (the message, up to about
+20 words). Keep
 the deck to about 8–14 cards, so a 12 s reel shows each one several times.
 `hold` is frames per card at 30 fps (4 ≈ 7.5 cards a second; lower is
 harder to stop on), and `intro` is the seconds on the face-down card.
