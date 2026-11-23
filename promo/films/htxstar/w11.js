@@ -402,7 +402,7 @@ const e272 = (() => {
         lines: [[0.3, 1.2, 'capricorn', 'and you?'], [1.7, 1.6, 'capricorn', 'are | you GO?']] },
       { dur: 4.0, set: mc(PAL.navy, (x, t, lt, cx, cy) => { pad(x, t, lt, cx + 220, cy - 20, lt > 2.4 ? 1 : 0.3); const n = 3 - Math.floor(lt / 0.8); txt(x, n > 0 ? String(n) : 'GO', cx - 200, cy, { size: 220, col: n > 0 ? BONE : GOLD }) }),
         cast: { aries: [[0, 200, 1250, 180]], leo: [[0, 540, 1250, 180]], sagittarius: [[0, 880, 1250, 180]] }, mood: { aries: 'wide', leo: 'wide', sagittarius: 'wide' }, hops: { aries: [2.4], leo: [2.5], sagittarius: [2.6] } },
-      { dur: 4.0, set: (x, t, lt) => { duskSky(x, '#0a0f24', '#2a1d52', '#c2557a'); skyline(x, FLOOR + 60, t, { alpha: 0.9 }); rocket(x, 540, 1300 - ease.inQuad(clamp(lt / 3.6)) * 1500, 1.2, t, 1); if (lt > 0.6) sparkles(x, t, 540, 900, 0.6 + (t - lt), 18, 460, 13) },
+      { dur: 4.0, set: (x, t, lt) => { duskSky(x, '#0a0f24', '#2a1d52', '#c2557a'); skyline(x, FLOOR + 60, t, { alpha: 0.9 }); x.fillStyle = '#1a1430'; x.fillRect(0, FLOOR + 60, 1080, 600); x.fillStyle = INK; x.fillRect(0, FLOOR + 54, 1080, 10); rocket(x, 540, 1300 - ease.inQuad(clamp(lt / 3.6)) * 1500, 1.2, t, 1); if (lt > 0.6) sparkles(x, t, 540, 900, 0.6 + (t - lt), 18, 460, 13) },
         cast: { taurus: [[0, 160, 1500, 160]], cancer: [[0, 920, 1500, 160]] }, mood: { taurus: 'heart', cancer: 'heart' },
         lines: [[1.0, 2.2, 'cancer', 'see you | up there.']], stick: [[0.2, 1.6, 'LIFTOFF', GOLD]] },
     ],
