@@ -304,7 +304,7 @@ export function karaoke(x, t, lyric = '♪ my heart is on the 610 ♪', bounce =
   x.fillStyle = '#2a1a40'; x.fillRect(0, 1380, 1080, 540); x.fillStyle = INK; x.fillRect(0, 1374, 1080, 8)
   x.fillStyle = '#c8ccd6'; x.beginPath(); x.arc(540, 250, 50, 0, Math.PI * 2); x.fill(); for (let k = 0; k < 10; k++) { x.fillStyle = INK; x.fillRect(500 + (k % 4) * 22, 210 + Math.floor(k / 4) * 26, 4, 4) }
 }
-export function phoneChat(x, cx, cy, msgs, lt, { k = 1, title = 'you', s = 1 } = {}) {   // a generic phone and chat (no app UI)
+export function phoneChat(x, cx, cy, msgs, lt, { k = 1, title = 'you', s = 1.3 } = {}) {   // a generic phone and chat (no app UI)
   if (k <= 0) return
   x.save(); x.translate(cx, cy); x.scale(k * s, k * s)
   box(x, -200, -340, 400, 680, INK, 10); box(x, -184, -310, 368, 620, '#f4efe4', 0)

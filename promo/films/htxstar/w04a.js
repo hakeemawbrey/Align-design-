@@ -252,7 +252,7 @@ function easel(x, lt, slide, k = 1) {
   slide.forEach((s, i) => fit(x, s, 0, -110 + i * 90, 540, { size: 42, col: INK, font: MONO, weight: 700 }))
   x.restore()
 }
-const pager = (x, cx, cy, t, on) => { const j = on ? Math.sin(t * 60) * 5 : 0; box(x, cx - 50 + j, cy - 70, 100, 140, '#2a2a3a', 5); x.fillStyle = on && Math.sin(t * 20) > 0 ? BRAKE : '#5a2030'; x.fillRect(cx - 30 + j, cy - 50, 60, 30) }
+const pager = (x, cx, cy, t, on) => { const j = on ? Math.sin(t * 60) * 8 : 0; box(x, cx - 90 + j, cy - 120, 180, 240, '#2a2a3a', 7); x.fillStyle = on && Math.sin(t * 20) > 0 ? BRAKE : '#5a2030'; x.fillRect(cx - 60 + j, cy - 90, 120, 60); txt(x, 'BUZZ', cx + j, cy + 40, { size: 40, col: on ? GOLD : '#5a5a6a', font: MONO, weight: 700 }) }
 const hst092 = story({
   hook: "Capricorn's first | date has slides", key: 'Bb',
   close: 'No slides. Just come. Jan 9.', stars: ['capricorn', 'gemini', 'virgo', 'pisces'],
@@ -267,7 +267,7 @@ const hst092 = story({
       lines: [[0.3, 1.5, 'capricorn', 'a porch. | in the Heights.'], [2.0, 1.6, 'gemini', "it's our | FIRST date."]], sfx: [SFX.womp(2.0)] },
     { dur: 3.6, set: (x, t, lt) => { brunchFront(x, t); easel(x, lt, ['YEAR 5: PICKLEBALL', 'LEAGUE (DOUBLES)']) }, cast: { capricorn: [[0, 200, 1300, 230]], gemini: [[0, 900, 1300, 210]], pisces: [[0, 560, 1420, 140]] }, mood: { capricorn: 'squint', gemini: 'neutral', pisces: 'wide' },
       stick: [[0.6, 2.4, 'STILL NOT BUZZING', BRAKE]], sfx: [SFX.cricket(0.4), SFX.cricket(1.2)] },
-    { dur: 3.8, set: (x, t, lt) => { brunchFront(x, t); pager(x, 540, 800, t, lt < 1.6) }, cast: { capricorn: [[0, 260, 1300, 230]], gemini: [[0, 840, 1300, 220]] }, mood: { capricorn: 'wide', gemini: 'sparkle' }, hops: { gemini: [0.2, 0.5] },
+    { dur: 3.8, set: (x, t, lt) => { brunchFront(x, t); pager(x, 540, 900, t, lt < 1.6) }, cast: { capricorn: [[0, 260, 1300, 230]], gemini: [[0, 840, 1300, 220]] }, mood: { capricorn: 'wide', gemini: 'sparkle' }, hops: { gemini: [0.2, 0.5] },
       lines: [[1.0, 1.4, 'gemini', "table's ready!"], [2.4, 1.3, 'gemini', 'quick question:']], sfx: [SFX.ding(0.1)] },
     { dur: 3.8, set: (x, t) => { kitchen(x, t, { wall: '#ffe0e8', tile: '#ffb0c8' }); table(x, 540, 640, 1240) }, cast: { capricorn: [[0, 300, 1150, 240]], gemini: [[0, 780, 1150, 230]] }, mood: { capricorn: lt => lt > 1.8 ? 'wide' : 'neutral', gemini: 'happy' },
       lines: [[0.3, 1.6, 'gemini', 'what do you | do for FUN?'], [2.2, 1.3, 'capricorn', '...fun?']], sfx: [SFX.cricket(2.6), SFX.cricket(3.1)] },

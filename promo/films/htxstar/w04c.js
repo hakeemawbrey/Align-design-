@@ -138,7 +138,7 @@ const hst104 = story({
       lines: [[0.3, 1.5, 'libra', "I'm by | the escalator!"], [2.0, 1.6, 'libra', 'the... | tall one?']] },
     { dur: 3.6, set: (x, t) => tunnel(x, t, [['← EXIT', 260], ['EXIT →', 820]]), cast: { gemini: [[0, 300, 1290, 230]], libra: [[0, 780, 1290, 230]] }, mood: { gemini: 'wide', libra: 'wide' }, look: { gemini: [-1, 0], libra: [1, 0] },
       stick: [[0.2, 2.8, 'LOST: BOTH OF THEM', BRAKE]], sfx: [SFX.womp(0.3)] },
-    { dur: 4.0, set: (x, t, lt) => { tunnel(x, t); phoneChat(x, 540, 900, [[0.3, 0, "let's be exact."], [1.2, 1, 'under the | big clock?'], [2.2, 0, 'under the big clock.']], lt, { title: 'LIBRA ♎', s: 0.85 }) },
+    { dur: 4.0, set: (x, t, lt) => { tunnel(x, t); phoneChat(x, 540, 900, [[0.3, 0, "let's be exact."], [1.2, 1, 'under the | big clock?'], [2.2, 0, 'under the big clock.']], lt, { title: 'LIBRA ♎', s: 1.1 }) },
       cast: { gemini: [[0, 880, 1330, 190]] }, mood: { gemini: 'squint' }, sfx: [SFX.pluck(0.3, 523), SFX.pluck(1.2, 659), SFX.ding(2.2)] },
     { dur: 3.6, set: (x, t, lt) => { tunnel(x, t); bigClock(x, 540, 700, t); if (lt > 1.2) hearts(x, t, 540, 1050, t - lt + 1.2, { n: 8 }) }, cast: { gemini: [[0, -100, 1290, 230], [1.0, 380, 1290, 230]], libra: [[0, 1180, 1290, 230], [1.0, 700, 1290, 230]] },
       mood: { gemini: 'heart', libra: 'heart' }, lines: [[1.4, 2.0, 'gemini', 'FOUND you! | and the AC!']], sfx: [SFX.cheer(1.2)] },
