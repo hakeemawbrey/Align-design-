@@ -442,13 +442,14 @@ function starGlow(color) {
 
 // Builds this reel's kind of star (they match, like a constellation) and
 // returns a factory for individuals.
-export function makeSpecies(rng, colors) {
+export function makeSpecies(rng, colors, opts = {}) {
   const R = 0.5
-  const inner = rng.range(0.32, 0.46)
-  const curve = rng.range(0.25, 0.7)
-  const depth = rng.range(0.1, 0.2)
+  const inner = opts.inner ?? rng.range(0.32, 0.46)
+  const curve = opts.curve ?? rng.range(0.25, 0.7)
+  const depth = opts.depth ?? rng.range(0.1, 0.2)
   const geo = starGeometry(R, inner, curve, depth)
-  const eyes = rng.pick([2, 2, 2, 2, 1, 3])
+  const pickedEyes = rng.pick([2, 2, 2, 2, 1, 3])
+  const eyes = opts.eyes || pickedEyes
   const front = depth / 2 + depth * 0.45
   const eyeGeo = new THREE.SphereGeometry(0.075, 12, 8)
   const pupilGeo = new THREE.SphereGeometry(0.042, 10, 6)
@@ -459,8 +460,9 @@ export function makeSpecies(rng, colors) {
   const mouthMat = new THREE.MeshBasicMaterial({ color: '#2a0a18' })
   const hoverBase = rng.range(0.7, 1.3)
 
-  return function spawn(i, irng) {
-    const color = new THREE.Color(pickStarColor(irng))
+  // opts.color pins a star's colour (the profile picture wants a gold one)
+  return function spawn(i, irng, opts = {}) {
+    const color = new THREE.Color(opts.color || pickStarColor(irng))
     const hot = new THREE.Color('#ffffff').lerp(color, 0.18)
     const mat = new THREE.ShaderMaterial({
       vertexShader: STAR_VERT,

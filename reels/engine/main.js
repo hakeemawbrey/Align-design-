@@ -10,7 +10,12 @@ import { createApprovals, saveFile, zipAll, baseName, glyphFor } from './approva
 
 const params = new URLSearchParams(location.search)
 
-if (params.has('render')) {
+if (params.has('pfp')) {
+  import('./pfp.js').then(({ renderPfp }) => {
+    window.PFP = renderPfp
+    window.PFP_READY = true
+  })
+} else if (params.has('render')) {
   const canvas = document.createElement('canvas')
   document.body.appendChild(canvas)
   const W = +(params.get('w') || 1080), H = +(params.get('h') || 1920)

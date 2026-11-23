@@ -88,3 +88,17 @@ The player is also the review desk:
 - Approvals are kept with the published page (or in this browser when run locally).
   **Export list** saves `approved.json`, and `npm run render -- --from approved.json` renders those
   exact reels (same seeds) as final MP4s from the command line.
+
+## Profile pictures
+
+`pfp/` holds 1080×1080 avatars built from the reels' own cast, plus `preview-circles.png`
+(how each looks in Instagram's circle, full size and at the real ~110px):
+
+| file | what |
+| --- | --- |
+| `pfp-star.png` | one gold ✦ star with eyes, looking at you |
+| `pfp-aura.png` | the holographic figure in its aura, a gold star over its head |
+| `pfp-popup.png` | the star inside the reels' Windows-98 popup, titled `align.exe` |
+| `pfp-gaze.png` | the figure from behind, looking up at a giant star |
+
+Re-render with `npm run pfp` (`--label yourname.exe` changes the popup title).

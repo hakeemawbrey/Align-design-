@@ -8,6 +8,7 @@
     "dev": "node src/serve.mjs",
     "render": "node src/render.mjs",
     "plan": "node src/plan.mjs",
+    "pfp": "node src/pfp.mjs",
     "check": "node src/check.mjs",
     "write": "node src/write.mjs"
   },

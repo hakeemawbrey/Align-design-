@@ -18,7 +18,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { spawn } from 'node:child_process'
-import { chromium } from 'playwright'
+import { launchBrowser } from './browser.mjs'
 import { serve } from './serve.mjs'
 import { ROOT, SIGNS, loadLibrary, lineId } from './content.mjs'
 
@@ -111,9 +111,7 @@ function saveLedger() {
 // --- browser
 const server = await serve(0)
 const port = server.address().port
-const browser = await chromium.launch({
-  args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required'],
-})
+const browser = await launchBrowser()
 const page = await browser.newPage({ viewport: { width: 400, height: 400 } })
 page.on('pageerror', (e) => console.error('  page error:', e.message))
 page.on('console', (m) => m.type() === 'error' && console.error('  console:', m.text()))
