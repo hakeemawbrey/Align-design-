@@ -96,7 +96,7 @@ const hst102 = story({
 
 // ── hst103 · Scorpio swore they're not scared of bats (the bridge at sunset)
 const hst103 = story({
-  hook: "Scorpio swore | they're not scared | of bats", key: 'Eb',
+  hook: "Scorpio swore | they're not | scared of bats", key: 'Eb',
   close: 'Come as you are. Jan 9.', stars: ['scorpio', 'taurus', 'pisces', 'aquarius'],
   scenes: [
     { dur: 3.6, title: 'THE BAT BRIDGE · SUNSET', set: (x, t, lt) => batBridge(x, t, lt, 0.05), cast: { scorpio: [[0, 330, 1260, 250]], taurus: [[0, 760, 1260, 230]] }, mood: { scorpio: 'squint', taurus: 'happy' }, hops: { scorpio: [0.02, 0.4] }, look: { scorpio: [0, 0] },
@@ -141,7 +141,7 @@ const hst104 = story({
     { dur: 4.0, set: (x, t, lt) => { tunnel(x, t); phoneChat(x, 540, 900, [[0.3, 0, "let's be exact."], [1.2, 1, 'under the | big clock?'], [2.2, 0, 'under the big clock.']], lt, { title: 'LIBRA ♎', s: 0.85 }) },
       cast: { gemini: [[0, 880, 1330, 190]] }, mood: { gemini: 'squint' }, sfx: [SFX.pluck(0.3, 523), SFX.pluck(1.2, 659), SFX.ding(2.2)] },
     { dur: 3.6, set: (x, t, lt) => { tunnel(x, t); bigClock(x, 540, 700, t); if (lt > 1.2) hearts(x, t, 540, 1050, t - lt + 1.2, { n: 8 }) }, cast: { gemini: [[0, -100, 1290, 230], [1.0, 380, 1290, 230]], libra: [[0, 1180, 1290, 230], [1.0, 700, 1290, 230]] },
-      mood: { gemini: 'heart', libra: 'heart' }, lines: [[1.4, 2.0, 'gemini', 'FOUND you! | and it\'s air-conditioned!']], sfx: [SFX.cheer(1.2)] },
+      mood: { gemini: 'heart', libra: 'heart' }, lines: [[1.4, 2.0, 'gemini', 'FOUND you! | and the AC!']], sfx: [SFX.cheer(1.2)] },
   ],
   lesson: { lines: ['Say the plan', 'out loud.', 'Twice.'], cast: { gemini: [[0, 330, 1370, 190]], libra: [[0, 750, 1370, 190]] }, mood: { gemini: 'happy', libra: 'heart' }, line: ['libra', 'under the | big clock.'] },
 })

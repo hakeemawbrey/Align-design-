@@ -4,7 +4,7 @@ import { clamp, prog, ease } from '../../src/lib.js'
 import { FLOOR, box, txt, outside, table } from '../starrace/ep.js'
 import { signChar } from '../signs3kit.js'
 import { skyline, car, freeway, sweat, taco, overheadSign, streetSign, cones, mural, coffeeShop, soupPot, heatSun, shield, BRAKE } from './kit.js'
-import { story, SFX, Kp, Y, fit, night, sky, sun, ground, tree, kitchen, porch, bayou, bellaire, brunchFront, phoneChat, bigText, steam, boba, bowl, corkBoard, hearts, sparkles, label, GOLD, BONE, PINK, INK, MONO, SERIF, MINT, SKYB, LAV } from './w04kit.js'
+import { story, SFX, Kp, Y, fit, night, sky, sun, ground, tree, kitchen, porch, bayou, beach, bellaire, brunchFront, phoneChat, bigText, steam, boba, bowl, corkBoard, hearts, sparkles, label, GOLD, BONE, PINK, INK, MONO, SERIF, MINT, SKYB, LAV } from './w04kit.js'
 
 const YOU = (y = 1480) => [540, y, 100]          // "you": a bubble from the bottom of the frame (the viewer speaks)
 const AUNTS = { cancer: 'glasses', taurus: 'glasses' }
@@ -148,8 +148,10 @@ const hst088 = story({
 })
 
 // ── hst089 · Pisces took you to Galveston. Bring tissues.
-function pelican(x, cx, cy, t) { const f = Math.sin(t * 6) * 18; x.fillStyle = INK; x.fillRect(cx - 60, cy - 8 - f, 50, 12); x.fillRect(cx + 10, cy - 8 - f, 50, 12); box(x, cx - 30, cy - 14, 70, 32, '#c8b8a0', 4); box(x, cx + 34, cy - 24, 24, 22, '#c8b8a0', 3); box(x, cx + 56, cy - 18, 50, 12, '#e8a040', 3) }
-function gull(x, cx, cy, t, fry = 0) { box(x, cx - 30, cy - 18, 60, 34, BONE, 4); box(x, cx + 22, cy - 34, 24, 22, BONE, 3); box(x, cx + 44, cy - 28, 18, 8, '#f2c75c', 2); x.fillStyle = INK; x.fillRect(cx + 32, cy - 28, 5, 5); if (fry) box(x, cx + 54, cy - 36, 10, 40, '#f2c75c', 2) }
+function pelican(x, cx, cy, t) { x.save(); x.translate(cx, cy); x.scale(2.2, 2.2); pelican0(x, 0, 0, t); x.restore() }
+function pelican0(x, cx, cy, t) { const f = Math.sin(t * 6) * 18; x.fillStyle = INK; x.fillRect(cx - 60, cy - 8 - f, 50, 12); x.fillRect(cx + 10, cy - 8 - f, 50, 12); box(x, cx - 30, cy - 14, 70, 32, '#c8b8a0', 4); box(x, cx + 34, cy - 24, 24, 22, '#c8b8a0', 3); box(x, cx + 56, cy - 18, 50, 12, '#e8a040', 3) }
+function gull(x, cx, cy, t, fry = 0) { x.save(); x.translate(cx, cy); x.scale(1.8, 1.8); gull0(x, 0, 0, t, fry); x.restore() }
+function gull0(x, cx, cy, t, fry = 0) { box(x, cx - 30, cy - 18, 60, 34, BONE, 4); box(x, cx + 22, cy - 34, 24, 22, BONE, 3); box(x, cx + 44, cy - 28, 18, 8, '#f2c75c', 2); x.fillStyle = INK; x.fillRect(cx + 32, cy - 28, 5, 5); if (fry) box(x, cx + 54, cy - 36, 10, 40, '#f2c75c', 2) }
 const hst089 = story({
   hook: 'Pisces took you | to Galveston. | Bring tissues.', key: 'Eb',
   close: 'Bring tissues. Jan 9.', stars: ['pisces', 'cancer', 'scorpio', 'taurus'],
