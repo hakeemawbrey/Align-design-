@@ -146,9 +146,10 @@ export function confessional(x, t, lt, { wall = '#3a1f4a', name = '', sub = '', 
   box(x, 300, 1240, 480, 200, '#7a2a4a', 8); box(x, 260, 1180, 80, 260, '#7a2a4a', 8); box(x, 740, 1180, 80, 260, '#7a2a4a', 8)
   x.fillStyle = '#2a1830'; x.fillRect(0, 1440, 1080, 480)
   const k = clamp((lt - 0.15) / 0.3); if (k > 0 && name) {
-    x.save(); x.globalAlpha = k; box(x, 60, 1480, 760 * ease.outCubic(k), 130, 'rgba(14,9,32,0.92)', 0); x.fillStyle = PINK; x.fillRect(60, 1480, 12, 130)
-    txt(x, 'CONFESSIONAL', 96, 1512, { size: 26, col: PINK, font: MONO, weight: 700, align: 'left' })
-    txt(x, name, 96, 1562, { size: 46, col: BONE, align: 'left' }); if (sub) txt(x, sub, 96 + name.length * 27 + 30, 1564, { size: 32, col: GOLD, font: SERIF, weight: 500, italic: true, align: 'left' })
+    x.save(); x.globalAlpha = k; box(x, 60, 1620, 760 * ease.outCubic(k), 130, 'rgba(14,9,32,0.92)', 0); x.fillStyle = PINK; x.fillRect(60, 1620, 12, 130)
+    txt(x, 'CONFESSIONAL', 96, 1652, { size: 26, col: PINK, font: MONO, weight: 700, align: 'left' })
+    txt(x, name, 96, 1702, { size: 46, col: BONE, align: 'left' }); x.font = `800 46px ${INTER}`; const nw = x.measureText(name).width
+    if (sub) txt(x, sub, 96 + nw + 24, 1704, { size: 34, col: GOLD, font: SERIF, weight: 500, italic: true, align: 'left' })
     x.restore()
   }
   if (Math.floor(t * 1.5) % 2) { x.fillStyle = BRAKE; x.beginPath(); x.arc(960, 300, 14, 0, Math.PI * 2); x.fill() }   // REC light
