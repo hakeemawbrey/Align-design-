@@ -1,23 +1,23 @@
 // Houston Star Talk · worker w06 · POV scripts hst137–hst148 (see w06.js / w06kit.js)
-import { pov, Y, SKIES, holding, sweater, shades, headband, clipboard, phone, chatB, thermo, boba, bowl, queso, raspa, crawfish, houses, puffer, sweat, taco, PINK, GOLD, MINT, SKYB, LAV } from './w06kit.js'
+import { pov, coat, Y, SKIES, holding, sweater, shades, headband, clipboard, phone, chatB, thermo, boba, bowl, queso, raspa, crawfish, houses, puffer, sweat, taco, PINK, GOLD, MINT, SKYB, LAV } from './w06kit.js'
 
 const B = (d, set, chip, cap, lines = [], extra = {}) => ({ d, set, chip, cap, lines, ...extra })
 const hold = (id, f, side = 1, dy = 20) => (x, t, lt, P) => holding(x, P, id, (a, b) => f(x, a, b), side, dy)
 const wear = (f, id, ...a) => (x, t, lt, P) => f(x, P, id, ...a)
 const both = (...fs) => (x, t, lt, P) => fs.forEach(f => f(x, t, lt, P))
 const R = (id, s = 220) => ({ [id]: [[0, 790, Y, s]] })
-const thermoAt = (deg, col) => (x) => thermo(x, 820, 720, deg, col)
+const thermoAt = (deg, col) => (x) => thermo(x, 830, 980, deg, col)
 
 export const W06B = {
   // ── hst137 · Gemini · a Bellaire food crawl that never ends
   hst137: pov({
-    sign: 'gemini', acc: SKYB, hook: 'Hey Gemini. | This is you on Bellaire.', end: 'Pace yourself. Jan 9.', stars: ['gemini', 'libra', 'cancer', 'sagittarius'],
+    sign: 'gemini', acc: SKYB, hook: 'Hey Gemini. | This is you, | on Bellaire.', end: 'Pace yourself. Jan 9.', stars: ['gemini', 'libra', 'cancer', 'sagittarius'],
     open: { set: 'bellaire', front: hold('gemini', (x, a, b) => boba(x, a, b, 0.9)), mood: 'sparkle' },
     beats: [
       B(3.0, 'bellaire', '9:00 PM · BELLAIRE BLVD', 'you said "one quick bite." | it is never one.', [[0.5, 2.2, 'you', 'one stop. | maybe two.']], { mood: 'wink' }),
       B(3.0, 'bellaire', '9:20 PM · STOP 1: NOODLES', 'you order for both | of your moods.', [[0.5, 2.2, 'you', 'spicy AND | not spicy.']], { front: hold('gemini', (x, a, b) => bowl(x, a, b + 10, 0.7)) }),
       B(3.4, 'bellaire', '9:50 PM · STOP 2: BOBA', 'your friend is | already full.', [[0.3, 1.3, 'cancer', "I'm so | full."], [1.8, 1.4, 'you', 'that was | a snack.']], { cast: R('cancer'), moods: { cancer: 'sleepy' }, front: hold('gemini', (x, a, b) => boba(x, a, b, 0.8)) }),
-      B(3.0, 'bellaire', '10:30 PM · STOP 3: PHO', "it's 61° out. | that's soup weather.", [[0.5, 2.2, 'you', "it's basically | winter."]], { front: wear(puffer, 'gemini', '#5ec8ff'), mood: 'squint' }),
+      B(3.0, 'bellaire', '10:30 PM · STOP 3: PHO', "it's 61° out. | that's soup weather.", [[0.5, 2.2, 'you', "it's basically | winter."]], { front: wear(coat, 'gemini', '#5ec8ff'), mood: 'squint' }),
       B(3.2, 'bellaire', '11:15 PM · STOP 4: HOT POT', 'you update two group chats | at the same time.', [[0.6, 2.2, 'you', 'both chats | need to know.']],
         { front: (x, t, lt) => phone(x, 800, 1040, 0.62, () => { chatB(x, -150, 'where r u', false, 1); chatB(x, -80, 'stop 4!!', true, lt > 0.8 ? 1 : 0); chatB(x, -10, 'stop 4!!', true, lt > 1.4 ? 1 : 0, '#2bb05a') }) }),
       B(3.2, 'karaoke', '11:50 PM · KARAOKE', 'you sing the duet. | both parts.', [[0.5, 2.3, 'you', "I'm also | the harmony."]], { o: { lyric: 'and I... and I...' }, you: [400, 1240, 270], mood: 'sparkle' }),
@@ -49,16 +49,16 @@ export const W06B = {
   // ── hst139 · Leo · the one cold day (and the 80° afternoon)
   hst139: pov({
     sign: 'leo', acc: GOLD, hook: "Your sign is Leo. | It's 55° in Houston.", end: 'Bring both outfits. Jan 9.', stars: ['leo', 'aquarius', 'sagittarius', 'pisces'],
-    open: { set: 'street', o: { sky: SKIES.haze, sign: 'UPTOWN' }, front: both(wear(puffer, 'leo', '#e05a3a'), thermoAt('55°', '#5ec8ff')), mood: 'sparkle' },
+    open: { set: 'street', o: { sky: SKIES.haze, sign: 'UPTOWN' }, front: both(wear(coat, 'leo', '#e05a3a'), thermoAt('55°', '#5ec8ff')), mood: 'sparkle' },
     beats: [
       B(3.0, 'bedroom', '6:30 AM · THE COLD DAY', "the app says 55°. | you've waited all year.", [[0.5, 2.2, 'you', "it's | time."]], { mood: 'sparkle' }),
-      B(3.0, 'vintage', '6:45 AM · THE CLOSET', 'puffer. beanie. boots. | a scarf, for the look.', [[0.5, 2.2, 'you', 'Houston, | look at me.']], { front: wear(puffer, 'leo', '#e05a3a'), mood: 'wink' }),
-      B(3.0, 'street', '7:30 AM · UPTOWN', 'you post the car | thermometer. obviously.', [[0.5, 2.2, 'you', "caption: | 'freezing.'"]], { o: { sky: SKIES.haze }, front: both(wear(puffer, 'leo', '#e05a3a'), thermoAt('55°', '#5ec8ff')) }),
-      B(3.4, 'brunch', '10:00 AM · BRUNCH', 'everyone else wore | the same puffer.', [[0.3, 1.2, 'sagittarius', 'nice | coat.'], [1.8, 1.3, 'you', '...nice | coat.']], { cast: R('sagittarius'), moods: { sagittarius: 'squint' }, mood: 'squint', front: both(wear(puffer, 'leo', '#e05a3a'), wear(puffer, 'sagittarius', '#e05a3a')) }),
-      B(3.0, 'bellaire', '12:00 PM · BELLAIRE', 'the pho line wraps | around the block.', [[0.5, 2.2, 'you', 'soup is | my brand today.']], { front: both(wear(puffer, 'leo', '#e05a3a'), hold('leo', (x, a, b) => bowl(x, a, b + 30, 0.6))) }),
-      B(3.0, 'street', '2:30 PM · 74°', 'it is now 74°. | you are still in the puffer.', [[0.5, 2.2, 'you', "I'm | committed."]], { o: { sky: SKIES.noon }, front: both(wear(puffer, 'leo', '#e05a3a'), thermoAt('74°', '#ffb35c'), (x, t, lt, P) => { const [cx, cy, s] = P.at('leo'); sweat(x, cx + s * 0.3, cy - s * 0.35, t) }), mood: 'squint' }),
-      B(3.0, 'street', '4:00 PM · 80°', 'the coat comes off. | the shades come on.', [[0.5, 2.2, 'you', 'summer Leo | is back.']], { o: { sky: SKIES.gold }, front: both(wear(shades, 'leo'), thermoAt('80°', '#ff3a4e')), mood: 'wink' }),
-      B(3.4, 'lawn', '6:00 PM · DISCOVERY GREEN', 'someone compliments | BOTH outfits.', [[0.3, 1.3, 'aquarius', 'loved the | coat era.'], [1.8, 1.4, 'you', 'you SAW | that?']], { cast: R('aquarius'), moods: { aquarius: 'sparkle' }, mood: 'heart', front: wear(shades, 'leo') }),
+      B(3.0, 'vintage', '6:45 AM · THE CLOSET', 'beanie. scarf. boots. | the full winter look.', [[0.5, 2.2, 'you', 'Houston, | look at me.']], { front: wear(coat, 'leo', '#e05a3a'), mood: 'wink' }),
+      B(3.0, 'street', '7:30 AM · UPTOWN', 'you post the car | thermometer. obviously.', [[0.5, 2.2, 'you', "caption: | 'freezing.'"]], { o: { sky: SKIES.haze }, front: both(wear(coat, 'leo', '#e05a3a'), thermoAt('55°', '#5ec8ff')) }),
+      B(3.4, 'brunch', '10:00 AM · BRUNCH', 'everyone else wore | the same scarf.', [[0.3, 1.2, 'sagittarius', 'nice | scarf.'], [1.8, 1.3, 'you', '...nice | scarf.']], { cast: R('sagittarius'), moods: { sagittarius: 'squint' }, mood: 'squint', front: both(wear(coat, 'leo', '#e05a3a'), wear(coat, 'sagittarius', '#e05a3a')) }),
+      B(3.0, 'bellaire', '12:00 PM · BELLAIRE', 'the pho line wraps | around the block.', [[0.5, 2.2, 'you', 'soup is | my brand today.']], { front: both(wear(coat, 'leo', '#e05a3a'), hold('leo', (x, a, b) => bowl(x, a, b + 30, 0.6))) }),
+      B(3.0, 'street', '2:30 PM · 74°', 'it is now 74°. | you are still in the scarf.', [[0.5, 2.2, 'you', "I'm | committed."]], { o: { sky: SKIES.noon }, front: both(wear(coat, 'leo', '#e05a3a'), thermoAt('74°', '#ffb35c'), (x, t, lt, P) => { const [cx, cy, s] = P.at('leo'); sweat(x, cx + s * 0.3, cy - s * 0.35, t) }), mood: 'squint' }),
+      B(3.0, 'street', '4:00 PM · 80°', 'the scarf comes off. | the shades come on.', [[0.5, 2.2, 'you', 'summer Leo | is back.']], { o: { sky: SKIES.gold }, front: both(wear(shades, 'leo'), thermoAt('80°', '#ff3a4e')), mood: 'wink' }),
+      B(3.4, 'lawn', '6:00 PM · DISCOVERY GREEN', 'someone compliments | BOTH outfits.', [[0.3, 1.3, 'aquarius', 'loved the | scarf era.'], [1.8, 1.4, 'you', 'you SAW | that?']], { cast: R('aquarius'), moods: { aquarius: 'sparkle' }, mood: 'heart', front: wear(shades, 'leo') }),
       B(3.2, 'party', 'JAN 9', 'Jan 9 could be 50. | it could be 80.', [[0.5, 2.4, 'you', "I'm bringing | both looks."]], { you: [540, Y, 300], mood: 'sparkle' }),
     ],
   }),
@@ -82,7 +82,7 @@ export const W06B = {
 
   // ── hst141 · Libra · picking the brunch spot for the group chat
   hst141: pov({
-    sign: 'libra', acc: LAV, hook: "If you're a Libra, | this is your Houston brunch", end: 'No maybe. Jan 9.', stars: ['libra', 'scorpio', 'taurus', 'gemini'],
+    sign: 'libra', acc: LAV, hook: "If you're a Libra: | your Houston brunch", end: 'No maybe. Jan 9.', stars: ['libra', 'scorpio', 'taurus', 'gemini'],
     open: { set: 'brunch', cast: { gemini: [[0, 200, Y + 40, 180]], taurus: [[0, 880, Y + 40, 180]] }, moods: { gemini: 'wink', taurus: 'happy' }, mood: 'wide' },
     beats: [
       B(3.0, 'bedroom', '9:00 AM · THE GROUP CHAT', 'the group chat asks you | to pick the brunch spot.', [[0.5, 2.2, 'you', 'me? | pick?']], { mood: 'wide', o: { wall: '#6a4a8a' } }),
@@ -99,7 +99,7 @@ export const W06B = {
 
   // ── hst142 · Scorpio · the first date, and THE question
   hst142: pov({
-    sign: 'scorpio', acc: '#ff5a6e', hook: "POV: you're a Scorpio | on a Houston first date", end: 'Corner seat saved. Jan 9.', stars: ['scorpio', 'sagittarius', 'leo', 'virgo'],
+    sign: 'scorpio', acc: '#ff5a6e', hook: 'POV: Scorpio | on a Houston | first date', end: 'Corner seat saved. Jan 9.', stars: ['scorpio', 'sagittarius', 'leo', 'virgo'],
     open: { set: 'night', o: { sign: 'WASHINGTON AVE' }, front: wear(shades, 'scorpio'), mood: 'squint' },
     beats: [
       B(3.0, 'night', '7:50 PM · WASHINGTON AVE', 'you arrive early. | you take the corner seat.', [[0.5, 2.2, 'you', 'I can see | the door.']], { mood: 'squint', front: wear(shades, 'scorpio') }),
@@ -116,7 +116,7 @@ export const W06B = {
 
   // ── hst143 · Sagittarius · Galveston is "only an hour"
   hst143: pov({
-    sign: 'sagittarius', acc: SKYB, hook: 'Only a Houston Sagittarius | will get this', end: 'Next adventure: Jan 9.', stars: ['sagittarius', 'cancer', 'aquarius', 'capricorn'],
+    sign: 'sagittarius', acc: SKYB, hook: 'Only a Houston | Sagittarius | will get this', end: 'Next adventure: Jan 9.', stars: ['sagittarius', 'cancer', 'aquarius', 'capricorn'],
     open: { set: 'beach', front: wear(shades, 'sagittarius'), mood: 'sparkle' },
     beats: [
       B(3.0, 'bedroom', '6:00 AM · SATURDAY', 'you wake up and say | "beach?" to no one.', [[0.5, 2.2, 'you', 'beach. | now.']], { mood: 'sparkle' }),
@@ -133,7 +133,7 @@ export const W06B = {
 
   // ── hst144 · Capricorn · the downtown tunnels (closed on weekends)
   hst144: pov({
-    sign: 'capricorn', acc: MINT, hook: 'Day in the life: | you, a Houston Capricorn', end: 'Written in pen: Jan 9.', stars: ['capricorn', 'leo', 'virgo', 'taurus'],
+    sign: 'capricorn', acc: MINT, hook: 'Day in the life: | a Houston Capricorn', end: 'Written in pen: Jan 9.', stars: ['capricorn', 'leo', 'virgo', 'taurus'],
     open: { set: 'street', o: { sign: 'DOWNTOWN', sky: SKIES.morning }, front: wear(clipboard, 'capricorn'), mood: 'squint' },
     beats: [
       B(3.0, 'bedroom', '5:30 AM · ALARM', 'you wake up before | the alarm. as always.', [[0.5, 2.2, 'you', 'the alarm | is late.']], { mood: 'squint', o: { sky: SKIES.dusk } }),
@@ -150,7 +150,7 @@ export const W06B = {
 
   // ── hst145 · Aquarius · free museum Thursday, and an argument about a painting
   hst145: pov({
-    sign: 'aquarius', acc: '#c9a6ff', hook: 'Day in the life: | you, a Houston Aquarius', end: 'Come as you are. Jan 9.', stars: ['aquarius', 'virgo', 'gemini', 'pisces'],
+    sign: 'aquarius', acc: '#c9a6ff', hook: 'Day in the life: | a Houston Aquarius', end: 'Come as you are. Jan 9.', stars: ['aquarius', 'virgo', 'gemini', 'pisces'],
     open: { set: 'museum', o: { free: true }, mood: 'sparkle' },
     beats: [
       B(3.0, 'bedroom', '10:00 AM · THURSDAY', 'you have one | very specific plan.', [[0.5, 2.2, 'you', 'free museum | Thursday.']], { mood: 'sparkle', o: { wall: '#2a4a6a' } }),
@@ -167,7 +167,7 @@ export const W06B = {
 
   // ── hst146 · Pisces · the bats at sunset (cries, obviously)
   hst146: pov({
-    sign: 'pisces', acc: LAV, hook: 'Hey Pisces. | This is you at sunset.', end: 'Happy tears only. Jan 9.', stars: ['pisces', 'capricorn', 'cancer', 'libra'],
+    sign: 'pisces', acc: LAV, hook: 'Hey Pisces. | This is you, | at sunset.', end: 'Happy tears only. Jan 9.', stars: ['pisces', 'capricorn', 'cancer', 'libra'],
     open: { set: 'bats', o: { batsAt: 0, n: 26 }, mood: 'wide', look: { pisces: [0, -1] } },
     beats: [
       B(3.0, 'bedroom', '5:00 PM · BEFORE', 'you heard the bats fly | out at sunset.', [[0.5, 2.2, 'you', 'a whole | sky of bats?']], { mood: 'wide', o: { sky: SKIES.sunset } }),
@@ -201,7 +201,7 @@ export const W06B = {
 
   // ── hst148 · Taurus · crawfish season begins
   hst148: pov({
-    sign: 'taurus', acc: '#ff7a2a', hook: "If you're a Taurus, | this is your crawfish season", end: 'Save room. Jan 9.', stars: ['taurus', 'cancer', 'gemini', 'leo'],
+    sign: 'taurus', acc: '#ff7a2a', hook: "If you're a Taurus: | your crawfish season", end: 'Save room. Jan 9.', stars: ['taurus', 'cancer', 'gemini', 'leo'],
     open: { set: 'crawfish', mood: 'heart', front: (x, t, lt) => crawfish(x, 820, 980 + Math.sin(t * 6) * 10, 1.4, Math.sin(t * 3) * 0.3) },
     beats: [
       B(3.0, 'bedroom', 'EARLY JANUARY', 'it is early January. | you can sense it.', [[0.5, 2.2, 'you', 'the season | is coming.']], { mood: 'squint', o: { wall: '#7a3a3a' } }),
