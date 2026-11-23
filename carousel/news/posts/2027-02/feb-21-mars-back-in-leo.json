@@ -24,7 +24,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky news · feb 21",
    "headline": "*leo*, mars is back in your sign, walking backwards",
    "art": {
     "kind": "planet",
@@ -35,11 +34,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 21 · 14:15 utc",
-   "tag": "mars retrograde",
    "sign": "leo",
    "headline": "*mars* slides back from virgo into leo",
-   "body": "mars left leo on nov 25. it's been retrograde since jan 10 and today it appears to back over the line. jupiter, also retrograde, is in leo with it.",
+   "body": "it left leo on nov 25 and turned retrograde on jan 10. jupiter, also retrograde, is in leo with it.",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -50,7 +47,6 @@
   {
    "layout": "callout",
    "sign": "leo",
-   "kicker": "leo",
    "headline": "you don't need to *win* the rematch",
    "body": "old drive, old pride, old crush. look before you leap.",
    "art": {

@@ -21,9 +21,8 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
+   "kicker": "sky note",
    "headline": "“saturday's *blood moon* will change everything”",
-   "dek": "the feb 20 eclipse is all over the feed. let's check",
    "art": {
     "kind": "eclipse",
     "type": "lunar",
@@ -32,18 +31,15 @@
   },
   {
    "layout": "note",
-   "kicker": "going around",
    "headline": "“the feb 20 eclipse turns the moon blood red”",
    "verdict": "false",
-   "body": "that red picture is what a total lunar eclipse looks like. feb 20 is penumbral: the moon only skims earth's pale outer shadow. it stays its normal colour, maybe a touch dimmer on one edge."
+   "body": "that red picture is a total lunar eclipse. feb 20 is penumbral: the moon only skims earth's pale outer shadow. it stays its normal colour, maybe a touch dimmer on one edge."
   },
   {
    "layout": "story",
-   "kicker": "feb 20 · 23:12 utc",
-   "tag": "the astronomy",
    "sign": "virgo",
    "headline": "red needs the dark *core* of earth's shadow",
-   "body": "the moon turns copper only when it sinks into the umbra, lit by sunlight bent through our atmosphere. this time, at 2° virgo, it misses the umbra entirely.",
+   "body": "the moon turns copper only inside the umbra, lit by sunlight bent through our atmosphere. this time it misses the umbra entirely.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -52,8 +48,6 @@
   },
   {
    "layout": "story",
-   "kicker": "the reading",
-   "tag": "what astrologers say",
    "sign": "virgo",
    "headline": "a quiet eclipse still reads as an *ending*",
    "body": "astrologers read eclipses as fast-forwards, faint or not. nothing about this one changes everything. it might change one habit, if you let it.",

@@ -22,7 +22,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · jan 2",
    "headline": "day two of the year and the *moon* is in *scorpio*",
    "dek": "so yes, you're reading into everything",
    "art": {
@@ -34,8 +33,6 @@
   {
    "layout": "story",
    "sign": "scorpio",
-   "kicker": "jan 2 · moon in scorpio",
-   "tag": "the moon",
    "headline": "feelings run deep and *private* today",
    "body": "a scorpio moon reads as intense and a bit suspicious. ask the question instead of investigating the answer.",
    "art": {
@@ -46,10 +43,8 @@
   {
    "layout": "story",
    "sign": "scorpio",
-   "kicker": "jan 3 · venus square jupiter",
-   "tag": "one thing",
    "headline": "*venus* in scorpio squares jupiter tomorrow",
-   "body": "big feelings, bigger promises. astrologers read it as an overdo. let the grand gesture wait a day.",
+   "body": "read it as big feelings, bigger promises. let the grand gesture wait a day.",
    "art": {
     "kind": "pair",
     "a": "venus",

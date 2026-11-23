@@ -9,10 +9,7 @@
  ],
  "facts": [
   "2027-01-25 sun conjunction pluto",
-  "2027-01-27 mercury opposition jupiter",
   "2027-01-28 venus trine jupiter",
-  "2027-01-29 last quarter scorpio",
-  "2027-01-30 sun sextile saturn",
   "2027-01-31 mercury enters pisces",
   "2027-02-06 solar eclipse aquarius"
  ],
@@ -27,9 +24,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky desk · jan 25 – 31",
    "headline": "what just happened in the *sky* this week? *mercury* just went dreamy",
-   "dek": "6 stories · the week, caught up",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -39,10 +34,9 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "mon jan 25 · 5° aquarius",
-   "tag": "sun meets pluto",
+   "kicker": "mon jan 25",
    "headline": "the sun lined up with *pluto*",
-   "body": "if something came out this week that you'd rather not have known: that's the reading. better known than not.",
+   "body": "if something came out this week you'd rather not know: that's the reading. better known than not.",
    "art": {
     "kind": "pair",
     "a": "sun",
@@ -51,24 +45,10 @@
   },
   {
    "layout": "story",
-   "sign": "leo",
-   "kicker": "wed jan 27",
-   "tag": "mercury opposes jupiter",
-   "headline": "the week of *big* talk",
-   "body": "promises were cheap on wednesday. check which ones you actually meant.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "jupiter"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "sagittarius",
-   "kicker": "thu jan 28",
-   "tag": "venus trines jupiter",
+   "kicker": "thu jan 28 · venus trine jupiter",
    "headline": "the month's *luckiest* love night",
-   "body": "if you went on the date, good. if you didn't, venus is in sagittarius until feb 3.",
+   "body": "if you went on the date, good. if not, venus is in sagittarius until feb 3.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -77,24 +57,10 @@
   },
   {
    "layout": "story",
-   "sign": "scorpio",
-   "kicker": "fri jan 29 · 9° scorpio",
-   "tag": "last quarter",
-   "headline": "the *clear-out* moon came and went",
-   "body": "one thing let go, cleanly, counts. the next new moon is an eclipse.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.75,
-    "sign": "scorpio"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "pisces",
-   "kicker": "sun jan 31 · 0° pisces",
-   "tag": "mercury moves",
+   "kicker": "today",
    "headline": "*mercury* walked into pisces",
-   "body": "after a sun sextile saturn on saturday, talk turns softer and vaguer. say the clear version anyway.",
+   "body": "talk turns softer and vaguer. say the clear version anyway.",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -108,10 +74,9 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "sat feb 6 · 17.6° aquarius",
-   "tag": "the one to watch",
+   "kicker": "feb 6",
    "headline": "the solar *eclipse* is six days out",
-   "body": "an annular eclipse in aquarius. finish one thing this week so there's room for the next.",
+   "body": "an annular eclipse in aquarius. finish one thing this week so there's room.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -120,8 +85,8 @@
   },
   {
    "layout": "end",
-   "headline": "january's done. *the honest thing* still works in february.",
-   "body": "save this. check your january rank against what really happened.",
+   "headline": "january's done. the *honest* thing still works in february.",
+   "body": "check your january rank against what really happened.",
    "art": {
     "kind": "wheel",
     "tint": "gold"

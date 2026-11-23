@@ -22,9 +22,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
    "headline": "is *jan 1* really a cosmic reset?",
-   "dek": "the calendar flips at midnight. the sky has its own schedule",
    "art": {
     "kind": "stars",
     "tint": "gold"
@@ -35,14 +33,13 @@
    "kicker": "going around",
    "headline": "“the universe resets on january 1st”",
    "verdict": "context",
-   "body": "january 1 is a calendar choice, not a sky event. nothing special happens up there at midnight. but the sky does offer a fresh start soon: the first new moon of 2027 is jan 7, in capricorn."
+   "body": "jan 1 is a calendar choice, not a sky event. nothing special happens up there at midnight. the sky's fresh start comes a week later: the first new moon of 2027, jan 7, in capricorn."
   },
   {
    "layout": "story",
    "kicker": "the astronomy",
-   "tag": "tonight's moon",
    "headline": "right now the *moon* is waning, not new",
-   "body": "it hit last quarter in libra on dec 30, half-lit and shrinking. it reaches new moon on jan 7. on jan 1 the sun meets mercury in capricorn, which is the closest thing to a sky event on new year's day.",
+   "body": "it hit last quarter in libra on dec 30 and is still shrinking. on jan 1 the sun meets mercury in capricorn, the closest thing to a sky event that day.",
    "art": {
     "kind": "moon",
     "phase": 0.75,
@@ -52,9 +49,8 @@
   {
    "layout": "story",
    "kicker": "what astrologers read",
-   "tag": "the reading",
    "headline": "astrologers save *beginnings* for new moons",
-   "body": "a waning moon reads as a time to finish and let go. so the honest astrology of new year's eve is: close things now, start them on jan 7. many also treat the aries equinox in march as the zodiac's new year.",
+   "body": "a waning moon reads as finishing and letting go. so the honest astrology of new year's eve: close things now, start them on jan 7.",
    "art": {
     "kind": "moon",
     "phase": 0.02,

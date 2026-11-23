@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "season change · feb 18",
    "labels": [
     "aquarius",
     "pisces"
@@ -56,7 +55,7 @@
    "sign": "pisces",
    "kicker": "hello pisces",
    "headline": "your season starts with *mercury* backing up",
-   "body": "the sun enters pisces as retrograde mercury slips back into aquarius. feel first, reply second.",
+   "body": "retrograde mercury backs into aquarius as you arrive. feel first, reply second.",
    "art": {
     "kind": "figure",
     "sign": "pisces",
@@ -65,7 +64,6 @@
   },
   {
    "layout": "list",
-   "kicker": "pisces season is good for",
    "headline": "four weeks of *soft*",
    "rows": [
     {
@@ -81,12 +79,12 @@
     {
      "label": "make",
      "color": "pisces",
-     "text": "the thing you only do when no one's watching."
+     "text": "what you only make when no one's watching."
     },
     {
      "label": "date",
      "color": "pisces",
-     "text": "someone gentle, not someone who needs saving."
+     "text": "someone gentle, not a rescue project."
     }
    ]
   },

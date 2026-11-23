@@ -19,7 +19,6 @@
  "facts": [
   "2027-02-06 solar eclipse aquarius",
   "2027-02-09 mercury stations retrograde pisces",
-  "2027-02-14 venus in capricorn",
   "2027-02-20 lunar eclipse virgo",
   "2027-02-21 mars enters leo",
   "2027-02-28 last quarter sagittarius",
@@ -29,9 +28,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · february recap",
    "headline": "what just happened in the *sky* this february?",
-   "dek": "6 stories · catch up in one swipe",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -47,7 +44,6 @@
   {
    "layout": "story",
    "kicker": "feb 6",
-   "tag": "eclipse",
    "sign": "aquarius",
    "headline": "a ring of fire *eclipse* reset aquarius",
    "body": "the annular solar eclipse at 17.6° aquarius. if you started something then, it's three weeks old now.",
@@ -60,10 +56,9 @@
   {
    "layout": "story",
    "kicker": "feb 9",
-   "tag": "mercury retrograde",
    "sign": "pisces",
    "headline": "*mercury* turned around in pisces",
-   "body": "and it's still retrograde, back in aquarius. three more days of re-dos.",
+   "body": "it's still retrograde, now back in aquarius, until mar 3.",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -73,21 +68,7 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 14",
-   "tag": "venus",
-   "sign": "capricorn",
-   "headline": "valentine's ran on *venus* in capricorn",
-   "body": "love got practical. the ones who showed up on time said the most.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "story",
    "kicker": "feb 20",
-   "tag": "penumbral eclipse",
    "sign": "virgo",
    "headline": "the quietest *eclipse* of the year so far",
    "body": "a penumbral lunar eclipse in virgo. barely visible. still, a good night to put one fix down.",
@@ -104,7 +85,6 @@
   {
    "layout": "story",
    "kicker": "feb 21",
-   "tag": "mars",
    "sign": "leo",
    "headline": "*mars* backed into leo, still retrograde",
    "body": "old pride came back for review. you don't have to reopen the case.",
@@ -117,11 +97,10 @@
   },
   {
    "layout": "story",
-   "kicker": "the one to watch · mar 1",
-   "tag": "venus",
+   "kicker": "the one to watch",
    "sign": "aquarius",
    "headline": "tomorrow *venus* moves into aquarius",
-   "body": "and mercury turns direct on mar 3. march opens curious. today's last quarter moon in sagittarius says: tidy up first.",
+   "body": "and mercury turns direct mar 3. today's last quarter moon in sagittarius says: tidy up first.",
    "art": {
     "kind": "moon",
     "phase": 0.75,

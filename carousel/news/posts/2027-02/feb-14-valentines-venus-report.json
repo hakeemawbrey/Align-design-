@@ -19,7 +19,6 @@
  "facts": [
   "2027-02-14 venus in capricorn",
   "2027-02-14 first quarter taurus",
-  "2027-02-14 moon in gemini",
   "2027-02-14 mercury retrograde",
   "2027-02-14 mars retrograde",
   "2027-02-14 mars in virgo",
@@ -29,7 +28,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "love weather · feb 14",
    "labels": [
     "venus · capricorn",
     "mars · virgo"
@@ -49,11 +47,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 14 · 12.9° capricorn",
-   "tag": "where venus is",
    "sign": "capricorn",
    "headline": "*venus* in capricorn, the morning after a square to saturn",
-   "body": "venus squared saturn yesterday. the moon reaches first quarter in taurus this morning, then moves into gemini. and mercury is retrograde. it's a careful sky, not a cold one.",
+   "body": "venus squared saturn yesterday, and mercury is still retrograde. it's a careful sky, not a cold one.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -62,7 +58,6 @@
   },
   {
    "layout": "list",
-   "kicker": "good day for",
    "headline": "tonight *works* for",
    "accent": "spark",
    "rows": [
@@ -77,11 +72,6 @@
      "text": "saying what you want, plainly, once."
     },
     {
-     "label": "pace",
-     "color": "spark",
-     "text": "a second date with someone kind."
-    },
-    {
      "label": "you",
      "color": "spark",
      "text": "a night alone that you actually enjoy."
@@ -90,7 +80,6 @@
   },
   {
    "layout": "list",
-   "kicker": "bad day for",
    "headline": "skip *this*",
    "accent": "rub",
    "rows": [
@@ -105,11 +94,6 @@
      "text": "the retrograde \"hey stranger\" text."
     },
     {
-     "label": "scoring",
-     "color": "rub",
-     "text": "grading the gift instead of the effort."
-    },
-    {
      "label": "masks",
      "color": "rub",
      "text": "pretending you're fine with casual."
@@ -117,36 +101,8 @@
    ]
   },
   {
-   "layout": "list",
-   "kicker": "by element",
-   "headline": "your *valentine's*",
-   "rows": [
-    {
-     "label": "fire",
-     "color": "capricorn",
-     "text": "slow down. let them catch up to you."
-    },
-    {
-     "label": "earth",
-     "color": "capricorn",
-     "text": "your night. venus speaks your language."
-    },
-    {
-     "label": "air",
-     "color": "capricorn",
-     "text": "less banter, one real question."
-    },
-    {
-     "label": "water",
-     "color": "capricorn",
-     "text": "say the feeling before it turns into a test."
-    }
-   ]
-  },
-  {
    "layout": "story",
    "kicker": "if you're single",
-   "tag": "read the sky",
    "sign": "capricorn",
    "headline": "read their sky before their *selfies*",
    "body": "venus stays in capricorn until march 1. a good stretch to choose someone for how they show up, not how they photograph.",

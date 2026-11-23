@@ -25,9 +25,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "eclipse alert · tomorrow",
    "headline": "a ring of fire *eclipse* in aquarius, tomorrow",
-   "dek": "feb 6 · 15:59 utc · annular",
    "art": {
     "kind": "planet",
     "body": "sun",
@@ -36,11 +34,10 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 6 · 17.6° aquarius",
-   "tag": "the facts",
+   "kicker": "17.6° aquarius",
    "sign": "aquarius",
    "headline": "annular means the moon is too small to cover the *sun*",
-   "body": "the new moon passes in front of the sun but sits far enough away that a bright ring stays. greatest eclipse is over the south atlantic. only a narrow path sees the ring.",
+   "body": "the new moon leaves a bright ring of sun showing. greatest eclipse is over the south atlantic. only a narrow path sees the ring.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -49,26 +46,24 @@
   },
   {
    "layout": "note",
-   "kicker": "going around",
    "headline": "“eclipses are bad luck”",
    "verdict": "false",
-   "body": "an eclipse is the moon and sun lining up, nothing more. astrologers read eclipses as fast-forward buttons: things that were already ending end, things already starting start."
+   "body": "an eclipse is the moon and sun lining up, nothing more. astrologers read eclipses as fast-forwards: what was ending ends, what was starting starts."
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "the three signs it *lands* on",
    "accent": "rub",
    "rows": [
     {
      "sign": "aquarius",
      "label": "aquarius",
-     "text": "it's in your sign. a reset on how you show up."
+     "text": "your sign. a reset on how you show up."
     },
     {
      "sign": "leo",
      "label": "leo",
-     "text": "the opposite sign. partners say the quiet part."
+     "text": "opposite sign. partners say the quiet part."
     },
     {
      "sign": "scorpio",

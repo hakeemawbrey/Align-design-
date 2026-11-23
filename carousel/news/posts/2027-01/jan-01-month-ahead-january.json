@@ -13,7 +13,6 @@
   "2027-01-07 new moon capricorn",
   "2027-01-07 venus enters sagittarius",
   "2027-01-10 mars stations retrograde virgo",
-  "2027-01-13 mercury enters aquarius",
   "2027-01-20 sun enters aquarius",
   "2027-01-22 full moon leo",
   "2027-01-25 sun conjunction pluto",
@@ -30,9 +29,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · january 2027",
    "headline": "new year, new sky. what's coming in *january*",
-   "dek": "eight dates to put in your calendar before you text anyone",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -46,8 +43,7 @@
   },
   {
    "layout": "list",
-   "kicker": "january at a glance",
-   "headline": "the month, *in eight lines*",
+   "headline": "the month in *five dates*",
    "rows": [
     {
      "label": "jan 7",
@@ -65,24 +61,9 @@
      "text": "mars turns retrograde in virgo"
     },
     {
-     "label": "jan 13",
-     "color": "mercury",
-     "text": "mercury enters aquarius"
-    },
-    {
-     "label": "jan 20",
-     "color": "sun",
-     "text": "aquarius season starts"
-    },
-    {
      "label": "jan 22",
      "color": "leo",
      "text": "full moon in *leo*"
-    },
-    {
-     "label": "jan 25",
-     "color": "pluto",
-     "text": "the sun meets pluto"
     },
     {
      "label": "feb 6",
@@ -95,9 +76,8 @@
    "layout": "story",
    "sign": "capricorn",
    "kicker": "jan 7 · 17° capricorn",
-   "tag": "new moon",
    "headline": "new moon in *capricorn*: the real new year",
-   "body": "jan 1 is a date. the new moon is the sky's reset. astrologers read it as the night to pick one plan and mean it.",
+   "body": "jan 1 is a date. the new moon is the reset. astrologers read it as the night to pick one plan and mean it.",
    "art": {
     "kind": "moon",
     "phase": 0,
@@ -112,9 +92,8 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "jan 10 · 10° virgo",
-   "tag": "mars retrograde",
    "headline": "*mars* stops and turns backwards in *virgo*",
-   "body": "from earth, mars seems to reverse as we overtake it. it stays retrograde into spring. read it as redo season, not start season.",
+   "body": "from earth, mars seems to reverse as we overtake it. it stays that way into spring: redo season, not start season.",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -124,24 +103,10 @@
   },
   {
    "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "jan 7 · venus in sagittarius",
-   "tag": "love weather",
-   "headline": "*venus* goes honest: flirting gets blunt",
-   "body": "venus leaves scorpio for sagittarius on jan 7. good month to say what you want on the first date, not the fifth.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "aquarius",
-   "kicker": "jan 20 · sun enters aquarius",
-   "tag": "new season",
+   "kicker": "jan 20 → feb 6",
    "headline": "*aquarius* season, and an eclipse right behind it",
-   "body": "the sun reaches aquarius on jan 20 and meets pluto on jan 25. an annular solar eclipse lands in aquarius on feb 6.",
+   "body": "the sun reaches aquarius on jan 20 and meets pluto on jan 25. an annular solar eclipse follows on feb 6.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -149,22 +114,9 @@
    }
   },
   {
-   "layout": "story",
-   "sign": "leo",
-   "kicker": "jan 22 · 2° leo",
-   "tag": "full moon",
-   "headline": "full moon in *leo*: the month's loudest night",
-   "body": "astrologers read leo full moons as the push to be seen. say the thing you've been rehearsing in the shower.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "leo"
-   }
-  },
-  {
    "layout": "end",
    "headline": "if you remember one date: *jan 10*",
-   "body": "mars stops. don't start the fight you'll have to redo. new year, new deck. there's always an 11:11.",
+   "body": "mars stops. don't start a fight you'll have to redo.",
    "art": {
     "kind": "planet",
     "body": "mars",

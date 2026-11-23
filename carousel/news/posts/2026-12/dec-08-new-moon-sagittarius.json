@@ -25,9 +25,8 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "moon alert · dec 8",
    "headline": "*new moon* in sagittarius, tonight",
-   "dek": "peaks 7:52 pm et · 00:52 utc dec 9 · 17° sagittarius",
+   "dek": "7:52 pm et · 17° sagittarius",
    "art": {
     "kind": "moon",
     "phase": 0.03,
@@ -37,10 +36,9 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "7:52 pm et · 17° sagittarius",
-   "tag": "the astronomy",
+   "kicker": "the astronomy",
    "headline": "the *moon* lines up between earth and the sun",
-   "body": "its lit side faces away from us, so there is nothing to see tonight. the first thin crescent shows low in the west after sunset in a day or two.",
+   "body": "its lit side faces away from us, so there's nothing to see. look for the first thin crescent low in the west in a day or two.",
    "art": {
     "kind": "moon",
     "phase": 0.02,
@@ -52,9 +50,8 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "the reading",
-   "tag": "new moon in sagittarius",
    "headline": "start the *honest* version of whatever you start",
-   "body": "sagittarius new moons read as fresh starts for truth, travel and big-picture wants. with mercury in sagittarius too, the sky is asking you to say it plainly.",
+   "body": "sagittarius new moons read as fresh starts for truth, travel and big wants. mercury is in sagittarius too: say it plainly.",
    "art": {
     "kind": "figure",
     "sign": "sagittarius"
@@ -62,18 +59,17 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "the signs who *feel it* most",
    "rows": [
     {
      "sign": "sagittarius",
      "label": "sagittarius",
-     "text": "your new year starts early. pick the one want."
+     "text": "your year starts early. pick one want."
     },
     {
      "sign": "gemini",
      "label": "gemini",
-     "text": "opposite sign: partners have something to say."
+     "text": "partners have something to say."
     },
     {
      "sign": "virgo",
@@ -83,7 +79,7 @@
     {
      "sign": "pisces",
      "label": "pisces",
-     "text": "a public fresh start. say it with your chest."
+     "text": "a public fresh start. own it out loud."
     }
    ]
   },

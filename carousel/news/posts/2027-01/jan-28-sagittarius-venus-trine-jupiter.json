@@ -22,9 +22,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sign callout · jan 28",
    "headline": "*sagittarius*, *venus* is in your sign and jupiter just said yes",
-   "dek": "send this to your sagittarius",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -34,7 +32,6 @@
   {
    "layout": "callout",
    "sign": "sagittarius",
-   "kicker": "sagittarius",
    "headline": "you're the most *magnetic* person in the room this week",
    "art": {
     "kind": "figure",
@@ -66,7 +63,7 @@
   },
   {
    "layout": "end",
-   "headline": "say the honest thing. *you're good at it.*",
+   "headline": "say the *honest* thing. you're good at it.",
    "body": "just say it warmly.",
    "art": {
     "kind": "aura",

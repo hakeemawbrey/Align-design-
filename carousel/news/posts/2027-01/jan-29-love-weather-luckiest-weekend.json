@@ -25,9 +25,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "love weather · jan 29",
    "headline": "love weather: *venus* just met luck. use the weekend",
-   "dek": "and let one old thing go before the eclipse",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -37,10 +35,9 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "jan 28 · 24° sagittarius / leo",
-   "tag": "where venus is",
+   "kicker": "jan 28",
    "headline": "venus in sagittarius trined *jupiter*",
-   "body": "astrologers read it as warm and generous love weather. it lingers into the weekend. venus moves into capricorn on feb 3.",
+   "body": "astrologers read it as warm, generous love weather. it lingers into the weekend. venus moves into capricorn on feb 3.",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -81,8 +78,7 @@
   {
    "layout": "story",
    "sign": "scorpio",
-   "kicker": "jan 29 · 9° scorpio",
-   "tag": "last quarter",
+   "kicker": "today",
    "headline": "a *clear-out* moon before the eclipse",
    "body": "the last quarter in scorpio reads as the time to let one thing go, cleanly. the solar eclipse in aquarius is feb 6.",
    "art": {
@@ -92,35 +88,8 @@
    }
   },
   {
-   "layout": "list",
-   "kicker": "by element",
-   "headline": "this weekend, *for you*",
-   "rows": [
-    {
-     "color": "sagittarius",
-     "label": "fire",
-     "text": "go big, then go home on time."
-    },
-    {
-     "color": "sagittarius",
-     "label": "earth",
-     "text": "say yes to a plan you didn't make."
-    },
-    {
-     "color": "sagittarius",
-     "label": "air",
-     "text": "less banter, one true sentence."
-    },
-    {
-     "color": "sagittarius",
-     "label": "water",
-     "text": "let the old one go. kindly."
-    }
-   ]
-  },
-  {
    "layout": "end",
-   "headline": "your sun is who you are. *your venus is how you love.*",
+   "headline": "your sun is who you are. your *venus* is how you love.",
    "body": "release, don't ghost.",
    "art": {
     "kind": "planet",

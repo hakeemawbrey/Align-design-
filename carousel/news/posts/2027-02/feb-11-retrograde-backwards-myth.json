@@ -25,9 +25,8 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
+   "kicker": "sky note",
    "headline": "“three planets are moving *backwards* right now”",
-   "dek": "mercury, mars and jupiter. half of that is true",
    "art": {
     "kind": "pair",
     "a": "mercury",
@@ -36,18 +35,15 @@
   },
   {
    "layout": "note",
-   "kicker": "going around",
    "headline": "“retrograde planets actually move backwards”",
    "verdict": "misleading",
    "body": "true that mercury, mars and jupiter are all retrograde this week. not true that they reverse. every planet keeps circling the sun the same way. retrograde is what it looks like from here."
   },
   {
    "layout": "story",
-   "kicker": "the astronomy",
-   "tag": "why it looks like that",
    "sign": "virgo",
    "headline": "think of passing a slower car: it seems to *drift back*",
-   "body": "earth is overtaking mars and jupiter on the inside, so they appear to slide backwards against the stars. mercury, inside our orbit, does the same as it laps us.",
+   "body": "earth is overtaking mars and jupiter, so they seem to slide back against the stars. mercury, inside our orbit, does it as it laps us.",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -57,11 +53,9 @@
   },
   {
    "layout": "story",
-   "kicker": "the reading",
-   "tag": "what astrologers say",
    "sign": "pisces",
    "headline": "a retrograde reads as a *review*, not a punishment",
-   "body": "astrologers read retrograde stretches as time to revisit: old plans, old drafts, old people. nothing is cursed. some things just want a second pass.",
+   "body": "astrologers read retrograde stretches as time to revisit old plans, old drafts, old people. some things just want a second pass.",
    "art": {
     "kind": "wheel",
     "signs": [

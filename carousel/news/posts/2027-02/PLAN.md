@@ -9,7 +9,7 @@ One post a day. Facts from news/data/SKY.md; every post passes check.mjs.
 | 2027-02-03 | wed | sign-callout | hero | capricorn, venus just moved into your sign. until march 1 | venus enters capricorn |
 | 2027-02-04 | thu | sky-note | cover | “mercury retrograde breaks your phone” | wed/thu myth check, heads-up: mercury stations retrograde feb 9 |
 | 2027-02-05 | fri | moon-alert | hero | a ring of fire eclipse in aquarius, tomorrow | annular solar eclipse, day before (week-before alert is january's jan 30) |
-| 2027-02-06 | sat | moon-alert | breaking | a ring of fire in aquarius, today. the new moon covers the sun's middle | annular solar eclipse + new moon in aquarius |
+| 2027-02-06 | sat | moon-alert | breaking | a ring of fire in aquarius, today | annular solar eclipse + new moon in aquarius |
 | 2027-02-07 | sun | sky-roundup | cover | what just happened in the sky this week? | sunday week review; one to watch: mercury rx tue |
 | 2027-02-08 | mon | sign-callout | hero | gemini, uranus stops reversing in your sign today | uranus stations direct in gemini |
 | 2027-02-09 | tue | who-this-hits | breaking | mercury turns backwards today. here's who feels it | mercury stations retrograde in pisces |

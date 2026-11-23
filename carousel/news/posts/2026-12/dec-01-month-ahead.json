@@ -16,7 +16,6 @@
   "2026-12-10 saturn stations direct aries",
   "2026-12-12 jupiter stations retrograde leo",
   "2026-12-12 neptune stations direct aries",
-  "2026-12-18 sun trine jupiter",
   "2026-12-21 sun enters capricorn",
   "2026-12-23 full moon cancer",
   "2026-12-25 mercury enters capricorn",
@@ -35,9 +34,7 @@
   {
    "layout": "cover",
    "accent": "gold",
-   "kicker": "sky desk · december 2026",
    "headline": "what's coming in *december*",
-   "dek": "nine dates, one month, a lot of honest conversations",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -52,7 +49,6 @@
   },
   {
    "layout": "list",
-   "kicker": "december at a glance",
    "headline": "the *dates*",
    "rows": [
     {
@@ -66,19 +62,9 @@
      "text": "new moon in *sagittarius*"
     },
     {
-     "label": "dec 10",
+     "label": "dec 10–12",
      "color": "saturn",
-     "text": "saturn turns direct in aries"
-    },
-    {
-     "label": "dec 12",
-     "color": "jupiter",
-     "text": "jupiter turns retrograde, neptune direct"
-    },
-    {
-     "label": "dec 18",
-     "color": "sun",
-     "text": "sun trine jupiter"
+     "text": "saturn, neptune direct. jupiter turns back"
     },
     {
      "label": "dec 21",
@@ -96,9 +82,8 @@
    "layout": "story",
    "sign": "scorpio",
    "kicker": "dec 4",
-   "tag": "venus ingress",
    "headline": "*venus* goes into scorpio. flirting gets a lot less casual",
-   "body": "venus spends the rest of the month in scorpio. astrologers read it as all-or-nothing love: fewer people, more depth, zero patience for small talk.",
+   "body": "venus stays in scorpio for the rest of the month. reads as all-or-nothing love: fewer people, more depth, no small talk.",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -113,9 +98,8 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "dec 8",
-   "tag": "new moon",
    "headline": "new moon in *sagittarius*: start the honest version",
-   "body": "the moon goes dark at 17° sagittarius. a good night to name what you actually want, out loud, to yourself first.",
+   "body": "the moon goes dark at 17° sagittarius. name what you actually want, to yourself first.",
    "art": {
     "kind": "moon",
     "phase": 0,
@@ -126,9 +110,8 @@
    "layout": "story",
    "sign": "leo",
    "kicker": "dec 10 – 12",
-   "tag": "three stations",
    "headline": "*saturn* and neptune go direct. jupiter turns back in leo",
-   "body": "three planets change direction in three days. it reads as a gear change: what was stuck starts moving, and what was growing fast slows down to check itself.",
+   "body": "three planets change direction in three days. what was stuck starts moving. what grew fast stops to check itself.",
    "art": {
     "kind": "planet",
     "body": "jupiter",
@@ -140,31 +123,17 @@
    "layout": "story",
    "sign": "capricorn",
    "kicker": "dec 21",
-   "tag": "season change",
    "headline": "*capricorn* season: less talk, more plans",
-   "body": "the sun enters capricorn on the solstice weekend, and mercury follows on dec 25. good for saying what you mean and booking the date.",
+   "body": "the sun enters capricorn on the solstice, and mercury follows on dec 25. good for meaning it and booking the date.",
    "art": {
     "kind": "figure",
     "sign": "capricorn"
    }
   },
   {
-   "layout": "story",
-   "sign": "cancer",
-   "kicker": "dec 23",
-   "tag": "full moon",
-   "headline": "full moon in *cancer*: say the soft thing out loud",
-   "body": "the last full moon of 2026 lands two days before christmas. astrologers read cancer moons as home, family and who you actually miss.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "cancer"
-   }
-  },
-  {
    "layout": "end",
-   "headline": "if you only remember one date: *dec 23*",
-   "body": "save this. plan the conversation, not the outfit. there is always an 11:11.",
+   "headline": "remember one date: *dec 23*, full moon in cancer",
+   "body": "say the soft thing out loud. plan the conversation, not the outfit.",
    "art": {
     "kind": "moon",
     "phase": 0.5,

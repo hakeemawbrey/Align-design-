@@ -23,7 +23,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · sat dec 19",
    "headline": "the *moon* changes sign this afternoon. plan the date for tonight",
    "art": {
     "kind": "moon",
@@ -35,7 +34,6 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "until 3:30 pm et",
-   "tag": "moon in aries",
    "headline": "morning *moon* in aries: send the bold text",
    "body": "a waxing moon in aries reads as short fuses and fast yeses. ask early.",
    "art": {
@@ -48,9 +46,8 @@
    "layout": "story",
    "sign": "taurus",
    "kicker": "from 3:30 pm et",
-   "tag": "moon in taurus",
    "headline": "then *taurus*: good food, slow talk, no rush",
-   "body": "the moon moves into taurus by late afternoon. reads as a night for comfort and staying put.",
+   "body": "reads as a night for comfort and staying put.",
    "art": {
     "kind": "figure",
     "sign": "taurus"

@@ -26,7 +26,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "sky desk · week of jan 25",
    "labels": [
     "sun",
     "pluto"
@@ -45,24 +44,10 @@
   },
   {
    "layout": "story",
-   "sign": "aquarius",
-   "kicker": "mon jan 25 · 5° aquarius",
-   "tag": "sun conjunct pluto",
-   "headline": "the sun lines up with *pluto*",
-   "body": "the sun passes pluto about once a year. astrologers read it as what's hidden coming up. let it, then decide.",
-   "art": {
-    "kind": "pair",
-    "a": "sun",
-    "b": "pluto"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "leo",
-   "kicker": "wed jan 27 · 24° aquarius / leo",
-   "tag": "mercury opposes jupiter",
-   "headline": "big talk, *bigger* promises",
-   "body": "astrologers read it as overstatement. lovely for a pep talk. check the numbers before you agree to anything.",
+   "kicker": "wed jan 27",
+   "headline": "mercury opposes *jupiter*: big talk",
+   "body": "astrologers read it as overstatement. lovely for a pep talk. check the numbers before you agree.",
    "art": {
     "kind": "pair",
     "a": "mercury",
@@ -72,8 +57,7 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "thu jan 28 · 24° sagittarius / leo",
-   "tag": "venus trines jupiter",
+   "kicker": "thu jan 28 · venus trine jupiter",
    "headline": "the month's *luckiest* love aspect",
    "body": "warm, generous, a bit extra. a good night for the date you've been putting off.",
    "art": {
@@ -85,8 +69,7 @@
   {
    "layout": "story",
    "sign": "scorpio",
-   "kicker": "fri jan 29 · 9° scorpio",
-   "tag": "last quarter",
+   "kicker": "fri jan 29",
    "headline": "last quarter in *scorpio*: let one thing go",
    "body": "the clear-out moon before the eclipse new moon on feb 6. release, don't haunt.",
    "art": {
@@ -99,9 +82,8 @@
    "layout": "story",
    "sign": "pisces",
    "kicker": "sat jan 30 · sun jan 31",
-   "tag": "the weekend",
    "headline": "sun sextiles saturn, mercury enters *pisces*",
-   "body": "steady saturday, dreamier sunday. mercury moves into pisces at 01:27 utc on jan 31.",
+   "body": "steady saturday, dreamier sunday.",
    "art": {
     "kind": "planet",
     "body": "mercury",

@@ -26,9 +26,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of dec 14",
    "headline": "what just happened in the *sky* this week?",
-   "dek": "4 stories · swipe",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -44,7 +42,6 @@
    "layout": "story",
    "sign": "pisces",
    "kicker": "dec 17",
-   "tag": "first quarter",
    "headline": "the *moon* hit first quarter in pisces",
    "body": "the halfway push. if a plan stalled, this was the nudge.",
    "art": {
@@ -57,7 +54,6 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "dec 17 – 19",
-   "tag": "moon in aries",
    "headline": "the *moon* in aries made everyone a bit braver",
    "body": "if you said the thing midweek, you had help.",
    "art": {
@@ -69,7 +65,6 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "dec 18",
-   "tag": "sun trine jupiter",
    "headline": "the *sun* trined jupiter: the best day of the month",
    "body": "generous, warm, lucky-feeling. what did you ask for?",
    "art": {
@@ -82,7 +77,6 @@
    "layout": "story",
    "sign": "taurus",
    "kicker": "dec 19",
-   "tag": "moon in taurus",
    "headline": "the weekend slowed down in *taurus*",
    "body": "good food, long nights, less phone.",
    "art": {

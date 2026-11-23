@@ -26,7 +26,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "eclipse alert · tomorrow",
    "labels": [
     "sun · pisces",
     "moon · virgo"
@@ -45,11 +44,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 20 · 23:12 utc",
-   "tag": "the honest facts",
    "sign": "virgo",
    "headline": "this is the subtle kind of *eclipse*",
-   "body": "a penumbral eclipse: the moon passes through earth's pale outer shadow only. no red moon, no dark bite. if you look, you might catch a faint shading. most people won't.",
+   "body": "penumbral: the moon passes through earth's pale outer shadow only. no red moon, no dark bite. most people won't see a thing.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -62,11 +59,9 @@
   },
   {
    "layout": "story",
-   "kicker": "the reading",
-   "tag": "virgo vs pisces",
    "sign": "virgo",
    "headline": "the sun is in pisces, the moon in *virgo*: feeling vs fixing",
-   "body": "astrologers read this eclipse as a soft close on over-managing. and today the sun opposes retrograde mars. read it as: drop the argument you're rehearsing.",
+   "body": "astrologers read it as a soft close on over-managing. the sun also opposes mars today: drop the argument you're rehearsing.",
    "art": {
     "kind": "pair",
     "a": "sun",
@@ -75,7 +70,6 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "the three signs it *lands* on",
    "accent": "rub",
    "rows": [

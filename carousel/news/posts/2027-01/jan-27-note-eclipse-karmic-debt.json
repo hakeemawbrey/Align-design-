@@ -8,8 +8,7 @@
  ],
  "facts": [
   "2027-02-06 solar eclipse aquarius",
-  "2027-02-06 new moon aquarius",
-  "2027-02-20 lunar eclipse virgo"
+  "2027-02-06 new moon aquarius"
  ],
  "caption": "sky note: \"the feb 6 eclipse erases your karmic debt.\" not true. it's an annular solar eclipse in aquarius, and it's a reading, not a refund.",
  "hashtags": [
@@ -22,9 +21,9 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
+   "kicker": "viral claim",
    "headline": "“your *300-year* karmic debt is erased at the eclipse”",
-   "dek": "the feb 6 eclipse is real. the debt relief is not",
+   "dek": "the eclipse is real. the debt relief isn't",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -33,8 +32,7 @@
   },
   {
    "layout": "note",
-   "kicker": "going around",
-   "headline": "“the feb 6 eclipse wipes your karma clean, and it's bad luck if you miss it”",
+   "headline": "“the eclipse wipes your karma clean. miss it and it's bad luck”",
    "verdict": "false",
    "body": "there's no ephemeris for karma, and no eclipse is a 300-year event: solar eclipses happen somewhere on earth a few times a year. missing it changes nothing."
   },
@@ -42,7 +40,6 @@
    "layout": "story",
    "sign": "aquarius",
    "kicker": "feb 6 · 15:59 utc · 17.6° aquarius",
-   "tag": "the astronomy",
    "headline": "an *annular* eclipse: a ring, not a blackout",
    "body": "the new moon crosses the sun but looks a little too small to cover it, so a ring of sun stays lit. never look at it without eclipse glasses.",
    "art": {
@@ -54,10 +51,8 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "the reading",
-   "tag": "what astrologers say",
    "headline": "eclipses read as *doors*, not debts",
-   "body": "astrologers read a solar eclipse as a stronger new moon: a start you didn't fully plan. a penumbral lunar eclipse in virgo follows on feb 20.",
+   "body": "astrologers read a solar eclipse as a stronger new moon: a start you didn't fully plan.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -67,7 +62,7 @@
   {
    "layout": "end",
    "headline": "nobody's *erasing* anything. you can still apologise.",
-   "body": "the honest take: the eclipse won't fix it. a clear, kind text might.",
+   "body": "the eclipse won't fix it. a clear, kind text might.",
    "art": {
     "kind": "stars",
     "tint": "gold"

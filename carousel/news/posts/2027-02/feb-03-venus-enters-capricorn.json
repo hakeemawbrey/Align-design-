@@ -21,7 +21,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky news · feb 3",
    "headline": "*capricorn*, venus just moved into your sign. until march 1",
    "art": {
     "kind": "planet",
@@ -31,11 +30,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 3 · 14:30 utc",
-   "tag": "venus ingress",
    "sign": "capricorn",
    "headline": "*venus* leaves sagittarius and steps into capricorn",
-   "body": "venus moves through capricorn until march 1, so valentine's falls inside it. astrologers read venus as how you love. in capricorn: slow, loyal, a little guarded.",
+   "body": "in capricorn, astrologers read love as slow, loyal and a little guarded. valentine's falls inside it.",
    "art": {
     "kind": "planet",
     "body": "venus",

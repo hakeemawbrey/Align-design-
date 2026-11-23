@@ -23,9 +23,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
    "headline": "does *jupiter* really move backwards on saturday?",
-   "dek": "no. but the illusion is real, and it is pretty",
    "art": {
     "kind": "planet",
     "body": "jupiter",
@@ -37,14 +35,13 @@
    "kicker": "going around",
    "headline": "“retrograde planets actually move backwards”",
    "verdict": "false",
-   "body": "no planet ever reverses its orbit. retrograde is how the motion looks from earth: we are moving too, so the planets seem to slow, stop and loop back against the stars."
+   "body": "no planet ever reverses its orbit. retrograde is how it looks from earth: we're moving too, so planets seem to slow, stop and loop back against the stars."
   },
   {
    "layout": "story",
    "kicker": "the astronomy",
-   "tag": "apparent motion",
    "headline": "it is the *overtaking* effect",
-   "body": "earth orbits faster than jupiter and saturn. when we pass them, they look like they drift backwards, the way a slower car seems to slide back as you overtake it on the highway.",
+   "body": "earth orbits faster than jupiter and saturn. as we pass them, they seem to drift back, like a slower car as you overtake it.",
    "art": {
     "kind": "pair",
     "a": "jupiter",
@@ -54,9 +51,8 @@
   {
    "layout": "story",
    "kicker": "what astrologers read",
-   "tag": "the reading",
    "headline": "retrograde reads as *review*, not disaster",
-   "body": "astrologers read a retrograde as time to revisit what that planet rules. saturn turns direct in aries on dec 10, and jupiter turns retrograde in leo on dec 12.",
+   "body": "a time to revisit what that planet rules. saturn turns direct in aries on dec 10, jupiter retrograde in leo on dec 12.",
    "art": {
     "kind": "planet",
     "body": "saturn",

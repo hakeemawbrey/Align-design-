@@ -18,15 +18,12 @@
  "facts": [
   "2027-02-26 venus in capricorn",
   "2027-03-01 venus enters aquarius",
-  "2027-02-26 moon in scorpio",
   "2027-02-26 mercury retrograde"
  ],
  "slides": [
   {
    "layout": "hero",
-   "kicker": "love weather · feb 26",
    "headline": "love weather: *venus*' last weekend in capricorn",
-   "dek": "it moves to aquarius on monday",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -36,11 +33,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 26 – mar 1",
-   "tag": "where venus is",
    "sign": "capricorn",
    "headline": "*venus* is in the last degrees of capricorn",
-   "body": "it crosses into aquarius on mar 1. the moon is in scorpio tonight and mercury is still retrograde. a weekend to finish, not to start.",
+   "body": "it crosses into aquarius on mar 1, and mercury is still retrograde. a weekend to finish, not to start.",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -49,7 +44,6 @@
   },
   {
    "layout": "list",
-   "kicker": "good weekend for",
    "headline": "*yes* to",
    "accent": "spark",
    "rows": [
@@ -72,7 +66,6 @@
   },
   {
    "layout": "list",
-   "kicker": "bad weekend for",
    "headline": "*no* to",
    "accent": "rub",
    "rows": [
@@ -90,33 +83,6 @@
      "label": "rush",
      "color": "rub",
      "text": "big decisions before mercury turns."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "by element",
-   "headline": "your *weekend*",
-   "rows": [
-    {
-     "label": "fire",
-     "color": "capricorn",
-     "text": "be the one who makes the plan."
-    },
-    {
-     "label": "earth",
-     "color": "capricorn",
-     "text": "last weekend of your venus. enjoy it."
-    },
-    {
-     "label": "air",
-     "color": "capricorn",
-     "text": "venus is coming to you. get ready."
-    },
-    {
-     "label": "water",
-     "color": "capricorn",
-     "text": "ask, don't hint."
     }
    ]
   },

@@ -21,9 +21,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · jan 16",
    "headline": "the *moon* is in *taurus*. you're allowed to stay in",
-   "dek": "and venus squares mars, so maybe you should",
    "art": {
     "kind": "moon",
     "phase": 0.3,
@@ -33,8 +31,6 @@
   {
    "layout": "story",
    "sign": "taurus",
-   "kicker": "jan 16 · moon in taurus",
-   "tag": "the moon",
    "headline": "comfort is the *plan* today",
    "body": "a taurus moon reads as slow, warm, a bit stubborn. good for a long dinner. bad for being rushed.",
    "art": {
@@ -45,8 +41,6 @@
   {
    "layout": "story",
    "sign": "virgo",
-   "kicker": "jan 16 · 10° sagittarius / virgo",
-   "tag": "one thing",
    "headline": "*venus* square mars: want it, wait on it",
    "body": "astrologers read it as wanting more than the timing allows. let the slow one be slow.",
    "art": {

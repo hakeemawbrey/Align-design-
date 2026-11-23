@@ -23,9 +23,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "today's sky · jan 23",
    "headline": "the morning after the *full moon*. the *moon*'s still in leo",
-   "dek": "and the follow-up text is blessed",
    "art": {
     "kind": "figure",
     "sign": "leo"
@@ -34,8 +32,6 @@
   {
    "layout": "story",
    "sign": "leo",
-   "kicker": "jan 23 · moon in leo",
-   "tag": "the moon",
    "headline": "still loud, a bit *softer*",
    "body": "the moon is waning in leo. read it as the day to be generous about what got said last night.",
    "art": {
@@ -47,8 +43,6 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "jan 23 · 18° aquarius / sagittarius",
-   "tag": "one thing",
    "headline": "*mercury* sextile venus: say the nice thing",
    "body": "an easy aspect for kind words. if last night went well, tell them. if it didn't, tell them kindly.",
    "art": {

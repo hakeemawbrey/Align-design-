@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "who this hits · feb 23",
    "headline": "the last stretch of *mercury* retrograde. who it hits now",
    "art": {
     "kind": "planet",
@@ -36,11 +35,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 18 – mar 3",
-   "tag": "the astronomy",
    "sign": "aquarius",
    "headline": "*mercury* backed out of pisces into aquarius",
-   "body": "it crossed back on feb 18 and appears to keep sliding until it stations direct at 20.9° aquarius on mar 3. after that it looks like it's moving forward again.",
+   "body": "it crossed back on feb 18 and seems to keep sliding until it turns direct at 20.9° aquarius on mar 3.",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -52,9 +49,8 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "accent": "rub",
-   "headline": "tier *one*",
+   "headline": "hits *hardest*",
    "rows": [
     {
      "sign": "aquarius",
@@ -75,9 +71,8 @@
   },
   {
    "layout": "list",
-   "kicker": "feels it",
    "accent": "gold",
-   "headline": "tier *two*",
+   "headline": "feels *it*",
    "rows": [
     {
      "sign": "taurus",
@@ -103,7 +98,6 @@
   },
   {
    "layout": "list",
-   "kicker": "background noise",
    "accent": "spark",
    "headline": "mostly *fine*",
    "rows": [

@@ -10,8 +10,7 @@
  "facts": [
   "2026-12-12 venus sextile mars",
   "2026-12-11 venus in scorpio",
-  "2026-12-11 mars in virgo",
-  "2026-12-09 venus square pluto"
+  "2026-12-11 mars in virgo"
  ],
  "caption": "love weather: venus in scorpio sextiles mars in virgo on saturday morning. the easiest weekend for asking someone out this month.",
  "hashtags": [
@@ -25,7 +24,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "love weather · dec 11",
    "headline": "*venus* and mars finally agree. ask them out this weekend",
    "art": {
     "kind": "planet",
@@ -46,9 +44,8 @@
    "layout": "story",
    "sign": "scorpio",
    "kicker": "sat dec 12 · morning",
-   "tag": "venus sextile mars",
    "headline": "*venus* in scorpio, mars in virgo: a friendly angle",
-   "body": "a sextile is 60° apart, the easygoing aspect. astrologers read venus-mars sextiles as want and action pointing the same way. the venus-pluto squeeze from wednesday is behind you.",
+   "body": "a sextile is 60° apart, the easygoing aspect. astrologers read it as want and action pointing the same way.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -58,7 +55,6 @@
   },
   {
    "layout": "list",
-   "kicker": "this weekend",
    "headline": "good weekend *for*",
    "rows": [
     {
@@ -69,23 +65,17 @@
     {
      "label": "good",
      "color": "spark",
-     "text": "showing up early and paying attention"
+     "text": "saying what you are looking for"
     },
     {
      "label": "good",
      "color": "spark",
      "text": "one real compliment, said once"
-    },
-    {
-     "label": "good",
-     "color": "spark",
-     "text": "saying what you are looking for"
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "this weekend",
    "headline": "bad weekend *for*",
    "rows": [
     {
@@ -96,23 +86,17 @@
     {
      "label": "bad",
      "color": "rub",
-     "text": "fixing their life on date one"
-    },
-    {
-     "label": "bad",
-     "color": "rub",
      "text": "replying in a paragraph to a “hey”"
     },
     {
      "label": "bad",
      "color": "rub",
-     "text": "keeping score from last weekend"
+     "text": "fixing their life on date one"
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "by element",
    "headline": "this weekend, *by element*",
    "rows": [
     {

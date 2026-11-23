@@ -26,9 +26,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "who this hits · heads-up",
    "headline": "*mars* backs into leo on sunday. here's who feels it",
-   "dek": "still retrograde, back where it was in november",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -38,8 +36,6 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 21 · 14:15 utc",
-   "tag": "the astronomy",
    "sign": "leo",
    "headline": "*mars* left leo on nov 25. now it looks like it's coming back",
    "body": "mars turned retrograde at 10.4° virgo on jan 10. as earth keeps passing it, it appears to slide back across the line into leo, where jupiter is too.",
@@ -54,14 +50,13 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "accent": "rub",
-   "headline": "tier *one*",
+   "headline": "hits *hardest*",
    "rows": [
     {
      "sign": "leo",
      "label": "leo",
-     "text": "old drive comes back. aim it, don't swing it."
+     "text": "old drive returns. aim it, don't swing it."
     },
     {
      "sign": "virgo",
@@ -77,9 +72,8 @@
   },
   {
    "layout": "list",
-   "kicker": "feels it",
    "accent": "gold",
-   "headline": "tier *two*",
+   "headline": "feels *it*",
    "rows": [
     {
      "sign": "taurus",
@@ -105,7 +99,6 @@
   },
   {
    "layout": "list",
-   "kicker": "background noise",
    "accent": "spark",
    "headline": "mostly *fine*",
    "rows": [
@@ -139,7 +132,7 @@
   {
    "layout": "end",
    "headline": "the fight isn't back. the *pattern* is.",
-   "body": "tag the one in tier one. save this for sunday.",
+   "body": "tag your leo. save this for sunday.",
    "art": {
     "kind": "figure",
     "sign": "leo"

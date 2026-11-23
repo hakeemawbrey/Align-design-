@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "love weather · dec 18",
    "headline": "love weather for *party* season: go talk to them",
    "art": {
     "kind": "aura",
@@ -36,9 +35,8 @@
    "layout": "story",
    "sign": "scorpio",
    "kicker": "this weekend",
-   "tag": "where venus is",
    "headline": "*venus* is still in scorpio, and today is generous",
-   "body": "venus in scorpio wants depth. the sun trines jupiter today, and the moon moves from aries into taurus on saturday afternoon: bold first, then cosy.",
+   "body": "venus in scorpio wants depth. the sun trines jupiter today, and the moon moves from aries into taurus saturday afternoon: bold first, then cosy.",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -47,7 +45,6 @@
   },
   {
    "layout": "list",
-   "kicker": "party season",
    "headline": "good weekend *for*",
    "rows": [
     {
@@ -58,23 +55,17 @@
     {
      "label": "good",
      "color": "spark",
-     "text": "leaving together to get food after"
-    },
-    {
-     "label": "good",
-     "color": "spark",
      "text": "asking “are you seeing anyone?” sober"
     },
     {
      "label": "good",
      "color": "spark",
-     "text": "introducing them to your friends"
+     "text": "leaving together to get food after"
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "party season",
    "headline": "bad weekend *for*",
    "rows": [
     {
@@ -90,45 +81,12 @@
     {
      "label": "bad",
      "color": "rub",
-     "text": "pretending “let's see where it goes” is fine"
-    },
-    {
-     "label": "bad",
-     "color": "rub",
      "text": "mistaking mistletoe for a plan"
     }
    ]
   },
   {
-   "layout": "list",
-   "kicker": "by element",
-   "headline": "party season, *by element*",
-   "rows": [
-    {
-     "label": "fire",
-     "color": "scorpio",
-     "text": "one person, not the whole room."
-    },
-    {
-     "label": "earth",
-     "color": "scorpio",
-     "text": "say yes to the invite you almost skipped."
-    },
-    {
-     "label": "air",
-     "color": "scorpio",
-     "text": "ask the second question."
-    },
-    {
-     "label": "water",
-     "color": "scorpio",
-     "text": "you are reading them right. act on it."
-    }
-   ]
-  },
-  {
    "layout": "table",
-   "kicker": "ranked",
    "headline": "who wins *party* season",
    "columns": [
     "sign",
@@ -164,12 +122,6 @@
      "sign": "taurus",
      "text": "arrived late, stayed for the food",
      "value": "cosy"
-    },
-    {
-     "label": "capricorn",
-     "sign": "capricorn",
-     "text": "left at ten. no regrets",
-     "value": "efficient"
     }
    ]
   },

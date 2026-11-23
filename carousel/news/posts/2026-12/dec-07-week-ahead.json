@@ -10,7 +10,6 @@
  ],
  "facts": [
   "2026-12-08 new moon sagittarius",
-  "2026-12-08 mercury opposition uranus",
   "2026-12-09 venus square pluto",
   "2026-12-10 saturn stations direct aries",
   "2026-12-11 mercury trine saturn",
@@ -30,9 +29,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of dec 7",
    "headline": "the sky's busiest week of december starts *now*",
-   "dek": "7 stories · swipe",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -43,9 +40,8 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "tue dec 8",
-   "tag": "new moon",
    "headline": "new moon in *sagittarius*",
-   "body": "a fresh start for the honest version of you. set one intention, not ten.",
+   "body": "set one intention, not ten. make it the honest one.",
    "art": {
     "kind": "moon",
     "phase": 0,
@@ -54,24 +50,10 @@
   },
   {
    "layout": "story",
-   "sign": "gemini",
-   "kicker": "tue dec 8",
-   "tag": "mercury opposite uranus",
-   "headline": "*mercury* opposes uranus: the text you didn't see coming",
-   "body": "reads as surprise news and sudden opinions. reply after one breath.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "uranus"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "scorpio",
    "kicker": "wed dec 9",
-   "tag": "venus square pluto",
    "headline": "*venus* squares pluto: jealousy, meet a mirror",
-   "body": "intense feelings, power games on offer. read it as a day to decline the game.",
+   "body": "power games on offer. read it as a day to decline the game.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -82,9 +64,8 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "thu dec 10",
-   "tag": "saturn direct",
    "headline": "*saturn* turns direct in aries",
-   "body": "after months of apparent backing up, saturn holds still and moves forward again. stuck plans can start moving.",
+   "body": "after months of apparent backing up, saturn moves forward again. stuck plans can start moving.",
    "art": {
     "kind": "planet",
     "body": "saturn",
@@ -95,9 +76,8 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "sat dec 12",
-   "tag": "venus sextile mars",
    "headline": "*venus* and mars get along for once",
-   "body": "the nicest aspect of the week. a good saturday to ask someone out properly.",
+   "body": "the nicest angle of the week. a good saturday to ask someone out properly.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -108,7 +88,6 @@
    "layout": "story",
    "sign": "leo",
    "kicker": "sat dec 12",
-   "tag": "two stations",
    "headline": "*jupiter* turns retrograde in leo as neptune goes direct",
    "body": "growth slows down to check its work. the fog lifts a little.",
    "art": {
@@ -122,7 +101,7 @@
    "layout": "end",
    "sign": "leo",
    "headline": "the one to watch: *saturday*",
-   "body": "venus sextile mars in the morning, jupiter stationing at night. a good day for a real date.",
+   "body": "the nicest angle and a big station in one day. book the real date.",
    "art": {
     "kind": "pair",
     "a": "venus",

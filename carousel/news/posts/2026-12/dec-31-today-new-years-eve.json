@@ -27,7 +27,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · new year's eve",
    "headline": "the *moon* is in libra for the midnight kiss. ask nicely",
    "art": {
     "kind": "moon",
@@ -38,10 +37,8 @@
   {
    "layout": "story",
    "sign": "libra",
-   "kicker": "all day",
-   "tag": "moon in libra",
    "headline": "a waning *moon* in libra: charm, balance, manners",
-   "body": "one day past last quarter. reads as a night for kindness and fair trades. the moon slips into scorpio after midnight, so things get deeper at 12:01.",
+   "body": "one day past last quarter. reads as a night for kindness and fair trades. the moon slips into scorpio before dawn on jan 1.",
    "art": {
     "kind": "figure",
     "sign": "libra"
@@ -51,7 +48,6 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "morning and night",
-   "tag": "two trines",
    "headline": "the *sun* and mercury both trine mars",
    "body": "capricorn sun and mercury, mars in virgo: drive and words agree. good for saying what you want next year, and meaning it.",
    "art": {

@@ -23,9 +23,7 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "love weather · dec 4",
    "headline": "love weather: *venus* in scorpio",
-   "dek": "the weekend gets intense. in a good way, if you let it",
    "art": {
     "kind": "aura",
     "sign": "libra"
@@ -43,9 +41,8 @@
    "layout": "story",
    "sign": "scorpio",
    "kicker": "dec 4 · 3:15 am et",
-   "tag": "where venus is",
    "headline": "*venus* just walked into scorpio",
-   "body": "venus left libra overnight and stays in scorpio until early january. astrologers read it as love that wants depth, privacy and a straight answer.",
+   "body": "venus left libra overnight and stays until early january. reads as love that wants depth, privacy and a straight answer.",
    "art": {
     "kind": "planet",
     "body": "venus",
@@ -55,7 +52,6 @@
   },
   {
    "layout": "list",
-   "kicker": "this weekend",
    "headline": "good weekend *for*",
    "rows": [
     {
@@ -72,24 +68,13 @@
      "label": "good",
      "color": "spark",
      "text": "telling someone they matter, plainly"
-    },
-    {
-     "label": "good",
-     "color": "spark",
-     "text": "texting back the person who texts back"
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "this weekend",
    "headline": "bad weekend *for*",
    "rows": [
-    {
-     "label": "bad",
-     "color": "rub",
-     "text": "checking who viewed your story"
-    },
     {
      "label": "bad",
      "color": "rub",
@@ -103,13 +88,12 @@
     {
      "label": "bad",
      "color": "rub",
-     "text": "testing people who already passed"
+     "text": "checking who viewed your story"
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "by element",
    "headline": "venus in scorpio, *by element*",
    "rows": [
     {

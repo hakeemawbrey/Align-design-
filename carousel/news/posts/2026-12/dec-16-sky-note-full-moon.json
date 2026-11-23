@@ -21,9 +21,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
    "headline": "does the *full moon* make people act crazy?",
-   "dek": "the next one is dec 23. here is what the records say",
    "art": {
     "kind": "moon",
     "phase": 0.5
@@ -34,14 +32,13 @@
    "kicker": "going around",
    "headline": "“everyone acts unhinged on a full moon”",
    "verdict": "false",
-   "body": "large reviews of hospital, emergency and police records have mostly found no reliable link between the full moon and wild behaviour. some small studies suggest people sleep a little less around it. tired is not unhinged."
+   "body": "large reviews of hospital, emergency and police records mostly find no reliable link to wild behaviour. some small studies suggest people sleep a bit less. tired is not unhinged."
   },
   {
    "layout": "story",
    "kicker": "the astronomy",
-   "tag": "full moon",
    "headline": "a full moon is just the *moon* opposite the sun",
-   "body": "earth sits between them, so we see the whole lit side. it happens about every 29.5 days. the moon is not closer or stronger on a full moon. it is just brighter, and brighter nights are memorable.",
+   "body": "earth sits between them, so we see the whole lit side, about every 29.5 days. it isn't closer or stronger, just brighter, and bright nights stick.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -51,9 +48,8 @@
   {
    "layout": "story",
    "kicker": "what astrologers read",
-   "tag": "the reading",
    "headline": "astrologers read full moons as *culminations*",
-   "body": "a peak, not a breakdown: things you started around the new moon come to a head. the dec 23 full moon is in cancer, which reads as home, family and who you miss.",
+   "body": "a peak, not a breakdown: what started at the new moon comes to a head. the dec 23 full moon is in cancer: home, family, who you miss.",
    "art": {
     "kind": "moon",
     "phase": 0.5,

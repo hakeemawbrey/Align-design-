@@ -23,7 +23,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · sat dec 26",
    "headline": "the *moon* is in leo and the leftovers are dramatic",
    "art": {
     "kind": "moon",
@@ -34,8 +33,6 @@
   {
    "layout": "story",
    "sign": "leo",
-   "kicker": "all day",
-   "tag": "moon in leo",
    "headline": "a waning *moon* in leo wants a little attention",
    "body": "reads as warmth, pride and wanting to be seen. compliment someone out loud.",
    "art": {
@@ -47,7 +44,6 @@
    "layout": "story",
    "sign": "capricorn",
    "kicker": "this afternoon",
-   "tag": "mercury square neptune",
    "headline": "*mercury* squares neptune: messages get blurry",
    "body": "mercury, newly in capricorn, clashes with neptune in aries. read twice. send once.",
    "art": {

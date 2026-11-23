@@ -19,9 +19,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
    "headline": "is your sign *ophiuchus* now?",
-   "dek": "the 13th sign comes back every winter. here is the honest version",
    "art": {
     "kind": "stars",
     "tint": "violet"
@@ -32,14 +30,13 @@
    "kicker": "going around",
    "headline": "“nasa added a 13th sign, so your sign changed”",
    "verdict": "false",
-   "body": "nasa didn't add a sign. it explained that the sun's path crosses 13 constellations, and that the constellations have drifted from the signs over about 2,000 years. that's astronomy, not a new zodiac."
+   "body": "nasa didn't add a sign. it explained that the sun crosses 13 constellations, which have drifted from the signs over about 2,000 years. astronomy, not a new zodiac."
   },
   {
    "layout": "story",
    "kicker": "the astronomy",
-   "tag": "precession",
    "headline": "the *sky* slowly shifts against the calendar",
-   "body": "earth's axis wobbles, so the stars behind the sun drift about one degree every 72 years. the sun does pass in front of ophiuchus each year. constellations are also different sizes, so the sun spends uneven time in each.",
+   "body": "earth's axis wobbles, so the stars behind the sun drift about one degree every 72 years. and yes, the sun does cross ophiuchus each year.",
    "art": {
     "kind": "wheel",
     "tint": "violet"
@@ -48,9 +45,8 @@
   {
    "layout": "story",
    "kicker": "what astrologers use",
-   "tag": "tropical zodiac",
    "headline": "western signs follow the *seasons*, not the stars",
-   "body": "the tropical zodiac starts aries at the march equinox and cuts the year into 12 equal slices. by design, it never moves. your sign is the season you were born in, and that season is the same as it was.",
+   "body": "the tropical zodiac starts aries at the march equinox and cuts the year into 12 equal slices. your sign is your birth season, and that hasn't moved.",
    "art": {
     "kind": "stars",
     "tint": "gold"
@@ -59,7 +55,7 @@
   {
    "layout": "end",
    "headline": "you're still a *sagittarius*. you just learned a fun fact",
-   "body": "say the honest thing: astrology is a reading, and the astronomy is still true.",
+   "body": "astrology is a reading. the astronomy is still true.",
    "art": {
     "kind": "figure",
     "sign": "sagittarius"

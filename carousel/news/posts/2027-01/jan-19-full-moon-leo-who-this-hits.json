@@ -26,9 +26,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "who this hits · jan 19",
    "headline": "the *full moon* in *leo* is friday. here's who it hits",
-   "dek": "the month's loudest night, by sign",
    "art": {
     "kind": "moon",
     "phase": 0.45,
@@ -37,8 +35,7 @@
   },
   {
    "layout": "table",
-   "kicker": "ranked",
-   "headline": "most likely to *say it out loud* on friday",
+   "headline": "most likely to say it *out loud* on friday",
    "columns": [
     "sign",
     "odds"
@@ -54,12 +51,6 @@
      "label": "aquarius",
      "sign": "aquarius",
      "text": "your season, the moon opposite you",
-     "value": "likely"
-    },
-    {
-     "label": "aries",
-     "sign": "aries",
-     "text": "fire sign, fire moon, no filter",
      "value": "likely"
     },
     {
@@ -84,7 +75,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier one · hits hardest",
+   "kicker": "tier one",
    "headline": "you'll *feel* this",
    "rows": [
     {
@@ -95,7 +86,7 @@
     {
      "sign": "aquarius",
      "label": "aquarius",
-     "text": "the moon faces your new season. partners talk."
+     "text": "the moon faces your season. partners talk."
     },
     {
      "sign": "taurus",
@@ -111,7 +102,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier two · feels it",
+   "kicker": "tier two",
    "headline": "you'll *notice* this",
    "rows": [
     {
@@ -138,7 +129,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier three · background noise",
+   "kicker": "tier three",
    "headline": "you'll *barely* clock it",
    "rows": [
     {

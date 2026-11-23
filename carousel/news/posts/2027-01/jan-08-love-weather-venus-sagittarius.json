@@ -24,7 +24,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "love weather · jan 8",
    "labels": [
     "scorpio",
     "sagittarius"
@@ -42,10 +41,9 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "jan 7 – feb 3 · venus in sagittarius",
-   "tag": "where venus is",
-   "headline": "venus left scorpio and *opened the window*",
-   "body": "astrologers read venus in sagittarius as love that wants air: adventure, laughs, blunt honesty. less brooding, more asking.",
+   "kicker": "jan 7 – feb 3",
+   "headline": "love wants *air* now",
+   "body": "astrologers read venus in sagittarius as adventure, laughs and blunt honesty. less brooding, more asking.",
    "art": {
     "kind": "aura",
     "sign": "sagittarius"
@@ -54,7 +52,7 @@
   {
    "layout": "list",
    "kicker": "this weekend",
-   "headline": "good weekend for",
+   "headline": "good for / bad for",
    "rows": [
     {
      "color": "spark",
@@ -63,21 +61,9 @@
     },
     {
      "color": "spark",
-     "label": "sat",
-     "text": "saying yes to a plan you didn't make."
-    },
-    {
-     "color": "spark",
      "label": "any",
      "text": "saying what you want on date one."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "this weekend",
-   "headline": "bad weekend for",
-   "rows": [
+    },
     {
      "color": "rub",
      "label": "sat",
@@ -87,23 +73,17 @@
      "color": "rub",
      "label": "sun",
      "text": "starting a fight. mars stations retrograde."
-    },
-    {
-     "color": "rub",
-     "label": "any",
-     "text": "pretending \"let's see\" is a plan."
     }
    ]
   },
   {
    "layout": "list",
-   "kicker": "by element",
    "headline": "venus in sagittarius, *for you*",
    "rows": [
     {
      "color": "sagittarius",
      "label": "fire",
-     "text": "you're in your element. flirt like you mean it."
+     "text": "your element. flirt like you mean it."
     },
     {
      "color": "sagittarius",
@@ -124,7 +104,7 @@
   },
   {
    "layout": "end",
-   "headline": "your sun is who you are. *your venus is how you love.*",
+   "headline": "your sun is who you are. your *venus* is how you love.",
    "body": "find your venus sign before your next first date.",
    "art": {
     "kind": "planet",

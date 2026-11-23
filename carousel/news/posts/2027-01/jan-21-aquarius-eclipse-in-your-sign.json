@@ -24,9 +24,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sign callout · jan 21",
    "headline": "*aquarius*, it's your season, and there's an *eclipse* in 16 days",
-   "dek": "send this to your aquarius",
    "art": {
     "kind": "aura",
     "sign": "aquarius"
@@ -35,7 +33,6 @@
   {
    "layout": "callout",
    "sign": "aquarius",
-   "kicker": "aquarius",
    "headline": "the sun, mercury and pluto are *all* in your sign",
    "art": {
     "kind": "figure",

@@ -18,14 +18,11 @@
   "2027-02-06 solar eclipse aquarius",
   "2027-02-12 sun in aquarius",
   "2027-02-12 pluto in aquarius",
-  "2027-02-18 sun enters pisces",
-  "2027-02-10 sun opposition jupiter",
-  "2027-02-18 mercury enters aquarius"
+  "2027-02-18 sun enters pisces"
  ],
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky news · feb 12",
    "headline": "*aquarius*, an eclipse, pluto and the sun, all in your sign this week",
    "art": {
     "kind": "planet",
@@ -35,11 +32,9 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 6 – feb 18",
-   "tag": "aquarius",
    "sign": "aquarius",
-   "headline": "the eclipse, the *sun* and pluto, all in your sign",
-   "body": "the annular eclipse fell in aquarius on feb 6. the sun opposed jupiter on feb 10. pluto sits in aquarius too. and mercury backs in on feb 18.",
+   "headline": "the *eclipse* was yours. the sun stays until feb 18",
+   "body": "the annular eclipse fell in aquarius on feb 6, and pluto sits in your sign too. read it as a reset that is still settling.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -49,7 +44,6 @@
   {
    "layout": "callout",
    "sign": "aquarius",
-   "kicker": "aquarius",
    "headline": "being hard to read isn't the same as being *deep*",
    "body": "let one person in on purpose.",
    "art": {

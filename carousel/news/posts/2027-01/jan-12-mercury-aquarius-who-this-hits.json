@@ -25,9 +25,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "who this hits · jan 12",
    "headline": "*mercury* walks into *aquarius* tomorrow. who this hits",
-   "dek": "the planet of talk gets cool and clever",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -36,7 +34,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier one · hits hardest",
+   "kicker": "tier one",
    "headline": "your *words* change",
    "rows": [
     {
@@ -63,7 +61,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier two · feels it",
+   "kicker": "tier two",
    "headline": "you'll *hear* it",
    "rows": [
     {
@@ -90,7 +88,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier three · background noise",
+   "kicker": "tier three",
    "headline": "you'll *barely* clock it",
    "rows": [
     {
@@ -118,7 +116,7 @@
   {
    "layout": "end",
    "headline": "clever isn't *honest*. you can be both.",
-   "body": "mercury meets pluto on jan 15. if something true wants out, let it out once, kindly.",
+   "body": "mercury meets pluto jan 15. if something true wants out, say it once, kindly.",
    "art": {
     "kind": "pair",
     "a": "mercury",

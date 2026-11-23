@@ -10,7 +10,6 @@
  ],
  "facts": [
   "2026-12-01 last quarter virgo",
-  "2026-12-04 mercury square jupiter",
   "2026-12-04 venus enters scorpio",
   "2026-12-04 mars square uranus",
   "2026-12-06 mercury enters sagittarius"
@@ -26,9 +25,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of nov 30",
    "headline": "what just happened in the *sky* this week?",
-   "dek": "5 stories · swipe",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -44,9 +41,8 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "dec 1",
-   "tag": "last quarter",
    "headline": "a last quarter moon in *virgo* cleared the desk",
-   "body": "half-lit and shrinking. reads as the week to finish things, not start them.",
+   "body": "half-lit and shrinking. reads as a week for finishing, not starting.",
    "art": {
     "kind": "moon",
     "phase": 0.75,
@@ -55,22 +51,8 @@
   },
   {
    "layout": "story",
-   "sign": "leo",
-   "kicker": "dec 4",
-   "tag": "mercury square jupiter",
-   "headline": "*mercury* squared jupiter and everyone overpromised",
-   "body": "big talk, big plans. read it as a reminder to say only what you can back up.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "jupiter"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "scorpio",
    "kicker": "dec 4",
-   "tag": "venus ingress",
    "headline": "*venus* walked into scorpio. small talk is over",
    "body": "love in scorpio reads as all or nothing, and venus stays until january.",
    "art": {
@@ -83,9 +65,8 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "dec 4",
-   "tag": "mars square uranus",
    "headline": "*mars* squared uranus: the urge to blow it all up",
-   "body": "mars in virgo met sudden uranus. if you quit something on a whim friday, sleep on it.",
+   "body": "mars in virgo met sudden uranus. quit something on a whim friday? sleep on it.",
    "art": {
     "kind": "pair",
     "a": "mars",
@@ -96,7 +77,6 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "dec 6",
-   "tag": "mercury ingress",
    "headline": "*mercury* entered sagittarius this morning",
    "body": "conversations get louder and more honest until christmas day.",
    "art": {

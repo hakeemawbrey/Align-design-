@@ -10,8 +10,6 @@
  "facts": [
   "2027-01-18 mercury sextile saturn",
   "2027-01-20 sun enters aquarius",
-  "2027-01-21 sun trine uranus",
-  "2027-01-22 sun sextile neptune",
   "2027-01-22 full moon leo",
   "2027-01-23 mercury sextile venus"
  ],
@@ -26,9 +24,7 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky desk · week of jan 18",
    "headline": "new *season*, full moon, and the one text you've been drafting",
-   "dek": "5 stories · swipe",
    "art": {
     "kind": "planet",
     "body": "sun",
@@ -38,10 +34,9 @@
   {
    "layout": "story",
    "sign": "aries",
-   "kicker": "mon jan 18 · 9° aquarius / aries",
-   "tag": "mercury sextile saturn",
-   "headline": "*mercury* gets serious, in a useful way",
-   "body": "astrologers read it as clear, grown-up talk. good day to set a boundary without a speech.",
+   "kicker": "mon jan 18",
+   "headline": "mercury sextiles *saturn*: grown-up talk",
+   "body": "astrologers read it as clear talk. a good day to set a boundary without a speech.",
    "art": {
     "kind": "pair",
     "a": "mercury",
@@ -51,10 +46,9 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "wed jan 20 · 0° aquarius",
-   "tag": "new season",
+   "kicker": "wed jan 20",
    "headline": "the sun enters *aquarius*",
-   "body": "capricorn hands over to aquarius. read it as a month for friends, ideas and doing things your own way.",
+   "body": "read it as a month for friends, ideas and doing things your own way.",
    "art": {
     "kind": "figure",
     "sign": "aquarius"
@@ -62,24 +56,10 @@
   },
   {
    "layout": "story",
-   "sign": "aquarius",
-   "kicker": "thu jan 21 · fri jan 22",
-   "tag": "sun aspects",
-   "headline": "the sun trines uranus, then sextiles *neptune*",
-   "body": "a surprise thursday, a softer friday. good days to try something you'd usually say no to.",
-   "art": {
-    "kind": "pair",
-    "a": "sun",
-    "b": "uranus"
-   }
-  },
-  {
-   "layout": "story",
    "sign": "leo",
-   "kicker": "fri jan 22 · 2° leo",
-   "tag": "the one to watch",
+   "kicker": "fri jan 22",
    "headline": "full moon in *leo*: say it out loud",
-   "body": "the sun in aquarius, the moon opposite in leo. astrologers read it as heart versus head. the heart gets the mic.",
+   "body": "sun in aquarius, moon opposite in leo. astrologers read it as heart versus head. the heart gets the mic.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -89,8 +69,7 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "sat jan 23 · 18° aquarius / sagittarius",
-   "tag": "after the full moon",
+   "kicker": "sat jan 23",
    "headline": "mercury sextiles *venus*: the easy follow-up",
    "body": "a sweet aspect for the text after the big night. say thanks, say more, say when.",
    "art": {

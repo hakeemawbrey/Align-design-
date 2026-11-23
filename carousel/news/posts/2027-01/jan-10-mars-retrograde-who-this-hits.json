@@ -26,9 +26,7 @@
   {
    "layout": "breaking",
    "word": "retrograde",
-   "kicker": "who this hits · jan 10",
    "headline": "*mars* turns retrograde in *virgo* today. here's who feels it",
-   "dek": "all twelve signs, by tier",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -40,7 +38,6 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "13:00 utc · 10.4° virgo",
-   "tag": "what's happening",
    "headline": "the planet of *drive* appears to back up",
    "body": "earth is overtaking mars, so mars seems to slide back. it re-enters leo on feb 21 and stays retrograde into spring.",
    "art": {
@@ -51,13 +48,13 @@
   },
   {
    "layout": "list",
-   "kicker": "tier one · hits hardest",
+   "kicker": "tier one",
    "headline": "you'll *feel* this",
    "rows": [
     {
      "sign": "virgo",
      "label": "virgo",
-     "text": "**it's in your sign.** slow the push, fix the plan."
+     "text": "**your sign.** slow the push, fix the plan."
     },
     {
      "sign": "pisces",
@@ -78,13 +75,13 @@
   },
   {
    "layout": "list",
-   "kicker": "tier two · feels it",
+   "kicker": "tier two",
    "headline": "you'll *notice* this",
    "rows": [
     {
      "sign": "taurus",
      "label": "taurus",
-     "text": "an old flame flickers. you don't owe it fuel."
+     "text": "an old flame flickers. you owe it no fuel."
     },
     {
      "sign": "capricorn",
@@ -105,13 +102,13 @@
   },
   {
    "layout": "list",
-   "kicker": "tier three · background noise",
+   "kicker": "tier three",
    "headline": "you'll *barely* clock it",
    "rows": [
     {
      "sign": "aries",
      "label": "aries",
-     "text": "routines slip. reset the alarm, not your life."
+     "text": "routines slip. fix the alarm, not your life."
     },
     {
      "sign": "cancer",
@@ -126,14 +123,14 @@
     {
      "sign": "scorpio",
      "label": "scorpio",
-     "text": "a friend group shuffle. stay out of the drama."
+     "text": "a friend-group shuffle. skip the drama."
     }
    ]
   },
   {
    "layout": "end",
    "headline": "slow is not *stuck*. it's the redo.",
-   "body": "the move: don't start the fight you'll have to finish in spring. say the honest thing once, then let it sit.",
+   "body": "don't start the fight you'll finish in spring. say it once, then let it sit.",
    "art": {
     "kind": "figure",
     "sign": "virgo"

@@ -19,19 +19,14 @@
  "facts": [
   "2027-02-02 mercury square uranus",
   "2027-02-03 venus enters capricorn",
-  "2027-02-05 venus square neptune",
   "2027-02-06 solar eclipse aquarius",
   "2027-02-07 venus trine mars",
-  "2027-02-07 mercury opposition mars",
-  "2027-02-08 uranus stations direct gemini",
   "2027-02-09 mercury stations retrograde pisces"
  ],
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of feb 1",
    "headline": "what just happened in the *sky* this week?",
-   "dek": "5 stories · one is about your love life",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -46,7 +41,6 @@
   {
    "layout": "story",
    "kicker": "feb 3",
-   "tag": "venus",
    "sign": "capricorn",
    "headline": "*venus* went into capricorn. romance got a calendar",
    "body": "until march 1. read it as: the person who follows up is the person who's interested.",
@@ -58,21 +52,7 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 5",
-   "tag": "venus square neptune",
-   "sign": "capricorn",
-   "headline": "a soft-focus day. *venus* met the fog",
-   "body": "astrologers read venus square neptune as a day to want what you imagine, not what's there. check again in daylight.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "neptune"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 6 · 15:59 utc",
-   "tag": "eclipse",
+   "kicker": "feb 6",
    "sign": "aquarius",
    "headline": "the annular *eclipse* in aquarius drew its ring",
    "body": "a new moon reset. if you started one honest thing this week, that was the move.",
@@ -85,10 +65,9 @@
   {
    "layout": "story",
    "kicker": "feb 7",
-   "tag": "venus trine mars",
    "sign": "virgo",
    "headline": "*venus* and mars got along, for once",
-   "body": "a trine reads as easy flow between wanting and doing. mercury also opposed mars today: easy to want, easy to snap. pick the first.",
+   "body": "astrologers read a trine as easy flow between wanting and doing. a good day to ask.",
    "art": {
     "kind": "pair",
     "a": "venus",
@@ -97,11 +76,10 @@
   },
   {
    "layout": "story",
-   "kicker": "the one to watch · feb 9",
-   "tag": "mercury",
+   "kicker": "the one to watch",
    "sign": "pisces",
    "headline": "tuesday: *mercury* turns retrograde in pisces",
-   "body": "and uranus turns direct tomorrow. read the next three weeks as re-dos. save your drafts.",
+   "body": "read the next three weeks as re-dos. save your drafts.",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -112,7 +90,7 @@
   {
    "layout": "end",
    "headline": "eclipses close doors. close yours *politely*.",
-   "body": "save this. tuesday's post is the retrograde.",
+   "body": "save this for tuesday.",
    "art": {
     "kind": "moon",
     "phase": 0.04

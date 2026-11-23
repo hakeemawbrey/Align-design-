@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "love weather · jan 15",
    "labels": [
     "venus",
     "mars"
@@ -46,8 +45,7 @@
   {
    "layout": "story",
    "sign": "sagittarius",
-   "kicker": "jan 15 · 9° sagittarius / aries",
-   "tag": "today",
+   "kicker": "today",
    "headline": "venus trines *saturn*: commit to something small",
    "body": "astrologers read it as steady affection. a second date, a real plan, a text you'll stand by tomorrow.",
    "art": {
@@ -59,10 +57,9 @@
   {
    "layout": "story",
    "sign": "virgo",
-   "kicker": "jan 16 · 10° sagittarius / virgo",
-   "tag": "tomorrow",
+   "kicker": "tomorrow",
    "headline": "venus squares a *retrograde* mars",
-   "body": "desire runs ahead and energy lags behind. read it as chemistry with bad timing. you don't have to fix it tonight.",
+   "body": "read it as chemistry with bad timing. you don't have to fix it tonight.",
    "art": {
     "kind": "planet",
     "body": "mars",
@@ -72,8 +69,7 @@
   },
   {
    "layout": "list",
-   "kicker": "this weekend",
-   "headline": "good for / bad for",
+   "headline": "this weekend: good for / bad for",
    "rows": [
     {
      "color": "spark",
@@ -99,7 +95,6 @@
   },
   {
    "layout": "list",
-   "kicker": "by element",
    "headline": "this weekend, *for you*",
    "rows": [
     {
@@ -126,7 +121,7 @@
   },
   {
    "layout": "end",
-   "headline": "if it's one-sided, it isn't alignment. *it's a hobby.*",
+   "headline": "if it's one-sided, it isn't alignment. it's a *hobby*.",
    "body": "your venus is how you love. it has to be mutual.",
    "art": {
     "kind": "planet",

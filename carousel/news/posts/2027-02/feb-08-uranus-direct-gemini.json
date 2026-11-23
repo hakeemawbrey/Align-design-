@@ -21,7 +21,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "sky news · feb 8",
    "headline": "*gemini*, uranus stops reversing in your sign today",
    "art": {
     "kind": "planet",
@@ -31,11 +30,10 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 8 · 1.7° gemini",
-   "tag": "uranus direct",
+   "kicker": "1.7° gemini",
    "sign": "gemini",
    "headline": "*uranus* pauses, then moves forward again",
-   "body": "from earth, uranus has looked like it was drifting backwards for months. today it stations and turns direct. astrologers read uranus as change you didn't plan.",
+   "body": "from earth, uranus has looked like it was drifting backwards for months. today it turns direct. astrologers read uranus as change you didn't plan.",
    "art": {
     "kind": "planet",
     "body": "uranus",
@@ -46,7 +44,6 @@
   {
    "layout": "callout",
    "sign": "gemini",
-   "kicker": "gemini",
    "headline": "you can want *change* and still pick a person",
    "body": "restless is fine. vague isn't.",
    "art": {

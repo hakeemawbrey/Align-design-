@@ -21,7 +21,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "today's sky · feb 27",
    "headline": "the moon's in *sagittarius*: say it straight, today",
    "art": {
     "kind": "moon",
@@ -31,8 +30,6 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 27 · 10:52 utc",
-   "tag": "moon in sagittarius",
    "sign": "sagittarius",
    "headline": "the *moon* moves into the honest sign",
    "body": "it reaches last quarter tomorrow. astrologers read a sagittarius moon as blunt and restless. mercury's still retrograde, so blunt, but kind.",

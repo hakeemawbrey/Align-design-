@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "who this hits · jan 26",
    "headline": "two planets hit *jupiter* this week. who gets the luck",
    "dek": "and who gets the overpromise",
    "art": {
@@ -39,7 +38,6 @@
    "layout": "story",
    "sign": "leo",
    "kicker": "wed jan 27 · thu jan 28",
-   "tag": "what's happening",
    "headline": "mercury opposes it, *venus* trines it",
    "body": "jupiter is retrograde in leo. astrologers read mercury's hit as big talk and venus's as big warmth. same planet, two moods.",
    "art": {
@@ -55,7 +53,6 @@
   },
   {
    "layout": "table",
-   "kicker": "ranked",
    "headline": "most likely to *overpromise* this week",
    "columns": [
     "sign",
@@ -81,12 +78,6 @@
      "value": "high"
     },
     {
-     "label": "gemini",
-     "sign": "gemini",
-     "text": "says yes to three plans at once",
-     "value": "medium"
-    },
-    {
      "label": "pisces",
      "sign": "pisces",
      "text": "means it. also means the other thing",
@@ -102,7 +93,7 @@
   },
   {
    "layout": "list",
-   "kicker": "tier one · hits hardest",
+   "kicker": "tier one",
    "headline": "you'll *feel* this",
    "rows": [
     {
@@ -118,34 +109,7 @@
     {
      "sign": "sagittarius",
      "label": "sagittarius",
-     "text": "venus trine jupiter is yours. go on the date."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "tier two · the rest",
-   "headline": "you'll *notice* it",
-   "rows": [
-    {
-     "sign": "aries",
-     "label": "aries",
-     "text": "fun plans multiply. pick the best one."
-    },
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "a home plan grows. budget first."
-    },
-    {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "a work win. don't promise the next one yet."
-    },
-    {
-     "sign": "libra",
-     "label": "libra",
-     "text": "friends invite you. just go."
+     "text": "the venus trine is yours. go on the date."
     }
    ]
   },

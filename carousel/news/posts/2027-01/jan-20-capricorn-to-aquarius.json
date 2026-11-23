@@ -24,7 +24,6 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "new season · jan 20",
    "labels": [
     "capricorn",
     "aquarius"
@@ -43,7 +42,7 @@
    "layout": "callout",
    "sign": "capricorn",
    "kicker": "goodbye capricorn",
-   "headline": "you made the plan. *you can stop* checking it every hour.",
+   "headline": "you made the plan. you can *stop* checking it every hour.",
    "art": {
     "kind": "figure",
     "sign": "capricorn"
@@ -63,10 +62,9 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "jan 20 – feb 18 · aquarius season",
-   "tag": "good for",
+   "kicker": "jan 20 – feb 18",
    "headline": "friends, ideas and *honest* distance",
-   "body": "astrologers read aquarius season as the month to meet people through people. the sun meets pluto here on jan 25, and an annular solar eclipse lands in aquarius on feb 6.",
+   "body": "astrologers read it as the month to meet people through people. the sun meets pluto here jan 25, and an annular solar eclipse lands feb 6.",
    "art": {
     "kind": "aura",
     "sign": "aquarius"

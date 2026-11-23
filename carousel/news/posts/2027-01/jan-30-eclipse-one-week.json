@@ -28,8 +28,7 @@
   {
    "layout": "breaking",
    "word": "eclipse",
-   "kicker": "eclipse alert · 7 days",
-   "headline": "one week until the *ring of fire* eclipse in *aquarius*",
+   "headline": "one week until the ring of fire *eclipse* in *aquarius*",
    "dek": "feb 6 · 15:59 utc · 17.6° aquarius",
    "art": {
     "kind": "eclipse",
@@ -40,10 +39,8 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "feb 6 · 15:59 utc",
-   "tag": "the facts",
    "headline": "an *annular* solar eclipse at the new moon",
-   "body": "the moon covers the sun's middle and leaves a bright ring. greatest eclipse falls over the south atlantic. check a local eclipse map, and use eclipse glasses.",
+   "body": "the moon covers the middle of the sun and leaves a bright ring. greatest eclipse is over the south atlantic. check a local map, use eclipse glasses.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -54,7 +51,6 @@
    "layout": "story",
    "sign": "virgo",
    "kicker": "feb 6 → feb 20",
-   "tag": "eclipse season",
    "headline": "two eclipses, *two weeks* apart",
    "body": "the solar eclipse in aquarius, then a penumbral lunar eclipse in virgo on feb 20. mercury stations retrograde in between, on feb 9.",
    "art": {
@@ -66,8 +62,6 @@
   {
    "layout": "story",
    "sign": "aquarius",
-   "kicker": "the reading",
-   "tag": "aquarius",
    "headline": "a new moon with the *volume* up",
    "body": "astrologers read solar eclipses as starts you didn't fully plan. in aquarius: friendships, freedom, the way you date.",
    "art": {
@@ -77,7 +71,6 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "four signs feel this *eclipse* most",
    "rows": [
     {
@@ -105,7 +98,7 @@
   {
    "layout": "end",
    "headline": "this week: *finish* one thing so there's room",
-   "body": "new moon, new deck. there's always an 11:11. we'll be back the day before.",
+   "body": "new moon, new deck. there's always an 11:11.",
    "art": {
     "kind": "eclipse",
     "type": "solar",

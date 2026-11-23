@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "moon alert · jan 7",
    "headline": "new moon in *capricorn*, today. the real new year starts now",
    "dek": "peaks 20:25 utc · 17° capricorn",
    "art": {
@@ -37,8 +36,6 @@
   {
    "layout": "story",
    "sign": "capricorn",
-   "kicker": "20:25 utc · 17.3° capricorn",
-   "tag": "the facts",
    "headline": "the moon sits between us and the *sun*",
    "body": "its lit side faces away, so you won't see it tonight. a thin crescent shows up low in the west after sunset in a day or two.",
    "art": {
@@ -50,10 +47,8 @@
   {
    "layout": "story",
    "sign": "capricorn",
-   "kicker": "the reading",
-   "tag": "capricorn",
    "headline": "start the thing that takes *a year*",
-   "body": "astrologers read capricorn new moons as slow, serious starts. not a mood board. a plan with a date and a first step.",
+   "body": "astrologers read capricorn new moons as slow, serious starts. not a mood board: a plan with a date and a first step.",
    "art": {
     "kind": "figure",
     "sign": "capricorn"
@@ -61,7 +56,6 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "three signs feel this *new moon* most",
    "rows": [
     {
@@ -77,14 +71,14 @@
     {
      "sign": "aries",
      "label": "aries",
-     "text": "work and reputation. saturn's in your sign, too."
+     "text": "career resets. saturn's in your sign too."
     }
    ]
   },
   {
    "layout": "end",
-   "headline": "new moon, new deck. *there's always an 11:11.*",
-   "body": "write the plan in one line tonight. mars slows down on sunday, so start before then.",
+   "headline": "new moon, new deck. there's always an *11:11*.",
+   "body": "write the plan in one line tonight. mars slows on sunday, so start first.",
    "art": {
     "kind": "moon",
     "phase": 0,

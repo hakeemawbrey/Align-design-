@@ -20,23 +20,18 @@
   "2027-02-03 venus enters capricorn",
   "2027-02-06 solar eclipse aquarius",
   "2027-02-06 new moon aquarius",
-  "2027-02-08 uranus stations direct gemini",
   "2027-02-09 mercury stations retrograde pisces",
   "2027-02-10 sun opposition jupiter",
   "2027-02-18 sun enters pisces",
   "2027-02-18 mercury enters aquarius",
   "2027-02-20 lunar eclipse virgo",
   "2027-02-20 full moon virgo",
-  "2027-02-21 mars enters leo",
-  "2027-02-01 mars retrograde",
   "2027-03-03 mercury stations direct aquarius"
  ],
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · february 2027",
    "headline": "what's coming in *february*: two eclipses and a mercury retrograde",
-   "dek": "every date worth knowing, in one swipe",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -51,7 +46,6 @@
   },
   {
    "layout": "list",
-   "kicker": "february at a glance",
    "headline": "the *dates*",
    "rows": [
     {
@@ -62,12 +56,7 @@
     {
      "label": "feb 6",
      "color": "aquarius",
-     "text": "annular solar eclipse, new moon in aquarius"
-    },
-    {
-     "label": "feb 8",
-     "color": "uranus",
-     "text": "uranus turns direct in gemini"
+     "text": "ring of fire eclipse in aquarius"
     },
     {
      "label": "feb 9",
@@ -82,22 +71,16 @@
     {
      "label": "feb 20",
      "color": "virgo",
-     "text": "penumbral lunar eclipse, full moon in virgo"
-    },
-    {
-     "label": "feb 21",
-     "color": "mars",
-     "text": "mars backs into leo, still retrograde"
+     "text": "faint lunar eclipse in virgo"
     }
    ]
   },
   {
    "layout": "story",
-   "kicker": "feb 6 · 15:59 utc",
-   "tag": "annular eclipse",
+   "kicker": "feb 6",
    "sign": "aquarius",
    "headline": "a ring of fire in *aquarius*: the month's fresh start",
-   "body": "the new moon lines up with the sun but is too far away to cover it, so a ring stays lit. astrologers read it as a reset on how you show up in groups.",
+   "body": "the new moon is too far away to cover the sun, so a ring stays lit. astrologers read it as a reset on how you show up in groups.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -107,10 +90,9 @@
   {
    "layout": "story",
    "kicker": "feb 9 · 6° pisces",
-   "tag": "mercury retrograde",
    "sign": "pisces",
    "headline": "*mercury* backs up until march 3. re-read before you re-send",
-   "body": "from earth it looks like mercury slides back through pisces and into aquarius on feb 18. a reading, not a curse: good weeks for redoing, bad ones for rushing.",
+   "body": "it only looks like it slides back, into aquarius on feb 18. a reading, not a curse: good weeks for redoing, bad ones for rushing.",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -120,24 +102,10 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 14 · venus in capricorn",
-   "tag": "valentine's",
-   "sign": "capricorn",
-   "headline": "valentine's with *venus* in capricorn: less poetry, more plans",
-   "body": "venus spends all of february in capricorn. astrologers read it as love that shows up on time. the grand gesture matters less than the follow-through.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 20 · 2° virgo",
-   "tag": "penumbral eclipse",
+   "kicker": "feb 20",
    "sign": "virgo",
    "headline": "a full moon eclipse in *virgo* you might not even notice",
-   "body": "the moon only grazes earth's faint outer shadow, so most people won't see much dimming. astrologers still read it as a quiet ending: one habit, one excuse.",
+   "body": "the moon only grazes earth's faint outer shadow, so it barely dims. astrologers still read it as a quiet ending: one habit, one excuse.",
    "art": {
     "kind": "moon",
     "phase": 0.5,
@@ -149,23 +117,9 @@
    }
   },
   {
-   "layout": "story",
-   "kicker": "feb 21 · mars retrograde",
-   "tag": "mars",
-   "sign": "leo",
-   "headline": "*mars* walks backwards out of virgo and into leo",
-   "body": "mars has looked like it's reversing since jan 10. on feb 21 it slips back into leo, still retrograde. read it as old pride asking for a second look.",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "leo",
-    "rx": true
-   }
-  },
-  {
    "layout": "end",
    "headline": "if you only remember one date: *feb 6*",
-   "body": "new moon, new deck. save this and start the honest thing that day.",
+   "body": "new moon, new deck. start the honest thing that day.",
    "art": {
     "kind": "moon",
     "phase": 0,

@@ -25,9 +25,7 @@
   {
    "layout": "breaking",
    "word": "eclipse",
-   "kicker": "eclipse alert · today",
-   "headline": "a ring of fire in *aquarius*, today. the new moon covers the sun's middle",
-   "dek": "15:59 utc · 17.6° aquarius",
+   "headline": "a ring of fire in *aquarius*, today",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -36,11 +34,10 @@
   },
   {
    "layout": "story",
-   "kicker": "feb 6 · 15:59 utc",
-   "tag": "annular solar eclipse",
+   "kicker": "15:59 utc · 17.6° aquarius",
    "sign": "aquarius",
    "headline": "the moon covers the middle of the *sun*, not the edge",
-   "body": "a new moon at 17.6° aquarius, lined up with the sun. it's near its far point, so the sun's rim stays lit. greatest eclipse is over the south atlantic, off southern brazil.",
+   "body": "the new moon is near its far point, so the sun's rim stays lit. greatest eclipse is over the south atlantic, off southern brazil.",
    "art": {
     "kind": "eclipse",
     "type": "solar",
@@ -50,11 +47,9 @@
   },
   {
    "layout": "story",
-   "kicker": "the reading",
-   "tag": "new moon in aquarius",
    "sign": "aquarius",
    "headline": "start the version of you that doesn't *perform*",
-   "body": "aquarius is the friends-and-futures sign, and pluto is here too. astrologers read this as a reset on who you let in. a good day to start, a bad day to fake it.",
+   "body": "aquarius is the friends-and-futures sign, and pluto is here too. astrologers read it as a reset on who you let in. start, don't fake it.",
    "art": {
     "kind": "aura",
     "sign": "aquarius"
@@ -62,8 +57,7 @@
   },
   {
    "layout": "list",
-   "kicker": "what to start, by element",
-   "headline": "one *start*",
+   "headline": "one *start*, by element",
    "rows": [
     {
      "label": "fire",

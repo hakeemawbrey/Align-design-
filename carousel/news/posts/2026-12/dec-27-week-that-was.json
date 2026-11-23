@@ -26,9 +26,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of dec 21",
    "headline": "what just happened in the *sky* over the holidays?",
-   "dek": "5 stories · swipe",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -43,7 +41,6 @@
    "layout": "story",
    "sign": "capricorn",
    "kicker": "dec 21",
-   "tag": "sun ingress",
    "headline": "*capricorn* season started on the solstice",
    "body": "less talk, more plans until jan 20.",
    "art": {
@@ -55,7 +52,6 @@
    "layout": "story",
    "sign": "cancer",
    "kicker": "dec 23",
-   "tag": "full moon",
    "headline": "the last *full moon* of 2026 rose in cancer",
    "body": "if you said the soft thing, it counted.",
    "art": {
@@ -68,7 +64,6 @@
    "layout": "story",
    "sign": "leo",
    "kicker": "dec 23",
-   "tag": "two aspects",
    "headline": "the *sun* squared neptune, mercury trined jupiter",
    "body": "nostalgia and good talk on the same night. classic holidays.",
    "art": {
@@ -81,7 +76,6 @@
    "layout": "story",
    "sign": "capricorn",
    "kicker": "dec 25",
-   "tag": "mercury ingress",
    "headline": "*mercury* moved into capricorn on christmas",
    "body": "conversations got shorter and more serious.",
    "art": {
@@ -94,7 +88,6 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "dec 26",
-   "tag": "mercury square neptune",
    "headline": "*mercury* squared neptune and texts got vague",
    "body": "if a message confused you, ask. do not decode.",
    "art": {

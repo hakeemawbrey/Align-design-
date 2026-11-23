@@ -19,34 +19,26 @@
  "facts": [
   "2027-02-06 solar eclipse aquarius",
   "2027-02-06 pluto in aquarius",
-  "2027-02-18 mercury enters aquarius",
   "2027-02-20 lunar eclipse virgo",
   "2027-02-21 mars enters leo",
-  "2027-02-10 sun opposition jupiter",
   "2027-02-10 jupiter retrograde",
   "2027-02-09 mercury stations retrograde pisces",
   "2027-02-18 sun enters pisces",
   "2027-02-03 venus enters capricorn",
   "2027-02-08 uranus stations direct gemini",
   "2027-02-28 last quarter sagittarius",
-  "2027-02-03 venus enters capricorn",
   "2027-02-13 venus square saturn",
   "2027-02-05 venus square neptune",
   "2027-02-13 saturn in aries",
   "2027-02-13 neptune in aries",
   "2027-02-14 first quarter taurus",
   "2027-02-07 mercury opposition mars",
-  "2027-02-24 moon in scorpio",
-  "2027-02-22 moon in libra",
-  "2027-02-17 moon in cancer",
   "2027-02-01 mars retrograde"
  ],
  "slides": [
   {
    "layout": "cover",
-   "kicker": "ranked · february",
    "headline": "the signs whose *february* changes the most, ranked",
-   "dek": "two eclipses, one retrograde. find yourself",
    "art": {
     "kind": "aura",
     "sign": "aquarius"
@@ -58,7 +50,7 @@
    "sign": "cancer",
    "dates": "jun 21 – jul 22",
    "headline": "cancer, you get the quiet month. use it.",
-   "body": "no eclipse, no station, no planet moving into your sign. the moon passes through on feb 17 and that's about it. a good month to rest and let other people do the drama."
+   "body": "no eclipse, no station, no planet moving into your sign. a good month to rest and let other people do the drama."
   },
   {
    "layout": "rank",
@@ -66,7 +58,7 @@
    "sign": "libra",
    "dates": "sep 23 – oct 22",
    "headline": "libra, the sky gives you a breather.",
-   "body": "the big moves land elsewhere. the moon visits on feb 22. read it as room to notice who checks in when nothing is happening. that's the person."
+   "body": "the big moves land elsewhere. notice who checks in when nothing is happening. that's the person."
   },
   {
    "layout": "rank",
@@ -74,7 +66,7 @@
    "sign": "scorpio",
    "dates": "oct 23 – nov 21",
    "headline": "scorpio, you watch from the side and take notes.",
-   "body": "the feb 6 eclipse lands in aquarius, the sign square to yours, so you feel it at an angle. the moon passes through feb 24. a good month to listen more than you test."
+   "body": "the feb 6 eclipse lands in aquarius, square to your sign, so you feel it at an angle. listen more than you test."
   },
   {
    "layout": "rank",
@@ -82,7 +74,7 @@
    "sign": "taurus",
    "dates": "apr 20 – may 20",
    "headline": "taurus, valentine's morning starts in your sign.",
-   "body": "the first quarter moon is in taurus on feb 14. astrologers read a first quarter as a small push. if you want something, say it before the day gets busy."
+   "body": "the first quarter moon is in taurus on feb 14. astrologers read it as a small push. if you want something, say it early."
   },
   {
    "layout": "rank",
@@ -98,7 +90,7 @@
    "sign": "sagittarius",
    "dates": "nov 22 – dec 21",
    "headline": "sagittarius, venus leaves you on feb 3.",
-   "body": "the flirt season in your sign ends as venus moves on. the last quarter moon is in sagittarius on feb 28. a good month to close the tab on one maybe."
+   "body": "your flirt season is over. the last quarter moon lands in sagittarius on feb 28: close the tab on one maybe."
   },
   {
    "layout": "rank",
@@ -130,7 +122,7 @@
    "sign": "leo",
    "dates": "jul 23 – aug 22",
    "headline": "leo, mars comes back to you, backwards.",
-   "body": "jupiter is retrograde in leo, the sun opposes it on feb 10, and on feb 21 mars backs into leo. read it as old pride up for review, not a fight to win."
+   "body": "jupiter is retrograde in leo, and on feb 21 mars backs in too. read it as old pride up for review, not a fight to win."
   },
   {
    "layout": "rank",
@@ -146,12 +138,12 @@
    "sign": "aquarius",
    "dates": "jan 20 – feb 18",
    "headline": "aquarius, the eclipse is in your sign.",
-   "body": "an annular solar eclipse lands in aquarius on feb 6, with pluto in your sign too. mercury backs in on feb 18. astrologers read it as a real reset. pick one thing."
+   "body": "an annular solar eclipse lands in your sign on feb 6, with pluto there too. astrologers read it as a real reset. pick one thing."
   },
   {
    "layout": "end",
    "headline": "one-sided isn't *alignment*. it's a hobby.",
-   "body": "tag the one who's #1. save this for the eclipse.",
+   "body": "tag the one who's #1.",
    "art": {
     "kind": "wheel",
     "signs": [

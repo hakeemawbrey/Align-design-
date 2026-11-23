@@ -24,9 +24,8 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "season change · dec 21",
    "headline": "*sagittarius* hands the keys to *capricorn*",
-   "dek": "the sun changes sign at 3:50 pm et · the solstice",
+   "dek": "3:50 pm et · the solstice",
    "art": {
     "kind": "figure",
     "sign": "sagittarius"
@@ -65,7 +64,6 @@
   },
   {
    "layout": "list",
-   "kicker": "capricorn season is good for",
    "headline": "good season *for*",
    "rows": [
     {
@@ -77,11 +75,6 @@
      "label": "clarity",
      "color": "capricorn",
      "text": "“what are we?” asked calmly"
-    },
-    {
-     "label": "limits",
-     "color": "capricorn",
-     "text": "dealbreakers stated up front"
     },
     {
      "label": "follow-up",

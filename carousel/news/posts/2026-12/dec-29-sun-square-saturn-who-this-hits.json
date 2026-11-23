@@ -25,7 +25,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "who this hits · dec 29",
    "headline": "the sun squares *saturn* tonight. the year-end reality check",
    "art": {
     "kind": "planet",
@@ -37,9 +36,8 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "dec 29 · 8.3°",
-   "tag": "the astronomy",
    "headline": "the *sun* and saturn sit 90° apart",
-   "body": "a square is a quarter of the circle: the sun in capricorn, saturn in aries. astrologers read squares as friction that forces a decision. mercury makes the same square tomorrow.",
+   "body": "a square is a quarter turn: sun in capricorn, saturn in aries. it reads as friction that forces a decision. mercury makes the same square tomorrow.",
    "art": {
     "kind": "pair",
     "a": "sun",
@@ -54,7 +52,7 @@
     {
      "sign": "capricorn",
      "label": "capricorn",
-     "text": "your season meets a wall. go around it calmly."
+     "text": "your season meets a wall. go around it."
     },
     {
      "sign": "aries",

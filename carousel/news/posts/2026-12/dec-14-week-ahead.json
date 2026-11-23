@@ -13,7 +13,6 @@
   "2026-12-18 sun trine jupiter",
   "2026-12-17 moon in aries",
   "2026-12-19 moon in taurus",
-  "2026-12-15 moon in pisces",
   "2026-12-14 jupiter retrograde"
  ],
  "caption": "a quieter week with one gift: the sun trines jupiter on friday. dec 14 – 20, 2026.",
@@ -27,9 +26,7 @@
  "slides": [
   {
    "layout": "split",
-   "kicker": "sky desk · week of dec 14",
    "headline": "a calm week with one *lucky* friday",
-   "dek": "4 stories · swipe",
    "art": {
     "kind": "planet",
     "body": "sun",
@@ -48,21 +45,7 @@
   {
    "layout": "story",
    "sign": "pisces",
-   "kicker": "tue dec 15 – wed dec 16",
-   "tag": "moon in pisces",
-   "headline": "the *moon* drifts through pisces",
-   "body": "soft days. good for listening more than talking.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.2,
-    "sign": "pisces"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "pisces",
    "kicker": "thu dec 17",
-   "tag": "first quarter",
    "headline": "first quarter moon in *pisces*: the push",
    "body": "half-lit and growing. reads as the point where an intention needs an action.",
    "art": {
@@ -75,7 +58,6 @@
    "layout": "story",
    "sign": "aries",
    "kicker": "dec 17 – 19",
-   "tag": "moon in aries",
    "headline": "then the *moon* hits aries and patience runs out",
    "body": "good for a bold ask. bad for a fight about the dishes.",
    "art": {
@@ -88,9 +70,8 @@
    "layout": "story",
    "sign": "sagittarius",
    "kicker": "fri dec 18",
-   "tag": "sun trine jupiter",
    "headline": "the *sun* trines jupiter: generous, warm, a bit lucky",
-   "body": "the sun at 27° sagittarius, jupiter at 27° leo. astrologers read it as a yes-energy day.",
+   "body": "the sun at 27° sagittarius, jupiter at 27° leo. astrologers read it as a yes day.",
    "art": {
     "kind": "pair",
     "a": "sun",

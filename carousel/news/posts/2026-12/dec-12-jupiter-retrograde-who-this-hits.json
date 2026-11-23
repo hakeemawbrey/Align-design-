@@ -26,7 +26,6 @@
  "slides": [
   {
    "layout": "breaking",
-   "kicker": "who this hits · dec 12",
    "headline": "*jupiter* turns backwards in leo tonight. here is who feels it",
    "art": {
     "kind": "planet",
@@ -40,9 +39,8 @@
    "layout": "story",
    "sign": "leo",
    "kicker": "dec 12 · 7:59 pm et · 27° leo",
-   "tag": "the astronomy",
    "headline": "*jupiter* seems to stop, then slide back",
-   "body": "earth is catching up to jupiter, so from here it looks like it reverses. it stays retrograde into the new year. neptune does the opposite today and turns direct in aries.",
+   "body": "earth is catching up to jupiter, so it looks like it reverses, and it stays that way into the new year. neptune turns direct in aries today.",
    "art": {
     "kind": "planet",
     "body": "jupiter",
@@ -59,7 +57,7 @@
     {
      "sign": "leo",
      "label": "leo",
-     "text": "it is in your sign. less show, more substance."
+     "text": "it's your sign. less show, more substance."
     },
     {
      "sign": "aquarius",
@@ -92,6 +90,11 @@
      "sign": "sagittarius",
      "label": "sagittarius",
      "text": "travel plans want rechecking."
+    },
+    {
+     "sign": "capricorn",
+     "label": "capricorn",
+     "text": "shared money talk, finally."
     }
    ]
   },
@@ -119,11 +122,6 @@
      "sign": "libra",
      "label": "libra",
      "text": "fewer group chats, closer friends."
-    },
-    {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "shared money talk, finally."
     },
     {
      "sign": "pisces",

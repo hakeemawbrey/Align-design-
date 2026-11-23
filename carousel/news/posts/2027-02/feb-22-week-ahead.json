@@ -29,9 +29,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky desk · week of feb 22",
    "headline": "after two *eclipses*, the sky gives you a quiet week",
-   "dek": "four things, all of them gentle",
    "art": {
     "kind": "moon",
     "phase": 0.55,
@@ -41,10 +39,9 @@
   {
    "layout": "story",
    "kicker": "feb 22 – 24",
-   "tag": "moon in libra, then scorpio",
    "sign": "libra",
    "headline": "the moon in *libra*: a good night to talk it through",
-   "body": "then scorpio from feb 24: feelings go deeper and quieter. read it as a mid-week check-in, not an interrogation.",
+   "body": "from feb 24 it's in scorpio: deeper, quieter. a check-in, not an interrogation.",
    "art": {
     "kind": "aura",
     "sign": "libra"
@@ -52,8 +49,6 @@
   },
   {
    "layout": "story",
-   "kicker": "all week",
-   "tag": "still retrograde",
    "sign": "aquarius",
    "headline": "*mercury* is still backing up, now in aquarius",
    "body": "mercury retrograde runs until mar 3. old friends, old chats, old ideas. reply to the ones that matter.",
@@ -67,7 +62,6 @@
   {
    "layout": "story",
    "kicker": "feb 28",
-   "tag": "last quarter in sagittarius",
    "sign": "sagittarius",
    "headline": "a last quarter moon in *sagittarius* closes the month",
    "body": "astrologers read a last quarter as clean-up time. one honest goodbye or one honest yes.",
@@ -79,8 +73,7 @@
   },
   {
    "layout": "story",
-   "kicker": "the one to watch · mar 1",
-   "tag": "venus",
+   "kicker": "the one to watch",
    "sign": "aquarius",
    "headline": "next monday, *venus* moves into aquarius",
    "body": "love weather changes from careful to curious. use this week to finish the capricorn lesson: follow through.",

@@ -16,15 +16,13 @@
  ],
  "facts": [
   "2027-02-09 mercury stations retrograde pisces",
-  "2027-03-03 mercury stations direct aquarius",
-  "2027-02-18 mercury enters aquarius"
+  "2027-03-03 mercury stations direct aquarius"
  ],
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky note · viral claim",
+   "kicker": "sky note",
    "headline": "“mercury retrograde breaks your *phone*”",
-   "dek": "it starts tuesday. let's check the claim first",
    "art": {
     "kind": "stars",
     "tint": "mercury"
@@ -32,18 +30,15 @@
   },
   {
    "layout": "note",
-   "kicker": "going around",
    "headline": "“mercury retrograde breaks your phone”",
    "verdict": "false",
-   "body": "nothing about mercury touches your phone. a retrograde is a change in how the planet looks from earth, not a force. phones break all year, we just notice in retrograde."
+   "body": "nothing about mercury touches your phone. retrograde is how the planet looks from earth, not a force. phones break all year. we just notice in retrograde."
   },
   {
    "layout": "story",
-   "kicker": "feb 9 – mar 3",
-   "tag": "the astronomy",
    "sign": "pisces",
-   "headline": "*mercury* doesn't reverse. earth overtakes it",
-   "body": "mercury laps the sun faster than we do. as it swings past, it looks like it slides back: from 6° pisces on feb 9 to 20.9° aquarius on mar 3.",
+   "headline": "*mercury* doesn't reverse. it laps us",
+   "body": "mercury circles the sun faster than we do. as it passes us, it seems to slide back: 6° pisces on feb 9 to 20.9° aquarius on mar 3.",
    "art": {
     "kind": "planet",
     "body": "mercury",
@@ -52,11 +47,9 @@
   },
   {
    "layout": "story",
-   "kicker": "the reading",
-   "tag": "what astrologers say",
    "sign": "pisces",
    "headline": "a season for *re-dos*: read twice, then reconnect",
-   "body": "astrologers read mercury as talk and plans, so its retrograde reads as a time to slow down, double-check, and finish old conversations before starting new ones.",
+   "body": "astrologers read mercury as talk and plans. its retrograde reads as time to double-check and finish old conversations before new ones.",
    "art": {
     "kind": "wheel",
     "signs": [
@@ -68,7 +61,6 @@
   },
   {
    "layout": "table",
-   "kicker": "ranked, lovingly",
    "headline": "who handles *mercury* retrograde best",
    "columns": [
     "sign",

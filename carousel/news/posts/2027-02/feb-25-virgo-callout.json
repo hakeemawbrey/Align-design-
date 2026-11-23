@@ -23,9 +23,7 @@
  "slides": [
   {
    "layout": "cover",
-   "kicker": "sky news · feb 25",
    "headline": "*virgo*, mars finally left your sign. you can unclench",
-   "dek": "three months, one eclipse, done",
    "art": {
     "kind": "figure",
     "sign": "virgo"
@@ -33,8 +31,6 @@
   },
   {
    "layout": "story",
-   "kicker": "nov 25 – feb 21",
-   "tag": "virgo",
    "sign": "virgo",
    "headline": "*mars* moved in, turned back, then backed out",
    "body": "mars entered virgo on nov 25, turned retrograde there on jan 10, and slipped back into leo on feb 21, a day after the eclipse in your sign.",
@@ -48,7 +44,6 @@
   {
    "layout": "callout",
    "sign": "virgo",
-   "kicker": "virgo",
    "headline": "you don't have to *fix* anyone to be worth dating",
    "body": "rest is not a project.",
    "art": {

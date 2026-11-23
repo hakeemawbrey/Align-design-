@@ -27,7 +27,6 @@
  "slides": [
   {
    "layout": "hero",
-   "kicker": "moon alert · jan 22",
    "headline": "full moon in *leo*, today. *say it* with your whole chest",
    "dek": "peaks 12:17 utc · 2° leo",
    "art": {
@@ -39,8 +38,6 @@
   {
    "layout": "story",
    "sign": "leo",
-   "kicker": "12:17 utc · 2.2° leo",
-   "tag": "the facts",
    "headline": "the moon sits opposite the *sun*",
    "body": "the sun is in aquarius, the moon across from it in leo, fully lit. it rises in the east around sunset and looks full tonight and last night.",
    "art": {
@@ -52,10 +49,8 @@
   {
    "layout": "story",
    "sign": "leo",
-   "kicker": "the reading",
-   "tag": "leo",
    "headline": "your heart wants a *witness*",
-   "body": "astrologers read leo full moons as the need to be seen. jupiter is retrograde in leo too, so it's less about new and more about owning what's already true.",
+   "body": "astrologers read leo full moons as the need to be seen. with jupiter retrograde in leo, it's about owning what's already true.",
    "art": {
     "kind": "figure",
     "sign": "leo"
@@ -68,7 +63,6 @@
   },
   {
    "layout": "list",
-   "kicker": "hits hardest",
    "headline": "three signs feel this *full moon* most",
    "rows": [
     {
