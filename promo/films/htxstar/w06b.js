@@ -116,7 +116,7 @@ export const W06B = {
 
   // ── hst143 · Sagittarius · Galveston is "only an hour"
   hst143: pov({
-    sign: 'sagittarius', acc: SKYB, hook: 'Only a Houston | Sagittarius | will get this', end: 'Next adventure: Jan 9.', stars: ['sagittarius', 'cancer', 'aquarius', 'capricorn'],
+    sign: 'sagittarius', acc: SKYB, hook: 'Only a Sagittarius | in Houston | gets this', end: 'Next adventure: Jan 9.', stars: ['sagittarius', 'cancer', 'aquarius', 'capricorn'],
     open: { set: 'beach', front: wear(shades, 'sagittarius'), mood: 'sparkle' },
     beats: [
       B(3.0, 'bedroom', '6:00 AM · SATURDAY', 'you wake up and say | "beach?" to no one.', [[0.5, 2.2, 'you', 'beach. | now.']], { mood: 'sparkle' }),
@@ -159,7 +159,7 @@ export const W06B = {
       B(3.4, 'museum', '3:10 PM · GALLERY 1', 'a stranger explains it | to you. confidently.', [[0.3, 1.3, 'virgo', "it's about | rectangles."], [1.8, 1.4, 'you', "it's about | FEELINGS."]], { cast: R('virgo'), moods: { virgo: 'squint' }, mood: 'wide' }),
       B(3.4, 'museum', '3:20 PM · GALLERY 1', 'you both laugh. | you keep talking.', [[0.3, 1.1, 'virgo', 'coffee?'], [1.6, 1.6, 'you', 'only if we | keep arguing.']], { cast: R('virgo'), moods: { virgo: 'heart' }, mood: 'wink' }),
       B(3.0, 'chapel', '5:00 PM · THE QUIET CHAPEL', 'you sit in silence. | it fixes everything.', [[0.8, 1.8, 'you', '...']], { mood: 'sleepy' }),
-      B(3.0, 'nozoning', '7:00 PM · NO ZONING', 'a taco stand next to | a mansion. you love it.', [[0.5, 2.2, 'you', 'no rules. | just tacos.']], { mood: 'sparkle', you: [540, Y + 40, 260] }),
+      B(3.0, 'lawn', '7:00 PM · DISCOVERY GREEN', 'free music on the lawn. | you dance. alone.', [[0.5, 2.2, 'you', 'nobody | is watching.']], { mood: 'sparkle', o: { sky: SKIES.dusk } }),
       B(3.4, 'night', '9:00 PM · ROUND TWO', 'second argument: | the best taco.', [[0.3, 1.1, 'virgo', 'corn.'], [1.6, 1.4, 'you', 'whatever | is closest.']], { cast: R('virgo'), moods: { virgo: 'squint' }, mood: 'wink' }),
       B(3.2, 'party', 'JAN 9', "you'll arrive in an outfit | no one can explain.", [[0.5, 2.4, 'you', "it's about | feelings."]], { you: [540, Y, 300], mood: 'sparkle' }),
     ],
