@@ -101,7 +101,7 @@ export function confetti(x, t, n = 22, top = 360) { for (let k = 0; k < n; k++) 
 export function mic(x, cx, base) { box(x, cx - 6, base - 300, 12, 300, '#8f96a0', 4); box(x, cx - 18, base - 340, 36, 50, '#3a3a4a', 5); box(x, cx - 60, base - 10, 120, 14, '#8f96a0', 4) }
 export function boat(x, cx, cy, t, col = '#5ec8ff') {   // a paddle boat
   const b = Math.sin(t * 2) * 6
-  box(x, cx - 170, cy - 30 + b, 340, 70, col, 7); box(x, cx - 120, cy - 120 + b, 240, 20, BONE, 5); box(x, cx - 110, cy - 100 + b, 14, 70, BONE, 3); box(x, cx + 96, cy - 100 + b, 14, 70, BONE, 3)
+  box(x, cx - 190, cy - 10 + b, 380, 70, col, 7); box(x, cx - 200, cy - 22 + b, 400, 16, BONE, 5)
   for (let k = 0; k < 4; k++) { const a = t * 5 + k * Math.PI / 2; x.fillStyle = '#ff5a6e'; x.fillRect(cx + 190 + Math.cos(a) * 26 - 6, cy + 10 + b + Math.sin(a) * 26 - 6, 12, 12) }
 }
 export function court(x, t, col = '#2f7a5a') {
@@ -194,18 +194,18 @@ export const SET = {
   bats: (x, t, lt, o = {}) => { sky(x, ...SKIES.sunset); sun(x, 300, 720, 90, '#ffb36b'); skyline(x, 960, t, { alpha: 0.6, col: '#3a2a5a', lit: '#ffd36b' }); water(x, 1060, 220, t, '#4a3a6a', 'rgba(255,180,120,0.35)'); bridge(x, FLOOR + 60, t); ground(x, '#3a4a3a', FLOOR + 140); if (lt > (o.batsAt ?? 0)) bats(x, t - (o.batsAt ?? 0), o.n || 22) },
   beach: (x, t, lt, o = {}) => { sky(x, ...(o.sky || SKIES.noon)); sun(x, 860, 440, 60); x.fillStyle = '#7a8a5a'; x.fillRect(0, 900, 1080, 300); water(x, 900, 300, t, '#8a7a4a', 'rgba(255,255,255,0.35)'); gull(x, t, 200, 520); gull(x, t + 3, 700, 600); sand(x, 1180); },
   crawfish: (x, t, lt, o = {}) => { sky(x, ...(o.sky || SKIES.gold)); stringLights(x, t, 400); tree(x, 140, FLOOR - 40, 1); ground(x, '#4a7a3a'); grill(x, 900, FLOOR - 40, t); newspaperTable(x, 540); crawfishPile(x, 540, FLOOR - 46, t) },
-  karaoke: (x, t, lt, o = {}) => { stage(x, t, o.col); lyrics(x, 540, 470, o.lyric || 'la la la la la', t, prog(lt, 0.2, 2.6)); mic(x, 820, FLOOR + 60); notes(x, t, 540, 900, { n: 5 }) },
+  karaoke: (x, t, lt, o = {}) => { stage(x, t, o.col); lyrics(x, 540, 730, o.lyric || 'la la la la la', t, prog(lt, 0.2, 2.6)); mic(x, 820, FLOOR + 60); notes(x, t, 540, 900, { n: 5 }) },
   paddle: (x, t, lt, o = {}) => { sky(x, ...(o.sky || SKIES.morning)); x.fillStyle = '#4a8a4a'; x.fillRect(0, 780, 1080, 140); tree(x, 160, 900, 0.9); tree(x, 920, 900, 0.8); water(x, 900, FLOOR + 60 - 900, t, '#3a7a8a'); x.fillStyle = '#3a7a8a'; x.fillRect(0, FLOOR + 60, 1080, 1920 - FLOOR - 60); water(x, FLOOR + 60, 600, t, '#2f6a7a') },
   mural: (x, t, lt) => { mural(x, t); x.fillStyle = '#3a3450'; x.fillRect(0, FLOOR + 60, 1080, 1920 - FLOOR - 60); x.fillStyle = INK; x.fillRect(0, FLOOR + 54, 1080, 10); x.fillStyle = 'rgba(0,0,0,0.0)' },
   vintage: (x, t, lt) => { room(x, { wall: '#3a6a5a', floor: '#8a5a3a', trim: '#2a4a3a' }); racks(x, t); plant(x, 120, FLOOR + 60, 1.2); plant(x, 980, FLOOR + 60, 1) },
-  tunnel: (x, t, lt, o = {}) => { tunnel(x, t); shopSign(x, 540, 560, o.sign || 'LUNCH', '#ffd36b', t, 1, false); ac(x, 180, 380, t) },
+  tunnel: (x, t, lt, o = {}) => { tunnel(x, t); shopSign(x, 540, 720, o.sign || 'LUNCH', '#ffd36b', t, 1, false); ac(x, 180, 380, t) },
   pickle: (x, t) => court(x, t),
   coffee: (x, t, lt, o = {}) => { sky(x, ...(o.sky || SKIES.haze)); ground(x, '#4a4a5a'); coffeeShop(x, 540, FLOOR + 60, !!o.closed); box(x, 0, FLOOR + 460, 1080, 60, '#3a3450', 0); txt(x, 'FEEDER ROAD', 820, FLOOR + 490, { size: 28, col: BONE, font: MONO, weight: 700 }) },
   parking: (x, t, lt, o = {}) => { sky(x, ...SKIES.noon); heatSun(x, 880, 440, t, 70); ground(x, '#5a5a66'); for (let k = 0; k < 6; k++) { x.fillStyle = BONE; x.fillRect(60 + k * 180, FLOOR + 80, 8, 180) } tree(x, 220, FLOOR + 60, 1); x.fillStyle = 'rgba(20,40,20,0.35)'; x.beginPath(); x.ellipse(220, FLOOR + 140, 230, 50, 0, 0, TAU); x.fill(); shimmer(x, FLOOR - 200, 300, t) },
   nozoning: (x, t, lt) => { sky(x, ...SKIES.noon); ground(x, '#5a5a66'); mansion(x, 280, FLOOR + 60); tacoStand(x, 800, FLOOR + 60, t) },
   lawn: (x, t, lt, o = {}) => { sky(x, ...(o.sky || SKIES.sunset)); skyline(x, 1000, t, { alpha: 0.95 }); ground(x, '#4a8a4a', 1000); for (let k = 0; k < 30; k++) { x.fillStyle = 'rgba(30,80,30,0.5)'; x.fillRect((k * 97) % 1080, 1020 + (k * 53) % 700, 6, 18) } },
   bellaire: (x, t, lt) => { skyline(x, FLOOR + 60, t, { alpha: 0.4 }); x.fillStyle = 'rgba(12,8,30,0.5)'; x.fillRect(0, 0, 1080, FLOOR + 60); for (const [cx, cy, s, c, d] of [[230, 520, 'NOODLES', '#ff5a6e', 0], [800, 470, 'BOBA', '#7dffb0', 0.1], [270, 760, 'PHO', '#ffd36b', 0.2], [820, 720, 'HOT POT', '#ff8fd0', 0.3], [540, 960, 'KARAOKE', '#5ee0ff', 0.4]]) shopSign(x, cx, cy, s, c, t, 1); outside(x, { ground: '#2a2440' }) },
-  kolache: (x, t, lt) => { room(x, { wall: '#f4d9b0', floor: '#8a5530', trim: '#c98e5a' }); box(x, 120, 420, 840, 260, '#bfe6ff', 8); for (let r = 0; r < 2; r++) for (let k = 0; k < 6; k++) { const cx = 200 + k * 136, cy = 490 + r * 120; if ((k + r) % 2) kolache(x, cx, cy, 0.7); else klobasnek(x, cx, cy, 0.6) } counter(x, FLOOR - 20, '#a06a3a') },
+  kolache: (x, t, lt) => { room(x, { wall: '#f4d9b0', floor: '#8a5530', trim: '#c98e5a' }); box(x, 120, 610, 840, 260, '#bfe6ff', 8); for (let r = 0; r < 2; r++) for (let k = 0; k < 6; k++) { const cx = 200 + k * 136, cy = 680 + r * 120; if ((k + r) % 2) kolache(x, cx, cy, 0.7); else klobasnek(x, cx, cy, 0.6) } counter(x, FLOOR - 20, '#a06a3a') },
   office: (x, t, lt, o = {}) => { room(x, { wall: '#c8d0dc', floor: '#6a7280', trim: '#9aa2b0' }); ac(x, 540, 360, t); box(x, 620, FLOOR - 120, 360, 40, '#8a6a4a', 6); box(x, 680, FLOOR - 320, 240, 180, '#2a3550', 7); snowflakes(x, t, o.snow ?? 10) },
   party: (x, t, lt) => { x.fillStyle = '#1c1240'; x.fillRect(0, 0, 1080, 1920); stringLights(x, t, 340, [GOLD, PINK, SKYB]); confetti(x, t); x.fillStyle = '#2a1d52'; x.fillRect(0, FLOOR + 60, 1080, 1920 - FLOOR - 60); x.fillStyle = INK; x.fillRect(0, FLOOR + 54, 1080, 10); heartsRise(x, t) },
   kitchen: (x, t, lt, o = {}) => { room(x, { wall: o.wall || '#f0c890', floor: '#8a6a4a', trim: '#c08850' }); box(x, 120, 420, 260, 200, '#e8e2d2', 6); box(x, 700, 420, 260, 200, '#e8e2d2', 6); counter(x, FLOOR - 40, '#b07a4a'); soupPot(x, 800, FLOOR - 110, t) },
@@ -243,7 +243,7 @@ export function pov(S) {
   const first = {
     dur: O.d || 2.7, set: (x, t, lt) => SET[O.set](x, t, lt, O.o || {}),
     back: O.back, front: (x, t, lt, P) => { O.front?.(x, t, lt, P); if (lt > 0.0) youTag(x, P.at(me)[0], P.at(me)[1] + P.at(me)[2] * 0.62, me, acc) },
-    cast: { [me]: [[0, 540, Y, 320]], ...(O.cast || {}) }, mood: { [me]: O.mood || 'sparkle', ...(O.moods || {}) },
+    cast: { [me]: [[0, ...(O.you || [540, Y, 320])]], ...(O.cast || {}) }, mood: { [me]: O.mood || 'sparkle', ...(O.moods || {}) },
     hops: wave([me, ...Object.keys(O.cast || {})]), look: O.look || {}, lines: (O.lines || []).map(([a, d, w, s]) => [a, d, fix(w), s]),
   }
   const beats = S.beats.map(B => {
