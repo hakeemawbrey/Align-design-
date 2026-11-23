@@ -1,0 +1,146 @@
+{
+ "id": "sample-all-layouts",
+ "format": "sky-roundup",
+ "date": "2027-01-10",
+ "signs": [
+  "virgo"
+ ],
+ "caption": "mars backs up in virgo today. save this one.",
+ "hashtags": [
+  "astrology",
+  "marsretrograde",
+  "virgo",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky news · jan 10",
+   "headline": "*mars* turns retrograde in *virgo* today, and it stays backwards until april",
+   "dek": "what it means for your love life, sign by sign",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "jan 10 · 10° virgo",
+   "tag": "mars retrograde",
+   "headline": "the planet of *drive* looks like it's walking backwards",
+   "body": "from earth, mars appears to slow, stop and reverse for about 11 weeks. astrologers read it as a time to redo, not start.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "rx": true
+   }
+  },
+  {
+   "layout": "rank",
+   "rank": 1,
+   "sign": "virgo",
+   "dates": "aug 23 – sep 22",
+   "headline": "virgo, it's happening in your sign, so you feel it first.",
+   "body": "mars stations at 10° virgo on jan 10. read it as a pause on the plan you were pushing hardest. the fix you keep putting off is the work now. and the person who keeps asking for a second chance? say the honest thing, once."
+  },
+  {
+   "layout": "callout",
+   "sign": "virgo",
+   "kicker": "virgo",
+   "headline": "you don't have to *fix* anyone before february",
+   "art": {
+    "kind": "figure",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "note",
+   "kicker": "going around",
+   "headline": "“mars retrograde means you'll break up”",
+   "verdict": "false",
+   "body": "mars retrograde is an optical effect: earth passes mars, so it looks like it moves backwards. astrologers read it as slower, more tired energy, not a breakup timer. if a relationship ends now, it was already ending."
+  },
+  {
+   "layout": "list",
+   "kicker": "who this hits",
+   "headline": "mars retrograde, *by sign*",
+   "rows": [
+    {
+     "sign": "virgo",
+     "label": "virgo",
+     "text": "**hits hardest.** it's in your sign."
+    },
+    {
+     "sign": "pisces",
+     "label": "pisces",
+     "text": "**hits hard.** partners slow down."
+    },
+    {
+     "sign": "gemini",
+     "label": "gemini",
+     "text": "home plans get redone."
+    },
+    {
+     "sign": "sagittarius",
+     "label": "sagittarius",
+     "text": "work asks for a do-over."
+    },
+    {
+     "sign": "leo",
+     "label": "leo",
+     "text": "money moves wait till spring."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "january",
+   "headline": "what's coming",
+   "rows": [
+    {
+     "label": "jan 7",
+     "color": "capricorn",
+     "text": "new moon in *capricorn*"
+    },
+    {
+     "label": "jan 10",
+     "color": "mars",
+     "text": "mars turns retrograde"
+    },
+    {
+     "label": "jan 13",
+     "color": "mercury",
+     "text": "mercury enters aquarius"
+    },
+    {
+     "label": "jan 20",
+     "color": "sun",
+     "text": "aquarius season starts"
+    },
+    {
+     "label": "jan 22",
+     "color": "leo",
+     "text": "full moon in *leo*"
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "slow is not *stuck*. it's the redo.",
+   "body": "save this for april 1, when mars turns direct.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.3
+   }
+  }
+ ],
+ "facts": [
+  "2027-01-10 mars stations retrograde virgo",
+  "2027-01-07 new moon capricorn",
+  "2027-01-13 mercury enters aquarius",
+  "2027-01-20 sun enters aquarius",
+  "2027-01-22 full moon leo"
+ ]
+}

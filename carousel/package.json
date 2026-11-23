@@ -8,13 +8,19 @@
     "render": "node src/render.mjs",
     "generate": "node src/generate.mjs",
     "check": "node src/check.mjs",
-    "studio": "node app/build.mjs"
+    "studio": "node app/build.mjs",
+    "news:sky": "node news/src/sky.mjs",
+    "news:check": "node news/src/check.mjs",
+    "news:render": "node news/src/render.mjs",
+    "news:gallery": "node news/src/gallery.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",
     "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
     "@fontsource/poppins": "^5.2.6",
     "@fontsource/space-mono": "^5.2.8",
+    "astronomy-engine": "^2.1.19",
     "playwright": "^1.56.0",
     "three": "^0.180.0"
   },

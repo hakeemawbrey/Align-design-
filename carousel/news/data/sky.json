@@ -1,0 +1,6941 @@
+{
+ "range": [
+  "2026-11-25",
+  "2027-03-08"
+ ],
+ "zodiac": "tropical",
+ "generated": "astronomy-engine 2.1.19",
+ "events": [
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "sun",
+   "b": "pluto",
+   "aSign": "sagittarius",
+   "aDeg": 3.5,
+   "bSign": "aquarius",
+   "bDeg": 3.5,
+   "at": "2026-11-25T17:26:57Z",
+   "day": "2026-11-25"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "sun",
+   "b": "uranus",
+   "aSign": "sagittarius",
+   "aDeg": 3.7,
+   "bSign": "gemini",
+   "bDeg": 3.7,
+   "at": "2026-11-25T22:41:15Z",
+   "day": "2026-11-25"
+  },
+  {
+   "type": "ingress",
+   "body": "mars",
+   "sign": "virgo",
+   "from": "leo",
+   "retrograde": false,
+   "at": "2026-11-25T23:37:30Z",
+   "day": "2026-11-25"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "cancer",
+   "from": "gemini",
+   "retrograde": false,
+   "at": "2026-11-26T10:51:33Z",
+   "day": "2026-11-26"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "leo",
+   "from": "cancer",
+   "retrograde": false,
+   "at": "2026-11-28T11:20:37Z",
+   "day": "2026-11-28"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "venus",
+   "b": "jupiter",
+   "aSign": "libra",
+   "aDeg": 26.7,
+   "bSign": "leo",
+   "bDeg": 26.7,
+   "at": "2026-11-28T12:07:01Z",
+   "day": "2026-11-28"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "uranus",
+   "b": "pluto",
+   "aSign": "gemini",
+   "aDeg": 3.5,
+   "bSign": "aquarius",
+   "bDeg": 3.5,
+   "at": "2026-11-29T11:27:39Z",
+   "day": "2026-11-29"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "sun",
+   "b": "saturn",
+   "aSign": "sagittarius",
+   "aDeg": 8,
+   "bSign": "aries",
+   "bDeg": 8,
+   "at": "2026-11-30T06:02:06Z",
+   "day": "2026-11-30"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "virgo",
+   "from": "leo",
+   "retrograde": false,
+   "at": "2026-11-30T14:13:07Z",
+   "day": "2026-11-30"
+  },
+  {
+   "type": "phase",
+   "phase": "last quarter",
+   "sign": "virgo",
+   "degree": 9.1,
+   "at": "2026-12-01T06:09:14Z",
+   "day": "2026-12-01"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "libra",
+   "from": "virgo",
+   "retrograde": false,
+   "at": "2026-12-02T20:04:41Z",
+   "day": "2026-12-02"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "jupiter",
+   "aSign": "scorpio",
+   "aDeg": 26.9,
+   "bSign": "leo",
+   "bDeg": 26.9,
+   "at": "2026-12-04T07:02:34Z",
+   "day": "2026-12-04"
+  },
+  {
+   "type": "ingress",
+   "body": "venus",
+   "sign": "scorpio",
+   "from": "libra",
+   "retrograde": false,
+   "at": "2026-12-04T08:15:00Z",
+   "day": "2026-12-04"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mars",
+   "b": "uranus",
+   "aSign": "virgo",
+   "aDeg": 3.3,
+   "bSign": "gemini",
+   "bDeg": 3.3,
+   "at": "2026-12-04T19:27:53Z",
+   "day": "2026-12-04"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "scorpio",
+   "from": "libra",
+   "retrograde": false,
+   "at": "2026-12-05T04:35:37Z",
+   "day": "2026-12-04"
+  },
+  {
+   "type": "ingress",
+   "body": "mercury",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2026-12-06T08:34:41Z",
+   "day": "2026-12-06"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "mercury",
+   "b": "neptune",
+   "aSign": "sagittarius",
+   "aDeg": 1.6,
+   "bSign": "aries",
+   "bDeg": 1.6,
+   "at": "2026-12-07T10:19:27Z",
+   "day": "2026-12-07"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2026-12-07T15:06:33Z",
+   "day": "2026-12-07"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "mercury",
+   "b": "uranus",
+   "aSign": "sagittarius",
+   "aDeg": 3.2,
+   "bSign": "gemini",
+   "bDeg": 3.2,
+   "at": "2026-12-08T10:30:00Z",
+   "day": "2026-12-08"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "mercury",
+   "b": "pluto",
+   "aSign": "sagittarius",
+   "aDeg": 3.7,
+   "bSign": "aquarius",
+   "bDeg": 3.7,
+   "at": "2026-12-08T19:32:48Z",
+   "day": "2026-12-08"
+  },
+  {
+   "type": "phase",
+   "phase": "new moon",
+   "sign": "sagittarius",
+   "degree": 17,
+   "at": "2026-12-09T00:52:31Z",
+   "day": "2026-12-08"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "mars",
+   "aSign": "sagittarius",
+   "aDeg": 4.9,
+   "bSign": "virgo",
+   "bDeg": 4.9,
+   "at": "2026-12-09T13:41:57Z",
+   "day": "2026-12-09"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "venus",
+   "b": "pluto",
+   "aSign": "scorpio",
+   "aDeg": 3.8,
+   "bSign": "aquarius",
+   "bDeg": 3.8,
+   "at": "2026-12-09T18:38:40Z",
+   "day": "2026-12-09"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2026-12-10T03:09:22Z",
+   "day": "2026-12-09"
+  },
+  {
+   "type": "station",
+   "body": "saturn",
+   "direction": "direct",
+   "sign": "aries",
+   "degree": 7.9,
+   "at": "2026-12-10T23:24:22Z",
+   "day": "2026-12-10"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "mercury",
+   "b": "saturn",
+   "aSign": "sagittarius",
+   "aDeg": 7.9,
+   "bSign": "aries",
+   "bDeg": 7.9,
+   "at": "2026-12-11T13:23:40Z",
+   "day": "2026-12-11"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "venus",
+   "b": "mars",
+   "aSign": "scorpio",
+   "aDeg": 5.7,
+   "bSign": "virgo",
+   "bDeg": 5.7,
+   "at": "2026-12-12T09:16:10Z",
+   "day": "2026-12-12"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2026-12-12T16:05:37Z",
+   "day": "2026-12-12"
+  },
+  {
+   "type": "station",
+   "body": "neptune",
+   "direction": "direct",
+   "sign": "aries",
+   "degree": 1.6,
+   "at": "2026-12-12T22:14:03Z",
+   "day": "2026-12-12"
+  },
+  {
+   "type": "station",
+   "body": "jupiter",
+   "direction": "retrograde",
+   "sign": "leo",
+   "degree": 27,
+   "at": "2026-12-13T00:59:03Z",
+   "day": "2026-12-12"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2026-12-15T04:35:37Z",
+   "day": "2026-12-14"
+  },
+  {
+   "type": "phase",
+   "phase": "first quarter",
+   "sign": "pisces",
+   "degree": 25.3,
+   "at": "2026-12-17T05:43:14Z",
+   "day": "2026-12-17"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aries",
+   "from": "pisces",
+   "retrograde": false,
+   "at": "2026-12-17T14:34:41Z",
+   "day": "2026-12-17"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "sun",
+   "b": "jupiter",
+   "aSign": "sagittarius",
+   "aDeg": 27,
+   "bSign": "leo",
+   "bDeg": 27,
+   "at": "2026-12-18T21:21:05Z",
+   "day": "2026-12-18"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "taurus",
+   "from": "aries",
+   "retrograde": false,
+   "at": "2026-12-19T20:30:00Z",
+   "day": "2026-12-19"
+  },
+  {
+   "type": "ingress",
+   "body": "sun",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2026-12-21T20:50:37Z",
+   "day": "2026-12-21"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "gemini",
+   "from": "taurus",
+   "retrograde": false,
+   "at": "2026-12-21T22:27:11Z",
+   "day": "2026-12-21"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "sun",
+   "b": "neptune",
+   "aSign": "capricorn",
+   "aDeg": 1.6,
+   "bSign": "aries",
+   "bDeg": 1.6,
+   "at": "2026-12-23T11:42:25Z",
+   "day": "2026-12-23"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "mercury",
+   "b": "jupiter",
+   "aSign": "sagittarius",
+   "aDeg": 26.8,
+   "bSign": "leo",
+   "bDeg": 26.8,
+   "at": "2026-12-23T18:03:30Z",
+   "day": "2026-12-23"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "cancer",
+   "from": "gemini",
+   "retrograde": false,
+   "at": "2026-12-23T21:59:03Z",
+   "day": "2026-12-23"
+  },
+  {
+   "type": "phase",
+   "phase": "full moon",
+   "sign": "cancer",
+   "degree": 2.2,
+   "at": "2026-12-24T01:28:45Z",
+   "day": "2026-12-23"
+  },
+  {
+   "type": "ingress",
+   "body": "mercury",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2026-12-25T18:23:26Z",
+   "day": "2026-12-25"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "leo",
+   "from": "cancer",
+   "retrograde": false,
+   "at": "2026-12-25T21:12:11Z",
+   "day": "2026-12-25"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "neptune",
+   "aSign": "capricorn",
+   "aDeg": 1.7,
+   "bSign": "aries",
+   "bDeg": 1.7,
+   "at": "2026-12-26T19:50:23Z",
+   "day": "2026-12-26"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "virgo",
+   "from": "leo",
+   "retrograde": false,
+   "at": "2026-12-27T22:13:07Z",
+   "day": "2026-12-27"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "sun",
+   "b": "saturn",
+   "aSign": "capricorn",
+   "aDeg": 8.3,
+   "bSign": "aries",
+   "bDeg": 8.3,
+   "at": "2026-12-29T23:24:08Z",
+   "day": "2026-12-29"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "libra",
+   "from": "virgo",
+   "retrograde": false,
+   "at": "2026-12-30T02:27:11Z",
+   "day": "2026-12-29"
+  },
+  {
+   "type": "phase",
+   "phase": "last quarter",
+   "sign": "libra",
+   "degree": 9.1,
+   "at": "2026-12-30T19:00:07Z",
+   "day": "2026-12-30"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "saturn",
+   "aSign": "capricorn",
+   "aDeg": 8.3,
+   "bSign": "aries",
+   "bDeg": 8.3,
+   "at": "2026-12-30T23:52:58Z",
+   "day": "2026-12-30"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "sun",
+   "b": "mars",
+   "aSign": "capricorn",
+   "aDeg": 9.8,
+   "bSign": "virgo",
+   "bDeg": 9.8,
+   "at": "2026-12-31T12:03:30Z",
+   "day": "2026-12-31"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "mercury",
+   "b": "mars",
+   "aSign": "capricorn",
+   "aDeg": 9.9,
+   "bSign": "virgo",
+   "bDeg": 9.9,
+   "at": "2026-12-31T23:31:10Z",
+   "day": "2026-12-31"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "scorpio",
+   "from": "libra",
+   "retrograde": false,
+   "at": "2027-01-01T10:15:56Z",
+   "day": "2027-01-01"
+  },
+  {
+   "type": "aspect",
+   "aspect": "conjunction",
+   "a": "sun",
+   "b": "mercury",
+   "aSign": "capricorn",
+   "aDeg": 11,
+   "bSign": "capricorn",
+   "bDeg": 11,
+   "at": "2027-01-01T17:09:22Z",
+   "day": "2027-01-01"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "venus",
+   "b": "jupiter",
+   "aSign": "scorpio",
+   "aDeg": 26.3,
+   "bSign": "leo",
+   "bDeg": 26.3,
+   "at": "2027-01-03T17:55:46Z",
+   "day": "2027-01-03"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2027-01-03T20:57:11Z",
+   "day": "2027-01-03"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2027-01-06T09:17:48Z",
+   "day": "2027-01-06"
+  },
+  {
+   "type": "ingress",
+   "body": "venus",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2027-01-07T08:54:22Z",
+   "day": "2027-01-07"
+  },
+  {
+   "type": "phase",
+   "phase": "new moon",
+   "sign": "capricorn",
+   "degree": 17.3,
+   "at": "2027-01-07T20:25:05Z",
+   "day": "2027-01-07"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-01-08T22:11:15Z",
+   "day": "2027-01-08"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "venus",
+   "b": "neptune",
+   "aSign": "sagittarius",
+   "aDeg": 1.8,
+   "bSign": "aries",
+   "bDeg": 1.8,
+   "at": "2027-01-09T02:49:27Z",
+   "day": "2027-01-08"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "venus",
+   "b": "uranus",
+   "aSign": "sagittarius",
+   "aDeg": 2.1,
+   "bSign": "gemini",
+   "bDeg": 2.1,
+   "at": "2027-01-09T08:19:55Z",
+   "day": "2027-01-09"
+  },
+  {
+   "type": "station",
+   "body": "mars",
+   "direction": "retrograde",
+   "sign": "virgo",
+   "degree": 10.4,
+   "at": "2027-01-10T13:00:56Z",
+   "day": "2027-01-10"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2027-01-11T10:36:33Z",
+   "day": "2027-01-11"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "venus",
+   "b": "pluto",
+   "aSign": "sagittarius",
+   "aDeg": 4.7,
+   "bSign": "aquarius",
+   "bDeg": 4.7,
+   "at": "2027-01-11T19:25:46Z",
+   "day": "2027-01-11"
+  },
+  {
+   "type": "ingress",
+   "body": "mercury",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-01-13T06:06:33Z",
+   "day": "2027-01-13"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aries",
+   "from": "pisces",
+   "retrograde": false,
+   "at": "2027-01-13T21:14:03Z",
+   "day": "2027-01-13"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "mercury",
+   "b": "neptune",
+   "aSign": "aquarius",
+   "aDeg": 1.9,
+   "bSign": "aries",
+   "bDeg": 1.9,
+   "at": "2027-01-14T09:33:02Z",
+   "day": "2027-01-14"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "mercury",
+   "b": "uranus",
+   "aSign": "aquarius",
+   "aDeg": 2,
+   "bSign": "gemini",
+   "bDeg": 2,
+   "at": "2027-01-14T10:03:16Z",
+   "day": "2027-01-14"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "uranus",
+   "b": "neptune",
+   "aSign": "gemini",
+   "aDeg": 1.9,
+   "bSign": "aries",
+   "bDeg": 1.9,
+   "at": "2027-01-15T07:21:33Z",
+   "day": "2027-01-15"
+  },
+  {
+   "type": "phase",
+   "phase": "first quarter",
+   "sign": "aries",
+   "degree": 25.5,
+   "at": "2027-01-15T20:35:05Z",
+   "day": "2027-01-15"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "venus",
+   "b": "saturn",
+   "aSign": "sagittarius",
+   "aDeg": 9.1,
+   "bSign": "aries",
+   "bDeg": 9.1,
+   "at": "2027-01-15T21:35:51Z",
+   "day": "2027-01-15"
+  },
+  {
+   "type": "aspect",
+   "aspect": "conjunction",
+   "a": "mercury",
+   "b": "pluto",
+   "aSign": "aquarius",
+   "aDeg": 4.8,
+   "bSign": "aquarius",
+   "bDeg": 4.8,
+   "at": "2027-01-16T02:49:27Z",
+   "day": "2027-01-15"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "taurus",
+   "from": "aries",
+   "retrograde": false,
+   "at": "2027-01-16T04:44:03Z",
+   "day": "2027-01-15"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "venus",
+   "b": "mars",
+   "aSign": "sagittarius",
+   "aDeg": 10.2,
+   "bSign": "virgo",
+   "bDeg": 10.2,
+   "at": "2027-01-16T21:38:40Z",
+   "day": "2027-01-16"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "gemini",
+   "from": "taurus",
+   "retrograde": false,
+   "at": "2027-01-18T08:32:48Z",
+   "day": "2027-01-18"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "mercury",
+   "b": "saturn",
+   "aSign": "aquarius",
+   "aDeg": 9.3,
+   "bSign": "aries",
+   "bDeg": 9.3,
+   "at": "2027-01-18T18:04:13Z",
+   "day": "2027-01-18"
+  },
+  {
+   "type": "ingress",
+   "body": "sun",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-01-20T07:30:00Z",
+   "day": "2027-01-20"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "cancer",
+   "from": "gemini",
+   "retrograde": false,
+   "at": "2027-01-20T09:21:33Z",
+   "day": "2027-01-20"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "sun",
+   "b": "uranus",
+   "aSign": "aquarius",
+   "aDeg": 1.8,
+   "bSign": "gemini",
+   "bDeg": 1.8,
+   "at": "2027-01-22T02:19:13Z",
+   "day": "2027-01-21"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "sun",
+   "b": "neptune",
+   "aSign": "aquarius",
+   "aDeg": 2.1,
+   "bSign": "aries",
+   "bDeg": 2.1,
+   "at": "2027-01-22T08:34:41Z",
+   "day": "2027-01-22"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "leo",
+   "from": "cancer",
+   "retrograde": false,
+   "at": "2027-01-22T08:45:56Z",
+   "day": "2027-01-22"
+  },
+  {
+   "type": "phase",
+   "phase": "full moon",
+   "sign": "leo",
+   "degree": 2.2,
+   "at": "2027-01-22T12:17:50Z",
+   "day": "2027-01-22"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "mercury",
+   "b": "venus",
+   "aSign": "aquarius",
+   "aDeg": 17.9,
+   "bSign": "sagittarius",
+   "bDeg": 17.9,
+   "at": "2027-01-23T22:33:30Z",
+   "day": "2027-01-23"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "virgo",
+   "from": "leo",
+   "retrograde": false,
+   "at": "2027-01-24T08:45:00Z",
+   "day": "2027-01-24"
+  },
+  {
+   "type": "aspect",
+   "aspect": "conjunction",
+   "a": "sun",
+   "b": "pluto",
+   "aSign": "aquarius",
+   "aDeg": 5.1,
+   "bSign": "aquarius",
+   "bDeg": 5.1,
+   "at": "2027-01-25T08:00:56Z",
+   "day": "2027-01-25"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "libra",
+   "from": "virgo",
+   "retrograde": false,
+   "at": "2027-01-26T11:13:07Z",
+   "day": "2027-01-26"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "mercury",
+   "b": "jupiter",
+   "aSign": "aquarius",
+   "aDeg": 23.9,
+   "bSign": "leo",
+   "bDeg": 23.9,
+   "at": "2027-01-27T16:38:26Z",
+   "day": "2027-01-27"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "scorpio",
+   "from": "libra",
+   "retrograde": false,
+   "at": "2027-01-28T17:21:33Z",
+   "day": "2027-01-28"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "venus",
+   "b": "jupiter",
+   "aSign": "sagittarius",
+   "aDeg": 23.7,
+   "bSign": "leo",
+   "bDeg": 23.7,
+   "at": "2027-01-29T02:13:35Z",
+   "day": "2027-01-28"
+  },
+  {
+   "type": "phase",
+   "phase": "last quarter",
+   "sign": "scorpio",
+   "degree": 9.3,
+   "at": "2027-01-29T10:56:06Z",
+   "day": "2027-01-29"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "sun",
+   "b": "saturn",
+   "aSign": "aquarius",
+   "aDeg": 10.1,
+   "bSign": "aries",
+   "bDeg": 10.1,
+   "at": "2027-01-30T06:32:20Z",
+   "day": "2027-01-30"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2027-01-31T03:14:03Z",
+   "day": "2027-01-30"
+  },
+  {
+   "type": "ingress",
+   "body": "mercury",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2027-02-01T01:27:11Z",
+   "day": "2027-01-31"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "uranus",
+   "aSign": "pisces",
+   "aDeg": 1.7,
+   "bSign": "gemini",
+   "bDeg": 1.7,
+   "at": "2027-02-02T12:18:16Z",
+   "day": "2027-02-02"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2027-02-02T15:33:45Z",
+   "day": "2027-02-02"
+  },
+  {
+   "type": "ingress",
+   "body": "venus",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2027-02-03T14:30:56Z",
+   "day": "2027-02-03"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-02-05T04:29:03Z",
+   "day": "2027-02-04"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "venus",
+   "b": "neptune",
+   "aSign": "capricorn",
+   "aDeg": 2.4,
+   "bSign": "aries",
+   "bDeg": 2.4,
+   "at": "2027-02-05T17:38:54Z",
+   "day": "2027-02-05"
+  },
+  {
+   "type": "phase",
+   "phase": "new moon",
+   "sign": "aquarius",
+   "degree": 17.6,
+   "at": "2027-02-06T15:56:47Z",
+   "day": "2027-02-06"
+  },
+  {
+   "type": "eclipse",
+   "kind": "solar",
+   "subtype": "annular",
+   "sign": "aquarius",
+   "degree": 17.6,
+   "at": "2027-02-06T15:59:32Z",
+   "day": "2027-02-06",
+   "where": {
+    "lat": -31.3,
+    "lon": -48.5
+   }
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "mercury",
+   "b": "mars",
+   "aSign": "pisces",
+   "aDeg": 5.5,
+   "bSign": "virgo",
+   "bDeg": 5.5,
+   "at": "2027-02-07T07:13:49Z",
+   "day": "2027-02-07"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2027-02-07T16:31:52Z",
+   "day": "2027-02-07"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "venus",
+   "b": "mars",
+   "aSign": "capricorn",
+   "aDeg": 5.2,
+   "bSign": "virgo",
+   "bDeg": 5.2,
+   "at": "2027-02-08T02:30:28Z",
+   "day": "2027-02-07"
+  },
+  {
+   "type": "station",
+   "body": "uranus",
+   "direction": "direct",
+   "sign": "gemini",
+   "degree": 1.7,
+   "at": "2027-02-08T12:23:26Z",
+   "day": "2027-02-08"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "mercury",
+   "b": "venus",
+   "aSign": "pisces",
+   "aDeg": 5.9,
+   "bSign": "capricorn",
+   "bDeg": 5.9,
+   "at": "2027-02-08T17:15:42Z",
+   "day": "2027-02-08"
+  },
+  {
+   "type": "station",
+   "body": "mercury",
+   "direction": "retrograde",
+   "sign": "pisces",
+   "degree": 6,
+   "at": "2027-02-09T17:35:37Z",
+   "day": "2027-02-09"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aries",
+   "from": "pisces",
+   "retrograde": false,
+   "at": "2027-02-10T02:48:45Z",
+   "day": "2027-02-09"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "sun",
+   "b": "jupiter",
+   "aSign": "aquarius",
+   "aDeg": 22,
+   "bSign": "leo",
+   "bDeg": 22,
+   "at": "2027-02-11T00:28:49Z",
+   "day": "2027-02-10"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "taurus",
+   "from": "aries",
+   "retrograde": false,
+   "at": "2027-02-12T10:45:00Z",
+   "day": "2027-02-12"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "venus",
+   "b": "saturn",
+   "aSign": "capricorn",
+   "aDeg": 11.4,
+   "bSign": "aries",
+   "bDeg": 11.4,
+   "at": "2027-02-13T11:36:47Z",
+   "day": "2027-02-13"
+  },
+  {
+   "type": "phase",
+   "phase": "first quarter",
+   "sign": "taurus",
+   "degree": 25.4,
+   "at": "2027-02-14T07:59:02Z",
+   "day": "2027-02-14"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "gemini",
+   "from": "taurus",
+   "retrograde": false,
+   "at": "2027-02-14T15:59:03Z",
+   "day": "2027-02-14"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "mercury",
+   "b": "mars",
+   "aSign": "pisces",
+   "aDeg": 1.9,
+   "bSign": "virgo",
+   "bDeg": 1.9,
+   "at": "2027-02-16T17:42:25Z",
+   "day": "2027-02-16"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "cancer",
+   "from": "gemini",
+   "retrograde": false,
+   "at": "2027-02-16T18:38:26Z",
+   "day": "2027-02-16"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mercury",
+   "b": "uranus",
+   "aSign": "pisces",
+   "aDeg": 1.7,
+   "bSign": "gemini",
+   "bDeg": 1.7,
+   "at": "2027-02-16T22:39:50Z",
+   "day": "2027-02-16"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "mars",
+   "b": "uranus",
+   "aSign": "virgo",
+   "aDeg": 1.7,
+   "bSign": "gemini",
+   "bDeg": 1.7,
+   "at": "2027-02-17T06:37:15Z",
+   "day": "2027-02-17"
+  },
+  {
+   "type": "ingress",
+   "body": "mercury",
+   "sign": "aquarius",
+   "from": "pisces",
+   "retrograde": true,
+   "at": "2027-02-18T12:17:48Z",
+   "day": "2027-02-18"
+  },
+  {
+   "type": "aspect",
+   "aspect": "conjunction",
+   "a": "sun",
+   "b": "mercury",
+   "aSign": "aquarius",
+   "aDeg": 29.8,
+   "bSign": "aquarius",
+   "bDeg": 29.8,
+   "at": "2027-02-18T16:40:32Z",
+   "day": "2027-02-18"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "leo",
+   "from": "cancer",
+   "retrograde": false,
+   "at": "2027-02-18T19:31:52Z",
+   "day": "2027-02-18"
+  },
+  {
+   "type": "ingress",
+   "body": "sun",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2027-02-18T21:33:45Z",
+   "day": "2027-02-18"
+  },
+  {
+   "type": "aspect",
+   "aspect": "opposition",
+   "a": "sun",
+   "b": "mars",
+   "aSign": "pisces",
+   "aDeg": 0.8,
+   "bSign": "virgo",
+   "bDeg": 0.8,
+   "at": "2027-02-19T15:52:01Z",
+   "day": "2027-02-19"
+  },
+  {
+   "type": "aspect",
+   "aspect": "square",
+   "a": "sun",
+   "b": "uranus",
+   "aSign": "pisces",
+   "aDeg": 1.7,
+   "bSign": "gemini",
+   "bDeg": 1.7,
+   "at": "2027-02-20T15:10:32Z",
+   "day": "2027-02-20"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "virgo",
+   "from": "leo",
+   "retrograde": false,
+   "at": "2027-02-20T19:59:03Z",
+   "day": "2027-02-20"
+  },
+  {
+   "type": "eclipse",
+   "kind": "lunar",
+   "subtype": "penumbral",
+   "sign": "virgo",
+   "degree": 2,
+   "at": "2027-02-20T23:12:44Z",
+   "day": "2027-02-20"
+  },
+  {
+   "type": "phase",
+   "phase": "full moon",
+   "sign": "virgo",
+   "degree": 2.1,
+   "at": "2027-02-20T23:24:07Z",
+   "day": "2027-02-20"
+  },
+  {
+   "type": "ingress",
+   "body": "mars",
+   "sign": "leo",
+   "from": "virgo",
+   "retrograde": true,
+   "at": "2027-02-21T14:15:56Z",
+   "day": "2027-02-21"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "libra",
+   "from": "virgo",
+   "retrograde": false,
+   "at": "2027-02-22T21:45:00Z",
+   "day": "2027-02-22"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "scorpio",
+   "from": "libra",
+   "retrograde": false,
+   "at": "2027-02-25T02:24:22Z",
+   "day": "2027-02-24"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "sagittarius",
+   "from": "scorpio",
+   "retrograde": false,
+   "at": "2027-02-27T10:52:30Z",
+   "day": "2027-02-27"
+  },
+  {
+   "type": "phase",
+   "phase": "last quarter",
+   "sign": "sagittarius",
+   "degree": 9.4,
+   "at": "2027-02-28T05:17:07Z",
+   "day": "2027-02-28"
+  },
+  {
+   "type": "ingress",
+   "body": "venus",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-03-01T06:32:48Z",
+   "day": "2027-03-01"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "capricorn",
+   "from": "sagittarius",
+   "retrograde": false,
+   "at": "2027-03-01T22:35:37Z",
+   "day": "2027-03-01"
+  },
+  {
+   "type": "aspect",
+   "aspect": "trine",
+   "a": "venus",
+   "b": "uranus",
+   "aSign": "aquarius",
+   "aDeg": 1.9,
+   "bSign": "gemini",
+   "bDeg": 1.9,
+   "at": "2027-03-02T21:00:00Z",
+   "day": "2027-03-02"
+  },
+  {
+   "type": "station",
+   "body": "mercury",
+   "direction": "direct",
+   "sign": "aquarius",
+   "degree": 20.9,
+   "at": "2027-03-03T12:38:26Z",
+   "day": "2027-03-03"
+  },
+  {
+   "type": "aspect",
+   "aspect": "sextile",
+   "a": "venus",
+   "b": "neptune",
+   "aSign": "aquarius",
+   "aDeg": 3.3,
+   "bSign": "aries",
+   "bDeg": 3.3,
+   "at": "2027-03-04T01:21:33Z",
+   "day": "2027-03-03"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "aquarius",
+   "from": "capricorn",
+   "retrograde": false,
+   "at": "2027-03-04T11:31:52Z",
+   "day": "2027-03-04"
+  },
+  {
+   "type": "aspect",
+   "aspect": "conjunction",
+   "a": "venus",
+   "b": "pluto",
+   "aSign": "aquarius",
+   "aDeg": 6.3,
+   "bSign": "aquarius",
+   "bDeg": 6.3,
+   "at": "2027-03-06T13:46:52Z",
+   "day": "2027-03-06"
+  },
+  {
+   "type": "moon-ingress",
+   "body": "moon",
+   "sign": "pisces",
+   "from": "aquarius",
+   "retrograde": false,
+   "at": "2027-03-06T23:26:15Z",
+   "day": "2027-03-06"
+  }
+ ],
+ "days": [
+  {
+   "day": "2026-11-25",
+   "moon": {
+    "sign": "gemini",
+    "degree": 18.8,
+    "illumination": 0.98,
+    "phaseAngle": 195
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 3.4
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 18.8
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 14.7
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 25.4
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 29.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.5
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.5
+    }
+   }
+  },
+  {
+   "day": "2026-11-26",
+   "moon": {
+    "sign": "cancer",
+    "degree": 3.9,
+    "illumination": 0.93,
+    "phaseAngle": 209
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 4.4
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 3.9
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 16
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 25.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 0.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.6
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.5
+    }
+   }
+  },
+  {
+   "day": "2026-11-27",
+   "moon": {
+    "sign": "cancer",
+    "degree": 18.8,
+    "illumination": 0.86,
+    "phaseAngle": 223
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 5.5
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 18.8
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 17.4
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 26.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 0.7
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.6
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.5
+    }
+   }
+  },
+  {
+   "day": "2026-11-28",
+   "moon": {
+    "sign": "leo",
+    "degree": 3.4,
+    "illumination": 0.77,
+    "phaseAngle": 237
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 6.5
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 3.4
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 18.8
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 26.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.7
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.5
+    }
+   }
+  },
+  {
+   "day": "2026-11-29",
+   "moon": {
+    "sign": "leo",
+    "degree": 17.7,
+    "illumination": 0.67,
+    "phaseAngle": 250
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 7.5
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 17.7
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 20.2
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 27.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.7
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.5,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.5
+    }
+   }
+  },
+  {
+   "day": "2026-11-30",
+   "moon": {
+    "sign": "virgo",
+    "degree": 1.6,
+    "illumination": 0.56,
+    "phaseAngle": 263
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 8.5
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 1.6
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 21.6
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 27.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.8
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.8
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.5,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.6
+    }
+   }
+  },
+  {
+   "day": "2026-12-01",
+   "moon": {
+    "sign": "virgo",
+    "degree": 15.1,
+    "illumination": 0.45,
+    "phaseAngle": 276
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 9.5
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 15.1
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 23.1
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 28.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 2.2
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.8
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.6
+    }
+   }
+  },
+  {
+   "day": "2026-12-02",
+   "moon": {
+    "sign": "virgo",
+    "degree": 28.3,
+    "illumination": 0.35,
+    "phaseAngle": 288
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 10.5
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 28.3
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 24.5
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 29
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 2.6
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.6
+    }
+   }
+  },
+  {
+   "day": "2026-12-03",
+   "moon": {
+    "sign": "libra",
+    "degree": 11.3,
+    "illumination": 0.25,
+    "phaseAngle": 300
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 11.5
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 11.3
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 26
+    },
+    "venus": {
+     "sign": "libra",
+     "degree": 29.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 2.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.6
+    }
+   }
+  },
+  {
+   "day": "2026-12-04",
+   "moon": {
+    "sign": "libra",
+    "degree": 23.9,
+    "illumination": 0.17,
+    "phaseAngle": 311
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 12.6
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 23.9
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 27.5
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 0.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 3.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.6
+    }
+   }
+  },
+  {
+   "day": "2026-12-05",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 6.4,
+    "illumination": 0.1,
+    "phaseAngle": 323
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 13.6
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 6.4
+    },
+    "mercury": {
+     "sign": "scorpio",
+     "degree": 29
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 0.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 3.6
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.7
+    }
+   }
+  },
+  {
+   "day": "2026-12-06",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 18.8,
+    "illumination": 0.05,
+    "phaseAngle": 334
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 14.6
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 18.8
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 0.5
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 1.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.7
+    }
+   }
+  },
+  {
+   "day": "2026-12-07",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 1,
+    "illumination": 0.02,
+    "phaseAngle": 345
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 15.6
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 1
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 2
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 2.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.7
+    }
+   }
+  },
+  {
+   "day": "2026-12-08",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 13,
+    "illumination": 0,
+    "phaseAngle": 356
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 16.6
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 13
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 3.6
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4.6
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.7
+    }
+   }
+  },
+  {
+   "day": "2026-12-09",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 25,
+    "illumination": 0.01,
+    "phaseAngle": 7
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 17.6
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 25
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 5.1
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 3.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.8
+    }
+   }
+  },
+  {
+   "day": "2026-12-10",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 6.8,
+    "illumination": 0.03,
+    "phaseAngle": 18
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 18.6
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 6.8
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 6.6
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 4.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5.2
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9,
+     "rx": true
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.8
+    }
+   }
+  },
+  {
+   "day": "2026-12-11",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 18.7,
+    "illumination": 0.06,
+    "phaseAngle": 29
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 19.7
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 18.7
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 8.2
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 5.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5.5
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.8
+    }
+   }
+  },
+  {
+   "day": "2026-12-12",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 0.4,
+    "illumination": 0.12,
+    "phaseAngle": 40
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 20.7
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 0.4
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 9.7
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5.8
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6,
+     "rx": true
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.8
+    }
+   }
+  },
+  {
+   "day": "2026-12-13",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 12.3,
+    "illumination": 0.18,
+    "phaseAngle": 51
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 21.7
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 12.3
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 11.2
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 6.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.8
+    }
+   }
+  },
+  {
+   "day": "2026-12-14",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 24.2,
+    "illumination": 0.26,
+    "phaseAngle": 61
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 22.7
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 24.2
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 12.8
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 7.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.9
+    }
+   }
+  },
+  {
+   "day": "2026-12-15",
+   "moon": {
+    "sign": "pisces",
+    "degree": 6.3,
+    "illumination": 0.35,
+    "phaseAngle": 73
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 23.7
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 6.3
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 14.3
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 8.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.7
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 7.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.9
+    }
+   }
+  },
+  {
+   "day": "2026-12-16",
+   "moon": {
+    "sign": "pisces",
+    "degree": 18.6,
+    "illumination": 0.45,
+    "phaseAngle": 84
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 24.7
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 18.6
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 15.9
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 9.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 3.9
+    }
+   }
+  },
+  {
+   "day": "2026-12-17",
+   "moon": {
+    "sign": "aries",
+    "degree": 1.3,
+    "illumination": 0.55,
+    "phaseAngle": 96
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 25.8
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 1.3
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 17.4
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 10.1
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.2
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4
+    }
+   }
+  },
+  {
+   "day": "2026-12-18",
+   "moon": {
+    "sign": "aries",
+    "degree": 14.4,
+    "illumination": 0.65,
+    "phaseAngle": 108
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 26.8
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 14.4
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 19
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 11
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.5
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4
+    }
+   }
+  },
+  {
+   "day": "2026-12-19",
+   "moon": {
+    "sign": "aries",
+    "degree": 28,
+    "illumination": 0.75,
+    "phaseAngle": 120
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 27.8
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 28
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 20.5
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 11.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.7
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 27,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4
+    }
+   }
+  },
+  {
+   "day": "2026-12-20",
+   "moon": {
+    "sign": "taurus",
+    "degree": 12.1,
+    "illumination": 0.84,
+    "phaseAngle": 133
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 28.8
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 12.1
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 22.1
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 12.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4
+    }
+   }
+  },
+  {
+   "day": "2026-12-21",
+   "moon": {
+    "sign": "taurus",
+    "degree": 26.6,
+    "illumination": 0.92,
+    "phaseAngle": 147
+   },
+   "positions": {
+    "sun": {
+     "sign": "sagittarius",
+     "degree": 29.8
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 26.6
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 23.6
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 13.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.1
+    }
+   }
+  },
+  {
+   "day": "2026-12-22",
+   "moon": {
+    "sign": "gemini",
+    "degree": 11.6,
+    "illumination": 0.97,
+    "phaseAngle": 161
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 0.9
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 11.6
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 25.2
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 14.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.1
+    }
+   }
+  },
+  {
+   "day": "2026-12-23",
+   "moon": {
+    "sign": "gemini",
+    "degree": 26.8,
+    "illumination": 1,
+    "phaseAngle": 175
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 1.9
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 26.8
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 26.8
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 15.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.6
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.6,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.1
+    }
+   }
+  },
+  {
+   "day": "2026-12-24",
+   "moon": {
+    "sign": "cancer",
+    "degree": 12.1,
+    "illumination": 0.99,
+    "phaseAngle": 189
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 2.9
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 12.1
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 28.3
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 16.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.8
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.5,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.1
+    }
+   }
+  },
+  {
+   "day": "2026-12-25",
+   "moon": {
+    "sign": "cancer",
+    "degree": 27.4,
+    "illumination": 0.96,
+    "phaseAngle": 203
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 3.9
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 27.4
+    },
+    "mercury": {
+     "sign": "sagittarius",
+     "degree": 29.9
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 17.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.5,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.2
+    }
+   }
+  },
+  {
+   "day": "2026-12-26",
+   "moon": {
+    "sign": "leo",
+    "degree": 12.3,
+    "illumination": 0.9,
+    "phaseAngle": 217
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 4.9
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 12.3
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 1.5
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 18.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.5,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.2
+    }
+   }
+  },
+  {
+   "day": "2026-12-27",
+   "moon": {
+    "sign": "leo",
+    "degree": 26.9,
+    "illumination": 0.82,
+    "phaseAngle": 231
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 5.9
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 26.9
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 3.1
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 19.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.2
+    }
+   }
+  },
+  {
+   "day": "2026-12-28",
+   "moon": {
+    "sign": "virgo",
+    "degree": 11,
+    "illumination": 0.72,
+    "phaseAngle": 244
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 7
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 11
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 4.7
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 20.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.3
+    }
+   }
+  },
+  {
+   "day": "2026-12-29",
+   "moon": {
+    "sign": "virgo",
+    "degree": 24.7,
+    "illumination": 0.62,
+    "phaseAngle": 257
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 8
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 24.7
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 6.2
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 21.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.6
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.4,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.3
+    }
+   }
+  },
+  {
+   "day": "2026-12-30",
+   "moon": {
+    "sign": "libra",
+    "degree": 8,
+    "illumination": 0.51,
+    "phaseAngle": 269
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 9
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 8
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 7.8
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 22.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.7
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.3
+    }
+   }
+  },
+  {
+   "day": "2026-12-31",
+   "moon": {
+    "sign": "libra",
+    "degree": 20.9,
+    "illumination": 0.41,
+    "phaseAngle": 281
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 10
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 20.9
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 9.4
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 23.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.8
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.3
+    }
+   }
+  },
+  {
+   "day": "2027-01-01",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 3.5,
+    "illumination": 0.31,
+    "phaseAngle": 292
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 11
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 3.5
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 11
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 24.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.9
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.4
+    }
+   }
+  },
+  {
+   "day": "2027-01-02",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 15.9,
+    "illumination": 0.22,
+    "phaseAngle": 304
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 12.1
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 15.9
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 12.6
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 25.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.3,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.4
+    }
+   }
+  },
+  {
+   "day": "2027-01-03",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 28,
+    "illumination": 0.15,
+    "phaseAngle": 315
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 13.1
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 28
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 14.3
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 26.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.1
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.4
+    }
+   }
+  },
+  {
+   "day": "2027-01-04",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 10,
+    "illumination": 0.09,
+    "phaseAngle": 326
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 14.1
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 10
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 15.9
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 27.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.2
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.2,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.5
+    }
+   }
+  },
+  {
+   "day": "2027-01-05",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 22,
+    "illumination": 0.04,
+    "phaseAngle": 337
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 15.1
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 22
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 17.5
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 28.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.5
+    }
+   }
+  },
+  {
+   "day": "2027-01-06",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 3.8,
+    "illumination": 0.01,
+    "phaseAngle": 348
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 16.1
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 3.8
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 19.1
+    },
+    "venus": {
+     "sign": "scorpio",
+     "degree": 29.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.3
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.5
+    }
+   }
+  },
+  {
+   "day": "2027-01-07",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 15.6,
+    "illumination": 0,
+    "phaseAngle": 358
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 17.2
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 15.6
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 20.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 0.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 26,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.6
+    }
+   }
+  },
+  {
+   "day": "2027-01-08",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 27.4,
+    "illumination": 0.01,
+    "phaseAngle": 9
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 18.2
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 27.4
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 22.4
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 1.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.6
+    }
+   }
+  },
+  {
+   "day": "2027-01-09",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 9.3,
+    "illumination": 0.03,
+    "phaseAngle": 20
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 19.2
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 9.3
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 24.1
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 2.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2.1,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.6
+    }
+   }
+  },
+  {
+   "day": "2027-01-10",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 21.2,
+    "illumination": 0.07,
+    "phaseAngle": 31
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 20.2
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 21.2
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 25.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 3.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.6
+    }
+   }
+  },
+  {
+   "day": "2027-01-11",
+   "moon": {
+    "sign": "pisces",
+    "degree": 3.2,
+    "illumination": 0.13,
+    "phaseAngle": 42
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 21.2
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 3.2
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 27.4
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 4.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.7
+    }
+   }
+  },
+  {
+   "day": "2027-01-12",
+   "moon": {
+    "sign": "pisces",
+    "degree": 15.4,
+    "illumination": 0.2,
+    "phaseAngle": 53
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 22.3
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 15.4
+    },
+    "mercury": {
+     "sign": "capricorn",
+     "degree": 29.1
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 5.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.7
+    }
+   }
+  },
+  {
+   "day": "2027-01-13",
+   "moon": {
+    "sign": "pisces",
+    "degree": 27.8,
+    "illumination": 0.29,
+    "phaseAngle": 65
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 23.3
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 27.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 0.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 6.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 8.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.7
+    }
+   }
+  },
+  {
+   "day": "2027-01-14",
+   "moon": {
+    "sign": "aries",
+    "degree": 10.5,
+    "illumination": 0.38,
+    "phaseAngle": 76
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 24.3
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 10.5
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 2.4
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 7.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.8
+    }
+   }
+  },
+  {
+   "day": "2027-01-15",
+   "moon": {
+    "sign": "aries",
+    "degree": 23.5,
+    "illumination": 0.49,
+    "phaseAngle": 88
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 25.3
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 23.5
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 4.1
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 8.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.2,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 1.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.8
+    }
+   }
+  },
+  {
+   "day": "2027-01-16",
+   "moon": {
+    "sign": "taurus",
+    "degree": 6.9,
+    "illumination": 0.59,
+    "phaseAngle": 101
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 26.3
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 6.9
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 5.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 10
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.8
+    }
+   }
+  },
+  {
+   "day": "2027-01-17",
+   "moon": {
+    "sign": "taurus",
+    "degree": 20.8,
+    "illumination": 0.7,
+    "phaseAngle": 113
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 27.3
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 20.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 7.5
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 11
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10.1,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 25,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.9
+    }
+   }
+  },
+  {
+   "day": "2027-01-18",
+   "moon": {
+    "sign": "gemini",
+    "degree": 5.1,
+    "illumination": 0.8,
+    "phaseAngle": 127
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 28.4
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 5.1
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 9.2
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 12.1
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 10,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.9
+    }
+   }
+  },
+  {
+   "day": "2027-01-19",
+   "moon": {
+    "sign": "gemini",
+    "degree": 19.8,
+    "illumination": 0.88,
+    "phaseAngle": 140
+   },
+   "positions": {
+    "sun": {
+     "sign": "capricorn",
+     "degree": 29.4
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 19.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 10.9
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 13.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 4.9
+    }
+   }
+  },
+  {
+   "day": "2027-01-20",
+   "moon": {
+    "sign": "cancer",
+    "degree": 4.8,
+    "illumination": 0.95,
+    "phaseAngle": 154
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 0.4
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 4.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 12.6
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 14.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5
+    }
+   }
+  },
+  {
+   "day": "2027-01-21",
+   "moon": {
+    "sign": "cancer",
+    "degree": 20,
+    "illumination": 0.99,
+    "phaseAngle": 169
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 1.4
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 20
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 14.2
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 15.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5
+    }
+   }
+  },
+  {
+   "day": "2027-01-22",
+   "moon": {
+    "sign": "leo",
+    "degree": 5.2,
+    "illumination": 1,
+    "phaseAngle": 183
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 2.4
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 5.2
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 15.9
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 16.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5
+    }
+   }
+  },
+  {
+   "day": "2027-01-23",
+   "moon": {
+    "sign": "leo",
+    "degree": 20.3,
+    "illumination": 0.98,
+    "phaseAngle": 197
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 3.5
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 20.3
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 17.5
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 17.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.1
+    }
+   }
+  },
+  {
+   "day": "2027-01-24",
+   "moon": {
+    "sign": "virgo",
+    "degree": 5,
+    "illumination": 0.93,
+    "phaseAngle": 211
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 4.5
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 5
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 19.2
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 18.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 9.1,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.1
+    }
+   }
+  },
+  {
+   "day": "2027-01-25",
+   "moon": {
+    "sign": "virgo",
+    "degree": 19.4,
+    "illumination": 0.86,
+    "phaseAngle": 224
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 5.5
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 19.4
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 20.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 19.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.1
+    }
+   }
+  },
+  {
+   "day": "2027-01-26",
+   "moon": {
+    "sign": "libra",
+    "degree": 3.3,
+    "illumination": 0.77,
+    "phaseAngle": 237
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 6.5
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 3.3
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 22.4
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 21
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.7,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 24,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.2
+    }
+   }
+  },
+  {
+   "day": "2027-01-27",
+   "moon": {
+    "sign": "libra",
+    "degree": 16.8,
+    "illumination": 0.68,
+    "phaseAngle": 249
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 7.5
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 16.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 23.9
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 22.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 9.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.2
+    }
+   }
+  },
+  {
+   "day": "2027-01-28",
+   "moon": {
+    "sign": "libra",
+    "degree": 29.8,
+    "illumination": 0.58,
+    "phaseAngle": 261
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 8.5
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 29.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 25.4
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 23.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.2
+    }
+   }
+  },
+  {
+   "day": "2027-01-29",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 12.5,
+    "illumination": 0.48,
+    "phaseAngle": 273
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 9.6
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 12.5
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 26.9
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 24.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.2
+    }
+   }
+  },
+  {
+   "day": "2027-01-30",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 24.8,
+    "illumination": 0.38,
+    "phaseAngle": 284
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 10.6
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 24.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 28.2
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 25.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.3
+    }
+   }
+  },
+  {
+   "day": "2027-01-31",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 6.9,
+    "illumination": 0.29,
+    "phaseAngle": 295
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 11.6
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 6.9
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 29.6
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 26.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.3
+    }
+   }
+  },
+  {
+   "day": "2027-02-01",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 18.9,
+    "illumination": 0.21,
+    "phaseAngle": 306
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 12.6
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 18.9
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 0.8
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 27.8
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 7.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.3
+    }
+   }
+  },
+  {
+   "day": "2027-02-02",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 0.7,
+    "illumination": 0.14,
+    "phaseAngle": 317
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 13.6
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 0.7
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 1.9
+    },
+    "venus": {
+     "sign": "sagittarius",
+     "degree": 29
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.4
+    }
+   }
+  },
+  {
+   "day": "2027-02-03",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 12.5,
+    "illumination": 0.08,
+    "phaseAngle": 328
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 14.6
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 12.5
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 2.9
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 0.1
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 23,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.4
+    }
+   }
+  },
+  {
+   "day": "2027-02-04",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 24.3,
+    "illumination": 0.03,
+    "phaseAngle": 339
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 15.6
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 24.3
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 3.8
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 1.3
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.4
+    }
+   }
+  },
+  {
+   "day": "2027-02-05",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 6.2,
+    "illumination": 0.01,
+    "phaseAngle": 350
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 16.7
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 6.2
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 4.6
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 2.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.5
+    }
+   }
+  },
+  {
+   "day": "2027-02-06",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 18.2,
+    "illumination": 0,
+    "phaseAngle": 0
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 17.7
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 18.2
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.2
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 3.6
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5.7,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.5
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.5
+    }
+   }
+  },
+  {
+   "day": "2027-02-07",
+   "moon": {
+    "sign": "pisces",
+    "degree": 0.2,
+    "illumination": 0.01,
+    "phaseAngle": 12
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 18.7
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 0.2
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.6
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 4.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 10.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7,
+     "rx": true
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.5
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.5
+    }
+   }
+  },
+  {
+   "day": "2027-02-08",
+   "moon": {
+    "sign": "pisces",
+    "degree": 12.5,
+    "illumination": 0.04,
+    "phaseAngle": 23
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 19.7
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 12.5
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.9
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 5.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.5
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.6
+    }
+   }
+  },
+  {
+   "day": "2027-02-09",
+   "moon": {
+    "sign": "pisces",
+    "degree": 24.9,
+    "illumination": 0.09,
+    "phaseAngle": 34
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 20.7
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 24.9
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 6
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4.6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.2,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.6
+    }
+   }
+  },
+  {
+   "day": "2027-02-10",
+   "moon": {
+    "sign": "aries",
+    "degree": 7.5,
+    "illumination": 0.15,
+    "phaseAngle": 46
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 21.7
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 7.5
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.9,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 8.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 4.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 22.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.6
+    }
+   }
+  },
+  {
+   "day": "2027-02-11",
+   "moon": {
+    "sign": "aries",
+    "degree": 20.3,
+    "illumination": 0.23,
+    "phaseAngle": 58
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 22.7
+    },
+    "moon": {
+     "sign": "aries",
+     "degree": 20.3
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.6,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 9.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 3.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.6
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.7
+    }
+   }
+  },
+  {
+   "day": "2027-02-12",
+   "moon": {
+    "sign": "taurus",
+    "degree": 3.4,
+    "illumination": 0.33,
+    "phaseAngle": 70
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 23.7
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 3.4
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 5.2,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 10.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 3.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.7
+    }
+   }
+  },
+  {
+   "day": "2027-02-13",
+   "moon": {
+    "sign": "taurus",
+    "degree": 16.9,
+    "illumination": 0.43,
+    "phaseAngle": 82
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 24.8
+    },
+    "moon": {
+     "sign": "taurus",
+     "degree": 16.9
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 4.6,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 11.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 3.1,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.7
+    }
+   }
+  },
+  {
+   "day": "2027-02-14",
+   "moon": {
+    "sign": "gemini",
+    "degree": 0.6,
+    "illumination": 0.54,
+    "phaseAngle": 95
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 25.8
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 0.6
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 3.8,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 12.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 2.7,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.7
+    }
+   }
+  },
+  {
+   "day": "2027-02-15",
+   "moon": {
+    "sign": "gemini",
+    "degree": 14.6,
+    "illumination": 0.65,
+    "phaseAngle": 108
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 26.8
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 14.6
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 2.9,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 14
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 2.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.7
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.8
+    }
+   }
+  },
+  {
+   "day": "2027-02-16",
+   "moon": {
+    "sign": "gemini",
+    "degree": 29,
+    "illumination": 0.76,
+    "phaseAngle": 121
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 27.8
+    },
+    "moon": {
+     "sign": "gemini",
+     "degree": 29
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 2,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 15.2
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.8
+    }
+   }
+  },
+  {
+   "day": "2027-02-17",
+   "moon": {
+    "sign": "cancer",
+    "degree": 13.6,
+    "illumination": 0.85,
+    "phaseAngle": 135
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 28.8
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 13.6
+    },
+    "mercury": {
+     "sign": "pisces",
+     "degree": 0.9,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 16.4
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21.2,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 11.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.8
+    }
+   }
+  },
+  {
+   "day": "2027-02-18",
+   "moon": {
+    "sign": "cancer",
+    "degree": 28.4,
+    "illumination": 0.93,
+    "phaseAngle": 149
+   },
+   "positions": {
+    "sun": {
+     "sign": "aquarius",
+     "degree": 29.8
+    },
+    "moon": {
+     "sign": "cancer",
+     "degree": 28.4
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 29.8,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 17.5
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 1.1,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 21,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.8
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.9
+    }
+   }
+  },
+  {
+   "day": "2027-02-19",
+   "moon": {
+    "sign": "leo",
+    "degree": 13.3,
+    "illumination": 0.98,
+    "phaseAngle": 163
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 0.8
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 13.3
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 28.6,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 18.7
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 0.8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.1
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.9
+    }
+   }
+  },
+  {
+   "day": "2027-02-20",
+   "moon": {
+    "sign": "leo",
+    "degree": 28.2,
+    "illumination": 1,
+    "phaseAngle": 176
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 1.8
+    },
+    "moon": {
+     "sign": "leo",
+     "degree": 28.2
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 27.5,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 19.9
+    },
+    "mars": {
+     "sign": "virgo",
+     "degree": 0.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.7
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 5.9
+    }
+   }
+  },
+  {
+   "day": "2027-02-21",
+   "moon": {
+    "sign": "virgo",
+    "degree": 12.8,
+    "illumination": 0.99,
+    "phaseAngle": 190
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 2.8
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 12.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 26.4,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 21.1
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 30,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 2.9
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6
+    }
+   }
+  },
+  {
+   "day": "2027-02-22",
+   "moon": {
+    "sign": "virgo",
+    "degree": 27.2,
+    "illumination": 0.96,
+    "phaseAngle": 203
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 3.8
+    },
+    "moon": {
+     "sign": "virgo",
+     "degree": 27.2
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 25.4,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 22.2
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 29.6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.5,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6
+    }
+   }
+  },
+  {
+   "day": "2027-02-23",
+   "moon": {
+    "sign": "libra",
+    "degree": 11.2,
+    "illumination": 0.9,
+    "phaseAngle": 216
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 4.8
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 11.2
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 24.5,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 23.4
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 29.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6
+    }
+   }
+  },
+  {
+   "day": "2027-02-24",
+   "moon": {
+    "sign": "libra",
+    "degree": 24.8,
+    "illumination": 0.83,
+    "phaseAngle": 229
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 5.9
+    },
+    "moon": {
+     "sign": "libra",
+     "degree": 24.8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 23.6,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 24.6
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 28.8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6
+    }
+   }
+  },
+  {
+   "day": "2027-02-25",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 8,
+    "illumination": 0.74,
+    "phaseAngle": 241
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 6.9
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 8
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 22.9,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 25.8
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 28.4,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.1
+    }
+   }
+  },
+  {
+   "day": "2027-02-26",
+   "moon": {
+    "sign": "scorpio",
+    "degree": 20.7,
+    "illumination": 0.65,
+    "phaseAngle": 253
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 7.9
+    },
+    "moon": {
+     "sign": "scorpio",
+     "degree": 20.7
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 22.3,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 27
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 28,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 20,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.1
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.1
+    }
+   }
+  },
+  {
+   "day": "2027-02-27",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 3.1,
+    "illumination": 0.55,
+    "phaseAngle": 264
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 8.9
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 3.1
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.8,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 28.1
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 27.6,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.9,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 12.9
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.8
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.1
+    }
+   }
+  },
+  {
+   "day": "2027-02-28",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 15.3,
+    "illumination": 0.45,
+    "phaseAngle": 275
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 9.9
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 15.3
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.4,
+     "rx": true
+    },
+    "venus": {
+     "sign": "capricorn",
+     "degree": 29.3
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 27.3,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.8,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.1
+    }
+   }
+  },
+  {
+   "day": "2027-03-01",
+   "moon": {
+    "sign": "sagittarius",
+    "degree": 27.2,
+    "illumination": 0.36,
+    "phaseAngle": 286
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 10.9
+    },
+    "moon": {
+     "sign": "sagittarius",
+     "degree": 27.2
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.1,
+     "rx": true
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 0.5
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 26.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.7,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.2
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.2
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.2
+    }
+   }
+  },
+  {
+   "day": "2027-03-02",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 9.1,
+    "illumination": 0.27,
+    "phaseAngle": 297
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 11.9
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 9.1
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21,
+     "rx": true
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 1.7
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 26.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.6,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.3
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.2
+    }
+   }
+  },
+  {
+   "day": "2027-03-03",
+   "moon": {
+    "sign": "capricorn",
+    "degree": 20.9,
+    "illumination": 0.19,
+    "phaseAngle": 308
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 12.9
+    },
+    "moon": {
+     "sign": "capricorn",
+     "degree": 20.9
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 20.9
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 2.9
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 26.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.4,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.4
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.2
+    }
+   }
+  },
+  {
+   "day": "2027-03-04",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 2.7,
+    "illumination": 0.12,
+    "phaseAngle": 319
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 13.9
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 2.7
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 4.1
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 25.8,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.3,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.5
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 1.9
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.3
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.3
+    }
+   }
+  },
+  {
+   "day": "2027-03-05",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 14.6,
+    "illumination": 0.07,
+    "phaseAngle": 330
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 14.9
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 14.6
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.2
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 5.3
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 25.5,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.2,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.6
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.3
+    }
+   }
+  },
+  {
+   "day": "2027-03-06",
+   "moon": {
+    "sign": "aquarius",
+    "degree": 26.7,
+    "illumination": 0.03,
+    "phaseAngle": 341
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 15.9
+    },
+    "moon": {
+     "sign": "aquarius",
+     "degree": 26.7
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.4
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 6.5
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 25.2,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19.1,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.7
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.3
+    }
+   }
+  },
+  {
+   "day": "2027-03-07",
+   "moon": {
+    "sign": "pisces",
+    "degree": 9,
+    "illumination": 0,
+    "phaseAngle": 352
+   },
+   "positions": {
+    "sun": {
+     "sign": "pisces",
+     "degree": 16.9
+    },
+    "moon": {
+     "sign": "pisces",
+     "degree": 9
+    },
+    "mercury": {
+     "sign": "aquarius",
+     "degree": 21.8
+    },
+    "venus": {
+     "sign": "aquarius",
+     "degree": 7.7
+    },
+    "mars": {
+     "sign": "leo",
+     "degree": 24.9,
+     "rx": true
+    },
+    "jupiter": {
+     "sign": "leo",
+     "degree": 19,
+     "rx": true
+    },
+    "saturn": {
+     "sign": "aries",
+     "degree": 13.8
+    },
+    "uranus": {
+     "sign": "gemini",
+     "degree": 2
+    },
+    "neptune": {
+     "sign": "aries",
+     "degree": 3.4
+    },
+    "pluto": {
+     "sign": "aquarius",
+     "degree": 6.3
+    }
+   }
+  }
+ ]
+}
