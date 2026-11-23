@@ -42,6 +42,7 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
 .chip[aria-pressed="true"] .g, .chip[aria-pressed="true"] small { color: var(--night); }
 .rail-label { width: 100%; font: 600 11px var(--cond); letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
 .reels { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px 16px; padding-bottom: 60px; }
+.intro p a { color: var(--gold); }
 .reel { display: grid; gap: 8px; min-width: 0; }
 .reel video, .reel .poster { width: 100%; aspect-ratio: 1 / 1; max-width: 100%; background-color: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
 .reel .poster { border: 0; padding: 0; cursor: pointer; background-repeat: no-repeat; position: relative; }
@@ -86,7 +87,7 @@ nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px so
 
 <header><div class="wrap">
   <h1 class="mark">align <span>signs</span></h1>
-  <nav aria-label="Views"><a href="#reels" id="nav-reels">Reels</a><a href="#catalog" id="nav-catalog">Catalogue</a></nav>
+  <nav aria-label="Views"><a href="#reels" id="nav-reels">Reels</a><a href="#catalog" id="nav-catalog">Catalogue</a><a id="nav-other" target="_blank" rel="noopener" hidden></a></nav>
 </div></header>
 
 <main>
@@ -236,6 +237,11 @@ function route() {
 }
 $("#reel-stats").innerHTML = `<span>${D.reels.length} reels</span><span>${D.scripts} scripts</span><span>12 signs · ${Object.keys(FMT).length - 1} formats · ${Object.keys(LOOK).length} looks · ${Object.keys(MUS).length} music styles</span><span>${total} free images</span>`;
 $("#cat-stats").innerHTML = `<span>${total} images</span><span>${D.catalog.length} pools</span><span>public domain · CC0 · CC BY</span>`;
+if (D.other) { const o = $("#nav-other"); o.href = D.other; o.textContent = D.otherLabel + " \u2197"; o.hidden = false; }
+if (D.part && D.part.length < 12) {
+  const names = D.part.map((k) => D.signs[k].name);
+  $("#view-reels .intro p").insertAdjacentHTML("beforeend", ` This page has ${names[0]} to ${names[names.length - 1]}${D.other ? `; the other signs are on <a href="${esc(D.other)}" target="_blank" rel="noopener">${esc(D.otherLabel)}</a>` : ""}.`);
+}
 reelRail(); reelGrid(); catRail(); catGrid(); route();
 addEventListener("hashchange", route);
 </script>

@@ -53,13 +53,19 @@ def sprites():
 PW = 240          # poster tile size in the per-sign poster sheets
 
 
+SIGN_FILTER = None
+
+
 def reels(limit):
     """Small previews (480px) for the page, and one poster sheet per sign instead of a
     poster file per reel, so hundreds of reels stay within the page's file limits."""
     os.makedirs(os.path.join(OUT, "reels"), exist_ok=True)
     os.makedirs(os.path.join(OUT, "posters"), exist_ok=True)
     metas = sorted(glob.glob(os.path.join(HERE, "out", "*-s*.json")), key=os.path.getmtime, reverse=True)
-    metas = [m for m in metas if os.path.exists(m[:-5] + ".mp4")][: limit or None]
+    metas = [m for m in metas if os.path.exists(m[:-5] + ".mp4")]
+    if SIGN_FILTER:
+        metas = [m for m in metas if json.load(open(m))["sign"] in SIGN_FILTER]
+    metas = metas[: limit or None]
 
     def enc(m):
         web = os.path.join(OUT, "reels", os.path.basename(m)[:-5] + ".mp4")
@@ -102,7 +108,16 @@ def reels(limit):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--reels", type=int, default=0)
+    ap.add_argument("--signs", help="comma list: only these signs' reels (a page holds at most ~480 reels)")
+    ap.add_argument("--out", help="output folder (default out/site)")
+    ap.add_argument("--other", help="URL of the companion page with the other signs")
+    ap.add_argument("--other-label", default="Other signs")
     a = ap.parse_args()
+    global OUT, SIGN_FILTER
+    if a.out:
+        OUT = os.path.abspath(a.out)
+    if a.signs:
+        SIGN_FILTER = set(a.signs.split(","))
     print("sprites")
     cat = sprites()
     print("reels")
@@ -110,7 +125,8 @@ def main():
     tpl = open(os.path.join(HERE, "tools", "site.html")).read()
     blob = json.dumps({"catalog": cat, "reels": rl, "tw": TW, "th": TH, "cols": COLS,
                        "signs": {k: {"name": v["name"], "glyph": v["glyph"] + "\ufe0e"} for k, v in scripts.SIGNS.items()},
-                       "scripts": len(scripts.all_ids())}, ensure_ascii=False).replace("</", "<\\/")
+                       "scripts": len(scripts.all_ids()), "other": a.other, "otherLabel": a.other_label,
+                       "part": [k for k in scripts.ORDER if not SIGN_FILTER or k in SIGN_FILTER]}, ensure_ascii=False).replace("</", "<\\/")
     open(os.path.join(OUT, "index.html"), "w").write(tpl.replace("/*DATA*/null", blob))
     n = sum(len(p["items"]) for p in cat)
     print(f"{OUT}/index.html: {len(rl)} reels, {n} images in {len(cat)} pools")
