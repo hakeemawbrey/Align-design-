@@ -114,7 +114,7 @@ const truck = {
 }
 
 // ── hst080 · Your friend went quiet for a week (pho on a 60° day)
-const chat = (x, t, lt, msgs) => phone(x, 540, 720, lt, msgs, { w: 560, h: 460 })
+const chat = (x, t, lt, msgs) => phone(x, 540, 810, lt, msgs, { w: 560, h: 380 })
 const quiet = {
   hook: 'Your friend | went quiet for | a week', key: 'B',
   closing: 'Jan 9. Bring your quiet friend.', endStars: ['aquarius', 'gemini', 'leo', 'pisces'],
@@ -208,7 +208,7 @@ const ex = {
   lesson: ['Nostalgia is not', 'a reason to go back.'],
   lessonSet: warmSet, lessonCast: { capricorn: [[0, 220, Y, 200]], libra: [[0, 540, Y, 210]], sagittarius: [[0, 860, Y, 200]] }, lessonMood: { capricorn: 'happy', libra: 'heart', sagittarius: 'happy' },
   scenes: [
-    { dur: 3.6, set: coldSet, back: (x, t, lt) => phone(x, 540, 700, lt, [['l', "it's cold.", 0.0], ['l', 'remember us?', 0.3]], { w: 520, h: 340 }), cast: { libra: [[0, 540, Y, 290]] }, mood: { libra: 'wide' }, hops: { libra: [0.05, 0.3] }, wear: PF, sfx: [[0.0, 'buzz']],
+    { dur: 3.6, set: coldSet, back: (x, t, lt) => phone(x, 540, 820, lt, [['l', "it's cold.", 0.0], ['l', 'remember us?', 0.3]], { w: 520, h: 340 }), cast: { libra: [[0, 540, Y, 290]] }, mood: { libra: 'wide' }, hops: { libra: [0.05, 0.3] }, wear: PF, sfx: [[0.0, 'buzz']],
       lines: [[0.8, 2.6, 'libra', "It's 55° and | my ex texted."]] },
     { dur: 3.8, set: coldSet, cast: { libra: [[0, 540, Y, 260]] }, mood: { libra: 'sparkle' }, look: { libra: [0, -1] }, wear: PF,
       lines: [[0.3, 2.8, 'libra', 'Remember | cuddle weather?']] },
@@ -216,9 +216,9 @@ const ex = {
       lines: [[0.8, 1.4, 'capricorn', 'He cancelled | four times.'], [2.4, 1.3, 'sagittarius', 'In ONE month.']] },
     { dur: 3.6, set: coldSet, cast: { capricorn: [[0, 200, Y, 230]], libra: [[0, 540, Y, 240]], sagittarius: [[0, 880, Y, 230]] }, mood: { capricorn: 'eyeroll', libra: 'sparkle', sagittarius: 'squint' }, wear: PF,
       lines: [[0.2, 1.4, 'libra', "But it's | COLD."], [1.8, 1.5, 'sagittarius', "It's 55, babe."]] },
-    { dur: 3.6, set: coldSet, back: (x, t, lt) => phone(x, 540, 700, lt, [['r', 'hey...', 0.3]], { w: 520, h: 300, typing: 1.0 }), cast: { capricorn: [[0, 200, Y, 230]], libra: [[0, 540, Y, 240]], sagittarius: [[0, 880, Y, 230]], pisces: [[0, 540, 1000, 130]] }, mood: { capricorn: 'wide', libra: 'neutral', sagittarius: 'wide', pisces: 'wide' }, wear: PF, sfx: [[0.6, 'sob']],
+    { dur: 3.6, set: coldSet, back: (x, t, lt) => phone(x, 540, 820, lt, [['r', 'hey...', 0.3]], { w: 520, h: 300, typing: 1.0 }), cast: { capricorn: [[0, 200, Y, 230]], libra: [[0, 540, Y, 240]], sagittarius: [[0, 880, Y, 230]], pisces: [[0, 540, 1000, 130]] }, mood: { capricorn: 'wide', libra: 'neutral', sagittarius: 'wide', pisces: 'wide' }, wear: PF, sfx: [[0.6, 'sob']],
       lines: [[1.6, 1.8, 'pisces', 'nooo *sob*']] },
-    { dur: 3.8, set: coldSet, back: (x, t, lt) => phone(x, 540, 700, lt, [['r', 'Stay warm.', 0.3], ['r', "I'm good.", 0.8]], { w: 520, h: 340 }), cast: { capricorn: [[0, 200, Y, 230]], libra: [[0, 540, Y, 240]], sagittarius: [[0, 880, Y, 230]] }, mood: { capricorn: lt => lt < 1.2 ? 'wide' : 'heart', libra: 'sparkle', sagittarius: lt => lt < 1.2 ? 'wide' : 'heart' }, hops: { capricorn: [1.2, 1.6], sagittarius: [1.3, 1.7] }, wear: PF, sfx: [[1.2, 'cheer']],
+    { dur: 3.8, set: coldSet, back: (x, t, lt) => phone(x, 540, 820, lt, [['r', 'Stay warm.', 0.3], ['r', "I'm good.", 0.8]], { w: 520, h: 340 }), cast: { capricorn: [[0, 200, Y, 230]], libra: [[0, 540, Y, 240]], sagittarius: [[0, 880, Y, 230]] }, mood: { capricorn: lt => lt < 1.2 ? 'wide' : 'heart', libra: 'sparkle', sagittarius: lt => lt < 1.2 ? 'wide' : 'heart' }, hops: { capricorn: [1.2, 1.6], sagittarius: [1.3, 1.7] }, wear: PF, sfx: [[1.2, 'cheer']],
       lines: [[1.6, 1.9, 'sagittarius', 'SENT. | Iconic.']] },
     { dur: 3.8, set: warmSet, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('libra'); sweat(x, cx + s * 0.35, cy - s * 0.35, t, 3) }, cast: { libra: [[0, 540, Y, 260]] }, mood: { libra: 'happy' }, wear: { libra: [] },
       stick: [[0.1, 1.4, 'NEXT DAY · 81°', '#ff9a3c']], lines: [[1.6, 2.0, 'libra', 'And just like | that: summer.']] },
