@@ -121,7 +121,7 @@ export const hst439 = {
   hook: 'Capricorn packed | for ONE party', badge: BADGE, cues: [...sting(493.88), ['boom', 0.0, 0.2]], endLen: 6.2,
   end: ticket('Packed. Planned. Jan 9.', ['capricorn', 'aquarius', 'virgo', 'cancer']),
   scenes: [
-    { dur: 2.8, set: bed, front: (x, t, lt) => { bag(x, t, 6, 9); clipboard(x, 880, 560, 'JAN 9', [['bag', 0.6]], lt, { w: 260, k: 0.8 }) }, cast: { [CP]: [[0, 240, Y - 140, 240]] }, mood: { [CP]: 'squint' }, hops: { [CP]: [0.02, 0.5, 1.0, 1.5, 2.0] }, look: { [CP]: [0.8, 0] } },
+    { dur: 2.8, set: bed, front: (x, t, lt) => { bag(x, t, 6, 9); clipboard(x, 880, 800, 'JAN 9', [['bag', 0.6]], lt, { w: 260, k: 0.8 }); streetSign(x, 300, 740, 'HOUSTON', { pole: false, k: 0.75 }) }, cast: { [CP]: [[0, 240, Y - 140, 240]] }, mood: { [CP]: 'squint' }, hops: { [CP]: [0.02, 0.5, 1.0, 1.5, 2.0] }, look: { [CP]: [0.8, 0] } },
     ...PACK.map(([it, line], i) => ({ dur: 2.7, set: bed, front: (x, t, lt) => bag(x, t, i + 1, lt), cast: { [CP]: [[0, 240, Y - 140, 240]] }, mood: { [CP]: 'squint' }, look: { [CP]: [0.8, 0] }, hops: { [CP]: [0.3] }, lines: [[0.3, 2.2, CP, line]] })),
     { dur: 3.4, set: bed, front: (x, t, lt) => bag(x, t, 6, 9), cast: { [CP]: [[0, 240, Y - 140, 240]], aquarius: [[0, 1300, Y, 240], [0.5, 880, Y, 240]] }, mood: { [CP]: 'wide', aquarius: 'eyeroll' },
       lines: [[0.6, 1.3, 'aquarius', "it's one | night."], [2.0, 1.3, CP, "it's a | plan."]] },
@@ -135,7 +135,7 @@ export const hst439 = {
 // ── hst440 · Taurus has a pre-party food plan (Bellaire, Hillcroft, a 60° pho, boba, "saving room")
 const TA = 'taurus'
 const stop = (n, set, food, line, extra = {}) => ({ dur: 3.0, set, front: (x, t, lt, P) => { label(x, 840, 560, `STOP ${n}`, Kp(lt, 0.05), { size: 50, bg: GOLD, rot: 0.04 }); dish(x, food, 760, 1220, 1.1, t); extra.front?.(x, t, lt, P) }, cast: { [TA]: [[0, 330, Y, 280]], ...(extra.cast || {}) }, mood: { [TA]: 'heart', ...(extra.mood || {}) }, hops: { [TA]: [0.1, 0.5] }, lines: [[0.3, 2.4, TA, line], ...(extra.lines || [])] })
-const kitchen = (x, t) => { room(x, { wall: '#c86a3a', floor: '#5a3a2a' }); box(x, 600, 520, 380, 280, '#f4efe4', 8); txt(x, 'THE PLAN', 790, 560, { size: 38, col: INK }); ['1 · dumplings', '2 · chaat', '3 · pho', '4 · boba', '5 · the party'].forEach((s, i) => txt(x, s, 630, 610 + i * 40, { size: 28, col: INK, align: 'left', font: MONO, weight: 700 })) }
+const kitchen = (x, t) => { room(x, { wall: '#c86a3a', floor: '#5a3a2a' }); box(x, 600, 520, 380, 280, '#f4efe4', 8); txt(x, 'THE PLAN', 790, 560, { size: 38, col: INK }); ['1 · dumplings', '2 · chaat', '3 · pho', '4 · boba', '5 · the party'].forEach((s, i) => txt(x, s, 630, 610 + i * 40, { size: 28, col: INK, align: 'left', font: MONO, weight: 700 })); streetSign(x, 290, 720, 'BELLAIRE BLVD', { pole: false, k: 0.7 }) }
 const FOOD_PINS = [[-320, 180, 'HOME'], [-140, 40, 'BELLAIRE'], [20, 170, 'HILLCROFT'], [160, -40, 'PHO'], [240, 200, 'BOBA'], [330, -170, 'JAN 9']]
 export const hst440 = {
   hook: 'Taurus has a | pre-party food plan', badge: BADGE, cues: [...sting(554.37)], endLen: 6.2,
@@ -151,5 +151,55 @@ export const hst440 = {
       cast: { [TA]: [[0, 380, Y, 270]], gemini: [[0, 760, Y, 240]] }, mood: { [TA]: 'happy', gemini: 'eyeroll' }, lines: [[0.2, 1.4, TA, 'saving room | for the party.'], [1.8, 1.4, 'gemini', 'you said that | at stop two.']] },
     { dur: 4.6, set: kitchen, front: (x, t, lt) => rpg(x, lt, 'TAURUS', "eat before you go. | a fed star | is a happy star.", 0.3, 4.1, { y: 1060, col: '#ffb07a' }),
       cast: { [TA]: [[0, 330, 860, 250]] }, mood: { [TA]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst441 · which shoes for Jan 9? the signs vote (boots, sneakers, heels, sandals; ends on a tie and a comment prompt)
+export function shoe(x, kind, cx, cy, s = 1, col = '#8a4a2a') {
+  x.save(); x.translate(cx, cy); x.scale(s, s)
+  if (kind === 'boots') { box(x, -40, -120, 70, 130, col, 6); box(x, -40, -10, 120, 44, col, 6); box(x, -46, 30, 20, 14, INK, 0); for (let k = 0; k < 3; k++) { x.fillStyle = GOLD; x.fillRect(-30 + k * 18, -90, 8, 50) } }
+  else if (kind === 'sneakers') { box(x, -70, -30, 140, 50, BONE, 6); box(x, -70, 20, 150, 18, '#ff5a6e', 4); for (let k = 0; k < 3; k++) { x.fillStyle = INK; x.fillRect(-30 + k * 22, -22, 14, 6) } }
+  else if (kind === 'heels') { x.fillStyle = INK; x.beginPath(); x.moveTo(-80, 20); x.lineTo(-40, -40); x.lineTo(70, 10); x.lineTo(70, 30); x.closePath(); x.fill(); x.fillStyle = col; x.beginPath(); x.moveTo(-72, 16); x.lineTo(-38, -32); x.lineTo(62, 12); x.lineTo(62, 22); x.closePath(); x.fill(); box(x, -78, 18, 14, 50, col, 4) }
+  else if (kind === 'sandals') { box(x, -70, 10, 140, 20, '#c98e5a', 5); x.strokeStyle = INK; x.lineWidth = 10; x.beginPath(); x.moveTo(-30, 10); x.lineTo(0, -30); x.lineTo(30, 10); x.stroke(); x.strokeStyle = PINK; x.lineWidth = 5; x.stroke() }
+  x.restore()
+}
+const SHOES = [['boots', 'BOOTS', '#b0703a', ['sagittarius', 'leo', 'aries'], "boots are out. | it's rodeo season."], ['sneakers', 'SNEAKERS', '#ff5a6e', ['virgo', 'capricorn', 'aquarius'], 'parking is | three blocks away.'],
+  ['heels', 'HEELS', PINK, ['libra', 'scorpio', 'gemini'], 'Westheimer bumps? | I can handle it.'], ['sandals', 'SANDALS', '#c98e5a', ['taurus', 'pisces', 'cancer'], "it's 80°. | toes out."]]
+const shoeWall = (x, t, lt, votes = [0, 0, 0, 0], hi = -1) => { room(x, { wall: '#2a4a5a', floor: '#3a2a3a' }); SHOES.forEach(([k, name, col], i) => { const cx = 150 + i * 260, cy = 820, on = i === hi; box(x, cx - 110, cy - 130, 220, 260, on ? GOLD : BONE, 7); shoe(x, k, cx, cy - 10, 0.9, col); txt(x, name, cx, cy + 95, { size: 32, col: INK }); for (let v = 0; v < votes[i]; v++) box(x, cx - 75 + v * 55, cy + 150, 40, 40, PINK, 4) }) }
+export const hst441 = {
+  hook: 'Jan 9 shoes: | the signs vote', badge: BADGE, cues: [...sting(783.99), ['tick', 4.0, 0.1], ['tick', 7.4, 0.1], ['tick', 10.8, 0.1], ['tick', 14.2, 0.1]], endLen: 6.2,
+  end: ticket('Any shoes. Just come. Jan 9.', ['sagittarius', 'virgo', 'libra', 'taurus']),
+  scenes: [
+    { dur: 2.8, set: (x, t, lt) => { shoeWall(x, t, lt, [0, 0, 0, 0], Math.floor(t * 3) % 4); streetSign(x, 540, 590, 'WESTHEIMER', { pole: false, k: 0.8 }) }, cast: Object.fromEntries(SIGN_IDS.map((id, i) => [id, [[0, 90 + (i % 6) * 180, i < 6 ? 1180 : 1330, 130]]])), hops: waveHops(SIGN_IDS, 0.02, 0.06), mood: allMood('wide') },
+    ...SHOES.map(([k, name, col, who, line], i) => ({ dur: 3.4, set: (x, t, lt) => shoeWall(x, t, lt, SHOES.map((_, j) => j < i ? 3 : j === i ? Math.min(3, Math.floor(lt / 0.5)) : 0), i),
+      cast: Object.fromEntries(who.map((id, j) => [id, [[0, -200 + j * 60, Y, 220], [0.3 + j * 0.3, 260 + j * 280, Y, 220]]])), mood: Object.fromEntries(who.map(id => [id, id === 'pisces' ? 'heart' : 'sparkle'])),
+      front: (x, t, lt, P) => { if (k === 'boots') wear(x, P, who[0], 'hat', '#b0703a'); if (k === 'sandals') wear(x, P, who[0], 'shades') }, lines: [[1.2, 2.0, who[0], line]], stick: [[0.2, 1.0, `TEAM ${name}`, col]] })),
+    { dur: 3.4, set: (x, t, lt) => shoeWall(x, t, lt, [3, 3, 3, 3]), cast: { gemini: [[0, 540, Y, 280]] }, mood: { gemini: 'wink' }, lines: [[0.4, 2.6, 'gemini', 'a tie? | wear two.']], stick: [[0.1, 1.2, "IT'S A TIE", GOLD]], hops: { gemini: [0.4, 0.9] } },
+    { dur: 3.6, set: (x, t, lt) => shoeWall(x, t, lt, [3, 3, 3, 3], Math.floor(t * 2) % 4), front: (x, t, lt) => { const k = Kp(lt, 0.1, 0.35); label(x, 540, 470, 'your pick for Jan 9?', k, { size: 56, bg: GOLD }); label(x, 540, 1260, 'boots · sneakers · heels · sandals', k, { size: 38, bg: PINK, rot: 0.02 }); label(x, 540, 1360, 'comment yours', k, { size: 44, bg: BONE, rot: -0.02 }) }, cast: {} },
+  ],
+}
+
+// ── hst442 · a Heights Cancer leaves the Heights (nobody leaves the Heights; the comfort zone will be there later)
+const CA = 'cancer'
+const porch = (x, t) => { daySky(x, t, { top: '#7ab0ff', bot: '#ffe8c0', city: false, ground: '#6a9a4a' }); bungalow(x, 560, FLOOR + 60, t, { col: '#e8a0b0' }); x.fillStyle = '#3a6a2a'; x.beginPath(); x.arc(130, 820, 130, 0, Math.PI * 2); x.fill(); box(x, 115, 900, 30, 460, '#6b3b1f', 5) }
+export const hst442 = {
+  hook: 'A Heights Cancer | leaves the Heights', badge: BADGE, cues: [...sting(698.46)], endLen: 6.2,
+  end: ticket('Leave the porch. Jan 9.', ['cancer', 'taurus', 'virgo', 'pisces']),
+  scenes: [
+    { dur: 3.0, set: porch, front: (x, t, lt) => streetSign(x, 760, 700, 'THE HEIGHTS', { pole: false, k: 0.9 }), cast: { [CA]: [[0, 330, Y - 20, 260]] }, mood: { [CA]: 'happy' }, hops: { [CA]: [0.02, 0.6, 1.2, 1.8] },
+      lines: [[0.6, 2.2, CA, 'nobody leaves | the Heights.']] },
+    { dur: 3.2, set: porch, front: (x, t, lt) => inviteCard(x, 760, 760, 0.7, t, Kp(lt, 0.1)), cast: { [CA]: [[0, 330, Y - 20, 260]] }, mood: { [CA]: lt => lt > 1.4 ? 'wide' : 'heart' },
+      lines: [[0.3, 1.2, CA, 'a party! | yay!'], [1.6, 1.4, CA, 'that means... | leaving.']] },
+    { dur: 3.4, set: porch, cast: { [CA]: [[0, 330, Y - 20, 260]] }, mood: { [CA]: 'heart' }, lines: [[0.2, 1.0, CA, 'bye, porch.'], [1.3, 0.9, CA, 'bye, dog.'], [2.3, 0.9, CA, 'bye, tree.']] },
+    { dur: 3.2, set: (x, t) => { bedroom(x, t, { wall: '#8a5a6a', night: false }) }, front: (x, t, lt, P) => { wear(x, P, CA, 'scarf', '#8fe3ff'); dish(x, 'bag', 780, Y + 40, 1, t); for (let k = 0; k < 3; k++) if (lt > 0.5 + k * 0.6) dish(x, ['tray', 'chips', 'sweater'][k], 780 + (k - 1) * 90, Y - 90 - k * 10, 0.4, t) }, cast: { [CA]: [[0, 330, Y, 270]] }, mood: { [CA]: 'squint' },
+      lines: [[0.3, 2.6, CA, 'snacks. a sweater. | snacks for the sweater.']] },
+    { dur: 3.4, set: (x, t, lt) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#ff9a6a'); g.addColorStop(1, '#ffd8a0'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR - 290, t, { alpha: 0.8 }); freeway(x, FLOOR - 300, 440, 3, t * 500); overheadSign(x, 540, 640, 'NOW LEAVING', 'THE HEIGHTS', Kp(lt, 0.05)) },
+      front: (x, t) => car(x, 540, FLOOR - 40, '#e8a0b0', { open: true, s: 1.4 }), cast: { [CA]: [[0, 470, FLOOR - 180, 190]], taurus: [[0, 650, FLOOR - 180, 190]] }, mood: { [CA]: 'wide', taurus: 'happy' },
+      lines: [[0.4, 1.3, 'taurus', "it's ten | minutes."], [1.9, 1.3, CA, "it's a | journey."]] },
+    { dur: 3.2, set: (x, t, lt) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#2a1d5a'); g.addColorStop(1, '#ff8a7a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR - 290, t, { alpha: 0.9 }); freeway(x, FLOOR - 300, 440, 3, t * 500); shield(x, 880, 620, '610', 0.85) },
+      front: (x, t) => car(x, 540, FLOOR - 40, '#e8a0b0', { open: true, s: 1.4 }), cast: { [CA]: [[0, 470, FLOOR - 180, 190]], taurus: [[0, 650, FLOOR - 180, 190]] }, mood: { [CA]: 'sparkle', taurus: 'wink' },
+      lines: [[0.4, 2.4, CA, 'the outside world. | it has lights!']] },
+    { dur: 4.8, set: porch, front: (x, t, lt) => rpg(x, lt, 'CANCER', 'your comfort zone | will be right there | when you get back.', 0.3, 4.3, { y: 1060, col: '#8fe3ff' }),
+      cast: { [CA]: [[0, 330, 860, 250]] }, mood: { [CA]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
   ],
 }
