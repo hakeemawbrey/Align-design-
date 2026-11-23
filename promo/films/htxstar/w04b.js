@@ -43,7 +43,7 @@ const hst093 = story({
 
 // ── hst094 · You asked Taurus for a bite (a breakfast taco, then the next morning)
 const morning = (x, t) => { sky(x, '#ffc58a', '#fff0d0', FLOOR + 60); sun(x, 880, 300, 70); skyline(x, FLOOR + 60, t, { col: '#c87a6a', lit: '#ffe0a0', alpha: 0.5 }); ground(x, '#b8a890') }
-const TACO = (x, P, id, dx = 0.55, s = 0.9) => { const [cx, cy, sz] = P.at(id); taco(x, cx + sz * dx, cy + sz * 0.1, s) }
+const TACO = (x, P, id, dx = 0.6, s = 1.5) => { const [cx, cy, sz] = P.at(id); taco(x, cx + sz * dx, cy + sz * 0.1, s) }
 const hst094 = story({
   hook: 'You asked Taurus | for a bite', key: 'G',
   close: 'Save me a bite. Jan 9.', stars: ['taurus', 'aquarius', 'pisces', 'cancer'],
@@ -65,7 +65,7 @@ const hst094 = story({
     { dur: 3.8, title: 'THE NEXT MORNING', set: (x, t) => porch(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('taurus'); box(x, cx + s * 0.35, cy - s * 0.05, 90, 110, '#c9a478', 5) },
       cast: { taurus: [[0, 260, 1250, 240]], aquarius: [[0, 760, 1250, 230]] }, mood: { taurus: 'happy', aquarius: 'wide' },
       lines: [[0.4, 1.4, 'aquarius', 'Taurus? | at my door?'], [2.0, 1.6, 'taurus', 'two tacos. | one is yours.']], sfx: [SFX.ding(2.0)] },
-    { dur: 3.8, set: (x, t, lt) => { porch(x, t); taco(x, 640, 1110, 1.1); if (lt > 1.8) hearts(x, t, 540, 1000, t - lt + 1.8, { n: 8, spread: 260 }) },
+    { dur: 3.8, set: (x, t, lt) => { porch(x, t); taco(x, 640, 1100, 1.8); if (lt > 1.8) hearts(x, t, 540, 1000, t - lt + 1.8, { n: 8, spread: 260 }) },
       cast: { taurus: [[0, 260, 1250, 240]], aquarius: [[0, 760, 1250, 230]] }, mood: { taurus: 'sparkle', aquarius: lt => lt > 1.8 ? 'heart' : 'wide' },
       lines: [[0.3, 1.6, 'taurus', 'flour. extra salsa. | right?'], [2.0, 1.6, 'aquarius', 'you | remembered?']] },
     { dur: 3.4, set: (x, t) => porch(x, t), front: (x, t, lt, P) => TACO(x, P, 'taurus'), cast: { taurus: [[0, 260, 1250, 240]], aquarius: [[0, 760, 1250, 230]] }, mood: { taurus: 'wink', aquarius: 'happy' }, hops: { aquarius: [1.8, 2.1] },
