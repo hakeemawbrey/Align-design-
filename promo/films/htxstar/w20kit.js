@@ -270,7 +270,7 @@ export function phone(x, cx, cy, lines, { k = 1, s = 1 } = {}) {   // a generic 
   if (k <= 0) return
   x.save(); x.translate(cx, cy); x.scale(s * k, s * k)
   box(x, -170, -300, 340, 600, '#1b1236', 10); x.fillStyle = '#f4efe4'; x.fillRect(-150, -270, 300, 540)
-  lines.forEach(([me, text], i) => { const w = 220, bx = me ? 150 - w - 14 : -150 + 14, by = -240 + i * 110; box(x, bx, by, w, 84, me ? '#5ec8ff' : '#e0d6f0', 3); const [l1, l2] = text.split(' | '); txt(x, l1, bx + w / 2, by + (l2 ? 26 : 42), { size: 26, col: INK }); if (l2) txt(x, l2, bx + w / 2, by + 58, { size: 26, col: INK }) })
+  lines.forEach(([me, text], i) => { const w = 250, bx = me ? 150 - w - 10 : -150 + 10, by = -200 + i * 150; box(x, bx, by, w, 120, me ? '#5ec8ff' : '#e0d6f0', 3); const [l1, l2] = text.split(' | '); txt(x, l1, bx + w / 2, by + (l2 ? 38 : 60), { size: 38, col: INK }); if (l2) txt(x, l2, bx + w / 2, by + 84, { size: 38, col: INK }) })
   x.restore()
 }
 export function heartsRain(x, t, n = 14, col = PINK) { for (let k = 0; k < n; k++) { const ph = (t * 0.35 + k / n) % 1, hx = 60 + (k * 131) % 960, hy = 300 + ph * 1100; x.fillStyle = col; x.fillRect(hx - 10, hy - 6, 8, 8); x.fillRect(hx + 2, hy - 6, 8, 8); x.fillRect(hx - 10, hy + 2, 20, 6); x.fillRect(hx - 4, hy + 8, 8, 6) } }
