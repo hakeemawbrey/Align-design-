@@ -2,9 +2,9 @@
 import { Y, BADGE, Kp, fadeK, sting, ticket, waveHops, title, daySky, bayou, bedroom, rack, mirror, phone, clipboard, thermo, rpg, wear, wearAt, dish, partyTable,
   carBack, routeMap, photoFrame, flash, dayCard, nameTag, closet, stamp, signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease,
   GOLD, BONE, PINK, INK, MINT, SKYB, LAV, MONO, SERIF } from './w18.js'
-import { skyline, freeway, car, heatSun, sweat, shield, streetSign, overheadSign, taco, kolache, klobasnek, puffer, mural, houses, cones, coffeeShop, slab, BRAKE } from './kit.js'
+import { skyline, freeway, car, heatSun, sweat, shield, streetSign, overheadSign, taco, kolache, klobasnek, puffer, mural, houses, cones, coffeeShop, slab, inviteCard, calendar, BRAKE } from './kit.js'
 import { bungalow, blvdNight, forecastCard } from './w18a.js'
-import { SIGN_IDS } from '../signs3kit.js'
+import { SIGN_IDS, notes, hearts } from '../signs3kit.js'
 
 const allMood = m => Object.fromEntries(SIGN_IDS.map(id => [id, m]))
 
@@ -58,5 +58,98 @@ export const hst436 = {
       cast: { [SG]: [[0, 590, FLOOR - 180, 200]] }, mood: { [SG]: 'wink' }, lines: [[1.0, 2.0, SG, 'right on time. | told you.']] },
     { dur: 4.8, set: (x, t, lt) => bridgeBats(x, t, lt + 4), front: (x, t, lt) => rpg(x, lt, 'SAGITTARIUS', 'getting there is | part of the party. | enjoy the ride.', 0.3, 4.3, { y: 1060, col: '#b08aff' }),
       cast: { [SG]: [[0, 540, 820, 250]] }, mood: { [SG]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst437 · the signs fight over the party playlist (each sign takes the aux; screwed sound)
+const AUX = [
+  ['aries', 'hype songs. | ONLY hype songs.', 'wide'], ['taurus', 'slow jams. | sit down, relax.', 'sleepy'], ['gemini', 'one song. | 40 tabs open.', 'wink'],
+  ['cancer', "zydeco, like | grandma's porch.", 'heart'], ['leo', 'a voice memo | of me singing.', 'sparkle'], ['virgo', 'sorted by tempo. | color-coded.', 'squint'],
+  ['libra', 'Tejano. | two-step with me?', 'heart'], ['scorpio', 'slowed... | way... down...', 'sleepy'], ['sagittarius', 'everything. | on shuffle.', 'sparkle'],
+  ['capricorn', 'smooth jazz. | for focus.', 'squint'], ['aquarius', "a song you | haven't heard.", 'eyeroll'], ['pisces', 'sad songs. | happy crying.', 'heart'],
+]
+const club = (x, t, hue = 0) => { const cols = ['#1a2a5a', '#3a1a5a', '#1a4a4a', '#4a1a3a']; x.fillStyle = cols[hue % 4]; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR - 200, t, { alpha: 0.4 })
+  for (let k = 0; k < 5; k++) { const a = Math.sin(t * 1.3 + k * 1.7) * 0.5; x.save(); x.translate(200 + k * 170, 300); x.rotate(a); x.fillStyle = [`rgba(255,143,177,0.16)`, `rgba(125,255,176,0.16)`, `rgba(242,199,92,0.16)`, `rgba(143,227,255,0.16)`, `rgba(201,166,255,0.16)`][k]; x.beginPath(); x.moveTo(0, 0); x.lineTo(-120, 1100); x.lineTo(120, 1100); x.fill(); x.restore() }
+  for (let i = 0; i < 9; i++) for (let j = 0; j < 3; j++) { const on = Math.sin(t * 4 + i * 1.1 + j * 2.3) > 0.3; x.fillStyle = on ? ['#ff8fb1', '#7dffb0', '#ffd36b'][(i + j) % 3] : '#2a2240'; x.fillRect(i * 120, FLOOR + 60 + j * 70, 120, 70) }
+  x.fillStyle = INK; x.fillRect(0, FLOOR + 54, 1080, 8) }
+export const hst437 = {
+  hook: 'The signs fight over | the party playlist', badge: BADGE, cues: [...sting(523.25), ['boom', 0.0, 0.2]], endLen: 6.2,
+  end: ticket('The aux is yours. Jan 9.', ['libra', 'cancer', 'scorpio', 'aquarius']),
+  scenes: [
+    { dur: 2.8, set: (x, t) => club(x, t), front: (x, t, lt) => { dish(x, 'speaker', 540, 1100, 1.3, t); notes(x, t, 540, 900, { n: 6, cell: 7 }) }, cast: Object.fromEntries(SIGN_IDS.map((id, i) => [id, [[0, 90 + (i % 6) * 180, i < 6 ? 1000 : 1250, 140]]])), hops: waveHops(SIGN_IDS, 0.02, 0.05), mood: allMood('sparkle') },
+    ...AUX.map(([id, line, mood], i) => ({
+      dur: 2.6, title: `${id.toUpperCase()} HAS THE AUX`, set: (x, t) => club(x, t, i), front: (x, t, lt) => { dish(x, 'speaker', 840, 1150, 1.1, id === 'scorpio' ? t * 0.3 : t); notes(x, t * (id === 'scorpio' ? 0.3 : 1), 840, 960, { n: 4, cell: 6, col: [GOLD, PINK, MINT][i % 3] }) },
+      cast: { [id]: [[0, 360, Y, 290]] }, mood: { [id]: mood }, hops: { [id]: id === 'scorpio' ? [0.2] : [0.1, 0.7, 1.3, 1.9] }, look: { [id]: [0.7, 0] },
+      lines: [[0.2, 2.25, id, line]],
+    })),
+    { dur: 3.2, set: (x, t) => club(x, t, 1), front: (x, t, lt) => { dish(x, 'speaker', 540, 1100, 1.3, t); const k = Kp(lt, 0.1, 0.35); label(x, 540, 560, 'your party song?', k, { size: 56, bg: GOLD }); label(x, 540, 670, 'comment it', k, { size: 44, bg: PINK, rot: 0.03 }) },
+      cast: Object.fromEntries(SIGN_IDS.map((id, i) => [id, [[0, 90 + (i % 6) * 180, i < 6 ? 1000 : 1250, 140]]])), hops: waveHops(SIGN_IDS, 0.1, 0.05), mood: allMood('heart') },
+  ],
+}
+
+// ── hst438 · Pisces started crying about Jan 9 already (a countdown of happy tears; the Aunties step in)
+const P_ = 'pisces'
+const day = (n, set, line, extra = {}) => ({ dur: 3.2, set, front: (x, t, lt, P) => { dayCard(x, 860, 560, n, Kp(lt, 0.02), { col: '#7a6aff' }); extra.front?.(x, t, lt, P) }, cast: { [P_]: [[0, 420, Y, 280]], ...(extra.cast || {}) }, mood: { [P_]: 'heart', ...(extra.mood || {}) }, lines: [[0.3, 2.6, P_, line], ...(extra.lines || [])], ...(extra.more || {}) })
+export const hst438 = {
+  hook: 'Pisces started crying | about Jan 9 already', badge: BADGE, cues: [...sting(622.25), ['bell', 0.1, 1318.5, 0.012, 1.2, 0]], endLen: 6.2,
+  end: ticket('Happy tears only. Jan 9.', ['pisces', 'cancer', 'taurus', 'libra']),
+  scenes: [
+    { dur: 3.0, set: (x, t) => bedroom(x, t, { wall: '#4a3a8a', floor: '#2a2a4a' }), front: (x, t, lt) => { inviteCard(x, 760, 1000, 0.75, t, 1); hearts(x, t, 420, 1100, 0, { n: 6, spread: 200 }) }, cast: { [P_]: [[0, 330, Y, 280]] }, mood: { [P_]: 'heart' }, hops: { [P_]: [0.02, 0.5, 1.0, 1.5] },
+      lines: [[0.4, 2.4, P_, "I'm INVITED?"]] },
+    day(4, (x, t) => bedroom(x, t, { wall: '#3a4a8a', floor: '#2a2a4a' }), 'a card for | every sign.', { front: (x, t, lt) => { for (let k = 0; k < 6; k++) box(x, 600 + (k % 3) * 120, 1150 + Math.floor(k / 3) * 100, 90, 70, [PINK, GOLD, MINT, SKYB, LAV, BONE][k], 4) } }),
+    day(5, (x, t) => { bedroom(x, t, { wall: '#5a3a7a', floor: '#2a2a4a' }); mirror(x, 820, 1000, 260, 480, t) }, "the outfit. | it's so pretty.", { front: (x, t, lt, P) => wear(x, P, P_, 'flower', LAV) }),
+    day(6, (x, t) => bedroom(x, t, { wall: '#3a2a5a', floor: '#2a2a4a' }), 'king cake season | started. sob.', { front: (x, t) => dish(x, 'kingcake', 760, 1240, 1.1, t) }),
+    day(7, (x, t) => bayou(x, t), 'the bayou sunset. | I cannot.', {}),
+    { dur: 3.6, set: (x, t) => room(x, { wall: '#6a4a3a', floor: '#3a2a1e' }), front: (x, t, lt, P) => { dayCard(x, 860, 560, 8, Kp(lt, 0.02), { col: '#7a6aff' }); wear(x, P, 'cancer', 'glasses'); wear(x, P, 'taurus', 'glasses') },
+      cast: { [P_]: [[0, 540, Y, 250]], cancer: [[0, 220, Y, 230]], taurus: [[0, 860, Y, 230]] }, mood: { [P_]: 'heart', cancer: 'happy', taurus: 'wink' },
+      lines: [[0.2, 1.5, 'cancer', 'drink some | water, baby.'], [1.9, 1.5, 'taurus', "it's a party, | not a goodbye."]] },
+    { dur: 3.2, set: (x, t) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#1c1240'); g.addColorStop(1, '#5a2a7a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR + 60, t, { alpha: 0.9 }); outside(x, { ground: '#221b38' }) },
+      front: (x, t, lt) => { dayCard(x, 860, 560, 9, Kp(lt, 0.02), { col: GOLD }); if (lt > 0.4) sparkles(x, t, 420, 1100, t - lt + 0.4, 12, 300, 4) }, cast: { [P_]: [[0, 420, Y, 290]] }, mood: { [P_]: 'sparkle' }, hops: { [P_]: [0.4, 0.9, 1.4] },
+      lines: [[0.3, 2.6, P_, 'happy tears | only today.']] },
+    { dur: 4.6, set: (x, t) => bayou(x, t), front: (x, t, lt) => rpg(x, lt, 'PISCES', 'big feelings are | welcome at parties. | bring yours.', 0.3, 4.1, { y: 1060, col: LAV }),
+      cast: { [P_]: [[0, 540, 820, 260]] }, mood: { [P_]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst439 · Capricorn packed for ONE party (the bag gets heavier; Aquarius has notes)
+const CP = 'capricorn'
+const PACK = [['sweater', 'a sweater. | for the AC.'], ['fan', 'a mini fan. | for outside.'], ['umbrella', 'an umbrella. | just in case.'], ['chips', 'snacks. | for the feeder road.'], ['cooler', 'water. | it is Houston.'], ['tray', 'kolaches. | for the group.']]
+const bed = (x, t) => { bedroom(x, t, { wall: '#2a3a5a', floor: '#3a2a2a' }); box(x, 120, 1180, 840, 150, '#c9a6ff', 8); box(x, 120, 1140, 200, 60, BONE, 6) }
+const bag = (x, t, n, lt, shut = 0) => { x.save(); x.translate(640, 1120); const sq = shut > 0 ? 1 - 0.1 * Math.sin(Math.PI * clamp(shut)) : 1; x.scale(1.6, 1.6 * sq); dish(x, 'suitcase', 0, 0, 1, t); x.restore()
+  if (shut < 1) for (let i = 0; i < n; i++) { const it = PACK[i][0], k = i === n - 1 ? Kp(lt, 0.3) : 1; if (k > 0) dish(x, it, 520 + (i % 3) * 120, 940 - Math.floor(i / 3) * 90, 0.45 * k, t) } }
+export const hst439 = {
+  hook: 'Capricorn packed | for ONE party', badge: BADGE, cues: [...sting(493.88), ['boom', 0.0, 0.2]], endLen: 6.2,
+  end: ticket('Packed. Planned. Jan 9.', ['capricorn', 'aquarius', 'virgo', 'cancer']),
+  scenes: [
+    { dur: 2.8, set: bed, front: (x, t, lt) => { bag(x, t, 6, 9); clipboard(x, 880, 560, 'JAN 9', [['bag', 0.6]], lt, { w: 260, k: 0.8 }) }, cast: { [CP]: [[0, 240, Y - 140, 240]] }, mood: { [CP]: 'squint' }, hops: { [CP]: [0.02, 0.5, 1.0, 1.5, 2.0] }, look: { [CP]: [0.8, 0] } },
+    ...PACK.map(([it, line], i) => ({ dur: 2.7, set: bed, front: (x, t, lt) => bag(x, t, i + 1, lt), cast: { [CP]: [[0, 240, Y - 140, 240]] }, mood: { [CP]: 'squint' }, look: { [CP]: [0.8, 0] }, hops: { [CP]: [0.3] }, lines: [[0.3, 2.2, CP, line]] })),
+    { dur: 3.4, set: bed, front: (x, t, lt) => bag(x, t, 6, 9), cast: { [CP]: [[0, 240, Y - 140, 240]], aquarius: [[0, 1300, Y, 240], [0.5, 880, Y, 240]] }, mood: { [CP]: 'wide', aquarius: 'eyeroll' },
+      lines: [[0.6, 1.3, 'aquarius', "it's one | night."], [2.0, 1.3, CP, "it's a | plan."]] },
+    { dur: 3.2, set: bed, front: (x, t, lt) => { bag(x, t, 6, 9, prog(lt, 0.3, 1.6)); if (lt > 1.6) sparkles(x, t, 640, 1100, t - lt + 1.6, 10, 260, 7) }, cast: { [CP]: [[0, 240, Y - 140, 240], [0.4, 600, 900, 220], [1.6, 240, Y - 140, 240]] }, mood: { [CP]: lt => lt > 1.6 ? 'sparkle' : 'squint' }, hops: { [CP]: [0.5, 0.8, 1.1, 1.4] },
+      lines: [[1.7, 1.4, CP, 'it closed.']], stick: [[0.2, 1.4, 'SIT ON IT', GOLD]] },
+    { dur: 4.8, set: bed, front: (x, t, lt) => { bag(x, t, 6, 9, 1); rpg(x, lt, 'CAPRICORN', 'plan the small stuff | so you can relax | when you get there.', 0.3, 4.3, { y: 1020, col: '#8fd0a0' }) },
+      cast: { [CP]: [[0, 540, 780, 250]] }, mood: { [CP]: 'happy' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst440 · Taurus has a pre-party food plan (Bellaire, Hillcroft, a 60° pho, boba, "saving room")
+const TA = 'taurus'
+const stop = (n, set, food, line, extra = {}) => ({ dur: 3.0, set, front: (x, t, lt, P) => { label(x, 840, 560, `STOP ${n}`, Kp(lt, 0.05), { size: 50, bg: GOLD, rot: 0.04 }); dish(x, food, 760, 1220, 1.1, t); extra.front?.(x, t, lt, P) }, cast: { [TA]: [[0, 330, Y, 280]], ...(extra.cast || {}) }, mood: { [TA]: 'heart', ...(extra.mood || {}) }, hops: { [TA]: [0.1, 0.5] }, lines: [[0.3, 2.4, TA, line], ...(extra.lines || [])] })
+const kitchen = (x, t) => { room(x, { wall: '#c86a3a', floor: '#5a3a2a' }); box(x, 600, 520, 380, 280, '#f4efe4', 8); txt(x, 'THE PLAN', 790, 560, { size: 38, col: INK }); ['1 · dumplings', '2 · chaat', '3 · pho', '4 · boba', '5 · the party'].forEach((s, i) => txt(x, s, 630, 610 + i * 40, { size: 28, col: INK, align: 'left', font: MONO, weight: 700 })) }
+const FOOD_PINS = [[-320, 180, 'HOME'], [-140, 40, 'BELLAIRE'], [20, 170, 'HILLCROFT'], [160, -40, 'PHO'], [240, 200, 'BOBA'], [330, -170, 'JAN 9']]
+export const hst440 = {
+  hook: 'Taurus has a | pre-party food plan', badge: BADGE, cues: [...sting(554.37)], endLen: 6.2,
+  end: ticket('Come hungry. Jan 9.', ['taurus', 'gemini', 'sagittarius', 'cancer']),
+  scenes: [
+    { dur: 3.0, set: kitchen, front: (x, t) => { dish(x, 'queso', 300, 1330, 0.9, t); taco(x, 780, 1320, 1.2) }, cast: { [TA]: [[0, 330, Y - 60, 280]] }, mood: { [TA]: 'sparkle' }, hops: { [TA]: [0.02, 0.4, 0.8, 1.2, 1.6, 2.0] }, lines: [[0.5, 2.3, TA, 'party at night. | snacks all day.']] },
+    { dur: 3.0, set: (x, t, lt) => { daySky(x, t, { top: '#ffb07a', bot: '#ffe8b0', city: false, ground: '#e8d8b0' }); routeMap(x, 540, 980, FOOD_PINS, lt / 3.2, t, { k: Kp(lt, 0.02), title: 'THE FOOD PLAN' }) }, cast: {}, stick: [[0.4, 2.3, 'five stops. one stomach.', PINK]] },
+    stop(1, (x, t) => blvdNight(x, t, ['DUMPLINGS', 'BOBA', 'NOODLES', 'KARAOKE']), 'dumplings', 'Bellaire. | the dumplings.'),
+    stop(2, (x, t) => { daySky(x, t, { top: '#ff8a5a', bot: '#ffd08a', ground: '#7a5a3a' }); box(x, 560, 700, 440, 300, '#f2c75c', 8); txt(x, 'CHAAT · SWEETS', 780, 760, { size: 40, col: INK }) }, 'chaat', 'Hillcroft. | the chaat. hello.'),
+    stop(3, (x, t) => { daySky(x, t, { top: '#8aa0c0', bot: '#d0dae8', ground: '#5a6a7a' }); thermo(x, 880, 900, '60°', 1, { hot: false }) }, 'pho', "pho. it's 60°. | basically winter.", { front: (x, t, lt, P) => wear(x, P, TA, 'scarf', '#c84a4a') }),
+    stop(4, (x, t) => blvdNight(x, t, ['BOBA', 'TEA', 'BOBA', 'MORE BOBA']), 'boba', 'boba. | for the road.'),
+    { dur: 3.4, set: (x, t) => outside(x, { ground: '#2a2638' }), front: (x, t, lt) => { skyline(x, FLOOR + 60, t, { alpha: 0.6 }); if (lt > 0.3) sparkles(x, t, 540, 900, t - lt + 0.3, 12, 360, 3) },
+      cast: { [TA]: [[0, 380, Y, 270]], gemini: [[0, 760, Y, 240]] }, mood: { [TA]: 'happy', gemini: 'eyeroll' }, lines: [[0.2, 1.4, TA, 'saving room | for the party.'], [1.8, 1.4, 'gemini', 'you said that | at stop two.']] },
+    { dur: 4.6, set: kitchen, front: (x, t, lt) => rpg(x, lt, 'TAURUS', "eat before you go. | a fed star | is a happy star.", 0.3, 4.1, { y: 1060, col: '#ffb07a' }),
+      cast: { [TA]: [[0, 330, 860, 250]] }, mood: { [TA]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
   ],
 }
