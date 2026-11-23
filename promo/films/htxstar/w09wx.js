@@ -351,7 +351,7 @@ const sunset = (() => {
   const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'sunset', now: '10/10', ...o })
   const C = (bg, head) => cut(bg, head, { th, strip: S, icon: 'sunset', now: '10/10' })
   const roof = (x, t) => { const g = x.createLinearGradient(0, 0, 0, 1300); g.addColorStop(0, '#3a1a5a'); g.addColorStop(1, '#ff8a5a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#ffd36b'; x.beginPath(); x.arc(760, 1060, 120, Math.PI, 0); x.fill(); skyline(x, 1100, t, { alpha: 0.9, col: '#2a1d52' }); box(x, 0, 1160, 1080, 300, '#6a6a7a', 6); for (let k = 0; k < 6; k++) { x.fillStyle = BONE; x.fillRect(60 + k * 180, 1250, 100, 8) } box(x, 0, 1140, 1080, 24, '#8f96a0', 4) }
-  const spots = (lt) => (x, t) => [['bellaire', 'THE PARK LAKE'], ['downtown', 'THE BAYOU'], ['galveston', 'THE SEAWALL'], ['midtown', 'A GARAGE ROOF']].forEach(([n, lab], i) => { const [px, py] = P2M(PL[n]); const k = Kp(lt, 0.2 + i * 0.4); wxIcon(x, 'sunset', px, py, 0.6, t, k); if (k > 0) txt(x, lab, px, py + 50, { size: 24, col: BONE, font: MONO, weight: 700 }) })
+  const spots = (lt) => (x, t) => [[[250, 700], 'THE PARK LAKE'], [[520, 600], 'THE BAYOU'], [P2M(PL.galveston), 'THE SEAWALL'], [[560, 900], 'A GARAGE ROOF']].forEach(([[px, py], lab], i) => { const k = Kp(lt, 0.2 + i * 0.4); wxIcon(x, 'sunset', px, py, 0.6, t, k); if (k > 0) txt(x, lab, px, py + 50, { size: 24, col: BONE, font: MONO, weight: 700 }) })
   return {
     hook: "Tonight's sunset: | bring someone", badge: BADGE, cues: [...STING], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring someone. Jan 9.', stars: ['pisces', 'leo', 'sagittarius', 'cancer'] }),
@@ -437,8 +437,8 @@ const breeze = (() => {
   const th = THEME.blue, S = 'GULF BREEZE: MOVING NORTH  ·  CLEAR LAKE: BREEZY  ·  PEARLAND: BREEZY  ·  MIDTOWN: NOTES IN THE AIR  ·  THE WOODLANDS: STILL WAITING  ·  '
   const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'wind', now: 'BREEZY', ...o })
   const C = (bg, head, o = {}) => cut(bg, head, { th, strip: S, icon: 'wind', now: 'BREEZY', ...o })
-  const arrows = (p) => (x, t) => { const [gx, gy] = P2M(PL.galveston), [wx, wy] = P2M(PL.woodlands); for (let k = 0; k < 6; k++) { const u = clamp(p - k * 0.08), px = gx + (wx - gx) * u, py = gy + (wy - gy) * u + (k % 2 ? 30 : -30); if (u > 0) wxIcon(x, 'wind', px, py, 0.45, t) } }
-  const note = (x, cx, cy, t, text) => { x.save(); x.translate(cx, cy); x.rotate(0.15 * Math.sin(t * 3)); box(x, -90, -60, 180, 120, BONE, 4); txt(x, text, 0, 0, { size: 24 }); x.restore() }
+  const arrows = (p) => (x, t) => { const [gx, gy] = P2M(PL.galveston), [wx, wy] = P2M(PL.woodlands); for (let k = 0; k < 6; k++) { const u = clamp(p - k * 0.08), px = gx + (wx - gx) * u, py = gy + (wy - gy) * u + (k % 2 ? 30 : -30); if (u > 0) wxIcon(x, 'wind', px, py, 0.8, t) } }
+  const note = (x, cx, cy, t, text) => { x.save(); x.translate(cx, cy); x.rotate(0.15 * Math.sin(t * 3)); box(x, -140, -80, 280, 160, BONE, 5); const L = text.split(' | '); L.forEach((l, j) => txt(x, l, 0, (j - (L.length - 1) / 2) * 44, { size: 36 })); x.restore() }
   const wind = (x, t) => { for (let k = 0; k < 10; k++) { const ph = (t * 0.9 + k / 10) % 1; x.strokeStyle = 'rgba(255,255,255,0.5)'; x.lineWidth = 6; x.beginPath(); x.moveTo(ph * 1300 - 200, 400 + k * 90); x.lineTo(ph * 1300 - 60, 400 + k * 90); x.stroke() } }
   return {
     hook: 'A Gulf breeze is | headed for your | love life', badge: BADGE, cues: [...STING, ['whoosh', 13.0, 0.6, 0.02]], endLen: 6.2,
@@ -456,10 +456,10 @@ const breeze = (() => {
       { dur: 3.0, set: W('IT IS CARRYING SOMETHING', { draw: (x, t, lt) => { arrows(0.6)(x, t); const [px, py] = P2M(PL.midtown); wxIcon(x, 'heart', px, py - 40, 0.6, t, Kp(lt, 0.6)) } }),
         cast: { aquarius: [[0, ...FC]] }, mood: { aquarius: 'wide' },
         lines: [[0.3, 2.4, 'aquarius', "it's carrying | something."]] },
-      { dur: 3.4, set: C((x, t, lt) => { street(x, t); wind(x, t) }, 'LIVE: MIDTOWN'), front: (x, t, lt) => note(x, 120 + clamp(lt / 1.0) * 620, 820 + 30 * Math.sin(t * 3), t, "hi from | Pearland".replace(' | ', ' ')),
+      { dur: 3.4, set: C((x, t, lt) => { street(x, t); wind(x, t) }, 'LIVE: MIDTOWN'), front: (x, t, lt) => note(x, 120 + clamp(lt / 1.0) * 600, 760 + 30 * Math.sin(t * 3), t, 'hi from | Pearland'),
         cast: { gemini: [[0, 360, Y - 30, 240]] }, mood: { gemini: lt => lt > 1.0 ? 'sparkle' : 'neutral' },
         lines: [[1.2, 2.0, 'gemini', "a note? | 'hi from Pearland.'"]] },
-      { dur: 3.2, set: C((x, t, lt) => { bungalow(x, t, { col: '#7ab0a0' }); wind(x, t) }, 'LIVE: THE HEIGHTS'), front: (x, t, lt) => note(x, 740, 860, t, 'hi back! ♥'),
+      { dur: 3.2, set: C((x, t, lt) => { bungalow(x, t, { col: '#7ab0a0' }); wind(x, t) }, 'LIVE: THE HEIGHTS'), front: (x, t, lt) => note(x, 760, 820, t, 'hi back! | ♥ Heights'),
         cast: { virgo: [[0, 360, Y - 30, 240]] }, mood: { virgo: 'wide' },
         lines: [[0.3, 2.6, 'virgo', 'oh no. | this is a whole thing.']] },
       { dur: 3.0, set: W('BREEZE ENDS NEAR THE WOODLANDS', { draw: (x, t) => { arrows(1)(x, t); const [px, py] = P2M(PL.woodlands); x.strokeStyle = GOLD; x.lineWidth = 6; x.beginPath(); x.arc(px, py, 50, 0, Math.PI * 2); x.stroke() } }), front: (x, t, lt, P) => pointer(x, P, 'aquarius', ...P2M(PL.woodlands)),
@@ -500,7 +500,7 @@ const fronts = (() => {
         cast: { cancer: [[0, ...FC]] }, mood: { cancer: 'wide' },
         lines: [[0.4, 2.3, 'cancer', 'and... | chemistry.']] },
       { dur: 3.2, set: C((x, t) => { street(x, t, { night: true }); for (let i = 0; i < 40; i++) { const px = (i * 61) % 1080, py = ((i * 137 + t * 700) % 1300); x.fillStyle = 'rgba(143,227,255,0.6)'; x.fillRect(px, py, 5, 22) } }, 'LIVE: A LIGHT RAIN'), front: (x, t, lt, P) => scarf(x, P, 'capricorn'), back: (x, t, lt, P) => glow(x, P, 'leo'),
-        cast: { capricorn: [[0, 420, Y - 30, 240], [1.6, 470, Y - 50, 240], [3.2, 420, Y - 30, 240]], leo: [[0, 660, Y - 30, 240], [1.6, 610, Y - 50, 240], [3.2, 660, Y - 30, 240]] }, mood: { capricorn: 'heart', leo: 'heart' }, hops: { capricorn: [0.4, 1.2, 2.0], leo: [0.6, 1.4, 2.2] },
+        cast: { capricorn: [[0, 340, Y - 30, 230], [1.6, 400, Y - 50, 230], [3.2, 340, Y - 30, 230]], leo: [[0, 740, Y - 30, 230], [1.6, 680, Y - 50, 230], [3.2, 740, Y - 30, 230]] }, mood: { capricorn: 'heart', leo: 'heart' }, hops: { capricorn: [0.4, 1.2, 2.0], leo: [0.6, 1.4, 2.2] },
         lines: [[0.3, 2.6, 'leo', 'dance in | the drizzle?']] },
       { dur: 3.0, set: C((x, t) => { street(x, t, { night: true }); for (let i = 0; i < 30; i++) { const px = (i * 61) % 1080, py = ((i * 137 + t * 700) % 1300); x.fillStyle = 'rgba(143,227,255,0.6)'; x.fillRect(px, py, 5, 22) } }, 'LIVE: A WITNESS'), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('pisces'); x.fillStyle = INK; x.beginPath(); x.arc(cx, cy - s * 0.65, s * 0.62, Math.PI, 0); x.fill(); x.fillStyle = '#ff8fb1'; x.beginPath(); x.arc(cx, cy - s * 0.65, s * 0.56, Math.PI, 0); x.fill(); box(x, cx - 4, cy - s * 0.65, 8, s * 0.6, INK, 0) },
         cast: { pisces: [[0, 540, Y - 30, 230]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.2] },
@@ -521,7 +521,7 @@ const fronts = (() => {
 const tenday = (() => {
   const th = THEME.dusk, S = 'DAY 1 TO DAY 9: GETTING READY  ·  DAY 10: JAN 9, THE HOUSTON BETA PARTY  ·  FORECAST: SHOW UP  ·  '
   const DAYS = [['DAY 1', 'sun', 'GO'], ['DAY 2', 'sun', 'GO'], ['DAY 3', 'cloud', 'PLAN'], ['DAY 4', 'cloud', 'PLAN'], ['DAY 5', 'wind', 'CHAT'], ['DAY 6', 'wind', 'CHAT'], ['DAY 7', 'sun', 'LIST'], ['DAY 8', 'drizzle', 'NERVES'], ['DAY 9', 'sun', 'FIT'], ['JAN 9', 'heart', 'PARTY', PINK]]
-  const board = (cur, k = 1) => (x, t) => { strip5(x, t, DAYS.slice(0, 5), 520, { k, cur: cur < 5 ? cur : -1, h: 260 }); strip5(x, t, DAYS.slice(5), 820, { k, cur: cur >= 5 ? cur - 5 : -1, h: 260 }) }
+  const board = (cur, k = 1) => (x, t) => { strip5(x, t, DAYS.slice(0, 5), 640, { k, cur: cur < 5 ? cur : -1, h: 250 }); strip5(x, t, DAYS.slice(5), 920, { k, cur: cur >= 5 ? cur - 5 : -1, h: 250 }) }
   const W = (head, cur, o = {}) => wall(head, { th, strip: S, icon: DAYS[Math.max(0, cur)][1], now: cur >= 0 ? DAYS[cur][0] : '10 DAYS', map: false, draw: board(cur), ...o })
   const day = (cur, sign, line, mood, bg, head) => ({ dur: 3.0, set: cut((x, t, lt) => { bg(x, t, lt); box(x, 60, 470, 260, 90, '#1a0c3a', 5); txt(x, DAYS[cur][0], 190, 515, { size: 44, col: GOLD, font: MONO, weight: 700 }) }, head, { th, strip: S, icon: DAYS[cur][1], now: DAYS[cur][0] }), cast: { [sign]: [[0, 540, Y - 30, 250]] }, mood: { [sign]: mood }, hops: { [sign]: [0.3] }, lines: [[0.3, 2.4, sign, line]] })
   return {

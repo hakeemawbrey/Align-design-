@@ -176,7 +176,7 @@ export function tunnel(x, t, { busy = 0 } = {}) {   // the downtown tunnels: til
 export function cafe(x, t, { wall = '#c98e5a', sign = 'COFFEE' } = {}) {   // inside a coffee shop: counter, window, plants
   x.fillStyle = wall; x.fillRect(0, 0, 1080, FLOOR + 60)
   box(x, 90, 520, 420, 420, '#bfe6ff', 8); x.fillStyle = INK; x.fillRect(296, 520, 8, 420); x.fillRect(90, 726, 420, 8)
-  box(x, 600, 560, 380, 120, '#1b1236', 6); txt(x, sign, 790, 620, { size: 50, col: GOLD })
+  box(x, 600, 560, 380, 120, '#1b1236', 6); x.font = `800 50px ${INTER}`; let sz = 50; while (sz > 26 && (x.font = `800 ${sz}px ${INTER}`, x.measureText(sign).width > 340)) sz -= 2; txt(x, sign, 790, 620, { size: sz, col: GOLD })
   for (let k = 0; k < 3; k++) { box(x, 630 + k * 110, 760, 70, 80, '#c9783a', 4); x.fillStyle = '#5aa05a'; x.beginPath(); x.arc(665 + k * 110, 740, 46, 0, Math.PI * 2); x.fill() }
   x.fillStyle = '#6b3b1f'; x.fillRect(0, FLOOR + 60, 1080, 1920); x.fillStyle = INK; x.fillRect(0, FLOOR + 54, 1080, 8)
 }
