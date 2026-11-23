@@ -102,7 +102,7 @@ export function icon(x, kind, cx, cy, s = 1, a1 = null, a2 = null, t = 0) {
     case 'bowl': { x.fillStyle = INK; x.beginPath(); x.arc(0, -10, 112, 0, Math.PI); x.fill(); x.fillStyle = a2 || BONE; x.beginPath(); x.arc(0, -10, 104, 0, Math.PI); x.fill()
       x.fillStyle = c1; x.beginPath(); x.ellipse(0, -10, 104, 22, 0, 0, TAU); x.fill(); x.strokeStyle = INK; x.lineWidth = 6; x.stroke(); for (let k = 0; k < 4; k++) { x.fillStyle = ['#7dbf5a', '#fff', '#c9783a', '#ff5a3a'][k]; x.fillRect(-60 + k * 34, -18, 16, 10) } steam(x, t, 3, -40); break }
     case 'cup': { poly(x, [[-62, -80], [62, -80], [48, 90], [-48, 90]], 'rgba(232,244,255,0.95)'); x.fillStyle = c1; x.beginPath(); x.moveTo(-58, -46); x.lineTo(58, -46); x.lineTo(48, 86); x.lineTo(-48, 86); x.fill()
-      for (let k = 0; k < 9; k++) circ(x, -34 + (k % 5) * 17, 70 - Math.floor(k / 5) * 16, 8, '#2a1a10', 0); B(-70, -96, 140, 18, BONE, 4); B(12, -170, 18, 90, c2, 4); break }
+      for (let k = 0; k < 9; k++) circ(x, -34 + (k % 5) * 17, 70 - Math.floor(k / 5) * 16, 8, '#2a1a10', 0); B(-70, -96, 140, 18, BONE, 4); B(12, -146, 18, 66, c2, 4); break }
     case 'raspa': { poly(x, [[-60, -10], [60, -10], [44, 100], [-44, 100]], BONE); x.fillStyle = BRAKE; x.fillRect(-52, 30, 104, 12)
       x.fillStyle = INK; x.beginPath(); x.arc(0, -10, 74, Math.PI, 0); x.fill(); x.fillStyle = c1; x.beginPath(); x.arc(0, -10, 66, Math.PI, 0); x.fill()
       x.fillStyle = c2; for (let k = 0; k < 5; k++) x.fillRect(-50 + k * 24, -60 + (k % 2) * 16, 14, 40 + (k % 3) * 10); x.fillStyle = 'rgba(255,255,255,0.6)'; for (let k = 0; k < 8; k++) x.fillRect(-50 + k * 13, -40 - (k % 3) * 12, 6, 6); break }

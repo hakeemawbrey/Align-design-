@@ -109,7 +109,7 @@ export const W14A = {
 
   // ── hst337 · Which H-Town phrase is your sign?
   hst337: assigns({
-    hook: 'Which H-Town phrase | is your sign?', bg: BG.neon(), card: { kind: 'neon', head: 'SAY IT LIKE HOUSTON', glow: PINK, iconS: 0.75, iconY: -50, nameSize: 60 },
+    hook: 'What your sign | says in H-Town', bg: BG.neon(), card: { kind: 'neon', head: 'SAY IT LIKE HOUSTON', glow: PINK, iconS: 0.75, iconY: -50, nameSize: 60 },
     hero: (x, t) => { icon(x, 'quote', 540, 820 + bob(t), 1.4, PINK) },
     items: [
       ['aries', "FIXIN' TO", "fixin' to? | already did it.", 'quote', '#ff5a3a'],
@@ -209,7 +209,7 @@ export const W14A = {
 
   // ── hst341 · Which Houston street is your sign?
   hst341: assigns({
-    hook: 'Which Houston street | is your sign?', bg: BG.night({ ground: '#14303a', city: '#12283a', lit: '#7dffb0' }), card: { kind: 'green', iconS: 0.95 }, flip: true,
+    hook: "Find your sign's | Houston street", bg: BG.night({ ground: '#14303a', city: '#12283a', lit: '#7dffb0' }), card: { kind: 'green', iconS: 0.95 }, flip: true,
     hero: (x, t) => { streetSign(x, 540, 790 + bob(t), 'WESTHEIMER', { pole: false, w: 560, sub: '& EVERY OTHER STREET' }) },
     items: [
       ['aries', 'WESTHEIMER', 'felt every | single bump.', 'car', '#e05a3a'],

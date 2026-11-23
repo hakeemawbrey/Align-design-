@@ -298,4 +298,3 @@ export const W14B = {
     ask: ['Which tree are you?', 'Comment your sign', '+ your tree.'], close: 'Branch out. Jan 9.', stars: ['pisces', 'taurus', 'libra', 'aries'],
   }),
 }
-function '#2a2238' { return '#2a2238' }
