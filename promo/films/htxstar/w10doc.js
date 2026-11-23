@@ -1,10 +1,10 @@
 // Houston Star Talk · w10 nature-doc parodies (hst248–hst260). Grammar from hst008: a camera viewfinder, Latin
 // lower-thirds, italic narration subtitles; one Houston creature, its habitat, an encounter, and a sighting on Jan 9.
 import { clamp } from '../../src/lib.js'
-import { FLOOR, box, txt, outside } from '../starrace/ep.js'
+import { FLOOR, box, txt, outside, clock } from '../starrace/ep.js'
 import { label, sparkles, GOLD, BONE, PINK, INK, MONO, MINT } from '../signs3kit.js'
-import { partyCard, skyline, car, freeway, overheadSign, streetSign, mural, coffeeShop, sweat, puffer, phoneFlash, soupPot, lowerThird, narr, BRAKE } from './kit.js'
-import { Y, BADGE, STING, Kp, stamp, viewfinder, sky, SKIES, bayou, bungalow, foodStrip, batBridge, paddleLake, paddleBoat, tunnel, townhomes, gulf, marina, pines, closet, plants, trailLoop, boba, bowl, mic, dog, boots, phone, specs, card, clock, lowSun } from './w10.js'
+import { partyCard, skyline, car, freeway, overheadSign, streetSign, mural, coffeeShop, sweat, phoneFlash, soupPot, lowerThird, narr, BRAKE } from './kit.js'
+import { Y, BADGE, STING, Kp, stamp, viewfinder, sky, SKIES, bayou, bungalow, foodStrip, batBridge, paddleLake, paddleBoat, tunnel, townhomes, gulf, marina, pines, closet, plants, trailLoop, boba, bowl, mic, dog, boots, phone, specs, card, lowSun, coat } from './w10.js'
 
 const night = (x, t) => { skyline(x, FLOOR + 60, t, { alpha: 0.85 }); outside(x, { ground: '#221b38' }) }
 /** the closing sighting: night skyline, confetti and the party sticker */
@@ -77,7 +77,7 @@ const hst249 = doc({
 
 // ── hst250 · Watch closely: the bats at sunset and a Pisces
 const hst250 = doc({
-  hook: 'Watch closely: | the bats at sunset | and a Pisces', endLine: 'Come for the view. Jan 9.', endStars: ['pisces', 'scorpio', 'cancer', 'libra'],
+  hook: 'Watch closely: | the sunset bats | and a Pisces', endLine: 'Come for the view. Jan 9.', endStars: ['pisces', 'scorpio', 'cancer', 'libra'],
   scenes: [
     { dur: 3.8, set: (x, t, lt) => batBridge(x, t, lt + 2, 30), cast: { pisces: [[0, 330, Y + 20, 230]], scorpio: [[0, 760, Y + 20, 230]] }, mood: { pisces: 'wide', scorpio: 'squint' }, hops: { pisces: [0.05, 0.5] },
       lt: ['THE BAT BRIDGE', 'a bayou, at sunset', 2.7], n: ['You came for the bats. | Everyone does.', 0.3, 2.3] },
@@ -100,7 +100,7 @@ const hst250 = doc({
 
 // ── hst251 · Observe: the Bellaire late-night food crawler
 const hst251 = doc({
-  hook: 'Observe: the Bellaire | late-night | food crawler', endLine: 'Eat first. Then Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'cancer'],
+  hook: 'Observe: the Bellaire | late-night food crawler', endLine: 'Eat first. Then Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'cancer'],
   scenes: [
     { dur: 3.8, set: (x, t) => foodStrip(x, t), cast: { sagittarius: [[0, 160, Y, 250], [3.4, 520, Y, 250]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.05] },
       lt: ['THE FOOD CRAWLER', 'Sagittarius noctivorus', 2.7], n: ['You are hungry. | So is it.', 0.3, 2.3] },
@@ -147,7 +147,7 @@ const hst252 = doc({
 
 // ── hst253 · A Clear Lake engineer attempts small talk
 const hst253 = doc({
-  hook: 'A Clear Lake engineer | attempts | small talk', endLine: 'Calculated. See you Jan 9.', endStars: ['capricorn', 'leo', 'virgo', 'aquarius'],
+  hook: 'A Clear Lake engineer | attempts small talk', endLine: 'Calculated. See you Jan 9.', endStars: ['capricorn', 'leo', 'virgo', 'aquarius'],
   scenes: [
     { dur: 3.8, set: (x, t) => marina(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); card(x, cx + s * 0.75, cy - 10, 0.55, 'SPECS', 'v4.2') }, cast: { capricorn: [[0, 380, Y, 250]] }, mood: { capricorn: 'squint' }, hops: { capricorn: [0.05, 0.6] },
       lt: ['THE CLEAR LAKE ENGINEER', 'Capricornus precisus', 2.7], n: ['You may hear it | before you see it.', 0.3, 2.3] },
@@ -193,7 +193,7 @@ const hst254 = doc({
 
 // ── hst255 · The EaDo townhome dweller cannot find its own door
 const hst255 = doc({
-  hook: 'The EaDo townhome dweller | cannot find | its own door', endLine: 'Find your people. Jan 9.', endStars: ['gemini', 'taurus', 'leo', 'scorpio'],
+  hook: "The EaDo townhome dweller | can't find its door", endLine: 'Find your people. Jan 9.', endStars: ['gemini', 'taurus', 'leo', 'scorpio'],
   scenes: [
     { dur: 3.8, set: (x, t) => townhomes(x, t), cast: { gemini: [[0, 120, Y, 240], [1.6, 330, Y, 240], [3.2, 120, Y, 240]] }, mood: { gemini: 'wide' }, hops: { gemini: [0.05] },
       lt: ['THE TOWNHOME DWELLER', 'Gemini identicalis', 2.7], n: ['You have stood here too. | Which door is yours?', 0.3, 2.3] },
@@ -243,21 +243,21 @@ const hst256 = doc({
 const hst257 = doc({
   hook: 'Rare: a Houstonian | in a coat. | It is 61°.', endLine: 'Wear the coat. Jan 9.', endStars: ['scorpio', 'sagittarius', 'cancer', 'pisces'],
   scenes: [
-    { dur: 3.8, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); skyline(x, FLOOR + 60, t, { alpha: 0.5 }); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => puffer(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 420, Y, 260]] }, mood: { scorpio: 'squint' }, hops: { scorpio: [0.05, 0.3, 0.55] },
+    { dur: 3.8, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); skyline(x, FLOOR + 60, t, { alpha: 0.5 }); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => coat(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 420, Y, 260]] }, mood: { scorpio: 'squint' }, hops: { scorpio: [0.05, 0.3, 0.55] },
       lt: ['THE COAT WEARER', 'Scorpio frigidus', 2.7], n: ['You know this creature. | You may be it.', 0.3, 2.3] },
-    { dur: 3.4, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => puffer(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 420, Y, 260]] }, mood: { scorpio: 'wide' },
+    { dur: 3.4, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => coat(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 420, Y, 260]] }, mood: { scorpio: 'wide' },
       n: ['At 61 degrees, | the coats come out.', 0.2, 1.7], lines: [[2.0, 1.2, 'scorpio', "it's | freezing."]] },
-    { dur: 3.2, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { puffer(x, P, 'scorpio', '#e05a3a'); phoneFlash(x, 760, 1080, t, '61°', lt) }, cast: { scorpio: [[0, 380, Y, 250]] }, mood: { scorpio: 'squint' },
+    { dur: 3.2, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { coat(x, P, 'scorpio', '#e05a3a'); phoneFlash(x, 760, 1080, t, '61°', lt) }, cast: { scorpio: [[0, 380, Y, 250]] }, mood: { scorpio: 'squint' },
       n: ['It documents the event.', 0.2, 1.5], lines: [[1.8, 1.2, 'scorpio', 'posting it.']] },
-    { dur: 3.6, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => puffer(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 300, Y, 230]], sagittarius: [[0, 1180, Y, 240], [0.6, 780, Y, 240]] }, mood: { scorpio: 'squint', sagittarius: 'happy' },
+    { dur: 3.6, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => coat(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 300, Y, 230]], sagittarius: [[0, 1180, Y, 240], [0.6, 780, Y, 240]] }, mood: { scorpio: 'squint', sagittarius: 'happy' },
       lt: ['THE SHORTS WEARER', 'Sagittarius aestivus', 0.2], lines: [[1.2, 1.0, 'sagittarius', 'you good?'], [2.3, 1.1, 'scorpio', 'surviving.']] },
-    { dur: 3.2, set: (x, t) => { x.fillStyle = '#3a2a4a'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#5a4a3a'; x.fillRect(0, FLOOR + 60, 1080, 1920) }, front: (x, t, lt, P) => { puffer(x, P, 'scorpio', '#e05a3a'); soupPot(x, 760, 1180, t) }, cast: { scorpio: [[0, 330, Y, 240]] }, mood: { scorpio: 'heart' },
+    { dur: 3.2, set: (x, t) => { x.fillStyle = '#3a2a4a'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#5a4a3a'; x.fillRect(0, FLOOR + 60, 1080, 1920) }, front: (x, t, lt, P) => { coat(x, P, 'scorpio', '#e05a3a'); soupPot(x, 760, 1180, t) }, cast: { scorpio: [[0, 330, Y, 240]] }, mood: { scorpio: 'heart' },
       n: ['Soup is gathered.', 0.2, 1.4], lines: [[1.7, 1.2, 'scorpio', 'soup.']] },
-    { dur: 3.4, set: (x, t) => { sky(x, '#5ec8ff', '#fff0c8'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { puffer(x, P, 'scorpio', '#e05a3a'); const [cx, cy, s] = P.at('scorpio'); sweat(x, cx + s * 0.3, cy - s * 0.3, t, 4) }, cast: { scorpio: [[0, 420, Y, 250]] }, mood: { scorpio: 'squint' },
+    { dur: 3.4, set: (x, t) => { sky(x, '#5ec8ff', '#fff0c8'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { coat(x, P, 'scorpio', '#e05a3a'); const [cx, cy, s] = P.at('scorpio'); sweat(x, cx + s * 0.3, cy - s * 0.3, t, 4) }, cast: { scorpio: [[0, 420, Y, 250]] }, mood: { scorpio: 'squint' },
       n: ['By 3pm: 79°.', 0.2, 1.3], lines: [[1.6, 1.6, 'scorpio', 'I will not | remove it.']] },
-    { dur: 3.4, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { puffer(x, P, 'scorpio', '#e05a3a'); soupPot(x, 540, 1300, t) }, cast: { scorpio: [[0, 330, Y - 30, 230]], sagittarius: [[0, 750, Y - 30, 230]] }, mood: { scorpio: lt => lt > 1.8 ? 'heart' : 'wide', sagittarius: 'happy' },
+    { dur: 3.4, set: (x, t) => { sky(x, '#8fa8c8', '#d8e2ee'); outside(x, { ground: '#4a5a4a' }) }, front: (x, t, lt, P) => { coat(x, P, 'scorpio', '#e05a3a'); soupPot(x, 540, 1300, t) }, cast: { scorpio: [[0, 330, Y - 30, 230]], sagittarius: [[0, 750, Y - 30, 230]] }, mood: { scorpio: lt => lt > 1.8 ? 'heart' : 'wide', sagittarius: 'happy' },
       lines: [[0.2, 1.4, 'sagittarius', 'share | the soup?'], [1.9, 1.2, 'scorpio', '...yes.']] },
-    { dur: 3.6, set: sighting, front: (x, t, lt, P) => puffer(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 380, Y, 240]], sagittarius: [[0, 700, Y, 240]] }, mood: { scorpio: 'sparkle', sagittarius: 'heart' },
+    { dur: 3.6, set: sighting, front: (x, t, lt, P) => coat(x, P, 'scorpio', '#e05a3a'), cast: { scorpio: [[0, 380, Y, 240]], sagittarius: [[0, 700, Y, 240]] }, mood: { scorpio: 'sparkle', sagittarius: 'heart' },
       n: ['Next sighting: Jan 9.', 0.2, 1.4], lines: [[1.7, 1.6, 'scorpio', 'coat | included.']] },
   ],
 })
@@ -288,7 +288,7 @@ const hst258 = doc({
 
 // ── hst259 · A Woodlands resident ventures into Houston
 const hst259 = doc({
-  hook: 'A Woodlands resident | ventures into | Houston', endLine: 'Worth the drive in. Jan 9.', endStars: ['libra', 'taurus', 'virgo', 'pisces'],
+  hook: 'A Woodlands resident | ventures into Houston', endLine: 'Worth the drive in. Jan 9.', endStars: ['libra', 'taurus', 'virgo', 'pisces'],
   scenes: [
     { dur: 3.8, set: (x, t) => pines(x, t), cast: { libra: [[0, 400, Y, 250]] }, mood: { libra: 'happy' }, hops: { libra: [0.05, 0.6] },
       lt: ['THE WOODLANDS RESIDENT', 'Libra arborealis', 2.7], n: ['You are about to see | something brave.', 0.3, 2.3] },

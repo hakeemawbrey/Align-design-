@@ -121,8 +121,8 @@ export function blinker(x, cx, cy, t, on = true, s = 1) { const lit = on && Math
 export function postcard(x, cx, cy, s, top, big, col = '#8fe3ff', rot = -0.06) { x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(s, s); box(x, -170, -110, 340, 220, BONE, 6); x.fillStyle = col; x.fillRect(-160, -100, 320, 110); txt(x, top, 0, -70, { size: 22, col: INK, font: MONO, weight: 700 }); txt(x, big, 0, -26, { size: big.length > 12 ? 34 : 44, col: INK }); txt(x, 'wish you were here', 0, 60, { size: 26, col: INK, font: SERIF, weight: 500, italic: true }); x.restore() }
 /** a hair swoosh on top of a star (Leo's hair; frizz 0..1) */
 export function hair(x, P, id, frizz = 0, t = 0) {
-  const [cx, cy, s] = P.at(id)
-  for (let k = 0; k < 9; k++) { const a = -Math.PI + k * Math.PI / 8, r = s * (0.5 + 0.12 * frizz * (1 + Math.sin(k * 3 + t * 6))), px = cx + Math.cos(a) * r, py = cy - s * 0.1 + Math.sin(a) * r * 0.9; x.fillStyle = INK; x.fillRect(px - 17, py - 17, 34, 34); x.fillStyle = '#e0a030'; x.fillRect(px - 12, py - 12, 24, 24) }
+  const [cx, cy, s] = P.at(id); if (frizz <= 0) return
+  for (let k = 0; k < 9; k++) { const a = -Math.PI + k * Math.PI / 8, r = s * (0.46 + 0.2 * frizz * (1 + Math.sin(k * 3 + t * 6))), px = cx + Math.cos(a) * r, py = cy - s * 0.1 + Math.sin(a) * r * 0.9; x.fillStyle = INK; x.fillRect(px - 17, py - 17, 34, 34); x.fillStyle = '#e0a030'; x.fillRect(px - 12, py - 12, 24, 24) }
 }
 
 // ── nature doc ───────────────────────────────────────────────────────────────────────────────────────────────
@@ -259,3 +259,10 @@ export function lowSun(x, cx, cy, r = 110, col = '#ffb05a') { x.fillStyle = INK;
 /** a tape-measure / note card a narrator holds */
 export function card(x, cx, cy, s, l1, l2 = '', col = BONE) { x.save(); x.translate(cx, cy); x.rotate(-0.05); x.scale(s, s); box(x, -150, -80, 300, 160, col, 6); txt(x, l1, 0, l2 ? -26 : 0, { size: 38, col: INK }); if (l2) txt(x, l2, 0, 32, { size: 30, col: INK, font: MONO, weight: 700 }); x.restore() }
 export { HGREEN, BRAKE, GOLD, BONE, PINK, INK, MONO, SERIF, INTER, SKYB, MINT, signChar }
+/** cold-day outfit that keeps the face clear: a beanie with a pompom, a scarf, puffy sleeves */
+export function coat(x, P, id, col = '#e05a3a', hat = '#2b5fb0') {
+  const [cx, cy, s] = P.at(id); if (s < 40) return
+  for (const sx of [-1, 1]) box(x, cx + sx * s * 0.42 - s * 0.11, cy - s * 0.02, s * 0.22, s * 0.2, col, 5)
+  box(x, cx - s * 0.36, cy + s * 0.16, s * 0.72, s * 0.12, col, 5); box(x, cx + s * 0.1, cy + s * 0.2, s * 0.13, s * 0.26, col, 4)
+  box(x, cx - s * 0.2, cy - s * 0.5, s * 0.4, s * 0.12, hat, 4); x.fillStyle = BONE; x.beginPath(); x.arc(cx, cy - s * 0.56, s * 0.06, 0, Math.PI * 2); x.fill()
+}

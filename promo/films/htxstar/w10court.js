@@ -3,8 +3,8 @@
 import { clamp } from '../../src/lib.js'
 import { box, txt, clock } from '../starrace/ep.js'
 import { sparkles, GOLD, BONE, PINK, INK, MONO, SERIF, MINT, SKYB } from '../signs3kit.js'
-import { partyCard, gavel, taco, puffer, overheadSign, car, BRAKE } from './kit.js'
-import { Y, BADGE, STING, Kp, stamp, BANG, court, stand, juryRail, easel, jabot, specs, phone, cloud, thermostat, frost, sweater, queso, check, crawfish, blinker, postcard, hair, card, signChar } from './w10.js'
+import { partyCard, gavel, taco, overheadSign, car, BRAKE } from './kit.js'
+import { Y, BADGE, STING, Kp, stamp, BANG, court, stand, juryRail, easel, jabot, specs, phone, cloud, thermostat, frost, sweater, queso, check, crawfish, blinker, postcard, hair, card, signChar, coat } from './w10.js'
 
 const JY = 600
 /** build a court episode: the judge sits at the bench in every scene unless j: false; bang: lt of a gavel hit */
@@ -41,7 +41,7 @@ const onStand = (pal = 'wood') => (x, t, lt, P) => stand(x, 780, pal)
 
 // ── hst236 · Scorpio is on trial for leaving you on read
 const hst236 = trial({
-  hook: 'Scorpio is on trial | for leaving you | on read', judge: 'libra', pal: 'night',
+  hook: 'Scorpio on trial | for leaving you | on read', judge: 'libra', pal: 'night',
   endLine: 'Reply to the invite. Jan 9.', endStars: ['scorpio', 'libra', 'gemini', 'pisces'],
   scenes: [
     { dur: 3.0, head: 'THE PEOPLE v. SCORPIO', cast: { scorpio: [[0, 360, Y, 270]] }, mood: { scorpio: 'squint' }, hops: { scorpio: [0.05, 0.5] },
@@ -163,27 +163,28 @@ const hst239 = trial({
 
 // ── hst240 · Cancer is suing the office AC
 const shiver = t => Math.sin(t * 40) * 4
+const scarf = (x, cx, cy, s, col = '#c9a6ff') => { box(x, cx - s * 0.36, cy + s * 0.16, s * 0.72, s * 0.12, col, 5); box(x, cx + s * 0.12, cy + s * 0.2, s * 0.12, s * 0.26, col, 4) }
 const hst240 = trial({
   hook: 'Cancer is suing | the office AC', judge: 'aquarius', pal: 'mint',
   endLine: 'Bring a sweater anyway. Jan 9.', endStars: ['cancer', 'aquarius', 'leo', 'sagittarius'],
   scenes: [
     { dur: 3.0, head: 'CANCER v. THE AC', set: (x) => frost(x, 0.9), cast: { cancer: [[0, 360, Y, 270]] }, mood: { cancer: 'wide' }, hops: { cancer: [0.05, 0.3, 0.6, 0.9] },
-      front: (x, t, lt, P) => { const [cx, cy, s] = P.at('cancer'); sweater(x, cx + shiver(t), cy + s * 0.25, 1.3, '#c9a6ff'); thermostat(x, 820, 1080, 1.1, '64°', t) },
+      front: (x, t, lt, P) => { const [cx, cy, s] = P.at('cancer'); scarf(x, cx + shiver(t), cy, s); thermostat(x, 820, 1080, 1.1, '64°', t) },
       lines: [[0.7, 1.8, 'cancer', 'you know | this feeling.']] },
     { dur: 3.2, head: 'EXHIBIT A', set: (x) => frost(x, 0.7), cast: { cancer: [[0, 250, Y, 210]] }, mood: { cancer: 'squint' },
       front: (x, t, lt) => easel(x, 760, 1000, Kp(lt, 0.1), 'EXHIBIT A', (cx, cy) => { txt(x, 'OUTSIDE 95°', cx, cy - 60, { size: 44, col: BRAKE, font: MONO, weight: 700 }); txt(x, 'MY DESK 64°', cx, cy + 30, { size: 44, col: '#2b5fb0', font: MONO, weight: 700 }) }),
       lines: [[0.5, 2.2, 'cancer', 'make it | make sense.']] },
     { dur: 3.0, head: 'EXHIBIT B: THE DRAWER', set: (x) => frost(x, 0.7), cast: { cancer: [[0, 300, Y, 230]] }, mood: { cancer: 'happy' },
-      front: (x, t, lt) => { for (let k = 0; k < 3; k++) { const kk = Kp(lt, 0.2 + k * 0.35); if (kk > 0) sweater(x, 640 + k * 150, 1100, 0.8 * kk, ['#ff8fb1', '#ffd36b', '#8fe3ff'][k]) } },
+      front: (x, t, lt) => { for (let k = 0; k < 3; k++) { const kk = Kp(lt, 0.2 + k * 0.35); if (kk > 0) sweater(x, 620 + k * 160, 1120, 0.55 * kk, ['#ff8fb1', '#ffd36b', '#8fe3ff'][k]) } },
       lines: [[1.3, 1.6, 'cancer', 'three sweaters. | at work.']] },
     { dur: 3.0, head: 'WITNESS: SAGITTARIUS', cast: { sagittarius: [[0, 780, Y - 50, 240]] }, mood: { sagittarius: 'happy' }, front: onStand('mint'),
       lines: [[0.3, 2.4, 'sagittarius', 'shorts | AND a parka. | every day.']] },
     { dur: 3.0, head: 'WITNESS: LEO', cast: { leo: [[0, 780, Y - 50, 240]] }, mood: { leo: 'sparkle' }, front: onStand('mint'),
       lines: [[0.3, 1.5, 'leo', 'I love it. | I run hot.']], stick: [[2.0, 0.9, 'BOO.', PINK]] },
-    { dur: 3.4, head: 'FOR THE DEFENSE: THE AC', cast: { cancer: [[0, 250, Y, 210]] }, mood: { cancer: 'wide' }, front: (x, t) => thermostat(x, 740, 1100, 1.6, '64°', t),
+    { dur: 3.4, head: 'FOR THE DEFENSE: THE AC', cast: { cancer: [[0, 250, Y, 210]] }, mood: { cancer: 'wide' }, front: (x, t) => thermostat(x, 740, 1230, 1.2, '64°', t),
       lines: [[0.3, 2.0, [740, 1180, 200], "without me | you'd be soup."]], stick: [[2.4, 0.9, 'FAIR.', MINT]] },
     { dur: 3.0, j: false, head: 'THE JURY (COLD)', set: (x) => { frost(x, 1); juryRail(x, 'mint') }, ...jury(['aries', 'gemini', 'virgo', 'libra', 'pisces'], { pisces: 'wide', virgo: 'squint' }),
-      front: (x, t, lt, P) => { for (const id of ['aries', 'gemini', 'virgo', 'libra', 'pisces']) { const [cx, cy, s] = P.at(id); sweater(x, cx + shiver(t + cx), cy + s * 0.3, 0.6, '#8fe3ff') } },
+      front: (x, t, lt, P) => { for (const id of ['aries', 'gemini', 'virgo', 'libra', 'pisces']) { const [cx, cy, s] = P.at(id); scarf(x, cx + shiver(t + cx), cy, s, '#8fe3ff') } },
       lines: [[0.3, 2.2, 'gemini', 'can we | deliberate | outside?']] },
     { dur: 3.6, head: 'THE VERDICT', bang: 0.9, cast: { cancer: [[0, 330, Y, 230]] }, mood: { aquarius: lt => lt > 1 ? 'happy' : 'squint', cancer: 'wide' },
       lines: [[1.1, 2.3, 'aquarius', 'the AC stays. | it is Houston.']], stick: [[0.95, 1.0, 'BANG.', GOLD]] },
@@ -211,7 +212,7 @@ const hst241 = trial({
       lines: [[0.2, 1.5, 'aries', '20 minutes | without traffic!'], [1.9, 1.3, 'capricorn', 'this is | Houston.']] },
     { dur: 3.2, head: 'WITNESS: THE KATY FREEWAY', j: false, cast: { aries: [[0, 300, Y, 200]] }, mood: { aries: 'eyeroll' },
       front: (x, t, lt) => overheadSign(x, 560, 760, 'I-10 WEST', 'KATY FWY', Kp(lt, 0.1)),
-      lines: [[0.6, 2.2, [560, 900, 200], 'I was | very busy.']] },
+      lines: [[0.6, 2.2, [560, 1130, 200], 'I was | very busy.']] },
     { dur: 3.0, head: 'WITNESS: LIBRA', cast: { libra: [[0, 780, Y - 50, 240]] }, mood: { libra: 'wink' }, front: onStand('wood'),
       lines: [[0.3, 2.3, 'libra', 'I always | add 30.']] },
     { dur: 3.6, head: 'THE HONEST PART', cast: { aries: [[0, 300, Y, 230]], virgo: [[0, 780, Y, 230]] }, mood: { aries: 'wide', virgo: 'neutral' },
@@ -259,12 +260,12 @@ const hst242 = trial({
 
 // ── hst243 · Pisces is suing the one cold day in Houston
 const hst243 = trial({
-  hook: 'Pisces is suing | the one cold day | in Houston', judge: 'cancer', pal: 'night',
+  hook: "Pisces is suing | Houston's one | cold day", judge: 'cancer', pal: 'night',
   endLine: 'Find your season. Jan 9.', endStars: ['pisces', 'leo', 'cancer', 'sagittarius'],
   scenes: [
     { dur: 3.0, head: 'PISCES v. THE COLD FRONT', cast: { pisces: [[0, 330, Y, 270]] }, mood: { pisces: 'wide' }, hops: { pisces: [0.05, 0.5] },
-      front: (x, t, lt, P) => { puffer(x, P, 'pisces', '#5ec8ff'); cloud(x, 810, 1060, 0.85, t, { col: '#bfe0ff' }) }, lines: [[0.6, 1.9, 'pisces', 'you remember | the cold day?']] },
-    { dur: 3.2, head: 'EXHIBIT A: MONDAY', cast: { pisces: [[0, 250, Y, 210]] }, mood: { pisces: 'heart' }, front: (x, t, lt, P) => { puffer(x, P, 'pisces', '#5ec8ff'); easel(x, 760, 1000, Kp(lt, 0.1), 'EXHIBIT A', (cx, cy) => phone(x, cx, cy, 1.0, '55°', { sub: 'MONDAY' })) },
+      front: (x, t, lt, P) => { coat(x, P, 'pisces', '#5ec8ff'); cloud(x, 810, 1060, 0.85, t, { col: '#bfe0ff' }) }, lines: [[0.6, 1.9, 'pisces', 'you remember | the cold day?']] },
+    { dur: 3.2, head: 'EXHIBIT A: MONDAY', cast: { pisces: [[0, 250, Y, 210]] }, mood: { pisces: 'heart' }, front: (x, t, lt, P) => { coat(x, P, 'pisces', '#5ec8ff'); easel(x, 760, 1000, Kp(lt, 0.1), 'EXHIBIT A', (cx, cy) => phone(x, cx, cy, 1.0, '55°', { sub: 'MONDAY' })) },
       lines: [[0.5, 2.2, 'pisces', 'it was 55. | I wore the puffer.']] },
     { dur: 3.2, head: 'EXHIBIT B: THURSDAY', cast: { pisces: [[0, 250, Y, 210]] }, mood: { pisces: 'wide' }, front: (x, t, lt) => easel(x, 760, 1000, Kp(lt, 0.1), 'EXHIBIT B', (cx, cy) => phone(x, cx, cy, 1.0, '81°', { sub: 'THURSDAY', col: '#ffd36b' })),
       lines: [[0.5, 2.2, 'pisces', 'by Thursday | it was 81.']] },
@@ -317,7 +318,7 @@ const hst244 = trial({
 
 // ── hst245 · Libra took 3 months to pick a date spot
 const hst245 = trial({
-  hook: 'Libra took 3 months | to pick | a date spot', judge: 'taurus', pal: 'wood',
+  hook: 'Libra took months | to pick | a date spot', judge: 'taurus', pal: 'wood',
   endLine: 'Just pick. Jan 9.', endStars: ['libra', 'aries', 'taurus', 'scorpio'],
   scenes: [
     { dur: 3.0, head: 'THE PEOPLE v. LIBRA', cast: { libra: [[0, 360, Y, 270]] }, mood: { libra: 'wide' }, hops: { libra: [0.05, 0.4, 0.8] },
@@ -346,7 +347,7 @@ const hst245 = trial({
 
 // ── hst246 · Sagittarius is on trial for one more Galveston trip
 const hst246 = trial({
-  hook: 'Sagittarius is on trial | for one more | Galveston trip', judge: 'capricorn', pal: 'mint',
+  hook: 'Sagittarius on trial | for one more | Galveston trip', judge: 'capricorn', pal: 'mint',
   endLine: 'Stay in town. Jan 9.', endStars: ['sagittarius', 'cancer', 'capricorn', 'gemini'],
   scenes: [
     { dur: 3.0, head: 'THE PEOPLE v. SAGITTARIUS', cast: { sagittarius: [[0, 340, Y, 270]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.05, 0.4] },
