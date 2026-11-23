@@ -1,0 +1,55 @@
+{
+  "id": "154-virgo-and-sagittarius",
+  "title": "Virgo & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 54 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & sagittarius: how do they align? ✨\nTwo mutable signs, a quarter of the sky apart. Real friction, and real growth if they stay. Virgo brings the devotion. Sagittarius brings the adventure.\nevery sign pair, part 54 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Virgo* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "explainB": [
+        "*Sagittarius* loves honestly and freely.",
+        "They want a partner for the next trip."
+      ],
+      "diff": [
+        "Two mutable signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Virgo brings *the devotion.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

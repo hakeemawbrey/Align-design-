@@ -1,0 +1,54 @@
+{
+  "id": "210-mars-in-taurus-vs-scorpio",
+  "title": "Mars in Taurus vs Mars in Scorpio",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in taurus vs mars in scorpio 🌙\nTaurus holds its ground. Scorpio holds a grudge.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Taurus",
+        "art": "sign:♉:mars"
+      },
+      "b": {
+        "label": "Mars in Scorpio",
+        "art": "sign:♏:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Taurus* versus *Mars in Scorpio.*"
+      ],
+      "explainA": [
+        "*Mars in Taurus* is slow and steady.",
+        "Hard to start, impossible to stop."
+      ],
+      "explainB": [
+        "*Mars in Scorpio* is quiet and intense.",
+        "It wants, it waits, it never forgets."
+      ],
+      "diff": [
+        "Taurus *holds its ground.*",
+        "Scorpio *holds a grudge.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

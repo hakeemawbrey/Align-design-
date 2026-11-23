@@ -1,0 +1,54 @@
+{
+  "id": "219-i-like-you-vs-i-love-you",
+  "title": "I like you vs I love you",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "i like you vs i love you: what's the difference? 💭\nOne is a door. One is a home.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "I like you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "I love you",
+        "art": "halo"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*I like you* versus *i love you.*"
+      ],
+      "explainA": [
+        "*I like you* is about now.",
+        "I want more of this."
+      ],
+      "explainB": [
+        "*I love you* is about later.",
+        "I want you in what comes next."
+      ],
+      "diff": [
+        "One is a *door.*",
+        "One is a *home.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

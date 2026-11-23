@@ -1,0 +1,54 @@
+{
+  "id": "241-endless-swiping-vs-a-nightly-deck",
+  "title": "Endless swiping vs A nightly deck",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "endless swiping vs a nightly deck ✦\nEndless is exhausting. A deck is enough.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Endless swiping",
+        "art": "loop"
+      },
+      "b": {
+        "label": "A nightly deck",
+        "art": "back"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Endless swiping* versus *a nightly deck.*"
+      ],
+      "explainA": [
+        "*Endless swiping* never runs out,",
+        "and never feels like enough."
+      ],
+      "explainB": [
+        "A *nightly deck* deals you a hand.",
+        "Then it's done until tomorrow."
+      ],
+      "diff": [
+        "Endless is *exhausting.*",
+        "A deck is *enough.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

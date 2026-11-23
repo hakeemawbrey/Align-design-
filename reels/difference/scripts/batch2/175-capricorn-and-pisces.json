@@ -1,0 +1,55 @@
+{
+  "id": "175-capricorn-and-pisces",
+  "title": "Capricorn & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 75 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "capricorn & pisces: how do they align? ✨\nEarth and water feed each other. Easy to talk to, easy to grow with. Capricorn brings the commitment. Pisces brings the tenderness.\nevery sign pair, part 75 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "capricorn",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Capricorn* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Capricorn* loves like a long plan.",
+        "Slow to open, built to last."
+      ],
+      "explainB": [
+        "*Pisces* loves like a dream.",
+        "Romantic, gentle, all in."
+      ],
+      "diff": [
+        "Earth and water *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Capricorn brings *the commitment.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

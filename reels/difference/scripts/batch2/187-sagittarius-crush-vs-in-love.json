@@ -1,0 +1,55 @@
+{
+  "id": "187-sagittarius-crush-vs-in-love",
+  "title": "Sagittarius crush vs Sagittarius in love",
+  "cover": "What's the difference?",
+  "kicker": "SAGITTARIUS",
+  "series": "SAGITTARIUS IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sagittarius with a crush vs sagittarius in love 💭\nThe crush is fun. Love is when they plan you in.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "sagittarius",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:lilac"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:lilac:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Sagittarius with a *crush,*",
+        "versus Sagittarius in *love.*"
+      ],
+      "explainA": [
+        "A *Sagittarius* crush is a laugh.",
+        "Jokes, dares, a spontaneous trip."
+      ],
+      "explainB": [
+        "*Sagittarius* in love brings you along,",
+        "on every adventure."
+      ],
+      "diff": [
+        "The crush is *fun.*",
+        "Love is when they *plan you in.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "170-sagittarius-and-capricorn",
+  "title": "Sagittarius & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 70 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sagittarius & capricorn: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Sagittarius brings the adventure. Capricorn brings the commitment.\nevery sign pair, part 70 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "sagittarius",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Sagittarius* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Sagittarius* loves honestly and freely.",
+        "They want a partner for the next trip."
+      ],
+      "explainB": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Sagittarius brings *the adventure.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

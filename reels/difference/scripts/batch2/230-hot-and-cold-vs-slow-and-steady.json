@@ -1,0 +1,54 @@
+{
+  "id": "230-hot-and-cold-vs-slow-and-steady",
+  "title": "Hot and cold vs Slow and steady",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "hot and cold vs slow and steady: what's the difference? 💭\nHot and cold keeps you hooked. Steady keeps you safe.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Hot and cold",
+        "art": "solo:flame:mars"
+      },
+      "b": {
+        "label": "Slow and steady",
+        "art": "road"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Hot and cold* versus *slow and steady.*"
+      ],
+      "explainA": [
+        "*Hot and cold* is all in, then gone.",
+        "Then back again."
+      ],
+      "explainB": [
+        "*Slow and steady* is a little more,",
+        "every single week."
+      ],
+      "diff": [
+        "Hot and cold keeps you *hooked.*",
+        "Steady keeps you *safe.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

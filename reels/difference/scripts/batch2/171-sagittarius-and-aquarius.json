@@ -1,0 +1,55 @@
+{
+  "id": "171-sagittarius-and-aquarius",
+  "title": "Sagittarius & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 71 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sagittarius & aquarius: how do they align? ✨\nFire and air feed each other. Easy to talk to, easy to grow with. Sagittarius brings the adventure. Aquarius brings the freedom.\nevery sign pair, part 71 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "sagittarius",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Sagittarius* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Sagittarius* loves with room to roam.",
+        "Adventure first, rules later."
+      ],
+      "explainB": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "diff": [
+        "Fire and air *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Sagittarius brings *the adventure.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

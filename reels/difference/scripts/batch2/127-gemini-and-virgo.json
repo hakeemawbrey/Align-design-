@@ -1,0 +1,55 @@
+{
+  "id": "127-gemini-and-virgo",
+  "title": "Gemini & Virgo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 27 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & virgo: how do they align? ✨\nTwo mutable signs, a quarter of the sky apart. Real friction, and real growth if they stay. Gemini brings the conversation. Virgo brings the devotion.\nevery sign pair, part 27 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "virgo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "ask": [
+        "*Gemini* and *Virgo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves curious and quick.",
+        "They need a mind to play with."
+      ],
+      "explainB": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "diff": [
+        "Two mutable signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Gemini brings *the conversation.* Virgo brings *the devotion.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "149-leo-and-aquarius",
+  "title": "Leo & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 49 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & aquarius: how do they align? ✨\nOpposite signs. Each one has what the other is missing. Leo brings the warmth. Aquarius brings the freedom.\nevery sign pair, part 49 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Leo* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves big and generous.",
+        "They want to adore you, and be adored back."
+      ],
+      "explainB": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "diff": [
+        "Opposite signs.",
+        "Each one has what the other is *missing.*",
+        "Leo brings *the warmth.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

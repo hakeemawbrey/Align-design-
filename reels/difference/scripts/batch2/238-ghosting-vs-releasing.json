@@ -1,0 +1,53 @@
+{
+  "id": "238-ghosting-vs-releasing",
+  "title": "Ghosting vs Releasing",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "ghosting vs releasing ✦\nGhosting lingers. Releasing lets go.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Ghosting",
+        "art": "duo:ghost:gold:lilac"
+      },
+      "b": {
+        "label": "Releasing",
+        "art": "solo:door:gold"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Ghosting* versus *releasing.*"
+      ],
+      "explainA": [
+        "*Ghosting* leaves someone waiting."
+      ],
+      "explainB": [
+        "*Releasing* on the Align app",
+        "takes them out of your deck, cleanly."
+      ],
+      "diff": [
+        "Ghosting *lingers.*",
+        "Releasing *lets go.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

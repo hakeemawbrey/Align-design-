@@ -1,0 +1,54 @@
+{
+  "id": "235-swiping-vs-aligning",
+  "title": "Swiping vs Aligning",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "swiping vs aligning ✦\nSwiping is a reflex. Aligning is a choice.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Swiping",
+        "art": "solo:phone:blue"
+      },
+      "b": {
+        "label": "Aligning",
+        "art": "align"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Swiping* versus *aligning.*"
+      ],
+      "explainA": [
+        "*Swiping* judges a face",
+        "in half a second."
+      ],
+      "explainB": [
+        "*Aligning* is choosing someone",
+        "after you've read their sky."
+      ],
+      "diff": [
+        "Swiping is a *reflex.*",
+        "Aligning is a *choice.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

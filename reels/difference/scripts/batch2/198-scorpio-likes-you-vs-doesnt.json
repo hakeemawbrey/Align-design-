@@ -1,0 +1,55 @@
+{
+  "id": "198-scorpio-likes-you-vs-doesnt",
+  "title": "When Scorpio likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "SCORPIO",
+  "series": "DOES SCORPIO LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when scorpio likes you vs when they don't 👀\nScorpio is never lukewarm. Warm means yes.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:rose:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Scorpio *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Scorpio* likes you,",
+        "they want to know everything."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they go cold, fast."
+      ],
+      "diff": [
+        "Scorpio is never lukewarm.",
+        "Warm means *yes.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

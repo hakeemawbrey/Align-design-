@@ -1,0 +1,55 @@
+{
+  "id": "131-gemini-and-capricorn",
+  "title": "Gemini & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 31 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & capricorn: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Gemini brings the conversation. Capricorn brings the commitment.\nevery sign pair, part 31 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Gemini* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves curious and quick.",
+        "They need a mind to play with."
+      ],
+      "explainB": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Gemini brings *the conversation.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

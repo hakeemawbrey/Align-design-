@@ -1,0 +1,55 @@
+{
+  "id": "117-taurus-and-virgo",
+  "title": "Taurus & Virgo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 17 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus & virgo: how do they align? ✨\nBoth earth signs. They get each other without explaining. Taurus brings the steadiness. Virgo brings the devotion.\nevery sign pair, part 17 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "virgo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "ask": [
+        "*Taurus* and *Virgo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Taurus* loves slowly, then forever.",
+        "Dinner, touch, and showing up on time."
+      ],
+      "explainB": [
+        "*Virgo* loves through small acts.",
+        "Fixing, planning, noticing what you need."
+      ],
+      "diff": [
+        "Both earth signs.",
+        "They *get* each other without explaining.",
+        "Taurus brings *the steadiness.* Virgo brings *the devotion.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

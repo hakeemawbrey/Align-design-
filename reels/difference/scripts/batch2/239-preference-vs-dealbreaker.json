@@ -1,0 +1,54 @@
+{
+  "id": "239-preference-vs-dealbreaker",
+  "title": "Preference vs Dealbreaker",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "preference vs dealbreaker ✦\nPreferences bend. Dealbreakers don't.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Preference",
+        "art": "solo:star:mint"
+      },
+      "b": {
+        "label": "Dealbreaker",
+        "art": "solo:shield:rose"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A preference* versus *a dealbreaker.*"
+      ],
+      "explainA": [
+        "A *preference* is nice to have.",
+        "Tall, funny, a dog person."
+      ],
+      "explainB": [
+        "A *dealbreaker* is a must not.",
+        "On Align, it goes right on your card."
+      ],
+      "diff": [
+        "Preferences *bend.*",
+        "Dealbreakers *don't.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

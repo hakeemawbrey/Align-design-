@@ -1,0 +1,55 @@
+{
+  "id": "183-leo-crush-vs-in-love",
+  "title": "Leo crush vs Leo in love",
+  "cover": "What's the difference?",
+  "kicker": "LEO",
+  "series": "LEO IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo with a crush vs leo in love 💭\nThe crush wants your attention. Love gives you theirs.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:gold"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:gold:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Leo with a *crush,*",
+        "versus Leo in *love.*"
+      ],
+      "explainA": [
+        "A *Leo* crush is a performance.",
+        "They want you watching."
+      ],
+      "explainB": [
+        "*Leo* in love is generous,",
+        "and proud to be seen with you."
+      ],
+      "diff": [
+        "The crush wants your *attention.*",
+        "Love gives you *theirs.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

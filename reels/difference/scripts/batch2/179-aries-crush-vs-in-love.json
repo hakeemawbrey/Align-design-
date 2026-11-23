@@ -1,0 +1,55 @@
+{
+  "id": "179-aries-crush-vs-in-love",
+  "title": "Aries crush vs Aries in love",
+  "cover": "What's the difference?",
+  "kicker": "ARIES",
+  "series": "ARIES IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries with a crush vs aries in love 💭\nThe crush is a race. Love is when they slow down for you.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:mars"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:mars:mars"
+      },
+      "guess": true,
+      "ask": [
+        "Aries with a *crush,*",
+        "versus Aries in *love.*"
+      ],
+      "explainA": [
+        "An *Aries* crush is obvious.",
+        "They chase, they tease, they text first."
+      ],
+      "explainB": [
+        "*Aries* in love gets protective,",
+        "and fights for you, not with you."
+      ],
+      "diff": [
+        "The crush is a *race.*",
+        "Love is when they *slow down* for you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

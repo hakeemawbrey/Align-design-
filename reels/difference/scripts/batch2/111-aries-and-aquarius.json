@@ -1,0 +1,55 @@
+{
+  "id": "111-aries-and-aquarius",
+  "title": "Aries & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 11 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & aquarius: how do they align? ✨\nFire and air feed each other. Easy to talk to, easy to grow with. Aries brings the spark. Aquarius brings the freedom.\nevery sign pair, part 11 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Aries* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves fast and out loud.",
+        "If they want you, you'll know by Tuesday."
+      ],
+      "explainB": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "diff": [
+        "Fire and air *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Aries brings *the spark.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

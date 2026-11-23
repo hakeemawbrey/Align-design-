@@ -1,0 +1,53 @@
+{
+  "id": "232-good-morning-vs-good-night",
+  "title": "Good morning vs Good night",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "good morning vs good night: what's the difference? 💭\nOne of each is the goal.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Good morning",
+        "art": "sun"
+      },
+      "b": {
+        "label": "Good night",
+        "art": "moon:full"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Good morning* versus *good night.*"
+      ],
+      "explainA": [
+        "A *good morning* text means",
+        "you're their first thought."
+      ],
+      "explainB": [
+        "A *good night* text means",
+        "you're their last."
+      ],
+      "diff": [
+        "One of each is the *goal.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "124-gemini-and-gemini",
+  "title": "Gemini & Gemini",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 24 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & gemini: how do they align? ✨\nTwo Geminis are a mirror. Easy to understand, hard to hide from. Double conversation, and the same blind spots.\nevery sign pair, part 24 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "ask": [
+        "*Gemini* and *Gemini.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "explainB": [
+        "*Gemini* loves curious and quick.",
+        "They need a mind to play with."
+      ],
+      "diff": [
+        "Two Geminis are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *conversation,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

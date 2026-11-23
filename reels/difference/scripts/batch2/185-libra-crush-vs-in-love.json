@@ -1,0 +1,55 @@
+{
+  "id": "185-libra-crush-vs-in-love",
+  "title": "Libra crush vs Libra in love",
+  "cover": "What's the difference?",
+  "kicker": "LIBRA",
+  "series": "LIBRA IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra with a crush vs libra in love 💭\nThe crush flirts with everyone. Love chooses one.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:rose"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:rose:rose"
+      },
+      "guess": true,
+      "ask": [
+        "Libra with a *crush,*",
+        "versus Libra in *love.*"
+      ],
+      "explainA": [
+        "A *Libra* crush is charming.",
+        "Compliments, eye contact, perfect timing."
+      ],
+      "explainB": [
+        "*Libra* in love thinks in we,",
+        "and makes your life a little prettier."
+      ],
+      "diff": [
+        "The crush flirts with *everyone.*",
+        "Love *chooses one.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

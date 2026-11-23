@@ -1,0 +1,55 @@
+{
+  "id": "144-leo-and-virgo",
+  "title": "Leo & Virgo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 44 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & virgo: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Leo brings the warmth. Virgo brings the devotion.\nevery sign pair, part 44 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "virgo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "ask": [
+        "*Leo* and *Virgo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "explainB": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Leo brings *the warmth.* Virgo brings *the devotion.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "162-libra-and-aquarius",
+  "title": "Libra & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 62 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & aquarius: how do they align? ✨\nBoth air signs. They get each other without explaining. Libra brings the balance. Aquarius brings the freedom.\nevery sign pair, part 62 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Libra* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "explainB": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "diff": [
+        "Both air signs.",
+        "They *get* each other without explaining.",
+        "Libra brings *the balance.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "216-double-text-vs-follow-up",
+  "title": "Double text vs Follow up",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "double text vs follow up: what's the difference? 💭\nDouble texts ask for attention. Follow ups give something.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Double text",
+        "art": "solo:phone:rose"
+      },
+      "b": {
+        "label": "Follow up",
+        "art": "solo:door:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A double text* versus *a follow up.*"
+      ],
+      "explainA": [
+        "A *double text* is a nervous second message.",
+        "Did you see my last one?"
+      ],
+      "explainB": [
+        "A *follow up* adds something new.",
+        "A plan, a link, a question."
+      ],
+      "diff": [
+        "Double texts *ask* for attention.",
+        "Follow ups *give* something."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

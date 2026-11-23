@@ -1,0 +1,54 @@
+{
+  "id": "237-photo-first-vs-sky-first",
+  "title": "Photo first vs Sky first",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "photo first vs sky first ✦\nOne starts with looks. One starts with who.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Photo first",
+        "art": "solo:mirror:lilac"
+      },
+      "b": {
+        "label": "Sky first",
+        "art": "chart"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Photo first* versus *sky first.*"
+      ],
+      "explainA": [
+        "*Photo first* decides",
+        "before you know them."
+      ],
+      "explainB": [
+        "*Sky first* lets you read how they love,",
+        "then see their face."
+      ],
+      "diff": [
+        "One starts with *looks.*",
+        "One starts with *who.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "146-leo-and-scorpio",
+  "title": "Leo & Scorpio",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 46 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & scorpio: how do they align? ✨\nTwo fixed signs, a quarter of the sky apart. Real friction, and real growth if they stay. Leo brings the warmth. Scorpio brings the depth.\nevery sign pair, part 46 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "scorpio",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "*Leo* and *Scorpio.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "explainB": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "diff": [
+        "Two fixed signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Leo brings *the warmth.* Scorpio brings *the depth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

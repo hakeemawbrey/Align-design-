@@ -1,0 +1,54 @@
+{
+  "id": "209-mars-in-aries-vs-libra",
+  "title": "Mars in Aries vs Mars in Libra",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in aries vs mars in libra 🌙\nAries charges. Libra persuades.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Mars in Libra",
+        "art": "sign:♎:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Aries* versus *Mars in Libra.*"
+      ],
+      "explainA": [
+        "*Mars in Aries* goes straight for it.",
+        "Quick to want, quick to fight, quick to forgive."
+      ],
+      "explainB": [
+        "*Mars in Libra* goes about it gracefully.",
+        "It hates conflict, and charms its way through."
+      ],
+      "diff": [
+        "Aries *charges.*",
+        "Libra *persuades.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

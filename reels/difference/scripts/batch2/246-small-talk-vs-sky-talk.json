@@ -1,0 +1,53 @@
+{
+  "id": "246-small-talk-vs-sky-talk",
+  "title": "Small talk vs Sky talk",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "small talk vs sky talk ✦\nSmall talk fills time. Sky talk opens doors.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Small talk",
+        "art": "solo:clock:lilac"
+      },
+      "b": {
+        "label": "Sky talk",
+        "art": "glyphs:☉☽✦:gold"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Small talk* versus *sky talk.*"
+      ],
+      "explainA": [
+        "*Small talk* is weather and work."
+      ],
+      "explainB": [
+        "*Sky talk* is your big three,",
+        "and how you both love."
+      ],
+      "diff": [
+        "Small talk *fills time.*",
+        "Sky talk *opens doors.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

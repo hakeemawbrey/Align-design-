@@ -1,0 +1,54 @@
+{
+  "id": "226-liking-posts-vs-liking-you",
+  "title": "Liking posts vs Liking you",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "liking posts vs liking you: what's the difference? 💭\nPosts get taps. People get time.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Liking posts",
+        "art": "solo:phone:rose"
+      },
+      "b": {
+        "label": "Liking you",
+        "art": "duo:close:gold:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Liking your posts* versus *liking you.*"
+      ],
+      "explainA": [
+        "*Liking your posts* costs nothing.",
+        "A tap, and it's done."
+      ],
+      "explainB": [
+        "*Liking you* takes effort.",
+        "Plans, texts, and showing up."
+      ],
+      "diff": [
+        "Posts get *taps.*",
+        "People get *time.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "195-leo-likes-you-vs-doesnt",
+  "title": "When Leo likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "LEO",
+  "series": "DOES LEO LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when leo likes you vs when they don't 👀\nLeo likes you in public. If it's all private, ask why.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:gold:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Leo *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Leo* likes you,",
+        "they show you off."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they stop trying to impress you."
+      ],
+      "diff": [
+        "Leo likes you in public.",
+        "If it's all private, *ask why.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "155-virgo-and-capricorn",
+  "title": "Virgo & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 55 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & capricorn: how do they align? ✨\nBoth earth signs. They get each other without explaining. Virgo brings the devotion. Capricorn brings the commitment.\nevery sign pair, part 55 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Virgo* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves through small acts.",
+        "Fixing, planning, noticing what you need."
+      ],
+      "explainB": [
+        "*Capricorn* loves like a long plan.",
+        "Slow to open, built to last."
+      ],
+      "diff": [
+        "Both earth signs.",
+        "They *get* each other without explaining.",
+        "Virgo brings *the devotion.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

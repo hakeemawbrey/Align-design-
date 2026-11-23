@@ -1,0 +1,55 @@
+{
+  "id": "188-capricorn-crush-vs-in-love",
+  "title": "Capricorn crush vs Capricorn in love",
+  "cover": "What's the difference?",
+  "kicker": "CAPRICORN",
+  "series": "CAPRICORN IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "capricorn with a crush vs capricorn in love 💭\nThe crush is careful. Love is committed.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "capricorn",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:blue"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:blue:blue"
+      },
+      "guess": true,
+      "ask": [
+        "Capricorn with a *crush,*",
+        "versus Capricorn in *love.*"
+      ],
+      "explainA": [
+        "A *Capricorn* crush is subtle.",
+        "They take you seriously, and that's the sign."
+      ],
+      "explainB": [
+        "*Capricorn* in love makes plans,",
+        "for years, not weekends."
+      ],
+      "diff": [
+        "The crush is *careful.*",
+        "Love is *committed.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

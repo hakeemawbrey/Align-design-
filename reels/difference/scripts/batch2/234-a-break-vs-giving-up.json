@@ -1,0 +1,54 @@
+{
+  "id": "234-a-break-vs-giving-up",
+  "title": "A break vs Giving up",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a break vs giving up: what's the difference? 💭\nA break recharges. Giving up closes the door.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A break",
+        "art": "solo:alone:blue"
+      },
+      "b": {
+        "label": "Giving up",
+        "art": "solo:wall:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A break from dating* versus *giving up.*"
+      ],
+      "explainA": [
+        "A *break from dating* is rest,",
+        "on purpose, for a while."
+      ],
+      "explainB": [
+        "*Giving up* is deciding",
+        "love isn't for you."
+      ],
+      "diff": [
+        "A break *recharges.*",
+        "Giving up *closes the door.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

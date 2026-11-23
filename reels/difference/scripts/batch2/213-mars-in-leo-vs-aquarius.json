@@ -1,0 +1,54 @@
+{
+  "id": "213-mars-in-leo-vs-aquarius",
+  "title": "Mars in Leo vs Mars in Aquarius",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in leo vs mars in aquarius 🌙\nLeo fights for pride. Aquarius fights for a cause.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Leo",
+        "art": "sign:♌:mars"
+      },
+      "b": {
+        "label": "Mars in Aquarius",
+        "art": "sign:♒:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Leo* versus *Mars in Aquarius.*"
+      ],
+      "explainA": [
+        "*Mars in Leo* wants to be seen.",
+        "Proud, warm, and dramatic."
+      ],
+      "explainB": [
+        "*Mars in Aquarius* wants to be free.",
+        "Cool, stubborn, and principled."
+      ],
+      "diff": [
+        "Leo fights for *pride.*",
+        "Aquarius fights for a *cause.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

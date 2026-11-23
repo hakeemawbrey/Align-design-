@@ -1,0 +1,55 @@
+{
+  "id": "137-cancer-and-libra",
+  "title": "Cancer & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 37 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer & libra: how do they align? ✨\nTwo cardinal signs, a quarter of the sky apart. Real friction, and real growth if they stay. Cancer brings the care. Libra brings the balance.\nevery sign pair, part 37 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Cancer* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "explainB": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "diff": [
+        "Two cardinal signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Cancer brings *the care.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

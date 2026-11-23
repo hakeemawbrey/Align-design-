@@ -1,0 +1,54 @@
+{
+  "id": "204-venus-in-taurus-vs-scorpio",
+  "title": "Venus in Taurus vs Venus in Scorpio",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in taurus vs venus in scorpio 🌙\nTaurus wants safe. Scorpio wants deep.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Taurus",
+        "art": "sign:♉:venus"
+      },
+      "b": {
+        "label": "Venus in Scorpio",
+        "art": "sign:♏:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Taurus* versus *Venus in Scorpio.*"
+      ],
+      "explainA": [
+        "*Venus in Taurus* loves through comfort.",
+        "Touch, food, and loyalty."
+      ],
+      "explainB": [
+        "*Venus in Scorpio* loves through intensity.",
+        "Trust, depth, and all of you."
+      ],
+      "diff": [
+        "Taurus wants *safe.*",
+        "Scorpio wants *deep.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

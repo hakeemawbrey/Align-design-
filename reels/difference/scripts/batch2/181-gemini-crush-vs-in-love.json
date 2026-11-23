@@ -1,0 +1,55 @@
+{
+  "id": "181-gemini-crush-vs-in-love",
+  "title": "Gemini crush vs Gemini in love",
+  "cover": "What's the difference?",
+  "kicker": "GEMINI",
+  "series": "GEMINI IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini with a crush vs gemini in love 💭\nThe crush is fun. Love is when they stop looking around.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:mint"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:mint:mint"
+      },
+      "guess": true,
+      "ask": [
+        "Gemini with a *crush,*",
+        "versus Gemini in *love.*"
+      ],
+      "explainA": [
+        "A *Gemini* crush is all texting.",
+        "Memes at midnight, questions all day."
+      ],
+      "explainB": [
+        "*Gemini* in love tells you everything,",
+        "and wants to hear everything back."
+      ],
+      "diff": [
+        "The crush is *fun.*",
+        "Love is when they *stop looking around.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

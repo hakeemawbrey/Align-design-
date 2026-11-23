@@ -1,0 +1,55 @@
+{
+  "id": "125-gemini-and-cancer",
+  "title": "Gemini & Cancer",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 25 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & cancer: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Gemini brings the conversation. Cancer brings the care.\nevery sign pair, part 25 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "cancer",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "ask": [
+        "*Gemini* and *Cancer.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves curious and quick.",
+        "They need a mind to play with."
+      ],
+      "explainB": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Gemini brings *the conversation.* Cancer brings *the care.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

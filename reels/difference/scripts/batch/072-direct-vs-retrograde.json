@@ -5,7 +5,7 @@
   "voice": "af_heart",
   "speed": 1.12,
   "caption": "direct vs retrograde: what's the difference? 🌙\nNothing really goes backward. Earth is just passing it.",
-  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "cta": "join the align beta ✦ link in bio",
   "hashtags": [
     "astrology",
     "zodiacsigns",
@@ -43,9 +43,9 @@
   ],
   "end": {
     "lines": [
-      "Send this to someone",
-      "who only knows their sun sign."
+      "Join the *Align* beta.",
+      "Link in bio."
     ],
-    "pill": "SEND THIS TO SOMEONE"
+    "pill": "JOIN THE ALIGN BETA"
   }
 }

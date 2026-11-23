@@ -1,0 +1,54 @@
+{
+  "id": "222-taking-it-slow-vs-not-interested",
+  "title": "Taking it slow vs Not interested",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taking it slow vs not interested: what's the difference? 💭\nSlow has a direction. Not interested has none.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taking it slow",
+        "art": "road"
+      },
+      "b": {
+        "label": "Not interested",
+        "art": "solo:clock:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Taking it slow* versus *not interested.*"
+      ],
+      "explainA": [
+        "*Taking it slow* still moves forward.",
+        "Plans, just spaced out."
+      ],
+      "explainB": [
+        "*Not interested* stays still.",
+        "No plans, ever."
+      ],
+      "diff": [
+        "Slow has a *direction.*",
+        "Not interested has *none.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

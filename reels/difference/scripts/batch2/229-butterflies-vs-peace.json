@@ -1,0 +1,52 @@
+{
+  "id": "229-butterflies-vs-peace",
+  "title": "Butterflies vs Peace",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "butterflies vs peace: what's the difference? 💭\nButterflies start it. Peace keeps it.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Butterflies",
+        "art": "solo:butterflies:gold"
+      },
+      "b": {
+        "label": "Peace",
+        "art": "halo"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Butterflies* versus *peace.*"
+      ],
+      "explainA": [
+        "*Butterflies* are the not knowing."
+      ],
+      "explainB": [
+        "*Peace* is the knowing."
+      ],
+      "diff": [
+        "Butterflies *start* it.",
+        "Peace *keeps* it."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

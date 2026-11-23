@@ -1,0 +1,55 @@
+{
+  "id": "161-libra-and-capricorn",
+  "title": "Libra & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 61 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & capricorn: how do they align? ✨\nTwo cardinal signs, a quarter of the sky apart. Real friction, and real growth if they stay. Libra brings the balance. Capricorn brings the commitment.\nevery sign pair, part 61 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Libra* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "explainB": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "diff": [
+        "Two cardinal signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Libra brings *the balance.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

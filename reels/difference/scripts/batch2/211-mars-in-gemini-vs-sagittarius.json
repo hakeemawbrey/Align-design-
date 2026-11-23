@@ -1,0 +1,54 @@
+{
+  "id": "211-mars-in-gemini-vs-sagittarius",
+  "title": "Mars in Gemini vs Mars in Sagittarius",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in gemini vs mars in sagittarius 🌙\nGemini argues. Sagittarius preaches.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Gemini",
+        "art": "sign:♊:mars"
+      },
+      "b": {
+        "label": "Mars in Sagittarius",
+        "art": "sign:♐:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Gemini* versus *Mars in Sagittarius.*"
+      ],
+      "explainA": [
+        "*Mars in Gemini* fights with words.",
+        "Quick, clever, and restless."
+      ],
+      "explainB": [
+        "*Mars in Sagittarius* fights for what it believes.",
+        "Blunt, fiery, and over fast."
+      ],
+      "diff": [
+        "Gemini *argues.*",
+        "Sagittarius *preaches.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

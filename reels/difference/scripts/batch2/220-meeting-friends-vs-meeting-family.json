@@ -1,0 +1,54 @@
+{
+  "id": "220-meeting-friends-vs-meeting-family",
+  "title": "Meeting friends vs Meeting family",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "meeting friends vs meeting family: what's the difference? 💭\nFriends ask if you're fun. Family asks if you're serious.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Meeting friends",
+        "art": "solo:crowd:gold"
+      },
+      "b": {
+        "label": "Meeting family",
+        "art": "duo:close:gold:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Meeting the friends* versus *meeting the family.*"
+      ],
+      "explainA": [
+        "*Meeting the friends* is an audition.",
+        "Do you fit in?"
+      ],
+      "explainB": [
+        "*Meeting the family* is a statement.",
+        "You're staying."
+      ],
+      "diff": [
+        "Friends ask if you're *fun.*",
+        "Family asks if you're *serious.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

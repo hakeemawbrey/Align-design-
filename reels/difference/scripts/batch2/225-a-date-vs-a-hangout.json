@@ -1,0 +1,54 @@
+{
+  "id": "225-a-date-vs-a-hangout",
+  "title": "A date vs A hangout",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a date vs a hangout: what's the difference? 💭\nDates are clear. Hangouts leave room to pretend.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A date",
+        "art": "duo:close:rose:rose"
+      },
+      "b": {
+        "label": "A hangout",
+        "art": "duo:apart:mint:mint"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A date* versus *a hangout.*"
+      ],
+      "explainA": [
+        "A *date* is planned,",
+        "and you both know it."
+      ],
+      "explainB": [
+        "A *hangout* could be anything,",
+        "and that's the point."
+      ],
+      "diff": [
+        "Dates are *clear.*",
+        "Hangouts leave room to *pretend.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

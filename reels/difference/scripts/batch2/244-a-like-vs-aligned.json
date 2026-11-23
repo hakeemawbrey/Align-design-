@@ -1,0 +1,54 @@
+{
+  "id": "244-a-like-vs-aligned",
+  "title": "A like vs Aligned",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a like vs aligned ✦\nA like is a hope. Aligned is a fact.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A like",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Aligned",
+        "art": "align"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A like* versus *aligned.*"
+      ],
+      "explainA": [
+        "A *like* goes one way.",
+        "It might never come back."
+      ],
+      "explainB": [
+        "*Aligned* means you both chose,",
+        "and the cards flip."
+      ],
+      "diff": [
+        "A like is a *hope.*",
+        "Aligned is a *fact.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

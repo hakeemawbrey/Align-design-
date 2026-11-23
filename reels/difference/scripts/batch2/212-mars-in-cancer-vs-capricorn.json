@@ -1,0 +1,54 @@
+{
+  "id": "212-mars-in-cancer-vs-capricorn",
+  "title": "Mars in Cancer vs Mars in Capricorn",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in cancer vs mars in capricorn 🌙\nCancer fights for home. Capricorn fights for the goal.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Cancer",
+        "art": "sign:♋:mars"
+      },
+      "b": {
+        "label": "Mars in Capricorn",
+        "art": "sign:♑:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Cancer* versus *Mars in Capricorn.*"
+      ],
+      "explainA": [
+        "*Mars in Cancer* acts through feelings.",
+        "It protects, and it sulks when hurt."
+      ],
+      "explainB": [
+        "*Mars in Capricorn* acts through discipline.",
+        "It plans, it climbs, it stays cool."
+      ],
+      "diff": [
+        "Cancer fights for *home.*",
+        "Capricorn fights for the *goal.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

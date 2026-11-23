@@ -1565,12 +1565,16 @@ function focusAt(t) {
 // Which art each card shows, and how far through a flip it is.
 function cardState(t, side) {
   const delay = side * 0.1
-  let pair = 0
+  // guess mode: both cards start face down, and each turns over as it's explained
+  const guess = GUESS && !COVER
+  let pair = guess ? 'back' : 0
   let flip = null
   for (const b of BEATS) {
-    const swap = b.kind === 'end' ? 'back' : b.kind === 'ask' && b.pair > 0 ? b.pair : null
+    let swap = b.kind === 'end' ? 'back' : b.kind === 'ask' && b.pair > 0 ? b.pair : null
+    const turn = guess && ((side === 0 && b.kind === 'a') || (side === 1 && b.kind === 'b'))
+    if (turn) swap = b.pair
     if (swap === null) continue
-    const t0 = b.start + delay
+    const t0 = turn ? b.start - 0.12 : b.start + delay
     if (t >= t0 + 0.62) pair = swap
     else if (t >= t0) {
       const k = (t - t0) / 0.62
@@ -1582,6 +1586,141 @@ function cardState(t, side) {
   return { art: pair, sx: 1, k: null }
 }
 
+// Each card's colour, like a deck card's sign colour: from the art's spec.
+const NAMED_TINT = {
+  spark: COL.rose, road: COL.gold, halo: COL.gold, limerence: COL.lilac, lineup: COL.rose, loop: COL.mint, beam: COL.gold,
+  align: COL.gold, sun: COL.gold, rising: COL.rose, venus: COL.venus, mars: COL.mars, horoscope: COL.lilac2, chart: COL.gold,
+  slices: COL.mint, constellation: COL.blue, back: COL.lilac,
+}
+function tintOf(spec) {
+  if (NAMED_TINT[spec]) return NAMED_TINT[spec]
+  const [kind, a, b] = spec.split(':')
+  if (kind === 'solo' || kind === 'planet' || kind === 'sign') return colOf(kind === 'solo' ? b : spec.split(':')[2])
+  if (kind === 'duo') return colOf(b)
+  if (kind === 'glyphs') return colOf(b)
+  if (kind === 'moon') return '#cfdcff'
+  if (kind === 'eclipse') return a === 'solar' ? COL.gold : COL.mars
+  if (kind === 'aspect') return { conjunction: COL.gold, opposition: COL.rose, trine: COL.mint, square: COL.mars, sextile: COL.blue }[a] ?? COL.gold
+  if (kind === 'orbs') return colOf(b.split(',')[0])
+  return COL.gold
+}
+const glyphOf = (spec) => { const [kind, a] = spec.split(':'); return kind === 'sign' || kind === 'planet' ? a : '✦' }
+const mix = (h, w, k) => { const [r, g, b] = rgb(h), [R, G, B] = rgb(w); return `rgb(${Math.round(r + (R - r) * k)},${Math.round(g + (G - g) * k)},${Math.round(b + (B - b) * k)})` }
+
+// The Align card: a thick foil border in the card's colour (the colour rolled
+// through white, like printed metal), a dark face washed with that colour at the
+// top, a kicker and orb, the framed art panel, the name in serif caps, and a
+// mono footer, the way the beta's deck cards are drawn.
+const EDGE = 13
+const PANEL = { x: -192, y: -206, w: 384, h: 366, srcY: 74 }
+function alignCard(g, t, spec, side, tint, back) {
+  const w = L.cw, h = L.ch
+  // foil, sweeping slowly
+  const sweep = ((t * 0.18 + side * 0.3) % 1) * 2 - 1
+  const fg = g.createLinearGradient(-w / 2 + sweep * w * 0.6, -h / 2, w / 2 + sweep * w * 0.6, h / 2)
+  const stops = back ? ['#c8b4ff', '#6b4bd0', '#f2d784', '#6b4bd0', '#c8b4ff'] : [tint, mix(tint, '#ffffff', 0.55), '#ffffff', mix(tint, '#ffffff', 0.55), tint]
+  stops.forEach((c, i) => fg.addColorStop(i / (stops.length - 1), c))
+  g.save()
+  g.shadowColor = 'rgba(27,18,54,0.3)'
+  g.shadowBlur = 28
+  g.shadowOffsetY = 14
+  g.fillStyle = fg
+  g.beginPath()
+  g.roundRect(-w / 2, -h / 2, w, h, 26)
+  g.fill()
+  g.restore()
+  g.save()
+  g.shadowColor = rgba(back ? COL.lilac : tint, 0.55)
+  g.shadowBlur = 30
+  g.fillStyle = fg
+  g.beginPath()
+  g.roundRect(-w / 2, -h / 2, w, h, 26)
+  g.fill()
+  g.restore()
+  // a thin dark edge so pale foils still stand off the paper
+  g.save()
+  g.strokeStyle = 'rgba(27,18,54,0.35)'
+  g.lineWidth = 1.5
+  g.beginPath()
+  g.roundRect(-w / 2, -h / 2, w, h, 26)
+  g.stroke()
+  g.restore()
+  // the face
+  const fx = -w / 2 + EDGE, fy = -h / 2 + EDGE, fw = w - EDGE * 2, fh = h - EDGE * 2
+  g.save()
+  g.beginPath()
+  g.roundRect(fx, fy, fw, fh, 26 - EDGE)
+  g.clip()
+  if (back) {
+    g.drawImage(cards[side], fx, fy, fw, fh)
+    g.restore()
+    return
+  }
+  const face = g.createLinearGradient(0, fy, 0, fy + fh)
+  face.addColorStop(0, '#160e28')
+  face.addColorStop(0.55, '#100a1d')
+  face.addColorStop(1, '#0e0919')
+  g.fillStyle = face
+  g.fillRect(fx, fy, fw, fh)
+  const wash = g.createRadialGradient(0, fy, 0, 0, fy, fw * 0.75)
+  wash.addColorStop(0, rgba(tint, 0.3))
+  wash.addColorStop(1, rgba(tint, 0))
+  g.fillStyle = wash
+  g.fillRect(fx, fy, fw, fh * 0.6)
+  // kicker + orb
+  mono(g, KICKER, fx + 20, fy + 24, { size: 13, color: tint, a: 0.95, align: 'left', spacing: 3 })
+  const ox = fx + fw - 30, oy = fy + 24
+  const og = g.createRadialGradient(ox - 5, oy - 6, 1, ox, oy, 18)
+  og.addColorStop(0, mix(tint, '#ffffff', 0.65))
+  og.addColorStop(0.55, tint)
+  og.addColorStop(1, mix(tint, '#1a0f2e', 0.6))
+  g.save()
+  g.shadowColor = tint
+  g.shadowBlur = 12
+  g.fillStyle = og
+  g.beginPath()
+  g.arc(ox, oy, 17, 0, TAU)
+  g.fill()
+  g.restore()
+  glyph(g, glyphOf(spec), ox, oy + 7, 20, '#1a0f2e')
+  // the art panel, ringed in the card's colour
+  const s = PANEL.w / AW
+  g.save()
+  g.beginPath()
+  g.roundRect(PANEL.x, PANEL.y, PANEL.w, PANEL.h, 12)
+  g.clip()
+  g.drawImage(cards[side], 0, PANEL.srcY, AW, PANEL.h / s, PANEL.x, PANEL.y, PANEL.w, PANEL.h)
+  g.restore()
+  g.save()
+  g.shadowColor = tint
+  g.shadowBlur = 14
+  g.strokeStyle = rgba(tint, 0.85)
+  g.lineWidth = 2
+  g.beginPath()
+  g.roundRect(PANEL.x, PANEL.y, PANEL.w, PANEL.h, 12)
+  g.stroke()
+  g.restore()
+  // the name, in serif caps
+  g.save()
+  const name = CARD_NAMES[side].toUpperCase()
+  let size = 30
+  g.font = `500 ${size}px "EB Garamond"`
+  g.letterSpacing = '3px'
+  while (g.measureText(name).width > fw - 40 && size > 18) g.font = `500 ${--size}px "EB Garamond"`
+  g.fillStyle = tint
+  g.shadowColor = rgba(tint, 0.5)
+  g.shadowBlur = 12
+  g.textAlign = 'left'
+  g.textBaseline = 'middle'
+  g.fillText(name, fx + 20, PANEL.y + PANEL.h + 36)
+  g.restore()
+  // footer
+  mono(g, `ALIGN · ${SERIAL}`, fx + 18, fy + fh - 18, { size: 11.5, color: COL.bone, a: 0.6, align: 'left', spacing: 2.5 })
+  mono(g, side ? 'CARD B' : 'CARD A', fx + fw - 18, fy + fh - 18, { size: 11.5, color: COL.bone, a: 0.4, align: 'right', spacing: 2.5 })
+  g.restore()
+}
+let QUESTION = 'What\'s the difference?', KICKER = 'LOVE', SERIAL = '', CARD_NAMES = ['', ''], GUESS = false, COVER = false, SERIES = ''
+
 function drawCard(t, side) {
   const st = cardState(t, side)
   const f = focusAt(t)
@@ -1589,7 +1728,9 @@ function drawCard(t, side) {
   const focus = f * me // 1 = this card in focus, −1 = the other one is
   const scale = 1 + 0.045 * Math.max(0, focus) - 0.04 * Math.max(0, -focus)
   const dim = 0.36 * Math.max(0, -focus)
-  const art = st.art === 'back' ? 'back' : PAIRS[st.art][side ? 'b' : 'a'].art
+  const back = st.art === 'back'
+  const art = back ? 'back' : PAIRS[st.art][side ? 'b' : 'a'].art
+  if (!back) CARD_NAMES[side] = PAIRS[st.art][side ? 'b' : 'a'].label
   const g = cards[side].getContext('2d')
   g.save()
   g.clearRect(0, 0, AW, AH)
@@ -1599,41 +1740,26 @@ function drawCard(t, side) {
   ctx.save()
   ctx.translate(x, y)
   ctx.scale(scale * st.sx, scale)
-  // the white frame, with a soft shadow
-  ctx.shadowColor = 'rgba(27,18,54,0.16)'
-  ctx.shadowBlur = 34
-  ctx.shadowOffsetY = 12
-  ctx.fillStyle = '#ffffff'
-  ctx.beginPath()
-  ctx.roundRect(-L.cw / 2, -L.ch / 2, L.cw, L.ch, 22)
-  ctx.fill()
-  ctx.shadowColor = 'transparent'
-  ctx.strokeStyle = 'rgba(27,18,54,0.08)'
-  ctx.lineWidth = 2
-  ctx.stroke()
-  ctx.save()
-  ctx.beginPath()
-  ctx.roundRect(-AW / 2, -AH / 2, AW, AH, 14)
-  ctx.clip()
-  ctx.drawImage(cards[side], -AW / 2, -AH / 2)
+  alignCard(ctx, t, art, side, back ? COL.lilac : tintOf(art), back)
   if (dim > 0) {
     ctx.fillStyle = rgba(COL.paper, dim)
-    ctx.fillRect(-AW / 2, -AH / 2, AW, AH)
+    ctx.beginPath()
+    ctx.roundRect(-L.cw / 2, -L.ch / 2, L.cw, L.ch, 26)
+    ctx.fill()
   }
-  ctx.restore()
   // a gold ring on the card being explained
   if (focus > 0.02) {
     ctx.strokeStyle = rgba(COL.goldDeep, 0.9 * focus)
     ctx.lineWidth = 6
     ctx.beginPath()
-    ctx.roundRect(-L.cw / 2 - 9, -L.ch / 2 - 9, L.cw + 18, L.ch + 18, 28)
+    ctx.roundRect(-L.cw / 2 - 10, -L.ch / 2 - 10, L.cw + 20, L.ch + 20, 32)
     ctx.stroke()
   }
   ctx.restore()
 
-  // the label above, swapping as the card turns edge-on
-  if (st.art !== 'back') {
-    const text = PAIRS[st.art][side ? 'b' : 'a'].label
+  // the label above, swapping as the card turns edge-on; a face-down card shows "?"
+  const text = back ? (GUESS && BEATS[beatAt(t)].kind !== 'end' ? '?' : '') : PAIRS[st.art][side ? 'b' : 'a'].label
+  if (text) {
     const a = (st.k === null ? 1 : Math.abs(Math.cos(Math.PI * st.k))) * (1 - 0.6 * Math.max(0, -focus))
     let size = 66
     ctx.font = `700 ${size}px Poppins`
@@ -1704,7 +1830,7 @@ function drawCaptions(t) {
   const b = BEATS[beatAt(t)]
   if (!ln) {
     // gaps in a question beat show the format's question
-    if (b.kind === 'ask') headline(t, 'What\'s the difference?', clamp((t - b.start) / 0.3))
+    if (b.kind === 'ask') headline(t, QUESTION, clamp((t - b.start) / 0.3))
     return
   }
   const { size } = L.cap
@@ -1818,7 +1944,10 @@ function drawHeader(t) {
   const b = BEATS[beatAt(t)]
   const cur = b.kind === 'end' ? PAIRS.length : b.pair
   const n = PAIRS.length, w = 58, gap = 14
-  if (n < 2) return
+  if (n < 2) {
+    if (SERIES) mono(ctx, SERIES, CX, L.dots, { size: 22, color: COL.goldDeep, a: 1, spacing: 5 })
+    return
+  }
   const x0 = CX - (n * w + (n - 1) * gap) / 2
   for (let i = 0; i < n; i++) {
     ctx.fillStyle = i < cur ? rgba(COL.ink, 0.75) : i === cur ? COL.goldDeep : rgba(COL.ink, 0.13)
@@ -1904,6 +2033,11 @@ window.setup = async (data) => {
   const { script, timeline } = data
   PAIRS = script.pairs
   HANDLE = script.handle ?? ''
+  KICKER = script.kicker ?? (script.hashtags?.[0] === 'astrology' ? 'THE STARS' : 'LOVE')
+  SERIAL = script.id.slice(0, 3) + '/250'
+  GUESS = !!script.pairs[0].guess
+  SERIES = script.series ?? ''
+  QUESTION = script.cover ?? QUESTION
   BEATS = timeline.beats
   LINES = timeline.lines
   DURATION = timeline.duration
@@ -1934,6 +2068,7 @@ window.cover = (text, q = 0.92) => {
   ctx.drawImage(paper, 0, 0)
   drawHeader(0)
   const saved = BEATS
+  COVER = true
   BEATS = [{ kind: 'ask', pair: 0, start: -10, at: -9, end: 1e9 }]
   drawCard(t, 0)
   drawCard(t, 1)
@@ -1942,5 +2077,6 @@ window.cover = (text, q = 0.92) => {
   drawMascot(t)
   drawHandle()
   BEATS = saved
+  COVER = false
   return canvas.toDataURL('image/jpeg', q)
 }

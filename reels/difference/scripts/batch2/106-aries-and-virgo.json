@@ -1,0 +1,55 @@
+{
+  "id": "106-aries-and-virgo",
+  "title": "Aries & Virgo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 6 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & virgo: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Aries brings the spark. Virgo brings the devotion.\nevery sign pair, part 6 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "virgo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "ask": [
+        "*Aries* and *Virgo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "explainB": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Aries brings *the spark.* Virgo brings *the devotion.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

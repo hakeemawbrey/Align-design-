@@ -5,7 +5,7 @@
   "voice": "af_heart",
   "speed": 1.12,
   "caption": "reassurance vs validation: what's the difference? 💭\nReassurance says it's okay. Validation says you're okay.",
-  "cta": "send this to someone who mixes them up 👀\nyour full chart is free on align, link in bio",
+  "cta": "join the align beta ✦ link in bio",
   "hashtags": [
     "relationshipadvice",
     "datingtips",
@@ -42,9 +42,9 @@
   ],
   "end": {
     "lines": [
-      "On the Align app,",
-      "a card only flips when you *both* align."
+      "Join the *Align* beta.",
+      "Link in bio."
     ],
-    "pill": "ALIGN · LINK IN BIO"
+    "pill": "JOIN THE ALIGN BETA"
   }
 }

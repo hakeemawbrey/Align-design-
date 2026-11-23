@@ -1,0 +1,55 @@
+{
+  "id": "115-taurus-and-cancer",
+  "title": "Taurus & Cancer",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 15 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus & cancer: how do they align? ✨\nEarth and water feed each other. Easy to talk to, easy to grow with. Taurus brings the steadiness. Cancer brings the care.\nevery sign pair, part 15 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "cancer",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "ask": [
+        "*Taurus* and *Cancer.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Taurus* loves slowly, then forever.",
+        "Dinner, touch, and showing up on time."
+      ],
+      "explainB": [
+        "*Cancer* loves like coming home.",
+        "They remember everything you told them."
+      ],
+      "diff": [
+        "Earth and water *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Taurus brings *the steadiness.* Cancer brings *the care.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

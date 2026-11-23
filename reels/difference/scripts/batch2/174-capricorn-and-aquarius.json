@@ -1,0 +1,55 @@
+{
+  "id": "174-capricorn-and-aquarius",
+  "title": "Capricorn & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 74 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "capricorn & aquarius: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Capricorn brings the commitment. Aquarius brings the freedom.\nevery sign pair, part 74 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "capricorn",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Capricorn* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "explainB": [
+        "*Aquarius* loves in their own way.",
+        "Loyal, unusual, and never clingy."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Capricorn brings *the commitment.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

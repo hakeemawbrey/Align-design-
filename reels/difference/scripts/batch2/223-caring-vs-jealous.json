@@ -1,0 +1,52 @@
+{
+  "id": "223-caring-vs-jealous",
+  "title": "Caring vs Jealous",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "caring vs jealous: what's the difference? 💭\nCaring wants you happy. Jealousy wants you watched.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Caring",
+        "art": "solo:heart:gold"
+      },
+      "b": {
+        "label": "Jealous",
+        "art": "duo:three:rose:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Caring* versus *jealous.*"
+      ],
+      "explainA": [
+        "*Caring* asks how your night was."
+      ],
+      "explainB": [
+        "*Jealous* asks who was there."
+      ],
+      "diff": [
+        "Caring wants you *happy.*",
+        "Jealousy wants you *watched.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

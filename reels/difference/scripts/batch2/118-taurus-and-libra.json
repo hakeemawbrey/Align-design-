@@ -1,0 +1,55 @@
+{
+  "id": "118-taurus-and-libra",
+  "title": "Taurus & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 18 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus & libra: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Taurus brings the steadiness. Libra brings the balance.\nevery sign pair, part 18 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Taurus* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Taurus* loves with all five senses.",
+        "Steady, loyal, a little stubborn."
+      ],
+      "explainB": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Taurus brings *the steadiness.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

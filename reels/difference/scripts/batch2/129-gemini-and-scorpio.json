@@ -1,0 +1,55 @@
+{
+  "id": "129-gemini-and-scorpio",
+  "title": "Gemini & Scorpio",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 29 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & scorpio: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Gemini brings the conversation. Scorpio brings the depth.\nevery sign pair, part 29 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "scorpio",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "*Gemini* and *Scorpio.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves curious and quick.",
+        "They need a mind to play with."
+      ],
+      "explainB": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Gemini brings *the conversation.* Scorpio brings *the depth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

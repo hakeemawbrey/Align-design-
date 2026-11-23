@@ -1,0 +1,55 @@
+{
+  "id": "172-sagittarius-and-pisces",
+  "title": "Sagittarius & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 72 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "sagittarius & pisces: how do they align? ✨\nTwo mutable signs, a quarter of the sky apart. Real friction, and real growth if they stay. Sagittarius brings the adventure. Pisces brings the tenderness.\nevery sign pair, part 72 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "sagittarius",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Sagittarius* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Sagittarius* loves honestly and freely.",
+        "They want a partner for the next trip."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Two mutable signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Sagittarius brings *the adventure.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

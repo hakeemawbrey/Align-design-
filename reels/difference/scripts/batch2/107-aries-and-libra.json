@@ -1,0 +1,55 @@
+{
+  "id": "107-aries-and-libra",
+  "title": "Aries & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 7 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & libra: how do they align? ✨\nOpposite signs. Each one has what the other is missing. Aries brings the spark. Libra brings the balance.\nevery sign pair, part 7 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Aries* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves fast and out loud.",
+        "If they want you, you'll know by Tuesday."
+      ],
+      "explainB": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "diff": [
+        "Opposite signs.",
+        "Each one has what the other is *missing.*",
+        "Aries brings *the spark.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

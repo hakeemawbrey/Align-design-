@@ -1,0 +1,55 @@
+{
+  "id": "200-capricorn-likes-you-vs-doesnt",
+  "title": "When Capricorn likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "CAPRICORN",
+  "series": "DOES CAPRICORN LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when capricorn likes you vs when they don't 👀\nCapricorn's time is precious. If they give it, that's love.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "capricorn",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:blue:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Capricorn *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Capricorn* likes you,",
+        "they make room in a busy life."
+      ],
+      "explainB": [
+        "When they don't,",
+        "work always comes first."
+      ],
+      "diff": [
+        "Capricorn's time is precious.",
+        "If they give it, *that's love.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

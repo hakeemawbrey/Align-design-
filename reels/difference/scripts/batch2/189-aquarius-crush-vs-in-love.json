@@ -1,0 +1,55 @@
+{
+  "id": "189-aquarius-crush-vs-in-love",
+  "title": "Aquarius crush vs Aquarius in love",
+  "cover": "What's the difference?",
+  "kicker": "AQUARIUS",
+  "series": "AQUARIUS IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aquarius with a crush vs aquarius in love 💭\nThe crush is a friend. Love is a best friend, and more.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aquarius",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:blue"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:blue:blue"
+      },
+      "guess": true,
+      "ask": [
+        "Aquarius with a *crush,*",
+        "versus Aquarius in *love.*"
+      ],
+      "explainA": [
+        "An *Aquarius* crush looks like friendship.",
+        "Long talks, strange ideas, no labels."
+      ],
+      "explainB": [
+        "*Aquarius* in love is loyal,",
+        "and loves you exactly as you are."
+      ],
+      "diff": [
+        "The crush is a *friend.*",
+        "Love is a *best friend,* and more."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

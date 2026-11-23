@@ -1,0 +1,55 @@
+{
+  "id": "102-aries-and-taurus",
+  "title": "Aries & Taurus",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 2 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & taurus: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Aries brings the spark. Taurus brings the steadiness.\nevery sign pair, part 2 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "taurus",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "ask": [
+        "*Aries* and *Taurus.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "explainB": [
+        "*Taurus* loves with all five senses.",
+        "Steady, loyal, a little stubborn."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Aries brings *the spark.* Taurus brings *the steadiness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "134-cancer-and-cancer",
+  "title": "Cancer & Cancer",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 34 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer & cancer: how do they align? ✨\nTwo Cancers are a mirror. Easy to understand, hard to hide from. Double care, and the same blind spots.\nevery sign pair, part 34 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "b": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "ask": [
+        "*Cancer* and *Cancer.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Cancer* loves like coming home.",
+        "They remember everything you told them."
+      ],
+      "explainB": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "diff": [
+        "Two Cancers are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *care,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

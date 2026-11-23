@@ -1,0 +1,55 @@
+{
+  "id": "201-aquarius-likes-you-vs-doesnt",
+  "title": "When Aquarius likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "AQUARIUS",
+  "series": "DOES AQUARIUS LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when aquarius likes you vs when they don't 👀\nAquarius is friendly to all. Being different is the sign.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aquarius",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:blue:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Aquarius *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Aquarius* likes you,",
+        "they show you their strange side."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they treat you like everyone else."
+      ],
+      "diff": [
+        "Aquarius is friendly to all.",
+        "Being *different* is the sign."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

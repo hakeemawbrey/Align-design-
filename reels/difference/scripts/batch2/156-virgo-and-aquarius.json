@@ -1,0 +1,55 @@
+{
+  "id": "156-virgo-and-aquarius",
+  "title": "Virgo & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 56 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & aquarius: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Virgo brings the devotion. Aquarius brings the freedom.\nevery sign pair, part 56 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Virgo* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "explainB": [
+        "*Aquarius* loves in their own way.",
+        "Loyal, unusual, and never clingy."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Virgo brings *the devotion.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

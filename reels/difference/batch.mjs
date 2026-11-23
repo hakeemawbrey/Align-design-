@@ -142,18 +142,9 @@ const HOOKS = {
   ],
 }
 
-const ENDS = {
-  share: { lines: ['Send this to someone', 'who mixes them up.'], pill: 'SEND THIS TO SOMEONE' },
-  friend: { lines: ['Send this to the friend', 'who needs to hear it.'], pill: 'SEND THIS TO SOMEONE' },
-  save: { lines: ['Save this for the next time', 'you\'re not sure.'], pill: 'SAVE THIS FOR LATER' },
-  flip: { lines: ['On the Align app,', 'a card only flips when you *both* align.'], pill: 'ALIGN · LINK IN BIO' },
-  sky: { lines: ['It\'s why the Align app shows you', 'someone\'s sky before their face.'], pill: 'ALIGN · LINK IN BIO' },
-  deal: { lines: ['On the Align app,', 'your dealbreakers go right on your card.'], pill: 'ALIGN · LINK IN BIO' },
-  free: { lines: ['Your full chart is free', 'on the Align app.'], pill: 'YOUR CHART · LINK IN BIO' },
-  three: { lines: ['It\'s why the Align app reads your *big three,*', 'not just your sun.'], pill: 'ALIGN · LINK IN BIO' },
-  sun: { lines: ['Send this to someone', 'who only knows their sun sign.'], pill: 'SEND THIS TO SOMEONE' },
-}
-const ROTATE = { L: ['share', 'friend', 'sky', 'save', 'flip', 'share', 'friend', 'deal'], S: ['share', 'free', 'sun', 'three', 'save'] }
+const BETA_END = { lines: ['Join the *Align* beta.', 'Link in bio.'], pill: 'JOIN THE ALIGN BETA' }
+const BETA_CTA = 'join the align beta ✦ link in bio'
+
 
 const TAGS = {
   L: ['relationshipadvice', 'datingtips', 'psychologyfacts', 'love', 'whatsthedifference'],
@@ -173,7 +164,8 @@ P.forEach(([cat, a, b, artA, artB, ea, eb, diff, extra = {}], i) => {
   const n = count[cat]++
   const [sa, sb] = extra.say ?? [a.toLowerCase(), b.toLowerCase()]
   const hook = extra.hook ?? HOOKS[cat][(n * 3 + i) % HOOKS[cat].length]
-  const end = ENDS[extra.end ?? ROTATE[cat][n % ROTATE[cat].length]]
+  // every reel ends the same way: the beta, nothing else
+  const end = BETA_END
   const lines = [...ea, ...eb, ...diff, hook, ...end.lines].join(' ')
   if (/compatib/i.test(lines + a + b)) throw new Error(`pair ${i + 1}: never "compatibility"`)
   if (/[!0-9]/.test(lines)) throw new Error(`pair ${i + 1}: no exclamation marks or digits in spoken lines: ${lines}`)
@@ -186,7 +178,7 @@ P.forEach(([cat, a, b, artA, artB, ea, eb, diff, extra = {}], i) => {
     voice: 'af_heart',
     speed: 1.12,
     caption: `${a.toLowerCase()} vs ${b.toLowerCase()}: what's the difference? ${cat === 'L' ? '💭' : '🌙'}\n${diff.map(plain).join(' ')}`,
-    cta: `${cat === 'L' ? 'send this to someone who mixes them up 👀' : 'send this to someone who only knows their sun sign 👀'}\nyour full chart is free on align, link in bio`,
+    cta: BETA_CTA,
     hashtags: TAGS[cat],
     pairs: [{
       a: { label: a, art: artA },

@@ -1,0 +1,54 @@
+{
+  "id": "158-libra-and-libra",
+  "title": "Libra & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 58 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & libra: how do they align? ✨\nTwo Libras are a mirror. Easy to understand, hard to hide from. Double balance, and the same blind spots.\nevery sign pair, part 58 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Libra* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "explainB": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "diff": [
+        "Two Libras are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *balance,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

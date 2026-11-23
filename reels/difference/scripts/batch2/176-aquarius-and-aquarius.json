@@ -1,0 +1,54 @@
+{
+  "id": "176-aquarius-and-aquarius",
+  "title": "Aquarius & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 76 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aquarius & aquarius: how do they align? ✨\nTwo Aquariuss are a mirror. Easy to understand, hard to hide from. Double freedom, and the same blind spots.\nevery sign pair, part 76 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Aquarius* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "explainB": [
+        "*Aquarius* loves in their own way.",
+        "Loyal, unusual, and never clingy."
+      ],
+      "diff": [
+        "Two Aquariuss are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *freedom,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

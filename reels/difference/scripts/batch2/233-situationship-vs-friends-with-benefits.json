@@ -1,0 +1,54 @@
+{
+  "id": "233-situationship-vs-friends-with-benefits",
+  "title": "Situationship vs Friends with benefits",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "situationship vs friends with benefits: what's the difference? 💭\nOne hopes for more. One promises less.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Situationship",
+        "art": "duo:apart:lilac:rose"
+      },
+      "b": {
+        "label": "Friends with benefits",
+        "art": "duo:away:rose:rose"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A situationship* versus *friends with benefits.*"
+      ],
+      "explainA": [
+        "A *situationship* has feelings,",
+        "and no label."
+      ],
+      "explainB": [
+        "*Friends with benefits* has a label,",
+        "and tries to have no feelings."
+      ],
+      "diff": [
+        "One hopes for *more.*",
+        "One promises *less.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

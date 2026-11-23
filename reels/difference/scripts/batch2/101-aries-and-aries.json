@@ -1,0 +1,54 @@
+{
+  "id": "101-aries-and-aries",
+  "title": "Aries & Aries",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 1 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & aries: how do they align? ✨\nTwo Ariess are a mirror. Easy to understand, hard to hide from. Double spark, and the same blind spots.\nevery sign pair, part 1 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "ask": [
+        "*Aries* and *Aries.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves fast and out loud.",
+        "If they want you, you'll know by Tuesday."
+      ],
+      "explainB": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "diff": [
+        "Two Ariess are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *spark,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

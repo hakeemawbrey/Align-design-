@@ -1,0 +1,55 @@
+{
+  "id": "128-gemini-and-libra",
+  "title": "Gemini & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 28 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & libra: how do they align? ✨\nBoth air signs. They get each other without explaining. Gemini brings the conversation. Libra brings the balance.\nevery sign pair, part 28 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Gemini* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "explainB": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "diff": [
+        "Both air signs.",
+        "They *get* each other without explaining.",
+        "Gemini brings *the conversation.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

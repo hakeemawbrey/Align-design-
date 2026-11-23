@@ -1,0 +1,54 @@
+{
+  "id": "205-venus-in-gemini-vs-sagittarius",
+  "title": "Venus in Gemini vs Venus in Sagittarius",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in gemini vs venus in sagittarius 🌙\nGemini wants to talk. Sagittarius wants to go.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Gemini",
+        "art": "sign:♊:venus"
+      },
+      "b": {
+        "label": "Venus in Sagittarius",
+        "art": "sign:♐:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Gemini* versus *Venus in Sagittarius.*"
+      ],
+      "explainA": [
+        "*Venus in Gemini* loves through words.",
+        "Banter, texts, and new ideas."
+      ],
+      "explainB": [
+        "*Venus in Sagittarius* loves through adventure.",
+        "Trips, honesty, and freedom."
+      ],
+      "diff": [
+        "Gemini wants to *talk.*",
+        "Sagittarius wants to *go.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

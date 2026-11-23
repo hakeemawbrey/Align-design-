@@ -1,0 +1,55 @@
+{
+  "id": "145-leo-and-libra",
+  "title": "Leo & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 45 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & libra: how do they align? ✨\nFire and air feed each other. Easy to talk to, easy to grow with. Leo brings the warmth. Libra brings the balance.\nevery sign pair, part 45 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Leo* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves big and generous.",
+        "They want to adore you, and be adored back."
+      ],
+      "explainB": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "diff": [
+        "Fire and air *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Leo brings *the warmth.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

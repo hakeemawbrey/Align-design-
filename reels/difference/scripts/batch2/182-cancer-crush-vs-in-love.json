@@ -1,0 +1,55 @@
+{
+  "id": "182-cancer-crush-vs-in-love",
+  "title": "Cancer crush vs Cancer in love",
+  "cover": "What's the difference?",
+  "kicker": "CANCER",
+  "series": "CANCER IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer with a crush vs cancer in love 💭\nThe crush is hidden. Love is when they let you in.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:blue"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:blue:blue"
+      },
+      "guess": true,
+      "ask": [
+        "Cancer with a *crush,*",
+        "versus Cancer in *love.*"
+      ],
+      "explainA": [
+        "A *Cancer* crush is shy.",
+        "They feed you, and hope you notice."
+      ],
+      "explainB": [
+        "*Cancer* in love builds you a home,",
+        "and remembers every date."
+      ],
+      "diff": [
+        "The crush is *hidden.*",
+        "Love is when they *let you in.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

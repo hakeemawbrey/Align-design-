@@ -1,0 +1,55 @@
+{
+  "id": "191-aries-likes-you-vs-doesnt",
+  "title": "When Aries likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "ARIES",
+  "series": "DOES ARIES LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when aries likes you vs when they don't 👀\nAries never hides it. No answer is the answer.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:mars:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Aries *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Aries* likes you,",
+        "they make the first move, fast."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they're gone before you notice."
+      ],
+      "diff": [
+        "Aries never hides it.",
+        "No answer *is* the answer."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

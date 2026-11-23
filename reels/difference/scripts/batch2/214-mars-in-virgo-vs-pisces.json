@@ -1,0 +1,54 @@
+{
+  "id": "214-mars-in-virgo-vs-pisces",
+  "title": "Mars in Virgo vs Mars in Pisces",
+  "cover": "What's the difference?",
+  "kicker": "MARS",
+  "series": "MARS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "mars in virgo vs mars in pisces 🌙\nVirgo makes a plan. Pisces follows a feeling.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "marssign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Mars in Virgo",
+        "art": "sign:♍:mars"
+      },
+      "b": {
+        "label": "Mars in Pisces",
+        "art": "sign:♓:mars"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Mars in Virgo* versus *Mars in Pisces.*"
+      ],
+      "explainA": [
+        "*Mars in Virgo* gets things done.",
+        "Precise, practical, a little critical."
+      ],
+      "explainB": [
+        "*Mars in Pisces* goes with the flow.",
+        "Gentle, intuitive, and hard to pin down."
+      ],
+      "diff": [
+        "Virgo makes a *plan.*",
+        "Pisces follows a *feeling.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

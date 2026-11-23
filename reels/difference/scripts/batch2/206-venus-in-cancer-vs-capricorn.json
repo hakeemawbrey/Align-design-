@@ -1,0 +1,54 @@
+{
+  "id": "206-venus-in-cancer-vs-capricorn",
+  "title": "Venus in Cancer vs Venus in Capricorn",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in cancer vs venus in capricorn 🌙\nCancer cares for you. Capricorn builds with you.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Cancer",
+        "art": "sign:♋:venus"
+      },
+      "b": {
+        "label": "Venus in Capricorn",
+        "art": "sign:♑:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Cancer* versus *Venus in Capricorn.*"
+      ],
+      "explainA": [
+        "*Venus in Cancer* loves by nurturing.",
+        "Home, family, and feeling safe."
+      ],
+      "explainB": [
+        "*Venus in Capricorn* loves by providing.",
+        "Plans, effort, and staying power."
+      ],
+      "diff": [
+        "Cancer *cares* for you.",
+        "Capricorn *builds* with you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

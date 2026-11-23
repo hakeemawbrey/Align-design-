@@ -1,0 +1,55 @@
+{
+  "id": "157-virgo-and-pisces",
+  "title": "Virgo & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 57 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & pisces: how do they align? ✨\nOpposite signs. Each one has what the other is missing. Virgo brings the devotion. Pisces brings the tenderness.\nevery sign pair, part 57 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Virgo* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves through small acts.",
+        "Fixing, planning, noticing what you need."
+      ],
+      "explainB": [
+        "*Pisces* loves like a dream.",
+        "Romantic, gentle, all in."
+      ],
+      "diff": [
+        "Opposite signs.",
+        "Each one has what the other is *missing.*",
+        "Virgo brings *the devotion.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

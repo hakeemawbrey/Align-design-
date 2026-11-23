@@ -1,0 +1,55 @@
+{
+  "id": "104-aries-and-cancer",
+  "title": "Aries & Cancer",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 4 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & cancer: how do they align? ✨\nTwo cardinal signs, a quarter of the sky apart. Real friction, and real growth if they stay. Aries brings the spark. Cancer brings the care.\nevery sign pair, part 4 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "cancer",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "ask": [
+        "*Aries* and *Cancer.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "explainB": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "diff": [
+        "Two cardinal signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Aries brings *the spark.* Cancer brings *the care.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

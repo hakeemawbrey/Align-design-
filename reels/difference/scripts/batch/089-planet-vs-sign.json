@@ -5,7 +5,7 @@
   "voice": "af_heart",
   "speed": 1.12,
   "caption": "planet vs sign: what's the difference? 🌙\nThe planet is the actor. The sign is the costume.",
-  "cta": "send this to someone who only knows their sun sign 👀\nyour full chart is free on align, link in bio",
+  "cta": "join the align beta ✦ link in bio",
   "hashtags": [
     "astrology",
     "zodiacsigns",
@@ -43,9 +43,9 @@
   ],
   "end": {
     "lines": [
-      "Save this for the next time",
-      "you're not sure."
+      "Join the *Align* beta.",
+      "Link in bio."
     ],
-    "pill": "SAVE THIS FOR LATER"
+    "pill": "JOIN THE ALIGN BETA"
   }
 }

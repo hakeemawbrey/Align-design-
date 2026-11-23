@@ -1,0 +1,55 @@
+{
+  "id": "202-pisces-likes-you-vs-doesnt",
+  "title": "When Pisces likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "PISCES",
+  "series": "DOES PISCES LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when pisces likes you vs when they don't 👀\nPisces can't hide a feeling. If it goes quiet, listen.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "pisces",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:lilac:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Pisces *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Pisces* likes you,",
+        "they tell you how they feel."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they drift away, softly."
+      ],
+      "diff": [
+        "Pisces can't hide a feeling.",
+        "If it goes *quiet,* listen."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

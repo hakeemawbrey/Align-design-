@@ -1,0 +1,55 @@
+{
+  "id": "159-libra-and-scorpio",
+  "title": "Libra & Scorpio",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 59 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & scorpio: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Libra brings the balance. Scorpio brings the depth.\nevery sign pair, part 59 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "scorpio",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "*Libra* and *Scorpio.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "explainB": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Libra brings *the balance.* Scorpio brings *the depth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

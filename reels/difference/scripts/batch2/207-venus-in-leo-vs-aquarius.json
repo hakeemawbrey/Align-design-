@@ -1,0 +1,54 @@
+{
+  "id": "207-venus-in-leo-vs-aquarius",
+  "title": "Venus in Leo vs Venus in Aquarius",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in leo vs venus in aquarius 🌙\nLeo wants to be adored. Aquarius wants to be understood.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Leo",
+        "art": "sign:♌:venus"
+      },
+      "b": {
+        "label": "Venus in Aquarius",
+        "art": "sign:♒:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Leo* versus *Venus in Aquarius.*"
+      ],
+      "explainA": [
+        "*Venus in Leo* loves out loud.",
+        "Grand gestures and devotion."
+      ],
+      "explainB": [
+        "*Venus in Aquarius* loves as a friend.",
+        "Space, respect, and no clinging."
+      ],
+      "diff": [
+        "Leo wants to be *adored.*",
+        "Aquarius wants to be *understood.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "186-scorpio-crush-vs-in-love",
+  "title": "Scorpio crush vs Scorpio in love",
+  "cover": "What's the difference?",
+  "kicker": "SCORPIO",
+  "series": "SCORPIO IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "scorpio with a crush vs scorpio in love 💭\nThe crush is watching. Love is trusting.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:rose"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:rose:rose"
+      },
+      "guess": true,
+      "ask": [
+        "Scorpio with a *crush,*",
+        "versus Scorpio in *love.*"
+      ],
+      "explainA": [
+        "A *Scorpio* crush stares.",
+        "They study you before they say a word."
+      ],
+      "explainB": [
+        "*Scorpio* in love is loyal for life,",
+        "and tells you their secrets."
+      ],
+      "diff": [
+        "The crush is *watching.*",
+        "Love is *trusting.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

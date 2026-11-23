@@ -1,0 +1,54 @@
+{
+  "id": "218-soft-launch-vs-hard-launch",
+  "title": "Soft launch vs Hard launch",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "soft launch vs hard launch: what's the difference? 💭\nSoft says someone. Hard says them.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Soft launch",
+        "art": "duo:ghost:rose:lilac"
+      },
+      "b": {
+        "label": "Hard launch",
+        "art": "duo:close:gold:rose"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A soft launch* versus *a hard launch.*"
+      ],
+      "explainA": [
+        "A *soft launch* is a hand, a drink, a shadow.",
+        "No face yet."
+      ],
+      "explainB": [
+        "A *hard launch* is their face,",
+        "their name, and the caption."
+      ],
+      "diff": [
+        "Soft says *someone.*",
+        "Hard says *them.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

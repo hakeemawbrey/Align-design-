@@ -1,0 +1,55 @@
+{
+  "id": "123-taurus-and-pisces",
+  "title": "Taurus & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 23 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus & pisces: how do they align? ✨\nEarth and water feed each other. Easy to talk to, easy to grow with. Taurus brings the steadiness. Pisces brings the tenderness.\nevery sign pair, part 23 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Taurus* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Taurus* loves slowly, then forever.",
+        "Dinner, touch, and showing up on time."
+      ],
+      "explainB": [
+        "*Pisces* loves like a dream.",
+        "Romantic, gentle, all in."
+      ],
+      "diff": [
+        "Earth and water *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Taurus brings *the steadiness.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

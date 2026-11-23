@@ -1,0 +1,52 @@
+{
+  "id": "221-first-date-vs-second-date",
+  "title": "First date vs Second date",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "first date vs second date: what's the difference? 💭\nFirst dates are nerves. Second dates are choices.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "First date",
+        "art": "spark"
+      },
+      "b": {
+        "label": "Second date",
+        "art": "road"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A first date* versus *a second date.*"
+      ],
+      "explainA": [
+        "A *first date* checks if they match the profile."
+      ],
+      "explainB": [
+        "A *second date* checks if you match each other."
+      ],
+      "diff": [
+        "First dates are *nerves.*",
+        "Second dates are *choices.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

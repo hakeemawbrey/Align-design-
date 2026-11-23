@@ -1,0 +1,55 @@
+{
+  "id": "163-libra-and-pisces",
+  "title": "Libra & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 63 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & pisces: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Libra brings the balance. Pisces brings the tenderness.\nevery sign pair, part 63 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Libra* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Libra brings *the balance.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

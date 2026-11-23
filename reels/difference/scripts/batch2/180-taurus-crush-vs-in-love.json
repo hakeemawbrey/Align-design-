@@ -1,0 +1,55 @@
+{
+  "id": "180-taurus-crush-vs-in-love",
+  "title": "Taurus crush vs Taurus in love",
+  "cover": "What's the difference?",
+  "kicker": "TAURUS",
+  "series": "TAURUS IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus with a crush vs taurus in love 💭\nThe crush is careful. Love is forever, once it decides.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:gold"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:gold:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Taurus with a *crush,*",
+        "versus Taurus in *love.*"
+      ],
+      "explainA": [
+        "A *Taurus* crush moves slowly.",
+        "Lots of looking, very little saying."
+      ],
+      "explainB": [
+        "*Taurus* in love is all in,",
+        "with your favorite food already ordered."
+      ],
+      "diff": [
+        "The crush is *careful.*",
+        "Love is *forever,* once it decides."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

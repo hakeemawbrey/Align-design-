@@ -1,0 +1,54 @@
+{
+  "id": "249-an-aura-vs-a-photo",
+  "title": "An aura vs A photo",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "an aura vs a photo ✦\nThe aura is the first impression. The photo is the second.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "An aura",
+        "art": "sign:✦:lilac"
+      },
+      "b": {
+        "label": "A photo",
+        "art": "solo:mirror:gold"
+      },
+      "ask": [
+        "How Align is different.",
+        "*An aura* versus *a photo.*"
+      ],
+      "explainA": [
+        "On Align, a card starts with an *aura,*",
+        "in the colors of their sign."
+      ],
+      "explainB": [
+        "The *photo* stays veiled,",
+        "until you both align."
+      ],
+      "diff": [
+        "The aura is the *first impression.*",
+        "The photo is the *second.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "193-gemini-likes-you-vs-doesnt",
+  "title": "When Gemini likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "GEMINI",
+  "series": "DOES GEMINI LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when gemini likes you vs when they don't 👀\nGemini lives in the words. Watch the length of the texts.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:mint:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Gemini *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Gemini* likes you,",
+        "they keep the conversation going."
+      ],
+      "explainB": [
+        "When they don't,",
+        "the replies get shorter."
+      ],
+      "diff": [
+        "Gemini lives in the words.",
+        "Watch the *length* of the texts."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

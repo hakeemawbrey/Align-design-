@@ -1,0 +1,55 @@
+{
+  "id": "132-gemini-and-aquarius",
+  "title": "Gemini & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 32 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & aquarius: how do they align? ✨\nBoth air signs. They get each other without explaining. Gemini brings the conversation. Aquarius brings the freedom.\nevery sign pair, part 32 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Gemini* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "explainB": [
+        "*Aquarius* loves as a friend first.",
+        "They need space to stay themselves."
+      ],
+      "diff": [
+        "Both air signs.",
+        "They *get* each other without explaining.",
+        "Gemini brings *the conversation.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

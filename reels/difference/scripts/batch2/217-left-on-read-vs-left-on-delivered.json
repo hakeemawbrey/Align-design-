@@ -1,0 +1,54 @@
+{
+  "id": "217-left-on-read-vs-left-on-delivered",
+  "title": "Left on read vs Left on delivered",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "left on read vs left on delivered: what's the difference? 💭\nRead is a choice. Delivered is a maybe.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Left on read",
+        "art": "solo:phone:lilac"
+      },
+      "b": {
+        "label": "Left on delivered",
+        "art": "solo:clock:blue"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Left on read* versus *left on delivered.*"
+      ],
+      "explainA": [
+        "*Left on read* means they saw it,",
+        "and chose not to answer yet."
+      ],
+      "explainB": [
+        "*Left on delivered* means they haven't opened it.",
+        "Busy, asleep, or avoiding."
+      ],
+      "diff": [
+        "Read is a *choice.*",
+        "Delivered is a *maybe.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

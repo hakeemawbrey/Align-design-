@@ -1,0 +1,55 @@
+{
+  "id": "177-aquarius-and-pisces",
+  "title": "Aquarius & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 77 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aquarius & pisces: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Aquarius brings the freedom. Pisces brings the tenderness.\nevery sign pair, part 77 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aquarius",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Aquarius* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aquarius* loves in their own way.",
+        "Loyal, unusual, and never clingy."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Aquarius brings *the freedom.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "248-clash-vs-dealbreaker",
+  "title": "Clash vs Dealbreaker",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "clash vs dealbreaker ✦\nClashes grow you. Dealbreakers protect you.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Clash",
+        "art": "duo:wall:mint:mint"
+      },
+      "b": {
+        "label": "Dealbreaker",
+        "art": "solo:shield:rose"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A clash* versus *a dealbreaker.*"
+      ],
+      "explainA": [
+        "A *clash* is friction you can work with."
+      ],
+      "explainB": [
+        "A *dealbreaker* is a line you won't cross."
+      ],
+      "diff": [
+        "Clashes *grow* you.",
+        "Dealbreakers *protect* you."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "215-dry-texter-vs-busy-texter",
+  "title": "Dry texter vs Busy texter",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "dry texter vs busy texter: what's the difference? 💭\nDry is about interest. Busy is about timing.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Dry texter",
+        "art": "solo:phone:blue"
+      },
+      "b": {
+        "label": "Busy texter",
+        "art": "solo:clock:gold"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A dry texter* versus *a busy texter.*"
+      ],
+      "explainA": [
+        "A *dry texter* has the time,",
+        "and gives you one word."
+      ],
+      "explainB": [
+        "A *busy texter* has no time,",
+        "and makes the one text count."
+      ],
+      "diff": [
+        "Dry is about *interest.*",
+        "Busy is about *timing.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

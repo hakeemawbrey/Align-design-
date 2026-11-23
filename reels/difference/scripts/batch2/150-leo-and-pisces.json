@@ -1,0 +1,55 @@
+{
+  "id": "150-leo-and-pisces",
+  "title": "Leo & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 50 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & pisces: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Leo brings the warmth. Pisces brings the tenderness.\nevery sign pair, part 50 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Leo* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Leo brings *the warmth.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

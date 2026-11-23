@@ -53,6 +53,7 @@ const FONTS = [
   ['Poppins', dataUri(path.join(fontDir, 'poppins/files/poppins-latin-800-normal.woff2'), 'font/woff2'), 'normal', '800'],
   ['Space Mono', dataUri(path.join(fontDir, 'space-mono/files/space-mono-latin-700-normal.woff2'), 'font/woff2'), 'normal', '700'],
   ['EB Garamond', dataUri(path.join(fontDir, 'eb-garamond/files/eb-garamond-latin-500-italic.woff2'), 'font/woff2'), 'italic', '500'],
+  ['EB Garamond', dataUri(path.join(fontDir, 'eb-garamond/files/eb-garamond-latin-500-normal.woff2'), 'font/woff2'), 'normal', '500'],
 ]
 const GLYPHS = JSON.parse(readFileSync(path.join(AFFIRM, 'glyphs.json'), 'utf8'))
 

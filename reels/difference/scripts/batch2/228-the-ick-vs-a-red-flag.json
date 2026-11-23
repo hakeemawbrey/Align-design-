@@ -1,0 +1,54 @@
+{
+  "id": "228-the-ick-vs-a-red-flag",
+  "title": "The ick vs A red flag",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "the ick vs a red flag: what's the difference? 💭\nThe ick is about you. A red flag is about them.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "The ick",
+        "art": "solo:storm:mint"
+      },
+      "b": {
+        "label": "A red flag",
+        "art": "solo:flag:rose"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*The ick* versus *a red flag.*"
+      ],
+      "explainA": [
+        "*The ick* is a sudden turnoff.",
+        "Small, strange, and hard to unsee."
+      ],
+      "explainB": [
+        "A *red flag* is a real warning,",
+        "about how they treat people."
+      ],
+      "diff": [
+        "The ick is about *you.*",
+        "A red flag is about *them.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

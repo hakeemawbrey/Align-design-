@@ -1,0 +1,52 @@
+{
+  "id": "247-spark-vs-clash",
+  "title": "Spark vs Clash",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "spark vs clash ✦\nEvery pair has both. Align shows you where.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Spark",
+        "art": "spark"
+      },
+      "b": {
+        "label": "Clash",
+        "art": "duo:wall:rose:rose"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A spark* versus *a clash.*"
+      ],
+      "explainA": [
+        "A *spark* is where your charts pull together."
+      ],
+      "explainB": [
+        "A *clash* is where they push apart."
+      ],
+      "diff": [
+        "Every pair has *both.*",
+        "Align shows you *where.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

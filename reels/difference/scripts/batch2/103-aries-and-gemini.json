@@ -1,0 +1,55 @@
+{
+  "id": "103-aries-and-gemini",
+  "title": "Aries & Gemini",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 3 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & gemini: how do they align? ✨\nFire and air feed each other. Easy to talk to, easy to grow with. Aries brings the spark. Gemini brings the conversation.\nevery sign pair, part 3 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "gemini",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "ask": [
+        "*Aries* and *Gemini.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves fast and out loud.",
+        "If they want you, you'll know by Tuesday."
+      ],
+      "explainB": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "diff": [
+        "Fire and air *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Aries brings *the spark.* Gemini brings *the conversation.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

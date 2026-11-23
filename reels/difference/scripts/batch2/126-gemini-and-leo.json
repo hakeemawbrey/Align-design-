@@ -1,0 +1,55 @@
+{
+  "id": "126-gemini-and-leo",
+  "title": "Gemini & Leo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 26 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & leo: how do they align? ✨\nAir and fire feed each other. Easy to talk to, easy to grow with. Gemini brings the conversation. Leo brings the warmth.\nevery sign pair, part 26 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "leo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "ask": [
+        "*Gemini* and *Leo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "explainB": [
+        "*Leo* loves big and generous.",
+        "They want to adore you, and be adored back."
+      ],
+      "diff": [
+        "Air and fire *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Gemini brings *the conversation.* Leo brings *the warmth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

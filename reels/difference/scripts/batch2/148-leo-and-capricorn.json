@@ -1,0 +1,55 @@
+{
+  "id": "148-leo-and-capricorn",
+  "title": "Leo & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 48 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & capricorn: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Leo brings the warmth. Capricorn brings the commitment.\nevery sign pair, part 48 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Leo* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "explainB": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Leo brings *the warmth.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

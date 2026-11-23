@@ -1,0 +1,55 @@
+{
+  "id": "147-leo-and-sagittarius",
+  "title": "Leo & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 47 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "leo & sagittarius: how do they align? ✨\nBoth fire signs. They get each other without explaining. Leo brings the warmth. Sagittarius brings the adventure.\nevery sign pair, part 47 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "leo",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Leo* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Leo* loves big and generous.",
+        "They want to adore you, and be adored back."
+      ],
+      "explainB": [
+        "*Sagittarius* loves with room to roam.",
+        "Adventure first, rules later."
+      ],
+      "diff": [
+        "Both fire signs.",
+        "They *get* each other without explaining.",
+        "Leo brings *the warmth.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

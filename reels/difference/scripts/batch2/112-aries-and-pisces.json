@@ -1,0 +1,55 @@
+{
+  "id": "112-aries-and-pisces",
+  "title": "Aries & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 12 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & pisces: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Aries brings the spark. Pisces brings the tenderness.\nevery sign pair, part 12 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Aries* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Aries brings *the spark.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

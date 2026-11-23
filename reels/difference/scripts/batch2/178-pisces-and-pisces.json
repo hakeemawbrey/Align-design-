@@ -1,0 +1,54 @@
+{
+  "id": "178-pisces-and-pisces",
+  "title": "Pisces & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 78 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "pisces & pisces: how do they align? ✨\nTwo Piscess are a mirror. Easy to understand, hard to hide from. Double tenderness, and the same blind spots.\nevery sign pair, part 78 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Pisces* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Pisces* loves like a dream.",
+        "Romantic, gentle, all in."
+      ],
+      "explainB": [
+        "*Pisces* loves with no walls.",
+        "They feel what you feel before you say it."
+      ],
+      "diff": [
+        "Two Piscess are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *tenderness,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

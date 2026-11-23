@@ -1,0 +1,54 @@
+{
+  "id": "250-a-percentage-vs-a-reading",
+  "title": "A percentage vs A reading",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a percentage vs a reading ✦\nA number judges. A reading explains.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A percentage",
+        "art": "orbs:72%:gold"
+      },
+      "b": {
+        "label": "A reading",
+        "art": "chart"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A percentage* versus *a reading.*"
+      ],
+      "explainA": [
+        "Most apps give you a *match percentage.*",
+        "A number, with no reason."
+      ],
+      "explainB": [
+        "Align gives you a *reading.*",
+        "Where you spark, clash, and align."
+      ],
+      "diff": [
+        "A number *judges.*",
+        "A reading *explains.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "245-dating-apps-vs-align",
+  "title": "Dating apps vs Align",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "dating apps vs align ✦\nOne is looks first. One is love first.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Dating apps",
+        "art": "solo:phone:blue"
+      },
+      "b": {
+        "label": "Align",
+        "art": "back"
+      },
+      "ask": [
+        "How Align is different.",
+        "*Dating apps* versus *align.*"
+      ],
+      "explainA": [
+        "Most *dating apps* show a face,",
+        "and let you guess the rest."
+      ],
+      "explainB": [
+        "*Align* shows you how someone loves,",
+        "then their face, once it's mutual."
+      ],
+      "diff": [
+        "One is *looks* first.",
+        "One is *love* first."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

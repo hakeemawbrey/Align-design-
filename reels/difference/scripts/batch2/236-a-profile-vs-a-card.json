@@ -1,0 +1,54 @@
+{
+  "id": "236-a-profile-vs-a-card",
+  "title": "A profile vs A card",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a profile vs a card ✦\nProfiles sell a look. Cards show a person.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A profile",
+        "art": "solo:mirror:rose"
+      },
+      "b": {
+        "label": "A card",
+        "art": "back"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A profile* versus *an Align card.*"
+      ],
+      "explainA": [
+        "A *profile* is photos first,",
+        "and a bio you skim."
+      ],
+      "explainB": [
+        "An *Align card* is their chart,",
+        "their dealbreakers, and a veiled photo."
+      ],
+      "diff": [
+        "Profiles sell a *look.*",
+        "Cards show a *person.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

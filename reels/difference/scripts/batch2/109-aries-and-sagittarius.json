@@ -1,0 +1,55 @@
+{
+  "id": "109-aries-and-sagittarius",
+  "title": "Aries & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 9 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & sagittarius: how do they align? ✨\nBoth fire signs. They get each other without explaining. Aries brings the spark. Sagittarius brings the adventure.\nevery sign pair, part 9 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Aries* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves fast and out loud.",
+        "If they want you, you'll know by Tuesday."
+      ],
+      "explainB": [
+        "*Sagittarius* loves with room to roam.",
+        "Adventure first, rules later."
+      ],
+      "diff": [
+        "Both fire signs.",
+        "They *get* each other without explaining.",
+        "Aries brings *the spark.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

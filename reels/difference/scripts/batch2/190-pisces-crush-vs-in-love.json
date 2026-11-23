@@ -1,0 +1,55 @@
+{
+  "id": "190-pisces-crush-vs-in-love",
+  "title": "Pisces crush vs Pisces in love",
+  "cover": "What's the difference?",
+  "kicker": "PISCES",
+  "series": "PISCES IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "pisces with a crush vs pisces in love 💭\nThe crush is a dream. Love is real, and still soft.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "pisces",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:lilac"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:lilac:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Pisces with a *crush,*",
+        "versus Pisces in *love.*"
+      ],
+      "explainA": [
+        "A *Pisces* crush is a daydream.",
+        "Playlists, poems, the whole future."
+      ],
+      "explainB": [
+        "*Pisces* in love is gentle,",
+        "and feels everything with you."
+      ],
+      "diff": [
+        "The crush is a *dream.*",
+        "Love is *real,* and still soft."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

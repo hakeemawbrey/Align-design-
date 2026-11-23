@@ -1,0 +1,53 @@
+{
+  "id": "224-busy-vs-avoiding-you",
+  "title": "Busy vs Avoiding you",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "busy vs avoiding you: what's the difference? 💭\nBusy comes with a time. Avoiding comes with an excuse.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Busy",
+        "art": "solo:clock:gold"
+      },
+      "b": {
+        "label": "Avoiding you",
+        "art": "solo:mask:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Busy* versus *avoiding you.*"
+      ],
+      "explainA": [
+        "*Busy* people tell you when they're free."
+      ],
+      "explainB": [
+        "People *avoiding you*",
+        "only ever say they're busy."
+      ],
+      "diff": [
+        "Busy comes with a *time.*",
+        "Avoiding comes with an *excuse.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

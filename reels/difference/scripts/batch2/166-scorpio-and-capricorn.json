@@ -1,0 +1,55 @@
+{
+  "id": "166-scorpio-and-capricorn",
+  "title": "Scorpio & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 66 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "scorpio & capricorn: how do they align? ✨\nWater and earth feed each other. Easy to talk to, easy to grow with. Scorpio brings the depth. Capricorn brings the commitment.\nevery sign pair, part 66 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Scorpio* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Scorpio* loves all or nothing.",
+        "Deep trust, total loyalty, no half measures."
+      ],
+      "explainB": [
+        "*Capricorn* loves like a long plan.",
+        "Slow to open, built to last."
+      ],
+      "diff": [
+        "Water and earth *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Scorpio brings *the depth.* Capricorn brings *the commitment.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

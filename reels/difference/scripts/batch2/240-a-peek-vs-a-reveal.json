@@ -1,0 +1,54 @@
+{
+  "id": "240-a-peek-vs-a-reveal",
+  "title": "A peek vs A reveal",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a peek vs a reveal ✦\nA peek is a glimpse. A reveal is mutual.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A peek",
+        "art": "back"
+      },
+      "b": {
+        "label": "A reveal",
+        "art": "align"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A peek* versus *a reveal.*"
+      ],
+      "explainA": [
+        "A *peek* is a few seconds of their photo,",
+        "while you hold the card."
+      ],
+      "explainB": [
+        "A *reveal* lifts the veil for good,",
+        "once you both align."
+      ],
+      "diff": [
+        "A peek is a *glimpse.*",
+        "A reveal is *mutual.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

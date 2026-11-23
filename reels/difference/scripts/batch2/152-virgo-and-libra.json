@@ -1,0 +1,55 @@
+{
+  "id": "152-virgo-and-libra",
+  "title": "Virgo & Libra",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 52 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & libra: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Virgo brings the devotion. Libra brings the balance.\nevery sign pair, part 52 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "libra",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "ask": [
+        "*Virgo* and *Libra.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "explainB": [
+        "*Libra* loves beautifully.",
+        "Romance, balance, and no ugly fights."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Virgo brings *the devotion.* Libra brings *the balance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

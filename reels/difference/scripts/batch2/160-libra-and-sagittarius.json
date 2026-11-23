@@ -1,0 +1,55 @@
+{
+  "id": "160-libra-and-sagittarius",
+  "title": "Libra & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 60 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "libra & sagittarius: how do they align? ✨\nAir and fire feed each other. Easy to talk to, easy to grow with. Libra brings the balance. Sagittarius brings the adventure.\nevery sign pair, part 60 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Libra",
+        "art": "sign:♎:rose"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Libra* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Libra* loves in partnership.",
+        "Fair, charming, always thinking of us."
+      ],
+      "explainB": [
+        "*Sagittarius* loves with room to roam.",
+        "Adventure first, rules later."
+      ],
+      "diff": [
+        "Air and fire *feed* each other.",
+        "Easy to talk to, easy to grow with.",
+        "Libra brings *the balance.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "135-cancer-and-leo",
+  "title": "Cancer & Leo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 35 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer & leo: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Cancer brings the care. Leo brings the warmth.\nevery sign pair, part 35 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "leo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "b": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "ask": [
+        "*Cancer* and *Leo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "explainB": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Cancer brings *the care.* Leo brings *the warmth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

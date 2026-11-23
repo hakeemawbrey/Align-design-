@@ -1,0 +1,54 @@
+{
+  "id": "164-scorpio-and-scorpio",
+  "title": "Scorpio & Scorpio",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 64 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "scorpio & scorpio: how do they align? ✨\nTwo Scorpios are a mirror. Easy to understand, hard to hide from. Double depth, and the same blind spots.\nevery sign pair, part 64 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "*Scorpio* and *Scorpio.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Scorpio* loves all or nothing.",
+        "Deep trust, total loyalty, no half measures."
+      ],
+      "explainB": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "diff": [
+        "Two Scorpios are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *depth,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

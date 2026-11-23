@@ -1,0 +1,54 @@
+{
+  "id": "203-venus-in-aries-vs-libra",
+  "title": "Venus in Aries vs Venus in Libra",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in aries vs venus in libra 🌙\nOne wants excitement. One wants harmony.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Aries",
+        "art": "sign:♈:venus"
+      },
+      "b": {
+        "label": "Venus in Libra",
+        "art": "sign:♎:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Aries* versus *Venus in Libra.*"
+      ],
+      "explainA": [
+        "*Venus in Aries* loves the chase.",
+        "Direct, eager, a little impatient."
+      ],
+      "explainB": [
+        "*Venus in Libra* loves the romance.",
+        "Courtship, beauty, and fairness."
+      ],
+      "diff": [
+        "One wants *excitement.*",
+        "One wants *harmony.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

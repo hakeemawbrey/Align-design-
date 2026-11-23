@@ -1,0 +1,54 @@
+{
+  "id": "208-venus-in-virgo-vs-pisces",
+  "title": "Venus in Virgo vs Venus in Pisces",
+  "cover": "What's the difference?",
+  "kicker": "VENUS",
+  "series": "VENUS · OPPOSITE SIGNS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "venus in virgo vs venus in pisces 🌙\nVirgo shows love in actions. Pisces shows it in feelings.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "venussign",
+    "birthchart",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Venus in Virgo",
+        "art": "sign:♍:venus"
+      },
+      "b": {
+        "label": "Venus in Pisces",
+        "art": "sign:♓:venus"
+      },
+      "ask": [
+        "Same planet, opposite signs.",
+        "*Venus in Virgo* versus *Venus in Pisces.*"
+      ],
+      "explainA": [
+        "*Venus in Virgo* loves through help.",
+        "Small fixes, real effort."
+      ],
+      "explainB": [
+        "*Venus in Pisces* loves through feeling.",
+        "Romance, empathy, and devotion."
+      ],
+      "diff": [
+        "Virgo shows love in *actions.*",
+        "Pisces shows it in *feelings.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

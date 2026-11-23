@@ -1,0 +1,54 @@
+{
+  "id": "227-viewed-story-vs-texted-you",
+  "title": "Viewed story vs Texted you",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "viewed story vs texted you: what's the difference? 💭\nAttention watches. Intention reaches out.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Viewed story",
+        "art": "solo:phone:lilac"
+      },
+      "b": {
+        "label": "Texted you",
+        "art": "beam"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*Watching your story* versus *texting you.*"
+      ],
+      "explainA": [
+        "Watching your *story* is attention.",
+        "It's easy."
+      ],
+      "explainB": [
+        "*Texting you* is intention.",
+        "It takes a choice."
+      ],
+      "diff": [
+        "Attention *watches.*",
+        "Intention *reaches out.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "108-aries-and-scorpio",
+  "title": "Aries & Scorpio",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 8 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "aries & scorpio: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Aries brings the spark. Scorpio brings the depth.\nevery sign pair, part 8 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "aries",
+    "scorpio",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Aries",
+        "art": "sign:♈:mars"
+      },
+      "b": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "ask": [
+        "*Aries* and *Scorpio.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Aries* loves like a dare.",
+        "Bold first moves, honest to a fault."
+      ],
+      "explainB": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Aries brings *the spark.* Scorpio brings *the depth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

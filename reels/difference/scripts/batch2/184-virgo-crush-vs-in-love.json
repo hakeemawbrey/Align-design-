@@ -1,0 +1,55 @@
+{
+  "id": "184-virgo-crush-vs-in-love",
+  "title": "Virgo crush vs Virgo in love",
+  "cover": "What's the difference?",
+  "kicker": "VIRGO",
+  "series": "VIRGO IN LOVE",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo with a crush vs virgo in love 💭\nThe crush notices. Love helps.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "zodiaclove",
+    "crush",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A crush",
+        "art": "solo:thoughts:mint"
+      },
+      "b": {
+        "label": "In love",
+        "art": "duo:close:mint:mint"
+      },
+      "guess": true,
+      "ask": [
+        "Virgo with a *crush,*",
+        "versus Virgo in *love.*"
+      ],
+      "explainA": [
+        "A *Virgo* crush is quiet.",
+        "They remember your coffee order."
+      ],
+      "explainB": [
+        "*Virgo* in love fixes things.",
+        "Your schedule, your shelf, your day."
+      ],
+      "diff": [
+        "The crush *notices.*",
+        "Love *helps.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

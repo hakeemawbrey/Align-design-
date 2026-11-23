@@ -1,0 +1,55 @@
+{
+  "id": "116-taurus-and-leo",
+  "title": "Taurus & Leo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 16 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "taurus & leo: how do they align? ✨\nTwo fixed signs, a quarter of the sky apart. Real friction, and real growth if they stay. Taurus brings the steadiness. Leo brings the warmth.\nevery sign pair, part 16 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "leo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Taurus",
+        "art": "sign:♉:gold"
+      },
+      "b": {
+        "label": "Leo",
+        "art": "sign:♌:gold"
+      },
+      "ask": [
+        "*Taurus* and *Leo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Taurus* loves with all five senses.",
+        "Steady, loyal, a little stubborn."
+      ],
+      "explainB": [
+        "*Leo* loves like a spotlight.",
+        "Warm, loyal, a little dramatic."
+      ],
+      "diff": [
+        "Two fixed signs, a quarter of the sky apart.",
+        "Real *friction,* and real growth if they stay.",
+        "Taurus brings *the steadiness.* Leo brings *the warmth.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

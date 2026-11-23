@@ -1,0 +1,55 @@
+{
+  "id": "165-scorpio-and-sagittarius",
+  "title": "Scorpio & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 65 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "scorpio & sagittarius: how do they align? ✨\nNeighbors on the wheel, with different needs, and a lot to teach each other. Scorpio brings the depth. Sagittarius brings the adventure.\nevery sign pair, part 65 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Scorpio* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Scorpio* loves intensely.",
+        "They want your secrets, and they keep them."
+      ],
+      "explainB": [
+        "*Sagittarius* loves honestly and freely.",
+        "They want a partner for the next trip."
+      ],
+      "diff": [
+        "Neighbors on the wheel,",
+        "with *different* needs, and a lot to teach each other.",
+        "Scorpio brings *the depth.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

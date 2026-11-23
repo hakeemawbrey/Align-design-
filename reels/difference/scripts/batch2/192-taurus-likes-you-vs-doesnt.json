@@ -1,0 +1,55 @@
+{
+  "id": "192-taurus-likes-you-vs-doesnt",
+  "title": "When Taurus likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "TAURUS",
+  "series": "DOES TAURUS LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when taurus likes you vs when they don't 👀\nTaurus shows it with time. Check the calendar.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "taurus",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:gold:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Taurus *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Taurus* likes you,",
+        "they make time, and they make plans."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they get politely busy."
+      ],
+      "diff": [
+        "Taurus shows it with time.",
+        "Check the *calendar.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

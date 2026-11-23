@@ -1,0 +1,55 @@
+{
+  "id": "199-sagittarius-likes-you-vs-doesnt",
+  "title": "When Sagittarius likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "SAGITTARIUS",
+  "series": "DOES SAGITTARIUS LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when sagittarius likes you vs when they don't 👀\nSagittarius is honest. If you have to wonder, that's an answer.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "sagittarius",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:lilac:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Sagittarius *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Sagittarius* likes you,",
+        "they invite you somewhere new."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they get vague about the future."
+      ],
+      "diff": [
+        "Sagittarius is honest.",
+        "If you have to *wonder,* that's an answer."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

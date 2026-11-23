@@ -1,0 +1,55 @@
+{
+  "id": "168-scorpio-and-pisces",
+  "title": "Scorpio & Pisces",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 68 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "scorpio & pisces: how do they align? ✨\nBoth water signs. They get each other without explaining. Scorpio brings the depth. Pisces brings the tenderness.\nevery sign pair, part 68 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "scorpio",
+    "pisces",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Scorpio",
+        "art": "sign:♏:rose"
+      },
+      "b": {
+        "label": "Pisces",
+        "art": "sign:♓:lilac"
+      },
+      "ask": [
+        "*Scorpio* and *Pisces.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Scorpio* loves all or nothing.",
+        "Deep trust, total loyalty, no half measures."
+      ],
+      "explainB": [
+        "*Pisces* loves like a dream.",
+        "Romantic, gentle, all in."
+      ],
+      "diff": [
+        "Both water signs.",
+        "They *get* each other without explaining.",
+        "Scorpio brings *the depth.* Pisces brings *the tenderness.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

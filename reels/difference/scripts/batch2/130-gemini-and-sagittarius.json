@@ -1,0 +1,55 @@
+{
+  "id": "130-gemini-and-sagittarius",
+  "title": "Gemini & Sagittarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 30 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "gemini & sagittarius: how do they align? ✨\nOpposite signs. Each one has what the other is missing. Gemini brings the conversation. Sagittarius brings the adventure.\nevery sign pair, part 30 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "gemini",
+    "sagittarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Gemini",
+        "art": "sign:♊:mint"
+      },
+      "b": {
+        "label": "Sagittarius",
+        "art": "sign:♐:lilac"
+      },
+      "ask": [
+        "*Gemini* and *Sagittarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Gemini* loves through talking.",
+        "If the conversation is good, they're in."
+      ],
+      "explainB": [
+        "*Sagittarius* loves with room to roam.",
+        "Adventure first, rules later."
+      ],
+      "diff": [
+        "Opposite signs.",
+        "Each one has what the other is *missing.*",
+        "Gemini brings *the conversation.* Sagittarius brings *the adventure.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

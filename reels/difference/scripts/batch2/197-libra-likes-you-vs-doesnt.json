@@ -1,0 +1,55 @@
+{
+  "id": "197-libra-likes-you-vs-doesnt",
+  "title": "When Libra likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "LIBRA",
+  "series": "DOES LIBRA LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when libra likes you vs when they don't 👀\nLibra is nice to everyone. Look for the plans.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "libra",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:rose:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Libra *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Libra* likes you,",
+        "they include you in plans."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they stay sweet, and keep it vague."
+      ],
+      "diff": [
+        "Libra is nice to everyone.",
+        "Look for the *plans.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

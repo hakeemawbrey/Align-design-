@@ -1,0 +1,54 @@
+{
+  "id": "151-virgo-and-virgo",
+  "title": "Virgo & Virgo",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 51 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "virgo & virgo: how do they align? ✨\nTwo Virgos are a mirror. Easy to understand, hard to hide from. Double devotion, and the same blind spots.\nevery sign pair, part 51 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "b": {
+        "label": "Virgo",
+        "art": "sign:♍:mint"
+      },
+      "ask": [
+        "*Virgo* and *Virgo.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Virgo* loves through small acts.",
+        "Fixing, planning, noticing what you need."
+      ],
+      "explainB": [
+        "*Virgo* loves carefully.",
+        "They show it more than they say it."
+      ],
+      "diff": [
+        "Two Virgos are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *devotion,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

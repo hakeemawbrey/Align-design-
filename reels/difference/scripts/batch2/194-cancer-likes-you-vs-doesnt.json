@@ -1,0 +1,55 @@
+{
+  "id": "194-cancer-likes-you-vs-doesnt",
+  "title": "When Cancer likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "CANCER",
+  "series": "DOES CANCER LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when cancer likes you vs when they don't 👀\nCancer shows it with care. No care, no chance.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:blue:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Cancer *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Cancer* likes you,",
+        "they take care of you."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they pull back into their shell."
+      ],
+      "diff": [
+        "Cancer shows it with care.",
+        "No care, no *chance.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

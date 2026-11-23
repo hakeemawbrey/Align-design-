@@ -1,0 +1,54 @@
+{
+  "id": "173-capricorn-and-capricorn",
+  "title": "Capricorn & Capricorn",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 73 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "capricorn & capricorn: how do they align? ✨\nTwo Capricorns are a mirror. Easy to understand, hard to hide from. Double commitment, and the same blind spots.\nevery sign pair, part 73 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "capricorn",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "b": {
+        "label": "Capricorn",
+        "art": "sign:♑:blue"
+      },
+      "ask": [
+        "*Capricorn* and *Capricorn.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Capricorn* loves like a long plan.",
+        "Slow to open, built to last."
+      ],
+      "explainB": [
+        "*Capricorn* loves through commitment.",
+        "They show up, they build, they stay."
+      ],
+      "diff": [
+        "Two Capricorns are a *mirror.*",
+        "Easy to understand, hard to hide from.",
+        "Double *commitment,* and the same blind spots."
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "242-an-opener-vs-a-talk-card",
+  "title": "An opener vs A talk card",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "an opener vs a talk card ✦\nOpeners perform. Talk cards connect.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "An opener",
+        "art": "solo:knot:rose"
+      },
+      "b": {
+        "label": "A talk card",
+        "art": "duo:close:gold:gold"
+      },
+      "ask": [
+        "How Align is different.",
+        "*An opener* versus *a talk card.*"
+      ],
+      "explainA": [
+        "An *opener* is you, alone,",
+        "trying to be clever."
+      ],
+      "explainB": [
+        "A *talk card* is one question for both of you.",
+        "Neither answer shows until you both reply."
+      ],
+      "diff": [
+        "Openers *perform.*",
+        "Talk cards *connect.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

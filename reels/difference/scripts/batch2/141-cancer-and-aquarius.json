@@ -1,0 +1,55 @@
+{
+  "id": "141-cancer-and-aquarius",
+  "title": "Cancer & Aquarius",
+  "cover": "How do they align?",
+  "kicker": "HOW THEY ALIGN",
+  "series": "EVERY SIGN PAIR · 41 / 78",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "cancer & aquarius: how do they align? ✨\nAlmost opposite, but not quite. They keep adjusting to each other, and that can work. Cancer brings the care. Aquarius brings the freedom.\nevery sign pair, part 41 of 78",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "cancer",
+    "aquarius",
+    "zodiaclove",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Cancer",
+        "art": "sign:♋:blue"
+      },
+      "b": {
+        "label": "Aquarius",
+        "art": "sign:♒:blue"
+      },
+      "ask": [
+        "*Cancer* and *Aquarius.*",
+        "How do they align?"
+      ],
+      "explainA": [
+        "*Cancer* loves protectively.",
+        "Soft inside, a shell outside."
+      ],
+      "explainB": [
+        "*Aquarius* loves in their own way.",
+        "Loyal, unusual, and never clingy."
+      ],
+      "diff": [
+        "Almost opposite, but not quite.",
+        "They keep *adjusting* to each other, and that can work.",
+        "Cancer brings *the care.* Aquarius brings *the freedom.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "231-a-plan-vs-whatever-you-want",
+  "title": "A plan vs Whatever you want",
+  "cover": "What's the difference?",
+  "kicker": "DATING NOW",
+  "series": "DATING NOW",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "a plan vs whatever you want: what's the difference? 💭\nPlans feel like effort. Shrugs can feel like none.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingtips",
+    "relationshipadvice",
+    "dating",
+    "love",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "A plan",
+        "art": "solo:star:gold"
+      },
+      "b": {
+        "label": "Whatever you want",
+        "art": "solo:thoughts:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "Guess which is which.",
+        "*A plan* versus *whatever you want.*"
+      ],
+      "explainA": [
+        "*A plan* says,",
+        "I thought about you."
+      ],
+      "explainB": [
+        "*Whatever you want*",
+        "puts all the work on you."
+      ],
+      "diff": [
+        "Plans feel like *effort.*",
+        "Shrugs can feel like *none.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

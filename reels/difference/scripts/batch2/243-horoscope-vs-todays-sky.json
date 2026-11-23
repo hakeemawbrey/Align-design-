@@ -1,0 +1,54 @@
+{
+  "id": "243-horoscope-vs-todays-sky",
+  "title": "Horoscope vs Today's sky",
+  "cover": "What's the difference?",
+  "kicker": "ALIGN",
+  "series": "HOW ALIGN WORKS",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "horoscope vs today's sky ✦\nOne is generic. One is today.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "datingapp",
+    "astrology",
+    "dating",
+    "love",
+    "align",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Horoscope",
+        "art": "horoscope"
+      },
+      "b": {
+        "label": "Today's sky",
+        "art": "chart"
+      },
+      "ask": [
+        "How Align is different.",
+        "*A daily horoscope* versus *today's sky.*"
+      ],
+      "explainA": [
+        "A *daily horoscope* is the same",
+        "for your whole sign."
+      ],
+      "explainB": [
+        "*Today's sky* on Align",
+        "reads the real planets, right now."
+      ],
+      "diff": [
+        "One is *generic.*",
+        "One is *today.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}

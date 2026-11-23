@@ -1,0 +1,55 @@
+{
+  "id": "196-virgo-likes-you-vs-doesnt",
+  "title": "When Virgo likes you vs when they don't",
+  "cover": "What's the difference?",
+  "kicker": "VIRGO",
+  "series": "DOES VIRGO LIKE YOU",
+  "voice": "af_heart",
+  "speed": 1.12,
+  "caption": "when virgo likes you vs when they don't 👀\nVirgo is in the details. No details, no Virgo.",
+  "cta": "join the align beta ✦ link in bio",
+  "hashtags": [
+    "astrology",
+    "virgo",
+    "zodiaclove",
+    "datingtips",
+    "zodiacsigns",
+    "whatsthedifference"
+  ],
+  "pairs": [
+    {
+      "a": {
+        "label": "Likes you",
+        "art": "beam"
+      },
+      "b": {
+        "label": "Doesn't",
+        "art": "duo:ghost:mint:lilac"
+      },
+      "guess": true,
+      "ask": [
+        "When Virgo *likes you,*",
+        "versus when they *don't.*"
+      ],
+      "explainA": [
+        "When *Virgo* likes you,",
+        "they do small things, every day."
+      ],
+      "explainB": [
+        "When they don't,",
+        "they get polite and vague."
+      ],
+      "diff": [
+        "Virgo is in the details.",
+        "No details, no *Virgo.*"
+      ]
+    }
+  ],
+  "end": {
+    "lines": [
+      "Join the *Align* beta.",
+      "Link in bio."
+    ],
+    "pill": "JOIN THE ALIGN BETA"
+  }
+}
