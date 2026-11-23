@@ -1,5 +1,5 @@
 // hst406 · 23 days · Leo's outfit crisis (80° in January) · Heights bedroom mirror · pop
-import { ep, C, Y, Kp, clamp, box, txt, label, sparkles, GOLD, BONE, PINK, INK, MONO, SKYB, LAV, BRAKE, bedroom, mirror, rack, heatSun, sweat, thermo, puffer, sweater, scarf, streetSign, bigWindow, skyFill } from './w17.js'
+import { ep, C, Y, Kp, clamp, box, txt, label, sparkles, GOLD, BONE, PINK, INK, MONO, SKYB, LAV, BRAKE, bedroom, mirror, rack, heatSun, sweat, thermo, pufferLow, sweater, scarf, streetSign, bigWindow, skyFill } from './w17.js'
 
 const L = 300, R = 780, M = 540
 const set = (x, t) => { bedroom(x, t, { wall: '#5a2a4a', floor: '#6a4a2a' }); mirror(x, 800, 860, 300, 560, t); rack(x, 40, 1000, ['#7a3ac9', '#e05a3a', GOLD, '#f4e1b0']) }
@@ -10,7 +10,7 @@ const fan = (x, t, cx, cy) => { box(x, cx - 8, cy, 16, 120, '#8f96a0', 4); x.sav
 const linen = (x, P) => { sweater(x, P, 'leo', '#f4e1b0'); scarf(x, P, 'leo', GOLD) }
 
 export const EP = ep(23, {
-  hook: 'Your Leo, 23 days out: | the outfit crisis',
+  hook: 'Your Leo, 23 days | before the party: | outfit crisis',
   hookSet: (x, t) => { set(x, t); streetSign(x, 210, 330 + 470, 'THE HEIGHTS', { pole: false }) },
   hookFront: (x, t, lt, P) => velvet(x, P),
   hookCast: C({ leo: [[0, L, Y, 270], [1.2, L + 60, Y, 270], [2.4, L, Y, 270]] }), hookMood: { leo: 'sparkle' }, hookLook: { leo: [0, 0] },
@@ -21,7 +21,7 @@ export const EP = ep(23, {
     { dur: 3.4, set: (x, t) => { set(x, t); hotWin(x, t) }, front: (x, t, lt, P) => { velvet(x, P); const [cx, cy, s] = P.at('leo'); sweat(x, cx, cy - s * 0.5, t); thermo(x, 820, 600, '81°', Kp(lt, 0.1)) },
       cast: C({ leo: [L + 60, Y, 260] }), mood: { leo: 'squint' },
       lines: [[0.4, 2.6, 'leo', 'velvet. in Houston. | in January.']] },
-    { dur: 3.6, set, front: (x, t, lt, P) => puffer(x, P, 'leo', '#e05a3a'), cast: C({ leo: [L, Y, 250], gemini: [R, Y, 210] }), mood: { leo: 'sparkle', gemini: 'eyeroll' },
+    { dur: 3.6, set, front: (x, t, lt, P) => pufferLow(x, P, 'leo', '#e05a3a'), cast: C({ leo: [L, Y, 250], gemini: [R, Y, 210] }), mood: { leo: 'sparkle', gemini: 'eyeroll' },
       lines: [[0.2, 1.6, 'leo', 'the one 55° day | might happen!'], [2.0, 1.3, 'gemini', "it won't."]], stick: [[0.1, 1.5, 'LOOK 2: PUFFER', SKYB]] },
     { dur: 3.6, set, front: (x, t, lt, P) => { sequins(x, t, P); fan(x, t, 140, 1200) }, cast: C({ leo: [L + 40, Y, 250], virgo: [R, Y, 210] }), mood: { leo: 'wink', virgo: 'squint' },
       lines: [[0.2, 1.5, 'leo', 'sequins breathe, | right?'], [1.9, 1.4, 'virgo', 'they do | not.']], stick: [[0.1, 1.5, 'LOOK 3: SEQUINS', GOLD]] },

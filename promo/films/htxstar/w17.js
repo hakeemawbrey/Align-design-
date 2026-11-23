@@ -53,17 +53,17 @@ export function dayChip(x, t, n, at = 2.7) {
 
 // ── props on a star (P.at(id) → [cx, cy, size]) ────────────────────────────────────────────────────────────
 export function glasses(x, P, id, col = GOLD) {
-  const [cx, cy, s] = P.at(id); const w = s * 0.2, h = s * 0.15, ey = cy - s * 0.03
+  const [cx, cy, s] = P.at(id); const w = s * 0.17, h = s * 0.13, ey = cy - s * 0.01
   x.strokeStyle = INK; x.lineWidth = Math.max(4, s * 0.025)
-  for (const d of [-1, 1]) { x.fillStyle = 'rgba(255,255,255,0.18)'; x.fillRect(cx + d * s * 0.16 - w / 2, ey - h / 2, w, h); x.strokeRect(cx + d * s * 0.16 - w / 2, ey - h / 2, w, h) }
-  x.beginPath(); x.moveTo(cx - s * 0.06, ey); x.lineTo(cx + s * 0.06, ey); x.stroke()
-  x.strokeStyle = col; x.lineWidth = 3; x.beginPath(); x.moveTo(cx - s * 0.26, ey + h / 2); x.quadraticCurveTo(cx, ey + s * 0.3, cx + s * 0.26, ey + h / 2); x.stroke()   // the chain
+  for (const d of [-1, 1]) { x.fillStyle = 'rgba(255,255,255,0.18)'; x.fillRect(cx + d * s * 0.135 - w / 2, ey - h / 2, w, h); x.strokeRect(cx + d * s * 0.135 - w / 2, ey - h / 2, w, h) }
+  x.beginPath(); x.moveTo(cx - s * 0.05, ey); x.lineTo(cx + s * 0.05, ey); x.stroke()
+  x.strokeStyle = col; x.lineWidth = 3; x.beginPath(); x.moveTo(cx - s * 0.22, ey + h / 2); x.quadraticCurveTo(cx, ey + s * 0.3, cx + s * 0.22, ey + h / 2); x.stroke()   // the chain
 }
 export function shades(x, P, id) {
-  const [cx, cy, s] = P.at(id); const ey = cy - s * 0.03
-  for (const d of [-1, 1]) box(x, cx + d * s * 0.16 - s * 0.12, ey - s * 0.07, s * 0.24, s * 0.13, '#0b0820', 3)
+  const [cx, cy, s] = P.at(id); const ey = cy - s * 0.01
+  for (const d of [-1, 1]) box(x, cx + d * s * 0.135 - s * 0.1, ey - s * 0.065, s * 0.2, s * 0.12, '#0b0820', 3)
   x.fillStyle = INK; x.fillRect(cx - s * 0.05, ey - s * 0.03, s * 0.1, s * 0.03)
-  x.fillStyle = 'rgba(255,255,255,0.5)'; x.fillRect(cx - s * 0.24, ey - s * 0.05, s * 0.05, s * 0.02); x.fillRect(cx + s * 0.08, ey - s * 0.05, s * 0.05, s * 0.02)
+  x.fillStyle = 'rgba(255,255,255,0.5)'; x.fillRect(cx - s * 0.21, ey - s * 0.045, s * 0.05, s * 0.02); x.fillRect(cx + s * 0.07, ey - s * 0.045, s * 0.05, s * 0.02)
 }
 export function clipboard(x, P, id, side = 1) {
   const [cx, cy, s] = P.at(id); const bx = cx + side * s * 0.48, by = cy + s * 0.12
@@ -73,7 +73,7 @@ export function clipboard(x, P, id, side = 1) {
 }
 export function beanie(x, P, id, col = '#2b5fb0') {
   const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.2, cy - s * 0.58, s * 0.4, s * 0.14, col, 4); x.fillStyle = BONE; x.beginPath(); x.arc(cx, cy - s * 0.62, s * 0.06, 0, Math.PI * 2); x.fill()
+  box(x, cx - s * 0.14, cy - s * 0.56, s * 0.28, s * 0.12, col, 4); x.fillStyle = BONE; x.beginPath(); x.arc(cx, cy - s * 0.6, s * 0.06, 0, Math.PI * 2); x.fill()
 }
 export function sunHat(x, P, id, col = '#f4e1b0') {
   const [cx, cy, s] = P.at(id)
@@ -83,19 +83,20 @@ export function sunHat(x, P, id, col = '#f4e1b0') {
 }
 export function bib(x, P, id) {
   const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.14, cy + s * 0.1, s * 0.28, s * 0.24, BONE, 3); crawdad(x, cx, cy + s * 0.22, s * 0.0022)
+  box(x, cx - s * 0.14, cy + s * 0.15, s * 0.28, s * 0.2, BONE, 3); crawdad(x, cx, cy + s * 0.25, s * 0.0022)
 }
 export function scarf(x, P, id, col = GOLD) {
   const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.24, cy + s * 0.1, s * 0.48, s * 0.07, col, 3); box(x, cx + s * 0.1, cy + s * 0.15, s * 0.08, s * 0.18, col, 3)
+  box(x, cx - s * 0.26, cy + s * 0.15, s * 0.52, s * 0.07, col, 3); box(x, cx + s * 0.1, cy + s * 0.2, s * 0.08, s * 0.16, col, 3)
 }
-export function sweater(x, P, id, col = '#c0304a', motif = null) {
-  const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.3, cy + s * 0.06, s * 0.6, s * 0.26, col, 4)
-  for (let k = 0; k < 5; k++) { x.fillStyle = 'rgba(255,255,255,0.35)'; x.fillRect(cx - s * 0.26 + k * s * 0.12, cy + s * 0.1, s * 0.06, s * 0.04) }
-  if (motif === 'fish') { x.fillStyle = SKYB; x.beginPath(); x.ellipse(cx, cy + s * 0.22, s * 0.07, s * 0.04, 0, 0, Math.PI * 2); x.fill(); x.beginPath(); x.moveTo(cx + s * 0.06, cy + s * 0.22); x.lineTo(cx + s * 0.11, cy + s * 0.18); x.lineTo(cx + s * 0.11, cy + s * 0.26); x.fill() }
-  if (motif === 'star') { x.fillStyle = GOLD; x.fillRect(cx - s * 0.04, cy + s * 0.17, s * 0.08, s * 0.08) }
+export function sweater(x, P, id, col = '#c0304a', motif = null) {   // a knit band across the star's lower half (below the mouth)
+  const [cx, cy, s] = P.at(id); const top = cy + s * 0.17, h = s * 0.14
+  box(x, cx - s * 0.3, top, s * 0.6, h, col, 4)
+  for (let k = 0; k < 5; k++) { x.fillStyle = 'rgba(255,255,255,0.35)'; x.fillRect(cx - s * 0.26 + k * s * 0.12, top + h * 0.3, s * 0.06, h * 0.3) }
+  if (motif === 'fish') { const fy = top + h / 2; x.fillStyle = SKYB; x.beginPath(); x.ellipse(cx, fy, s * 0.06, s * 0.035, 0, 0, Math.PI * 2); x.fill(); x.beginPath(); x.moveTo(cx + s * 0.05, fy); x.lineTo(cx + s * 0.1, fy - s * 0.04); x.lineTo(cx + s * 0.1, fy + s * 0.04); x.fill() }
+  if (motif === 'star') { x.fillStyle = GOLD; x.fillRect(cx - s * 0.04, top + h * 0.2, s * 0.08, h * 0.6) }
 }
+export function pufferLow(x, P, id, col = '#e05a3a') { const [cx, cy, s] = P.at(id); for (let k = 0; k < 2; k++) box(x, cx - s * 0.34, cy + s * 0.14 + k * s * 0.12, s * 0.68, s * 0.11, col, 4); beanie(x, P, id) }
 export function frizz(x, P, id, amt, col) {      // humidity hair: a puffy mane behind the star
   if (amt <= 0) return
   const [cx, cy, s] = P.at(id); const R = s * (0.5 + 0.35 * amt)
