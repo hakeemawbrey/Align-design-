@@ -54,7 +54,7 @@ const hst248 = doc({
 
 // ── hst249 · The 5am Memorial jogger in its natural habitat
 const hst249 = doc({
-  hook: 'The 5am Memorial jogger | in its | natural habitat', endLine: 'Pace yourself. Jan 9.', endStars: ['aries', 'libra', 'gemini', 'virgo'],
+  hook: 'The 5am jogger | of Memorial Park | in its habitat', endLine: 'Pace yourself. Jan 9.', endStars: ['aries', 'libra', 'gemini', 'virgo'],
   scenes: [
     { dur: 3.6, set: (x, t) => trailLoop(x, t, { skyc: SKIES.dawn }), cast: { aries: [[0, 160, Y, 240], [3.6, 880, Y, 240]] }, mood: { aries: 'sparkle' },
       lt: ['THE 5AM JOGGER', 'Aries velocissimus', 2.7], n: ['Shh. You might | scare it off.', 0.3, 2.3] },
@@ -81,7 +81,7 @@ const hst250 = doc({
   scenes: [
     { dur: 3.8, set: (x, t, lt) => batBridge(x, t, lt + 2, 30), cast: { pisces: [[0, 330, Y + 20, 230]], scorpio: [[0, 760, Y + 20, 230]] }, mood: { pisces: 'wide', scorpio: 'squint' }, hops: { pisces: [0.05, 0.5] },
       lt: ['THE BAT BRIDGE', 'a bayou, at sunset', 2.7], n: ['You came for the bats. | Everyone does.', 0.3, 2.3] },
-    { dur: 3.6, set: (x, t, lt) => batBridge(x, t, lt + 5, 50), cast: { pisces: [[0, 330, Y + 20, 250]] }, mood: { pisces: 'wide' },
+    { dur: 3.6, set: (x, t, lt) => batBridge(x, t, lt + 5, 50), cast: { pisces: [[0, 800, Y + 20, 250]] }, mood: { pisces: 'wide' },
       lt: ['THE PISCES', 'Pisces lacrimosa', 0.2], n: ['It cries at minute one.', 1.4, 1.2], lines: [[2.0, 1.4, 'pisces', "they're so | beautiful."]] },
     { dur: 3.2, set: (x, t, lt) => batBridge(x, t, lt + 8, 50), cast: { scorpio: [[0, 760, Y + 20, 250]] }, mood: { scorpio: 'eyeroll' },
       n: ['Its companion | pretends not to care.', 0.2, 1.6], lines: [[1.9, 1.2, 'scorpio', "it's just | bats."]] },
@@ -100,7 +100,7 @@ const hst250 = doc({
 
 // ── hst251 · Observe: the Bellaire late-night food crawler
 const hst251 = doc({
-  hook: 'Observe: the Bellaire | late-night food crawler', endLine: 'Eat first. Then Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'cancer'],
+  hook: 'Spotted: the | Bellaire night | food crawler', endLine: 'Eat first. Then Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'cancer'],
   scenes: [
     { dur: 3.8, set: (x, t) => foodStrip(x, t), cast: { sagittarius: [[0, 160, Y, 250], [3.4, 520, Y, 250]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.05] },
       lt: ['THE FOOD CRAWLER', 'Sagittarius noctivorus', 2.7], n: ['You are hungry. | So is it.', 0.3, 2.3] },
@@ -108,7 +108,7 @@ const hst251 = doc({
       n: ['Stop one: boba.', 0.2, 1.4], lines: [[1.8, 1.4, 'sagittarius', "I'm not | sharing this."]] },
     { dur: 3.4, set: (x, t) => foodStrip(x, t), front: (x, t) => bowl(x, 740, 1200, t, 1.2), cast: { sagittarius: [[0, 360, Y, 250]] }, mood: { sagittarius: 'heart' },
       n: ['Stop two: pho, | because it is 61°.', 0.2, 1.8], lines: [[2.1, 1.2, 'sagittarius', 'basically | winter.']] },
-    { dur: 3.6, set: (x, t) => foodStrip(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('libra'); mic(x, cx - s * 0.6, cy - 20, 1.1) }, cast: { libra: [[0, 640, Y, 250]] }, mood: { libra: 'sparkle' }, hops: { libra: [0.4, 0.9, 1.4] },
+    { dur: 3.6, set: (x, t) => foodStrip(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('libra'); mic(x, cx - s * 0.6, cy - 20, 1.1) }, cast: { libra: [[0, 820, Y, 250]] }, mood: { libra: 'sparkle' }, hops: { libra: [0.4, 0.9, 1.4] },
       lt: ['A KARAOKE CREATURE', 'Libra microphonica', 0.2], lines: [[1.6, 1.6, 'libra', 'one more | song!']] },
     { dur: 3.4, set: (x, t) => foodStrip(x, t), cast: { sagittarius: [[0, 330, Y, 240]], libra: [[0, 760, Y, 240]] }, mood: { sagittarius: 'wink', libra: 'happy' },
       n: ['A second creature | joins the crawl.', 0.2, 1.6], lines: [[1.9, 1.3, 'libra', 'where next?']] },
@@ -124,7 +124,7 @@ const hst251 = doc({
 // ── hst252 · The Montrose plant parent in its natural habitat
 const can = (x, P, id) => { const [cx, cy, s] = P.at(id); box(x, cx + s * 0.45, cy - 10, 80, 70, '#5ec8ff', 5); box(x, cx + s * 0.45 + 76, cy - 4, 46, 14, '#5ec8ff', 3) }
 const hst252 = doc({
-  hook: 'The Montrose plant parent | in its | natural habitat', endLine: 'Water your plants. Then Jan 9.', endStars: ['virgo', 'gemini', 'cancer', 'aquarius'],
+  hook: 'The Montrose | plant parent | in its habitat', endLine: 'Water your plants. Then Jan 9.', endStars: ['virgo', 'gemini', 'cancer', 'aquarius'],
   scenes: [
     { dur: 3.8, set: (x, t) => plants(x, t), front: (x, t, lt, P) => can(x, P, 'virgo'), cast: { virgo: [[0, 400, Y, 250]] }, mood: { virgo: 'happy' }, hops: { virgo: [0.05, 0.6] },
       lt: ['THE PLANT PARENT', 'Virgo verdantis', 2.7], n: ['You have entered | its jungle. Quietly.', 0.3, 2.3] },
@@ -132,7 +132,7 @@ const hst252 = doc({
       n: ['Each plant has a name.', 0.2, 1.4], lines: [[1.7, 1.5, 'virgo', 'good morning, | Gerald.']] },
     { dur: 3.4, set: (x, t) => plants(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); sweat(x, cx + s * 0.3, cy - s * 0.3, t, 3) }, cast: { virgo: [[0, 400, Y, 250]] }, mood: { virgo: 'sparkle' },
       n: ['Houston humidity: | the plants love it.', 0.2, 1.8], lines: [[2.0, 1.3, 'virgo', 'the pothos | is thriving.']] },
-    { dur: 3.6, set: (x, t) => { mural(x, t); outside(x, { ground: '#2a2440' }) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); box(x, cx + s * 0.5, cy - 120, 90, 60, '#ffd36b', 5); box(x, cx + s * 0.5 + 38, cy - 60, 14, 120, '#8a5530', 4) }, cast: { virgo: [[0, 360, Y, 240]] }, mood: { virgo: 'sparkle' },
+    { dur: 3.6, set: (x, t) => { mural(x, t); outside(x, { ground: '#2a2440' }) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); box(x, cx + s * 0.5, cy - 120, 90, 60, '#ffd36b', 5); box(x, cx + s * 0.5 + 38, cy - 60, 14, 120, '#8a5530', 4) }, cast: { virgo: [[0, 760, Y, 240]] }, mood: { virgo: 'sparkle' },
       lt: ['THE VINTAGE RUN', 'foraging, Westheimer', 0.2], lines: [[1.6, 1.6, 'virgo', 'a lamp | for Gerald.']] },
     { dur: 3.6, set: (x, t) => plants(x, t), cast: { virgo: [[0, 330, Y, 240]], gemini: [[0, 1180, Y, 240], [0.7, 770, Y, 240]] }, mood: { virgo: 'wide', gemini: 'happy' },
       lt: ['A VISITOR', 'Gemini curiosus', 0.2], lines: [[1.2, 1.1, 'gemini', 'which one | is Gerald?'], [2.4, 1.1, 'virgo', 'they ALL | have names.']] },
@@ -147,7 +147,7 @@ const hst252 = doc({
 
 // ── hst253 · A Clear Lake engineer attempts small talk
 const hst253 = doc({
-  hook: 'A Clear Lake engineer | attempts small talk', endLine: 'Calculated. See you Jan 9.', endStars: ['capricorn', 'leo', 'virgo', 'aquarius'],
+  hook: 'A Clear Lake | engineer tries | small talk', endLine: 'Calculated. See you Jan 9.', endStars: ['capricorn', 'leo', 'virgo', 'aquarius'],
   scenes: [
     { dur: 3.8, set: (x, t) => marina(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); card(x, cx + s * 0.75, cy - 10, 0.55, 'SPECS', 'v4.2') }, cast: { capricorn: [[0, 380, Y, 250]] }, mood: { capricorn: 'squint' }, hops: { capricorn: [0.05, 0.6] },
       lt: ['THE CLEAR LAKE ENGINEER', 'Capricornus precisus', 2.7], n: ['You may hear it | before you see it.', 0.3, 2.3] },
@@ -170,7 +170,7 @@ const hst253 = doc({
 
 // ── hst254 · The downtown tunnel lunch creature (it's you)
 const hst254 = doc({
-  hook: "The downtown tunnel | lunch creature | (it's you)", endLine: 'Come up for air. Jan 9.', endStars: ['cancer', 'aquarius', 'aries', 'libra'],
+  hook: "Downtown tunnel | lunch creature | (it's you)", endLine: 'Come up for air. Jan 9.', endStars: ['cancer', 'aquarius', 'aries', 'libra'],
   scenes: [
     { dur: 3.8, set: (x, t) => tunnel(x, t), cast: { cancer: [[0, 220, Y, 250], [3.4, 480, Y, 250]] }, mood: { cancer: 'happy' }, hops: { cancer: [0.05] },
       lt: ['THE TUNNEL DWELLER', 'Cancer subterraneus', 2.7], n: ['Yes, you. | We see you down here.', 0.3, 2.3] },
@@ -193,7 +193,7 @@ const hst254 = doc({
 
 // ── hst255 · The EaDo townhome dweller cannot find its own door
 const hst255 = doc({
-  hook: "The EaDo townhome dweller | can't find its door", endLine: 'Find your people. Jan 9.', endStars: ['gemini', 'taurus', 'leo', 'scorpio'],
+  hook: "The EaDo | townhome dweller | can't find its door", endLine: 'Find your people. Jan 9.', endStars: ['gemini', 'taurus', 'leo', 'scorpio'],
   scenes: [
     { dur: 3.8, set: (x, t) => townhomes(x, t), cast: { gemini: [[0, 120, Y, 240], [1.6, 330, Y, 240], [3.2, 120, Y, 240]] }, mood: { gemini: 'wide' }, hops: { gemini: [0.05] },
       lt: ['THE TOWNHOME DWELLER', 'Gemini identicalis', 2.7], n: ['You have stood here too. | Which door is yours?', 0.3, 2.3] },
@@ -217,7 +217,7 @@ const hst255 = doc({
 // ── hst256 · Courtship season: the paddle boats of Hermann Park
 const boatFront = ids => (x, t, lt, P) => ids.forEach(([id, col]) => { const [cx, cy, s] = P.at(id); paddleBoat(x, cx, cy + s * 0.35, t, col) })
 const hst256 = doc({
-  hook: 'Courtship season: | the Hermann Park | paddle boats', endLine: 'Make your move. Jan 9.', endStars: ['leo', 'libra', 'pisces', 'taurus'],
+  hook: 'Courtship season | on the Hermann | Park paddle boats', endLine: 'Make your move. Jan 9.', endStars: ['leo', 'libra', 'pisces', 'taurus'],
   scenes: [
     { dur: 3.8, set: (x, t) => paddleLake(x, t), front: boatFront([['leo', '#ffd36b']]), cast: { leo: [[0, 260, 1150, 220], [3.6, 460, 1150, 220]] }, mood: { leo: 'sparkle' }, hops: { leo: [0.05] },
       lt: ['THE PADDLE BOATER', 'Leo pedalis', 2.7], n: ['You are on a first date. | So is it.', 0.3, 2.3] },
@@ -265,7 +265,7 @@ const hst257 = doc({
 // ── hst258 · The Galveston day-tripper meets the brown water
 const castle = (x, cx, base, k) => { if (k <= 0) return; x.save(); x.translate(cx, base); x.scale(k, k); box(x, -80, -90, 160, 90, '#e0c080', 5); box(x, -100, -150, 50, 150, '#e0c080', 5); box(x, 50, -150, 50, 150, '#e0c080', 5); box(x, -20, -130, 40, 40, '#e0c080', 4); x.restore() }
 const hst258 = doc({
-  hook: 'The Galveston day-tripper | meets the | brown water', endLine: 'The beach can wait. Jan 9.', endStars: ['aquarius', 'cancer', 'sagittarius', 'gemini'],
+  hook: 'A Galveston | day-tripper meets | the brown water', endLine: 'The beach can wait. Jan 9.', endStars: ['aquarius', 'cancer', 'sagittarius', 'gemini'],
   scenes: [
     { dur: 3.8, set: (x, t) => gulf(x, t), cast: { aquarius: [[0, 160, Y, 250], [3.2, 420, Y, 250]] }, mood: { aquarius: 'sparkle' }, hops: { aquarius: [0.05] },
       lt: ['THE DAY-TRIPPER', 'Aquarius maritimus', 2.7], n: ['You have made this drive. | Windows down.', 0.3, 2.3] },
@@ -288,7 +288,7 @@ const hst258 = doc({
 
 // ── hst259 · A Woodlands resident ventures into Houston
 const hst259 = doc({
-  hook: 'A Woodlands resident | ventures into Houston', endLine: 'Worth the drive in. Jan 9.', endStars: ['libra', 'taurus', 'virgo', 'pisces'],
+  hook: 'A Woodlands | resident ventures | into Houston', endLine: 'Worth the drive in. Jan 9.', endStars: ['libra', 'taurus', 'virgo', 'pisces'],
   scenes: [
     { dur: 3.8, set: (x, t) => pines(x, t), cast: { libra: [[0, 400, Y, 250]] }, mood: { libra: 'happy' }, hops: { libra: [0.05, 0.6] },
       lt: ['THE WOODLANDS RESIDENT', 'Libra arborealis', 2.7], n: ['You are about to see | something brave.', 0.3, 2.3] },
@@ -322,7 +322,7 @@ const hst260 = doc({
       n: ['In January, | they awaken.', 0.2, 1.5], lines: [[1.8, 1.3, 'virgo', "it's | time."]] },
     { dur: 3.4, set: (x, t) => closet(x, t), front: (x, t, lt) => { bootFront(700, 1360, 1.5)(x, t, lt); sparkles(x, t, 700, 1260, t - lt + 0.3, 10, 160, 5) }, cast: { virgo: [[0, 330, Y - 30, 230]] }, mood: { virgo: 'squint' }, hops: { virgo: [0.4, 1.0, 1.6, 2.2] },
       lines: [[0.3, 2.6, 'virgo', 'polish. buff. | repeat.']] },
-    { dur: 3.6, set: (x, t) => closet(x, t), front: bootFront(700, 1360, 1.5), cast: { virgo: [[0, 300, Y - 30, 220]], pisces: [[0, 1180, Y - 40, 230], [0.6, 820, Y - 40, 230]] }, mood: { virgo: 'happy', pisces: 'wide' },
+    { dur: 3.6, set: (x, t) => closet(x, t), front: bootFront(560, 1380, 1.2), cast: { virgo: [[0, 300, Y - 30, 220]], pisces: [[0, 1180, Y - 40, 230], [0.6, 820, Y - 40, 230]] }, mood: { virgo: 'happy', pisces: 'wide' },
       lt: ['THE ROOMMATE', 'Pisces sentimentalis', 0.2], lines: [[1.2, 1.1, 'pisces', "they're | so shiny."], [2.4, 1.1, 'pisces', "I'm crying."]] },
     { dur: 3.6, set: (x, t) => { x.fillStyle = '#2a1d42'; x.fillRect(0, 0, 1080, 1920); for (let k = 0; k < 10; k++) { x.fillStyle = [GOLD, PINK, '#8fe3ff'][k % 3]; x.beginPath(); x.arc(100 + k * 100, 420 + Math.sin(t * 2 + k) * 20, 12, 0, Math.PI * 2); x.fill() } x.fillStyle = '#6b4a2a'; x.fillRect(0, FLOOR + 60, 1080, 1920); for (let k = 0; k < 12; k++) { x.fillStyle = 'rgba(0,0,0,0.15)'; x.fillRect(k * 90, FLOOR + 60, 5, 600) } },
       cast: { virgo: [[0, 360, Y, 230], [0.9, 460, Y, 230], [1.8, 360, Y, 230], [2.7, 460, Y, 230]], pisces: [[0, 700, Y, 230], [0.9, 620, Y, 230], [1.8, 700, Y, 230], [2.7, 620, Y, 230]] }, mood: { virgo: 'happy', pisces: 'heart' },
