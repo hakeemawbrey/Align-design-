@@ -151,3 +151,5 @@ python3 promo/scripts/farm/gdrive.py upload <folder id> $OUT/hstNNN-share.mp4 "<
 - If a video can't be made, skip it and say why in your final message. Finish what you can and say exactly what is
   blocked.
 - Do not stop to ask questions: decide, note the decision in your final message, and keep going.
+- **Do not end your turn while renders are running in the background.** Wait for them (an until-loop on the output files) and keep working until every id in your batch has a `done/` record.
+- Countdown videos ("N days until Jan 9") must be posted exactly N days before Jan 9. Put the day count in the record as `"countdown_days": N` so the posting plan can schedule it.
