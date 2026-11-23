@@ -166,9 +166,9 @@ export const W05B = {
       },
     ],
     bulb: 'so the Moon *ghosted* the Sun. briefly.',
-    items: ['Solar: the Moon *blocks* the Sun', "Lunar: Earth's *shadow*", 'Always use *eclipse glasses*'],
+    items: ['Solar: Moon *blocks* Sun', "Lunar: Earth's *shadow*", 'Always use *eclipse glasses*'],
     last: 'Shadows pass. *Share the boil.*', lastWho: 'teacher',
-    party: { line: 'Crawfish season, beta season: Jan 9.', stars: ['leo', 'scorpio', 'pisces', 'cancer'] },
+    party: { line: 'Crawfish season. Jan 9.', stars: ['leo', 'scorpio', 'pisces', 'cancer'] },
   },
 
   // ─────────────────────────────── hst122 · You measure distance in minutes. So do stars. ───────────────────────────────
@@ -326,7 +326,7 @@ export const W05B = {
   // ─────────────────────────────── hst125 · Is your sign wrong? ───────────────────────────────
   hst125: {
     id: 'hst125', duration: 51, key: 'B', open: 'sky', qAccent: '#7dffb0', tint: '#2a5a8a',
-    hook: 'Is *your* sign wrong? | We checked, H-Town.',
+    hook: 'Is *your* sign wrong? | Relax, Houston.',
     teacher: star('virgo', { pitch: 470, prop: 'clipboard' }), student: star('aquarius', { pitch: 700 }),
     boardTitle: 'THE 13TH?',
     beats: [
@@ -373,7 +373,7 @@ export const W05B = {
     bulb: 'so my sign is *fine*. my cousin is dramatic.',
     items: ['A *13th* constellation exists', "Earth's axis *wobbles*", 'Astrology follows *seasons*'],
     last: 'Your sign stayed. *The sky moved.*', lastWho: 'teacher',
-    party: { line: 'All 12 (and Ophiuchus) on Jan 9.', stars: ['virgo', 'aquarius', 'pisces', 'aries'] },
+    party: { line: 'All 13 welcome. Jan 9.', stars: ['virgo', 'aquarius', 'pisces', 'aries'] },
   },
 
   // ─────────────────────────────── hst126 · Late 20s in Houston? Your Saturn return. ───────────────────────────────
@@ -423,7 +423,7 @@ export const W05B = {
       },
     ],
     bulb: 'so the porch swing is *character growth*.',
-    items: ['Saturn: about *29 years* around', 'Astrology: a *growing-up* era', 'Talk big choices *through*'],
+    items: ['Saturn: a *29-year* orbit', 'Astrology: a *growing-up* era', 'Talk big choices *through*'],
     last: 'Grow up. *Keep the swing.*', lastWho: 'teacher',
     party: { line: 'Grown-up plans: Jan 9.', stars: ['capricorn', 'sagittarius', 'pisces', 'taurus'] },
   },

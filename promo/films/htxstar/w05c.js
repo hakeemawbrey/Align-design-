@@ -39,7 +39,7 @@ export const W05C = {
         },
         chalk: [
           { dt: 0.5, line: 1, text: '*ARI*', x: 600, y: 255, size: 30 }, { dt: 0.9, line: 1, text: '*CAN*', x: 400, y: 75, size: 30, align: 'center' },
-          { dt: 1.3, line: 1, text: '*LIB*', x: 200, y: 255, size: 30, align: 'right' }, { dt: 1.7, line: 1, text: '*CAP*', x: 400, y: 440, size: 30, align: 'center' },
+          { dt: 1.3, line: 1, text: '*LIB*', x: 200, y: 255, size: 30, align: 'right' }, { dt: 1.7, line: 1, text: '*CAP*', x: 400, y: 418, size: 30, align: 'center' },
         ],
       },
       { lines: [
@@ -359,7 +359,7 @@ export const W05C = {
       },
     ],
     bulb: 'so the Moon goes *dark* to start over. same.',
-    items: ['New Moon: lit side faces *away*', 'Astrology: *fresh starts*', 'One small *intention*'],
+    items: ['New Moon: lit side *away*', 'Astrology: *fresh starts*', 'One small *intention*'],
     last: 'Start small. *Start now.*', lastWho: 'teacher',
     party: { line: 'New year, new match: Jan 9.', stars: ['pisces', 'sagittarius', 'virgo', 'aries'] },
   },
