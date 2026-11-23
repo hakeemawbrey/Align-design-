@@ -249,7 +249,7 @@ const e267 = (() => {
 
 // ── hst268 · Mission control, but it's your group chat
 const e268 = (() => {
-  const feed = (msgs) => (x, t, lt, cx, cy) => { msgs.forEach(([who, s, col], i) => { const y = cy - 220 + i * 92 - Math.max(0, lt * 30 - 40); if (y < cy - 260 || y > cy + 250) return; box(x, cx - 380, y - 34, 760, 70, '#1e2a50', 3); mono(x, who, cx - 360, y, 28, col || GOLD, 'left'); txt(x, s, cx - 180, y, { size: 32, col: BONE, align: 'left' }) }) }
+  const feed = (msgs) => (x, t, lt, cx, cy) => { msgs.forEach(([who, s, col], i) => { const y = cy - 220 + i * 92 - Math.max(0, lt * 10 - 20); if (y < cy - 260 || y > cy + 250) return; box(x, cx - 380, y - 34, 760, 70, '#1e2a50', 3); mono(x, who, cx - 360, y, 28, col || GOLD, 'left'); txt(x, s, cx - 180, y, { size: 32, col: BONE, align: 'left' }) }) }
   return {
     hook: "Mission control, but | it's your group chat", badge: BADGE, cues: [...STING, ...beep(4.0, 6, 1975.5), ...beep(24.5, 3, 1318.5)], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Add them to the chat. Jan 9.', stars: ['capricorn', 'gemini', 'libra', 'scorpio'] }),
@@ -296,7 +296,7 @@ const e269 = {
     { dur: 3.6, set: mc(PAL.red, (x, t, lt) => goBoard(x, [['ARIES', lt > 0.4 ? 'NO GO' : '?'], ['VIRGO', lt > 1.2 ? 'NO GO' : '?'], ['PISCES', lt > 2.0 ? 'NO GO' : '?']], 540, 470)),
       cast: { aries: [[0, 200, 1250, 180]], virgo: [[0, 540, 1250, 180]], pisces: [[0, 880, 1250, 180]] }, mood: { aries: 'squint', virgo: 'squint', pisces: 'wide' },
       lines: [[0.4, 0.9, 'aries', 'ABORT.'], [1.2, 0.9, 'virgo', 'abort.'], [2.0, 1.4, 'pisces', 'abort | *sniff*']] },
-    { dur: 3.8, set: mc(PAL.red, (x, t, lt, cx, cy) => { mono(x, 'MISSION LOG', cx, cy - 190, 44, GOLD); ['LEFT YOU ON READ', 'FORGOT YOUR BIRTHDAY', 'SAID "U UP" AT 2AM'].forEach((s, i) => { if (lt > 0.3 + i * 0.6) mono(x, '· ' + s, cx, cy - 80 + i * 90, 38, BONE) }) }),
+    { dur: 3.8, set: mc(PAL.red, (x, t, lt, cx, cy) => { mono(x, 'MISSION LOG', cx, cy - 190, 44, GOLD); ['LEFT YOU ON READ', 'FORGOT YOUR BIRTHDAY', 'CANCELLED TACO NIGHT (TWICE)'].forEach((s, i) => { if (lt > 0.3 + i * 0.6) mono(x, '· ' + s, cx, cy - 80 + i * 90, 38, BONE) }) }),
       front: clip('virgo'), cast: { virgo: [[0, 540, 1250, 230]] }, mood: { virgo: 'squint' },
       lines: [[2.1, 1.5, 'virgo', 'remember | why it ended.']] },
     { dur: 3.8, set: (x, t) => { x.fillStyle = '#1a1033'; x.fillRect(0, 0, 1080, 1920) }, front: hs('scorpio'), cast: { scorpio: [[0, 540, Y - 100, 280]] }, mood: { scorpio: 'happy' },
