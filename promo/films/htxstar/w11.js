@@ -116,7 +116,7 @@ const e263 = (() => {
 
 // ── hst264 · T-minus 9 days: your party outfit check
 const e264 = (() => {
-  const closet = (x, t) => { x.fillStyle = '#2a1a3a'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#3a2550'; x.fillRect(0, FLOOR + 60, 1080, 600); box(x, 760, 420, 240, 820, '#bfe6ff', 8); x.fillStyle = 'rgba(255,255,255,0.3)'; x.fillRect(790, 460, 30, 740); for (let k = 0; k < 6; k++) { x.fillStyle = [PINK, GOLD, SKYB, MINT, LAV, '#e05a3a'][k]; x.fillRect(80 + k * 100, 380, 70, 220) } x.fillStyle = INK; x.fillRect(60, 360, 640, 10) }
+  const closet = (x, t) => { x.fillStyle = '#2a1a3a'; x.fillRect(0, 0, 1080, 1920); box(x, 80, 700, 460, 380, '#3a2a6a', 10); x.save(); x.beginPath(); x.rect(80, 700, 460, 380); x.clip(); x.translate(80, 700); x.scale(0.43, 0.43); duskSky(x, '#2a1d52', '#c2557a', '#ffb36b', 900); skyline(x, 900, t); x.restore(); x.fillStyle = INK; x.fillRect(306, 700, 8, 380); x.fillRect(80, 886, 460, 8); x.fillStyle = '#3a2550'; x.fillRect(0, FLOOR + 60, 1080, 600); box(x, 760, 420, 240, 820, '#bfe6ff', 8); x.fillStyle = 'rgba(255,255,255,0.3)'; x.fillRect(790, 460, 30, 740); for (let k = 0; k < 6; k++) { x.fillStyle = [PINK, GOLD, SKYB, MINT, LAV, '#e05a3a'][k]; x.fillRect(80 + k * 100, 380, 70, 220) } x.fillStyle = INK; x.fillRect(60, 360, 640, 10) }
   return {
     hook: 'T-minus 9 days: | your outfit check', badge: BADGE, cues: [...STING, ...beep(6.5, 2), ...beep(14.0, 2, 523.25)], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Dressed for 80°. Jan 9.', stars: ['libra', 'leo', 'sagittarius', 'taurus'] }),
@@ -126,7 +126,7 @@ const e264 = (() => {
       { dur: 3.8, set: mc(PAL.amber, (x, t, lt, cx, cy) => { heatSun(x, cx - 230, cy - 40, t, 70); mono(x, 'OUTSIDE: SOUP', cx - 230, cy + 140, 34, GOLD); for (let k = 0; k < 10; k++) { x.fillStyle = '#ffffff'; x.fillRect(cx + 150 + (k * 47) % 200, cy - 160 + ((t * 120 + k * 60) % 300), 12, 12) } mono(x, 'INSIDE: ARCTIC AC', cx + 240, cy + 140, 34, SKYB) }),
         front: hs('aquarius'), cast: { aquarius: [[0, 540, 1250, 230]] }, mood: { aquarius: 'squint' },
         lines: [[0.3, 1.4, 'aquarius', 'outside: | soup.'], [1.9, 1.6, 'aquarius', 'inside: | the Arctic.']] },
-      { dur: 3.8, set: (x, t) => { duskSky(x, '#ff9a3c', '#ffc24a', '#ffe08a'); heatSun(x, 860, 420, t, 80); shimmer(x, 500, 900, t) }, front: (x, t, lt, P) => { puffer(x, P, 'leo'); const [cx, cy, s] = P.at('leo'); sweat(x, cx + s * 0.4, cy - s * 0.4, t, 4) },
+      { dur: 3.8, set: (x, t) => { duskSky(x, '#ff9a3c', '#ffc24a', '#ffe08a'); heatSun(x, 860, 420, t, 80); shimmer(x, 500, 900, t); x.fillStyle = '#6a5a4a'; x.fillRect(0, FLOOR + 60, 1080, 600) }, front: (x, t, lt, P) => { puffer(x, P, 'leo'); const [cx, cy, s] = P.at('leo'); sweat(x, cx + s * 0.4, cy - s * 0.4, t, 4) },
         cast: { leo: [[0, 440, Y, 250]] }, mood: { leo: 'wide' },
         lines: [[0.4, 1.5, 'leo', "but it's | January!"]], stick: [[2.0, 1.6, 'PUFFER: NO GO', BRAKE]] },
       { dur: 3.8, set: (x, t) => lobby(x, t), cast: { taurus: [[0, 540, Y, 240]] }, mood: { taurus: 'wide' }, hops: { taurus: [0.4, 0.6, 0.8, 1.0, 1.2] },
@@ -149,7 +149,7 @@ const e264 = (() => {
 
 // ── hst265 · Before your first date: are you GO? (roll call with real advice)
 const e265 = {
-  hook: 'Before your first date: | are you GO?', badge: BADGE, cues: [...STING, ...beep(3.8, 2), ...beep(7.6, 2), ...beep(11.4, 2), ...beep(15.2, 2), ...beep(26.0, 4, 2093)], endLen: 6.2,
+  hook: 'Your first date: | are you GO?', badge: BADGE, cues: [...STING, ...beep(3.8, 2), ...beep(7.6, 2), ...beep(11.4, 2), ...beep(15.2, 2), ...beep(26.0, 4, 2093)], endLen: 6.2,
   end: (x, t, lt) => partyCard(x, t, lt, { line: 'You are GO. Jan 9.', stars: ['capricorn', 'cancer', 'gemini', 'pisces'] }),
   scenes: [
     { dur: 3.6, set: mc(PAL.green, (x, t, lt) => goBoard(x, [['LOCATION', '?'], ['PARKING', '?'], ['COMMS', '?'], ['TALK', '?'], ['FEELINGS', '?']], 540, 430)),
