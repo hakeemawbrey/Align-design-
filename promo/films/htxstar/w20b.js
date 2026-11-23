@@ -154,7 +154,7 @@ const boats = ep({
 
 // ── hst493 · Free museum Thursday is a dating app.
 const museum = ep({
-  hook: 'Free museum Thursday | is a dating app.',
+  hook: 'Free museum | Thursday is | a dating app.',
   end: end('Next exhibit: Jan 9.', ['virgo', 'aquarius', 'taurus', 'gemini']),
   scenes: [
     { dur: 3.4, set: (x, t) => { gallery(x, t); painting(x, 540, 640, 380, 300, 1) },
@@ -175,7 +175,7 @@ const museum = ep({
     { dur: 3.6, set: (x, t, lt) => { gallery(x, t, { wall: '#efe6d6' }); painting(x, 540, 640, 440, 400, 2); hearts(x, t, 540, 1000, t - lt, { n: 8, seed: 3 }) },
       cast: { virgo: [[0, 360, Y, 210]], aquarius: [[0, 720, Y, 210]], taurus: [[0, 940, Y + 20, 160]] }, mood: { virgo: 'heart', aquarius: 'heart', taurus: 'squint' },
       lines: [L(1.8, 1.4, 'taurus', 'shh.')], stick: [[0.3, 1.4, '*LAUGHING*', PINK]] },
-    { dur: 3.8, set: (x, t, lt) => { gallery(x, t, { wall: '#e0d6f0' }); const n = Math.min(3, Math.floor(lt / 0.9)); calendar(x, 540, 640, ['THU', 'THU', 'THU', 'THU'][n], ['WK 1', 'WK 2', 'WK 3', 'WK 4'][n], 1, (lt / 0.9) % 1 > 0.85 ? 1 : 0) },
+    { dur: 3.8, set: (x, t, lt) => { gallery(x, t, { wall: '#e0d6f0' }); const n = Math.min(3, Math.floor(lt / 0.9)); calendar(x, 540, 900, ['THU', 'THU', 'THU', 'THU'][n], ['WK 1', 'WK 2', 'WK 3', 'WK 4'][n], 1, (lt / 0.9) % 1 > 0.85 ? 1 : 0) },
       cast: { virgo: [[0, 300, Y, 200]], aquarius: [[0, 780, Y, 200]] }, mood: { virgo: 'happy', aquarius: 'happy' },
       lines: [], stick: [[0.4, 2.8, 'EVERY. THURSDAY.', GOLD]] },
     { dur: 3.8, set: (x, t) => { gallery(x, t, { wall: '#efe6d6' }); box(x, 280, FLOOR - 90, 520, 40, '#6b3b1f', 5); box(x, 300, FLOOR - 50, 24, 100, '#6b3b1f', 3); box(x, 756, FLOOR - 50, 24, 100, '#6b3b1f', 3) },
@@ -192,16 +192,16 @@ const kara = ep({
   hook: 'Your crush | picked the duet. | On Bellaire.',
   end: end('Sing anyway. Jan 9.', ['leo', 'sagittarius', 'gemini', 'pisces']),
   scenes: [
-    { dur: 3.4, set: (x, t) => { stage(x, t, { col: '#4a1a6a' }); neon(x, 540, 420, 'KARAOKE', t, '#ff5ec8', 90); mic(x, 540, 900) },
+    { dur: 3.4, set: (x, t) => { stage(x, t, { col: '#4a1a6a' }); neon(x, 540, 780, 'KARAOKE', t, '#ff5ec8', 90); mic(x, 540, 960) },
       cast: { leo: [[0, 300, Y, 220]], sagittarius: [[0, 1200, Y, 210], [2.2, 800, Y, 210]] }, mood: { leo: 'sparkle', sagittarius: 'wide' }, hops: { leo: [0.05, 0.4] },
       lines: [L(0.4, 2.0, 'leo', 'you came! I | signed us up.')] },
     { dur: 3.6, set: (x, t) => { stage(x, t, { col: '#4a1a6a' }); lyricScreen(x, 540, 640, ['♪ DUET ♪', 'la la la LOVE', 'la la la YOU'], 1, t) },
       cast: { sagittarius: [[0, 540, Y, 230]] }, mood: { sagittarius: 'wide' },
       lines: [L(0.4, 2.6, 'sagittarius', 'a DUET?')] },
-    { dur: 3.6, set: (x, t, lt) => { stage(x, t, { col: '#4a1a6a', spot: '#ffd36b' }); lyricScreen(x, 540, 560, ['♪ DUET ♪', 'la la la LOVE', 'la la la YOU'], 1, t); sparkles(x, t, 400, 1000, t - lt, 12, 240, 2) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('leo'); notes(x, t, cx, cy - s * 0.6, { n: 4, col: GOLD }) },
+    { dur: 3.6, set: (x, t, lt) => { stage(x, t, { col: '#4a1a6a', spot: '#ffd36b' }); lyricScreen(x, 540, 440, ['♪ DUET ♪', 'la la la LOVE', 'la la la YOU'], 1, t); sparkles(x, t, 400, 1000, t - lt, 12, 240, 2) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('leo'); notes(x, t, cx, cy - s * 0.6, { n: 4, col: GOLD }) },
       cast: { leo: [[0, 400, Y, 230]] }, mood: { leo: 'happy' }, hops: { leo: [0.3, 1.0, 1.7, 2.4] },
       lines: [L(0.4, 2.6, 'leo', 'la la | LAAA ♪')] },
-    { dur: 3.6, set: (x, t) => { stage(x, t, { col: '#4a1a6a', spot: '#ff8fb1' }); lyricScreen(x, 540, 560, ['♪ DUET ♪', 'la la la LOVE', 'la la la YOU'], 2, t) },
+    { dur: 3.6, set: (x, t) => { stage(x, t, { col: '#4a1a6a', spot: '#ff8fb1' }); lyricScreen(x, 540, 440, ['♪ DUET ♪', 'la la la LOVE', 'la la la YOU'], 2, t) },
       cast: { sagittarius: [[0, 680, Y, 230]] }, mood: { sagittarius: 'wide' },
       lines: [L(0.3, 1.8, 'sagittarius', 'LA LA | LAAA?!')], stick: [[2.0, 1.4, 'THE CROWD: OOF', PINK]] },
     { dur: 3.6, set: (x, t) => { stage(x, t, { col: '#3a1a5a' }) },
@@ -213,7 +213,7 @@ const kara = ep({
     { dur: 3.8, set: (x, t, lt) => { stage(x, t, { col: '#5a1a6a', spot: '#ffd36b' }); confetti(x, t) }, front: (x, t, lt, P) => { for (const id of ['leo', 'sagittarius']) { const [cx, cy, s] = P.at(id); notes(x, t, cx, cy - s * 0.6, { n: 3, col: id === 'leo' ? GOLD : PINK, seed: id.length }) } },
       cast: { leo: [[0, 380, Y, 220]], sagittarius: [[0, 700, Y, 220]] }, mood: { leo: 'heart', sagittarius: 'happy' }, hops: { leo: [0.3, 1.1, 1.9, 2.7], sagittarius: [0.6, 1.4, 2.2, 3.0] },
       lines: [], stick: [[0.4, 3.0, 'BOTH OFF-KEY. BOTH HAPPY.', GOLD]] },
-    { dur: 3.8, set: (x, t, lt) => { stage(x, t, { col: '#5a1a6a' }); box(x, 190, 460, 700, 340, '#0e1630', 8); txt(x, 'SCORE', 540, 540, { size: 50, col: '#8f96c0', font: MONO, weight: 700 }); txt(x, String(Math.round(100 * clamp(lt / 1.4))), 540, 650, { size: 130, col: GOLD, font: MONO, weight: 700 }); if (lt > 1.4) sparkles(x, t, 540, 630, 1.4 + (t - lt), 16, 380, 9) },
+    { dur: 3.8, set: (x, t, lt) => { stage(x, t, { col: '#5a1a6a' }); box(x, 190, 720, 700, 300, '#0e1630', 8); txt(x, 'SCORE', 540, 790, { size: 50, col: '#8f96c0', font: MONO, weight: 700 }); txt(x, String(Math.round(100 * clamp(lt / 1.4))), 540, 910, { size: 130, col: GOLD, font: MONO, weight: 700 }); if (lt > 1.4) sparkles(x, t, 540, 880, 1.4 + (t - lt), 16, 380, 9) },
       cast: { leo: [[0, 300, Y, 210]], sagittarius: [[0, 780, Y, 210]] }, mood: { leo: 'wide', sagittarius: 'wide' },
       lines: [L(2.2, 1.4, 'sagittarius', 'HOW?')], stick: [[1.5, 2.0, 'TWIST: 100 FOR CHEMISTRY', PINK]] },
     { dur: 4.2, set: (x, t, lt) => { nightCity(x, t); partyGlow(x, t, lt) },
@@ -259,10 +259,10 @@ const hs = ep({
 
 // ── hst496 · You said "beach day." They heard Galveston.
 const galv = ep({
-  hook: 'You said "beach day." | They heard | Galveston.',
+  hook: 'Beach day, | you said. They | heard Galveston.',
   end: end('Golden company. Jan 9.', ['gemini', 'capricorn', 'pisces', 'aries']),
   scenes: [
-    { dur: 3.4, set: (x, t) => { carInside(x, t, { night: false }); overheadSign(x, 540, 420, 'I-45 SOUTH', 'GALVESTON', 0.8) },
+    { dur: 3.4, set: (x, t) => { carInside(x, t, { night: false }); overheadSign(x, 540, 700, 'I-45 SOUTH', 'GALVESTON', 0.7) },
       cast: { gemini: [[0, 300, 1300, 200]], capricorn: [[0, 780, 1300, 200]] }, mood: { gemini: 'sparkle', capricorn: 'squint' }, hops: { gemini: [0.05, 0.4] },
       lines: [L(0.4, 2.4, 'gemini', 'you packed | snacks? BEACH DAY!')] },
     { dur: 3.6, set: (x, t) => { carInside(x, t, { night: false }) }, front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); box(x, cx - s * 0.75, cy - 70, 120, 160, BONE, 5); x.fillStyle = INK; for (let k = 0; k < 5; k++) x.fillRect(cx - s * 0.75 + 14, cy - 50 + k * 26, 90, 8) },
@@ -297,7 +297,7 @@ const dogs = ep({
   hook: 'The dogs | had better game | than us.',
   end: end('Tell your dog: Jan 9.', ['aquarius', 'leo', 'cancer', 'virgo']),
   scenes: [
-    { dur: 3.4, set: (x, t) => { day(x, t, { top: '#8ad0ff', bot: '#fff4e0', grass: '#5aa04a', city: false }); bungalow(x, 300, FLOOR + 60, t, { col: '#8ab0d0' }); streetSign(x, 860, 640, 'THE HEIGHTS', { k: 0.8 }) }, front: (x, t, lt) => dog(x, 300 + 700 * clamp((lt - 1.4) / 1.6), FLOOR + 50, t, { run: lt > 1.4 ? 1 : 0 }),
+    { dur: 3.4, set: (x, t) => { day(x, t, { top: '#8ad0ff', bot: '#fff4e0', grass: '#5aa04a', city: false }); bungalow(x, 300, FLOOR + 60, t, { col: '#8ab0d0' }); streetSign(x, 860, 780, 'THE HEIGHTS', { k: 0.8 }) }, front: (x, t, lt) => dog(x, 300 + 700 * clamp((lt - 1.4) / 1.6), FLOOR + 50, t, { run: lt > 1.4 ? 1 : 0 }),
       cast: { aquarius: [[0, 300, Y - 180, 200]] }, mood: { aquarius: lt => lt > 1.4 ? 'wide' : 'happy' }, hops: { aquarius: [0.05, 0.4] },
       lines: [L(0.4, 2.4, 'aquarius', 'you see that? | he left AGAIN.')] },
     { dur: 3.6, set: (x, t) => { day(x, t, { top: '#8ad0ff', bot: '#fff4e0', grass: '#5aa04a', city: false }); bungalow(x, 760, FLOOR + 60, t, { col: '#e0a0a0' }) }, front: (x, t) => { dog(x, 600, FLOOR + 50, t, { col: '#c9883a' }); dog(x, 860, FLOOR + 50, t, { col: '#efe6d6', band: '#5ec8ff', flip: true }) },
@@ -354,7 +354,7 @@ const ride = ep({
       lines: [L(0.4, 2.4, 'capricorn', 'I can | hear you.')] },
     { dur: 3.8, set: (x, t, lt) => { carInside(x, t); if (lt > 1.8) sparkles(x, t, 540, 900, 1.8 + (t - lt), 14, 340, 6) },
       cast: { capricorn: [[0, 540, 640, 180]], pisces: [[0, 280, 1300, 190]], sagittarius: [[0, 800, 1300, 190]] }, mood: { capricorn: lt => lt > 1.8 ? 'happy' : 'squint', pisces: 'wide', sagittarius: 'wide' },
-      lines: [L(0.3, 1.4, 'capricorn', 'where are | you BOTH going?'), L(1.9, 1.6, 'capricorn', '…me too.')], stick: [[2.0, 1.6, 'TWIST: SAME PARTY', GOLD]] },
+      lines: [L(0.3, 1.4, 'capricorn', 'where are | you BOTH going?'), L(1.9, 1.7, 'capricorn', '…me too. | same party.')] },
     { dur: 4.2, set: (x, t, lt) => { nightCity(x, t); partyGlow(x, t, lt) },
       cast: { pisces: [[0, 150, Y, 210], [1.2, 400, Y, 210]], sagittarius: [[0, 930, Y, 210], [1.2, 680, Y, 210]], capricorn: [[0, 540, Y + 300, 0], [1.4, 540, Y - 40, 170]] }, mood: { pisces: 'heart', sagittarius: 'heart', capricorn: 'happy' },
       lines: [L(1.3, 1.3, 'sagittarius', 'worth | the hour.'), L(2.7, 1.3, 'pisces', 'worth | two.')] },
@@ -364,7 +364,7 @@ const ride = ep({
 // ── hst499 · A silent date? You're a Gemini. (a quiet chapel in Montrose)
 const quiet = ep({
   hook: 'A silent date? | You\'re a Gemini.',
-  end: end('Loud or quiet, come as you are. Jan 9.', ['gemini', 'scorpio', 'virgo', 'cancer']),
+  end: end('Loud or quiet: Jan 9.', ['gemini', 'scorpio', 'virgo', 'cancer']),
   scenes: [
     { dur: 3.4, set: (x, t) => { chapel(x, t) },
       cast: { gemini: [[0, 340, Y, 220]], scorpio: [[0, 760, Y, 210]] }, mood: { gemini: 'wide', scorpio: 'happy' }, hops: { gemini: [0.05, 0.4] },
@@ -406,7 +406,7 @@ const tun = ep({
     { dur: 3.8, set: (x, t) => missionControl(x, t, (cx, cy) => loopMap(x, cx, cy, 1, t, { dots: [[720, 760, '#8fe3ff', 'CLEAR LAKE'], [420, 400, PINK, 'SPRING']], route: [[720, 760], [420, 400]] })),
       cast: { virgo: [[0, 540, 1220, 210]] }, mood: { virgo: 'squint' },
       lines: [L(0.3, 2.8, 'virgo', "that's an hour | each way.")] },
-    { dur: 3.6, set: (x, t) => split(x, t, 'CLEAR LAKE', 'SPRING', '#20304a', '#2a2140', 760), front: (x, t, lt) => { phone(x, 270, 560, [[0, 'lunch?']], { k: Kp(lt, 0.2), s: 0.6 }); phone(x, 810, 560, [[1, 'I work | downtown']], { k: Kp(lt, 1.4), s: 0.6 }) },
+    { dur: 3.6, set: (x, t) => split(x, t, 'CLEAR LAKE', 'SPRING', '#20304a', '#2a2140', 760), front: (x, t, lt) => { phone(x, 270, 640, [[0, 'lunch?']], { k: Kp(lt, 0.2), s: 1 }); phone(x, 810, 640, [[1, 'I work | downtown']], { k: Kp(lt, 1.4), s: 1 }) },
       cast: { virgo: [[0, 270, 1150, 200]], leo: [[0, 810, 1150, 200]] }, mood: { virgo: 'wide', leo: 'happy' },
       lines: [L(2.3, 1.2, 'virgo', 'me TOO?')] },
     { dur: 3.8, set: (x, t) => { tunnel(x, t) },
