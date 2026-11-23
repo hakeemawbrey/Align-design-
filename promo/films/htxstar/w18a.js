@@ -164,25 +164,25 @@ export function forecastCard(x, cx, cy, temp, word, k, icon = 'sun', t = 0) {
   x.restore()
 }
 const libraRoom = (x, t) => { bedroom(x, t, { wall: '#c86a8a', floor: '#6a3a4a', night: false }); closet(x, 220, 820, 300, 520, 1, '#8a5a6a') }
-const L = 'libra', LP = [[0, 560, 1000, 300]]
+const L = 'libra', LP = [[0, 560, 1150, 300]]
 export const hst433 = {
-  hook: "POV: you checked the | forecast for Jan 9", badge: BADGE, cues: [...sting(659.25), ['tick', 3.0, 0.08], ['tick', 6.4, 0.08], ['tick', 9.8, 0.08], ['tick', 13.2, 0.08]], endLen: 6.2,
+  hook: "POV: you checked | the Jan 9 forecast", badge: BADGE, cues: [...sting(659.25), ['tick', 3.0, 0.08], ['tick', 6.4, 0.08], ['tick', 9.8, 0.08], ['tick', 13.2, 0.08]], endLen: 6.2,
   end: ticket('Layers. Then Jan 9.', ['libra', 'cancer', 'aquarius', 'leo']),
   scenes: [
-    { dur: 3.0, set: (x, t) => libraRoom(x, t), front: (x, t, lt) => forecastCard(x, 780, 760, '72°', 'NICE?', 1, 'sun', t), cast: { libra: LP }, mood: { libra: 'sparkle' }, hops: { libra: [0.02, 0.7, 1.4, 2.1] },
+    { dur: 3.0, set: (x, t) => libraRoom(x, t), front: (x, t, lt) => forecastCard(x, 780, 820, '72°', 'NICE?', 0.8, 'sun', t), cast: { libra: LP }, mood: { libra: 'sparkle' }, hops: { libra: [0.02, 0.7, 1.4, 2.1] },
       lines: [[0.4, 2.4, L, 'hi. you too? | planning the fit?']] },
     { dur: 3.4, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { forecastCard(x, 780, 600, '55°', 'COLD FRONT', Kp(lt, 0.05), 'cloud', t); if (lt > 1.2) puffer(x, P, L, '#5a8aff') }, cast: { libra: LP }, mood: { libra: lt => lt > 1.2 ? 'happy' : 'wide' },
       lines: [[0.4, 0.9, L, '55?!'], [1.5, 1.7, L, 'puffer coat. | finally.']] },
     { dur: 3.4, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { forecastCard(x, 780, 600, '81°', 'NEVER MIND', Kp(lt, 0.05), 'sun', t); if (lt < 1.2) puffer(x, P, L, '#5a8aff'); else { wear(x, P, L, 'shades'); wear(x, P, L, 'fan', PINK) } }, cast: { libra: LP }, mood: { libra: lt => lt < 1.2 ? 'wide' : 'wink' },
       lines: [[0.3, 0.9, L, '81.'], [1.4, 1.8, L, 'puffer: | returned.']] },
-    { dur: 3.4, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { forecastCard(x, 780, 600, '81°', 'HUMID', Kp(lt, 0.05), 'drop', t); wear(x, P, L, 'frizz', '#7a4a2a'); sweat(x, 560, 860, t) }, cast: { libra: LP }, mood: { libra: 'eyeroll' },
+    { dur: 3.4, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { forecastCard(x, 780, 600, '81°', 'HUMID', Kp(lt, 0.05), 'drop', t); wear(x, P, L, 'frizz', '#7a4a2a'); sweat(x, 560, 1010, t) }, cast: { libra: LP }, mood: { libra: 'eyeroll' },
       lines: [[0.3, 2.8, L, 'my hair | has a forecast too.']] },
     { dur: 3.4, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { forecastCard(x, 780, 600, '64°', 'INDOORS: ARCTIC', Kp(lt, 0.05), 'snow', t); if (lt > 1.4) wear(x, P, L, 'sweater', '#5a8a6a') }, cast: { libra: LP }, mood: { libra: lt => lt > 1.4 ? 'happy' : 'squint' },
       lines: [[0.3, 1.1, L, 'and the AC?'], [1.5, 1.7, L, 'a sweater. | obviously.']] },
-    { dur: 3.6, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { wear(x, P, L, 'sweater', '#5a8a6a'); wear(x, P, L, 'scarf', PINK); wear(x, P, L, 'shades'); wear(x, P, L, 'flower', GOLD); if (lt > 0.4) sparkles(x, t, 560, 950, t - lt + 0.4, 10, 260, 2) }, cast: { libra: LP }, mood: { libra: 'sparkle' }, hops: { libra: [0.4, 1.0] },
+    { dur: 3.6, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { wear(x, P, L, 'sweater', '#5a8a6a'); wear(x, P, L, 'scarf', PINK); wear(x, P, L, 'shades'); wear(x, P, L, 'flower', GOLD); if (lt > 0.4) sparkles(x, t, 560, 1100, t - lt + 0.4, 10, 260, 2) }, cast: { libra: LP }, mood: { libra: 'sparkle' }, hops: { libra: [0.4, 1.0] },
       lines: [[0.3, 2.9, L, 'the answer: | layers.']], stick: [[0.4, 2.8, 'Houston weather: undecided', GOLD]] },
     { dur: 5.2, set: (x, t) => libraRoom(x, t), front: (x, t, lt, P) => { wear(x, P, L, 'flower', GOLD); rpg(x, lt, 'LIBRA', 'dress in layers. | then wear the one that | feels like you.', 0.2, 4.8, { y: 1120 }) },
-      cast: { libra: [[0, 560, 860, 300]] }, mood: { libra: 'heart' }, stick: [[0.1, 1.6, '★ LESSON UNLOCKED', GOLD]] },
+      cast: { libra: [[0, 560, 900, 300]] }, mood: { libra: 'heart' }, stick: [[0.1, 1.6, '★ LESSON UNLOCKED', GOLD]] },
   ],
 }
 

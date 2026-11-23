@@ -125,12 +125,13 @@ export function thermo(x, cx, cy, deg, k = 1, { hot = true } = {}) {
 export function rpg(x, lt, name, text, at, d, { y = 1110, col = GOLD } = {}) {
   const k = fadeK(lt, at, at + d, 0.15); if (k <= 0) return
   x.save(); x.globalAlpha = k
-  box(x, 70, y, 940, 250, '#120c2a', 8); x.strokeStyle = BONE; x.lineWidth = 4; x.strokeRect(84, y + 14, 912, 222)
+  const lines = text.split(' | '), H = 130 + lines.length * 64
+  box(x, 70, y, 940, H, '#120c2a', 8); x.strokeStyle = BONE; x.lineWidth = 4; x.strokeRect(84, y + 14, 912, H - 28)
   label(x, 220, y - 4, name, 1, { size: 34, bg: col, rot: 0, font: MONO, weight: 700 })
-  const lines = text.split(' | '), total = lines.join('').length, n = Math.floor(clamp((lt - at) / Math.max(0.4, total * 0.035)) * total)
+  const total = lines.join('').length, n = Math.floor(clamp((lt - at) / Math.max(0.4, total * 0.035)) * total)
   let used = 0
   lines.forEach((l, i) => { const s = l.slice(0, Math.max(0, n - used)); used += l.length; txt(x, s, 120, y + 90 + i * 64, { size: 46, col: BONE, weight: 700, align: 'left' }) })
-  if (n >= total && Math.sin(lt * 8) > 0) { x.fillStyle = GOLD; x.beginPath(); x.moveTo(960, y + 200); x.lineTo(980, y + 200); x.lineTo(970, y + 214); x.fill() }
+  if (n >= total && Math.sin(lt * 8) > 0) { x.fillStyle = GOLD; x.beginPath(); x.moveTo(960, y + H - 50); x.lineTo(980, y + H - 50); x.lineTo(970, y + H - 36); x.fill() }
   x.restore()
 }
 
