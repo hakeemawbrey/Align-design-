@@ -181,7 +181,7 @@ const e265 = {
 
 // ── hst266 · Your crush is orbiting you (stories, no texts) — mission control explains orbits
 const e266 = (() => {
-  const orbitScr = (lap) => (x, t, lt, cx, cy) => { x.fillStyle = PINK; x.beginPath(); x.arc(cx, cy, 60, 0, Math.PI * 2); x.fill(); x.strokeStyle = INK; x.lineWidth = 5; x.stroke(); mono(x, 'YOU', cx, cy, 30, INK); x.strokeStyle = 'rgba(143,227,255,0.6)'; x.setLineDash([10, 10]); x.lineWidth = 4; x.beginPath(); x.ellipse(cx, cy, 300, 150, -0.2, 0, Math.PI * 2); x.stroke(); x.setLineDash([]); const a = t * 1.6, ox = cx + Math.cos(a) * 300 * Math.cos(-0.2) - Math.sin(a) * 150 * Math.sin(-0.2), oy = cy + Math.cos(a) * 300 * Math.sin(-0.2) + Math.sin(a) * 150 * Math.cos(-0.2); x.fillStyle = GOLD; x.beginPath(); x.arc(ox, oy, 22, 0, Math.PI * 2); x.fill(); x.stroke(); if (lap) mono(x, lap, cx + 300, cy - 210, 30, GOLD) }
+  const orbitScr = (lap) => (x, t, lt, cx, cy) => { x.save(); x.globalAlpha = 0.35; loopMap(x, cx, cy, 1, t); x.restore(); x.fillStyle = PINK; x.beginPath(); x.arc(cx, cy, 60, 0, Math.PI * 2); x.fill(); x.strokeStyle = INK; x.lineWidth = 5; x.stroke(); mono(x, 'YOU', cx, cy, 30, INK); x.strokeStyle = 'rgba(143,227,255,0.6)'; x.setLineDash([10, 10]); x.lineWidth = 4; x.beginPath(); x.ellipse(cx, cy, 300, 150, -0.2, 0, Math.PI * 2); x.stroke(); x.setLineDash([]); const a = t * 1.6, ox = cx + Math.cos(a) * 300 * Math.cos(-0.2) - Math.sin(a) * 150 * Math.sin(-0.2), oy = cy + Math.cos(a) * 300 * Math.sin(-0.2) + Math.sin(a) * 150 * Math.cos(-0.2); x.fillStyle = GOLD; x.beginPath(); x.arc(ox, oy, 22, 0, Math.PI * 2); x.fill(); x.stroke(); if (lap) mono(x, lap, cx + 300, cy - 210, 30, GOLD) }
   return {
     hook: 'Your crush is | orbiting you', badge: BADGE, cues: [...STING, ['swell', 26.0, 28.6, { gain: 0.03 }]], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Land somewhere. Jan 9.', stars: ['gemini', 'aquarius', 'leo', 'sagittarius'] }),
@@ -202,9 +202,9 @@ const e266 = (() => {
         lines: [[2.4, 1.3, 'aquarius', 'both | are fine.']] },
       { dur: 3.6, set: (x, t) => { x.fillStyle = '#1a1033'; x.fillRect(0, 0, 1080, 1920) }, cast: { leo: [[0, 540, Y - 100, 280]] }, mood: { leo: 'heart' }, hops: { leo: [0.2] },
         lines: [[0.3, 1.4, 'leo', 'but you | deserve…'], [1.9, 1.6, 'leo', 'someone | who lands.']] },
-      { dur: 3.8, set: (x, t, lt) => { x.fillStyle = '#05040c'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = PINK; box(x, 380, 1000, 320, 120, PINK, 8); mono(x, 'YOU · DOCK', 540, 1060, 34, INK); if (lt > 2) hearts(x, t, 540, 820, t - lt + 2, { n: 6, seed: 3 }) },
+      { dur: 3.8, set: (x, t, lt) => { x.fillStyle = '#05040c'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = PINK; box(x, 380, 1000, 320, 120, PINK, 8); mono(x, 'YOU · DOCK', 540, 1060, 34, INK); if (lt > 2) label(x, 540, 1200, 'DOCKED', Kp(lt, 2), { size: 50, bg: GOLD }); if (lt > 2) hearts(x, t, 540, 820, t - lt + 2, { n: 6, seed: 3 }) },
         front: (x, t, lt, P) => helmet(x, P, 'gemini'), cast: { gemini: [[0, 540, 420, 220], [2.0, 540, 820, 220]] }, mood: { gemini: lt => lt > 2 ? 'heart' : 'wide' },
-        lines: [[2.1, 1.5, 'gemini', 'hi. | for real.']], stick: [[2.0, 1.4, 'DOCKED', GOLD]] },
+        lines: [[2.1, 1.5, 'gemini', 'hi. | for real.']] },
       { dur: 3.6, set: (x, t, lt) => { mc(PAL.navy, (x, t, lt, cx, cy) => { mono(x, 'LANDING SITE', cx, cy - 110, 44, SKYB); big(x, 'JAN 9', cy + 30, GOLD, 170) })(x, t, lt); sparkles(x, t, 540, 610, t - lt, 14, 380, 6) },
         front: hs('aquarius'), cast: { aquarius: [[0, 540, 1250, 230]] }, mood: { aquarius: 'sparkle' }, hops: { aquarius: [0.3, 1.0] },
         lines: [[0.4, 2.4, 'aquarius', 'landing site: | Jan 9.']] },
@@ -214,7 +214,7 @@ const e266 = (() => {
 
 // ── hst267 · Houston, we have a humidity problem (date-night hair)
 const e267 = (() => {
-  const frizz = (x, P, id, k, t) => { const [cx, cy, s] = P.at(id); for (let i = 0; i < 26; i++) { const a = Math.PI * (1.05 + 0.9 * i / 25), r = s * (0.5 + 0.35 * k) + Math.sin(t * 6 + i) * 6; x.fillStyle = i % 2 ? '#e8a23a' : '#c9783a'; x.beginPath(); x.arc(cx + Math.cos(a) * r, cy - s * 0.05 + Math.sin(a) * r, s * (0.1 + 0.1 * k), 0, Math.PI * 2); x.fill() } }
+  const frizz = (x, P, id, k, t) => { const [cx, cy, s] = P.at(id); for (let ring = 0; ring < 2; ring++) for (let i = 0; i < 22; i++) { const a = Math.PI * (0.9 + 1.2 * i / 21), r = s * (0.42 + (0.18 + 0.25 * ring) * k) + Math.sin(t * 6 + i * 2 + ring) * 6; x.fillStyle = (i + ring) % 2 ? '#e8a23a' : '#c9783a'; x.beginPath(); x.arc(cx + Math.cos(a) * r * 1.1, cy + Math.sin(a) * r, s * (0.12 + 0.08 * k), 0, Math.PI * 2); x.fill() } }
   const hot = (x, t) => { duskSky(x, '#ff8a3c', '#ffb347', '#ffe08a'); heatSun(x, 860, 440, t, 80); shimmer(x, 500, 900, t); x.fillStyle = '#6a5a4a'; x.fillRect(0, FLOOR + 60, 1080, 600) }
   return {
     hook: 'Houston, we have | a humidity problem', badge: BADGE, cues: [...STING, ...beep(4.0, 3, 1046.5)], endLen: 6.2,
