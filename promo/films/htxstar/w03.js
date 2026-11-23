@@ -172,7 +172,7 @@ export function cafe(x, t, { wall = '#3d2a4a', win = '#ffb36b' } = {}) {
 }
 /** a pond with trees (a park morning or a sunset) */
 export function pond(x, t, { water = '#3f8fb0', grass = '#3f8a4a', sky = null } = {}) {
-  if (sky) sunset(x, ...sky)
+  if (sky) sunset(x, ...sky); else dayFill(x, '#8fd3ff', '#fff0c0', 1100)
   for (const [cx, s] of [[90, 1.1], [300, 0.8], [800, 0.9], [1010, 1.2]]) tree(x, cx, 1000, s, '#2f6a3a', t)
   x.fillStyle = grass; x.fillRect(0, 990, 1080, 120)
   x.fillStyle = water; x.fillRect(0, 1100, 1080, 820)
@@ -304,7 +304,7 @@ export function feederTwo(x, t) {
   dayFill(x, '#ffb88a', '#ffe3b0', FLOOR + 60)
   box(x, 0, 760, 1080, 70, '#8f96a0', 8); for (let k = 0; k < 4; k++) box(x, 120 + k * 260, 830, 50, 300, '#8f96a0', 6)
   for (let k = 0; k < 5; k++) car(x, ((t * 220 + k * 260) % 1400) - 160, 742, ['#5ec8ff', '#ff8fb1', '#f2c75c', '#7dffb0', BONE][k], { s: 0.45 })
-  x.fillStyle = '#2a2638'; x.fillRect(0, 1140, 1080, 250)
+  x.fillStyle = '#2a2638'; x.fillRect(0, 1140, 1080, 250); x.fillStyle = '#b8a88a'; x.fillRect(0, 1390, 1080, 530); x.fillStyle = '#f2c75c'; x.fillRect(0, 1384, 1080, 8)
 }
 /** a shopping street (Rice Village-ish): shopfronts, parked cars, one tree of shade */
 export function shopStreet(x, t, sun = true) {

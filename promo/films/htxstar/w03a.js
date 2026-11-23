@@ -55,7 +55,7 @@ const aunties = {
 }
 
 // ── shared bits for part A
-const ON_AIR = (x) => { box(x, 70, 250, 160, 60, BRAKE, 5); txt(x, '● LIVE', 150, 281, { size: 30, col: BONE, font: MONO, weight: 700 }) }
+const ON_AIR = (x) => { box(x, 210, 548, 150, 56, BRAKE, 5); txt(x, '● LIVE', 285, 577, { size: 28, col: BONE, font: MONO, weight: 700 }) }
 /** the booth's CRT: inside(cx, cy, w, h) paints the picture; replay adds VHS lines */
 function tv(x, t, inside, { cx = 540, cy = 760, w = 700, h = 460, replay = false } = {}) {
   box(x, cx - w / 2 - 30, cy - h / 2 - 30, w + 60, h + 60, '#5a4a6a', 10)
@@ -74,8 +74,9 @@ function patioShot(x, t, cx, cy, w, h, { a = 'libra', b = 'leo', ma = 'happy', m
   x.fillStyle = '#6a5a4a'; x.fillRect(cx - w / 2, cy + h * 0.12, w, h)
   box(x, cx - 150, cy + 60, 300, 24, '#8a5530', 5); box(x, cx - 10, cy + 84, 20, 100, '#8a5530', 4)
   signChar(x, t, a, cx - 170, cy + 40, 130, { mood: ma, seed: 4 }); signChar(x, t, b, cx + 170, cy + 40, 130, { mood: mb, seed: 9 })
+  streetSign(x, cx + 150, cy - h / 2 + 60, 'MONTROSE', { pole: false, k: 0.6 })
   extra?.()
-  if (say) { x.font = `800 32px Inter`; const tw = x.measureText(say).width + 40, bx = sayL ? cx - 170 : cx + 170; box(x, bx - tw / 2, cy - 130, tw, 56, BONE, 4); txt(x, say, bx, cy - 101, { size: 32, col: INK }) }
+  if (say) { x.font = `800 30px Inter`; const tw = Math.min(w - 40, x.measureText(say).width + 40), bx = clamp(sayL ? cx - 170 : cx + 170, cx - w / 2 + 20 + tw / 2, cx + w / 2 - 20 - tw / 2); box(x, bx - tw / 2, cy - 110, tw, 54, BONE, 4); txt(x, say, bx, cy - 82, { size: 30, col: INK }) }
 }
 function tumbleweed(x, cx, cy, t, s = 1) { x.save(); x.translate(cx, cy); x.rotate(t * 5); x.strokeStyle = '#a8865a'; x.lineWidth = 5 * s; for (let k = 0; k < 7; k++) { x.beginPath(); x.arc(0, 0, (20 + k * 6) * s, k, k + 4); x.stroke() } x.restore() }
 function rain(x, t, a = 1) { x.save(); x.globalAlpha = a; x.strokeStyle = 'rgba(190,230,255,0.8)'; x.lineWidth = 4; for (let k = 0; k < 60; k++) { const px = (k * 89) % 1080, py = ((t * 1400 + k * 157) % 1500) + 200; x.beginPath(); x.moveTo(px, py); x.lineTo(px - 12, py + 40); x.stroke() } x.restore() }
@@ -96,7 +97,7 @@ function blanket(x, cx = 540, cy = 1360) { box(x, cx - 360, cy - 30, 720, 70, '#
 // ── hst062 · We're LIVE from your first date (the booth, a Montrose patio)
 const S62 = (x, t, opts, tvo) => { x.fillStyle = '#20183a'; x.fillRect(0, 0, 1080, 1920); for (let k = 0; k < 8; k++) { x.fillStyle = k % 2 ? '#261d46' : '#1d1638'; x.fillRect(k * 135, 0, 135, 1920) } tv(x, t, (cx, cy, w, h) => patioShot(x, t, cx, cy, w, h, opts), tvo); ON_AIR(x) }
 const B62 = { gemini: ['headset', '#5ec8ff'], sagittarius: ['headset', PINK] }
-const booth = (extra = {}) => ({ gemini: [[0, 290, 1300, 230]], sagittarius: [[0, 790, 1300, 230]], ...extra })
+const booth = (extra = {}) => ({ gemini: [[0, 290, 1190, 230]], sagittarius: [[0, 790, 1190, 230]], ...extra })
 const live = {
   hook: "We're LIVE from | your first date", key: 'A',
   closing: 'Live from Jan 9. Be there.', endStars: ['gemini', 'sagittarius', 'libra', 'pisces'],
@@ -110,7 +111,7 @@ const live = {
     { dur: 3.8, set: (x, t) => S62(x, t, { say: "where'd you go to high school?", sayL: false }), front: (x) => deskFront(x), cast: booth(), mood: { gemini: 'wide', sagittarius: 'wide' }, hops: { gemini: [0.9], sagittarius: [0.95] }, wear: B62, sfx: [[0.9, 'boom']],
       lines: [[1.0, 1.4, 'gemini', 'THE HOUSTON | QUESTION!'], [2.5, 1.2, 'sagittarius', 'A classic | opener.']] },
     { dur: 3.8, set: (x, t, lt) => S62(x, t, { ma: 'neutral', mb: 'neutral', extra: () => tumbleweed(x, 140 + lt * 220, 900, t) }), front: (x) => deskFront(x),
-      cast: booth({ pisces: [[0, 540, 1180, 140]] }), mood: { gemini: 'neutral', sagittarius: 'neutral', pisces: 'wide' }, look: { gemini: [1, 0], sagittarius: [-1, 0] }, wear: B62, sfx: [[0.3, 'crickets']],
+      cast: booth({ pisces: [[0, 540, 1100, 140]] }), mood: { gemini: 'neutral', sagittarius: 'neutral', pisces: 'wide' }, look: { gemini: [1, 0], sagittarius: [-1, 0] }, wear: B62, sfx: [[0.3, 'crickets']],
       lines: [[1.6, 1.0, 'sagittarius', 'Dead air.'], [2.7, 1.0, 'gemini', "We're losing | them."]] },
     { dur: 3.8, set: (x, t) => S62(x, t, { mb: 'squint', extra: () => { box(x, 680, 840, 50, 80, INK, 4); x.fillStyle = '#5ec8ff'; x.fillRect(686, 848, 38, 60) } }, { replay: true }), front: (x) => deskFront(x), cast: booth(), mood: { gemini: 'eyeroll', sagittarius: 'squint' }, wear: B62, sfx: [[0.1, 'tape']],
       lines: [[0.4, 1.6, 'sagittarius', 'Phone check. | Under the table.'], [2.3, 1.2, 'gemini', 'Brutal.']] },
@@ -119,7 +120,7 @@ const live = {
     { dur: 4.0, set: (x, t, lt) => S62(x, t, { say: lt < 1.4 ? 'FLOUR. obviously.' : '...corn??', sayL: lt >= 1.4, ma: lt < 1.4 ? 'squint' : 'happy', mb: 'happy', extra: () => { if (lt > 2.2) sparkles(x, t, 540, 820, t - lt + 2.2, 10, 200, 3, [PINK, GOLD]) } }), front: (x) => deskFront(x),
       cast: booth(), mood: { gemini: lt => lt < 2.2 ? 'wide' : 'heart', sagittarius: lt => lt < 2.2 ? 'wide' : 'heart' }, hops: { gemini: [2.2, 2.6], sagittarius: [2.3, 2.7] }, wear: B62, sfx: [[2.2, 'cheer']],
       lines: [[0.4, 1.2, 'sagittarius', 'They disagree!'], [2.3, 1.6, 'gemini', "...and they're | LAUGHING."]] },
-    { dur: 3.4, set: (x, t) => S62(x, t, { ma: 'heart', mb: 'heart' }), front: (x) => deskFront(x), cast: booth({ pisces: [[0, 540, 1180, 150]] }), mood: { gemini: 'sparkle', sagittarius: 'sparkle', pisces: 'heart' }, wear: B62, sfx: [[0.3, 'sob']],
+    { dur: 3.4, set: (x, t) => S62(x, t, { ma: 'heart', mb: 'heart' }), front: (x) => deskFront(x), cast: booth({ pisces: [[0, 540, 1100, 150]] }), mood: { gemini: 'sparkle', sagittarius: 'sparkle', pisces: 'heart' }, wear: B62, sfx: [[0.3, 'sob']],
       lines: [[0.3, 1.4, 'sagittarius', "They've been | talking an hour."], [1.9, 1.4, 'gemini', 'We need | a minute.']] },
   ],
 }
@@ -246,7 +247,7 @@ const late = {
 }
 
 // ── hst067 · The stars commentate your crawfish date (the booth, a backyard boil)
-const BOOTH2 = { gemini: [[0, 170, 760, 170]], sagittarius: [[0, 910, 760, 170]] }
+const BOOTH2 = { gemini: [[0, 170, 900, 170]], sagittarius: [[0, 910, 900, 170]] }
 const W67 = { gemini: ['headset', '#5ec8ff'], sagittarius: ['headset', PINK] }
 const pile = (x, n = 9) => { for (let k = 0; k < n; k++) crawfish(x, 420 + (k % 5) * 60, 1300 - Math.floor(k / 5) * 34, 0.9, k * 0.7) }
 const yard = (x, t) => { boilYard(x, t); }
