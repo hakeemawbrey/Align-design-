@@ -1,42 +1,6 @@
 {
  "images": [
   {
-   "id": "wc-8758831",
-   "source": "commons",
-   "title": "Cranach, Lucas (I) - Lucretia - Detail face",
-   "creator": "Mattes\n\nTaken on 21 November 2009",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Cranach,_Lucas_(I)_-_Lucretia_-_Detail_face.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Cranach%2C_Lucas_%28I%29_-_Lucretia_-_Detail_face.jpg/1920px-Cranach%2C_Lucas_%28I%29_-_Lucretia_-_Detail_face.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cranach%2C_Lucas_%28I%29_-_Lucretia_-_Detail_face.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1440,
-   "file": "wc-8758831.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "pin": true,
-   "note": "Cranach, Lucretia face detail, blue eyes"
-  },
-  {
-   "id": "wc-126974405",
-   "source": "commons",
-   "title": "Mummy portrait depicting a woman with necklace and Medusa pendant and golden ear-pendants with pearls, AD 161-192 , Kunsthistorisches Museum Vienna, Austria (21039802435)",
-   "creator": "Carole Raddato from FRANKFURT, Germany",
-   "license": "CC BY-SA 2.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Mummy_portrait_depicting_a_woman_with_necklace_and_Medusa_pendant_and_golden_ear-pendants_with_pearls,_AD_161-192_,_Kunsthistorisches_Museum_Vienna,_Austria_(21039802435).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Mummy_portrait_depicting_a_woman_with_necklace_and_Medusa_pendant_and_golden_ear-pendants_with_pearls%2C_AD_161-192_%2C_Kunsthistorisches_Museum_Vienna%2C_Austria_%2821039802435%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Mummy_portrait_depicting_a_woman_with_necklace_and_Medusa_pendant_and_golden_ear-pendants_with_pearls%2C_AD_161-192_%2C_Kunsthistorisches_Museum_Vienna%2C_Austria_%2821039802435%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1352,
-   "h": 2400,
-   "file": "wc-126974405.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ]
-  },
-  {
    "id": "aic-27307",
    "source": "aic",
    "title": "Madame de Pastoret and Her Son",
