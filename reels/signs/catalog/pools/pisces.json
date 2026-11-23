@@ -1,25 +1,6 @@
 {
  "images": [
   {
-   "id": "wc-7715772",
-   "source": "commons",
-   "title": "John William Waterhouse A Mermaid",
-   "creator": "John William Waterhouse",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_A_Mermaid.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 825,
-   "h": 1200,
-   "file": "wc-7715772.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "pin": true,
-   "note": "Waterhouse, A Mermaid combing her hair"
-  },
-  {
    "id": "wc-57364600",
    "source": "commons",
    "title": "The Return of Neptune MET DT201337",

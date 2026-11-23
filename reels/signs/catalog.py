@@ -9,6 +9,8 @@ import glob
 import json
 import os
 
+import numpy as np
+
 import sources
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -118,3 +120,101 @@ if __name__ == "__main__":
     for k in sorted(P):
         print(f"{k:14s} {len(P[k])}")
     print("total", len(all_images()))
+
+
+# ---------------------------------------------------------------- spreading the catalogue
+
+ELEMENT_POOLS = {
+    "fire": ["sunset", "candle", "autumn", "horses", "dance"],
+    "earth": ["fields", "garden", "fruit", "flowers", "blossom"],
+    "air": ["clouds", "birds", "music", "city-night", "train"],
+    "water": ["water", "rain", "pond", "stars-sea", "boat"],
+}
+FORMAT_POOLS = {
+    "dear": ["letters", "reading", "window", "door", "moon"],
+    "loves": ["couple", "lovers", "dance", "garden", "cupid"],
+    "wontsay": ["window", "eyes", "rain", "candle", "sleep", "mirror"],
+    "needs": ["couple", "cafe", "boat", "beach", "music"],
+    "relatable": ["cafe", "city-night", "music", "fruit", "train", "mirror"],
+    "advice": ["fields", "clouds", "sunset", "pond", "door"],
+    "reminder": ["blossom", "autumn", "snow", "stars-sea", "sleep"],
+    "align": ["stars", "space", "water", "pond", "moon"],
+    "invite": ["door", "train", "boat", "beach", "letters"],
+    "pair": ["couple", "lovers", "horses", "birds", "dance"],
+    "fall": ["couple", "garden", "blossom", "letters", "cupid"],
+    "date": ["cafe", "beach", "boat", "city-night", "fruit", "dance"],
+    "texts": ["letters", "window", "reading", "train", "cafe"],
+    "hurt": ["rain", "snow", "window", "candle", "sleep", "eyes"],
+    "hear": ["sunset", "blossom", "stars", "fields", "pond", "moon"],
+    "green": ["garden", "fields", "flowers", "birds", "blossom", "couple"],
+}
+
+
+class Allocator:
+    """Hands out pictures across a whole batch: least-used first, never the same opening
+    picture twice, and a wide mix of pools per reel. Usage persists in out/usage.json."""
+
+    def __init__(self, path=None):
+        self.path = path or os.path.join(HERE, "out", "usage.json")
+        st = json.load(open(self.path)) if os.path.exists(self.path) else {}
+        self.used = st.get("used", {})
+        self.openers = set(st.get("openers", []))
+
+    def save(self):
+        os.makedirs(os.path.dirname(self.path), exist_ok=True)
+        json.dump({"used": self.used, "openers": sorted(self.openers)}, open(self.path, "w"))
+
+    def weights(self, script):
+        P = pools()
+        import scripts as S
+        sign = script["sign"]
+        w = {}
+
+        def bump(names, v):
+            for n in names:
+                if P.get(n):
+                    w[n] = w.get(n, 0) + v
+        bump([sign], 3.0)
+        bump(script.get("moods", []), 1.0)
+        bump(FORMAT_POOLS.get(script["format"], []), 1.4)
+        bump(ELEMENT_POOLS.get(S.SIGNS[sign]["element"], []), 1.0)
+        if script["format"] == "pair":
+            other = script["id"].split("+")[1].split("-")[0]
+            bump([other], 2.0)
+        bump(list(P), 0.15)            # a little of everything, so nothing goes unused
+        return w
+
+    def choose(self, script, n, rng):
+        P = pools()
+        w = self.weights(script)
+        names = list(w)
+        picked, ids = [], set()
+        tries = 0
+        while len(picked) < n and tries < 200:
+            tries += 1
+            if not picked and script["sign"] in P:
+                pool = script["sign"] if rng.random() < 0.55 else names[int(rng.choice(len(names), p=np.array([w[k] for k in names]) / sum(w.values())))]
+            else:
+                pool = names[int(rng.choice(len(names), p=np.array([w[k] for k in names]) / sum(w.values())))]
+            items = [i for i in P[pool] if i["id"] not in ids and (picked or i["id"] not in self.openers)]
+            if not items:
+                continue
+            low = min(self.used.get(i["id"], 0) for i in items)
+            cands = [i for i in items if self.used.get(i["id"], 0) == low]
+            it = cands[int(rng.integers(len(cands)))]
+            ids.add(it["id"])
+            try:
+                local_file(it)
+            except Exception:
+                self.used[it["id"]] = self.used.get(it["id"], 0) + 99   # dead link: stop offering it
+                continue
+            picked.append(it)
+            self.used[it["id"]] = self.used.get(it["id"], 0) + 1
+            w[pool] *= 0.5                                                # spread across pools
+        if picked:
+            self.openers.add(picked[0]["id"])
+        return picked
+
+
+def by_id():
+    return {it["id"]: it for it in all_images()}

@@ -1,0 +1,57 @@
+{
+ "images": [
+  {
+   "id": "wc-180419078",
+   "source": "commons",
+   "title": "Станіслаў Жукоўскі. Гасціная ў Брасаве. 1916. НММРБ",
+   "creator": "Stanisław Żukowski",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B0%D0%BD%D1%96%D1%81%D0%BB%D0%B0%D1%9E_%D0%96%D1%83%D0%BA%D0%BE%D1%9E%D1%81%D0%BA%D1%96._%D0%93%D0%B0%D1%81%D1%86%D1%96%D0%BD%D0%B0%D1%8F_%D1%9E_%D0%91%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B5._1916._%D0%9D%D0%9C%D0%9C%D0%A0%D0%91.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%A1%D1%82%D0%B0%D0%BD%D1%96%D1%81%D0%BB%D0%B0%D1%9E_%D0%96%D1%83%D0%BA%D0%BE%D1%9E%D1%81%D0%BA%D1%96._%D0%93%D0%B0%D1%81%D1%86%D1%96%D0%BD%D0%B0%D1%8F_%D1%9E_%D0%91%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B5._1916._%D0%9D%D0%9C%D0%9C%D0%A0%D0%91.jpg/1920px-%D0%A1%D1%82%D0%B0%D0%BD%D1%96%D1%81%D0%BB%D0%B0%D1%9E_%D0%96%D1%83%D0%BA%D0%BE%D1%9E%D1%81%D0%BA%D1%96._%D0%93%D0%B0%D1%81%D1%86%D1%96%D0%BD%D0%B0%D1%8F_%D1%9E_%D0%91%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B5._1916._%D0%9D%D0%9C%D0%9C%D0%A0%D0%91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/%D0%A1%D1%82%D0%B0%D0%BD%D1%96%D1%81%D0%BB%D0%B0%D1%9E_%D0%96%D1%83%D0%BA%D0%BE%D1%9E%D1%81%D0%BA%D1%96._%D0%93%D0%B0%D1%81%D1%86%D1%96%D0%BD%D0%B0%D1%8F_%D1%9E_%D0%91%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B5._1916._%D0%9D%D0%9C%D0%9C%D0%A0%D0%91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1440,
+   "file": "wc-180419078.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "pin": true,
+   "note": "Munch, girl at the window in blue light"
+  },
+  {
+   "id": "aic-144969",
+   "source": "aic",
+   "title": "The Interior of the Palm House on the Pfaueninsel Near Potsdam",
+   "creator": "Carl Blechen (German, 1798–1840)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/144969",
+   "url": "https://www.artic.edu/iiif/2/38bb6be4-223e-af7a-7e18-f9ad0c388d3c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1810,
+   "file": "aic-144969.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Blechen, Palm House interior, sunlit passage"
+  }
+ ]
+}

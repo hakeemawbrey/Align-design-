@@ -1,0 +1,530 @@
+{
+ "aries": {
+  "fall": [
+   "Match their energy, then surprise them.",
+   "Be direct. They find honesty attractive.",
+   "Say yes to the last-minute plan.",
+   "Let them win sometimes, but not always.",
+   "Cheer for them loudly."
+  ],
+  "date": [
+   "A climbing gym, then tacos.",
+   "Go-karts and a rematch.",
+   "A spontaneous road trip with no plan.",
+   "A late-night drive with the windows down.",
+   "Anything with a little competition."
+  ],
+  "texts": [
+   "u up? come outside",
+   "I already got us tickets",
+   "ok but what are you doing right now",
+   "I'm outside.",
+   "pick a time, I'll be there"
+  ],
+  "hurt": [
+   "Gets loud, then gets quiet.",
+   "Goes for a hard run.",
+   "Acts like it doesn't matter. It does.",
+   "Needs an hour, not a week.",
+   "Comes back ready to fix it."
+  ],
+  "hear": [
+   "You don't have to be first to be loved.",
+   "Your fire is a gift, not a problem.",
+   "Slowing down won't make you lose.",
+   "You're allowed to be soft with the right person.",
+   "Someone is lucky to be chosen by you."
+  ],
+  "green": [
+   "Tells you how they feel, out loud.",
+   "Fights for the relationship, not against you.",
+   "Never plays games.",
+   "Shows up when it matters.",
+   "Makes you braver."
+  ]
+ },
+ "taurus": {
+  "fall": [
+   "Feed them. Seriously.",
+   "Be consistent, not flashy.",
+   "Plan something and actually follow through.",
+   "Hold their hand in public.",
+   "Give them time. They're worth it."
+  ],
+  "date": [
+   "A long dinner, no phones.",
+   "Farmers market, then cooking together.",
+   "A picnic with real plates.",
+   "A bakery crawl.",
+   "A cozy night in with candles."
+  ],
+  "texts": [
+   "I saved you the last one",
+   "come over, I made too much",
+   "I miss your hands",
+   "goodnight, text me when you wake up",
+   "let's not go anywhere this weekend"
+  ],
+  "hurt": [
+   "Goes quiet and keeps score.",
+   "Retreats to comfort food and a blanket.",
+   "Says they're fine for three days.",
+   "Needs time before they talk.",
+   "Forgives slowly, but for real."
+  ],
+  "hear": [
+   "You can rest without earning it.",
+   "Change can be good for you.",
+   "You deserve someone as steady as you are.",
+   "It's okay to ask for more.",
+   "Your loyalty is rare. Protect it."
+  ],
+  "green": [
+   "Remembers what you like.",
+   "Keeps every promise.",
+   "Makes home feel safe.",
+   "Loves you the same on a bad day.",
+   "Shows love in small, steady ways."
+  ]
+ },
+ "gemini": {
+  "fall": [
+   "Keep the conversation going.",
+   "Send them something weird you found.",
+   "Be curious about their curiosity.",
+   "Laugh at their jokes, then make better ones.",
+   "Never be boring. Ever."
+  ],
+  "date": [
+   "A bookstore, then debate over coffee.",
+   "A trivia night.",
+   "A walk through a new neighborhood.",
+   "A museum with commentary.",
+   "Three small plans in one night."
+  ],
+  "texts": [
+   "ok I have a theory",
+   "wait I have to tell you something",
+   "this made me think of you",
+   "random question",
+   "are you busy or can I talk your ear off"
+  ],
+  "hurt": [
+   "Talks about everything except the thing.",
+   "Goes very busy and very social.",
+   "Makes a joke and changes the subject.",
+   "Overthinks every word you said.",
+   "Needs to talk it out, eventually."
+  ],
+  "hear": [
+   "All of you is lovable, not just the fun part.",
+   "You're allowed to slow down.",
+   "Your mind is a gift.",
+   "You don't have to entertain to be wanted.",
+   "Someone wants your quiet side too."
+  ],
+  "green": [
+   "Never runs out of things to say.",
+   "Makes you laugh on hard days.",
+   "Learns your world.",
+   "Gives you freedom and trust.",
+   "Keeps things fresh."
+  ]
+ },
+ "cancer": {
+  "fall": [
+   "Remember the little things.",
+   "Meet their family and mean it.",
+   "Be gentle with their feelings.",
+   "Make them feel at home.",
+   "Text back. Every time."
+  ],
+  "date": [
+   "A home-cooked dinner.",
+   "A beach at night.",
+   "Old photos and a movie.",
+   "Baking something together.",
+   "A slow walk by the water."
+  ],
+  "texts": [
+   "did you eat?",
+   "text me when you get home",
+   "I saved this for you",
+   "how are you really",
+   "I made your favorite"
+  ],
+  "hurt": [
+   "Pulls into their shell.",
+   "Cries in the car.",
+   "Remembers it for a long time.",
+   "Waits for you to notice.",
+   "Still asks if you ate."
+  ],
+  "hear": [
+   "Your softness is safe here.",
+   "You deserve the care you give.",
+   "It's okay to need reassurance.",
+   "Your feelings make sense.",
+   "You are someone's home too."
+  ],
+  "green": [
+   "Checks in on you.",
+   "Remembers every detail.",
+   "Loves your people too.",
+   "Makes you feel safe.",
+   "Stays through your moods."
+  ]
+ },
+ "leo": {
+  "fall": [
+   "Compliment them. Specifically.",
+   "Take them somewhere they can dress up.",
+   "Be proud to be seen with them.",
+   "Match their warmth.",
+   "Celebrate their wins like they're yours."
+  ],
+  "date": [
+   "A rooftop dinner at sunset.",
+   "Dancing until close.",
+   "A show with good seats.",
+   "A photo walk, golden hour.",
+   "Somewhere a little extra."
+  ],
+  "texts": [
+   "you looked so good today",
+   "I told everyone about you",
+   "this song is us",
+   "we should be famous",
+   "I miss my favorite person"
+  ],
+  "hurt": [
+   "Acts fine in public.",
+   "Gets dramatic, then gets quiet.",
+   "Needs to feel chosen again.",
+   "Waits for an apology with feeling.",
+   "Forgives the second you mean it."
+  ],
+  "hear": [
+   "You don't have to perform to be loved.",
+   "Rest is not falling behind.",
+   "Your heart is the best thing about you.",
+   "You're enough on your quiet days.",
+   "The right person claps for you."
+  ],
+  "green": [
+   "Shows you off proudly.",
+   "Loyal in every room.",
+   "Generous with love.",
+   "Makes you feel like the main character.",
+   "Never lets you feel invisible."
+  ]
+ },
+ "virgo": {
+  "fall": [
+   "Notice what they do for you.",
+   "Be reliable. That's the whole trick.",
+   "Ask about their day, then listen.",
+   "Help without being asked.",
+   "Show up on time."
+  ],
+  "date": [
+   "A well-planned museum day.",
+   "Cooking a new recipe together.",
+   "A quiet hike with snacks they packed.",
+   "A bookstore and a long coffee.",
+   "Anything with a good itinerary."
+  ],
+  "texts": [
+   "I made a list of places we should try",
+   "did you remember your charger",
+   "drink some water",
+   "I fixed it",
+   "I planned the whole day, you just show up"
+  ],
+  "hurt": [
+   "Cleans the entire house.",
+   "Over-analyzes every word.",
+   "Gets very busy.",
+   "Quietly pulls back.",
+   "Writes a long text, then deletes it."
+  ],
+  "hear": [
+   "You don't have to fix everything.",
+   "You did enough today.",
+   "Perfect isn't the price of love.",
+   "Let someone take care of you.",
+   "Your care is seen."
+  ],
+  "green": [
+   "Remembers the details.",
+   "Makes life easier.",
+   "Always follows through.",
+   "Helps you grow.",
+   "Loves you in practical ways."
+  ]
+ },
+ "libra": {
+  "fall": [
+   "Be charming and kind.",
+   "Take them somewhere beautiful.",
+   "Make a decision for them sometimes.",
+   "Talk things through calmly.",
+   "Dress well. They notice."
+  ],
+  "date": [
+   "An art gallery, then dessert.",
+   "A candlelit dinner.",
+   "A garden at golden hour.",
+   "A concert under the stars.",
+   "A pretty café with good music."
+  ],
+  "texts": [
+   "you pick, I always pick",
+   "this reminded me of you",
+   "we'd look so cute here",
+   "can we talk about it",
+   "I just want us to be okay"
+  ],
+  "hurt": [
+   "Pretends everything is fine.",
+   "Keeps the peace and loses sleep.",
+   "Talks to three friends first.",
+   "Needs fairness, not winning.",
+   "Wants to talk it out, gently."
+  ],
+  "hear": [
+   "Your needs matter too.",
+   "Conflict can bring you closer.",
+   "You don't have to be liked by everyone.",
+   "Choose yourself sometimes.",
+   "You deserve to be someone's first choice."
+  ],
+  "green": [
+   "Listens to both sides.",
+   "Makes everything feel lovely.",
+   "Talks through problems calmly.",
+   "Treats you as an equal.",
+   "Brings peace, not drama."
+  ]
+ },
+ "scorpio": {
+  "fall": [
+   "Be honest, always.",
+   "Don't play games. They'll know.",
+   "Go deep. Skip the small talk.",
+   "Keep their secrets.",
+   "Earn their trust slowly."
+  ],
+  "date": [
+   "A dim café and a very long talk.",
+   "A late movie, back row.",
+   "Stargazing far from town.",
+   "A thunderstorm, indoors.",
+   "Somewhere private."
+  ],
+  "texts": [
+   "tell me something no one knows",
+   "I know you",
+   "come here",
+   "I noticed",
+   "you're the only one I want to talk to"
+  ],
+  "hurt": [
+   "Goes completely silent.",
+   "Remembers everything.",
+   "Disappears for a while.",
+   "Tests you to see if you'll stay.",
+   "Transforms and comes back stronger."
+  ],
+  "hear": [
+   "You can trust the right person.",
+   "Your intensity is not too much.",
+   "Healing is allowed to be slow.",
+   "Being known won't hurt you here.",
+   "You're safe to let go a little."
+  ],
+  "green": [
+   "Fiercely loyal.",
+   "Always honest.",
+   "Protects you.",
+   "Sees the real you.",
+   "Loves with all of it."
+  ]
+ },
+ "sagittarius": {
+  "fall": [
+   "Make them laugh.",
+   "Say yes to the adventure.",
+   "Have your own life.",
+   "Be honest, even when it's awkward.",
+   "Teach them something new."
+  ],
+  "date": [
+   "A spontaneous day trip.",
+   "A new cuisine neither of you has tried.",
+   "Camping under the stars.",
+   "A comedy show.",
+   "Getting a little lost on purpose."
+  ],
+  "texts": [
+   "let's go somewhere",
+   "pack a bag",
+   "I found the cheapest flight",
+   "you have to try this",
+   "I can't stop laughing about earlier"
+  ],
+  "hurt": [
+   "Leaves for a while.",
+   "Makes a joke about it.",
+   "Goes for a very long walk.",
+   "Needs space, then needs honesty.",
+   "Comes back with perspective."
+  ],
+  "hear": [
+   "Commitment can be an adventure.",
+   "You don't have to run to be free.",
+   "Your honesty is a gift.",
+   "Staying can be brave.",
+   "The right person is the adventure."
+  ],
+  "green": [
+   "Makes life exciting.",
+   "Always tells the truth.",
+   "Gives you freedom.",
+   "Grows with you.",
+   "Keeps you laughing."
+  ]
+ },
+ "capricorn": {
+  "fall": [
+   "Be ambitious about something.",
+   "Respect their time.",
+   "Be patient while they open up.",
+   "Show up consistently.",
+   "Make them laugh at their own dry jokes."
+  ],
+  "date": [
+   "A quiet dinner somewhere classic.",
+   "A long walk through the city.",
+   "A cabin weekend.",
+   "A museum, then planning the future.",
+   "An early morning coffee."
+  ],
+  "texts": [
+   "proud of you",
+   "I booked it already",
+   "let me know when you're done working",
+   "I'll handle it",
+   "five-year plan includes you"
+  ],
+  "hurt": [
+   "Works harder.",
+   "Goes cold and practical.",
+   "Says nothing, does everything.",
+   "Needs time to process alone.",
+   "Comes back with a solution."
+  ],
+  "hear": [
+   "You're allowed to rest.",
+   "You don't have to carry it all.",
+   "You're loved for more than what you do.",
+   "Being soft won't break you.",
+   "You've already done enough."
+  ],
+  "green": [
+   "Keeps every promise.",
+   "Builds a future with you.",
+   "Supports your goals.",
+   "Steady in a storm.",
+   "Loves for the long run."
+  ]
+ },
+ "aquarius": {
+  "fall": [
+   "Be their friend first.",
+   "Have strange interests.",
+   "Give them space without fear.",
+   "Talk about big ideas.",
+   "Never try to change them."
+  ],
+  "date": [
+   "A planetarium.",
+   "A weird indie film.",
+   "A late-night diner and big talks.",
+   "A science museum after dark.",
+   "Volunteering together."
+  ],
+  "texts": [
+   "ok hear me out",
+   "did you know",
+   "watch this documentary",
+   "I have a weird idea",
+   "we should start a club for this"
+  ],
+  "hurt": [
+   "Detaches completely.",
+   "Goes quiet and analytical.",
+   "Talks about it like it happened to someone else.",
+   "Needs space to feel it.",
+   "Comes back like nothing happened."
+  ],
+  "hear": [
+   "Your weird is wonderful.",
+   "You can be close and still be you.",
+   "Feelings are not a weakness.",
+   "Someone wants all of you.",
+   "You belong somewhere."
+  ],
+  "green": [
+   "Your best friend and your person.",
+   "Never tries to control you.",
+   "Loves your weird.",
+   "Always learning.",
+   "Fights for what's right."
+  ]
+ },
+ "pisces": {
+  "fall": [
+   "Be gentle.",
+   "Share music with them.",
+   "Listen to their dreams.",
+   "Write them something.",
+   "Be real, not just romantic."
+  ],
+  "date": [
+   "An aquarium.",
+   "A rainy afternoon and a record player.",
+   "A beach at sunset.",
+   "An art class together.",
+   "A movie that will make you both cry."
+  ],
+  "texts": [
+   "I dreamed about you",
+   "this song made me think of you",
+   "are you okay? something felt off",
+   "I wrote something",
+   "I love how you see things"
+  ],
+  "hurt": [
+   "Disappears into music.",
+   "Cries and then forgives too fast.",
+   "Daydreams the version where it went right.",
+   "Needs gentleness, not answers.",
+   "Feels it for both of you."
+  ],
+  "hear": [
+   "Your sensitivity is a strength.",
+   "You don't have to save anyone.",
+   "Your dreams are worth chasing.",
+   "Boundaries are a kind of love.",
+   "You're allowed to be loved back."
+  ],
+  "green": [
+   "Deeply empathetic.",
+   "Endlessly romantic.",
+   "Makes you feel understood.",
+   "Forgives and grows.",
+   "Turns life into art."
+  ]
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "images": [
+  {
+   "id": "wc-10180298",
+   "source": "commons",
+   "title": "Birds painting",
+   "creator": "Jean-Jacques Bachelier",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Birds_painting.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Birds_painting.jpg/1920px-Birds_painting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Birds_painting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1536,
+   "file": "wc-10180298.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186,
+   "file": "aic-94841.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Breton, The Song of the Lark at sunrise"
+  },
+  {
+   "id": "wc-138959229",
+   "source": "commons",
+   "title": "Bruno Liljefors - Swans 1918",
+   "creator": "Bruno Liljefors",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bruno_Liljefors_-_Swans_1918.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Bruno_Liljefors_-_Swans_1918.jpg/1920px-Bruno_Liljefors_-_Swans_1918.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Bruno_Liljefors_-_Swans_1918.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1480,
+   "file": "wc-138959229.jpg",
+   "focus": [
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "id": "wc-87527075",
+   "source": "commons",
+   "title": "Bruno Liljefors Swans in Reeds Thielska 270",
+   "creator": "Bruno Liljefors",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif/lossy-page1-1920px-Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1559,
+   "file": "wc-87527075.jpg",
+   "focus": [
+    0.6,
+    0.55
+   ],
+   "pin": true,
+   "note": "Liljefors, swans on dark water"
+  },
+  {
+   "id": "wc-138842823",
+   "source": "commons",
+   "title": "Bruno Liljefors - Swans 1906 TG 267",
+   "creator": "Bruno Liljefors",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bruno_Liljefors_-_Swans_1906_TG_267.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Bruno_Liljefors_-_Swans_1906_TG_267.jpg/1920px-Bruno_Liljefors_-_Swans_1906_TG_267.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Bruno_Liljefors_-_Swans_1906_TG_267.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 972,
+   "file": "wc-138842823.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Liljefors, two swans on rough water"
+  }
+ ]
+}

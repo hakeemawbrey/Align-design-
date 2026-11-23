@@ -1,6 +1,5 @@
 {
  "keep": [
-  4,
   16,
   36,
   37,
@@ -12,10 +11,6 @@
   76
  ],
  "focus": {
-  "4": [
-   0.5,
-   0.4
-  ],
   "16": [
    0.34,
    0.4
@@ -46,12 +41,10 @@
   ]
  },
  "pin": [
-  4,
   37,
   76
  ],
  "notes": {
-  "4": "Waterhouse, A Mermaid combing her hair",
   "37": "Rothaug, water nymph on a rock in turquoise sea",
   "76": "Waterhouse, The Lady of Shalott in her boat",
   "50": "Waterhouse, Ondine"

@@ -1,0 +1,310 @@
+{
+ "images": [
+  {
+   "id": "wc-22007281",
+   "source": "commons",
+   "title": "John F. Francis - Luncheon Still Life - Google Art Project",
+   "creator": "John F. Francis",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_F._Francis_-_Luncheon_Still_Life_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/John_F._Francis_-_Luncheon_Still_Life_-_Google_Art_Project.jpg/1920px-John_F._Francis_-_Luncheon_Still_Life_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/John_F._Francis_-_Luncheon_Still_Life_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1589,
+   "file": "wc-22007281.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-21997629",
+   "source": "commons",
+   "title": "Samuel Peploe - Still life- apples and jar - Google Art Project",
+   "creator": "Samuel Peploe",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Samuel_Peploe_-_Still_life-_apples_and_jar_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Samuel_Peploe_-_Still_life-_apples_and_jar_-_Google_Art_Project.jpg/1920px-Samuel_Peploe_-_Still_life-_apples_and_jar_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Samuel_Peploe_-_Still_life-_apples_and_jar_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1729,
+   "file": "wc-21997629.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-5148827",
+   "source": "commons",
+   "title": "Caravaggio - Still Life with Fruit (circa 1603)",
+   "creator": "Caravaggio",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Still_Life_with_Fruit_(circa_1603).png",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Caravaggio_-_Still_Life_with_Fruit_%28circa_1603%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Caravaggio_-_Still_Life_with_Fruit_%28circa_1603%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1800,
+   "h": 1123,
+   "file": "wc-5148827.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-50539978",
+   "source": "commons",
+   "title": "Still Life with Fruit and Carafe A15420",
+   "creator": "Pensionante del Saraceni",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Fruit_and_Carafe_A15420.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Still_Life_with_Fruit_and_Carafe_A15420.jpg/1920px-Still_Life_with_Fruit_and_Carafe_A15420.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Still_Life_with_Fruit_and_Carafe_A15420.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1327,
+   "file": "wc-50539978.jpg",
+   "focus": [
+    0.6,
+    0.55
+   ]
+  },
+  {
+   "id": "wc-57668945",
+   "source": "commons",
+   "title": "Henri Fantin-Latour - Still Life with Flowers and Fruit MET DT1980",
+   "creator": "Henri Fantin-Latour",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Henri_Fantin-Latour_-_Still_Life_with_Flowers_and_Fruit_MET_DT1980.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Henri_Fantin-Latour_-_Still_Life_with_Flowers_and_Fruit_MET_DT1980.jpg/1920px-Henri_Fantin-Latour_-_Still_Life_with_Flowers_and_Fruit_MET_DT1980.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Henri_Fantin-Latour_-_Still_Life_with_Flowers_and_Fruit_MET_DT1980.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2325,
+   "file": "wc-57668945.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-16549",
+   "source": "aic",
+   "title": "Apples and Grapes",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16549",
+   "url": "https://www.artic.edu/iiif/2/c12058f4-188f-c6ed-f0fe-52b32acfb296/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1348,
+   "file": "aic-16549.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-64001",
+   "source": "aic",
+   "title": "Apples",
+   "creator": "Henri Matisse",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64001",
+   "url": "https://www.artic.edu/iiif/2/b2bc0fc2-8d17-1fcd-8cae-8626421c11ef/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2255,
+   "file": "aic-64001.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-120154",
+   "source": "aic",
+   "title": "Still Life—Strawberries, Nuts, &c.",
+   "creator": "Raphaelle Peale (American, 1774–1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/120154",
+   "url": "https://www.artic.edu/iiif/2/1cddae1c-99d5-462f-4aa6-128c0732ac11/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1208,
+   "file": "aic-120154.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-64957",
+   "source": "aic",
+   "title": "Grapes, Lemons, Pears, and Apples",
+   "creator": "Vincent van Gogh (Dutch, 1853–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64957",
+   "url": "https://www.artic.edu/iiif/2/f11bd233-6cc3-4221-59eb-f7363be4119e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1396,
+   "file": "aic-64957.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-7660238",
+   "source": "commons",
+   "title": "Marco d'Oggiono (attr.) - Girl with Cherries - Metropolitan Museum of Art",
+   "creator": "Attributed to Marco d'Oggiono",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Marco_d%27Oggiono_(attr.)_-_Girl_with_Cherries_-_Metropolitan_Museum_of_Art.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Marco_d%27Oggiono_%28attr.%29_-_Girl_with_Cherries_-_Metropolitan_Museum_of_Art.jpg/1920px-Marco_d%27Oggiono_%28attr.%29_-_Girl_with_Cherries_-_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Marco_d%27Oggiono_%28attr.%29_-_Girl_with_Cherries_-_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1850,
+   "h": 2400,
+   "file": "wc-7660238.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-140223586",
+   "source": "commons",
+   "title": "Georges Lemmen - Young Woman with Cherries - 1483 - Collectie Vlaamse Gemeenschap",
+   "creator": "Georges Lemmen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Georges_Lemmen_-_Young_Woman_with_Cherries_-_1483_-_Collectie_Vlaamse_Gemeenschap.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Georges_Lemmen_-_Young_Woman_with_Cherries_-_1483_-_Collectie_Vlaamse_Gemeenschap.jpg/1920px-Georges_Lemmen_-_Young_Woman_with_Cherries_-_1483_-_Collectie_Vlaamse_Gemeenschap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Georges_Lemmen_-_Young_Woman_with_Cherries_-_1483_-_Collectie_Vlaamse_Gemeenschap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2369,
+   "file": "wc-140223586.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-36678",
+   "source": "aic",
+   "title": "Girl with Cherries",
+   "creator": "Eva Gonzalès (French, 1849–1883)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/36678",
+   "url": "https://www.artic.edu/iiif/2/ec4367a5-52b8-79a5-7e7d-dbaff46d4f4e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1985,
+   "file": "aic-36678.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Gonzalès, Girl with Cherries"
+  },
+  {
+   "id": "aic-62450",
+   "source": "aic",
+   "title": "Still Life with a Basket of Fruit and a Bunch of Asparagus",
+   "creator": "Louise Moillon (French, 1610–1696)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/62450",
+   "url": "https://www.artic.edu/iiif/2/87d426ca-4537-1386-50bf-6c2d5a5d7d17/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1214,
+   "file": "aic-62450.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-21912984",
+   "source": "commons",
+   "title": "Raphaelle Peale - Still Life with Peaches - Google Art Project",
+   "creator": "Raphaelle Peale",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Raphaelle_Peale_-_Still_Life_with_Peaches_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Raphaelle_Peale_-_Still_Life_with_Peaches_-_Google_Art_Project.jpg/1920px-Raphaelle_Peale_-_Still_Life_with_Peaches_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Raphaelle_Peale_-_Still_Life_with_Peaches_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1308,
+   "file": "wc-21912984.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57671864",
+   "source": "commons",
+   "title": "Still Life with Peaches and Grapes MET DT1876",
+   "creator": "Pierre-Auguste Renoir",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Peaches_and_Grapes_MET_DT1876.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Still_Life_with_Peaches_and_Grapes_MET_DT1876.jpg/1920px-Still_Life_with_Peaches_and_Grapes_MET_DT1876.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Still_Life_with_Peaches_and_Grapes_MET_DT1876.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1588,
+   "file": "wc-57671864.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Renoir, peaches and grapes"
+  },
+  {
+   "id": "wc-57671867",
+   "source": "commons",
+   "title": "Still Life with Peaches MET DT1140",
+   "creator": "Pierre-Auguste Renoir",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Peaches_MET_DT1140.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Still_Life_with_Peaches_MET_DT1140.jpg/1920px-Still_Life_with_Peaches_MET_DT1140.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Still_Life_with_Peaches_MET_DT1140.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1592,
+   "file": "wc-57671867.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-166310975",
+   "source": "commons",
+   "title": "Anne Vallayer-Coster - Still Life with Peaches and Grapes",
+   "creator": "Anne Vallayer-Coster",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Anne_Vallayer-Coster_-_Still_Life_with_Peaches_and_Grapes.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Anne_Vallayer-Coster_-_Still_Life_with_Peaches_and_Grapes.jpg/1920px-Anne_Vallayer-Coster_-_Still_Life_with_Peaches_and_Grapes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Anne_Vallayer-Coster_-_Still_Life_with_Peaches_and_Grapes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1504,
+   "file": "wc-166310975.jpg",
+   "focus": [
+    0.4,
+    0.6
+   ],
+   "pin": true,
+   "note": "Vallayer-Coster, peaches and grapes"
+  },
+  {
+   "id": "wc-129556151",
+   "source": "commons",
+   "title": "William Mason Brown Still life with peaches and silver platter",
+   "creator": "William Mason Brown",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:William_Mason_Brown_Still_life_with_peaches_and_silver_platter.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/William_Mason_Brown_Still_life_with_peaches_and_silver_platter.jpg/1920px-William_Mason_Brown_Still_life_with_peaches_and_silver_platter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/William_Mason_Brown_Still_life_with_peaches_and_silver_platter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1877,
+   "h": 2400,
+   "file": "wc-129556151.jpg",
+   "focus": [
+    0.55,
+    0.65
+   ]
+  }
+ ]
+}

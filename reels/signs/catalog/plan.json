@@ -201,6 +201,96 @@
    "fish painting still life sea",
    "Ophelia painting",
    "water nymph painting"
+  ],
+  "candle": [
+   "candlelight painting",
+   "woman by candlelight painting",
+   "night interior lamp painting",
+   "Schalcken candle"
+  ],
+  "snow": [
+   "winter landscape painting snow",
+   "snowy evening painting",
+   "winter village painting dusk",
+   "frozen lake painting"
+  ],
+  "autumn": [
+   "autumn landscape painting",
+   "autumn leaves painting woman",
+   "golden autumn forest painting",
+   "Levitan autumn"
+  ],
+  "blossom": [
+   "cherry blossom painting",
+   "spring orchard painting",
+   "blossoming trees painting",
+   "apple blossom painting"
+  ],
+  "horses": [
+   "horse painting romantic",
+   "white horse painting",
+   "horse at sunset painting",
+   "horses in meadow painting"
+  ],
+  "birds": [
+   "birds painting",
+   "swans painting",
+   "doves painting",
+   "bird on branch painting"
+  ],
+  "door": [
+   "open door painting",
+   "doorway light painting",
+   "staircase painting interior",
+   "corridor painting light"
+  ],
+  "stars-sea": [
+   "night sea painting",
+   "Aivazovsky moonlit sea",
+   "ship at night painting",
+   "lighthouse painting"
+  ],
+  "fields": [
+   "wheat field painting",
+   "poppy field painting",
+   "meadow painting summer",
+   "lavender field painting"
+  ],
+  "reading": [
+   "woman reading painting",
+   "girl reading book painting",
+   "man reading painting",
+   "reading in bed painting"
+  ],
+  "sleep": [
+   "sleeping woman painting",
+   "dreaming painting",
+   "rest painting afternoon",
+   "nap painting"
+  ],
+  "fruit": [
+   "fruit still life painting",
+   "cherries painting",
+   "peaches painting still life",
+   "lemons painting still life"
+  ],
+  "eyes": [
+   "portrait close up painting woman eyes",
+   "face portrait painting intense",
+   "portrait gaze painting",
+   "young woman face painting"
+  ],
+  "train": [
+   "railway station painting",
+   "train painting 19th century",
+   "travel painting carriage",
+   "waiting at station painting"
+  ],
+  "pond": [
+   "pond painting reflection",
+   "water lilies painting",
+   "lake reflection painting",
+   "willow pond painting"
   ]
  },
  "space_sources": [
@@ -339,5 +429,22 @@
    "Ruisdael clouds",
    "Kuindzhi clouds"
   ]
- }
+ },
+ "round3": [
+  "candle",
+  "snow",
+  "autumn",
+  "blossom",
+  "horses",
+  "birds",
+  "door",
+  "stars-sea",
+  "fields",
+  "reading",
+  "sleep",
+  "fruit",
+  "eyes",
+  "train",
+  "pond"
+ ]
 }

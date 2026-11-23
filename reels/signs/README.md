@@ -9,7 +9,7 @@ invite or "come align" card.
 
 ```sh
 pip install numpy Pillow            # and ffmpeg on PATH
-python3 scripts.py                  # every script id (348 today)
+python3 scripts.py                  # every script id (528 today)
 python3 render.py scorpio-dear-2    # out/scorpio-dear-2-s0.mp4 (+ .txt caption/credits, .cover.jpg, .json)
 python3 render.py scorpio-dear-2 --seed 3      # same words, new pictures and music
 python3 render.py scorpio-dear-2 --stills      # a contact sheet of the cards, seconds
@@ -24,10 +24,36 @@ The published page (samples + catalogue): https://claude.ai/artifact/HNVXezdgMLD
 
 ## The reel
 
-Square 1080×1080, 30 fps, 10–20 s. Each card is a still: one painting, graded toward
-dusk and darkened where the type sits, with the line on top. Cards change with a hard
-cut, no transitions, motion, progress bar or header. At the bottom, small and quiet: COME ALIGN · JOIN THE BETA. The hook and the call to action are EB Garamond italic; the
-body is Sofia Sans Condensed.
+Square 1080×1080, 30 fps, 10–20 s. Each card is a still and cards change with a hard cut:
+no transitions, motion, progress bar or header. A quiet COME ALIGN · JOIN THE BETA signs
+off every card, and the last card is a call to action (send it, invite them, come align).
+
+Each reel gets one **look** (`looks.py`), and a batch rotates through them:
+
+| Layout | What |
+| --- | --- |
+| `full` | the painting full-bleed, a soft dark band, the line centred |
+| `lower` | full-bleed, a gradient at the bottom, the line set left in the lower third |
+| `bar` | the painting on top, a band of its own deepest colour below with the line |
+| `paper` | a cream sheet, the painting inset like a print, ink-dark type |
+| `polaroid` | a tilted instant photo over a blurred copy, the line below |
+| `split` | the painting on one half, a coloured panel with the line on the other |
+| `card` | a plain card, big type, the painting as a round medallion |
+| `arch` | the painting in an arched window on a dark ground |
+| `duotone` | the painting in two colours, the line in capitals |
+
+On top of the layout, a look picks a type pairing (EB Garamond, Playfair, Cormorant, DM
+Serif, Fraunces, Lora, Courier Prime typewriter, Caveat handwriting, Bebas Neue), a colour
+grade (dusk, film with grain, noir, cool, natural, sepia, duotone) and a palette.
+`python3 looks.py` writes `out/looks.jpg`, one sample of every layout. `--layout paper` on
+`render.py` or `make.py` fixes it.
+
+**Pictures** are handed out by `catalog.Allocator`: least-used first across the whole
+batch, never the same opening picture twice, and each reel mixes its sign's pool, its
+element's pools (fire: sunsets, candlelight…), pools that suit its format (letters for
+"Dear", rain and windows for "when hurt"…) and a little of everything else. Usage is kept in
+`out/usage.json`; `make.py` plans a whole batch at once (`out/plan/`) and then renders it in
+parallel.
 
 | Format | Hook | Ends on |
 | --- | --- | --- |
@@ -41,10 +67,18 @@ body is Sofia Sans Condensed.
 | `align` | What alignment feels like for an Aquarius | find who you align with |
 | `invite` | Send this to the Sagittarius who has a passport and no plan. | invite them to align |
 | `pair` | Scorpio + Cancer | invite them |
+| `fall` | How to make a Leo fall for you | invite them |
+| `date` | The perfect date for a Taurus | invite them |
+| `texts` | Texts that mean a Gemini likes you | send this |
+| `hurt` | What a Scorpio does when they're hurt | send this |
+| `hear` | Pisces, you need to hear this: | save this |
+| `green` | Green flags in a Virgo | invite them |
+
+Variants of a format never repeat the same set of lines.
 
 ## Words
 
-All copy is in `copy/signs.json`, per sign: `dear` (letters), `loves`, `wontsay`, `needs`,
+All copy is in `copy/signs.json` and `copy/more.json` (fall, date, texts, hurt, hear, green), per sign: `dear` (letters), `loves`, `wontsay`, `needs`,
 `relatable`, `advice`, `align`, `pairs`, `invite` hooks, and the image `moods` the sign
 draws from. `scripts.py` turns it into scripts and holds the CTAs, captions and hashtags.
 Add a line to any list and new scripts appear. `python3 scripts.py --lint` checks the
@@ -64,7 +98,7 @@ brands, no alcohol).
 To grow the catalogue: add queries to `catalog/plan.json`, run
 `python3 tools/fetch_all.py --again <pool>`, look at `cache/<pool>/sheet-*.jpg`, add the
 tile numbers you like to `catalog/keep/<pool>.json`, and run `python3 tools/curate.py <pool>`.
-What makes a good picture (adapted from the Visions brief for a tall 9:16 crop): one
+What makes a good picture (adapted from the Visions brief for a square crop): one
 clear subject that reads in two seconds, colour, romantic or moody; no nudity as the
 focus, violence, crowds, text, frames, sculpture on plain backgrounds, or near-duplicates.
 
@@ -94,5 +128,6 @@ synthesized, so there's nothing to license. Mastered to −14 LUFS.
 
 ## Fonts
 
-EB Garamond and Sofia Sans Condensed, SIL Open Font License (`assets/fonts/`). Sign
-glyphs are from DejaVu Sans (free licence).
+All SIL Open Font License, in `assets/fonts/` with their licences: EB Garamond, Sofia Sans
+Condensed, Playfair Display, Cormorant Garamond, DM Serif Display, Fraunces, Lora, Courier
+Prime, Caveat, Bebas Neue, Archivo Narrow. Sign glyphs on the page are from DejaVu Sans.

@@ -1,0 +1,175 @@
+{
+ "images": [
+  {
+   "id": "aic-876",
+   "source": "aic",
+   "title": "October Day",
+   "creator": "Jean Charles Cazin (French, 1841–1901)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/876",
+   "url": "https://www.artic.edu/iiif/2/3ef69544-a84c-dfa4-df6a-346b4b59c351/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1388,
+   "file": "aic-876.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "id": "aic-65845",
+   "source": "aic",
+   "title": "Autumn River Scene, The Brook",
+   "creator": "David Bates (English, 1840-1921)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/65845",
+   "url": "https://www.artic.edu/iiif/2/901da649-8816-41da-07e2-6140dd52d67a/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1009,
+   "file": "aic-65845.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-90048",
+   "source": "aic",
+   "title": "Distant View of Niagara Falls",
+   "creator": "Thomas Cole (American, born England, 1801–1848)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/90048",
+   "url": "https://www.artic.edu/iiif/2/18092196-50ae-3ff1-9205-1b3110e966c3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1306,
+   "file": "aic-90048.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-78262573",
+   "source": "commons",
+   "title": "Maisons à Bougival, automne, par Camille Pissarro, Getty Museum, edited",
+   "creator": "Camille Pissarro",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Maisons_%C3%A0_Bougival,_automne,_par_Camille_Pissarro,_Getty_Museum,_edited.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Maisons_%C3%A0_Bougival%2C_automne%2C_par_Camille_Pissarro%2C_Getty_Museum%2C_edited.jpg/1920px-Maisons_%C3%A0_Bougival%2C_automne%2C_par_Camille_Pissarro%2C_Getty_Museum%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Maisons_%C3%A0_Bougival%2C_automne%2C_par_Camille_Pissarro%2C_Getty_Museum%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1468,
+   "file": "wc-78262573.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-77164161",
+   "source": "commons",
+   "title": "John-William-Waterhouse-The-Lady-of-Shalott",
+   "creator": "Multiple Authors",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:John-William-Waterhouse-The-Lady-of-Shalott.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/John-William-Waterhouse-The-Lady-of-Shalott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/John-William-Waterhouse-The-Lady-of-Shalott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1573,
+   "h": 1200,
+   "file": "wc-77164161.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "pin": true,
+   "note": "Waterhouse, Lady of Shalott (autumnal river)"
+  },
+  {
+   "id": "wc-74901663",
+   "source": "commons",
+   "title": "New Forest in Autumn, 1919 - Frederick Golden Short",
+   "creator": "Frederick Golden Short",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:New_Forest_in_Autumn,_1919_-_Frederick_Golden_Short.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/New_Forest_in_Autumn%2C_1919_-_Frederick_Golden_Short.jpg/1920px-New_Forest_in_Autumn%2C_1919_-_Frederick_Golden_Short.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/New_Forest_in_Autumn%2C_1919_-_Frederick_Golden_Short.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1416,
+   "file": "wc-74901663.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Short, New Forest in Autumn"
+  },
+  {
+   "id": "aic-95993",
+   "source": "aic",
+   "title": "Pond in the Woods",
+   "creator": "Narcisse Virgile Diaz de la Peña (French, 1807–1876)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/95993",
+   "url": "https://www.artic.edu/iiif/2/44c6f2f1-90fc-f386-734b-fbb9427b6ff3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1259,
+   "file": "aic-95993.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-3782503",
+   "source": "commons",
+   "title": "Levitan Zolotaya Osen",
+   "creator": "Isaac Levitan",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Levitan_Zolotaya_Osen.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Levitan_Zolotaya_Osen.jpg/1920px-Levitan_Zolotaya_Osen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Levitan_Zolotaya_Osen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1235,
+   "file": "wc-3782503.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "pin": true,
+   "note": "Levitan, Golden Autumn"
+  },
+  {
+   "id": "wc-115721565",
+   "source": "commons",
+   "title": "Levitan Zolotaya Osen detail1",
+   "creator": "Isaac Levitan",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Levitan_Zolotaya_Osen_detail1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Levitan_Zolotaya_Osen_detail1.jpg/1920px-Levitan_Zolotaya_Osen_detail1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Levitan_Zolotaya_Osen_detail1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1533,
+   "file": "wc-115721565.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-14624",
+   "source": "aic",
+   "title": "Stacks of Wheat (End of Day, Autumn)",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14624",
+   "url": "https://www.artic.edu/iiif/2/4c364c64-2108-4e19-5fc5-1ab26ba924a7/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1097,
+   "file": "aic-14624.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  }
+ ]
+}

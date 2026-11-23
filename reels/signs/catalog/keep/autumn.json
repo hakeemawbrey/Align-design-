@@ -1,0 +1,4 @@
+{"keep": [0, 2, 4, 8, 11, 15, 22, 23, 28, 29],
+ "focus": {"0": [0.3, 0.5], "4": [0.5, 0.5], "11": [0.45, 0.45], "23": [0.55, 0.5], "29": [0.6, 0.5]},
+ "pin": [23, 15, 11],
+ "notes": {"23": "Levitan, Golden Autumn", "15": "Short, New Forest in Autumn", "11": "Waterhouse, Lady of Shalott (autumnal river)"}}

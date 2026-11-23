@@ -11,6 +11,7 @@ A script is a short run of text cards spoken straight to one sign:
   python3 scripts.py scorpio-dear-2  # print one
   python3 scripts.py --lint          # copy rules over every script
 """
+import hashlib
 import json
 import os
 import re
@@ -19,27 +20,36 @@ import zlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SIGNS = json.load(open(os.path.join(HERE, "copy", "signs.json")))
+for _k, _v in json.load(open(os.path.join(HERE, "copy", "more.json"))).items():
+    SIGNS[_k].update(_v)
 ORDER = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio",
          "sagittarius", "capricorn", "aquarius", "pisces"]
 
 # Closing cards. {S} = sign name. Every reel ends on one: share it, invite them, or come align.
 CTAS = {
     "share":  [("send this to your {S}", "the one who needs it"), ("tag the {S} who needs this", "they'll know"),
-               ("send this to a {S}", "and see what they say")],
+               ("send this to a {S}", "and see what they say"), ("screenshot this, {S}", "for the hard days"),
+               ("your {S} needs to see this", "send it"), ("save this, {S}", "come back to it")],
     "invite": [("invite your {S} to align", "find out how you two align · link in bio"),
                ("bring your {S} to align", "see your alignment together · link in bio"),
-               ("align with your {S}", "invite them · link in bio")],
+               ("align with your {S}", "invite them · link in bio"),
+               ("see how you align with a {S}", "your chart is free · link in bio"),
+               ("dating a {S}? come align", "invite them · link in bio")],
     "align":  [("find who you align with", "your chart is free · align · link in bio"),
                ("stop chasing. start aligning.", "align · link in bio"),
-               ("come align", "your full chart is free · link in bio")],
+               ("come align", "your full chart is free · link in bio"),
+               ("your sign is the start. your chart is the story.", "come align · link in bio"),
+               ("alignment > attention", "come align · link in bio")],
 }
 CTA_FOR = {"dear": "share", "loves": "invite", "wontsay": "share", "needs": "invite", "relatable": "share",
-           "advice": "share", "align": "align", "pair": "invite", "invite": "invite", "reminder": "share"}
+           "advice": "share", "align": "align", "pair": "invite", "invite": "invite", "reminder": "share",
+           "fall": "invite", "date": "invite", "texts": "share", "hurt": "share", "hear": "share", "green": "invite"}
 
 TAGS = {"base": ["zodiac", "astrology", "align"],
         "dear": "zodiacadvice", "loves": "zodiaclove", "wontsay": "zodiacmemes", "needs": "relationshipadvice",
         "relatable": "relatable", "advice": "relationshipadvice", "align": "alignment", "pair": "zodiaclove",
-        "invite": "zodiaclove", "reminder": "zodiacadvice"}
+        "invite": "zodiaclove", "reminder": "zodiacadvice", "fall": "zodiaclove", "date": "datingadvice",
+        "texts": "relatable", "hurt": "zodiacsigns", "hear": "affirmations", "green": "greenflags"}
 
 # Captions: short, warm, then the free chart. {S} = sign name.
 CAPTIONS = {
@@ -53,14 +63,30 @@ CAPTIONS = {
     "pair": ["Some pairs just align.", "Send this to your other half."],
     "invite": ["You know exactly who this is.", "Send it. They'll get it."],
     "reminder": ["Your reminder, {S}.", "Save this for the hard days."],
+    "fall": ["Taking notes? Good.", "Now you know, {S} lovers.", "The {S} cheat code."],
+    "date": ["Plan accordingly.", "Send this to the one planning your date.", "{S} date ideas, approved."],
+    "texts": ["If they text like this, they like you.", "{S} texts, decoded.", "Every {S} has sent at least one of these."],
+    "hurt": ["Be gentle with your {S}.", "If your {S} goes quiet, read this.", "{S}s feel it all."],
+    "hear": ["{S}, this is for you.", "Read it twice.", "Save this for later, {S}."],
+    "green": ["Green flags only.", "If your {S} does this, keep them.", "{S} at their best."],
 }
 FOOT = "Get your full chart free in the Align app, link in bio."
 
 
 def _pick(seq, k, salt):
     """k items from seq, a different but stable selection per salt."""
-    idx = sorted(range(len(seq)), key=lambda i: zlib.crc32(f"{salt}:{i}".encode()))
+    idx = sorted(range(len(seq)), key=lambda i: hashlib.md5(f"{salt}:{i}".encode()).hexdigest())
     return [seq[i] for i in idx[:k]]
+
+
+def _pickv(seq, n, salt, k):
+    """The k-th of all n-line combinations of seq (in a stable shuffled order), itself shuffled:
+    variants of one format never repeat the same set of lines."""
+    import itertools
+    combos = sorted(itertools.combinations(range(len(seq)), min(n, len(seq))),
+                    key=lambda c: hashlib.md5(f"{salt}:{c}".encode()).hexdigest())
+    c = combos[k % len(combos)]
+    return [seq[i] for i in sorted(c, key=lambda i: hashlib.md5(f"{salt}:{k}:{i}".encode()).hexdigest())]
 
 
 def _cap(s):
@@ -74,35 +100,53 @@ def _cards(sign, fmt, k):
         letter = d["dear"][k % len(d["dear"])]
         return f"Dear {S},", [*letter], f"{S}: a letter"
     if fmt == "loves":
-        items = _pick(d["loves"], 4, f"{sign}{k}")
+        items = _pickv(d["loves"], 4, "loves" + sign, k)
         return f"How a {S} loves you", [_cap(x) + "." for x in items], f"How a {S} loves"
     if fmt == "wontsay":
-        items = _pick(d["wontsay"], 3, f"{sign}{k}")
+        items = _pickv(d["wontsay"], 3, "wontsay" + sign, k)
         return f"Things a {S} won't say out loud", [f"“{x}”" for x in items], f"What a {S} won't say"
     if fmt == "needs":
-        items = _pick(d["needs"], 4, f"{sign}{k}")
+        items = _pickv(d["needs"], 4, "needs" + sign, k)
         return f"Dating a {S}? They need…", [_cap(x) + "." for x in items], f"What a {S} needs"
     if fmt == "relatable":
-        items = _pick(d["relatable"], 4, f"{sign}{k}")
+        items = _pickv(d["relatable"], 4, "relatable" + sign, k)
         return f"Signs you're dating a {S}", [_cap(x) + "." for x in items], f"Dating a {S}"
     if fmt == "advice":
-        items = _pick(d["advice"], 3, f"{sign}{k}")
+        items = _pickv(d["advice"], 3, "advice" + sign, k)
         return f"{S}, a little relationship advice", items, f"Advice for {S}"
     if fmt == "reminder":
-        a = _pick(d["advice"], 1, f"r{sign}{k}")[0]
+        a = _pickv(d["advice"], 1, "advice" + sign, k)[0]
         letter = d["dear"][(k + 1) % len(d["dear"])]
         return f"{S}, this is your reminder:", [letter[0], a], f"A reminder for {S}"
+    if fmt == "fall":
+        items = _pickv(d["fall"], 3, "fall" + sign, k)
+        return f"How to make a {S} fall for you", items, f"How to make a {S} fall"
+    if fmt == "date":
+        items = _pickv(d["date"], 3, "date" + sign, k)
+        return f"The perfect date for a {S}", items, f"The perfect {S} date"
+    if fmt == "texts":
+        items = _pickv(d["texts"], 3, "texts" + sign, k)
+        return f"Texts that mean a {S} likes you", [f"“{x}”" for x in items], f"{S} texts, decoded"
+    if fmt == "hurt":
+        items = _pickv(d["hurt"], 3, "hurt" + sign, k)
+        return f"What a {S} does when they're hurt", items, f"A {S}, hurt"
+    if fmt == "hear":
+        items = _pickv(d["hear"], 2, "hear" + sign, k)
+        return f"{S}, you need to hear this:", items, f"{S}, hear this"
+    if fmt == "green":
+        items = _pickv(d["green"], 4, "green" + sign, k)
+        return f"Green flags in a {S}", items, f"{S} green flags"
     if fmt == "align":
         return f"What alignment feels like for a {S}", [*d["align"]], f"Alignment, {S}"
     if fmt == "invite":
         hook = d["invite"][k % len(d["invite"])]
-        items = _pick(d["loves"], 2, f"i{sign}{k}")
+        items = _pickv(d["loves"], 2, "loves" + sign, k)
         return f"Send this to the {S} who {hook}.", [_cap(x) + "." for x in items], f"For the {S} who {hook}"
     raise KeyError(fmt)
 
 
 FORMATS = {"dear": 4, "loves": 3, "wontsay": 3, "needs": 2, "relatable": 3, "advice": 3,
-           "reminder": 3, "align": 1, "invite": 4}
+           "reminder": 3, "align": 1, "invite": 4, "fall": 3, "date": 2, "texts": 3, "hurt": 2, "hear": 3, "green": 2}
 
 
 def build(sid):
