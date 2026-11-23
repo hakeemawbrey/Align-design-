@@ -388,7 +388,7 @@ const mudbugs = (() => {
     hook: 'Crawfish season | just started. | Your sign reacts.', badge: BADGE, cues: [...STING], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Good things start small. Jan 9.', stars: ['capricorn', 'libra', 'leo', 'pisces'] }),
     scenes: [
-      { dur: 3.0, set: desk(o('CRAWFISH SEASON IS OPEN')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#f4e1b0'; x.fillRect(cx - 300, cy - 300, 600, 600); for (let k = 0; k < 9; k++) crawfish(x, cx - 180 + (k % 3) * 180, cy - 140 + Math.floor(k / 3) * 140 + 6 * Math.sin(t * 4 + k), 1.4, Math.sin(k) * 0.4) }, { title: 'MUDBUGS' }),
+      { dur: 3.0, set: desk(o('CRAWFISH SEASON IS OPEN')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#f4e1b0'; x.fillRect(cx - 300, cy - 300, 600, 600); for (let k = 0; k < 2; k++) crawfish(x, cx + 10 + (k ? 30 : -30), cy - 90 + k * 170 + 6 * Math.sin(t * 4 + k), 2.3, (k ? 0.12 : -0.12)) }, { title: 'MUDBUGS' }),
         cast: { taurus: [[0, ...AL]] }, mood: { taurus: 'heart' }, hops: { taurus: [0.05, 0.5] },
         lines: [[0.3, 2.5, 'taurus', 'you smelled it too. | it is starting.']] },
       { dur: 3.0, set: field(yard, o('LIVE: FIRST BOIL OF THE YEAR', 'LIVE')),
