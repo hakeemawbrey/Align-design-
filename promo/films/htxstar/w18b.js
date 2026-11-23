@@ -1,8 +1,8 @@
 // Houston Star Talk, worker w18 (party prep): hst435–hst444. Helpers in w18.js.
 import { Y, BADGE, Kp, fadeK, sting, ticket, waveHops, title, daySky, bayou, bedroom, rack, mirror, phone, clipboard, thermo, rpg, wear, wearAt, dish, partyTable,
-  carBack, routeMap, photoFrame, flash, dayCard, nameTag, closet, stamp, signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease,
+  carBack, routeMap, photoFrame, flash, dayCard, nameTag, closet, stamp, pennant, signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease,
   GOLD, BONE, PINK, INK, MINT, SKYB, LAV, MONO, SERIF } from './w18.js'
-import { skyline, freeway, car, heatSun, sweat, shield, streetSign, overheadSign, taco, kolache, klobasnek, puffer, mural, houses, cones, coffeeShop, slab, inviteCard, calendar, BRAKE } from './kit.js'
+import { skyline, freeway, car, heatSun, sweat, shield, streetSign, overheadSign, taco, kolache, klobasnek, puffer, mural, houses, cones, coffeeShop, slab, inviteCard, calendar, loopMap, BRAKE } from './kit.js'
 import { bungalow, blvdNight, forecastCard } from './w18a.js'
 import { SIGN_IDS, notes, hearts } from '../signs3kit.js'
 
@@ -201,5 +201,53 @@ export const hst442 = {
       lines: [[0.4, 2.4, CA, 'the outside world. | it has lights!']] },
     { dur: 4.8, set: porch, front: (x, t, lt) => rpg(x, lt, 'CANCER', 'your comfort zone | will be right there | when you get back.', 0.3, 4.3, { y: 1060, col: '#8fe3ff' }),
       cast: { [CA]: [[0, 330, 860, 250]] }, mood: { [CA]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst443 · Aquarius is coming from the Woodlands (the bubble, the third loop, I-45; distance is a vibe check)
+const AQ = 'aquarius'
+const pines = (x, t) => { daySky(x, t, { top: '#6ac0e0', bot: '#e8f6e0', city: false, ground: '#4a7a3a' }); for (let k = 0; k < 9; k++) { const cx = 60 + k * 125, h = 380 + (k % 3) * 90; box(x, cx - 12, FLOOR + 60 - 120, 24, 120, '#6b3b1f', 4); for (let j = 0; j < 3; j++) { x.fillStyle = INK; x.beginPath(); x.moveTo(cx - 90 + j * 14, FLOOR - 60 - j * 110); x.lineTo(cx, FLOOR - 60 - j * 110 - h / 2.2); x.lineTo(cx + 90 - j * 14, FLOOR - 60 - j * 110); x.fill(); x.fillStyle = ['#2f6a3a', '#3a7a44', '#4a8a4a'][j]; x.beginPath(); x.moveTo(cx - 80 + j * 14, FLOOR - 66 - j * 110); x.lineTo(cx, FLOOR - 54 - j * 110 - h / 2.2); x.lineTo(cx + 80 - j * 14, FLOOR - 66 - j * 110); x.fill() } } }
+const bigMap = (x, t, lt, route) => missionMap(x, t, lt, route)
+function missionMap(x, t, lt, route) { x.fillStyle = '#0d1a2a'; x.fillRect(0, 0, 1080, 1920); box(x, 60, 640, 960, 640, '#0b2232', 8); x.save(); x.beginPath(); x.rect(60, 640, 960, 640); x.clip(); loopMap(x, 540, 960, 1.05, t, { dots: [[560, 690, '#7dffb0', 'WOODLANDS'], [560, 960, GOLD, 'INSIDE THE LOOP']], route }); x.restore() }
+export const hst443 = {
+  hook: 'Aquarius is coming | from the Woodlands', badge: BADGE, cues: [...sting(830.61), ['whoosh', 0.2, 0.6, 0.02]], endLen: 6.2,
+  end: ticket('Worth the drive. Jan 9.', ['aquarius', 'gemini', 'capricorn', 'libra']),
+  scenes: [
+    { dur: 3.0, set: pines, front: (x, t, lt) => streetSign(x, 760, 760, 'THE WOODLANDS', { pole: false, k: 0.8 }), cast: { [AQ]: [[0, 330, Y, 280]] }, mood: { [AQ]: 'sparkle' }, hops: { [AQ]: [0.02, 0.6, 1.2, 1.8] },
+      front2: null, lines: [[0.8, 2.0, AQ, 'technically | not Houston.']] },
+    { dur: 3.4, set: (x, t, lt) => missionMap(x, t, lt, [[560, 690], [560, 960]]), cast: { [AQ]: [[0, 540, 1350, 170]] }, mood: { [AQ]: 'squint' }, stick: [[0.2, 1.4, 'DISTANCE: A LOT', PINK]],
+      lines: [[1.4, 1.8, AQ, 'party math. | hmm.']] },
+    { dur: 3.4, set: (x, t, lt) => missionMap(x, t, lt, [[560, 690], [180, 960]]), cast: { [AQ]: [[0, 540, 1350, 170]] }, mood: { [AQ]: 'wide' }, lines: [[0.3, 2.8, AQ, 'option one: | the Grand Parkway.']], stick: [[0.2, 1.4, 'THE THIRD LOOP', GOLD]] },
+    { dur: 3.2, set: (x, t) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#3a2a7a'); g.addColorStop(1, '#ff9a6a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR - 290, t, { alpha: 0.8 }); freeway(x, FLOOR - 300, 440, 4, t * 700); shield(x, 880, 620, '45', 0.85) },
+      front: (x, t) => car(x, 540, FLOOR - 40, '#5ec8ff', { open: true, s: 1.4 }), cast: { [AQ]: [[0, 590, FLOOR - 180, 200]] }, mood: { [AQ]: 'happy' }, lines: [[0.3, 2.5, AQ, 'option two: | I-45, all the way.']] },
+    { dur: 3.0, set: (x, t) => { daySky(x, t, { city: false }); mural(x, t); outside(x, { ground: '#3a2a4a' }) }, cast: { [AQ]: [[0, 540, Y, 260]] }, mood: { [AQ]: 'wink' }, front: (x, t, lt, P) => wear(x, P, AQ, 'headphones', MINT), lines: [[0.3, 2.4, AQ, 'option three: | move inside the Loop.']], stick: [[1.3, 1.5, 'jk', BONE]] },
+    { dur: 3.4, set: (x, t) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#0e0b24'); g.addColorStop(1, '#2a1d52'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR - 290, t, { alpha: 0.9 }); freeway(x, FLOOR - 300, 440, 4, t * 300) },
+      front: (x, t, lt) => { car(x, 540, FLOOR - 40, '#5ec8ff', { open: true, s: 1.4 }); overheadSign(x, 540, 640, 'BETA PARTY', 'EXIT  JAN 9', Kp(lt, 0.1), { gold: true }); if (lt > 1.0) sparkles(x, t, 540, 760, t - lt + 1.0, 12, 340, 2) },
+      cast: { [AQ]: [[0, 590, FLOOR - 180, 200]] }, mood: { [AQ]: 'sparkle' }, lines: [[1.0, 2.0, AQ, 'made it. | road trip vibes.']] },
+    { dur: 4.8, set: pines, front: (x, t, lt) => rpg(x, lt, 'AQUARIUS', 'far is just a feeling. | show up anyway. | your people will be there.', 0.3, 4.3, { y: 1060, col: MINT }),
+      cast: { [AQ]: [[0, 540, 820, 250]] }, mood: { [AQ]: 'heart' }, stick: [[0.1, 1.5, '★ LESSON UNLOCKED', GOLD]] },
+  ],
+}
+
+// ── hst444 · Gemini RSVP'd twice. Now: two outfits (the twins argue; you pick; Gemini picks both)
+const GE = 'gemini'
+const twinRoom = (x, t) => { bedroom(x, t, { wall: '#5a4a1a', floor: '#3a2a1a' }); closet(x, 540, 760, 760, 560, 1, '#8a6a3a'); rack(x, 540, 540, ['#ffd36b', '#7dbf5a', '#ffd36b', '#7dbf5a'], t, { w: 600 }) }
+const TW = { gl: [[0, 330, Y, 260]], gr: [[0, 750, Y, 260]] }
+const twins = (moodL, moodR, extra = {}) => ({ set: twinRoom, back: (x, t, lt) => { signChar(x, t, GE, 750, Y, 260, { mood: typeof moodR === 'function' ? moodR(lt) : moodR, seed: 11, look: [-0.7, 0], hops: extra.hopsR?.map(h => t - lt + h).filter(h => h <= t) }); extra.wearR?.forEach(([it, c]) => wearAt(x, 750, Y, 260, it, c)) },
+  front: (x, t, lt, P) => { extra.wearL?.forEach(([it, c]) => wear(x, P, GE, it, c)); extra.front?.(x, t, lt, P) }, cast: { [GE]: TW.gl }, mood: { [GE]: moodL }, look: { [GE]: [0.7, 0] } })
+export const hst444 = {
+  hook: "Gemini RSVP'd twice. | Now: two outfits.", badge: BADGE, cues: [...sting(932.33)], endLen: 6.2,
+  end: ticket('Twice the fun. Jan 9.', ['gemini', 'libra', 'leo', 'sagittarius']),
+  scenes: [
+    { dur: 3.0, ...twins('wink', 'wink', { hopsR: [0.3, 0.9, 1.5, 2.1], front: (x, t, lt) => pennant(x, 100, 600, 'BAYOU CITY', t) || phone(x, 540, 1000, lt + 2, [[0, 'R', 'RSVP: yes!'], [0.6, 'R', 'RSVP: yes!']], { w: 380, h: 420, head: 'Jan 9', max: 2, k: 0.9 }) }), hops: { [GE]: [0.02, 0.6, 1.2, 1.8] } },
+    { dur: 3.2, ...twins('sparkle', 'eyeroll', { wearL: [['bow', GOLD]], wearR: [], front: (x, t, lt, P) => { const [cx] = P.at(GE); dish(x, 'sweater', 330, 760, 0.01) } }), lines: [[0.3, 2.6, GE, 'the gold one. | obviously.']] },
+    { dur: 3.2, ...twins('eyeroll', 'sparkle', { wearL: [['bow', GOLD]], wearR: [['scarf', '#7dbf5a']] }), lines: [[0.3, 2.6, [750, Y, 260], 'the green one. | obviously.']] },
+    { dur: 3.0, ...twins('wide', 'wide', { wearL: [['bow', GOLD]], wearR: [['scarf', '#7dbf5a']] }), lines: [[0.2, 1.2, GE, 'gold!'], [0.9, 1.2, [750, Y, 260], 'green!'], [1.6, 1.2, GE, 'GOLD!']] },
+    { dur: 4.4, ...twins('happy', 'happy', { wearL: [['bow', GOLD]], wearR: [['scarf', '#7dbf5a']], front: (x, t, lt) => rpg(x, lt, 'GEMINI × 2', 'ok YOU pick. | left or right? | comment it.', 0.3, 3.9, { y: 560, col: '#ffd36b' }) }) },
+    { dur: 3.4, ...twins('sparkle', 'sparkle', { hopsR: [0.4, 1.0], wearL: [['bow', GOLD], ['scarf', '#7dbf5a']], wearR: [['bow', GOLD], ['scarf', '#7dbf5a']], front: (x, t, lt) => { if (lt > 0.4) sparkles(x, t, 540, 1100, t - lt + 0.4, 12, 360, 5) } }), lines: [[0.4, 2.6, GE, 'both. | changing in the car.']], hops: { [GE]: [0.4, 1.0] } },
+    { dur: 3.4, set: (x, t) => { const g = x.createLinearGradient(0, 0, 0, FLOOR); g.addColorStop(0, '#1c1240'); g.addColorStop(1, '#5a2a7a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); skyline(x, FLOOR + 60, t, { alpha: 0.9 }); outside(x, { ground: '#221b38' }) },
+      front: (x, t, lt, P) => { overheadSign(x, 540, 640, 'BETA PARTY', 'JAN 9', Kp(lt, 0.05), { gold: true }); if (P.at(GE)[2] > 0) wear(x, P, GE, lt < 1.6 ? 'bow' : 'scarf', lt < 1.6 ? GOLD : '#7dbf5a'); wear(x, P, 'libra', 'flower', PINK) },
+      cast: { [GE]: [[0, -200, Y, 240], [0.4, 300, Y, 240], [1.1, 300, Y, 240], [1.5, 1300, Y, 240], [1.55, 1300, Y, 0], [1.6, -200, Y, 0], [1.62, -200, Y, 240], [2.0, 300, Y, 240]], libra: [[0, 760, Y, 240]] }, mood: { [GE]: 'wink', libra: lt => lt > 2.0 ? 'wide' : 'happy' },
+      lines: [[0.4, 0.8, GE, 'hi!'], [2.1, 1.1, 'libra', 'wait. | again?']] },
   ],
 }

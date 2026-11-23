@@ -1,6 +1,6 @@
 // Houston Star Talk, worker w18 (party prep): hst429–hst436. Helpers in w18.js.
 import { Y, BADGE, Kp, fadeK, sting, ticket, waveHops, title, daySky, bayou, bedroom, rack, mirror, phone, clipboard, thermo, rpg, wear, wearAt, dish, partyTable,
-  carBack, routeMap, photoFrame, flash, dayCard, nameTag, closet, stamp, signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease,
+  carBack, routeMap, photoFrame, flash, dayCard, nameTag, closet, stamp, pennant, signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease,
   GOLD, BONE, PINK, INK, MINT, SKYB, LAV, MONO, SERIF } from './w18.js'
 import { skyline, freeway, car, heatSun, sweat, shield, streetSign, overheadSign, taco, kolache, klobasnek, puffer, mural, houses, cones, BRAKE } from './kit.js'
 import { SIGN_IDS } from '../signs3kit.js'
@@ -195,7 +195,7 @@ export const hst434 = {
   hook: 'Get ready with Leo: | 3 hours, 1 mirror', badge: BADGE, cues: [...sting(1046.5), ['boom', 0.0, 0.25]], endLen: 6.2,
   end: ticket('Ready when you are. Jan 9.', ['leo', 'virgo', 'gemini', 'sagittarius']),
   scenes: [
-    { dur: 2.8, set: leoRoom, back: leoRefl([['crown', GOLD]], 'wink'), front: (x, t, lt, P) => { wear(x, P, 'leo', 'crown') }, cast: { leo: LEO }, mood: { leo: 'sparkle' }, hops: { leo: [0.02, 0.5, 1.0, 1.5, 2.0] }, look: { leo: [0.8, 0] } },
+    { dur: 2.8, set: (x, t) => { leoRoom(x, t); pennant(x, 120, 720, 'H-TOWN', t) }, back: leoRefl([['crown', GOLD]], 'wink'), front: (x, t, lt, P) => { wear(x, P, 'leo', 'crown') }, cast: { leo: LEO }, mood: { leo: 'sparkle' }, hops: { leo: [0.02, 0.5, 1.0, 1.5, 2.0] }, look: { leo: [0.8, 0] } },
     { dur: 3.2, set: leoRoom, back: leoRefl([], 'happy', (x, t) => { x.fillStyle = 'rgba(125,200,120,0.6)'; x.fillRect(730, 900, 140, 120) }), front: (x, t, lt, P) => { hourTag(1)(x, t, lt); const [cx, cy, s] = P.at('leo'); x.fillStyle = 'rgba(125,200,120,0.6)'; x.fillRect(cx - s * 0.3, cy - s * 0.18, s * 0.6, s * 0.4) }, cast: { leo: LEO }, mood: { leo: 'sleepy' },
       lines: [[0.3, 2.6, 'leo', 'step one: | the glow.']] },
     { dur: 3.4, set: leoRoom, back: leoRefl([['frizz', '#e0a030']], 'wide'), front: (x, t, lt, P) => { hourTag(1)(x, t, lt); wear(x, P, 'leo', 'frizz', '#e0a030') }, cast: { leo: LEO }, mood: { leo: 'wide' },

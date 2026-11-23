@@ -249,3 +249,11 @@ export function closet(x, cx, cy, w = 860, h = 760, open = 1, col = '#8a5a3a') {
 export function stamp(x, s, cx = 880, cy = 300, col = '#ff5a6e') { box(x, cx - 150, cy - 46, 300, 92, '#120c24', 6); txt(x, s, cx, cy + 4, { size: 48, col, font: MONO, weight: 700 }) }
 
 export { signChar, sparkles, pop01, label, txt, box, outside, room, FLOOR, clamp, prog, ease, MONO, SERIF, INTER, HGREEN }
+/** a felt wall pennant (H-TOWN, BAYOU CITY…) that sways a little */
+export function pennant(x, cx, cy, text, t, col = '#c0304a') {
+  x.save(); x.translate(cx, cy); x.rotate(-0.08 + Math.sin(t * 2) * 0.03)
+  x.fillStyle = INK; x.beginPath(); x.moveTo(-16, -66); x.lineTo(300, 0); x.lineTo(-16, 66); x.closePath(); x.fill()
+  x.fillStyle = col; x.beginPath(); x.moveTo(-8, -56); x.lineTo(280, 0); x.lineTo(-8, 56); x.closePath(); x.fill()
+  box(x, -30, -70, 22, 140, BONE, 4); txt(x, text, 110, 2, { size: 40, col: BONE })
+  x.restore()
+}
