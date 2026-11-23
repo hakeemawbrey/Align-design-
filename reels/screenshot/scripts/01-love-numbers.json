@@ -1,11 +1,12 @@
 {
   "id": "01-love-numbers",
-  "hook": "STOP SCROLLING",
+  "eyebrow": "ALIGN · LOVE NUMBERS",
+  "hook": "Stop scrolling.",
   "sub": [
-    "close your eyes, take a breath",
-    "& screenshot"
+    "Close your eyes, take a breath",
+    "and screenshot."
   ],
-  "foot": "comment the number you got",
+  "foot": "Comment the number you got",
   "intro": 1.1,
   "hold": 4,
   "duration": 12,

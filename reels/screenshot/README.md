@@ -18,6 +18,12 @@ number. The Align version keeps the mechanic and makes the rest its own:
   chip, spark / clash / align rows with strength dots, the message under a
   rule, and the `ALIGN · № 444/∞` footer. The intro is the app's face-down
   card (`CardBack.tsx`): violet glass, seed of life, the chakra column.
+- **Align type and the pearl holo button.** The hook is set like an app
+  screen: a Space Mono eyebrow, "Stop scrolling." in EB Garamond italic
+  (`.h-display`) and the line under it in the same serif, in bone, not white.
+  The call to action is the app's pearl CTA (`.chrome-cta`: the `--chrome`
+  pearl gradient, `--chrome-ink` serif italic and a ✦) inside the
+  `.holo-frame` rainbow rim, whose hue cycles every 4 s.
 - **Hard cuts only.** No card is ever half-faded or moving when the frame
   is captured, so every screenshot lands on a whole, readable card.
 - **Fair deck.** The order is shuffled in bags of the whole deck and never

@@ -21,9 +21,9 @@ const COL = {
 // Instagram covers about the top 220 px and the bottom 420 px with its UI,
 // and the right edge with the buttons, so the card sits inside that.
 const L = {
-  hook: 300, sub: 384, sub2: 438,
-  card: { x: CX, y: 1052 },
-  foot: 1634,
+  eyebrow: 204, hook: 326, sub: 410, sub2: 464,
+  card: { x: CX, y: 1024 },
+  foot: 1630,
 }
 
 // ---------- helpers ----------
@@ -607,62 +607,165 @@ function blitCard(img, t, { scale = 1, glow = 1, tint = '#9a7be0' } = {}) {
 
 // ---------- the text around the card ----------
 
+// The hook in Align's type: a mono eyebrow, the headline in EB Garamond
+// italic like a screen title (.h-display), and the line under it in the same
+// serif. Colours are the app's labels: bone, never white.
 function drawHook(t) {
-  const k = easeOut(t / 0.35)
-  const s = backOut(t / 0.45, 2.4)
+  const k0 = easeOut(t / 0.35)
+  spacedText(ctx, EYEBROW, CX, L.eyebrow, { font: `700 26px ${MONO}`, color: rgba(LABEL[2], 0.9 * k0), spacing: 26 * 0.22 })
+  glyph4(ctx, CX - measureSpaced(EYEBROW, `700 26px ${MONO}`, 26 * 0.22) / 2 - 30, L.eyebrow, 11, rgba(COL.gold, k0))
+  glyph4(ctx, CX + measureSpaced(EYEBROW, `700 26px ${MONO}`, 26 * 0.22) / 2 + 30, L.eyebrow, 11, rgba(COL.gold, k0))
+  const k = easeOut((t - 0.05) / 0.4)
   ctx.save()
-  ctx.translate(CX, L.hook)
-  ctx.scale(s, s)
   ctx.globalAlpha = k
-  ctx.font = '800 92px Poppins'
-  ctx.letterSpacing = '2px'
+  let size = 118
+  ctx.font = `italic 400 ${size}px ${SERIF}`
+  while (ctx.measureText(HOOK).width > W - 120) ctx.font = `italic 400 ${(size -= 4)}px ${SERIF}`
   ctx.textAlign = 'center'
-  ctx.textBaseline = 'middle'
-  ctx.lineWidth = 14
-  ctx.lineJoin = 'round'
-  ctx.strokeStyle = 'rgba(7,4,28,0.9)'
-  ctx.strokeText(HOOK, 0, 0)
-  ctx.fillStyle = COL.gold
-  ctx.fillText(HOOK, 0, 0)
+  ctx.textBaseline = 'alphabetic'
+  ctx.shadowColor = 'rgba(248,237,255,0.35)'
+  ctx.shadowBlur = 30
+  ctx.fillStyle = LABEL[1]
+  ctx.fillText(HOOK, CX, L.hook + 10 * (1 - k))
   ctx.restore()
   const k2 = easeOut((t - 0.35) / 0.4)
   ctx.save()
   ctx.globalAlpha = k2
-  ctx.font = '600 46px Poppins'
+  ctx.font = `italic 400 50px ${SERIF}`
   ctx.textAlign = 'center'
-  ctx.textBaseline = 'middle'
-  ctx.fillStyle = COL.bone
-  ctx.fillText(SUB[0], CX, L.sub + 12 * (1 - k2))
-  if (SUB[1]) ctx.fillText(SUB[1], CX, L.sub2 + 12 * (1 - k2))
+  ctx.textBaseline = 'alphabetic'
+  ctx.fillStyle = LABEL[1]
+  ctx.fillText(SUB[0], CX, L.sub + 10 * (1 - k2))
+  if (SUB[1]) ctx.fillText(SUB[1], CX, L.sub2 + 10 * (1 - k2))
   ctx.restore()
+}
+
+function measureSpaced(str, font, spacing) {
+  ctx.save()
+  ctx.font = font
+  ctx.letterSpacing = `${spacing}px`
+  const w = ctx.measureText(str).width - spacing
+  ctx.restore()
+  return w
+}
+function spacedText(g, str, x, y, { font, color, spacing }) {
+  g.save()
+  g.font = font
+  g.letterSpacing = `${spacing}px`
+  g.textAlign = 'center'
+  g.textBaseline = 'middle'
+  g.fillStyle = color
+  g.fillText(str, x + spacing / 2, y)
+  g.restore()
+}
+// a four-point ✦, drawn so it never falls back to an emoji
+function glyph4(g, x, y, s, color) {
+  g.save()
+  g.fillStyle = color
+  g.beginPath()
+  for (let i = 0; i < 8; i++) {
+    const r = i % 2 ? s * 0.3 : s
+    const a = (i / 8) * TAU - Math.PI / 2
+    g.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r)
+  }
+  g.closePath()
+  g.fill()
+  g.restore()
+}
+
+// The bottom button: the app's pearl CTA (.chrome-cta: the --chrome pearl
+// gradient, --chrome-ink serif italic, a ✦) inside the holo frame
+// (.holo-frame: a conic rainbow rim whose hue cycles every 4 s), at the
+// phone's 390 px scaled 2.2×, the same scale as the card.
+const PX = 2.2
+let PILL = null
+function makePill(text) {
+  const h = Math.round(54 * PX), pad = Math.round(1.5 * PX * 1.6)
+  ctx.save()
+  ctx.font = `italic 500 ${19 * PX}px ${SERIF}`
+  const tw = ctx.measureText(text).width
+  ctx.restore()
+  const w = Math.max(314 * PX, tw + 14 * PX + 10 * PX + 64 * PX)
+  const glow = 40
+  const c = layer(Math.ceil(w + pad * 2 + glow * 2), Math.ceil(h + pad * 2 + glow * 2))
+  const g = c.getContext('2d')
+  return { c, g, w, h, pad, glow, text, tw }
+}
+function drawPill(p, t) {
+  const { c, g, w, h, pad, glow, text, tw } = p
+  g.clearRect(0, 0, c.width, c.height)
+  const ox = glow, oy = glow
+  const ow = w + pad * 2, oh = h + pad * 2
+  // holo rim
+  g.save()
+  g.filter = `hue-rotate(${((t / 4) * 360) % 360}deg)`
+  g.shadowColor = 'rgba(255,140,220,0.5)'
+  g.shadowBlur = 14 * PX
+  const cg = g.createConicGradient((210 - 90) * Math.PI / 180, ox + ow / 2, oy + oh / 2)
+  const stops = ['#ff6ad5', '#ffd36a', '#7affc4', '#6ad5ff', '#b18cff', '#ff6ad5']
+  stops.forEach((s, i) => cg.addColorStop(i / (stops.length - 1), s))
+  g.fillStyle = cg
+  g.beginPath()
+  g.roundRect(ox, oy, ow, oh, oh / 2)
+  g.fill()
+  g.restore()
+  // pearl face
+  const x = ox + pad, y = oy + pad
+  const a = 100 * Math.PI / 180
+  const len = Math.abs(w * Math.sin(a)) + Math.abs(h * Math.cos(a))
+  const dx = Math.sin(a) * len / 2, dy = -Math.cos(a) * len / 2
+  const pg = g.createLinearGradient(x + w / 2 - dx, y + h / 2 - dy, x + w / 2 + dx, y + h / 2 + dy)
+  pg.addColorStop(0, '#f8edff')
+  pg.addColorStop(0.38, '#fff7ec')
+  pg.addColorStop(0.72, '#eaf4ff')
+  pg.addColorStop(1, '#ffeff7')
+  g.fillStyle = pg
+  g.beginPath()
+  g.roundRect(x, y, w, h, h / 2)
+  g.fill()
+  // the inset highlight along the top, and a slow sheen
+  g.save()
+  g.clip()
+  g.fillStyle = 'rgba(255,255,255,0.9)'
+  g.fillRect(x, y, w, 1 * PX)
+  const sx = x - w * 0.4 + ((t * 0.45) % 1.6) * w
+  const sh = g.createLinearGradient(sx, 0, sx + w * 0.25, 0)
+  sh.addColorStop(0, 'rgba(255,255,255,0)')
+  sh.addColorStop(0.5, 'rgba(255,255,255,0.55)')
+  sh.addColorStop(1, 'rgba(255,255,255,0)')
+  g.fillStyle = sh
+  g.fillRect(x, y, w, h)
+  g.restore()
+  // label + ✦, gap 10
+  const gw = 14 * PX * 0.8
+  const total = tw + 10 * PX + gw
+  g.font = `italic 500 ${19 * PX}px ${SERIF}`
+  g.fillStyle = '#3a2c4e'
+  g.textAlign = 'left'
+  g.textBaseline = 'middle'
+  g.fillText(text, x + w / 2 - total / 2, y + h / 2 + 2)
+  glyph4(g, x + w / 2 - total / 2 + tw + 10 * PX + gw / 2, y + h / 2, gw / 2 + 2, '#3a2c4e')
+  return c
 }
 
 function drawFoot(t) {
   if (!FOOT) return
   const k = easeOut((t - INTRO + 0.2) / 0.4)
   if (k <= 0) return
+  if (!PILL) PILL = makePill(FOOT)
+  const c = drawPill(PILL, t)
   ctx.save()
   ctx.globalAlpha = k
-  ctx.font = '700 32px Poppins'
-  ctx.letterSpacing = '1px'
-  const tw = ctx.measureText(FOOT).width
-  const w = tw + 110, h = 78
-  ctx.translate(CX, L.foot)
-  ctx.fillStyle = 'rgba(255,246,220,0.95)'
-  ctx.beginPath()
-  ctx.roundRect(-w / 2, -h / 2, w, h, h / 2)
-  ctx.fill()
-  sparkle(ctx, -w / 2 + 40, 0, 15, COL.goldDeep)
-  ctx.fillStyle = COL.ink
-  ctx.textAlign = 'left'
-  ctx.textBaseline = 'middle'
-  ctx.fillText(FOOT, -w / 2 + 68, 2)
+  // the app's own glow under the pearl: 0 0 30px rgba(248,237,255,0.35)
+  ctx.shadowColor = 'rgba(248,237,255,0.35)'
+  ctx.shadowBlur = 30 * PX * 0.6
+  ctx.drawImage(c, CX - c.width / 2, L.foot - c.height / 2 + 10 * (1 - k))
   ctx.restore()
 }
 
 // ---------- the deal ----------
 
-let CARDS = [], FACES = [], BACK = null, ORDER = [], HOOK = '', SUB = [], FOOT = '', INTRO = 1, STEP = 4 / 30, DURATION = 12
+let CARDS = [], FACES = [], BACK = null, ORDER = [], HOOK = '', EYEBROW = '', SUB = [], FOOT = '', INTRO = 1, STEP = 4 / 30, DURATION = 12
 
 // Bags of the whole deck, each shuffled, never the same card twice in a row,
 // so every card shows up about as often as the others.
@@ -711,7 +814,8 @@ window.setup = async (data) => {
   await document.fonts.ready
   const s = data.script
   CARDS = s.cards
-  HOOK = s.hook ?? 'STOP SCROLLING'
+  HOOK = s.hook ?? 'Stop scrolling.'
+  EYEBROW = s.eyebrow ?? 'ALIGN · LOVE NUMBERS'
   SUB = s.sub ?? ['close your eyes, take a breath', '& screenshot']
   FOOT = s.foot ?? ''
   INTRO = s.intro ?? 1.1
