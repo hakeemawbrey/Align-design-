@@ -4,7 +4,7 @@
 import { clamp, prog, ease } from '../../src/lib.js'
 import { FLOOR, box, txt, outside } from '../starrace/ep.js'
 import { label, signChar, sparkles, pop01, GOLD, BONE, PINK, INK, INTER, MONO, SERIF, SIGN_IDS } from '../signs3kit.js'
-import { streetSign, shield, skyline, car, freeway, heatSun, sweat, partyCard, inviteCard, taco, BRAKE, HGREEN } from './kit.js'
+import { streetSign, shield, skyline, car, freeway, heatSun, sweat, partyCard, inviteCard, taco, calendar, BRAKE, HGREEN } from './kit.js'
 
 const Y = 1255
 const BADGE = { text: 'HOU BETA · JAN 9', x: 230, y: 150 }
