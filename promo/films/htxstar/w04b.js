@@ -115,7 +115,7 @@ const hst096 = story({
       stick: [[0.2, 3.0, '*silence*', BONE]], sfx: [SFX.cricket(0.5), SFX.cricket(1.3), SFX.cricket(2.1)] },
     { dur: 3.6, set: (x, t) => chapel(x, t), front: (x, t) => sweat(x, 800, 1080, t, 3), cast: { aquarius: [[0, 360, 1240, 240]], gemini: [[0, 720, 1240, 230]] }, mood: { aquarius: 'sleepy', gemini: 'squint' },
       lines: [[0.3, 1.5, 'gemini', '*whispers* | is this a test?'], [2.0, 1.2, 'aquarius', 'shh.']] },
-    { dur: 3.4, set: (x, t) => chapel(x, t), cast: { aquarius: [[0, 360, 1240, 240]], gemini: [[0, 720, 1240, 230]], pisces: [[0, 900, 1440, 140]] }, mood: { aquarius: 'sleepy', gemini: 'wide', pisces: 'heart' },
+    { dur: 3.4, set: (x, t) => chapel(x, t), cast: { aquarius: [[0, 360, 1240, 240]], gemini: [[0, 720, 1240, 230]], pisces: [[0, 930, 1170, 150]] }, mood: { aquarius: 'sleepy', gemini: 'wide', pisces: 'heart' },
       stick: [[0.2, 2.8, 'PISCES IS CRYING. SILENTLY.', LAV]] },
     { dur: 3.8, set: (x, t) => chapel(x, t), cast: { aquarius: [[0, 360, 1240, 240]], gemini: [[0, 720, 1240, 230]] }, mood: { aquarius: 'sleepy', gemini: lt => lt > 1.4 ? 'sleepy' : 'neutral' },
       stick: [[0.2, 1.2, 'MINUTE 9', GOLD]], lines: [[2.0, 1.6, 'gemini', '...oh.']], sfx: [SFX.gasp(2.0)] },
