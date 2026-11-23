@@ -1,0 +1,101 @@
+{
+ "id": "dec-08-new-moon-sagittarius",
+ "format": "moon-alert",
+ "date": "2026-12-08",
+ "series": "sky news",
+ "signs": [
+  "sagittarius",
+  "gemini",
+  "virgo",
+  "pisces"
+ ],
+ "facts": [
+  "2026-12-08 new moon sagittarius",
+  "2026-12-08 mercury opposition uranus",
+  "2026-12-06 mercury enters sagittarius"
+ ],
+ "caption": "new moon in sagittarius tonight at 7:52 pm et (00:52 utc dec 9), 17°. the moon is invisible: it sits between earth and the sun.",
+ "hashtags": [
+  "newmoon",
+  "sagittarius",
+  "moonalert",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "moon alert · dec 8",
+   "headline": "*new moon* in sagittarius, tonight",
+   "dek": "peaks 7:52 pm et · 00:52 utc dec 9 · 17° sagittarius",
+   "art": {
+    "kind": "moon",
+    "phase": 0.03,
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "7:52 pm et · 17° sagittarius",
+   "tag": "the astronomy",
+   "headline": "the *moon* lines up between earth and the sun",
+   "body": "its lit side faces away from us, so there is nothing to see tonight. the first thin crescent shows low in the west after sunset in a day or two.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.02,
+    "sign": "sagittarius",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "the reading",
+   "tag": "new moon in sagittarius",
+   "headline": "start the *honest* version of whatever you start",
+   "body": "sagittarius new moons read as fresh starts for truth, travel and big-picture wants. with mercury in sagittarius too, the sky is asking you to say it plainly.",
+   "art": {
+    "kind": "figure",
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "headline": "the signs who *feel it* most",
+   "rows": [
+    {
+     "sign": "sagittarius",
+     "label": "sagittarius",
+     "text": "your new year starts early. pick the one want."
+    },
+    {
+     "sign": "gemini",
+     "label": "gemini",
+     "text": "opposite sign: partners have something to say."
+    },
+    {
+     "sign": "virgo",
+     "label": "virgo",
+     "text": "home and family want an honest update."
+    },
+    {
+     "sign": "pisces",
+     "label": "pisces",
+     "text": "a public fresh start. say it with your chest."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "sign": "sagittarius",
+   "headline": "write one sentence you mean. *send it* this week",
+   "body": "new moon, new deck. there is always an 11:11.",
+   "art": {
+    "kind": "stars",
+    "tint": "gold"
+   }
+  }
+ ]
+}

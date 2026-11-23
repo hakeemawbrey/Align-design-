@@ -1,0 +1,70 @@
+{
+ "id": "dec-19-today-moon-aries-taurus",
+ "format": "sky-roundup",
+ "date": "2026-12-19",
+ "series": "sky news",
+ "signs": [
+  "aries",
+  "taurus"
+ ],
+ "facts": [
+  "2026-12-19 moon in aries",
+  "2026-12-19 moon in taurus",
+  "2026-12-21 sun enters capricorn"
+ ],
+ "caption": "today's sky: the moon leaves aries for taurus at 3:30 pm et (20:30 utc). bold morning, slow evening.",
+ "hashtags": [
+  "todayssky",
+  "moon",
+  "aries",
+  "taurus",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "today's sky · sat dec 19",
+   "headline": "the *moon* changes sign this afternoon. plan the date for tonight",
+   "art": {
+    "kind": "moon",
+    "phase": 0.33,
+    "sign": "taurus"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "until 3:30 pm et",
+   "tag": "moon in aries",
+   "headline": "morning *moon* in aries: send the bold text",
+   "body": "a waxing moon in aries reads as short fuses and fast yeses. ask early.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.33,
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "taurus",
+   "kicker": "from 3:30 pm et",
+   "tag": "moon in taurus",
+   "headline": "then *taurus*: good food, slow talk, no rush",
+   "body": "the moon moves into taurus by late afternoon. reads as a night for comfort and staying put.",
+   "art": {
+    "kind": "figure",
+    "sign": "taurus"
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "taurus",
+   "headline": "ask in the morning. *show up* in the evening",
+   "body": "capricorn season starts monday.",
+   "art": {
+    "kind": "aura",
+    "sign": "taurus"
+   }
+  }
+ ]
+}

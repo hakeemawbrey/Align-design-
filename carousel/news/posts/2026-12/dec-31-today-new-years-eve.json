@@ -1,0 +1,74 @@
+{
+ "id": "dec-31-today-new-years-eve",
+ "format": "sky-roundup",
+ "date": "2026-12-31",
+ "series": "sky news",
+ "signs": [
+  "libra",
+  "virgo",
+  "capricorn"
+ ],
+ "facts": [
+  "2026-12-31 moon in libra",
+  "2026-12-31 sun trine mars",
+  "2026-12-31 mercury trine mars",
+  "2026-12-30 last quarter libra",
+  "2027-01-01 moon in scorpio"
+ ],
+ "caption": "today's sky on new year's eve: the moon in libra, the sun and mercury both trine mars. the moon enters scorpio after midnight.",
+ "hashtags": [
+  "todayssky",
+  "newyearseve",
+  "libra",
+  "mars",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "today's sky · new year's eve",
+   "headline": "the *moon* is in libra for the midnight kiss. ask nicely",
+   "art": {
+    "kind": "moon",
+    "phase": 0.78,
+    "sign": "libra"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "libra",
+   "kicker": "all day",
+   "tag": "moon in libra",
+   "headline": "a waning *moon* in libra: charm, balance, manners",
+   "body": "one day past last quarter. reads as a night for kindness and fair trades. the moon slips into scorpio after midnight, so things get deeper at 12:01.",
+   "art": {
+    "kind": "figure",
+    "sign": "libra"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "morning and night",
+   "tag": "two trines",
+   "headline": "the *sun* and mercury both trine mars",
+   "body": "capricorn sun and mercury, mars in virgo: drive and words agree. good for saying what you want next year, and meaning it.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "libra",
+   "headline": "say it before *midnight*. there is always an 11:11",
+   "body": "happy new year from the sky desk.",
+   "art": {
+    "kind": "stars",
+    "tint": "gold"
+   }
+  }
+ ]
+}

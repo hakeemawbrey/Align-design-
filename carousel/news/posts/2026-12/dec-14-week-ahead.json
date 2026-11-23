@@ -1,0 +1,112 @@
+{
+ "id": "dec-14-week-ahead",
+ "format": "sky-roundup",
+ "date": "2026-12-14",
+ "series": "sky news",
+ "signs": [
+  "sagittarius",
+  "pisces",
+  "aries"
+ ],
+ "facts": [
+  "2026-12-17 first quarter pisces",
+  "2026-12-18 sun trine jupiter",
+  "2026-12-17 moon in aries",
+  "2026-12-19 moon in taurus",
+  "2026-12-15 moon in pisces",
+  "2026-12-14 jupiter retrograde"
+ ],
+ "caption": "a quieter week with one gift: the sun trines jupiter on friday. dec 14 – 20, 2026.",
+ "hashtags": [
+  "weekahead",
+  "astrology",
+  "jupiter",
+  "zodiac",
+  "skynews"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "sky desk · week of dec 14",
+   "headline": "a calm week with one *lucky* friday",
+   "dek": "4 stories · swipe",
+   "art": {
+    "kind": "planet",
+    "body": "sun",
+    "sign": "sagittarius"
+   },
+   "labels": [
+    "sun",
+    "jupiter"
+   ],
+   "art2": {
+    "kind": "planet",
+    "body": "jupiter",
+    "sign": "leo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "pisces",
+   "kicker": "tue dec 15 – wed dec 16",
+   "tag": "moon in pisces",
+   "headline": "the *moon* drifts through pisces",
+   "body": "soft days. good for listening more than talking.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.2,
+    "sign": "pisces"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "pisces",
+   "kicker": "thu dec 17",
+   "tag": "first quarter",
+   "headline": "first quarter moon in *pisces*: the push",
+   "body": "half-lit and growing. reads as the point where an intention needs an action.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.25,
+    "sign": "pisces"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "dec 17 – 19",
+   "tag": "moon in aries",
+   "headline": "then the *moon* hits aries and patience runs out",
+   "body": "good for a bold ask. bad for a fight about the dishes.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.3,
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "fri dec 18",
+   "tag": "sun trine jupiter",
+   "headline": "the *sun* trines jupiter: generous, warm, a bit lucky",
+   "body": "the sun at 27° sagittarius, jupiter at 27° leo. astrologers read it as a yes-energy day.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "jupiter",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "sagittarius",
+   "headline": "the one to watch: *friday*. ask for the thing",
+   "body": "worst case, you know where you stand.",
+   "art": {
+    "kind": "figure",
+    "sign": "sagittarius"
+   }
+  }
+ ]
+}

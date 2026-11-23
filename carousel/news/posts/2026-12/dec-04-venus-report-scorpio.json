@@ -1,0 +1,148 @@
+{
+ "id": "dec-04-venus-report-scorpio",
+ "format": "venus-report",
+ "date": "2026-12-04",
+ "series": "sky news",
+ "signs": [
+  "scorpio"
+ ],
+ "facts": [
+  "2026-12-04 venus enters scorpio",
+  "2026-12-04 mars square uranus",
+  "2026-12-04 mars in virgo"
+ ],
+ "caption": "love weather: venus entered scorpio today and stays into january. your sun is who you are. your venus is how you love.",
+ "hashtags": [
+  "venus",
+  "scorpio",
+  "loveweather",
+  "astrology",
+  "dating",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "love weather · dec 4",
+   "headline": "love weather: *venus* in scorpio",
+   "dek": "the weekend gets intense. in a good way, if you let it",
+   "art": {
+    "kind": "aura",
+    "sign": "libra"
+   },
+   "labels": [
+    "libra",
+    "scorpio"
+   ],
+   "art2": {
+    "kind": "aura",
+    "sign": "scorpio"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "dec 4 · 3:15 am et",
+   "tag": "where venus is",
+   "headline": "*venus* just walked into scorpio",
+   "body": "venus left libra overnight and stays in scorpio until early january. astrologers read it as love that wants depth, privacy and a straight answer.",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "scorpio",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "this weekend",
+   "headline": "good weekend *for*",
+   "rows": [
+    {
+     "label": "good",
+     "color": "spark",
+     "text": "one long date instead of three short ones"
+    },
+    {
+     "label": "good",
+     "color": "spark",
+     "text": "asking the question you usually swallow"
+    },
+    {
+     "label": "good",
+     "color": "spark",
+     "text": "telling someone they matter, plainly"
+    },
+    {
+     "label": "good",
+     "color": "spark",
+     "text": "texting back the person who texts back"
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "this weekend",
+   "headline": "bad weekend *for*",
+   "rows": [
+    {
+     "label": "bad",
+     "color": "rub",
+     "text": "checking who viewed your story"
+    },
+    {
+     "label": "bad",
+     "color": "rub",
+     "text": "jealousy as a love language"
+    },
+    {
+     "label": "bad",
+     "color": "rub",
+     "text": "big moves on a whim (mars squares uranus)"
+    },
+    {
+     "label": "bad",
+     "color": "rub",
+     "text": "testing people who already passed"
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "by element",
+   "headline": "venus in scorpio, *by element*",
+   "rows": [
+    {
+     "label": "fire",
+     "color": "scorpio",
+     "text": "slow down. depth is the new chase."
+    },
+    {
+     "label": "earth",
+     "color": "scorpio",
+     "text": "loyalty looks good on you right now."
+    },
+    {
+     "label": "air",
+     "color": "scorpio",
+     "text": "say the feeling, not the analysis."
+    },
+    {
+     "label": "water",
+     "color": "scorpio",
+     "text": "home turf. lead with it."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "sign": "scorpio",
+   "headline": "your sun is who you are. your *venus* is how you love",
+   "body": "find yours before the weekend.",
+   "art": {
+    "kind": "aura",
+    "sign": "scorpio"
+   }
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "id": "dec-22-week-ahead",
+ "format": "sky-roundup",
+ "date": "2026-12-22",
+ "series": "sky news",
+ "signs": [
+  "cancer",
+  "capricorn",
+  "leo"
+ ],
+ "facts": [
+  "2026-12-23 full moon cancer",
+  "2026-12-23 sun square neptune",
+  "2026-12-23 mercury trine jupiter",
+  "2026-12-25 mercury enters capricorn",
+  "2026-12-26 mercury square neptune",
+  "2026-12-26 moon in leo"
+ ],
+ "caption": "the holiday week in the sky: a full moon, mercury into capricorn, and a little fog. dec 22 – 27, 2026.",
+ "hashtags": [
+  "weekahead",
+  "fullmoon",
+  "cancer",
+  "capricorn",
+  "astrology",
+  "holidays"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of dec 21",
+   "headline": "the *holiday* week in the sky, before the family asks",
+   "dek": "5 stories · swipe",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "cancer",
+     "capricorn",
+     "leo",
+     "aries"
+    ]
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "cancer",
+   "kicker": "wed dec 23 · 8:28 pm et",
+   "tag": "full moon",
+   "headline": "full moon in *cancer*: the feelings arrive early",
+   "body": "the last full moon of 2026. reads as home, family and the person you miss.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "cancer"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "wed dec 23",
+   "tag": "sun square neptune",
+   "headline": "the *sun* squares neptune: rose-tinted, slightly",
+   "body": "nostalgia is loud. an ex may look better than they were. check the facts.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "neptune"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "leo",
+   "kicker": "wed dec 23",
+   "tag": "mercury trine jupiter",
+   "headline": "*mercury* trines jupiter: the good talk at the table",
+   "body": "same day, kinder energy. a good evening for a generous conversation.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "jupiter"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "capricorn",
+   "kicker": "fri dec 25",
+   "tag": "mercury ingress",
+   "headline": "*mercury* enters capricorn on christmas day",
+   "body": "words get shorter and more serious. good for plans, bad for small talk.",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "capricorn"
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "capricorn"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "sat dec 26",
+   "tag": "mercury square neptune",
+   "headline": "*mercury* squares neptune: re-read before you send",
+   "body": "messages blur. the boxing day text can wait until it makes sense.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "neptune"
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "cancer",
+   "headline": "the one to watch: the *full moon*, wednesday",
+   "body": "plan the conversation, not just the dinner.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.48,
+    "sign": "cancer"
+   }
+  }
+ ]
+}

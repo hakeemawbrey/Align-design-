@@ -1,0 +1,122 @@
+{
+ "id": "dec-13-week-that-was",
+ "format": "sky-roundup",
+ "date": "2026-12-13",
+ "series": "sky news",
+ "signs": [
+  "sagittarius",
+  "aries",
+  "leo"
+ ],
+ "facts": [
+  "2026-12-08 new moon sagittarius",
+  "2026-12-09 venus square pluto",
+  "2026-12-10 saturn stations direct aries",
+  "2026-12-11 mercury trine saturn",
+  "2026-12-12 venus sextile mars",
+  "2026-12-12 jupiter stations retrograde leo",
+  "2026-12-12 neptune stations direct aries"
+ ],
+ "caption": "swipe for the week the sky had: a new moon and three planets changing direction. dec 7 – 13, 2026.",
+ "hashtags": [
+  "skynews",
+  "weeklyhoroscope",
+  "jupiterretrograde",
+  "saturndirect",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of dec 7",
+   "headline": "three planets changed direction this week. *catch up*",
+   "dek": "6 stories · swipe",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "sagittarius",
+     "aries",
+     "leo",
+     "scorpio"
+    ]
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "dec 8",
+   "tag": "new moon",
+   "headline": "a new moon in *sagittarius* reset the honesty meter",
+   "body": "if you set one intention, check it is still the one.",
+   "art": {
+    "kind": "moon",
+    "phase": 0,
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "dec 9",
+   "tag": "venus square pluto",
+   "headline": "*venus* squared pluto and the jealousy came out",
+   "body": "if someone played games, you learned something useful.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "dec 10 – 11",
+   "tag": "saturn direct",
+   "headline": "*saturn* went direct, then mercury trined it",
+   "body": "plans got traction. a good week for a serious talk that went fine.",
+   "art": {
+    "kind": "planet",
+    "body": "saturn",
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "dec 12",
+   "tag": "venus sextile mars",
+   "headline": "*venus* and mars played nice saturday morning",
+   "body": "if you asked someone out, that was good timing.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "leo",
+   "kicker": "dec 12",
+   "tag": "jupiter rx · neptune direct",
+   "headline": "*jupiter* turned retrograde in leo, neptune turned direct",
+   "body": "big plans slow down to be checked. the fog thins.",
+   "art": {
+    "kind": "planet",
+    "body": "jupiter",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "sagittarius",
+   "headline": "the one to watch: *sun trine jupiter* on friday",
+   "body": "the friendliest aspect of the month. save the big ask for it.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "jupiter"
+   }
+  }
+ ]
+}

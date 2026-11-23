@@ -1,0 +1,113 @@
+{
+ "id": "jan-03-week-that-was",
+ "format": "sky-roundup",
+ "date": "2027-01-03",
+ "series": "sky news",
+ "signs": [
+  "capricorn"
+ ],
+ "facts": [
+  "2026-12-29 sun square saturn",
+  "2026-12-30 last quarter libra",
+  "2026-12-30 mercury square saturn",
+  "2026-12-31 sun trine mars",
+  "2026-12-31 mercury trine mars",
+  "2027-01-01 sun conjunction mercury",
+  "2027-01-03 venus square jupiter"
+ ],
+ "caption": "swipe for the week the sky had, from dec 29 to today. one of these is about your love life.",
+ "hashtags": [
+  "astrology",
+  "skyroundup",
+  "capricorn",
+  "newyear",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · dec 29 – jan 3",
+   "headline": "what just happened in the *sky* over new year?",
+   "dek": "5 stories · the week, caught up",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mercury"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "capricorn",
+   "kicker": "dec 29–30 · 8° aries",
+   "tag": "saturn square",
+   "headline": "the sun and mercury both hit *saturn*",
+   "body": "sun square saturn, then mercury square saturn. read it as the year-end reality check: the plan met the calendar.",
+   "art": {
+    "kind": "planet",
+    "body": "saturn",
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "libra",
+   "kicker": "dec 30 · 9° libra",
+   "tag": "last quarter",
+   "headline": "last quarter in *libra*: the clear-out moon",
+   "body": "the half-lit moon before a new one. astrologers read it as a time to let go of what's unfair, not just what's old.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.75,
+    "sign": "libra"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "dec 31 · 10° capricorn / virgo",
+   "tag": "mars trines",
+   "headline": "new year's eve got a *mars* boost",
+   "body": "the sun and mercury both trined mars in virgo. a good night to do, not just plan. hope you did something.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "capricorn",
+   "kicker": "jan 1 · 11° capricorn",
+   "tag": "sun meets mercury",
+   "headline": "the year opened with the sun on *mercury*",
+   "body": "they lined up in capricorn on jan 1. read it as a clear head for resolutions. write yours in one sentence.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mercury"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "today · 26° scorpio / leo",
+   "tag": "the one to watch",
+   "headline": "*venus* squares jupiter today: easy on the promises",
+   "body": "an overdo aspect. lovely for a big night, risky for a big vow. you can mean it next week too.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "jupiter"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "resolution: say the *honest* thing first",
+   "body": "save this. the week ahead lands tomorrow.",
+   "art": {
+    "kind": "stars",
+    "tint": "gold"
+   }
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "dec-28-last-week-of-2026",
+ "format": "sky-roundup",
+ "date": "2026-12-28",
+ "series": "sky news",
+ "signs": [
+  "capricorn",
+  "virgo",
+  "libra"
+ ],
+ "facts": [
+  "2026-12-29 sun square saturn",
+  "2026-12-30 last quarter libra",
+  "2026-12-30 mercury square saturn",
+  "2026-12-31 sun trine mars",
+  "2026-12-31 mercury trine mars",
+  "2027-01-01 sun conjunction mercury",
+  "2027-01-07 new moon capricorn"
+ ],
+ "caption": "the last week of 2026 in the sky: a test, a clean-up, then two trines on new year's eve. dec 28 – jan 3.",
+ "hashtags": [
+  "weekahead",
+  "newyearseve",
+  "astrology",
+  "capricorn",
+  "zodiac",
+  "skynews"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of dec 28",
+   "headline": "the last week of *2026* ends on a good note",
+   "dek": "5 stories · swipe",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "tue dec 29",
+   "tag": "sun square saturn",
+   "headline": "the *sun* squares saturn: the boring true thing",
+   "body": "reads as limits and responsibility. say what you can actually give.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "saturn"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "libra",
+   "kicker": "wed dec 30",
+   "tag": "last quarter",
+   "headline": "last quarter *moon* in libra: clear the table",
+   "body": "half-lit and shrinking. a good day to end what is already over.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.75,
+    "sign": "libra"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "wed dec 30",
+   "tag": "mercury square saturn",
+   "headline": "*mercury* squares saturn: the hard conversation",
+   "body": "short, honest, done. do not drag it into next year.",
+   "art": {
+    "kind": "planet",
+    "body": "saturn",
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "thu dec 31",
+   "tag": "two trines",
+   "headline": "the *sun* and mercury both trine mars on new year's eve",
+   "body": "energy and words line up. the midnight kiss can come with a sentence.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "capricorn",
+   "kicker": "fri jan 1",
+   "tag": "sun meets mercury",
+   "headline": "the *sun* meets mercury in capricorn on day one",
+   "body": "a clear head to start 2027. write down what you want.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mercury"
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "capricorn",
+   "headline": "the one to watch: *new year's eve*. say it before midnight",
+   "body": "then the first new moon of 2027 is jan 7, in capricorn.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.02,
+    "sign": "capricorn"
+   }
+  }
+ ]
+}

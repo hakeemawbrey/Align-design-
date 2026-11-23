@@ -1,0 +1,86 @@
+{
+ "id": "jan-20-capricorn-to-aquarius",
+ "format": "season-handover",
+ "date": "2027-01-20",
+ "series": "sky news",
+ "signs": [
+  "aquarius",
+  "capricorn"
+ ],
+ "facts": [
+  "2027-01-20 sun enters aquarius",
+  "2027-01-21 sun trine uranus",
+  "2027-01-25 sun conjunction pluto",
+  "2027-02-06 solar eclipse aquarius"
+ ],
+ "caption": "sun enters aquarius at 07:30 utc, jan 20. the friend season, with an eclipse on feb 6.",
+ "hashtags": [
+  "aquariusseason",
+  "aquarius",
+  "capricorn",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "new season · jan 20",
+   "labels": [
+    "capricorn",
+    "aquarius"
+   ],
+   "headline": "*capricorn* hands the keys to *aquarius*",
+   "art": {
+    "kind": "figure",
+    "sign": "capricorn"
+   },
+   "art2": {
+    "kind": "figure",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "capricorn",
+   "kicker": "goodbye capricorn",
+   "headline": "you made the plan. *you can stop* checking it every hour.",
+   "art": {
+    "kind": "figure",
+    "sign": "capricorn"
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "aquarius",
+   "kicker": "hello aquarius",
+   "headline": "your season. *be weird* on purpose.",
+   "art": {
+    "kind": "figure",
+    "sign": "aquarius",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "jan 20 – feb 18 · aquarius season",
+   "tag": "good for",
+   "headline": "friends, ideas and *honest* distance",
+   "body": "astrologers read aquarius season as the month to meet people through people. the sun meets pluto here on jan 25, and an annular solar eclipse lands in aquarius on feb 6.",
+   "art": {
+    "kind": "aura",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "be someone's friend *first*. the rest can follow.",
+   "body": "read their sky before their selfies.",
+   "art": {
+    "kind": "planet",
+    "body": "sun",
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

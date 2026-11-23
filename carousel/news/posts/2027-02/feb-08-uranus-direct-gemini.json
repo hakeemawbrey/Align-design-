@@ -1,0 +1,67 @@
+{
+ "series": "sky news",
+ "id": "feb-08-uranus-direct-gemini",
+ "format": "sign-callout",
+ "date": "2027-02-08",
+ "signs": [
+  "gemini"
+ ],
+ "caption": "uranus turns direct today at 1.7° gemini. it only looked like it was going backwards.",
+ "hashtags": [
+  "uranus",
+  "gemini",
+  "astrology",
+  "zodiac",
+  "retrograde"
+ ],
+ "facts": [
+  "2027-02-08 uranus stations direct gemini",
+  "2027-02-09 mercury stations retrograde pisces"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "sky news · feb 8",
+   "headline": "*gemini*, uranus stops reversing in your sign today",
+   "art": {
+    "kind": "planet",
+    "body": "uranus",
+    "sign": "gemini"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 8 · 1.7° gemini",
+   "tag": "uranus direct",
+   "sign": "gemini",
+   "headline": "*uranus* pauses, then moves forward again",
+   "body": "from earth, uranus has looked like it was drifting backwards for months. today it stations and turns direct. astrologers read uranus as change you didn't plan.",
+   "art": {
+    "kind": "planet",
+    "body": "uranus",
+    "sign": "gemini",
+    "zoom": 1.3
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "gemini",
+   "kicker": "gemini",
+   "headline": "you can want *change* and still pick a person",
+   "body": "restless is fine. vague isn't.",
+   "art": {
+    "kind": "figure",
+    "sign": "gemini"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "say what you *actually* want, then let it surprise you",
+   "body": "heads-up: mercury turns retrograde tomorrow.",
+   "art": {
+    "kind": "aura",
+    "sign": "gemini"
+   }
+  }
+ ]
+}

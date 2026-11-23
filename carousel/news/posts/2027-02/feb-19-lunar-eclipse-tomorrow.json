@@ -1,0 +1,109 @@
+{
+ "series": "sky news",
+ "id": "feb-19-lunar-eclipse-tomorrow",
+ "format": "moon-alert",
+ "date": "2027-02-19",
+ "signs": [
+  "virgo",
+  "pisces",
+  "gemini"
+ ],
+ "caption": "penumbral lunar eclipse + full moon in virgo tomorrow, feb 20, 23:12 utc. honest note: you may not see any change.",
+ "hashtags": [
+  "lunareclipse",
+  "fullmoon",
+  "virgo",
+  "eclipse",
+  "astrology"
+ ],
+ "facts": [
+  "2027-02-20 lunar eclipse virgo",
+  "2027-02-20 full moon virgo",
+  "2027-02-19 sun opposition mars",
+  "2027-02-19 sun in pisces",
+  "2027-02-21 mars enters leo"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "eclipse alert · tomorrow",
+   "labels": [
+    "sun · pisces",
+    "moon · virgo"
+   ],
+   "headline": "tomorrow: a full moon *eclipse* in virgo that barely shows",
+   "art": {
+    "kind": "planet",
+    "body": "sun",
+    "sign": "pisces"
+   },
+   "art2": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 20 · 23:12 utc",
+   "tag": "the honest facts",
+   "sign": "virgo",
+   "headline": "this is the subtle kind of *eclipse*",
+   "body": "a penumbral eclipse: the moon passes through earth's pale outer shadow only. no red moon, no dark bite. if you look, you might catch a faint shading. most people won't.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "virgo"
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the reading",
+   "tag": "virgo vs pisces",
+   "sign": "virgo",
+   "headline": "the sun is in pisces, the moon in *virgo*: feeling vs fixing",
+   "body": "astrologers read this eclipse as a soft close on over-managing. and today the sun opposes retrograde mars. read it as: drop the argument you're rehearsing.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "headline": "the three signs it *lands* on",
+   "accent": "rub",
+   "rows": [
+    {
+     "sign": "virgo",
+     "label": "virgo",
+     "text": "it's in your sign. drop one standard."
+    },
+    {
+     "sign": "pisces",
+     "label": "pisces",
+     "text": "the opposite sign. a partner gets honest."
+    },
+    {
+     "sign": "gemini",
+     "label": "gemini",
+     "text": "home and work need one boundary."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "release, don't *ghost*.",
+   "body": "tonight: write down the one thing you're done fixing.",
+   "art": {
+    "kind": "figure",
+    "sign": "virgo"
+   }
+  }
+ ]
+}

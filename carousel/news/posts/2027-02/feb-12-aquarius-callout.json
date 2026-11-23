@@ -1,0 +1,71 @@
+{
+ "series": "sky news",
+ "id": "feb-12-aquarius-callout",
+ "format": "sign-callout",
+ "date": "2027-02-12",
+ "signs": [
+  "aquarius"
+ ],
+ "caption": "aquarius, this was your eclipse (feb 6, 17.6°) and the sun is in your sign until feb 18. pluto is there too.",
+ "hashtags": [
+  "aquarius",
+  "aquariusseason",
+  "eclipse",
+  "astrology",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-06 solar eclipse aquarius",
+  "2027-02-12 sun in aquarius",
+  "2027-02-12 pluto in aquarius",
+  "2027-02-18 sun enters pisces",
+  "2027-02-10 sun opposition jupiter",
+  "2027-02-18 mercury enters aquarius"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "sky news · feb 12",
+   "headline": "*aquarius*, an eclipse, pluto and the sun, all in your sign this week",
+   "art": {
+    "kind": "planet",
+    "body": "pluto",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 6 – feb 18",
+   "tag": "aquarius",
+   "sign": "aquarius",
+   "headline": "the eclipse, the *sun* and pluto, all in your sign",
+   "body": "the annular eclipse fell in aquarius on feb 6. the sun opposed jupiter on feb 10. pluto sits in aquarius too. and mercury backs in on feb 18.",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "aquarius",
+   "kicker": "aquarius",
+   "headline": "being hard to read isn't the same as being *deep*",
+   "body": "let one person in on purpose.",
+   "art": {
+    "kind": "aura",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "detached is a *choice*. so is warm.",
+   "body": "send this to your aquarius before their season ends.",
+   "art": {
+    "kind": "figure",
+    "sign": "aquarius",
+    "zoom": 1.3
+   }
+  }
+ ]
+}

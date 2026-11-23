@@ -1,0 +1,71 @@
+{
+ "series": "sky news",
+ "id": "feb-21-mars-back-in-leo",
+ "format": "sign-callout",
+ "date": "2027-02-21",
+ "signs": [
+  "leo"
+ ],
+ "caption": "mars re-enters leo today, 14:15 utc, still retrograde. jupiter is retrograde in leo too.",
+ "hashtags": [
+  "mars",
+  "marsretrograde",
+  "leo",
+  "astrology",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-21 mars enters leo",
+  "2027-02-21 mars retrograde",
+  "2027-02-21 jupiter retrograde",
+  "2027-02-21 jupiter in leo",
+  "2026-11-25 mars enters virgo"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "sky news · feb 21",
+   "headline": "*leo*, mars is back in your sign, walking backwards",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 21 · 14:15 utc",
+   "tag": "mars retrograde",
+   "sign": "leo",
+   "headline": "*mars* slides back from virgo into leo",
+   "body": "mars left leo on nov 25. it's been retrograde since jan 10 and today it appears to back over the line. jupiter, also retrograde, is in leo with it.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "leo",
+   "kicker": "leo",
+   "headline": "you don't need to *win* the rematch",
+   "body": "old drive, old pride, old crush. look before you leap.",
+   "art": {
+    "kind": "figure",
+    "sign": "leo"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "say it once, warmly. that's the *loud* move now.",
+   "body": "send this to your leo.",
+   "art": {
+    "kind": "aura",
+    "sign": "leo"
+   }
+  }
+ ]
+}

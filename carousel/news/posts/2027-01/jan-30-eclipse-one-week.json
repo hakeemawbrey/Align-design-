@@ -1,0 +1,116 @@
+{
+ "id": "jan-30-eclipse-one-week",
+ "format": "moon-alert",
+ "date": "2027-01-30",
+ "series": "sky news",
+ "signs": [
+  "aquarius",
+  "leo",
+  "taurus",
+  "scorpio"
+ ],
+ "facts": [
+  "2027-02-06 solar eclipse aquarius",
+  "2027-02-06 new moon aquarius",
+  "2027-02-20 lunar eclipse virgo",
+  "2027-01-30 sun sextile saturn",
+  "2027-02-09 mercury stations retrograde pisces"
+ ],
+ "caption": "one week out: annular solar eclipse at 17.6° aquarius, feb 6 at 15:59 utc. greatest eclipse is over the south atlantic.",
+ "hashtags": [
+  "eclipse",
+  "solareclipse",
+  "aquarius",
+  "eclipseseason",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "breaking",
+   "word": "eclipse",
+   "kicker": "eclipse alert · 7 days",
+   "headline": "one week until the *ring of fire* eclipse in *aquarius*",
+   "dek": "feb 6 · 15:59 utc · 17.6° aquarius",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "feb 6 · 15:59 utc",
+   "tag": "the facts",
+   "headline": "an *annular* solar eclipse at the new moon",
+   "body": "the moon covers the sun's middle and leaves a bright ring. greatest eclipse falls over the south atlantic. check a local eclipse map, and use eclipse glasses.",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "feb 6 → feb 20",
+   "tag": "eclipse season",
+   "headline": "two eclipses, *two weeks* apart",
+   "body": "the solar eclipse in aquarius, then a penumbral lunar eclipse in virgo on feb 20. mercury stations retrograde in between, on feb 9.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "the reading",
+   "tag": "aquarius",
+   "headline": "a new moon with the *volume* up",
+   "body": "astrologers read solar eclipses as starts you didn't fully plan. in aquarius: friendships, freedom, the way you date.",
+   "art": {
+    "kind": "figure",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "headline": "four signs feel this *eclipse* most",
+   "rows": [
+    {
+     "sign": "aquarius",
+     "label": "aquarius",
+     "text": "**your sign.** a new chapter, on purpose."
+    },
+    {
+     "sign": "leo",
+     "label": "leo",
+     "text": "the eclipse faces you. partnerships shift."
+    },
+    {
+     "sign": "taurus",
+     "label": "taurus",
+     "text": "career gets a new direction."
+    },
+    {
+     "sign": "scorpio",
+     "label": "scorpio",
+     "text": "home and family plans reset."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "this week: *finish* one thing so there's room",
+   "body": "new moon, new deck. there's always an 11:11. we'll be back the day before.",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

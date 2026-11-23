@@ -1,0 +1,77 @@
+{
+ "id": "jan-28-sagittarius-venus-trine-jupiter",
+ "format": "sign-callout",
+ "date": "2027-01-28",
+ "series": "sky news",
+ "signs": [
+  "sagittarius"
+ ],
+ "facts": [
+  "2027-01-07 venus enters sagittarius",
+  "2027-01-28 venus trine jupiter",
+  "2027-02-03 venus enters capricorn"
+ ],
+ "caption": "venus trines jupiter today from 23.7° sagittarius to 23.7° leo. venus stays in sagittarius until feb 3.",
+ "hashtags": [
+  "sagittarius",
+  "venus",
+  "jupiter",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "sign callout · jan 28",
+   "headline": "*sagittarius*, *venus* is in your sign and jupiter just said yes",
+   "dek": "send this to your sagittarius",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "sagittarius",
+   "kicker": "sagittarius",
+   "headline": "you're the most *magnetic* person in the room this week",
+   "art": {
+    "kind": "figure",
+    "sign": "sagittarius",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "sagittarius",
+   "kicker": "venus trine jupiter",
+   "headline": "ask them out *plainly*. the bold version, not the hint.",
+   "art": {
+    "kind": "figure",
+    "sign": "sagittarius",
+    "zoom": 1.3
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "sagittarius",
+   "kicker": "venus leaves on feb 3",
+   "headline": "six days left. *don't* spend them waiting for a reply.",
+   "art": {
+    "kind": "figure",
+    "sign": "sagittarius",
+    "zoom": 1.4
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "say the honest thing. *you're good at it.*",
+   "body": "just say it warmly.",
+   "art": {
+    "kind": "aura",
+    "sign": "sagittarius"
+   }
+  }
+ ]
+}

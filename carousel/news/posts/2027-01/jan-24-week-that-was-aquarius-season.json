@@ -1,0 +1,116 @@
+{
+ "id": "jan-24-week-that-was-aquarius-season",
+ "format": "sky-roundup",
+ "date": "2027-01-24",
+ "series": "sky news",
+ "signs": [
+  "aquarius",
+  "leo"
+ ],
+ "facts": [
+  "2027-01-18 mercury sextile saturn",
+  "2027-01-20 sun enters aquarius",
+  "2027-01-21 sun trine uranus",
+  "2027-01-22 full moon leo",
+  "2027-01-23 mercury sextile venus",
+  "2027-01-25 sun conjunction pluto"
+ ],
+ "caption": "swipe for the week the sky had, jan 18 to today. tomorrow the sun meets pluto.",
+ "hashtags": [
+  "skyroundup",
+  "aquariusseason",
+  "fullmoon",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · jan 18 – 24",
+   "headline": "what just happened in the *sky* this week?",
+   "dek": "5 stories · the week, caught up",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "aquarius",
+     "leo"
+    ],
+    "tint": "gold"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "mon jan 18",
+   "tag": "mercury sextile saturn",
+   "headline": "boundaries got *easier* to say",
+   "body": "clear talk with no drama. if you said no to something on monday, it probably landed fine.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "saturn"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "wed jan 20 · 0° aquarius",
+   "tag": "new season",
+   "headline": "*aquarius* season started",
+   "body": "the sun left capricorn. then it trined uranus on thursday: a week for unexpected plans.",
+   "art": {
+    "kind": "planet",
+    "body": "sun",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "leo",
+   "kicker": "fri jan 22 · 2° leo",
+   "tag": "full moon",
+   "headline": "the *leo* full moon took the mic",
+   "body": "read it as the week's confession night. if you said it, good. if you didn't, the moon is not the only chance.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "leo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "sat jan 23",
+   "tag": "mercury sextile venus",
+   "headline": "the *follow-up* text had good weather",
+   "body": "kind words came easier. hope you sent one.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "venus"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "tomorrow · 5° aquarius",
+   "tag": "the one to watch",
+   "headline": "the sun meets *pluto* on monday",
+   "body": "once a year the sun passes pluto. astrologers read it as the truth with the lights on. more tomorrow.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "you said it. now *let it land*.",
+   "body": "save this. the week ahead lands tomorrow.",
+   "art": {
+    "kind": "stars",
+    "tint": "gold"
+   }
+  }
+ ]
+}

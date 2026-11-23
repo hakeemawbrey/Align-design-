@@ -1,0 +1,138 @@
+{
+ "id": "jan-15-love-weather-venus-square-mars",
+ "format": "venus-report",
+ "date": "2027-01-15",
+ "series": "sky news",
+ "signs": [
+  "sagittarius",
+  "virgo"
+ ],
+ "facts": [
+  "2027-01-15 venus trine saturn",
+  "2027-01-16 venus square mars",
+  "2027-01-15 venus in sagittarius",
+  "2027-01-15 mars retrograde",
+  "2027-01-15 first quarter aries"
+ ],
+ "caption": "venus trines saturn today and squares a retrograde mars tomorrow. your venus is how you love.",
+ "hashtags": [
+  "venus",
+  "loveweather",
+  "dating",
+  "sagittarius",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "love weather · jan 15",
+   "labels": [
+    "venus",
+    "mars"
+   ],
+   "headline": "love weather: *venus* wants it, *mars* isn't ready",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "sagittarius"
+   },
+   "art2": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "jan 15 · 9° sagittarius / aries",
+   "tag": "today",
+   "headline": "venus trines *saturn*: commit to something small",
+   "body": "astrologers read it as steady affection. a second date, a real plan, a text you'll stand by tomorrow.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "saturn"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "jan 16 · 10° sagittarius / virgo",
+   "tag": "tomorrow",
+   "headline": "venus squares a *retrograde* mars",
+   "body": "desire runs ahead and energy lags behind. read it as chemistry with bad timing. you don't have to fix it tonight.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "this weekend",
+   "headline": "good for / bad for",
+   "rows": [
+    {
+     "color": "spark",
+     "label": "good",
+     "text": "a plan with a time and a place."
+    },
+    {
+     "color": "spark",
+     "label": "good",
+     "text": "asking what they actually want."
+    },
+    {
+     "color": "rub",
+     "label": "bad",
+     "text": "chasing someone who's slow to reply."
+    },
+    {
+     "color": "rub",
+     "label": "bad",
+     "text": "reading a late text as a verdict."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "by element",
+   "headline": "this weekend, *for you*",
+   "rows": [
+    {
+     "color": "sagittarius",
+     "label": "fire",
+     "text": "match their pace once. see what happens."
+    },
+    {
+     "color": "sagittarius",
+     "label": "earth",
+     "text": "make the plan. you're good at plans."
+    },
+    {
+     "color": "sagittarius",
+     "label": "air",
+     "text": "say it in person, not in a voice note."
+    },
+    {
+     "color": "sagittarius",
+     "label": "water",
+     "text": "a slow reply isn't a no. ask."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "if it's one-sided, it isn't alignment. *it's a hobby.*",
+   "body": "your venus is how you love. it has to be mutual.",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "sagittarius"
+   }
+  }
+ ]
+}

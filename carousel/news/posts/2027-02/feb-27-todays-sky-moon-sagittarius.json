@@ -1,0 +1,55 @@
+{
+ "series": "sky news",
+ "id": "feb-27-todays-sky-moon-sagittarius",
+ "format": "sky-roundup",
+ "date": "2027-02-27",
+ "signs": [
+  "sagittarius"
+ ],
+ "caption": "the moon enters sagittarius today, 10:52 utc. tomorrow it hits last quarter there.",
+ "hashtags": [
+  "moon",
+  "sagittarius",
+  "astrology",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-27 moon in sagittarius",
+  "2027-02-28 last quarter sagittarius",
+  "2027-02-27 mercury retrograde"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "today's sky · feb 27",
+   "headline": "the moon's in *sagittarius*: say it straight, today",
+   "art": {
+    "kind": "moon",
+    "phase": 0.72,
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 27 · 10:52 utc",
+   "tag": "moon in sagittarius",
+   "sign": "sagittarius",
+   "headline": "the *moon* moves into the honest sign",
+   "body": "it reaches last quarter tomorrow. astrologers read a sagittarius moon as blunt and restless. mercury's still retrograde, so blunt, but kind.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.72,
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "the first thing you say should be *true*, not cute.",
+   "body": "one honest text today.",
+   "art": {
+    "kind": "aura",
+    "sign": "sagittarius"
+   }
+  }
+ ]
+}

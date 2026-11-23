@@ -1,0 +1,67 @@
+{
+ "id": "dec-03-scorpio-venus-tomorrow",
+ "format": "sign-callout",
+ "date": "2026-12-03",
+ "series": "sky news",
+ "signs": [
+  "scorpio"
+ ],
+ "facts": [
+  "2026-12-04 venus enters scorpio",
+  "2026-12-04 moon in scorpio",
+  "2026-12-06 mercury enters sagittarius"
+ ],
+ "caption": "scorpio, venus moves into your sign tomorrow and stays through the holidays. send this to your scorpio.",
+ "hashtags": [
+  "scorpio",
+  "venus",
+  "astrology",
+  "zodiac",
+  "dating"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "sky news · dec 3",
+   "headline": "*scorpio*, venus moves in tomorrow. people are going to notice",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "scorpio"
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "scorpio",
+   "kicker": "dec 4 · venus enters scorpio",
+   "headline": "the planet of *love* parks in your sign for the whole month",
+   "art": {
+    "kind": "figure",
+    "sign": "scorpio",
+    "zoom": 1.2
+   }
+  },
+  {
+   "layout": "callout",
+   "sign": "scorpio",
+   "kicker": "the moon joins you too",
+   "headline": "magnetic is easy this week. *honest* is the flex",
+   "body": "the moon is in scorpio from late on dec 4, and mercury leaves your sign on dec 6.",
+   "art": {
+    "kind": "figure",
+    "sign": "scorpio",
+    "zoom": 1.3
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "scorpio",
+   "headline": "stop testing people who *already passed*",
+   "body": "if they showed up, believe them.",
+   "art": {
+    "kind": "aura",
+    "sign": "scorpio"
+   }
+  }
+ ]
+}

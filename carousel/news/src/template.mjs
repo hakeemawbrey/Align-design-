@@ -103,7 +103,7 @@ const LAYOUTS = {
     return `
     <div class="art full-art">${ctx.art.html}<div class="shade-mid"></div></div>
     <div class="callout-text">
-      ${s.kicker ? `<div class="kicker center">${esc(s.kicker)}</div>` : ''}
+      ${s.kicker ? `<div class="kicker center"><span class="pill">${esc(s.kicker)}</span></div>` : ''}
       <h1 class="fit head center" data-max="520" data-big="140" data-small="62">${rich(s.headline)}</h1>
       ${s.body ? `<p class="dek center">${rich(s.body)}</p>` : ''}
     </div>`
@@ -319,8 +319,8 @@ ${a2.css}
 .divider .ln{flex:1;height:2px;background:linear-gradient(90deg,transparent,#f2c75c 50%,transparent)}
 .dmark{font:400 20px 'Space Mono',monospace;letter-spacing:.3em;color:#efe6d6;opacity:.8;display:flex;gap:8px;align-items:center}
 /* breaking */
-.giant{position:absolute;left:-20px;right:-20px;top:120px;text-align:center;font:italic 500 330px/1 'EB Garamond',serif;letter-spacing:-.04em;
-  color:transparent;-webkit-text-stroke:2px rgba(239,230,214,.22);background:linear-gradient(180deg,rgba(239,230,214,.16),rgba(239,230,214,0));-webkit-background-clip:text;background-clip:text;white-space:nowrap}
+.giant{position:absolute;left:-20px;right:-20px;top:96px;text-align:center;font:italic 500 330px/1 'EB Garamond',serif;letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:3px rgba(239,230,214,.55);background:linear-gradient(180deg,rgba(239,230,214,.42),rgba(239,230,214,.05));-webkit-background-clip:text;background-clip:text;white-space:nowrap;z-index:2;mix-blend-mode:screen}
 .breaking-art{left:0;top:110px;width:${W}px;height:820px;background:transparent !important}
 .breaking-art .scene svg > rect:first-of-type{opacity:.6}
 /* split */
@@ -341,6 +341,7 @@ ${a2.css}
 .tval{font:400 26px 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;text-align:right}
 /* story inset */
 .inset-art{left:${W - 64 - 300 + 30}px;top:${130 + 620 - 300 + 40}px;width:300px;height:300px;border-radius:50%;border:4px solid #efe6d6;box-shadow:0 20px 60px rgba(5,2,15,.7);z-index:2}
+.pill{padding:10px 20px;border-radius:999px;background:rgba(11,6,32,.72);border:1px solid rgba(179,166,196,.28);color:#efe6d6}
 /* end */
 .end-art{left:0;top:110px;width:${W}px;height:620px}
 .end-text{position:absolute;left:72px;right:72px;bottom:110px}
@@ -366,9 +367,14 @@ ${OVERLAY_HTML}
   }
   // Lists: shrink rows until they fit above the bottom margin.
   const rows = document.querySelector('.fit-rows')
+  if (rows && rows.children.length <= 4 && !rows.classList.contains('table')) {
+    rows.querySelectorAll('.row-t').forEach((r) => (r.style.fontSize = '42px'))
+    rows.querySelectorAll('.row').forEach((r) => (r.style.padding = '44px 0'))
+    rows.querySelectorAll('.row-l').forEach((r) => (r.style.fontSize = '26px'))
+  }
   if (rows) {
     const wrap = rows.parentElement
-    let f = 36, pad = 30
+    let f = parseFloat(rows.querySelector('.row-t')?.style.fontSize) || 36, pad = parseFloat(rows.querySelector('.row')?.style.paddingTop) || 30
     const over = () => rows.getBoundingClientRect().bottom > wrap.getBoundingClientRect().bottom
     while (over() && f > 22) {
       f -= 1; pad = Math.max(10, pad - 1)

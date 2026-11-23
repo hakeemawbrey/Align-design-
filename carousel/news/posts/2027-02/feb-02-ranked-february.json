@@ -1,0 +1,165 @@
+{
+ "series": "sky news",
+ "id": "feb-02-ranked-february",
+ "format": "ranked-twelve",
+ "date": "2027-02-02",
+ "signs": [
+  "aquarius",
+  "virgo",
+  "leo"
+ ],
+ "caption": "find your rank. send it to the one who's #1. two eclipses, one mercury retrograde, all in february.",
+ "hashtags": [
+  "february",
+  "zodiac",
+  "ranked",
+  "eclipse",
+  "astrology"
+ ],
+ "facts": [
+  "2027-02-06 solar eclipse aquarius",
+  "2027-02-06 pluto in aquarius",
+  "2027-02-18 mercury enters aquarius",
+  "2027-02-20 lunar eclipse virgo",
+  "2027-02-21 mars enters leo",
+  "2027-02-10 sun opposition jupiter",
+  "2027-02-10 jupiter retrograde",
+  "2027-02-09 mercury stations retrograde pisces",
+  "2027-02-18 sun enters pisces",
+  "2027-02-03 venus enters capricorn",
+  "2027-02-08 uranus stations direct gemini",
+  "2027-02-28 last quarter sagittarius",
+  "2027-02-03 venus enters capricorn",
+  "2027-02-13 venus square saturn",
+  "2027-02-05 venus square neptune",
+  "2027-02-13 saturn in aries",
+  "2027-02-13 neptune in aries",
+  "2027-02-14 first quarter taurus",
+  "2027-02-07 mercury opposition mars",
+  "2027-02-24 moon in scorpio",
+  "2027-02-22 moon in libra",
+  "2027-02-17 moon in cancer",
+  "2027-02-01 mars retrograde"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "ranked · february",
+   "headline": "the signs whose *february* changes the most, ranked",
+   "dek": "two eclipses, one retrograde. find yourself",
+   "art": {
+    "kind": "aura",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "rank",
+   "rank": 12,
+   "sign": "cancer",
+   "dates": "jun 21 – jul 22",
+   "headline": "cancer, you get the quiet month. use it.",
+   "body": "no eclipse, no station, no planet moving into your sign. the moon passes through on feb 17 and that's about it. a good month to rest and let other people do the drama."
+  },
+  {
+   "layout": "rank",
+   "rank": 11,
+   "sign": "libra",
+   "dates": "sep 23 – oct 22",
+   "headline": "libra, the sky gives you a breather.",
+   "body": "the big moves land elsewhere. the moon visits on feb 22. read it as room to notice who checks in when nothing is happening. that's the person."
+  },
+  {
+   "layout": "rank",
+   "rank": 10,
+   "sign": "scorpio",
+   "dates": "oct 23 – nov 21",
+   "headline": "scorpio, you watch from the side and take notes.",
+   "body": "the feb 6 eclipse lands in aquarius, the sign square to yours, so you feel it at an angle. the moon passes through feb 24. a good month to listen more than you test."
+  },
+  {
+   "layout": "rank",
+   "rank": 9,
+   "sign": "taurus",
+   "dates": "apr 20 – may 20",
+   "headline": "taurus, valentine's morning starts in your sign.",
+   "body": "the first quarter moon is in taurus on feb 14. astrologers read a first quarter as a small push. if you want something, say it before the day gets busy."
+  },
+  {
+   "layout": "rank",
+   "rank": 8,
+   "sign": "aries",
+   "dates": "mar 21 – apr 19",
+   "headline": "aries, the slow planets in your sign get poked.",
+   "body": "saturn and neptune sit in aries. venus squares neptune on feb 5 and saturn on feb 13. read it as love asking for patience and clear words. you can do both."
+  },
+  {
+   "layout": "rank",
+   "rank": 7,
+   "sign": "sagittarius",
+   "dates": "nov 22 – dec 21",
+   "headline": "sagittarius, venus leaves you on feb 3.",
+   "body": "the flirt season in your sign ends as venus moves on. the last quarter moon is in sagittarius on feb 28. a good month to close the tab on one maybe."
+  },
+  {
+   "layout": "rank",
+   "rank": 6,
+   "sign": "gemini",
+   "dates": "may 21 – jun 20",
+   "headline": "gemini, uranus starts moving forward again.",
+   "body": "uranus turns direct in gemini on feb 8 after months of apparent backward drift. read it as the restless part of you finally getting a direction."
+  },
+  {
+   "layout": "rank",
+   "rank": 5,
+   "sign": "capricorn",
+   "dates": "dec 22 – jan 19",
+   "headline": "capricorn, venus is in your sign all month.",
+   "body": "venus enters capricorn on feb 3 and stays past valentine's. astrologers read it as your charm season. let people see you want something."
+  },
+  {
+   "layout": "rank",
+   "rank": 4,
+   "sign": "pisces",
+   "dates": "feb 19 – mar 20",
+   "headline": "pisces, mercury turns backwards in your sign.",
+   "body": "mercury stations retrograde in pisces on feb 9 and the sun enters pisces on feb 18. your season starts with a re-read. send the text you drafted twice."
+  },
+  {
+   "layout": "rank",
+   "rank": 3,
+   "sign": "leo",
+   "dates": "jul 23 – aug 22",
+   "headline": "leo, mars comes back to you, backwards.",
+   "body": "jupiter is retrograde in leo, the sun opposes it on feb 10, and on feb 21 mars backs into leo. read it as old pride up for review, not a fight to win."
+  },
+  {
+   "layout": "rank",
+   "rank": 2,
+   "sign": "virgo",
+   "dates": "aug 23 – sep 22",
+   "headline": "virgo, an eclipse in your sign, then mars leaves.",
+   "body": "a penumbral lunar eclipse falls in virgo on feb 20. a day later retrograde mars backs out of virgo into leo. read it as a quiet ending and a lighter load."
+  },
+  {
+   "layout": "rank",
+   "rank": 1,
+   "sign": "aquarius",
+   "dates": "jan 20 – feb 18",
+   "headline": "aquarius, the eclipse is in your sign.",
+   "body": "an annular solar eclipse lands in aquarius on feb 6, with pluto in your sign too. mercury backs in on feb 18. astrologers read it as a real reset. pick one thing."
+  },
+  {
+   "layout": "end",
+   "headline": "one-sided isn't *alignment*. it's a hobby.",
+   "body": "tag the one who's #1. save this for the eclipse.",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "aquarius",
+     "virgo",
+     "leo"
+    ]
+   }
+  }
+ ]
+}

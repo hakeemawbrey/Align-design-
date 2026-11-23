@@ -1,0 +1,98 @@
+{
+ "series": "sky news",
+ "id": "feb-13-lunar-eclipse-week-out",
+ "format": "moon-alert",
+ "date": "2027-02-13",
+ "signs": [
+  "virgo",
+  "pisces"
+ ],
+ "caption": "penumbral lunar eclipse in virgo next saturday, feb 20, 23:12 utc. honest note: it's very hard to see.",
+ "hashtags": [
+  "lunareclipse",
+  "fullmoon",
+  "virgo",
+  "eclipse",
+  "astrology"
+ ],
+ "facts": [
+  "2027-02-20 lunar eclipse virgo",
+  "2027-02-20 full moon virgo",
+  "2027-02-21 mars enters leo",
+  "2027-02-13 venus square saturn"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "eclipse alert · 7 days",
+   "headline": "a full moon *eclipse* in virgo, one week out. the subtle kind",
+   "dek": "feb 20 · penumbral",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 20 · 23:12 utc",
+   "tag": "the facts",
+   "sign": "virgo",
+   "headline": "penumbral means the moon only grazes our *shadow*",
+   "body": "the full moon passes through earth's faint outer shadow and misses the dark core. most people see no change at all, or a slight greying on one edge.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.48,
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the reading",
+   "tag": "virgo full moon",
+   "sign": "virgo",
+   "headline": "a quiet ending: the *habit* you keep fixing",
+   "body": "astrologers read full moons as endings and eclipses as fast ones. in virgo: the routine, the to-do list, the way you edit yourself for people. a week to notice.",
+   "art": {
+    "kind": "figure",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "the week to it",
+   "headline": "before *feb 20*",
+   "rows": [
+    {
+     "label": "today",
+     "color": "venus",
+     "text": "venus squares saturn. love asks for patience."
+    },
+    {
+     "label": "feb 18",
+     "color": "pisces",
+     "text": "pisces season starts."
+    },
+    {
+     "label": "feb 20",
+     "color": "virgo",
+     "text": "penumbral eclipse, full moon in virgo."
+    },
+    {
+     "label": "feb 21",
+     "color": "mars",
+     "text": "mars backs into leo."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "you can end a thing without a *scene*",
+   "body": "save this. we'll post again the day before.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.4
+   }
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "series": "sky news",
+ "id": "feb-24-ophiuchus-myth",
+ "format": "sky-note",
+ "date": "2027-02-24",
+ "signs": [
+  "pisces",
+  "sagittarius",
+  "scorpio"
+ ],
+ "caption": "sky note: \"your sign changed because of ophiuchus.\" not true. western astrology uses the tropical zodiac, tied to the seasons.",
+ "hashtags": [
+  "skynote",
+  "ophiuchus",
+  "zodiac",
+  "astrology",
+  "astronomy"
+ ],
+ "facts": [
+  "2027-02-24 sun in pisces"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky note · viral claim",
+   "headline": "“there's a *13th sign* and yours just changed”",
+   "dek": "ophiuchus is back on the feed. let's check",
+   "art": {
+    "kind": "wheel",
+    "tint": "violet"
+   }
+  },
+  {
+   "layout": "note",
+   "kicker": "going around",
+   "headline": "“your sign changed because of ophiuchus”",
+   "verdict": "false",
+   "body": "your sign hasn't changed. western astrology uses the tropical zodiac: twelve equal slices starting at the march equinox. it follows the seasons, not the star patterns."
+  },
+  {
+   "layout": "story",
+   "kicker": "the astronomy",
+   "tag": "constellations vs signs",
+   "sign": "scorpio",
+   "headline": "the sun does pass through *ophiuchus*. that's not news",
+   "body": "the constellations are unequal and the sun crosses thirteen of them. earth's slow wobble has also shifted them against the seasons over centuries. signs and constellations are two maps.",
+   "art": {
+    "kind": "stars",
+    "tint": "scorpio"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the reading",
+   "tag": "what astrologers say",
+   "sign": "sagittarius",
+   "headline": "tropical astrology never used the *stars* that way",
+   "body": "astrologers read signs as seasons of the year. by that map the sun is in pisces right now, and you're still the sign you were last week.",
+   "art": {
+    "kind": "figure",
+    "sign": "pisces"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "same sign. same chance to say the *honest* thing.",
+   "body": "send this to whoever panicked.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.83
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": "jan-02-today-moon-scorpio",
+ "format": "sky-roundup",
+ "date": "2027-01-02",
+ "series": "sky news",
+ "signs": [
+  "scorpio"
+ ],
+ "facts": [
+  "2027-01-02 moon in scorpio",
+  "2027-01-02 venus in scorpio",
+  "2027-01-03 venus square jupiter",
+  "2027-01-07 venus enters sagittarius"
+ ],
+ "caption": "today's sky: moon and venus both in scorpio. the moon moves into sagittarius tomorrow night.",
+ "hashtags": [
+  "scorpio",
+  "moon",
+  "todayssky",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "today's sky · jan 2",
+   "headline": "day two of the year and the *moon* is in *scorpio*",
+   "dek": "so yes, you're reading into everything",
+   "art": {
+    "kind": "moon",
+    "phase": 0.85,
+    "sign": "scorpio"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "jan 2 · moon in scorpio",
+   "tag": "the moon",
+   "headline": "feelings run deep and *private* today",
+   "body": "a scorpio moon reads as intense and a bit suspicious. ask the question instead of investigating the answer.",
+   "art": {
+    "kind": "figure",
+    "sign": "scorpio"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "jan 3 · venus square jupiter",
+   "tag": "one thing",
+   "headline": "*venus* in scorpio squares jupiter tomorrow",
+   "body": "big feelings, bigger promises. astrologers read it as an overdo. let the grand gesture wait a day.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "jupiter"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "not every silence is a *message*",
+   "body": "venus leaves scorpio on jan 7. until then, ask once, plainly.",
+   "art": {
+    "kind": "aura",
+    "sign": "scorpio"
+   }
+  }
+ ]
+}

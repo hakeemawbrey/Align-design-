@@ -1,0 +1,119 @@
+{
+ "id": "dec-06-week-that-was",
+ "format": "sky-roundup",
+ "date": "2026-12-06",
+ "series": "sky news",
+ "signs": [
+  "scorpio",
+  "sagittarius",
+  "virgo"
+ ],
+ "facts": [
+  "2026-12-01 last quarter virgo",
+  "2026-12-04 mercury square jupiter",
+  "2026-12-04 venus enters scorpio",
+  "2026-12-04 mars square uranus",
+  "2026-12-06 mercury enters sagittarius"
+ ],
+ "caption": "swipe for the week the sky had. one of these is about your love life. dec 1 – 6, 2026.",
+ "hashtags": [
+  "skynews",
+  "astrology",
+  "weeklyhoroscope",
+  "zodiac",
+  "venus"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of nov 30",
+   "headline": "what just happened in the *sky* this week?",
+   "dek": "5 stories · swipe",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "virgo",
+     "scorpio",
+     "sagittarius",
+     "leo",
+     "gemini"
+    ]
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "dec 1",
+   "tag": "last quarter",
+   "headline": "a last quarter moon in *virgo* cleared the desk",
+   "body": "half-lit and shrinking. reads as the week to finish things, not start them.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.75,
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "leo",
+   "kicker": "dec 4",
+   "tag": "mercury square jupiter",
+   "headline": "*mercury* squared jupiter and everyone overpromised",
+   "body": "big talk, big plans. read it as a reminder to say only what you can back up.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "jupiter"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "scorpio",
+   "kicker": "dec 4",
+   "tag": "venus ingress",
+   "headline": "*venus* walked into scorpio. small talk is over",
+   "body": "love in scorpio reads as all or nothing, and venus stays until january.",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "scorpio"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "dec 4",
+   "tag": "mars square uranus",
+   "headline": "*mars* squared uranus: the urge to blow it all up",
+   "body": "mars in virgo met sudden uranus. if you quit something on a whim friday, sleep on it.",
+   "art": {
+    "kind": "pair",
+    "a": "mars",
+    "b": "uranus"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "dec 6",
+   "tag": "mercury ingress",
+   "headline": "*mercury* entered sagittarius this morning",
+   "body": "conversations get louder and more honest until christmas day.",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "end",
+   "sign": "sagittarius",
+   "headline": "the one to watch: a *new moon* on tuesday",
+   "body": "sagittarius, 17°. decide what you want before it arrives.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.02
+   }
+  }
+ ]
+}

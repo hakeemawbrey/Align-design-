@@ -1,0 +1,132 @@
+{
+ "id": "jan-17-week-that-was-mars-turned",
+ "format": "sky-roundup",
+ "date": "2027-01-17",
+ "series": "sky news",
+ "signs": [
+  "virgo",
+  "aquarius"
+ ],
+ "facts": [
+  "2027-01-10 mars stations retrograde virgo",
+  "2027-01-11 venus sextile pluto",
+  "2027-01-13 mercury enters aquarius",
+  "2027-01-15 mercury conjunction pluto",
+  "2027-01-15 uranus sextile neptune",
+  "2027-01-15 first quarter aries",
+  "2027-01-16 venus square mars"
+ ],
+ "caption": "swipe for the week the sky had, jan 10 to jan 16. one of these is about your love life.",
+ "hashtags": [
+  "skyroundup",
+  "astrology",
+  "marsretrograde",
+  "mercury",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · jan 10 – 16",
+   "headline": "what just happened in the *sky* this week?",
+   "dek": "6 stories · the week, caught up",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "sun jan 10 · 10° virgo",
+   "tag": "mars retrograde",
+   "headline": "*mars* stopped and started backing up",
+   "body": "week one of the redo. if your plans felt sticky, that's the reading. it runs into spring.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "virgo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "mon jan 11 · venus sextile pluto",
+   "tag": "love",
+   "headline": "*venus* went deep for a night",
+   "body": "astrologers read it as honesty with weight. if someone said something real on monday, it was real.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "wed jan 13 → fri jan 15",
+   "tag": "mercury",
+   "headline": "*mercury* hit aquarius, then met pluto",
+   "body": "talk went from cool to blunt in three days. the group chat had opinions. some were true.",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "aquarius"
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "fri jan 15 · 2° gemini / aries",
+   "tag": "slow giants",
+   "headline": "uranus and *neptune* made a quiet sextile",
+   "body": "two of the slowest planets lined up. astrologers read it as a long, background shift, not a news day.",
+   "art": {
+    "kind": "pair",
+    "a": "uranus",
+    "b": "neptune"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "fri jan 15 · 25° aries",
+   "tag": "first quarter",
+   "headline": "a half moon in *aries* asked for a decision",
+   "body": "and venus trined saturn the same day. if you committed to something small, good. keep it.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.25,
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "sat jan 16 · venus square mars",
+   "tag": "the one that stung",
+   "headline": "*venus* squared a backwards mars",
+   "body": "wanting it and getting it were on different clocks. a slow reply this week wasn't a verdict.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "the redo is *working*. even if it's slow.",
+   "body": "save this. aquarius season starts on wednesday.",
+   "art": {
+    "kind": "stars",
+    "tint": "mercury"
+   }
+  }
+ ]
+}

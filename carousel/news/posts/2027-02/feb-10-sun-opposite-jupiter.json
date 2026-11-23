@@ -1,0 +1,79 @@
+{
+ "series": "sky news",
+ "id": "feb-10-sun-opposite-jupiter",
+ "format": "sky-roundup",
+ "date": "2027-02-10",
+ "signs": [
+  "leo",
+  "aquarius"
+ ],
+ "caption": "the sun opposes jupiter today (22° aquarius / 22° leo). jupiter is up all night: look for the brightest point that isn't the moon.",
+ "hashtags": [
+  "jupiter",
+  "leo",
+  "aquarius",
+  "astrology",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-10 sun opposition jupiter",
+  "2027-02-10 jupiter retrograde",
+  "2027-02-10 moon in aries",
+  "2027-02-10 mercury retrograde"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "today's sky · feb 10",
+   "labels": [
+    "sun · aquarius",
+    "jupiter · leo"
+   ],
+   "headline": "the sun and *jupiter* face off: big feelings, both directions",
+   "art": {
+    "kind": "planet",
+    "body": "sun"
+   },
+   "art2": {
+    "kind": "planet",
+    "body": "jupiter",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 10 · 00:28 utc",
+   "tag": "sun opposite jupiter",
+   "sign": "leo",
+   "headline": "earth sits between the sun and *jupiter*",
+   "body": "that puts jupiter opposite the sun in our sky, so it rises at sunset and stays up all night, near its brightest. it's in leo, still retrograde.",
+   "art": {
+    "kind": "planet",
+    "body": "jupiter",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the reading",
+   "tag": "aquarius vs leo",
+   "sign": "aquarius",
+   "headline": "the group or the *spotlight*: you don't have to pick",
+   "body": "astrologers read this opposition as wanting more of everything. the moon is in aries too, so it's an impatient day. go big on generosity, small on promises.",
+   "art": {
+    "kind": "aura",
+    "sign": "leo"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "big is fine. make it *mutual*.",
+   "body": "look up tonight. that bright one is jupiter.",
+   "art": {
+    "kind": "stars",
+    "tint": "jupiter"
+   }
+  }
+ ]
+}

@@ -2,13 +2,14 @@
 //   node news/src/digest.mjs > news/data/SKY.md
 import { readFileSync } from 'node:fs'
 const s = JSON.parse(readFileSync(new URL('../data/sky.json', import.meta.url)))
+const et = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' })
 const cap = (x) => x[0].toUpperCase() + x.slice(1)
-const out = ['# The sky, Dec 2026 – early Mar 2027', '', 'Computed with astronomy-engine (tropical, geocentric). Dates are New York dates. `moon →` lines are the Moon changing sign (the "moon in X today" fact).', '']
+const out = ['# The sky, Dec 2026 – early Mar 2027', '', 'Computed with astronomy-engine (tropical, geocentric). Dates and times are New York (ET); the exact UTC moment is the `at` field in sky.json. `moon →` lines are the Moon changing sign (the "moon in X today" fact).', '']
 let month = ''
 for (const e of s.events) {
   const m = e.day.slice(0, 7)
   if (m !== month) { out.push('', `## ${m}`, ''); month = m }
-  const t = e.at.slice(11, 16) + ' UTC'
+  const t = et.format(new Date(e.at)).toLowerCase() + ' ET'
   let line
   if (e.type === 'moon-ingress') line = `moon → ${e.sign}`
   else if (e.type === 'ingress') line = `**${cap(e.body)} enters ${cap(e.sign)}**${e.retrograde ? ' (retrograde)' : ''}`

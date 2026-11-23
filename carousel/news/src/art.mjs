@@ -82,8 +82,8 @@ const SURFACES = {
   jupiter: { pal: ['#7a3a22', '#c0703f', '#e8b98a', '#f6ead6', '#fff8ec', '#d99a62', '#a4462c', '#f1dcc0'], freq: '0.0012 0.028', oct: 4, spot: '#c4492c' },
   saturn: { pal: ['#8a6a3c', '#c9a66b', '#e9d3a2', '#f6e9c8', '#d9bb80', '#b8935a'], freq: '0.001 0.03', oct: 3, ring: true },
   mars: { pal: ['#3a0e06', '#6e2010', '#a8381a', '#c44a22', '#b8401c', '#d8693a', '#8a2a12'], freq: '0.012 0.012', oct: 5, cap: true },
-  venus: { pal: ['#8a5e2a', '#c39550', '#e2bf7a', '#f3dcaa', '#d6ae68'], freq: '0.004 0.012', oct: 5 },
-  mercury: { pal: ['#3c3633', '#5f5752', '#8a817a', '#b2a99f', '#d6cdc2'], freq: '0.03 0.03', oct: 5, craters: true },
+  venus: { pal: ['#7a4a52', '#b87a7e', '#e3b2a8', '#f6dccf', '#fff0e6', '#d9a0a0'], freq: '0.004 0.012', oct: 5 },
+  mercury: { pal: ['#2e2218', '#584130', '#8a6b4e', '#b08e6c', '#d2b48e'], freq: '0.02 0.02', oct: 5, craters: true },
   moon: { pal: ['#4b4650', '#6f6a73', '#a19ca3', '#cfcac9', '#ece7df'], freq: '0.008 0.008', oct: 5, craters: true },
   uranus: { pal: ['#6fc6d6', '#8fd8e4', '#b5e9ef', '#a3e0ea', '#7fd0e0'], freq: '0.001 0.02', oct: 2 },
   neptune: { pal: ['#1d2f86', '#2c49b8', '#4a6fd8', '#6f92ea', '#3554c4'], freq: '0.0015 0.02', oct: 3 },
@@ -105,7 +105,7 @@ export function realPlanet(id, cx, cy, R, name, { tilt = -18, seed = 3, rim = nu
       const a = r() * Math.PI * 2, dist = Math.sqrt(r()) * R * 0.95
       const cr = R * (0.01 + Math.pow(r(), 3) * 0.08)
       const px = cx + Math.cos(a) * dist, py = cy + Math.sin(a) * dist
-      craters += `<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${cr.toFixed(1)}" fill="#000" opacity=".22"/><circle cx="${(px - cr * .25).toFixed(1)}" cy="${(py - cr * .25).toFixed(1)}" r="${(cr * .8).toFixed(1)}" fill="#fff" opacity=".08"/>`
+      craters += `<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${cr.toFixed(1)}" fill="#000" opacity=".1"/><circle cx="${(px - cr * .25).toFixed(1)}" cy="${(py - cr * .25).toFixed(1)}" r="${(cr * .8).toFixed(1)}" fill="#fff" opacity=".08"/>`
     }
   }
   const spot = S.spot ? `<ellipse cx="${cx + R * 0.28}" cy="${cy + R * 0.34}" rx="${R * 0.17}" ry="${R * 0.1}" fill="${S.spot}" opacity=".85"/><ellipse cx="${cx + R * 0.28}" cy="${cy + R * 0.34}" rx="${R * 0.1}" ry="${R * 0.055}" fill="#e8743f" opacity=".8"/>` : ''
@@ -234,7 +234,8 @@ export function art(a, w, h, seed = 1, prefix = '') {
       <path d="M${cx + R * 1.2} ${cy + R * 1.05} l-6 -34 m6 34 l-34 -2" stroke="${rgba('#efe6d6', .7)}" stroke-width="4" stroke-linecap="round" fill="none" transform="rotate(200 ${cx + R * 1.2} ${cy + R * 1.05})"/>`
     }
   } else if (a.kind === 'pair') {
-    body = realPlanet('a', cx - R * 0.95, cy + R * 0.15, R * 0.72, a.a, { seed: 5 }) + realPlanet('b', cx + R * 0.95, cy - R * 0.15, R * 0.72, a.b, { seed: 9 })
+    const ra = R * (a.a === 'saturn' ? 0.5 : 0.72), rb = R * (a.b === 'saturn' ? 0.5 : 0.72)
+    body = realPlanet('a', cx - R * 1.1, cy + R * 0.2, ra, a.a, { seed: 5 }) + realPlanet('b', cx + R * 1.1, cy - R * 0.2, rb, a.b, { seed: 9 })
       + `<line x1="${cx - R * 0.1}" y1="${cy}" x2="${cx + R * 0.1}" y2="${cy}" stroke="#fff4cf" stroke-width="3" opacity=".7"/>`
   } else if (a.kind === 'moon') {
     const ph = a.phase ?? 0.5

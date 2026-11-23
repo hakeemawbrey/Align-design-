@@ -1,0 +1,76 @@
+{
+ "id": "jan-13-note-mercury-aquarius-cold",
+ "format": "sky-note",
+ "date": "2027-01-13",
+ "series": "sky news",
+ "signs": [
+  "aquarius",
+  "capricorn"
+ ],
+ "facts": [
+  "2027-01-13 mercury enters aquarius",
+  "2027-01-13 sun in capricorn",
+  "2027-01-20 sun enters aquarius"
+ ],
+ "caption": "sky note: \"mercury in aquarius makes everyone emotionally unavailable.\" half true at best. mercury enters aquarius today.",
+ "hashtags": [
+  "skynote",
+  "mercury",
+  "aquarius",
+  "astrology",
+  "dating"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky note · viral claim",
+   "headline": "“*mercury* in aquarius makes everyone emotionally unavailable”",
+   "dek": "mercury enters aquarius today. here's the honest version",
+   "art": {
+    "kind": "stars",
+    "tint": "mercury"
+   }
+  },
+  {
+   "layout": "note",
+   "kicker": "going around",
+   "headline": "“from today, nobody will text you back with feelings”",
+   "verdict": "misleading",
+   "body": "astrologers do read mercury in aquarius as cooler, idea-first talk. but that's a style, not a shutdown. people who answer warmly keep doing it, and the ones who never did weren't waiting on mercury."
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "the astronomy",
+   "tag": "what's true",
+   "headline": "mercury never strays *far* from the sun",
+   "body": "from earth, mercury always sits within about 28° of the sun, so it's in the sun's sign or a neighbour. today it's in aquarius while the sun is still in capricorn.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mercury"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "the reading",
+   "tag": "what astrologers say",
+   "headline": "clear head, *honest* words",
+   "body": "astrologers read this as good weather for saying what you think plainly. feelings still count. you just name them instead of hinting.",
+   "art": {
+    "kind": "figure",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "unavailable is a person, *not a planet*.",
+   "body": "the honest take: the first thing you say should be true, not cute. that works in every sign.",
+   "art": {
+    "kind": "aura",
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

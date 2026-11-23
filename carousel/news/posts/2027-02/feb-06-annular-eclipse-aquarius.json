@@ -1,0 +1,101 @@
+{
+ "series": "sky news",
+ "id": "feb-06-annular-eclipse-aquarius",
+ "format": "moon-alert",
+ "date": "2027-02-06",
+ "signs": [
+  "aquarius"
+ ],
+ "caption": "annular solar eclipse + new moon in aquarius today, 15:59 utc, 17.6°. eclipse glasses or nothing.",
+ "hashtags": [
+  "solareclipse",
+  "annulareclipse",
+  "newmoon",
+  "aquarius",
+  "astrology",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-06 solar eclipse aquarius",
+  "2027-02-06 new moon aquarius",
+  "2027-02-06 pluto in aquarius",
+  "2027-02-06 sun in aquarius"
+ ],
+ "slides": [
+  {
+   "layout": "breaking",
+   "word": "eclipse",
+   "kicker": "eclipse alert · today",
+   "headline": "a ring of fire in *aquarius*, today. the new moon covers the sun's middle",
+   "dek": "15:59 utc · 17.6° aquarius",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 6 · 15:59 utc",
+   "tag": "annular solar eclipse",
+   "sign": "aquarius",
+   "headline": "the moon covers the middle of the *sun*, not the edge",
+   "body": "a new moon at 17.6° aquarius, lined up with the sun. it's near its far point, so the sun's rim stays lit. greatest eclipse is over the south atlantic, off southern brazil.",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius",
+    "zoom": 1.3
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the reading",
+   "tag": "new moon in aquarius",
+   "sign": "aquarius",
+   "headline": "start the version of you that doesn't *perform*",
+   "body": "aquarius is the friends-and-futures sign, and pluto is here too. astrologers read this as a reset on who you let in. a good day to start, a bad day to fake it.",
+   "art": {
+    "kind": "aura",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "what to start, by element",
+   "headline": "one *start*",
+   "rows": [
+    {
+     "label": "fire",
+     "color": "leo",
+     "text": "the plan you've only told yourself."
+    },
+    {
+     "label": "earth",
+     "color": "capricorn",
+     "text": "a routine that leaves room for a date."
+    },
+    {
+     "label": "air",
+     "color": "aquarius",
+     "text": "the group chat you actually want."
+    },
+    {
+     "label": "water",
+     "color": "pisces",
+     "text": "one honest message, sent today."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "new moon, new deck. there's always an *11:11*.",
+   "body": "never look at the sun without eclipse glasses.",
+   "art": {
+    "kind": "moon",
+    "phase": 0,
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

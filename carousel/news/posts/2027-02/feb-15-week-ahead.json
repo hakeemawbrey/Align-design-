@@ -1,0 +1,128 @@
+{
+ "series": "sky news",
+ "id": "feb-15-week-ahead",
+ "format": "sky-roundup",
+ "date": "2027-02-15",
+ "signs": [
+  "pisces",
+  "virgo",
+  "leo"
+ ],
+ "caption": "the busiest week of february: pisces season, a lunar eclipse in virgo and mars back into leo. save this.",
+ "hashtags": [
+  "astrology",
+  "piscesseason",
+  "lunareclipse",
+  "mars",
+  "zodiac"
+ ],
+ "facts": [
+  "2027-02-16 mercury opposition mars",
+  "2027-02-16 mercury square uranus",
+  "2027-02-17 mars square uranus",
+  "2027-02-18 mercury enters aquarius",
+  "2027-02-18 sun conjunction mercury",
+  "2027-02-18 sun enters pisces",
+  "2027-02-19 sun opposition mars",
+  "2027-02-20 lunar eclipse virgo",
+  "2027-02-20 full moon virgo",
+  "2027-02-21 mars enters leo"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of feb 15",
+   "headline": "the *loudest* week of february, day by day",
+   "dek": "a season change, an eclipse, mars on the move",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "pisces",
+     "virgo",
+     "leo",
+     "aquarius",
+     "gemini"
+    ],
+    "tint": "gold"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 16 – 17",
+   "tag": "mars vs mercury",
+   "sign": "virgo",
+   "headline": "*mars* gets touchy: mercury opposes it, then it squares uranus",
+   "body": "a second mercury-mars opposition this month, then mars squares uranus. read it as short fuses. say less, later.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 18 · 21:33 utc",
+   "tag": "season change",
+   "sign": "pisces",
+   "headline": "the *sun* enters pisces, and mercury backs into aquarius",
+   "body": "same day: retrograde mercury slips back into aquarius and the sun meets it. pisces season starts with a rewind.",
+   "art": {
+    "kind": "figure",
+    "sign": "pisces"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 19",
+   "tag": "sun opposite mars",
+   "sign": "virgo",
+   "headline": "the sun faces *mars*: you'll want to win the argument",
+   "body": "earth sits between the sun and retrograde mars. astrologers read it as pride up front. ask if you're right or just loud.",
+   "art": {
+    "kind": "pair",
+    "a": "sun",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 20 · 23:12 utc",
+   "tag": "penumbral eclipse",
+   "sign": "virgo",
+   "headline": "a full moon *eclipse* in virgo, faint enough to miss",
+   "body": "the moon grazes earth's outer shadow. barely visible. read it as a quiet ending.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "virgo"
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "the one to watch · feb 21",
+   "tag": "mars",
+   "sign": "leo",
+   "headline": "*mars* backs out of virgo and into leo",
+   "body": "still retrograde. old pride, old flames, old fights come up for review. you don't have to reopen them.",
+   "art": {
+    "kind": "planet",
+    "body": "mars",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "loud week. you can be the *calm* one.",
+   "body": "save this and check it each morning.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.7
+   }
+  }
+ ]
+}

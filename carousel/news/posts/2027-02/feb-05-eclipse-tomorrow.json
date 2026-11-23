@@ -1,0 +1,90 @@
+{
+ "series": "sky news",
+ "id": "feb-05-eclipse-tomorrow",
+ "format": "moon-alert",
+ "date": "2027-02-05",
+ "signs": [
+  "aquarius",
+  "leo",
+  "scorpio"
+ ],
+ "caption": "annular solar eclipse in aquarius tomorrow, 15:59 utc. never look at the sun without eclipse glasses.",
+ "hashtags": [
+  "solareclipse",
+  "eclipse",
+  "aquarius",
+  "newmoon",
+  "astrology"
+ ],
+ "facts": [
+  "2027-02-06 solar eclipse aquarius",
+  "2027-02-06 new moon aquarius",
+  "2027-02-05 venus square neptune",
+  "2027-02-06 pluto in aquarius"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "eclipse alert · tomorrow",
+   "headline": "a ring of fire *eclipse* in aquarius, tomorrow",
+   "dek": "feb 6 · 15:59 utc · annular",
+   "art": {
+    "kind": "planet",
+    "body": "sun",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 6 · 17.6° aquarius",
+   "tag": "the facts",
+   "sign": "aquarius",
+   "headline": "annular means the moon is too small to cover the *sun*",
+   "body": "the new moon passes in front of the sun but sits far enough away that a bright ring stays. greatest eclipse is over the south atlantic. only a narrow path sees the ring.",
+   "art": {
+    "kind": "eclipse",
+    "type": "solar",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "note",
+   "kicker": "going around",
+   "headline": "“eclipses are bad luck”",
+   "verdict": "false",
+   "body": "an eclipse is the moon and sun lining up, nothing more. astrologers read eclipses as fast-forward buttons: things that were already ending end, things already starting start."
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "headline": "the three signs it *lands* on",
+   "accent": "rub",
+   "rows": [
+    {
+     "sign": "aquarius",
+     "label": "aquarius",
+     "text": "it's in your sign. a reset on how you show up."
+    },
+    {
+     "sign": "leo",
+     "label": "leo",
+     "text": "the opposite sign. partners say the quiet part."
+    },
+    {
+     "sign": "scorpio",
+     "label": "scorpio",
+     "text": "home and work trade places for a bit."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "tonight: write down one thing to *start*",
+   "body": "eclipse glasses only. save this for tomorrow.",
+   "art": {
+    "kind": "stars",
+    "tint": "aquarius"
+   }
+  }
+ ]
+}

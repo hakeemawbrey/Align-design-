@@ -1,0 +1,134 @@
+{
+ "series": "sky news",
+ "id": "feb-26-venus-last-weekend-capricorn",
+ "format": "venus-report",
+ "date": "2027-02-26",
+ "signs": [
+  "capricorn",
+  "aquarius"
+ ],
+ "caption": "venus runs your heart. its last weekend in capricorn: it enters aquarius mar 1, 06:32 utc.",
+ "hashtags": [
+  "venus",
+  "capricorn",
+  "aquarius",
+  "dating",
+  "astrology"
+ ],
+ "facts": [
+  "2027-02-26 venus in capricorn",
+  "2027-03-01 venus enters aquarius",
+  "2027-02-26 moon in scorpio",
+  "2027-02-26 mercury retrograde"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "love weather · feb 26",
+   "headline": "love weather: *venus*' last weekend in capricorn",
+   "dek": "it moves to aquarius on monday",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "capricorn",
+    "style": "pastel"
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 26 – mar 1",
+   "tag": "where venus is",
+   "sign": "capricorn",
+   "headline": "*venus* is in the last degrees of capricorn",
+   "body": "it crosses into aquarius on mar 1. the moon is in scorpio tonight and mercury is still retrograde. a weekend to finish, not to start.",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "capricorn"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "good weekend for",
+   "headline": "*yes* to",
+   "accent": "spark",
+   "rows": [
+    {
+     "label": "follow",
+     "color": "spark",
+     "text": "the follow-up you promised."
+    },
+    {
+     "label": "clear",
+     "color": "spark",
+     "text": "naming what this is, out loud."
+    },
+    {
+     "label": "deep",
+     "color": "spark",
+     "text": "one long talk, phones down."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "bad weekend for",
+   "headline": "*no* to",
+   "accent": "rub",
+   "rows": [
+    {
+     "label": "ghost",
+     "color": "rub",
+     "text": "fading out instead of saying it."
+    },
+    {
+     "label": "replay",
+     "color": "rub",
+     "text": "reading old chats at 2am."
+    },
+    {
+     "label": "rush",
+     "color": "rub",
+     "text": "big decisions before mercury turns."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "by element",
+   "headline": "your *weekend*",
+   "rows": [
+    {
+     "label": "fire",
+     "color": "capricorn",
+     "text": "be the one who makes the plan."
+    },
+    {
+     "label": "earth",
+     "color": "capricorn",
+     "text": "last weekend of your venus. enjoy it."
+    },
+    {
+     "label": "air",
+     "color": "capricorn",
+     "text": "venus is coming to you. get ready."
+    },
+    {
+     "label": "water",
+     "color": "capricorn",
+     "text": "ask, don't hint."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "your sun is who you are. your *venus* is how you love.",
+   "body": "send this to your weekend plans.",
+   "art": {
+    "kind": "planet",
+    "body": "venus",
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "id": "jan-08-love-weather-venus-sagittarius",
+ "format": "venus-report",
+ "date": "2027-01-08",
+ "series": "sky news",
+ "signs": [
+  "sagittarius"
+ ],
+ "facts": [
+  "2027-01-07 venus enters sagittarius",
+  "2027-01-08 venus trine neptune",
+  "2027-01-09 venus opposition uranus",
+  "2027-01-10 mars stations retrograde virgo",
+  "2027-02-03 venus enters capricorn"
+ ],
+ "caption": "your sun is who you are. your venus is how you love. venus is in sagittarius from jan 7 to feb 3.",
+ "hashtags": [
+  "venus",
+  "sagittarius",
+  "loveweather",
+  "dating",
+  "astrology"
+ ],
+ "slides": [
+  {
+   "layout": "split",
+   "kicker": "love weather · jan 8",
+   "labels": [
+    "scorpio",
+    "sagittarius"
+   ],
+   "headline": "love weather: *venus* swapped scorpio for *sagittarius*",
+   "art": {
+    "kind": "figure",
+    "sign": "scorpio"
+   },
+   "art2": {
+    "kind": "figure",
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "jan 7 – feb 3 · venus in sagittarius",
+   "tag": "where venus is",
+   "headline": "venus left scorpio and *opened the window*",
+   "body": "astrologers read venus in sagittarius as love that wants air: adventure, laughs, blunt honesty. less brooding, more asking.",
+   "art": {
+    "kind": "aura",
+    "sign": "sagittarius"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "this weekend",
+   "headline": "good weekend for",
+   "rows": [
+    {
+     "color": "spark",
+     "label": "fri",
+     "text": "a soft, dreamy date. venus trines neptune."
+    },
+    {
+     "color": "spark",
+     "label": "sat",
+     "text": "saying yes to a plan you didn't make."
+    },
+    {
+     "color": "spark",
+     "label": "any",
+     "text": "saying what you want on date one."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "this weekend",
+   "headline": "bad weekend for",
+   "rows": [
+    {
+     "color": "rub",
+     "label": "sat",
+     "text": "big decisions. venus opposes uranus."
+    },
+    {
+     "color": "rub",
+     "label": "sun",
+     "text": "starting a fight. mars stations retrograde."
+    },
+    {
+     "color": "rub",
+     "label": "any",
+     "text": "pretending \"let's see\" is a plan."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "by element",
+   "headline": "venus in sagittarius, *for you*",
+   "rows": [
+    {
+     "color": "sagittarius",
+     "label": "fire",
+     "text": "you're in your element. flirt like you mean it."
+    },
+    {
+     "color": "sagittarius",
+     "label": "earth",
+     "text": "try one plan that isn't dinner."
+    },
+    {
+     "color": "sagittarius",
+     "label": "air",
+     "text": "the banter is the date. let it be."
+    },
+    {
+     "color": "sagittarius",
+     "label": "water",
+     "text": "blunt isn't cold. ask what they meant."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "your sun is who you are. *your venus is how you love.*",
+   "body": "find your venus sign before your next first date.",
+   "art": {
+    "kind": "planet",
+    "body": "venus"
+   }
+  }
+ ]
+}

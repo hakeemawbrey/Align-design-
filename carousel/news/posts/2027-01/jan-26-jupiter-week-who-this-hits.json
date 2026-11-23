@@ -1,0 +1,163 @@
+{
+ "id": "jan-26-jupiter-week-who-this-hits",
+ "format": "who-this-hits",
+ "date": "2027-01-26",
+ "series": "sky news",
+ "signs": [
+  "leo",
+  "aquarius",
+  "sagittarius"
+ ],
+ "facts": [
+  "2027-01-26 jupiter in leo",
+  "2027-01-26 jupiter retrograde",
+  "2027-01-27 mercury opposition jupiter",
+  "2027-01-28 venus trine jupiter"
+ ],
+ "caption": "find your sign. mercury opposes jupiter tomorrow, venus trines it thursday. jupiter is retrograde in leo.",
+ "hashtags": [
+  "jupiter",
+  "leo",
+  "whothishits",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "hero",
+   "kicker": "who this hits · jan 26",
+   "headline": "two planets hit *jupiter* this week. who gets the luck",
+   "dek": "and who gets the overpromise",
+   "art": {
+    "kind": "planet",
+    "body": "jupiter",
+    "sign": "leo",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "leo",
+   "kicker": "wed jan 27 · thu jan 28",
+   "tag": "what's happening",
+   "headline": "mercury opposes it, *venus* trines it",
+   "body": "jupiter is retrograde in leo. astrologers read mercury's hit as big talk and venus's as big warmth. same planet, two moods.",
+   "art": {
+    "kind": "planet",
+    "body": "jupiter",
+    "sign": "leo",
+    "rx": true
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "leo"
+   }
+  },
+  {
+   "layout": "table",
+   "kicker": "ranked",
+   "headline": "most likely to *overpromise* this week",
+   "columns": [
+    "sign",
+    "risk"
+   ],
+   "rows": [
+    {
+     "label": "leo",
+     "sign": "leo",
+     "text": "jupiter is in your sign. you're generous",
+     "value": "very"
+    },
+    {
+     "label": "sagittarius",
+     "sign": "sagittarius",
+     "text": "venus in your sign, jupiter's your ruler",
+     "value": "very"
+    },
+    {
+     "label": "aquarius",
+     "sign": "aquarius",
+     "text": "mercury in your sign opposes it",
+     "value": "high"
+    },
+    {
+     "label": "gemini",
+     "sign": "gemini",
+     "text": "says yes to three plans at once",
+     "value": "medium"
+    },
+    {
+     "label": "pisces",
+     "sign": "pisces",
+     "text": "means it. also means the other thing",
+     "value": "medium"
+    },
+    {
+     "label": "virgo",
+     "sign": "virgo",
+     "text": "already has a spreadsheet",
+     "value": "low"
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "tier one · hits hardest",
+   "headline": "you'll *feel* this",
+   "rows": [
+    {
+     "sign": "leo",
+     "label": "leo",
+     "text": "**your sign.** say yes to one thing, not five."
+    },
+    {
+     "sign": "aquarius",
+     "label": "aquarius",
+     "text": "big talk with a partner. check the details."
+    },
+    {
+     "sign": "sagittarius",
+     "label": "sagittarius",
+     "text": "venus trine jupiter is yours. go on the date."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "tier two · the rest",
+   "headline": "you'll *notice* it",
+   "rows": [
+    {
+     "sign": "aries",
+     "label": "aries",
+     "text": "fun plans multiply. pick the best one."
+    },
+    {
+     "sign": "taurus",
+     "label": "taurus",
+     "text": "a home plan grows. budget first."
+    },
+    {
+     "sign": "scorpio",
+     "label": "scorpio",
+     "text": "a work win. don't promise the next one yet."
+    },
+    {
+     "sign": "libra",
+     "label": "libra",
+     "text": "friends invite you. just go."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "promise *less*. mean all of it.",
+   "body": "dealbreakers go up front, even in a lucky week.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "jupiter"
+   }
+  }
+ ]
+}

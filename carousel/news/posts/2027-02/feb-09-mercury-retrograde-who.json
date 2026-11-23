@@ -1,0 +1,149 @@
+{
+ "series": "sky news",
+ "id": "feb-09-mercury-retrograde-who",
+ "format": "who-this-hits",
+ "date": "2027-02-09",
+ "signs": [
+  "pisces",
+  "aquarius",
+  "virgo"
+ ],
+ "caption": "find your sign. tag the one who's in tier one. mercury stations retrograde at 6° pisces today, direct mar 3.",
+ "hashtags": [
+  "mercuryretrograde",
+  "pisces",
+  "astrology",
+  "zodiac",
+  "whothishits"
+ ],
+ "facts": [
+  "2027-02-09 mercury stations retrograde pisces",
+  "2027-02-18 mercury enters aquarius",
+  "2027-03-03 mercury stations direct aquarius",
+  "2027-02-16 mercury opposition mars"
+ ],
+ "slides": [
+  {
+   "layout": "breaking",
+   "word": "retrograde",
+   "kicker": "who this hits · feb 9",
+   "headline": "*mercury* turns backwards today. here's who feels it",
+   "dek": "6° pisces · until march 3",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "pisces",
+    "rx": true
+   }
+  },
+  {
+   "layout": "story",
+   "kicker": "feb 9 · 17:35 utc",
+   "tag": "the astronomy",
+   "sign": "pisces",
+   "headline": "it looks like *mercury* slides back for three weeks",
+   "body": "earth is overtaking mercury on the inside track. from 6° pisces it appears to drift back into aquarius on feb 18, then turns direct at 20.9° aquarius on mar 3.",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "pisces",
+     "aquarius"
+    ],
+    "tint": "mercury"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "accent": "rub",
+   "headline": "tier *one*",
+   "rows": [
+    {
+     "sign": "pisces",
+     "label": "pisces",
+     "text": "it starts in your sign. re-read everything."
+    },
+    {
+     "sign": "aquarius",
+     "label": "aquarius",
+     "text": "it backs into you feb 18. old friends return."
+    },
+    {
+     "sign": "virgo",
+     "label": "virgo",
+     "text": "it faces your sign. partners want a redo."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "feels it",
+   "accent": "gold",
+   "headline": "tier *two*",
+   "rows": [
+    {
+     "sign": "gemini",
+     "label": "gemini",
+     "text": "work messages need a second look."
+    },
+    {
+     "sign": "sagittarius",
+     "label": "sagittarius",
+     "text": "family plans get rescheduled."
+    },
+    {
+     "sign": "leo",
+     "label": "leo",
+     "text": "an ex's name comes up. you can let it."
+    },
+    {
+     "sign": "cancer",
+     "label": "cancer",
+     "text": "travel or study plans wobble."
+    }
+   ]
+  },
+  {
+   "layout": "list",
+   "kicker": "background noise",
+   "accent": "spark",
+   "headline": "mostly *fine*",
+   "rows": [
+    {
+     "sign": "aries",
+     "label": "aries",
+     "text": "sleep on the big decision."
+    },
+    {
+     "sign": "taurus",
+     "label": "taurus",
+     "text": "a friend owes you a reply."
+    },
+    {
+     "sign": "capricorn",
+     "label": "capricorn",
+     "text": "proofread the money stuff."
+    },
+    {
+     "sign": "libra",
+     "label": "libra",
+     "text": "your routine wants one fix."
+    },
+    {
+     "sign": "scorpio",
+     "label": "scorpio",
+     "text": "old flirt, new context. go slow."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "headline": "re-read before you *re-send*.",
+   "body": "the ex isn't back. the pattern is. save this until march 3.",
+   "art": {
+    "kind": "stars",
+    "tint": "mercury"
+   }
+  }
+ ]
+}

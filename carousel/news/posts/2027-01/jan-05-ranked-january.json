@@ -1,0 +1,145 @@
+{
+ "id": "jan-05-ranked-january",
+ "format": "ranked-twelve",
+ "date": "2027-01-05",
+ "series": "sky news",
+ "signs": [
+  "virgo",
+  "aquarius",
+  "capricorn",
+  "leo"
+ ],
+ "facts": [
+  "2027-01-10 mars stations retrograde virgo",
+  "2027-01-13 mercury enters aquarius",
+  "2027-01-20 sun enters aquarius",
+  "2027-01-25 sun conjunction pluto",
+  "2027-02-06 solar eclipse aquarius",
+  "2027-01-07 new moon capricorn",
+  "2027-01-22 full moon leo",
+  "2027-01-05 jupiter retrograde",
+  "2027-01-05 jupiter in leo",
+  "2027-01-07 venus enters sagittarius",
+  "2027-01-09 venus opposition uranus",
+  "2027-01-05 uranus in gemini",
+  "2027-01-29 last quarter scorpio",
+  "2027-01-15 first quarter aries",
+  "2027-01-15 venus trine saturn",
+  "2027-01-05 saturn in aries",
+  "2027-01-05 neptune in aries"
+ ],
+ "caption": "find your rank. send it to the one who's #1. ranked by how much of january's sky lands on each sign.",
+ "hashtags": [
+  "january",
+  "zodiac",
+  "ranked",
+  "astrology",
+  "marsretrograde",
+  "horoscope"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "ranked · january 2027",
+   "headline": "the signs whose *january* changes the most, ranked",
+   "dek": "your sign is in here somewhere",
+   "art": {
+    "kind": "aura",
+    "sign": "virgo"
+   }
+  },
+  {
+   "layout": "rank",
+   "rank": 12,
+   "sign": "libra",
+   "headline": "january is quiet. enjoy it before it isn't.",
+   "body": "mars spends the month in the part of your sky astrologers tie to rest. aquarius season from jan 20 reads as fun and flirting. low stakes, good naps."
+  },
+  {
+   "layout": "rank",
+   "rank": 11,
+   "sign": "cancer",
+   "headline": "the sun sits across from you until jan 20.",
+   "body": "capricorn season reads as a mirror for you: what do the people close to you actually give back? notice, don't audit."
+  },
+  {
+   "layout": "rank",
+   "rank": 10,
+   "sign": "aries",
+   "headline": "a first quarter moon in your sign on jan 15.",
+   "body": "saturn and neptune both sit in aries, and venus trines saturn the same day. a good week to make one promise you can keep."
+  },
+  {
+   "layout": "rank",
+   "rank": 9,
+   "sign": "taurus",
+   "headline": "the romance part of your sky goes into redo.",
+   "body": "mars turns retrograde in virgo on jan 10, a sign astrologers link to your love life. old flames may flicker. you don't have to relight them."
+  },
+  {
+   "layout": "rank",
+   "rank": 8,
+   "sign": "scorpio",
+   "headline": "venus leaves your sign on jan 7.",
+   "body": "the spotlight on your heart moves on. a last quarter moon in scorpio on jan 29 reads as a clean ending. release, don't haunt."
+  },
+  {
+   "layout": "rank",
+   "rank": 7,
+   "sign": "gemini",
+   "headline": "venus opposes uranus in your sign on jan 9.",
+   "body": "uranus is retrograde in gemini all month. read jan 9 as someone surprising you. mars retrograde squares your sign, so home plans get redone."
+  },
+  {
+   "layout": "rank",
+   "rank": 6,
+   "sign": "sagittarius",
+   "headline": "venus walks into your sign on jan 7.",
+   "body": "you'll read as magnetic and maybe a bit too honest. good month to ask someone out plainly. mars retrograde in virgo slows your work plans."
+  },
+  {
+   "layout": "rank",
+   "rank": 5,
+   "sign": "pisces",
+   "headline": "mars backs up right across from you.",
+   "body": "mars turns retrograde in virgo, your opposite sign, on jan 10. partners and almost-partners slow down. read it as time to renegotiate, not run."
+  },
+  {
+   "layout": "rank",
+   "rank": 4,
+   "sign": "leo",
+   "headline": "full moon in your sign on jan 22.",
+   "body": "jupiter is retrograde in leo all month and the full moon lands there on jan 22. the month asks you to be seen for what you actually want."
+  },
+  {
+   "layout": "rank",
+   "rank": 3,
+   "sign": "capricorn",
+   "headline": "the new moon lands in your sign on jan 7.",
+   "body": "your season, your reset. astrologers read a new moon in your sign as a personal new year. pick the one plan and put a date on it."
+  },
+  {
+   "layout": "rank",
+   "rank": 2,
+   "sign": "aquarius",
+   "headline": "mercury, the sun, then an eclipse.",
+   "body": "mercury enters your sign jan 13, the sun on jan 20, the sun meets pluto there on jan 25, and an annular solar eclipse lands in aquarius on feb 6."
+  },
+  {
+   "layout": "rank",
+   "rank": 1,
+   "sign": "virgo",
+   "headline": "mars turns backwards in your sign.",
+   "body": "mars stations retrograde at 10° virgo on jan 10 and stays retrograde into spring. read it as a slow, honest redo of how you push. the fix you keep avoiding is the work."
+  },
+  {
+   "layout": "end",
+   "headline": "find your rank. *send it* to your #1.",
+   "body": "it's a reading, not a verdict. save it and check back on jan 31.",
+   "art": {
+    "kind": "wheel",
+    "tint": "gold"
+   }
+  }
+ ]
+}

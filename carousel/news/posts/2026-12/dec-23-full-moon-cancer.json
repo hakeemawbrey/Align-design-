@@ -1,0 +1,107 @@
+{
+ "id": "dec-23-full-moon-cancer",
+ "format": "moon-alert",
+ "date": "2026-12-23",
+ "series": "sky news",
+ "signs": [
+  "cancer",
+  "capricorn",
+  "aries",
+  "libra"
+ ],
+ "facts": [
+  "2026-12-23 full moon cancer",
+  "2026-12-21 sun enters capricorn",
+  "2026-12-23 sun square neptune"
+ ],
+ "caption": "full moon in cancer tonight at 8:28 pm et (01:28 utc dec 24), 2.2°. look east as the sun sets. say the soft thing out loud.",
+ "hashtags": [
+  "fullmoon",
+  "cancer",
+  "moonalert",
+  "astrology",
+  "zodiac",
+  "coldmoon"
+ ],
+ "slides": [
+  {
+   "layout": "breaking",
+   "kicker": "moon alert · dec 23",
+   "headline": "*full moon* in cancer, tonight",
+   "dek": "peaks 8:28 pm et · 01:28 utc dec 24 · look east after sunset",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "cancer"
+   },
+   "word": "full moon"
+  },
+  {
+   "layout": "story",
+   "sign": "cancer",
+   "kicker": "8:28 pm et · 2.2° cancer",
+   "tag": "the astronomy",
+   "headline": "the *moon* sits opposite the sun, fully lit",
+   "body": "the sun just entered capricorn, so the full moon lands in cancer, the opposite sign. it rises in the east around sunset and stays up all night. the last full moon of 2026.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.5,
+    "sign": "cancer",
+    "zoom": 1.25
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "cancer"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "cancer",
+   "kicker": "the reading",
+   "tag": "full moon in cancer",
+   "headline": "say the *soft* thing out loud",
+   "body": "astrologers read a cancer full moon as feelings about home, family and belonging coming to the surface. with the sun squaring neptune today, separate what you miss from what you romanticise.",
+   "art": {
+    "kind": "figure",
+    "sign": "cancer"
+   }
+  },
+  {
+   "layout": "list",
+   "kicker": "hits hardest",
+   "headline": "the signs who *feel it* most",
+   "rows": [
+    {
+     "sign": "cancer",
+     "label": "cancer",
+     "text": "it is in your sign. let them see you."
+    },
+    {
+     "sign": "capricorn",
+     "label": "capricorn",
+     "text": "opposite sign: a partner wants more warmth."
+    },
+    {
+     "sign": "aries",
+     "label": "aries",
+     "text": "family stuff. say it kindly."
+    },
+    {
+     "sign": "libra",
+     "label": "libra",
+     "text": "a public moment. show who you are with."
+    }
+   ]
+  },
+  {
+   "layout": "end",
+   "sign": "cancer",
+   "headline": "if it is one-sided, it is not *alignment*. it is a hobby",
+   "body": "say the soft thing to someone who says it back.",
+   "art": {
+    "kind": "aura",
+    "sign": "cancer"
+   }
+  }
+ ]
+}

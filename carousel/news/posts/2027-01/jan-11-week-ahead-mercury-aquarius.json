@@ -1,0 +1,124 @@
+{
+ "id": "jan-11-week-ahead-mercury-aquarius",
+ "format": "sky-roundup",
+ "date": "2027-01-11",
+ "series": "sky news",
+ "signs": [
+  "aquarius",
+  "sagittarius"
+ ],
+ "facts": [
+  "2027-01-11 venus sextile pluto",
+  "2027-01-13 mercury enters aquarius",
+  "2027-01-14 mercury trine uranus",
+  "2027-01-15 mercury conjunction pluto",
+  "2027-01-15 first quarter aries",
+  "2027-01-15 venus trine saturn",
+  "2027-01-16 venus square mars",
+  "2027-01-15 uranus sextile neptune"
+ ],
+ "caption": "the week ahead, jan 11 to jan 17: mercury in aquarius, mercury meets pluto, venus squares a retrograde mars.",
+ "hashtags": [
+  "weekahead",
+  "mercury",
+  "aquarius",
+  "astrology",
+  "zodiac"
+ ],
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "sky desk · week of jan 11",
+   "headline": "this week, your *texts* get cooler and your crush gets louder",
+   "dek": "6 stories · swipe",
+   "art": {
+    "kind": "wheel",
+    "signs": [
+     "aquarius",
+     "sagittarius",
+     "virgo"
+    ],
+    "tint": "mercury"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "sagittarius",
+   "kicker": "mon jan 11 · venus sextile pluto",
+   "tag": "love",
+   "headline": "*venus* gets a little intense, in a good way",
+   "body": "astrologers read it as honest depth. a good night for the real conversation, not the third rerun.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "wed jan 13 · 0° aquarius",
+   "tag": "mercury moves",
+   "headline": "*mercury* enters aquarius: think in big ideas",
+   "body": "it leaves capricorn for aquarius. read it as detached, inventive talk. great for ideas, rough on feelings.",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "aquarius"
+   },
+   "inset": {
+    "kind": "figure",
+    "sign": "aquarius"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aquarius",
+   "kicker": "fri jan 15 · 5° aquarius",
+   "tag": "mercury meets pluto",
+   "headline": "mercury meets *pluto*: the conversation goes deep",
+   "body": "one day after mercury trines uranus. astrologers read the pluto meeting as the truth surfacing. ask, then listen.",
+   "art": {
+    "kind": "pair",
+    "a": "mercury",
+    "b": "pluto"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "aries",
+   "kicker": "fri jan 15 · 25° aries",
+   "tag": "first quarter",
+   "headline": "first quarter in *aries*: push, but kindly",
+   "body": "the half moon reads as a decision point. same day, venus trines saturn: a good night to commit to something small.",
+   "art": {
+    "kind": "moon",
+    "phase": 0.25,
+    "sign": "aries"
+   }
+  },
+  {
+   "layout": "story",
+   "sign": "virgo",
+   "kicker": "sat jan 16 · 10° sagittarius / virgo",
+   "tag": "the one to watch",
+   "headline": "*venus* squares a retrograde mars",
+   "body": "want and timing disagree. read it as a weekend to flirt, not to force. the slow answer is still an answer.",
+   "art": {
+    "kind": "pair",
+    "a": "venus",
+    "b": "mars"
+   }
+  },
+  {
+   "layout": "end",
+   "headline": "cool head, *warm heart*. you need both.",
+   "body": "save this for wednesday, when mercury changes sign.",
+   "art": {
+    "kind": "planet",
+    "body": "mercury",
+    "sign": "aquarius"
+   }
+  }
+ ]
+}

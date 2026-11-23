@@ -66,9 +66,8 @@ slide is usually `end`, with one thing to do or a save prompt.
 
 ## Output
 
-- One JSON file per post at `news/posts/<yyyy-mm>/<mm>-<dd>-<slug>.json`,
-  `id` = the filename without `.json`, prefixed with the month (e.g.
-  `dec-08-new-moon-sagittarius`).
+- One JSON file per post at `news/posts/<yyyy-mm>/<id>.json`, where `id`
+  is `<mon>-<dd>-<slug>` (e.g. `dec-08-new-moon-sagittarius.json`).
 - Fill `facts` with every sky claim in the post (shorthand in README.md).
 - `news/posts/<yyyy-mm>/PLAN.md`: a table, one row per day: date, format,
   hook (cover headline), why that day.
