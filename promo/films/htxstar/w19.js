@@ -120,13 +120,14 @@ export function wavy(x, t, top = 900, h = 500, a = 0.2) { for (let k = 0; k < 12
 /** pixel mosquitoes buzzing around (cx, cy) */
 export function mosquitoes(x, t, cx, cy, n = 6, R = 200) {
   for (let k = 0; k < n; k++) { const a = t * (2.2 + k * 0.3) + k * 2.1, px = cx + Math.cos(a) * R * (0.6 + 0.4 * Math.sin(k)), py = cy + Math.sin(a * 1.3) * R * 0.6
-    x.fillStyle = INK; x.fillRect(px - 10, py - 4, 20, 8); x.fillRect(px + 10, py - 2, 14, 3); x.fillStyle = `rgba(220,230,255,${(0.5 + 0.4 * Math.sin(t * 40 + k)).toFixed(2)})`; x.fillRect(px - 8, py - 16, 8, 12); x.fillRect(px + 2, py - 16, 8, 12) }
+    x.fillStyle = INK; x.fillRect(px - 16, py - 6, 32, 12); x.fillRect(px + 16, py - 3, 22, 5); x.fillRect(px - 12, py + 6, 4, 14); x.fillRect(px + 6, py + 6, 4, 14); x.fillStyle = `rgba(220,230,255,${(0.6 + 0.35 * Math.sin(t * 40 + k)).toFixed(2)})`; x.fillRect(px - 14, py - 26, 13, 20); x.fillRect(px + 2, py - 26, 13, 20) }
 }
 /** love bugs: little black pairs flying joined (clean, cute) */
 export function loveBugs(x, t, cx, cy, n = 5, R = 220) {
   for (let k = 0; k < n; k++) { const a = t * (1.2 + k * 0.2) + k * 1.7, px = cx + Math.cos(a) * R * (0.5 + 0.5 * ((k * 3) % 5) / 4), py = cy + Math.sin(a * 0.8) * R * 0.5
-    for (const d of [-14, 14]) { x.fillStyle = INK; x.fillRect(px + d - 9, py - 5, 18, 10); x.fillStyle = '#ff5a3a'; x.fillRect(px + d - (d < 0 ? 12 : -6), py - 4, 6, 8) }
-    x.fillStyle = 'rgba(220,230,255,0.6)'; x.fillRect(px - 20, py - 16, 12, 9); x.fillRect(px + 8, py - 16, 12, 9) }
+    x.save(); x.translate(px, py); x.scale(2, 2)
+    for (const d of [-14, 14]) { x.fillStyle = INK; x.fillRect(d - 9, -5, 18, 10); x.fillStyle = '#ff5a3a'; x.fillRect(d - (d < 0 ? 12 : -6), -4, 6, 8) }
+    x.fillStyle = 'rgba(220,230,255,0.7)'; x.fillRect(-20, -16, 12, 9); x.fillRect(8, -16, 12, 9); x.restore() }
 }
 /** big thermometer reading (a joke number) */
 export function thermo(x, cx, cy, deg, { k = 1, hot = true } = {}) {

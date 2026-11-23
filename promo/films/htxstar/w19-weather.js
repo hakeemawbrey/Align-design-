@@ -15,9 +15,10 @@ const city = (x, t, p) => { sky(x, p); skyline(x, FLOOR + 60, t, { col: p.city }
 const lessonScene = (dur, pal, text, cast, mood, extra) => ({ dur, set: (x, t, lt) => { city(x, t, pal); extra?.(x, t, lt) }, front: (x, t, lt) => lesson(x, t, lt, text), cast, mood, hops: hop2(Object.keys(cast)) })
 const two = (a, b, s = 240) => ({ [a]: [[0, 360, Y, s]], [b]: [[0, 720, Y, s]] })
 const enter = (id, from = 1250, to = 720, s = 240, at = 0.6) => ({ [id]: [[0, from, Y, s], [at, to, Y, s]] })
-const home = (x, t, wall = '#3a2a5a') => { room(x, { wall, floor: '#5a3a2a' }); box(x, 700, 420, 280, 340, '#bfe6ff', 10); skyline(x, 760, t, { col: '#3a4f7a', alpha: 1 }); x.fillStyle = INK; x.fillRect(836, 420, 8, 340); x.fillRect(700, 586, 280, 8) }
+const home = (x, t, wall = '#3a2a5a') => { room(x, { wall, floor: '#5a3a2a' }); box(x, 700, 420, 280, 340, '#bfe6ff', 10); x.save(); x.beginPath(); x.rect(700, 420, 280, 340); x.clip(); x.translate(700, 420); x.scale(0.26, 0.26); skyline(x, 1300, t, { col: '#3a4f7a', alpha: 1 }); x.restore(); x.fillStyle = INK; x.fillRect(836, 420, 8, 340); x.fillRect(700, 586, 280, 8) }
 
 // weather-only props
+function win(x, t, l = 700, tp = 760, w = 280, h = 340) { box(x, l, tp, w, h, '#bfe6ff', 10); x.save(); x.beginPath(); x.rect(l, tp, w, h); x.clip(); x.translate(l, tp); x.scale(w / 1080, w / 1080); skyline(x, h * 1080 / w, t, { col: '#3a4f7a', alpha: 1 }); x.restore(); x.fillStyle = INK; x.fillRect(l + w / 2 - 4, tp, 8, h); x.fillRect(l, tp + h / 2 - 4, w, 8) }
 function drizzle(x, t, a = 0.7) { for (let k = 0; k < 80; k++) { const px = (k * 131) % 1080, py = ((k * 97) + t * 900) % 1600 + 200; x.fillStyle = `rgba(160,200,255,${a})`; x.fillRect(px, py, 4, 26) } }
 function umbrella(x, P, id, col = '#ff8fb1') { const [cx, cy, s] = P.at(id); const top = cy - s * 0.95; x.fillStyle = INK; x.beginPath(); x.arc(cx, top + 8, s * 0.62, Math.PI, 0); x.fill(); x.fillStyle = col; x.beginPath(); x.arc(cx, top, s * 0.58, Math.PI, 0); x.fill(); box(x, cx - 4, top, 8, s * 0.5, '#8f96a0', 3) }
 function coat(x, cx, cy, k = 1, col = '#e05a3a') { if (k <= 0) return; x.save(); x.translate(cx, cy); x.scale(k, k); box(x, -10, -200, 20, 30, '#8f96a0', 3); box(x, -110, -170, 220, 300, col, 7); for (let q = 0; q < 4; q++) { x.fillStyle = 'rgba(0,0,0,0.18)'; x.fillRect(-110, -110 + q * 62, 220, 8) } box(x, -150, -160, 40, 220, col, 6); box(x, 110, -160, 40, 220, col, 6); x.restore() }
@@ -55,7 +56,7 @@ const dressWarm = skit({
 const fogged = skit({
   hook: 'Step outside. | Your glasses: gone.', close: 'See you clearly. Jan 9.', endStars: ['virgo', 'aquarius', 'gemini', 'leo'],
   scenes: [
-    { dur: 3.2, set: (x, t) => office(x, t, { snow: 0.3 }), front: (x, t, lt, P) => glasses(x, P, 'virgo', 0), cast: { virgo: [[0, 540, Y, 270]] }, mood: { virgo: 'happy' }, hops: { virgo: [0.05, 0.5] },
+    { dur: 3.2, set: (x, t) => { office(x, t, { snow: 0.3 }); win(x, t, 720, 820, 300, 360) }, front: (x, t, lt, P) => glasses(x, P, 'virgo', 0), cast: { virgo: [[0, 540, Y, 270]] }, mood: { virgo: 'happy' }, hops: { virgo: [0.05, 0.5] },
       lines: [[0.3, 2.6, 'virgo', 'cool inside. | heading out.']] },
     { dur: 3.4, set: (x, t) => { city(x, t, PAL.haze); wavy(x, t, 700, 700, 0.25) }, front: (x, t, lt, P) => glasses(x, P, 'virgo', clamp(lt / 0.6)), cast: { virgo: [[0, 540, Y, 270]] }, mood: { virgo: 'wide' },
       lines: [[0.8, 2.4, 'virgo', "I can't | see. at all."]], stick: [[0.1, 3.0, 'HUMIDITY', SKYB]] },
@@ -98,15 +99,15 @@ const pollenNote = skit({
 const arctic = skit({
   hook: 'Office AC: | Antarctica mode.', close: 'Bring a sweater. Jan 9.', endStars: ['pisces', 'cancer', 'capricorn', 'sagittarius'],
   scenes: [
-    { dur: 3.4, set: (x, t) => office(x, t), front: (x, t, lt, P) => layers(x, P, 'cancer', 2, ['#ff8fb1', '#c9a6ff']), cast: { cancer: [[0, 540, Y, 270]] }, mood: { cancer: 'wink' }, hops: { cancer: [0.05, 0.5] },
+    { dur: 3.4, set: (x, t) => { office(x, t); win(x, t, 740, 820, 280, 340) }, front: (x, t, lt, P) => layers(x, P, 'cancer', 2, ['#ff8fb1', '#c9a6ff']), cast: { cancer: [[0, 400, Y, 270]] }, mood: { cancer: 'wink' }, hops: { cancer: [0.05, 0.5] },
       lines: [[0.3, 2.8, 'cancer', 'you brought | a sweater too?']] },
     { dur: 3.4, set: (x, t) => office(x, t), front: (x, t, lt, P) => frost(x, P, 'pisces'), cast: { pisces: [[0, 540, Y, 270]] }, mood: { pisces: 'wide' },
       lines: [[0.3, 2.8, 'pisces', 'my tears | are FROZEN.']], stick: [[0.2, 3.0, 'OUTSIDE: 90° · INSIDE: THIS', SKYB]] },
     { dur: 3.6, set: (x, t) => office(x, t), front: (x, t, lt, P) => { layers(x, P, 'cancer', 2, ['#ff8fb1', '#c9a6ff']); if (lt > 1.4) blanket(x, P, 'pisces') }, cast: { cancer: [[0, 330, Y, 250]], pisces: [[0, 760, Y, 250]] }, mood: { cancer: 'heart', pisces: lt => lt > 1.4 ? 'heart' : 'wide' },
       lines: [[0.3, 1.3, 'cancer', 'blanket, | baby.'], [1.9, 1.4, 'pisces', 'thank | you.']] },
-    { dur: 3.4, set: (x, t) => { office(x, t, { snow: 0.6 }); thermostat(x, 800, 900, '62°') }, cast: { capricorn: [[0, 480, Y, 260]] }, mood: { capricorn: 'squint' },
+    { dur: 3.4, set: (x, t) => { office(x, t, { snow: 0.6 }); thermostat(x, 800, 900, '64°') }, cast: { capricorn: [[0, 480, Y, 260]] }, mood: { capricorn: 'squint' },
       lines: [[0.3, 2.8, 'capricorn', 'I like it | crisp.']], stick: [[0.1, 1.4, 'WHO DID THIS', BRAKE]] },
-    { dur: 3.6, set: (x, t) => { office(x, t, { snow: 0.6 }); thermostat(x, 800, 900, '62°') }, front: (x, t, lt, P) => frost(x, P, 'capricorn'), cast: { capricorn: [[0, 480, Y, 260]] }, mood: { capricorn: 'wide' }, hops: { capricorn: [1.4, 1.6, 1.8, 2.0] },
+    { dur: 3.6, set: (x, t) => { office(x, t, { snow: 0.6 }); thermostat(x, 800, 900, '64°') }, front: (x, t, lt, P) => frost(x, P, 'capricorn'), cast: { capricorn: [[0, 480, Y, 260]] }, mood: { capricorn: 'wide' }, hops: { capricorn: [1.4, 1.6, 1.8, 2.0] },
       lines: [[0.3, 1.1, 'capricorn', '...'], [1.4, 1.9, 'capricorn', "ok. I'm | freezing too."]], stick: [[0.1, 1.2, '★ TWIST', PINK]] },
     { dur: 3.6, set: (x, t) => { patio(x, t, PAL.gold); heatSun(x, 860, 380, t, 80) }, cast: { cancer: [[0, 250, Y, 220]], pisces: [[0, 540, Y, 220]], capricorn: [[0, 830, Y, 220]] }, mood: { cancer: 'happy', pisces: 'heart', capricorn: 'sparkle' }, hops: hop2(['cancer', 'pisces', 'capricorn']),
       lines: [[0.3, 1.3, 'pisces', 'warm | tears!'], [1.9, 1.4, 'capricorn', 'thawing. | as a team.']], stick: [[0.1, 3.4, 'LUNCH OUTSIDE', GOLD]] },
@@ -116,7 +117,7 @@ const arctic = skit({
 
 // ── hst469 · Mosquitoes love you? Scorpio, same. (patio at dusk, Leo's bug spray)
 const skeeters = skit({
-  hook: 'Mosquitoes love you? | Scorpio, same.', close: 'Green flags only. Jan 9.', endStars: ['scorpio', 'leo', 'libra', 'aries'],
+  hook: 'Bitten again? | Scorpio, same.', close: 'Green flags only. Jan 9.', endStars: ['scorpio', 'leo', 'libra', 'aries'],
   scenes: [
     { dur: 3.4, set: (x, t) => patio(x, t, PAL.dusk), front: (x, t, lt, P) => { const [cx, cy] = P.at('scorpio'); mosquitoes(x, t, cx, cy - 40, 5, 170) }, cast: { scorpio: [[0, 540, Y, 270]] }, mood: { scorpio: 'squint' }, hops: { scorpio: [0.05, 0.5, 1.0] },
       lines: [[0.3, 2.8, 'scorpio', 'you too? | every time?']] },
@@ -150,7 +151,7 @@ const coldFit = skit({
       cast: { leo: [[0, 360, Y, 260]], aries: [[0, 800, Y, 220]] }, mood: { leo: 'wink', aries: 'sparkle' }, lines: [[0.3, 1.4, 'aries', 'work it!'], [1.9, 1.4, 'leo', 'always.']] },
     { dur: 3.6, set: (x, t) => { city(x, t, PAL.noon); heatSun(x, 860, 380, t, 80) }, front: (x, t, lt, P) => { layers(x, P, 'leo', 4 - Math.floor(clamp(lt / 3) * 3), ['#c9a6ff', '#2b5fb0', '#f2c75c', '#c9a6ff']); thermo(x, 860, 900, `${52 + Math.round(clamp(lt / 3) * 25)}°`, { k: 0.7 }); stamp(x, '2:00 PM') },
       cast: { leo: [[0, 400, Y, 260]] }, mood: { leo: 'wide' }, lines: [[0.3, 2.9, 'leo', "it's... | leaving?!"]] },
-    { dur: 3.6, set: (x, t) => { city(x, t, PAL.dusk) }, front: (x, t, lt) => chat(x, 760, 820, lt, [['l', 'posting all winter', 0.4], ['r', 'the one day. iconic.', 1.4]], { k: Kp(lt, 0.1) }),
+    { dur: 3.6, set: (x, t) => { city(x, t, PAL.dusk) }, front: (x, t, lt) => chat(x, 740, 920, lt, [['l', 'posting all winter', 0.4], ['r', 'the one day. iconic.', 1.4]], { k: Kp(lt, 0.1) }),
       cast: { leo: [[0, 300, Y, 250]] }, mood: { leo: 'sparkle' }, lines: [[0.3, 1.0, 'leo', 'four hours.'], [1.6, 1.6, 'leo', 'so many | photos.']], stick: [[0.1, 1.2, '★ TWIST', PINK]] },
     lessonScene(3.6, PAL.dusk, 'enjoy it | while it lasts.', two('leo', 'aries'), { leo: 'heart', aries: 'heart' }),
   ],
@@ -160,7 +161,7 @@ const coldFit = skit({
 const pal471 = [{ top: '#6a8ab8', bot: '#cfe0f0', city: '#3a4a6a', ground: '#5a6070' }, PAL.noon, PAL.grey, PAL.haze]
 const fits = [['#2b5fb0', '#e05a3a', '#f2c75c'], ['#7dffb0'], ['#ffd36b', '#5ec8ff'], ['#ff8fb1']]
 const seasons = skit({
-  hook: 'Four seasons by noon. | Gemini is ready.', close: 'Ready for any weather. Jan 9.', endStars: ['gemini', 'sagittarius', 'libra', 'cancer'],
+  hook: '4 seasons by noon. | Gemini is ready.', close: 'Ready for any weather. Jan 9.', endStars: ['gemini', 'sagittarius', 'libra', 'cancer'],
   scenes: [
     ...[['7 AM · 50°', 'coat. | obviously.', 3, 0], ['10 AM · 79°', 'shorts. | obviously.', 1, 1], ['1 PM · DRIZZLE', 'umbrella. | sure.', 2, 2], ['4 PM · STICKY', 'tank top. | why not.', 1, 3]].map(([st, line, n, i]) => ({
       dur: 3.4, set: (x, t) => { city(x, t, pal471[i]); if (i === 1) heatSun(x, 860, 380, t, 80); if (i === 2) drizzle(x, t); if (i === 3) wavy(x, t, 800, 600, 0.25) },
@@ -192,7 +193,7 @@ const shady = skit({
     { dur: 3.8, set: (x, t) => shadeLot(x, t, PAL.gold), cast: { capricorn: [[0, 400, Y + 60, 240]], aries: [[0, 680, Y + 60, 240]] }, mood: { capricorn: lt => lt > 2 ? 'heart' : 'happy', aries: 'heart' },
       lines: [[0.3, 1.6, 'capricorn', 'half each? | front wheels?'], [2.1, 1.4, 'aries', '...deal.']], stick: [[0.1, 1.2, '★ TWIST', PINK]] },
     { dur: 3.6, set: (x, t) => shadeLot(x, t, PAL.dusk), front: (x, t) => { car(x, 330, 1620, '#3a9a6a', { s: 1.1 }); car(x, 750, 1620, '#e0503a', { s: 1.1, flip: true }) }, cast: { capricorn: [[0, 430, Y + 30, 220]], aries: [[0, 650, Y + 30, 220]] }, mood: { capricorn: 'heart', aries: 'heart' },
-      lines: [[0.3, 2.8, 'aries', 'same time | tomorrow?']], stick: [[0.1, 3.0, 'SHADE: SHARED', MINT]] },
+      lines: [[0.3, 2.8, 'aries', 'see you | in the shade.']], stick: [[0.1, 3.0, 'SHADE: SHARED', MINT]] },
     lessonScene(3.6, PAL.dusk, 'share the shade.', two('capricorn', 'aries'), { capricorn: 'heart', aries: 'heart' }, (x, t) => tree(x, 540, FLOOR + 60, { s: 0.8, shade: false })),
   ],
 })
@@ -266,10 +267,10 @@ const packing = skit({
   scenes: [
     { dur: 3.4, set: (x, t) => home(x, t, '#2a3a5a'), front: (x, t, lt) => { bag(x, 760, 1300, 1, 1); forecastPhone(x, 760, 760, [['JAN 9', 'cloud', '??°']], lt, { k: 0.7 }) }, cast: { sagittarius: [[0, 300, Y, 260]] }, mood: { sagittarius: 'squint' }, hops: { sagittarius: [0.05, 0.5] },
       lines: [[0.3, 2.8, 'sagittarius', 'you too? | no idea?']] },
-    ...[0, 2, 4].map(i => ({ dur: 3.2, set: (x, t) => home(x, t, '#2a3a5a'), front: (x, t, lt, P) => { bag(x, 760, 1300, 1, i + 1 + Math.floor(clamp(lt / 1.6) * 2)); clipboard(x, P, 'virgo', (i + 2) / 6) },
-      cast: { sagittarius: [[0, 300, Y, 250]], virgo: [[0, 760, Y - 330, 180]] }, mood: { sagittarius: ['happy', 'sparkle', 'wink'][i / 2], virgo: 'squint' },
+    ...[0, 2, 4].map(i => ({ dur: 3.2, set: (x, t) => home(x, t, '#2a3a5a'), front: (x, t, lt, P) => { bag(x, 600, 1300, 1, i + 1 + Math.floor(clamp(lt / 1.6) * 2)); clipboard(x, P, 'virgo', (i + 2) / 6) },
+      cast: { sagittarius: [[0, 300, Y, 250]], virgo: [[0, 900, Y, 210]] }, mood: { sagittarius: ['happy', 'sparkle', 'wink'][i / 2], virgo: 'squint' },
       lines: [[0.3, 1.3, 'sagittarius', `${ITEMS[i]}...`], [1.6, 1.4, 'sagittarius', `...${ITEMS[i + 1]}.`]] })),
-    { dur: 3.4, set: (x, t) => home(x, t, '#2a3a5a'), front: (x, t, lt, P) => { bag(x, 760, 1300, 1.2 + 0.05 * Math.sin(t * 6), 6); clipboard(x, P, 'virgo', 1) }, cast: { sagittarius: [[0, 300, Y, 250]], virgo: [[0, 760, Y - 330, 180]] }, mood: { sagittarius: 'heart', virgo: 'happy' },
+    { dur: 3.4, set: (x, t) => home(x, t, '#2a3a5a'), front: (x, t, lt, P) => { bag(x, 600, 1300, 1.1 + 0.05 * Math.sin(t * 6), 6); clipboard(x, P, 'virgo', 1) }, cast: { sagittarius: [[0, 300, Y, 250]], virgo: [[0, 900, Y, 210]] }, mood: { sagittarius: 'heart', virgo: 'happy' },
       lines: [[0.3, 2.8, 'virgo', 'every season: | packed.']], stick: [[0.1, 3.0, 'HOUSTON BAG: READY', GOLD]] },
     { dur: 3.8, set: (x, t) => { sky(x, PAL.plum); skyline(x, FLOOR + 60, t, { col: PAL.plum.city }); ground(x, PAL.plum) }, front: (x, t, lt) => { bag(x, 230, 1470, 0.55, 6); bag(x, 540, 1470, 0.55, 6); bag(x, 850, 1470, 0.55, 6) },
       cast: { sagittarius: [[0, 230, Y - 40, 220]], leo: [[0, 1250, Y - 40, 220], [0.5, 540, Y - 40, 220]], pisces: [[0, 1350, Y - 40, 220], [0.9, 850, Y - 40, 220]] }, mood: { sagittarius: lt => lt > 1.6 ? 'wide' : 'happy', leo: 'wink', pisces: 'heart' },
