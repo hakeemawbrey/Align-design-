@@ -51,12 +51,12 @@ const hst086 = story({
       hops: { cancer: [0.1, 0.5, 0.9], taurus: [0.2, 0.6, 1.0] },
       lines: [[0.3, 1.4, 'cancer', "we'll | behave."], [1.9, 1.4, 'taurus', 'mostly.']], sfx: [SFX.boing(1.9)] },
   ],
-  lesson: { lines: ['They ask because', 'they love you.', 'Your pace is yours.'], cast: { cancer: [[0, 330, 1390, 190]], taurus: [[0, 750, 1390, 190]] }, mood: { cancer: 'heart', taurus: 'heart' }, props: AUNTS, line: ['taurus', 'now eat. | you look thin.'] },
+  lesson: { lines: ['They ask because', 'they love you.', 'Your pace is yours.'], cast: { cancer: [[0, 330, 1370, 190]], taurus: [[0, 750, 1370, 190]] }, mood: { cancer: 'heart', taurus: 'heart' }, props: AUNTS, line: ['taurus', 'now eat. | you look thin.'] },
 })
 
 
 // ── shared bits for this file
-const liveBug = (x, t) => { box(x, 70, 250, 150, 60, BRAKE, 5); txt(x, '● LIVE', 145, 281, { size: 30, col: BONE, font: MONO, weight: 700 }) }
+const liveBug = (x, t) => { box(x, 150, 960, 150, 60, BRAKE, 5); txt(x, '● LIVE', 225, 991, { size: 30, col: BONE, font: MONO, weight: 700 }) }
 function tv(x, cx, cy, w, h, focusY, draw, { label: lab = null } = {}) {   // a CRT that shows the world (drawn full-frame, scaled in)
   box(x, cx - w / 2 - 30, cy - h / 2 - 30, w + 60, h + 60, '#4a3a5a', 10)
   x.save(); x.beginPath(); x.rect(cx - w / 2, cy - h / 2, w, h); x.clip(); const s = w / 1080; x.translate(cx - 540 * s, cy - focusY * s); x.scale(s, s); draw(); x.restore()
@@ -74,13 +74,13 @@ const DATE = (x, t, lt, { sweat: sw = 0, phone = 0, love = 0 } = {}) => {
   const ya = 1250, yb = 1250
   signChar(x, t, 'aquarius', 400, ya, 220, { mood: love ? 'heart' : phone ? 'neutral' : 'happy', look: phone ? [0, 1] : [1, 0], seed: 4, hops: love ? [t - (lt % 0.8)] : null })
   signChar(x, t, 'libra', 680, yb, 220, { mood: love ? 'heart' : 'happy', look: [-1, 0], seed: 9 })
-  tag(x, 'YOU', 400, 1400); tag(x, 'THEM', 680, 1400, PINK)
+  tag(x, 'YOU', 400, 1345); tag(x, 'THEM', 680, 1345, PINK)
   if (sw) { sweat(x, 470, 1120, t, 3); sweat(x, 750, 1120, t, 3) }
   if (phone) { box(x, 440, 1210, 40, 70, INK, 4); x.fillStyle = SKYB; x.fillRect(446, 1218, 28, 54) }
   if (love) hearts(x, t, 540, 1150, t - lt, { n: 8, spread: 260 })
 }
 const BOOTH = { gemini: 'headset', sagittarius: 'headset' }
-const boothCast = (y = 1450, s = 170) => ({ gemini: [[0, 150, y, s]], sagittarius: [[0, 930, y, s]] })
+const boothCast = (y = 1370, s = 150) => ({ gemini: [[0, 150, y, s]], sagittarius: [[0, 930, y, s]] })
 const hst087 = story({
   hook: 'The stars are | live-commenting | your date', key: 'G',
   close: 'Ask the real question. Jan 9.', stars: ['gemini', 'sagittarius', 'libra', 'pisces'],
@@ -96,7 +96,7 @@ const hst087 = story({
     { dur: 3.8, set: (x, t, lt) => { DATE(x, t, lt, { sweat: 1 }); mosquito(x, 560, 1060, t) }, cast: boothCast(), mood: { gemini: 'wide', sagittarius: 'wide' }, props: BOOTH,
       lines: [[0.2, 1.6, [680, 1250, 220], 'so... what | do you do?'], [2.0, 1.6, 'sagittarius', 'small talk. | losing them.']], sfx: [SFX.womp(2.0)] },
     { dur: 3.4, set: (x, t, lt) => { studio(x, t); tv(x, 540, 760, 820, 560, 1150, () => DATE(x, t, lt)); liveBug(x, t) },
-      cast: { gemini: [[0, 300, 1300, 240]], sagittarius: [[0, 780, 1300, 240]], pisces: [[0, 540, 1480, 150]] }, mood: { gemini: 'neutral', sagittarius: 'neutral', pisces: 'wide' }, props: BOOTH,
+      cast: { gemini: [[0, 300, 1300, 240]], sagittarius: [[0, 780, 1300, 240]], pisces: [[0, 540, 1400, 140]] }, mood: { gemini: 'neutral', sagittarius: 'neutral', pisces: 'wide' }, props: BOOTH,
       look: { gemini: [1, 0], sagittarius: [-1, 0] }, stick: [[0.3, 2.6, '*dead air*', BONE]], sfx: [SFX.cricket(0.5), SFX.cricket(1.1), SFX.cricket(1.7)] },
     { dur: 3.8, set: (x, t, lt) => { DATE(x, t, lt, { phone: 1 }); vhs(x, t, lt) }, cast: boothCast(), mood: { gemini: 'wide', sagittarius: 'squint' }, props: BOOTH,
       lines: [[1.0, 2.2, 'sagittarius', 'phone check. | brutal.']], sfx: [SFX.thud(0.1)] },
@@ -105,16 +105,16 @@ const hst087 = story({
     { dur: 4.0, set: (x, t, lt) => DATE(x, t, lt, { love: 1 }), cast: boothCast(), mood: { gemini: 'heart', sagittarius: 'heart' }, props: BOOTH, hops: { gemini: [1.8, 2.3], sagittarius: [1.9, 2.4] },
       lines: [[0.2, 1.5, [680, 1250, 220], 'okay so | this taco truck...'], [2.0, 1.8, 'gemini', "THEY'RE | LAUGHING!"]], sfx: [SFX.cheer(1.9)] },
     { dur: 3.6, set: (x, t, lt) => { studio(x, t); tv(x, 540, 760, 820, 560, 1150, () => DATE(x, t, lt, { love: 1 })); liveBug(x, t) },
-      cast: { gemini: [[0, 300, 1300, 240]], sagittarius: [[0, 780, 1300, 240]], pisces: [[0, 540, 1480, 150]] }, mood: { gemini: 'heart', sagittarius: 'squint', pisces: 'heart' }, props: { ...BOOTH, pisces: 'tissue' },
+      cast: { gemini: [[0, 300, 1300, 240]], sagittarius: [[0, 780, 1300, 240]], pisces: [[0, 540, 1400, 140]] }, mood: { gemini: 'heart', sagittarius: 'squint', pisces: 'heart' }, props: { ...BOOTH, pisces: 'tissue' },
       lines: [[0.3, 2.6, 'sagittarius', "we'll be right back. | we need a minute."]] },
   ],
-  lesson: { lines: ['Skip the résumé.', 'Ask what', 'they love.'], cast: { gemini: [[0, 330, 1390, 190]], sagittarius: [[0, 750, 1390, 190]] }, mood: { gemini: 'sparkle', sagittarius: 'happy' }, props: BOOTH, line: ['gemini', "and we're | back."] },
+  lesson: { lines: ['Skip the résumé.', 'Ask what', 'they love.'], cast: { gemini: [[0, 330, 1370, 190]], sagittarius: [[0, 750, 1370, 190]] }, mood: { gemini: 'sparkle', sagittarius: 'happy' }, props: BOOTH, line: ['gemini', "and we're | back."] },
 })
 
 // ── hst088 · Virgo planned your date. To the minute. (Montrose → a mural → Bellaire → the bayou)
 const plan = (x, lt, done = -1, k = 1) => {
   if (k <= 0) return
-  x.save(); x.translate(540, 700); x.scale(k, k); x.rotate(-0.02)
+  x.save(); x.translate(540, 820); x.scale(k * 0.78, k * 0.78); x.rotate(-0.02)
   box(x, -360, -260, 720, 520, BONE, 8); box(x, -360, -260, 720, 80, '#2e8b57', 0); txt(x, 'THE PLAN (LAMINATED)', 0, -220, { size: 34, col: BONE, font: MONO, weight: 700 })
   ;['6:00 COFFEE · MONTROSE', '6:40 MURAL PHOTOS', '7:15 DINNER · BELLAIRE', '8:30 HOME. ON TIME.'].forEach((s, i) => { fit(x, s, 0, -110 + i * 100, 620, { size: 40, col: INK, font: MONO, weight: 700 }); if (i <= done) { x.strokeStyle = BRAKE; x.lineWidth = 8; x.beginPath(); x.moveTo(-300, -110 + i * 100); x.lineTo(300, -110 + i * 100); x.stroke() } })
   x.restore()
@@ -123,7 +123,7 @@ const hst088 = story({
   hook: 'Virgo planned | your date. | To the minute.', key: 'C',
   close: 'Plan it. Then let it happen. Jan 9.', stars: ['virgo', 'sagittarius', 'pisces', 'libra'],
   scenes: [
-    { dur: 3.6, set: (x, t, lt) => { night(x, t); plan(x, lt, -1, 1) }, cast: { virgo: [[0, 540, 1250, 260]] }, mood: { virgo: 'squint' }, props: { virgo: 'clipboard' }, hops: { virgo: [0.02, 0.45] },
+    { dur: 3.6, set: (x, t, lt) => { night(x, t); plan(x, lt, -1, 1) }, cast: { virgo: [[0, 820, 1300, 220]] }, mood: { virgo: 'squint' }, props: { virgo: 'clipboard' }, hops: { virgo: [0.02, 0.45] },
       lines: [[0.3, 1.5, 'virgo', 'hi. your date. | I planned it.'], [2.0, 1.4, 'virgo', 'every. | minute.']] },
     { dur: 3.8, title: '6:00 · MONTROSE', set: (x, t) => { night(x, t); coffeeShop(x, 540, FLOOR + 60) }, cast: { virgo: [[0, 200, Y, 230]] }, mood: { virgo: 'squint' }, props: { virgo: 'clipboard' },
       lines: [[0.3, 1.4, 'virgo', '6:00. | where are they?'], [2.0, 1.7, [880, 1250, 220], 'stuck on 59! | 20 minutes!']], sfx: [SFX.thud(2.0)] },
@@ -144,7 +144,7 @@ const hst088 = story({
       cast: { virgo: [[0, 330, 1250, 230]], sagittarius: [[0, 760, 1250, 230]] }, mood: { virgo: 'heart', sagittarius: 'heart' }, props: { virgo: 'clipboard' },
       lines: [[0.3, 2.6, 'virgo', '*writes* 8:31: | stay here.']], sfx: [SFX.pluck(0.3, 660)] },
   ],
-  lesson: { lines: ['Plan the date.', 'Leave room', 'for the magic.'], cast: { virgo: [[0, 330, 1390, 190]], sagittarius: [[0, 750, 1390, 190]] }, mood: { virgo: 'happy', sagittarius: 'heart' }, props: { virgo: 'clipboard' }, line: ['virgo', "I'm adding | 'magic' to the list."] },
+  lesson: { lines: ['Plan the date.', 'Leave room', 'for the magic.'], cast: { virgo: [[0, 330, 1370, 190]], sagittarius: [[0, 750, 1370, 190]] }, mood: { virgo: 'happy', sagittarius: 'heart' }, props: { virgo: 'clipboard' }, line: ['virgo', "I'm adding | 'magic' to the list."] },
 })
 
 // ── hst089 · Pisces took you to Galveston. Bring tissues.
@@ -176,7 +176,7 @@ const hst089 = story({
     { dur: 3.4, set: (x, t) => { night(x, t); freeway(x, FLOOR - 160, 600, 4, t * 300) }, front: (x, t) => car(x, 540, FLOOR + 120, '#c9a6ff', { open: true }),
       cast: { pisces: [[0, 520, FLOOR + 5, 200]] }, mood: { pisces: 'sleepy' }, lines: [[0.4, 2.4, 'pisces', 'same time | next week?']] },
   ],
-  lesson: { lines: ['Feel it out loud.', 'The right one', 'stays.'], cast: { pisces: [[0, 540, 1390, 200]] }, mood: { pisces: 'heart' }, props: { pisces: 'tissue' }, line: ['pisces', "I'm fine. | *sob*"] },
+  lesson: { lines: ['Feel it out loud.', 'The right one', 'stays.'], cast: { pisces: [[0, 540, 1370, 200]] }, mood: { pisces: 'heart' }, props: { pisces: 'tissue' }, line: ['pisces', "I'm fine. | *sob*"] },
 })
 
 // ── hst090 · Leo dragged you to every mural in Houston
@@ -207,7 +207,7 @@ const hst090 = story({
     { dur: 3.4, set: (x, t) => { mural(x, t); outside(x, { ground: '#2a2440' }) }, cast: { leo: [[0, 540, 1240, 280]] }, mood: { leo: 'heart' }, props: { leo: ['crown', 'phone'] },
       lines: [[0.3, 2.6, 'leo', 'now you. | your turn. candid.']] },
   ],
-  lesson: { lines: ['Stop performing.', 'Let them see', 'the real you.'], cast: { leo: [[0, 540, 1390, 200]] }, mood: { leo: 'heart' }, props: { leo: 'crown' }, line: ['leo', 'still my | good side.'] },
+  lesson: { lines: ['Stop performing.', 'Let them see', 'the real you.'], cast: { leo: [[0, 540, 1370, 200]] }, mood: { leo: 'heart' }, props: { leo: 'crown' }, line: ['leo', 'still my | good side.'] },
 })
 
 // ── hst091 · Aries is late to your date (Houston traffic, a Texas U-turn, Kuykendahl)
@@ -237,7 +237,7 @@ const hst091 = story({
     { dur: 3.4, set: (x, t) => { night(x, t); coffeeShop(x, 540, FLOOR + 60) }, cast: { aries: [[0, -200, Y, 230], [0.8, 300, Y, 230]] }, mood: { aries: 'heart' },
       lines: [[1.0, 2.2, YOU(), 'right on time. | (we\'re both late)']] },
   ],
-  lesson: { lines: ['Late happens.', 'Text before,', 'not after.'], cast: { aries: [[0, 540, 1390, 200]] }, mood: { aries: 'happy' }, line: ['aries', 'I left early | this time.'] },
+  lesson: { lines: ['Late happens.', 'Text before,', 'not after.'], cast: { aries: [[0, 540, 1370, 200]] }, mood: { aries: 'happy' }, line: ['aries', 'I left early | this time.'] },
 })
 
 // ── hst092 · Capricorn brought a 5-year plan to brunch (Midtown)
@@ -275,7 +275,7 @@ const hst092 = story({
     { dur: 3.4, set: (x, t) => { kitchen(x, t, { wall: '#ffe0e8', tile: '#ffb0c8' }); table(x, 540, 640, 1240) }, cast: { capricorn: [[0, 300, 1150, 240]], gemini: [[0, 780, 1150, 230]] }, mood: { capricorn: 'heart', gemini: 'heart' },
       lines: [[0.3, 2.6, 'capricorn', 'new plan. | year one: tacos.']] },
   ],
-  lesson: { lines: ['A first date', "isn't an interview.", 'Be curious.'], cast: { capricorn: [[0, 330, 1390, 190]], gemini: [[0, 750, 1390, 190]] }, mood: { capricorn: 'happy', gemini: 'sparkle' }, line: ['capricorn', 'flour. obviously.'] },
+  lesson: { lines: ['A first date', "isn't an interview.", 'Be curious.'], cast: { capricorn: [[0, 330, 1370, 190]], gemini: [[0, 750, 1370, 190]] }, mood: { capricorn: 'happy', gemini: 'sparkle' }, line: ['capricorn', 'flour. obviously.'] },
 })
 
 export const W04A = { hst086, hst087, hst088, hst089, hst090, hst091, hst092 }

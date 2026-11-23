@@ -43,7 +43,7 @@ export function story(D) {
   for (const s of scenes) { for (const [k, lt, ...a] of s.sfx || []) cues.push([k, r2(acc + lt), ...a]); acc += s.dur }
   return {
     hook: D.hook, badge: BADGE, cues, endLen: D.endLen ?? 6.2,
-    end: (x, t, lt) => { x.fillStyle = `rgba(8,5,22,${(0.75 * clamp(lt / 0.4)).toFixed(3)})`; x.fillRect(0, 0, 1080, 1920); partyCard(x, t, lt, { line: D.close, stars: D.stars }) },
+    end: (x, t, lt) => { x.fillStyle = `rgba(8,5,22,${(0.92 * clamp(lt / 0.4)).toFixed(3)})`; x.fillRect(0, 0, 1080, 1920); partyCard(x, t, lt, { line: D.close, stars: D.stars }) },
     scenes,
   }
 }
@@ -173,7 +173,7 @@ export function porch(x, t, { siding = '#7fb0c8' } = {}) {   // a Heights bungal
 }
 export function bayou(x, t, { dusk = 0, trail = true } = {}) {   // Buffalo Bayou: the trail, the water, downtown in the distance
   sky(x, dusk ? '#4a3a8a' : '#7cc8ff', dusk ? '#ff9a6a' : '#d8f0ff', 900)
-  skyline(x, 900, t, { col: dusk ? '#3a2d6a' : '#5a6f9a', lit: '#ffe39a', alpha: 0.8 })
+  x.save(); x.translate(540 * 0.5, 900 * 0.5); x.scale(0.5, 0.5); skyline(x, 900, t, { col: dusk ? '#3a2d6a' : '#5a6f9a', lit: '#ffe39a', alpha: 0.8 }); x.restore()
   x.fillStyle = '#3f7a46'; x.fillRect(0, 880, 1080, 120)
   for (let k = 0; k < 8; k++) tree(x, 60 + k * 140, 960, 0.55, k % 2 ? '#2f7a46' : '#3c8a50')
   x.fillStyle = '#5c6b3a'; x.fillRect(0, 990, 1080, 220)
