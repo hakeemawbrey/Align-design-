@@ -18,7 +18,7 @@ export const LANE1 = FLOOR - 20, LANE2 = FLOOR + 210
 export const PAL = {
   noon: { top: '#7cc6f0', bot: '#f6e7b8', city: '#3a4f7a', ground: '#8a7a5a' },
   dusk: { top: '#3a2a6a', bot: '#ff9a6a', city: '#2a1d52', ground: '#3a2a4a' },
-  night: { top: '#0b0a22', bot: '#2a1d52', city: '#1a1338', ground: '#221b38' },
+  night: { top: '#0b0a22', bot: '#2a1d52', city: '#2a2160', ground: '#221b38' },
   dawn: { top: '#2a3a7a', bot: '#ffc7a0', city: '#2f2f5a', ground: '#3d3550' },
   haze: { top: '#c9d6d0', bot: '#f4e6c2', city: '#7a8a9a', ground: '#9a8a6a' },
   mint: { top: '#1d4a5a', bot: '#7fd6c0', city: '#1a3340', ground: '#2a3a40' },
@@ -39,7 +39,7 @@ export function road(x, t, p, { num = null, scroll = 0, sign = null, sub = null,
   if (city) skyline(x, FLOOR - 150, t, { col: p.city, alpha: 0.95 })
   freeway(x, FLOOR - 160, 600, 3, scroll); x.fillStyle = p.ground; x.fillRect(0, FLOOR + 440, 1080, 480)
   if (num) shield(x, 900, 700, num, 0.8)
-  if (sign) overheadSign(x, 540, 760, sign, sub, 1)
+  if (sign) overheadSign(x, 540, 810, sign, sub, 1)
 }
 /** car lanes (car centre y); a star riding in a car sits 115 px above it at size 190 */
 export const CA = 1330, CB = 1560, SEAT = 115
@@ -76,15 +76,16 @@ export function gps(x, cx, cy, eta, t, { k = 1, col = BRAKE, note = 'ETA' } = {}
 export function chat(x, cx, cy, lt, msgs, { k = 1, title = '' } = {}) {
   if (k <= 0) return
   x.save(); x.translate(cx, cy); x.scale(k, k)
-  box(x, -230, -340, 460, 680, INK, 0); box(x, -210, -310, 420, 620, '#f4efe4', 0)
-  if (title) txt(x, title, 0, -280, { size: 26, col: INK, font: MONO, weight: 700 })
-  let y = -230
+  const H = 120 + msgs.length * 84 + (title ? 40 : 0), top = -H / 2
+  box(x, -250, top - 20, 500, H + 40, INK, 0); box(x, -230, top, 460, H, '#f4efe4', 0)
+  if (title) txt(x, title, 0, top + 34, { size: 28, col: INK, font: MONO, weight: 700 })
+  let y = top + (title ? 100 : 70)
   for (const [side, s, at] of msgs) {
     if (lt < at) continue
     const kk = clamp(ease.outBack(prog(lt, at, at + 0.25)))
-    x.font = `800 30px ${INTER}`; const w = Math.min(360, x.measureText(s).width + 40), l = side === 'r' ? 190 - w : -190
-    x.save(); x.globalAlpha = clamp(kk); box(x, l, y - 28, w, 56, side === 'r' ? '#5ec8ff' : '#e0d6f0', 4); txt(x, s, l + w / 2, y, { size: 30, col: INK }); x.restore()
-    y += 78
+    x.font = `800 36px ${INTER}`; const w = Math.min(420, x.measureText(s).width + 44), l = side === 'r' ? 210 - w : -210
+    x.save(); x.globalAlpha = clamp(kk); box(x, l, y - 32, w, 64, side === 'r' ? '#5ec8ff' : '#e0d6f0', 4); txt(x, s, l + w / 2, y, { size: 36, col: INK }); x.restore()
+    y += 84
   }
   x.restore()
 }
@@ -218,7 +219,7 @@ export function bigText(x, lt, lines, { y = 700, at = 0.1, col = GOLD, size = 96
   x.save(); x.globalAlpha = clamp(k); lines.forEach((s, i) => txt(x, s, 540, y + i * (size * 1.05), { size: i ? size * 0.7 : size, col: i ? sub : col })); x.restore()
 }
 /** a time stamp chip (top-right) */
-export function stamp(x, s, col = BONE) { box(x, 700, 250, 320, 80, 'rgba(8,5,22,0.85)', 0); txt(x, s, 860, 290, { size: 40, col, font: MONO, weight: 700 }) }
+export function stamp(x, s, col = BONE) { x.font = `700 40px ${MONO}`; const w = x.measureText(s).width + 50; box(x, 1020 - w, 250, w, 80, 'rgba(8,5,22,0.85)', 0); txt(x, s, 1020 - w / 2, 290, { size: 40, col, font: MONO, weight: 700 }) }
 
 /** wrap a skit spec with the house defaults (badge, sting, party ticket) */
 export function skit(spec) {

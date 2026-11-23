@@ -2,7 +2,7 @@
 // a ★ LESSON UNLOCKED beat and the Jan 9 party ticket. Props: w19.js and kit.js. Engine: starrace/ep.js.
 import {
   FLOOR, box, txt, label, sparkles, signChar, GOLD, BONE, PINK, INK, MONO, SERIF, SKYB, MINT, skyline, car, freeway, shield, overheadSign, streetSign, BRAKE, HGREEN,
-  clamp, prog, ease, Y, Kp, PAL, CA, CB, SEAT, sky, ground, road, rideP, jam, dash, dashFront, gps, chat, train, roadWork, parkingLot, tree, wavy, lesson, plate, bigText, stamp, skit, sunShade, shades,
+  clamp, prog, ease, Y, Kp, PAL, CA, CB, SEAT, sky, ground, road, bayou, heatSun, rideP, jam, dash, dashFront, gps, chat, train, roadWork, parkingLot, tree, wavy, lesson, plate, bigText, stamp, skit, sunShade, shades,
 } from './w19.js'
 import { houses, coffeeShop, mural, kolache, taco } from './kit.js'
 import { clock } from '../starrace/ep.js'
@@ -44,7 +44,7 @@ const merge = skit({
 
 // ── more props (traffic only)
 const S2 = 230 / 190
-const at = (cx, cy = CA) => [cx, cy - SEAT * S2, 230]
+const at = (cx, cy = CA) => [0, cx, cy - SEAT * S2, 230]
 /** a minivan carrying up to three stars (call in front; stars sit at cx-170, cx, cx+170 at size 170) */
 function van(x, cx, cy, col) { box(x, cx - 320, cy - 40, 640, 90, col, 7); for (const wx of [-200, 200]) { x.fillStyle = INK; x.beginPath(); x.arc(cx + wx, cy + 50, 36, 0, Math.PI * 2); x.fill(); x.fillStyle = '#8f96a0'; x.beginPath(); x.arc(cx + wx, cy + 50, 15, 0, Math.PI * 2); x.fill() } x.fillStyle = '#fff3c4'; x.fillRect(cx + 300, cy - 28, 14, 18); x.fillStyle = BRAKE; x.fillRect(cx - 326, cy - 30, 14, 22) }
 /** an elevated freeway with a feeder road under it */
@@ -59,7 +59,7 @@ function stand(x, cx, base, word, col = '#ff8fb1') { box(x, cx - 150, base - 220
 function bats(x, t, n = 14) { for (let k = 0; k < n; k++) { const ph = (t * 0.25 + k / n) % 1, px = ph * 1300 - 100, py = 380 + (k * 47) % 360 + Math.sin(t * 6 + k) * 20, f = Math.sin(t * 20 + k) > 0 ? 10 : -6; x.fillStyle = INK; x.beginPath(); x.moveTo(px - 22, py + f); x.lineTo(px, py); x.lineTo(px + 22, py + f); x.lineTo(px, py + 6); x.fill() } }
 function beach(x, t, p) { sky(x, p); x.fillStyle = '#8a6a3a'; x.fillRect(0, 900, 1080, 400); for (let k = 0; k < 8; k++) { const y = 920 + k * 45; x.fillStyle = 'rgba(255,240,210,0.25)'; x.fillRect(((k * 170 + t * 40) % 1300) - 200, y, 220, 6) } x.fillStyle = '#e8d2a0'; x.fillRect(0, 1300, 1080, 620); x.fillStyle = INK; x.fillRect(0, 1296, 1080, 8); for (let k = 0; k < 3; k++) { const gx = ((k * 360 + t * 70) % 1300) - 100, gy = 520 + k * 60; x.strokeStyle = BONE; x.lineWidth = 6; x.beginPath(); x.moveTo(gx - 26, gy); x.quadraticCurveTo(gx - 12, gy - 16, gx, gy); x.quadraticCurveTo(gx + 12, gy - 16, gx + 26, gy); x.stroke() } }
 /** Leo's pompadour: mess 0 (perfect) .. 1 (wild) */
-function hair(x, P, id, mess) { const [cx, cy, s] = P.at(id), top = cy - s * 0.5; x.save(); x.translate(cx, top); x.rotate(mess * 0.5 * Math.sin(P.t * 3)); for (let k = 0; k < 5; k++) { const a = -0.6 + k * 0.3 + mess * Math.sin(k * 2.3) * 0.9; x.fillStyle = INK; x.beginPath(); x.ellipse(Math.cos(a - Math.PI / 2) * 30, -30 + Math.sin(a - Math.PI / 2) * 30, 22, 46, a, 0, Math.PI * 2); x.fill(); x.fillStyle = '#ffb347'; x.beginPath(); x.ellipse(Math.cos(a - Math.PI / 2) * 30, -30 + Math.sin(a - Math.PI / 2) * 30, 16, 40, a, 0, Math.PI * 2); x.fill() } x.restore() }
+function hair(x, P, id, mess) { const [cx, cy, s] = P.at(id), top = cy - s * 0.42; x.save(); x.translate(cx, top); x.scale(s / 170, s / 170); x.rotate(mess * 0.5 * Math.sin(P.t * 3)); for (let k = 0; k < 5; k++) { const a = -0.6 + k * 0.3 + mess * Math.sin(k * 2.3 + P.t * 2) * 1.4; x.fillStyle = INK; x.beginPath(); x.ellipse(Math.cos(a - Math.PI / 2) * 30, -30 + Math.sin(a - Math.PI / 2) * 30, 22, 46, a, 0, Math.PI * 2); x.fill(); x.fillStyle = '#ffb347'; x.beginPath(); x.ellipse(Math.cos(a - Math.PI / 2) * 30, -30 + Math.sin(a - Math.PI / 2) * 30, 16, 40, a, 0, Math.PI * 2); x.fill() } x.restore() }
 function blinker(x, P, id, t) { if (Math.floor(t * 3) % 2) return; const [cx, cy, s] = P.at(id); x.fillStyle = '#ffb347'; x.beginPath(); x.arc(cx + 130 * s / 190, cy + SEAT * s / 190 - 20, 16, 0, Math.PI * 2); x.fill() }
 const night2 = (x, t, p) => { sky(x, p); skyline(x, FLOOR + 60, t, { col: p.city }); ground(x, p) }
 
@@ -67,7 +67,7 @@ const night2 = (x, t, p) => { sky(x, p); skyline(x, FLOOR + 60, t, { col: p.city
 const gpsLied = skit({
   hook: "Your GPS said | '20 minutes.' It lied.", close: 'Leave early for Jan 9.', endStars: ['virgo', 'capricorn', 'taurus', 'leo'],
   scenes: [
-    { dur: 3.4, set: (x, t) => dash(x, t, PAL.noon, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 760, '20 MIN', t, { k: Kp(lt, 0.02), col: MINT }) },
+    { dur: 3.4, set: (x, t) => dash(x, t, PAL.noon, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 880, '20 MIN', t, { k: Kp(lt, 0.02), col: MINT }) },
       cast: { virgo: [[0, 330, 1210, 260]] }, mood: { virgo: 'happy' }, hops: { virgo: [0.05, 0.5] }, lines: [[0.4, 2.8, 'virgo', 'date at 7. | GPS says 20.']] },
     drv({ dur: 3.4, pal: PAL.noon, num: '290', speed: 10, jamSpeed: 2, set2: (x, t) => roadWork(x, t, 1160), cast: { virgo: [at(380)] }, cars: { virgo: '#7dbf5a' }, mood: { virgo: 'squint' },
       front: (x, t, lt) => gps(x, 860, 420, '35 MIN', t, { k: 0.55, col: '#ff9a2a' }), lines: [[0.3, 2.8, 'virgo', 'construction. | since forever.']] }),
@@ -75,7 +75,7 @@ const gpsLied = skit({
       cast: { virgo: [at(760, CB)] }, mood: { virgo: 'wide' }, lines: [[0.4, 2.6, 'virgo', 'a train. | of course.']] },
     drv({ dur: 3.4, pal: PAL.gold, sign: 'TEXAS U-TURN', sub: 'MISSED YOUR EXIT?', speed: 60, cast: { virgo: [at(300), [1.6, 300, CA - SEAT * S2, 230], [2.6, 760, CA - SEAT * S2, 230]] }, cars: { virgo: '#7dbf5a' }, mood: { virgo: 'squint' },
       lines: [[0.3, 1.3, 'virgo', 'missed it.'], [1.8, 1.4, 'virgo', 'U-turn. | fine.']] }),
-    { dur: 3.6, set: (x, t) => dash(x, t, PAL.dusk, { scroll: t * 40 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 760, '1 HR', t, { k: 1 }) },
+    { dur: 3.6, set: (x, t) => dash(x, t, PAL.dusk, { scroll: t * 40 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 880, '1 HR', t, { k: 1 }) },
       cast: { virgo: [[0, 330, 1210, 260]] }, mood: { virgo: 'wide' }, lines: [[0.3, 3.0, 'virgo', 'Houston is | an hour from | Houston.']], stick: [[0.2, 3.2, 'ETA: 1 HOUR', BRAKE]] },
     { dur: 3.6, set: (x, t) => { night2(x, t, PAL.dusk); coffeeShop(x, 760, FLOOR + 60) }, cast: { virgo: [[0, 1250, Y, 240], [0.7, 320, Y, 240]] }, mood: { virgo: 'wide' },
       lines: [[0.9, 2.4, 'virgo', "I'm SO sorry, | I'm SO late—"]] },
@@ -87,15 +87,15 @@ const gpsLied = skit({
 
 // ── hst455 · Gemini texted 'five minutes away.' From Cypress.
 const fiveMin = skit({
-  hook: "Gemini said 'five | minutes.' From Cypress.", close: 'Real ETA: Jan 9.', endStars: ['gemini', 'pisces', 'sagittarius', 'cancer'],
+  hook: "Gemini said '5 min.' | From Cypress.", close: 'Real ETA: Jan 9.', endStars: ['gemini', 'pisces', 'sagittarius', 'cancer'],
   scenes: [
-    { dur: 3.4, set: (x, t) => dash(x, t, PAL.rose, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); chat(x, 760, 720, lt + 0.6, [['r', 'almost there! 5 min', 0.4]], { k: Kp(lt, 0.02) }) },
+    { dur: 3.4, set: (x, t) => dash(x, t, PAL.rose, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); chat(x, 760, 840, lt + 0.6, [['r', 'almost there! 5 min', 0.4]], { k: Kp(lt, 0.02) }) },
       cast: { gemini: [[0, 330, 1210, 260]] }, mood: { gemini: 'wink' }, hops: { gemini: [0.05, 0.5] }, lines: [[0.5, 2.7, 'gemini', "you've sent this. | don't lie."]] },
     drv({ dur: 3.6, pal: PAL.rose, speed: 120, jam: false, set2: (x, t) => streetSign(x, 760, 700, 'KUYKENDAHL', { pole: false }), cast: { gemini: [at(360)] }, cars: { gemini: '#f2c75c' }, mood: { gemini: 'squint' },
       lines: [[0.3, 1.5, 'gemini', 'Kirk-en-doll? | Kuy-ken-dahl?'], [2.0, 1.4, 'gemini', 'both. | Gemini.']], stick: [[0.1, 1.2, 'STILL IN CYPRESS', GOLD]] }),
     drv({ dur: 3.4, pal: PAL.rose, num: '290', speed: 30, cast: { gemini: [at(360)], sagittarius: [at(760, CB)] }, cars: { gemini: '#f2c75c', sagittarius: '#c9a6ff' }, mood: { gemini: 'wink', sagittarius: 'squint' },
       lines: [[0.3, 1.4, 'gemini', 'still "5 | minutes."'], [1.9, 1.4, 'sagittarius', 'you said that | an hour ago.']] }),
-    { dur: 3.6, set: (x, t) => dash(x, t, PAL.plum, { scroll: t * 200 }), front: (x, t, lt) => { dashFront(x, t); chat(x, 760, 720, lt, [['l', 'omw!! 5 min!', 0.5]], { k: Kp(lt, 0.02) }) },
+    { dur: 3.6, set: (x, t) => dash(x, t, PAL.plum, { scroll: t * 200 }), front: (x, t, lt) => { dashFront(x, t); chat(x, 760, 840, lt, [['l', 'omw!! 5 min!', 0.5]], { k: Kp(lt, 0.02) }) },
       cast: { pisces: [[0, 330, 1210, 260]] }, mood: { pisces: 'wide' }, lines: [[1.3, 2.1, 'pisces', "I'm in | Pearland."]], stick: [[0.1, 3.3, 'MEANWHILE · ON 288', PINK]] },
     drv({ dur: 3.6, pal: PAL.plum, sign: 'MIDTOWN', sub: 'NEXT EXIT', speed: 80, jam: false, cast: { gemini: [at(320)], pisces: [at(760, CB)] }, cars: { gemini: '#f2c75c', pisces: '#8fe3ff' }, mood: { gemini: 'wide', pisces: 'wide' },
       lines: [[0.4, 1.3, 'gemini', 'is that...'], [2.0, 1.4, 'pisces', 'is that | my date?']], stick: [[0.1, 1.1, '★ TWIST', GOLD]] }),
@@ -114,16 +114,16 @@ const feederRun = skit({
     fdr({ dur: 3.4, pal: PAL.gold, cast: { aries: [upSeat(780)], taurus: [at(300)] }, cars: { aries: '#e0503a', taurus: '#c98e4a' }, mood: { aries: 'sparkle', taurus: 'happy' }, hops: { taurus: [0.05, 0.6], aries: [0.15] },
       lines: [[0.3, 1.4, 'aries', 'race you | to Montrose!'], [1.9, 1.4, 'taurus', 'feeder road. | always.']] }),
     fdr({ dur: 3.4, pal: PAL.gold, speed: 0, set2: (x, t) => stand(x, 760, FLOOR + 40, 'TACOS'), cast: { taurus: [at(300)] }, cars: { taurus: '#c98e4a' }, mood: { taurus: 'heart' },
-      front: (x, t) => taco(x, 420, 1060, 1.2), lines: [[0.3, 2.8, 'taurus', 'breakfast | taco stop.']] }),
+      front: (x, t) => taco(x, 760, 1260, 1.5), lines: [[0.3, 2.8, 'taurus', 'breakfast | taco stop.']] }),
     fdr({ dur: 3.4, pal: PAL.gold, speed: 0, brake: 1, cast: { aries: [upSeat(540)] }, cars: { aries: '#e0503a' }, mood: { aries: 'wide' }, front: (x, t) => stamp(x, 'FREEWAY: STOPPED', BRAKE),
       lines: [[0.3, 2.8, 'aries', 'why is it | STOPPED?!']] }),
     fdr({ dur: 3.4, pal: PAL.gold, speed: 0, set2: (x, t) => stand(x, 760, FLOOR + 40, 'RASPAS', '#5ec8ff'), cast: { taurus: [at(300)] }, cars: { taurus: '#c98e4a' }, mood: { taurus: 'sparkle' },
       lines: [[0.3, 2.8, 'taurus', 'raspa stand. | obviously.']] }),
     fdr({ dur: 3.2, pal: PAL.dusk, speed: 0, brake: 1, cast: { aries: [upSeat(540)] }, cars: { aries: '#e0503a' }, mood: { aries: 'squint' },
       lines: [[0.3, 2.6, 'aries', 'I can SEE | the exit!']] }),
-    { dur: 3.6, set: (x, t) => mural(x, t), cast: { taurus: [[0, 320, Y, 240]], aries: [[0, 1250, Y, 240], [1.6, 760, Y, 240]] }, mood: { taurus: 'happy', aries: 'wide' },
+    { dur: 3.6, set: (x, t) => { mural(x, t); ground(x, PAL.gold, 1320) }, cast: { taurus: [[0, 320, Y, 240]], aries: [[0, 1250, Y, 240], [1.6, 760, Y, 240]] }, mood: { taurus: 'happy', aries: 'wide' },
       lines: [[0.3, 1.2, 'taurus', 'oh hey.'], [1.8, 1.5, 'aries', 'HOW?!']], stick: [[0.1, 1.2, '★ TWIST', PINK]] },
-    { dur: 3.6, set: (x, t) => mural(x, t), cast: { taurus: [[0, 320, Y, 240]], aries: [[0, 760, Y, 240]] }, mood: { taurus: 'wink', aries: 'heart' },
+    { dur: 3.6, set: (x, t) => { mural(x, t); ground(x, PAL.gold, 1320) }, cast: { taurus: [[0, 320, Y, 240]], aries: [[0, 760, Y, 240]] }, mood: { taurus: 'wink', aries: 'heart' },
       front: (x, t) => taco(x, 540, 1180, 1.3), lines: [[0.3, 1.5, 'taurus', 'slow is | a route too.'], [2.0, 1.3, 'taurus', 'taco?']] },
     lessonScene(3.6, PAL.gold, 'your pace | is a real pace.', { taurus: [[0, 400, Y, 240]], aries: [[0, 680, Y, 240]] }, { taurus: 'heart', aries: 'heart' }),
   ],
@@ -156,9 +156,9 @@ const uturn = skit({
 const VAN = ['cancer', 'virgo', 'sagittarius'], vanCast = (cx, cy = 1300) => Object.fromEntries(VAN.map((id, i) => [id, [[0, cx - 170 + i * 170, cy - 95, 170]]]))
 const vn = o => ({ ...o, cast: { ...vanCast(o.vx ?? 480), ...(o.extra || {}) }, set: (x, t, lt) => { road(x, t, o.pal, { num: o.num, scroll: (o.speed ?? 0) * t, sign: o.sign, sub: o.sub }); jam(x, t, 1185, JAM, { s: 0.55, speed: o.speed ? 6 : 0 }) }, front: (x, t, lt, P) => { van(x, o.vx ?? 480, 1300, '#5ec8ff'); o.front?.(x, t, lt, P) } })
 const snacks = skit({
-  hook: 'Cancer packed snacks | for a 12-minute drive', close: 'Pack snacks. Jan 9.', endStars: ['cancer', 'virgo', 'sagittarius', 'aries'],
+  hook: 'Cancer packed lunch | for a 12-min drive', close: 'Pack snacks. Jan 9.', endStars: ['cancer', 'virgo', 'sagittarius', 'aries'],
   scenes: [
-    { dur: 3.4, set: (x, t) => { sky(x, PAL.mint); houses(x, FLOOR + 40, t); ground(x, PAL.mint) }, front: (x, t) => { box(x, 620, 1200, 240, 130, '#ff8fb1', 7); box(x, 600, 1180, 280, 30, BONE, 5) },
+    { dur: 3.4, set: (x, t) => { sky(x, PAL.mint); skyline(x, FLOOR - 60, t, { col: PAL.mint.city }); houses(x, FLOOR + 40, t); ground(x, PAL.mint) }, front: (x, t) => { box(x, 620, 1200, 240, 130, '#ff8fb1', 7); box(x, 600, 1180, 280, 30, BONE, 5) },
       cast: { cancer: [[0, 360, Y, 250]], sagittarius: [[0, 1250, Y, 210], [0.8, 900, Y, 210]] }, mood: { cancer: 'heart', sagittarius: 'wide' }, hops: { cancer: [0.05, 0.6] },
       lines: [[0.3, 1.6, 'cancer', 'you need | a cooler. trust.'], [2.1, 1.2, 'sagittarius', 'for 12 | minutes?']] },
     vn({ dur: 3.4, pal: PAL.mint, sign: 'BELTWAY 8', sub: '12 MIN', speed: 120, lines: [[0.3, 1.4, 'virgo', 'we do not | need snacks.'], [2.0, 1.2, 'cancer', 'mm-hm.']], mood: { cancer: 'wink', virgo: 'squint', sagittarius: 'happy' } }),
@@ -173,7 +173,7 @@ const snacks = skit({
 
 // ── hst459 · Scorpio knows a shortcut. Don't ask. (night, the Heights side streets, the bayou bats)
 const shortcut = skit({
-  hook: "Scorpio knows a shortcut. | Don't ask.", close: 'Shortcut to Jan 9.', endStars: ['scorpio', 'aquarius', 'gemini', 'pisces'],
+  hook: "Scorpio's shortcut. | Don't ask.", close: 'Shortcut to Jan 9.', endStars: ['scorpio', 'aquarius', 'gemini', 'pisces'],
   scenes: [
     drv({ dur: 3.4, pal: PAL.plum, num: '610', speed: 0, jamSpeed: 0, cast: { scorpio: [at(420)] }, cars: { scorpio: '#6a3ab0' }, mood: { scorpio: 'wink' }, hops: { scorpio: [0.05, 0.6] },
       lines: [[0.3, 2.8, 'scorpio', 'hold on. | I know a way.']] }),
@@ -194,7 +194,7 @@ const shortcut = skit({
 })
 
 // ── hst460 · Leo vs. the Westheimer bumps
-const wh = (o) => ({ ...o, set: (x, t, lt) => { sky(x, o.pal); skyline(x, FLOOR - 160, t, { col: o.pal.city }); freeway(x, FLOOR - 160, 600, 2, t * 80); x.fillStyle = o.pal.ground; x.fillRect(0, FLOOR + 440, 1080, 480); streetSign(x, 760, 640, 'WESTHEIMER', { pole: false }); for (let k = 0; k < 4; k++) { const bx = ((k * 300 - t * 80) % 1200 + 1200) % 1200 - 60; box(x, bx, FLOOR + 140, 80, 14, '#4a4656', 3) } },
+const wh = (o) => ({ ...o, set: (x, t, lt) => { sky(x, o.pal); skyline(x, FLOOR - 160, t, { col: o.pal.city }); freeway(x, FLOOR - 160, 600, 2, t * 80); x.fillStyle = o.pal.ground; x.fillRect(0, FLOOR + 440, 1080, 480); streetSign(x, 760, 820, 'WESTHEIMER', { pole: false }); for (let k = 0; k < 4; k++) { const bx = ((k * 300 - t * 80) % 1200 + 1200) % 1200 - 60; box(x, bx, FLOOR + 140, 80, 14, '#4a4656', 3) } },
   front: (x, t, lt, P) => { rideP(x, P, 'leo', '#ffb347', t, { bump: Math.abs(Math.sin(lt * (o.shake ?? 9))) * (o.amp ?? 30) }); hair(x, P, 'leo', o.mess ?? 0) }, cast: { leo: [at(360)], ...(o.cast || {}) } })
 const bumps = skit({
   hook: 'Leo vs. the | Westheimer bumps', close: 'Come as you are. Jan 9.', endStars: ['leo', 'sagittarius', 'libra', 'taurus'],
@@ -228,7 +228,7 @@ const gulf = skit({
     { dur: 3.6, set: (x, t) => beach(x, t, PAL.gold), cast: { pisces: [[0, 540, Y + 140, 260]] }, mood: { pisces: 'wide' }, lines: [[0.3, 2.9, 'pisces', 'the water | is... brown.']] },
     { dur: 3.6, set: (x, t) => beach(x, t, PAL.gold), cast: { pisces: [[0, 540, Y + 140, 260]] }, mood: { pisces: 'heart' }, hops: { pisces: [1.0, 1.6, 2.2] },
       lines: [[0.3, 2.9, 'pisces', 'and I | LOVE it.']], stick: [[0.1, 1.2, '★ TWIST', PINK]] },
-    { dur: 3.6, set: (x, t) => beach(x, t, PAL.dusk), front: (x, t, lt) => { if (lt > 0.8) { box(x, 300, 1440, 480, 60, '#ff8fb1', 6) } }, cast: { pisces: [[0, 400, Y + 140, 240]], cancer: [[0, 1250, Y + 140, 240], [0.7, 700, Y + 140, 240]] }, mood: { pisces: 'heart', cancer: 'heart' },
+    { dur: 3.6, set: (x, t) => beach(x, t, PAL.dusk), back: (x, t, lt) => { if (lt > 0.8) { box(x, 260, 1470, 560, 50, '#ff8fb1', 6); for (let k = 0; k < 7; k++) { x.fillStyle = BONE; x.fillRect(280 + k * 78, 1480, 30, 30) } } }, cast: { pisces: [[0, 400, Y + 140, 240]], cancer: [[0, 1250, Y + 140, 240], [0.7, 700, Y + 140, 240]] }, mood: { pisces: 'heart', cancer: 'heart' },
       lines: [[0.9, 1.4, 'cancer', 'there’s my | crier.'], [2.4, 1.1, 'pisces', 'hi!!']] },
     { dur: 3.4, set: (x, t) => beach(x, t, PAL.dusk), cast: { pisces: [[0, 400, Y + 140, 240]], cancer: [[0, 700, Y + 140, 240]] }, mood: { pisces: 'heart', cancer: 'happy' },
       lines: [[0.3, 2.8, 'cancer', 'brown water. | big heart.']], stick: [[0.2, 2.8, 'GALVESTON: PERFECT', GOLD]] },
@@ -241,7 +241,7 @@ const sunrise = { top: '#3a4a9a', bot: '#ffb07a', city: '#2a2a5a', ground: '#4a4
 const early = skit({
   hook: 'Capricorn left at 4am | to beat traffic', close: 'Arrive early. Jan 9.', endStars: ['capricorn', 'aries', 'virgo', 'gemini'],
   scenes: [
-    { dur: 3.2, set: (x, t) => { x.fillStyle = '#141030'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#221b48'; x.fillRect(0, FLOOR + 60, 1080, 800); clock(x, 540, 720, Math.floor(t * 2) % 2 ? '3:58' : '3:58 AM', BRAKE) },
+    { dur: 3.2, set: (x, t) => { sky(x, PAL.night); skyline(x, FLOOR + 60, t, { col: '#2a2160', alpha: 1 }); ground(x, PAL.night); clock(x, 540, 720, Math.floor(t * 2) % 2 ? '3:58 AM' : '3 58 AM', BRAKE) },
       cast: { capricorn: [[0, 540, Y, 260]] }, mood: { capricorn: 'squint' }, hops: { capricorn: [0.05, 0.4, 0.8] }, lines: [[0.4, 2.5, 'capricorn', 'meeting at 9. | leaving now.']] },
     drv({ dur: 3.2, pal: PAL.night, num: '10', speed: 300, jam: false, cast: { capricorn: [at(420)] }, cars: { capricorn: '#3a9a6a' }, mood: { capricorn: 'sparkle' }, front: (x, t) => stamp(x, '4:12 AM', MINT),
       lines: [[0.3, 2.6, 'capricorn', 'empty freeway. | as planned.']] }),
@@ -251,9 +251,9 @@ const early = skit({
       lines: [[0.3, 2.6, 'capricorn', 'very | early.']] },
     { dur: 3.6, set: (x, t) => parkingLot(x, t, sunrise, { trees: [880] }), front: (x, t, lt, P) => rideP(x, P, 'capricorn', '#3a9a6a', t), cast: { capricorn: [at(420, 1520)], aries: [[0, 1300, 1180, 200], [1.2, 760, 1180, 200], [3.4, -200, 1180, 200]] }, mood: { capricorn: 'wide', aries: 'sparkle' },
       lines: [[1.0, 1.5, 'aries', 'morning! | loop two!']], stick: [[0.1, 1.0, '★ TWIST', PINK]] },
-    { dur: 3.8, set: (x, t) => { sky(x, sunrise); heatSun(x, 540, FLOOR - 40, t, 120); ground(x, sunrise, FLOOR + 60) }, cast: { capricorn: [[0, 380, Y, 240]], aries: [[0, 1250, Y, 230], [0.6, 720, Y, 230]] }, mood: { capricorn: 'heart', aries: 'heart' },
+    { dur: 3.8, set: (x, t) => { sky(x, sunrise); heatSun(x, 850, FLOOR - 260, t, 100); ground(x, sunrise, FLOOR + 60) }, cast: { capricorn: [[0, 380, Y, 240]], aries: [[0, 1250, Y, 230], [0.6, 720, Y, 230]] }, mood: { capricorn: 'heart', aries: 'heart' },
       lines: [[0.7, 1.4, 'aries', 'you up | this early too?'], [2.3, 1.3, 'capricorn', 'always.']] },
-    { dur: 3.4, set: (x, t) => { sky(x, sunrise); heatSun(x, 540, FLOOR - 140, t, 120); ground(x, sunrise, FLOOR + 60) }, cast: { capricorn: [[0, 380, Y, 240]], aries: [[0, 720, Y, 230]] }, mood: { capricorn: 'happy', aries: 'wink' },
+    { dur: 3.4, set: (x, t) => { sky(x, sunrise); heatSun(x, 850, FLOOR - 340, t, 100); ground(x, sunrise, FLOOR + 60) }, cast: { capricorn: [[0, 380, Y, 240]], aries: [[0, 720, Y, 230]] }, mood: { capricorn: 'happy', aries: 'wink' },
       lines: [[0.3, 2.8, 'aries', 'same time | tomorrow?']], stick: [[0.2, 2.8, '5 AM · EVERY DAY SINCE', GOLD]] },
     lessonScene(3.6, sunrise, 'early people | find each other.', { capricorn: [[0, 400, Y, 240]], aries: [[0, 680, Y, 240]] }, { capricorn: 'heart', aries: 'heart' }),
   ],
@@ -261,11 +261,11 @@ const early = skit({
 
 // ── hst463 · If you drive for fun, this is your sign (Sagittarius on the "third loop")
 const thirdLoop = skit({
-  hook: 'If you drive for fun, | this is your sign', close: 'Road trip to Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'aquarius'],
+  hook: 'Sagittarius drove | the third loop for fun', close: 'Road trip to Jan 9.', endStars: ['sagittarius', 'libra', 'taurus', 'aquarius'],
   scenes: [
     drv({ dur: 3.4, pal: PAL.lime, speed: 200, jam: false, sign: 'GRAND PKWY', sub: 'ALL OF IT', cast: { sagittarius: [at(400)] }, cars: { sagittarius: '#c9a6ff' }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.05, 0.6] },
       lines: [[0.3, 2.8, 'sagittarius', 'no plans? | perfect.']] }),
-    { dur: 3.4, set: (x, t) => dash(x, t, PAL.lime, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 760, '???', t, { col: '#c9a6ff', note: 'TO:' }) }, cast: { sagittarius: [[0, 330, 1210, 260]] }, mood: { sagittarius: 'wink' },
+    { dur: 3.4, set: (x, t) => dash(x, t, PAL.lime, { scroll: t * 300 }), front: (x, t, lt) => { dashFront(x, t); gps(x, 780, 880, '???', t, { col: '#c9a6ff', note: 'TO:' }) }, cast: { sagittarius: [[0, 330, 1210, 260]] }, mood: { sagittarius: 'wink' },
       lines: [[0.3, 2.8, 'sagittarius', 'the third | loop. all | of it.']] },
     drv({ dur: 3.2, pal: PAL.lime, speed: 200, jam: false, set2: (x) => streetSign(x, 760, 700, 'KATY', { pole: false }), cast: { sagittarius: [at(400)] }, cars: { sagittarius: '#c9a6ff' }, mood: { sagittarius: 'happy' },
       lines: [[0.3, 2.6, 'sagittarius', 'hi, | everyone’s cousin!']], stick: [[0.1, 2.8, 'STOP 1: KATY', GOLD]] }),
@@ -285,13 +285,13 @@ const thirdLoop = skit({
 const choirCars = { aquarius: '#5ee0ff', leo: '#ffb347', capricorn: '#3a9a6a', taurus: '#c98e4a' }
 const ch = o => drv({ pal: PAL.teal, num: '288', speed: 0, jamSpeed: 0, ...o, front: (x, t, lt, P) => { if (o.notes) for (const id of Object.keys(o.cast)) { const [cx, cy] = P.at(id); notes(x, t, cx, cy - 150, { n: 3 }) } o.front2?.(x, t, lt, P) } })
 const choir = skit({
-  hook: 'Stuck on 288? | Aquarius started a choir.', close: 'The real party: Jan 9.', endStars: ['aquarius', 'capricorn', 'leo', 'taurus'],
+  hook: 'Stuck on 288? | Aquarius has an idea.', close: 'The real party: Jan 9.', endStars: ['aquarius', 'capricorn', 'leo', 'taurus'],
   scenes: [
     ch({ dur: 3.4, cast: { aquarius: [at(420)] }, cars: { aquarius: choirCars.aquarius }, mood: { aquarius: 'squint' }, hops: { aquarius: [0.05, 0.6] }, lines: [[0.3, 2.8, 'aquarius', 'stuck? | you too?']] }),
     ch({ dur: 3.4, cast: { aquarius: [at(420)] }, cars: { aquarius: choirCars.aquarius }, mood: { aquarius: 'sparkle' }, lines: [[0.3, 2.8, 'aquarius', 'ok. windows | down, everyone.']] }),
     ch({ dur: 3.4, notes: true, cast: { aquarius: [at(300)], leo: [at(780, CB)] }, cars: { aquarius: choirCars.aquarius, leo: choirCars.leo }, mood: { aquarius: 'happy', leo: 'sparkle' }, lines: [[0.3, 1.3, 'leo', 'what song?!'], [1.8, 1.4, 'aquarius', 'the slow one.']] }),
     ch({ dur: 3.4, notes: true, cast: { aquarius: [at(300)], capricorn: [at(780, CB)] }, cars: { aquarius: choirCars.aquarius, capricorn: choirCars.capricorn }, mood: { aquarius: 'happy', capricorn: 'squint' }, lines: [[0.3, 1.3, 'capricorn', 'I do not | sing.'], [1.9, 1.3, 'aquarius', 'you do | now.']] }),
-    ch({ dur: 3.6, notes: true, cast: { aquarius: [at(250)], leo: [at(800)], taurus: [at(540, CB)] }, cars: choirCars, mood: { aquarius: 'happy', leo: 'sparkle', taurus: 'heart' }, lines: [[0.3, 2.6, 'taurus', 'this is | nice, actually.']], stick: [[0.2, 3.2, 'THE 288 CHOIR', GOLD]] }),
+    ch({ dur: 3.6, notes: true, cast: { aquarius: [at(250)], leo: [at(800)], taurus: [at(540, CB)] }, cars: { aquarius: choirCars.aquarius, leo: choirCars.leo, taurus: choirCars.taurus }, mood: { aquarius: 'happy', leo: 'sparkle', taurus: 'heart' }, lines: [[0.3, 2.6, 'taurus', 'this is | nice, actually.']], stick: [[0.2, 3.2, 'THE 288 CHOIR', GOLD]] }),
     ch({ dur: 3.8, notes: true, speed: 0, jamSpeed: 120, cast: { capricorn: [at(300)], aquarius: [at(780, CB)] }, cars: { capricorn: choirCars.capricorn, aquarius: choirCars.aquarius }, mood: { capricorn: 'heart', aquarius: 'wide' },
       lines: [[0.4, 1.3, 'aquarius', 'traffic’s | moving!'], [2.0, 1.5, 'capricorn', 'one more | verse.']], stick: [[0.1, 1.2, '★ TWIST', PINK]] }),
     lessonScene(3.6, PAL.teal, 'make it fun | where you are.', { aquarius: [[0, 400, Y, 240]], capricorn: [[0, 680, Y, 240]] }, { aquarius: 'heart', capricorn: 'heart' }, (x, t) => notes(x, t, 540, 1000, { n: 6 })),
