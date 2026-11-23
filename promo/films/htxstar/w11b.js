@@ -21,7 +21,7 @@ const T = (o) => { o.cues = [...TSTING, ...hitsAt(o.scenes, s => s.cast && !Obje
 
 // ── hst273 · In a city with three loops… (epic romance)
 const e273 = T({
-  hook: 'In a city with | three loops… one love',
+  hook: 'In a city with | three loops… | one love',
   end: (x, t, lt) => partyCard(x, t, lt, { line: 'Cross every loop. Jan 9.', stars: ['taurus', 'scorpio', 'libra', 'pisces'] }),
   scenes: [
     { dur: 3.6, set: (x, t) => { duskSky(x, '#120c2a', '#3a1d52', '#c2557a'); skyline(x, FLOOR - 140, t, { alpha: 0.9 }); freeway(x, FLOOR - 150, 400, 4, t * 500); for (let k = 0; k < 4; k++) car(x, (k * 330 + t * 420) % 1400 - 160, FLOOR - 60 + (k % 2) * 160, ['#e05a3a', '#5ec8ff', '#f2c75c', '#ff8fb1'][k], { s: 0.8, brake: k % 2 }) },

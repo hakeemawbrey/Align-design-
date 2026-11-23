@@ -252,7 +252,7 @@ export function yearbook(x, t, ids, k = 1) {
 
 // ── trailer grammar ──────────────────────────────────────────────────────────────────────────────────────
 /** letterbox bars (top + bottom), drawn last in `front` */
-export function bars(x, top = 200, bot = 1690) { x.fillStyle = '#000'; x.fillRect(0, 0, 1080, top); x.fillRect(0, bot, 1080, 1920 - bot) }
+export function bars(x, top = 200, bot = 1700) { x.fillStyle = '#000'; x.fillRect(0, 0, 1080, top); x.fillRect(0, bot, 1080, 1920 - bot) }
 /** film grain + vignette for the "cinematic" look */
 export function grain(x, t, a = 0.06) {
   const g = x.createRadialGradient(540, 960, 300, 540, 960, 1100); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.55)'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920)
@@ -275,7 +275,7 @@ export function ratingCard(x, t, lt, rating, why) {
   x.save(); x.translate(540, 900); x.scale(k, k)
   x.strokeStyle = BONE; x.lineWidth = 8; x.strokeRect(-420, -260, 840, 520)
   x.fillStyle = BONE; x.fillRect(-420, -260, 840, 110); txt(x, 'THIS PREVIEW IS RATED', 0, -205, { size: 44, col: INK, font: MONO, weight: 700 })
-  txt(x, rating, 0, -40, { size: 150, col: BONE })
+  txt(x, rating, 0, -40, { size: Math.min(150, Math.floor(1250 / rating.length)), col: BONE })
   why.split(' | ').forEach((ln, j) => txt(x, ln, 0, 110 + j * 56, { size: 40, col: GOLD, font: SERIF, weight: 500, italic: true }))
   x.restore()
 }
@@ -300,11 +300,11 @@ export function laurel(x, cx, cy, lines, k = 1) {
 /** a cast name card in the lower area: SIGN · as ROLE */
 export function castCard(x, lt, name, role, at = 0.3) {
   const k = clamp((lt - at) / 0.3); if (k <= 0) return
-  x.save(); x.globalAlpha = k; x.fillStyle = 'rgba(5,4,10,0.8)'; x.fillRect(0, 1500, 1080, 150)
-  txt(x, name, 540, 1545, { size: 52, col: GOLD }); txt(x, 'as ' + role, 540, 1605, { size: 40, col: BONE, font: SERIF, weight: 500, italic: true }); x.restore()
+  x.save(); x.globalAlpha = k; x.fillStyle = 'rgba(5,4,10,0.85)'; x.fillRect(0, 1535, 1080, 160)
+  txt(x, name, 540, 1580, { size: 52, col: GOLD }); txt(x, 'as ' + role, 540, 1642, { size: 40, col: BONE, font: SERIF, weight: 500, italic: true }); x.restore()
 }
 /** voice-over subtitle (trailer narration) above the bottom bar */
-export function vo(x, lt, text, at = 0.2, d = 99, y = 1560) {
+export function vo(x, lt, text, at = 0.2, d = 99, y = 1622) {
   const k = clamp((lt - at) / 0.3) * (1 - clamp((lt - at - d) / 0.3)); if (k <= 0) return
   x.save(); x.globalAlpha = k; const [a, b] = text.split(' | ')
   txt(x, a, 540, b ? y - 26 : y, { size: 44, col: BONE, font: SERIF, weight: 500, italic: true }); if (b) txt(x, b, 540, y + 30, { size: 44, col: BONE, font: SERIF, weight: 500, italic: true })
