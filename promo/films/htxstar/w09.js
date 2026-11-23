@@ -237,23 +237,29 @@ export function mosquito(x, cx, cy, t, s = 1) {   // round body, striped tail, s
   x.fillStyle = '#ff5a6e'; x.beginPath(); x.arc(-13, -4, 2, 0, Math.PI * 2); x.fill()
   x.restore()
 }
-export function loveBugs(x, t, n = 10, k = 1) {   // pairs of little black-and-red bugs drifting together (clean: they just travel in pairs)
+export function loveBugs(x, t, n = 10, k = 1, s = 2.4) {   // pairs of little black-and-red bugs drifting together (clean: they just travel in pairs)
   for (let i = 0; i < n * clamp(k); i++) {
-    const bx = (i * 173 + t * (60 + i % 4 * 15)) % 1180 - 50, by = 300 + (i * 97) % 900 + 30 * Math.sin(t * 2 + i)
-    for (const d of [-1, 1]) { x.fillStyle = INK; x.fillRect(bx + d * 12 - 8, by - 5, 16, 10); x.fillStyle = '#e04040'; x.fillRect(bx + d * 12 - 8 + (d > 0 ? 10 : 0), by - 4, 6, 8) }
+    const bx = (i * 173 + t * (60 + i % 4 * 15)) % 1180 - 50, by = 300 + (i * 97) % 900 + 30 * Math.sin(t * 2 + i), f = Math.sin(t * 30 + i) > 0 ? 1 : 0.5
+    x.save(); x.translate(bx, by); x.scale(s, s)
+    for (const d of [-1, 1]) { x.fillStyle = 'rgba(220,235,255,0.7)'; x.fillRect(d * 9 - 5, -9 * f, 10, 6 * f); x.fillStyle = INK; x.fillRect(d * 9 - 7, -4, 14, 8); x.fillStyle = '#e04040'; x.fillRect(d * 9 + (d > 0 ? 2 : -7), -3, 5, 6) }
+    x.restore()
   }
 }
 export function sweatDrops(x, cx, cy, t, n = 3, col = SKYB) {
   for (let q = 0; q < n; q++) { const ph = (t * 1.3 + q / n) % 1, px = cx + (q - (n - 1) / 2) * 30, py = cy + ph * 60; x.fillStyle = INK; x.fillRect(px - 6, py - 8, 13, 17); x.fillStyle = col; x.fillRect(px - 3, py - 5, 7, 11) }
 }
-export function frizz(x, P, id, t, k = 1) {   // humidity hair: a puff of pixel curls on a star's head
+export function frizz(x, P, id, t, k = 1) {   // humidity hair: a cloud of curls on a star's head, bigger as k grows
   if (k <= 0) return
-  const [cx, cy, s] = P.at(id)
-  for (let i = 0; i < 14; i++) { const a = -Math.PI * (0.1 + 0.8 * i / 13), r = s * (0.5 + 0.12 * clamp(k)) + 8 * Math.sin(t * 6 + i); x.fillStyle = INK; x.fillRect(cx + Math.cos(a) * r - 13, cy - s * 0.15 + Math.sin(a) * r - 13, 26, 26); x.fillStyle = '#6b3b1f'; x.fillRect(cx + Math.cos(a) * r - 9, cy - s * 0.15 + Math.sin(a) * r - 9, 18, 18) }
+  const [cx, cy, s] = P.at(id), n = 16, R = s * (0.44 + 0.14 * clamp(k / 2)), r = s * (0.1 + 0.05 * clamp(k / 2))
+  for (const pass of [0, 1]) for (let i = 0; i < n; i++) {
+    const a = -Math.PI * (0.06 + 0.88 * i / (n - 1)), w = 6 * Math.sin(t * 5 + i * 1.7), px = cx + Math.cos(a) * (R + w), py = cy - s * 0.12 + Math.sin(a) * (R + w) * 0.9
+    x.fillStyle = pass ? '#7a4a2a' : INK; x.beginPath(); x.arc(px, py, pass ? r : r + 5, 0, Math.PI * 2); x.fill()
+    if (pass) { x.fillStyle = '#a0683a'; x.beginPath(); x.arc(px - r * 0.3, py - r * 0.3, r * 0.35, 0, Math.PI * 2); x.fill() }
+  }
 }
 export function sweater(x, P, id, col = '#c96a8a') {   // a cardigan over a star's middle
   const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.34, cy - s * 0.02, s * 0.68, s * 0.3, col, 4); x.fillStyle = BONE; for (let k = 0; k < 3; k++) x.fillRect(cx - 4, cy + s * 0.02 + k * s * 0.08, 8, 8)
+  box(x, cx - s * 0.3, cy + s * 0.1, s * 0.6, s * 0.22, col, 4); x.fillStyle = BONE; for (let k = 0; k < 2; k++) x.fillRect(cx - 4, cy + s * 0.14 + k * s * 0.08, 8, 8)
 }
 export function sunnies(x, P, id) { const [cx, cy, s] = P.at(id); box(x, cx - s * 0.3, cy - s * 0.12, s * 0.24, s * 0.1, INK, 3); box(x, cx + s * 0.06, cy - s * 0.12, s * 0.24, s * 0.1, INK, 3); x.fillStyle = INK; x.fillRect(cx - s * 0.06, cy - s * 0.09, s * 0.12, 6) }
 export function readers(x, P, id) { const [cx, cy, s] = P.at(id); x.strokeStyle = INK; x.lineWidth = 6; x.strokeRect(cx - s * 0.28, cy - s * 0.12, s * 0.22, s * 0.12); x.strokeRect(cx + s * 0.06, cy - s * 0.12, s * 0.22, s * 0.12); x.beginPath(); x.moveTo(cx - s * 0.06, cy - s * 0.07); x.lineTo(cx + s * 0.06, cy - s * 0.07); x.stroke() }

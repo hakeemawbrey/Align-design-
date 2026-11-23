@@ -68,8 +68,8 @@ const hair = (() => {
       { dur: 3.0, set: C((x, t) => street(x, t), 'LIVE: MIDTOWN'), front: (x, t, lt, P) => frizz(x, P, 'libra', t, clamp((lt - 0.8) / 1.2)),
         cast: { libra: [[0, 540, Y - 30, 260]] }, mood: { libra: lt => lt < 1 ? 'sparkle' : 'wide' },
         lines: [[0.3, 2.4, 'libra', 'I spent | an hour on this.']] },
-      { dur: 3.2, set: W('THE FRIZZ INDEX', { map: false, draw: (x, t, lt) => { meter(x, 480, 700, 760, clamp(lt / 1.8) * 1.0, { lab: 'FRIZZ INDEX', col: '#ff5aa0' }); if (lt > 1.8) bigNum(x, 'OFF THE CHART', 480, 860, Kp(lt, 1.8), '#ff8fb1', 70) } }), front: (x, t, lt, P) => clipboard(x, P, 'virgo', -1),
-        cast: { virgo: [[0, ...FC]] }, mood: { virgo: 'squint' },
+      { dur: 3.2, set: W('THE FRIZZ INDEX', { map: false, draw: (x, t, lt) => { bigNum(x, 'FRIZZ INDEX', 540, 600, 1, BONE, 90); for (let k = 0; k < 5; k++) { const on = clamp(lt * 2.2 - k * 0.35); box(x, 140 + k * 165, 980 - k * 70, 140, 120 + k * 70, on > 0.5 ? ['#7dffb0', '#ffd36b', '#ffb36b', '#ff7a5a', '#ff5aa0'][k] : '#2a1438', 6) } if (lt > 1.8) bigNum(x, 'OFF THE CHART', 540, 1180, Kp(lt, 1.8), '#ff8fb1', 70) } }), front: (x, t, lt, P) => clipboard(x, P, 'virgo', -1),
+        cast: { virgo: [[0, 900, 760, 200]] }, mood: { virgo: 'squint' },
         lines: [[0.2, 2.8, 'virgo', 'the index is | past the top.']] },
       { dur: 3.0, set: C((x, t) => bayou(x, t), 'LIVE: THE BAYOU TRAIL'), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('aries'); box(x, cx - s * 0.38, cy - s * 0.62, s * 0.76, s * 0.18, '#2b5fb0', 4); box(x, cx - s * 0.1, cy - s * 0.48, s * 0.6, s * 0.08, '#2b5fb0', 3) },
         cast: { aries: [[0, 540, Y - 30, 250]] }, mood: { aries: 'sparkle' },
@@ -99,15 +99,15 @@ const seasons = (() => {
   const th = THEME.mint, S = 'SEASON 1: SUMMER  ·  SEASON 2: STILL SUMMER  ·  SEASON 3: SECOND SUMMER  ·  SEASON 4: THE COLD DAY  ·  '
   const SL = [['SUMMER', '#ff7a2a', 0.34], ['STILL SUMMER', '#ff5a6e', 0.3], ['SECOND SUMMER', '#ffb36b', 0.32], ['THE COLD DAY', '#5ec8ff', 0.04]]
   const wheel = (hi = -1, k = 1) => (x, t) => {
-    const cx = 480, cy = 820, R = 270 * k; let a = -Math.PI / 2
+    const cx = 480, cy = 860, R = 300 * k; let a = -Math.PI / 2
     SL.forEach(([n, c, f], i) => { const b = a + f * Math.PI * 2, out = i === hi ? 24 : 0, m = (a + b) / 2; x.save(); x.translate(Math.cos(m) * out, Math.sin(m) * out); x.fillStyle = INK; x.beginPath(); x.moveTo(cx, cy); x.arc(cx, cy, R + 6, a, b); x.fill(); x.fillStyle = c; x.beginPath(); x.moveTo(cx, cy); x.arc(cx, cy, R, a, b); x.closePath(); x.fill(); x.restore(); a = b })
-    a = -Math.PI / 2; SL.forEach(([n, c, f], i) => { const m = a + f * Math.PI; if (i < 3) txt(x, n, cx + Math.cos(m) * R * 0.58, cy + Math.sin(m) * R * 0.58, { size: 30, col: INK }); a += f * Math.PI * 2 })
+    a = -Math.PI / 2; SL.forEach(([n, c, f], i) => { const m = a + f * Math.PI; if (i < 3) n.split(' ').forEach((w, j, A) => txt(x, w, cx + Math.cos(m) * R * 0.55, cy + Math.sin(m) * R * 0.55 + (j - (A.length - 1) / 2) * 34, { size: 32, col: INK })); a += f * Math.PI * 2 })
     txt(x, 'THE COLD DAY →', cx - 150, cy - R - 40, { size: 30, col: '#5ec8ff', font: MONO, weight: 700 })
   }
   const W = (head, hi, o = {}) => wall(head, { th, strip: S, map: false, draw: wheel(hi), ...o })
   const C = (bg, head, o = {}) => cut(bg, head, { th, strip: S, ...o })
   return {
-    hook: "Your forecaster explains | Houston's four seasons", badge: BADGE, cues: [...STING], endLen: 6.2,
+    hook: "Houston's seasons: | all four of them", badge: BADGE, cues: [...STING], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Dressed for all four. Jan 9.', stars: ['virgo', 'cancer', 'libra', 'gemini'] }),
     scenes: [
       { dur: 3.0, set: W('THE FOUR SEASONS', -1), front: (x, t, lt, P) => pointer(x, P, 'virgo', 600, 700),
@@ -123,7 +123,7 @@ const seasons = (() => {
         front: (x, t, lt, P) => { const [cx, cy, s] = P.at('gemini'); box(x, cx - s * 0.3, cy + s * 0.12, s * 0.26, s * 0.2, '#5ec8ff', 4); box(x, cx + s * 0.04, cy + s * 0.12, s * 0.26, s * 0.2, '#5ec8ff', 4) },
         cast: { gemini: [[0, 380, Y - 30, 250]] }, mood: { gemini: 'sparkle' },
         lines: [[0.3, 2.4, 'gemini', 'shorts by | the tree.']] },
-      { dur: 3.2, set: W('SEASON 4: THE COLD DAY', 3, { now: '55°', icon: 'cloud' }), front: (x, t, lt, P) => { pointer(x, P, 'virgo', 470, 560) },
+      { dur: 3.2, set: W('SEASON 4: THE COLD DAY', 3, { now: '55°', icon: 'cloud' }), front: (x, t, lt, P) => { pointer(x, P, 'virgo', 475, 575) },
         cast: { virgo: [[0, ...FC]] }, mood: { virgo: 'wide' },
         lines: [[0.3, 2.6, 'virgo', 'and the cold day. | singular.']] },
       { dur: 3.0, set: C((x, t) => { street(x, t); box(x, 640, 1160, 220, 120, '#8f96a0', 6) }, 'LIVE: THE COLD DAY', { now: '55°', icon: 'cloud' }),
@@ -160,13 +160,13 @@ const ac = (() => {
       { dur: 3.0, set: C((x, t) => { street(x, t); tree(x, 820, FLOOR + 20, 1.3) }, 'LIVE: THE PARKING LOT', { now: '95°' }), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('taurus'); sweatDrops(x, cx + s * 0.3, cy - s * 0.35, t) },
         cast: { taurus: [[0, 300, Y - 30, 240], [1.8, 760, Y - 30, 240]] }, mood: { taurus: 'squint' },
         lines: [[0.3, 1.4, 'taurus', 'the one spot | in the shade.']] },
-      { dur: 3.0, set: C((x, t) => office(x, t), 'LIVE: YOUR OFFICE', { now: '62°', icon: 'wind' }), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('pisces'); box(x, cx - s * 0.42, cy - s * 0.1, s * 0.84, s * 0.4, '#c9a6ff', 5) },
+      { dur: 3.0, set: C((x, t) => office(x, t), 'LIVE: YOUR OFFICE', { now: '62°', icon: 'wind' }), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('pisces'); box(x, cx - s * 0.44, cy + s * 0.12, s * 0.88, s * 0.26, '#c9a6ff', 5) },
         cast: { pisces: [[0, 560, Y - 30, 250]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.4, 0.5, 1.4, 1.5] },
         lines: [[0.3, 2.4, 'pisces', 'my fingers | are frozen.']] },
       { dur: 3.2, set: W('SWEATER CARRY FORECAST', { map: false, now: '62°', draw: (x, t, lt) => strip5(x, t, [['MON', 'puffer', 'BRING'], ['TUE', 'puffer', 'BRING'], ['WED', 'puffer', 'BRING'], ['THU', 'puffer', 'BRING'], ['FRI', 'puffer', 'BRING']], 620, { k: clamp(lt / 1.4) }) }),
         cast: { capricorn: [[0, 540, 1250, 220]] }, mood: { capricorn: 'squint' },
         lines: [[0.3, 2.6, 'capricorn', 'sweater carry: | every day.']] },
-      { dur: 3.0, set: C((x, t, lt) => { x.fillStyle = (lt * 1.6) % 1 < 0.5 ? '#d0402a' : '#2b6aa0'; x.fillRect(0, 0, 1080, 1400); box(x, 420, 560, 240, 640, '#6b3b1f', 8); txt(x, (lt * 1.6) % 1 < 0.5 ? 'OUT' : 'IN', 540, 520, { size: 60, col: BONE }) }, 'LIVE: THE DOORWAY'),
+      { dur: 3.0, set: C((x, t, lt) => { x.fillStyle = (lt * 1.6) % 1 < 0.5 ? '#d0402a' : '#2b6aa0'; x.fillRect(0, 0, 1080, 1920); box(x, 420, 560, 240, 640, '#6b3b1f', 8); txt(x, (lt * 1.6) % 1 < 0.5 ? 'OUT' : 'IN', 540, 520, { size: 60, col: BONE }) }, 'LIVE: THE DOORWAY'),
         front: (x, t, lt, P) => { if ((lt * 1.6) % 1 >= 0.5) sweater(x, P, 'gemini', '#7ab07a') },
         cast: { gemini: [[0, 540, 1060, 240]] }, mood: { gemini: 'wide' },
         lines: [[0.3, 2.4, 'gemini', 'on. off. | on. off.']] },
@@ -195,7 +195,7 @@ const lovebugs = (() => {
   const C = (bg, head, o = {}) => cut(bg, head, { th, strip: S, icon: 'lovebug', now: 'PAIRS', ...o })
   const swarm = (x, t) => loveBugs(x, t, 16, 1)
   return {
-    hook: 'Love bug season: | your windshield is booked', badge: BADGE, cues: [...STING], endLen: 6.2,
+    hook: 'Love bugs are back. | Your car knows.', badge: BADGE, cues: [...STING], endLen: 6.2,
     end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring your pair. Jan 9.', stars: ['taurus', 'cancer', 'gemini', 'pisces'] }),
     scenes: [
       { dur: 3.0, set: W('LOVE BUG SEASON', { draw: (x, t) => { for (let k = 0; k < 9; k++) wxIcon(x, 'lovebug', 180 + (k * 97) % 640 + 20 * Math.sin(t * 2 + k), 560 + (k * 61) % 480, 0.8, t) } }), front: (x, t, lt, P) => pointer(x, P, 'libra', 500, 760),
@@ -247,7 +247,7 @@ const popup = (() => {
         cast: { gemini: [[0, ...FC]] }, mood: { gemini: 'wide' },
         lines: [[0.3, 2.4, 'gemini', 'the cloud | is following you.']] },
       { dur: 3.0, set: (x, t, lt) => { const c = 540 * clamp(lt / 2); twoSides(0, c, c + 540)(x, t); wxBar(x, t, 'LIVE: STILL FOLLOWING', { th, strip: S, icon: 'rain', now: '50/50' }) },
-        cast: { cancer: [[0, 270, Y - 30, 230], [2.0, 810, Y - 30, 230]], leo: [[0, 810, Y - 30, 230], [2.0, 930, Y - 30, 200]] }, mood: { cancer: 'wide', leo: 'wide' },
+        cast: { cancer: [[0, 270, Y - 30, 230], [2.0, 680, Y - 30, 230]], leo: [[0, 810, Y - 30, 230], [1.6, 960, Y - 10, 180]] }, mood: { cancer: 'wide', leo: 'wide' },
         lines: [[0.3, 2.4, 'cancer', 'why ME?']] },
       { dur: 3.0, set: C2((x, t) => { street(x, t); rainHalf(x, t, 0, 1080, 0.4) }, 'ADVICE: WAIT TEN MINUTES'), front: (x, t, lt, P) => clipboard(x, P, 'virgo', -1),
         cast: { virgo: [[0, 600, Y - 30, 240]] }, mood: { virgo: 'squint' },
@@ -297,8 +297,8 @@ const brakes = (() => {
         cast: { aries: [[0, ...FC]] }, mood: { aries: 'eyeroll' },
         lines: [[0.3, 2.4, 'aries', 'clearing | by... later.']] },
       { dur: 3.0, set: C((x, t) => { skyline(x, 1010, t, { alpha: 0.85 }); freeway(x, 1000, 400, 2, 0); car(x, 300, 1300, '#c96a8a', { brake: 1 }); car(x, 760, 1300, '#5ec8ff', { brake: 1 }) }, 'LIVE: A CAR CONCERT'),
-        front: (x, t, lt, P) => { const [cx, cy] = P.at('sagittarius'); for (let k = 0; k < 3; k++) { const ph = (t * 0.8 + k / 3) % 1; txt(x, '♪', cx + 120 + k * 40, cy - 60 - ph * 120, { size: 52, col: GOLD }) } },
-        cast: { sagittarius: [[0, 540, 1090, 210]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.3, 0.8, 1.3, 1.8] },
+        front: (x, t, lt, P) => { const [cx, cy] = P.at('sagittarius'); car(x, cx, 1200, '#8a6ac9', { open: true, brake: 1 }); for (let k = 0; k < 3; k++) { const ph = (t * 0.8 + k / 3) % 1; txt(x, '♪', cx + 120 + k * 40, cy - 60 - ph * 120, { size: 52, col: GOLD }) } },
+        cast: { sagittarius: [[0, 540, 1085, 190]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.3, 0.8, 1.3, 1.8] },
         lines: [[0.3, 2.4, 'sagittarius', 'full concert | in my car.']] },
       { dur: 3.0, set: C((x, t) => bungalow(x, t, { col: '#8a6ac9' }), 'MEANWHILE: LEAVING AT 4', { now: '4:00', icon: 'sun' }),
         cast: { scorpio: [[0, 400, Y - 30, 240]] }, mood: { scorpio: 'wink' },
