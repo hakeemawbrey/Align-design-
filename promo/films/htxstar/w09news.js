@@ -203,4 +203,226 @@ const tunnels = (() => {
   }
 })()
 
-export const NEWS = { hst211: signal, hst212: twenty, hst213: spot, hst214: tunnels }
+// ── hst215 · Your car is yellow now. It's oak season.
+const pollen = (() => {
+  const pal = PAL.forest, tick = 'OAK POLLEN: EVERYWHERE  ·  CAR WASHES: POINTLESS  ·  SNEEZES REPORTED IN EVERY ZIP CODE  ·  LINT ROLLERS SOLD OUT IN THE HEIGHTS  ·  '
+  const o = (head, kick = 'ALERT') => ({ pal, tick, head, kick })
+  const dust = (x, t) => oakPollen(x, t, 1, 70)
+  return {
+    hook: "Your car is | yellow now. | It's oak season.", badge: BADGE, cues: [...STING], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Shoot your shot. Jan 9.', stars: ['leo', 'scorpio', 'gemini', 'pisces'] }),
+    scenes: [
+      { dur: 3.0, set: desk(o('POLLEN ALERT: ALL OF HOUSTON')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#8fd0ff'; x.fillRect(cx - 300, cy - 300, 600, 600); pollenCar(x, cx, cy + 60, '#2a2a3a', 0.4 + 0.6 * clamp(lt / 2), 1.3); oakPollen(x, t, 1, 40) }, { title: 'YOUR CAR' }), front: dust,
+        cast: { gemini: [[0, ...AL]] }, mood: { gemini: 'wide' }, hops: { gemini: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'gemini', 'go check your car. | yes, you.']] },
+      { dur: 3.2, set: field((x, t, lt) => { street(x, t); pollenCar(x, 760, 1280, '#5ec8ff', clamp(lt / 2.4)) }, o('CAR WASHED: 1 HOUR AGO', 'LIVE')), front: dust,
+        cast: { taurus: [[0, 300, Y - 40, 240]] }, mood: { taurus: lt => lt < 1.5 ? 'happy' : 'wide' }, look: { taurus: [1, 0.4] },
+        lines: [[0.3, 2.6, 'taurus', 'I washed it | an hour ago.']] },
+      { dur: 3.0, set: field((x, t) => { street(x, t); pollenCar(x, 760, 1280, '#1b1236', 1) }, o('BLACK CARS: NOW BEIGE', 'LIVE')), front: dust,
+        cast: { libra: [[0, 300, Y - 40, 240]] }, mood: { libra: 'eyeroll' },
+        lines: [[0.3, 2.4, 'libra', "it was black. | it's beige now."]] },
+      { dur: 3.2, set: field((x, t) => bayou(x, t), o('SNEEZES: CITYWIDE', 'LIVE')), front: dust,
+        cast: { pisces: [[0, 540, Y - 20, 260]] }, mood: { pisces: lt => lt < 1.4 ? 'squint' : 'heart' }, hops: { pisces: [0.4, 0.5, 1.4] },
+        lines: [[0.2, 1.3, 'pisces', "it's not tears, | it's pollen."], [1.7, 1.3, 'pisces', "...it's | both."]] },
+      { dur: 3.2, set: desk(o('EXPERT: WHY IS EVERYTHING YELLOW?', 'ANALYSIS')), front: (x, t, lt, P) => clipboard(x, P, 'virgo', -1),
+        back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#bfe6ff'; x.fillRect(cx - 300, cy - 300, 600, 600); tree(x, cx, cy + 180, 1.3); oakPollen(x, t, 1, 50) }, { title: 'LIVE OAK' }),
+        cast: { virgo: [[0, ...AL]] }, mood: { virgo: 'squint' },
+        lines: [[0.2, 1.4, 'virgo', 'the oaks | are blooming.'], [1.7, 1.3, 'virgo', 'basically | tree dating.']] },
+      { dur: 3.0, set: field((x, t) => bayou(x, t), o('RUN CLUB: UNSTOPPABLE', 'LIVE')), front: dust,
+        back: (x, t, lt, P) => { const [cx, cy] = P.at('aries'); for (let k = 0; k < 10; k++) { x.fillStyle = 'rgba(214,200,60,0.7)'; x.fillRect(cx - 80 - k * 40, cy + 40 + (k % 3) * 10, 18, 18) } },
+        cast: { aries: [[0, -150, Y - 20, 230], [2.8, 1250, Y - 20, 230]] }, mood: { aries: 'sparkle' },
+        lines: [[0.5, 1.8, 'aries', "can't stop. | run club."]] },
+      { dur: 3.4, set: field((x, t, lt) => { street(x, t); pollenCar(x, 650, 1280, '#2a2a3a', 1, 1.4); if (lt > 0.8) { x.strokeStyle = INK; x.lineWidth = 6; x.font = `800 30px ${INTER}`; x.fillStyle = INK; x.textAlign = 'center'; x.fillText('TEXT ME ♥', 650, 1180) } }, o('MESSAGE FOUND IN THE POLLEN', 'UPDATE')), front: dust,
+        cast: { leo: [[0, 260, Y - 40, 230]] }, mood: { leo: 'wink' },
+        lines: [[0.3, 2.6, 'leo', 'wrote my number | in the pollen.']], stick: [[1.2, 1.8, 'BOLD MOVE', GOLD]] },
+      { dur: 3.2, set: field((x, t) => { street(x, t); pollenCar(x, 650, 1280, '#2a2a3a', 1, 1.4); x.fillStyle = INK; x.font = `800 30px ${INTER}`; x.textAlign = 'center'; x.fillText('TEXT ME ♥', 650, 1180) }, o('IT WORKED', 'UPDATE')), front: dust,
+        back: (x, t, lt) => { if (lt > 1.2) hearts(x, t, 540, 900, t - lt + 1.2, { n: 6, spread: 200 }) },
+        cast: { scorpio: [[0, 900, Y - 40, 230]] }, mood: { scorpio: lt => lt < 1.2 ? 'squint' : 'heart' },
+        lines: [[0.3, 2.4, 'scorpio', 'okay. | that worked.']] },
+      { dur: 3.4, set: desk(o("TONIGHT'S TAKEAWAY", 'STAR NEWS')),
+        cast: { gemini: [[0, ...A]] }, mood: { gemini: 'wink' },
+        lines: [[0.2, 2.9, 'gemini', 'messy season? | shoot your shot anyway.']], stick: [[0.6, 2.4, '★ LESSON UNLOCKED', GOLD]] },
+      { dur: 2.8, set: desk(o('NEXT: HOUSTON BETA PARTY · JAN 9', 'NEXT')),
+        cast: { gemini: [[0, ...A]] }, mood: { gemini: 'happy' }, hops: { gemini: [1.4] }, lines: [[0.3, 2.2, 'gemini', 'Jan 9. | bring a lint roller.']] },
+    ],
+  }
+})()
+
+// ── hst216 · The first-date question every Houstonian asks
+const school = (() => {
+  const pal = PAL.candy, tick = 'MOST ASKED QUESTION ON HOUSTON FIRST DATES  ·  FOLLOW-UP: "WHERE ARE YOU FROM ORIGINALLY?"  ·  YEARBOOKS SPOTTED AT BRUNCH  ·  '
+  const o = (head, kick = 'DEVELOPING') => ({ pal, tick, head, kick })
+  const brunch = (x, t) => cafe(x, t, { wall: '#d07a9a', sign: 'BRUNCH' })
+  return {
+    hook: 'Every Houston first | date asks this', badge: BADGE, cues: [...STING, ['bell', 0.9, 1318.5, 0.02, 0.8, 0]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: "Say where you're from. Jan 9.", stars: ['virgo', 'pisces', 'cancer', 'sagittarius'] }),
+    scenes: [
+      { dur: 3.0, set: desk(o('THE QUESTION', 'BREAKING')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#fff0f6'; x.fillRect(cx - 300, cy - 300, 600, 600); txt(x, "WHERE'D YOU GO", cx, cy - 60, { size: 46 }); txt(x, 'TO HIGH SCHOOL?', cx, cy + 10, { size: 46 }); txt(x, '?', cx, cy + 130, { size: 120, col: '#ff5aa0' }) }, { title: 'TONIGHT' }),
+        cast: { cancer: [[0, ...AL]] }, mood: { cancer: 'wide' }, hops: { cancer: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'cancer', 'your date will | ask you this.']] },
+      { dur: 3.0, set: field(brunch, o('LIVE: MIDTOWN BRUNCH', 'LIVE')),
+        cast: { libra: [[0, 320, Y, 240]], sagittarius: [[0, 760, Y, 240]] }, mood: { libra: 'happy', sagittarius: 'happy' }, look: { libra: [1, 0], sagittarius: [-1, 0] },
+        lines: [[0.3, 2.4, 'libra', "so... where'd you | go to high school?"]] },
+      { dur: 3.0, set: field(brunch, o('LIVE: MIDTOWN BRUNCH', 'LIVE')),
+        cast: { libra: [[0, 320, Y, 240]], sagittarius: [[0, 760, Y, 240]] }, mood: { libra: 'wide', sagittarius: 'sparkle' }, look: { libra: [1, 0] },
+        lines: [[0.3, 2.4, 'sagittarius', 'which one? | I went to three.']] },
+      { dur: 3.2, set: desk(o("IT'S NOT SMALL TALK", 'ANALYSIS')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.save(); x.translate(cx, cy); x.scale(0.5, 0.55); x.translate(-540, -830); houMap(x, t, { places: [PL.katy, PL.heights, PL.pearland, PL.cypress, PL.sugarland, PL.clearlake] }); x.restore() }, { title: 'THE MAP' }),
+        cast: { cancer: [[0, ...AL]] }, mood: { cancer: 'squint' },
+        lines: [[0.2, 2.8, 'cancer', "it's not small talk. | it's a map."]] },
+      { dur: 3.0, set: field((x, t) => bungalow(x, t, { col: '#8ab0d0' }), o('ANSWERS VARY', 'LIVE')),
+        cast: { leo: [[0, 360, Y, 250]] }, mood: { leo: 'sparkle' },
+        lines: [[0.3, 2.4, 'leo', "I'm from Katy | originally."]], stick: [[1.2, 1.6, 'DIFFERENT QUESTION', GOLD]] },
+      { dur: 3.0, set: field((x, t) => street(x, t), o('ANSWERS VARY', 'LIVE')),
+        cast: { scorpio: [[0, 540, Y, 250]] }, mood: { scorpio: 'squint' },
+        lines: [[0.3, 2.4, 'scorpio', 'I share that | on date three.']], stick: [[1.2, 1.6, 'CLASSIFIED', '#8f96a0']] },
+      { dur: 3.0, set: field(brunch, o('ANSWERS VARY', 'LIVE')), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); box(x, cx + s * 0.3, cy - 30, 120, 150, '#2b5fb0', 5); txt(x, 'CLASS', cx + s * 0.3 + 60, cy + 20, { size: 22, col: GOLD, font: MONO, weight: 700 }) },
+        cast: { capricorn: [[0, 380, Y, 240]] }, mood: { capricorn: 'happy' },
+        lines: [[0.3, 2.4, 'capricorn', 'I brought | my yearbook.']] },
+      { dur: 3.6, set: field(brunch, o('MATCH: SAME HIGH SCHOOL', 'UPDATE')),
+        back: (x, t, lt) => { if (lt > 1.8) hearts(x, t, 540, 960, t - lt + 1.8, { n: 7, spread: 220 }) },
+        cast: { virgo: [[0, 320, Y, 240]], pisces: [[0, 760, Y, 240]] }, mood: { virgo: lt => lt < 0.4 ? 'happy' : 'wide', pisces: 'heart' }, look: { virgo: [1, 0], pisces: [-1, 0] },
+        lines: [[0.2, 1.4, 'virgo', 'wait. | SAME school?'], [1.8, 1.6, 'pisces', 'same lunch | table?!']], stick: [[1.9, 1.5, 'PISCES: CRYING', SKYB]] },
+      { dur: 3.4, set: desk(o("TONIGHT'S TAKEAWAY", 'STAR NEWS')),
+        cast: { cancer: [[0, ...A]] }, mood: { cancer: 'wink' },
+        lines: [[0.2, 2.9, 'cancer', 'then ask the next one: | what do you love now?']], stick: [[0.6, 2.4, '★ LESSON UNLOCKED', GOLD]] },
+      { dur: 2.8, set: desk(o('NEXT: HOUSTON BETA PARTY · JAN 9', 'NEXT')),
+        cast: { cancer: [[0, ...A]] }, mood: { cancer: 'happy' }, hops: { cancer: [1.4] }, lines: [[0.3, 2.2, 'cancer', 'Jan 9. | bring your answer.']] },
+    ],
+  }
+})()
+
+// ── hst217 · Houston's official bird was spotted near you (the mosquito)
+const skeeter = (() => {
+  const pal = PAL.ice, tick = 'MOSQUITO ACTIVITY: HIGH AT DUSK  ·  LONG SLEEVES IN 90°: SPOTTED  ·  CANDLES LIT CITYWIDE  ·  FREE MUSEUM NIGHTS: ZERO BITES  ·  '
+  const o = (head, kick = 'WILDLIFE') => ({ pal, tick, head, kick })
+  const swarm = (cx, cy, n = 5, R = 160) => (x, t) => { for (let k = 0; k < n; k++) mosquito(x, cx + Math.cos(t * (2 + k * 0.4) + k * 1.3) * R, cy + Math.sin(t * (2.6 + k * 0.3) + k) * R * 0.6, t + k, 2.2) }
+  const museum = (x, t) => { x.fillStyle = '#e8e0d0'; x.fillRect(0, 0, 1080, FLOOR + 60); x.fillStyle = '#d8ccb4'; x.beginPath(); x.moveTo(60, 560); x.lineTo(540, 400); x.lineTo(1020, 560); x.fill(); for (let k = 0; k < 6; k++) box(x, 110 + k * 160, 600, 60, FLOOR - 560, '#f4efe4', 4); box(x, 380, 760, 320, 240, '#c9a6ff', 6); box(x, 420, 800, 240, 160, '#ffd36b', 4); x.fillStyle = '#b8a88a'; x.fillRect(0, FLOOR + 60, 1080, 1920) }
+  return {
+    hook: "Houston's official | bird is near you", badge: BADGE, cues: [...STING, ['pluck', 0.8, 1760, 0.02, 0.3, 0]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Plan B ready. Jan 9.', stars: ['libra', 'capricorn', 'cancer', 'pisces'] }),
+    scenes: [
+      { dur: 3.0, set: desk(o('OFFICIAL BIRD SPOTTED NEAR YOU')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#bfe6ff'; x.fillRect(cx - 300, cy - 300, 600, 600); mosquito(x, cx + 20 * Math.sin(t * 3), cy + 14 * Math.cos(t * 4), t, 7) }, { title: 'THE BIRD' }),
+        cast: { taurus: [[0, ...AL]] }, mood: { taurus: 'wide' }, hops: { taurus: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'taurus', 'the official bird | is near you.']] },
+      { dur: 3.0, set: field((x, t) => park(x, t), o('LIVE: PICNIC IN PROGRESS', 'LIVE')), front: swarm(380, 1000),
+        cast: { leo: [[0, 380, Y - 30, 240]] }, mood: { leo: 'squint' }, hops: { leo: [0.4, 0.9, 1.4, 1.9] },
+        lines: [[0.3, 2.4, 'leo', 'I wore shorts. | I regret it.']] },
+      { dur: 3.0, set: field((x, t) => park(x, t), o('LONG SLEEVES IN 90°', 'LIVE')), front: (x, t, lt, P) => { sweater(x, P, 'gemini', '#5a9ac9'); const [cx, cy, s] = P.at('gemini'); sweatDrops(x, cx + s * 0.3, cy - s * 0.35, t) },
+        cast: { gemini: [[0, 640, Y - 30, 240]] }, mood: { gemini: 'squint' },
+        lines: [[0.3, 2.4, 'gemini', 'long sleeves. | in 90 degrees.']] },
+      { dur: 3.2, set: desk(o('MOSQUITO RADAR', 'ANALYSIS')), front: (x, t, lt, P) => clipboard(x, P, 'virgo', -1),
+        back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.save(); x.translate(cx, cy); x.scale(0.5, 0.55); x.translate(-540, -830); houMap(x, t, { tint: `rgba(40,20,80,${(0.3 + 0.2 * clamp(lt / 2)).toFixed(2)})` }); for (let k = 0; k < 9; k++) mosquito(x, 200 + (k * 137) % 700, 600 + (k * 89) % 460, t + k, 3.2); x.restore() }, { title: 'DUSK' }),
+        cast: { virgo: [[0, ...AL]] }, mood: { virgo: 'squint' },
+        lines: [[0.2, 1.4, 'virgo', 'peak activity: | dusk.'], [1.7, 1.3, 'virgo', 'like most | first dates.']] },
+      { dur: 3.0, set: field((x, t) => bayou(x, t, { dusk: 1 }), o('CANDLES LIT ON THE BAYOU', 'LIVE')),
+        front: (x, t, lt, P) => { for (const cx of [700, 820]) { box(x, cx - 26, 1250, 52, 60, '#f2c75c', 4); x.fillStyle = '#ffb02a'; x.beginPath(); x.arc(cx, 1236 + 3 * Math.sin(t * 9 + cx), 12, 0, Math.PI * 2); x.fill() } },
+        cast: { cancer: [[0, 330, Y - 30, 240]] }, mood: { cancer: 'happy' },
+        lines: [[0.3, 2.4, 'cancer', 'I brought candles | for everyone.']] },
+      { dur: 3.0, set: field((x, t) => bayou(x, t, { dusk: 1 }), o('BITES: ONE STAR ONLY', 'LIVE')), front: swarm(540, 1000, 6, 140),
+        cast: { pisces: [[0, 540, Y - 30, 250]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.0, 1.7] },
+        lines: [[0.3, 2.4, 'pisces', 'they only | bite ME.']], stick: [[1.2, 1.5, 'PISCES: CRYING', SKYB]] },
+      { dur: 3.2, set: field((x, t) => park(x, t, { lake: false }), o('EXCLUSIVE INTERVIEW', 'EXCLUSIVE')), front: (x, t, lt, P) => { mic(x, P, 'sagittarius'); mosquito(x, 800 + 10 * Math.sin(t * 5), 900 + 8 * Math.cos(t * 6), t, 5) },
+        cast: { sagittarius: [[0, 360, Y - 30, 230]] }, mood: { sagittarius: 'sparkle' },
+        lines: [[0.2, 1.2, 'sagittarius', 'any | comment?'], [1.6, 1.2, [800, 900, 120], 'bzz.']] },
+      { dur: 3.0, set: desk(o('DATE TIP: HAVE A PLAN B', 'STAR NEWS')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.save(); x.translate(cx, cy); x.scale(0.5, 0.5); x.translate(-540, -800); museum(x, t); x.restore() }, { title: 'FREE MUSEUM NIGHT' }),
+        cast: { taurus: [[0, ...AL]] }, mood: { taurus: 'happy' },
+        lines: [[0.3, 2.4, 'taurus', 'outdoors? | have a plan B.']] },
+      { dur: 3.2, set: field(museum, o('MUSEUM DATE: ZERO BITES', 'UPDATE')),
+        back: (x, t, lt) => { if (lt > 1.6) hearts(x, t, 540, 960, t - lt + 1.6, { n: 6, spread: 200 }) },
+        cast: { libra: [[0, 300, Y, 230]], capricorn: [[0, 780, Y, 230]] }, mood: { libra: 'heart', capricorn: 'happy' }, look: { libra: [1, 0], capricorn: [-1, 0] },
+        lines: [[0.2, 1.3, 'capricorn', 'free museum night. | zero bites.'], [1.7, 1.2, 'libra', 'and | art!']] },
+      { dur: 3.4, set: desk(o("TONIGHT'S TAKEAWAY", 'STAR NEWS')),
+        cast: { taurus: [[0, ...A]] }, mood: { taurus: 'wink' },
+        lines: [[0.2, 2.9, 'taurus', 'outdoor date? | always pack a plan B.']], stick: [[0.6, 2.4, '★ LESSON UNLOCKED', GOLD]] },
+      { dur: 2.8, set: desk(o('NEXT: HOUSTON BETA PARTY · JAN 9', 'NEXT')),
+        cast: { taurus: [[0, ...A]] }, mood: { taurus: 'happy' }, hops: { taurus: [1.4] }, lines: [[0.3, 2.2, 'taurus', 'see you Jan 9. | bzz.']] },
+    ],
+  }
+})()
+
+// ── hst218 · The Heights and Sugar Land signed a dating treaty
+const treaty = (() => {
+  const pal = PAL.sunset, tick = 'TALKS CONTINUE ON A FEEDER ROAD  ·  PARKING REMAINS THE KEY ISSUE  ·  THE HALFWAY TACO SPOT: AGREED  ·  DOGS IN BANDANAS PRESENT  ·  '
+  const o = (head, kick = 'SUMMIT') => ({ pal, tick, head, kick })
+  const summit = (x, t) => { cafe(x, t, { wall: '#7a5a8a', sign: 'HALFWAY COFFEE' }); box(x, 200, 1230, 680, 40, '#8a5530', 6); for (const [cx, c] of [[300, '#7ab0a0'], [780, '#e0a030']]) { box(x, cx - 4, 1080, 8, 150, '#8f96a0', 2); box(x, cx, 1080, 80, 52, c, 3) } }
+  const pair = { aquarius: [[0, 300, 1110, 230]], taurus: [[0, 780, 1110, 230]] }
+  return {
+    hook: 'The Heights and | Sugar Land signed | a dating treaty', badge: BADGE, cues: [...STING, ['bell', 24.6, 1046.5, 0.02, 1.4, 0]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Meet halfway. Jan 9.', stars: ['aquarius', 'taurus', 'gemini', 'pisces'] }),
+    scenes: [
+      { dur: 3.2, set: desk(o('HEIGHTS–SUGAR LAND SUMMIT', 'BREAKING')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.save(); x.translate(cx, cy); x.scale(0.5, 0.55); x.translate(-540, -830); houMap(x, t, { places: [PL.heights, PL.sugarland] }); x.setLineDash([16, 12]); x.strokeStyle = PINK; x.lineWidth = 8; x.beginPath(); x.moveTo(PL.heights[0], PL.heights[1]); x.lineTo(PL.sugarland[0], PL.sugarland[1]); x.stroke(); x.restore() }, { title: 'HEIGHTS ↔ SUGAR LAND' }),
+        cast: { virgo: [[0, ...AL]] }, mood: { virgo: 'wide' }, hops: { virgo: [0.05, 0.5] },
+        lines: [[0.3, 2.7, 'virgo', "you're in the Heights. | they're in Sugar Land."]] },
+      { dur: 3.0, set: field(summit, o('LIVE: A COFFEE SHOP ON A FEEDER ROAD', 'LIVE')), cast: pair, mood: { aquarius: 'neutral', taurus: 'neutral' }, look: { aquarius: [1, 0], taurus: [-1, 0] },
+        lines: [[0.3, 2.4, 'aquarius', 'nobody leaves | the Heights.']] },
+      { dur: 3.0, set: field(summit, o('OPENING STATEMENTS', 'LIVE')), cast: pair, mood: { aquarius: 'neutral', taurus: 'squint' }, look: { aquarius: [1, 0], taurus: [-1, 0] },
+        lines: [[0.3, 2.4, 'taurus', 'my street has | a quiet hour.']] },
+      { dur: 3.0, set: desk(o('TALKS STALL OVER PARKING', 'DEVELOPING')),
+        cast: { virgo: [[0, ...A]] }, mood: { virgo: 'squint' }, lines: [[0.3, 2.4, 'virgo', 'talks have stalled. | on parking.']] },
+      { dur: 3.0, set: field(summit, o('A MEDIATOR ARRIVES', 'LIVE')), front: (x, t, lt, P) => clipboard(x, P, 'gemini', 1),
+        cast: { ...pair, gemini: [[0, 540, 1500, 200], [0.5, 540, 860, 200]] }, mood: { gemini: 'sparkle' }, look: { aquarius: [1, -0.5], taurus: [-1, -0.5] },
+        lines: [[0.6, 2.2, 'gemini', 'proposal: | alternate weekends.']] },
+      { dur: 3.2, set: field(summit, o('TERMS: THE HALFWAY TACO SPOT', 'LIVE')), cast: pair, mood: { aquarius: 'happy', taurus: lt => lt > 1.6 ? 'heart' : 'happy' }, look: { aquarius: [1, 0], taurus: [-1, 0] },
+        lines: [[0.2, 1.4, 'aquarius', 'and the halfway | taco spot?'], [1.8, 1.0, 'taurus', 'deal.']] },
+      { dur: 3.2, set: field(summit, o('TREATY SIGNED', 'HISTORIC')), cast: pair, mood: { aquarius: 'heart', taurus: 'heart' }, look: { aquarius: [1, 0], taurus: [-1, 0] },
+        back: (x, t, lt) => { const k = Kp(lt, 0.2, 0.4); if (k > 0) { x.save(); x.translate(540, 1060); x.scale(k, k); box(x, -120, -80, 240, 150, BONE, 5); txt(x, 'TREATY', 0, -40, { size: 40 }); x.strokeStyle = INK; x.lineWidth = 4; x.beginPath(); x.moveTo(-90, 30); for (let q = 0; q < 8; q++) x.lineTo(-90 + q * 22 * clamp((lt - 0.6) / 1.2), 30 + (q % 2 ? -14 : 8)); x.stroke(); x.restore() } if (lt > 1.6) sparkles(x, t, 540, 1000, t - lt + 1.6, 12, 260, 3) },
+        lines: [], stick: [[1.6, 1.5, 'TREATY SIGNED', GOLD]] },
+      { dur: 3.0, set: field((x, t) => street(x, t), o('REACTION FROM THE PUBLIC', 'LIVE')),
+        cast: { pisces: [[0, 540, Y, 250]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.2] },
+        lines: [[0.3, 2.4, 'pisces', 'I love | diplomacy.']] },
+      { dur: 3.4, set: desk(o("TONIGHT'S TAKEAWAY", 'STAR NEWS')),
+        cast: { virgo: [[0, ...A]] }, mood: { virgo: 'wink' },
+        lines: [[0.2, 2.9, 'virgo', "distance is a schedule | problem. not a love one."]], stick: [[0.6, 2.4, '★ LESSON UNLOCKED', GOLD]] },
+      { dur: 2.8, set: desk(o('NEXT: HOUSTON BETA PARTY · JAN 9', 'NEXT')),
+        cast: { virgo: [[0, ...A]] }, mood: { virgo: 'happy' }, hops: { virgo: [1.4] }, lines: [[0.3, 2.2, 'virgo', 'Jan 9. | all sides of town.']] },
+    ],
+  }
+})()
+
+// ── hst219 · Crawfish season just started. Your sign reacts.
+const mudbugs = (() => {
+  const pal = { ...PAL.navy, chy: '#d83a2a', desk: '#d83a2a', kick: GOLD }, tick = 'CRAWFISH SEASON: OPEN  ·  SIZE: SMALL (IT IS EARLY)  ·  GARLIC BUTTER SUPPLIES: HOLDING  ·  NEWSPAPER ON EVERY TABLE  ·  '
+  const o = (head, kick = 'SEASON OPENER') => ({ pal, tick, head, kick })
+  const yard = (x, t) => { bungalow(x, t, { col: '#d0a060' }); crawfishTable(x, t, 540, 1240) }
+  return {
+    hook: 'Crawfish season | just started. | Your sign reacts.', badge: BADGE, cues: [...STING], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Good things start small. Jan 9.', stars: ['capricorn', 'libra', 'leo', 'pisces'] }),
+    scenes: [
+      { dur: 3.0, set: desk(o('CRAWFISH SEASON IS OPEN')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#f4e1b0'; x.fillRect(cx - 300, cy - 300, 600, 600); for (let k = 0; k < 9; k++) crawfish(x, cx - 180 + (k % 3) * 180, cy - 140 + Math.floor(k / 3) * 140 + 6 * Math.sin(t * 4 + k), 1.4, Math.sin(k) * 0.4) }, { title: 'MUDBUGS' }),
+        cast: { taurus: [[0, ...AL]] }, mood: { taurus: 'heart' }, hops: { taurus: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'taurus', 'you smelled it too. | it is starting.']] },
+      { dur: 3.0, set: field(yard, o('LIVE: FIRST BOIL OF THE YEAR', 'LIVE')),
+        cast: { sagittarius: [[0, 540, 1000, 240]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.3, 0.8] },
+        lines: [[0.3, 2.4, 'sagittarius', 'first boil | of the year!']] },
+      { dur: 3.0, set: field(yard, o('SIZE CHECK: SMALL', 'LIVE')), front: (x, t, lt, P) => { readers(x, P, 'virgo'); crawfish(x, 760, 900, 0.7, 0.2) },
+        cast: { virgo: [[0, 460, 1000, 240]] }, mood: { virgo: 'squint' }, look: { virgo: [1, 0] },
+        lines: [[0.3, 2.4, 'virgo', "they're tiny. | it's early."]] },
+      { dur: 3.2, set: field(yard, o('TUTORIAL: PINCH, TWIST, PULL', 'LIVE')), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('cancer'); crawfish(x, cx + s * 0.5, cy, 1.2, Math.sin(lt * 3) * 0.5) },
+        cast: { cancer: [[0, 420, 1000, 240]] }, mood: { cancer: 'happy' },
+        lines: [[0.3, 2.6, 'cancer', 'pinch. twist. | pull. you got it.']] },
+      { dur: 3.0, set: field(yard, o('VIET-CAJUN: GARLIC BUTTER', 'LIVE')), front: (x, t, lt, P) => { box(x, 700, 940, 140, 100, '#f2c75c', 5); txt(x, 'GARLIC', 770, 990, { size: 26, font: MONO, weight: 700 }) },
+        cast: { leo: [[0, 420, 1000, 240]] }, mood: { leo: 'heart' },
+        lines: [[0.3, 2.4, 'leo', 'garlic butter. | the Houston way.']] },
+      { dur: 3.0, set: field(yard, o('SPICE LEVEL: EMOTIONAL', 'LIVE')),
+        cast: { pisces: [[0, 540, 1000, 250]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.1] },
+        lines: [[0.3, 2.4, 'pisces', "it's the spice. | and I'm happy."]] },
+      { dur: 3.0, set: field(yard, o('SPEED ROUND', 'LIVE')),
+        cast: { aries: [[0, 300, 1000, 230], [1.2, 780, 1000, 230], [2.4, 300, 1000, 230]] }, mood: { aries: 'wide' },
+        lines: [[0.2, 1.2, 'aries', 'speed | round!']], stick: [[1.4, 1.4, 'ARIES: 0 PEELED', BRAKE]] },
+      { dur: 3.2, set: desk(o('FORECAST: BIGGER BY SPRING', 'ANALYSIS')), back: (x, t, lt) => ots(x, ...OTS, 1, (cx, cy) => { x.fillStyle = '#f4e1b0'; x.fillRect(cx - 300, cy - 300, 600, 600); crawfish(x, cx - 150, cy, 0.9); txt(x, '→', cx, cy, { size: 80 }); crawfish(x, cx + 150, cy, 2.0) }, { title: 'JAN → SPRING' }),
+        cast: { taurus: [[0, ...AL]] }, mood: { taurus: 'happy' }, lines: [[0.3, 2.6, 'taurus', 'they get bigger | by spring.']] },
+      { dur: 3.4, set: field(yard, o('MOMENT OF THE NIGHT', 'UPDATE')),
+        back: (x, t, lt) => { if (lt > 1.8) hearts(x, t, 540, 860, t - lt + 1.8, { n: 6, spread: 200 }) },
+        front: (x, t, lt, P) => { const [cx, cy, s] = P.at('capricorn'); box(x, cx + s * 0.25, cy + 10, 110, 50, BONE, 4); for (let k = 0; k < 4; k++) { x.fillStyle = '#ff9a7a'; x.fillRect(cx + s * 0.25 + 12 + k * 24, cy + 22, 16, 24) } },
+        cast: { capricorn: [[0, 330, 1000, 230]], libra: [[0, 780, 1000, 230]] }, mood: { capricorn: 'happy', libra: lt => lt > 1.8 ? 'heart' : 'wide' }, look: { capricorn: [1, 0], libra: [-1, 0] },
+        lines: [[0.2, 1.4, 'capricorn', 'I peeled these | for you.'], [1.8, 1.3, 'libra', 'marry | me.']] },
+      { dur: 3.4, set: desk(o("TONIGHT'S TAKEAWAY", 'STAR NEWS')),
+        cast: { taurus: [[0, ...A]] }, mood: { taurus: 'wink' },
+        lines: [[0.2, 2.9, 'taurus', 'good things start small. | let them grow.']], stick: [[0.6, 2.4, '★ LESSON UNLOCKED', GOLD]] },
+      { dur: 2.8, set: desk(o('NEXT: HOUSTON BETA PARTY · JAN 9', 'NEXT')),
+        cast: { taurus: [[0, ...A]] }, mood: { taurus: 'happy' }, hops: { taurus: [1.4] }, lines: [[0.3, 2.2, 'taurus', 'Jan 9. | wash your hands.']] },
+    ],
+  }
+})()
+
+export const NEWS = { hst215: pollen, hst216: school, hst217: skeeter, hst218: treaty, hst219: mudbugs, hst211: signal, hst212: twenty, hst213: spot, hst214: tunnels }

@@ -197,26 +197,44 @@ export function village(x, t) {   // a shop street with a row of parked cars (Ri
 }
 export function crawfishTable(x, t, cx, top, n = 14, k = 1) {   // newspaper on a table with a pile of crawfish, corn, potatoes
   box(x, cx - 380, top, 760, 40, '#ddd2b8', 5); for (let j = 0; j < 6; j++) { x.fillStyle = 'rgba(60,50,40,0.35)'; x.fillRect(cx - 360, top + 6 + j * 5, 300, 2); x.fillRect(cx + 40, top + 6 + j * 5, 300, 2) }
-  for (let i = 0; i < n * clamp(k); i++) crawfish(x, cx - 260 + (i * 97) % 520, top - 20 - ((i * 37) % 3) * 22, 0.8 + (i % 3) * 0.1, i % 2 ? 0.3 : -0.4)
+  for (let i = 0; i < n * clamp(k); i++) crawfish(x, cx - 260 + (i * 97) % 520, top - 24 - ((i * 37) % 3) * 26, 1.1 + (i % 3) * 0.1, (i % 2 ? 0.3 : -0.4) + (i % 3 === 0 ? Math.PI : 0))
   for (let i = 0; i < 3; i++) { box(x, cx - 330 + i * 270, top - 50, 70, 34, '#f2c75c', 4) }
 }
-export function crawfish(x, cx, cy, s = 1, rot = 0) {
+export function crawfish(x, cx, cy, s = 1, rot = 0) {   // faces left: two claws, antennae, a segmented tail with a fan
   x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(s, s)
-  x.fillStyle = INK; x.fillRect(-40, -14, 80, 28); x.fillRect(32, -24, 24, 18); x.fillRect(32, 6, 24, 18)
-  x.fillStyle = '#d83a2a'; x.fillRect(-36, -10, 72, 20); x.fillRect(36, -20, 16, 10); x.fillRect(36, 10, 16, 10)
-  x.fillStyle = '#ff6a4a'; for (let k = 0; k < 4; k++) x.fillRect(-32 + k * 14, -8, 6, 16)
-  x.fillStyle = INK; x.fillRect(-50, -2, 12, 4); x.restore()
+  const R = '#d83a2a', H = '#ff7a5a'
+  x.strokeStyle = INK; x.lineWidth = 2; x.lineCap = 'round'
+  x.beginPath(); x.moveTo(-26, -6); x.quadraticCurveTo(-60, -40, -86, -30); x.moveTo(-26, -2); x.quadraticCurveTo(-56, -26, -90, -12); x.stroke()   // antennae
+  for (const d of [-1, 1]) {                                     // arms + claws
+    x.strokeStyle = INK; x.lineWidth = 7; x.beginPath(); x.moveTo(-22, d * 6); x.lineTo(-44, d * 20); x.stroke(); x.strokeStyle = R; x.lineWidth = 4; x.stroke()
+    x.fillStyle = INK; x.beginPath(); x.ellipse(-58, d * 24, 17, 10, d * 0.25, 0, Math.PI * 2); x.fill()
+    x.fillStyle = R; x.beginPath(); x.ellipse(-58, d * 24, 14, 7, d * 0.25, 0, Math.PI * 2); x.fill()
+    x.fillStyle = INK; x.beginPath(); x.moveTo(-76, d * 24); x.lineTo(-62, d * 22); x.lineTo(-76, d * 18); x.fill()   // the pincer notch
+  }
+  x.fillStyle = INK; x.beginPath(); x.moveTo(44, 0); x.lineTo(62, -14); x.lineTo(62, 14); x.closePath(); x.fill(); x.fillStyle = R; x.beginPath(); x.moveTo(47, 0); x.lineTo(59, -10); x.lineTo(59, 10); x.closePath(); x.fill()   // tail fan
+  for (let k = 3; k >= 0; k--) { const sx = 6 + k * 10, r = 10 - k * 1.2; x.fillStyle = INK; x.beginPath(); x.ellipse(sx, 0, r + 3, r + 3, 0, 0, Math.PI * 2); x.fill(); x.fillStyle = k % 2 ? R : H; x.beginPath(); x.ellipse(sx, 0, r, r, 0, 0, Math.PI * 2); x.fill() }
+  x.fillStyle = INK; x.beginPath(); x.ellipse(-14, 0, 17, 12, 0, 0, Math.PI * 2); x.fill(); x.fillStyle = R; x.beginPath(); x.ellipse(-14, 0, 14, 9, 0, 0, Math.PI * 2); x.fill()   // head
+  x.fillStyle = H; x.fillRect(-20, -5, 10, 3)
+  x.fillStyle = INK; x.beginPath(); x.arc(-24, -7, 3, 0, Math.PI * 2); x.arc(-24, 7, 3, 0, Math.PI * 2); x.fill()
+  x.restore()
 }
 export function oakPollen(x, t, k = 1, n = 80) {   // drifting yellow-green dust
   if (k <= 0) return
   for (let i = 0; i < n; i++) { const px = (i * 137 + t * (20 + i % 7 * 6)) % 1080, py = (i * 211 + t * (30 + i % 5 * 8)) % 1920; x.fillStyle = `rgba(214,200,60,${(0.7 * clamp(k)).toFixed(2)})`; x.fillRect(px, py, 6 + (i % 3) * 3, 6 + (i % 3) * 3) }
 }
 export function pollenCar(x, cx, cy, col, cover = 0, s = 1) { car(x, cx, cy, col, { s }); if (cover > 0) { x.save(); x.globalAlpha = 0.85 * clamp(cover); x.fillStyle = '#c8b83a'; x.fillRect(cx - 120 * s, cy - 40 * s, 240 * s, 22 * s); x.fillRect(cx - 70 * s, cy - 86 * s, 130 * s, 16 * s); x.restore() } }
-export function mosquito(x, cx, cy, t, s = 1) {
-  const f = Math.sin(t * 40) > 0 ? 1 : 0.4
+export function mosquito(x, cx, cy, t, s = 1) {   // round body, striped tail, see-through wings, thin legs, a little nose
+  const f = Math.sin(t * 40) > 0 ? 1 : 0.55
   x.save(); x.translate(cx, cy); x.scale(s, s)
-  x.fillStyle = 'rgba(200,230,255,0.8)'; x.fillRect(-22, -20 * f, 18, 14 * f); x.fillRect(4, -20 * f, 18, 14 * f)
-  x.fillStyle = INK; x.fillRect(-16, -6, 32, 12); x.fillRect(14, -4, 24, 4); x.fillRect(-12, 6, 4, 14); x.fillRect(0, 6, 4, 14); x.fillRect(10, 6, 4, 14)
+  x.fillStyle = 'rgba(200,235,255,0.75)'; x.strokeStyle = 'rgba(27,18,54,0.6)'; x.lineWidth = 1.5
+  for (const d of [-1, 1]) { x.beginPath(); x.ellipse(d * 9, -14, 7, 15 * f, d * 0.5, 0, Math.PI * 2); x.fill(); x.stroke() }
+  x.strokeStyle = INK; x.lineWidth = 1.8; x.lineCap = 'round'
+  for (const [dx, ex, ey] of [[-6, -18, 16], [0, -4, 20], [6, 12, 18]]) { x.beginPath(); x.moveTo(dx, 2); x.lineTo(ex, ey); x.lineTo(ex - 4, ey + 6); x.stroke() }
+  x.beginPath(); x.moveTo(-16, -2); x.lineTo(-28, 10); x.stroke()                                  // the nose
+  x.fillStyle = INK; x.beginPath(); x.ellipse(4, -1, 12, 6, 0.2, 0, Math.PI * 2); x.fill()          // body
+  x.fillStyle = '#5a5070'; for (let k = 0; k < 3; k++) x.fillRect(2 + k * 5, -4, 2, 6)
+  x.fillStyle = INK; x.beginPath(); x.arc(-12, -3, 6, 0, Math.PI * 2); x.fill()                      // head
+  x.fillStyle = '#ff5a6e'; x.beginPath(); x.arc(-13, -4, 2, 0, Math.PI * 2); x.fill()
   x.restore()
 }
 export function loveBugs(x, t, n = 10, k = 1) {   // pairs of little black-and-red bugs drifting together (clean: they just travel in pairs)
@@ -290,7 +308,7 @@ export function wxIcon(x, kind, cx, cy, s, t, k = 1) {
   else if (kind === 'wind') { for (let q = 0; q < 3; q++) { const off = ((t * 120) + q * 40) % 60; x.strokeStyle = BONE; x.lineWidth = 10; x.beginPath(); x.moveTo(-70 + off - 30, -40 + q * 40); x.lineTo(40 + off - 30, -40 + q * 40); x.arc(40 + off - 30, -52 + q * 40, 12, Math.PI / 2, -Math.PI / 2, true); x.stroke() } }
   else if (kind === 'fog') { for (let q = 0; q < 4; q++) { x.fillStyle = 'rgba(232,238,246,0.85)'; x.fillRect(-80 + 10 * Math.sin(t * 2 + q), -50 + q * 32, 160, 16) } }
   else if (kind === 'pollen') { for (let q = 0; q < 12; q++) { const a = q * 0.52 + t, r = 30 + (q % 3) * 18; x.fillStyle = '#d6c83c'; x.fillRect(Math.cos(a) * r - 7, Math.sin(a) * r - 7, 14, 14) } }
-  else if (kind === 'bug') mosquito(x, 0, 0, t, 2.2)
+  else if (kind === 'bug') mosquito(x, 0, 0, t, 3.2)
   else if (kind === 'lovebug') { for (const d of [-1, 1]) { x.fillStyle = INK; x.fillRect(d * 24 - 16, -10, 32, 20); x.fillStyle = '#e04040'; x.fillRect(d * 24 - 16 + (d > 0 ? 20 : 0), -8, 12, 16) } }
   else if (kind === 'sunset') { x.fillStyle = '#ff9a6a'; x.beginPath(); x.arc(0, 20, 60, Math.PI, 0); x.fill(); x.fillStyle = '#ffd36b'; x.beginPath(); x.arc(0, 20, 40, Math.PI, 0); x.fill(); x.fillStyle = INK; x.fillRect(-80, 20, 160, 8) }
   else if (kind === 'puffer') { box(x, -50, -60, 100, 120, '#e05a3a', 5); for (let q = 0; q < 3; q++) { x.fillStyle = INK; x.fillRect(-50, -24 + q * 30, 100, 4) } }
