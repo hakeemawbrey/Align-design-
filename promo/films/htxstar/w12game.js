@@ -30,7 +30,7 @@ export function gameEp(G) {
     const ok = b.reveal && (b.pick == null || b.pick[0] === b.reveal[0])
     const S = { dur: b.dur, lines: b.lines || [], mood: b.mood || {}, hops: b.hops || {}, look: b.look, stick: b.stick }
     if (b.k === 'open') return { ...S,
-      set: (x, t, lt) => { studio(x, t, th); logo(x, t, G.show, G.sub, { cy: 690, col: logoCol, k: bi === 0 ? 1 : Kp(lt, 0, 0.4) }) },
+      set: (x, t, lt) => { studio(x, t, th); logo(x, t, G.show, G.sub, { cy: 770, s: 0.9, col: logoCol, k: bi === 0 ? 1 : Kp(lt, 0, 0.4) }) },
       back: (x, t, lt) => micStand(x, 540, 1440),
       front: (x, t, lt) => { b.front?.(x, t, lt) },
       cast: { [G.host]: [[0, 540, 1180, 230]], ...Object.fromEntries(pl.map((p, i) => { const e = pl.length === 2 ? [190, 890][i] : 890; return [p.id, [[0, e < 540 ? -170 : 1250, PY + 60, PS], [0.9, e, PY + 60, PS]]] })), ...(b.cast || {}) },
@@ -99,7 +99,7 @@ export const W12G = {
 
   // hst287 · kolache or klobasnek (Virgo hosts with a clipboard)
   hst287: { show: 'KNOW YOUR | KOLACHE', sub: 'THE PASTRY QUIZ', host: 'virgo', logoCol: '#c9783a', th: { bg1: '#4a2a12', bg2: '#140a04', card: '#3a1f0c', beam: 'rgba(255,220,170,0.10)' },
-    hook: 'Kolache or klobasnek? | One wrong answer: out', players: [P('sagittarius', 'KATY', '#8a3ab0'), P('cancer', 'BELLAIRE', '#c0304a')],
+    hook: 'Kolache or | klobasnek? | Miss one, you\'re out', players: [P('sagittarius', 'KATY', '#8a3ab0'), P('cancer', 'BELLAIRE', '#c0304a')],
     music: ['chiptune', 'G', 4287], endLine: 'Know your pastry. Jan 9.', endStars: ['virgo', 'cancer', 'sagittarius', 'taurus'],
     beats: [
       { k: 'open', dur: 3.2, lines: [[0.4, 1.3, 'virgo', 'tonight: | pastry.'], [1.8, 1.3, 'virgo', 'you at home, | keep score.']] },
@@ -229,7 +229,7 @@ export const W12G = {
 
   // hst294 · climb the ladder to the Jan 9 ticket (Houston food)
   hst294: { show: 'CLIMB TO | JAN 9', sub: 'THE HOUSTON FOOD LADDER', host: 'scorpio', logoCol: '#6a1f3a', th: { bg1: '#2a0a1a', bg2: '#0a0208', card: '#2a0c1c', beam: 'rgba(255,170,190,0.10)' },
-    hook: 'Five questions between you | and Jan 9', players: [P('aquarius', 'MONTROSE', '#2b8ab0')],
+    hook: 'Five questions | between you | and Jan 9', players: [P('aquarius', 'MONTROSE', '#2b8ab0')],
     rungs: ['A BOBA', 'A CRAWFISH TRAY', 'A RASPA', 'A BRISKET PLATE', 'THE JAN 9 TICKET'],
     music: ['pop', 'Db', 4294], endLine: 'Top rung: Jan 9.', endStars: ['scorpio', 'aquarius', 'taurus', 'sagittarius'],
     beats: [
@@ -249,7 +249,7 @@ export const W12G = {
 
   // hst295 · name that freeway
   hst295: { show: 'NAME THAT | FREEWAY', sub: 'ONE HONK TO ANSWER', host: 'taurus', logoCol: '#1f7a4a', th: { bg1: '#14322a', bg2: '#050e0a', card: '#1f4a3a', beam: 'rgba(200,255,220,0.10)' },
-    hook: 'Name that Houston freeway | in one honk', players: [P('leo', 'KATY', '#c98e1a'), P('libra', 'SPRING', '#8a3ab0')],
+    hook: 'Name that | Houston freeway | in one honk', players: [P('leo', 'KATY', '#c98e1a'), P('libra', 'SPRING', '#8a3ab0')],
     music: ['screwed', 'F', 4295], endLine: 'Take any freeway. Jan 9.', endStars: ['taurus', 'leo', 'libra', 'scorpio'],
     beats: [
       { k: 'open', dur: 3.2, lines: [[0.4, 1.3, 'taurus', 'buzzers are | car horns.'], [1.8, 1.3, 'taurus', 'you honk | at home.']] },
@@ -268,7 +268,7 @@ export const W12G = {
 
   // hst296 · match the sign to its Houston weekend
   hst296: { show: 'MATCH | THE WEEKEND', sub: 'WHICH SIGN DOES THIS?', host: 'cancer', logoCol: '#c98e5a', th: { bg1: '#3a2a10', bg2: '#120c04', card: '#3a2a12', beam: 'rgba(255,230,170,0.10)' },
-    hook: 'Match your sign | to its Houston weekend', players: [P('gemini', 'MIDTOWN', '#2b8ab0'), P('virgo', 'RICE VILLAGE', '#1f7a4a')],
+    hook: 'Your sign\'s | Houston weekend', players: [P('gemini', 'MIDTOWN', '#2b8ab0'), P('virgo', 'RICE VILLAGE', '#1f7a4a')],
     music: ['lofi', 'Ab', 4296], endLine: 'One weekend for all: Jan 9.', endStars: ['cancer', 'gemini', 'virgo', 'pisces'],
     beats: [
       { k: 'open', dur: 3.2, lines: [[0.4, 1.3, 'cancer', 'one weekend. | which sign?'], [1.8, 1.3, 'cancer', 'you guess | too, sweetie.']] },
@@ -306,7 +306,7 @@ export const W12G = {
 
   // hst298 · which sign said it (Houston dating lines)
   hst298: { show: 'WHO | SAID IT?', sub: 'HOUSTON DATING EDITION', host: 'leo', logoCol: '#e0306a', th: { bg1: '#2a0a3a', bg2: '#0a0212', card: '#2a0c3a', beam: 'rgba(255,190,240,0.10)' },
-    hook: 'Which sign said this | about Houston dating?', players: [P('taurus', 'THIRD WARD', '#c98e1a'), P('sagittarius', 'EAST END', '#2b8ab0')],
+    hook: 'Which sign said | this about | Houston dating?', players: [P('taurus', 'THIRD WARD', '#c98e1a'), P('sagittarius', 'EAST END', '#2b8ab0')],
     music: ['funk', 'A', 4298], endLine: 'Say it in person. Jan 9.', endStars: ['leo', 'scorpio', 'libra', 'aries'],
     beats: [
       { k: 'open', dur: 3.2, lines: [[0.4, 1.3, 'leo', 'real quotes. | which sign?'], [1.8, 1.3, 'leo', 'you guess | too.']] },
