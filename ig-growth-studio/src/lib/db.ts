@@ -279,6 +279,23 @@ const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
       summary TEXT NOT NULL
     )`,
   ],
+  // v12: creator studies run from the Research page (one step at a time, resumable).
+  async () => [
+    `CREATE TABLE research_jobs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      site TEXT NOT NULL,
+      target TEXT NOT NULL,
+      handle TEXT,
+      status TEXT NOT NULL,
+      step INTEGER NOT NULL DEFAULT 0,
+      pid INTEGER,
+      waits INTEGER NOT NULL DEFAULT 0,
+      next_at TEXT,
+      message TEXT,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    )`,
+  ],
 ];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */

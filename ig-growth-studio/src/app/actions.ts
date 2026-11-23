@@ -18,6 +18,7 @@ import {
   updatePost,
 } from "@/lib/db";
 import { saveRound } from "@/lib/analysisRounds";
+import { resumeStudy, sendToPrivateRepo, startStudy, stopStudy } from "@/lib/researchJobs";
 import { setAudioSetting } from "@/lib/audio";
 import { GraphClient } from "@/lib/graph";
 import { PostFields, queuePost } from "@/lib/posts";
@@ -164,4 +165,27 @@ export async function runAnalysisRound(form: FormData) {
   const days = Number(form.get("days")) === 14 ? 14 : 30;
   await saveRound(await getDb(), { source: "manual", days });
   revalidatePath("/analyze");
+}
+
+/** Research: queue a creator study (the worker runs it, one step at a time). */
+export async function startStudyAction(_: unknown, form: FormData): Promise<{ error?: string; ok?: string }> {
+  const res = await startStudy(await getDb(), String(form.get("target") ?? ""));
+  revalidatePath("/research");
+  return "error" in res ? { error: res.error } : { ok: "Queued. It starts within a minute; you can leave this page." };
+}
+
+export async function stopStudyAction(form: FormData) {
+  await stopStudy(await getDb(), Number(form.get("id")));
+  revalidatePath("/research");
+}
+
+export async function resumeStudyAction(form: FormData) {
+  await resumeStudy(await getDb(), Number(form.get("id")));
+  revalidatePath("/research");
+}
+
+export async function sendStudyAction(_: unknown, form: FormData): Promise<{ error?: string; ok?: string }> {
+  const res = await sendToPrivateRepo(String(form.get("handle") ?? ""));
+  revalidatePath("/research");
+  return "error" in res ? { error: res.error } : { ok: res.message };
 }

@@ -6,12 +6,15 @@
  * One block for all accounts plus one per account: the patterns, and the top and bottom Reels with their titles,
  * the start of each caption and what each video is. View counts only; no tokens, links or personal data.
  */
+import fs from "node:fs";
 import path from "node:path";
 import { type Analysis, type Scored } from "../src/lib/analysis";
 import { analyse, scoreReels } from "../src/lib/analysis";
 import { loadAnalysis, loadAnalysisInputs } from "../src/lib/analysisData";
 import { compareRounds, listRounds } from "../src/lib/analysisRounds";
 import { listAccounts, openDb } from "../src/lib/db";
+import { hookOf } from "../src/lib/analysis";
+import { getCreator, linkKey, listCreators, postStructure, summarise, topForScripts } from "../src/lib/research";
 
 const reel = (s: Scored, captions: Map<number, string>) => ({
   title: s.title,
@@ -85,10 +88,48 @@ async function main() {
     sv: x.saves,
     sh: x.shares,
   }));
+  // Creators from the Research page, as structure only: never their captions, transcripts or on-screen words.
+  const creators = listCreators().flatMap((c) => {
+    const data = getCreator(c.handle);
+    if (!data) return [];
+    const sum = summarise(data.posts);
+    return [
+      {
+        key: linkKey(c.handle),
+        name: c.site === "facebook" ? c.name || c.handle : `@${c.handle}`,
+        site: c.site,
+        followers: c.followers,
+        posts: data.posts.length,
+        formats: sum.formats.filter((f) => f.count >= 3).slice(0, 8),
+        topics: sum.topics.filter((t) => t.count >= 2).slice(0, 8),
+        top: topForScripts(data.posts).map((p) => ({ key: linkKey(p.shortcode), ...postStructure(p, hookOf) })),
+      },
+    ];
+  });
+  // Align's voice for scripts (founder/data/align-brief.json).
+  let voice: unknown = null;
+  try {
+    const brief = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "..", "founder", "data", "align-brief.json"), "utf8"));
+    voice = {
+      rules: brief.voice?.rules ?? [],
+      banned: brief.voice?.banned ?? [],
+      vocabulary: brief.voice?.vocabulary ?? [],
+      coreMessages: brief.voice?.coreMessages ?? [],
+      examples: (brief.voice?.examples ?? []).slice(0, 6),
+      product: brief.product?.oneLiner ?? null,
+      audience: brief.audience?.who ?? null,
+      pains: brief.audience?.pains ?? [],
+      facts: (brief.facts ?? []).slice(0, 20),
+    };
+  } catch {
+    voice = null;
+  }
   const out = {
     generatedAt: new Date().toISOString(),
     days,
     reels: everyReel,
+    creators,
+    voice,
     sinceLastRound: since(),
     howToRead:
       "timesUsual = views at 24 hours ÷ the median for the same account's Reels from nearby days (1.0 = usual). A hit is 2× or more. Saves and shares per 1,000 views.",

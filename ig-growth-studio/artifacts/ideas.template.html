@@ -63,6 +63,16 @@ button:focus-visible, textarea:focus-visible, input:focus-visible, select:focus-
 textarea { width: 100%; box-sizing: border-box; min-height: 64px; font: 15px var(--body); padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; }
 .note { font-size: 13px; color: var(--muted); }
 details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.tele { position: fixed; inset: 0; background: var(--bg); color: var(--ink); z-index: 50; display: grid; grid-template-rows: auto 1fr; padding-top: env(safe-area-inset-top, 0px); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tele .bar { display: flex; gap: 8px; align-items: center; padding: 12px 0; flex-wrap: wrap; }
+.tele .text { overflow: auto; font: 600 clamp(26px, 5vw, 44px)/1.45 var(--body); padding-bottom: 60vh; max-width: 900px; margin: 0 auto; white-space: pre-wrap; }
+.structs { display: grid; gap: 8px; }
+.struct { text-align: left; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--surface); color: var(--ink); font: 14px var(--body); cursor: pointer; display: grid; gap: 4px; }
+.struct[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.script { border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
+.beat { display: grid; grid-template-columns: 56px 1fr; gap: 8px; font-size: 14px; }
+.beat .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+
 @media (prefers-reduced-motion: no-preference) { .btn { transition: opacity .15s; } }
 </style>
 
@@ -106,6 +116,38 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
     </form>
   </section>
 
+  <section class="panel" id="scriptPanel">
+    <h2>Script maker</h2>
+    <p class="muted small">Pick a creator you studied on the Research page and one of their best posts. Claude gets only the post's shape (length, pacing, hook style, formats, topics), never their words, and writes an original Align script in Align's voice. Facts it can't know go in [brackets] for you to fill in.</p>
+    <div class="tabs" id="creatorTabs" role="group" aria-label="Creator"></div>
+    <div class="grid2">
+      <div class="structs" id="structs"></div>
+      <div style="display:grid;gap:10px;min-width:0">
+        <div class="actions">
+          <button class="btn" id="write" type="button" disabled>Write an Align script</button>
+          <button class="btn ghost" id="regen" type="button" hidden>Regenerate</button>
+          <span class="note" id="scriptStatus"></span>
+        </div>
+        <div class="script" id="script" hidden></div>
+        <div id="reviseRow" hidden style="display:grid;gap:8px">
+          <label for="notes" class="small muted">Notes for a revision, for example "shorter, more about ghosting, end on 11:11"</label>
+          <textarea id="notes"></textarea>
+          <div class="actions">
+            <button class="btn ghost" id="revise" type="button">Revise with notes</button>
+            <button class="btn" id="saveScript" type="button">Save</button>
+            <button class="btn ghost" id="copyScript" type="button">Copy</button>
+            <button class="btn ghost" id="teleBtn" type="button">Teleprompter</button>
+            <span class="note" id="saveStatus"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <details>
+      <summary>Saved scripts</summary>
+      <div class="queue" id="savedScripts"></div>
+    </details>
+  </section>
+
   <section class="panel">
     <h2>Production queue</h2>
     <p class="muted small">Ideas sent from here. Claude turns queued ones into a batch for the film farm on the claude/align-promo-video branch, then the farm writes, renders and uploads each film.</p>
@@ -118,6 +160,16 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
   </section>
 
   <p class="note" id="foot"></p>
+</div>
+
+<div class="tele" id="tele" hidden role="dialog" aria-label="Teleprompter">
+  <div class="bar">
+    <button class="btn" id="teleGo" type="button">Start</button>
+    <label class="small muted" for="teleSpeed">Speed</label>
+    <input type="range" id="teleSpeed" min="10" max="120" value="40">
+    <button class="btn ghost" id="teleClose" type="button">Close</button>
+  </div>
+  <div class="text" id="teleText"></div>
 </div>
 
 <script type="application/json" id="data">/*DATA*/</script>
@@ -349,6 +401,124 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
     }));
   }
 
+
+  // ---------- Script maker ----------
+  const CREATORS = DATA.creators || [];
+  let creatorIx = 0, structIx = null, script = null, scriptTurns = [];
+  const voiceText = () => {
+    const v = DATA.voice || {};
+    return [
+      "ALIGN: " + (v.product || "a dating app played as a card game"),
+      "Audience: " + (v.audience || ""),
+      "Their pains: " + (v.pains || []).join("; "),
+      "Voice rules:\n- " + (v.rules || []).join("\n- "),
+      "Never: " + (v.banned || []).join("; "),
+      "Align vocabulary (use at most two per script): " + (v.vocabulary || []).join(", "),
+      "Core messages (pick one): " + (v.coreMessages || []).join("; "),
+      "True facts you may use (nothing else; no other numbers): " + (v.facts || []).join(" "),
+      "Example lines in Align's voice: " + (v.examples || []).join(" | "),
+    ].join("\n");
+  };
+  function structLine(t) {
+    return [t.type, t.seconds ? t.seconds + " s" : t.slides ? t.slides + " slides" : null, t.beats ? t.beats + " beats" : null, t.hookStyle, t.talking ? `talking, ${t.wordsPerSecond ?? "?"} words/s` : "no talking", t.hookOnScreen ? "hook on screen" : null].filter(Boolean).join(" · ");
+  }
+  function renderCreators() {
+    if (!CREATORS.length) { $("scriptPanel").hidden = true; return; }
+    $("creatorTabs").replaceChildren(...CREATORS.map((c, i) => { const b = el("button", "", c.name); b.type = "button"; b.setAttribute("aria-pressed", String(i === creatorIx)); b.onclick = () => { creatorIx = i; structIx = null; renderCreators(); }; return b; }));
+    const c = CREATORS[creatorIx];
+    $("structs").replaceChildren(...c.top.map((t, j) => {
+      const b = el("button", "struct"); b.type = "button"; b.setAttribute("aria-pressed", String(j === structIx));
+      b.append(el("strong", "", (t.timesTheirUsual != null ? x(t.timesTheirUsual) + " their usual · " : "") + structLine(t)));
+      const meta = el("div", "meta"); for (const v of [...t.formats, ...t.topics.map((tp) => "topic: " + tp), ...t.ctas.map((ct) => "CTA: " + ct)]) meta.append(el("span", "tag", v)); b.append(meta);
+      b.onclick = () => { structIx = j; renderCreators(); };
+      return b;
+    }));
+    $("write").disabled = structIx === null || !sample;
+  }
+  function renderScript(sc) {
+    const box = $("script"); box.hidden = false;
+    const parts = [el("h3", "", sc.title || "Untitled")];
+    if (sc.onScreenHook) parts.push(el("div", "", "On screen: " + sc.onScreenHook));
+    if (sc.spokenHook) parts.push(el("div", "", "Say first: " + sc.spokenHook));
+    for (const b of sc.beats || []) { const r = el("div", "beat"); r.append(el("span", "t", b.time || "")); const body = el("div"); if (b.say) body.append(el("div", "", b.say)); if (b.onScreen) body.append(el("div", "small muted", "On screen: " + b.onScreen)); if (b.shot) body.append(el("div", "small muted", "Shot: " + b.shot)); r.append(body); parts.push(r); }
+    if (sc.caption) parts.push(el("div", "small", "Caption: " + sc.caption));
+    if (sc.why) parts.push(el("div", "small muted", "Why it should work: " + sc.why));
+    box.replaceChildren(...parts);
+    $("reviseRow").hidden = false; $("regen").hidden = structIx === null;
+  }
+  const scriptText = (sc) => [sc.title, sc.onScreenHook && "ON SCREEN: " + sc.onScreenHook, sc.spokenHook, ...(sc.beats || []).map((b) => [b.time, b.say, b.onScreen && "(on screen: " + b.onScreen + ")"].filter(Boolean).join("  ")), sc.caption && "CAPTION: " + sc.caption].filter(Boolean).join("\n\n");
+  const sayText = (sc) => [sc.spokenHook, ...(sc.beats || []).map((b) => b.say)].filter(Boolean).join("\n\n");
+  const SCRIPT_SHAPE = '{"title":string,"onScreenHook":string,"spokenHook":string,"beats":[{"time":"0:03","say":string,"onScreen":string,"shot":string}],"caption":string,"why":string}';
+  async function writeScript(extra) {
+    const c = CREATORS[creatorIx], t = c.top[structIx];
+    ctl = new AbortController();
+    $("write").disabled = true; $("regen").disabled = true; $("revise").disabled = true;
+    $("scriptStatus").textContent = "Writing… usually under a minute.";
+    const ask = extra ? [...scriptTurns, { role: "user", content: extra + "\nReply with only the full revised script as JSON in the same shape." }] : [{ role: "user", content: [
+      "Write an original Instagram Reel script for Align's founder to film, borrowing only the STRUCTURE of a post that did well for another creator.",
+      "The creator's post structure (their words are deliberately not included; never imitate any creator's lines): " + JSON.stringify(t),
+      `That creator overall: ${c.name}, formats that work for them: ${JSON.stringify(c.formats.slice(0, 5))}`,
+      "Match its length, pacing (beats and words per second), hook style and whether the hook is on screen and spoken.",
+      voiceText(),
+      "Put anything you can't know (a personal story, a stat, a name, a date) in [square brackets] for the founder to fill in. No invented numbers or user stories.",
+      "Reply with ONLY one JSON object: " + SCRIPT_SHAPE,
+    ].join("\n\n") }];
+    try {
+      const sc = await sample.json(ask, { signal: ctl.signal, cache: false });
+      script = sc; scriptTurns = [...ask, { role: "assistant", content: JSON.stringify(sc) }];
+      renderScript(sc); $("scriptStatus").textContent = "";
+    } catch (e) { if (!e || e.code !== "cancelled") $("scriptStatus").textContent = fail(e); }
+    finally { $("write").disabled = structIx === null || !sample; $("regen").disabled = false; $("revise").disabled = false; }
+  }
+  $("write").onclick = () => writeScript(null);
+  $("regen").onclick = () => { if (structIx === null) return; scriptTurns = []; writeScript(null); };
+  $("revise").onclick = () => { const n = $("notes").value.trim(); if (!n || !scriptTurns.length) return; $("notes").value = ""; writeScript("Revise it: " + n); };
+  $("copyScript").onclick = async () => { if (!script) return; try { await navigator.clipboard.writeText(scriptText(script)); $("saveStatus").textContent = "Copied."; } catch { $("saveStatus").textContent = "Couldn't copy here. Select the script and copy it."; } };
+  $("saveScript").onclick = async () => {
+    if (!script || !db) { $("saveStatus").textContent = "Saving needs this page open on claude.ai or in the Claude app."; return; }
+    try { await db.collection("scripts").add({ ...script, from: CREATORS[creatorIx].name, structure: CREATORS[creatorIx].top[structIx], savedAt: new Date().toISOString() }); $("saveStatus").textContent = "Saved."; }
+    catch (e) { $("saveStatus").textContent = e && e.code === "not_granted" ? "Only the page's owner can save scripts." : "Couldn't save. Try again."; }
+  };
+  // Teleprompter: the words to say, large, scrolling at the chosen speed.
+  let teleTimer = null;
+  const openTele = (sc) => { $("teleText").textContent = sayText(sc); $("tele").hidden = false; $("teleText").scrollTop = 0; $("teleGo").textContent = "Start"; };
+  const stopTele = () => { if (teleTimer) cancelAnimationFrame(teleTimer); teleTimer = null; $("teleGo").textContent = "Start"; };
+  $("teleBtn").onclick = () => script && openTele(script);
+  $("teleClose").onclick = () => { stopTele(); $("tele").hidden = true; };
+  $("teleGo").onclick = () => {
+    if (teleTimer) return stopTele();
+    $("teleGo").textContent = "Pause";
+    let last = performance.now();
+    const step = (t) => { const dt = (t - last) / 1000; last = t; $("teleText").scrollTop += Number($("teleSpeed").value) * dt; teleTimer = requestAnimationFrame(step); };
+    teleTimer = requestAnimationFrame(step);
+  };
+  function renderSaved(docs) {
+    const items = docs.map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => String(b.savedAt).localeCompare(String(a.savedAt)));
+    $("savedScripts").replaceChildren(...(items.length ? items.slice(0, 50).map((i) => {
+      const row = el("div", "row");
+      const open = el("button", "btn ghost", i.title || "Untitled"); open.type = "button"; open.onclick = () => {
+        // A saved script has no live conversation: Revise starts from its text; Regenerate needs a post picked.
+        script = i; scriptTurns = [{ role: "user", content: "Here is an Align Reel script (JSON). " + voiceText() }, { role: "assistant", content: JSON.stringify(i) }];
+        renderScript(i); $("regen").hidden = structIx === null; $("scriptPanel").scrollIntoView({ behavior: "smooth" });
+      };
+      const tele = el("button", "btn ghost", "Teleprompter"); tele.type = "button"; tele.onclick = () => openTele(i);
+      row.append(open, tele, el("span", "tag", "from " + (i.from || "?")), el("span", "small muted", new Date(i.savedAt).toLocaleDateString()));
+      return row;
+    }) : [el("p", "muted small", "No saved scripts yet.")]));
+  }
+  // A link from the app's Research page can open a creator and post here: #script-<creator>-<post>.
+  // Keys, not positions, so a link from the app still finds the right creator and post after the list changes.
+  const m = location.hash.match(/^#script-([0-9a-f]+)(?:-([0-9a-f]+))?$/);
+  if (m) {
+    const ci = CREATORS.findIndex((c) => c.key === m[1]);
+    if (ci >= 0) {
+      creatorIx = ci;
+      const pi = m[2] ? CREATORS[ci].top.findIndex((t) => t.key === m[2]) : -1;
+      structIx = pi >= 0 ? pi : null;
+      setTimeout(() => $("scriptPanel").scrollIntoView(), 50);
+    }
+  }
+  renderCreators();
   render();
   $("status").textContent = "Connecting to Claude…";
   const claude = window.claude;
@@ -356,7 +526,7 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
   claude.use("sample").then((s) => {
     sample = s;
     if (!s) { $("ask").hidden = true; $("status").textContent = "Claude ideas aren't available in this view."; return; }
-    $("status").textContent = ""; render();
+    $("status").textContent = ""; render(); renderCreators();
   });
   claude.use("db").then((d) => {
     db = d;
@@ -365,6 +535,7 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
     let settled = false;
     const t = setTimeout(() => { if (!settled) $("queue").replaceChildren(el("p", "muted small", "The production queue is taking a while to load.")); }, 10000);
     d.collection("production").onSnapshot((snap) => { settled = true; clearTimeout(t); renderQueue(snap.docs); }, () => { settled = true; clearTimeout(t); $("queue").replaceChildren(el("p", "muted small", "Couldn't load the production queue.")); });
+    d.collection("scripts").onSnapshot((snap) => renderSaved(snap.docs), () => $("savedScripts").replaceChildren(el("p", "muted small", "Couldn't load saved scripts.")));
   });
 })();
 </script>

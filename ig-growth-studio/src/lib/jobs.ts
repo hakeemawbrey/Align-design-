@@ -1,5 +1,6 @@
 import { type Account, type DB, getSetting, listAccountDays, saveAccountDay, hasSnapshot, listAccounts, markVideoChecked, markVideoGone, saveMediaSnapshots, saveSnapshot, setPageName, setSetting, videosDueForRefresh } from "./db";
 import { saveDailyRoundIfDue } from "./analysisRounds";
+import { researchTick } from "./researchJobs";
 import { type FbRunResult, publishFacebookDue } from "./facebook";
 import { GraphClient, GraphError } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
@@ -39,6 +40,14 @@ export async function runScheduledWork(
     }
   }
   await saveAccountDaysIfDue(db, now);
+  // Creator studies (Research page) run from the local worker only: they need this Mac's browser and tools.
+  if (source === "worker") {
+    try {
+      await researchTick(db, now);
+    } catch (err) {
+      console.error("research:", err instanceof Error ? err.message : err);
+    }
+  }
   try {
     await saveDailyRoundIfDue(db, now);
   } catch (err) {
