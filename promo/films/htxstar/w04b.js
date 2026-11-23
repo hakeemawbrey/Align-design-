@@ -128,13 +128,13 @@ const hst096 = story({
 })
 
 // ── hst097 · Sag said it's 20 minutes away (Houston is an hour from Houston)
-const drive = (x, t, sign, sub, k = 1) => { sky(x, '#8fd0ff', '#e8f6ff', FLOOR - 160); freeway(x, FLOOR - 160, 600, 4, t * 380); if (sign) overheadSign(x, 540, 760, sign, sub, k) }
+const drive = (x, t, sign, sub, k = 1) => { sky(x, '#8fd0ff', '#e8f6ff', FLOOR - 160); skyline(x, FLOOR - 150, t, { col: '#5a6f9a', lit: '#ffe39a', alpha: 0.45 }); freeway(x, FLOOR - 160, 600, 4, t * 380); if (sign) overheadSign(x, 540, 760, sign, sub, k) }
 const sagCar = (x, t, lt) => car(x, 540, FLOOR + 120, '#f2b544', { open: true })
 const hst097 = story({
   hook: 'Do not ask Sag | how far it is', key: 'A',
   close: 'Only 20 minutes away. Jan 9.', stars: ['sagittarius', 'cancer', 'leo', 'pisces'],
   scenes: [
-    { dur: 3.6, set: (x, t) => drive(x, t), front: (x, t, lt) => sagCar(x, t, lt), cast: { sagittarius: [[0, 520, FLOOR + 5, 210]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.02, 0.35, 0.7] },
+    { dur: 3.6, set: (x, t) => drive(x, t, 'THE PLACE', '20 MIN (SAG SAYS)'), front: (x, t, lt) => sagCar(x, t, lt), cast: { sagittarius: [[0, 520, FLOOR + 5, 210]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.02, 0.35, 0.7] },
       lines: [[0.3, 1.5, 'sagittarius', 'you\'ll love it. | 20 minutes.'], [2.0, 1.4, 'sagittarius', 'tops.']] },
     { dur: 3.6, set: (x, t, lt) => drive(x, t, 'SUGAR LAND', 'NEXT EXIT', Kp(lt, 0.1)), front: (x, t, lt) => sagCar(x, t, lt), cast: { sagittarius: [[0, 520, FLOOR + 5, 210]] }, mood: { sagittarius: 'happy' },
       stick: [[0.2, 1.4, 'MINUTE 35', GOLD]], lines: [[1.8, 1.6, 'sagittarius', 'almost | there!']] },
@@ -155,7 +155,7 @@ const hst097 = story({
 })
 
 // ── hst098 · Gemini said yes to everything this Saturday
-const sched = (x, lt, k = 1) => { if (k <= 0) return; x.save(); x.translate(540, 740); x.scale(k, k); box(x, -340, -300, 680, 600, BONE, 8); box(x, -340, -300, 680, 80, '#c9a6ff', 0); txt(x, 'GEMINI · SATURDAY', 0, -258, { size: 36, col: INK, font: MONO, weight: 700 }); ['6AM  RUN CLUB', '10AM BRUNCH', '2PM  PICKLEBALL', '6PM  CRAWFISH', '9PM  KARAOKE', '11PM A DATE (?)'].forEach((s, i) => txt(x, s, -290, -170 + i * 80, { size: 40, col: INK, font: MONO, weight: 700, align: 'left' })); x.restore() }
+const sched = (x, lt, k = 1) => { if (k <= 0) return; x.save(); x.translate(500, 860); x.scale(k * 0.85, k * 0.85); box(x, -340, -300, 680, 600, BONE, 8); box(x, -340, -300, 680, 80, '#c9a6ff', 0); txt(x, 'GEMINI · SATURDAY', 0, -258, { size: 36, col: INK, font: MONO, weight: 700 }); ['6AM  RUN CLUB', '10AM BRUNCH', '2PM  PICKLEBALL', '6PM  CRAWFISH', '9PM  KARAOKE', '11PM A DATE (?)'].forEach((s, i) => txt(x, s, -290, -170 + i * 80, { size: 40, col: INK, font: MONO, weight: 700, align: 'left' })); x.restore() }
 const tired = ['sparkle', 'happy', 'neutral', 'sleepy']
 const hst098 = story({
   hook: 'Everything Gemini | said yes to | on Saturday', key: 'E',
