@@ -209,7 +209,7 @@ const hst099 = story({
       lines: [[1.4, 2.2, 'cancer', 'here. | I knew.']], sfx: [SFX.ding(1.4)] },
     { dur: 3.8, set: (x, t, lt) => { cold(x, t, lt, 1); hearts(x, t, 540, 900, t - lt + 1.8, { n: 8 }) }, cast: { cancer: [[0, 480, 1150, 250]] }, mood: { cancer: lt => lt > 1.8 ? 'wink' : 'happy' }, props: { cancer: 'sweater' },
       lines: [[0.2, 1.5, YOU(), 'wait. what | about you?'], [1.9, 1.7, 'cancer', 'I brought | two.']], sfx: [SFX.boing(1.9)] },
-    { dur: 3.4, set: (x, t, lt) => { cold(x, t, lt, 1); soupPot(x, 640, 1200, t) }, cast: { cancer: [[0, 300, 1150, 250]], pisces: [[0, 900, 1420, 140]] }, mood: { cancer: 'happy', pisces: 'heart' }, props: { cancer: 'sweater', pisces: 'scarf' },
+    { dur: 3.4, set: (x, t, lt) => { cold(x, t, lt, 1); soupPot(x, 640, 1200, t) }, cast: { cancer: [[0, 300, 1150, 250]], pisces: [[0, 900, 1150, 150]] }, mood: { cancer: 'happy', pisces: 'heart' }, props: { cancer: 'sweater', pisces: 'scarf' },
       lines: [[0.3, 2.6, 'cancer', 'also soup. | always soup.']] },
   ],
   lesson: { lines: ['Notice what', 'they need', 'before they ask.'], cast: { cancer: [[0, 540, 1370, 200]] }, mood: { cancer: 'heart' }, props: { cancer: 'sweater' }, line: ['cancer', 'did you | eat?'] },

@@ -11,7 +11,7 @@ const AUNTS = { cancer: 'glasses', taurus: 'glasses' }
 // ── hst100 · Libra washed the car for you. Then: pollen.
 const drive = (x, t) => { sky(x, '#8fd0ff', '#fff4d8', FLOOR + 60); porch(x, t); x.fillStyle = '#9aa0a8'; x.fillRect(0, 1360, 1080, 560); x.fillStyle = INK; x.fillRect(0, 1354, 1080, 8) }
 const pollen = (x, t, k) => { for (let i = 0; i < Math.round(90 * k); i++) { const ph = (t * 0.35 + i * 0.137) % 1; x.fillStyle = 'rgba(240,210,60,0.85)'; x.fillRect((i * 97 + Math.sin(t * 2 + i) * 40) % 1080, ph * 1500, 9, 9) } }
-const yellowCar = (x, cx, cy, k, t, flip = false, base = '#5ec8ff') => { car(x, cx, cy, base, { s: 1.5, flip }); if (k > 0) { x.save(); x.globalAlpha = 0.85 * clamp(k); x.fillStyle = '#e8c83a'; x.fillRect(cx - 180, cy - 130, 360, 40); x.fillRect(cx - 186, cy - 62, 372, 30); for (let i = 0; i < 30; i++) x.fillRect(cx - 170 + (i * 37) % 340, cy - 120 + (i * 23) % 90, 8, 8); x.restore() } else { sparkles(x, t, cx, cy - 60, t - 0.2, 6, 200, 7) } }
+const yellowCar = (x, cx, cy, k, t, flip = false, base = '#5ec8ff', sc = 1) => { if (sc !== 1) { x.save(); x.translate(cx, cy); x.scale(sc, sc); yellowCar(x, 0, 0, k, t, flip, base); x.restore(); return } car(x, cx, cy, base, { s: 1.5, flip }); if (k > 0) { x.save(); x.globalAlpha = 0.85 * clamp(k); x.fillStyle = '#e8c83a'; x.fillRect(cx - 180, cy - 130, 360, 40); x.fillRect(cx - 186, cy - 62, 372, 30); for (let i = 0; i < 30; i++) x.fillRect(cx - 170 + (i * 37) % 340, cy - 120 + (i * 23) % 90, 8, 8); x.restore() } else { sparkles(x, t, cx, cy - 60, t - 0.2, 6, 200, 7) } }
 const hst100 = story({
   hook: 'Pollen season. | Libra just | washed the car.', key: 'G',
   close: 'Pollen and all. Jan 9.', stars: ['libra', 'taurus', 'pisces', 'gemini'],
@@ -27,8 +27,8 @@ const hst100 = story({
       stick: [[0.1, 1.0, 'WASH #2', BONE]], lines: [[2.0, 1.4, 'libra', 'AGAIN?!']], sfx: [SFX.thud(2.0)] },
     { dur: 3.4, set: (x, t, lt) => { drive(x, t); pollen(x, t, 1) }, front: (x, t) => yellowCar(x, 620, 1290, 1, t), cast: { libra: [[0, 240, 1180, 240]], pisces: [[0, 900, 1060, 150]] }, mood: { libra: 'squint', pisces: 'wide' }, hops: { libra: [0.8] },
       lines: [[0.8, 1.2, 'libra', '*ACHOO*'], [2.1, 1.2, 'pisces', '*sniff* | allergies.']] },
-    { dur: 3.8, set: (x, t, lt) => { drive(x, t); pollen(x, t, 0.6) }, front: (x, t, lt) => { yellowCar(x, 620, 1290, 1, t); yellowCar(x, 1500 - clamp(lt / 1.2) * 600, 1560, 1, t, true, '#ff8a3c') },
-      cast: { libra: [[0, 240, 1180, 240]], taurus: [[0, 1500, 1420, 200], [1.2, 900, 1420, 200]] }, mood: { libra: 'wide', taurus: 'happy' },
+    { dur: 3.8, set: (x, t, lt) => { drive(x, t); pollen(x, t, 0.6) }, front: (x, t, lt) => { yellowCar(x, 620, 1290, 1, t); yellowCar(x, 1400 - clamp(lt / 1.2) * 440, 1310, 1, t, true, '#ff8a3c', 0.6) },
+      cast: { libra: [[0, 240, 1180, 240]], taurus: [[0, 1400, 1190, 170], [1.2, 960, 1190, 170]] }, mood: { libra: 'wide', taurus: 'happy' },
       lines: [[1.4, 2.2, 'taurus', 'sorry. my car is | ALSO yellow.']], sfx: [SFX.boing(1.2)] },
     { dur: 3.8, set: (x, t, lt) => { drive(x, t); hearts(x, t, 540, 1000, t - lt + 0.4, { n: 8 }) }, cast: { libra: [[0, 340, 1220, 240]], taurus: [[0, 740, 1220, 240]] }, mood: { libra: 'heart', taurus: 'heart' }, hops: { libra: [0.3, 0.6], taurus: [0.4, 0.7] },
       lines: [[0.3, 1.5, 'taurus', 'we match!'], [2.0, 1.6, 'libra', "honestly? | you're perfect."]], sfx: [SFX.cheer(0.3)] },

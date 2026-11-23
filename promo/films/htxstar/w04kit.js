@@ -111,7 +111,7 @@ export const PROP = {
   tissue: (x, F) => inSprite(x, F, () => { R(x, -2, 22, 8, 6, INK); R(x, -1.4, 22.6, 6.8, 4.8, LAV); R(x, 0, 18.5, 3, 4, '#ffffff') }),
   shades: (x, F) => inSprite(x, F, () => { R(x, 9, 16, 8, 5, INK); R(x, 19.5, 16, 8, 5, INK); R(x, 16, 16.5, 4, 1.2, INK) }),
   beret: (x, F) => inSprite(x, F, () => { x.fillStyle = INK; x.beginPath(); x.ellipse(17, 5, 9, 3.6, -0.2, 0, Math.PI * 2); x.fill(); x.fillStyle = '#c0304a'; x.beginPath(); x.ellipse(17, 5, 8, 2.8, -0.2, 0, Math.PI * 2); x.fill(); R(x, 17, 0.6, 1, 2, INK) }),
-  sweater: (x, F) => inSprite(x, F, () => { R(x, 7, 24, 22, 8, INK); R(x, 7.6, 24.6, 20.8, 6.8, '#6b8fd6'); for (let k = 0; k < 5; k++) R(x, 9 + k * 4, 26.5, 2, 2, BONE) }),
+  sweater: (x, F) => inSprite(x, F, () => { R(x, 27, 19, 12, 9, INK); R(x, 27.7, 19.7, 10.6, 7.6, '#6b8fd6'); R(x, 27.7, 23, 10.6, 1, '#4a6ab0'); for (let k = 0; k < 3; k++) R(x, 29 + k * 3.2, 21, 1.2, 1.2, BONE); R(x, 35, 26, 3.4, 7, INK); R(x, 35.6, 26.4, 2.2, 6.2, '#6b8fd6') }),
   headphones: (x, F) => inSprite(x, F, () => { x.strokeStyle = INK; x.lineWidth = 2; x.beginPath(); x.arc(18, 17, 14.5, Math.PI * 1.08, Math.PI * 1.92); x.stroke(); for (const i of [2.5, 30]) { R(x, i - 0.6, 12.4, 4.7, 7.2, INK); R(x, i, 13, 3.5, 6, MINT) } }),
 }
 
