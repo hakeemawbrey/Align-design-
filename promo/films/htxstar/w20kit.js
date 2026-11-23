@@ -56,11 +56,14 @@ export function neon(x, cx, cy, s, t, col = '#ff5ec8', size = 64) { const fl = 0
 export function tortilla(x, cx, cy, s = 1, corn = false) { x.save(); x.translate(cx, cy); x.scale(s, s); circ(x, 0, 0, 70, corn ? '#f2c75c' : '#f4e1b0'); for (let k = 0; k < 7; k++) { x.fillStyle = corn ? '#c9983a' : '#d9b77a'; x.fillRect(-40 + (k * 37) % 80, -40 + (k * 53) % 80, 10, 10) } x.restore() }
 export function crawfish(x, cx, cy, s = 1, rot = 0) {
   x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(s, s)
-  const R = '#e0402a'
-  for (let k = 0; k < 4; k++) box(x, -60 + k * 30, -16, 30, 32, k % 2 ? R : '#c83420', 4)
-  box(x, 60, -22, 46, 44, R, 4); box(x, -94, -12, 30, 24, '#c83420', 4)
-  for (const sy of [-1, 1]) { x.strokeStyle = INK; x.lineWidth = 6; x.beginPath(); x.moveTo(100, sy * 14); x.lineTo(140, sy * 40); x.stroke(); box(x, 136, sy * 40 - 14, 40, 28, R, 4) }
-  x.fillStyle = INK; x.fillRect(92, -12, 6, 6); x.restore()
+  const R = '#e8462a', D = '#b8301c'
+  x.strokeStyle = INK; x.lineWidth = 4; x.beginPath(); x.moveTo(90, -16); x.quadraticCurveTo(150, -70, 200, -60); x.moveTo(90, 16); x.quadraticCurveTo(150, 70, 200, 60); x.stroke()   // antennae
+  for (let k = 0; k < 4; k++) { x.strokeStyle = INK; x.lineWidth = 5; x.beginPath(); x.moveTo(10 + k * 16, 24); x.lineTo(0 + k * 16, 44); x.stroke() }   // legs
+  x.fillStyle = INK; x.beginPath(); x.moveTo(-150, -34); x.lineTo(-112, 0); x.lineTo(-150, 34); x.fill(); x.fillStyle = D; x.beginPath(); x.moveTo(-142, -24); x.lineTo(-118, 0); x.lineTo(-142, 24); x.fill()   // tail fan
+  for (let k = 0; k < 4; k++) { const h = 30 + k * 6; box(x, -118 + k * 32, -h / 2, 32, h, k % 2 ? R : D, 4) }   // tail segments
+  box(x, 10, -30, 84, 60, R, 5); x.fillStyle = D; x.fillRect(16, -6, 72, 10)   // head
+  for (const sy of [-1, 1]) { x.strokeStyle = INK; x.lineWidth = 9; x.beginPath(); x.moveTo(84, sy * 22); x.lineTo(124, sy * 48); x.stroke(); box(x, 120, sy * 52 - 18, 54, 36, R, 5); x.fillStyle = INK; x.fillRect(150, sy * 52 - 4, 26, 8) }   // claws
+  x.fillStyle = INK; x.fillRect(80, -20, 8, 8); x.fillRect(80, 12, 8, 8); x.restore()
 }
 export function corn(x, cx, cy, s = 1) { x.save(); x.translate(cx, cy); x.scale(s, s); box(x, -12, 60, 24, 60, '#d9c7a8', 4); x.fillStyle = INK; x.beginPath(); x.ellipse(0, 0, 40, 80, 0, 0, TAU); x.fill(); x.fillStyle = '#ffd36b'; x.beginPath(); x.ellipse(0, 0, 34, 74, 0, 0, TAU); x.fill(); for (let r = -60; r < 60; r += 16) for (let c = -20; c <= 20; c += 16) { x.fillStyle = '#f2b544'; x.fillRect(c - 5, r, 10, 10) } x.restore() }
 export function potato(x, cx, cy, s = 1) { x.save(); x.translate(cx, cy); x.scale(s, s); x.fillStyle = INK; x.beginPath(); x.ellipse(0, 0, 40, 28, 0, 0, TAU); x.fill(); x.fillStyle = '#c9a06a'; x.beginPath(); x.ellipse(0, 0, 34, 22, 0, 0, TAU); x.fill(); x.restore() }
