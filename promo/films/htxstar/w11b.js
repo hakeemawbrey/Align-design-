@@ -393,10 +393,10 @@ const e284 = T({
 
 // ── hst285 · Houston needs a hero. You need a plus-one. (superhero)
 const e285 = T({
-  hook: 'Houston needs a hero. | You need a plus-one.',
+  hook: 'Every hero needs a | plus-one. Got yours?',
   end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring your plus-one. Jan 9.', stars: ['leo', 'virgo', 'pisces', 'aries'] }),
   scenes: [
-    { dur: 3.6, set: (x, t) => { duskSky(x, '#05040c', '#1a1338', '#3a1d52'); skyline(x, FLOOR + 260, t); box(x, 300, 1260, 480, 700, '#1a1338', 6) }, front: cin((x, t, lt, P) => { cape(x, P, 'leo', t); flare(x, 820, 380, t, 0.35) }),
+    { dur: 3.6, set: (x, t) => { duskSky(x, '#05040c', '#1a1338', '#3a1d52'); skyline(x, FLOOR + 260, t); box(x, 300, 1260, 480, 700, '#1a1338', 6) }, back: (x, t, lt, P) => cape(x, P, 'leo', t), front: cin((x, t, lt, P) => { flare(x, 820, 380, t, 0.35) }),
       cast: { leo: [[0, 540, 1110, 260]] }, mood: { leo: 'squint' }, hops: { leo: [0.05, 0.5] },
       lines: [[0.4, 1.4, 'leo', "you're going | alone?"], [2.1, 1.4, 'leo', 'not | anymore.']] },
     card(['THIS JANUARY']),
@@ -404,16 +404,16 @@ const e285 = T({
       cast: { leo: [[0, 540, Y - 60, 240]] }, mood: { leo: lt => lt > 1.4 ? 'wide' : 'happy' }, hops: { leo: [1.4] },
       lines: [[1.6, 1.6, 'leo', 'ow. | …I feel | different.']] },
     { dur: 3.4, set: (x, t, lt) => { night(x, t, '#2a2a3a'); streetSign(x, 820, 560, 'MONTROSE', { k: 0.8 }); const g = 0.4 + 0.4 * Math.sin(t * 6); x.fillStyle = `rgba(242,199,92,${g.toFixed(2)})`; x.fillRect(360, FLOOR + 80, 300, 130) },
-      front: cin((x, t, lt, P) => { car(x, -100 + 610 * ease.outCubic(clamp(lt / 1.4)), FLOOR + 140, '#e05a3a'); cape(x, P, 'leo', t) }), cast: { leo: [[0, 860, Y - 120, 200]] }, mood: { leo: 'sparkle' },
+      front: cin((x, t, lt, P) => { car(x, -100 + 610 * ease.outCubic(clamp(lt / 1.4)), FLOOR + 140, '#e05a3a'); }), cast: { leo: [[0, 860, Y - 120, 200]] }, mood: { leo: 'sparkle' },
       lines: [[1.6, 1.6, 'leo', 'parking. | first try.']], stick: [[0.2, 1.4, 'POWER: PARKING', GOLD]] },
-    { dur: 3.4, set: (x, t) => lobby(x, t), front: cin((x, t, lt, P) => { cape(x, P, 'leo', t); const [cx, cy, s] = P.at('virgo'); if (lt > 1.2) box(x, cx - s * 0.4, cy + s * 0.2, s * 0.8, s * 0.22, '#5a7ab0', 5) }),
+    { dur: 3.4, set: (x, t) => lobby(x, t), back: (x, t, lt, P) => cape(x, P, 'leo', t), front: cin((x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); if (lt > 1.2) box(x, cx - s * 0.4, cy + s * 0.2, s * 0.8, s * 0.22, '#5a7ab0', 5) }),
       cast: { leo: [[0, 300, Y, 220]], virgo: [[0, 780, Y, 220]] }, mood: { leo: 'sparkle', virgo: lt => lt > 1.2 ? 'heart' : 'wide' },
       lines: [[0.3, 1.2, 'virgo', 'so | cold…'], [1.6, 1.6, 'leo', 'spare | sweater.']], stick: [[0.2, 1.2, 'POWER: SWEATER', SKYB]] },
     { dur: 3.4, set: (x, t) => { skyline(x, FLOOR - 150, t, { alpha: 0.6 }); freeway(x, FLOOR - 160, 600, 3, t * 400); overheadSign(x, 540, 640, 'TEXAS U-TURN', 'NEXT LEFT', 1) },
       front: cin((x, t, lt) => car(x, 540, FLOOR + 120, '#e05a3a', { open: true, flip: lt > 1.4 })), cast: { leo: [[0, 520, FLOOR + 5, 190]] }, mood: { leo: 'sparkle' },
       lines: [[1.5, 1.6, 'leo', 'U-turn. | flawless.']], stick: [[0.2, 1.2, 'POWER: THE U-TURN', PINK]] },
     card(['EVERY HERO', 'NEEDS A PLUS-ONE'], { size: 84, dur: 2.4 }),
-    { dur: 3.8, set: (x, t, lt) => { partyRoom(x, t); if (lt > 1.0) sparkles(x, t, 540, 1100, t - lt + 1.0, 16, 380, 3) }, front: cin((x, t, lt, P) => cape(x, P, 'leo', t)),
+    { dur: 3.8, set: (x, t, lt) => { partyRoom(x, t); if (lt > 1.0) sparkles(x, t, 540, 1100, t - lt + 1.0, 16, 380, 3) }, back: (x, t, lt, P) => cape(x, P, 'leo', t), front: cin(),
       cast: { leo: [[0, 540, 300, 260], [1.0, 540, Y - 40, 260]], pisces: [[0, 160, Y, 170]], aries: [[0, 920, Y, 170]] }, mood: { leo: 'heart', pisces: 'heart', aries: 'sparkle' }, hops: { pisces: [1.2, 1.8], aries: [1.3, 1.9] },
       lines: [[1.2, 2.2, 'leo', "I'm your | plus-one."]] },
     rate('RATED +1', 'for Plus-one Guaranteed'),
