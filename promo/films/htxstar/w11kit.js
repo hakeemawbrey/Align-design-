@@ -3,7 +3,7 @@
 import { clamp, ease, prog } from '../../src/lib.js'
 import { label, sparkles, pop01, signChar, GOLD, BONE, PINK, INK, INTER, MONO, SERIF, MINT, SKYB, LAV } from '../signs3kit.js'
 import { box, txt, FLOOR, outside } from '../starrace/ep.js'
-import { skyline, BRAKE, HGREEN } from './kit.js'
+import { skyline, heatSun, BRAKE, HGREEN } from './kit.js'
 
 export const Y = 1255
 export const BADGE = { text: 'HOU BETA · JAN 9', x: 230, y: 150 }
@@ -166,8 +166,9 @@ export function partyRoom(x, t, { wall = '#1a1033' } = {}) {
   x.globalAlpha = 1; x.fillStyle = '#2a1a40'; x.fillRect(0, FLOOR + 60, 1080, 600); for (let k = 0; k < 8; k++) { x.fillStyle = k % 2 ? '#3a2a55' : '#2a1a40'; x.fillRect(k * 135, FLOOR + 60, 135, 600) }
 }
 /** a cold office lobby: AC vents blowing snowflakes */
-export function lobby(x, t) {
+export function lobby(x, t, view = false) {
   x.fillStyle = '#c9d6e4'; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#9fb0c4'; x.fillRect(0, FLOOR + 60, 1080, 600)
+  if (view) { box(x, 120, 560, 840, 560, '#ffb347', 10); x.save(); x.beginPath(); x.rect(120, 560, 840, 560); x.clip(); x.translate(120, 560); x.scale(0.78, 0.78); duskSky(x, '#ff8a3c', '#ffb347', '#ffe08a', 720); skyline(x, 720, t); x.restore(); heatSun(x, 800, 680, t, 50); x.fillStyle = INK; x.fillRect(536, 560, 8, 560); mono(x, 'OUTSIDE', 540, 530, 30, '#5a6a80') }
   for (const vx of [240, 840]) { box(x, vx - 110, 300, 220, 60, '#e8eef4', 5); for (let k = 0; k < 4; k++) { x.fillStyle = INK; x.fillRect(vx - 90, 312 + k * 12, 180, 4) } }
   for (let k = 0; k < 40; k++) { const ph = (t * 0.35 + k * 0.05) % 1; const vx = k % 2 ? 240 : 840; x.fillStyle = '#ffffff'; x.fillRect(vx - 100 + (k * 37) % 200 + Math.sin(t * 3 + k) * 20, 370 + ph * 900, 10, 10) }
 }
