@@ -87,7 +87,7 @@ const hst108 = story({
 // ── hst109 · Sag challenged the aunties to pickleball
 const score = (x, a, b) => { box(x, 300, 300, 480, 110, INK, 6); txt(x, `AUNTIES ${a} · SAG ${b}`, 540, 356, { size: 44, col: GOLD, font: MONO, weight: 700 }) }
 const ball = (x, lt, a, d = 0.6, from = [320, 1150], to = [760, 900]) => { const p = clamp((lt - a) / d); if (p <= 0 || p >= 1) return; const bx = from[0] + (to[0] - from[0]) * p, by = from[1] + (to[1] - from[1]) * p - Math.sin(Math.PI * p) * 200; x.fillStyle = INK; x.beginPath(); x.arc(bx, by, 20, 0, Math.PI * 2); x.fill(); x.fillStyle = '#e8f04a'; x.beginPath(); x.arc(bx, by, 15, 0, Math.PI * 2); x.fill() }
-const SIDES = (o = {}) => ({ sagittarius: [[0, 320, 1450, 220]], cancer: [[0, 640, 960, 190]], taurus: [[0, 860, 960, 190]], ...o })
+const SIDES = (o = {}) => ({ sagittarius: [[0, 320, 1360, 210]], cancer: [[0, 640, 960, 190]], taurus: [[0, 860, 960, 190]], ...o })
 const PADS = { sagittarius: 'paddle', cancer: ['glasses', 'paddle', 'sweatband'], taurus: ['glasses', 'paddle'] }
 const hst109 = story({
   hook: 'Sag vs. | the aunties | at pickleball', key: 'E',
@@ -107,7 +107,7 @@ const hst109 = story({
       lines: [[1.5, 2.2, 'sagittarius', "okay. you're | SO good."]], sfx: [SFX.ding(1.5)] },
     { dur: 3.8, set: (x, t, lt) => { court(x, t); hearts(x, t, 640, 900, t - lt + 0.8, { n: 8 }) }, cast: SIDES({ sagittarius: [[0, 500, 1260, 220]] }), mood: { sagittarius: 'heart', cancer: 'happy', taurus: 'sparkle' }, props: PADS,
       lines: [[0.3, 1.5, 'taurus', 'want lessons? | Saturdays.'], [2.0, 1.6, 'sagittarius', 'YES | please.']] },
-    { dur: 3.4, set: (x, t) => court(x, t), cast: { sagittarius: [[0, 540, 1250, 260]], pisces: [[0, 880, 1420, 140]] }, mood: { sagittarius: 'wink', pisces: 'heart' }, props: { sagittarius: ['glasses', 'paddle'] },
+    { dur: 3.4, set: (x, t) => court(x, t), cast: { sagittarius: [[0, 540, 1250, 260]], pisces: [[0, 880, 1310, 140]] }, mood: { sagittarius: 'wink', pisces: 'heart' }, props: { sagittarius: ['glasses', 'paddle'] },
       lines: [[0.3, 2.6, 'sagittarius', "I'm an | auntie now."]], sfx: [SFX.boing(0.3)] },
   ],
   lesson: { lines: ['Be a good loser.', 'Honestly?', "It's attractive."], cast: { sagittarius: [[0, 330, 1370, 190]], cancer: [[0, 750, 1370, 190]] }, mood: { sagittarius: 'happy', cancer: 'heart' }, props: { cancer: 'glasses', sagittarius: 'glasses' }, line: ['cancer', 'good game, | baby.'] },
