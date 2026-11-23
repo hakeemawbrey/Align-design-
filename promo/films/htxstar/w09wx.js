@@ -313,4 +313,237 @@ const brakes = (() => {
   }
 })()
 
-export const WX = { hst224: hair, hst225: seasons, hst226: ac, hst227: lovebugs, hst228: popup, hst229: brakes }
+// ── hst230 · Today's humidity, by your sign
+const humid = (() => {
+  const th = THEME.mint, S = 'HUMIDITY: YES  ·  SHADE: PRECIOUS  ·  ICED TEA: RECOMMENDED  ·  HUGS: STILL ALLOWED  ·  '
+  const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'fog', now: '98%', ...o })
+  const duo = (a, b, la, lb, va, vb, bg = (x, t) => street(x, t), head = 'BY SIGN') => ({
+    dur: 3.4, set: cut((x, t, lt) => { bg(x, t, lt); meter(x, 290, 1340, 420, clamp(lt / 1.2) * va, { lab: a.toUpperCase(), col: '#5ec8ff' }); meter(x, 790, 1340, 420, clamp(lt / 1.2) * vb, { lab: b.toUpperCase(), col: '#7dffb0' }) }, head, { th, strip: S, icon: 'fog', now: '98%' }),
+    front: (x, t, lt, P) => { for (const id of [a, b]) { const [cx, cy, s] = P.at(id); sweatDrops(x, cx + s * 0.3, cy - s * 0.35, t, 2) } },
+    cast: { [a]: [[0, 290, 1130, 220]], [b]: [[0, 790, 1130, 220]] }, mood: { [a]: 'squint', [b]: 'squint' },
+    lines: [[0.1, 1.5, a, la], [1.7, 1.5, b, lb]] })
+  return {
+    hook: "Today's humidity, | by your sign", badge: BADGE, cues: [...STING], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Hugs still count. Jan 9.', stars: ['taurus', 'cancer', 'aquarius', 'pisces'] }),
+    scenes: [
+      { dur: 3.0, set: W('HUMIDITY BY SIGN', { map: { tint: 'rgba(125,255,176,0.16)' }, draw: (x, t) => bigNum(x, '98%', 460, 780, 1, MINT, 170) }), front: (x, t, lt, P) => pointer(x, P, 'taurus', 470, 790),
+        cast: { taurus: [[0, ...FC]] }, mood: { taurus: 'squint' }, hops: { taurus: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'taurus', 'your humidity, | by your sign.']] },
+      { ...duo('aries', 'leo', 'ran here. | why.', 'glowing. | not sweating.', 1, 0.9, (x, t) => bayou(x, t)), mood: { aries: 'wide', leo: 'wink' } },
+      duo('virgo', 'gemini', 'I brought | a towel.', 'changed | twice.', 0.6, 0.95, (x, t) => street(x, t)),
+      { ...duo('cancer', 'pisces', 'I made you | iced tea.', "it's tears | AND sweat.", 0.7, 1, (x, t) => bungalow(x, t, { col: '#7ab0a0' })), mood: { cancer: 'happy', pisces: 'heart' } },
+      { ...duo('scorpio', 'capricorn', "I don't | sweat.", 'AC set | to 68.', 0.85, 0.3, (x, t) => office(x, t, { cold: 0 })), mood: { scorpio: 'eyeroll', capricorn: 'happy' } },
+      { ...duo('sagittarius', 'aquarius', 'Galveston | trip!', 'I invented | a fan hat.', 0.8, 0.5, (x, t) => beach(x, t)), mood: { sagittarius: 'sparkle', aquarius: 'sparkle' } },
+      { ...duo('libra', 'taurus', 'my hair | gave up.', 'staying | inside.', 1, 0.2, (x, t) => cafe(x, t, { wall: '#5aa0a0', sign: 'ICED TEA' })), mood: { libra: 'wide', taurus: 'happy' } },
+      { dur: 3.2, set: W('RELIEF: THE SHADE', { map: false, draw: (x, t) => { tree(x, 480, 1180, 2.2); x.fillStyle = 'rgba(0,0,0,0.25)'; x.beginPath(); x.ellipse(480, 1190, 300, 40, 0, 0, Math.PI * 2); x.fill() } }),
+        back: (x, t, lt) => { if (lt > 1.4) hearts(x, t, 480, 860, t - lt + 1.4, { n: 6, spread: 200 }) },
+        cast: { cancer: [[0, 380, 1130, 200]], aquarius: [[0, 1250, 1130, 200], [0.8, 590, 1130, 200]] }, mood: { cancer: 'happy', aquarius: lt => lt > 1.4 ? 'heart' : 'squint' }, look: { cancer: [1, 0], aquarius: [-1, 0] },
+        lines: [[0.9, 2.1, 'cancer', 'room in | the shade?']] },
+      lesson('taurus', 'sweaty hugs | still count.', th, '98%'),
+      outro('taurus', 'Jan 9. | hugs still count.', th),
+    ],
+  }
+})()
+
+// ── hst231 · Tonight's sunset: bring someone
+const sunset = (() => {
+  const th = THEME.dusk, S = 'SUNSET: 10/10  ·  BEST VIEWS: THE BAYOU, THE PARK LAKE, THE SEAWALL, A GARAGE ROOF  ·  BRING SOMEONE  ·  '
+  const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'sunset', now: '10/10', ...o })
+  const C = (bg, head) => cut(bg, head, { th, strip: S, icon: 'sunset', now: '10/10' })
+  const roof = (x, t) => { const g = x.createLinearGradient(0, 0, 0, 1300); g.addColorStop(0, '#3a1a5a'); g.addColorStop(1, '#ff8a5a'); x.fillStyle = g; x.fillRect(0, 0, 1080, 1920); x.fillStyle = '#ffd36b'; x.beginPath(); x.arc(760, 1060, 120, Math.PI, 0); x.fill(); skyline(x, 1100, t, { alpha: 0.9, col: '#2a1d52' }); box(x, 0, 1160, 1080, 300, '#6a6a7a', 6); for (let k = 0; k < 6; k++) { x.fillStyle = BONE; x.fillRect(60 + k * 180, 1250, 100, 8) } box(x, 0, 1140, 1080, 24, '#8f96a0', 4) }
+  const spots = (lt) => (x, t) => [['bellaire', 'THE PARK LAKE'], ['downtown', 'THE BAYOU'], ['galveston', 'THE SEAWALL'], ['midtown', 'A GARAGE ROOF']].forEach(([n, lab], i) => { const [px, py] = P2M(PL[n]); const k = Kp(lt, 0.2 + i * 0.4); wxIcon(x, 'sunset', px, py, 0.6, t, k); if (k > 0) txt(x, lab, px, py + 50, { size: 24, col: BONE, font: MONO, weight: 700 }) })
+  return {
+    hook: "Tonight's sunset: | bring someone", badge: BADGE, cues: [...STING], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring someone. Jan 9.', stars: ['pisces', 'leo', 'sagittarius', 'cancer'] }),
+    scenes: [
+      { dur: 3.0, set: W('SUNSET OUTLOOK: 10/10', { map: { tint: 'rgba(255,140,90,0.25)' }, draw: (x, t) => wxIcon(x, 'sunset', 470, 800, 2.2, t) }), front: (x, t, lt, P) => pointer(x, P, 'pisces', 470, 800),
+        cast: { pisces: [[0, ...FC]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.05, 0.5, 1.4] },
+        lines: [[0.3, 2.5, 'pisces', "tonight's sunset? | bring someone."]] },
+      { dur: 3.0, set: C((x, t) => bayou(x, t, { dusk: 1 }), 'SPOT 1: THE BAYOU'),
+        cast: { libra: [[0, 330, Y - 30, 230]], aries: [[0, -150, Y - 30, 230], [1.0, 760, Y - 30, 230]] }, mood: { libra: 'happy', aries: 'sparkle' }, look: { libra: [1, 0], aries: [-1, 0] },
+        lines: [[1.1, 1.7, 'aries', 'run club, | then sunset?']] },
+      { dur: 3.2, set: C((x, t) => { park(x, t); x.fillStyle = 'rgba(255,140,90,0.3)'; x.fillRect(0, 0, 1080, FLOOR) }, 'SPOT 2: THE PARK LAKE'), front: (x, t, lt, P) => { const [cx] = P.at('cancer'); paddle(x, cx + 120, 1250, t) },
+        cast: { cancer: [[0, 420, 1150, 190]], taurus: [[0, 600, 1150, 190]] }, mood: { cancer: 'heart', taurus: 'happy' }, look: { cancer: [1, 0], taurus: [-1, 0] },
+        lines: [[0.3, 2.5, 'taurus', 'paddle | slower.']] },
+      { dur: 3.2, set: W('THE BEST VIEWS TONIGHT', { draw: (x, t, lt) => spots(lt)(x, t) }), front: (x, t, lt, P) => pointer(x, P, 'pisces', ...P2M(PL.galveston)),
+        cast: { pisces: [[0, ...FC]] }, mood: { pisces: 'sparkle' },
+        lines: [[0.3, 2.6, 'pisces', 'four spots. | all free.']] },
+      { dur: 3.0, set: C(roof, 'SPOT 3: A GARAGE ROOF'),
+        cast: { scorpio: [[0, 380, 1060, 220]], virgo: [[0, 700, 1060, 220]] }, mood: { scorpio: 'wink', virgo: 'heart' }, look: { scorpio: [1, 0], virgo: [-1, 0] },
+        lines: [[0.3, 2.4, 'scorpio', 'best view | in town.']] },
+      { dur: 3.0, set: C((x, t) => beach(x, t, { dusk: 1 }), 'SPOT 4: THE SEAWALL'),
+        cast: { gemini: [[0, 540, Y - 20, 240]] }, mood: { gemini: 'sparkle' }, hops: { gemini: [0.4, 1.0] },
+        lines: [[0.3, 2.4, 'gemini', "the water's | GOLD!"]] },
+      { dur: 3.0, set: W('YOUR FORECASTER IS FINE', { map: { tint: 'rgba(255,140,90,0.25)' } }),
+        cast: { pisces: [[0, 540, 1100, 260]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.1, 1.9] },
+        lines: [[0.3, 2.4, 'pisces', "I'm not crying. | it's the forecast."]] },
+      { dur: 3.4, set: C((x, t) => bayou(x, t, { dusk: 1 }), 'LIVE: ROOM FOR ONE MORE'),
+        back: (x, t, lt) => { if (lt > 1.8) hearts(x, t, 540, 930, t - lt + 1.8, { n: 6, spread: 200 }) },
+        cast: { sagittarius: [[0, 360, Y - 30, 230]], leo: [[0, 1250, Y - 30, 230], [0.8, 720, Y - 30, 230]] }, mood: { sagittarius: lt => lt > 1.8 ? 'heart' : 'neutral', leo: 'happy' }, look: { sagittarius: [1, 0], leo: [-1, 0] },
+        lines: [[0.9, 2.2, 'leo', 'room for | one more?']] },
+      lesson('pisces', 'the plan can be simple: | look at the sky together.', th, '10/10'),
+      outro('pisces', 'Jan 9. | bring someone.', th),
+    ],
+  }
+  function paddle(x, cx, cy, t) { box(x, cx - 170, cy - 30, 340, 60, '#ffd36b', 5); x.fillStyle = INK; x.beginPath(); x.arc(cx + 150, cy, 26, 0, Math.PI * 2); x.fill(); x.fillStyle = '#8f96a0'; for (let k = 0; k < 4; k++) { const a = t * 4 + k * Math.PI / 2; x.fillRect(cx + 150 + Math.cos(a) * 20 - 4, cy + Math.sin(a) * 20 - 4, 8, 8) } }
+})()
+
+// ── hst232 · The Jan 9 forecast for your outfit
+const outfit = (() => {
+  const th = THEME.gold, S = 'JAN 9 WEATHER: UNKNOWN  ·  OUTFIT: READY ANYWAY  ·  LAYERS: ADVISED  ·  SANDALS AND A BEANIE: ACCEPTED  ·  '
+  const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'cloud', now: '??°', ...o })
+  const C = (bg, head) => cut(bg, head, { th, strip: S, icon: 'cloud', now: '??°' })
+  const beanie = (x, P, id, col = '#e05a3a') => { const [cx, cy, s] = P.at(id); box(x, cx - s * 0.3, cy - s * 0.62, s * 0.6, s * 0.16, col, 4); x.fillStyle = BONE; x.beginPath(); x.arc(cx, cy - s * 0.66, s * 0.07, 0, Math.PI * 2); x.fill() }
+  const shorts = (x, P, id) => { const [cx, cy, s] = P.at(id); box(x, cx - s * 0.3, cy + s * 0.14, s * 0.26, s * 0.18, '#5ec8ff', 4); box(x, cx + s * 0.04, cy + s * 0.14, s * 0.26, s * 0.18, '#5ec8ff', 4) }
+  const puff = (x, P, id) => { const [cx, cy, s] = P.at(id); for (let k = 0; k < 2; k++) box(x, cx - s * 0.36, cy + s * 0.04 + k * s * 0.13, s * 0.72, s * 0.12, '#e05a3a', 4) }
+  return {
+    hook: 'The Jan 9 forecast | for your outfit', badge: BADGE, cues: [...STING], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Wear the layers. Jan 9.', stars: ['leo', 'aquarius', 'cancer', 'virgo'] }),
+    scenes: [
+      { dur: 3.0, set: W('JAN 9: OUTFIT FORECAST', { draw: (x, t) => bigNum(x, '?', 460, 790, 1 + 0.05 * Math.sin(t * 4), GOLD, 320) }), front: (x, t, lt, P) => pointer(x, P, 'sagittarius', 470, 800),
+        cast: { sagittarius: [[0, ...FC]] }, mood: { sagittarius: 'wide' }, hops: { sagittarius: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'sagittarius', 'Jan 9 weather? | nobody knows.']] },
+      { dur: 3.4, set: W('OUTFIT PROBABILITY', { map: false, draw: (x, t, lt) => { [['PUFFER', 0.6, '#e05a3a'], ['SHORTS', 0.7, '#5ec8ff'], ['BOTH', 1, GOLD]].forEach(([lab, v, c], i) => meter(x, 520, 640 + i * 150, 760, clamp((lt - i * 0.4) / 0.8) * v, { lab, col: c })) } }),
+        cast: { sagittarius: [[0, 900, 1240, 200]] }, mood: { sagittarius: 'squint' },
+        lines: [[0.3, 2.8, 'sagittarius', 'most likely: | both.']] },
+      { dur: 3.0, set: C((x, t) => street(x, t), 'LIVE: BOTH, AT ONCE'), front: (x, t, lt, P) => { puff(x, P, 'leo'); shorts(x, P, 'leo'); beanie(x, P, 'leo') },
+        cast: { leo: [[0, 540, Y - 30, 260]] }, mood: { leo: 'sparkle' }, hops: { leo: [0.6, 1.8] },
+        lines: [[0.3, 2.4, 'leo', 'puffer AND | shorts. a look.']] },
+      { dur: 3.0, set: C((x, t) => bungalow(x, t, { col: '#d0a060' }), 'LIVE: THE PACKING LIST'), front: (x, t, lt, P) => clipboard(x, P, 'virgo', 1),
+        cast: { virgo: [[0, 400, Y - 30, 250]] }, mood: { virgo: 'squint' },
+        lines: [[0.3, 2.4, 'virgo', 'three layers | and a fan.']] },
+      { dur: 3.0, set: C((x, t) => street(x, t), 'LIVE: A HOUSTON WINTER FIT'), front: (x, t, lt, P) => { beanie(x, P, 'aquarius', '#7a3fb0'); const [cx, cy, s] = P.at('aquarius'); for (const d of [-1, 1]) box(x, cx + d * s * 0.2 - 30, cy + s * 0.42, 60, 16, '#c98e5a', 3) },
+        cast: { aquarius: [[0, 540, Y - 40, 260]] }, mood: { aquarius: 'sparkle' },
+        lines: [[0.3, 2.4, 'aquarius', 'beanie. | sandals. done.']] },
+      { dur: 3.2, set: W('COULD BE 80. COULD BE 50.', { map: (lt) => ({ heat: 0.5 + 0.5 * Math.sin(lt * 3) }), now: '50–80°' }), front: (x, t, lt, P) => pointer(x, P, 'sagittarius', 470, 800),
+        cast: { sagittarius: [[0, ...FC]] }, mood: { sagittarius: 'eyeroll' },
+        lines: [[0.3, 2.6, 'sagittarius', 'could be 80. | could be 50.']] },
+      { dur: 3.0, set: C((x, t) => cafe(x, t, { wall: '#c98a1a', sign: 'THE GROUP CHAT' }), 'LIVE: EXTRAS FOR Y\'ALL'), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('cancer'); for (let k = 0; k < 3; k++) box(x, cx + s * 0.35 + k * 14, cy - 20 + k * 30, 120, 26, ['#c96a8a', '#5a7ab0', '#7ab07a'][k], 3) },
+        cast: { cancer: [[0, 380, Y - 30, 250]] }, mood: { cancer: 'happy' },
+        lines: [[0.3, 2.4, 'cancer', 'extra sweaters | for y\'all.']] },
+      { dur: 3.2, set: C((x, t) => street(x, t, { night: true }), 'LIVE: READY'),
+        back: (x, t, lt) => { if (lt > 0.8) sparkles(x, t, 540, 1000, t - lt + 0.8, 14, 380, 6) },
+        front: (x, t, lt, P) => { puff(x, P, 'leo'); beanie(x, P, 'aquarius', '#7a3fb0'); shorts(x, P, 'virgo') },
+        cast: { leo: [[0, 200, Y - 30, 200]], aquarius: [[0, 420, Y - 30, 200]], cancer: [[0, 640, Y - 30, 200]], virgo: [[0, 870, Y - 30, 200]] }, mood: { leo: 'sparkle', aquarius: 'happy', cancer: 'heart', virgo: 'wink' }, hops: { leo: [0.3], aquarius: [0.45], cancer: [0.6], virgo: [0.75] },
+        lines: [[0.8, 2.2, 'cancer', 'every forecast: | covered.']] },
+      lesson('sagittarius', 'layers are | a love language.', th, '??°'),
+      outro('sagittarius', 'Jan 9. | wear the layers.', th),
+    ],
+  }
+})()
+
+// ── hst233 · A Gulf breeze is headed for your love life
+const breeze = (() => {
+  const th = THEME.blue, S = 'GULF BREEZE: MOVING NORTH  ·  CLEAR LAKE: BREEZY  ·  PEARLAND: BREEZY  ·  MIDTOWN: NOTES IN THE AIR  ·  THE WOODLANDS: STILL WAITING  ·  '
+  const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'wind', now: 'BREEZY', ...o })
+  const C = (bg, head, o = {}) => cut(bg, head, { th, strip: S, icon: 'wind', now: 'BREEZY', ...o })
+  const arrows = (p) => (x, t) => { const [gx, gy] = P2M(PL.galveston), [wx, wy] = P2M(PL.woodlands); for (let k = 0; k < 6; k++) { const u = clamp(p - k * 0.08), px = gx + (wx - gx) * u, py = gy + (wy - gy) * u + (k % 2 ? 30 : -30); if (u > 0) wxIcon(x, 'wind', px, py, 0.45, t) } }
+  const note = (x, cx, cy, t, text) => { x.save(); x.translate(cx, cy); x.rotate(0.15 * Math.sin(t * 3)); box(x, -90, -60, 180, 120, BONE, 4); txt(x, text, 0, 0, { size: 24 }); x.restore() }
+  const wind = (x, t) => { for (let k = 0; k < 10; k++) { const ph = (t * 0.9 + k / 10) % 1; x.strokeStyle = 'rgba(255,255,255,0.5)'; x.lineWidth = 6; x.beginPath(); x.moveTo(ph * 1300 - 200, 400 + k * 90); x.lineTo(ph * 1300 - 60, 400 + k * 90); x.stroke() } }
+  return {
+    hook: 'A Gulf breeze is | headed for your | love life', badge: BADGE, cues: [...STING, ['whoosh', 13.0, 0.6, 0.02]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Say hi first. Jan 9.', stars: ['gemini', 'virgo', 'aquarius', 'scorpio'] }),
+    scenes: [
+      { dur: 3.0, set: W('GULF BREEZE: INCOMING', { draw: (x, t, lt) => arrows(0.3 + lt * 0.1)(x, t) }), front: (x, t, lt, P) => pointer(x, P, 'aquarius', ...P2M(PL.galveston)),
+        cast: { aquarius: [[0, ...FC]] }, mood: { aquarius: 'sparkle' }, hops: { aquarius: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'aquarius', 'a Gulf breeze | is headed your way.']] },
+      { dur: 3.0, set: C((x, t) => { beach(x, t); for (let k = 0; k < 3; k++) { box(x, 120 + k * 300, FLOOR - 240, 140, 40, BONE, 4); box(x, 186 + k * 300, FLOOR - 400, 8, 160, '#8f96a0', 2) } wind(x, t) }, 'LIVE: CLEAR LAKE'),
+        cast: { capricorn: [[0, 540, Y - 20, 240]] }, mood: { capricorn: 'happy' },
+        lines: [[0.3, 2.4, 'capricorn', 'finally. | air.']] },
+      { dur: 3.0, set: C((x, t) => { bungalow(x, t, { col: '#a0c080' }); wind(x, t) }, 'LIVE: PEARLAND'),
+        cast: { taurus: [[0, 540, Y - 30, 250]] }, mood: { taurus: 'sparkle' }, hops: { taurus: [0.5, 1.5] },
+        lines: [[0.3, 2.4, 'taurus', 'my hair | is MOVING.']] },
+      { dur: 3.0, set: W('IT IS CARRYING SOMETHING', { draw: (x, t, lt) => { arrows(0.6)(x, t); const [px, py] = P2M(PL.midtown); wxIcon(x, 'heart', px, py - 40, 0.6, t, Kp(lt, 0.6)) } }),
+        cast: { aquarius: [[0, ...FC]] }, mood: { aquarius: 'wide' },
+        lines: [[0.3, 2.4, 'aquarius', "it's carrying | something."]] },
+      { dur: 3.4, set: C((x, t, lt) => { street(x, t); wind(x, t) }, 'LIVE: MIDTOWN'), front: (x, t, lt) => note(x, 120 + clamp(lt / 1.0) * 620, 820 + 30 * Math.sin(t * 3), t, "hi from | Pearland".replace(' | ', ' ')),
+        cast: { gemini: [[0, 360, Y - 30, 240]] }, mood: { gemini: lt => lt > 1.0 ? 'sparkle' : 'neutral' },
+        lines: [[1.2, 2.0, 'gemini', "a note? | 'hi from Pearland.'"]] },
+      { dur: 3.2, set: C((x, t, lt) => { bungalow(x, t, { col: '#7ab0a0' }); wind(x, t) }, 'LIVE: THE HEIGHTS'), front: (x, t, lt) => note(x, 740, 860, t, 'hi back! ♥'),
+        cast: { virgo: [[0, 360, Y - 30, 240]] }, mood: { virgo: 'wide' },
+        lines: [[0.3, 2.6, 'virgo', 'oh no. | this is a whole thing.']] },
+      { dur: 3.0, set: W('BREEZE ENDS NEAR THE WOODLANDS', { draw: (x, t) => { arrows(1)(x, t); const [px, py] = P2M(PL.woodlands); x.strokeStyle = GOLD; x.lineWidth = 6; x.beginPath(); x.arc(px, py, 50, 0, Math.PI * 2); x.stroke() } }), front: (x, t, lt, P) => pointer(x, P, 'aquarius', ...P2M(PL.woodlands)),
+        cast: { aquarius: [[0, ...FC]] }, mood: { aquarius: 'squint' },
+        lines: [[0.3, 2.4, 'aquarius', 'and it stops | at the Woodlands.']] },
+      { dur: 3.0, set: C((x, t) => { park(x, t, { lake: false }); for (const cx of [200, 880]) tree(x, cx, FLOOR, 1.4) }, 'LIVE: THE WOODLANDS'),
+        cast: { scorpio: [[0, 540, Y - 30, 250]] }, mood: { scorpio: 'eyeroll' },
+        lines: [[0.3, 2.4, 'scorpio', 'nothing | reaches us here.']] },
+      lesson('aquarius', "say hi. the wind | won't do it for you.", th, 'BREEZY'),
+      outro('aquarius', 'Jan 9. | say hi in person.', th),
+    ],
+  }
+})()
+
+// ── hst234 · This cold front is dating the Gulf air
+const fronts = (() => {
+  const th = THEME.rose, S = 'COLD FRONT: FROM THE NORTH  ·  GULF AIR: WARM  ·  CHEMISTRY: HIGH  ·  LIGHT RAIN, THEN CALM  ·  OUTFIT CHANGES: SEVERAL  ·  '
+  const W = (head, o = {}) => wall(head, { th, strip: S, icon: 'heart', now: '♥', ...o })
+  const C = (bg, head, o = {}) => cut(bg, head, { th, strip: S, icon: 'heart', now: '♥', ...o })
+  const scarf = (x, P, id) => { const [cx, cy, s] = P.at(id); box(x, cx - s * 0.32, cy + s * 0.1, s * 0.64, s * 0.1, '#5ec8ff', 4); box(x, cx + s * 0.12, cy + s * 0.16, s * 0.1, s * 0.22, '#5ec8ff', 3) }
+  const glow = (x, P, id) => { const [cx, cy, s] = P.at(id); const g = x.createRadialGradient(cx, cy, s * 0.2, cx, cy, s * 0.9); g.addColorStop(0, 'rgba(255,150,80,0.45)'); g.addColorStop(1, 'rgba(255,150,80,0)'); x.fillStyle = g; x.fillRect(cx - s, cy - s, 2 * s, 2 * s) }
+  const meet = (p) => (x, t) => { const m = MAP, y0 = m.cy - m.h / 2 + 40, y1 = m.cy + m.h / 2 - 40, cy = lerpN(y0 + 40, m.cy - 30, p), wy = lerpN(y1 - 40, m.cy + 30, p); front(x, m.cx - m.w / 2 + 20, cy, m.cx + m.w / 2 - 20, cy + 30, 'cold', 8); front(x, m.cx - m.w / 2 + 20, wy, m.cx + m.w / 2 - 20, wy - 30, 'warm', 8); if (p >= 1) { for (let k = 0; k < 6; k++) wxIcon(x, 'heart', m.cx - 300 + k * 120, m.cy, 0.35, t) } }
+  function lerpN(a, b, u) { return a + (b - a) * clamp(u) }
+  return {
+    hook: 'This cold front | is dating the | Gulf air', badge: BADGE, cues: [...STING, ['riser', 9.2, 11.4, 0.05], ['boom', 11.5, 0.2]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Bring your opposite. Jan 9.', stars: ['capricorn', 'leo', 'cancer', 'pisces'] }),
+    scenes: [
+      { dur: 3.0, set: W('TONIGHT: A WEATHER ROMANCE', { draw: (x, t) => meet(0.2)(x, t) }), front: (x, t, lt, P) => pointer(x, P, 'cancer', 500, 600),
+        cast: { cancer: [[0, ...FC]] }, mood: { cancer: 'heart' }, hops: { cancer: [0.05, 0.5] },
+        lines: [[0.3, 2.5, 'cancer', 'big romance | over your city tonight.']] },
+      { dur: 3.2, set: W('TWO SYSTEMS APPROACH', { draw: (x, t, lt) => meet(0.2 + 0.5 * lt / 3.2)(x, t) }), front: (x, t, lt, P) => pointer(x, P, 'cancer', 500, 1000),
+        cast: { cancer: [[0, ...FC]] }, mood: { cancer: 'sparkle' },
+        lines: [[0.2, 1.4, 'cancer', 'one from | up north.'], [1.7, 1.4, 'cancer', 'one from | the Gulf.']] },
+      { dur: 3.2, set: C((x, t) => street(x, t), 'LIVE: THE FIRST MEETING'), front: (x, t, lt, P) => { scarf(x, P, 'capricorn') }, back: (x, t, lt, P) => glow(x, P, 'leo'),
+        cast: { capricorn: [[0, 300, Y - 30, 240], [1.0, 400, Y - 30, 240]], leo: [[0, 800, Y - 30, 240], [1.0, 680, Y - 30, 240]] }, mood: { capricorn: 'wide', leo: 'wink' }, look: { capricorn: [1, 0], leo: [-1, 0] },
+        lines: [[0.2, 1.3, 'capricorn', "you're | so warm."], [1.6, 1.4, 'leo', "you're | so chill."]] },
+      { dur: 3.0, set: W('CONTACT', { draw: (x, t, lt) => { meet(1)(x, t); if (lt > 0.3) sparkles(x, t, 500, 820, t - lt + 0.3, 16, 380, 9) } }),
+        cast: { cancer: [[0, ...FC]] }, mood: { cancer: 'wide' },
+        lines: [[0.4, 2.3, 'cancer', 'and... | chemistry.']] },
+      { dur: 3.2, set: C((x, t) => { street(x, t, { night: true }); for (let i = 0; i < 40; i++) { const px = (i * 61) % 1080, py = ((i * 137 + t * 700) % 1300); x.fillStyle = 'rgba(143,227,255,0.6)'; x.fillRect(px, py, 5, 22) } }, 'LIVE: A LIGHT RAIN'), front: (x, t, lt, P) => scarf(x, P, 'capricorn'), back: (x, t, lt, P) => glow(x, P, 'leo'),
+        cast: { capricorn: [[0, 420, Y - 30, 240], [1.6, 470, Y - 50, 240], [3.2, 420, Y - 30, 240]], leo: [[0, 660, Y - 30, 240], [1.6, 610, Y - 50, 240], [3.2, 660, Y - 30, 240]] }, mood: { capricorn: 'heart', leo: 'heart' }, hops: { capricorn: [0.4, 1.2, 2.0], leo: [0.6, 1.4, 2.2] },
+        lines: [[0.3, 2.6, 'leo', 'dance in | the drizzle?']] },
+      { dur: 3.0, set: C((x, t) => { street(x, t, { night: true }); for (let i = 0; i < 30; i++) { const px = (i * 61) % 1080, py = ((i * 137 + t * 700) % 1300); x.fillStyle = 'rgba(143,227,255,0.6)'; x.fillRect(px, py, 5, 22) } }, 'LIVE: A WITNESS'), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('pisces'); x.fillStyle = INK; x.beginPath(); x.arc(cx, cy - s * 0.65, s * 0.62, Math.PI, 0); x.fill(); x.fillStyle = '#ff8fb1'; x.beginPath(); x.arc(cx, cy - s * 0.65, s * 0.56, Math.PI, 0); x.fill(); box(x, cx - 4, cy - s * 0.65, 8, s * 0.6, INK, 0) },
+        cast: { pisces: [[0, 540, Y - 30, 230]] }, mood: { pisces: 'heart' }, hops: { pisces: [0.3, 1.2] },
+        lines: [[0.3, 2.4, 'pisces', "it's | beautiful."]] },
+      { dur: 3.0, set: C((x, t, lt) => bungalow(x, t, { col: '#c0a0d0' }), 'TEMPERATURE: ALL OVER', { now: '80° → 55°' }), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('taurus'); const k = Math.floor(lt * 1.4) % 3; box(x, cx - s * 0.32, cy + s * 0.1, s * 0.64, s * 0.24, ['#e05a3a', '#5ec8ff', '#7ab07a'][k], 4) },
+        cast: { taurus: [[0, 540, Y - 30, 250]] }, mood: { taurus: 'eyeroll' },
+        lines: [[0.3, 2.4, 'taurus', 'I changed | three times.']] },
+      { dur: 3.0, set: W('BY MORNING: BALANCED', { now: 'MILD', map: { tint: 'rgba(255,143,177,0.12)' }, draw: (x, t) => { for (let k = 0; k < 6; k++) wxIcon(x, 'heart', 220 + k * 110, 820 + 20 * Math.sin(t * 2 + k), 0.4, t) } }),
+        cast: { cancer: [[0, ...FC]] }, mood: { cancer: 'heart' },
+        lines: [[0.3, 2.4, 'cancer', 'by morning? | they found balance.']] },
+      lesson('cancer', "you don't have to match. | you have to meet.", th, '♥'),
+      outro('cancer', 'Jan 9. | bring your opposite.', th),
+    ],
+  }
+})()
+
+// ── hst235 · Your 10-day forecast ends at a party
+const tenday = (() => {
+  const th = THEME.dusk, S = 'DAY 1 TO DAY 9: GETTING READY  ·  DAY 10: JAN 9, THE HOUSTON BETA PARTY  ·  FORECAST: SHOW UP  ·  '
+  const DAYS = [['DAY 1', 'sun', 'GO'], ['DAY 2', 'sun', 'GO'], ['DAY 3', 'cloud', 'PLAN'], ['DAY 4', 'cloud', 'PLAN'], ['DAY 5', 'wind', 'CHAT'], ['DAY 6', 'wind', 'CHAT'], ['DAY 7', 'sun', 'LIST'], ['DAY 8', 'drizzle', 'NERVES'], ['DAY 9', 'sun', 'FIT'], ['JAN 9', 'heart', 'PARTY', PINK]]
+  const board = (cur, k = 1) => (x, t) => { strip5(x, t, DAYS.slice(0, 5), 520, { k, cur: cur < 5 ? cur : -1, h: 260 }); strip5(x, t, DAYS.slice(5), 820, { k, cur: cur >= 5 ? cur - 5 : -1, h: 260 }) }
+  const W = (head, cur, o = {}) => wall(head, { th, strip: S, icon: DAYS[Math.max(0, cur)][1], now: cur >= 0 ? DAYS[cur][0] : '10 DAYS', map: false, draw: board(cur), ...o })
+  const day = (cur, sign, line, mood, bg, head) => ({ dur: 3.0, set: cut((x, t, lt) => { bg(x, t, lt); box(x, 60, 470, 260, 90, '#1a0c3a', 5); txt(x, DAYS[cur][0], 190, 515, { size: 44, col: GOLD, font: MONO, weight: 700 }) }, head, { th, strip: S, icon: DAYS[cur][1], now: DAYS[cur][0] }), cast: { [sign]: [[0, 540, Y - 30, 250]] }, mood: { [sign]: mood }, hops: { [sign]: [0.3] }, lines: [[0.3, 2.4, sign, line]] })
+  return {
+    hook: 'Your 10-day | forecast ends | at a party', badge: BADGE, cues: [...STING, ['glitter', 24.2, 25.0]], endLen: 6.2,
+    end: (x, t, lt) => partyCard(x, t, lt, { line: 'Forecast: you, there. Jan 9.', stars: ['scorpio', 'aries', 'leo', 'pisces'] }),
+    scenes: [
+      { dur: 3.2, set: (x, t, lt) => W('YOUR 10-DAY OUTLOOK', -1, { draw: board(-1, clamp(lt / 1.2 + 0.3)) })(x, t, lt),
+        cast: { scorpio: [[0, 900, 1270, 190]] }, mood: { scorpio: 'wink' }, hops: { scorpio: [0.05, 0.5] },
+        lines: [[0.3, 2.6, 'scorpio', 'your 10 days. | it ends at a party.']] },
+      day(0, 'aries', 'new year | energy!', 'sparkle', (x, t) => { bayou(x, t); heatSun(x, 860, 520, t, 70) }, 'DAY 1: SUNNY, MOTIVATED'),
+      day(2, 'taurus', 'planning | the outfit.', 'squint', (x, t) => bungalow(x, t, { col: '#c0a0d0' }), 'DAY 3: CLOUDY, PLANNING'),
+      day(4, 'gemini', 'group chat: | very active.', 'wide', (x, t) => street(x, t), 'DAY 5: WINDY GROUP CHAT'),
+      day(6, 'virgo', 'the checklist | is ready.', 'happy', (x, t) => cafe(x, t, { wall: '#6a5a9a', sign: 'LIST' }), 'DAY 7: CLEAR, ORGANIZED'),
+      { ...day(7, 'pisces', 'nervous | happy crying.', 'heart', (x, t) => park(x, t), 'DAY 8: LIGHT DRIZZLE (PISCES)'), hops: { pisces: [0.3, 1.2] } },
+      day(8, 'leo', 'outfit | reveal.', 'sparkle', (x, t) => street(x, t, { night: true }), 'DAY 9: SUNNY, SHINING'),
+      { dur: 3.4, set: (x, t, lt) => W('DAY 10: JAN 9', 9)(x, t, lt), back: (x, t, lt) => { if (lt > 0.4) sparkles(x, t, 540, 950, t - lt + 0.4, 16, 420, 7) },
+        cast: { scorpio: [[0, 900, 1270, 190]] }, mood: { scorpio: 'heart' }, hops: { scorpio: [0.4, 1.2] },
+        lines: [[0.3, 2.8, 'scorpio', 'day 10: | the beta party.']] },
+      lesson('scorpio', 'whatever the forecast, | show up.', th, 'JAN 9'),
+      outro('scorpio', 'see you | Jan 9.', th),
+    ],
+  }
+})()
+
+export const WX = { hst230: humid, hst231: sunset, hst232: outfit, hst233: breeze, hst234: fronts, hst235: tenday, hst224: hair, hst225: seasons, hst226: ac, hst227: lovebugs, hst228: popup, hst229: brakes }
