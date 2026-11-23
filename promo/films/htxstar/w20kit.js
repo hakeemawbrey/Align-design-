@@ -23,12 +23,12 @@ export function nightCity(x, t, ground0 = '#221b38') { skyline(x, FLOOR + 60, t,
 
 // ── food places
 /** a food truck (side view) with a serving window, an awning and a menu board */
-export function foodTruck(x, cx0, base0, t, { col = '#ff8fb1', name = 'TACOS', open = 1, s = 0.68 } = {}) {
+export function foodTruck(x, cx0, base0, t, { col = '#ff8fb1', name = 'TACOS', open = 1, s = 0.68, ink = BONE } = {}) {
   x.save(); x.translate(cx0, base0); x.scale(s, s); const cx = 0, base = 0
   box(x, cx - 330, base - 470, 660, 400, col, 8); box(x, cx + 330, base - 330, 140, 260, col, 8); x.fillStyle = '#bfe6ff'; x.fillRect(cx + 350, base - 310, 90, 90)
   box(x, cx - 260, base - 410, 380, 190, '#1b1236', 5); x.fillStyle = '#ffd36b'; x.fillRect(cx - 250, base - 400, 360, 170)
   for (let k = 0; k < 7; k++) { x.fillStyle = k % 2 ? BONE : BRAKE; x.beginPath(); x.moveTo(cx - 290 + k * 60, base - 470); x.lineTo(cx - 290 + k * 60 + 60, base - 470); x.lineTo(cx - 290 + k * 60 + 30, base - 470 + 50 * open); x.fill() }
-  txt(x, name, cx - 70, base - 130, { size: 60, col: BONE })
+  txt(x, name, cx - 70, base - 130, { size: 60, col: ink })
   for (const wx of [cx - 200, cx + 300]) { circ(x, wx, base - 50, 48, '#2a2638'); circ(x, wx, base - 50, 20, '#8f96a0', 0) }
   x.restore()
 }
@@ -170,10 +170,13 @@ export function mansion(x, cx, base, t) {
 }
 
 // ── romcom places
-export function bayou(x, t, { y = FLOOR - 60, water = '#5a7a4a' } = {}) {
-  x.fillStyle = water; x.fillRect(0, y - 220, 1080, 160); for (let k = 0; k < 10; k++) { const ph = (t * 40 + k * 110) % 1180 - 50; x.fillStyle = 'rgba(255,255,255,0.25)'; x.fillRect(ph, y - 200 + (k % 3) * 40, 60, 5) }
-  x.fillStyle = '#2f6a2a'; x.fillRect(0, y - 70, 1080, 20); x.fillStyle = '#c9b89a'; x.fillRect(0, y - 50, 1080, 110); x.fillStyle = INK; x.fillRect(0, y - 54, 1080, 6)
-  for (let k = 0; k < 5; k++) { const tx = 80 + k * 240; box(x, tx - 12, y - 420, 24, 200, '#6b3b1f', 4); x.fillStyle = INK; x.beginPath(); x.arc(tx, y - 440, 96, 0, TAU); x.fill(); x.fillStyle = k % 2 ? '#3d7a3a' : '#2f6a2a'; x.beginPath(); x.arc(tx, y - 440, 88, 0, TAU); x.fill() }
+export function bayou(x, t, { water = '#4a7a6a' } = {}) {   // the trail along the bayou: trees, grass, the path, the water in front
+  const y = FLOOR + 70
+  skyline(x, FLOOR - 120, t, { col: '#7a7ab0', lit: '#ffe8c0', alpha: 0.5 })
+  for (let k = 0; k < 6; k++) { const tx = 60 + k * 200; box(x, tx - 12, FLOOR - 300, 24, 200, '#6b3b1f', 4); x.fillStyle = INK; x.beginPath(); x.arc(tx, FLOOR - 320, 96, 0, TAU); x.fill(); x.fillStyle = k % 2 ? '#3d7a3a' : '#2f6a2a'; x.beginPath(); x.arc(tx, FLOOR - 320, 88, 0, TAU); x.fill() }
+  x.fillStyle = '#3d8a3a'; x.fillRect(0, FLOOR - 120, 1080, 110); x.fillStyle = '#d8c8a8'; x.fillRect(0, FLOOR - 16, 1080, 86); x.fillStyle = INK; x.fillRect(0, FLOOR - 20, 1080, 6)
+  x.fillStyle = water; x.fillRect(0, y, 1080, 1920 - y); x.fillStyle = INK; x.fillRect(0, y - 4, 1080, 8)
+  for (let k = 0; k < 14; k++) { const ph = (t * 40 + k * 110) % 1180 - 50; x.fillStyle = 'rgba(255,255,255,0.22)'; x.fillRect(ph, y + 40 + (k * 47) % 420, 70, 6) }
 }
 export function court(x, t) {
   x.fillStyle = '#2b6a9a'; x.fillRect(0, 900, 1080, 1020); x.fillStyle = '#3a9a6a'; x.fillRect(80, 960, 920, 560)
@@ -184,11 +187,13 @@ export function ball(x, cx, cy, s = 1) { circ(x, cx, cy, 20 * s, '#e8f04a', 4); 
 export function paddle(x, cx, cy, s = 1, col = PINK, rot = 0) { x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(s, s); box(x, -8, 30, 16, 60, '#6b3b1f', 4); x.fillStyle = INK; x.beginPath(); x.ellipse(0, -20, 52, 62, 0, 0, TAU); x.fill(); x.fillStyle = col; x.beginPath(); x.ellipse(0, -20, 44, 54, 0, 0, TAU); x.fill(); x.restore() }
 export function scoreboard(x, cx, cy, a, b, { la = 'HOME', lb = 'AWAY', k = 1, col = '#1b1236' } = {}) { if (k <= 0) return; x.save(); x.translate(cx, cy); x.scale(k, k); box(x, -260, -90, 520, 180, col, 8); txt(x, la, -130, -50, { size: 28, col: BONE, font: MONO, weight: 700 }); txt(x, lb, 130, -50, { size: 28, col: BONE, font: MONO, weight: 700 }); txt(x, String(a), -130, 30, { size: 80, col: GOLD, font: MONO, weight: 700 }); txt(x, String(b), 130, 30, { size: 80, col: GOLD, font: MONO, weight: 700 }); x.restore() }
 /** a low bridge silhouette over the bayou; bats stream out from under it when bats > 0 */
-export function batBridge(x, t, bats = 0, y = 900) {
-  box(x, -10, y - 40, 1100, 70, '#4a4a58', 6); for (let k = 0; k < 6; k++) box(x, 60 + k * 190, y + 30, 40, 260, '#4a4a58', 5)
-  x.fillStyle = '#2a3a4a'; x.fillRect(0, y + 290, 1080, 140); for (let k = 0; k < 8; k++) { x.fillStyle = 'rgba(255,200,150,0.25)'; x.fillRect((k * 150 + t * 20) % 1080, y + 320 + (k % 3) * 30, 70, 5) }
-  const n = Math.round(80 * clamp(bats))
-  for (let k = 0; k < n; k++) { const ph = (t * 0.25 + k * 0.137) % 1, bx = 100 + (k * 97) % 880 + Math.sin(ph * 9 + k) * 60, by = y + 40 - ph * 760, fl = Math.sin(t * 20 + k) > 0 ? 1 : -1; x.fillStyle = INK; x.fillRect(bx - 4, by - 3, 8, 7); x.fillRect(bx - 16, by - 3 * fl - 3, 12, 4); x.fillRect(bx + 4, by - 3 * fl - 3, 12, 4) }
+export function batBridge(x, t, bats = 0, y = 820) {   // a low bridge over the bayou at sunset; bats stream out from under it when bats > 0
+  const wy = y + 250
+  x.fillStyle = '#2a3a5a'; x.fillRect(0, wy, 1080, FLOOR + 60 - wy); for (let k = 0; k < 10; k++) { x.fillStyle = 'rgba(255,190,140,0.3)'; x.fillRect((k * 150 + t * 20) % 1080, wy + 20 + (k % 4) * 28, 70, 5) }
+  box(x, -10, y - 40, 1100, 70, '#4a4a58', 6); for (let k = 0; k < 6; k++) box(x, 60 + k * 190, y + 30, 40, wy - y - 30, '#4a4a58', 5)
+  ground(x, '#2a3a2a')
+  const n = Math.round(90 * clamp(bats))
+  for (let k = 0; k < n; k++) { const ph = (t * 0.25 + k * 0.137) % 1, bx = 100 + (k * 97) % 880 + Math.sin(ph * 9 + k) * 60, by = y + 40 - ph * 620, fl = Math.sin(t * 20 + k) > 0 ? 1 : -1; x.fillStyle = INK; x.fillRect(bx - 5, by - 4, 10, 8); x.fillRect(bx - 19, by - 3 * fl - 4, 14, 5); x.fillRect(bx + 5, by - 3 * fl - 4, 14, 5) }
 }
 export function lake(x, t, { y = 1050, col = '#3a8ab0' } = {}) { x.fillStyle = col; x.fillRect(0, y, 1080, 1920 - y); for (let k = 0; k < 16; k++) { const ph = (t * 30 + k * 90) % 1180 - 50; x.fillStyle = 'rgba(255,255,255,0.3)'; x.fillRect(ph, y + 40 + (k * 53) % 700, 70, 6) } x.fillStyle = INK; x.fillRect(0, y - 4, 1080, 8) }
 export function paddleBoat(x, cx, cy, t, { col = '#5ec8ff', s = 1, spin = 0 } = {}) {
