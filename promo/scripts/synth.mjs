@@ -102,5 +102,68 @@ export function createMix(DUR, SR = 48000) {
     const beat = 60 / bpm
     for (let t = from + beat / 2; t < to; t += beat) { const i0 = Math.floor(t * SR); let hp = 0, prev = 0; for (let k = 0; k < SR * 0.05; k++) { const x = noise(); hp = 0.9 * (hp + x - prev); prev = x; add(i0 + k, hp * Math.exp(-k / SR * 90) * gain * 0.8, hp * Math.exp(-k / SR * 90) * gain) } }
   }
-  return { pad, pulse, hats, pop, pluck, arp, tick, whoosh, bell, boom, glitter, riser, render, renderLoop }
+  // ── additive instruments (added for whop-type2; nothing above changed) ──
+  // a 2-pole state-variable low-pass, used by the instruments below
+  const svf = () => { let lo = 0, bp = 0; return (x, fc, q = 0.7) => { const f = 2 * Math.sin(Math.PI * Math.min(fc, SR / 6) / SR); lo += f * bp; const hi = x - lo - bp / q; bp += f * hi; return { lo, bp, hi } } }
+  // round, short kick: pitch drop 120 → 46 Hz, soft beater click, no reverb send
+  function kick(t, gain = 0.4) {
+    const i0 = Math.floor(t * SR); let ph = 0; const f = svf()
+    for (let k = 0; k < SR * 0.5; k++) {
+      const tt = k / SR, fr = 46 + 74 * Math.exp(-tt * 38); ph += fr / SR
+      const body = Math.sin(2 * Math.PI * ph) * Math.exp(-tt * 7.5) * Math.min(1, tt / 0.0015)
+      const click = f(noise(), 3000, 0.8).bp * Math.exp(-tt * 300) * 0.25
+      const v = Math.tanh((body + click) * 1.4) * gain; add(i0 + k, v, v, 0)
+    }
+  }
+  // soft finger-snap / rim: band-passed noise burst with a short tonal knock
+  function snap(t, gain = 0.06, pan = 0) {
+    const i0 = Math.floor(t * SR); const f = svf()
+    for (let k = 0; k < SR * 0.18; k++) {
+      const tt = k / SR, env = Math.min(1, tt / 0.0008) * (Math.exp(-tt * 55) + 0.25 * Math.exp(-tt * 14))
+      const v = (f(noise(), 2100, 2.2).bp * 1.6 + Math.sin(2 * Math.PI * 330 * tt) * Math.exp(-tt * 70) * 0.5) * env * gain
+      add(i0 + k, v * (1 - pan), v * (1 + pan), 0.45)
+    }
+  }
+  // shaker: high-passed noise with a soft swelled attack (gentler than hats)
+  function shaker(t, gain = 0.02, pan = 0) {
+    const i0 = Math.floor(t * SR); const f = svf(), len = 0.09
+    for (let k = 0; k < SR * len; k++) {
+      const tt = k / SR, env = Math.sin(Math.PI * Math.min(1, tt / 0.012) / 2) * Math.exp(-Math.max(0, tt - 0.012) * 48)
+      const v = f(noise(), 6500, 0.9).hi * env * gain; add(i0 + k, v * (1 - pan), v * (1 + pan), 0.12)
+    }
+  }
+  // warm bass note: sine + soft 2nd/3rd harmonics (audible on phones), gentle attack and release
+  function bass(t, f, len = 0.5, gain = 0.12) {
+    const i0 = Math.floor(t * SR), n = Math.floor((len + 0.12) * SR)
+    for (let k = 0; k < n; k++) {
+      const tt = k / SR, env = Math.min(1, tt / 0.012) * Math.min(1, Math.max(0, (len + 0.12 - tt) / 0.12)) * (0.75 + 0.25 * Math.exp(-tt * 5))
+      const w = 2 * Math.PI * f * tt
+      const v = Math.tanh((Math.sin(w) + 0.32 * Math.sin(2 * w) + 0.12 * Math.sin(3 * w)) * 1.3) * env * gain; add(i0 + k, v, v, 0.02)
+    }
+  }
+  // electric-piano chord (2-op FM, decaying index), slight strum, for soft stabs on the changes
+  function keys(t, freqs, len = 1.6, gain = 0.03, strum = 0.012) {
+    freqs.forEach((f, j) => {
+      const i0 = Math.floor((t + j * strum) * SR), n = Math.floor((len + 0.6) * SR), pan = freqs.length > 1 ? (j / (freqs.length - 1) - 0.5) * 0.7 : 0
+      for (let k = 0; k < n; k++) {
+        const tt = k / SR, idx = 1.6 * Math.exp(-tt * 4) + 0.15, env = Math.min(1, tt / 0.003) * Math.exp(-tt * 1.6) * Math.min(1, Math.max(0, (len + 0.6 - tt) / 0.6))
+        const v = Math.sin(2 * Math.PI * f * tt + idx * Math.sin(2 * Math.PI * f * tt)) * env * gain; add(i0 + k, v * (1 - pan), v * (1 + pan), 0.5)
+      }
+    })
+  }
+  // soft noise swell into a downbeat (low-pass opens as it rises, cuts at t1)
+  function swell(t0, t1, gain = 0.05) {
+    const i0 = Math.floor(t0 * SR), n = Math.floor((t1 - t0) * SR); const f = svf()
+    for (let k = 0; k < n; k++) { const p = k / n, v = f(noise(), 300 + 5200 * p * p, 0.9).lo * gain * p * p * p; add(i0 + k, v, v, 0.5) }
+  }
+  // side-chain: duck everything already in the mix (call before adding the drums) under each time in `times`
+  function duck(times, depth = 0.35, release = 0.32) {
+    const g = new Float32Array(N).fill(1)
+    for (const t of times) {
+      const i0 = Math.floor((t - 0.006) * SR)
+      for (let k = 0; k < SR * release * 3; k++) { const i = i0 + k; if (i < 0 || i >= N) continue; const tt = k / SR, v = 1 - depth * Math.min(1, tt / 0.006) * Math.exp(-Math.max(0, tt - 0.006) / release); if (v < g[i]) g[i] = v }
+    }
+    for (let i = 0; i < N; i++) { L[i] *= g[i]; R[i] *= g[i]; send[i] *= g[i] }
+  }
+  return { pad, pulse, hats, pop, pluck, arp, tick, whoosh, bell, boom, glitter, riser, render, renderLoop, kick, snap, shaker, bass, keys, swell, duck }
 }
