@@ -83,7 +83,7 @@ export function sunHat(x, P, id, col = '#f4e1b0') {
 }
 export function bib(x, P, id) {
   const [cx, cy, s] = P.at(id)
-  box(x, cx - s * 0.14, cy + s * 0.15, s * 0.28, s * 0.2, BONE, 3); crawdad(x, cx, cy + s * 0.25, s * 0.0022)
+  box(x, cx - s * 0.14, cy + s * 0.15, s * 0.28, s * 0.2, BONE, 3); crawdad(x, cx, cy + s * 0.25, s * 0.00002)
 }
 export function scarf(x, P, id, col = GOLD) {
   const [cx, cy, s] = P.at(id)
