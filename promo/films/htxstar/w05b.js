@@ -12,7 +12,7 @@ export const W05B = {
   // ─────────────────────────────── hst119 · Your element, explained with Houston weather ───────────────────────────────
   hst119: {
     id: 'hst119', duration: 50, key: 'C', open: 'rain', qAccent: '#8fe3ff', tint: '#4a6ab0',
-    hook: 'Your element, | explained with *Houston weather*',
+    hook: 'Your element, | explained with | *Houston weather*',
     teacher: star('sagittarius', { pitch: 560 }), student: star('aquarius', { pitch: 700 }),
     boardTitle: 'THE ELEMENTS',
     beats: [
@@ -142,7 +142,7 @@ export const W05B = {
       { lines: [
           ['teacher', "lunar eclipse: Earth's *shadow* hits the Moon.", { tag: TR, point: [500, 230] }],
           ['teacher', 'the Moon can even glow *red*.', { point: [600, 230] }],
-          ['teacher', "and *never* look at the Sun without eclipse glasses.", { tag: at2(TR, 80), point: [200, 230] }],
+          ['teacher', 'never look at the Sun without *eclipse glasses*.', { tag: at2(TR, 80), point: [200, 230] }],
         ],
         draw(x, t, B, b) {
           chalkCircle(x, t, { x: B.x0 + 120, y: B.y0 + 230, r: 60, at: b.at + 0.1, dur: 0.5, color: Y })
@@ -174,7 +174,7 @@ export const W05B = {
   // ─────────────────────────────── hst122 · You measure distance in minutes. So do stars. ───────────────────────────────
   hst122: {
     id: 'hst122', duration: 50, key: 'Ab', open: 'loop', openText: '45', qAccent: '#9fd8ff', tint: '#3a7ab0',
-    hook: '*You* measure distance | in minutes. So do stars.',
+    hook: '*You* count miles | in minutes. | So do stars.',
     teacher: star('pisces', { pitch: 660 }), student: star('capricorn', { pitch: 420, prop: 'whistle' }),
     boardTitle: 'LIGHT TIME',
     beats: [
@@ -223,7 +223,7 @@ export const W05B = {
   // ─────────────────────────────── hst123 · Full moon tonight? Your group chat knows. ───────────────────────────────
   hst123: {
     id: 'hst123', duration: 48, key: 'E', open: 'skyline', qAccent: '#f2c75c', tint: '#6a3ab0',
-    hook: 'Full moon tonight? | *Your* group chat knows.',
+    hook: 'Full moon? | *Your* group chat | already knows.',
     teacher: star('scorpio', { pitch: 380 }), student: star('aries', { pitch: 760 }),
     boardTitle: 'FULL MOON',
     beats: [
@@ -270,8 +270,8 @@ export const W05B = {
 
   // ─────────────────────────────── hst124 · When two planets "meet" over your skyline ───────────────────────────────
   hst124: {
-    id: 'hst124', duration: 50, key: 'G', open: 'bayou', qAccent: '#c9a6ff', tint: '#7a4ac0',
-    hook: "When two planets 'meet' | over *your* skyline",
+    id: 'hst124', duration: 46, key: 'G', open: 'bayou', qAccent: '#c9a6ff', tint: '#7a4ac0',
+    hook: "Two planets 'meet' | over *your* skyline",
     teacher: star('libra', { pitch: 560 }), student: star('capricorn', { pitch: 420 }),
     boardTitle: 'CONJUNCTION',
     beats: [
@@ -325,8 +325,8 @@ export const W05B = {
 
   // ─────────────────────────────── hst125 · Is your sign wrong? ───────────────────────────────
   hst125: {
-    id: 'hst125', duration: 52, key: 'B', open: 'sky', qAccent: '#7dffb0', tint: '#2a5a8a',
-    hook: 'Is *your* sign wrong? | A Houston explainer.',
+    id: 'hst125', duration: 51, key: 'B', open: 'sky', qAccent: '#7dffb0', tint: '#2a5a8a',
+    hook: 'Is *your* sign wrong? | We checked, H-Town.',
     teacher: star('virgo', { pitch: 470, prop: 'clipboard' }), student: star('aquarius', { pitch: 700 }),
     boardTitle: 'THE 13TH?',
     beats: [
@@ -378,8 +378,8 @@ export const W05B = {
 
   // ─────────────────────────────── hst126 · Late 20s in Houston? Your Saturn return. ───────────────────────────────
   hst126: {
-    id: 'hst126', duration: 52, key: 'Eb', open: 'street', openText: 'HEIGHTS BLVD', qAccent: '#f2c75c', tint: '#8a6a3a',
-    hook: 'Late 20s in Houston? | *Your* Saturn return.',
+    id: 'hst126', duration: 47, key: 'Eb', open: 'street', openText: 'HEIGHTS BLVD', qAccent: '#f2c75c', tint: '#8a6a3a',
+    hook: 'Late 20s, Houston? | *Your* Saturn return.',
     teacher: star('capricorn', { pitch: 400, glasses: true }), student: star('sagittarius', { pitch: 720 }),
     boardTitle: 'SATURN RETURN',
     beats: [
@@ -398,9 +398,9 @@ export const W05B = {
         chalk: [{ dt: 0.8, line: 1, text: '~*29* YEARS', x: 400, y: 440, size: 32, align: 'center' }],
       },
       { lines: [
-          ['teacher', 'astrologers call its return your *Saturn return*.', { tag: TA, point: [300, 200] }],
+          ['teacher', 'astrologers call its comeback your *return*.', { tag: TA, point: [300, 200] }],
           ['teacher', 'they read it as a *growing-up* era.', { point: [400, 260] }],
-          ['teacher', 'Heights edition: porch, plants, *dog in a bandana*.', { tag: at2(TH, 80), point: [600, 320] }],
+          ['teacher', 'Heights edition: porch, *dog in a bandana*.', { tag: at2(TH, 80), point: [600, 320] }],
         ],
         draw(x, t, B, b) {
           const a = b.lines[2].t
@@ -430,8 +430,8 @@ export const W05B = {
 
   // ─────────────────────────────── hst127 · Lost on 290? Your sky has a compass. ───────────────────────────────
   hst127: {
-    id: 'hst127', duration: 50, key: 'A', open: 'loop', openText: '290', qAccent: '#8fe3ff', tint: '#2a7a8a',
-    hook: 'Lost on 290? | *Your* sky has a compass.',
+    id: 'hst127', duration: 49, key: 'A', open: 'loop', openText: '290', qAccent: '#8fe3ff', tint: '#2a7a8a',
+    hook: 'Lost on 290? | *Your* sky has | a compass.',
     teacher: star('aquarius', { pitch: 600 }), student: star('taurus', { pitch: 430 }),
     boardTitle: 'NORTH STAR',
     beats: [
@@ -447,7 +447,7 @@ export const W05B = {
         chalk: [{ dt: 0.6, line: 1, text: '*BIG DIPPER*', x: 120, y: 400, size: 32 }],
       },
       { lines: [
-          ['teacher', 'the two stars at the cup\'s end point to *Polaris*.', { tag: TR, point: [600, 100] }],
+          ['teacher', "the cup's two end stars point to *Polaris*.", { tag: TR, point: [600, 100] }],
           ['teacher', 'it stays nearly *still* while the sky turns.', { point: [650, 80] }],
         ],
         draw(x, t, B, b) {
@@ -473,7 +473,7 @@ export const W05B = {
         chalk: [{ dt: 0.3, line: 0, text: 'N', x: 400, y: 70, size: 34, align: 'center' }, { dt: 0.9, line: 0, text: '*290*', x: 220, y: 110, size: 30, align: 'center' }],
       },
     ],
-    bulb: 'so the North Star is the *one constant*. like me.',
+    bulb: 'so the North Star is the *one constant*.',
     items: ['Big Dipper points to *Polaris*', 'Polaris barely *moves*', 'Be *steady*. Show up.'],
     last: 'Find north. *Then show up.*', lastWho: 'teacher',
     party: { line: 'Head toward Jan 9.', stars: ['aquarius', 'taurus', 'pisces', 'leo'] },

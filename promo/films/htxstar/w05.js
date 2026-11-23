@@ -85,7 +85,7 @@ export const W05A = {
   // ─────────────────────────────── hst112 · Mercury retrograde vs your 610 ───────────────────────────────
   hst112: {
     id: 'hst112', duration: 50, key: 'A', open: 'loop', openText: '610', qAccent: '#8fe3ff', tint: '#3a6ad0',
-    hook: "What's Mercury retrograde | doing to *your* 610?",
+    hook: 'Mercury retrograde | vs. *your* 610',
     teacher: star('gemini', { pitch: 620 }), student: star('taurus', { pitch: 430 }),
     boardTitle: 'MERCURY RX',
     beats: [
@@ -96,7 +96,7 @@ export const W05A = {
         ],
         draw(x, t, B, b) {
           chalkLoopPath(x, t, B, { at: b.lines[1].t + 0.1, x0: 80, x1: 720, cy: 290, amp: 150, dur: 2.2 })
-          const u = ease.inOutSine(clamp(prog(t, b.lines[1].t + 0.1, b.lines[1].t + 2.3)))
+          const u = ease.inOutCubic(clamp(prog(t, b.lines[1].t + 0.1, b.lines[1].t + 2.3)))
           const px = lerp(80, 720, u) - Math.sin(u * Math.PI * 2) * 640 * 0.22, py = 290 - Math.sin(u * Math.PI) * 150
           disc(x, B.x0 + px, B.y0 + py, 20, BL, clamp(prog(t, b.lines[1].t, b.lines[1].t + 0.3)))
         },
@@ -114,7 +114,7 @@ export const W05A = {
           disc(x, B.x0 + 400 + Math.cos(a1) * 90, B.y0 + 230 + Math.sin(a1) * 90, 14, BL, clamp(prog(t, b.at + 0.8, b.at + 1.1)))
           disc(x, B.x0 + 400 + Math.cos(a2) * 180, B.y0 + 230 + Math.sin(a2) * 180, 20, MN, clamp(prog(t, b.at + 0.9, b.at + 1.2)))
         },
-        chalk: [{ dt: 0.5, line: 0, text: '*MERCURY*', x: 30, y: 70, size: 30, color: BL }, { dt: 0.9, line: 0, text: 'EARTH', x: 650, y: 70, size: 30, color: MN }],
+        chalk: [{ dt: 0.5, line: 0, text: '*MERCURY*', x: 30, y: 110, size: 30, color: BL }, { dt: 0.9, line: 0, text: 'EARTH', x: 650, y: 110, size: 30, color: MN }],
       },
       { lines: [
           ['teacher', 'astrologers say it rules *talk and travel*.', { tag: TA, point: [300, 160] }],
@@ -141,7 +141,7 @@ export const W05A = {
   // ─────────────────────────────── hst113 · Your rising sign, explained with feeder roads ───────────────────────────────
   hst113: {
     id: 'hst113', duration: 49, key: 'F', open: 'street', openText: 'FEEDER RD', qAccent: '#7dffb0', tint: '#2f8a5e',
-    hook: 'Your rising sign, | explained with *feeder roads*',
+    hook: 'Your rising sign, | explained with | *feeder roads*',
     teacher: star('libra', { pitch: 560 }), student: star('sagittarius', { pitch: 740 }),
     boardTitle: 'RISING SIGN',
     beats: [
@@ -297,7 +297,7 @@ export const W05A = {
   // ─────────────────────────────── hst116 · Inside the Loop, explained with orbits ───────────────────────────────
   hst116: {
     id: 'hst116', duration: 50, key: 'C', open: 'loop', openText: '610', qAccent: '#ff9a3c', tint: '#c0503a',
-    hook: 'Inside the Loop, | explained with *orbits*',
+    hook: 'The Loop, | explained with | *planet orbits*',
     teacher: star('capricorn', { pitch: 400, prop: 'whistle' }), student: star('gemini', { pitch: 720 }),
     boardTitle: 'THE LOOPS',
     beats: [
@@ -312,7 +312,7 @@ export const W05A = {
           const k = clamp(prog(t, b.lines[1].t + 0.9, b.lines[1].t + 1.2))
           ;[[80, 3.0, BL], [140, 1.6, MN], [200, 0.9, PK]].forEach(([r, w, c], i) => disc(x, B.x0 + 400 + Math.cos(t * w + i) * r, B.y0 + 230 + Math.sin(t * w + i) * r, 14, c, k))
         },
-        chalk: [{ dt: 0.7, line: 2, text: '*88* DAYS', x: 30, y: 60, size: 34 }, { dt: 1.1, line: 2, text: 'EARTH: *1 YR*', x: 770, y: 420, size: 30, align: 'right' }],
+        chalk: [{ dt: 0.7, line: 2, text: '*88* DAYS', x: 30, y: 110, size: 34 }, { dt: 1.1, line: 2, text: 'EARTH: *1 YR*', x: 770, y: 420, size: 30, align: 'right' }],
       },
       { lines: [
           ['teacher', 'Houston has *rings* too.', { tag: TH, point: [400, 230] }],
@@ -351,7 +351,7 @@ export const W05A = {
   // ─────────────────────────────── hst117 · Your moon sign is your comfort food ───────────────────────────────
   hst117: {
     id: 'hst117', duration: 48, key: 'Bb', open: 'food', qAccent: '#ffcf6b', tint: '#d09a3a',
-    hook: 'Your moon sign | is your *comfort food*',
+    hook: 'Your moon sign | is your | *comfort food*',
     teacher: star('taurus', { pitch: 410, glasses: true }), student: star('virgo', { pitch: 640, prop: 'clipboard' }),
     boardTitle: 'MOON SIGN',
     beats: [
@@ -401,7 +401,7 @@ export const W05A = {
   // ─────────────────────────────── hst118 · Houston's brightest "star" is not a star ───────────────────────────────
   hst118: {
     id: 'hst118', duration: 50, key: 'E', open: 'bayou', qAccent: '#ffb6d0', tint: '#8a3a9a',
-    hook: "Houston's brightest 'star' | is *not* a star",
+    hook: "Houston's brightest | 'star' is *not* | a star",
     teacher: star('scorpio', { pitch: 380 }), student: star('cancer', { pitch: 600 }),
     boardTitle: 'EVENING STAR',
     beats: [

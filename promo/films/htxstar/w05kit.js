@@ -385,8 +385,9 @@ export function makeHtxExplainer(cfg) {
             x.save(); x.globalAlpha *= k
             if (cfg.beats[i].draw) cfg.beats[i].draw(x, t, B, b, T)
             for (const c of cfg.beats[i].chalk || []) chalkText(x, t, { ...c, x: B.x0 + c.x, y: B.y0 + c.y, at: (c.line != null ? b.lines[c.line].t : b.at) + c.dt })
+            let nt = 0
             for (const L of b.lines) if (L.o.tag) {
-              const tg = L.o.tag
+              const tg = { ...L.o.tag, dy: L.o.tag.fixed ? L.o.tag.dy : 14 + 66 * nt++ }
               if (tg.kind === 'hou') houTag(x, t, { at: L.t + 0.05, x: B.x0 + tg.dx, y: B.y0 + tg.dy, align: tg.align || 'left', text: tg.text })
               else factTag(x, t, { kind: tg.kind, at: L.t + 0.05, out: null, x: B.x0 + tg.dx, y: B.y0 + tg.dy, align: tg.align || 'left' })
             }
@@ -466,7 +467,10 @@ export function checkText(cfg) {
   for (const s of cfg.items) if (plain(s).length > 34) bad.push(s)
   const hw = plain(cfg.hook).replace(/\|/g, ' ').split(/\s+/).filter(Boolean)
   if (hw.length > 8) bad.push('hook words: ' + cfg.hook)
-  for (const ln of cfg.hook.split('|')) if (ln.trim().split(/\s+/).length < 2) bad.push('hook lone word: ' + cfg.hook)
+  for (const ln of cfg.hook.split('|')) {
+    if (ln.trim().split(/\s+/).length < 2) bad.push('hook lone word: ' + cfg.hook)
+    if (plain(ln).trim().length > 19) bad.push('hook line too long (wraps): ' + ln)
+  }
   return bad
 }
 export { HGREEN, BRAKE, MONO, INTER }
