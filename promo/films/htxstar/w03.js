@@ -4,7 +4,7 @@
 // scene-local SFX (scene.sfx: [[lt, kind, …]]) and worn props (scene.wear: { sign: ['glasses' | 'headset' | …] }).
 import { clamp, prog, ease } from '../../src/lib.js'
 import { FLOOR, box, txt, outside, room, table } from '../starrace/ep.js'
-import { label, sparkles, pop01, starFrame, inSprite, GOLD, BONE, PINK, INK, MONO, SERIF, INTER, MINT, SKYB, LAV } from '../signs3kit.js'
+import { label, sparkles, pop01, starFrame, inSprite, tearsCells, GOLD, BONE, PINK, INK, MONO, SERIF, INTER, MINT, SKYB, LAV } from '../signs3kit.js'
 import { skyline, partyCard, BRAKE, HGREEN, freeway, car, heatSun, coffeeShop, houses, kolache, klobasnek, soupPot } from './kit.js'
 
 export const Y = 1255
@@ -44,7 +44,9 @@ function levelUp(t, key = 'C') {
 
 // ── worn props (sprite cells: the star is 36 × 36; eyes at (13.4, 19.2) and (22.6, 19.2)) ─────────────────────
 const R = (c, i, j, w, h, col) => { c.fillStyle = col; c.fillRect(i, j, w, h) }
+let NOW = 0
 const WEAR = {
+  tears(c, k = 2) { tearsCells(c, NOW, k) },
   glasses(c) {                       // the aunties' tiny reading glasses, low on the face, with a chain
     for (const ex of [13.4, 22.6]) { R(c, ex - 4, 18.6, 8, 1, INK); R(c, ex - 4, 23.4, 8, 1, INK); R(c, ex - 4, 18.6, 1, 5.8, INK); R(c, ex + 3, 18.6, 1, 5.8, INK); R(c, ex - 3, 19.6, 6, 3.8, 'rgba(190,230,255,0.28)'); R(c, ex - 2.6, 19.9, 1.4, 1, 'rgba(255,255,255,0.8)') }
     R(c, 17.4, 20, 1.2, 0.9, INK); for (let k = 0; k < 5; k++) { R(c, 9.2 - k * 0.5, 24.6 + k * 1.2, 0.9, 0.9, GOLD); R(c, 26.2 + k * 0.5, 24.6 + k * 1.2, 0.9, 0.9, GOLD) }
@@ -88,7 +90,7 @@ function wearFront(s, t0) {
       const talk = (s.lines || []).filter(l => l[2] === id).map(l => t0 + l[0])
       const hops = [...(s.hops?.[id] || []).map(h => t0 + h), ...talk].filter(h => h <= t).slice(-3)
       const F = starFrame(cx, cy + bob, size, t, { pop: pop01(t, t0 - 0.2, 0.3, 1.6), hops, seed: id.length + 3 })
-      inSprite(x, F, () => { for (const it of [].concat(items)) { const [n, ...arg] = [].concat(it); WEAR[n]?.(x, ...arg) } })
+      NOW = t; inSprite(x, F, () => { for (const it of [].concat(items)) { const [n, ...arg] = [].concat(it); (typeof n === 'function' ? n : WEAR[n])?.(x, ...arg) } })
     }
   }
 }
