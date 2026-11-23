@@ -35,8 +35,8 @@ export const W14A = {
 
   // ── hst334 · Your sign is a kolache filling
   hst334: assigns({
-    hook: 'Your sign | is a kolache filling', bg: BG.kitchen({ wall: '#ffe9d6', tile: '#ffd9c0', top: '#e8a06a', counter: '#8a5232' }), card: { kind: 'case', iconS: 1.2, iconY: -50 }, tagCol: '#3a2418',
-    hero: (x, t) => { icon(x, 'kolache', 330, 800 + bob(t), 1.3, '#c0304a'); icon(x, 'klob', 560, 790 + bob(t, 1), 1.2); icon(x, 'kolache', 790, 800 + bob(t, 2), 1.3, '#ff9a3c') },
+    hook: 'Your sign | is a kolache filling', bg: BG.kitchen({ wall: '#ffe9d6', tile: '#ffd9c0', top: '#e8a06a', counter: '#8a5232' }), card: { kind: 'case', iconS: 1.2, iconY: -50 },
+    hero: (x, t) => { icon(x, 'kolache', 250, 800 + bob(t), 0.85, '#c0304a'); icon(x, 'klob', 540, 790 + bob(t, 1), 0.85); icon(x, 'kolache', 830, 800 + bob(t, 2), 0.85, '#ff9a3c') },
     items: [
       ['aries', 'CHERRY', 'red. bold. | first out the box.', 'kolache', '#c0304a'],
       ['taurus', 'CREAM CHEESE', 'soft. rich. | worth the wait.', 'kolache', '#fff6e0'],
@@ -60,18 +60,18 @@ export const W14A = {
 
   // ── hst335 · You're not a sign. You're Houston weather.
   hst335: assigns({
-    hook: "You're not a sign. | You're Houston weather.", bg: BG.studio(), card: { kind: 'tile', head: 'STAR WEATHER · 7 DAY', iconS: 1.0 },
+    hook: "You're not | a sign. You're | Houston weather.", bg: BG.studio(), card: { kind: 'tile', head: 'STAR WEATHER · 7 DAY', iconS: 1.0 },
     hero: (x, t) => { icon(x, 'sun', 300, 800 + bob(t), 1.0, GOLD, PINK, t); icon(x, 'rain', 540, 800 + bob(t, 1), 0.9, '#c9d4e8', PINK, t); icon(x, 'thermo', 760, 800 + bob(t, 2), 0.9, '55°') },
     items: [
       ['aries', 'JUNE HEAT', 'hot. fast. | shows up early.', 'sun'],
       ['taurus', 'PATIO WEATHER', 'the one perfect | day. staying out.', 'thermo', '72°', '#ffb02a'],
-      ['gemini', 'SUN AND RAIN AT ONCE', 'sunny. raining. | same block.', 'rain'],
+      ['gemini', 'SUN AND RAIN AT ONCE', 'sunny. raining. | same block.', 'rain', '#fff3c4'],
       ['cancer', 'THE 55° DAY', 'puffer coat. | soup. blanket.', 'coat', '#e05a3a', '#2b5fb0'],
       ['leo', 'OCTOBER SUMMER', 'still summer. | still iconic.', 'sun'],
       ['virgo', 'OAK POLLEN WEEK', 'wiping the car. | again.', 'pollen', null, null, 'squint'],
       ['libra', '80° IN JANUARY', 'shorts or a coat? | ...both.', 'thermo', '80°'],
       ['scorpio', 'MORNING FOG', 'mysterious. | gone by noon.', 'fog'],
-      ['sagittarius', 'THE POP-UP SHOWER', 'came. went. | ten minutes. bye.', 'rain'],
+      ['sagittarius', 'THE POP-UP SHOWER', 'came. went. | ten minutes. bye.', 'rain', '#c9d4e8'],
       ['capricorn', 'THE HUMIDITY', "it's not the heat. | it's me.", 'cloud', '#c9e0ff', null, 'wink'],
       ['aquarius', 'THE ARCTIC OFFICE AC', 'freezing you | indoors. in July.', 'snow', '#bfe6ff'],
       ['pisces', 'PINK SKY AFTER RAIN', 'the sky is pink. | I am crying.', 'cloud', '#ffb3c7'],
@@ -282,7 +282,7 @@ export const W14A = {
 
   // ── hst344 · You're not a sign. You're a Houston sound.
   hst344: assigns({
-    hook: "You're not a sign. | You're a Houston sound.", bg: BG.neon({ bg: '#0c1426', lines: ['#8fe3ff', '#7dffb0', '#ffd36b'] }), card: { kind: 'neon', glow: '#8fe3ff', head: 'NOW PLAYING · H-TOWN', headCol: '#8fe3ff', iconS: 0.95 },
+    hook: "You're not | a sign. You're | a Houston sound.", bg: BG.neon({ bg: '#0c1426', lines: ['#8fe3ff', '#7dffb0', '#ffd36b'] }), card: { kind: 'neon', glow: '#8fe3ff', head: 'NOW PLAYING · H-TOWN', headCol: '#8fe3ff', iconS: 0.95 },
     hero: (x, t) => { icon(x, 'speaker', 300, 810 + bob(t), 0.8, '#8fe3ff', null, t); icon(x, 'record', 540, 800, 0.9, PINK, null, t); icon(x, 'acc', 790, 810 + bob(t, 2), 0.8, '#ff8fb1', '#ffd84a', t) },
     items: [
       ['aries', 'THE SLAB BASS', 'you heard me | two blocks away.', 'speaker', '#ff5a3a'],
@@ -296,7 +296,7 @@ export const W14A = {
       ['sagittarius', 'CICADAS IN JULY', 'loud. outside. | free.', 'bug', '#6a8a4a'],
       ['capricorn', 'THE GOSPEL CHOIR', 'Sunday. | full volume.', 'note', '#ffd84a'],
       ['aquarius', 'THIRD WARD JAZZ', 'improvising. | always.', 'note', '#8fe3ff'],
-      ['pisces', 'RAIN ON THE ROOF', 'so peaceful. | crying.', 'rain'],
+      ['pisces', 'RAIN ON THE ROOF', 'so peaceful. | crying.', 'rain', '#c9d4e8'],
     ],
     bonus: { title: ['BONUS ROUND:', 'JULY'], items: [
       ['leo', 'THE AC ON MAX', 'the best sound | in July.', 'fan', '#8fe3ff', '#bfe6ff', 'sparkle'],
