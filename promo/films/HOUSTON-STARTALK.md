@@ -15,6 +15,7 @@ The user asked: "make 250 very Houston specific Houston star talk videos, needs 
   - The HOOK caption is static from frame 1: box style, 4–8 words, 2 lines at most.
   - Frame 0 is already busy, with motion and a Houston symbol (a green street sign, the 610 shield, brake lights, the skyline, the heat sun).
   - No fade-in and no logo.
+- **Sound:** keep music well under the SFX: each cues.js sets `music: { …, lufs: -26, musicRel: -15, crackle: false }` (the user found the default too loud). The 610 skit uses the 'screwed' style; the others use pop.
 - **Pacing:** a cut or new beat every 2–4 s. Lengths run 20–35 s. Render with `--social --calm=1` (normal speed).
 - **CTA:**
   - A persistent "HOU BETA · JAN 9" badge (top left, after the hook).
