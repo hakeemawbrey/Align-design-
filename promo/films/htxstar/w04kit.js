@@ -212,7 +212,7 @@ export function pond(x, t) {   // Hermann Park: the pond and paddle boats
 }
 export function paddleBoat(x, cx, cy, col = '#ffd36b', s = 1) {
   x.save(); x.translate(cx, cy); x.scale(s, s)
-  box(x, -170, -10, 340, 70, col, 7); box(x, -120, -90, 240, 26, BONE, 5); box(x, -110, -70, 14, 64, BONE, 3); box(x, 96, -70, 14, 64, BONE, 3)
+  box(x, -170, -10, 340, 70, col, 7); x.fillStyle = 'rgba(255,255,255,0.35)'; x.fillRect(-160, 0, 320, 10)
   x.fillStyle = INK; x.beginPath(); x.arc(150, 30, 34, 0, Math.PI * 2); x.fill(); x.fillStyle = '#c0304a'; x.beginPath(); x.arc(150, 30, 26, 0, Math.PI * 2); x.fill()
   x.restore()
 }

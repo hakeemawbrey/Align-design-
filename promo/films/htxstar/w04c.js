@@ -87,7 +87,7 @@ const hst102 = story({
     { dur: 3.8, set: (x, t, lt) => { crawfishTable(x, t, 1); if (lt > 0.8) sparkles(x, t, 540, 1050, t - lt + 0.8, 12, 300, 4) }, cast: { cancer: [[0, 220, 1000, 220]], taurus: [[0, 860, 1000, 220]], virgo: [[0, 540, 1250, 240]] },
       mood: { cancer: 'heart', taurus: 'heart', virgo: 'sparkle' }, props: AUNTS, hops: { cancer: [1.0, 1.3], taurus: [1.1, 1.4], virgo: [0.8] },
       lines: [[1.1, 2.2, 'cancer', 'A NATURAL!!']], sfx: [SFX.cheer(1.0)] },
-    { dur: 3.8, set: (x, t) => { crawfishTable(x, t, 0.3); for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) crawfish(x, 300 + c * 90, 980 - r * 30, 0.6, '#b8502a') }, cast: { cancer: [[0, 220, 1250, 230]], taurus: [[0, 860, 1250, 230]], pisces: [[0, 540, 1420, 140]] },
+    { dur: 3.8, set: (x, t) => { crawfishTable(x, t, 0.3); for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) crawfish(x, 300 + c * 90, 980 - r * 30, 0.6, '#b8502a') }, cast: { cancer: [[0, 220, 1250, 230]], taurus: [[0, 860, 1250, 230]], pisces: [[0, 540, 1290, 140]] },
       mood: { cancer: 'heart', taurus: 'wink', pisces: 'heart' }, props: AUNTS,
       lines: [[0.3, 1.5, 'taurus', '...and the shells | are in rows.'], [2.0, 1.6, 'cancer', "we're keeping | this one."]] },
   ],
