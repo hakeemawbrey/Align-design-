@@ -1,0 +1,76 @@
+{
+ "images": [
+  {
+   "id": "aic-16571",
+   "source": "aic",
+   "title": "Arrival of the Normandy Train, Gare Saint-Lazare",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16571",
+   "url": "https://www.artic.edu/iiif/2/0f1cc0e0-e42e-be16-3f71-2022da38cb93/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1265,
+   "file": "aic-16571.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Monet, Gare Saint-Lazare, steam"
+  },
+  {
+   "id": "wc-29838676",
+   "source": "commons",
+   "title": "Frits Thaulow - The Train is arriving - Google Art Project",
+   "creator": "Frits Thaulow",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frits_Thaulow_-_The_Train_is_arriving_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Frits_Thaulow_-_The_Train_is_arriving_-_Google_Art_Project.jpg/1920px-Frits_Thaulow_-_The_Train_is_arriving_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Frits_Thaulow_-_The_Train_is_arriving_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1172,
+   "file": "wc-29838676.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Thaulow, The Train is Arriving"
+  },
+  {
+   "id": "wc-30139434",
+   "source": "commons",
+   "title": "Honoré Daumier, The Third-Class Carriage - The Metropolitan Museum of Art",
+   "creator": "Honoré Daumier",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier,_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg/1920px-Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Honor%C3%A9_Daumier%2C_The_Third-Class_Carriage_-_The_Metropolitan_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1388,
+   "file": "wc-30139434.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "pin": true,
+   "note": "Daumier, The Third-Class Carriage"
+  },
+  {
+   "id": "aic-890",
+   "source": "aic",
+   "title": "On the Road",
+   "creator": "Jules Dupré (French, 1811–1889)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/890",
+   "url": "https://www.artic.edu/iiif/2/e0d8a305-15b0-bdcd-1e83-06d8594a2f7e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1320,
+   "file": "aic-890.jpg",
+   "focus": [
+    0.4,
+    0.6
+   ]
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "images": [
+  {
+   "id": "aic-36678",
+   "source": "aic",
+   "title": "Girl with Cherries",
+   "creator": "Eva Gonzalès (French, 1849–1883)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/36678",
+   "url": "https://www.artic.edu/iiif/2/ec4367a5-52b8-79a5-7e7d-dbaff46d4f4e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1985,
+   "file": "aic-36678.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-21962575",
+   "source": "commons",
+   "title": "Alfred Sisley - Orchard in Spring, By - Google Art Project",
+   "creator": "Alfred Sisley",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Sisley_-_Orchard_in_Spring,_By_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Alfred_Sisley_-_Orchard_in_Spring%2C_By_-_Google_Art_Project.jpg/1920px-Alfred_Sisley_-_Orchard_in_Spring%2C_By_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Alfred_Sisley_-_Orchard_in_Spring%2C_By_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1438,
+   "file": "wc-21962575.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Sisley, Orchard in Spring"
+  },
+  {
+   "id": "wc-43730740",
+   "source": "commons",
+   "title": "'Orchard in Spring' by Alfred Wahlberg, Bergen Kunstmuseum",
+   "creator": "Alfred Wahlberg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%27Orchard_in_Spring%27_by_Alfred_Wahlberg,_Bergen_Kunstmuseum.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/%27Orchard_in_Spring%27_by_Alfred_Wahlberg%2C_Bergen_Kunstmuseum.JPG/1920px-%27Orchard_in_Spring%27_by_Alfred_Wahlberg%2C_Bergen_Kunstmuseum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/%27Orchard_in_Spring%27_by_Alfred_Wahlberg%2C_Bergen_Kunstmuseum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1153,
+   "file": "wc-43730740.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Wahlberg, Orchard in Spring"
+  },
+  {
+   "id": "wc-9521585",
+   "source": "commons",
+   "title": "Van Gogh - Blühende Kastanienbäume1",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Bl%C3%BChende_Kastanienb%C3%A4ume1.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Van_Gogh_-_Bl%C3%BChende_Kastanienb%C3%A4ume1.jpeg/1920px-Van_Gogh_-_Bl%C3%BChende_Kastanienb%C3%A4ume1.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Van_Gogh_-_Bl%C3%BChende_Kastanienb%C3%A4ume1.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1893,
+   "h": 2400,
+   "file": "wc-9521585.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Van Gogh, blossoming chestnut trees"
+  },
+  {
+   "id": "wc-21924757",
+   "source": "commons",
+   "title": "Blossoming cherry trees - Google Art Project",
+   "creator": "Unknown  – Artist",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Blossoming_cherry_trees_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Blossoming_cherry_trees_-_Google_Art_Project.jpg/1920px-Blossoming_cherry_trees_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Blossoming_cherry_trees_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1662,
+   "file": "wc-21924757.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-96833763",
+   "source": "commons",
+   "title": "Man lying beneath a Blossoming Tree (SM 2214)",
+   "creator": "Paula Modersohn-Becker",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Man_lying_beneath_a_Blossoming_Tree_(SM_2214).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Man_lying_beneath_a_Blossoming_Tree_%28SM_2214%29.png/1920px-Man_lying_beneath_a_Blossoming_Tree_%28SM_2214%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Man_lying_beneath_a_Blossoming_Tree_%28SM_2214%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1363,
+   "file": "wc-96833763.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-77839463",
+   "source": "commons",
+   "title": "Alfred Zoff - Blossoming trees in Deutschlandsberg",
+   "creator": "Alfred Zoff",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Zoff_-_Blossoming_trees_in_Deutschlandsberg.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Alfred_Zoff_-_Blossoming_trees_in_Deutschlandsberg.jpg/1920px-Alfred_Zoff_-_Blossoming_trees_in_Deutschlandsberg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Alfred_Zoff_-_Blossoming_trees_in_Deutschlandsberg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1286,
+   "file": "wc-77839463.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-87088",
+   "source": "aic",
+   "title": "Water Lily Pond",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87088",
+   "url": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1499,
+   "file": "aic-87088.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}
