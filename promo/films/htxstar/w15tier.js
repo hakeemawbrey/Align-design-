@@ -1,0 +1,283 @@
+// Houston Star Talk · w15 tier lists (hst357–hst368). Builder: w15.js tierEp. Each ranks all 12 signs on a
+// Houston theme, ends on a twist, a comment prompt and the party ticket.
+import { tierEp } from './w15.js'
+import { GOLD, PINK, MINT, SKYB, LAV } from '../signs3kit.js'
+
+const C = (lt, d, id, s) => [lt, d, id, s]
+export const W15T = {
+  // drivers
+  hst357: tierEp({
+    hook: 'Houston drivers, | ranked by | your sign', title: 'SIGNS AS HOUSTON DRIVERS', bg: 'freeway', head: GOLD, introProp: ['shield', '610'],
+    items: [
+      ['capricorn', 'S', 'merged early. | zipper style.', ['car', '#3a8f6a']],
+      ['virgo', 'S', 'signal on. | since Kirby.', ['sign', 'KIRBY']],
+      ['taurus', 'A', 'never changes lanes. | ever.', ['tacos']],
+      ['cancer', 'A', 'lets everyone in. | everyone.', ['heart']],
+      ['libra', 'B', 'Texas U-turn? | ...or no?', ['sign', 'U-TURN']],
+      ['aquarius', 'B', 'took the feeder. | on purpose.', ['sign', 'FEEDER RD']],
+      ['leo', 'B', 'windows down. | music up.', ['car', '#e0a030']],
+      ['sagittarius', 'C', 'Grand Parkway | for fun.', ['shield', '99']],
+      ['pisces', 'C', 'cried at the | skyline on 59.', ['shield', '59']],
+      ['gemini', 'C', 'both lanes. | at once.', ['cone']],
+      ['scorpio', 'D', 'turn signal? | never heard of her.', ['car', '#b03a5a']],
+      ['aries', 'D', 'the minimum | is 85, right?', ['shield', '610']],
+    ],
+    twistCast: { aries: [[0, 330, 1270, 250]], virgo: [[0, 760, 1270, 230]] }, twistMood: { aries: 'wide', virgo: 'squint' },
+    twist: [C(0.2, 1.4, 'aries', 'D?? I was | FIRST in line!'), C(1.75, 1.5, 'virgo', 'you were | on the shoulder.')],
+    cta: ['Where do YOU drive?', 'Comment your sign + freeway'],
+    end: { line: 'Drive safe. See you Jan 9.', stars: ['capricorn', 'aries', 'virgo', 'pisces'] },
+  }),
+
+  // breakfast tacos
+  hst358: tierEp({
+    hook: "Your sign's | breakfast taco | tier list", title: 'BREAKFAST TACO ORDERS', bg: 'kitchen', head: '#ff9a3c', introProp: ['tacos'],
+    items: [
+      ['taurus', 'S', 'potato, egg, | cheese. twice.', ['tacos']],
+      ['sagittarius', 'S', 'one from every | truck on the way.', ['taco', 'x6']],
+      ['cancer', 'S', 'bought a dozen. | for the office.', ['tacos']],
+      ['libra', 'A', 'flour or corn? | ...half and half.', ['taco']],
+      ['gemini', 'A', 'flour AND corn. | at once.', ['tacos']],
+      ['leo', 'A', 'extra salsa. | the red one. hot.', ['taco']],
+      ['virgo', 'B', 'brought my own | tortilla warmer.', ['clipboard']],
+      ['aries', 'B', 'ate it walking | to the car.', ['sneaker']],
+      ['capricorn', 'B', 'ordered at 6:58. | done by 7.', ['taco']],
+      ['scorpio', 'C', 'secret spot. | not telling you.', ['taco', '???']],
+      ['aquarius', 'C', 'a taco with | kimchi? yes.', ['taco']],
+      ['pisces', 'D', 'it fell apart. | I cried.', ['taco']],
+    ],
+    twistCast: { pisces: [[0, 330, 1270, 250]], taurus: [[0, 760, 1270, 230]] }, twistMood: { pisces: 'heart', taurus: 'happy' },
+    twist: [C(0.2, 1.4, 'pisces', 'D tier... | for crying?'), C(1.75, 1.5, 'taurus', 'here. | have my second one.')],
+    cta: ['Flour or corn?', 'Comment your sign + your order'],
+    end: { line: 'Tacos first. Party Jan 9.', stars: ['taurus', 'pisces', 'gemini', 'sagittarius'] },
+  }),
+
+  // humidity
+  hst359: tierEp({
+    hook: 'Which tier is | your sign in | the humidity?', title: 'SURVIVING HOUSTON HUMIDITY', bg: 'heat', head: '#ff5a6e', introProp: ['sweat'],
+    items: [
+      ['scorpio', 'S', "doesn't sweat. | won't explain.", ['sun']],
+      ['aquarius', 'S', 'lives in the | downtown tunnels.', ['sign', 'TUNNEL']],
+      ['capricorn', 'A', 'parks by shade. | planned at dawn.', ['car', '#3a8f6a']],
+      ['cancer', 'A', 'sweater in the | bag. AC is arctic.', ['sweater']],
+      ['virgo', 'A', 'three shirts. | a schedule.', ['clipboard']],
+      ['taurus', 'B', 'refuses to | leave the porch.', ['sun']],
+      ['libra', 'B', 'hair was perfect. | for 4 minutes.', ['sweat']],
+      ['gemini', 'B', "'it's not the heat...' | (it's the heat)", ['thermo', '98°']],
+      ['sagittarius', 'C', 'Galveston. | at noon. why not.', ['sun']],
+      ['aries', 'C', 'ran the bayou | at 2pm.', ['sneaker']],
+      ['leo', 'D', 'wore black. | in August.', ['sweat']],
+      ['pisces', 'D', 'is it sweat | or tears? both.', ['sweat']],
+    ],
+    twistCast: { leo: [[0, 330, 1270, 250]], scorpio: [[0, 760, 1270, 230]] }, twistMood: { leo: 'wide', scorpio: 'wink' },
+    twist: [C(0.2, 1.4, 'leo', 'black is | my COLOR.'), C(1.75, 1.5, 'scorpio', "it's October. | still summer.")],
+    cta: ["It's not the heat.", 'Comment your sign + your trick'],
+    end: { line: 'Bring a sweater. Jan 9.', stars: ['leo', 'scorpio', 'aquarius', 'pisces'] },
+  }),
+
+  // the one cold day
+  hst360: tierEp({
+    hook: "One cold day. | Your sign's | tier list.", title: 'THE ONE 55° DAY', bg: 'cold', head: SKYB, introProp: ['thermo', '55°'],
+    items: [
+      ['cancer', 'S', 'soup on the | stove by 7am.', ['bowl']],
+      ['sagittarius', 'S', 'pho run. | it is "cold".', ['bowl']],
+      ['taurus', 'S', 'blanket. couch. | not moving.', ['sweater', '#c9a6ff']],
+      ['pisces', 'A', 'cried. it was | so pretty.', ['thermo', '55°']],
+      ['libra', 'A', 'a whole coat | outfit. planned.', ['coat', '#ff8fb1']],
+      ['virgo', 'A', 'covered every | plant. labeled.', ['clipboard']],
+      ['leo', 'B', 'posted the car | thermometer.', ['phone', '55°!! | cold']],
+      ['gemini', 'B', 'shorts AND | a beanie.', ['coat']],
+      ['capricorn', 'B', 'one jacket. | same as always.', ['coat', '#3a8f6a']],
+      ['aries', 'C', 'ran in shorts. | proving a point.', ['sneaker']],
+      ['scorpio', 'C', "wore the puffer. | it's 61.", ['coat', '#1b1236']],
+      ['aquarius', 'D', '"I like the cold." | moved here anyway.', ['thermo', '61°']],
+    ],
+    twistCast: { libra: [[0, 330, 1270, 250]], aquarius: [[0, 760, 1270, 230]] }, twistMood: { libra: 'wide', aquarius: 'eyeroll' },
+    twist: [C(0.2, 1.4, 'libra', '...wait. | 80° by Thursday?'), C(1.75, 1.5, 'aquarius', 'every | single year.')],
+    cta: ['Puffer or shorts?', 'Comment your sign + your fit'],
+    end: { line: 'Coat optional. Jan 9.', stars: ['cancer', 'libra', 'aquarius', 'pisces'] },
+  }),
+
+  // crawfish boil
+  hst361: tierEp({
+    hook: 'Crawfish boil | tier list: | find your sign', title: 'SIGNS AT A CRAWFISH BOIL', bg: 'boil', head: '#ff5a6e', introProp: ['pile'],
+    items: [
+      ['taurus', 'S', 'peeled 80. | did not speak.', ['pile']],
+      ['cancer', 'S', 'brought the corn | AND the potatoes.', ['crawfish']],
+      ['leo', 'S', 'the extra-spicy | batch was mine.', ['crawfish']],
+      ['sagittarius', 'A', 'Viet-Cajun. | butter garlic. yes.', ['crawfish']],
+      ['aries', 'A', 'burned the lips. | went back in.', ['crawfish']],
+      ['scorpio', 'A', 'peels with | one hand. calm.', ['crawfish']],
+      ['capricorn', 'B', 'brought paper | towels. 12 rolls.', ['clipboard']],
+      ['gemini', 'B', 'talked to | everyone. ate 3.', ['crawfish']],
+      ['libra', 'B', 'still deciding | how to peel.', ['crawfish']],
+      ['virgo', 'C', 'peeled them | into a neat pile.', ['clipboard']],
+      ['aquarius', 'C', '"they\'re small | in January." true.', ['crawfish']],
+      ['pisces', 'D', 'named one. | set it free.', ['heart']],
+    ],
+    twistCast: { pisces: [[0, 330, 1270, 250]], cancer: [[0, 760, 1270, 230]] }, twistMood: { pisces: 'heart', cancer: 'happy' },
+    twist: [C(0.2, 1.4, 'pisces', 'his name | was Gerald.'), C(1.75, 1.5, 'cancer', 'eat some corn, | baby.')],
+    cta: ['Season is starting.', 'Comment your sign + spice level'],
+    end: { line: 'Save room. Jan 9.', stars: ['taurus', 'pisces', 'leo', 'cancer'] },
+  }),
+
+  // first dates
+  hst362: tierEp({
+    hook: 'Is your sign | S-tier Houston | date material?', title: 'SIGNS AS A FIRST DATE', bg: 'coffee', head: PINK, introProp: ['heart'],
+    items: [
+      ['cancer', 'S', 'picnic at | Hermann Park.', ['heart']],
+      ['libra', 'S', 'free museum | Thursday. cute.', ['heart']],
+      ['scorpio', 'S', 'the bats at | sunset. quiet.', ['heart']],
+      ['pisces', 'A', 'paddle boats. | cried a little.', ['paddle']],
+      ['aries', 'A', 'run club date. | 5k. no warning.', ['sneaker']],
+      ['taurus', 'A', 'a Bellaire | food crawl.', ['bowl']],
+      ['leo', 'B', 'brunch. the wait | was the date.', ['coffee']],
+      ['gemini', 'B', 'karaoke on | Bellaire. duets.', ['heart']],
+      ['virgo', 'B', 'halfway coffee | on the feeder.', ['coffee']],
+      ['sagittarius', 'C', 'surprise! | Galveston!', ['sun']],
+      ['capricorn', 'C', 'emailed you | an itinerary.', ['clipboard']],
+      ['aquarius', 'D', 'lives in | The Woodlands.', ['sign', 'WOODLANDS']],
+    ],
+    twistCast: { aquarius: [[0, 330, 1270, 250]], cancer: [[0, 760, 1270, 230]] }, twistMood: { aquarius: 'eyeroll', cancer: 'heart' },
+    twist: [C(0.2, 1.4, 'aquarius', "it's 45 minutes! | without traffic!"), C(1.75, 1.5, 'cancer', "that's | long distance.")],
+    cta: ['Your perfect date?', 'Comment your sign + your spot'],
+    end: { line: 'Bring your date. Jan 9.', stars: ['cancer', 'aquarius', 'libra', 'scorpio'] },
+  }),
+
+  // parking
+  hst363: tierEp({
+    hook: 'Houston parking, | ranked by | your sign', title: 'SIGNS PARKING IN HOUSTON', bg: 'lot', head: MINT, introProp: ['car', '#3a7ad8'],
+    items: [
+      ['capricorn', 'S', 'arrived early. | front row.', ['car', '#3a8f6a']],
+      ['virgo', 'S', 'backed in. | perfectly centered.', ['clipboard']],
+      ['cancer', 'A', 'parked in | the shade. 4 blocks.', ['car', '#8fe3ff']],
+      ['scorpio', 'A', 'knows a secret | lot. silent.', ['pin', '#1b1236']],
+      ['taurus', 'A', 'found shade. | will not leave.', ['car', '#c98e4a']],
+      ['aquarius', 'B', 'biked. | no regrets.', ['sneaker', '#8fe3ff']],
+      ['sagittarius', 'B', 'parked at the | wrong address.', ['pin']],
+      ['gemini', 'B', 'two spots. | on purpose?', ['car', '#d8b23a']],
+      ['leo', 'C', 'valet. | at the taco stand.', ['car', '#e0a030']],
+      ['aries', 'C', 'circled Rice | Village 9 times.', ['sign', 'RICE VILLAGE']],
+      ['libra', 'D', 'couldn\'t pick | a spot. went home.', ['car', '#ff8fb1']],
+      ['pisces', 'D', 'oak pollen | on everything.', ['car', '#c9e05a']],
+    ],
+    twistCast: { libra: [[0, 330, 1270, 250]], aries: [[0, 760, 1270, 230]] }, twistMood: { libra: 'wide', aries: 'squint' },
+    twist: [C(0.2, 1.4, 'aries', 'lap ten. | spot opened!'), C(1.75, 1.5, 'libra', '...was that | my spot?')],
+    cta: ['Shade or front row?', 'Comment your sign + your spot'],
+    end: { line: 'Carpool to Jan 9.', stars: ['capricorn', 'libra', 'aries', 'pisces'] },
+  }),
+
+  // kolache vs klobasnek
+  hst364: tierEp({
+    hook: 'Kolache take | tier list: | find your sign', title: 'THE KOLACHE DEBATE', bg: 'kitchen', head: '#ff9a3c', introProp: ['both'],
+    items: [
+      ['virgo', 'S', "sausage one is a | KLOBASNEK. sorry.", ['klobasnek']],
+      ['taurus', 'S', "don't care. | I'll eat both.", ['both']],
+      ['cancer', 'S', 'grandma made | them. that\'s it.', ['kolache']],
+      ['capricorn', 'A', 'a dozen by | 7am. organized.', ['both']],
+      ['scorpio', 'A', 'cream cheese. | no questions.', ['kolache']],
+      ['libra', 'A', 'peach? apricot? | ...both?', ['kolache']],
+      ['sagittarius', 'B', 'jalapeño cheese. | adventure.', ['klobasnek']],
+      ['aquarius', 'B', 'invented a | boudin one.', ['klobasnek']],
+      ['leo', 'B', 'the biggest | one. obviously.', ['kolache']],
+      ['gemini', 'C', 'calls it both. | on purpose.', ['both']],
+      ['aries', 'C', 'ate it before | the debate.', ['kolache']],
+      ['pisces', 'D', 'the fruit one | looks sad. crying.', ['kolache']],
+    ],
+    twistCast: { gemini: [[0, 330, 1270, 250]], virgo: [[0, 760, 1270, 230]] }, twistMood: { gemini: 'wink', virgo: 'squint' },
+    twist: [C(0.2, 1.4, 'gemini', 'pig in | a blanket?'), C(1.75, 1.5, 'virgo', 'leave. | the kitchen.')],
+    cta: ['Kolache or klobasnek?', 'Comment your sign + your filling'],
+    end: { line: 'Bring a dozen. Jan 9.', stars: ['virgo', 'gemini', 'taurus', 'cancer'] },
+  }),
+
+  // the group chat
+  hst365: tierEp({
+    hook: 'Group chat | energy, ranked | by your sign', title: 'SIGNS IN THE GROUP CHAT', bg: 'night', head: LAV, introProp: ['phone', 'jan 9?? | who is in'],
+    items: [
+      ['capricorn', 'S', 'made the plan. | and a backup.', ['phone', 'plan A | plan B']],
+      ['cancer', 'S', '"text me when | you get home"', ['phone', 'home yet? | ??']],
+      ['gemini', 'S', '200 messages. | before noon.', ['phone', 'ok so | wait | also']],
+      ['leo', 'A', 'sends the fit. | asks for votes.', ['phone', 'rate it | 1-10']],
+      ['sagittarius', 'A', '"let\'s go to | Galveston." now.', ['phone', 'road trip? | now?']],
+      ['libra', 'A', 'made a poll. | for the poll.', ['phone', 'poll: | which poll']],
+      ['aries', 'B', '"I\'m here." | (nobody is)', ['phone', "I'm here | where r u"]],
+      ['taurus', 'B', 'only replies | about food.', ['phone', 'tacos? | yes']],
+      ['virgo', 'B', 'fixed the address. | twice.', ['phone', 'it says | FEEDER rd']],
+      ['aquarius', 'C', 'replies 3 days | later. "lol"', ['phone', 'lol']],
+      ['pisces', 'C', 'voice memo. | 9 minutes.', ['phone', '▶ 9:04']],
+      ['scorpio', 'D', 'read it all. | said nothing.', ['phone', 'read 5:02']],
+    ],
+    twistCast: { scorpio: [[0, 330, 1270, 250]], gemini: [[0, 760, 1270, 230]] }, twistMood: { scorpio: 'wink', gemini: 'wide' },
+    twist: [C(0.2, 1.4, 'gemini', 'is Scorpio | even coming?'), C(1.75, 1.5, 'scorpio', 'already | there.')],
+    cta: ['Who are you in the chat?', 'Comment your sign + your role'],
+    end: { line: 'Add Jan 9 to the chat.', stars: ['scorpio', 'gemini', 'capricorn', 'cancer'] },
+  }),
+
+  // Bellaire food crawl
+  hst366: tierEp({
+    hook: 'Which tier is | your sign on | Bellaire Blvd?', title: 'SIGNS ON A BELLAIRE CRAWL', bg: 'bellaire', head: '#ff5a6e', beat: 3.0, introProp: ['boba'],
+    items: [
+      ['sagittarius', 'S', 'six stops. | at midnight.', ['bowl']],
+      ['taurus', 'S', 'hot pot. | three hours.', ['bowl']],
+      ['gemini', 'S', 'karaoke. | took both mics.', ['heart']],
+      ['leo', 'A', 'karaoke solo. | encore. by request.', ['heart']],
+      ['cancer', 'A', 'bakery run for | the whole family.', ['kolache']],
+      ['libra', 'A', 'boba: 50% sweet. | 50% unsure.', ['boba', '#ffd36b']],
+      ['aries', 'B', 'pho in 6 minutes. | burned mouth.', ['bowl']],
+      ['scorpio', 'B', 'the spot with | no sign. trust.', ['pin']],
+      ['aquarius', 'B', 'ordered the thing | nobody orders.', ['boba', '#7dffb0']],
+      ['virgo', 'C', 'mapped the route. | stuck to it.', ['clipboard']],
+      ['capricorn', 'C', 'home by 10. | a plan is a plan.', ['clipboard']],
+      ['pisces', 'C', 'karaoke ballad. | wept. encore.', ['heart']],
+    ],
+    twistCast: { capricorn: [[0, 330, 1270, 250]], sagittarius: [[0, 760, 1270, 230]] }, twistMood: { capricorn: 'squint', sagittarius: 'sparkle' },
+    twist: [C(0.2, 1.4, 'sagittarius', 'one more stop. | dessert.'), C(1.75, 1.5, 'capricorn', "...fine. | it's 1am.")],
+    cta: ['Your first stop?', 'Comment your sign + your order'],
+    end: { line: 'Eat first. Party Jan 9.', stars: ['sagittarius', 'capricorn', 'gemini', 'pisces'] },
+  }),
+
+  // directions
+  hst367: tierEp({
+    hook: 'Your sign gives | directions. We | ranked it.', title: 'SIGNS GIVING DIRECTIONS', bg: 'traffic', head: GOLD, introProp: ['sign', 'KUYKENDAHL'],
+    items: [
+      ['virgo', 'S', 'feeder, then | Texas U-turn. done.', ['sign', 'U-TURN']],
+      ['capricorn', 'S', 'sent a pin | and a backup pin.', ['pin']],
+      ['scorpio', 'A', '"it\'s by the | other place." ok.', ['pin', '#1b1236']],
+      ['taurus', 'A', 'turn left at | the taco truck.', ['taco']],
+      ['cancer', 'A', '"where\'d you go | to high school?"', ['heart']],
+      ['libra', 'B', 'San Felipe. | "Fill-uh-pee."', ['sign', 'SAN FELIPE']],
+      ['aries', 'B', '20 minutes. | without traffic.', ['shield', '45']],
+      ['gemini', 'B', 'gave two routes. | both wrong.', ['pin']],
+      ['leo', 'C', '"it\'s KIRK-en-doll." | correct, Leo.', ['sign', 'KUYKENDAHL']],
+      ['sagittarius', 'C', 'take the | Grand Parkway. trust.', ['shield', '99']],
+      ['aquarius', 'C', 'go to the | third loop. turn.', ['shield', '8']],
+      ['pisces', 'D', "I'm lost. | it's beautiful.", ['heart']],
+    ],
+    twistCast: { pisces: [[0, 330, 1270, 250]], virgo: [[0, 760, 1270, 230]] }, twistMood: { pisces: 'heart', virgo: 'squint' },
+    twist: [C(0.2, 1.4, 'pisces', 'Houston is an | hour from Houston.'), C(1.75, 1.5, 'virgo', '...okay that | one is true.')],
+    cta: ['How far is it?', '"20 minutes." Comment your sign'],
+    end: { line: 'Leave early. Jan 9.', stars: ['virgo', 'pisces', 'leo', 'capricorn'] },
+  }),
+
+  // the weekend
+  hst368: tierEp({
+    hook: 'Your Houston | weekend plans, | S to D tier', title: 'SIGNS ON A HOUSTON WEEKEND', bg: 'park', head: MINT, introProp: ['paddle'],
+    items: [
+      ['pisces', 'S', 'the Waugh bridge | bats at sunset.', ['heart']],
+      ['aries', 'S', 'bayou trail. | 5am. run club.', ['sneaker']],
+      ['libra', 'S', 'free museum | day. art. date.', ['heart']],
+      ['cancer', 'A', 'Hermann Park | paddle boats.', ['paddle']],
+      ['sagittarius', 'A', 'Galveston. | brown water. love it.', ['sun']],
+      ['taurus', 'A', 'porch in the | Heights. dog.', ['dog']],
+      ['leo', 'B', 'mural photos. | 300 of them.', ['phone', 'pic 1/300']],
+      ['scorpio', 'B', 'the quiet chapel. | alone. perfect.', ['heart']],
+      ['gemini', 'B', 'pickleball, then | brunch, then...', ['sneaker', '#7dffb0']],
+      ['aquarius', 'C', 'Discovery Green. | a drum circle.', ['heart']],
+      ['virgo', 'C', 'errands. | in order.', ['clipboard']],
+      ['capricorn', 'D', 'worked. | on Saturday.', ['clipboard']],
+    ],
+    twistCast: { capricorn: [[0, 330, 1270, 250]], pisces: [[0, 760, 1270, 230]] }, twistMood: { capricorn: 'squint', pisces: 'heart' },
+    twist: [C(0.2, 1.4, 'pisces', 'come see | the bats with me.'), C(1.75, 1.5, 'capricorn', '...one sunset. | okay.')],
+    cta: ['Your perfect weekend?', 'Comment your sign + your spot'],
+    end: { line: 'Clear your Jan 9.', stars: ['pisces', 'capricorn', 'aries', 'libra'] },
+  }),
+}
