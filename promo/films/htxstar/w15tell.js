@@ -104,7 +104,7 @@ export const W15L = {
       one('traffic', [[0.2, 3.2, 'turn signal on | since Kirby.']], ['sign', 'KIRBY']),
       one('lot', [[0.2, 1.6, 'backed in. | centered.'], [1.9, 1.5, 'shade map. | laminated.']], ['clipboard']),
       one('cold', [[0.2, 1.6, 'covered every | plant. labeled.'], [1.9, 1.5, 'it was 52°.']], ['clipboard']),
-      one('freeway', [[0.2, 1.0, 'as a Vir—'], [1.5, 1.9, '...as someone who | says "San Felipe" right.']], ['sign', 'SAN FELIPE'], { beep: 0.9 }),
+      one('freeway', [[0.2, 1.0, 'as a Vir—'], [1.5, 1.9, '...as someone who | says "San Felipe" | correctly.']], ['sign', 'SAN FELIPE'], { beep: 0.9 }),
       one('day', [[0.2, 3.2, 'a sweater for | indoor AC. always.']], ['sweater', MINT]),
       one('night', [[0.2, 1.6, 'party checklist: | done.'], [1.9, 1.5, "you're on it. | checked.", ]], ['clipboard']),
     ],
@@ -166,7 +166,7 @@ export const W15L = {
   }),
 
   hst378: tellEp({
-    sign: 'capricorn', hidden: 'CAPRICORN', accent: '#3a8f6a', card: '#10281c', hook: "Signs you're | secretly a Houston | Capricorn", introBg: 'lot',
+    sign: 'capricorn', hidden: 'CAPRICORN', accent: '#3a8f6a', card: '#10281c', hook: "Signs you're | secretly a | Houston Capricorn", introBg: 'lot',
     clues: [
       one('run', [[0.2, 1.6, '5am in Memorial. | done by 6.'], [1.9, 1.5, 'then | work.']], ['sneaker', '#3a8f6a']),
       one('porch', [[0.2, 3.2, 'the hedges? | trimmed. with a level.']], ['hedge']),
@@ -186,11 +186,11 @@ export const W15L = {
     sign: 'aquarius', hidden: 'AQUARIUS', accent: '#5ec8ff', card: '#0a2a3a', hook: "You're a Houston | Aquarius if you | do this", introBg: 'space',
     clues: [
       one('woods', [[0.2, 1.6, 'The Woodlands. | technically'], [1.9, 1.5, 'not Houston. | I know.']], ['sign', 'WOODLANDS']),
-      one('space', [[0.2, 3.2, 'my Clear Lake | neighbors build rockets.']], ['shield', '45']),
+      one('space', [[0.2, 3.2, 'my Clear Lake | neighbors | build rockets.']], ['shield', '45']),
       one('museum', [[0.2, 1.6, 'free museum day. | weird art.'], [1.9, 1.5, 'stood there. | an hour.']], null),
       one('kitchen', [[0.2, 1.6, 'a boudin | kolache.'], [1.9, 1.5, "I invented it. | you're welcome."]], ['klobasnek']),
-      one('day', [[0.2, 1.0, 'as an Aqua—'], [1.5, 1.9, '...as someone at a | Discovery Green drum circle.']], ['heart'], { beep: 0.9 }),
-      one('night', [[0.2, 3.2, 'replied to | your text. 3 days later.']], ['phone', 'lol']),
+      one('day', [[0.2, 1.0, 'as an Aqua—'], [1.5, 1.9, '...as someone at | a drum circle at | Discovery Green.']], ['heart'], { beep: 0.9 }),
+      one('night', [[0.2, 3.2, 'replied to your | text. 3 days | later.']], ['phone', 'lol']),
       one('night', [[0.2, 1.6, "I'll arrive | as a surprise."], [1.9, 1.5, 'Jan 9. | surprise.']], ['ticket']),
     ],
     cameo: cameo('space', 'aquarius', 'leo', "that's an | Aquarius.", 'labels are | so last year.', 'eyeroll'),
@@ -200,7 +200,7 @@ export const W15L = {
   }),
 
   hst380: tellEp({
-    sign: 'pisces', hidden: 'PISCES', accent: LAV, card: '#24184a', hook: "Signs you're | secretly a Houston | Pisces", introBg: 'bayou',
+    sign: 'pisces', hidden: 'PISCES', accent: LAV, card: '#24184a', hook: "Signs you're | secretly a | Houston Pisces", introBg: 'bayou',
     clues: [
       one('bayou', [[0.2, 1.6, 'the bats at | sunset.'], [1.9, 1.5, 'I cried. | every time.']], ['heart']),
       one('traffic', [[0.2, 3.2, 'cried at the | skyline on 59.']], ['shield', '59']),

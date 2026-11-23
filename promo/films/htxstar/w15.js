@@ -32,7 +32,7 @@ export const BG = {
   traffic: (x, t) => { skyline(x, FLOOR - 150, t, { alpha: 0.8 }); freeway(x, FLOOR - 160, 620, 3, 0); for (const [cx, col] of [[150, '#7a5ab0'], [930, '#3a8f6a']]) car(x, cx, FLOOR + 40, col, { brake: 0.6 + 0.4 * Math.sin(t * 3 + cx), s: 0.8 }); },
   day: (x, t) => { dayGrad(x, 0, FLOOR + 60); clouds(x, t); tree(x, 120, FLOOR + 60, 1.1); tree(x, 960, FLOOR + 60, 0.95, '#4f9f55'); ground(x, '#4f8a3c') },
   heat: (x, t) => { dayGrad(x, 0, FLOOR + 60, '#ffb36b', '#ffe3a1'); heatSun(x, 860, 1000, t, 90); skyline(x, FLOOR + 60, t, { col: '#6b4a6a', lit: '#ffe3a1', alpha: 0.5 }); shimmer(x, 900, 500, t); ground(x, '#b98a4a') },
-  cold: (x, t) => { dayGrad(x, 0, FLOOR + 60, '#8fa6c8', '#d8e2ef'); skyline(x, FLOOR + 60, t, { col: '#4a5a7a', lit: '#fff3c4', alpha: 0.7 }); for (let k = 0; k < 26; k++) { const ph = (t * 0.15 + hash(k)) % 1; x.fillStyle = 'rgba(255,255,255,0.7)'; x.fillRect((k * 151) % 1080, 300 + ph * 1100, 6, 6) } ground(x, '#6f7f96') },
+  cold: (x, t) => { dayGrad(x, 0, FLOOR + 60, '#8fa6c8', '#d8e2ef'); skyline(x, FLOOR + 60, t, { col: '#4a5a7a', lit: '#fff3c4', alpha: 0.7 }); ground(x, '#6f7f96') },
   bayou: (x, t) => {
     dayGrad(x, 0, FLOOR + 60, '#5a3a8a', '#ff9a6a'); x.fillStyle = '#ffcf6b'; x.beginPath(); x.arc(540, 1110, 110, 0, Math.PI * 2); x.fill()
     skyline(x, FLOOR - 40, t, { col: '#2a1a40', lit: '#ffd36b', alpha: 0.75 })
@@ -103,7 +103,7 @@ export function boba(x, cx, cy, s = 1, col = '#d8a8f0') {
 export function phone(x, cx, cy, s = 1, text = '', t = 0) {
   x.save(); x.translate(cx, cy); x.scale(s, s)
   box(x, -90, -160, 180, 320, INK, 6); x.fillStyle = '#e8f0ff'; x.fillRect(-78, -140, 156, 270)
-  if (text) { const L = text.split(' | '); L.forEach((l, i) => { box(x, -70, -120 + i * 64, 140, 50, i % 2 ? '#ff8fb1' : '#8fe3ff', 3); txt(x, l, 0, -95 + i * 64, { size: 22, col: INK, font: INTER, weight: 800 }) }) }
+  if (text) { const L = text.split(' | '); L.forEach((l, i) => { box(x, -74, -126 + i * 74, 148, 60, i % 2 ? '#ff8fb1' : '#8fe3ff', 3); txt(x, l, 0, -96 + i * 74, { size: l.length > 9 ? 24 : 30, col: INK, font: INTER, weight: 800 }) }) }
   x.restore()
 }
 export function bowl(x, cx, cy, s = 1, t = 0) {
@@ -144,7 +144,7 @@ export function prop(x, P, t, lt, spec, cx = 800, cy = 1290) {
     case 'pile': for (let k = 0; k < 7; k++) crawfish(x, cx - 120 + (k % 4) * 80, cy - Math.floor(k / 4) * 70 + 20, 0.55, k * 0.7); break
     case 'boba': boba(x, cx, cy + bob, 1.1, a || '#d8a8f0'); break
     case 'bowl': bowl(x, cx, cy, 1.1, t); break
-    case 'phone': phone(x, cx, cy - 30 + bob, 1.0, a || '', t); break
+    case 'phone': phone(x, cx, cy - 40 + bob, 1.2, a || '', t); break
     case 'coat': coat(x, cx, cy + bob, 0.9, a || '#e05a3a'); break
     case 'sweater': sweater(x, cx, cy + bob, 0.9, a || '#8fe3ff'); break
     case 'clipboard': clipboard(x, cx, cy + bob, 1.1); break
@@ -193,7 +193,7 @@ export function tierEp(E) {
   const crowd = () => Object.fromEntries(SIGN_IDS.map((id, i) => [id, [[0, 115 + (i % 6) * 170, i < 6 ? 1060 : 1270, 150]]]))
   const wave = () => Object.fromEntries(SIGN_IDS.map((id, i) => [id, [0.02 + (i % 6) * 0.07 + (i < 6 ? 0 : 0.04), 1.2 + (i % 6) * 0.07]]))
   const intro = {
-    dur: 2.6, set: (x, t, lt) => { bg(x, t, lt); if (E.introProp) prop(x, null, t, lt + 1, E.introProp, 540, 780) },
+    dur: 2.6, set: (x, t, lt) => { bg(x, t, lt); if (E.introProp) { x.save(); x.translate(540, 840); x.scale(1.5, 1.5); x.translate(-540, -840); prop(x, null, t, lt + 1, E.introProp, 540, 840); x.restore() } },
     cast: crowd(), hops: wave(), mood: Object.fromEntries(SIGN_IDS.map((id, i) => [id, ['sparkle', 'wide', 'happy', 'wink'][i % 4]])),
   }
   const beats = items.map((it, i) => ({
@@ -241,19 +241,19 @@ export function tellEp(E) {
     dur: 2.6, set: (x, t, lt) => { (BG[E.introBg || E.clues[0].bg] || BG.night)(x, t, lt); titleCard(x, t, lt) },
     cast: { [id]: [[0, 540, Y, 300]], ...(E.introCast || {}) }, hops: { [id]: [0.02, 0.55, 1.1, 1.65] }, mood: { [id]: 'wink', ...(E.introMood || {}) },
   }
-  const clues = E.clues.map((c, i) => ({
+  const clues = E.clues.map((c, i) => { const R = i % 2 === 1, sx = c.x ?? (R ? 750 : 330); return {
     dur: c.dur || 3.6,
     set: (x, t, lt) => (BG[c.bg] || BG.night)(x, t, lt),
     back: c.back,
     front: (x, t, lt, P) => {
-      prop(x, P, t, lt, c.prop, c.px ?? 800, c.py ?? 1290)
+      prop(x, P, t, lt, c.prop, c.px ?? (R ? 290 : 800), c.py ?? 1290)
       label(x, 860, 300, `CLUE ${i + 1}`, pop01(t, t - lt + 0.05, 0.3, 1.8), { size: 40, bg: E.accent || GOLD, rot: 0.04, font: MONO, weight: 700 })
       if (c.beep && lt > c.beep && lt < c.beep + 1.0) { label(x, 540, 640, 'BEEP', pop01(t, t - lt + c.beep, 0.25, 2), { size: 90, bg: PINK, rot: -0.06 }) }
       c.front?.(x, t, lt, P)
     },
-    cast: c.cast || { [id]: [[0, c.x ?? 330, Y, 270]] }, mood: c.mood || { [id]: 'happy' }, look: c.look || { [id]: [0, 0.3] }, hops: c.hops,
+    cast: c.cast || { [id]: [[0, R ? 1250 : -170, Y, 270], [0.3, sx, Y, 270]] }, mood: c.mood || { [id]: 'happy' }, look: c.look || { [id]: [0, 0.3] }, hops: c.hops,
     lines: c.lines.map(l => l.length === 3 ? [l[0], l[1], id, l[2]] : l), stick: c.stick,
-  }))
+  } })
   const reveal = {
     dur: E.revealDur || 3.6, set: (x, t, lt) => { (BG[E.revealBg || 'night'])(x, t, lt); if (lt > 0.4) sparkles(x, t, 540, 1100, t - lt + 0.4, 12, 360, 7) },
     front: (x, t, lt) => { const k = Kp(lt, 1.9, 0.35); if (k > 0) label(x, 540, 1440, E.cta || 'Comment your sign.', k, { size: 46, bg: PINK, rot: -0.02 }) },
