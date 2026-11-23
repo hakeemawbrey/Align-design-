@@ -1,0 +1,97 @@
+{
+ "worker": "w13",
+ "styles": [
+  "sports",
+  "cooking"
+ ],
+ "items": [
+  {
+   "id": "hst311",
+   "style": "sports"
+  },
+  {
+   "id": "hst312",
+   "style": "sports"
+  },
+  {
+   "id": "hst313",
+   "style": "sports"
+  },
+  {
+   "id": "hst314",
+   "style": "sports"
+  },
+  {
+   "id": "hst315",
+   "style": "sports"
+  },
+  {
+   "id": "hst316",
+   "style": "sports"
+  },
+  {
+   "id": "hst317",
+   "style": "sports"
+  },
+  {
+   "id": "hst318",
+   "style": "sports"
+  },
+  {
+   "id": "hst319",
+   "style": "sports"
+  },
+  {
+   "id": "hst320",
+   "style": "sports"
+  },
+  {
+   "id": "hst321",
+   "style": "sports"
+  },
+  {
+   "id": "hst322",
+   "style": "cooking"
+  },
+  {
+   "id": "hst323",
+   "style": "cooking"
+  },
+  {
+   "id": "hst324",
+   "style": "cooking"
+  },
+  {
+   "id": "hst325",
+   "style": "cooking"
+  },
+  {
+   "id": "hst326",
+   "style": "cooking"
+  },
+  {
+   "id": "hst327",
+   "style": "cooking"
+  },
+  {
+   "id": "hst328",
+   "style": "cooking"
+  },
+  {
+   "id": "hst329",
+   "style": "cooking"
+  },
+  {
+   "id": "hst330",
+   "style": "cooking"
+  },
+  {
+   "id": "hst331",
+   "style": "cooking"
+  },
+  {
+   "id": "hst332",
+   "style": "cooking"
+  }
+ ]
+}

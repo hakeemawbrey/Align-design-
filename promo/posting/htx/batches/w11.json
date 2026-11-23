@@ -1,0 +1,109 @@
+{
+ "worker": "w11",
+ "styles": [
+  "mission",
+  "trailer"
+ ],
+ "items": [
+  {
+   "id": "hst261",
+   "style": "mission"
+  },
+  {
+   "id": "hst262",
+   "style": "mission"
+  },
+  {
+   "id": "hst263",
+   "style": "mission"
+  },
+  {
+   "id": "hst264",
+   "style": "mission"
+  },
+  {
+   "id": "hst265",
+   "style": "mission"
+  },
+  {
+   "id": "hst266",
+   "style": "mission"
+  },
+  {
+   "id": "hst267",
+   "style": "mission"
+  },
+  {
+   "id": "hst268",
+   "style": "mission"
+  },
+  {
+   "id": "hst269",
+   "style": "mission"
+  },
+  {
+   "id": "hst270",
+   "style": "mission"
+  },
+  {
+   "id": "hst271",
+   "style": "mission"
+  },
+  {
+   "id": "hst272",
+   "style": "mission"
+  },
+  {
+   "id": "hst273",
+   "style": "trailer"
+  },
+  {
+   "id": "hst274",
+   "style": "trailer"
+  },
+  {
+   "id": "hst275",
+   "style": "trailer"
+  },
+  {
+   "id": "hst276",
+   "style": "trailer"
+  },
+  {
+   "id": "hst277",
+   "style": "trailer"
+  },
+  {
+   "id": "hst278",
+   "style": "trailer"
+  },
+  {
+   "id": "hst279",
+   "style": "trailer"
+  },
+  {
+   "id": "hst280",
+   "style": "trailer"
+  },
+  {
+   "id": "hst281",
+   "style": "trailer"
+  },
+  {
+   "id": "hst282",
+   "style": "trailer"
+  },
+  {
+   "id": "hst283",
+   "style": "trailer"
+  },
+  {
+   "id": "hst284",
+   "style": "trailer"
+  },
+  {
+   "id": "hst285",
+   "style": "trailer"
+  }
+ ]
+}

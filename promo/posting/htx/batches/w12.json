@@ -1,0 +1,109 @@
+{
+ "worker": "w12",
+ "styles": [
+  "gameshow",
+  "realityshow"
+ ],
+ "items": [
+  {
+   "id": "hst286",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst287",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst288",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst289",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst290",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst291",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst292",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst293",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst294",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst295",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst296",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst297",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst298",
+   "style": "gameshow"
+  },
+  {
+   "id": "hst299",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst300",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst301",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst302",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst303",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst304",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst305",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst306",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst307",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst308",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst309",
+   "style": "realityshow"
+  },
+  {
+   "id": "hst310",
+   "style": "realityshow"
+  }
+ ]
+}

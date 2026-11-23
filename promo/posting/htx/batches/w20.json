@@ -1,0 +1,105 @@
+{
+ "worker": "w20",
+ "styles": [
+  "food",
+  "romcom"
+ ],
+ "items": [
+  {
+   "id": "hst477",
+   "style": "food"
+  },
+  {
+   "id": "hst478",
+   "style": "food"
+  },
+  {
+   "id": "hst479",
+   "style": "food"
+  },
+  {
+   "id": "hst480",
+   "style": "food"
+  },
+  {
+   "id": "hst481",
+   "style": "food"
+  },
+  {
+   "id": "hst482",
+   "style": "food"
+  },
+  {
+   "id": "hst483",
+   "style": "food"
+  },
+  {
+   "id": "hst484",
+   "style": "food"
+  },
+  {
+   "id": "hst485",
+   "style": "food"
+  },
+  {
+   "id": "hst486",
+   "style": "food"
+  },
+  {
+   "id": "hst487",
+   "style": "food"
+  },
+  {
+   "id": "hst488",
+   "style": "food"
+  },
+  {
+   "id": "hst489",
+   "style": "romcom"
+  },
+  {
+   "id": "hst490",
+   "style": "romcom"
+  },
+  {
+   "id": "hst491",
+   "style": "romcom"
+  },
+  {
+   "id": "hst492",
+   "style": "romcom"
+  },
+  {
+   "id": "hst493",
+   "style": "romcom"
+  },
+  {
+   "id": "hst494",
+   "style": "romcom"
+  },
+  {
+   "id": "hst495",
+   "style": "romcom"
+  },
+  {
+   "id": "hst496",
+   "style": "romcom"
+  },
+  {
+   "id": "hst497",
+   "style": "romcom"
+  },
+  {
+   "id": "hst498",
+   "style": "romcom"
+  },
+  {
+   "id": "hst499",
+   "style": "romcom"
+  },
+  {
+   "id": "hst500",
+   "style": "romcom"
+  }
+ ]
+}

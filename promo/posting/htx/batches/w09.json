@@ -1,0 +1,109 @@
+{
+ "worker": "w09",
+ "styles": [
+  "news",
+  "weather"
+ ],
+ "items": [
+  {
+   "id": "hst211",
+   "style": "news"
+  },
+  {
+   "id": "hst212",
+   "style": "news"
+  },
+  {
+   "id": "hst213",
+   "style": "news"
+  },
+  {
+   "id": "hst214",
+   "style": "news"
+  },
+  {
+   "id": "hst215",
+   "style": "news"
+  },
+  {
+   "id": "hst216",
+   "style": "news"
+  },
+  {
+   "id": "hst217",
+   "style": "news"
+  },
+  {
+   "id": "hst218",
+   "style": "news"
+  },
+  {
+   "id": "hst219",
+   "style": "news"
+  },
+  {
+   "id": "hst220",
+   "style": "news"
+  },
+  {
+   "id": "hst221",
+   "style": "news"
+  },
+  {
+   "id": "hst222",
+   "style": "news"
+  },
+  {
+   "id": "hst223",
+   "style": "news"
+  },
+  {
+   "id": "hst224",
+   "style": "weather"
+  },
+  {
+   "id": "hst225",
+   "style": "weather"
+  },
+  {
+   "id": "hst226",
+   "style": "weather"
+  },
+  {
+   "id": "hst227",
+   "style": "weather"
+  },
+  {
+   "id": "hst228",
+   "style": "weather"
+  },
+  {
+   "id": "hst229",
+   "style": "weather"
+  },
+  {
+   "id": "hst230",
+   "style": "weather"
+  },
+  {
+   "id": "hst231",
+   "style": "weather"
+  },
+  {
+   "id": "hst232",
+   "style": "weather"
+  },
+  {
+   "id": "hst233",
+   "style": "weather"
+  },
+  {
+   "id": "hst234",
+   "style": "weather"
+  },
+  {
+   "id": "hst235",
+   "style": "weather"
+  }
+ ]
+}

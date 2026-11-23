@@ -1,0 +1,109 @@
+{
+ "worker": "w08",
+ "styles": [
+  "texts",
+  "forecast"
+ ],
+ "items": [
+  {
+   "id": "hst186",
+   "style": "texts"
+  },
+  {
+   "id": "hst187",
+   "style": "texts"
+  },
+  {
+   "id": "hst188",
+   "style": "texts"
+  },
+  {
+   "id": "hst189",
+   "style": "texts"
+  },
+  {
+   "id": "hst190",
+   "style": "texts"
+  },
+  {
+   "id": "hst191",
+   "style": "texts"
+  },
+  {
+   "id": "hst192",
+   "style": "texts"
+  },
+  {
+   "id": "hst193",
+   "style": "texts"
+  },
+  {
+   "id": "hst194",
+   "style": "texts"
+  },
+  {
+   "id": "hst195",
+   "style": "texts"
+  },
+  {
+   "id": "hst196",
+   "style": "texts"
+  },
+  {
+   "id": "hst197",
+   "style": "texts"
+  },
+  {
+   "id": "hst198",
+   "style": "texts"
+  },
+  {
+   "id": "hst199",
+   "style": "forecast"
+  },
+  {
+   "id": "hst200",
+   "style": "forecast"
+  },
+  {
+   "id": "hst201",
+   "style": "forecast"
+  },
+  {
+   "id": "hst202",
+   "style": "forecast"
+  },
+  {
+   "id": "hst203",
+   "style": "forecast"
+  },
+  {
+   "id": "hst204",
+   "style": "forecast"
+  },
+  {
+   "id": "hst205",
+   "style": "forecast"
+  },
+  {
+   "id": "hst206",
+   "style": "forecast"
+  },
+  {
+   "id": "hst207",
+   "style": "forecast"
+  },
+  {
+   "id": "hst208",
+   "style": "forecast"
+  },
+  {
+   "id": "hst209",
+   "style": "forecast"
+  },
+  {
+   "id": "hst210",
+   "style": "forecast"
+  }
+ ]
+}

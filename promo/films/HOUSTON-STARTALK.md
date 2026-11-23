@@ -2,7 +2,12 @@
 
 The user asked: "make 250 very Houston specific Houston star talk videos, needs a very good hook caption and visual to get attention within 2 seconds. This is to promote our Houston beta and beta party Jan 9th. Run multiple agents research Houston … lore and city culture and references. Make 3 first so I can approve."
 
-## Status
+## Status (scaling to 500)
+- The owner asked for 500, with as many styles as possible to test, speaking directly to the viewer and leaning on the original Star Talk story and advice formats.
+- The farm runs on `promo/posting/htx/FARM.md`, with 20 worker batches in `promo/posting/htx/batches/` (hst011–hst500).
+- Records land in `promo/posting/htx/done/`.
+
+## Status (first 10)
 - The first 3 are waiting for approval:
   - `hst001` neighborhoods as signs
   - `hst002` POV: Scorpio on the 610

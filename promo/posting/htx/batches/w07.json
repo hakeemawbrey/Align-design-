@@ -1,0 +1,109 @@
+{
+ "worker": "w07",
+ "styles": [
+  "dates",
+  "flags"
+ ],
+ "items": [
+  {
+   "id": "hst161",
+   "style": "dates"
+  },
+  {
+   "id": "hst162",
+   "style": "dates"
+  },
+  {
+   "id": "hst163",
+   "style": "dates"
+  },
+  {
+   "id": "hst164",
+   "style": "dates"
+  },
+  {
+   "id": "hst165",
+   "style": "dates"
+  },
+  {
+   "id": "hst166",
+   "style": "dates"
+  },
+  {
+   "id": "hst167",
+   "style": "dates"
+  },
+  {
+   "id": "hst168",
+   "style": "dates"
+  },
+  {
+   "id": "hst169",
+   "style": "dates"
+  },
+  {
+   "id": "hst170",
+   "style": "dates"
+  },
+  {
+   "id": "hst171",
+   "style": "dates"
+  },
+  {
+   "id": "hst172",
+   "style": "dates"
+  },
+  {
+   "id": "hst173",
+   "style": "dates"
+  },
+  {
+   "id": "hst174",
+   "style": "flags"
+  },
+  {
+   "id": "hst175",
+   "style": "flags"
+  },
+  {
+   "id": "hst176",
+   "style": "flags"
+  },
+  {
+   "id": "hst177",
+   "style": "flags"
+  },
+  {
+   "id": "hst178",
+   "style": "flags"
+  },
+  {
+   "id": "hst179",
+   "style": "flags"
+  },
+  {
+   "id": "hst180",
+   "style": "flags"
+  },
+  {
+   "id": "hst181",
+   "style": "flags"
+  },
+  {
+   "id": "hst182",
+   "style": "flags"
+  },
+  {
+   "id": "hst183",
+   "style": "flags"
+  },
+  {
+   "id": "hst184",
+   "style": "flags"
+  },
+  {
+   "id": "hst185",
+   "style": "flags"
+  }
+ ]
+}

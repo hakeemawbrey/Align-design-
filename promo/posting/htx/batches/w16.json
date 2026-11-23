@@ -1,0 +1,105 @@
+{
+ "worker": "w16",
+ "styles": [
+  "starterpack",
+  "whichone"
+ ],
+ "items": [
+  {
+   "id": "hst381",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst382",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst383",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst384",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst385",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst386",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst387",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst388",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst389",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst390",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst391",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst392",
+   "style": "starterpack"
+  },
+  {
+   "id": "hst393",
+   "style": "whichone"
+  },
+  {
+   "id": "hst394",
+   "style": "whichone"
+  },
+  {
+   "id": "hst395",
+   "style": "whichone"
+  },
+  {
+   "id": "hst396",
+   "style": "whichone"
+  },
+  {
+   "id": "hst397",
+   "style": "whichone"
+  },
+  {
+   "id": "hst398",
+   "style": "whichone"
+  },
+  {
+   "id": "hst399",
+   "style": "whichone"
+  },
+  {
+   "id": "hst400",
+   "style": "whichone"
+  },
+  {
+   "id": "hst401",
+   "style": "whichone"
+  },
+  {
+   "id": "hst402",
+   "style": "whichone"
+  },
+  {
+   "id": "hst403",
+   "style": "whichone"
+  },
+  {
+   "id": "hst404",
+   "style": "whichone"
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "worker": "w03",
+ "styles": [
+  "story"
+ ],
+ "items": [
+  {
+   "id": "hst061",
+   "style": "story"
+  },
+  {
+   "id": "hst062",
+   "style": "story"
+  },
+  {
+   "id": "hst063",
+   "style": "story"
+  },
+  {
+   "id": "hst064",
+   "style": "story"
+  },
+  {
+   "id": "hst065",
+   "style": "story"
+  },
+  {
+   "id": "hst066",
+   "style": "story"
+  },
+  {
+   "id": "hst067",
+   "style": "story"
+  },
+  {
+   "id": "hst068",
+   "style": "story"
+  },
+  {
+   "id": "hst069",
+   "style": "story"
+  },
+  {
+   "id": "hst070",
+   "style": "story"
+  },
+  {
+   "id": "hst071",
+   "style": "story"
+  },
+  {
+   "id": "hst072",
+   "style": "story"
+  },
+  {
+   "id": "hst073",
+   "style": "story"
+  },
+  {
+   "id": "hst074",
+   "style": "story"
+  },
+  {
+   "id": "hst075",
+   "style": "story"
+  },
+  {
+   "id": "hst076",
+   "style": "story"
+  },
+  {
+   "id": "hst077",
+   "style": "story"
+  },
+  {
+   "id": "hst078",
+   "style": "story"
+  },
+  {
+   "id": "hst079",
+   "style": "story"
+  },
+  {
+   "id": "hst080",
+   "style": "story"
+  },
+  {
+   "id": "hst081",
+   "style": "story"
+  },
+  {
+   "id": "hst082",
+   "style": "story"
+  },
+  {
+   "id": "hst083",
+   "style": "story"
+  },
+  {
+   "id": "hst084",
+   "style": "story"
+  },
+  {
+   "id": "hst085",
+   "style": "story"
+  }
+ ]
+}

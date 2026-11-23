@@ -1,0 +1,105 @@
+{
+ "worker": "w19",
+ "styles": [
+  "traffic",
+  "weatherskit"
+ ],
+ "items": [
+  {
+   "id": "hst453",
+   "style": "traffic"
+  },
+  {
+   "id": "hst454",
+   "style": "traffic"
+  },
+  {
+   "id": "hst455",
+   "style": "traffic"
+  },
+  {
+   "id": "hst456",
+   "style": "traffic"
+  },
+  {
+   "id": "hst457",
+   "style": "traffic"
+  },
+  {
+   "id": "hst458",
+   "style": "traffic"
+  },
+  {
+   "id": "hst459",
+   "style": "traffic"
+  },
+  {
+   "id": "hst460",
+   "style": "traffic"
+  },
+  {
+   "id": "hst461",
+   "style": "traffic"
+  },
+  {
+   "id": "hst462",
+   "style": "traffic"
+  },
+  {
+   "id": "hst463",
+   "style": "traffic"
+  },
+  {
+   "id": "hst464",
+   "style": "traffic"
+  },
+  {
+   "id": "hst465",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst466",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst467",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst468",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst469",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst470",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst471",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst472",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst473",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst474",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst475",
+   "style": "weatherskit"
+  },
+  {
+   "id": "hst476",
+   "style": "weatherskit"
+  }
+ ]
+}
