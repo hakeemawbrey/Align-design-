@@ -144,6 +144,7 @@ function bats(x, t, cx, cy, n = 14, spread = 260) {
     x.fillRect(bx - 16, by - 2 - f * 5, 12, 4); x.fillRect(bx + 4, by - 2 - f * 5, 12, 4)
   }
 }
+function sky2(x, base, t, o, sc = 0.45) { x.save(); x.translate(0, base); x.scale(1, sc); skyline(x, 0, t, o); x.restore() }
 function sceneBG(x, top, bot, h) { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, top); g.addColorStop(1, bot); x.fillStyle = g; x.fillRect(0, 0, 1080, h) }
 /** draws a 1080 × 630 Houston vignette (scaled into the window) */
 const OPENERS = {
@@ -157,24 +158,24 @@ const OPENERS = {
   },
   loop(x, t, o) {             // the 610: brake lights forever
     sceneBG(x, '#ff9a5c', '#7a3a7a', 630)
-    skyline(x, 330, t, { col: '#3a2252', alpha: 0.7 })
+    sky2(x, 330, t, { col: '#3a2252', alpha: 0.7 }, 0.3)
     freeway(x, 330, 300, 3, t * 90)
     const C = ['#e05a3a', '#4a7fd0', '#e8e2d0', '#3aa070', '#c9a6ff']
     for (let i = 0; i < 5; i++) car(x, 140 + i * 210 + Math.sin(t * 2 + i) * 6, 430 + (i % 2) * 100, C[i], { brake: 1, s: 0.72 })
-    shield(x, 940, 150, o.openText || '610', 1.15 + 0.04 * Math.sin(t * 5))
+    shield(x, 920, 220, o.openText || '610', 1.15 + 0.04 * Math.sin(t * 5))
   },
   heat(x, t, o) {             // the heat sun over a shimmering street
     sceneBG(x, '#ffb347', '#ff6f61', 630)
     heatSun(x, 540, 250 + Math.sin(t * 2) * 8, t, 120)
-    skyline(x, 630, t, { col: '#7a2f4a', alpha: 0.6 })
+    sky2(x, 630, t, { col: '#7a2f4a', alpha: 0.6 }, 0.3)
     shimmer(x, 380, 250, t)
-    x.fillStyle = INK; x.fillRect(820, 120, 150, 70); x.fillStyle = '#fff2d8'; x.fillRect(826, 126, 138, 58)
-    x.font = `800 46px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#d03a2a'; x.fillText(o.openText || 'HOT', 895, 157)
+    x.fillStyle = INK; x.fillRect(820, 220, 150, 70); x.fillStyle = '#fff2d8'; x.fillRect(826, 226, 138, 58)
+    x.font = `800 46px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#d03a2a'; x.fillText(o.openText || 'HOT', 895, 257)
   },
   bayou(x, t, o) {            // sunset on the bayou, a bridge, the bats coming out
     sceneBG(x, '#ff8a5c', '#4a2a7a', 630)
     x.fillStyle = '#ffd36b'; x.beginPath(); x.arc(760, 330, 80, 0, Math.PI * 2); x.fill()
-    skyline(x, 420, t, { col: '#2a1a4a', alpha: 0.85 })
+    sky2(x, 420, t, { col: '#2a1a4a', alpha: 0.85 }, 0.35)
     x.fillStyle = '#2f5a6a'; x.fillRect(0, 420, 1080, 210)
     for (let i = 0; i < 8; i++) { x.fillStyle = 'rgba(255,210,120,0.4)'; x.fillRect((i * 151 + t * 40) % 1080, 450 + i * 20, 90, 5) }
     x.fillStyle = INK; x.fillRect(0, 400, 1080, 26); for (let i = 0; i < 6; i++) x.fillRect(80 + i * 190, 400, 22, 120)
@@ -182,10 +183,10 @@ const OPENERS = {
   },
   street(x, t, o) {           // a swinging green street sign over traffic
     sceneBG(x, '#5ab0e8', '#ffd0a0', 630)
-    skyline(x, 470, t, { col: '#4a5a8a', alpha: 0.7 })
+    sky2(x, 470, t, { col: '#4a5a8a', alpha: 0.7 }, 0.4)
     freeway(x, 470, 160, 2, t * 220)
     for (let i = 0; i < 3; i++) car(x, ((i * 420 + t * 260) % 1500) - 200, 560, ['#e05a3a', '#3aa070', '#f2c75c'][i], { s: 0.6 })
-    x.save(); x.translate(540, 70); x.rotate(Math.sin(t * 3.2) * 0.07); streetSign(x, 0, 130, o.openText || 'WESTHEIMER', { pole: false }); x.restore()
+    x.save(); x.translate(540, 200); x.rotate(Math.sin(t * 3.2) * 0.07); streetSign(x, 0, 130, o.openText || 'WESTHEIMER', { pole: false }); x.restore()
   },
   food(x, t, o) {             // a kolache, a taco and a klobasnek, steaming
     sceneBG(x, '#ffe0b0', '#ff9a8a', 630)
@@ -206,7 +207,7 @@ const OPENERS = {
   },
   rain(x, t, o) {             // a sudden afternoon shower, then sun (no storms, no water rising)
     sceneBG(x, '#6a7aa0', '#b0a0c8', 630)
-    skyline(x, 630, t, { col: '#3a3a6a', alpha: 0.8 })
+    sky2(x, 630, t, { col: '#3a3a6a', alpha: 0.8 }, 0.35)
     x.fillStyle = '#4a4a6a'; for (let i = 0; i < 5; i++) { x.beginPath(); x.arc(160 + i * 200, 110 + (i % 2) * 20, 90, 0, Math.PI * 2); x.fill() }
     for (let i = 0; i < 60; i++) { const rx = (i * 97) % 1080, ry = ((i * 53 + t * 900) % 560) + 120; x.fillStyle = 'rgba(200,230,255,0.7)'; x.fillRect(rx, ry, 4, 22) }
     heatSun(x, 940, 120, t, 50)
