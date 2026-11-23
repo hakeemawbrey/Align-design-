@@ -129,9 +129,9 @@ export function ball(x, cx, cy, s = 1) { x.fillStyle = INK; x.beginPath(); x.arc
 export function paddle(x, cx, cy, rot = 0, col = '#ff7a2a') { x.save(); x.translate(cx, cy); x.rotate(rot); box(x, -8, 10, 16, 60, INK, 3); box(x, -34, -60, 68, 76, col, 5); x.restore() }
 export function bat(x, cx, cy, t, s = 1) {
   const f = Math.sin(t * 22 + cx) > 0 ? -1 : 1
-  x.save(); x.translate(cx, cy); x.scale(s, s); x.fillStyle = '#1a1024'
-  x.beginPath(); x.moveTo(0, 0); x.lineTo(-34, -14 * f); x.lineTo(-22, 6); x.lineTo(-10, 2); x.closePath(); x.fill()
-  x.beginPath(); x.moveTo(0, 0); x.lineTo(34, -14 * f); x.lineTo(22, 6); x.lineTo(10, 2); x.closePath(); x.fill()
+  x.save(); x.translate(cx, cy); x.scale(s, s); x.fillStyle = '#2a1636'; x.strokeStyle = 'rgba(255,214,170,0.9)'; x.lineWidth = 3
+  x.beginPath(); x.moveTo(0, 0); x.lineTo(-34, -14 * f); x.lineTo(-22, 6); x.lineTo(-10, 2); x.closePath(); x.stroke(); x.fill()
+  x.beginPath(); x.moveTo(0, 0); x.lineTo(34, -14 * f); x.lineTo(22, 6); x.lineTo(10, 2); x.closePath(); x.stroke(); x.fill()
   x.fillRect(-7, -8, 14, 16); x.restore()
 }
 export function stringLights(x, y, t, n = 9) {
@@ -144,7 +144,7 @@ export function crawfish(x, cx, cy, s = 1, rot = 0) {
   x.fillStyle = INK; x.fillRect(-12, -6, 5, 5); x.restore()
 }
 export function crawPile(x, cx, cy, k = 1, n = 22) {
-  for (let i = 0; i < n * clamp(k); i++) { const a = i * 2.39, r = 14 * Math.sqrt(i) * 2.4; crawfish(x, cx + Math.cos(a) * r * 1.6, cy + Math.sin(a) * r * 0.45 - (n - i) * 0.9, 0.9, a) }
+  for (let i = 0; i < n * clamp(k); i++) { const a = i * 2.39, r = 9 * Math.sqrt(i) * 2.4; crawfish(x, cx + Math.cos(a) * r * 1.5, cy + Math.sin(a) * r * 0.3 - (n - i) * 0.6, 0.7, a) }
 }
 export function corn(x, cx, cy, s = 1) { x.save(); x.translate(cx, cy); x.scale(s, s); box(x, -36, -16, 72, 32, '#f2c75c', 4); for (let k = 0; k < 4; k++) { x.fillStyle = '#d9a33a'; x.fillRect(-28 + k * 16, -10, 6, 20) } x.restore() }
 export function potato(x, cx, cy, s = 1) { x.fillStyle = INK; x.beginPath(); x.ellipse(cx, cy, 30 * s, 22 * s, 0, 0, TAU); x.fill(); x.fillStyle = '#c9a46a'; x.beginPath(); x.ellipse(cx, cy, 25 * s, 17 * s, 0, 0, TAU); x.fill() }
@@ -209,38 +209,37 @@ export function sportsEp(S) {
 }
 
 // ── arenas ──────────────────────────────────────────────────────────────────────────────────────────────────
-const montrose = (x, t, lt, { bumps = true } = {}) => {
+const montrose = (x, t, { bumps = true } = {}) => {
   mural(x, t); x.fillStyle = '#8a8496'; x.fillRect(0, 1300, 1080, 30)
   ground(x, '#2a2638', 1330); for (let d = -((t * 200) % 140); d < 1080; d += 140) { x.fillStyle = GOLD; x.fillRect(d, 1560, 70, 10) }
   if (bumps) for (let k = 0; k < 3; k++) box(x, 120 + k * 330, 1420, 180, 26, '#f2c75c', 5)
   streetSign(x, 150, 830, 'WESTHEIMER', { k: 0.62 })
 }
-const riceLot = (x, t, lt, { full = true } = {}) => {
+const riceLot = (x, t, { full = true } = {}) => {
   box(x, -10, 760, 1100, 500, '#c98e5a', 8)
   for (let k = 0; k < 4; k++) { const l = 20 + k * 265; for (let j = 0; j < 6; j++) { x.fillStyle = j % 2 ? BONE : ['#ff8fb1', '#7dbf5a', '#8fe3ff', '#ffd36b'][k]; x.fillRect(l + j * 38, 800, 38, 60) } box(x, l + 20, 900, 180, 160, '#bfe6ff', 5); box(x, l + 70, 1080, 80, 180, '#6b3b1f', 4) }
-  txt(x, 'SHOPS · RESTAURANTS · NO PARKING', 540, 1206, { size: 30, col: INK, font: MONO, weight: 700 })
   ground(x, '#3a3a46', 1260); for (let k = 0; k < 6; k++) { x.fillStyle = BONE; x.fillRect(80 + k * 190, 1420, 8, 180) }
   streetSign(x, 880, 640, 'UNIVERSITY BLVD', { k: 0.5, pole: false })
   if (full) { box(x, 60, 620, 190, 80, BRAKE, 5); txt(x, 'FULL', 155, 662, { size: 44, col: BONE, font: MONO, weight: 700 }) }
 }
-const brunch = (x, t, lt, { wait = 'MIN 90' } = {}) => {
+const brunch = (x, t, { wait = 'MIN 90' } = {}) => {
   skyline(x, 900, t, { alpha: 0.5 }); box(x, 120, 640, 840, 680, '#f4efe4', 8)
   for (let j = 0; j < 14; j++) { x.fillStyle = j % 2 ? '#ffffff' : '#ff8fb1'; x.fillRect(110 + j * 61, 640, 61, 86) }
   box(x, 330, 760, 420, 90, '#1c1240', 5); txt(x, 'BRUNCH', 540, 806, { size: 58, col: GOLD })
   box(x, 170, 900, 220, 220, '#bfe6ff', 5); box(x, 690, 900, 220, 220, '#bfe6ff', 5); box(x, 470, 900, 140, 420, '#6b3b1f', 5)
   ground(x, '#8a8496', 1320); for (let k = 0; k < 6; k++) box(x, 100 + k * 180, 1180, 14, 140, GOLD, 4)
   x.strokeStyle = '#c0304a'; x.lineWidth = 10; for (let k = 0; k < 5; k++) { x.beginPath(); x.moveTo(107 + k * 180, 1196); x.quadraticCurveTo(197 + k * 180, 1260, 287 + k * 180, 1196); x.stroke() }
-  board(x, 900, 1000, 'WAIT', wait)
+  board(x, 960, 960, 'WAIT', wait)
 }
-function board(x, cx, cy, top, big) { box(x, cx - 110, cy - 90, 220, 180, '#1c1240', 6); txt(x, top, cx, cy - 50, { size: 30, col: GOLD, font: MONO, weight: 700 }); txt(x, big, cx, cy + 20, { size: big.length > 6 ? 44 : 56, col: BONE, font: MONO, weight: 700 }); box(x, cx - 8, cy + 96, 16, 150, '#6b3b1f', 3) }
-const bayou = (x, t, lt, { run = 1 } = {}) => {
+function board(x, cx, cy, top, big) { box(x, cx - 100, cy - 90, 200, 180, '#1c1240', 6); txt(x, top, cx, cy - 50, { size: 30, col: GOLD, font: MONO, weight: 700 }); txt(x, big, cx, cy + 20, { size: big.length > 6 ? 44 : 56, col: BONE, font: MONO, weight: 700 }); box(x, cx - 8, cy + 96, 16, 150, '#6b3b1f', 3) }
+const bayou = (x, t, { run = 1 } = {}) => {
   skyline(x, 990, t, { alpha: 0.85 })
   x.fillStyle = '#3f7a4a'; x.fillRect(0, 980, 1080, 100); water(x, 1080, 140, t * (1 + run * 3)); x.fillStyle = '#c9b48a'; x.fillRect(0, 1220, 1080, 100)
   ground(x, '#356a40', 1320)
   const off = (t * 260 * run) % 540; for (let k = -1; k < 3; k++) tree(x, k * 540 + 270 - off, 1000, 0.7, '#4f9a5a')
   for (let k = 0; k < 8; k++) { x.fillStyle = 'rgba(0,0,0,0.12)'; x.fillRect(((k * 160 - t * 600 * run) % 1240 + 1240) % 1240 - 80, 1268, 50, 8) }
 }
-const feeder = (x, t, lt, { scroll = 1, shop = 0 } = {}) => {
+const feeder = (x, t, { scroll = 1, shop = 0 } = {}) => {
   skyline(x, 780, t, { alpha: 0.6 })
   if (shop) coffeeShop(x, 800, 1050, false)
   box(x, -10, 760, 1100, 90, '#5a5670', 6); x.fillStyle = '#8f96a0'; x.fillRect(0, 740, 1080, 20)
@@ -250,11 +249,11 @@ const feeder = (x, t, lt, { scroll = 1, shop = 0 } = {}) => {
   ground(x, '#4a5a40', 1330)
   streetSign(x, 160, 1000, 'FEEDER RD', { k: 0.55, pole: false })
 }
-const karaoke = (x, t, lt, { lyric = 'LA LA LA', screen = 'BALLAD' } = {}) => {
+const karaoke = (x, t, { lyric = 'LA LA LA', screen = 'BALLAD' } = {}) => {
   x.fillStyle = '#1e0f2e'; x.fillRect(0, 0, 1080, 1920)
   for (let k = 0; k < 24; k++) { const a = t * 0.8 + k, r = 300 + (k % 5) * 90; x.fillStyle = ['rgba(255,143,177,0.35)', 'rgba(143,227,255,0.35)', 'rgba(242,199,92,0.35)'][k % 3]; x.fillRect(540 + Math.cos(a) * r * 1.2, 900 + Math.sin(a * 1.3) * r * 0.9, 14, 14) }
-  x.save(); x.shadowColor = PINK; x.shadowBlur = 30; txt(x, 'BELLAIRE BLVD', 540, 540, { size: 56, col: PINK, font: MONO, weight: 700 }); txt(x, 'KARAOKE NIGHT', 540, 600, { size: 40, col: SKYB, font: MONO, weight: 700 }); x.restore()
-  box(x, 240, 680, 600, 260, '#0e1630', 8); txt(x, screen, 540, 730, { size: 30, col: GOLD, font: MONO, weight: 700 })
+  x.save(); x.shadowColor = PINK; x.shadowBlur = 30; txt(x, 'BELLAIRE BLVD', 540, 580, { size: 56, col: PINK, font: MONO, weight: 700 }); txt(x, 'KARAOKE NIGHT', 540, 636, { size: 40, col: SKYB, font: MONO, weight: 700 }); x.restore()
+  box(x, 240, 690, 600, 260, '#0e1630', 8); txt(x, screen, 540, 735, { size: 30, col: GOLD, font: MONO, weight: 700 })
   const ln = lyric.split(' | '); ln.forEach((s, i) => txt(x, s, 540, 800 + i * 60 - (ln.length - 1) * 20, { size: 46, col: BONE }))
   box(x, -10, 1250, 1100, 80, '#5a2a6a', 6); ground(x, '#2a1838', 1330)
 }
@@ -270,14 +269,14 @@ const backyard = (x, t, lt) => {
   stringLights(x, 700, t); ground(x, '#3f6a3a', 1320)
 }
 const boilTable = (x, t, pile = 1) => { box(x, 60, 1220, 960, 50, '#d8d4c8', 6); for (let k = 0; k < 8; k++) { x.fillStyle = 'rgba(40,40,60,0.35)'; x.fillRect(90 + k * 115, 1232, 80, 6); x.fillRect(90 + k * 115, 1248, 60, 6) } box(x, 120, 1276, 30, 160, '#6b3b1f', 4); box(x, 930, 1276, 30, 160, '#6b3b1f', 4); if (pile > 0) crawPile(x, 540, 1205, pile) }
-const sunLot = (x, t, lt, { sunX = 860, shadeX = 300 } = {}) => {
+const sunLot = (x, t, { sunX = 860, shadeX = 300 } = {}) => {
   heatSun(x, sunX, 600, t, 80)
   x.fillStyle = '#4a4458'; x.fillRect(0, 1080, 1080, 240); for (let k = 0; k < 7; k++) { x.fillStyle = BONE; x.fillRect(20 + k * 170, 1100, 8, 200) }
   ground(x, '#4a4458', 1320); shimmer(x, 1080, 240, t)
   x.fillStyle = 'rgba(10,8,30,0.45)'; x.beginPath(); x.ellipse(shadeX, 1240, 190, 46, 0, 0, TAU); x.fill()
   tree(x, 300, 1250, 1.0, '#4f9a5a')
 }
-const bridge = (x, t, lt, { bats = 0 } = {}) => {
+const bridge = (x, t, { bats = 0 } = {}) => {
   sunsetSky(x, 1100, 0.85 - 0.35 * clamp(bats)); skyline(x, 1000, t, { alpha: 0.9, col: '#2a1a40' })
   water(x, 1000, 400, t, '#3a3a6a'); x.fillStyle = 'rgba(255,170,120,0.25)'; x.fillRect(380, 1010, 320, 240)
   box(x, -10, 1300, 1100, 60, '#8a6a5a', 6); for (let k = 0; k < 4; k++) { x.fillStyle = INK; x.beginPath(); x.arc(140 + k * 270, 1440, 100, Math.PI, 0); x.fill(); x.fillStyle = '#2d2a50'; x.beginPath(); x.arc(140 + k * 270, 1440, 88, Math.PI, 0); x.fill() }
@@ -288,7 +287,7 @@ const batSwarm = (x, t, lt, t0, n = 26) => { for (let i = 0; i < n; i++) { const
 const pond = (x, t, lt) => {
   skyline(x, 860, t, { alpha: 0.45 }); for (let k = 0; k < 6; k++) tree(x, 60 + k * 200, 1000, 0.55, k % 2 ? '#4f9a5a' : '#3f8a4f')
   water(x, 980, 520, t, '#3a7aa0'); ground(x, '#3f7a4a', 1500)
-  streetSign(x, 900, 580, 'HERMANN PARK', { k: 0.5, pole: false })
+  streetSign(x, 860, 660, 'HERMANN PARK', { k: 0.5, pole: false })
 }
 // a star riding in an open car / a boat
 const ride = (x, P, id, col, lane, { brake = 0, flip = false } = {}) => { const [cx] = P.at(id); car(x, cx, lane, col, { open: true, brake, flip }) }
@@ -363,7 +362,7 @@ const ep313 = sportsEp({
     { dur: 2.8, set: (x, t) => brunch(x, t), cast: { cancer: [[0, 300, Y, 210]], pisces: [[0, 560, Y, 210]], leo: [[0, 800, Y + 20, 170]] }, hops: { cancer: [0.05, 1.2], pisces: [0.15], leo: [0.3] }, mood: { cancer: 'squint', pisces: 'wide', leo: 'sleepy' },
       lines: [[1.0, 1.6, 'pisces', "I'm so | hungry."]] },
     { dur: 3.2, booth: true, mood: { sagittarius: 'sparkle', scorpio: 'squint' }, lines: [[0.2, 1.4, 'p', "you're watching | the brunch wait!"], [1.7, 1.4, 'c', 'Midtown. | Saturday.']] },
-    { dur: 3.2, set: (x, t) => brunch(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); box(x, cx + s * 0.35, cy - 40, 70, 90, BONE, 4) }, cast: { virgo: [[0, 820, Y - 60, 200]], cancer: [[0, 300, Y, 210]] }, mood: { virgo: 'happy', cancer: 'squint' },
+    { dur: 3.2, set: (x, t) => brunch(x, t), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('virgo'); box(x, cx + s * 0.35, cy - 40, 70, 90, BONE, 4) }, cast: { virgo: [[0, 720, Y - 60, 200]], cancer: [[0, 300, Y, 210]] }, mood: { virgo: 'happy', cancer: 'squint' },
       lines: [[0.2, 1.3, 'virgo', "about | 20 minutes!"]], comm: [[1.6, 1.5, 'c', 'she said 20 | an hour ago.']] },
     { dur: 3.2, set: (x, t) => brunch(x, t), cast: { pisces: [[0, 540, Y, 240]] }, mood: { pisces: 'sparkle' }, hops: { pisces: [0.2, 0.7] },
       lines: [[0.2, 1.4, 'pisces', 'I planned | this outfit | for a week.']], comm: [[1.7, 1.4, 'p', 'the fit is | in peak form!']] },
@@ -375,7 +374,7 @@ const ep313 = sportsEp({
       lines: [[0.1, 1.1, 'leo', "that's mine!"]], comm: [[1.4, 1.6, 'p', "it was Leo's. | heartbreaker."]] },
     { dur: 3.2, set: (x, t) => brunch(x, t, { wait: 'MIN 110' }), front: (x, t, lt, P) => { const [cx, cy, s] = P.at('cancer'); if (lt > 0.4) box(x, cx + s * 0.4, cy - 10, 90, 34, '#d9a55a', 4) }, cast: { cancer: [[0, 320, Y, 220]], pisces: [[0, 640, Y, 220]] }, mood: { cancer: 'happy', pisces: 'heart' },
       lines: [[0.2, 1.4, 'cancer', 'I brought | granola bars.']], comm: [[1.7, 1.4, 'c', 'veteran move. | always a snack.']] },
-    { dur: 3.4, set: (x, t) => brunch(x, t, { wait: 'TABLE!' }), back: (x, t, lt) => { if (lt > 0.8) sparkles(x, t, 540, 1050, t - lt + 0.8, 14, 300, 5) }, cast: { virgo: [[0, 820, Y - 60, 200]], cancer: [[0, 300, Y, 210]], pisces: [[0, 540, Y, 210]] }, mood: { virgo: 'happy', cancer: 'heart', pisces: 'heart' }, hops: { cancer: [0.9, 1.4], pisces: [1.0, 1.5] },
+    { dur: 3.4, set: (x, t) => brunch(x, t, { wait: 'TABLE!' }), back: (x, t, lt) => { if (lt > 0.8) sparkles(x, t, 540, 1050, t - lt + 0.8, 14, 300, 5) }, cast: { virgo: [[0, 720, Y - 60, 200]], cancer: [[0, 300, Y, 210]], pisces: [[0, 540, Y, 210]] }, mood: { virgo: 'happy', cancer: 'heart', pisces: 'heart' }, hops: { cancer: [0.9, 1.4], pisces: [1.0, 1.5] },
       lines: [[0.2, 1.1, 'virgo', 'table for | two!']], comm: [[1.4, 1.8, 'p', "THEY'RE IN! | THEY'RE IN!"]], score: [1, 112, 'FINAL'] },
     { dur: 3.6, booth: true, mood: { sagittarius: 'heart', scorpio: 'wink' }, lines: [[0.2, 1.6, 'c', 'bring a friend | worth waiting with.'], [2.0, 1.4, 'p', 'like us. | Jan 9.']] },
   ],
@@ -498,8 +497,8 @@ const ep318 = sportsEp({
       lines: [[0.2, 1.4, 'taurus', 'pinch. twist. | peel.']], comm: [[1.7, 1.4, 'c', 'Taurus: | pure technique.']], score: [3, 0, 'ROUND 1'] },
     { dur: 3.2, set: (x, t) => backyard(x, t), front: (x, t, lt, P) => { boilTable(x, t, 1); for (let k = 0; k < 6; k++) box(x, 560 + (k * 97) % 360, 1150 - (k * 41) % 120, 22, 14, '#d8432f', 3) }, cast: { leo: [[0, 700, 1120, 220]] }, mood: { leo: 'wide' },
       lines: [[0.2, 1.4, 'leo', 'why are they | so SMALL?']], comm: [[1.7, 1.4, 'p', 'Leo is | fighting it!']] },
-    { dur: 3.4, set: (x, t) => backyard(x, t), front: (x, t, lt, P) => { boilTable(x, t, 1); crawfish(x, 460, 1060, 2.2, 0.2) }, cast: { taurus: [[0, 260, 1120, 210]] }, mood: { taurus: 'happy' }, replay: true,
-      tele: [[0.3, 'circle', 460, 1060, 110], [0.9, 'arrow', 640, 900, 520, 1010]], comm: [[0.3, 1.4, 'c', 'watch the | twist. textbook.'], [1.9, 1.3, 'p', 'a master.']] },
+    { dur: 3.4, set: (x, t) => backyard(x, t), front: (x, t, lt, P) => { boilTable(x, t, 1); crawfish(x, 620, 1150, 1.8, 0.2) }, cast: { taurus: [[0, 260, 1120, 210]] }, mood: { taurus: 'happy' }, replay: true,
+      tele: [[0.3, 'circle', 620, 1150, 100], [0.9, 'arrow', 800, 960, 680, 1080]], comm: [[0.3, 1.4, 'c', 'watch the | twist. textbook.'], [1.9, 1.3, 'p', 'a master.']] },
     { dur: 3.2, set: (x, t) => backyard(x, t), front: (x, t) => boilTable(x, t, 0.8), cast: { taurus: [[0, 300, 1120, 210], [1.0, 440, 1120, 210]], leo: [[0, 700, 1120, 210]] }, mood: { taurus: 'happy', leo: 'wide' }, look: { leo: [-1, 0] },
       lines: [[1.0, 1.3, 'taurus', 'here. | like this.']], comm: [[0.1, 0.9, 'c', 'wait...'], [2.3, 0.9, 'c', "she's COACHING."]] },
     { dur: 3.2, set: (x, t) => backyard(x, t), front: (x, t, lt) => { boilTable(x, t, 0.7); const k = Kp(lt, 0.2); if (k > 0) { box(x, 470, 1120, 140 * k, 90 * k, '#f2c75c', 6); txt(x, 'GARLIC', 540, 1160, { size: 26 * k, col: INK, font: MONO, weight: 700 }) } }, cast: { taurus: [[0, 300, 1100, 210]], leo: [[0, 780, 1100, 210]] }, mood: { taurus: 'heart', leo: 'heart' },
@@ -582,7 +581,7 @@ const ep321 = sportsEp({
     { dur: 3.4, set: (x, t) => pond(x, t), front: (x, t, lt, P) => { boatRide(x, t, P, ['aries', 'virgo'], '#ff7a2a'); boatRide(x, t, P, ['gemini', 'pisces'], '#5ec8ff') }, cast: { aries: [[0, 140, 1120, 140]], virgo: [[0, 260, 1120, 140]], gemini: [[0, 700, 1120, 140]], pisces: [[0, 820, 1120, 140]] }, mood: { aries: 'happy', virgo: 'happy', gemini: 'happy', pisces: 'heart' }, replay: true,
       tele: [[0.3, 'circle', 200, 1170, 130], [0.6, 'circle', 760, 1170, 130]], comm: [[0.3, 1.4, 'c', 'both boats | yield. ALL of them.'], [1.9, 1.3, 'p', 'sportsmanship!']] },
     { dur: 3.0, set: (x, t) => { pond(x, t); box(x, 960, 1000, 140, 400, '#8a6a4a', 6); x.fillStyle = BONE; for (let k = 0; k < 10; k++) x.fillRect(940, 1000 + k * 40, 20, 20) }, front: (x, t, lt, P) => { boatRide(x, t, P, ['aries', 'virgo'], '#ff7a2a'); boatRide(x, t, P, ['gemini', 'pisces'], '#5ec8ff') }, cast: { aries: [[0, 140, 1100, 140], [3, 600, 1100, 140]], virgo: [[0, 260, 1100, 140], [3, 720, 1100, 140]], gemini: [[0, 140, 1320, 140], [3, 600, 1320, 140]], pisces: [[0, 260, 1320, 140], [3, 720, 1320, 140]] }, mood: { aries: 'squint', virgo: 'squint', gemini: 'sparkle', pisces: 'wide' }, hops: { aries: [0.3, 0.7, 1.1, 1.5], gemini: [0.4, 0.8, 1.2, 1.6] },
-      comm: [[0.3, 1.4, 'p', 'side by side | to the dock!']], mine: [[1.6, 1.3, 'PHOTO FINISH', GOLD, 1000]] },
+      comm: [[0.3, 1.4, 'p', 'side by side | to the dock!']], mine: [[1.6, 1.3, 'PHOTO FINISH', GOLD, 860]] },
     { dur: 3.4, set: (x, t) => pond(x, t), front: (x, t, lt) => phoneFlash(x, 900, 960, t, 'CLICK', lt), cast: { aries: [[0, 200, 1180, 170]], virgo: [[0, 380, 1180, 170]], gemini: [[0, 560, 1180, 170]], pisces: [[0, 740, 1180, 170]] }, mood: { aries: 'happy', virgo: 'wink', gemini: 'sparkle', pisces: 'heart' }, hops: { aries: [1.0], virgo: [1.05], gemini: [1.1], pisces: [1.15] },
       lines: [[1.4, 1.0, 'aries', 'who won?'], [2.4, 1.0, 'pisces', 'the selfie.']], score: [1, 1, 'FINAL'] },
     { dur: 3.4, booth: true, mood: { taurus: 'heart', aquarius: 'happy' }, lines: [[0.2, 1.4, 'c', 'everybody wins | at Hermann Park.'], [1.8, 1.4, 'p', 'final round: | Jan 9.']] },
