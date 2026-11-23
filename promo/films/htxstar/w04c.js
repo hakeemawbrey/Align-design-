@@ -13,7 +13,7 @@ const drive = (x, t) => { sky(x, '#8fd0ff', '#fff4d8', FLOOR + 60); porch(x, t);
 const pollen = (x, t, k) => { for (let i = 0; i < Math.round(90 * k); i++) { const ph = (t * 0.35 + i * 0.137) % 1; x.fillStyle = 'rgba(240,210,60,0.85)'; x.fillRect((i * 97 + Math.sin(t * 2 + i) * 40) % 1080, ph * 1500, 9, 9) } }
 const yellowCar = (x, cx, cy, k, t, flip = false, base = '#5ec8ff') => { car(x, cx, cy, base, { s: 1.5, flip }); if (k > 0) { x.save(); x.globalAlpha = 0.85 * clamp(k); x.fillStyle = '#e8c83a'; x.fillRect(cx - 180, cy - 130, 360, 40); x.fillRect(cx - 186, cy - 62, 372, 30); for (let i = 0; i < 30; i++) x.fillRect(cx - 170 + (i * 37) % 340, cy - 120 + (i * 23) % 90, 8, 8); x.restore() } else { sparkles(x, t, cx, cy - 60, t - 0.2, 6, 200, 7) } }
 const hst100 = story({
-  hook: 'Libra washed | the car for you. | Then: pollen.', key: 'G',
+  hook: 'Pollen season. | Libra just | washed the car.', key: 'G',
   close: 'Pollen and all. Jan 9.', stars: ['libra', 'taurus', 'pisces', 'gemini'],
   scenes: [
     { dur: 3.6, set: (x, t) => drive(x, t), front: (x, t, lt) => { yellowCar(x, 620, 1290, 0, t); for (let i = 0; i < 8; i++) { const ph = (t * 0.8 + i / 8) % 1; x.fillStyle = 'rgba(255,255,255,0.7)'; x.beginPath(); x.arc(420 + i * 50, 1180 - ph * 200, 14, 0, Math.PI * 2); x.fill() } },
@@ -96,7 +96,7 @@ const hst102 = story({
 
 // ── hst103 · Scorpio swore they're not scared of bats (the bridge at sunset)
 const hst103 = story({
-  hook: "Scorpio swore | they're not | scared of bats", key: 'Eb',
+  hook: '"I fear nothing" | said Scorpio. | Then: bats.', key: 'Eb',
   close: 'Come as you are. Jan 9.', stars: ['scorpio', 'taurus', 'pisces', 'aquarius'],
   scenes: [
     { dur: 3.6, title: 'THE BAT BRIDGE · SUNSET', set: (x, t, lt) => batBridge(x, t, lt, 0.05), cast: { scorpio: [[0, 330, 1260, 250]], taurus: [[0, 760, 1260, 230]] }, mood: { scorpio: 'squint', taurus: 'happy' }, hops: { scorpio: [0.02, 0.4] }, look: { scorpio: [0, 0] },
@@ -148,7 +148,7 @@ const hst104 = story({
 
 // ── hst105 · Leo joined run club. For a crush. (6AM on the bayou)
 const hst105 = story({
-  hook: 'Leo joined | run club. | For a crush.', key: 'F',
+  hook: '"I love running" | said Leo, who | hates running', key: 'F',
   close: 'No running required. Jan 9.', stars: ['leo', 'sagittarius', 'virgo', 'pisces'],
   scenes: [
     { dur: 3.6, title: '6AM · THE BAYOU', set: (x, t) => bayou(x, t), cast: { leo: [[0, 540, 1250, 270]] }, mood: { leo: 'wink' }, props: { leo: ['crown', 'sweatband'] }, hops: { leo: [0.02, 0.4] }, look: { leo: [0, 0] },
@@ -173,7 +173,7 @@ const hst105 = story({
 
 // ── hst106 · Pisces signed up for karaoke (Bellaire)
 const hst106 = story({
-  hook: 'Pisces signed up | for karaoke', key: 'A',
+  hook: 'Pisces vs. | karaoke night', key: 'A',
   close: 'Be brave. Jan 9.', stars: ['pisces', 'taurus', 'leo', 'gemini'],
   scenes: [
     { dur: 3.6, title: 'KARAOKE · BELLAIRE', set: (x, t) => karaoke(x, t, '♪ UP NEXT: PISCES ♪', 0), cast: { pisces: [[0, 540, 1240, 270]] }, mood: { pisces: 'wide' }, props: { pisces: 'mic' }, hops: { pisces: [0.02, 0.2, 0.4, 0.6] },

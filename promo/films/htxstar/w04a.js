@@ -186,7 +186,7 @@ function grackle(x, cx, cy, t) { box(x, cx - 34, cy - 16, 68, 34, '#1a1430', 4);
 function polaroid(x, t, k, id = 'leo') { if (k <= 0) return; x.save(); x.translate(540, 760); x.rotate(-0.05); x.scale(k, k); box(x, -260, -300, 520, 600, BONE, 8); x.fillStyle = '#ff9a3c'; x.fillRect(-220, -260, 440, 420); signChar(x, t, id, 0, -40, 300, { mood: 'sparkle', seed: 3, hops: [t - (t % 0.9)] }); txt(x, 'candid. not posed.', 0, 230, { size: 34, col: INK, font: SERIF, weight: 500, italic: true }); x.restore() }
 const muralB = (x, t) => { const cols = ['#2b5fb0', '#ffd36b', '#ff5a6e', '#2e8b57']; for (let k = 0; k < 8; k++) { x.fillStyle = cols[k % 4]; x.beginPath(); x.moveTo(k * 140 - 100, 1400); x.lineTo(k * 140 + 60, 400); x.lineTo(k * 140 + 200, 400); x.lineTo(k * 140 + 40, 1400); x.fill() } fit(x, 'HOUSTON', 540, 720, 900, { size: 150, col: BONE }); outside(x, { ground: '#2a2440' }) }
 const hst090 = story({
-  hook: 'Leo dragged you | to every mural | in Houston', key: 'A',
+  hook: 'Take 31. | Leo still needs | one more photo.', key: 'A',
   close: 'Come as you are. Jan 9.', stars: ['leo', 'virgo', 'gemini', 'pisces'],
   scenes: [
     { dur: 3.6, set: (x, t) => { mural(x, t); outside(x, { ground: '#2a2440' }) }, cast: { leo: [[0, 540, 1240, 280]] }, mood: { leo: 'sparkle' }, props: { leo: 'crown' }, hops: { leo: [0.02, 0.4, 0.8] },
@@ -254,7 +254,7 @@ function easel(x, lt, slide, k = 1) {
 }
 const pager = (x, cx, cy, t, on) => { const j = on ? Math.sin(t * 60) * 5 : 0; box(x, cx - 50 + j, cy - 70, 100, 140, '#2a2a3a', 5); x.fillStyle = on && Math.sin(t * 20) > 0 ? BRAKE : '#5a2030'; x.fillRect(cx - 30 + j, cy - 50, 60, 30) }
 const hst092 = story({
-  hook: 'Capricorn brought | a 5-year plan | to brunch', key: 'Bb',
+  hook: "Capricorn's first | date has slides", key: 'Bb',
   close: 'No slides. Just come. Jan 9.', stars: ['capricorn', 'gemini', 'virgo', 'pisces'],
   scenes: [
     { dur: 3.6, title: 'MIDTOWN · BRUNCH', set: (x, t) => brunchFront(x, t), cast: { capricorn: [[0, 330, 1260, 260]], gemini: [[0, 820, 1260, 230]] }, mood: { capricorn: 'squint', gemini: 'happy' }, hops: { capricorn: [0.02], gemini: [0.2, 0.6] }, look: { capricorn: [0, 0] },

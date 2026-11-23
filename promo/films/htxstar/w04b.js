@@ -104,7 +104,7 @@ const hst095 = story({
 
 // ── hst096 · Aquarius planned a silent date (a very quiet chapel in Montrose)
 const hst096 = story({
-  hook: 'Aquarius planned | a silent date', key: 'Db',
+  hook: 'Gemini on | a silent date', key: 'Db',
   close: 'Then come be loud. Jan 9.', stars: ['aquarius', 'gemini', 'pisces', 'virgo'],
   scenes: [
     { dur: 3.6, title: 'MONTROSE · 4PM', set: (x, t) => night(x, t), cast: { aquarius: [[0, 330, Y, 260]], gemini: [[0, 760, Y, 240]] }, mood: { aquarius: 'sleepy', gemini: 'sparkle' }, hops: { gemini: [0.02, 0.3, 0.6, 0.9] },
@@ -131,7 +131,7 @@ const hst096 = story({
 const drive = (x, t, sign, sub, k = 1) => { sky(x, '#8fd0ff', '#e8f6ff', FLOOR - 160); freeway(x, FLOOR - 160, 600, 4, t * 380); if (sign) overheadSign(x, 540, 760, sign, sub, k) }
 const sagCar = (x, t, lt) => car(x, 540, FLOOR + 120, '#f2b544', { open: true })
 const hst097 = story({
-  hook: "Sag said it's | 20 minutes away", key: 'A',
+  hook: 'Do not ask Sag | how far it is', key: 'A',
   close: 'Only 20 minutes away. Jan 9.', stars: ['sagittarius', 'cancer', 'leo', 'pisces'],
   scenes: [
     { dur: 3.6, set: (x, t) => drive(x, t), front: (x, t, lt) => sagCar(x, t, lt), cast: { sagittarius: [[0, 520, FLOOR + 5, 210]] }, mood: { sagittarius: 'sparkle' }, hops: { sagittarius: [0.02, 0.35, 0.7] },
@@ -158,7 +158,7 @@ const hst097 = story({
 const sched = (x, lt, k = 1) => { if (k <= 0) return; x.save(); x.translate(540, 740); x.scale(k, k); box(x, -340, -300, 680, 600, BONE, 8); box(x, -340, -300, 680, 80, '#c9a6ff', 0); txt(x, 'GEMINI · SATURDAY', 0, -258, { size: 36, col: INK, font: MONO, weight: 700 }); ['6AM  RUN CLUB', '10AM BRUNCH', '2PM  PICKLEBALL', '6PM  CRAWFISH', '9PM  KARAOKE', '11PM A DATE (?)'].forEach((s, i) => txt(x, s, -290, -170 + i * 80, { size: 40, col: INK, font: MONO, weight: 700, align: 'left' })); x.restore() }
 const tired = ['sparkle', 'happy', 'neutral', 'sleepy']
 const hst098 = story({
-  hook: 'Gemini said yes | to everything | this Saturday', key: 'E',
+  hook: 'Everything Gemini | said yes to | on Saturday', key: 'E',
   close: 'One plan. Jan 9.', stars: ['gemini', 'libra', 'leo', 'pisces'],
   scenes: [
     { dur: 3.6, set: (x, t, lt) => { night(x, t); sched(x, lt) }, cast: { gemini: [[0, 820, 1300, 230]] }, mood: { gemini: 'sparkle' }, hops: { gemini: [0.02, 0.3, 0.6] },
@@ -192,7 +192,7 @@ const cold = (x, t, lt, k) => {
   box(x, 400, 300, 280, 90, '#dff6ff', 6); txt(x, 'AC: ARCTIC', 540, 346, { size: 40, col: INK, font: MONO, weight: 700 })
 }
 const hst099 = story({
-  hook: 'Cancer brought | a sweater | for you', key: 'C',
+  hook: "It's 90°. | Cancer packed | a sweater.", key: 'C',
   close: 'Bring a sweater. Jan 9.', stars: ['cancer', 'capricorn', 'pisces', 'virgo'],
   scenes: [
     { dur: 3.6, set: (x, t) => hotOut(x, t), front: (x, t) => sweat(x, 640, 1080, t, 3), cast: { cancer: [[0, 540, 1240, 280]] }, mood: { cancer: 'happy' }, props: { cancer: 'sweater' }, hops: { cancer: [0.02, 0.4] },

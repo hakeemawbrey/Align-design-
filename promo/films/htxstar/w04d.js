@@ -90,7 +90,7 @@ const ball = (x, lt, a, d = 0.6, from = [320, 1150], to = [760, 900]) => { const
 const SIDES = (o = {}) => ({ sagittarius: [[0, 320, 1450, 220]], cancer: [[0, 640, 960, 190]], taurus: [[0, 860, 960, 190]], ...o })
 const PADS = { sagittarius: 'paddle', cancer: ['glasses', 'paddle', 'sweatband'], taurus: ['glasses', 'paddle'] }
 const hst109 = story({
-  hook: 'Sag challenged | the aunties | to pickleball', key: 'E',
+  hook: 'Sag vs. | the aunties | at pickleball', key: 'E',
   close: 'Good sports only. Jan 9.', stars: ['sagittarius', 'cancer', 'taurus', 'pisces'],
   scenes: [
     { dur: 3.6, set: (x, t) => court(x, t), cast: SIDES(), mood: { sagittarius: 'sparkle', cancer: 'squint', taurus: 'squint' }, props: PADS, hops: { sagittarius: [0.02, 0.3, 0.6] }, look: { sagittarius: [0, 0] },
