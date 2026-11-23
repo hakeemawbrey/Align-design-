@@ -1,6 +1,7 @@
 // node promo/scripts/teaser-sound.mjs --teaser=01-blind   → promo/out/teasers/01-blind.wav
 // node promo/scripts/teaser-sound.mjs --film=htxloops     → promo/out/films/htxloops/soundtrack.wav
 // Builds the teaser's score from its exported `music` and `cues`, plus the shared end-tag sounds.
+import { existsSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createMix } from './synth.mjs'
@@ -453,7 +454,7 @@ function scoreStyle(m, T) {
   for (const s of S) if (s.t0 > 0.3) for (const f of (st.fills?.[s.type] || [])) FILLS[f](c, s.t0)
   if (st.swell) for (const s of S) if (s.type === 'build' && s.t1 - s.t0 >= BEAT * 0.99) m.swell(s.t0, s.t1, { gain: st.swell })
   for (const t of (mu.hits || []).map(snap)) (st.hit || ((c, t) => c.m.crash(t, { gain: 0.05, len: 2.6 })))(c, t)
-  if (mu.crackle !== false) st.extras?.(c)      // music.crackle: false → no vinyl crackle / tape hiss
+  if (mu.crackle ?? !STARTALK) st.extras?.(c)   // music.crackle: false → no vinyl crackle / tape hiss (Star Talk: off unless crackle: true)
 
   // drums
   for (const [part, d] of Object.entries(st.drums || {})) {
@@ -575,7 +576,7 @@ function scoreStyle(m, T) {
   const parent = mod(tonic + PARENT[st.mode], 12), cueShift = mu.cueShift ?? (mod(parent - 2 + 6, 12) - 6)
   return {
     cueShift, sections: S, tonic, mode: st.mode,
-    master: { lufs: mu.lufs ?? -15, musicRel: mu.musicRel ?? st.musicRel ?? -4.5, levels: { drums: 0, bass: -2, pad: -8, keys: -7, lead: -5, fx: -9, ...(st.mix || {}) }, reverb: { ...(st.reverb || {}), wet: st.reverbWet ?? 2.6 }, delay: { time: (st.delayTime ?? 0.75) * BEAT, wet: 0.5 } },
+    master: { lufs: mu.lufs ?? -15, musicRel: (mu.musicRel ?? st.musicRel ?? -4.5) + (STARTALK ? STARTALK_MUSIC_DB : 0), levels: { drums: 0, bass: -2, pad: -8, keys: -7, lead: -5, fx: -9, ...(st.mix || {}) }, reverb: { ...(st.reverb || {}), wet: st.reverbWet ?? 2.6 }, delay: { time: (st.delayTime ?? 0.75) * BEAT, wet: 0.5 } },
   }
 }
 const PITCHED = new Set(['pop', 'pluck', 'bell'])
@@ -584,6 +585,13 @@ const id = (process.argv.find(a => a.startsWith('--teaser=')) || '').split('=')[
 const film2 = process.argv.includes('--film2')
 const film3 = process.argv.includes('--film3')
 const film = (process.argv.find(a => a.startsWith('--film=')) || '').split('=')[1]
+// Star Talk (any film whose scenes import startalk.js, or that has a lore.json): no hiss bed, and the music sits
+// STARTALK_MUSIC_DB lower under the dialogue blips and SFX. --no-startalk-mix renders the old way.
+const STARTALK_MUSIC_DB = -4
+const STARTALK = !!film && !process.argv.includes('--no-startalk-mix') && (() => {
+  const dir = path.join(here, `../films/${film}`)
+  try { if (existsSync(path.join(dir, 'lore.json'))) return true; return /startalk\.js/.test(readFileSync(path.join(dir, 'scenes/index.js'), 'utf8')) } catch { return false }
+})()
 if (!id && !film2 && !film3 && !film) { console.error('usage: --teaser=<id> | --film2'); process.exit(1) }
 if (process.argv.includes('--social')) process.env.SOCIAL = '1'   // OG films: no end-card / card-cut cues; score ends with the story
 const T = film ? (await import(`../films/${film}/cues.js`)).default : film3 ? (await import('../film3/cues.js')).default : film2 ? (await import('../film2/cues.js')).default : (await import(`../teasers/t${id}.js`)).default
