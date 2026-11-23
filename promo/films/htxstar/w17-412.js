@@ -18,7 +18,7 @@ const halfway = (x, t) => { daySky(x, t); freeway(x, 1000, 160, 2, t * 200); out
 const coin = (x, t, lt) => { const up = Math.sin(Math.PI * clamp(lt / 1.4)) * 420, w = Math.abs(Math.cos(lt * 14)) * 60 + 6; x.fillStyle = INK; x.beginPath(); x.ellipse(M, 1000 - up, w + 6, 66, 0, 0, Math.PI * 2); x.fill(); x.fillStyle = GOLD; x.beginPath(); x.ellipse(M, 1000 - up, w, 60, 0, 0, Math.PI * 2); x.fill() }
 
 export const EP = ep(17, {
-  hook: '17 days out. | Libra still can\'t choose.',
+  hook: '17 days out. | Libra still | can\'t choose.',
   hookSet: (x, t) => split(x, t),
   hookCast: C({ libra: [[0, 440, Y, 270], [0.7, 640, Y, 270], [1.4, 440, Y, 270], [2.1, 640, Y, 270], [2.8, 540, Y, 270]] }), hookMood: { libra: 'wide' }, hookLook: { libra: [0, 0] },
   calX: 540, calY: 760, calS: 0.6,

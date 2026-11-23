@@ -8,7 +8,7 @@ const auntie = (x, t, P) => { glasses(x, P, 'cancer'); needles(x, t, P, 'cancer'
 const arctic = (x, t) => { room(x, { wall: '#bfe6ff', floor: '#8fb6d8', trim: '#5a7a9a' }); for (let k = 0; k < 30; k++) { const ph = (t * 0.3 + k * 0.07) % 1; x.fillStyle = 'rgba(255,255,255,0.8)'; x.fillRect((k * 131) % 1080, ph * 1390, 8, 8) } box(x, 140, 340, 260, 40, '#dfe9f0', 4); txt(x, 'AC: 62°', 820, 520, { size: 56, col: '#2b5fb0', font: MONO, weight: 700 }) }
 
 export const EP = ep(5, {
-  hook: '5 sleeps left. | Cancer knit you a sweater.',
+  hook: '5 sleeps left. | Cancer knit you | a sweater.',
   hookSet: (x, t) => set(x, t),
   hookFront: (x, t, lt, P) => auntie(x, t, P),
   hookCast: C({ cancer: [[0, L, Y, 270], [2.6, L, Y, 270]] }), hookMood: { cancer: 'happy' }, hookLook: { cancer: [0, 0] },

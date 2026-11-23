@@ -7,7 +7,7 @@ const aunties = (x, P) => { glasses(x, P, 'cancer'); if (P.at('taurus')) glasses
 const containers = (x, t, lt) => { for (let i = 0; i < 5; i++) { const k = Kp(lt, 0.2 + i * 0.25); if (k <= 0) continue; x.save(); x.translate(380 + (i % 3) * 160, 1110 - Math.floor(i / 3) * 90); x.scale(k, k); box(x, -60, -36, 120, 72, '#f4efe4', 4); x.fillStyle = [BRAKE, SKYB, MINT, GOLD, PINK][i]; x.fillRect(-60, -36, 120, 16); x.restore() } }
 
 export const EP = ep(14, {
-  hook: 'Two weeks out, | Auntie Cancer is cooking',
+  hook: 'Two weeks out. | Auntie Cancer | is cooking.',
   hookSet: (x, t) => set(x, t),
   hookFront: (x, t, lt, P) => aunties(x, P),
   hookCast: C({ cancer: [[0, L, Y, 270], [1.3, L + 40, Y, 270]] }), hookMood: { cancer: 'happy' }, hookLook: { cancer: [0, 0] },

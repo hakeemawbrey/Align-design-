@@ -9,7 +9,7 @@ const butter = (x, t, lt) => { set(x, t, lt); box(x, 380, 520, 320, 200, '#f2c75
 const peel = (x, t, lt) => { set(x, t, lt); const steps = ['PINCH', 'TWIST', 'PEEL']; steps.forEach((s, i) => { const k = Kp(lt, 0.2 + i * 0.6); if (k > 0) { x.save(); x.translate(260 + i * 280, 600); x.scale(k, k); box(x, -110, -44, 220, 88, [PINK, GOLD, MINT][i], 5); txt(x, s, 0, 2, { size: 40, col: INK }); x.restore() } }) }
 
 export const EP = ep(4, {
-  hook: 'Crawfish season is back. | 4 days to go.',
+  hook: 'Crawfish season | is back. | 4 days to go.',
   hookSet: (x, t, lt) => { set(x, t, lt); soupPot(x, t, 860, 980) },
   hookFront: bibs(['scorpio']),
   hookCast: C({ scorpio: [[0, L, Y - 120, 270], [1.4, L + 40, Y - 120, 270]] }), hookMood: { scorpio: 'sparkle' }, hookLook: { scorpio: [0, 0] },

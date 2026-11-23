@@ -9,7 +9,7 @@ const pair = (cs = 210, ps = 200) => C({ capricorn: [M - 110, CY, cs], pisces: [
 const score = (x, s, k, col = GOLD) => { if (k <= 0) return; x.save(); x.translate(M, 560); x.scale(k, k); x.rotate(-0.04); box(x, -180, -60, 360, 120, '#1c1240', 6); txt(x, s, 0, 2, { size: 54, col }); x.restore() }
 
 export const EP = ep(8, {
-  hook: 'One week and a day. | Capricorn rehearsed hello.',
+  hook: 'One week, one day: | Capricorn practices | saying hey.',
   hookSet: (x, t) => { boat(0)(x, t, 0); streetSign(x, 300, 840, 'HERMANN PARK', { pole: false }) },
   hookCast: pair(), hookMood: { capricorn: 'squint', pisces: 'heart' }, hookLook: { capricorn: [0, 0] },
   calX: 820, calY: 760, calS: 0.6,

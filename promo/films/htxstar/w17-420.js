@@ -8,7 +8,7 @@ const bundled = (ids, col = '#e05a3a') => (x, t, lt, P) => ids.forEach((id, i) =
 const shorts = (x, P, id) => { const [cx, cy, s] = P.at(id); box(x, cx - s * 0.26, cy + s * 0.2, s * 0.52, s * 0.1, '#ffd36b', 3) }
 
 export const EP = ep(9, {
-  hook: 'Single digits, Houston. | And it\'s 55°.',
+  hook: 'Single digits | and Houston | hit 55°.',
   hookSet: (x, t, lt) => { cold(x, t); thermo(x, 260, 620, '55°', 1, SKYB) },
   hookFront: bundled(['gemini']),
   hookCast: C({ gemini: [[0, R, Y, 270], [0.4, R - 30, Y, 270], [0.8, R + 30, Y, 270], [1.2, R - 30, Y, 270], [1.6, R, Y, 270]] }), hookMood: { gemini: 'wide' }, hookLook: { gemini: [0, 0] },

@@ -11,7 +11,7 @@ const map = (x, t, lt, stops) => {
 const stealSnack = (x, t, lt) => { const ph = clamp((lt - 1.0) / 1.6); const gx = 760 - ph * 700, gy = 1080 - Math.sin(Math.PI * ph) * 300; x.strokeStyle = BONE; x.lineWidth = 8; const f = Math.sin(t * 12) * 14; x.beginPath(); x.moveTo(gx - 40, gy - f); x.quadraticCurveTo(gx - 16, gy - 18, gx, gy); x.quadraticCurveTo(gx + 16, gy - 18, gx + 40, gy - f); x.stroke(); if (ph > 0) taco(x, gx, gy + 30, 0.5); else taco(x, 760, 1110, 0.7) }
 
 export const EP = ep(15, {
-  hook: '15 days out. | Sag already planned Jan 10.',
+  hook: '15 days out. | Sag already | planned Jan 10.',
   hookSet: (x, t) => set(x, t),
   hookFront: (x, t, lt, P) => sunHat(x, P, 'sagittarius'),
   hookCast: C({ sagittarius: [[0, L, Y, 270], [1.4, L + 60, Y, 270], [2.8, L, Y, 270]] }), hookMood: { sagittarius: 'sparkle' }, hookLook: { sagittarius: [0, 0] },

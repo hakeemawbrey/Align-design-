@@ -12,7 +12,7 @@ const ALL = ['KATY', 'PEARLAND', 'SPRING', 'SUGAR LAND', 'HEIGHTS', 'PARTY']
 const road = (x, t) => { skyline(x, 1000, t, { alpha: 0.8 }); freeway(x, 1000, 420, 3, t * 300); outside(x, { ground: '#2a2638' }) }
 
 export const EP = ep(10, {
-  hook: 'T-minus 10 days. | Virgo mapped every ride.',
+  hook: 'T-minus 10 days. | Virgo mapped | every ride.',
   hookSet: board(ALL, [['KATY', 'PARTY'], ['PEARLAND', 'PARTY'], ['SPRING', 'PARTY']]),
   hookFront: (x, t, lt, P) => clipboard(x, P, 'virgo'),
   hookCast: C({ virgo: [[0, 200, Y + 40, 250], [1.4, 240, Y + 40, 250]] }), hookMood: { virgo: 'squint' }, hookLook: { virgo: [0, 0] },

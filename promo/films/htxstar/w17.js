@@ -5,10 +5,10 @@
 import { clamp, prog, ease } from '../../src/lib.js'
 import { FLOOR, box, txt, room, outside, table, heart } from '../starrace/ep.js'
 import { label, sparkles, pop01, signChar, GOLD, BONE, PINK, INK, INTER, MONO, SERIF, MINT, SKYB, LAV, SIGN_IDS } from '../signs3kit.js'
-import { skyline, partyCard, heatSun, sweat, BRAKE, HGREEN, mural, houses, coffeeShop, freeway, loopMap, overheadSign, kolache, klobasnek, taco, soupPot, puffer, streetSign } from './kit.js'
+import { car, skyline, partyCard, heatSun, sweat, BRAKE, HGREEN, mural, houses, coffeeShop, freeway, loopMap, overheadSign, kolache, klobasnek, taco, soupPot, puffer, streetSign } from './kit.js'
 
 export { clamp, prog, ease, FLOOR, box, txt, room, outside, table, heart, label, sparkles, pop01, signChar, GOLD, BONE, PINK, INK, INTER, MONO, SERIF, MINT, SKYB, LAV, SIGN_IDS }
-export { skyline, heatSun, sweat, BRAKE, HGREEN, mural, houses, coffeeShop, freeway, loopMap, overheadSign, kolache, klobasnek, taco, soupPot, puffer, streetSign }
+export { car, skyline, heatSun, sweat, BRAKE, HGREEN, mural, houses, coffeeShop, freeway, loopMap, overheadSign, kolache, klobasnek, taco, soupPot, puffer, streetSign }
 
 export const Y = 1255, G = FLOOR + 60
 export const BADGE = { text: 'HOU BETA · JAN 9', x: 230, y: 150 }
