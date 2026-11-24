@@ -86,7 +86,7 @@
   {
     "file": "aries-orbital-sunset.jpg",
     "set": "aura",
-    "title": " Earth observations taken by Expedition 44 crewmember",
+    "title": "Orbital sunrise over Earth's limb, photographed by NASA astronaut Scott Kelly (ISS Expedition 44)",
     "dominant_colors": [
       "#2c0305",
       "#55171d",
@@ -314,7 +314,7 @@
   {
     "file": "gemini-limb-layers.jpg",
     "set": "aura",
-    "title": "Earth Limb taken by the Expedition 17 Crew",
+    "title": "Layers of Earth's atmosphere and noctilucent clouds over central Asia (ISS Expedition 17)",
     "dominant_colors": [
       "#030309",
       "#cf6810",
@@ -542,7 +542,7 @@
   {
     "file": "leo-golden-limb.jpg",
     "set": "aura",
-    "title": "Earth Observations taken by the Expedition 23 Crew",
+    "title": "Sunset over the Indian Ocean seen from the ISS (Expedition 23)",
     "dominant_colors": [
       "#040304",
       "#eeba51",
@@ -713,7 +713,7 @@
   {
     "file": "libra-magenta-aurora.jpg",
     "set": "aura",
-    "title": "An aurora intersects Earth's airglow beneath a starry sky in this photograph from the International Space Station as it ",
+    "title": "An aurora intersects Earth's airglow beneath a starry sky in this photograph from the International Space Station as it",
     "dominant_colors": [
       "#576987",
       "#110c1b",
@@ -998,7 +998,7 @@
   {
     "file": "capricorn-aurora-ribbon.jpg",
     "set": "aura",
-    "title": "Earth observation taken using EHDC3",
+    "title": "Aurora australis over the Indian Ocean south of Perth, seen from the ISS",
     "dominant_colors": [
       "#110908",
       "#17380e",
@@ -1083,7 +1083,7 @@
   {
     "file": "aquarius-noctilucent.jpg",
     "set": "aura",
-    "title": "Polar mesospheric clouds in the Northern Hemisphere are featured in this image photographed by an Expedition 31 crew mem",
+    "title": "Polar mesospheric (noctilucent) clouds over the Northern Hemisphere, seen from the ISS",
     "dominant_colors": [
       "#020103",
       "#048cec",

@@ -1,0 +1,3114 @@
+[
+ {
+  "file": "sun-iss-starburst.jpg",
+  "subject": "sun",
+  "variant": "iss-starburst",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#2b251e",
+   "#6e6c6b",
+   "#dddcd0"
+  ],
+  "mood": [
+   "awakening",
+   "sparkle",
+   "dawn"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "iss073e1068530",
+  "title": "An orbital sunrise bursts above Earth's horizon",
+  "date_created": "2025-11-13",
+  "credit": "NASA (ISS Expedition 73 crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/iss073e1068530",
+  "source_file": "https://images-assets.nasa.gov/image/iss073e1068530/iss073e1068530~orig.jpg",
+  "upscale": 0.58,
+  "kb": 558
+ },
+ {
+  "file": "sun-iss-sunrise.jpg",
+  "subject": "sun",
+  "variant": "iss-sunrise",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#66250d",
+   "#e58933",
+   "#f7e6ca"
+  ],
+  "mood": [
+   "hopeful",
+   "new-beginning",
+   "glowing"
+  ],
+  "uses": [
+   "cover",
+   "background"
+  ],
+  "nasa_id": "iss074e0784492",
+  "title": "A bright orange sunburst illuminates Earth's atmosphere during an orbital sunrise",
+  "date_created": "2026-06-29",
+  "credit": "NASA/Chris Williams",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/iss074e0784492",
+  "source_file": "https://images-assets.nasa.gov/image/iss074e0784492/iss074e0784492~orig.jpg",
+  "upscale": 0.388,
+  "kb": 198
+ },
+ {
+  "file": "sun-prominence-2018.jpg",
+  "subject": "sun",
+  "variant": "prominence-2018",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#7c0800",
+   "#540200",
+   "#a51300"
+  ],
+  "mood": [
+   "textured",
+   "intimate",
+   "molten"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA22661",
+  "title": "Twisting Prominences",
+  "date_created": "2018-08-07",
+  "credit": "NASA/GSFC/Solar Dynamics Observatory",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA22661",
+  "source_file": "https://images-assets.nasa.gov/image/PIA22661/PIA22661~orig.jpg",
+  "upscale": 1.078,
+  "kb": 379
+ },
+ {
+  "file": "sun-prominence-monster.jpg",
+  "subject": "sun",
+  "variant": "prominence-monster",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1548,
+  "height": 1935,
+  "colors": [
+   "#bb0900",
+   "#710000",
+   "#ea460b"
+  ],
+  "mood": [
+   "eruptive",
+   "dramatic",
+   "molten"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GSFC_20171208_Archive_e001953",
+  "title": "NASA's SDO Captures a Monster Prominence",
+  "date_created": "2017-12-08",
+  "credit": "NASA/GSFC/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001953",
+  "source_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001953/GSFC_20171208_Archive_e001953~orig.jpg",
+  "upscale": 1.5,
+  "kb": 512
+ },
+ {
+  "file": "sun-sdo-131-teal.jpg",
+  "subject": "sun",
+  "variant": "sdo-131-teal",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.334
+  },
+  "colors": [
+   "#003434",
+   "#006565",
+   "#10b1b1"
+  ],
+  "mood": [
+   "cool",
+   "electric",
+   "otherworldly"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "svs_id": 13982,
+  "title": "X1.0 flare, 28 Oct 2021 (131 Å, teal)",
+  "credit": "NASA/GSFC/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/13982/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a013900/a013982/SDO_X1_Flare_10-28-21_131.jpg",
+  "upscale": 0.328,
+  "kb": 490
+ },
+ {
+  "file": "sun-sdo-171-gold.jpg",
+  "subject": "sun",
+  "variant": "sdo-171-gold",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.341
+  },
+  "colors": [
+   "#472500",
+   "#7a4700",
+   "#d08f06"
+  ],
+  "mood": [
+   "golden",
+   "radiant",
+   "regal",
+   "warm"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 13982,
+  "title": "Active October Sun Emits X-class Flare (171 Å full disk, 26 Oct 2021)",
+  "credit": "NASA/GSFC/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/13982/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a013900/a013982/SDO_ActiveOctober_10-26-21_Cleaned_4k.jpg",
+  "upscale": 0.335,
+  "kb": 379
+ },
+ {
+  "file": "sun-sdo-304-orange.jpg",
+  "subject": "sun",
+  "variant": "sdo-304-orange",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.361
+  },
+  "colors": [
+   "#900000",
+   "#600000",
+   "#c70d00"
+  ],
+  "mood": [
+   "fiery",
+   "intense",
+   "alive"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 13982,
+  "title": "Active October Sun Emits X-class Flare (304 Å full disk, Oct 2021)",
+  "credit": "NASA/GSFC/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/13982/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a013900/a013982/13982_SDO_ActiveOctober_304_4k_Still.jpg",
+  "upscale": 0.354,
+  "kb": 603
+ },
+ {
+  "file": "sun-sdo-flare-blend.jpg",
+  "subject": "sun",
+  "variant": "sdo-flare-blend",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.344
+  },
+  "colors": [
+   "#d03100",
+   "#940e00",
+   "#fba30d"
+  ],
+  "mood": [
+   "fiery",
+   "eruptive",
+   "powerful"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 13982,
+  "title": "X1.0 flare, 28 Oct 2021 (171 + 304 Å blend)",
+  "credit": "NASA/GSFC/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/13982/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a013900/a013982/SDO_X1_Flare_10-28_304-171Blend.jpg",
+  "upscale": 0.337,
+  "kb": 453
+ },
+ {
+  "file": "sun-sdo-x9-flare-blue.jpg",
+  "subject": "sun",
+  "variant": "sdo-x9-flare-blue",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.309
+  },
+  "colors": [
+   "#240668",
+   "#6529cb",
+   "#da95f9"
+  ],
+  "mood": [
+   "electric",
+   "mystical",
+   "charged",
+   "violet"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 14683,
+  "title": "X9.0 flare, 3 Oct 2024 (131 + 171 Å blend)",
+  "credit": "NASA/SDO",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/14683/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a014600/a014683/SDO_10-03-24_1219UTC_131-171_Blue_4k.jpg",
+  "upscale": 0.305,
+  "kb": 501
+ },
+ {
+  "file": "sun-white-light-2016.jpg",
+  "subject": "sun",
+  "variant": "white-light-2016",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.499,
+   "r": 0.389
+  },
+  "colors": [
+   "#e79126",
+   "#c56a04",
+   "#612800"
+  ],
+  "mood": [
+   "calm",
+   "honest",
+   "warm",
+   "clean"
+  ],
+  "uses": [
+   "inner",
+   "cover"
+  ],
+  "nasa_id": "NHQ201605090015",
+  "title": "Mercury Solar Transit",
+  "date_created": "2016-05-09",
+  "credit": "NASA/Bill Ingalls",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/NHQ201605090015",
+  "source_file": "https://images-assets.nasa.gov/image/NHQ201605090015/NHQ201605090015~orig.tif",
+  "upscale": 0.583,
+  "kb": 224
+ },
+ {
+  "file": "mercury-color-limb.jpg",
+  "subject": "mercury",
+  "variant": "color-limb",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#665f55",
+   "#433b33",
+   "#959387"
+  ],
+  "mood": [
+   "electric",
+   "detailed",
+   "strange"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA14190",
+  "title": "Mercury Colorful Limb",
+  "date_created": "2011-03-31",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA14190",
+  "source_file": "https://images-assets.nasa.gov/image/PIA14190/PIA14190~orig.jpg",
+  "upscale": 1.488,
+  "kb": 542
+ },
+ {
+  "file": "mercury-crater-horizon.jpg",
+  "subject": "mercury",
+  "variant": "crater-horizon",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1508,
+  "height": 1508,
+  "colors": [
+   "#686868",
+   "#454545",
+   "#232323"
+  ],
+  "mood": [
+   "textured",
+   "detail",
+   "landscape"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA10176",
+  "title": "MESSENGER Views Mercury Horizon",
+  "date_created": "2008-01-17",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA10176",
+  "source_file": "https://images-assets.nasa.gov/image/PIA10176/PIA10176~orig.jpg",
+  "upscale": 1.499,
+  "kb": 346
+ },
+ {
+  "file": "mercury-crescent.jpg",
+  "subject": "mercury",
+  "variant": "crescent",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.4
+  },
+  "colors": [
+   "#2b2b2b",
+   "#5c5c5c",
+   "#959494"
+  ],
+  "mood": [
+   "quiet",
+   "secretive",
+   "retrograde"
+  ],
+  "uses": [
+   "inner",
+   "cover"
+  ],
+  "nasa_id": "PIA10179",
+  "title": "An Overview of Mercury as MESSENGER Approached",
+  "date_created": "2008-01-18",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA10179",
+  "source_file": "https://images-assets.nasa.gov/image/PIA10179/PIA10179~orig.jpg",
+  "upscale": 1.379,
+  "kb": 93
+ },
+ {
+  "file": "mercury-enhanced-color.jpg",
+  "subject": "mercury",
+  "variant": "enhanced-color",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.388
+  },
+  "colors": [
+   "#7d6c66",
+   "#454367",
+   "#afa589"
+  ],
+  "mood": [
+   "vivid",
+   "surprising",
+   "analytic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA16853",
+  "title": "Colors of the Innermost Planet: View 1",
+  "date_created": "2013-02-18",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA16853",
+  "source_file": "https://images-assets.nasa.gov/image/PIA16853/PIA16853~orig.jpg",
+  "upscale": 1.236,
+  "kb": 550
+ },
+ {
+  "file": "mercury-gibbous-limb.jpg",
+  "subject": "mercury",
+  "variant": "gibbous-limb",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1536,
+  "height": 1536,
+  "colors": [
+   "#3d3d3d",
+   "#737373",
+   "#bebdbc"
+  ],
+  "mood": [
+   "close",
+   "monumental",
+   "stark"
+  ],
+  "uses": [
+   "cover",
+   "background"
+  ],
+  "nasa_id": "PIA14463",
+  "title": "It All Ends at Mercury Limb",
+  "date_created": "2011-07-14",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA14463",
+  "source_file": "https://images-assets.nasa.gov/image/PIA14463/PIA14463~orig.jpg",
+  "upscale": 1.5,
+  "kb": 288
+ },
+ {
+  "file": "mercury-messenger-disc.jpg",
+  "subject": "mercury",
+  "variant": "messenger-disc",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.507,
+   "cy": 0.499,
+   "r": 0.389
+  },
+  "colors": [
+   "#646464",
+   "#363636",
+   "#8b8b8b"
+  ],
+  "mood": [
+   "cerebral",
+   "stark",
+   "classic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA11245",
+  "title": "Mercury as Never Seen Before",
+  "date_created": "2008-10-07",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA11245",
+  "source_file": "https://images-assets.nasa.gov/image/PIA11245/PIA11245~orig.jpg",
+  "upscale": 1.357,
+  "kb": 289
+ },
+ {
+  "file": "venus-galileo-violet.jpg",
+  "subject": "venus",
+  "variant": "galileo-violet",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.501,
+   "cy": 0.501,
+   "r": 0.252
+  },
+  "colors": [
+   "#3a64dd",
+   "#76a2f1",
+   "#0b1e8d"
+  ],
+  "mood": [
+   "cool",
+   "mysterious",
+   "blue"
+  ],
+  "uses": [
+   "inner"
+  ],
+  "nasa_id": "PIA00072",
+  "title": "Venus Cloud Patterns colorized and filtered",
+  "date_created": "1996-02-01",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00072",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00072/PIA00072~orig.jpg",
+  "upscale": 1.5,
+  "kb": 140
+ },
+ {
+  "file": "venus-magellan-radar.jpg",
+  "subject": "venus",
+  "variant": "magellan-radar",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.499,
+   "r": 0.388
+  },
+  "colors": [
+   "#b3610f",
+   "#863806",
+   "#d9992b"
+  ],
+  "mood": [
+   "molten",
+   "sensual",
+   "golden"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA00104",
+  "title": "Venus - Computer Simulated Global View Centered at 180 Degrees East Longitude",
+  "date_created": "1996-11-12",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00104",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00104/PIA00104~orig.jpg",
+  "upscale": 0.337,
+  "kb": 502
+ },
+ {
+  "file": "venus-mariner10-enhanced.jpg",
+  "subject": "venus",
+  "variant": "mariner10-enhanced",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.53,
+   "cy": 0.501,
+   "r": 0.387
+  },
+  "colors": [
+   "#ddd4cb",
+   "#9a9695",
+   "#464648"
+  ],
+  "mood": [
+   "soft",
+   "veiled",
+   "romantic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA23791",
+  "title": "Venus from Mariner 10",
+  "date_created": "2020-06-08",
+  "credit": "NASA/JPL-Caltech (Mariner 10 data, reprocessed at JPL)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA23791",
+  "source_file": "https://images-assets.nasa.gov/image/PIA23791/PIA23791~orig.jpg",
+  "upscale": 1.33,
+  "kb": 159
+ },
+ {
+  "file": "venus-mariner10-natural.jpg",
+  "subject": "venus",
+  "variant": "mariner10-natural",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.529,
+   "cy": 0.501,
+   "r": 0.388
+  },
+  "colors": [
+   "#e3dfdb",
+   "#aaaaab",
+   "#4c4d50"
+  ],
+  "mood": [
+   "pearl",
+   "soft",
+   "dreamy"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA23791",
+  "title": "Venus from Mariner 10",
+  "date_created": "2020-06-08",
+  "credit": "NASA/JPL-Caltech (Mariner 10 data, reprocessed at JPL)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA23791",
+  "source_file": "https://images-assets.nasa.gov/image/PIA23791/PIA23791~orig.jpg",
+  "upscale": 1.33,
+  "kb": 115
+ },
+ {
+  "file": "venus-pioneer-crescent.jpg",
+  "subject": "venus",
+  "variant": "pioneer-crescent",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.501,
+   "cy": 0.5,
+   "r": 0.4
+  },
+  "colors": [
+   "#e9bc72",
+   "#cb711e",
+   "#612315"
+  ],
+  "mood": [
+   "romantic",
+   "warm",
+   "intimate"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "ARC-1978-AC78-9052",
+  "title": "ARC-1978-AC78-9052",
+  "date_created": "1978-12-13",
+  "credit": "NASA Ames Research Center (Pioneer Venus Orbiter)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/ARC-1978-AC78-9052",
+  "source_file": "https://images-assets.nasa.gov/image/ARC-1978-AC78-9052/ARC-1978-AC78-9052~orig.jpg",
+  "upscale": 0.708,
+  "kb": 118
+ },
+ {
+  "file": "venus-twilight-monument.jpg",
+  "subject": "venus",
+  "variant": "twilight-monument",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#161f4c",
+   "#090f35",
+   "#2a293c"
+  ],
+  "mood": [
+   "real-sky",
+   "twilight",
+   "romantic",
+   "evening-star"
+  ],
+  "uses": [
+   "cover",
+   "background"
+  ],
+  "nasa_id": "NHQ202605180003",
+  "title": "Moon Venus Conjunction",
+  "date_created": "2026-05-18",
+  "credit": "NASA/Bill Ingalls",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/NHQ202605180003",
+  "source_file": "https://images-assets.nasa.gov/image/NHQ202605180003/NHQ202605180003~orig.jpg",
+  "upscale": 0.295,
+  "kb": 335
+ },
+ {
+  "file": "moon-apollo11-full.jpg",
+  "subject": "moon",
+  "variant": "apollo11-full",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.498,
+   "r": 0.387
+  },
+  "colors": [
+   "#c1c5c8",
+   "#898b95",
+   "#464752"
+  ],
+  "mood": [
+   "bright",
+   "luminous",
+   "iconic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "as11-44-6667",
+  "title": "View of a full Moon photographed from Apollo 11 spacecraft",
+  "date_created": "1969-07-21",
+  "credit": "NASA (Apollo 11 crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/as11-44-6667",
+  "source_file": "https://images-assets.nasa.gov/image/as11-44-6667/as11-44-6667~orig.jpg",
+  "upscale": 0.901,
+  "kb": 541
+ },
+ {
+  "file": "moon-apollo17-full.jpg",
+  "subject": "moon",
+  "variant": "apollo17-full",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.51,
+   "r": 0.387
+  },
+  "colors": [
+   "#8e8e86",
+   "#6e6b65",
+   "#312f31"
+  ],
+  "mood": [
+   "serene",
+   "classic",
+   "silver"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "as17-152-23311",
+  "title": "Full disc of moon photographed by Apollo 17 crewmen during transearth coast",
+  "date_created": "1972-12-14",
+  "credit": "NASA (Apollo 17 crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/as17-152-23311",
+  "source_file": "https://images-assets.nasa.gov/image/as17-152-23311/as17-152-23311~orig.jpg",
+  "upscale": 0.524,
+  "kb": 522
+ },
+ {
+  "file": "moon-apollo8-gibbous.jpg",
+  "subject": "moon",
+  "variant": "apollo8-gibbous",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.528,
+   "r": 0.389
+  },
+  "colors": [
+   "#b6b6b4",
+   "#8a8988",
+   "#424345"
+  ],
+  "mood": [
+   "moody",
+   "dramatic",
+   "silver"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "as08-14-2506",
+  "title": "Photograph of nearly full moon taken from Apollo 8",
+  "date_created": "1968-12-22",
+  "credit": "NASA (Apollo 8 crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/as08-14-2506",
+  "source_file": "https://images-assets.nasa.gov/image/as08-14-2506/as08-14-2506~orig.tif",
+  "upscale": 0.393,
+  "kb": 447
+ },
+ {
+  "file": "moon-artemis-crescent.jpg",
+  "subject": "moon",
+  "variant": "artemis-crescent",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#978e86",
+   "#2c2c2e",
+   "#635d5a"
+  ],
+  "mood": [
+   "delicate",
+   "new-beginnings",
+   "quiet"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "art002e019570",
+  "title": "Crescent Moon Ahead of Flyby",
+  "date_created": "2026-04-07",
+  "credit": "NASA (Artemis II crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/art002e019570",
+  "source_file": "https://images-assets.nasa.gov/image/art002e019570/art002e019570~orig.jpg",
+  "upscale": 0.458,
+  "kb": 113
+ },
+ {
+  "file": "moon-artemis-farside.jpg",
+  "subject": "moon",
+  "variant": "artemis-farside",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#454343",
+   "#222223",
+   "#6c6968"
+  ],
+  "mood": [
+   "hidden",
+   "shadow",
+   "mysterious"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "art002e009287",
+  "title": "A New View of the Moon",
+  "date_created": "2026-04-06",
+  "credit": "NASA (Artemis II crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/art002e009287",
+  "source_file": "https://images-assets.nasa.gov/image/art002e009287/art002e009287~orig.jpg",
+  "upscale": 0.435,
+  "kb": 306
+ },
+ {
+  "file": "moon-earthrise-apollo8.jpg",
+  "subject": "moon",
+  "variant": "earthrise-apollo8",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#848484",
+   "#626463",
+   "#a7aeb0"
+  ],
+  "mood": [
+   "awe",
+   "perspective",
+   "home"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "as08-14-2383",
+  "title": "Apollo 8 Mission image, Earth over the horizon of the moon",
+  "date_created": "1968-12-24",
+  "credit": "NASA/Bill Anders (Apollo 8)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/as08-14-2383",
+  "source_file": "https://images-assets.nasa.gov/image/as08-14-2383/as08-14-2383~orig.jpg",
+  "upscale": 0.533,
+  "kb": 176
+ },
+ {
+  "file": "moon-earthset-artemis.jpg",
+  "subject": "moon",
+  "variant": "earthset-artemis",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#48403b",
+   "#332d29",
+   "#b6c1ce"
+  ],
+  "mood": [
+   "awe",
+   "farewell",
+   "perspective"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "art002e009288",
+  "title": "Earthset",
+  "date_created": "2026-04-06",
+  "credit": "NASA (Artemis II crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/art002e009288",
+  "source_file": "https://images-assets.nasa.gov/image/art002e009288/art002e009288~orig.jpg",
+  "upscale": 0.435,
+  "kb": 229
+ },
+ {
+  "file": "moon-iss-limb.jpg",
+  "subject": "moon",
+  "variant": "iss-limb",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#c5cfdf",
+   "#9db0cb",
+   "#0f3c6c"
+  ],
+  "mood": [
+   "airy",
+   "serene",
+   "real-sky"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "iss040e092688",
+  "title": "Moon setting",
+  "date_created": "2014-08-13",
+  "credit": "NASA/Reid Wiseman (ISS Expedition 40)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/iss040e092688",
+  "source_file": "https://images-assets.nasa.gov/image/iss040e092688/iss040e092688~orig.jpg",
+  "upscale": 0.57,
+  "kb": 165
+ },
+ {
+  "file": "moon-phase-2026-12-01.jpg",
+  "subject": "moon",
+  "variant": "phase-2026-12-01",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.368
+  },
+  "colors": [
+   "#74706a",
+   "#3d3b38",
+   "#a8a49c"
+  ],
+  "mood": [
+   "release",
+   "reflection",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2026-12-01",
+  "event": "Last quarter",
+  "event_time_et": "01:09",
+  "frame_time_ut": "01 Dec 2026 06:00 UT",
+  "svs_frame": 8023,
+  "illumination_pct": 50.19,
+  "svs_id": 5587,
+  "title": "Moon Phase and Libration, 2026, frame 8023 (01 Dec 2026 06:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5587/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/5760x3240_16x9_30p/plain/moon.8023.tif",
+  "upscale": 0.4,
+  "kb": 237,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2026-12-08.jpg",
+  "subject": "moon",
+  "variant": "phase-2026-12-08",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.344
+  },
+  "colors": [
+   "#0f151e",
+   "#171e2a",
+   "#202938"
+  ],
+  "mood": [
+   "new-beginnings",
+   "seed",
+   "dark",
+   "intention"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2026-12-08",
+  "event": "New moon",
+  "event_time_et": "19:52",
+  "frame_time_ut": "09 Dec 2026 01:00 UT",
+  "svs_frame": 8210,
+  "illumination_pct": 0.16,
+  "svs_id": 5587,
+  "title": "Moon Phase and Libration, 2026, frame 8210 (09 Dec 2026 01:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5587/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/5760x3240_16x9_30p/plain/moon.8210.tif",
+  "upscale": 0.4,
+  "kb": 165,
+  "note": "Rendered frame shows the new moon lit only by earthshine; brightness lifted about 2-3x so the dark disc reads on screen."
+ },
+ {
+  "file": "moon-phase-2026-12-17.jpg",
+  "subject": "moon",
+  "variant": "phase-2026-12-17",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.357
+  },
+  "colors": [
+   "#78756f",
+   "#b4afa6",
+   "#3d3c39"
+  ],
+  "mood": [
+   "action",
+   "momentum",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2026-12-17",
+  "event": "First quarter",
+  "event_time_et": "00:43",
+  "frame_time_ut": "17 Dec 2026 06:00 UT",
+  "svs_frame": 8407,
+  "illumination_pct": 50.25,
+  "svs_id": 5587,
+  "title": "Moon Phase and Libration, 2026, frame 8407 (17 Dec 2026 06:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5587/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/5760x3240_16x9_30p/plain/moon.8407.tif",
+  "upscale": 0.4,
+  "kb": 229,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2026-12-23.jpg",
+  "subject": "moon",
+  "variant": "phase-2026-12-23",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.39
+  },
+  "colors": [
+   "#969189",
+   "#cac4bc",
+   "#65625c"
+  ],
+  "mood": [
+   "culmination",
+   "luminous",
+   "release"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2026-12-23",
+  "event": "Full moon",
+  "event_time_et": "20:28",
+  "frame_time_ut": "24 Dec 2026 01:00 UT",
+  "svs_frame": 8570,
+  "illumination_pct": 99.88,
+  "svs_id": 5587,
+  "title": "Moon Phase and Libration, 2026, frame 8570 (24 Dec 2026 01:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5587/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/5760x3240_16x9_30p/plain/moon.8570.tif",
+  "upscale": 0.4,
+  "kb": 345,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2026-12-30.jpg",
+  "subject": "moon",
+  "variant": "phase-2026-12-30",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.361
+  },
+  "colors": [
+   "#736f6a",
+   "#3d3b38",
+   "#a5a099"
+  ],
+  "mood": [
+   "release",
+   "reflection",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2026-12-30",
+  "event": "Last quarter",
+  "event_time_et": "14:00",
+  "frame_time_ut": "30 Dec 2026 19:00 UT",
+  "svs_frame": 8732,
+  "illumination_pct": 50.13,
+  "svs_id": 5587,
+  "title": "Moon Phase and Libration, 2026, frame 8732 (30 Dec 2026 19:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5587/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/5760x3240_16x9_30p/plain/moon.8732.tif",
+  "upscale": 0.4,
+  "kb": 229,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-01-07.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-01-07",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.343
+  },
+  "colors": [
+   "#0f151e",
+   "#171e2a",
+   "#202a38"
+  ],
+  "mood": [
+   "new-beginnings",
+   "seed",
+   "dark",
+   "intention"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-01-07",
+  "event": "New moon",
+  "event_time_et": "15:25",
+  "frame_time_ut": "07 Jan 2027 20:00 UT",
+  "svs_frame": 165,
+  "illumination_pct": 0.06,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 165 (07 Jan 2027 20:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.00165.tif",
+  "upscale": 0.4,
+  "kb": 163,
+  "note": "Rendered frame shows the new moon lit only by earthshine; brightness lifted about 2-3x so the dark disc reads on screen."
+ },
+ {
+  "file": "moon-phase-2027-01-15.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-01-15",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.364
+  },
+  "colors": [
+   "#77736d",
+   "#b3aea6",
+   "#3b3a37"
+  ],
+  "mood": [
+   "action",
+   "momentum",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-01-15",
+  "event": "First quarter",
+  "event_time_et": "15:35",
+  "frame_time_ut": "15 Jan 2027 21:00 UT",
+  "svs_frame": 358,
+  "illumination_pct": 50.32,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 358 (15 Jan 2027 21:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.00358.tif",
+  "upscale": 0.4,
+  "kb": 238,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-01-22.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-01-22",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.389
+  },
+  "colors": [
+   "#949088",
+   "#c9c4bb",
+   "#625f5a"
+  ],
+  "mood": [
+   "culmination",
+   "luminous",
+   "release"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-01-22",
+  "event": "Full moon",
+  "event_time_et": "07:17",
+  "frame_time_ut": "22 Jan 2027 12:00 UT",
+  "svs_frame": 517,
+  "illumination_pct": 99.98,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 517 (22 Jan 2027 12:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.00517.tif",
+  "upscale": 0.4,
+  "kb": 341,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-01-29.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-01-29",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.354
+  },
+  "colors": [
+   "#74716b",
+   "#3f3d39",
+   "#a7a29a"
+  ],
+  "mood": [
+   "release",
+   "reflection",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-01-29",
+  "event": "Last quarter",
+  "event_time_et": "05:56",
+  "frame_time_ut": "29 Jan 2027 11:00 UT",
+  "svs_frame": 684,
+  "illumination_pct": 50.1,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 684 (29 Jan 2027 11:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.00684.tif",
+  "upscale": 0.4,
+  "kb": 220,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-02-06.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-02-06",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.346
+  },
+  "colors": [
+   "#0f151e",
+   "#171e2a",
+   "#202a38"
+  ],
+  "mood": [
+   "new-beginnings",
+   "seed",
+   "dark",
+   "intention"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-02-06",
+  "event": "New moon",
+  "event_time_et": "10:56",
+  "frame_time_ut": "06 Feb 2027 16:00 UT",
+  "svs_frame": 881,
+  "illumination_pct": 0.0,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 881 (06 Feb 2027 16:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.00881.tif",
+  "upscale": 0.4,
+  "kb": 166,
+  "note": "Rendered frame shows the new moon lit only by earthshine; brightness lifted about 2-3x so the dark disc reads on screen."
+ },
+ {
+  "file": "moon-phase-2027-02-14.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-02-14",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.37
+  },
+  "colors": [
+   "#75726c",
+   "#b3aea5",
+   "#393835"
+  ],
+  "mood": [
+   "action",
+   "momentum",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-02-14",
+  "event": "First quarter",
+  "event_time_et": "02:59",
+  "frame_time_ut": "14 Feb 2027 08:00 UT",
+  "svs_frame": 1065,
+  "illumination_pct": 50.14,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 1065 (14 Feb 2027 08:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.01065.tif",
+  "upscale": 0.4,
+  "kb": 245,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-02-20.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-02-20",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.383
+  },
+  "colors": [
+   "#938e87",
+   "#c8c3ba",
+   "#615e59"
+  ],
+  "mood": [
+   "culmination",
+   "luminous",
+   "release"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-02-20",
+  "event": "Full moon",
+  "event_time_et": "18:24",
+  "frame_time_ut": "20 Feb 2027 23:00 UT",
+  "svs_frame": 1224,
+  "illumination_pct": 99.99,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 1224 (20 Feb 2027 23:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.01224.tif",
+  "upscale": 0.4,
+  "kb": 330,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "moon-phase-2027-02-28.jpg",
+  "subject": "moon",
+  "variant": "phase-2027-02-28",
+  "kind": "phase",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.348
+  },
+  "colors": [
+   "#75726c",
+   "#403e3a",
+   "#aba69e"
+  ],
+  "mood": [
+   "release",
+   "reflection",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "date": "2027-02-28",
+  "event": "Last quarter",
+  "event_time_et": "00:17",
+  "frame_time_ut": "28 Feb 2027 05:00 UT",
+  "svs_frame": 1398,
+  "illumination_pct": 50.25,
+  "svs_id": 5691,
+  "title": "Moon Phase and Libration, 2027, frame 1398 (28 Feb 2027 05:00 UT)",
+  "credit": "NASA's Scientific Visualization Studio (LRO LROC/LOLA data)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/5691/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005691/frames/5760x3240_16x9_30p/plain/moon.01398.tif",
+  "upscale": 0.4,
+  "kb": 213,
+  "note": "Constant 4000 px source crop, so apparent size differences between dates are real (perigee vs apogee)."
+ },
+ {
+  "file": "mars-curiosity-blue-sunset.jpg",
+  "subject": "mars",
+  "variant": "curiosity-blue-sunset",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#a7b5c6",
+   "#7e8590",
+   "#3c3c3e"
+  ],
+  "mood": [
+   "melancholy",
+   "alien",
+   "tender"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA19400",
+  "title": "Sunset in Mars Gale Crater",
+  "date_created": "2015-05-08",
+  "credit": "NASA/JPL-Caltech/MSSS/Texas A&M Univ.",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA19400",
+  "source_file": "https://images-assets.nasa.gov/image/PIA19400/PIA19400~orig.jpg",
+  "upscale": 1.488,
+  "kb": 163
+ },
+ {
+  "file": "mars-hubble-disc.jpg",
+  "subject": "mars",
+  "variant": "hubble-disc",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.388
+  },
+  "colors": [
+   "#5f574a",
+   "#b6864a",
+   "#93aebc"
+  ],
+  "mood": [
+   "bold",
+   "rust",
+   "driven"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GSFC_20171208_Archive_e000332",
+  "title": "Hubble Takes Mars Portrait Near Close Approach",
+  "date_created": "2017-12-08",
+  "credit": "NASA, ESA, the Hubble Heritage Team (STScI/AURA), J. Bell (ASU) and M. Wolff (Space Science Institute)",
+  "license": "public domain as a NASA release (joint NASA/ESA[/CSA] image; keep full credit line)",
+  "landing_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000332",
+  "source_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000332/GSFC_20171208_Archive_e000332~orig.jpg",
+  "upscale": 0.904,
+  "kb": 194
+ },
+ {
+  "file": "mars-perseverance-horizon.jpg",
+  "subject": "mars",
+  "variant": "perseverance-horizon",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#704e33",
+   "#563c27",
+   "#d9bb93"
+  ],
+  "mood": [
+   "grounded",
+   "frontier",
+   "dusty"
+  ],
+  "uses": [
+   "cover",
+   "background"
+  ],
+  "nasa_id": "PIA24765",
+  "title": "Perseverance's Office on Mars",
+  "date_created": "2021-08-02",
+  "credit": "NASA/JPL-Caltech/ASU/MSSS",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA24765",
+  "source_file": "https://images-assets.nasa.gov/image/PIA24765/PIA24765~orig.jpg",
+  "upscale": 0.325,
+  "kb": 618
+ },
+ {
+  "file": "mars-perseverance-jezero.jpg",
+  "subject": "mars",
+  "variant": "perseverance-jezero",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1574,
+  "height": 1574,
+  "colors": [
+   "#9f7b5d",
+   "#644b39",
+   "#31241a"
+  ],
+  "mood": [
+   "frontier",
+   "rugged",
+   "grounded"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA23727",
+  "title": "Perseverance's Mastcam-Z First High-Resolution Panorama",
+  "date_created": "2021-03-02",
+  "credit": "NASA/JPL-Caltech/ASU/MSSS",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA23727",
+  "source_file": "https://images-assets.nasa.gov/image/PIA23727/PIA23727~orig.jpg",
+  "upscale": 1.499,
+  "kb": 450
+ },
+ {
+  "file": "mars-viking-schiaparelli.jpg",
+  "subject": "mars",
+  "variant": "viking-schiaparelli",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#5f4328",
+   "#865e38",
+   "#3b2f23"
+  ],
+  "mood": [
+   "ancient",
+   "terrain",
+   "dusty"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA00004",
+  "title": "Schiaparelli Hemisphere",
+  "date_created": "1996-06-03",
+  "credit": "NASA/JPL/USGS",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00004",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00004/PIA00004~orig.jpg",
+  "upscale": 0.493,
+  "kb": 602
+ },
+ {
+  "file": "mars-viking-valles-marineris.jpg",
+  "subject": "mars",
+  "variant": "viking-valles-marineris",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#614c37",
+   "#35312c",
+   "#866b50"
+  ],
+  "mood": [
+   "scarred",
+   "epic",
+   "terrain"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA00003",
+  "title": "Valles Marineris Hemisphere",
+  "date_created": "1996-06-03",
+  "credit": "NASA/JPL/USGS",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00003",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00003/PIA00003~orig.jpg",
+  "upscale": 0.625,
+  "kb": 586
+ },
+ {
+  "file": "jupiter-cassini-portrait.jpg",
+  "subject": "jupiter",
+  "variant": "cassini-portrait",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.5,
+   "r": 0.399
+  },
+  "colors": [
+   "#36312a",
+   "#806f5f",
+   "#bbaaa1"
+  ],
+  "mood": [
+   "soft",
+   "grand",
+   "half-lit"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA04866",
+  "title": "Cassini Jupiter Portrait",
+  "date_created": "2003-11-13",
+  "credit": "NASA/JPL/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA04866",
+  "source_file": "https://images-assets.nasa.gov/image/PIA04866/PIA04866~orig.jpg",
+  "upscale": 0.583,
+  "kb": 167
+ },
+ {
+  "file": "jupiter-hubble-2014.jpg",
+  "subject": "jupiter",
+  "variant": "hubble-2014",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.504,
+   "cy": 0.51,
+   "r": 0.388
+  },
+  "colors": [
+   "#978874",
+   "#d0c7ba",
+   "#48473c"
+  ],
+  "mood": [
+   "abundant",
+   "classic",
+   "warm"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GSFC_20171208_Archive_e001093",
+  "title": "NASA's Hubble Shows Jupiter's Great Red Spot is Smaller than Ever",
+  "date_created": "2017-12-08",
+  "credit": "NASA, ESA, and A. Simon (Goddard Space Flight Center)",
+  "license": "public domain as a NASA release (joint NASA/ESA[/CSA] image; keep full credit line)",
+  "landing_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001093",
+  "source_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001093/GSFC_20171208_Archive_e001093~orig.jpg",
+  "upscale": 0.72,
+  "kb": 252
+ },
+ {
+  "file": "jupiter-hubble-2017.jpg",
+  "subject": "jupiter",
+  "variant": "hubble-2017",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.516,
+   "r": 0.39
+  },
+  "colors": [
+   "#97766b",
+   "#3e363a",
+   "#d1b9a2"
+  ],
+  "mood": [
+   "lucky",
+   "abundant",
+   "vivid"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GSFC_20171208_Archive_e000103",
+  "title": "NASA's Hubble Takes Close-up Portrait of Jupiter",
+  "date_created": "2017-12-08",
+  "credit": "NASA, ESA, and A. Simon (NASA Goddard)",
+  "license": "public domain as a NASA release (joint NASA/ESA[/CSA] image; keep full credit line)",
+  "landing_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000103",
+  "source_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000103/GSFC_20171208_Archive_e000103~orig.png",
+  "upscale": 1.155,
+  "kb": 287
+ },
+ {
+  "file": "jupiter-hubble-ganymede-shadow.jpg",
+  "subject": "jupiter",
+  "variant": "hubble-ganymede-shadow",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.495,
+   "cy": 0.518,
+   "r": 0.391
+  },
+  "colors": [
+   "#988974",
+   "#c6c4b1",
+   "#49453f"
+  ],
+  "mood": [
+   "uncanny",
+   "watchful",
+   "eye"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GSFC_20171208_Archive_e000916",
+  "title": "Hubble Spies Spooky Shadow on Jupiter's Giant Eye (color)",
+  "date_created": "2017-12-08",
+  "credit": "NASA, ESA, and A. Simon (Goddard Space Flight Center)",
+  "license": "public domain as a NASA release (joint NASA/ESA[/CSA] image; keep full credit line)",
+  "landing_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000916",
+  "source_file": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000916/GSFC_20171208_Archive_e000916~orig.jpg",
+  "upscale": 1.405,
+  "kb": 309
+ },
+ {
+  "file": "jupiter-juno-south-pole.jpg",
+  "subject": "jupiter",
+  "variant": "juno-south-pole",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.4
+  },
+  "colors": [
+   "#343331",
+   "#837a6c",
+   "#d3d0cc"
+  ],
+  "mood": [
+   "mysterious",
+   "cool",
+   "unseen"
+  ],
+  "uses": [
+   "inner",
+   "cover"
+  ],
+  "nasa_id": "PIA21032",
+  "title": "Jupiter Down Under",
+  "date_created": "2016-09-02",
+  "credit": "NASA/JPL-Caltech/SwRI/MSSS",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA21032",
+  "source_file": "https://images-assets.nasa.gov/image/PIA21032/PIA21032~orig.jpg",
+  "upscale": 0.8,
+  "kb": 131
+ },
+ {
+  "file": "jupiter-voyager-great-red-spot.jpg",
+  "subject": "jupiter",
+  "variant": "voyager-great-red-spot",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#3b353d",
+   "#74695d",
+   "#97adba"
+  ],
+  "mood": [
+   "turbulent",
+   "painterly",
+   "expansive"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA01384",
+  "title": "Jupiter Great Red Spot",
+  "date_created": "1998-12-05",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA01384",
+  "source_file": "https://images-assets.nasa.gov/image/PIA01384/PIA01384~orig.jpg",
+  "upscale": 0.364,
+  "kb": 614
+ },
+ {
+  "file": "saturn-cassini-backlit-green.jpg",
+  "subject": "saturn",
+  "variant": "cassini-backlit-green",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.061,
+   "y0": 0.332,
+   "x1": 0.94,
+   "y1": 0.666
+  },
+  "colors": [
+   "#242614",
+   "#504f2b",
+   "#817c42"
+  ],
+  "mood": [
+   "eerie",
+   "luminous",
+   "dramatic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA14934",
+  "title": "A Splendor Seldom Seen",
+  "date_created": "2012-12-18",
+  "credit": "NASA/JPL-Caltech/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA14934",
+  "source_file": "https://images-assets.nasa.gov/image/PIA14934/PIA14934~orig.jpg",
+  "upscale": 0.239,
+  "kb": 146
+ },
+ {
+  "file": "saturn-cassini-backlit.jpg",
+  "subject": "saturn",
+  "variant": "cassini-backlit",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.012,
+   "y0": 0.324,
+   "x1": 0.999,
+   "y1": 0.689
+  },
+  "colors": [
+   "#1d1a1f",
+   "#5c4f43",
+   "#9b8371"
+  ],
+  "mood": [
+   "solemn",
+   "luminous",
+   "rare"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA08329",
+  "title": "In Saturn Shadow",
+  "date_created": "2006-10-11",
+  "credit": "NASA/JPL/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA08329",
+  "source_file": "https://images-assets.nasa.gov/image/PIA08329/PIA08329~orig.jpg",
+  "upscale": 0.846,
+  "kb": 106
+ },
+ {
+  "file": "saturn-cassini-full.jpg",
+  "subject": "saturn",
+  "variant": "cassini-full",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.06,
+   "y0": 0.326,
+   "x1": 0.939,
+   "y1": 0.676
+  },
+  "colors": [
+   "#baa36f",
+   "#746c55",
+   "#39372e"
+  ],
+  "mood": [
+   "classic",
+   "balanced",
+   "calm"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA11141",
+  "title": "Saturn … Four Years On",
+  "date_created": "2008-12-30",
+  "credit": "NASA/JPL/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA11141",
+  "source_file": "https://images-assets.nasa.gov/image/PIA11141/PIA11141~orig.jpg",
+  "upscale": 0.359,
+  "kb": 89
+ },
+ {
+  "file": "saturn-cassini-gibbous.jpg",
+  "subject": "saturn",
+  "variant": "cassini-gibbous",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.06,
+   "y0": 0.309,
+   "x1": 0.941,
+   "y1": 0.692
+  },
+  "colors": [
+   "#2f2b1f",
+   "#5d553e",
+   "#c8c099"
+  ],
+  "mood": [
+   "majestic",
+   "shadowed",
+   "serious"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA21345",
+  "title": "So Far from Home",
+  "date_created": "2017-09-11",
+  "credit": "NASA/JPL-Caltech/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA21345",
+  "source_file": "https://images-assets.nasa.gov/image/PIA21345/PIA21345~orig.jpg",
+  "upscale": 0.428,
+  "kb": 122
+ },
+ {
+  "file": "saturn-cassini-jewel.jpg",
+  "subject": "saturn",
+  "variant": "cassini-jewel",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.05,
+   "y0": 0.141,
+   "x1": 0.95,
+   "y1": 0.86
+  },
+  "colors": [
+   "#262316",
+   "#bfad6b",
+   "#706843"
+  ],
+  "mood": [
+   "structured",
+   "majestic",
+   "calm"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA17474",
+  "title": "Jewel of the Solar System",
+  "date_created": "2013-10-25",
+  "credit": "NASA/JPL-Caltech/SSI/Cornell",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA17474",
+  "source_file": "https://images-assets.nasa.gov/image/PIA17474/PIA17474~orig.jpg",
+  "upscale": 0.538,
+  "kb": 196
+ },
+ {
+  "file": "saturn-hubble-1999.jpg",
+  "subject": "saturn",
+  "variant": "hubble-1999",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "ring_span": {
+   "x0": 0.071,
+   "y0": 0.328,
+   "x1": 0.929,
+   "y1": 0.674
+  },
+  "colors": [
+   "#8d7a68",
+   "#cbb49a",
+   "#3b3736"
+  ],
+  "mood": [
+   "classic",
+   "iconic",
+   "warm"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA03161",
+  "title": "A Change of Seasons on Saturn - October, 1999",
+  "date_created": "2001-07-21",
+  "credit": "NASA and The Hubble Heritage Team (STScI/AURA); acknowledgment: R.G. French (Wellesley College), J. Cuzzi (NASA/Ames), L. Dones (SwRI), J. Lissauer (NASA/Ames)",
+  "license": "public domain as a NASA release (joint NASA/ESA[/CSA] image; keep full credit line)",
+  "landing_url": "https://images.nasa.gov/details/PIA03161",
+  "source_file": "https://images-assets.nasa.gov/image/PIA03161/PIA03161~orig.jpg",
+  "upscale": 0.501,
+  "kb": 110
+ },
+ {
+  "file": "saturn-rings-closeup.jpg",
+  "subject": "saturn",
+  "variant": "rings-closeup",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1496,
+  "height": 1496,
+  "colors": [
+   "#c5b998",
+   "#332e26",
+   "#978d6f"
+  ],
+  "mood": [
+   "layered",
+   "discipline",
+   "texture"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA14943",
+  "title": "Translucent Arcs",
+  "date_created": "2018-08-13",
+  "credit": "NASA/JPL-Caltech/Space Science Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA14943",
+  "source_file": "https://images-assets.nasa.gov/image/PIA14943/PIA14943~orig.jpg",
+  "upscale": 1.5,
+  "kb": 325
+ },
+ {
+  "file": "uranus-voyager-crescent.jpg",
+  "subject": "uranus",
+  "variant": "voyager-crescent",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.501,
+   "cy": 0.499,
+   "r": 0.401
+  },
+  "colors": [
+   "#29312d",
+   "#61756b",
+   "#a0bdad"
+  ],
+  "mood": [
+   "distant",
+   "minimal",
+   "sliver"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA00143",
+  "title": "Uranus - Final Image",
+  "date_created": "1996-01-29",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00143",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00143/PIA00143~orig.jpg",
+  "upscale": 1.485,
+  "kb": 53
+ },
+ {
+  "file": "uranus-voyager-disc.jpg",
+  "subject": "uranus",
+  "variant": "voyager-disc",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.497,
+   "cy": 0.509,
+   "r": 0.391
+  },
+  "colors": [
+   "#c4e9ea",
+   "#8ab1b8",
+   "#3f595d"
+  ],
+  "mood": [
+   "cool",
+   "calm",
+   "minimal"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA18182",
+  "title": "Uranus as seen by NASA Voyager 2",
+  "date_created": "1986-12-18",
+  "credit": "NASA/JPL-Caltech",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA18182",
+  "source_file": "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
+  "upscale": 0.891,
+  "kb": 117
+ },
+ {
+  "file": "uranus-voyager-false-color.jpg",
+  "subject": "uranus",
+  "variant": "voyager-false-color",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.484,
+   "cy": 0.502,
+   "r": 0.336
+  },
+  "colors": [
+   "#83d2bb",
+   "#be9b49",
+   "#474c67"
+  ],
+  "mood": [
+   "disruptive",
+   "electric",
+   "surprising"
+  ],
+  "uses": [
+   "inner",
+   "cover"
+  ],
+  "nasa_id": "PIA00032",
+  "title": "Uranus in True and False Color",
+  "date_created": "1996-08-01",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA00032",
+  "source_file": "https://images-assets.nasa.gov/image/PIA00032/PIA00032~orig.jpg",
+  "upscale": 1.5,
+  "kb": 259
+ },
+ {
+  "file": "neptune-voyager-approach.jpg",
+  "subject": "neptune",
+  "variant": "voyager-approach",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.503,
+   "cy": 0.5,
+   "r": 0.195
+  },
+  "colors": [
+   "#3594f5",
+   "#2d71c3",
+   "#173a56"
+  ],
+  "mood": [
+   "distant",
+   "dreamy",
+   "blue"
+  ],
+  "uses": [
+   "inner"
+  ],
+  "nasa_id": "PIA02210",
+  "title": "Neptune",
+  "date_created": "1999-08-19",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA02210",
+  "source_file": "https://images-assets.nasa.gov/image/PIA02210/PIA02210~orig.jpg",
+  "upscale": 1.5,
+  "kb": 99
+ },
+ {
+  "file": "neptune-voyager-crescent.jpg",
+  "subject": "neptune",
+  "variant": "voyager-crescent",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#e0e6e9",
+   "#28313d",
+   "#7e8b98"
+  ],
+  "mood": [
+   "farewell",
+   "ethereal",
+   "fading"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA01539",
+  "title": "Post-encounter View of Neptune South Pole",
+  "date_created": "1999-05-08",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA01539",
+  "source_file": "https://images-assets.nasa.gov/image/PIA01539/PIA01539~orig.jpg",
+  "upscale": 1.387,
+  "kb": 81
+ },
+ {
+  "file": "neptune-voyager-disc.jpg",
+  "subject": "neptune",
+  "variant": "voyager-disc",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.511,
+   "cy": 0.504,
+   "r": 0.392
+  },
+  "colors": [
+   "#3760f5",
+   "#293bae",
+   "#171c53"
+  ],
+  "mood": [
+   "dreamy",
+   "deep-blue",
+   "oceanic"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA01492",
+  "title": "PIA01492",
+  "date_created": "1998-10-30",
+  "credit": "NASA/JPL",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA01492",
+  "source_file": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
+  "upscale": 0.66,
+  "kb": 260
+ },
+ {
+  "file": "pluto-blue-haze.jpg",
+  "subject": "pluto",
+  "variant": "blue-haze",
+  "kind": "crescent",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.5,
+   "r": 0.398
+  },
+  "colors": [
+   "#1b2740",
+   "#576990",
+   "#9fb3de"
+  ],
+  "mood": [
+   "halo",
+   "ethereal",
+   "farewell"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA21590",
+  "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+  "date_created": "2017-03-24",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA21590",
+  "source_file": "https://images-assets.nasa.gov/image/PIA21590/PIA21590~orig.jpg",
+  "upscale": 0.466,
+  "kb": 78
+ },
+ {
+  "file": "pluto-enhanced-color.jpg",
+  "subject": "pluto",
+  "variant": "enhanced-color",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.498,
+   "cy": 0.503,
+   "r": 0.387
+  },
+  "colors": [
+   "#c3bdb4",
+   "#827772",
+   "#3c2521"
+  ],
+  "mood": [
+   "transformative",
+   "bold",
+   "strange"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA19952",
+  "title": "The Rich Color Variations of Pluto",
+  "date_created": "2015-09-24",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA19952",
+  "source_file": "https://images-assets.nasa.gov/image/PIA19952/PIA19952~orig.jpg",
+  "upscale": 0.285,
+  "kb": 475
+ },
+ {
+  "file": "pluto-heart-closeup.jpg",
+  "subject": "pluto",
+  "variant": "heart-closeup",
+  "kind": "closeup",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#aca397",
+   "#76726e",
+   "#372f2d"
+  ],
+  "mood": [
+   "heart",
+   "intimate",
+   "textured"
+  ],
+  "uses": [
+   "inner",
+   "background"
+  ],
+  "nasa_id": "PIA19952",
+  "title": "The Rich Color Variations of Pluto",
+  "date_created": "2015-09-24",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA19952",
+  "source_file": "https://images-assets.nasa.gov/image/PIA19952/PIA19952~orig.jpg",
+  "upscale": 0.762,
+  "kb": 610
+ },
+ {
+  "file": "pluto-natural-color.jpg",
+  "subject": "pluto",
+  "variant": "natural-color",
+  "kind": "disc",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.5,
+   "cy": 0.501,
+   "r": 0.29
+  },
+  "colors": [
+   "#ddb690",
+   "#9e7c5d",
+   "#452e1b"
+  ],
+  "mood": [
+   "tender",
+   "heart",
+   "soft"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "PIA20291",
+  "title": "Color Image of Pluto",
+  "date_created": "2015-12-31",
+  "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/PIA20291",
+  "source_file": "https://images-assets.nasa.gov/image/PIA20291/PIA20291~orig.jpg",
+  "upscale": 1.5,
+  "kb": 158
+ },
+ {
+  "file": "eclipse-annular-2023-forming.jpg",
+  "subject": "eclipse",
+  "variant": "annular-2023-forming",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.501,
+   "r": 0.308
+  },
+  "colors": [
+   "#fabf33",
+   "#4f2706",
+   "#b16e16"
+  ],
+  "mood": [
+   "ring-of-fire",
+   "threshold",
+   "building"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 14450,
+  "title": "NASA Annular Eclipse Imagery: annular solar eclipse, 14 Oct 2023 (ring closing)",
+  "credit": "NASA/Jim Spann",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/14450/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a014400/a014450/14450_001_20231015-012931-jfs.jpg",
+  "upscale": 0.469,
+  "kb": 87
+ },
+ {
+  "file": "eclipse-annular-2023-partial.jpg",
+  "subject": "eclipse",
+  "variant": "annular-2023-partial",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#fed44f",
+   "#f7b32d",
+   "#653507"
+  ],
+  "mood": [
+   "bite",
+   "shift",
+   "warm"
+  ],
+  "uses": [
+   "inner"
+  ],
+  "svs_id": 14450,
+  "title": "NASA Annular Eclipse Imagery: partial phase, 14 Oct 2023",
+  "credit": "NASA/Jim Spann",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/14450/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a014400/a014450/14450_004_20231015-010814-jfs.jpg",
+  "upscale": 0.469,
+  "kb": 95
+ },
+ {
+  "file": "eclipse-annular-2023.jpg",
+  "subject": "eclipse",
+  "variant": "annular-2023",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.499,
+   "cy": 0.5,
+   "r": 0.31
+  },
+  "colors": [
+   "#f8c131",
+   "#4d2908",
+   "#af751a"
+  ],
+  "mood": [
+   "ring-of-fire",
+   "portal",
+   "intense"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "svs_id": 14450,
+  "title": "NASA Annular Eclipse Imagery: annular solar eclipse, 14 Oct 2023 (full ring)",
+  "credit": "NASA/Jim Spann",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://svs.gsfc.nasa.gov/14450/",
+  "source_file": "https://svs.gsfc.nasa.gov/vis/a010000/a014400/a014450/14450_002_20231015-013148-jfs.jpg",
+  "upscale": 0.473,
+  "kb": 92
+ },
+ {
+  "file": "eclipse-annular-iss-2023.jpg",
+  "subject": "eclipse",
+  "variant": "annular-iss-2023",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#d7d9de",
+   "#211e24",
+   "#8e8c8c"
+  ],
+  "mood": [
+   "bite",
+   "stark",
+   "clean"
+  ],
+  "uses": [
+   "inner"
+  ],
+  "nasa_id": "iss070e003409",
+  "title": "iss070e003409",
+  "date_created": "2023-10-14",
+  "credit": "NASA/Jasmin Moghbeli (ISS Expedition 70)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/iss070e003409",
+  "source_file": "https://images-assets.nasa.gov/image/iss070e003409/iss070e003409~orig.jpg",
+  "upscale": 0.599,
+  "kb": 204
+ },
+ {
+  "file": "eclipse-annular-sunrise-2021.jpg",
+  "subject": "eclipse",
+  "variant": "annular-sunrise-2021",
+  "kind": "horizon",
+  "shot": "crop",
+  "width": 1600,
+  "height": 2000,
+  "colors": [
+   "#41212e",
+   "#7b2a32",
+   "#fbd9ab"
+  ],
+  "mood": [
+   "moody",
+   "real-sky",
+   "omen",
+   "sunrise"
+  ],
+  "uses": [
+   "cover",
+   "background"
+  ],
+  "nasa_id": "NHQ202106100002",
+  "title": "Partial Solar Eclipse ",
+  "date_created": "2021-06-10",
+  "credit": "NASA/Aubrey Gemignani",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/NHQ202106100002",
+  "source_file": "https://images-assets.nasa.gov/image/NHQ202106100002/NHQ202106100002~orig.jpg",
+  "upscale": 0.525,
+  "kb": 297
+ },
+ {
+  "file": "eclipse-artemis-ii-2026.jpg",
+  "subject": "eclipse",
+  "variant": "artemis-ii-2026",
+  "kind": "eclipse",
+  "shot": "crop",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#202a2b",
+   "#455257",
+   "#7b8a91"
+  ],
+  "mood": [
+   "otherworldly",
+   "halo",
+   "deep-space"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "art002e009571",
+  "title": "Eclipsed: A View from Orion",
+  "date_created": "2026-04-07",
+  "credit": "NASA (Artemis II crew)",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/art002e009571",
+  "source_file": "https://images-assets.nasa.gov/image/art002e009571/art002e009571~orig.jpg",
+  "upscale": 0.667,
+  "kb": 350
+ },
+ {
+  "file": "eclipse-blood-moon-2022.jpg",
+  "subject": "eclipse",
+  "variant": "blood-moon-2022",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.505,
+   "cy": 0.496,
+   "r": 0.384
+  },
+  "colors": [
+   "#4a2716",
+   "#8b7068",
+   "#dedce0"
+  ],
+  "mood": [
+   "omen",
+   "karmic",
+   "crimson"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "NHQ202211080005",
+  "title": "Total Lunar Eclipse",
+  "date_created": "2022-11-08",
+  "credit": "NASA/Joel Kowsky",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/NHQ202211080005",
+  "source_file": "https://images-assets.nasa.gov/image/NHQ202211080005/NHQ202211080005~orig.jpg",
+  "upscale": 1.129,
+  "kb": 560
+ },
+ {
+  "file": "eclipse-blood-moon-2026.jpg",
+  "subject": "eclipse",
+  "variant": "blood-moon-2026",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.504,
+   "cy": 0.493,
+   "r": 0.377
+  },
+  "colors": [
+   "#4e1514",
+   "#a7543b",
+   "#dda698"
+  ],
+  "mood": [
+   "omen",
+   "karmic",
+   "crimson"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "MAF_20260303_LunarEclipse_03",
+  "title": "Total Lunar Eclipse 2026 – New Orleans",
+  "date_created": "2026-03-03",
+  "credit": "NASA/Michael DeMocker",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/MAF_20260303_LunarEclipse_03",
+  "source_file": "https://images-assets.nasa.gov/image/MAF_20260303_LunarEclipse_03/MAF_20260303_LunarEclipse_03~orig.JPG",
+  "upscale": 1.359,
+  "kb": 264
+ },
+ {
+  "file": "eclipse-diamond-ring-2017.jpg",
+  "subject": "eclipse",
+  "variant": "diamond-ring-2017",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#24292d",
+   "#637485",
+   "#d4dde5"
+  ],
+  "mood": [
+   "turning-point",
+   "flash",
+   "reveal"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "AFRC2017-0233-009",
+  "title": "2017 Total Solar Eclipse",
+  "date_created": "2017-08-21",
+  "credit": "NASA/Carla Thomas",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/AFRC2017-0233-009",
+  "source_file": "https://images-assets.nasa.gov/image/AFRC2017-0233-009/AFRC2017-0233-009~orig.jpg",
+  "upscale": 0.734,
+  "kb": 137
+ },
+ {
+  "file": "eclipse-partial-lunar-2010.jpg",
+  "subject": "eclipse",
+  "variant": "partial-lunar-2010",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.482,
+   "cy": 0.49,
+   "r": 0.37
+  },
+  "colors": [
+   "#7d7a72",
+   "#35332d",
+   "#b4b1a8"
+  ],
+  "mood": [
+   "shadow",
+   "solstice",
+   "silver"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "201012210001HQ",
+  "title": "Total Lunar Eclipse",
+  "date_created": "2010-12-21",
+  "credit": "NASA/Bill Ingalls",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/201012210001HQ",
+  "source_file": "https://images-assets.nasa.gov/image/201012210001HQ/201012210001HQ~orig.tif",
+  "upscale": 1.5,
+  "kb": 190
+ },
+ {
+  "file": "eclipse-partial-lunar-2024.jpg",
+  "subject": "eclipse",
+  "variant": "partial-lunar-2024",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "disc": {
+   "cx": 0.503,
+   "cy": 0.495,
+   "r": 0.336
+  },
+  "colors": [
+   "#252424",
+   "#616161",
+   "#a5a4a4"
+  ],
+  "mood": [
+   "shadow",
+   "shift",
+   "silver"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GRC-2024-C-10128",
+  "title": "Supermoon Lunar Eclipse",
+  "date_created": "2024-09-17",
+  "credit": "NASA/Sara Lowthian-Hanna",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/GRC-2024-C-10128",
+  "source_file": "https://images-assets.nasa.gov/image/GRC-2024-C-10128/GRC-2024-C-10128~orig.JPG",
+  "upscale": 1.378,
+  "kb": 287
+ },
+ {
+  "file": "eclipse-total-2024.jpg",
+  "subject": "eclipse",
+  "variant": "total-2024",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#362a20",
+   "#877768",
+   "#e1d6ca"
+  ],
+  "mood": [
+   "awe",
+   "portal",
+   "warm-corona"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "GRC-2024-C-02612",
+  "title": "2024 Total Solar Eclipse",
+  "date_created": "2024-04-08",
+  "credit": "NASA/Jordan Salkin",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/GRC-2024-C-02612",
+  "source_file": "https://images-assets.nasa.gov/image/GRC-2024-C-02612/GRC-2024-C-02612~orig.jpg",
+  "upscale": 0.52,
+  "kb": 228
+ },
+ {
+  "file": "eclipse-total-corona-2017-hq.jpg",
+  "subject": "eclipse",
+  "variant": "total-corona-2017-hq",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#2a2828",
+   "#dcdad7",
+   "#7b7a76"
+  ],
+  "mood": [
+   "awe",
+   "portal",
+   "crown"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "NHQ201708210100",
+  "title": "2017 Total Solar Eclipse",
+  "date_created": "2017-08-21",
+  "credit": "NASA/Aubrey Gemignani",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/NHQ201708210100",
+  "source_file": "https://images-assets.nasa.gov/image/NHQ201708210100/NHQ201708210100~orig.tif",
+  "upscale": 0.491,
+  "kb": 95
+ },
+ {
+  "file": "eclipse-total-corona-2017.jpg",
+  "subject": "eclipse",
+  "variant": "total-corona-2017",
+  "kind": "eclipse",
+  "shot": "full-disc",
+  "width": 1600,
+  "height": 1600,
+  "colors": [
+   "#212223",
+   "#5f6264",
+   "#b5b8b9"
+  ],
+  "mood": [
+   "awe",
+   "portal",
+   "silver"
+  ],
+  "uses": [
+   "cover",
+   "inner"
+  ],
+  "nasa_id": "AFRC2017-0233-007",
+  "title": "2017 Total Solar Eclipse",
+  "date_created": "2017-08-21",
+  "credit": "NASA/Carla Thomas",
+  "license": "public domain (NASA media are not copyrighted; credit kept as attribution)",
+  "landing_url": "https://images.nasa.gov/details/AFRC2017-0233-007",
+  "source_file": "https://images-assets.nasa.gov/image/AFRC2017-0233-007/AFRC2017-0233-007~orig.jpg",
+  "upscale": 0.556,
+  "kb": 246
+ }
+]

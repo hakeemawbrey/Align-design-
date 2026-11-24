@@ -1,0 +1,425 @@
+[
+  {
+    "file": "stars-milky-way-artemis.jpg",
+    "set": "stars",
+    "title": "Starstruck: the Milky Way photographed by the Artemis II crew",
+    "dominant_colors": [
+      "#383941",
+      "#2a2d33",
+      "#464750"
+    ],
+    "signs": [
+      "all",
+      "base-indigo"
+    ],
+    "mood": [
+      "vast",
+      "quiet",
+      "deep"
+    ],
+    "brightness": 0.232,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "art002e012588",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/art002e012588"
+  },
+  {
+    "file": "stars-milky-way-over-airglow.jpg",
+    "set": "stars",
+    "title": "The Milky Way appears above Earth's bright atmospheric glow",
+    "dominant_colors": [
+      "#1a1f26",
+      "#262c33",
+      "#0f1318"
+    ],
+    "signs": [
+      "all",
+      "capricorn"
+    ],
+    "mood": [
+      "vast",
+      "night",
+      "horizon"
+    ],
+    "brightness": 0.177,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss073e0516005",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss073e0516005"
+  },
+  {
+    "file": "stars-milky-way-rising.jpg",
+    "set": "stars",
+    "title": "The Milky Way rises above Earth's atmospheric glow",
+    "dominant_colors": [
+      "#212833",
+      "#171c24",
+      "#303846"
+    ],
+    "signs": [
+      "all",
+      "base-indigo"
+    ],
+    "mood": [
+      "vast",
+      "night",
+      "calm"
+    ],
+    "brightness": 0.186,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss074e0521637",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA/Chris Williams",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss074e0521637"
+  },
+  {
+    "file": "stars-galactic-core-dust.jpg",
+    "set": "stars",
+    "title": "A Cauldron of Stars at the Galaxy Center",
+    "dominant_colors": [
+      "#8a4b53",
+      "#75303a",
+      "#bc6262"
+    ],
+    "signs": [
+      "scorpio",
+      "aries",
+      "sagittarius"
+    ],
+    "mood": [
+      "dense",
+      "dusty",
+      "warm"
+    ],
+    "brightness": 0.307,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "PIA03654",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/PIA03654"
+  },
+  {
+    "file": "stars-zodiacal-light.jpg",
+    "set": "stars",
+    "title": "Zodiacal Light",
+    "dominant_colors": [
+      "#292837",
+      "#323141",
+      "#403d4a"
+    ],
+    "signs": [
+      "all",
+      "pisces",
+      "base-indigo"
+    ],
+    "mood": [
+      "quiet",
+      "faint",
+      "mystic"
+    ],
+    "brightness": 0.204,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "PIA24432",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/PIA24432"
+  },
+  {
+    "file": "stars-trails-orbit.jpg",
+    "set": "stars",
+    "title": "Star trails glitter above Earth's atmosphere",
+    "dominant_colors": [
+      "#1f1409",
+      "#070504",
+      "#5a1806"
+    ],
+    "signs": [
+      "all",
+      "aquarius"
+    ],
+    "mood": [
+      "motion",
+      "long-exposure",
+      "night"
+    ],
+    "brightness": 0.119,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss072e010734",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/54054828189_08b2de91bc_o",
+    "note": "NASA Image Library id 54054828189_08b2de91bc_o; photographed by NASA astronaut Jeanette Epps"
+  },
+  {
+    "file": "stars-sky-gradient-dawn.jpg",
+    "set": "stars",
+    "title": "First rays of an orbital sunrise light Earth's limb (ISS)",
+    "dominant_colors": [
+      "#010102",
+      "#4784b0",
+      "#af6540"
+    ],
+    "signs": [
+      "cancer",
+      "leo",
+      "all"
+    ],
+    "mood": [
+      "gradient",
+      "clean",
+      "horizon"
+    ],
+    "brightness": 0.095,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss061e123466",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss061e123466"
+  },
+  {
+    "file": "stars-dense-field-warm.jpg",
+    "set": "stars",
+    "title": "An unexpected population of young-looking stars",
+    "dominant_colors": [
+      "#332c26",
+      "#211c18",
+      "#121010"
+    ],
+    "signs": [
+      "all",
+      "taurus"
+    ],
+    "mood": [
+      "dense",
+      "granular",
+      "warm"
+    ],
+    "brightness": 0.2,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1244a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1244a/"
+  },
+  {
+    "file": "stars-dense-field-cool.jpg",
+    "set": "stars",
+    "title": "Family of stars breaking up",
+    "dominant_colors": [
+      "#131310",
+      "#20201a",
+      "#31342a"
+    ],
+    "signs": [
+      "all",
+      "aquarius"
+    ],
+    "mood": [
+      "dense",
+      "granular",
+      "sparkling"
+    ],
+    "brightness": 0.192,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1111a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1111a/"
+  },
+  {
+    "file": "stars-colour-field.jpg",
+    "set": "stars",
+    "title": "Glittering globular cluster Terzan 12",
+    "dominant_colors": [
+      "#2f2427",
+      "#3a3f51",
+      "#6c4b3e"
+    ],
+    "signs": [
+      "all",
+      "sagittarius"
+    ],
+    "mood": [
+      "sparkling",
+      "colourful",
+      "dense"
+    ],
+    "brightness": 0.327,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic2308a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA, R. Cohen (Rutgers University)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic2308a/"
+  },
+  {
+    "file": "stars-even-field.jpg",
+    "set": "stars",
+    "title": "Standout stars",
+    "dominant_colors": [
+      "#3c3632",
+      "#2a2323",
+      "#1d171a"
+    ],
+    "signs": [
+      "all"
+    ],
+    "mood": [
+      "granular",
+      "even",
+      "quiet"
+    ],
+    "brightness": 0.192,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1804a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1804a/"
+  },
+  {
+    "file": "stars-cluster-glints.jpg",
+    "set": "stars",
+    "title": "Hubble Investigates an Enigmatic Globular Cluster",
+    "dominant_colors": [
+      "#2a262a",
+      "#181619",
+      "#3f3a40"
+    ],
+    "signs": [
+      "all",
+      "gemini"
+    ],
+    "mood": [
+      "sparkling",
+      "even",
+      "bright"
+    ],
+    "brightness": 0.223,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw2223a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA, A. Dotter",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw2223a/"
+  },
+  {
+    "file": "stars-sparse-dark.jpg",
+    "set": "stars",
+    "title": "Panta rhei — motion in the Milky Way",
+    "dominant_colors": [
+      "#0a0a0b",
+      "#080808",
+      "#101012"
+    ],
+    "signs": [
+      "all",
+      "base-indigo"
+    ],
+    "mood": [
+      "sparse",
+      "calm",
+      "dark"
+    ],
+    "brightness": 0.061,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1507a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1507a/"
+  },
+  {
+    "file": "stars-sparse-glints.jpg",
+    "set": "stars",
+    "title": "An ancient globule",
+    "dominant_colors": [
+      "#090609",
+      "#0f0c0d",
+      "#1d1819"
+    ],
+    "signs": [
+      "all",
+      "base-indigo"
+    ],
+    "mood": [
+      "sparse",
+      "calm",
+      "dark"
+    ],
+    "brightness": 0.078,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1452a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA Acknowledgement: Gilles Chapdelaine",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1452a/"
+  },
+  {
+    "file": "stars-faint-field.jpg",
+    "set": "stars",
+    "title": "The secret of stellar youth",
+    "dominant_colors": [
+      "#090809",
+      "#0b0b0b",
+      "#10100f"
+    ],
+    "signs": [
+      "all",
+      "base-indigo"
+    ],
+    "mood": [
+      "sparse",
+      "faint",
+      "quiet"
+    ],
+    "brightness": 0.051,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1104a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1104a/"
+  }
+]
