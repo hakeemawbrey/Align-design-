@@ -1,0 +1,65 @@
+{
+  "id": "dec-26-today-moon-leo",
+  "format": "sky-roundup",
+  "date": "2026-12-26",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "capricorn"
+  ],
+  "facts": [
+    "2026-12-26 moon in leo",
+    "2026-12-26 mercury square neptune",
+    "2026-12-25 mercury enters capricorn"
+  ],
+  "caption": "today's sky: the moon in leo, mercury square neptune. re-read before you send.",
+  "hashtags": [
+    "todayssky",
+    "moon",
+    "leo",
+    "mercury",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "moon in *leo*, *mercury* square *neptune*. reread before you send",
+      "art": {
+        "kind": "moon",
+        "phase": 0.6,
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "headline": "a waning *moon* in leo wants a little attention",
+      "body": "reads as warmth, pride and wanting to be seen. compliment someone out loud.",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "this afternoon",
+      "headline": "*mercury* squares neptune: messages get blurry",
+      "body": "mercury, newly in capricorn, clashes with neptune in aries. read twice. send once.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "neptune"
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "leo",
+      "headline": "one thing: say it *clearly*, or say it tomorrow",
+      "art": {
+        "kind": "aura",
+        "sign": "leo"
+      }
+    }
+  ]
+}

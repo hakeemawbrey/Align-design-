@@ -1,0 +1,96 @@
+{
+  "id": "jan-31-week-that-was-jupiter-week",
+  "format": "sky-roundup",
+  "date": "2027-01-31",
+  "series": "sky news",
+  "signs": [
+    "aquarius",
+    "pisces"
+  ],
+  "facts": [
+    "2027-01-25 sun conjunction pluto",
+    "2027-01-28 venus trine jupiter",
+    "2027-01-31 mercury enters pisces",
+    "2027-02-06 solar eclipse aquarius"
+  ],
+  "caption": "swipe for the last week of january. mercury moved into pisces at 01:27 utc today.",
+  "hashtags": [
+    "skyroundup",
+    "mercury",
+    "pisces",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "what *just happened* in the sky? and *mercury* enters *pisces* tonight",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "kicker": "mon jan 25",
+      "headline": "the sun lined up with *pluto*",
+      "body": "if something came out this week you'd rather not know: that's the reading. better known than not.",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "pluto"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "thu jan 28 · venus trine jupiter",
+      "headline": "the month's *luckiest* love night",
+      "body": "if you went on the date, good. if not, venus is in sagittarius until feb 3.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "jupiter"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "kicker": "today",
+      "headline": "*mercury* walked into pisces",
+      "body": "talk turns softer and vaguer. say the clear version anyway.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "pisces"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "kicker": "feb 6",
+      "headline": "the solar *eclipse* is six days out",
+      "body": "an annular eclipse in aquarius. finish one thing this week so there's room.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "january's done. the *honest* thing still works in february.",
+      "body": "check your january rank against what really happened.",
+      "art": {
+        "kind": "wheel",
+        "tint": "gold"
+      }
+    }
+  ]
+}

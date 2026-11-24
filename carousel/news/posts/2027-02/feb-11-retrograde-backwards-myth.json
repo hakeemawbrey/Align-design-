@@ -1,0 +1,79 @@
+{
+  "series": "sky news",
+  "id": "feb-11-retrograde-backwards-myth",
+  "format": "sky-note",
+  "date": "2027-02-11",
+  "signs": [
+    "pisces",
+    "virgo"
+  ],
+  "caption": "sky note: \"retrograde planets actually move backwards.\" not true. right now mercury, mars and jupiter all look retrograde.",
+  "hashtags": [
+    "skynote",
+    "retrograde",
+    "astronomy",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-11 mercury retrograde",
+    "2027-02-11 mars retrograde",
+    "2027-02-11 jupiter retrograde",
+    "2027-01-10 mars stations retrograde virgo",
+    "2027-02-09 mercury stations retrograde pisces"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "sky note",
+      "headline": "*3 planets* are *retrograde*. are any actually moving *backwards*?",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "mars"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“retrograde planets actually move backwards”",
+      "verdict": "misleading",
+      "body": "true that mercury, mars and jupiter are all retrograde this week. not true that they reverse. every planet keeps circling the sun the same way. retrograde is what it looks like from here."
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "think of passing a slower car: it seems to *drift back*",
+      "body": "earth is overtaking mars and jupiter, so they seem to slide back against the stars. mercury, inside our orbit, does it as it laps us.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "headline": "a retrograde reads as a *review*, not a punishment",
+      "body": "astrologers read retrograde stretches as time to revisit old plans, old drafts, old people. some things just want a second pass.",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "pisces",
+          "virgo",
+          "leo"
+        ],
+        "tint": "violet"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "the planets aren't backing up. *you* can, a little.",
+      "body": "say the honest thing on the second try. save this.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.22
+      }
+    }
+  ]
+}

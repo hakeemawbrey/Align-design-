@@ -1,0 +1,101 @@
+{
+  "id": "jan-29-love-weather-luckiest-weekend",
+  "format": "venus-report",
+  "date": "2027-01-29",
+  "series": "sky news",
+  "signs": [
+    "sagittarius",
+    "scorpio"
+  ],
+  "facts": [
+    "2027-01-28 venus trine jupiter",
+    "2027-01-29 last quarter scorpio",
+    "2027-01-29 venus in sagittarius",
+    "2027-02-03 venus enters capricorn",
+    "2027-02-06 solar eclipse aquarius"
+  ],
+  "caption": "your venus is how you love. venus trined jupiter last night, and the last quarter moon is in scorpio today.",
+  "hashtags": [
+    "venus",
+    "loveweather",
+    "dating",
+    "sagittarius",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "venus just trined *jupiter*. *5 days* left of venus in *sagittarius*",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "jupiter"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "jan 28",
+      "headline": "venus in sagittarius trined *jupiter*",
+      "body": "astrologers read it as warm, generous love weather. it lingers into the weekend. venus moves into capricorn on feb 3.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "sagittarius"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "list",
+      "kicker": "this weekend",
+      "headline": "good for / bad for",
+      "rows": [
+        {
+          "color": "spark",
+          "label": "good",
+          "text": "the date you've put off twice."
+        },
+        {
+          "color": "spark",
+          "label": "good",
+          "text": "saying \"i like you\" in plain words."
+        },
+        {
+          "color": "rub",
+          "label": "bad",
+          "text": "promising a trip on date two."
+        },
+        {
+          "color": "rub",
+          "label": "bad",
+          "text": "reopening a door you already closed."
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "today",
+      "headline": "a *clear-out* moon before the eclipse",
+      "body": "the last quarter in scorpio reads as the time to let one thing go, cleanly. the solar eclipse in aquarius is feb 6.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.75,
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "your sun is who you are. your *venus* is how you love.",
+      "body": "release, don't ghost.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "sagittarius"
+      }
+    }
+  ]
+}

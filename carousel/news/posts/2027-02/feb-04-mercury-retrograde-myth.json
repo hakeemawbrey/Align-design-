@@ -1,0 +1,112 @@
+{
+  "series": "sky news",
+  "id": "feb-04-mercury-retrograde-myth",
+  "format": "sky-note",
+  "date": "2027-02-04",
+  "signs": [
+    "pisces"
+  ],
+  "caption": "sky note: \"mercury retrograde breaks your phone.\" not true. it starts tuesday, feb 9, at 6° pisces.",
+  "hashtags": [
+    "mercuryretrograde",
+    "skynote",
+    "pisces",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-09 mercury stations retrograde pisces",
+    "2027-03-03 mercury stations direct aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "sky note",
+      "headline": "“*mercury retrograde* breaks your phone.” *tuesday*'s fact-check",
+      "art": {
+        "kind": "stars",
+        "tint": "mercury"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“mercury retrograde breaks your phone”",
+      "verdict": "false",
+      "body": "nothing about mercury touches your phone. retrograde is how the planet looks from earth, not a force. phones break all year. we just notice in retrograde."
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "headline": "*mercury* doesn't reverse. it laps us",
+      "body": "mercury circles the sun faster than we do. as it passes us, it seems to slide back: 6° pisces on feb 9 to 20.9° aquarius on mar 3.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "headline": "a season for *re-dos*: read twice, then reconnect",
+      "body": "astrologers read mercury as talk and plans. its retrograde reads as time to double-check and finish old conversations before new ones.",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "pisces",
+          "aquarius"
+        ],
+        "tint": "mercury"
+      }
+    },
+    {
+      "layout": "table",
+      "headline": "who handles *mercury* retrograde best",
+      "columns": [
+        "sign",
+        "calm level"
+      ],
+      "rows": [
+        {
+          "label": "capricorn",
+          "sign": "capricorn",
+          "text": "already double-checked it",
+          "value": "unbothered"
+        },
+        {
+          "label": "taurus",
+          "sign": "taurus",
+          "text": "wasn't going anywhere anyway",
+          "value": "fine"
+        },
+        {
+          "label": "virgo",
+          "sign": "virgo",
+          "text": "made a list for the list",
+          "value": "prepared"
+        },
+        {
+          "label": "pisces",
+          "sign": "pisces",
+          "text": "it starts in their sign",
+          "value": "dreamy"
+        },
+        {
+          "label": "gemini",
+          "sign": "gemini",
+          "text": "sent it to the wrong chat",
+          "value": "chaos"
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "back up your phone. say the *honest* thing anyway.",
+      "body": "save this for tuesday.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.05
+      }
+    }
+  ]
+}

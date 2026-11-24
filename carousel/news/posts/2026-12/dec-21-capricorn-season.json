@@ -1,0 +1,96 @@
+{
+  "id": "dec-21-capricorn-season",
+  "format": "season-handover",
+  "date": "2026-12-21",
+  "series": "sky news",
+  "signs": [
+    "capricorn",
+    "sagittarius"
+  ],
+  "facts": [
+    "2026-12-21 sun enters capricorn",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-23 full moon cancer"
+  ],
+  "caption": "sun enters capricorn dec 21 at 3:50 pm et (20:50 utc), the december solstice. the plan-it season.",
+  "hashtags": [
+    "capricornseason",
+    "capricorn",
+    "sagittarius",
+    "solstice",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "split",
+      "headline": "*capricorn season* starts at *3:50 pm*. define the relationship",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius"
+      },
+      "labels": [
+        "sagittarius",
+        "capricorn"
+      ],
+      "art2": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "sagittarius",
+      "kicker": "goodbye sagittarius",
+      "headline": "thanks for the *honesty*. some of it was a lot",
+      "body": "a month of blunt texts and big plans. keep the truth, drop the volume.",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "capricorn",
+      "kicker": "hello capricorn",
+      "headline": "less talk, more *plans*. effort is the new flirt",
+      "body": "the sun is in capricorn until jan 20, and mercury joins it on christmas day.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "good season *for*",
+      "rows": [
+        {
+          "label": "plans",
+          "color": "capricorn",
+          "text": "booking the date instead of floating it"
+        },
+        {
+          "label": "clarity",
+          "color": "capricorn",
+          "text": "“what are we?” asked calmly"
+        },
+        {
+          "label": "follow-up",
+          "color": "capricorn",
+          "text": "doing what you said you would"
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "capricorn",
+      "headline": "put your dealbreakers on the *card*, not the third date",
+      "body": "the full moon in cancer is wednesday. save this.",
+      "art": {
+        "kind": "aura",
+        "sign": "capricorn"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sample-new-layouts", "format": "sign-callout", "date": "2026-12-12", "signs": ["leo"],
+  "facts": ["2026-12-12 jupiter stations retrograde leo", "2027-02-09 mercury stations retrograde pisces", "2027-02-20 lunar eclipse virgo", "2027-01-10 mars stations retrograde virgo"],
+  "caption": "jupiter turns around in leo today. it's not leaving, it's reviewing.", "hashtags": ["leo", "jupiter", "astrology", "zodiac"],
+  "slides": [
+    {"layout": "hero", "headline": "*leo*, jupiter just paused in your sign. this is the [[review]] part of your lucky year", "art": {"kind": "planet", "body": "jupiter", "sign": "leo"}},
+    {"layout": "hero", "kicker": "feb 9 · 6° pisces", "headline": "mercury turns *backwards* in 58 days. here's what to finish first", "art": {"kind": "planet", "body": "mercury"}},
+    {"layout": "breaking", "word": "retrograde", "kicker": "sky news · jan 10", "headline": "*mars* stops, then walks backwards through *virgo*", "art": {"kind": "planet", "body": "mars", "rx": true}},
+    {"layout": "split", "kicker": "this week", "labels": ["venus", "mars"], "headline": "*venus* and *mars* want different things this week", "art": {"kind": "planet", "body": "venus"}, "art2": {"kind": "planet", "body": "mars"}},
+    {"layout": "table", "kicker": "ranked", "headline": "who handles *mercury retrograde* best", "columns": ["sign", "calm level"], "rows": [
+      {"label": "capricorn", "sign": "capricorn", "text": "already double-checked it", "value": "unbothered"},
+      {"label": "taurus", "sign": "taurus", "text": "wasn't going anywhere anyway", "value": "fine"},
+      {"label": "virgo", "sign": "virgo", "text": "made a spreadsheet for it", "value": "prepared"},
+      {"label": "gemini", "sign": "gemini", "text": "sent the text to the wrong person", "value": "doomed"},
+      {"label": "aries", "sign": "aries", "text": "replied before reading", "value": "chaos"}]},
+    {"layout": "story", "kicker": "feb 20 · 2° virgo", "tag": "penumbral eclipse", "headline": "the full moon slips into earth's *faint* shadow", "body": "a penumbral eclipse barely dims the moon. most people won't notice it. astrologers still read it as a quiet ending.", "art": {"kind": "eclipse", "type": "lunar"}, "inset": {"kind": "figure", "sign": "virgo"}},
+    {"layout": "hero", "headline": "the *full moon* tonight is in cancer", "art": {"kind": "moon", "phase": 0.5}},
+    {"layout": "hero", "headline": "saturn turns *direct*. the lesson's over", "art": {"kind": "planet", "body": "saturn"}}
+  ]
+}

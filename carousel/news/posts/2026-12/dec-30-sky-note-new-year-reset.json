@@ -1,0 +1,73 @@
+{
+  "id": "dec-30-sky-note-new-year-reset",
+  "format": "sky-note",
+  "date": "2026-12-30",
+  "series": "sky news",
+  "signs": [
+    "capricorn"
+  ],
+  "facts": [
+    "2026-12-30 last quarter libra",
+    "2027-01-07 new moon capricorn",
+    "2027-01-01 sun conjunction mercury"
+  ],
+  "caption": "sky note: \"jan 1 is a cosmic reset\". needs context. the calendar flips, the sky doesn't. the next new moon is jan 7, in capricorn.",
+  "hashtags": [
+    "skynote",
+    "newyear",
+    "astrology",
+    "newmoon",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "is *jan 1* really a cosmic reset? the sky's actual reset is *jan 7*",
+      "art": {
+        "kind": "stars",
+        "tint": "gold"
+      }
+    },
+    {
+      "layout": "note",
+      "kicker": "going around",
+      "headline": "“the universe resets on january 1st”",
+      "verdict": "context",
+      "body": "jan 1 is a calendar choice, not a sky event. nothing special happens up there at midnight. the sky's fresh start comes a week later: the first new moon of 2027, jan 7, in capricorn."
+    },
+    {
+      "layout": "story",
+      "kicker": "the astronomy",
+      "headline": "right now the *moon* is waning, not new",
+      "body": "it hit last quarter in libra on dec 30 and is still shrinking. on jan 1 the sun meets mercury in capricorn, the closest thing to a sky event that day.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.75,
+        "sign": "libra"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "what astrologers read",
+      "headline": "astrologers save *beginnings* for new moons",
+      "body": "a waning moon reads as finishing and letting go. so the honest astrology of new year's eve: close things now, start them on jan 7.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.02,
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "resolutions are fine. a *new deal* is better",
+      "body": "there is always an 11:11. it does not have to be midnight.",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "capricorn",
+          "aries"
+        ]
+      }
+    }
+  ]
+}

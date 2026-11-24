@@ -1,0 +1,92 @@
+{
+  "series": "sky news",
+  "id": "feb-20-lunar-eclipse-virgo",
+  "format": "moon-alert",
+  "date": "2027-02-20",
+  "signs": [
+    "virgo"
+  ],
+  "caption": "penumbral lunar eclipse 23:12 utc, full moon 23:24 utc, 2° virgo. look if you like. the honest truth: it's faint.",
+  "hashtags": [
+    "lunareclipse",
+    "fullmoon",
+    "virgo",
+    "eclipse",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-20 lunar eclipse virgo",
+    "2027-02-20 full moon virgo",
+    "2027-02-20 moon in virgo",
+    "2027-02-21 mars enters leo"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "full moon *eclipse* in *virgo* at *6:12 pm*. no red moon, still counts",
+      "art": {
+        "kind": "eclipse",
+        "type": "penumbral",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "23:12 utc · 2° virgo",
+      "sign": "virgo",
+      "headline": "the moon brushes earth's outer *shadow*",
+      "body": "it never reaches the dark core, so the moon stays bright. don't expect a show.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "let one *fix* go unfinished",
+      "body": "astrologers read a virgo full moon as the end of over-editing: yourself, your texts, the people you date. the eclipse makes it a faster close.",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "one *release*, by element",
+      "rows": [
+        {
+          "label": "fire",
+          "color": "leo",
+          "text": "winning every conversation."
+        },
+        {
+          "label": "earth",
+          "color": "virgo",
+          "text": "the checklist you hold dates to."
+        },
+        {
+          "label": "air",
+          "color": "gemini",
+          "text": "the overthinking after you hit send."
+        },
+        {
+          "label": "water",
+          "color": "pisces",
+          "text": "waiting for them to guess."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "eclipses close doors. close yours *politely*.",
+      "body": "save this. mars backs into leo tomorrow.",
+      "art": {
+        "kind": "stars",
+        "tint": "virgo"
+      }
+    }
+  ]
+}

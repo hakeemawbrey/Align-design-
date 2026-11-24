@@ -1,0 +1,64 @@
+{
+  "id": "dec-10-aries-saturn-direct",
+  "format": "sign-callout",
+  "date": "2026-12-10",
+  "series": "sky news",
+  "signs": [
+    "aries"
+  ],
+  "facts": [
+    "2026-12-10 saturn stations direct aries",
+    "2026-12-12 neptune stations direct aries"
+  ],
+  "caption": "aries, saturn turns direct in your sign today at 7.9°, 6:24 pm et. neptune follows on dec 12. send this to your aries.",
+  "hashtags": [
+    "aries",
+    "saturn",
+    "saturndirect",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*aries*, *saturn* turns direct in your sign today. neptune *saturday*",
+      "art": {
+        "kind": "planet",
+        "body": "saturn",
+        "sign": "aries"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aries",
+      "kicker": "saturn direct · 7.9° aries",
+      "headline": "the planet of *commitment* goes forward in your sign",
+      "art": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aries",
+      "kicker": "and on dec 12",
+      "headline": "neptune goes direct in aries too. the *fog* lifts",
+      "art": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "aries",
+      "headline": "pick the person who picks you *back*",
+      "body": "if it is one-sided, it is not alignment. it is a hobby.",
+      "art": {
+        "kind": "aura",
+        "sign": "aries"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "jan-13-note-mercury-aquarius-cold",
+  "format": "sky-note",
+  "date": "2027-01-13",
+  "series": "sky news",
+  "signs": [
+    "aquarius",
+    "capricorn"
+  ],
+  "facts": [
+    "2027-01-13 mercury enters aquarius",
+    "2027-01-13 sun in capricorn",
+    "2027-01-20 sun enters aquarius"
+  ],
+  "caption": "sky note: \"mercury in aquarius makes everyone emotionally unavailable.\" half true at best. mercury enters aquarius today.",
+  "hashtags": [
+    "skynote",
+    "mercury",
+    "aquarius",
+    "astrology",
+    "dating"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "viral claim",
+      "headline": "*emotionally unavailable*? *mercury* in *aquarius*, fact-checked",
+      "art": {
+        "kind": "stars",
+        "tint": "mercury"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“from today, nobody will text you back with feelings”",
+      "verdict": "misleading",
+      "body": "astrologers do read mercury in aquarius as cooler, idea-first talk. that's a style, not a shutdown. the ones who never answered warmly weren't waiting on mercury."
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "mercury never strays *far* from the sun",
+      "body": "mercury always sits within about 28° of the sun. today it's in aquarius while the sun is still in capricorn.",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "mercury"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "clear head, *honest* words",
+      "body": "astrologers read it as good weather for saying what you think. feelings still count: name them, don't hint.",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "unavailable is a person, not a *planet*.",
+      "body": "the first thing you say should be true, not cute. that works in every sign.",
+      "art": {
+        "kind": "aura",
+        "sign": "aquarius"
+      }
+    }
+  ]
+}

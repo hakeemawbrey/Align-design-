@@ -1,0 +1,144 @@
+{
+  "id": "dec-01-month-ahead",
+  "format": "month-ahead",
+  "date": "2026-12-01",
+  "series": "sky news",
+  "signs": [
+    "capricorn",
+    "sagittarius",
+    "cancer",
+    "scorpio"
+  ],
+  "facts": [
+    "2026-12-04 venus enters scorpio",
+    "2026-12-06 mercury enters sagittarius",
+    "2026-12-08 new moon sagittarius",
+    "2026-12-10 saturn stations direct aries",
+    "2026-12-12 jupiter stations retrograde leo",
+    "2026-12-12 neptune stations direct aries",
+    "2026-12-21 sun enters capricorn",
+    "2026-12-23 full moon cancer",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-01 mars in virgo"
+  ],
+  "caption": "save this. december has one date worth planning a conversation around: the full moon in cancer on dec 23.",
+  "hashtags": [
+    "december",
+    "astrology",
+    "monthahead",
+    "fullmoon",
+    "zodiac",
+    "skynews"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "accent": "gold",
+      "headline": "december's sky in *8 dates*: *venus* moves into *scorpio* on the 4th",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "sagittarius",
+          "scorpio",
+          "capricorn",
+          "cancer",
+          "leo",
+          "aries"
+        ]
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "the *dates*",
+      "rows": [
+        {
+          "label": "dec 4",
+          "color": "venus",
+          "text": "venus enters *scorpio*"
+        },
+        {
+          "label": "dec 8",
+          "color": "sagittarius",
+          "text": "new moon in *sagittarius*"
+        },
+        {
+          "label": "dec 10–12",
+          "color": "saturn",
+          "text": "saturn, neptune direct. jupiter turns back"
+        },
+        {
+          "label": "dec 21",
+          "color": "capricorn",
+          "text": "*capricorn* season starts"
+        },
+        {
+          "label": "dec 23",
+          "color": "cancer",
+          "text": "full moon in *cancer*"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "dec 4",
+      "headline": "*venus* goes into scorpio. flirting gets a lot less casual",
+      "body": "venus stays in scorpio for the rest of the month. reads as all-or-nothing love: fewer people, more depth, no small talk.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "dec 8",
+      "headline": "new moon in *sagittarius*: start the honest version",
+      "body": "the moon goes dark at 17° sagittarius. name what you actually want, to yourself first.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "kicker": "dec 10 – 12",
+      "headline": "*saturn* and neptune go direct. jupiter turns back in leo",
+      "body": "three planets change direction in three days. what was stuck starts moving. what grew fast stops to check itself.",
+      "art": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "dec 21",
+      "headline": "*capricorn* season: less talk, more plans",
+      "body": "the sun enters capricorn on the solstice, and mercury follows on dec 25. good for meaning it and booking the date.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "remember one date: *dec 23*, full moon in cancer",
+      "body": "say the soft thing out loud. plan the conversation, not the outfit.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "cancer"
+      }
+    }
+  ]
+}

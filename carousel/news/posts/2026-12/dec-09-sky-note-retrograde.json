@@ -1,0 +1,72 @@
+{
+  "id": "dec-09-sky-note-retrograde",
+  "format": "sky-note",
+  "date": "2026-12-09",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "aries"
+  ],
+  "facts": [
+    "2026-12-12 jupiter stations retrograde leo",
+    "2026-12-10 saturn stations direct aries",
+    "2026-12-09 saturn retrograde"
+  ],
+  "caption": "sky note: \"retrograde planets move backwards\". not true. they only look like they do, from earth. jupiter stations retrograde in leo on dec 12.",
+  "hashtags": [
+    "skynote",
+    "retrograde",
+    "jupiter",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*jupiter* 'goes backwards' *saturday*. does it actually? we checked",
+      "art": {
+        "kind": "planet",
+        "body": "jupiter",
+        "rx": true
+      }
+    },
+    {
+      "layout": "note",
+      "kicker": "going around",
+      "headline": "“retrograde planets actually move backwards”",
+      "verdict": "false",
+      "body": "no planet ever reverses its orbit. retrograde is how it looks from earth: we're moving too, so planets seem to slow, stop and loop back against the stars."
+    },
+    {
+      "layout": "story",
+      "kicker": "the astronomy",
+      "headline": "it is the *overtaking* effect",
+      "body": "earth orbits faster than jupiter and saturn. as we pass them, they seem to drift back, like a slower car as you overtake it.",
+      "art": {
+        "kind": "pair",
+        "a": "jupiter",
+        "b": "saturn"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "what astrologers read",
+      "headline": "retrograde reads as *review*, not disaster",
+      "body": "a time to revisit what that planet rules. saturn turns direct in aries on dec 10, jupiter retrograde in leo on dec 12.",
+      "art": {
+        "kind": "planet",
+        "body": "saturn",
+        "sign": "aries"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "a planet looking backwards isn't a reason to *text* backwards",
+      "body": "say the honest thing, forward.",
+      "art": {
+        "kind": "stars",
+        "tint": "violet"
+      }
+    }
+  ]
+}

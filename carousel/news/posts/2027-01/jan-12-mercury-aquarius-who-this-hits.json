@@ -1,0 +1,127 @@
+{
+  "id": "jan-12-mercury-aquarius-who-this-hits",
+  "format": "who-this-hits",
+  "date": "2027-01-12",
+  "series": "sky news",
+  "signs": [
+    "aquarius",
+    "leo",
+    "taurus",
+    "scorpio"
+  ],
+  "facts": [
+    "2027-01-13 mercury enters aquarius",
+    "2027-01-31 mercury enters pisces",
+    "2027-01-15 mercury conjunction pluto"
+  ],
+  "caption": "find your sign. mercury enters aquarius tomorrow, jan 13, and stays until it moves into pisces on jan 31.",
+  "hashtags": [
+    "mercury",
+    "aquarius",
+    "whothishits",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*mercury* enters *aquarius* at 1:06 am tomorrow. *4 signs* feel it",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "list",
+      "kicker": "tier one",
+      "headline": "your *words* change",
+      "rows": [
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "**your sign.** you sound sharp. check for warm."
+        },
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "partners talk more plainly. listen first."
+        },
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "career talk speeds up. say what you want."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "home conversations get honest. good."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "tier two",
+      "headline": "you'll *hear* it",
+      "rows": [
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "big ideas and long chats. say yes to one."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "flirting is a word game. you're good at it."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "the group chat runs hot. pick your reply."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "friends with ideas. one of them is good."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "tier three",
+      "headline": "you'll *barely* clock it",
+      "rows": [
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "money talk. boring, useful."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "tidy up your routines, not your feelings."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "one deeper talk about trust."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "quiet thinking before your turn on jan 31."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "clever isn't *honest*. you can be both.",
+      "body": "mercury meets pluto jan 15. if something true wants out, say it once, kindly.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "pluto"
+      }
+    }
+  ]
+}

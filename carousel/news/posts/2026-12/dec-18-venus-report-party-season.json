@@ -1,0 +1,140 @@
+{
+  "id": "dec-18-venus-report-party-season",
+  "format": "venus-report",
+  "date": "2026-12-18",
+  "series": "sky news",
+  "signs": [
+    "scorpio",
+    "aries"
+  ],
+  "facts": [
+    "2026-12-18 venus in scorpio",
+    "2026-12-18 sun trine jupiter",
+    "2026-12-18 moon in aries",
+    "2026-12-19 moon in taurus"
+  ],
+  "caption": "love weather for party season: venus in scorpio, the sun trine jupiter today, the moon in aries then taurus. your venus is how you love.",
+  "hashtags": [
+    "loveweather",
+    "venus",
+    "scorpio",
+    "dating",
+    "astrology",
+    "holidays"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "the *sun* trines *jupiter* today. love weather says: *go talk to them*",
+      "art": {
+        "kind": "aura",
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "this weekend",
+      "headline": "*venus* is still in scorpio, and today is generous",
+      "body": "venus in scorpio wants depth. the sun trines jupiter today, and the moon moves from aries into taurus saturday afternoon: bold first, then cosy.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "good weekend *for*",
+      "rows": [
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "the corner conversation that runs long"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "asking “are you seeing anyone?” sober"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "leaving together to get food after"
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "headline": "bad weekend *for*",
+      "rows": [
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "the 1 am “u up” to the ex"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "performing for someone across the room"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "mistaking mistletoe for a plan"
+        }
+      ]
+    },
+    {
+      "layout": "table",
+      "headline": "who wins *party* season",
+      "columns": [
+        "sign",
+        "energy"
+      ],
+      "rows": [
+        {
+          "label": "leo",
+          "sign": "leo",
+          "text": "already holding court by the snacks",
+          "value": "radiant"
+        },
+        {
+          "label": "aries",
+          "sign": "aries",
+          "text": "the moon is with you. go first",
+          "value": "bold"
+        },
+        {
+          "label": "scorpio",
+          "sign": "scorpio",
+          "text": "venus in your sign. one look does it",
+          "value": "magnetic"
+        },
+        {
+          "label": "sagittarius",
+          "sign": "sagittarius",
+          "text": "sun trine jupiter. you are the plus one",
+          "value": "lucky"
+        },
+        {
+          "label": "taurus",
+          "sign": "taurus",
+          "text": "arrived late, stayed for the food",
+          "value": "cosy"
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "scorpio",
+      "headline": "your sun is who you are. your *venus* is how you love",
+      "body": "read their sky before the selfies.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio"
+      }
+    }
+  ]
+}

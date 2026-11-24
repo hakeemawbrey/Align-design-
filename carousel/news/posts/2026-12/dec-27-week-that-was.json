@@ -1,0 +1,111 @@
+{
+  "id": "dec-27-week-that-was",
+  "format": "sky-roundup",
+  "date": "2026-12-27",
+  "series": "sky news",
+  "signs": [
+    "cancer",
+    "capricorn"
+  ],
+  "facts": [
+    "2026-12-21 sun enters capricorn",
+    "2026-12-23 full moon cancer",
+    "2026-12-23 sun square neptune",
+    "2026-12-23 mercury trine jupiter",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-26 mercury square neptune"
+  ],
+  "caption": "swipe for the week the sky had: a new season, the last full moon of 2026, and mercury into capricorn. dec 21 – 27, 2026.",
+  "hashtags": [
+    "skynews",
+    "weeklyhoroscope",
+    "fullmoon",
+    "capricorn",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "what *just happened* in the sky over *christmas*? *6 moves*",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "capricorn",
+          "cancer",
+          "aries",
+          "leo"
+        ]
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "dec 21",
+      "headline": "*capricorn* season started on the solstice",
+      "body": "less talk, more plans until jan 20.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "cancer",
+      "kicker": "dec 23",
+      "headline": "the last *full moon* of 2026 rose in cancer",
+      "body": "if you said the soft thing, it counted.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "cancer"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "kicker": "dec 23",
+      "headline": "the *sun* squared neptune, mercury trined jupiter",
+      "body": "nostalgia and good talk on the same night. classic holidays.",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "neptune"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "dec 25",
+      "headline": "*mercury* moved into capricorn on christmas",
+      "body": "conversations got shorter and more serious.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aries",
+      "kicker": "dec 26",
+      "headline": "*mercury* squared neptune and texts got vague",
+      "body": "if a message confused you, ask. do not decode.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "neptune"
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "capricorn",
+      "headline": "the one to watch: the *sun* squares saturn on tuesday",
+      "body": "the last test of the year. keep the promise small and real.",
+      "art": {
+        "kind": "planet",
+        "body": "saturn",
+        "sign": "aries"
+      }
+    }
+  ]
+}

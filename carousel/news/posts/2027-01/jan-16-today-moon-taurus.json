@@ -1,0 +1,61 @@
+{
+  "id": "jan-16-today-moon-taurus",
+  "format": "sky-roundup",
+  "date": "2027-01-16",
+  "series": "sky news",
+  "signs": [
+    "taurus"
+  ],
+  "facts": [
+    "2027-01-16 moon in taurus",
+    "2027-01-16 venus square mars",
+    "2027-01-15 first quarter aries"
+  ],
+  "caption": "today's sky: moon in taurus, venus square mars. the first quarter moon was last night in aries.",
+  "hashtags": [
+    "taurus",
+    "todayssky",
+    "moon",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "the moon's in *taurus* and *venus* squares *mars* at 4:38 pm. stay in",
+      "art": {
+        "kind": "moon",
+        "phase": 0.3,
+        "sign": "taurus"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "taurus",
+      "headline": "comfort is the *plan* today",
+      "body": "a taurus moon reads as slow, warm, a bit stubborn. good for a long dinner. bad for being rushed.",
+      "art": {
+        "kind": "figure",
+        "sign": "taurus"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "*venus* square mars: want it, wait on it",
+      "body": "astrologers read it as wanting more than the timing allows. let the slow one be slow.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "stay in. *text back* the one who texted first.",
+      "art": {
+        "kind": "aura",
+        "sign": "taurus"
+      }
+    }
+  ]
+}

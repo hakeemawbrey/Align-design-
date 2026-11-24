@@ -1,0 +1,76 @@
+{
+  "id": "jan-21-aquarius-eclipse-in-your-sign",
+  "format": "sign-callout",
+  "date": "2027-01-21",
+  "series": "sky news",
+  "signs": [
+    "aquarius"
+  ],
+  "facts": [
+    "2027-01-20 sun enters aquarius",
+    "2027-01-21 mercury in aquarius",
+    "2027-01-21 pluto in aquarius",
+    "2027-01-25 sun conjunction pluto",
+    "2027-02-06 solar eclipse aquarius"
+  ],
+  "caption": "sun, mercury and pluto are all in aquarius. an annular solar eclipse lands at 17.6° aquarius on feb 6.",
+  "hashtags": [
+    "aquarius",
+    "aquariusseason",
+    "eclipse",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*aquarius*, it's your season and the *eclipse* is in *16 days*",
+      "art": {
+        "kind": "aura",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aquarius",
+      "headline": "the sun, mercury and pluto are *all* in your sign",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aquarius",
+      "kicker": "sun meets pluto · jan 25",
+      "headline": "you can be *detached* and still say what you feel",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.3
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aquarius",
+      "kicker": "solar eclipse · feb 6",
+      "headline": "astrologers read it as a door. walk through it *on purpose*.",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.4
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "cool is fine. *cold* is a choice.",
+      "body": "save this for feb 6.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "jan-09-today-mars-stops-tomorrow",
+  "format": "sky-roundup",
+  "date": "2027-01-09",
+  "series": "sky news",
+  "signs": [
+    "virgo",
+    "aquarius"
+  ],
+  "facts": [
+    "2027-01-09 moon in aquarius",
+    "2027-01-09 venus opposition uranus",
+    "2027-01-10 mars stations retrograde virgo",
+    "2027-01-09 mars in virgo"
+  ],
+  "caption": "today's sky: moon in aquarius, venus opposite uranus. tomorrow at 13:00 utc mars stations retrograde at 10° virgo.",
+  "hashtags": [
+    "marsretrograde",
+    "todayssky",
+    "virgo",
+    "aquarius",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*mars* turns retrograde tomorrow, *8 am*. today: moon in *aquarius*",
+      "art": {
+        "kind": "stars",
+        "tint": "mars"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "a little *distance* is healthy today",
+      "body": "an aquarius moon reads as cool and curious. talk to a friend before you talk to the person you're overthinking.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.05,
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "gemini",
+      "headline": "venus opposes *uranus*: expect a plot twist",
+      "body": "astrologers read this as sudden chemistry or sudden cancellations. enjoy it. don't sign anything.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "uranus"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "tomorrow · 13:00 utc · 10° virgo",
+      "headline": "*mars* goes still, then starts backing up",
+      "body": "the station is the slowest moment. read it as a day to not push. finish what's open first.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "send the honest text *today*. not tomorrow.",
+      "body": "tomorrow: mars retrograde, by sign.",
+      "art": {
+        "kind": "aura",
+        "sign": "aquarius"
+      }
+    }
+  ]
+}

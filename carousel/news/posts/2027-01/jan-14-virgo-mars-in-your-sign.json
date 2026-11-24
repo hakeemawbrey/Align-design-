@@ -1,0 +1,78 @@
+{
+  "id": "jan-14-virgo-mars-in-your-sign",
+  "format": "sign-callout",
+  "date": "2027-01-14",
+  "series": "sky news",
+  "signs": [
+    "virgo"
+  ],
+  "facts": [
+    "2027-01-10 mars stations retrograde virgo",
+    "2027-01-14 mars in virgo",
+    "2027-01-16 venus square mars",
+    "2027-02-21 mars enters leo"
+  ],
+  "caption": "mars stationed retrograde at 10° virgo on jan 10. it backs into leo on feb 21 and stays retrograde into spring.",
+  "hashtags": [
+    "virgo",
+    "marsretrograde",
+    "mars",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*virgo*, *mars* is reversing in your sign for *38 more days*",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "virgo",
+      "headline": "you don't have to *fix* everyone before spring",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "virgo",
+      "kicker": "mars retrograde in virgo",
+      "headline": "the plan you're pushing hardest wants a *redo*, not more push",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "virgo",
+      "kicker": "sat jan 16 · venus square mars",
+      "headline": "and if someone flirts *badly* this weekend, let them try again",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.4
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "say the honest thing, *once*. then let it sit.",
+      "body": "mars leaves your sign on feb 21, still retrograde.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    }
+  ]
+}

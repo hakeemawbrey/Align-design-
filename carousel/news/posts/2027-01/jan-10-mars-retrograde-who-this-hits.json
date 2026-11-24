@@ -1,0 +1,140 @@
+{
+  "id": "jan-10-mars-retrograde-who-this-hits",
+  "format": "who-this-hits",
+  "date": "2027-01-10",
+  "series": "sky news",
+  "signs": [
+    "virgo",
+    "pisces",
+    "gemini",
+    "sagittarius"
+  ],
+  "facts": [
+    "2027-01-10 mars stations retrograde virgo",
+    "2027-02-21 mars enters leo"
+  ],
+  "caption": "find your sign. tag the one who's in tier one. mars stations retrograde at 10.4° virgo, 13:00 utc today, and backs into leo on feb 21.",
+  "hashtags": [
+    "marsretrograde",
+    "virgo",
+    "whothishits",
+    "astrology",
+    "zodiac",
+    "mars"
+  ],
+  "slides": [
+    {
+      "layout": "breaking",
+      "word": "retrograde",
+      "headline": "*mars* turns retrograde in *virgo* at 8 am. *4 signs* feel it most",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "13:00 utc · 10.4° virgo",
+      "headline": "the planet of *drive* appears to back up",
+      "body": "earth is overtaking mars, so mars seems to slide back. it re-enters leo on feb 21 and stays retrograde into spring.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "rx": true
+      }
+    },
+    {
+      "layout": "list",
+      "kicker": "tier one",
+      "headline": "you'll *feel* this",
+      "rows": [
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "**your sign.** slow the push, fix the plan."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "partners slow down. renegotiate, don't run."
+        },
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "home and family plans get redone."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "work wants a do-over. pick one fight."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "tier two",
+      "headline": "you'll *notice* this",
+      "rows": [
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "an old flame flickers. you owe it no fuel."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "travel and big plans: reread the fine print."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "closeness and trust get a slow rethink."
+        },
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "money moves wait. spending isn't self-care."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "tier three",
+      "headline": "you'll *barely* clock it",
+      "rows": [
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "routines slip. fix the alarm, not your life."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "old conversations come back. answer kindly."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "more sleep, fewer plans. take it."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "a friend-group shuffle. skip the drama."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "slow is not *stuck*. it's the redo.",
+      "body": "don't start the fight you'll finish in spring. say it once, then let it sit.",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    }
+  ]
+}

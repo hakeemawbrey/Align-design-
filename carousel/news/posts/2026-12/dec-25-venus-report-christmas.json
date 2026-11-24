@@ -1,0 +1,141 @@
+{
+  "id": "dec-25-venus-report-christmas",
+  "format": "venus-report",
+  "date": "2026-12-25",
+  "series": "sky news",
+  "signs": [
+    "scorpio",
+    "capricorn",
+    "leo"
+  ],
+  "facts": [
+    "2026-12-25 venus in scorpio",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-25 moon in leo",
+    "2027-01-07 venus enters sagittarius"
+  ],
+  "caption": "love weather for christmas: venus in scorpio, mercury into capricorn at 1:23 pm et, the moon into leo by evening. your venus is how you love.",
+  "hashtags": [
+    "loveweather",
+    "venus",
+    "christmas",
+    "scorpio",
+    "dating",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*mercury* enters *capricorn* today. the gift is a *straight answer*",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "headline": "*venus* stays in scorpio until jan 7",
+      "body": "mercury enters capricorn this afternoon, the moon moves into leo by evening. reads as: feel deep, speak plain, be a little dramatic after dinner.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "good day *for*",
+      "rows": [
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "one “thinking of you”, meant"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "calling instead of a story reply"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "making a plan for after the holidays"
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "headline": "bad day *for*",
+      "rows": [
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "the gift that says what you won't"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "explaining your love life to the table"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "the 2 am text to the one who left"
+        }
+      ]
+    },
+    {
+      "layout": "table",
+      "headline": "who texts *first* on christmas",
+      "columns": [
+        "sign",
+        "odds"
+      ],
+      "rows": [
+        {
+          "label": "cancer",
+          "sign": "cancer",
+          "text": "already sent a photo of the tree",
+          "value": "certain"
+        },
+        {
+          "label": "leo",
+          "sign": "leo",
+          "text": "the moon is in your sign by tonight",
+          "value": "likely"
+        },
+        {
+          "label": "scorpio",
+          "sign": "scorpio",
+          "text": "venus says do it. pride says wait",
+          "value": "torn"
+        },
+        {
+          "label": "capricorn",
+          "sign": "capricorn",
+          "text": "mercury just arrived. a plan, not a text",
+          "value": "calls instead"
+        },
+        {
+          "label": "aquarius",
+          "sign": "aquarius",
+          "text": "will reply in january",
+          "value": "low"
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "scorpio",
+      "headline": "your sun is who you are. your *venus* is how you love",
+      "body": "merry christmas from the sky desk.",
+      "art": {
+        "kind": "aura",
+        "sign": "scorpio"
+      }
+    }
+  ]
+}

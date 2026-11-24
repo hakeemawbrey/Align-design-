@@ -1,0 +1,68 @@
+{
+  "id": "dec-05-today-moon-scorpio",
+  "format": "sky-roundup",
+  "date": "2026-12-05",
+  "series": "sky news",
+  "signs": [
+    "scorpio",
+    "sagittarius"
+  ],
+  "facts": [
+    "2026-12-05 moon in scorpio",
+    "2026-12-04 venus enters scorpio",
+    "2026-12-06 mercury enters sagittarius"
+  ],
+  "caption": "today's sky: the moon and venus are both in scorpio, and mercury enters sagittarius tomorrow.",
+  "hashtags": [
+    "todayssky",
+    "scorpio",
+    "moon",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "the *moon* and *venus* are both in *scorpio*. read twice, text once",
+      "art": {
+        "kind": "moon",
+        "phase": 0.9,
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "headline": "a waning moon in *scorpio*: feelings run deep and quiet",
+      "body": "a thin crescent before dawn, new on tuesday. reads as a day for one honest talk, not a group chat.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.9,
+        "sign": "scorpio",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "tomorrow · dec 6",
+      "headline": "*mercury* enters sagittarius. bluntness is back",
+      "body": "astrologers read it as conversations getting faster, funnier and a lot less filtered.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "scorpio",
+      "headline": "one thing: ask what you *actually* want to know",
+      "body": "not the hint. the question.",
+      "art": {
+        "kind": "aura",
+        "sign": "scorpio"
+      }
+    }
+  ]
+}

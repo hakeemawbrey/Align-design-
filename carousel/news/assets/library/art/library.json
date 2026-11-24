@@ -1,0 +1,944 @@
+[
+  {
+    "file": "celestial-map-northern-zodiac-durer.jpg",
+    "set": "art",
+    "title": "Celestial Map of the Northern Sky with the Twelve Zodiac Signs",
+    "dominant_colors": [
+      "#f5eedc",
+      "#c6c0b0",
+      "#d6cfbf"
+    ],
+    "signs": [
+      "all",
+      "celestial-map",
+      "zodiac"
+    ],
+    "mood": [
+      "antique",
+      "scholarly",
+      "mystic"
+    ],
+    "brightness": 0.829,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 106550",
+    "source": "Art Institute of Chicago",
+    "credit": "Albrecht Dürer, German, 1471-1528, Celestial Map of the Northern Sky with the Twelve Zodiac Signs, 1515. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/106550",
+    "date": "1515",
+    "artist": "Albrecht Dürer, German, 1471-1528",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "celestial-map-southern-durer.jpg",
+    "set": "art",
+    "title": "Celestial Map of the Southern Sky (Imagines coeli meridionales)",
+    "dominant_colors": [
+      "#f5eedc",
+      "#f8f1e0",
+      "#bfbaab"
+    ],
+    "signs": [
+      "all",
+      "celestial-map"
+    ],
+    "mood": [
+      "antique",
+      "scholarly",
+      "mystic"
+    ],
+    "brightness": 0.866,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 106549",
+    "source": "Art Institute of Chicago",
+    "credit": "Albrecht Dürer, German, 1471-1528, Celestial Map of the Southern Sky (Imagines coeli meridionales), 1515. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/106549",
+    "date": "1515",
+    "artist": "Albrecht Dürer, German, 1471-1528",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "constellation-leo-persian.jpg",
+    "set": "art",
+    "title": "The Constellation Leo, folio probably from the Kitab suwar al-kawakib al-thabita (Book of the Images of the Fixed Stars)",
+    "dominant_colors": [
+      "#c7bc98",
+      "#beb189",
+      "#594e33"
+    ],
+    "signs": [
+      "leo",
+      "constellation"
+    ],
+    "mood": [
+      "regal",
+      "antique",
+      "warm"
+    ],
+    "brightness": 0.621,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 131892",
+    "source": "Art Institute of Chicago",
+    "credit": "Iran, The Constellation Leo, folio probably from the Kitab suwar al-kawakib al-thabita (Book of the Images of the Fixed Stars), Timurid dynasty (ca. 1370–1507), dated c.1500. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/131892",
+    "date": "Timurid dynasty (ca. 1370–1507), dated c.1500",
+    "artist": "Iran"
+  },
+  {
+    "file": "astrologer-and-soldier-tiepolo.jpg",
+    "set": "art",
+    "title": "The Astrologer and the Young Soldier, from Capricci",
+    "dominant_colors": [
+      "#dcd8cc",
+      "#d6d1c3",
+      "#c5bfad"
+    ],
+    "signs": [
+      "astrologer",
+      "sagittarius",
+      "aries"
+    ],
+    "mood": [
+      "mysterious",
+      "sketchy",
+      "antique"
+    ],
+    "brightness": 0.743,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 14243",
+    "source": "Art Institute of Chicago",
+    "credit": "Giovanni Battista Tiepolo, Italian, 1696–1770, The Astrologer and the Young Soldier, from Capricci, 1740/50. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/14243",
+    "date": "1740/50",
+    "artist": "Giovanni Battista Tiepolo, Italian, 1696–1770"
+  },
+  {
+    "file": "two-astrologers-tiepolo.jpg",
+    "set": "art",
+    "title": "Two Astrologers and a Boy, from Scherzi",
+    "dominant_colors": [
+      "#e3e2d8",
+      "#e0dfd4",
+      "#c4c2b2"
+    ],
+    "signs": [
+      "astrologer",
+      "all"
+    ],
+    "mood": [
+      "mysterious",
+      "sketchy",
+      "antique"
+    ],
+    "brightness": 0.813,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 58587",
+    "source": "Art Institute of Chicago",
+    "credit": "Giovanni Battista Tiepolo, Italian, 1696–1770, Two Astrologers and a Boy, from Scherzi, 1735–40. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/58587",
+    "date": "1735–40",
+    "artist": "Giovanni Battista Tiepolo, Italian, 1696–1770"
+  },
+  {
+    "file": "urania-muse-of-astronomy-goltzius.jpg",
+    "set": "art",
+    "title": "Urania, The Muse of Astronomy, from The Nine Muses",
+    "dominant_colors": [
+      "#d6c3b5",
+      "#6e635c",
+      "#574e4a"
+    ],
+    "signs": [
+      "astronomy",
+      "aquarius",
+      "all"
+    ],
+    "mood": [
+      "scholarly",
+      "serene",
+      "antique"
+    ],
+    "brightness": 0.478,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 267830",
+    "source": "Art Institute of Chicago",
+    "credit": "Hendrick Goltzius, Dutch, 1558–1617, Urania, The Muse of Astronomy, from The Nine Muses, 1592. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/267830",
+    "date": "1592",
+    "artist": "Hendrick Goltzius, Dutch, 1558–1617"
+  },
+  {
+    "file": "planet-venus-chariot-taurus-libra.jpg",
+    "set": "art",
+    "title": "Venus, from The Seven Planets",
+    "dominant_colors": [
+      "#a79989",
+      "#d9cbba",
+      "#c0b1a0"
+    ],
+    "signs": [
+      "taurus",
+      "libra",
+      "venus",
+      "love"
+    ],
+    "mood": [
+      "romantic",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.599,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268081",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), Venus, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268081",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-mars-chariot-aries-scorpio.jpg",
+    "set": "art",
+    "title": "Mars, from The Seven Planets",
+    "dominant_colors": [
+      "#dccfbe",
+      "#b3a492",
+      "#998a7b"
+    ],
+    "signs": [
+      "aries",
+      "scorpio",
+      "mars"
+    ],
+    "mood": [
+      "bold",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.6,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268083",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), Mars, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268083",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-jupiter-chariot-sagittarius-pisces.jpg",
+    "set": "art",
+    "title": "Jupiter, from The Seven Planets",
+    "dominant_colors": [
+      "#aa9b8b",
+      "#dacdbc",
+      "#8e8073"
+    ],
+    "signs": [
+      "sagittarius",
+      "pisces",
+      "jupiter"
+    ],
+    "mood": [
+      "expansive",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.563,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268079",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), Jupiter, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268079",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-saturn-chariot-capricorn-aquarius.jpg",
+    "set": "art",
+    "title": "Saturnus, from The Seven Planets",
+    "dominant_colors": [
+      "#b6a897",
+      "#837569",
+      "#5e534a"
+    ],
+    "signs": [
+      "capricorn",
+      "aquarius",
+      "saturn"
+    ],
+    "mood": [
+      "serious",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.579,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268080",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), Saturnus, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268080",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-mercury-chariot-gemini-virgo.jpg",
+    "set": "art",
+    "title": "Mercurius, from The Seven Planets",
+    "dominant_colors": [
+      "#b7a896",
+      "#a19282",
+      "#817467"
+    ],
+    "signs": [
+      "gemini",
+      "virgo",
+      "mercury"
+    ],
+    "mood": [
+      "quick",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.585,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268082",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), Mercurius, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268082",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-sun-chariot-leo.jpg",
+    "set": "art",
+    "title": "The Sun, from The Seven Planets",
+    "dominant_colors": [
+      "#a39483",
+      "#8a7b6e",
+      "#d7cab9"
+    ],
+    "signs": [
+      "leo",
+      "sun"
+    ],
+    "mood": [
+      "radiant",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.56,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268077",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), The Sun, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268077",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "planet-moon-chariot-cancer.jpg",
+    "set": "art",
+    "title": "The Moon, from The Seven Planets",
+    "dominant_colors": [
+      "#7f7164",
+      "#b4a593",
+      "#9c8d7d"
+    ],
+    "signs": [
+      "cancer",
+      "moon"
+    ],
+    "mood": [
+      "dreamy",
+      "antique",
+      "celestial"
+    ],
+    "brightness": 0.578,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 268078",
+    "source": "Art Institute of Chicago",
+    "credit": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603), The Moon, from The Seven Planets, 1585. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/268078",
+    "date": "1585",
+    "artist": "Jan Sadeler I (Flemish, 1550–1600), after Maarten de Vos (Flemish, 1532–1603)",
+    "note": "Contains small engraved Latin labels that are part of the artwork (planet name on the arch / constellation names)."
+  },
+  {
+    "file": "lovers-frith.jpg",
+    "set": "art",
+    "title": "The Lovers",
+    "dominant_colors": [
+      "#685018",
+      "#7f662e",
+      "#4d3615"
+    ],
+    "signs": [
+      "lovers",
+      "libra",
+      "taurus"
+    ],
+    "mood": [
+      "romantic",
+      "tender",
+      "warm"
+    ],
+    "brightness": 0.322,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 180709",
+    "source": "Art Institute of Chicago",
+    "credit": "William Powell Frith (English, 1819–1909), The Lovers, 1855. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/180709",
+    "date": "1855",
+    "artist": "William Powell Frith (English, 1819–1909)"
+  },
+  {
+    "file": "the-kiss-munch.jpg",
+    "set": "art",
+    "title": "The Kiss IV",
+    "dominant_colors": [
+      "#a6987e",
+      "#b1a489",
+      "#bdb197"
+    ],
+    "signs": [
+      "lovers",
+      "scorpio"
+    ],
+    "mood": [
+      "intimate",
+      "stark",
+      "graphic"
+    ],
+    "brightness": 0.507,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 17255",
+    "source": "Art Institute of Chicago",
+    "credit": "Edvard Munch, Norwegian, 1863-1944, The Kiss IV, 1902. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/17255",
+    "date": "1902",
+    "artist": "Edvard Munch, Norwegian, 1863-1944"
+  },
+  {
+    "file": "young-couple-promenade-durer.jpg",
+    "set": "art",
+    "title": "Young Couple Threatened by Death (The Promenade)",
+    "dominant_colors": [
+      "#d0cfbf",
+      "#676757",
+      "#888875"
+    ],
+    "signs": [
+      "lovers",
+      "gemini",
+      "libra"
+    ],
+    "mood": [
+      "romantic",
+      "courtly",
+      "antique"
+    ],
+    "brightness": 0.642,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 4056",
+    "source": "Art Institute of Chicago",
+    "credit": "Albrecht Dürer, German, 1471-1528, Young Couple Threatened by Death (The Promenade), c. 1498. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/4056",
+    "date": "c. 1498",
+    "artist": "Albrecht Dürer, German, 1471-1528",
+    "note": "Cropped to the couple; the figure of Death behind the tree is outside the frame."
+  },
+  {
+    "file": "lovers-nocturne-fantin-latour.jpg",
+    "set": "art",
+    "title": "Beatrice and Benedict, Act I: Nocturne, from Hector Berlioz's Opera \"Beatrice and Benedict (1862)\"",
+    "dominant_colors": [
+      "#1c1c17",
+      "#35352f",
+      "#535148"
+    ],
+    "signs": [
+      "lovers",
+      "moon",
+      "pisces",
+      "cancer"
+    ],
+    "mood": [
+      "romantic",
+      "nocturnal",
+      "dreamy"
+    ],
+    "brightness": 0.321,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 44124",
+    "source": "Art Institute of Chicago",
+    "credit": "Henri Fantin-Latour, French, 1836-1904, Beatrice and Benedict, Act I: Nocturne, from Hector Berlioz's Opera \"Beatrice and Benedict (1862)\", c. 1888. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/44124",
+    "date": "c. 1888",
+    "artist": "Henri Fantin-Latour, French, 1836-1904"
+  },
+  {
+    "file": "heroine-meeting-lover-at-night.jpg",
+    "set": "art",
+    "title": "Abhisarika Nayika (Heroine Running to Meet her Lover)",
+    "dominant_colors": [
+      "#353d30",
+      "#484d48",
+      "#565b31"
+    ],
+    "signs": [
+      "lovers",
+      "night",
+      "leo",
+      "virgo"
+    ],
+    "mood": [
+      "romantic",
+      "nocturnal",
+      "vivid"
+    ],
+    "brightness": 0.322,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 131858",
+    "source": "Art Institute of Chicago",
+    "credit": "India, Rajasthan, Kota, Abhisarika Nayika (Heroine Running to Meet her Lover), Mid–18th century. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/131858",
+    "date": "Mid–18th century",
+    "artist": "India, Rajasthan, Kota"
+  },
+  {
+    "file": "sleeping-cupid.jpg",
+    "set": "art",
+    "title": "Bust of Sleeping Cupid",
+    "dominant_colors": [
+      "#7f785e",
+      "#8b846a",
+      "#645e49"
+    ],
+    "signs": [
+      "cupid",
+      "love",
+      "pisces"
+    ],
+    "mood": [
+      "tender",
+      "graphic",
+      "dreamy"
+    ],
+    "brightness": 0.441,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 147616",
+    "source": "Art Institute of Chicago",
+    "credit": "Bartolomeo Coriolano (Italian, c. 1599-c. 1676), after Guido Reni (Italian, 1575-1642), Bust of Sleeping Cupid, 1627/53. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/147616",
+    "date": "1627/53",
+    "artist": "Bartolomeo Coriolano (Italian, c. 1599-c. 1676), after Guido Reni (Italian, 1575-1642)"
+  },
+  {
+    "file": "flying-cupid-kissing-dove.jpg",
+    "set": "art",
+    "title": "Flying Cupid Kissing a Dove",
+    "dominant_colors": [
+      "#f7f0d6",
+      "#f0e5c9",
+      "#d4b593"
+    ],
+    "signs": [
+      "cupid",
+      "love",
+      "libra",
+      "taurus"
+    ],
+    "mood": [
+      "playful",
+      "romantic",
+      "soft"
+    ],
+    "brightness": 0.829,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 80093",
+    "source": "Art Institute of Chicago",
+    "credit": "Gilles Antoine Demarteau, the Younger (Flemish, c. 1750-1806), after Jean Baptiste Huet (French, 1745-1811), Flying Cupid Kissing a Dove, n.d.. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/80093",
+    "date": "n.d.",
+    "artist": "Gilles Antoine Demarteau, the Younger (Flemish, c. 1750-1806), after Jean Baptiste Huet (French, 1745-1811)"
+  },
+  {
+    "file": "moonrise-inness.jpg",
+    "set": "art",
+    "title": "Moonrise",
+    "dominant_colors": [
+      "#7e5d2b",
+      "#422a13",
+      "#2e1612"
+    ],
+    "signs": [
+      "moon",
+      "night",
+      "cancer",
+      "taurus"
+    ],
+    "mood": [
+      "warm",
+      "hazy",
+      "quiet"
+    ],
+    "brightness": 0.259,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 64754",
+    "source": "Art Institute of Chicago",
+    "credit": "George Inness (American, 1825–1894), Moonrise, 1891. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/64754",
+    "date": "1891",
+    "artist": "George Inness (American, 1825–1894)"
+  },
+  {
+    "file": "moon-at-night-inness.jpg",
+    "set": "art",
+    "title": "The Moon at Night",
+    "dominant_colors": [
+      "#2c2005",
+      "#342604",
+      "#241d09"
+    ],
+    "signs": [
+      "moon",
+      "night",
+      "cancer"
+    ],
+    "mood": [
+      "dark",
+      "hazy",
+      "quiet"
+    ],
+    "brightness": 0.141,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 64745",
+    "source": "Art Institute of Chicago",
+    "credit": "George Inness (American, 1825–1894), The Moon at Night, 1890. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/64745",
+    "date": "1890",
+    "artist": "George Inness (American, 1825–1894)"
+  },
+  {
+    "file": "nocturne-blue-gold-whistler.jpg",
+    "set": "art",
+    "title": "Nocturne: Blue and Gold—Southampton Water",
+    "dominant_colors": [
+      "#53564d",
+      "#595d53",
+      "#62665b"
+    ],
+    "signs": [
+      "night",
+      "pisces",
+      "aquarius"
+    ],
+    "mood": [
+      "calm",
+      "misty",
+      "minimal"
+    ],
+    "brightness": 0.367,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 56905",
+    "source": "Art Institute of Chicago",
+    "credit": "James McNeill Whistler (American, 1834–1903), Nocturne: Blue and Gold—Southampton Water, 1872. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/56905",
+    "date": "1872",
+    "artist": "James McNeill Whistler (American, 1834–1903)"
+  },
+  {
+    "file": "lane-at-night-grimshaw.jpg",
+    "set": "art",
+    "title": "Lane Scene at Night",
+    "dominant_colors": [
+      "#3f413a",
+      "#1c1816",
+      "#31302b"
+    ],
+    "signs": [
+      "moon",
+      "night",
+      "scorpio",
+      "capricorn"
+    ],
+    "mood": [
+      "moody",
+      "nocturnal",
+      "cool"
+    ],
+    "brightness": 0.235,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 273331",
+    "source": "Art Institute of Chicago",
+    "credit": "John Atkinson Grimshaw (English, 1836–1893), Lane Scene at Night, 1872. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/273331",
+    "date": "1872",
+    "artist": "John Atkinson Grimshaw (English, 1836–1893)"
+  },
+  {
+    "file": "moonlight-orebro-fjaestad.jpg",
+    "set": "art",
+    "title": "Moonlight, Örebro",
+    "dominant_colors": [
+      "#1c2033",
+      "#252c37",
+      "#74796d"
+    ],
+    "signs": [
+      "moon",
+      "night",
+      "cancer",
+      "pisces"
+    ],
+    "mood": [
+      "dreamy",
+      "nocturnal",
+      "shimmering"
+    ],
+    "brightness": 0.296,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 265481",
+    "source": "Art Institute of Chicago",
+    "credit": "Gustaf Fjaestad, Swedish, 1868-1948, Moonlight, Örebro, 1897. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/265481",
+    "date": "1897",
+    "artist": "Gustaf Fjaestad, Swedish, 1868-1948"
+  },
+  {
+    "file": "rabbits-in-moonlight-hiroshige.jpg",
+    "set": "art",
+    "title": "Rabbits in moonlight",
+    "dominant_colors": [
+      "#e5dbba",
+      "#98b2ab",
+      "#7b9a9d"
+    ],
+    "signs": [
+      "moon",
+      "cancer",
+      "pisces"
+    ],
+    "mood": [
+      "gentle",
+      "graphic",
+      "cool"
+    ],
+    "brightness": 0.708,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 19013",
+    "source": "Art Institute of Chicago",
+    "credit": "Utagawa Hiroshige 歌川 広重, Japanese, 1797-1858, Rabbits in moonlight, c. 1849/52. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/19013",
+    "date": "c. 1849/52",
+    "artist": "Utagawa Hiroshige 歌川 広重, Japanese, 1797-1858"
+  },
+  {
+    "file": "plum-branch-summer-moon-hiroshige.jpg",
+    "set": "art",
+    "title": "A Red Plum Branch against the Summer Moon",
+    "dominant_colors": [
+      "#e9e0c0",
+      "#d1d0b2",
+      "#a47862"
+    ],
+    "signs": [
+      "moon",
+      "virgo",
+      "taurus"
+    ],
+    "mood": [
+      "gentle",
+      "graphic",
+      "romantic"
+    ],
+    "brightness": 0.699,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 47686",
+    "source": "Art Institute of Chicago",
+    "credit": "Utagawa Hiroshige 歌川 広重, Japanese, 1797-1858, A Red Plum Branch against the Summer Moon, c. mid–1840s. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/47686",
+    "date": "c. mid–1840s",
+    "artist": "Utagawa Hiroshige 歌川 広重, Japanese, 1797-1858"
+  },
+  {
+    "file": "star-of-the-kings-rembrandt.jpg",
+    "set": "art",
+    "title": "The Star of the Kings: A Night Piece",
+    "dominant_colors": [
+      "#151611",
+      "#191a14",
+      "#23231c"
+    ],
+    "signs": [
+      "star",
+      "night",
+      "sagittarius"
+    ],
+    "mood": [
+      "dark",
+      "mysterious",
+      "nocturnal"
+    ],
+    "brightness": 0.15,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 49037",
+    "source": "Art Institute of Chicago",
+    "credit": "Rembrandt van Rijn, Dutch, 1606-1669, The Star of the Kings: A Night Piece, c. 1651. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/49037",
+    "date": "c. 1651",
+    "artist": "Rembrandt van Rijn, Dutch, 1606-1669"
+  },
+  {
+    "file": "the-celestial-art-redon.jpg",
+    "set": "art",
+    "title": "The Celestial Art",
+    "dominant_colors": [
+      "#d6d0c5",
+      "#b2a99b",
+      "#9b9283"
+    ],
+    "signs": [
+      "celestial",
+      "aquarius",
+      "gemini"
+    ],
+    "mood": [
+      "dreamy",
+      "mystic",
+      "soft"
+    ],
+    "brightness": 0.658,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "AIC 108633",
+    "source": "Art Institute of Chicago",
+    "credit": "Odilon Redon, French, 1840-1916, The Celestial Art, 1894. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/108633",
+    "date": "1894",
+    "artist": "Odilon Redon, French, 1840-1916"
+  },
+  {
+    "file": "sun-moon-lotus-tibet.jpg",
+    "set": "art",
+    "title": "Sun, Moon and Lotus on Lion Throne, from a Set of Initiation Cards (Tsakali)",
+    "dominant_colors": [
+      "#d3c3a2",
+      "#b05c3f",
+      "#cbb372"
+    ],
+    "signs": [
+      "sun",
+      "moon",
+      "leo",
+      "cancer"
+    ],
+    "mood": [
+      "sacred",
+      "vivid",
+      "graphic"
+    ],
+    "brightness": 0.637,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 1600,
+    "source_id": "AIC 199636",
+    "source": "Art Institute of Chicago",
+    "credit": "Southern Tibet, Sun, Moon and Lotus on Lion Throne, from a Set of Initiation Cards (Tsakali), 14th/15th century. The Art Institute of Chicago (CC0).",
+    "license": "CC0 (public domain)",
+    "landing_url": "https://www.artic.edu/artworks/199636",
+    "date": "14th/15th century",
+    "artist": "Southern Tibet"
+  }
+]

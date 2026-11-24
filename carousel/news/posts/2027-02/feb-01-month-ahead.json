@@ -1,0 +1,130 @@
+{
+  "series": "sky news",
+  "id": "feb-01-month-ahead",
+  "format": "month-ahead",
+  "date": "2027-02-01",
+  "signs": [
+    "aquarius",
+    "virgo",
+    "pisces"
+  ],
+  "caption": "save this. february has two eclipses, a mercury retrograde and valentine's with venus in capricorn.",
+  "hashtags": [
+    "february",
+    "eclipse",
+    "mercuryretrograde",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-03 venus enters capricorn",
+    "2027-02-06 solar eclipse aquarius",
+    "2027-02-06 new moon aquarius",
+    "2027-02-09 mercury stations retrograde pisces",
+    "2027-02-10 sun opposition jupiter",
+    "2027-02-18 sun enters pisces",
+    "2027-02-18 mercury enters aquarius",
+    "2027-02-20 lunar eclipse virgo",
+    "2027-02-20 full moon virgo",
+    "2027-03-03 mercury stations direct aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "february's sky: *2 eclipses* and a *mercury retrograde* in *28 days*",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "aquarius",
+          "virgo",
+          "pisces",
+          "leo",
+          "capricorn"
+        ],
+        "tint": "gold"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "the *dates*",
+      "rows": [
+        {
+          "label": "feb 3",
+          "color": "venus",
+          "text": "venus enters *capricorn*"
+        },
+        {
+          "label": "feb 6",
+          "color": "aquarius",
+          "text": "ring of fire eclipse in aquarius"
+        },
+        {
+          "label": "feb 9",
+          "color": "mercury",
+          "text": "mercury turns retrograde in pisces"
+        },
+        {
+          "label": "feb 18",
+          "color": "pisces",
+          "text": "pisces season starts"
+        },
+        {
+          "label": "feb 20",
+          "color": "virgo",
+          "text": "faint lunar eclipse in virgo"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 6",
+      "sign": "aquarius",
+      "headline": "a ring of fire in *aquarius*: the month's fresh start",
+      "body": "the new moon is too far away to cover the sun, so a ring stays lit. astrologers read it as a reset on how you show up in groups.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 9 · 6° pisces",
+      "sign": "pisces",
+      "headline": "*mercury* backs up until march 3. re-read before you re-send",
+      "body": "it only looks like it slides back, into aquarius on feb 18. a reading, not a curse: good weeks for redoing, bad ones for rushing.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 20",
+      "sign": "virgo",
+      "headline": "a full moon eclipse in *virgo* you might not even notice",
+      "body": "the moon only grazes earth's faint outer shadow, so it barely dims. astrologers still read it as a quiet ending: one habit, one excuse.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "virgo"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "if you only remember one date: *feb 6*",
+      "body": "new moon, new deck. start the honest thing that day.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "aquarius"
+      }
+    }
+  ]
+}

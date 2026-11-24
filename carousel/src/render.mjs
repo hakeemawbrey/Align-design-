@@ -37,8 +37,10 @@ export async function launch() {
     const base = process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/pw-browsers'
     const dirs = existsSync(base) ? readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort().reverse() : []
     for (const d of dirs) {
-      const exe = path.join(base, d, 'chrome-linux', 'chrome')
-      if (existsSync(exe)) return chromium.launch({ executablePath: exe })
+      for (const sub of ['chrome-linux', 'chrome-linux64']) {
+        const exe = path.join(base, d, sub, 'chrome')
+        if (existsSync(exe)) return chromium.launch({ executablePath: exe })
+      }
     }
     throw e
   }

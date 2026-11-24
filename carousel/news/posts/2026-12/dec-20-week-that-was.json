@@ -1,0 +1,99 @@
+{
+  "id": "dec-20-week-that-was",
+  "format": "sky-roundup",
+  "date": "2026-12-20",
+  "series": "sky news",
+  "signs": [
+    "sagittarius",
+    "pisces",
+    "capricorn"
+  ],
+  "facts": [
+    "2026-12-17 first quarter pisces",
+    "2026-12-18 sun trine jupiter",
+    "2026-12-17 moon in aries",
+    "2026-12-19 moon in taurus",
+    "2026-12-21 sun enters capricorn"
+  ],
+  "caption": "swipe for the week the sky had. quiet, with one generous friday. dec 14 – 20, 2026.",
+  "hashtags": [
+    "skynews",
+    "weeklyhoroscope",
+    "astrology",
+    "zodiac",
+    "sagittarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "the *solstice* is *tomorrow*. first, this week's sky in *5 moves*",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "sagittarius",
+          "pisces",
+          "aries",
+          "taurus",
+          "leo"
+        ]
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "kicker": "dec 17",
+      "headline": "the *moon* hit first quarter in pisces",
+      "body": "the halfway push. if a plan stalled, this was the nudge.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.25,
+        "sign": "pisces"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aries",
+      "kicker": "dec 17 – 19",
+      "headline": "the *moon* in aries made everyone a bit braver",
+      "body": "if you said the thing midweek, you had help.",
+      "art": {
+        "kind": "figure",
+        "sign": "aries"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "dec 18",
+      "headline": "the *sun* trined jupiter: the best day of the month",
+      "body": "generous, warm, lucky-feeling. what did you ask for?",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "jupiter"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "taurus",
+      "kicker": "dec 19",
+      "headline": "the weekend slowed down in *taurus*",
+      "body": "good food, long nights, less phone.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.35,
+        "sign": "taurus"
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "capricorn",
+      "headline": "the one to watch: *capricorn* season, tomorrow",
+      "body": "the sun changes sign at 3:50 pm et on monday.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    }
+  ]
+}

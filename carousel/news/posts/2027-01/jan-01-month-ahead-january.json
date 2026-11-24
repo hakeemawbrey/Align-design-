@@ -1,0 +1,127 @@
+{
+  "id": "jan-01-month-ahead-january",
+  "format": "month-ahead",
+  "date": "2027-01-01",
+  "series": "sky news",
+  "signs": [
+    "capricorn",
+    "virgo",
+    "aquarius"
+  ],
+  "facts": [
+    "2027-01-01 sun conjunction mercury",
+    "2027-01-07 new moon capricorn",
+    "2027-01-07 venus enters sagittarius",
+    "2027-01-10 mars stations retrograde virgo",
+    "2027-01-20 sun enters aquarius",
+    "2027-01-22 full moon leo",
+    "2027-01-25 sun conjunction pluto",
+    "2027-02-06 solar eclipse aquarius"
+  ],
+  "caption": "save this. january has one date worth planning a conversation around: jan 10, when mars stops in virgo.",
+  "hashtags": [
+    "january",
+    "newyear",
+    "astrology",
+    "marsretrograde",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "january's sky in *6 dates*: *mars* turns *retrograde* on the 10th",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "capricorn",
+          "virgo",
+          "aquarius",
+          "leo"
+        ],
+        "tint": "gold"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "the month in *five dates*",
+      "rows": [
+        {
+          "label": "jan 7",
+          "color": "capricorn",
+          "text": "new moon in *capricorn*"
+        },
+        {
+          "label": "jan 7",
+          "color": "venus",
+          "text": "venus enters sagittarius"
+        },
+        {
+          "label": "jan 10",
+          "color": "mars",
+          "text": "mars turns retrograde in virgo"
+        },
+        {
+          "label": "jan 22",
+          "color": "leo",
+          "text": "full moon in *leo*"
+        },
+        {
+          "label": "feb 6",
+          "color": "aquarius",
+          "text": "solar eclipse in *aquarius*"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "jan 7 · 17° capricorn",
+      "headline": "new moon in *capricorn*: the real new year",
+      "body": "jan 1 is a date. the new moon is the reset. astrologers read it as the night to pick one plan and mean it.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "capricorn"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "jan 10 · 10° virgo",
+      "headline": "*mars* stops and turns backwards in *virgo*",
+      "body": "from earth, mars seems to reverse as we overtake it. it stays that way into spring: redo season, not start season.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "kicker": "jan 20 → feb 6",
+      "headline": "*aquarius* season, and an eclipse right behind it",
+      "body": "the sun reaches aquarius on jan 20 and meets pluto on jan 25. an annular solar eclipse follows on feb 6.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "if you remember one date: *jan 10*",
+      "body": "mars stops. don't start a fight you'll have to redo.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "rx": true
+      }
+    }
+  ]
+}

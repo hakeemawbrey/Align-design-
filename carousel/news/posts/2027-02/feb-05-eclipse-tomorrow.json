@@ -1,0 +1,85 @@
+{
+  "series": "sky news",
+  "id": "feb-05-eclipse-tomorrow",
+  "format": "moon-alert",
+  "date": "2027-02-05",
+  "signs": [
+    "aquarius",
+    "leo",
+    "scorpio"
+  ],
+  "caption": "annular solar eclipse in aquarius tomorrow, 15:59 utc. never look at the sun without eclipse glasses.",
+  "hashtags": [
+    "solareclipse",
+    "eclipse",
+    "aquarius",
+    "newmoon",
+    "astrology"
+  ],
+  "facts": [
+    "2027-02-06 solar eclipse aquarius",
+    "2027-02-06 new moon aquarius",
+    "2027-02-05 venus square neptune",
+    "2027-02-06 pluto in aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "tomorrow, *10:59 am*: a *ring of fire* eclipse in *aquarius*",
+      "art": {
+        "kind": "planet",
+        "body": "sun",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "17.6° aquarius",
+      "sign": "aquarius",
+      "headline": "annular means the moon is too small to cover the *sun*",
+      "body": "the new moon leaves a bright ring of sun showing. greatest eclipse is over the south atlantic. only a narrow path sees the ring.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“eclipses are bad luck”",
+      "verdict": "false",
+      "body": "an eclipse is the moon and sun lining up, nothing more. astrologers read eclipses as fast-forwards: what was ending ends, what was starting starts."
+    },
+    {
+      "layout": "list",
+      "headline": "the three signs it *lands* on",
+      "accent": "rub",
+      "rows": [
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "your sign. a reset on how you show up."
+        },
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "opposite sign. partners say the quiet part."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "home and work trade places for a bit."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "tonight: write down one thing to *start*",
+      "body": "eclipse glasses only. save this for tomorrow.",
+      "art": {
+        "kind": "stars",
+        "tint": "aquarius"
+      }
+    }
+  ]
+}

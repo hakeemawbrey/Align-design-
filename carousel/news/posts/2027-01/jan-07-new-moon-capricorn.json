@@ -1,0 +1,88 @@
+{
+  "id": "jan-07-new-moon-capricorn",
+  "format": "moon-alert",
+  "date": "2027-01-07",
+  "series": "sky news",
+  "signs": [
+    "capricorn",
+    "aries",
+    "libra"
+  ],
+  "facts": [
+    "2027-01-07 new moon capricorn",
+    "2027-01-07 venus enters sagittarius",
+    "2027-01-07 saturn in aries",
+    "2027-01-10 mars stations retrograde virgo"
+  ],
+  "caption": "new moon in capricorn at 17°, 20:25 utc today. venus also moved into sagittarius this morning.",
+  "hashtags": [
+    "newmoon",
+    "capricorn",
+    "moonalert",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*new moon* in *capricorn* at *3:25 pm*. this is the real new year",
+      "art": {
+        "kind": "moon",
+        "phase": 0.03,
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "headline": "the moon sits between us and the *sun*",
+      "body": "its lit side faces away, so you won't see it tonight. a thin crescent shows up low in the west after sunset in a day or two.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.02,
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "headline": "start the thing that takes *a year*",
+      "body": "astrologers read capricorn new moons as slow, serious starts. not a mood board: a plan with a date and a first step.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "three signs feel this *new moon* most",
+      "rows": [
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "**your sign.** a personal reset. pick one goal."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "home and family plans want a fresh start."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "career resets. saturn's in your sign too."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "new moon, new deck. there's always an *11:11*.",
+      "body": "write the plan in one line tonight. mars slows on sunday, so start first.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "capricorn"
+      }
+    }
+  ]
+}
