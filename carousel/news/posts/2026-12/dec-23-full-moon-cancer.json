@@ -1,103 +1,102 @@
 {
- "id": "dec-23-full-moon-cancer",
- "format": "moon-alert",
- "date": "2026-12-23",
- "series": "sky news",
- "signs": [
-  "cancer",
-  "capricorn",
-  "aries",
-  "libra"
- ],
- "facts": [
-  "2026-12-23 full moon cancer",
-  "2026-12-21 sun enters capricorn",
-  "2026-12-23 sun square neptune"
- ],
- "caption": "full moon in cancer tonight at 8:28 pm et (01:28 utc dec 24), 2.2°. look east as the sun sets. say the soft thing out loud.",
- "hashtags": [
-  "fullmoon",
-  "cancer",
-  "moonalert",
-  "astrology",
-  "zodiac",
-  "coldmoon"
- ],
- "slides": [
-  {
-   "layout": "breaking",
-   "headline": "*full moon* in cancer, tonight",
-   "dek": "8:28 pm et · look east after sunset",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "cancer"
-   },
-   "word": "full moon"
-  },
-  {
-   "layout": "story",
-   "sign": "cancer",
-   "kicker": "the astronomy",
-   "headline": "the *moon* sits opposite the sun, fully lit",
-   "body": "the sun just entered capricorn, so the moon fills up in cancer, the opposite sign. it rises around sunset and stays up all night.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "cancer",
-    "zoom": 1.25
-   },
-   "inset": {
-    "kind": "figure",
-    "sign": "cancer"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "cancer",
-   "kicker": "the reading",
-   "headline": "say the *soft* thing out loud",
-   "body": "cancer full moons read as home, family and belonging surfacing. the sun squares neptune today: check what you miss versus what you romanticise.",
-   "art": {
-    "kind": "figure",
-    "sign": "cancer"
-   }
-  },
-  {
-   "layout": "list",
-   "headline": "the signs who *feel it* most",
-   "rows": [
+  "id": "dec-23-full-moon-cancer",
+  "format": "moon-alert",
+  "date": "2026-12-23",
+  "series": "sky news",
+  "signs": [
+    "cancer",
+    "capricorn",
+    "aries",
+    "libra"
+  ],
+  "facts": [
+    "2026-12-23 full moon cancer",
+    "2026-12-21 sun enters capricorn",
+    "2026-12-23 sun square neptune"
+  ],
+  "caption": "full moon in cancer tonight at 8:28 pm et (01:28 utc dec 24), 2.2°. look east as the sun sets. say the soft thing out loud.",
+  "hashtags": [
+    "fullmoon",
+    "cancer",
+    "moonalert",
+    "astrology",
+    "zodiac",
+    "coldmoon"
+  ],
+  "slides": [
     {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "it is in your sign. let them see you."
+      "layout": "breaking",
+      "headline": "*full moon* in *cancer* at *8:28 pm* tonight. say the soft thing",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "cancer"
+      },
+      "word": "full moon"
     },
     {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "a partner wants more warmth."
+      "layout": "story",
+      "sign": "cancer",
+      "kicker": "the astronomy",
+      "headline": "the *moon* sits opposite the sun, fully lit",
+      "body": "the sun just entered capricorn, so the moon fills up in cancer, the opposite sign. it rises around sunset and stays up all night.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "cancer",
+        "zoom": 1.25
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "cancer"
+      }
     },
     {
-     "sign": "aries",
-     "label": "aries",
-     "text": "family stuff. say it kindly."
+      "layout": "story",
+      "sign": "cancer",
+      "kicker": "the reading",
+      "headline": "say the *soft* thing out loud",
+      "body": "cancer full moons read as home, family and belonging surfacing. the sun squares neptune today: check what you miss versus what you romanticise.",
+      "art": {
+        "kind": "figure",
+        "sign": "cancer"
+      }
     },
     {
-     "sign": "libra",
-     "label": "libra",
-     "text": "a public moment. show who you are with."
+      "layout": "list",
+      "headline": "the signs who *feel it* most",
+      "rows": [
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "it is in your sign. let them see you."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "a partner wants more warmth."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "family stuff. say it kindly."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "a public moment. show who you are with."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "cancer",
+      "headline": "if it is one-sided, it is not *alignment*. it is a hobby",
+      "body": "pick someone who says it back.",
+      "art": {
+        "kind": "aura",
+        "sign": "cancer"
+      }
     }
-   ]
-  },
-  {
-   "layout": "end",
-   "sign": "cancer",
-   "headline": "if it is one-sided, it is not *alignment*. it is a hobby",
-   "body": "pick someone who says it back.",
-   "art": {
-    "kind": "aura",
-    "sign": "cancer"
-   }
-  }
- ]
+  ]
 }

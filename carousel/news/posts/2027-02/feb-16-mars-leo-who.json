@@ -1,142 +1,142 @@
 {
- "series": "sky news",
- "id": "feb-16-mars-leo-who",
- "format": "who-this-hits",
- "date": "2027-02-16",
- "signs": [
-  "leo",
-  "virgo",
-  "aquarius"
- ],
- "caption": "heads-up: retrograde mars backs from virgo into leo on sunday, feb 21. find your sign.",
- "hashtags": [
-  "marsretrograde",
-  "leo",
-  "virgo",
-  "astrology",
-  "whothishits"
- ],
- "facts": [
-  "2027-02-21 mars enters leo",
-  "2027-02-16 mars retrograde",
-  "2027-01-10 mars stations retrograde virgo",
-  "2026-11-25 mars enters virgo",
-  "2027-02-21 jupiter in leo"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "*mars* backs into leo on sunday. here's who feels it",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "leo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "headline": "*mars* left leo on nov 25. now it looks like it's coming back",
-   "body": "mars turned retrograde at 10.4° virgo on jan 10. as earth keeps passing it, it appears to slide back across the line into leo, where jupiter is too.",
-   "art": {
-    "kind": "wheel",
-    "signs": [
-     "leo",
-     "virgo"
-    ],
-    "tint": "mars"
-   }
-  },
-  {
-   "layout": "list",
-   "accent": "rub",
-   "headline": "hits *hardest*",
-   "rows": [
+  "series": "sky news",
+  "id": "feb-16-mars-leo-who",
+  "format": "who-this-hits",
+  "date": "2027-02-16",
+  "signs": [
+    "leo",
+    "virgo",
+    "aquarius"
+  ],
+  "caption": "heads-up: retrograde mars backs from virgo into leo on sunday, feb 21. find your sign.",
+  "hashtags": [
+    "marsretrograde",
+    "leo",
+    "virgo",
+    "astrology",
+    "whothishits"
+  ],
+  "facts": [
+    "2027-02-21 mars enters leo",
+    "2027-02-16 mars retrograde",
+    "2027-01-10 mars stations retrograde virgo",
+    "2026-11-25 mars enters virgo",
+    "2027-02-21 jupiter in leo"
+  ],
+  "slides": [
     {
-     "sign": "leo",
-     "label": "leo",
-     "text": "old drive returns. aim it, don't swing it."
+      "layout": "cover",
+      "headline": "*mars* backs into *leo* sunday at 9:15 am. *3 signs* feel it most",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "leo",
+        "rx": true
+      }
     },
     {
-     "sign": "virgo",
-     "label": "virgo",
-     "text": "mars leaves you. the pressure eases."
+      "layout": "story",
+      "sign": "leo",
+      "headline": "*mars* left leo on nov 25. now it looks like it's coming back",
+      "body": "mars turned retrograde at 10.4° virgo on jan 10. as earth keeps passing it, it appears to slide back across the line into leo, where jupiter is too.",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "leo",
+          "virgo"
+        ],
+        "tint": "mars"
+      }
     },
     {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "partners push. push back kindly."
+      "layout": "list",
+      "accent": "rub",
+      "headline": "hits *hardest*",
+      "rows": [
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "old drive returns. aim it, don't swing it."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "mars leaves you. the pressure eases."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "partners push. push back kindly."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "accent": "gold",
+      "headline": "feels *it*",
+      "rows": [
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "home stuff flares. pick one battle."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "work wants a redo, not a war."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "an old crush resurfaces. check why."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "a trip or plan gets revisited."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "accent": "spark",
+      "headline": "mostly *fine*",
+      "rows": [
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "say the thing, just shorter."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "money moves can wait a week."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "a friend needs you to show up."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "venus has your back. use it."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "your season. let others fight."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "the fight isn't back. the *pattern* is.",
+      "body": "tag your leo. save this for sunday.",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "accent": "gold",
-   "headline": "feels *it*",
-   "rows": [
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "home stuff flares. pick one battle."
-    },
-    {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "work wants a redo, not a war."
-    },
-    {
-     "sign": "aries",
-     "label": "aries",
-     "text": "an old crush resurfaces. check why."
-    },
-    {
-     "sign": "sagittarius",
-     "label": "sagittarius",
-     "text": "a trip or plan gets revisited."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "accent": "spark",
-   "headline": "mostly *fine*",
-   "rows": [
-    {
-     "sign": "gemini",
-     "label": "gemini",
-     "text": "say the thing, just shorter."
-    },
-    {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "money moves can wait a week."
-    },
-    {
-     "sign": "libra",
-     "label": "libra",
-     "text": "a friend needs you to show up."
-    },
-    {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "venus has your back. use it."
-    },
-    {
-     "sign": "pisces",
-     "label": "pisces",
-     "text": "your season. let others fight."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "the fight isn't back. the *pattern* is.",
-   "body": "tag your leo. save this for sunday.",
-   "art": {
-    "kind": "figure",
-    "sign": "leo"
-   }
-  }
- ]
+  ]
 }

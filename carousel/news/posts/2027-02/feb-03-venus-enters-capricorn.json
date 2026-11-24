@@ -1,76 +1,76 @@
 {
- "series": "sky news",
- "id": "feb-03-venus-enters-capricorn",
- "format": "sign-callout",
- "date": "2027-02-03",
- "signs": [
-  "capricorn"
- ],
- "caption": "venus enters capricorn today (14:30 utc) and stays until mar 1. love that shows up on time.",
- "hashtags": [
-  "venus",
-  "capricorn",
-  "astrology",
-  "zodiac",
-  "dating"
- ],
- "facts": [
-  "2027-02-03 venus enters capricorn",
-  "2027-03-01 venus enters aquarius"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "*capricorn*, venus just moved into your sign. until march 1",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "capricorn",
-   "headline": "*venus* leaves sagittarius and steps into capricorn",
-   "body": "in capricorn, astrologers read love as slow, loyal and a little guarded. valentine's falls inside it.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn",
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "capricorn",
-   "kicker": "capricorn",
-   "headline": "wanting someone isn't a *weakness*",
-   "body": "you plan everything. plan to say it.",
-   "art": {
-    "kind": "figure",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "capricorn",
-   "kicker": "everyone else",
-   "headline": "date like you mean to keep it",
-   "body": "show up when you said you would. that's the romance this month.",
-   "art": {
-    "kind": "aura",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "your sun is who you are. your *venus* is how you love.",
-   "body": "send this to your capricorn.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn"
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-03-venus-enters-capricorn",
+  "format": "sign-callout",
+  "date": "2027-02-03",
+  "signs": [
+    "capricorn"
+  ],
+  "caption": "venus enters capricorn today (14:30 utc) and stays until mar 1. love that shows up on time.",
+  "hashtags": [
+    "venus",
+    "capricorn",
+    "astrology",
+    "zodiac",
+    "dating"
+  ],
+  "facts": [
+    "2027-02-03 venus enters capricorn",
+    "2027-03-01 venus enters aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*capricorn*, *venus* moves into your sign at 9:30 am. for *26 days*",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "headline": "*venus* leaves sagittarius and steps into capricorn",
+      "body": "in capricorn, astrologers read love as slow, loyal and a little guarded. valentine's falls inside it.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "capricorn",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "capricorn",
+      "kicker": "capricorn",
+      "headline": "wanting someone isn't a *weakness*",
+      "body": "you plan everything. plan to say it.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "capricorn",
+      "kicker": "everyone else",
+      "headline": "date like you mean to keep it",
+      "body": "show up when you said you would. that's the romance this month.",
+      "art": {
+        "kind": "aura",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "your sun is who you are. your *venus* is how you love.",
+      "body": "send this to your capricorn.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "capricorn"
+      }
+    }
+  ]
 }

@@ -1,63 +1,63 @@
 {
- "id": "jan-23-today-moon-leo",
- "format": "sky-roundup",
- "date": "2027-01-23",
- "series": "sky news",
- "signs": [
-  "leo",
-  "sagittarius"
- ],
- "facts": [
-  "2027-01-23 moon in leo",
-  "2027-01-23 mercury sextile venus",
-  "2027-01-22 full moon leo"
- ],
- "caption": "today's sky: the moon is still in leo after yesterday's full moon, and mercury sextiles venus.",
- "hashtags": [
-  "leo",
-  "todayssky",
-  "mercury",
-  "venus",
-  "astrology"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "the morning after the *full moon*. the *moon*'s still in leo",
-   "art": {
-    "kind": "figure",
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "headline": "still loud, a bit *softer*",
-   "body": "the moon is waning in leo. read it as the day to be generous about what got said last night.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.55,
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "headline": "*mercury* sextile venus: say the nice thing",
-   "body": "an easy aspect for kind words. if last night went well, tell them. if it didn't, tell them kindly.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "venus"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "the follow-up is the *flirt*.",
-   "art": {
-    "kind": "aura",
-    "sign": "leo"
-   }
-  }
- ]
+  "id": "jan-23-today-moon-leo",
+  "format": "sky-roundup",
+  "date": "2027-01-23",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "sagittarius"
+  ],
+  "facts": [
+    "2027-01-23 moon in leo",
+    "2027-01-23 mercury sextile venus",
+    "2027-01-22 full moon leo"
+  ],
+  "caption": "today's sky: the moon is still in leo after yesterday's full moon, and mercury sextiles venus.",
+  "hashtags": [
+    "leo",
+    "todayssky",
+    "mercury",
+    "venus",
+    "astrology"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*mercury* sextiles *venus* at *5:33 pm*. text first, explain later",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "headline": "still loud, a bit *softer*",
+      "body": "the moon is waning in leo. read it as the day to be generous about what got said last night.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.55,
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "headline": "*mercury* sextile venus: say the nice thing",
+      "body": "an easy aspect for kind words. if last night went well, tell them. if it didn't, tell them kindly.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "venus"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "the follow-up is the *flirt*.",
+      "art": {
+        "kind": "aura",
+        "sign": "leo"
+      }
+    }
+  ]
 }

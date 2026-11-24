@@ -1,120 +1,120 @@
 {
- "series": "sky news",
- "id": "feb-28-february-in-the-sky",
- "format": "sky-roundup",
- "date": "2027-02-28",
- "signs": [
-  "aquarius",
-  "virgo",
-  "leo"
- ],
- "caption": "what just happened in the sky this month. tomorrow venus enters aquarius; mercury turns direct mar 3.",
- "hashtags": [
-  "astrology",
-  "february",
-  "eclipse",
-  "mercuryretrograde",
-  "zodiac"
- ],
- "facts": [
-  "2027-02-06 solar eclipse aquarius",
-  "2027-02-09 mercury stations retrograde pisces",
-  "2027-02-20 lunar eclipse virgo",
-  "2027-02-21 mars enters leo",
-  "2027-02-28 last quarter sagittarius",
-  "2027-03-01 venus enters aquarius",
-  "2027-03-03 mercury stations direct aquarius"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "what just happened in the *sky* this february?",
-   "art": {
-    "kind": "wheel",
-    "signs": [
-     "aquarius",
-     "virgo",
-     "leo",
-     "pisces",
-     "capricorn"
-    ],
-    "tint": "gold"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 6",
-   "sign": "aquarius",
-   "headline": "a ring of fire *eclipse* reset aquarius",
-   "body": "the annular solar eclipse at 17.6° aquarius. if you started something then, it's three weeks old now.",
-   "art": {
-    "kind": "eclipse",
-    "type": "solar",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 9",
-   "sign": "pisces",
-   "headline": "*mercury* turned around in pisces",
-   "body": "it's still retrograde, now back in aquarius, until mar 3.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "pisces",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 20",
-   "sign": "virgo",
-   "headline": "the quietest *eclipse* of the year so far",
-   "body": "a penumbral lunar eclipse in virgo. barely visible. still, a good night to put one fix down.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "virgo"
-   },
-   "inset": {
-    "kind": "figure",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 21",
-   "sign": "leo",
-   "headline": "*mars* backed into leo, still retrograde",
-   "body": "old pride came back for review. you don't have to reopen the case.",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "leo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "the one to watch",
-   "sign": "aquarius",
-   "headline": "tomorrow *venus* moves into aquarius",
-   "body": "and mercury turns direct mar 3. today's last quarter moon in sagittarius says: tidy up first.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.75,
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "new month, new deck. there's always an *11:11*.",
-   "body": "save this. march is next.",
-   "art": {
-    "kind": "stars",
-    "tint": "gold"
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-28-february-in-the-sky",
+  "format": "sky-roundup",
+  "date": "2027-02-28",
+  "signs": [
+    "aquarius",
+    "virgo",
+    "leo"
+  ],
+  "caption": "what just happened in the sky this month. tomorrow venus enters aquarius; mercury turns direct mar 3.",
+  "hashtags": [
+    "astrology",
+    "february",
+    "eclipse",
+    "mercuryretrograde",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-06 solar eclipse aquarius",
+    "2027-02-09 mercury stations retrograde pisces",
+    "2027-02-20 lunar eclipse virgo",
+    "2027-02-21 mars enters leo",
+    "2027-02-28 last quarter sagittarius",
+    "2027-03-01 venus enters aquarius",
+    "2027-03-03 mercury stations direct aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "what *just happened* in *february*'s sky? *2 eclipses*, to start",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "aquarius",
+          "virgo",
+          "leo",
+          "pisces",
+          "capricorn"
+        ],
+        "tint": "gold"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 6",
+      "sign": "aquarius",
+      "headline": "a ring of fire *eclipse* reset aquarius",
+      "body": "the annular solar eclipse at 17.6° aquarius. if you started something then, it's three weeks old now.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 9",
+      "sign": "pisces",
+      "headline": "*mercury* turned around in pisces",
+      "body": "it's still retrograde, now back in aquarius, until mar 3.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 20",
+      "sign": "virgo",
+      "headline": "the quietest *eclipse* of the year so far",
+      "body": "a penumbral lunar eclipse in virgo. barely visible. still, a good night to put one fix down.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "virgo"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 21",
+      "sign": "leo",
+      "headline": "*mars* backed into leo, still retrograde",
+      "body": "old pride came back for review. you don't have to reopen the case.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "leo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "the one to watch",
+      "sign": "aquarius",
+      "headline": "tomorrow *venus* moves into aquarius",
+      "body": "and mercury turns direct mar 3. today's last quarter moon in sagittarius says: tidy up first.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.75,
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "new month, new deck. there's always an *11:11*.",
+      "body": "save this. march is next.",
+      "art": {
+        "kind": "stars",
+        "tint": "gold"
+      }
+    }
+  ]
 }

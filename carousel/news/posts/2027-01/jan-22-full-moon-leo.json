@@ -1,95 +1,94 @@
 {
- "id": "jan-22-full-moon-leo",
- "format": "moon-alert",
- "date": "2027-01-22",
- "series": "sky news",
- "signs": [
-  "leo",
-  "aquarius",
-  "taurus",
-  "scorpio"
- ],
- "facts": [
-  "2027-01-22 full moon leo",
-  "2027-01-22 sun sextile neptune",
-  "2027-01-22 jupiter in leo",
-  "2027-01-22 jupiter retrograde",
-  "2027-01-20 sun enters aquarius"
- ],
- "caption": "full moon in leo at 2.2°, 12:17 utc today. it looks full tonight and last night. look east after sunset.",
- "hashtags": [
-  "fullmoon",
-  "leo",
-  "moonalert",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "full moon in *leo*, today. *say it* with your whole chest",
-   "dek": "peaks 12:17 utc · 2° leo",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "headline": "the moon sits opposite the *sun*",
-   "body": "the sun is in aquarius, the moon across from it in leo, fully lit. it rises in the east around sunset and looks full tonight and last night.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "headline": "your heart wants a *witness*",
-   "body": "astrologers read leo full moons as the need to be seen. with jupiter retrograde in leo, it's about owning what's already true.",
-   "art": {
-    "kind": "figure",
-    "sign": "leo"
-   },
-   "inset": {
-    "kind": "planet",
-    "body": "jupiter",
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "list",
-   "headline": "three signs feel this *full moon* most",
-   "rows": [
+  "id": "jan-22-full-moon-leo",
+  "format": "moon-alert",
+  "date": "2027-01-22",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "aquarius",
+    "taurus",
+    "scorpio"
+  ],
+  "facts": [
+    "2027-01-22 full moon leo",
+    "2027-01-22 sun sextile neptune",
+    "2027-01-22 jupiter in leo",
+    "2027-01-22 jupiter retrograde",
+    "2027-01-20 sun enters aquarius"
+  ],
+  "caption": "full moon in leo at 2.2°, 12:17 utc today. it looks full tonight and last night. look east after sunset.",
+  "hashtags": [
+    "fullmoon",
+    "leo",
+    "moonalert",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
     {
-     "sign": "leo",
-     "label": "leo",
-     "text": "**your sign.** be seen for what you want."
+      "layout": "hero",
+      "headline": "*full moon* in *leo* at *7:17 am*. say it with your whole chest",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "leo"
+      }
     },
     {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "the moon faces you. a partner speaks up."
+      "layout": "story",
+      "sign": "leo",
+      "headline": "the moon sits opposite the *sun*",
+      "body": "the sun is in aquarius, the moon across from it in leo, fully lit. it rises in the east around sunset and looks full tonight and last night.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "leo"
+      }
     },
     {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "home or career: pick tonight's priority."
+      "layout": "story",
+      "sign": "leo",
+      "headline": "your heart wants a *witness*",
+      "body": "astrologers read leo full moons as the need to be seen. with jupiter retrograde in leo, it's about owning what's already true.",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      },
+      "inset": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "list",
+      "headline": "three signs feel this *full moon* most",
+      "rows": [
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "**your sign.** be seen for what you want."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "the moon faces you. a partner speaks up."
+        },
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "home or career: pick tonight's priority."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "tell them *once*, out loud. not in a story.",
+      "body": "it has to be mutual, so ask, then listen.",
+      "art": {
+        "kind": "aura",
+        "sign": "leo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "tell them *once*, out loud. not in a story.",
-   "body": "it has to be mutual, so ask, then listen.",
-   "art": {
-    "kind": "aura",
-    "sign": "leo"
-   }
-  }
- ]
+  ]
 }

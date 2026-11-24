@@ -1,69 +1,69 @@
 {
- "id": "jan-06-note-mars-retrograde-dating",
- "format": "sky-note",
- "date": "2027-01-06",
- "series": "sky news",
- "signs": [
-  "virgo"
- ],
- "facts": [
-  "2027-01-10 mars stations retrograde virgo"
- ],
- "caption": "sky note: \"don't date during mars retrograde, it's doomed.\" not true. mars stations retrograde in virgo on sunday, jan 10.",
- "hashtags": [
-  "skynote",
-  "marsretrograde",
-  "dating",
-  "astrology",
-  "virgo"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "kicker": "viral claim",
-   "headline": "“anything that starts in *mars retrograde* is doomed”",
-   "art": {
-    "kind": "stars",
-    "tint": "mars"
-   }
-  },
-  {
-   "layout": "note",
-   "headline": "“don't date until mars goes direct. it won't last”",
-   "verdict": "false",
-   "body": "nobody has shown that relationships started in mars retrograde end sooner. it's a reading, not a statistic."
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "headline": "earth is the *faster* car on the inside lane",
-   "body": "as earth passes mars, mars appears to slow, stop and drift back against the stars. from jan 10 it does that in virgo.",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "virgo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "headline": "retrograde reads as *slow*, not doomed",
-   "body": "astrologers read mars retrograde as lower, tired drive: better for slow starts and second looks than for rushing in.",
-   "art": {
-    "kind": "figure",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "date if you want to. just *go slower*.",
-   "body": "if it ends, it wasn't mars. put your dealbreakers up front.",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "rx": true
-   }
-  }
- ]
+  "id": "jan-06-note-mars-retrograde-dating",
+  "format": "sky-note",
+  "date": "2027-01-06",
+  "series": "sky news",
+  "signs": [
+    "virgo"
+  ],
+  "facts": [
+    "2027-01-10 mars stations retrograde virgo"
+  ],
+  "caption": "sky note: \"don't date during mars retrograde, it's doomed.\" not true. mars stations retrograde in virgo on sunday, jan 10.",
+  "hashtags": [
+    "skynote",
+    "marsretrograde",
+    "dating",
+    "astrology",
+    "virgo"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "viral claim",
+      "headline": "“dates started in *mars retrograde* are doomed.” we *checked*",
+      "art": {
+        "kind": "stars",
+        "tint": "mars"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“don't date until mars goes direct. it won't last”",
+      "verdict": "false",
+      "body": "nobody has shown that relationships started in mars retrograde end sooner. it's a reading, not a statistic."
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "earth is the *faster* car on the inside lane",
+      "body": "as earth passes mars, mars appears to slow, stop and drift back against the stars. from jan 10 it does that in virgo.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "retrograde reads as *slow*, not doomed",
+      "body": "astrologers read mars retrograde as lower, tired drive: better for slow starts and second looks than for rushing in.",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "date if you want to. just *go slower*.",
+      "body": "if it ends, it wasn't mars. put your dealbreakers up front.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "rx": true
+      }
+    }
+  ]
 }

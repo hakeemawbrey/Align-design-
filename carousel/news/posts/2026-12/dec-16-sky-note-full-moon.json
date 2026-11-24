@@ -1,69 +1,69 @@
 {
- "id": "dec-16-sky-note-full-moon",
- "format": "sky-note",
- "date": "2026-12-16",
- "series": "sky news",
- "signs": [
-  "cancer"
- ],
- "facts": [
-  "2026-12-23 full moon cancer",
-  "2026-12-17 first quarter pisces"
- ],
- "caption": "sky note: \"the full moon makes people act crazy\". mostly not true. the next full moon is dec 23, in cancer.",
- "hashtags": [
-  "skynote",
-  "fullmoon",
-  "moon",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "does the *full moon* make people act crazy?",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5
-   }
-  },
-  {
-   "layout": "note",
-   "kicker": "going around",
-   "headline": "“everyone acts unhinged on a full moon”",
-   "verdict": "false",
-   "body": "large reviews of hospital, emergency and police records mostly find no reliable link to wild behaviour. some small studies suggest people sleep a bit less. tired is not unhinged."
-  },
-  {
-   "layout": "story",
-   "kicker": "the astronomy",
-   "headline": "a full moon is just the *moon* opposite the sun",
-   "body": "earth sits between them, so we see the whole lit side, about every 29.5 days. it isn't closer or stronger, just brighter, and bright nights stick.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "what astrologers read",
-   "headline": "astrologers read full moons as *culminations*",
-   "body": "a peak, not a breakdown: what started at the new moon comes to a head. the dec 23 full moon is in cancer: home, family, who you miss.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "cancer"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "nobody is *crazy*. some people are just finally honest",
-   "body": "say the honest thing. blame the moon if you need to.",
-   "art": {
-    "kind": "stars",
-    "tint": "violet"
-   }
-  }
- ]
+  "id": "dec-16-sky-note-full-moon",
+  "format": "sky-note",
+  "date": "2026-12-16",
+  "series": "sky news",
+  "signs": [
+    "cancer"
+  ],
+  "facts": [
+    "2026-12-23 full moon cancer",
+    "2026-12-17 first quarter pisces"
+  ],
+  "caption": "sky note: \"the full moon makes people act crazy\". mostly not true. the next full moon is dec 23, in cancer.",
+  "hashtags": [
+    "skynote",
+    "fullmoon",
+    "moon",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "does the *full moon* make people act crazy? the *dec 23* fact-check",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5
+      }
+    },
+    {
+      "layout": "note",
+      "kicker": "going around",
+      "headline": "“everyone acts unhinged on a full moon”",
+      "verdict": "false",
+      "body": "large reviews of hospital, emergency and police records mostly find no reliable link to wild behaviour. some small studies suggest people sleep a bit less. tired is not unhinged."
+    },
+    {
+      "layout": "story",
+      "kicker": "the astronomy",
+      "headline": "a full moon is just the *moon* opposite the sun",
+      "body": "earth sits between them, so we see the whole lit side, about every 29.5 days. it isn't closer or stronger, just brighter, and bright nights stick.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "what astrologers read",
+      "headline": "astrologers read full moons as *culminations*",
+      "body": "a peak, not a breakdown: what started at the new moon comes to a head. the dec 23 full moon is in cancer: home, family, who you miss.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "cancer"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "nobody is *crazy*. some people are just finally honest",
+      "body": "say the honest thing. blame the moon if you need to.",
+      "art": {
+        "kind": "stars",
+        "tint": "violet"
+      }
+    }
+  ]
 }

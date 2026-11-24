@@ -1,65 +1,65 @@
 {
- "series": "sky news",
- "id": "feb-12-aquarius-callout",
- "format": "sign-callout",
- "date": "2027-02-12",
- "signs": [
-  "aquarius"
- ],
- "caption": "aquarius, this was your eclipse (feb 6, 17.6°) and the sun is in your sign until feb 18. pluto is there too.",
- "hashtags": [
-  "aquarius",
-  "aquariusseason",
-  "eclipse",
-  "astrology",
-  "zodiac"
- ],
- "facts": [
-  "2027-02-06 solar eclipse aquarius",
-  "2027-02-12 sun in aquarius",
-  "2027-02-12 pluto in aquarius",
-  "2027-02-18 sun enters pisces"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "*aquarius*, an eclipse, pluto and the sun, all in your sign this week",
-   "art": {
-    "kind": "planet",
-    "body": "pluto",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aquarius",
-   "headline": "the *eclipse* was yours. the sun stays until feb 18",
-   "body": "the annular eclipse fell in aquarius on feb 6, and pluto sits in your sign too. read it as a reset that is still settling.",
-   "art": {
-    "kind": "eclipse",
-    "type": "solar",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "aquarius",
-   "headline": "being hard to read isn't the same as being *deep*",
-   "body": "let one person in on purpose.",
-   "art": {
-    "kind": "aura",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "detached is a *choice*. so is warm.",
-   "body": "send this to your aquarius before their season ends.",
-   "art": {
-    "kind": "figure",
-    "sign": "aquarius",
-    "zoom": 1.3
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-12-aquarius-callout",
+  "format": "sign-callout",
+  "date": "2027-02-12",
+  "signs": [
+    "aquarius"
+  ],
+  "caption": "aquarius, this was your eclipse (feb 6, 17.6°) and the sun is in your sign until feb 18. pluto is there too.",
+  "hashtags": [
+    "aquarius",
+    "aquariusseason",
+    "eclipse",
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-06 solar eclipse aquarius",
+    "2027-02-12 sun in aquarius",
+    "2027-02-12 pluto in aquarius",
+    "2027-02-18 sun enters pisces"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*aquarius*, the *eclipse* was in your sign. the sun leaves in *6 days*",
+      "art": {
+        "kind": "planet",
+        "body": "pluto",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "the *eclipse* was yours. the sun stays until feb 18",
+      "body": "the annular eclipse fell in aquarius on feb 6, and pluto sits in your sign too. read it as a reset that is still settling.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "aquarius",
+      "headline": "being hard to read isn't the same as being *deep*",
+      "body": "let one person in on purpose.",
+      "art": {
+        "kind": "aura",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "detached is a *choice*. so is warm.",
+      "body": "send this to your aquarius before their season ends.",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.3
+      }
+    }
+  ]
 }

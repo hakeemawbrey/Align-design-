@@ -1,139 +1,139 @@
 {
- "id": "dec-29-sun-square-saturn-who-this-hits",
- "format": "who-this-hits",
- "date": "2026-12-29",
- "series": "sky news",
- "signs": [
-  "capricorn",
-  "aries",
-  "cancer",
-  "libra"
- ],
- "facts": [
-  "2026-12-29 sun square saturn",
-  "2026-12-30 mercury square saturn"
- ],
- "caption": "find your sign. tag the one in tier one. the sun at 8.3° capricorn squares saturn at 8.3° aries tonight, 6:24 pm et.",
- "hashtags": [
-  "whothishits",
-  "saturn",
-  "capricorn",
-  "aries",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "the sun squares *saturn* tonight. the year-end reality check",
-   "art": {
-    "kind": "planet",
-    "body": "saturn",
-    "sign": "aries"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aries",
-   "kicker": "dec 29 · 8.3°",
-   "headline": "the *sun* and saturn sit 90° apart",
-   "body": "a square is a quarter turn: sun in capricorn, saturn in aries. it reads as friction that forces a decision. mercury makes the same square tomorrow.",
-   "art": {
-    "kind": "pair",
-    "a": "sun",
-    "b": "saturn"
-   }
-  },
-  {
-   "layout": "list",
-   "kicker": "hits hardest",
-   "headline": "*tier one*",
-   "rows": [
+  "id": "dec-29-sun-square-saturn-who-this-hits",
+  "format": "who-this-hits",
+  "date": "2026-12-29",
+  "series": "sky news",
+  "signs": [
+    "capricorn",
+    "aries",
+    "cancer",
+    "libra"
+  ],
+  "facts": [
+    "2026-12-29 sun square saturn",
+    "2026-12-30 mercury square saturn"
+  ],
+  "caption": "find your sign. tag the one in tier one. the sun at 8.3° capricorn squares saturn at 8.3° aries tonight, 6:24 pm et.",
+  "hashtags": [
+    "whothishits",
+    "saturn",
+    "capricorn",
+    "aries",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
     {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "your season meets a wall. go around it."
+      "layout": "hero",
+      "headline": "the sun squares *saturn* at *6:24 pm*. *4 signs* get a reality check",
+      "art": {
+        "kind": "planet",
+        "body": "saturn",
+        "sign": "aries"
+      }
     },
     {
-     "sign": "aries",
-     "label": "aries",
-     "text": "saturn is in your sign. own one promise."
+      "layout": "story",
+      "sign": "aries",
+      "kicker": "dec 29 · 8.3°",
+      "headline": "the *sun* and saturn sit 90° apart",
+      "body": "a square is a quarter turn: sun in capricorn, saturn in aries. it reads as friction that forces a decision. mercury makes the same square tomorrow.",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "saturn"
+      }
     },
     {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "partner vs. career. you can say both."
+      "layout": "list",
+      "kicker": "hits hardest",
+      "headline": "*tier one*",
+      "rows": [
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "your season meets a wall. go around it."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "saturn is in your sign. own one promise."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "partner vs. career. you can say both."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "home vs. relationship. pick a time to talk."
+        }
+      ]
     },
     {
-     "sign": "libra",
-     "label": "libra",
-     "text": "home vs. relationship. pick a time to talk."
+      "layout": "list",
+      "kicker": "feels it",
+      "headline": "*tier two*",
+      "rows": [
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "fewer plans, better ones."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "dating standards go up. good."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "say no to the extra shift."
+        },
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "friends need a real yes or no."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "background noise",
+      "headline": "*tier three*",
+      "rows": [
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "quiet week. rest counts."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "mars helps you finish. finish."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "tidy one money thing."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "let someone else host."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "capricorn",
+      "headline": "release, don't *ghost*. end the year clean",
+      "body": "one honest goodbye beats a silent january.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "feels it",
-   "headline": "*tier two*",
-   "rows": [
-    {
-     "sign": "leo",
-     "label": "leo",
-     "text": "fewer plans, better ones."
-    },
-    {
-     "sign": "sagittarius",
-     "label": "sagittarius",
-     "text": "dating standards go up. good."
-    },
-    {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "say no to the extra shift."
-    },
-    {
-     "sign": "gemini",
-     "label": "gemini",
-     "text": "friends need a real yes or no."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "background noise",
-   "headline": "*tier three*",
-   "rows": [
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "quiet week. rest counts."
-    },
-    {
-     "sign": "virgo",
-     "label": "virgo",
-     "text": "mars helps you finish. finish."
-    },
-    {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "tidy one money thing."
-    },
-    {
-     "sign": "pisces",
-     "label": "pisces",
-     "text": "let someone else host."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "sign": "capricorn",
-   "headline": "release, don't *ghost*. end the year clean",
-   "body": "one honest goodbye beats a silent january.",
-   "art": {
-    "kind": "figure",
-    "sign": "capricorn"
-   }
-  }
- ]
+  ]
 }

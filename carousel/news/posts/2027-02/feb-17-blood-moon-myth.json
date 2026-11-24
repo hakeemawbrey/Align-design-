@@ -1,69 +1,69 @@
 {
- "series": "sky news",
- "id": "feb-17-blood-moon-myth",
- "format": "sky-note",
- "date": "2027-02-17",
- "signs": [
-  "virgo"
- ],
- "caption": "sky note: \"saturday's eclipse turns the moon blood red.\" not true. feb 20 is a penumbral eclipse in virgo (23:12 utc): faint, not red.",
- "hashtags": [
-  "skynote",
-  "lunareclipse",
-  "bloodmoon",
-  "virgo",
-  "astrology"
- ],
- "facts": [
-  "2027-02-20 full moon virgo",
-  "2027-02-20 lunar eclipse virgo"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "kicker": "sky note",
-   "headline": "“saturday's *blood moon* will change everything”",
-   "art": {
-    "kind": "eclipse",
-    "type": "lunar",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "note",
-   "headline": "“the feb 20 eclipse turns the moon blood red”",
-   "verdict": "false",
-   "body": "that red picture is a total lunar eclipse. feb 20 is penumbral: the moon only skims earth's pale outer shadow. it stays its normal colour, maybe a touch dimmer on one edge."
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "headline": "red needs the dark *core* of earth's shadow",
-   "body": "the moon turns copper only inside the umbra, lit by sunlight bent through our atmosphere. this time it misses the umbra entirely.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5,
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "headline": "a quiet eclipse still reads as an *ending*",
-   "body": "astrologers read eclipses as fast-forwards, faint or not. nothing about this one changes everything. it might change one habit, if you let it.",
-   "art": {
-    "kind": "figure",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "no blood moon. still a good night to say the *honest* thing.",
-   "body": "send this to whoever posted the red one.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.5
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-17-blood-moon-myth",
+  "format": "sky-note",
+  "date": "2027-02-17",
+  "signs": [
+    "virgo"
+  ],
+  "caption": "sky note: \"saturday's eclipse turns the moon blood red.\" not true. feb 20 is a penumbral eclipse in virgo (23:12 utc): faint, not red.",
+  "hashtags": [
+    "skynote",
+    "lunareclipse",
+    "bloodmoon",
+    "virgo",
+    "astrology"
+  ],
+  "facts": [
+    "2027-02-20 full moon virgo",
+    "2027-02-20 lunar eclipse virgo"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "sky note",
+      "headline": "“saturday's *blood moon* will change everything.” it won't go *red*",
+      "art": {
+        "kind": "eclipse",
+        "type": "lunar",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "note",
+      "headline": "“the feb 20 eclipse turns the moon blood red”",
+      "verdict": "false",
+      "body": "that red picture is a total lunar eclipse. feb 20 is penumbral: the moon only skims earth's pale outer shadow. it stays its normal colour, maybe a touch dimmer on one edge."
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "red needs the dark *core* of earth's shadow",
+      "body": "the moon turns copper only inside the umbra, lit by sunlight bent through our atmosphere. this time it misses the umbra entirely.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5,
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "headline": "a quiet eclipse still reads as an *ending*",
+      "body": "astrologers read eclipses as fast-forwards, faint or not. nothing about this one changes everything. it might change one habit, if you let it.",
+      "art": {
+        "kind": "figure",
+        "sign": "virgo"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "no blood moon. still a good night to say the *honest* thing.",
+      "body": "send this to whoever posted the red one.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.5
+      }
+    }
+  ]
 }

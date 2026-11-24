@@ -1,101 +1,101 @@
 {
- "series": "sky news",
- "id": "feb-18-pisces-season",
- "format": "season-handover",
- "date": "2027-02-18",
- "signs": [
-  "pisces",
-  "aquarius"
- ],
- "caption": "sun enters pisces feb 18, 21:33 utc. the same day retrograde mercury backs into aquarius.",
- "hashtags": [
-  "piscesseason",
-  "pisces",
-  "aquarius",
-  "astrology",
-  "zodiac"
- ],
- "facts": [
-  "2027-02-18 sun enters pisces",
-  "2027-02-18 mercury enters aquarius",
-  "2027-02-18 sun conjunction mercury",
-  "2027-02-18 mercury retrograde",
-  "2027-02-06 solar eclipse aquarius"
- ],
- "slides": [
-  {
-   "layout": "split",
-   "labels": [
+  "series": "sky news",
+  "id": "feb-18-pisces-season",
+  "format": "season-handover",
+  "date": "2027-02-18",
+  "signs": [
+    "pisces",
+    "aquarius"
+  ],
+  "caption": "sun enters pisces feb 18, 21:33 utc. the same day retrograde mercury backs into aquarius.",
+  "hashtags": [
+    "piscesseason",
+    "pisces",
     "aquarius",
-    "pisces"
-   ],
-   "headline": "*aquarius* hands the keys to pisces",
-   "art": {
-    "kind": "figure",
-    "sign": "aquarius"
-   },
-   "art2": {
-    "kind": "figure",
-    "sign": "pisces"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "aquarius",
-   "kicker": "goodbye aquarius",
-   "headline": "you had an *eclipse* and you still played it cool",
-   "body": "the feb 6 reset was yours. keep the one thing you started.",
-   "art": {
-    "kind": "aura",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "pisces",
-   "kicker": "hello pisces",
-   "headline": "your season starts with *mercury* backing up",
-   "body": "retrograde mercury backs into aquarius as you arrive. feel first, reply second.",
-   "art": {
-    "kind": "figure",
-    "sign": "pisces",
-    "zoom": 1.25
-   }
-  },
-  {
-   "layout": "list",
-   "headline": "four weeks of *soft*",
-   "rows": [
+    "astrology",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-18 sun enters pisces",
+    "2027-02-18 mercury enters aquarius",
+    "2027-02-18 sun conjunction mercury",
+    "2027-02-18 mercury retrograde",
+    "2027-02-06 solar eclipse aquarius"
+  ],
+  "slides": [
     {
-     "label": "feel",
-     "color": "pisces",
-     "text": "naming the feeling before it names you."
+      "layout": "split",
+      "labels": [
+        "aquarius",
+        "pisces"
+      ],
+      "headline": "*pisces season* starts at *4:33 pm*, with *mercury* still retrograde",
+      "art": {
+        "kind": "figure",
+        "sign": "aquarius"
+      },
+      "art2": {
+        "kind": "figure",
+        "sign": "pisces"
+      }
     },
     {
-     "label": "forgive",
-     "color": "pisces",
-     "text": "one person. maybe yourself."
+      "layout": "callout",
+      "sign": "aquarius",
+      "kicker": "goodbye aquarius",
+      "headline": "you had an *eclipse* and you still played it cool",
+      "body": "the feb 6 reset was yours. keep the one thing you started.",
+      "art": {
+        "kind": "aura",
+        "sign": "aquarius"
+      }
     },
     {
-     "label": "make",
-     "color": "pisces",
-     "text": "what you only make when no one's watching."
+      "layout": "callout",
+      "sign": "pisces",
+      "kicker": "hello pisces",
+      "headline": "your season starts with *mercury* backing up",
+      "body": "retrograde mercury backs into aquarius as you arrive. feel first, reply second.",
+      "art": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1.25
+      }
     },
     {
-     "label": "date",
-     "color": "pisces",
-     "text": "someone gentle, not a rescue project."
+      "layout": "list",
+      "headline": "four weeks of *soft*",
+      "rows": [
+        {
+          "label": "feel",
+          "color": "pisces",
+          "text": "naming the feeling before it names you."
+        },
+        {
+          "label": "forgive",
+          "color": "pisces",
+          "text": "one person. maybe yourself."
+        },
+        {
+          "label": "make",
+          "color": "pisces",
+          "text": "what you only make when no one's watching."
+        },
+        {
+          "label": "date",
+          "color": "pisces",
+          "text": "someone gentle, not a rescue project."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "soft isn't a *flaw*. vague is.",
+      "body": "send this to your pisces. it's their turn.",
+      "art": {
+        "kind": "aura",
+        "sign": "pisces"
+      }
     }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "soft isn't a *flaw*. vague is.",
-   "body": "send this to your pisces. it's their turn.",
-   "art": {
-    "kind": "aura",
-    "sign": "pisces"
-   }
-  }
- ]
+  ]
 }

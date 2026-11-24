@@ -1,280 +1,370 @@
-// One news slide as a standalone 1080×1350 HTML page in Align's aura look:
-// every slide is soft coloured light (like an aura photograph) on deep indigo,
-// one glowing subject, a serif italic headline, and almost nothing else. No
-// borders, rules, frames, pills or sparkles.
+// One news slide as a standalone 1080×1350 HTML page: the "wire" look, built
+// from the reference teardown in news/research/ (TYPE-LAYOUT.md, IMAGERY.md).
 //
-// Headline markup: wrap words in *asterisks* to light them in the slide's
-// accent (the slide's sign colour, else the carousel's, else gold). Use
-// [[double brackets]] for a soft highlight bar instead.
+// The grammar: a real NASA photo across the top ~60% with a soft glow in the
+// sign's colour behind it, a hard fade to near-black, a divider with a small
+// `align ✦`, then a huge Anton all-caps headline whose lines are balanced to
+// fill ~90% of the width. Colour words: signs in their sign colour, planets
+// and numbers in gold, everything else bone. 3–5 elements per slide.
+//
+// Markup in text: *word* = accent (auto colour), [[word]] = gold, **b** = bone bold.
 
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
-import { hashString, imageDataUri } from '../../src/backgrounds.mjs'
-import { SIGN_COLORS } from '../../src/schema.mjs'
-import { auraColors, colorOf, dust, subjectSvg } from './art.mjs'
+import { fileURLToPath } from 'node:url'
+import { imageDataUri } from '../../src/backgrounds.mjs'
+import { SIGN_COLORS, SIGNS } from '../../src/schema.mjs'
 
 export const W = 1080
 export const H = 1350
 const require = createRequire(import.meta.url)
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const PHOTO = path.resolve(HERE, '../assets/photo')
+const FONTDIR = path.resolve(HERE, '../../../reels/signs/assets/fonts')
 
-function font(pkg, file) {
-  const dir = path.dirname(require.resolve(`${pkg}/package.json`))
-  return `data:font/woff2;base64,${readFileSync(path.join(dir, 'files', file)).toString('base64')}`
+const C = { bone: '#efe6d6', mist: '#b3a6c4', gold: '#f2c75c', floor: '#07041a', rub: '#e8628a', spark: '#7fd8b0', violet: '#b9a2ff' }
+const PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
+
+// ---- assets -----------------------------------------------------------------
+const uriCache = new Map()
+function fileUri(file, mime) {
+  if (!uriCache.has(file)) uriCache.set(file, `data:${mime};base64,${readFileSync(file).toString('base64')}`)
+  return uriCache.get(file)
+}
+const photo = (name) => fileUri(path.join(PHOTO, `${name}.jpg`), 'image/jpeg')
+function pkgFont(pkg, file) {
+  return fileUri(path.join(path.dirname(require.resolve(`${pkg}/package.json`)), 'files', file), 'font/woff2')
 }
 let FONTS
 function fonts() {
-  const face = (fam, style, weight, uri) => `@font-face{font-family:'${fam}';font-style:${style};font-weight:${weight};font-display:block;src:url(${uri}) format('woff2');}`
-  FONTS ??= [
-    face('EB Garamond', 'italic', 500, font('@fontsource/eb-garamond', 'eb-garamond-latin-500-italic.woff2')),
-    face('EB Garamond', 'italic', 400, font('@fontsource/eb-garamond', 'eb-garamond-latin-400-italic.woff2')),
-    face('EB Garamond', 'normal', 500, font('@fontsource/eb-garamond', 'eb-garamond-latin-500-normal.woff2')),
-    face('Inter', 'normal', 400, font('@fontsource/inter', 'inter-latin-400-normal.woff2')),
-    face('Inter', 'normal', 500, font('@fontsource/inter', 'inter-latin-500-normal.woff2')),
-    face('Inter', 'italic', 600, font('@fontsource/inter', 'inter-latin-600-italic.woff2')),
-    face('Space Mono', 'normal', 400, font('@fontsource/space-mono', 'space-mono-latin-400-normal.woff2')),
-  ].join('\n')
+  FONTS ??= `
+@font-face{font-family:Anton;src:url(${pkgFont('@fontsource/anton', 'anton-latin-400-normal.woff2')}) format('woff2');font-display:block}
+@font-face{font-family:Bebas;src:url(${fileUri(path.join(FONTDIR, 'BebasNeue-Regular.ttf'), 'font/ttf')}) format('truetype');font-display:block}
+@font-face{font-family:Archivo;src:url(${fileUri(path.join(FONTDIR, 'ArchivoNarrow.ttf'), 'font/ttf')}) format('truetype');font-weight:100 900;font-display:block}
+@font-face{font-family:'Space Mono';src:url(${pkgFont('@fontsource/space-mono', 'space-mono-latin-400-normal.woff2')}) format('woff2');font-display:block}`
   return FONTS
 }
 
-const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-// *word* → accent, [[words]] → highlight bar, \n → line break.
-const rich = (s) => esc(s)
-  .replace(/\[\[(.+?)\]\]/g, '<mark>$1</mark>')
+// ---- text -------------------------------------------------------------------
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+// Colour for an accented phrase: a sign → its colour; a planet, a number or a
+// time → gold; anything else → the slide's accent.
+function accentFor(phrase, fallback) {
+  const p = phrase.toLowerCase()
+  const sign = SIGNS.find((s) => p.includes(s))
+  if (sign) return SIGN_COLORS[sign].color
+  if (PLANETS.some((x) => new RegExp(`\\b${x}`).test(p)) || /\d/.test(p) || /eclipse|full moon|new moon/.test(p)) return C.gold
+  return fallback
+}
+const glueNums = (t) => String(t ?? '').replace(/(\d[\d:,]*(?:st|nd|rd|th)?)\s+(am|pm|days?|signs?|dates?|hours?|weeks?|years?|planets?|things?|events?|°)\b/gi, '$1\u00a0$2')
+const rich = (s, fallback) => esc(glueNums(s))
+  .replace(/\[\[(.+?)\]\]/g, (_, t) => `<span class="ac" style="color:${C.gold}">${t}</span>`)
   .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-  .replace(/\*(.+?)\*/g, '<em>$1</em>')
-  .replace(/\n/g, '<br>')
+  .replace(/\*(.+?)\*/g, (_, t) => `<span class="ac" style="color:${accentFor(t, fallback)}">${t}</span>`)
+  .replace(/\n/g, ' ')
 
-const SPARK = (c = '#f2c75c', s = 18) => `<svg viewBox="0 0 20 20" width="${s}" height="${s}" aria-hidden="true"><path fill="${c}" d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0z"/></svg>`
-
-const VERDICT = { true: ['true', '#7fd8b0'], misleading: ['half true', '#f2c75c'], false: ['not true', '#e8628a'], context: ['needs context', '#9a7be0'] }
-
-const accentOf = (slide, c) => colorOf(slide.accent ?? slide.sign ?? c.accent ?? c.signs?.[0] ?? 'gold', '#f2c75c')
-
-// ---- pieces ---------------------------------------------------------------
-
-const VERDICT_WORD = { true: 'true', misleading: 'half true', false: 'not true', context: 'needs context' }
-const VERDICT_COL = { true: '#7fd8b0', misleading: '#f2c75c', false: '#e8628a', context: '#b9a2ff' }
-
-// Aura light: three big blurred blobs, placed by seed, glowing around `at`
-// (where the subject sits, as % of the frame).
-function auraField(cols, seed, at = [50, 36], strength = 1) {
-  const r = (() => { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } })()
-  const [x, y] = at
-  const blob = (c, cx, cy, w, h, o) => `<div class="blob" style="left:${cx}%;top:${cy}%;width:${w}px;height:${h}px;background:radial-gradient(closest-side, ${c} 0%, ${c}cc 35%, ${c}00 100%);opacity:${(o * strength).toFixed(2)}"></div>`
-  return `<div class="aura">
-    ${blob(cols[2], x + (r() - .5) * 30, y + 40, 1300, 1100, .9)}
-    ${blob(cols[1], x + (r() < .5 ? -22 : 22), y + 10 + r() * 14, 900, 900, .55)}
-    ${blob(cols[0], x, y, 820, 820, .85)}
-    ${blob('#fff4e6', x, y, 300, 300, .22)}
-  </div>`
+// Body copy reads as sentences: capitalise sentence starts, "i", names, months, days.
+const PROPER = [...SIGNS, ...PLANETS.filter((p) => p !== 'sun' && p !== 'moon'), 'january', 'february', 'march', 'april', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'jan', 'feb', 'dec', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'christmas', 'ophiuchus', 'earth', 'nasa']
+function sentence(s) {
+  let t = String(s ?? '')
+  t = t.replace(/(^|[.?:]\s+)([a-z])/g, (_, a, b) => a + b.toUpperCase())
+  t = t.replace(/\bi\b/g, 'I').replace(/\bi'(m|ll|ve|d)\b/g, "I'$1")
+  t = t.replace(new RegExp(`\\b(${PROPER.join('|')})\\b`, 'g'), (w) => w[0].toUpperCase() + w.slice(1))
+  t = t.replace(/\bvalentine/g, 'Valentine').replace(/\bet\b/g, 'ET').replace(/\butc\b/g, 'UTC')
+  return t
 }
 
-// The subject: aura figure photo, or a drawn body with a bloom behind it.
-function subject(a, size, seed, cls = '', prefix = 's') {
-  if (!a || a.kind === 'stars') return ''
-  if (a.kind === 'figure' || a.kind === 'aura') {
-    return `<div class="figure ${cls}" style="width:${size}px;height:${size * 1.15}px"><img src="${imageDataUri(`aura/${a.sign}.jpg`)}" alt=""></div>`
+const STAR = (c, s) => `<svg width="${s}" height="${s}" viewBox="0 0 20 20" style="display:inline-block"><path fill="${c}" d="M10 0C10.9 6.4 13.6 9.1 20 10 13.6 10.9 10.9 13.6 10 20 9.1 13.6 6.4 10.9 0 10 6.4 9.1 9.1 6.4 10 0Z"/></svg>`
+
+// ---- art --------------------------------------------------------------------
+const SIGN_NEBULA = {
+  aries: 'aurora-red', leo: 'nebula-gold', sagittarius: 'nebula-violet', taurus: 'nebula-cosmic-cliffs', virgo: 'aurora-pink', capricorn: 'aurora-green',
+  gemini: 'nebula-gold', libra: 'aurora-pink', aquarius: 'nebula-blue', cancer: 'nebula-blue', scorpio: 'aurora-red', pisces: 'nebula-violet',
+}
+const planetPhoto = (body) => (body === 'moon' ? { kind: 'photo', file: 'moon-full', size: 1 } : { kind: 'photo', file: body, size: body === 'saturn' ? 1.45 : 1 })
+function eclipseArt(type, penumbral) {
+  if (type === 'lunar') return penumbral ? { kind: 'photo', file: 'moon-full', size: 1, dim: true } : { kind: 'photo', file: 'blood-moon', size: 1 }
+  return { kind: 'photo', file: 'eclipse-partial-sun', size: 1.2 }
+}
+// Guess a subject from the post when a slide has no usable art.
+function subjectFromPost(c, s) {
+  return subjectFromText(s.headline ?? '') ?? subjectFromText((c.facts ?? []).join(' '))
+}
+function subjectFromText(raw) {
+  const text = raw.toLowerCase()
+  if (/season/.test(text) && !/eclipse/.test(text)) return planetPhoto('sun')
+  if (/eclipse/.test(text)) return eclipseArt(/lunar|blood|penumbral/.test(text) ? 'lunar' : 'solar', /penumbral|2027-02-20/.test(text))
+  if (/full moon/.test(text)) return planetPhoto('moon')
+  if (/new moon/.test(text)) return { kind: 'photo', file: 'moon-crescent', size: 1 }
+  const pl = ['venus', 'mars', 'mercury', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'sun'].find((p) => new RegExp(`\\b${p}\\b`).test(text))
+  return pl ? planetPhoto(pl) : null
+}
+function resolveArt(a, s, c) {
+  const sign = s.sign ?? c.signs?.[0]
+  const nebula = (k) => ({ kind: 'nebula', file: SIGN_NEBULA[k] ?? 'nebula-violet' })
+  if (!a) return s.layout === 'rank' && s.sign ? { kind: 'aura', sign: s.sign } : subjectFromPost(c, s) ?? nebula(sign)
+  switch (a.kind) {
+    case 'planet': return planetPhoto(a.body)
+    case 'moon': {
+      const p = a.phase ?? 0.5
+      if (Math.abs(p - 0.5) < 0.12) return planetPhoto('moon')
+      const half = Math.abs(p - 0.25) < 0.13 || Math.abs(p - 0.75) < 0.13
+      return { kind: 'photo', file: half ? 'moon-half' : 'moon-crescent', size: 1, flip: p > 0.5 }
+    }
+    case 'eclipse': return eclipseArt(a.type === 'solar' ? 'solar' : 'lunar', a.type === 'penumbral')
+    case 'pair': return { kind: 'pair', a: planetPhoto(a.a), b: planetPhoto(a.b) }
+    case 'figure': case 'aura': return { kind: 'aura', sign: a.sign ?? sign }
+    default: return subjectFromPost(c, s) ?? nebula(a.tint ?? sign)
   }
-  const svg = subjectSvg(a, size, seed, prefix)
-  const wide = (a.kind === 'planet' && a.body === 'saturn') || a.kind === 'pair' || a.kind === 'wheel' || a.kind === 'eclipse'
-  return `<div class="subj ${wide ? 'wide ' : ''}${cls}" style="width:${size}px;height:${size}px"><div class="bloom">${svg.replace(/id="/g, 'id="b').replace(/url\(#/g, 'url(#b')}</div><div class="body">${svg}</div><div class="haze"></div></div>`
 }
 
-const kick = (k) => (k ? `<div class="kicker">${esc(k)}</div>` : '')
-const fitH = (cls, html, max, big, small) => `<h1 class="fit head ${cls}" data-max="${max}" data-big="${big}" data-small="${small}">${rich(html)}</h1>`
-const fitP = (cls, html, max, big, small) => (html ? `<p class="fit ${cls}" data-max="${max}" data-big="${big}" data-small="${small}">${rich(html)}</p>` : '')
+// The art band (height h): photo(s) on a glow in `glow`, screened so their
+// black becomes the floor, fading out at the bottom.
+function artBand(art, h, glow, { cy = h * 0.47, d = h * 0.74 } = {}) {
+  d = d
+  const disc = (p, x, y, size) => `<div class="ph" style="left:${x - size / 2}px;top:${y - size / 2}px;width:${size}px;height:${size}px;background-image:url(${photo(p.file)});${p.flip ? 'transform:scaleX(-1);' : ''}${p.dim ? 'filter:brightness(.6) saturate(.8);' : ''}"></div>`
+  const halo = (x, y, r, col, o) => `<div class="halo" style="left:${x - r}px;top:${y - r}px;width:${r * 2}px;height:${r * 2}px;background:radial-gradient(circle, ${col} 0%, ${col}99 26%, ${col}33 50%, transparent 70%);opacity:${o}"></div>`
+  const side = (a, x, y, size) => a.kind === 'photo' ? disc(a, x, y, size * a.size)
+    : a.kind === 'aura' ? `<div class="aura-img" style="left:${x - size * 0.6}px;top:${y - size * 0.6}px;width:${size * 1.2}px;height:${size * 1.2}px;background-image:url(${imageDataUri(`aura/${a.sign}.jpg`)})"></div>` : ''
+  let inner = ''
+  // NASA frames carry black margin round the disc: scale up so the disc itself is d.
+  d *= 1.38
+  if (art.kind === 'photo') {
+    const size = d * art.size
+    inner = halo(540, cy, Math.min(size, 900) * 0.62, glow, 0.6) + disc(art, 540, cy, size)
+  } else if (art.kind === 'pair') {
+    const size = d * 0.7
+    inner = halo(300, cy + 24, size * 0.5, glow, 0.5) + halo(780, cy - 24, size * 0.5, glow, 0.5)
+      + side(art.a, 290, cy + 24, size) + side(art.b, 790, cy - 24, size)
+  } else if (art.kind === 'aura') {
+    const col = SIGN_COLORS[art.sign]?.color ?? glow
+    const size = h * 1.15
+    inner = halo(540, cy, 560, col, 0.45) + `<div class="aura-img" style="left:${540 - size / 2}px;top:${cy - size / 2}px;width:${size}px;height:${size}px;background-image:url(${imageDataUri(`aura/${art.sign}.jpg`)})"></div>`
+  } else {
+    inner = `<div class="neb" style="background-image:url(${photo(art.file)})"></div>`
+  }
+  return `<div class="band" style="height:${h}px">${inner}<div class="fade"></div></div>`
+}
+
+// ---- pieces -----------------------------------------------------------------
+const divider = () => `<div class="div"><i></i><span class="mark">align ${STAR(C.gold, 18)}</span><i></i></div>`
+const tag = (t) => `<div class="tag">${esc(t)}</div>`
+const head = (text, accent, { maxh, maxfs = 150, minfs = 64, target = 940, cls = '' } = {}) =>
+  `<div class="hd ${cls}" data-maxh="${maxh}" data-maxfs="${maxfs}" data-minfs="${minfs}" data-target="${target}">${rich(text, accent)}</div>`
+const body = (t, accent, cls = '') => (t ? `<p class="bd ${cls}">${rich(sentence(t), accent)}</p>` : '')
+const deck = (t, accent) => (t ? `<p class="deck">${rich(t, accent)}</p>` : '')
+
+const VERDICT = { true: ['true.', C.spark], misleading: ['half true.', C.gold], false: ['not true.', C.rub], context: ['needs context.', C.violet] }
 
 // ---- layouts ----------------------------------------------------------------
-// Each returns { at: [x%, y%] where the light gathers, html }.
+const coverLike = (s, x, tagText) => `
+  ${s.layout === 'split' && x.art2 && x.art.kind === x.art2.kind ? artBand({ kind: 'pair', a: x.art, b: x.art2 }, 900, x.glow, { d: 560 }) : artBand(x.art, 900, x.glow)}
+  <div class="stack" style="bottom:92px">
+    ${tagText ? tag(tagText) : divider()}
+    ${head(s.headline, x.accent, { maxh: s.dek || (s.layout === 'callout' && s.body) ? 320 : 400, maxfs: 150 })}
+    ${deck(s.dek ?? (s.layout === 'callout' ? s.body : ''), x.accent)}
+  </div>`
 
 const LAYOUTS = {
-  cover: (s, c, x) => ({ at: [50, 33], html: `
-    <div class="stage" style="top:120px;height:760px">${subject(x.art, 600, x.seed)}</div>
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 330, 132, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }),
-  story: (s, c, x) => ({ at: [50, 28], html: `
-    <div class="stage" style="top:110px;height:620px">${subject(x.art, 500, x.seed)}${s.inset ? subject(s.inset, 220, x.seed + 3, 'inset', 'i') : ''}</div>
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 260, 100, 56)}${fitP('body center', s.body, 190, 36, 28)}</div>` }),
-  rank: (s, c, x) => ({ at: [50, 30], html: `
-    <div class="stage" style="top:90px;height:560px">${subject(x.art ?? { kind: 'aura', sign: s.sign }, 470, x.seed)}</div>
-    <div class="rank-num">${esc(s.rank)}</div>
-    <div class="txt bottom">
-      <div class="sign" style="color:${x.signCol}">${esc(s.title ?? s.sign)}</div>
-      ${s.dates ? `<div class="kicker">${esc(s.dates)}</div>` : ''}
-      ${fitP('hook center', s.headline, 140, 46, 32)}${fitP('body center', s.body, 230, 34, 26)}</div>` }),
-  callout: (s, c, x) => ({ at: [50, 40], html: `
-    <div class="stage" style="top:60px;height:900px;opacity:.9">${subject(x.art, 720, x.seed)}</div>
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 400, 136, 64)}${fitP('dek center', s.body, 110, 34, 26)}</div>` }),
-  hero: (s, c, x) => ({ at: [50, 34], html: `
-    <div class="stage" style="top:90px;height:820px">${subject(x.art, 680, x.seed)}</div>
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 330, 128, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }),
-  breaking: (s, c, x) => {
-    const w = s.word ?? 'breaking'
-    return { at: [50, 34], html: `
-    <div class="giant" style="font-size:${Math.min(300, Math.round(1900 / w.length))}px">${esc(w)}</div>
-    <div class="stage" style="top:110px;height:800px">${subject(x.art, 620, x.seed)}</div>
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 320, 124, 64)}${fitP('dek center', s.dek, 90, 34, 26)}</div>` }
-  },
-  split: (s, c, x) => ({ at: [50, 34], two: true, html: `
-    <div class="stage" style="top:150px;height:640px;left:-250px">${subject(x.art, 470, x.seed)}</div>
-    <div class="stage" style="top:150px;height:640px;left:250px">${subject(x.art2, 470, x.seed + 9, '', 't')}</div>
-    ${s.labels ? `<div class="labels"><span>${esc(s.labels[0] ?? '')}</span><span>${esc(s.labels[1] ?? '')}</span></div>` : ''}
-    <div class="txt bottom">${kick(s.kicker)}${fitH('center', s.headline, 300, 120, 60)}</div>` }),
-  note: (s, c, x) => ({ at: [50, 22], html: `
-    <div class="txt top">${kick(s.kicker ?? 'going around')}${fitH('center quote', s.headline, 330, 92, 52)}</div>
-    <div class="note">
-      <div class="note-top"><span class="note-title">${SPARK('#f2c75c', 22)} sky note</span><span class="verdict" style="color:${VERDICT_COL[s.verdict]}">${VERDICT_WORD[s.verdict] ?? ''}</span></div>
-      ${fitP('body bone', s.body, 360, 38, 28)}
-    </div>` }),
-  list: (s, c, x) => ({ at: [50, 18], html: `
-    <div class="txt top">${kick(s.kicker)}${s.headline ? fitH('center', s.headline, 220, 92, 52) : ''}</div>
-    <div class="rows fit-rows">${(s.rows ?? []).map((r) => {
-      const col = colorOf(r.color ?? r.sign ?? null, x.accent)
-      return `<div class="row"><div class="row-l" style="color:${col}">${esc(r.label)}</div><div class="row-t">${rich(r.text)}</div></div>`
-    }).join('')}</div>` }),
-  table: (s, c, x) => ({ at: [50, 18], html: `
-    <div class="txt top">${kick(s.kicker)}${s.headline ? fitH('center', s.headline, 220, 88, 50) : ''}</div>
-    <div class="rows fit-rows">${(s.rows ?? []).map((r, k) => {
-      const col = colorOf(r.color ?? r.sign ?? null, x.accent)
-      return `<div class="row trow"><div class="tnum" style="color:${col}">${esc(r.rank ?? k + 1)}</div><div><div class="row-l" style="color:${col}">${esc(r.label)}${r.value ? ` <span class="tval">· ${esc(r.value)}</span>` : ''}</div>${r.text ? `<div class="row-t">${rich(r.text)}</div>` : ''}</div></div>`
-    }).join('')}</div>` }),
-  end: (s, c, x) => ({ at: [50, 40], html: `
-    <div class="stage" style="top:170px;height:560px;opacity:.85">${subject(x.art, 440, x.seed)}</div>
-    <div class="txt bottom">${fitH('center', s.headline, 300, 104, 56)}${fitP('dek center', s.body, 100, 32, 26)}<div class="endmark">align ${SPARK('#f2c75c', 20)}</div></div>` }),
+  cover: (s, c, x) => coverLike(s, x),
+  hero: (s, c, x) => coverLike(s, x),
+  callout: (s, c, x) => coverLike(s, x),
+  split: (s, c, x) => coverLike(s, x),
+  breaking: (s, c, x) => coverLike(s, x, s.word ?? 'breaking'),
+  story: (s, c, x) => `
+    ${artBand(x.art, 780, x.glow, { d: 600 })}
+    <div class="stack" style="bottom:92px">
+      ${s.kicker ? tag(s.kicker) : divider()}
+      ${head(s.headline, x.accent, { maxh: s.body ? 250 : 360, maxfs: 120, minfs: 56 })}
+      ${body(s.body, x.accent)}
+    </div>`,
+  rank: (s, c, x) => `
+    ${artBand(x.art, 680, x.signCol, { d: 560 })}
+    <div class="stack left" style="bottom:96px">
+      <div class="rank">#${esc(s.rank)}</div>
+      <div class="sign" style="color:${x.signCol}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
+      ${head(s.headline, x.accent, { maxh: 180, maxfs: 84, minfs: 44, target: 952, cls: 'left bebas' })}
+      ${body(s.body, x.accent, 'left')}
+    </div>`,
+  note: (s, c, x) => `
+    ${artBand(x.art, 560, x.glow, { d: 420 })}
+    <div class="stack" style="bottom:92px">
+      ${tag(s.kicker && !/^(going around|viral claim)$/i.test(s.kicker) ? s.kicker : 'claim check')}
+      ${head(s.headline, x.accent, { maxh: 290, maxfs: 104, minfs: 54 })}
+      <div class="verdict" style="color:${(VERDICT[s.verdict] ?? VERDICT.context)[1]}">${(VERDICT[s.verdict] ?? VERDICT.context)[0]}</div>
+      ${body(s.body, x.accent)}
+    </div>`,
+  list: (s, c, x) => listLike(s, x, false),
+  table: (s, c, x) => listLike(s, x, true),
+  end: (s, c, x) => `
+    ${artBand(x.art, 840, x.glow, { d: 600 })}
+    <div class="stack" style="bottom:100px">
+      ${divider()}
+      ${head(s.headline, x.accent, { maxh: s.body ? 290 : 370, maxfs: 130 })}
+      ${s.body ? `<p class="deck">${rich(s.body, x.accent)}</p>` : ''}
+    </div>`,
+}
+function listLike(s, x, numbered) {
+  const rows = (s.rows ?? []).map((r, k) => {
+    const sign = r.sign ?? SIGNS.find((g) => (r.label ?? '').toLowerCase() === g)
+    const col = sign ? SIGN_COLORS[sign].color : PLANETS.includes(r.color) ? C.gold : SIGN_COLORS[r.color]?.color ?? C.gold
+    return `<div class="row">${numbered ? `<span class="num">${esc(r.rank ?? k + 1)}</span>` : ''}<span class="nm" style="color:${col}">${esc(r.label)}</span><span class="tx">${rich(sentence(r.text ?? ''), x.accent)}${r.value ? ` <em>· ${esc(r.value)}</em>` : ''}</span></div>`
+  }).join('')
+  return `
+    ${artBand(x.art, 640, x.glow, { d: 440, cy: 300 })}
+    <div class="stack" style="bottom:92px">
+      ${s.kicker ? tag(s.kicker) : divider()}
+      ${s.headline ? head(s.headline, x.accent, { maxh: 210, maxfs: 116, minfs: 56 }) : ''}
+      <div class="rows ${numbered ? 'numbered' : ''}">${rows}</div>
+    </div>`
 }
 export const LAYOUT_NAMES = Object.keys(LAYOUTS)
-
-function defaultArt(s, c) {
-  const sign = s.sign ?? c.signs?.[0]
-  if (s.layout === 'rank' && s.sign) return { kind: 'aura', sign: s.sign }
-  if (sign && ['callout', 'cover', 'end'].includes(s.layout)) return { kind: 'aura', sign }
-  return null
-}
 
 export function slideHtml(c, i) {
   const s = c.slides[i]
   const total = c.slides.length
   const layout = LAYOUTS[s.layout] ? s.layout : 'story'
-  const seed = (hashString(c.id) + i * 7919) >>> 0
-  const accent = accentOf(s, c)
   const sign = s.sign ?? c.signs?.[0]
-  const signCol = SIGN_COLORS[s.sign]?.color ?? colorOf(sign ?? 'violet')
-  // figure → the soft aura photo; the old 'stars'/'wheel' art fall back to pure light.
-  let a = s.art ?? defaultArt(s, c)
-  if (a?.kind === 'figure') a = { ...a, kind: 'aura' }
-  if (a?.kind === 'stars') a = null
-  const out = LAYOUTS[layout](s, c, { art: a, art2: s.art2, accent, signCol, seed })
-  let cols = auraColors(a, signCol)
-  if (layout === 'rank') cols = [signCol, colorOf(s.sign), '#3a1f7a']
-  if (out.two) {
-    const c2 = auraColors(s.art2, signCol)
-    cols = [cols[0], c2[0], '#3a1f7a']
-  }
-  const field = out.two
-    ? auraField([cols[0], cols[0], cols[2]], seed, [28, 34], .8) + auraField([cols[1], cols[1], cols[2]], seed + 1, [72, 34], .8)
-    : auraField(cols, seed, out.at)
+  const signCol = SIGN_COLORS[s.sign ?? sign]?.color ?? C.violet
+  const accent = s.accent === 'gold' ? C.gold : SIGN_COLORS[s.accent]?.color ?? signCol
+  let art = resolveArt(s.art, s, c)
+  // Covers lead with a real photograph of what the headline names.
+  if (i === 0 && art.kind === 'aura') { const named = subjectFromText(s.headline ?? ''); if (named) art = named }
+  const glow = art.kind === 'aura' ? SIGN_COLORS[art.sign]?.color ?? signCol : signCol
+  let art2 = s.art2 ? resolveArt(s.art2, s, c) : null
+  if (i === 0 && art2?.kind === 'aura' && art.kind !== 'aura') art2 = null
+  const html = LAYOUTS[layout](s, c, { accent, art, art2, glow, signCol })
+  const cover = i === 0
 
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${fonts()}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:${W}px;height:${H}px;overflow:hidden;background:#07041a}
-.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;color:#f3ebdd;background:#07041a}
-.aura{position:absolute;inset:-200px;filter:blur(70px) saturate(1.15)}
-.blob{position:absolute;transform:translate(-50%,-50%);border-radius:50%;mix-blend-mode:screen}
-.veil{position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 100%, rgba(7,4,26,.78) 0%, rgba(7,4,26,.35) 45%, rgba(7,4,26,0) 75%)}
-.grain{position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>")}
-/* subject */
-.stage{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:center}
-.subj{position:relative}
-.subj .bloom,.subj .body{position:absolute;inset:0}
-.subj .bloom{filter:blur(60px) saturate(1.5) brightness(1.3);opacity:1;transform:scale(1.3)}
-.subj .body{filter:blur(2.2px) saturate(1.1) brightness(1.04);
-  -webkit-mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%);mask-image:radial-gradient(closest-side, #000 54%, rgba(0,0,0,.55) 60%, transparent 68%)}
-.subj.wide .body{-webkit-mask-image:radial-gradient(closest-side, #000 72%, transparent 99%);mask-image:radial-gradient(closest-side, #000 72%, transparent 99%);filter:blur(2.6px) saturate(1.1)}
-.subj .bloom{-webkit-mask-image:radial-gradient(closest-side, #000 40%, transparent 100%);mask-image:radial-gradient(closest-side, #000 40%, transparent 100%)}
-.subj .haze{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 38% 32%, rgba(255,250,240,.35), rgba(255,250,240,0) 60%);mix-blend-mode:screen;filter:blur(8px)}
-.subj svg{width:100%;height:100%}
-.figure{position:relative;overflow:hidden;border-radius:50%;
-  -webkit-mask-image:radial-gradient(closest-side, #000 35%, rgba(0,0,0,.5) 65%, transparent 100%);mask-image:radial-gradient(closest-side, #000 35%, rgba(0,0,0,.5) 65%, transparent 100%)}
-.figure img{position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(7px) saturate(1.25) brightness(1.1)}
-.inset{position:absolute;right:150px;bottom:20px;opacity:.95}
-.giant{position:absolute;left:-40px;right:-40px;top:150px;text-align:center;font:italic 500 300px/1 'EB Garamond',serif;letter-spacing:-.04em;
-  color:rgba(255,244,230,.16);filter:blur(1.5px);white-space:nowrap}
-.labels{position:absolute;top:780px;left:0;right:0;display:flex;justify-content:space-around;font:400 22px 'Space Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:rgba(243,235,221,.7)}
-/* chrome: just a quiet mark */
-.mark{position:absolute;top:56px;left:0;right:0;text-align:center;font:400 20px 'Space Mono',monospace;letter-spacing:.34em;color:rgba(243,235,221,.55);display:flex;justify-content:center;gap:10px;align-items:center}
-.count{position:absolute;top:58px;right:64px;font:400 18px 'Space Mono',monospace;letter-spacing:.14em;color:rgba(243,235,221,.4)}
-/* type */
-.txt{position:absolute;left:84px;right:84px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.txt.bottom{bottom:110px}
-.txt.top{top:150px}
-.head{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;line-height:1.04;letter-spacing:-.012em;color:#f6eee1;text-wrap:balance;width:100%;
-  text-shadow:0 2px 30px rgba(7,4,26,.55)}
-.center{text-align:center}
-em{font-style:inherit;color:${accent};text-shadow:0 0 40px ${accent}aa,0 0 12px ${accent}66}
-mark{background:none;color:${accent};text-shadow:0 0 40px ${accent}aa}
-b{font-weight:500;color:#f6eee1}
-.kicker{font:400 20px 'Space Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:rgba(243,235,221,.62);margin-bottom:26px}
-.dek,.body{font:400 34px/1.45 'Inter',sans-serif;color:rgba(243,235,221,.72);margin-top:26px;width:100%;text-wrap:pretty}
-.body.bone{color:#f3ebdd}
-.hook{font:italic 400 46px/1.25 'EB Garamond',serif;color:#f6eee1;margin-top:18px;width:100%;text-wrap:balance}
-.quote{font-weight:400}
-/* rank */
-.rank-num{position:absolute;top:120px;left:0;right:0;text-align:center;font:italic 400 220px/1 'EB Garamond',serif;color:rgba(255,244,230,.14);filter:blur(.5px)}
-.sign{font:italic 500 120px/1 'EB Garamond',serif;letter-spacing:-.01em;text-shadow:0 0 50px currentColor}
-.rank .kicker{margin:14px 0 0}
-/* note */
-.note{position:absolute;left:84px;right:84px;bottom:110px;padding:44px 48px;border-radius:44px;background:rgba(20,10,46,.42);backdrop-filter:blur(24px)}
-.note-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.note-title{font:italic 500 44px 'EB Garamond',serif;display:flex;gap:12px;align-items:center}
-.verdict{font:400 20px 'Space Mono',monospace;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 0 20px currentColor}
-.note .body{text-align:left;margin-top:14px}
-/* rows */
-.rows{position:absolute;left:96px;right:96px;top:560px;bottom:110px;display:flex;flex-direction:column;justify-content:center;gap:40px}
-.row{text-align:left}
-.row-l{font:italic 500 46px/1.1 'EB Garamond',serif;text-shadow:0 0 30px currentColor}
-.row-t{font:400 32px/1.35 'Inter',sans-serif;color:rgba(243,235,221,.75);margin-top:6px}
-.trow{display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start}
-.tnum{font:italic 400 64px/1 'EB Garamond',serif;text-shadow:0 0 30px currentColor}
-.tval{font:400 20px 'Space Mono',monospace;letter-spacing:.2em;text-transform:uppercase;opacity:.8;text-shadow:none}
-.endmark{margin-top:44px;display:flex;gap:12px;align-items:center;font:400 22px 'Space Mono',monospace;letter-spacing:.34em;color:rgba(243,235,221,.7)}
-</style></head><body><div class="frame${layout === 'rank' ? ' rank' : ''}">
-${field}
-${dust(W, H, seed)}
-<div class="veil"></div>
-${out.html}
+html,body{width:${W}px;height:${H}px;overflow:hidden;background:${C.floor}}
+.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;background:${C.floor};color:${C.bone};-webkit-font-smoothing:antialiased}
+.band{position:absolute;left:0;right:0;top:0;overflow:hidden}
+.ph{position:absolute;background-size:cover;background-position:center;mix-blend-mode:screen;
+  -webkit-mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%)}
+.halo{position:absolute;border-radius:50%;filter:blur(42px);mix-blend-mode:screen}
+.aura-img{position:absolute;background-size:122%;background-position:center;mix-blend-mode:screen;filter:saturate(1.25) brightness(1.05) blur(1px);
+  -webkit-mask-image:radial-gradient(closest-side, #000 52%, transparent 100%);mask-image:radial-gradient(closest-side, #000 52%, transparent 100%)}
+.neb{position:absolute;inset:-30px;background-size:cover;background-position:center 30%;filter:saturate(1.1) brightness(.8)}
+.fade{position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(180deg, ${C.floor}00 0%, ${C.floor}d0 58%, ${C.floor} 100%)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.stack{position:absolute;left:70px;right:70px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.stack.left{align-items:flex-start;text-align:left;left:64px;right:64px}
+.div{display:flex;align-items:center;gap:20px;width:100%;margin-bottom:26px}
+.div i{flex:1;height:3px;background:linear-gradient(90deg, rgba(242,199,92,0), #f2c75c)}
+.div i:last-child{background:linear-gradient(270deg, rgba(242,199,92,0), #f2c75c)}
+.mark{font:400 22px 'Space Mono',monospace;letter-spacing:.3em;color:rgba(239,230,214,.85);display:flex;gap:10px;align-items:center;text-transform:lowercase}
+.tag{font:400 26px/1 Anton;letter-spacing:.06em;text-transform:uppercase;color:${C.floor};background:${C.bone};padding:9px 16px 8px;margin-bottom:28px}
+.hd{font-family:Anton;text-transform:uppercase;color:${C.bone};line-height:.98;letter-spacing:-.005em;width:100%}
+.hd .l{display:block;white-space:nowrap}
+.hd.left{text-align:left}
+.hd.bebas{font-family:Bebas;line-height:1;letter-spacing:.01em}
+.verdict{font:400 112px/1 Anton;text-transform:uppercase;margin-top:16px}
+.deck{font:400 44px/1.05 Bebas;letter-spacing:.04em;text-transform:uppercase;color:${C.mist};margin-top:22px}
+.bd{font:500 38px/1.36 Archivo, sans-serif;color:${C.mist};margin-top:24px;max-width:940px}
+.bd.left{text-align:left}
+.bd b,.deck b{color:${C.bone};font-weight:600}
+.rank{font:400 76px/1 Anton;color:${C.gold}}
+.sign{font:400 176px/.95 Anton;text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap;margin:4px 0 16px}
+.rows{width:100%;margin-top:34px;display:flex;flex-direction:column;gap:26px}
+.row{display:grid;grid-template-columns:330px 1fr;gap:26px;align-items:baseline;text-align:left}
+.rows.numbered .row{grid-template-columns:62px 300px 1fr}
+.num{font:400 54px/1 Anton;color:${C.gold}}
+.nm{font:400 56px/1 Anton;text-transform:uppercase;text-align:right}
+.rows.numbered .nm{text-align:left}
+.tx{font:500 32px/1.25 Archivo, sans-serif;color:${C.bone}}
+.tx em{font-style:normal;color:${C.mist}}
+.chrome{position:absolute;top:52px;font:400 20px 'Space Mono',monospace;letter-spacing:.24em;color:rgba(239,230,214,.7);display:flex;gap:8px;align-items:center;z-index:5}
+.chrome.l{left:64px}.chrome.r{right:64px;letter-spacing:.12em}
+</style></head><body><div class="frame">
+${html}
 <div class="grain"></div>
-<div class="mark">align ${SPARK('#f2c75c', 16)}</div>
-${total > 1 ? `<div class="count">${i + 1}/${total}</div>` : ''}
+${cover ? '' : `<div class="chrome l">align ${STAR(C.gold, 16)}</div><div class="chrome r">${i + 1}/${total}</div>`}
 </div>
 <script>
 (async () => {
   await document.fonts.ready
-  for (const el of document.querySelectorAll('.fit')) {
-    const max = +el.dataset.max, big = +el.dataset.big, small = +el.dataset.small
-    let s = big
-    for (; s > small; s -= 2) { el.style.fontSize = s + 'px'; if (el.scrollHeight <= max && el.scrollWidth <= el.clientWidth + 2) break }
-    el.style.fontSize = s + 'px'
+  // Balance each headline into lines so the widest fills the target width,
+  // and size it: the biggest font where every line fits the box.
+  for (const el of document.querySelectorAll('.hd')) {
+    const target = +el.dataset.target, maxh = +el.dataset.maxh, maxfs = +el.dataset.maxfs, minfs = +el.dataset.minfs
+    const words = []
+    let glue = false
+    const walk = (node, wrap) => {
+      for (const n of node.childNodes) {
+        if (n.nodeType === 3) {
+          const t = n.textContent
+          const parts = t.split(/[ \\n\\t]+/).filter(Boolean)
+          // Punctuation hugging the previous span ("*stuck*.") stays on that word.
+          if (parts.length && !/^[ \\n\\t]/.test(t) && words.length && glue) { words[words.length - 1] += parts.shift() }
+          parts.forEach((w) => words.push(wrap ? wrap[0] + w + wrap[1] : w))
+          glue = !/[ \\n\\t]$/.test(t)
+        } else { const o = n.outerHTML; const cut = o.indexOf('>') + 1; walk(n, [o.slice(0, cut), '</' + n.tagName.toLowerCase() + '>']); glue = true }
+      }
+    }
+    walk(el, null)
+    const meas = document.createElement('span')
+    meas.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:100px'
+    el.appendChild(meas)
+    const wid = words.map((w) => { meas.innerHTML = w; return meas.getBoundingClientRect().width })
+    meas.innerHTML = 'a&nbsp;a'; const two = meas.getBoundingClientRect().width; meas.innerHTML = 'aa'; const sp = two - meas.getBoundingClientRect().width
+    meas.remove()
+    const N = words.length
+    const lineW = (a, b) => { let s = sp * (b - a - 1); for (let k = a; k < b; k++) s += wid[k]; return s }
+    const split = (n) => {
+      if (n > N) return null
+      const memo = new Map()
+      const go = (start, k) => {
+        const key = start * 10 + k; if (memo.has(key)) return memo.get(key)
+        let best
+        if (k === 1) best = { w: lineW(start, N), cuts: [] }
+        else for (let e = start + 1; e <= N - k + 1; e++) {
+          const r = go(e, k - 1); const w = Math.max(lineW(start, e), r.w)
+          if (!best || w < best.w - 0.01) best = { w, cuts: [e, ...r.cuts] }
+        }
+        memo.set(key, best); return best
+      }
+      return go(0, n)
+    }
+    const lh = 0.98
+    let pick = null
+    for (let n = 1; n <= 5; n++) {
+      const r = split(n); if (!r) break
+      let fs = Math.min(maxfs, 100 * target / r.w)
+      if (n * fs * lh > maxh) fs = maxh / (n * lh)
+      // No stranded short line: every line at least 45% of the widest.
+      const cs = [0, ...r.cuts, N]; let lo = Infinity
+      for (let k = 0; k < n; k++) lo = Math.min(lo, lineW(cs[k], cs[k + 1]))
+      if (n > 1 && lo / r.w < 0.45 && pick) continue
+      if (!pick || fs > pick.fs + 3) pick = { n, fs, cuts: r.cuts }
+    }
+    const cuts = [0, ...pick.cuts, N]
+    el.innerHTML = cuts.slice(0, -1).map((a, k) => '<span class="l">' + words.slice(a, cuts[k + 1]).join(' ') + '</span>').join('')
+    el.style.fontSize = Math.max(minfs, pick.fs).toFixed(1) + 'px'
   }
-  // Lists: rows start under the heading, and shrink if they run long.
-  const rows = document.querySelector('.fit-rows'), top = document.querySelector('.txt.top')
-  if (rows && top) {
-    rows.style.top = (top.getBoundingClientRect().bottom + 50) + 'px'
-    let f = 32, g = 40
-    while (rows.scrollHeight > rows.clientHeight + 2 && f > 22) {
-      f -= 1; g = Math.max(14, g - 3); rows.style.gap = g + 'px'
-      rows.querySelectorAll('.row-t').forEach((r) => (r.style.fontSize = f + 'px'))
-      rows.querySelectorAll('.row-l').forEach((r) => (r.style.fontSize = (f + 12) + 'px'))
+  for (const el of document.querySelectorAll('[data-fitw]')) {
+    let f = 176; el.style.fontSize = f + 'px'
+    while (el.scrollWidth > +el.dataset.fitw && f > 80) { f -= 4; el.style.fontSize = f + 'px' }
+  }
+  const stack = document.querySelector('.stack'), rows = document.querySelector('.rows')
+  if (rows) {
+    let f = 32, n = 56, g = 26
+    while (stack.getBoundingClientRect().top < 300 && f > 24) {
+      f -= 1; n -= 2; g = Math.max(12, g - 2); rows.style.gap = g + 'px'
+      rows.querySelectorAll('.tx').forEach((e) => (e.style.fontSize = f + 'px'))
+      rows.querySelectorAll('.nm').forEach((e) => (e.style.fontSize = n + 'px'))
     }
   }
-  // Keep bottom text clear of the subject: if the text block is tall, fade the subject a little.
-  const txt = document.querySelector('.txt.bottom'), stage = document.querySelector('.stage')
-  if (txt && stage) {
-    const overlap = stage.getBoundingClientRect().bottom - txt.getBoundingClientRect().top
-    if (overlap > 120) stage.style.transform = 'translateY(' + (-Math.min(overlap - 120, 160)) + 'px)'
-  }
-  const frame = document.querySelector('.frame').getBoundingClientRect()
-  window.__overflow = [...document.querySelectorAll('.head,.body,.hook,.dek,.row')].filter((e) => e.getBoundingClientRect().bottom > frame.bottom - 40).map((e) => e.className)
+  const bd = document.querySelector('.bd'); let bf = 38
+  while (bd && stack.getBoundingClientRect().top < 360 && bf > 28) { bf -= 1; bd.style.fontSize = bf + 'px' }
+  // Keep the stack clear of the bottom edge: lift it if needed.
+  const over = stack.getBoundingClientRect().bottom - ${H - 64}
+  window.__overflow = stack.getBoundingClientRect().top < 130 ? ['stack too tall'] : []
   window.__ready = true
 })()
 </script></body></html>`

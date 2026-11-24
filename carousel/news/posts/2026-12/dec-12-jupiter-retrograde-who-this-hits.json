@@ -1,144 +1,144 @@
 {
- "id": "dec-12-jupiter-retrograde-who-this-hits",
- "format": "who-this-hits",
- "date": "2026-12-12",
- "series": "sky news",
- "signs": [
-  "leo",
-  "aquarius",
-  "scorpio",
-  "taurus",
-  "aries"
- ],
- "facts": [
-  "2026-12-12 jupiter stations retrograde leo",
-  "2026-12-12 neptune stations direct aries"
- ],
- "caption": "find your sign. tag the one who is in tier one. jupiter stations retrograde at 27° leo tonight, 7:59 pm et (00:59 utc dec 13). neptune turns direct at 1.6° aries earlier today.",
- "hashtags": [
-  "jupiterretrograde",
-  "leo",
-  "neptune",
-  "astrology",
-  "zodiac",
-  "whothishits"
- ],
- "slides": [
-  {
-   "layout": "breaking",
-   "headline": "*jupiter* turns backwards in leo tonight. here is who feels it",
-   "art": {
-    "kind": "planet",
-    "body": "jupiter",
-    "sign": "leo",
-    "rx": true
-   },
-   "word": "retrograde"
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "kicker": "dec 12 · 7:59 pm et · 27° leo",
-   "headline": "*jupiter* seems to stop, then slide back",
-   "body": "earth is catching up to jupiter, so it looks like it reverses, and it stays that way into the new year. neptune turns direct in aries today.",
-   "art": {
-    "kind": "planet",
-    "body": "jupiter",
-    "sign": "leo",
-    "rx": true,
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "list",
-   "kicker": "hits hardest",
-   "headline": "*tier one*",
-   "rows": [
+  "id": "dec-12-jupiter-retrograde-who-this-hits",
+  "format": "who-this-hits",
+  "date": "2026-12-12",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "aquarius",
+    "scorpio",
+    "taurus",
+    "aries"
+  ],
+  "facts": [
+    "2026-12-12 jupiter stations retrograde leo",
+    "2026-12-12 neptune stations direct aries"
+  ],
+  "caption": "find your sign. tag the one who is in tier one. jupiter stations retrograde at 27° leo tonight, 7:59 pm et (00:59 utc dec 13). neptune turns direct at 1.6° aries earlier today.",
+  "hashtags": [
+    "jupiterretrograde",
+    "leo",
+    "neptune",
+    "astrology",
+    "zodiac",
+    "whothishits"
+  ],
+  "slides": [
     {
-     "sign": "leo",
-     "label": "leo",
-     "text": "it's your sign. less show, more substance."
+      "layout": "breaking",
+      "headline": "*jupiter* turns retrograde in *leo* at 7:59 pm. *3 signs* feel it most",
+      "art": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo",
+        "rx": true
+      },
+      "word": "retrograde"
     },
     {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "partners slow down. ask, do not assume."
+      "layout": "story",
+      "sign": "leo",
+      "kicker": "dec 12 · 7:59 pm et · 27° leo",
+      "headline": "*jupiter* seems to stop, then slide back",
+      "body": "earth is catching up to jupiter, so it looks like it reverses, and it stays that way into the new year. neptune turns direct in aries today.",
+      "art": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo",
+        "rx": true,
+        "zoom": 1.2
+      }
     },
     {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "career plans get a second draft."
+      "layout": "list",
+      "kicker": "hits hardest",
+      "headline": "*tier one*",
+      "rows": [
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "it's your sign. less show, more substance."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "partners slow down. ask, do not assume."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "career plans get a second draft."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "feels it",
+      "headline": "*tier two*",
+      "rows": [
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "home stuff resurfaces. deal with it kindly."
+        },
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "an old flame looks warmer than it was."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "travel plans want rechecking."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "shared money talk, finally."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "kicker": "background noise",
+      "headline": "*tier three*",
+      "rows": [
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "say less, mean more."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "count what you spend on others."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "rest is not a reward. take it."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "fewer group chats, closer friends."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "routines first, romance second."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "leo",
+      "headline": "growth that slows down is still *growth*",
+      "body": "reread the promise before you make it bigger.",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "feels it",
-   "headline": "*tier two*",
-   "rows": [
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "home stuff resurfaces. deal with it kindly."
-    },
-    {
-     "sign": "aries",
-     "label": "aries",
-     "text": "an old flame looks warmer than it was."
-    },
-    {
-     "sign": "sagittarius",
-     "label": "sagittarius",
-     "text": "travel plans want rechecking."
-    },
-    {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "shared money talk, finally."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "background noise",
-   "headline": "*tier three*",
-   "rows": [
-    {
-     "sign": "gemini",
-     "label": "gemini",
-     "text": "say less, mean more."
-    },
-    {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "count what you spend on others."
-    },
-    {
-     "sign": "virgo",
-     "label": "virgo",
-     "text": "rest is not a reward. take it."
-    },
-    {
-     "sign": "libra",
-     "label": "libra",
-     "text": "fewer group chats, closer friends."
-    },
-    {
-     "sign": "pisces",
-     "label": "pisces",
-     "text": "routines first, romance second."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "sign": "leo",
-   "headline": "growth that slows down is still *growth*",
-   "body": "reread the promise before you make it bigger.",
-   "art": {
-    "kind": "figure",
-    "sign": "leo"
-   }
-  }
- ]
+  ]
 }

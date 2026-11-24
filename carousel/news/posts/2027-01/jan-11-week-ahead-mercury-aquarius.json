@@ -1,102 +1,102 @@
 {
- "id": "jan-11-week-ahead-mercury-aquarius",
- "format": "sky-roundup",
- "date": "2027-01-11",
- "series": "sky news",
- "signs": [
-  "aquarius",
-  "sagittarius"
- ],
- "facts": [
-  "2027-01-11 venus sextile pluto",
-  "2027-01-13 mercury enters aquarius",
-  "2027-01-15 mercury conjunction pluto",
-  "2027-01-16 venus square mars",
-  "2027-01-15 uranus sextile neptune"
- ],
- "caption": "the week ahead, jan 11 to jan 17: mercury in aquarius, mercury meets pluto, venus squares a retrograde mars.",
- "hashtags": [
-  "weekahead",
-  "mercury",
-  "aquarius",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "this week, your *texts* get cooler and your crush gets louder",
-   "art": {
-    "kind": "wheel",
-    "signs": [
-     "aquarius",
-     "sagittarius",
-     "virgo"
-    ],
-    "tint": "mercury"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "mon jan 11 · venus sextile pluto",
-   "headline": "*venus* gets a little intense, in a good way",
-   "body": "astrologers read it as honest depth. a night for the real conversation, not the third rerun.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "pluto"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aquarius",
-   "kicker": "wed jan 13",
-   "headline": "*mercury* enters aquarius: think in big ideas",
-   "body": "read it as detached, inventive talk. great for ideas, rough on feelings.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "aquarius"
-   },
-   "inset": {
-    "kind": "figure",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aquarius",
-   "kicker": "fri jan 15",
-   "headline": "mercury meets *pluto*: the conversation goes deep",
-   "body": "astrologers read it as the truth surfacing. ask, then listen.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "pluto"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "kicker": "sat jan 16",
-   "headline": "*venus* squares a retrograde mars",
-   "body": "want and timing disagree. read it as a weekend to flirt, not force. the slow answer is still an answer.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "mars"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "cool head, *warm heart*. you need both.",
-   "body": "save this for wednesday, when mercury changes sign.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "aquarius"
-   }
-  }
- ]
+  "id": "jan-11-week-ahead-mercury-aquarius",
+  "format": "sky-roundup",
+  "date": "2027-01-11",
+  "series": "sky news",
+  "signs": [
+    "aquarius",
+    "sagittarius"
+  ],
+  "facts": [
+    "2027-01-11 venus sextile pluto",
+    "2027-01-13 mercury enters aquarius",
+    "2027-01-15 mercury conjunction pluto",
+    "2027-01-16 venus square mars",
+    "2027-01-15 uranus sextile neptune"
+  ],
+  "caption": "the week ahead, jan 11 to jan 17: mercury in aquarius, mercury meets pluto, venus squares a retrograde mars.",
+  "hashtags": [
+    "weekahead",
+    "mercury",
+    "aquarius",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*mercury* enters *aquarius* wednesday. your *texts* get cooler",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "aquarius",
+          "sagittarius",
+          "virgo"
+        ],
+        "tint": "mercury"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "mon jan 11 · venus sextile pluto",
+      "headline": "*venus* gets a little intense, in a good way",
+      "body": "astrologers read it as honest depth. a night for the real conversation, not the third rerun.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "pluto"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "kicker": "wed jan 13",
+      "headline": "*mercury* enters aquarius: think in big ideas",
+      "body": "read it as detached, inventive talk. great for ideas, rough on feelings.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "aquarius"
+      },
+      "inset": {
+        "kind": "figure",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "kicker": "fri jan 15",
+      "headline": "mercury meets *pluto*: the conversation goes deep",
+      "body": "astrologers read it as the truth surfacing. ask, then listen.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "pluto"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "sat jan 16",
+      "headline": "*venus* squares a retrograde mars",
+      "body": "want and timing disagree. read it as a weekend to flirt, not force. the slow answer is still an answer.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "cool head, *warm heart*. you need both.",
+      "body": "save this for wednesday, when mercury changes sign.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "aquarius"
+      }
+    }
+  ]
 }

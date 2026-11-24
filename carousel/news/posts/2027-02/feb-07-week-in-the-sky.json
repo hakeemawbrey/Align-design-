@@ -1,100 +1,100 @@
 {
- "series": "sky news",
- "id": "feb-07-week-in-the-sky",
- "format": "sky-roundup",
- "date": "2027-02-07",
- "signs": [
-  "aquarius",
-  "capricorn",
-  "pisces"
- ],
- "caption": "swipe for the week the sky had. the one to watch: mercury turns retrograde tuesday, feb 9.",
- "hashtags": [
-  "astrology",
-  "eclipse",
-  "venus",
-  "mercuryretrograde",
-  "zodiac"
- ],
- "facts": [
-  "2027-02-02 mercury square uranus",
-  "2027-02-03 venus enters capricorn",
-  "2027-02-06 solar eclipse aquarius",
-  "2027-02-07 venus trine mars",
-  "2027-02-09 mercury stations retrograde pisces"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "what just happened in the *sky* this week?",
-   "art": {
-    "kind": "wheel",
-    "signs": [
-     "aquarius",
-     "capricorn",
-     "pisces",
-     "virgo"
-    ],
-    "tint": "violet"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 3",
-   "sign": "capricorn",
-   "headline": "*venus* went into capricorn. romance got a calendar",
-   "body": "until march 1. read it as: the person who follows up is the person who's interested.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 6",
-   "sign": "aquarius",
-   "headline": "the annular *eclipse* in aquarius drew its ring",
-   "body": "a new moon reset. if you started one honest thing this week, that was the move.",
-   "art": {
-    "kind": "eclipse",
-    "type": "solar",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 7",
-   "sign": "virgo",
-   "headline": "*venus* and mars got along, for once",
-   "body": "astrologers read a trine as easy flow between wanting and doing. a good day to ask.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "mars"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "the one to watch",
-   "sign": "pisces",
-   "headline": "tuesday: *mercury* turns retrograde in pisces",
-   "body": "read the next three weeks as re-dos. save your drafts.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "pisces",
-    "rx": true
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "eclipses close doors. close yours *politely*.",
-   "body": "save this for tuesday.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.04
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-07-week-in-the-sky",
+  "format": "sky-roundup",
+  "date": "2027-02-07",
+  "signs": [
+    "aquarius",
+    "capricorn",
+    "pisces"
+  ],
+  "caption": "swipe for the week the sky had. the one to watch: mercury turns retrograde tuesday, feb 9.",
+  "hashtags": [
+    "astrology",
+    "eclipse",
+    "venus",
+    "mercuryretrograde",
+    "zodiac"
+  ],
+  "facts": [
+    "2027-02-02 mercury square uranus",
+    "2027-02-03 venus enters capricorn",
+    "2027-02-06 solar eclipse aquarius",
+    "2027-02-07 venus trine mars",
+    "2027-02-09 mercury stations retrograde pisces"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "an *eclipse* and *venus* trine mars: what *just happened* this week",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "aquarius",
+          "capricorn",
+          "pisces",
+          "virgo"
+        ],
+        "tint": "violet"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 3",
+      "sign": "capricorn",
+      "headline": "*venus* went into capricorn. romance got a calendar",
+      "body": "until march 1. read it as: the person who follows up is the person who's interested.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 6",
+      "sign": "aquarius",
+      "headline": "the annular *eclipse* in aquarius drew its ring",
+      "body": "a new moon reset. if you started one honest thing this week, that was the move.",
+      "art": {
+        "kind": "eclipse",
+        "type": "solar",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 7",
+      "sign": "virgo",
+      "headline": "*venus* and mars got along, for once",
+      "body": "astrologers read a trine as easy flow between wanting and doing. a good day to ask.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "the one to watch",
+      "sign": "pisces",
+      "headline": "tuesday: *mercury* turns retrograde in pisces",
+      "body": "read the next three weeks as re-dos. save your drafts.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces",
+        "rx": true
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "eclipses close doors. close yours *politely*.",
+      "body": "save this for tuesday.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.04
+      }
+    }
+  ]
 }

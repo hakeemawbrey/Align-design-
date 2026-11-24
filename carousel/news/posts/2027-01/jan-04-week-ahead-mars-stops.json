@@ -1,96 +1,96 @@
 {
- "id": "jan-04-week-ahead-mars-stops",
- "format": "sky-roundup",
- "date": "2027-01-04",
- "series": "sky news",
- "signs": [
-  "virgo",
-  "capricorn"
- ],
- "facts": [
-  "2027-01-07 new moon capricorn",
-  "2027-01-07 venus enters sagittarius",
-  "2027-01-08 venus trine neptune",
-  "2027-01-09 venus opposition uranus",
-  "2027-01-10 mars stations retrograde virgo"
- ],
- "caption": "the week ahead: new moon, venus changes sign, mars stops. jan 4 to jan 10.",
- "hashtags": [
-  "astrology",
-  "weekahead",
-  "marsretrograde",
-  "newmoon",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "this week, *mars* hits the brakes. here's everything else",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "virgo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "capricorn",
-   "kicker": "thu jan 7",
-   "headline": "new moon in *capricorn*: start one serious thing",
-   "body": "astrologers read capricorn as structure. one plan, a real date on it.",
-   "art": {
-    "kind": "moon",
-    "phase": 0,
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "thu jan 7",
-   "headline": "*venus* leaves scorpio for sagittarius",
-   "body": "from secret feelings to said-out-loud ones. read it as flirting that sounds like a dare.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "fri · sat",
-   "headline": "venus trines neptune, then opposes *uranus*",
-   "body": "dreamy friday, surprising saturday. good for a date you didn't plan. bad for deciding forever.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "uranus"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "kicker": "sun jan 10",
-   "headline": "*mars* stations retrograde in *virgo*",
-   "body": "mars appears to stop, then slide back as earth overtakes it. read it as redo season, into spring.",
-   "art": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "virgo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "start on thursday. *slow down* on sunday.",
-   "body": "tomorrow: the signs whose january changes most.",
-   "art": {
-    "kind": "moon",
-    "phase": 0,
-    "sign": "capricorn"
-   }
-  }
- ]
+  "id": "jan-04-week-ahead-mars-stops",
+  "format": "sky-roundup",
+  "date": "2027-01-04",
+  "series": "sky news",
+  "signs": [
+    "virgo",
+    "capricorn"
+  ],
+  "facts": [
+    "2027-01-07 new moon capricorn",
+    "2027-01-07 venus enters sagittarius",
+    "2027-01-08 venus trine neptune",
+    "2027-01-09 venus opposition uranus",
+    "2027-01-10 mars stations retrograde virgo"
+  ],
+  "caption": "the week ahead: new moon, venus changes sign, mars stops. jan 4 to jan 10.",
+  "hashtags": [
+    "astrology",
+    "weekahead",
+    "marsretrograde",
+    "newmoon",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*mars* stops and turns retrograde *sunday*. plus a *new moon* thursday",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "capricorn",
+      "kicker": "thu jan 7",
+      "headline": "new moon in *capricorn*: start one serious thing",
+      "body": "astrologers read capricorn as structure. one plan, a real date on it.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "thu jan 7",
+      "headline": "*venus* leaves scorpio for sagittarius",
+      "body": "from secret feelings to said-out-loud ones. read it as flirting that sounds like a dare.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "fri · sat",
+      "headline": "venus trines neptune, then opposes *uranus*",
+      "body": "dreamy friday, surprising saturday. good for a date you didn't plan. bad for deciding forever.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "uranus"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "sun jan 10",
+      "headline": "*mars* stations retrograde in *virgo*",
+      "body": "mars appears to stop, then slide back as earth overtakes it. read it as redo season, into spring.",
+      "art": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "start on thursday. *slow down* on sunday.",
+      "body": "tomorrow: the signs whose january changes most.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "capricorn"
+      }
+    }
+  ]
 }

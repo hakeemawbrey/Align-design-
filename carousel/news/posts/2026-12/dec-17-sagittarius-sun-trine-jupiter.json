@@ -1,68 +1,68 @@
 {
- "id": "dec-17-sagittarius-sun-trine-jupiter",
- "format": "sign-callout",
- "date": "2026-12-17",
- "series": "sky news",
- "signs": [
-  "sagittarius"
- ],
- "facts": [
-  "2026-12-18 sun trine jupiter",
-  "2026-12-21 sun enters capricorn",
-  "2026-12-25 mercury enters capricorn",
-  "2026-12-17 mercury in sagittarius"
- ],
- "caption": "sagittarius, the sun in your sign trines jupiter tomorrow at 27°. your season ends dec 21. send this to your sagittarius.",
- "hashtags": [
-  "sagittarius",
-  "jupiter",
-  "astrology",
-  "zodiac",
-  "sagittariusseason"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "*sagittarius*, the luckiest day of your season is tomorrow",
-   "art": {
-    "kind": "planet",
-    "body": "sun",
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "sagittarius",
-   "kicker": "dec 18 · sun trine jupiter",
-   "headline": "the sun in your sign and *jupiter* line up in your favour",
-   "body": "both sit at 27°, 120° apart. astrologers read it as warmth and good timing.",
-   "art": {
-    "kind": "figure",
-    "sign": "sagittarius",
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "sagittarius",
-   "kicker": "then dec 21",
-   "headline": "your season ends. say the *big* thing before it does",
-   "body": "mercury stays in your sign until dec 25, so the words are there.",
-   "art": {
-    "kind": "figure",
-    "sign": "sagittarius",
-    "zoom": 1.35
-   }
-  },
-  {
-   "layout": "end",
-   "sign": "sagittarius",
-   "headline": "honest beats cute. *every* time",
-   "body": "the first thing you say should be true.",
-   "art": {
-    "kind": "aura",
-    "sign": "sagittarius"
-   }
-  }
- ]
+  "id": "dec-17-sagittarius-sun-trine-jupiter",
+  "format": "sign-callout",
+  "date": "2026-12-17",
+  "series": "sky news",
+  "signs": [
+    "sagittarius"
+  ],
+  "facts": [
+    "2026-12-18 sun trine jupiter",
+    "2026-12-21 sun enters capricorn",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-17 mercury in sagittarius"
+  ],
+  "caption": "sagittarius, the sun in your sign trines jupiter tomorrow at 27°. your season ends dec 21. send this to your sagittarius.",
+  "hashtags": [
+    "sagittarius",
+    "jupiter",
+    "astrology",
+    "zodiac",
+    "sagittariusseason"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*sagittarius*, your season's *luckiest day* is tomorrow, *4:21 pm*",
+      "art": {
+        "kind": "planet",
+        "body": "sun",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "sagittarius",
+      "kicker": "dec 18 · sun trine jupiter",
+      "headline": "the sun in your sign and *jupiter* line up in your favour",
+      "body": "both sit at 27°, 120° apart. astrologers read it as warmth and good timing.",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "sagittarius",
+      "kicker": "then dec 21",
+      "headline": "your season ends. say the *big* thing before it does",
+      "body": "mercury stays in your sign until dec 25, so the words are there.",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.35
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "sagittarius",
+      "headline": "honest beats cute. *every* time",
+      "body": "the first thing you say should be true.",
+      "art": {
+        "kind": "aura",
+        "sign": "sagittarius"
+      }
+    }
+  ]
 }

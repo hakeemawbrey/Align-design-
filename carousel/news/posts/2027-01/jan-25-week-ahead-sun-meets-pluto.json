@@ -1,104 +1,104 @@
 {
- "id": "jan-25-week-ahead-sun-meets-pluto",
- "format": "sky-roundup",
- "date": "2027-01-25",
- "series": "sky news",
- "signs": [
-  "aquarius",
-  "scorpio"
- ],
- "facts": [
-  "2027-01-25 sun conjunction pluto",
-  "2027-01-27 mercury opposition jupiter",
-  "2027-01-28 venus trine jupiter",
-  "2027-01-29 last quarter scorpio",
-  "2027-01-30 sun sextile saturn",
-  "2027-01-31 mercury enters pisces"
- ],
- "caption": "the sun meets pluto today at 5° aquarius, 08:00 utc. then jupiter week. jan 25 to jan 31.",
- "hashtags": [
-  "weekahead",
-  "pluto",
-  "aquarius",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "split",
-   "labels": [
-    "sun",
-    "pluto"
-   ],
-   "headline": "the *sun* meets *pluto* today. the truth gets the lights on",
-   "art": {
-    "kind": "planet",
-    "body": "sun",
-    "sign": "aquarius"
-   },
-   "art2": {
-    "kind": "planet",
-    "body": "pluto",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "kicker": "wed jan 27",
-   "headline": "mercury opposes *jupiter*: big talk",
-   "body": "astrologers read it as overstatement. lovely for a pep talk. check the numbers before you agree.",
-   "art": {
-    "kind": "pair",
-    "a": "mercury",
-    "b": "jupiter"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "thu jan 28 · venus trine jupiter",
-   "headline": "the month's *luckiest* love aspect",
-   "body": "warm, generous, a bit extra. a good night for the date you've been putting off.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "jupiter"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "scorpio",
-   "kicker": "fri jan 29",
-   "headline": "last quarter in *scorpio*: let one thing go",
-   "body": "the clear-out moon before the eclipse new moon on feb 6. release, don't haunt.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.75,
-    "sign": "scorpio"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "pisces",
-   "kicker": "sat jan 30 · sun jan 31",
-   "headline": "sun sextiles saturn, mercury enters *pisces*",
-   "body": "steady saturday, dreamier sunday.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "pisces"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "the truth is out. be *kind* about it.",
-   "body": "save this for thursday.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "jupiter"
-   }
-  }
- ]
+  "id": "jan-25-week-ahead-sun-meets-pluto",
+  "format": "sky-roundup",
+  "date": "2027-01-25",
+  "series": "sky news",
+  "signs": [
+    "aquarius",
+    "scorpio"
+  ],
+  "facts": [
+    "2027-01-25 sun conjunction pluto",
+    "2027-01-27 mercury opposition jupiter",
+    "2027-01-28 venus trine jupiter",
+    "2027-01-29 last quarter scorpio",
+    "2027-01-30 sun sextile saturn",
+    "2027-01-31 mercury enters pisces"
+  ],
+  "caption": "the sun meets pluto today at 5° aquarius, 08:00 utc. then jupiter week. jan 25 to jan 31.",
+  "hashtags": [
+    "weekahead",
+    "pluto",
+    "aquarius",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "split",
+      "labels": [
+        "sun",
+        "pluto"
+      ],
+      "headline": "the *sun* meets *pluto* today at 3 am. *6 sky events* this week",
+      "art": {
+        "kind": "planet",
+        "body": "sun",
+        "sign": "aquarius"
+      },
+      "art2": {
+        "kind": "planet",
+        "body": "pluto",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "kicker": "wed jan 27",
+      "headline": "mercury opposes *jupiter*: big talk",
+      "body": "astrologers read it as overstatement. lovely for a pep talk. check the numbers before you agree.",
+      "art": {
+        "kind": "pair",
+        "a": "mercury",
+        "b": "jupiter"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "thu jan 28 · venus trine jupiter",
+      "headline": "the month's *luckiest* love aspect",
+      "body": "warm, generous, a bit extra. a good night for the date you've been putting off.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "jupiter"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "fri jan 29",
+      "headline": "last quarter in *scorpio*: let one thing go",
+      "body": "the clear-out moon before the eclipse new moon on feb 6. release, don't haunt.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.75,
+        "sign": "scorpio"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "kicker": "sat jan 30 · sun jan 31",
+      "headline": "sun sextiles saturn, mercury enters *pisces*",
+      "body": "steady saturday, dreamier sunday.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "pisces"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "the truth is out. be *kind* about it.",
+      "body": "save this for thursday.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "jupiter"
+      }
+    }
+  ]
 }

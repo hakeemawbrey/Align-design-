@@ -1,112 +1,112 @@
 {
- "id": "dec-07-week-ahead",
- "format": "sky-roundup",
- "date": "2026-12-07",
- "series": "sky news",
- "signs": [
-  "sagittarius",
-  "aries",
-  "leo"
- ],
- "facts": [
-  "2026-12-08 new moon sagittarius",
-  "2026-12-09 venus square pluto",
-  "2026-12-10 saturn stations direct aries",
-  "2026-12-11 mercury trine saturn",
-  "2026-12-12 venus sextile mars",
-  "2026-12-12 jupiter stations retrograde leo",
-  "2026-12-12 neptune stations direct aries"
- ],
- "caption": "the busiest week of december: a new moon and three planets changing direction. save it. dec 7 – 13, 2026.",
- "hashtags": [
-  "weekahead",
-  "newmoon",
-  "jupiterretrograde",
-  "saturn",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "the sky's busiest week of december starts *now*",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "tue dec 8",
-   "headline": "new moon in *sagittarius*",
-   "body": "set one intention, not ten. make it the honest one.",
-   "art": {
-    "kind": "moon",
-    "phase": 0,
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "scorpio",
-   "kicker": "wed dec 9",
-   "headline": "*venus* squares pluto: jealousy, meet a mirror",
-   "body": "power games on offer. read it as a day to decline the game.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "pluto"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aries",
-   "kicker": "thu dec 10",
-   "headline": "*saturn* turns direct in aries",
-   "body": "after months of apparent backing up, saturn moves forward again. stuck plans can start moving.",
-   "art": {
-    "kind": "planet",
-    "body": "saturn",
-    "sign": "aries"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "virgo",
-   "kicker": "sat dec 12",
-   "headline": "*venus* and mars get along for once",
-   "body": "the nicest angle of the week. a good saturday to ask someone out properly.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "mars"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "leo",
-   "kicker": "sat dec 12",
-   "headline": "*jupiter* turns retrograde in leo as neptune goes direct",
-   "body": "growth slows down to check its work. the fog lifts a little.",
-   "art": {
-    "kind": "planet",
-    "body": "jupiter",
-    "sign": "leo",
-    "rx": true
-   }
-  },
-  {
-   "layout": "end",
-   "sign": "leo",
-   "headline": "the one to watch: *saturday*",
-   "body": "the nicest angle and a big station in one day. book the real date.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "mars"
-   }
-  }
- ]
+  "id": "dec-07-week-ahead",
+  "format": "sky-roundup",
+  "date": "2026-12-07",
+  "series": "sky news",
+  "signs": [
+    "sagittarius",
+    "aries",
+    "leo"
+  ],
+  "facts": [
+    "2026-12-08 new moon sagittarius",
+    "2026-12-09 venus square pluto",
+    "2026-12-10 saturn stations direct aries",
+    "2026-12-11 mercury trine saturn",
+    "2026-12-12 venus sextile mars",
+    "2026-12-12 jupiter stations retrograde leo",
+    "2026-12-12 neptune stations direct aries"
+  ],
+  "caption": "the busiest week of december: a new moon and three planets changing direction. save it. dec 7 – 13, 2026.",
+  "hashtags": [
+    "weekahead",
+    "newmoon",
+    "jupiterretrograde",
+    "saturn",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "*7 sky events* in *5 days*. the *new moon* goes first, tuesday",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "tue dec 8",
+      "headline": "new moon in *sagittarius*",
+      "body": "set one intention, not ten. make it the honest one.",
+      "art": {
+        "kind": "moon",
+        "phase": 0,
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "wed dec 9",
+      "headline": "*venus* squares pluto: jealousy, meet a mirror",
+      "body": "power games on offer. read it as a day to decline the game.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "pluto"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aries",
+      "kicker": "thu dec 10",
+      "headline": "*saturn* turns direct in aries",
+      "body": "after months of apparent backing up, saturn moves forward again. stuck plans can start moving.",
+      "art": {
+        "kind": "planet",
+        "body": "saturn",
+        "sign": "aries"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "virgo",
+      "kicker": "sat dec 12",
+      "headline": "*venus* and mars get along for once",
+      "body": "the nicest angle of the week. a good saturday to ask someone out properly.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "leo",
+      "kicker": "sat dec 12",
+      "headline": "*jupiter* turns retrograde in leo as neptune goes direct",
+      "body": "growth slows down to check its work. the fog lifts a little.",
+      "art": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo",
+        "rx": true
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "leo",
+      "headline": "the one to watch: *saturday*",
+      "body": "the nicest angle and a big station in one day. book the real date.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars"
+      }
+    }
+  ]
 }

@@ -1,167 +1,167 @@
 {
- "id": "jan-19-full-moon-leo-who-this-hits",
- "format": "who-this-hits",
- "date": "2027-01-19",
- "series": "sky news",
- "signs": [
-  "leo",
-  "aquarius",
-  "taurus",
-  "scorpio"
- ],
- "facts": [
-  "2027-01-22 full moon leo",
-  "2027-01-20 sun enters aquarius",
-  "2027-01-19 jupiter in leo",
-  "2027-01-19 jupiter retrograde"
- ],
- "caption": "find your sign. the full moon in leo is on friday, jan 22, at 12:17 utc.",
- "hashtags": [
-  "fullmoon",
-  "leo",
-  "whothishits",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "the *full moon* in *leo* is friday. here's who it hits",
-   "art": {
-    "kind": "moon",
-    "phase": 0.45,
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "table",
-   "headline": "most likely to say it *out loud* on friday",
-   "columns": [
-    "sign",
-    "odds"
-   ],
-   "rows": [
+  "id": "jan-19-full-moon-leo-who-this-hits",
+  "format": "who-this-hits",
+  "date": "2027-01-19",
+  "series": "sky news",
+  "signs": [
+    "leo",
+    "aquarius",
+    "taurus",
+    "scorpio"
+  ],
+  "facts": [
+    "2027-01-22 full moon leo",
+    "2027-01-20 sun enters aquarius",
+    "2027-01-19 jupiter in leo",
+    "2027-01-19 jupiter retrograde"
+  ],
+  "caption": "find your sign. the full moon in leo is on friday, jan 22, at 12:17 utc.",
+  "hashtags": [
+    "fullmoon",
+    "leo",
+    "whothishits",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
     {
-     "label": "leo",
-     "sign": "leo",
-     "text": "it's your full moon. obviously.",
-     "value": "certain"
+      "layout": "cover",
+      "headline": "*full moon* in *leo* friday, 7:17 am. *5 signs* most likely to say it",
+      "art": {
+        "kind": "moon",
+        "phase": 0.45,
+        "sign": "leo"
+      }
     },
     {
-     "label": "aquarius",
-     "sign": "aquarius",
-     "text": "your season, the moon opposite you",
-     "value": "likely"
+      "layout": "table",
+      "headline": "most likely to say it *out loud* on friday",
+      "columns": [
+        "sign",
+        "odds"
+      ],
+      "rows": [
+        {
+          "label": "leo",
+          "sign": "leo",
+          "text": "it's your full moon. obviously.",
+          "value": "certain"
+        },
+        {
+          "label": "aquarius",
+          "sign": "aquarius",
+          "text": "your season, the moon opposite you",
+          "value": "likely"
+        },
+        {
+          "label": "sagittarius",
+          "sign": "sagittarius",
+          "text": "venus is in your sign. you're bold",
+          "value": "probably"
+        },
+        {
+          "label": "scorpio",
+          "sign": "scorpio",
+          "text": "will say it, in a look",
+          "value": "sort of"
+        },
+        {
+          "label": "capricorn",
+          "sign": "capricorn",
+          "text": "has a draft saved since 2025",
+          "value": "next year"
+        }
+      ]
     },
     {
-     "label": "sagittarius",
-     "sign": "sagittarius",
-     "text": "venus is in your sign. you're bold",
-     "value": "probably"
+      "layout": "list",
+      "kicker": "tier one",
+      "headline": "you'll *feel* this",
+      "rows": [
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "**your sign.** jupiter's here too. be seen."
+        },
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "the moon faces your season. partners talk."
+        },
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "home versus career. pick one for friday."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "work wins applause. let it in."
+        }
+      ]
     },
     {
-     "label": "scorpio",
-     "sign": "scorpio",
-     "text": "will say it, in a look",
-     "value": "sort of"
+      "layout": "list",
+      "kicker": "tier two",
+      "headline": "you'll *notice* this",
+      "rows": [
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "romance and fun. say yes to the plan."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "a big idea wants a big audience."
+        },
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "a conversation you've been dodging."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "friends show up. so should you."
+        }
+      ]
     },
     {
-     "label": "capricorn",
-     "sign": "capricorn",
-     "text": "has a draft saved since 2025",
-     "value": "next year"
+      "layout": "list",
+      "kicker": "tier three",
+      "headline": "you'll *barely* clock it",
+      "rows": [
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "a money feeling. sleep on it."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "rest. mars is still backing up in your sign."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "something shared needs a fair split."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "a routine finally clicks. keep it."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "the move: say it *once*, warmly, in person",
+      "body": "if it's one-sided, it isn't alignment. it's a hobby.",
+      "art": {
+        "kind": "figure",
+        "sign": "leo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "tier one",
-   "headline": "you'll *feel* this",
-   "rows": [
-    {
-     "sign": "leo",
-     "label": "leo",
-     "text": "**your sign.** jupiter's here too. be seen."
-    },
-    {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "the moon faces your season. partners talk."
-    },
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "home versus career. pick one for friday."
-    },
-    {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "work wins applause. let it in."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "tier two",
-   "headline": "you'll *notice* this",
-   "rows": [
-    {
-     "sign": "aries",
-     "label": "aries",
-     "text": "romance and fun. say yes to the plan."
-    },
-    {
-     "sign": "sagittarius",
-     "label": "sagittarius",
-     "text": "a big idea wants a big audience."
-    },
-    {
-     "sign": "gemini",
-     "label": "gemini",
-     "text": "a conversation you've been dodging."
-    },
-    {
-     "sign": "libra",
-     "label": "libra",
-     "text": "friends show up. so should you."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "kicker": "tier three",
-   "headline": "you'll *barely* clock it",
-   "rows": [
-    {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "a money feeling. sleep on it."
-    },
-    {
-     "sign": "virgo",
-     "label": "virgo",
-     "text": "rest. mars is still backing up in your sign."
-    },
-    {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "something shared needs a fair split."
-    },
-    {
-     "sign": "pisces",
-     "label": "pisces",
-     "text": "a routine finally clicks. keep it."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "the move: say it *once*, warmly, in person",
-   "body": "if it's one-sided, it isn't alignment. it's a hobby.",
-   "art": {
-    "kind": "figure",
-    "sign": "leo"
-   }
-  }
- ]
+  ]
 }

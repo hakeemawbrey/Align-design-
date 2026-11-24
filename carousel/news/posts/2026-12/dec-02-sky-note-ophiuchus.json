@@ -1,65 +1,65 @@
 {
- "id": "dec-02-sky-note-ophiuchus",
- "format": "sky-note",
- "date": "2026-12-02",
- "series": "sky news",
- "signs": [
-  "sagittarius",
-  "scorpio"
- ],
- "facts": [],
- "caption": "sky note: \"nasa changed your sign, you're an ophiuchus now\". needs context. the tropical zodiac follows the seasons, not the constellations.",
- "hashtags": [
-  "skynote",
-  "ophiuchus",
-  "astrology",
-  "zodiac",
-  "sagittarius"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "is your sign *ophiuchus* now?",
-   "art": {
-    "kind": "stars",
-    "tint": "violet"
-   }
-  },
-  {
-   "layout": "note",
-   "kicker": "going around",
-   "headline": "“nasa added a 13th sign, so your sign changed”",
-   "verdict": "false",
-   "body": "nasa didn't add a sign. it explained that the sun crosses 13 constellations, which have drifted from the signs over about 2,000 years. astronomy, not a new zodiac."
-  },
-  {
-   "layout": "story",
-   "kicker": "the astronomy",
-   "headline": "the *sky* slowly shifts against the calendar",
-   "body": "earth's axis wobbles, so the stars behind the sun drift about one degree every 72 years. and yes, the sun does cross ophiuchus each year.",
-   "art": {
-    "kind": "wheel",
-    "tint": "violet"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "what astrologers use",
-   "headline": "western signs follow the *seasons*, not the stars",
-   "body": "the tropical zodiac starts aries at the march equinox and cuts the year into 12 equal slices. your sign is your birth season, and that hasn't moved.",
-   "art": {
-    "kind": "stars",
-    "tint": "gold"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "you're still a *sagittarius*. you just learned a fun fact",
-   "body": "astrology is a reading. the astronomy is still true.",
-   "art": {
-    "kind": "figure",
-    "sign": "sagittarius"
-   }
-  }
- ]
+  "id": "dec-02-sky-note-ophiuchus",
+  "format": "sky-note",
+  "date": "2026-12-02",
+  "series": "sky news",
+  "signs": [
+    "sagittarius",
+    "scorpio"
+  ],
+  "facts": [],
+  "caption": "sky note: \"nasa changed your sign, you're an ophiuchus now\". needs context. the tropical zodiac follows the seasons, not the constellations.",
+  "hashtags": [
+    "skynote",
+    "ophiuchus",
+    "astrology",
+    "zodiac",
+    "sagittarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "is your sign *ophiuchus* now? the *13th-sign* claim, checked",
+      "art": {
+        "kind": "stars",
+        "tint": "violet"
+      }
+    },
+    {
+      "layout": "note",
+      "kicker": "going around",
+      "headline": "“nasa added a 13th sign, so your sign changed”",
+      "verdict": "false",
+      "body": "nasa didn't add a sign. it explained that the sun crosses 13 constellations, which have drifted from the signs over about 2,000 years. astronomy, not a new zodiac."
+    },
+    {
+      "layout": "story",
+      "kicker": "the astronomy",
+      "headline": "the *sky* slowly shifts against the calendar",
+      "body": "earth's axis wobbles, so the stars behind the sun drift about one degree every 72 years. and yes, the sun does cross ophiuchus each year.",
+      "art": {
+        "kind": "wheel",
+        "tint": "violet"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "what astrologers use",
+      "headline": "western signs follow the *seasons*, not the stars",
+      "body": "the tropical zodiac starts aries at the march equinox and cuts the year into 12 equal slices. your sign is your birth season, and that hasn't moved.",
+      "art": {
+        "kind": "stars",
+        "tint": "gold"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "you're still a *sagittarius*. you just learned a fun fact",
+      "body": "astrology is a reading. the astronomy is still true.",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius"
+      }
+    }
+  ]
 }

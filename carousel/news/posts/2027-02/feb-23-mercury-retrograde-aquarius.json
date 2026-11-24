@@ -1,141 +1,141 @@
 {
- "series": "sky news",
- "id": "feb-23-mercury-retrograde-aquarius",
- "format": "who-this-hits",
- "date": "2027-02-23",
- "signs": [
-  "aquarius",
-  "leo",
-  "pisces"
- ],
- "caption": "mercury is retrograde in aquarius until mar 3 (20.9°). find your sign for the last stretch.",
- "hashtags": [
-  "mercuryretrograde",
-  "aquarius",
-  "astrology",
-  "zodiac",
-  "whothishits"
- ],
- "facts": [
-  "2027-02-23 mercury retrograde",
-  "2027-02-18 mercury enters aquarius",
-  "2027-03-03 mercury stations direct aquarius",
-  "2027-02-23 mercury in aquarius"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "the last stretch of *mercury* retrograde. who it hits now",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "aquarius",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aquarius",
-   "headline": "*mercury* backed out of pisces into aquarius",
-   "body": "it crossed back on feb 18 and seems to keep sliding until it turns direct at 20.9° aquarius on mar 3.",
-   "art": {
-    "kind": "wheel",
-    "signs": [
-     "aquarius",
-     "pisces"
-    ],
-    "tint": "mercury"
-   }
-  },
-  {
-   "layout": "list",
-   "accent": "rub",
-   "headline": "hits *hardest*",
-   "rows": [
+  "series": "sky news",
+  "id": "feb-23-mercury-retrograde-aquarius",
+  "format": "who-this-hits",
+  "date": "2027-02-23",
+  "signs": [
+    "aquarius",
+    "leo",
+    "pisces"
+  ],
+  "caption": "mercury is retrograde in aquarius until mar 3 (20.9°). find your sign for the last stretch.",
+  "hashtags": [
+    "mercuryretrograde",
+    "aquarius",
+    "astrology",
+    "zodiac",
+    "whothishits"
+  ],
+  "facts": [
+    "2027-02-23 mercury retrograde",
+    "2027-02-18 mercury enters aquarius",
+    "2027-03-03 mercury stations direct aquarius",
+    "2027-02-23 mercury in aquarius"
+  ],
+  "slides": [
     {
-     "sign": "aquarius",
-     "label": "aquarius",
-     "text": "it's in your sign now. reread yourself."
+      "layout": "hero",
+      "headline": "*8 days* of *mercury retrograde* left. *3 signs* still feel it",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "aquarius",
+        "rx": true
+      }
     },
     {
-     "sign": "leo",
-     "label": "leo",
-     "text": "a partner wants the talk you skipped."
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "*mercury* backed out of pisces into aquarius",
+      "body": "it crossed back on feb 18 and seems to keep sliding until it turns direct at 20.9° aquarius on mar 3.",
+      "art": {
+        "kind": "wheel",
+        "signs": [
+          "aquarius",
+          "pisces"
+        ],
+        "tint": "mercury"
+      }
     },
     {
-     "sign": "pisces",
-     "label": "pisces",
-     "text": "it left your sign. the fog lifts."
+      "layout": "list",
+      "accent": "rub",
+      "headline": "hits *hardest*",
+      "rows": [
+        {
+          "sign": "aquarius",
+          "label": "aquarius",
+          "text": "it's in your sign now. reread yourself."
+        },
+        {
+          "sign": "leo",
+          "label": "leo",
+          "text": "a partner wants the talk you skipped."
+        },
+        {
+          "sign": "pisces",
+          "label": "pisces",
+          "text": "it left your sign. the fog lifts."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "accent": "gold",
+      "headline": "feels *it*",
+      "rows": [
+        {
+          "sign": "taurus",
+          "label": "taurus",
+          "text": "work email: proofread twice."
+        },
+        {
+          "sign": "scorpio",
+          "label": "scorpio",
+          "text": "family history comes up. listen."
+        },
+        {
+          "sign": "gemini",
+          "label": "gemini",
+          "text": "a trip or course plan gets revised."
+        },
+        {
+          "sign": "libra",
+          "label": "libra",
+          "text": "an old crush likes your story."
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "accent": "spark",
+      "headline": "mostly *fine*",
+      "rows": [
+        {
+          "sign": "aries",
+          "label": "aries",
+          "text": "a friend comes back. let them."
+        },
+        {
+          "sign": "cancer",
+          "label": "cancer",
+          "text": "shared money: check the numbers."
+        },
+        {
+          "sign": "virgo",
+          "label": "virgo",
+          "text": "tweak one routine, not all of them."
+        },
+        {
+          "sign": "sagittarius",
+          "label": "sagittarius",
+          "text": "say it slower. same words."
+        },
+        {
+          "sign": "capricorn",
+          "label": "capricorn",
+          "text": "venus is with you. use it."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "headline": "the reply can wait a day. the *truth* can't.",
+      "body": "save this until march 3.",
+      "art": {
+        "kind": "stars",
+        "tint": "aquarius"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "accent": "gold",
-   "headline": "feels *it*",
-   "rows": [
-    {
-     "sign": "taurus",
-     "label": "taurus",
-     "text": "work email: proofread twice."
-    },
-    {
-     "sign": "scorpio",
-     "label": "scorpio",
-     "text": "family history comes up. listen."
-    },
-    {
-     "sign": "gemini",
-     "label": "gemini",
-     "text": "a trip or course plan gets revised."
-    },
-    {
-     "sign": "libra",
-     "label": "libra",
-     "text": "an old crush likes your story."
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "accent": "spark",
-   "headline": "mostly *fine*",
-   "rows": [
-    {
-     "sign": "aries",
-     "label": "aries",
-     "text": "a friend comes back. let them."
-    },
-    {
-     "sign": "cancer",
-     "label": "cancer",
-     "text": "shared money: check the numbers."
-    },
-    {
-     "sign": "virgo",
-     "label": "virgo",
-     "text": "tweak one routine, not all of them."
-    },
-    {
-     "sign": "sagittarius",
-     "label": "sagittarius",
-     "text": "say it slower. same words."
-    },
-    {
-     "sign": "capricorn",
-     "label": "capricorn",
-     "text": "venus is with you. use it."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "headline": "the reply can wait a day. the *truth* can't.",
-   "body": "save this until march 3.",
-   "art": {
-    "kind": "stars",
-    "tint": "aquarius"
-   }
-  }
- ]
+  ]
 }

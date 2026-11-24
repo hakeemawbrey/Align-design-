@@ -3,12 +3,14 @@
 An Instagram news series for Align: what the sky is doing today, this week
 and this month, and what it means for each sign. The editorial grammar
 comes from viral news carousels (cover hook, 1/N roundup, ranked twelve,
-community-note fact checks). The look is **aura**: every slide is soft
-coloured light on deep indigo, like an aura photograph, with one glowing
-subject (a planet, the moon, an eclipse, a sign's aura figure), one serif
-italic headline and a quiet `align ✦` mark. No borders, rules, frames, pills,
-sparkles or cards. Less is the rule: the checker caps every text field
-(see Lengths).
+community-note fact checks). The look is **wire**, built from a measured
+teardown of the references (`research/TYPE-LAYOUT.md`, `IMAGERY.md`,
+`HEADLINES.md`): a real NASA photo across the top (`assets/photo/`, public
+domain, credits in `credits.json`) with a soft glow in the sign's colour,
+a fade to near-black, a gold divider with `align ✦`, and a huge Anton
+all-caps headline balanced to fill the width. Signs are lit in their sign
+colour, planets and numbers in gold. Covers lead with a checkable fact: a
+time, a date or a count from the ephemeris.
 
 | Path | What |
 | --- | --- |

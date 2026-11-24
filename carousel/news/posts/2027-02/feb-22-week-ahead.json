@@ -1,96 +1,96 @@
 {
- "series": "sky news",
- "id": "feb-22-week-ahead",
- "format": "sky-roundup",
- "date": "2027-02-22",
- "signs": [
-  "libra",
-  "scorpio",
-  "sagittarius"
- ],
- "caption": "the quiet week after the eclipses. next up: venus enters aquarius mar 1, mercury turns direct mar 3.",
- "hashtags": [
-  "astrology",
-  "weekahead",
-  "moon",
-  "zodiac",
-  "venus"
- ],
- "facts": [
-  "2027-02-22 moon in libra",
-  "2027-02-24 moon in scorpio",
-  "2027-02-27 moon in sagittarius",
-  "2027-02-28 last quarter sagittarius",
-  "2027-02-22 mercury retrograde",
-  "2027-02-22 mars retrograde",
-  "2027-03-01 venus enters aquarius",
-  "2027-03-03 mercury stations direct aquarius"
- ],
- "slides": [
-  {
-   "layout": "cover",
-   "headline": "after two *eclipses*, the sky gives you a quiet week",
-   "art": {
-    "kind": "moon",
-    "phase": 0.55,
-    "sign": "libra"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 22 – 24",
-   "sign": "libra",
-   "headline": "the moon in *libra*: a good night to talk it through",
-   "body": "from feb 24 it's in scorpio: deeper, quieter. a check-in, not an interrogation.",
-   "art": {
-    "kind": "aura",
-    "sign": "libra"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aquarius",
-   "headline": "*mercury* is still backing up, now in aquarius",
-   "body": "mercury retrograde runs until mar 3. old friends, old chats, old ideas. reply to the ones that matter.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "aquarius",
-    "rx": true
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "feb 28",
-   "sign": "sagittarius",
-   "headline": "a last quarter moon in *sagittarius* closes the month",
-   "body": "astrologers read a last quarter as clean-up time. one honest goodbye or one honest yes.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.75,
-    "sign": "sagittarius"
-   }
-  },
-  {
-   "layout": "story",
-   "kicker": "the one to watch",
-   "sign": "aquarius",
-   "headline": "next monday, *venus* moves into aquarius",
-   "body": "love weather changes from careful to curious. use this week to finish the capricorn lesson: follow through.",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "aquarius"
-   }
-  },
-  {
-   "layout": "end",
-   "headline": "quiet isn't boring. it's *room*.",
-   "body": "save this. text the one you've been meaning to.",
-   "art": {
-    "kind": "stars",
-    "tint": "libra"
-   }
-  }
- ]
+  "series": "sky news",
+  "id": "feb-22-week-ahead",
+  "format": "sky-roundup",
+  "date": "2027-02-22",
+  "signs": [
+    "libra",
+    "scorpio",
+    "sagittarius"
+  ],
+  "caption": "the quiet week after the eclipses. next up: venus enters aquarius mar 1, mercury turns direct mar 3.",
+  "hashtags": [
+    "astrology",
+    "weekahead",
+    "moon",
+    "zodiac",
+    "venus"
+  ],
+  "facts": [
+    "2027-02-22 moon in libra",
+    "2027-02-24 moon in scorpio",
+    "2027-02-27 moon in sagittarius",
+    "2027-02-28 last quarter sagittarius",
+    "2027-02-22 mercury retrograde",
+    "2027-02-22 mars retrograde",
+    "2027-03-01 venus enters aquarius",
+    "2027-03-03 mercury stations direct aquarius"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "headline": "after *2 eclipses*, a *quiet week*. mercury turns direct in *9 days*",
+      "art": {
+        "kind": "moon",
+        "phase": 0.55,
+        "sign": "libra"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 22 – 24",
+      "sign": "libra",
+      "headline": "the moon in *libra*: a good night to talk it through",
+      "body": "from feb 24 it's in scorpio: deeper, quieter. a check-in, not an interrogation.",
+      "art": {
+        "kind": "aura",
+        "sign": "libra"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aquarius",
+      "headline": "*mercury* is still backing up, now in aquarius",
+      "body": "mercury retrograde runs until mar 3. old friends, old chats, old ideas. reply to the ones that matter.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "aquarius",
+        "rx": true
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "feb 28",
+      "sign": "sagittarius",
+      "headline": "a last quarter moon in *sagittarius* closes the month",
+      "body": "astrologers read a last quarter as clean-up time. one honest goodbye or one honest yes.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.75,
+        "sign": "sagittarius"
+      }
+    },
+    {
+      "layout": "story",
+      "kicker": "the one to watch",
+      "sign": "aquarius",
+      "headline": "next monday, *venus* moves into aquarius",
+      "body": "love weather changes from careful to curious. use this week to finish the capricorn lesson: follow through.",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "aquarius"
+      }
+    },
+    {
+      "layout": "end",
+      "headline": "quiet isn't boring. it's *room*.",
+      "body": "save this. text the one you've been meaning to.",
+      "art": {
+        "kind": "stars",
+        "tint": "libra"
+      }
+    }
+  ]
 }

@@ -1,93 +1,93 @@
 {
- "id": "dec-14-week-ahead",
- "format": "sky-roundup",
- "date": "2026-12-14",
- "series": "sky news",
- "signs": [
-  "sagittarius",
-  "pisces",
-  "aries"
- ],
- "facts": [
-  "2026-12-17 first quarter pisces",
-  "2026-12-18 sun trine jupiter",
-  "2026-12-17 moon in aries",
-  "2026-12-19 moon in taurus",
-  "2026-12-14 jupiter retrograde"
- ],
- "caption": "a quieter week with one gift: the sun trines jupiter on friday. dec 14 – 20, 2026.",
- "hashtags": [
-  "weekahead",
-  "astrology",
-  "jupiter",
-  "zodiac",
-  "skynews"
- ],
- "slides": [
-  {
-   "layout": "split",
-   "headline": "a calm week with one *lucky* friday",
-   "art": {
-    "kind": "planet",
-    "body": "sun",
-    "sign": "sagittarius"
-   },
-   "labels": [
-    "sun",
-    "jupiter"
-   ],
-   "art2": {
-    "kind": "planet",
-    "body": "jupiter",
-    "sign": "leo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "pisces",
-   "kicker": "thu dec 17",
-   "headline": "first quarter moon in *pisces*: the push",
-   "body": "half-lit and growing. reads as the point where an intention needs an action.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.25,
-    "sign": "pisces"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "aries",
-   "kicker": "dec 17 – 19",
-   "headline": "then the *moon* hits aries and patience runs out",
-   "body": "good for a bold ask. bad for a fight about the dishes.",
-   "art": {
-    "kind": "moon",
-    "phase": 0.3,
-    "sign": "aries"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "sagittarius",
-   "kicker": "fri dec 18",
-   "headline": "the *sun* trines jupiter: generous, warm, a bit lucky",
-   "body": "the sun at 27° sagittarius, jupiter at 27° leo. astrologers read it as a yes day.",
-   "art": {
-    "kind": "pair",
-    "a": "sun",
-    "b": "jupiter",
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "end",
-   "sign": "sagittarius",
-   "headline": "the one to watch: *friday*. ask for the thing",
-   "body": "worst case, you know where you stand.",
-   "art": {
-    "kind": "figure",
-    "sign": "sagittarius"
-   }
-  }
- ]
+  "id": "dec-14-week-ahead",
+  "format": "sky-roundup",
+  "date": "2026-12-14",
+  "series": "sky news",
+  "signs": [
+    "sagittarius",
+    "pisces",
+    "aries"
+  ],
+  "facts": [
+    "2026-12-17 first quarter pisces",
+    "2026-12-18 sun trine jupiter",
+    "2026-12-17 moon in aries",
+    "2026-12-19 moon in taurus",
+    "2026-12-14 jupiter retrograde"
+  ],
+  "caption": "a quieter week with one gift: the sun trines jupiter on friday. dec 14 – 20, 2026.",
+  "hashtags": [
+    "weekahead",
+    "astrology",
+    "jupiter",
+    "zodiac",
+    "skynews"
+  ],
+  "slides": [
+    {
+      "layout": "split",
+      "headline": "this week's one *lucky day*: *friday*, when the sun trines *jupiter*",
+      "art": {
+        "kind": "planet",
+        "body": "sun",
+        "sign": "sagittarius"
+      },
+      "labels": [
+        "sun",
+        "jupiter"
+      ],
+      "art2": {
+        "kind": "planet",
+        "body": "jupiter",
+        "sign": "leo"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "pisces",
+      "kicker": "thu dec 17",
+      "headline": "first quarter moon in *pisces*: the push",
+      "body": "half-lit and growing. reads as the point where an intention needs an action.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.25,
+        "sign": "pisces"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "aries",
+      "kicker": "dec 17 – 19",
+      "headline": "then the *moon* hits aries and patience runs out",
+      "body": "good for a bold ask. bad for a fight about the dishes.",
+      "art": {
+        "kind": "moon",
+        "phase": 0.3,
+        "sign": "aries"
+      }
+    },
+    {
+      "layout": "story",
+      "sign": "sagittarius",
+      "kicker": "fri dec 18",
+      "headline": "the *sun* trines jupiter: generous, warm, a bit lucky",
+      "body": "the sun at 27° sagittarius, jupiter at 27° leo. astrologers read it as a yes day.",
+      "art": {
+        "kind": "pair",
+        "a": "sun",
+        "b": "jupiter",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "sagittarius",
+      "headline": "the one to watch: *friday*. ask for the thing",
+      "body": "worst case, you know where you stand.",
+      "art": {
+        "kind": "figure",
+        "sign": "sagittarius"
+      }
+    }
+  ]
 }

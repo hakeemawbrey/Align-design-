@@ -1,68 +1,68 @@
 {
- "id": "dec-24-capricorn-mercury-tomorrow",
- "format": "sign-callout",
- "date": "2026-12-24",
- "series": "sky news",
- "signs": [
-  "capricorn"
- ],
- "facts": [
-  "2026-12-21 sun enters capricorn",
-  "2026-12-25 mercury enters capricorn",
-  "2026-12-24 moon in cancer",
-  "2027-01-01 sun conjunction mercury"
- ],
- "caption": "capricorn, it is your season and mercury moves into your sign tomorrow at 1:23 pm et. they meet in capricorn on jan 1. send this to your capricorn.",
- "hashtags": [
-  "capricorn",
-  "capricornseason",
-  "mercury",
-  "astrology",
-  "zodiac"
- ],
- "slides": [
-  {
-   "layout": "hero",
-   "headline": "*capricorn*, mercury moves in tomorrow. you get the last word of 2026",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "capricorn"
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "capricorn",
-   "kicker": "dec 25 · mercury enters capricorn",
-   "headline": "the planet of *words* joins the sun in your sign",
-   "body": "they line up in capricorn on jan 1. a clear head for the new year.",
-   "art": {
-    "kind": "figure",
-    "sign": "capricorn",
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "callout",
-   "sign": "capricorn",
-   "kicker": "tonight the moon is in cancer",
-   "headline": "your opposite sign wants you *softer*. try it once",
-   "art": {
-    "kind": "figure",
-    "sign": "capricorn",
-    "zoom": 1.35
-   }
-  },
-  {
-   "layout": "end",
-   "sign": "capricorn",
-   "headline": "tell them it is *serious*. it is allowed to be",
-   "body": "say the honest thing. it is christmas eve, not a negotiation.",
-   "art": {
-    "kind": "planet",
-    "body": "mercury",
-    "sign": "capricorn"
-   }
-  }
- ]
+  "id": "dec-24-capricorn-mercury-tomorrow",
+  "format": "sign-callout",
+  "date": "2026-12-24",
+  "series": "sky news",
+  "signs": [
+    "capricorn"
+  ],
+  "facts": [
+    "2026-12-21 sun enters capricorn",
+    "2026-12-25 mercury enters capricorn",
+    "2026-12-24 moon in cancer",
+    "2027-01-01 sun conjunction mercury"
+  ],
+  "caption": "capricorn, it is your season and mercury moves into your sign tomorrow at 1:23 pm et. they meet in capricorn on jan 1. send this to your capricorn.",
+  "hashtags": [
+    "capricorn",
+    "capricornseason",
+    "mercury",
+    "astrology",
+    "zodiac"
+  ],
+  "slides": [
+    {
+      "layout": "hero",
+      "headline": "*capricorn*, *mercury* moves in on *christmas*. say what you mean",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "capricorn"
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "capricorn",
+      "kicker": "dec 25 · mercury enters capricorn",
+      "headline": "the planet of *words* joins the sun in your sign",
+      "body": "they line up in capricorn on jan 1. a clear head for the new year.",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.2
+      }
+    },
+    {
+      "layout": "callout",
+      "sign": "capricorn",
+      "kicker": "tonight the moon is in cancer",
+      "headline": "your opposite sign wants you *softer*. try it once",
+      "art": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.35
+      }
+    },
+    {
+      "layout": "end",
+      "sign": "capricorn",
+      "headline": "tell them it is *serious*. it is allowed to be",
+      "body": "say the honest thing. it is christmas eve, not a negotiation.",
+      "art": {
+        "kind": "planet",
+        "body": "mercury",
+        "sign": "capricorn"
+      }
+    }
+  ]
 }

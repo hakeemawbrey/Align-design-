@@ -1,135 +1,135 @@
 {
- "id": "dec-11-venus-report-weekend",
- "format": "venus-report",
- "date": "2026-12-11",
- "series": "sky news",
- "signs": [
-  "scorpio",
-  "virgo"
- ],
- "facts": [
-  "2026-12-12 venus sextile mars",
-  "2026-12-11 venus in scorpio",
-  "2026-12-11 mars in virgo"
- ],
- "caption": "love weather: venus in scorpio sextiles mars in virgo on saturday morning. the easiest weekend for asking someone out this month.",
- "hashtags": [
-  "loveweather",
-  "venus",
-  "mars",
-  "scorpio",
-  "virgo",
-  "dating"
- ],
- "slides": [
-  {
-   "layout": "split",
-   "headline": "*venus* and mars finally agree. ask them out this weekend",
-   "art": {
-    "kind": "planet",
-    "body": "venus",
-    "sign": "scorpio"
-   },
-   "labels": [
+  "id": "dec-11-venus-report-weekend",
+  "format": "venus-report",
+  "date": "2026-12-11",
+  "series": "sky news",
+  "signs": [
+    "scorpio",
+    "virgo"
+  ],
+  "facts": [
+    "2026-12-12 venus sextile mars",
+    "2026-12-11 venus in scorpio",
+    "2026-12-11 mars in virgo"
+  ],
+  "caption": "love weather: venus in scorpio sextiles mars in virgo on saturday morning. the easiest weekend for asking someone out this month.",
+  "hashtags": [
+    "loveweather",
     "venus",
-    "mars"
-   ],
-   "art2": {
-    "kind": "planet",
-    "body": "mars",
-    "sign": "virgo"
-   }
-  },
-  {
-   "layout": "story",
-   "sign": "scorpio",
-   "kicker": "sat dec 12 · morning",
-   "headline": "*venus* in scorpio, mars in virgo: a friendly angle",
-   "body": "a sextile is 60° apart, the easygoing aspect. astrologers read it as want and action pointing the same way.",
-   "art": {
-    "kind": "pair",
-    "a": "venus",
-    "b": "mars",
-    "zoom": 1.2
-   }
-  },
-  {
-   "layout": "list",
-   "headline": "good weekend *for*",
-   "rows": [
+    "mars",
+    "scorpio",
+    "virgo",
+    "dating"
+  ],
+  "slides": [
     {
-     "label": "good",
-     "color": "spark",
-     "text": "asking for a specific day and time"
+      "layout": "split",
+      "headline": "*venus* and *mars* click saturday morning. ask them out *this weekend*",
+      "art": {
+        "kind": "planet",
+        "body": "venus",
+        "sign": "scorpio"
+      },
+      "labels": [
+        "venus",
+        "mars"
+      ],
+      "art2": {
+        "kind": "planet",
+        "body": "mars",
+        "sign": "virgo"
+      }
     },
     {
-     "label": "good",
-     "color": "spark",
-     "text": "saying what you are looking for"
+      "layout": "story",
+      "sign": "scorpio",
+      "kicker": "sat dec 12 · morning",
+      "headline": "*venus* in scorpio, mars in virgo: a friendly angle",
+      "body": "a sextile is 60° apart, the easygoing aspect. astrologers read it as want and action pointing the same way.",
+      "art": {
+        "kind": "pair",
+        "a": "venus",
+        "b": "mars",
+        "zoom": 1.2
+      }
     },
     {
-     "label": "good",
-     "color": "spark",
-     "text": "one real compliment, said once"
+      "layout": "list",
+      "headline": "good weekend *for*",
+      "rows": [
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "asking for a specific day and time"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "saying what you are looking for"
+        },
+        {
+          "label": "good",
+          "color": "spark",
+          "text": "one real compliment, said once"
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "headline": "bad weekend *for*",
+      "rows": [
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "“we should hang sometime”"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "replying in a paragraph to a “hey”"
+        },
+        {
+          "label": "bad",
+          "color": "rub",
+          "text": "fixing their life on date one"
+        }
+      ]
+    },
+    {
+      "layout": "list",
+      "headline": "this weekend, *by element*",
+      "rows": [
+        {
+          "label": "fire",
+          "color": "scorpio",
+          "text": "lead, but let them answer."
+        },
+        {
+          "label": "earth",
+          "color": "scorpio",
+          "text": "make the plan. it is attractive."
+        },
+        {
+          "label": "air",
+          "color": "scorpio",
+          "text": "less banter, more eye contact."
+        },
+        {
+          "label": "water",
+          "color": "scorpio",
+          "text": "say yes to the second date."
+        }
+      ]
+    },
+    {
+      "layout": "end",
+      "sign": "scorpio",
+      "headline": "read the sky before the face. *venus* runs your heart",
+      "body": "save this for saturday morning.",
+      "art": {
+        "kind": "aura",
+        "sign": "virgo"
+      }
     }
-   ]
-  },
-  {
-   "layout": "list",
-   "headline": "bad weekend *for*",
-   "rows": [
-    {
-     "label": "bad",
-     "color": "rub",
-     "text": "“we should hang sometime”"
-    },
-    {
-     "label": "bad",
-     "color": "rub",
-     "text": "replying in a paragraph to a “hey”"
-    },
-    {
-     "label": "bad",
-     "color": "rub",
-     "text": "fixing their life on date one"
-    }
-   ]
-  },
-  {
-   "layout": "list",
-   "headline": "this weekend, *by element*",
-   "rows": [
-    {
-     "label": "fire",
-     "color": "scorpio",
-     "text": "lead, but let them answer."
-    },
-    {
-     "label": "earth",
-     "color": "scorpio",
-     "text": "make the plan. it is attractive."
-    },
-    {
-     "label": "air",
-     "color": "scorpio",
-     "text": "less banter, more eye contact."
-    },
-    {
-     "label": "water",
-     "color": "scorpio",
-     "text": "say yes to the second date."
-    }
-   ]
-  },
-  {
-   "layout": "end",
-   "sign": "scorpio",
-   "headline": "read the sky before the face. *venus* runs your heart",
-   "body": "save this for saturday morning.",
-   "art": {
-    "kind": "aura",
-    "sign": "virgo"
-   }
-  }
- ]
+  ]
 }
