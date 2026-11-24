@@ -54,7 +54,9 @@ const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').
 
 // Colour for an accented phrase: a sign → its colour; a planet, a number or a
 // time → gold; anything else → the slide's accent.
+// One accent colour on all text: Align gold. (Signs and planets used to get their own colours.)
 function accentFor(phrase, fallback) {
+  return C.gold
   const p = phrase.toLowerCase()
   const sign = SIGNS.find((s) => p.includes(s))
   if (sign) return SIGN_COLORS[sign].color
@@ -284,7 +286,7 @@ const head = (text, accent, { maxh, maxfs = 150, minfs = 64, target = 940, cls =
 const body = (t, accent, cls = '') => (t ? `<p class="bd ${cls}">${rich(sentence(t), accent)}</p>` : '')
 const deck = (t, accent) => (t ? `<p class="deck">${rich(t, accent)}</p>` : '')
 
-const VERDICT = { true: ['true.', C.spark], misleading: ['half true.', C.gold], false: ['not true.', C.rub], context: ['needs context.', C.violet] }
+const VERDICT = { true: ['true.', C.gold], misleading: ['half true.', C.gold], false: ['not true.', C.gold], context: ['needs context.', C.gold] }
 
 // ---- layouts ----------------------------------------------------------------
 const coverLike = (s, x, tagText) => `
@@ -313,7 +315,7 @@ const LAYOUTS = {
     ${artBand(x.art, 680, x.signCol, { d: 560 })}
     <div class="stack left" style="bottom:96px">
       <div class="rank">#${esc(s.rank)}</div>
-      <div class="sign" style="color:${x.signCol}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
+      <div class="sign" style="color:${C.gold}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
       ${head(s.headline, x.accent, { maxh: 180, maxfs: 84, minfs: 44, target: 952, cls: 'left bebas' })}
       ${body(s.body, x.accent, 'left')}
     </div>`,
@@ -338,7 +340,7 @@ const LAYOUTS = {
 function listLike(s, x, numbered) {
   const rows = (s.rows ?? []).map((r, k) => {
     const sign = r.sign ?? SIGNS.find((g) => (r.label ?? '').toLowerCase() === g)
-    const col = sign ? SIGN_COLORS[sign].color : PLANETS.includes(r.color) ? C.gold : SIGN_COLORS[r.color]?.color ?? C.gold
+    const col = C.gold
     return `<div class="row">${numbered ? `<span class="num">${esc(r.rank ?? k + 1)}</span>` : ''}<span class="nm" style="color:${col}">${esc(r.label)}</span><span class="tx">${rich(sentence(r.text ?? ''), x.accent)}${r.value ? ` <em>· ${esc(r.value)}</em>` : ''}</span></div>`
   }).join('')
   return `

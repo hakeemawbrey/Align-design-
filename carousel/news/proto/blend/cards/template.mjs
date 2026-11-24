@@ -80,7 +80,9 @@ function fonts() {
 
 // ---- text -------------------------------------------------------------------
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+// One accent colour on all text: Align gold. (Signs and planets used to get their own colours.)
 function accentFor(phrase, fallback) {
+  return C.gold
   const p = phrase.toLowerCase()
   const sign = SIGNS.find((s) => p.includes(s))
   if (sign) return SIGN_COLORS[sign].color
@@ -248,7 +250,7 @@ const head = (text, accent, { maxh, maxfs = 150, minfs = 64, target = 940, cls =
   `<div class="hd ${cls}" data-maxh="${maxh}" data-maxfs="${maxfs}" data-minfs="${minfs}" data-target="${target}">${rich(text, accent)}</div>`
 const body = (t, accent, cls = '') => (t ? `<p class="bd ${cls}">${rich(sentence(t), accent)}</p>` : '')
 const deck = (t, accent) => (t ? `<p class="deck">${rich(t, accent)}</p>` : '')
-const VERDICT = { true: ['true.', C.spark], misleading: ['half true.', C.gold], false: ['not true.', C.rub], context: ['needs context.', C.violet] }
+const VERDICT = { true: ['true.', C.gold], misleading: ['half true.', C.gold], false: ['not true.', C.gold], context: ['needs context.', C.gold] }
 
 // a wide aura bloom behind the cards: "less sharp, more aura"
 const bloom = (col, cy = 420, r = 620, o = 0.55) => `<div class="bloom" style="left:${540 - r}px;top:${cy - r * 0.8}px;width:${r * 2}px;height:${r * 1.6}px;background:radial-gradient(closest-side, ${col} 0%, ${col}66 38%, ${col}1a 70%, transparent);opacity:${o}"></div>`
@@ -350,7 +352,7 @@ const LAYOUTS = {
     ${heroScene({ kind: 'aura', sign: s.sign }, x, { w: 600, cx: 600, bottom: 600, rot: s.rank % 2 ? 6 : -5, ry: s.rank % 2 ? -8 : 8, panel: false })}
     <div class="stack left" style="bottom:96px">
       <div class="rank">#${esc(s.rank)}</div>
-      <div class="sign" style="color:${x.signCol}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
+      <div class="sign" style="color:${C.gold}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
       ${head(s.headline, x.accent, { maxh: 180, maxfs: 84, minfs: 44, target: 952, cls: 'left bebas' })}
       ${body(s.body, x.accent, 'left')}
     </div>`,
@@ -374,6 +376,7 @@ const LAYOUTS = {
     </div>`,
 }
 function rowColor(r) {
+  return C.gold
   const sign = r.sign ?? SIGNS.find((g) => (r.label ?? '').toLowerCase() === g)
   if (sign) return SIGN_COLORS[sign].color
   if (r.color === 'spark') return C.spark
