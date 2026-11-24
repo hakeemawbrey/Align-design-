@@ -22,7 +22,9 @@ def days_out(r):
     m = re.search(r'(\d+)\s*(days?|day)', h) or re.search(r'day\s*(\d+)', h)
     if m: return int(m.group(1))
     m = re.search(r'(one|two|three)\s+weeks?', h)
-    if m: return 7 * WORDS[m.group(1)]
+    if m:
+        extra = re.search(r'weeks?,?\s+(?:and\s+)?(' + '|'.join(WORDS) + r')\s+days?', h)   # "one week, one day"
+        return 7 * WORDS[m.group(1)] + (WORDS[extra.group(1)] if extra else 0)
     m = re.search(r'\b(' + '|'.join(WORDS) + r')\s+days?', h)
     if m: return WORDS[m.group(1)]
     num = int(r['id'][3:])
