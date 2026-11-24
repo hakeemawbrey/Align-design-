@@ -52,6 +52,17 @@ function fileUri(file, mime) {
 const photo = (name) => fileUri(path.join(PHOTO, `${name}.jpg`), 'image/jpeg')
 const DISCS = JSON.parse(readFileSync(path.join(PHOTO, 'discs.json'), 'utf8'))
 const aura = (sign) => imageDataUri(`aura/${sign}.jpg`)
+// The photo library (news/assets/library/aura): real nebula / airglow photographs
+// tagged by sign. Printed softly behind the planet as the card's background art.
+const LIBDIR = path.join(NEWS, 'assets/library/aura')
+let LIB = null
+function libFor(sign, k = 0) {
+  if (LIB === null) { try { LIB = JSON.parse(readFileSync(path.join(LIBDIR, 'library.json'), 'utf8')).filter((e) => existsSync(path.join(LIBDIR, e.file))) } catch { LIB = [] } }
+  const own = LIB.filter((e) => e.file.startsWith(sign + '-'))
+  const list = own.length ? own : LIB.filter((e) => e.signs?.includes(sign))
+  if (!list.length) return null
+  return fileUri(path.join(LIBDIR, list[k % list.length].file), 'image/jpeg')
+}
 function pkgFont(pkg, file) {
   return fileUri(path.join(path.dirname(require.resolve(`${pkg}/package.json`)), 'files', file), 'font/woff2')
 }
@@ -182,11 +193,12 @@ const chip = (t, s) => `<div class="chip" style="font-size:${Math.max(14, 9 * s)
 
 // Sky card (full art): the photograph on a deep indigo face with a sign
 // bloom, a mono caption on the image, then the raised name panel (G-05a).
-function skyFace(art, { name, meta, caption, chipText, glow, orb, panel = true, discK = 0.9, discY = 0.5 }) {
+function skyFace(art, { name, meta, caption, chipText, glow, orb, panel = true, discK = 0.9, discY = 0.5, libK = 0 }) {
   return ({ w, h, s }) => {
     const ph = panel ? h * PANEL : h
     let img = ''
-    if (art.kind === 'photo') img = disc(art, w / 2, ph * discY, w * discK, FACE_BG, w)
+    const lib = art.kind === 'photo' && art.sign ? libFor(art.sign, libK) : null
+    if (art.kind === 'photo') img = (lib ? `<div class="libart" style="background-image:url(${lib})"></div>` : '') + disc(art, w / 2, ph * discY, w * discK, FACE_BG, w)
     else if (art.kind === 'nebula' && (DISCS[art.file]?.r ?? 1) < 0.7) img = disc({ file: art.file, fit: 1.25 }, w / 2, ph * discY, w, FACE_BG, w)
     else if (art.kind === 'nebula') img = `<div class="neb" style="background-image:url(${photo(art.file)})"></div>`
     else if (art.kind === 'aura') img = `<div class="aurafill" style="background-image:url(${aura(art.sign)})"></div>`
@@ -194,7 +206,7 @@ function skyFace(art, { name, meta, caption, chipText, glow, orb, panel = true, 
     return `<div class="img" style="height:${ph}px;background:${bloom}, linear-gradient(180deg, #1c0e44, ${FACE_BG})">${STARS}${img}
       <div class="ivig"></div>
       ${caption ? mono(caption, s, `position:absolute;left:${14 * s}px;bottom:${11 * s}px;color:rgba(239,230,214,.85)`) : ''}
-      ${chipText ? `<div style="position:absolute;right:${12 * s}px;bottom:${9 * s}px">${chip(chipText, s)}</div>` : ''}
+      ${chipText ? `<div style="position:absolute;${caption ? 'right' : 'left'}:${12 * s}px;bottom:${10 * s}px">${chip(chipText, s)}</div>` : ''}
     </div>
     ${panel ? namePanel({ name, meta, orb, s, ph }) : ''}`
   }
@@ -202,7 +214,7 @@ function skyFace(art, { name, meta, caption, chipText, glow, orb, panel = true, 
 const PANEL = 0.85
 function namePanel({ name, meta, orb, s, ph }) {
   return `<div class="panel" style="top:${ph}px;padding:0 ${16 * s}px">
-      <div><div class="nm" style="font-size:${24 * s}px">${esc(name)}</div>
+      <div><div class="nm" style="font-size:${27 * s}px">${esc(name)}</div>
       ${meta ? `<div class="meta" style="font-size:${10 * s}px;margin-top:${3 * s}px">${meta}</div>` : ''}</div>
       ${orb ? signOrb(orb, 30 * s) : ''}
     </div>`
@@ -263,7 +275,7 @@ function foilFor(art, x, cover) {
 function faceFor(art, x, opts = {}) {
   const t = cardText(art, x)
   if (art.kind === 'aura') return auraFace(art.sign, { ...t, ...opts })
-  return skyFace(art, { ...t, glow: x.glow, ...opts })
+  return skyFace(art, { ...t, glow: x.glow, libK: x.i ?? 0, ...opts })
 }
 
 // The hero card (covers and story slides): big, tilted, bleeding off the top.
@@ -275,9 +287,9 @@ function heroScene(art, x, { w = 640, cx = 540, bottom = 800, rot = -4, ry = 7, 
   const glowCol = art.kind === 'aura' ? SIGN_COLORS[art.sign]?.color ?? x.glow : x.glow
   // centre the subject in the part of the image that is on screen
   const ph = h * 0.8, hid = Math.max(0, -top - 30)
-  const discY = Math.min(0.66, Math.max(0.5, (hid + ph) / 2 / ph))
+  const discY = Math.min(0.68, Math.max(0.5, (hid + ph) / 2 / ph + 0.02))
   return `<div class="scene" data-bottom="${bottom}">${violetHalo(bottom - 380)}${bloom(glowCol, bottom - 380, 640, 0.5)}${back}
-    ${card({ w, cx, top, rot, ry, glow: glowCol, ...f, cls: 'lead', face: faceFor(art, x, { chipText, discY, discK: art.k ?? 0.9, panel }) })}</div>`
+    ${card({ w, cx, top, rot, ry, glow: glowCol, ...f, cls: 'lead', face: faceFor(art, x, { chipText, discY, discK: art.k ?? (cover ? 0.93 : 0.9), panel, ...(cover ? { caption: null } : {}) }) })}</div>`
 }
 
 // Two cards leaning together (split covers, pair art).
@@ -442,6 +454,7 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:${C.floor}}
   -webkit-mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%)}
 .block{position:absolute;border-radius:50%}
 .neb{position:absolute;inset:-4%;background-size:cover;background-position:center;filter:saturate(1.15) brightness(.9)}
+.libart{position:absolute;inset:-3%;background-size:cover;background-position:center;opacity:.42;filter:blur(2.5px) saturate(1.1);-webkit-mask-image:radial-gradient(120% 90% at 50% 45%, #000 40%, transparent 100%)}
 .aurafill{position:absolute;inset:-6%;background-size:cover;background-position:center 35%;filter:blur(1.6px) saturate(1.12)}
 .panel{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#24164c,#1a1040);border-top:1px solid rgba(179,166,196,.18)}
 .orb{border-radius:50%;display:grid;place-items:center;color:#fff;font-family:'DejaVu Sans',sans-serif;flex-shrink:0;text-shadow:0 0 6px rgba(0,0,0,.35)}

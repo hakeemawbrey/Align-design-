@@ -1,0 +1,1312 @@
+[
+  {
+    "file": "aries-orange-red-cloud.jpg",
+    "set": "aura",
+    "title": "New stars around Westerlund 2",
+    "dominant_colors": [
+      "#8f433a",
+      "#6f2f2f",
+      "#b05f49"
+    ],
+    "signs": [
+      "aries",
+      "scorpio"
+    ],
+    "mood": [
+      "fiery",
+      "dramatic",
+      "warm"
+    ],
+    "brightness": 0.365,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1509f",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, the Hubble Heritage Team (STScI/AURA), A. Nota (ESA/STScI), and the Westerlund 2 Science Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1509f/"
+  },
+  {
+    "file": "aries-fire-shell.jpg",
+    "set": "aura",
+    "title": "Hubble’s view of Wolf-Rayet 124",
+    "dominant_colors": [
+      "#af3415",
+      "#e66c1b",
+      "#741a16"
+    ],
+    "signs": [
+      "aries",
+      "leo"
+    ],
+    "mood": [
+      "fiery",
+      "explosive",
+      "radiant"
+    ],
+    "brightness": 0.197,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2307f",
+    "source": "ESA/Webb",
+    "credit": "ESA/Hubble and NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2307f/"
+  },
+  {
+    "file": "aries-ember-nebula.jpg",
+    "set": "aura",
+    "title": "Serpens Nebula North – aligned outflows crop (NIRCam image)",
+    "dominant_colors": [
+      "#422115",
+      "#6c331c",
+      "#b0551e"
+    ],
+    "signs": [
+      "aries",
+      "leo"
+    ],
+    "mood": [
+      "fiery",
+      "energetic",
+      "warm"
+    ],
+    "brightness": 0.197,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2415b",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, STScI, K. Pontoppidan (NASA’s Jet Propulsion Laboratory), J. Green (Space Telescope Science Institute)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2415b/"
+  },
+  {
+    "file": "aries-orbital-sunset.jpg",
+    "set": "aura",
+    "title": " Earth observations taken by Expedition 44 crewmember",
+    "dominant_colors": [
+      "#2c0305",
+      "#55171d",
+      "#c51a02"
+    ],
+    "signs": [
+      "aries",
+      "leo",
+      "taurus"
+    ],
+    "mood": [
+      "warm",
+      "horizon",
+      "dawn"
+    ],
+    "brightness": 0.259,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss044e025484",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss044e025484"
+  },
+  {
+    "file": "taurus-gold-cloud.jpg",
+    "set": "aura",
+    "title": "A cosmic concoction in NGC 2467",
+    "dominant_colors": [
+      "#86483e",
+      "#ae6f49",
+      "#572d2e"
+    ],
+    "signs": [
+      "taurus",
+      "leo"
+    ],
+    "mood": [
+      "warm",
+      "earthy",
+      "golden"
+    ],
+    "brightness": 0.388,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1012a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA and Orsola De Marco (Macquarie University)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1012a/"
+  },
+  {
+    "file": "taurus-golden-pillar.jpg",
+    "set": "aura",
+    "title": "Webb opens a Treasure Chest filled with stars",
+    "dominant_colors": [
+      "#b0733c",
+      "#623930",
+      "#213045"
+    ],
+    "signs": [
+      "taurus",
+      "leo",
+      "gemini"
+    ],
+    "mood": [
+      "golden",
+      "sculptural",
+      "warm"
+    ],
+    "brightness": 0.343,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potm2607a",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, M. Reiter Acknowledgement: M. H. Özsaraç",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/potm2607a/"
+  },
+  {
+    "file": "taurus-amber-specks.jpg",
+    "set": "aura",
+    "title": "Helix Nebula (NIRCam image)",
+    "dominant_colors": [
+      "#141824",
+      "#975b3a",
+      "#60352f"
+    ],
+    "signs": [
+      "taurus",
+      "leo"
+    ],
+    "mood": [
+      "golden",
+      "granular",
+      "warm"
+    ],
+    "brightness": 0.247,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2601a",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, STScI, A. Pagan (STScI)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2601a/"
+  },
+  {
+    "file": "gemini-yellow-veil.jpg",
+    "set": "aura",
+    "title": "Waves breaking in the stellar lagoon",
+    "dominant_colors": [
+      "#c2a161",
+      "#d3ba70",
+      "#ac8758"
+    ],
+    "signs": [
+      "gemini",
+      "taurus"
+    ],
+    "mood": [
+      "sunny",
+      "soft",
+      "airy"
+    ],
+    "brightness": 0.604,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1015a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA.",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1015a/"
+  },
+  {
+    "file": "gemini-gold-haze.jpg",
+    "set": "aura",
+    "title": "Webb unveils young stars across every stage of formation",
+    "dominant_colors": [
+      "#986444",
+      "#bd8558",
+      "#91897f"
+    ],
+    "signs": [
+      "gemini",
+      "taurus",
+      "cancer"
+    ],
+    "mood": [
+      "golden",
+      "soft",
+      "airy"
+    ],
+    "brightness": 0.476,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potm2605a",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, T. Megeath, M. Zamani (ESA/Webb) Acknowledgement: M. H. Özsaraç",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/potm2605a/"
+  },
+  {
+    "file": "gemini-star-cradle.jpg",
+    "set": "aura",
+    "title": "Pismis 24 (NIRCam image)",
+    "dominant_colors": [
+      "#224e86",
+      "#d3946b",
+      "#737c97"
+    ],
+    "signs": [
+      "gemini",
+      "cancer",
+      "leo"
+    ],
+    "mood": [
+      "sparkling",
+      "golden",
+      "uplifting"
+    ],
+    "brightness": 0.42,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2518a",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, and STScI, A. Pagan (STScI)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2518a/"
+  },
+  {
+    "file": "gemini-airglow-comet.jpg",
+    "set": "aura",
+    "title": "Comet Swan appears above Earth’s yellow-green airglow just before an orbital sunrise",
+    "dominant_colors": [
+      "#160d10",
+      "#8aa7e1",
+      "#6a6d67"
+    ],
+    "signs": [
+      "gemini",
+      "capricorn"
+    ],
+    "mood": [
+      "airy",
+      "horizon",
+      "quiet"
+    ],
+    "brightness": 0.22,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss073e0982209",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss073e0982209"
+  },
+  {
+    "file": "gemini-limb-layers.jpg",
+    "set": "aura",
+    "title": "Earth Limb taken by the Expedition 17 Crew",
+    "dominant_colors": [
+      "#030309",
+      "#cf6810",
+      "#2a6498"
+    ],
+    "signs": [
+      "gemini",
+      "leo",
+      "cancer"
+    ],
+    "mood": [
+      "horizon",
+      "dawn",
+      "layered"
+    ],
+    "brightness": 0.136,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss017e011603",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss017e011603"
+  },
+  {
+    "file": "cancer-blue-haze.jpg",
+    "set": "aura",
+    "title": "Webb’s View of the Molecular Cloud Chameleon I",
+    "dominant_colors": [
+      "#356dae",
+      "#325282",
+      "#446396"
+    ],
+    "signs": [
+      "cancer",
+      "aquarius",
+      "pisces"
+    ],
+    "mood": [
+      "calm",
+      "soft",
+      "dreamy"
+    ],
+    "brightness": 0.306,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2303a",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, and M. Zamani (ESA/Webb); Science: F. Sun (Steward Observatory), Z. Smith (Open University), and the Ice Age ERS Team.",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2303a/"
+  },
+  {
+    "file": "cancer-blue-star.jpg",
+    "set": "aura",
+    "title": "Tempestuous Young Stars in Orion",
+    "dominant_colors": [
+      "#1b6896",
+      "#7f3c3d",
+      "#2d4b61"
+    ],
+    "signs": [
+      "cancer",
+      "aries"
+    ],
+    "mood": [
+      "luminous",
+      "contrast",
+      "jewel"
+    ],
+    "brightness": 0.299,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw2304a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA, J. Bally, M. Robberto",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw2304a/"
+  },
+  {
+    "file": "cancer-teal-swirl.jpg",
+    "set": "aura",
+    "title": "Moving heart of the Crab Nebula",
+    "dominant_colors": [
+      "#5d7388",
+      "#8691a2",
+      "#4b5155"
+    ],
+    "signs": [
+      "cancer",
+      "aquarius",
+      "capricorn"
+    ],
+    "mood": [
+      "soft",
+      "dreamy",
+      "flowing"
+    ],
+    "brightness": 0.425,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1614a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA Acknowledgement: Mahdi Zamani",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1614a/"
+  },
+  {
+    "file": "cancer-sunrise-sky.jpg",
+    "set": "aura",
+    "title": "STS-43 Earth observation of a colorful sunrise",
+    "dominant_colors": [
+      "#050a09",
+      "#3cb2d3",
+      "#057cac"
+    ],
+    "signs": [
+      "cancer",
+      "leo"
+    ],
+    "mood": [
+      "horizon",
+      "dawn",
+      "clean"
+    ],
+    "brightness": 0.198,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "s43-22-011",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/s43-22-011"
+  },
+  {
+    "file": "leo-orange-blue-cloud.jpg",
+    "set": "aura",
+    "title": "Stars brewing in a nebulous cauldron",
+    "dominant_colors": [
+      "#783010",
+      "#482315",
+      "#814c37"
+    ],
+    "signs": [
+      "leo",
+      "aries",
+      "cancer"
+    ],
+    "mood": [
+      "warm",
+      "rich",
+      "dramatic"
+    ],
+    "brightness": 0.341,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potm2610a",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, E. Sabbi, M. Zamani (ESA/Webb) Acknowledgement: M. H. Özsaraç",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/potm2610a/"
+  },
+  {
+    "file": "leo-orange-bloom.jpg",
+    "set": "aura",
+    "title": "Star-forming region in M51 (close-up)",
+    "dominant_colors": [
+      "#934522",
+      "#986f40",
+      "#632f26"
+    ],
+    "signs": [
+      "leo",
+      "aries"
+    ],
+    "mood": [
+      "radiant",
+      "warm",
+      "rich"
+    ],
+    "brightness": 0.384,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2608c",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, A. Pedrini, A. Adamo (Stockholm University) and the FEAST JWST team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2608c/"
+  },
+  {
+    "file": "leo-fire-spiral.jpg",
+    "set": "aura",
+    "title": "NGC 1087",
+    "dominant_colors": [
+      "#ad5a39",
+      "#7b3b32",
+      "#522928"
+    ],
+    "signs": [
+      "leo",
+      "taurus"
+    ],
+    "mood": [
+      "radiant",
+      "swirling",
+      "warm"
+    ],
+    "brightness": 0.248,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2403d",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, STScI, J. Lee (STScI), T. Williams (Oxford), R. Chandar (UToledo), PHANGS Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2403d/"
+  },
+  {
+    "file": "leo-golden-limb.jpg",
+    "set": "aura",
+    "title": "Earth Observations taken by the Expedition 23 Crew",
+    "dominant_colors": [
+      "#040304",
+      "#eeba51",
+      "#3f86bb"
+    ],
+    "signs": [
+      "leo",
+      "taurus",
+      "gemini"
+    ],
+    "mood": [
+      "horizon",
+      "golden",
+      "dawn"
+    ],
+    "brightness": 0.143,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss023e057948",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss023e057948"
+  },
+  {
+    "file": "virgo-pink-cloud.jpg",
+    "set": "aura",
+    "title": "Young stars sculpt gas with powerful outflows",
+    "dominant_colors": [
+      "#ba7489",
+      "#8a5d61",
+      "#e597bb"
+    ],
+    "signs": [
+      "virgo",
+      "libra"
+    ],
+    "mood": [
+      "romantic",
+      "soft",
+      "rosy"
+    ],
+    "brightness": 0.357,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic0514a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA and A. Nota ( ESA / STScI, STScI / AURA )",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic0514a/"
+  },
+  {
+    "file": "virgo-salmon-dust.jpg",
+    "set": "aura",
+    "title": "Nearby dust clouds in the Milky Way",
+    "dominant_colors": [
+      "#a04b46",
+      "#82393b",
+      "#6f2e32"
+    ],
+    "signs": [
+      "virgo",
+      "aries"
+    ],
+    "mood": [
+      "romantic",
+      "soft",
+      "warm"
+    ],
+    "brightness": 0.278,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "opo0613a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, and The Hubble Heritage Team ( STScI / AURA ) Acknowledgment: P. McCullough ( STScI )",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/opo0613a/"
+  },
+  {
+    "file": "virgo-rose-veil.jpg",
+    "set": "aura",
+    "title": "The Orion Bar region (Hubble image)",
+    "dominant_colors": [
+      "#c08086",
+      "#a25970",
+      "#772d68"
+    ],
+    "signs": [
+      "virgo",
+      "libra"
+    ],
+    "mood": [
+      "romantic",
+      "dreamy",
+      "rosy"
+    ],
+    "brightness": 0.488,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2315d",
+    "source": "ESA/Webb",
+    "credit": "ESA/Hubble & NASA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2315d/"
+  },
+  {
+    "file": "libra-magenta-shell.jpg",
+    "set": "aura",
+    "title": "Extraterrestrial fireworks",
+    "dominant_colors": [
+      "#9e5688",
+      "#0c0c04",
+      "#74436c"
+    ],
+    "signs": [
+      "libra",
+      "virgo",
+      "sagittarius"
+    ],
+    "mood": [
+      "romantic",
+      "vivid",
+      "glowing"
+    ],
+    "brightness": 0.211,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "opo0635a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA and the Hubble Heritage Team ( STScI / AURA )",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/opo0635a/"
+  },
+  {
+    "file": "libra-violet-bloom.jpg",
+    "set": "aura",
+    "title": "Wolf-Rayet 124 (MIRI image)",
+    "dominant_colors": [
+      "#793a55",
+      "#552535",
+      "#33141c"
+    ],
+    "signs": [
+      "libra",
+      "sagittarius",
+      "virgo"
+    ],
+    "mood": [
+      "glowing",
+      "explosive",
+      "romantic"
+    ],
+    "brightness": 0.212,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2307e",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, STScI, Webb ERO Production Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2307e/"
+  },
+  {
+    "file": "libra-magenta-aurora.jpg",
+    "set": "aura",
+    "title": "An aurora intersects Earth's airglow beneath a starry sky in this photograph from the International Space Station as it ",
+    "dominant_colors": [
+      "#576987",
+      "#110c1b",
+      "#4d1a42"
+    ],
+    "signs": [
+      "libra",
+      "sagittarius",
+      "capricorn"
+    ],
+    "mood": [
+      "ethereal",
+      "horizon",
+      "night"
+    ],
+    "brightness": 0.248,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss069e092496",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss069e092496"
+  },
+  {
+    "file": "libra-pink-violet-cloud.jpg",
+    "set": "aura",
+    "title": "The Ghost Nebula",
+    "dominant_colors": [
+      "#a57982",
+      "#4d3b42",
+      "#74555e"
+    ],
+    "signs": [
+      "libra",
+      "virgo",
+      "pisces"
+    ],
+    "mood": [
+      "soft",
+      "dreamy",
+      "romantic"
+    ],
+    "brightness": 0.312,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1818a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble, NASA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1818a/"
+  },
+  {
+    "file": "scorpio-crimson-cone.jpg",
+    "set": "aura",
+    "title": "Hubble's newest camera images ghostly star-forming pillar of gas and dust",
+    "dominant_colors": [
+      "#892d2f",
+      "#5e222a",
+      "#bb554c"
+    ],
+    "signs": [
+      "scorpio",
+      "aries"
+    ],
+    "mood": [
+      "intense",
+      "mysterious",
+      "dramatic"
+    ],
+    "brightness": 0.225,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic0206c",
+    "source": "ESA/Hubble",
+    "credit": "NASA, Holland Ford (JHU), the ACS Science Team and ESA",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic0206c/"
+  },
+  {
+    "file": "scorpio-deep-red.jpg",
+    "set": "aura",
+    "title": "Digel Cloud 2S",
+    "dominant_colors": [
+      "#2a0b02",
+      "#390e05",
+      "#531206"
+    ],
+    "signs": [
+      "scorpio",
+      "aries"
+    ],
+    "mood": [
+      "intense",
+      "dense",
+      "mysterious"
+    ],
+    "brightness": 0.119,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2422a",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, CSA, STScI, M. Ressler (NASA-JPL)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2422a/"
+  },
+  {
+    "file": "scorpio-red-aurora.jpg",
+    "set": "aura",
+    "title": "A red and green aurora borealis above Canada's Gulf of St. Lawrence",
+    "dominant_colors": [
+      "#070103",
+      "#aee9d1",
+      "#76b09a"
+    ],
+    "signs": [
+      "scorpio",
+      "capricorn"
+    ],
+    "mood": [
+      "intense",
+      "ethereal",
+      "night"
+    ],
+    "brightness": 0.289,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss072e451060",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss072e451060"
+  },
+  {
+    "file": "scorpio-red-blue-jet.jpg",
+    "set": "aura",
+    "title": "Butterfly Nebula NGC 6302 (Near-infrared Hubble image)",
+    "dominant_colors": [
+      "#4d1d1d",
+      "#852423",
+      "#1d100f"
+    ],
+    "signs": [
+      "scorpio",
+      "aquarius"
+    ],
+    "mood": [
+      "dramatic",
+      "energetic",
+      "contrast"
+    ],
+    "brightness": 0.227,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2517e",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, J. Kastner, M. Zamani (ESA/Webb)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2517e/"
+  },
+  {
+    "file": "sagittarius-purple-haze.jpg",
+    "set": "aura",
+    "title": "A visual feast of galaxies, from infrared to X-ray",
+    "dominant_colors": [
+      "#704885",
+      "#0d0b0f",
+      "#231129"
+    ],
+    "signs": [
+      "sagittarius",
+      "pisces",
+      "libra"
+    ],
+    "mood": [
+      "mystic",
+      "soft",
+      "dreamy"
+    ],
+    "brightness": 0.187,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potm2504b",
+    "source": "ESA/Webb",
+    "credit": "ESA/Webb, NASA & CSA, G. Gozaliasl, A. Koekemoer, M. Franco, and the COSMOS-Web team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/potm2504b/"
+  },
+  {
+    "file": "sagittarius-violet-cloud.jpg",
+    "set": "aura",
+    "title": "Hubble view of the huge star formation region N11 in the Large Magellanic Cloud",
+    "dominant_colors": [
+      "#0e0c0c",
+      "#94627a",
+      "#22171d"
+    ],
+    "signs": [
+      "sagittarius",
+      "libra",
+      "virgo"
+    ],
+    "mood": [
+      "mystic",
+      "soft",
+      "romantic"
+    ],
+    "brightness": 0.214,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1011a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA and Jesús Maíz Apellániz (Instituto de Astrofísica de Andalucía, Spain)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1011a/"
+  },
+  {
+    "file": "sagittarius-violet-airglow.jpg",
+    "set": "aura",
+    "title": "A reddish airglow blankets Earth beneath the Milky Way",
+    "dominant_colors": [
+      "#413d65",
+      "#252d51",
+      "#151e3a"
+    ],
+    "signs": [
+      "sagittarius",
+      "pisces",
+      "base-violet"
+    ],
+    "mood": [
+      "mystic",
+      "night",
+      "quiet"
+    ],
+    "brightness": 0.279,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss073e0982696",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss073e0982696"
+  },
+  {
+    "file": "capricorn-green-aurora.jpg",
+    "set": "aura",
+    "title": "STS-47 view of the Aurora Australis",
+    "dominant_colors": [
+      "#275c36",
+      "#418752",
+      "#0b0807"
+    ],
+    "signs": [
+      "capricorn",
+      "scorpio"
+    ],
+    "mood": [
+      "ethereal",
+      "night",
+      "flowing"
+    ],
+    "brightness": 0.248,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "STS047-20-015",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/STS047-20-015"
+  },
+  {
+    "file": "capricorn-aurora-ribbon.jpg",
+    "set": "aura",
+    "title": "Earth observation taken using EHDC3",
+    "dominant_colors": [
+      "#110908",
+      "#17380e",
+      "#2e631e"
+    ],
+    "signs": [
+      "capricorn",
+      "aquarius"
+    ],
+    "mood": [
+      "ethereal",
+      "flowing",
+      "night"
+    ],
+    "brightness": 0.14,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss059e013117",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss059e013117"
+  },
+  {
+    "file": "capricorn-aurora-crown.jpg",
+    "set": "aura",
+    "title": "The aurora borealis blankets the Earth",
+    "dominant_colors": [
+      "#040202",
+      "#355341",
+      "#597d67"
+    ],
+    "signs": [
+      "capricorn",
+      "scorpio"
+    ],
+    "mood": [
+      "ethereal",
+      "horizon",
+      "night"
+    ],
+    "brightness": 0.207,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss072e159172",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss072e159172"
+  },
+  {
+    "file": "capricorn-teal-gold-swirl.jpg",
+    "set": "aura",
+    "title": "Celestial Cloudscape in the Orion Nebula",
+    "dominant_colors": [
+      "#846048",
+      "#b98654",
+      "#64768b"
+    ],
+    "signs": [
+      "capricorn",
+      "gemini",
+      "cancer"
+    ],
+    "mood": [
+      "flowing",
+      "soft",
+      "earthy"
+    ],
+    "brightness": 0.429,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw2232a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA, J. Bally Acknowledgement: M. H. Özsaraç",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw2232a/"
+  },
+  {
+    "file": "aquarius-noctilucent.jpg",
+    "set": "aura",
+    "title": "Polar mesospheric clouds in the Northern Hemisphere are featured in this image photographed by an Expedition 31 crew mem",
+    "dominant_colors": [
+      "#020103",
+      "#048cec",
+      "#0f3a60"
+    ],
+    "signs": [
+      "aquarius",
+      "cancer"
+    ],
+    "mood": [
+      "cool",
+      "quiet",
+      "horizon"
+    ],
+    "brightness": 0.117,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss031e116058",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss031e116058"
+  },
+  {
+    "file": "aquarius-noctilucent-wisps.jpg",
+    "set": "aura",
+    "title": "Noctilucent clouds are illuminated by sunlight just after the Sun has set below the horizon",
+    "dominant_colors": [
+      "#050506",
+      "#5386b7",
+      "#3f668c"
+    ],
+    "signs": [
+      "aquarius",
+      "cancer",
+      "pisces"
+    ],
+    "mood": [
+      "cool",
+      "quiet",
+      "ethereal"
+    ],
+    "brightness": 0.159,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "iss074e0784417",
+    "source": "NASA Image and Video Library",
+    "credit": "NASA/Chris Williams",
+    "license": "Public domain (NASA)",
+    "landing_url": "https://images.nasa.gov/details/iss074e0784417"
+  },
+  {
+    "file": "aquarius-bubble.jpg",
+    "set": "aura",
+    "title": "The Bubble Nebula",
+    "dominant_colors": [
+      "#201b23",
+      "#2c313e",
+      "#7085b4"
+    ],
+    "signs": [
+      "aquarius",
+      "cancer"
+    ],
+    "mood": [
+      "cool",
+      "luminous",
+      "calm"
+    ],
+    "brightness": 0.214,
+    "calm_area": "bottom",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1608a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, Hubble Heritage Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1608a/"
+  },
+  {
+    "file": "aquarius-veil-filaments.jpg",
+    "set": "aura",
+    "title": "Revisiting the Veil Nebula",
+    "dominant_colors": [
+      "#160d0f",
+      "#312429",
+      "#5e4349"
+    ],
+    "signs": [
+      "aquarius",
+      "libra",
+      "pisces"
+    ],
+    "mood": [
+      "electric",
+      "flowing",
+      "cool"
+    ],
+    "brightness": 0.228,
+    "calm_area": "top",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1520a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, Hubble Heritage Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1520a/"
+  },
+  {
+    "file": "pisces-lavender-cloud.jpg",
+    "set": "aura",
+    "title": "Pillars around Westerlund 2",
+    "dominant_colors": [
+      "#c6c8f8",
+      "#b4abe7",
+      "#9e90ca"
+    ],
+    "signs": [
+      "pisces",
+      "sagittarius",
+      "libra"
+    ],
+    "mood": [
+      "dreamy",
+      "soft",
+      "luminous"
+    ],
+    "brightness": 0.586,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic1509e",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, the Hubble Heritage Team (STScI/AURA), A. Nota (ESA/STScI), and the Westerlund 2 Science Team",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic1509e/"
+  },
+  {
+    "file": "pisces-blue-violet-cluster.jpg",
+    "set": "aura",
+    "title": "NGC 346 (Hubble)",
+    "dominant_colors": [
+      "#243554",
+      "#42548f",
+      "#6876b8"
+    ],
+    "signs": [
+      "pisces",
+      "cancer",
+      "sagittarius"
+    ],
+    "mood": [
+      "dreamy",
+      "sparkling",
+      "cool"
+    ],
+    "brightness": 0.292,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "weic2301c",
+    "source": "ESA/Webb",
+    "credit": "NASA, ESA, A. James (STScI)",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esawebb.org/images/weic2301c/"
+  },
+  {
+    "file": "base-indigo-nebula.jpg",
+    "set": "aura",
+    "title": "Hubble celebrates its 33rd anniversary with NGC 1333",
+    "dominant_colors": [
+      "#304968",
+      "#536f8c",
+      "#3a353c"
+    ],
+    "signs": [
+      "base-indigo",
+      "cancer",
+      "pisces"
+    ],
+    "mood": [
+      "calm",
+      "mysterious",
+      "dark"
+    ],
+    "brightness": 0.283,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "heic2304a",
+    "source": "ESA/Hubble",
+    "credit": "NASA, ESA, STScI",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/heic2304a/"
+  },
+  {
+    "file": "base-dark-dust.jpg",
+    "set": "aura",
+    "title": "Champions League",
+    "dominant_colors": [
+      "#2a251e",
+      "#333736",
+      "#3a5464"
+    ],
+    "signs": [
+      "base-dark",
+      "taurus"
+    ],
+    "mood": [
+      "calm",
+      "dark",
+      "quiet"
+    ],
+    "brightness": 0.214,
+    "calm_area": "none",
+    "width": 1600,
+    "height": 2000,
+    "source_id": "potw1944a",
+    "source": "ESA/Hubble",
+    "credit": "ESA/Hubble & NASA, K. Stapelfeldt",
+    "license": "CC BY 4.0",
+    "landing_url": "https://esahubble.org/images/potw1944a/"
+  }
+]
