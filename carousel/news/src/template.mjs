@@ -23,7 +23,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const PHOTO = path.resolve(HERE, '../assets/photo')
 const FONTDIR = path.resolve(HERE, '../../../reels/signs/assets/fonts')
 
-const C = { bone: '#efe6d6', mist: '#b3a6c4', gold: '#f2c75c', floor: '#07041a', rub: '#e8628a', spark: '#7fd8b0', violet: '#b9a2ff' }
+const C = { bone: '#efe6d6', mist: '#b3a6c4', gold: '#f2c75c', floor: '#0b0620', canvas: '#150b35', rub: '#e8628a', spark: '#7fd8b0', violet: '#9a7be0', ink: '#3a2c4e' }
 const PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
 
 // ---- assets -----------------------------------------------------------------
@@ -33,6 +33,8 @@ function fileUri(file, mime) {
   return uriCache.get(file)
 }
 const photo = (name) => fileUri(path.join(PHOTO, `${name}.jpg`), 'image/jpeg')
+// Measured disc radius/centre of each photo (fraction of the frame), so glows can stop at the limb.
+const DISCS = JSON.parse(readFileSync(path.join(PHOTO, 'discs.json'), 'utf8'))
 function pkgFont(pkg, file) {
   return fileUri(path.join(path.dirname(require.resolve(`${pkg}/package.json`)), 'files', file), 'font/woff2')
 }
@@ -42,6 +44,7 @@ function fonts() {
 @font-face{font-family:Anton;src:url(${pkgFont('@fontsource/anton', 'anton-latin-400-normal.woff2')}) format('woff2');font-display:block}
 @font-face{font-family:Bebas;src:url(${fileUri(path.join(FONTDIR, 'BebasNeue-Regular.ttf'), 'font/ttf')}) format('truetype');font-display:block}
 @font-face{font-family:Archivo;src:url(${fileUri(path.join(FONTDIR, 'ArchivoNarrow.ttf'), 'font/ttf')}) format('truetype');font-weight:100 900;font-display:block}
+@font-face{font-family:'EB Garamond';font-style:italic;src:url(${pkgFont('@fontsource/eb-garamond', 'eb-garamond-latin-500-italic.woff2')}) format('woff2');font-display:block}
 @font-face{font-family:'Space Mono';src:url(${pkgFont('@fontsource/space-mono', 'space-mono-latin-400-normal.woff2')}) format('woff2');font-display:block}`
   return FONTS
 }
@@ -124,7 +127,12 @@ function resolveArt(a, s, c) {
 // black becomes the floor, fading out at the bottom.
 function artBand(art, h, glow, { cy = h * 0.47, d = h * 0.74 } = {}) {
   d = d
-  const disc = (p, x, y, size) => `<div class="ph" style="left:${x - size / 2}px;top:${y - size / 2}px;width:${size}px;height:${size}px;background-image:url(${photo(p.file)});${p.flip ? 'transform:scaleX(-1);' : ''}${p.dim ? 'filter:brightness(.6) saturate(.8);' : ''}"></div>`
+  const disc = (p, x, y, size) => {
+    const m = DISCS[p.file]
+    // A floor-coloured disc behind full planets keeps the glow off the planet face.
+    const block = m && m.r > 0.6 && m.r < 0.85 && Math.abs(m.cx - 0.5) < 0.03 ? `<div class="block" style="left:${x - size * m.r / 2 * 0.985}px;top:${y - size * m.r / 2 * 0.985}px;width:${size * m.r * 0.985}px;height:${size * m.r * 0.985}px"></div>` : ''
+    return block + `<div class="ph" style="left:${x - size / 2}px;top:${y - size / 2}px;width:${size}px;height:${size}px;background-image:url(${photo(p.file)});${p.flip ? 'transform:scaleX(-1);' : ''}${p.dim ? 'filter:brightness(.6) saturate(.8);' : ''}"></div>`
+  }
   const halo = (x, y, r, col, o) => `<div class="halo" style="left:${x - r}px;top:${y - r}px;width:${r * 2}px;height:${r * 2}px;background:radial-gradient(circle, ${col} 0%, ${col}99 26%, ${col}33 50%, transparent 70%);opacity:${o}"></div>`
   const side = (a, x, y, size) => a.kind === 'photo' ? disc(a, x, y, size * a.size)
     : a.kind === 'aura' ? `<div class="aura-img" style="left:${x - size * 0.6}px;top:${y - size * 0.6}px;width:${size * 1.2}px;height:${size * 1.2}px;background-image:url(${imageDataUri(`aura/${a.sign}.jpg`)})"></div>` : ''
@@ -145,11 +153,28 @@ function artBand(art, h, glow, { cy = h * 0.47, d = h * 0.74 } = {}) {
   } else {
     inner = `<div class="neb" style="background-image:url(${photo(art.file)})"></div>`
   }
-  return `<div class="band" style="height:${h}px">${inner}<div class="fade"></div></div>`
+  // The app's splash halo: a wide violet breath behind every subject.
+  const violet = `<div class="halo" style="left:${540 - 640}px;top:${cy - 520}px;width:1280px;height:1040px;background:radial-gradient(closest-side, rgba(154,123,224,.42), rgba(91,47,184,.16) 60%, transparent);filter:blur(20px)"></div>`
+  return `<div class="band" style="height:${h}px">${violet}${inner}<div class="fade"></div></div>`
 }
 
+
+// The Align mark, as in app/src/components/intro/AlignMark.tsx: seed-of-life
+// circles with the glowing 7-chakra column (root red at the bottom → crown violet).
+const CHAKRAS = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
+let markN = 0
+function alignMark(size) {
+  const id = 'am' + markN++
+  const R = 20, petals = [[0, 0], ...Array.from({ length: 6 }, (_, k) => { const a = (-90 + k * 60) * Math.PI / 180; return [Math.cos(a) * R, Math.sin(a) * R] })]
+  const circles = [...petals.map(([x, y]) => `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${R}"/>`), `<circle cx="0" cy="0" r="${R * 2}"/>`].join('')
+  const defs = CHAKRAS.map((c, i) => `<radialGradient id="${id}g${i}"><stop offset="0" stop-color="${c}" stop-opacity=".9"/><stop offset=".45" stop-color="${c}" stop-opacity=".35"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient><radialGradient id="${id}c${i}" cx="42%" cy="38%"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="${c}"/><stop offset="1" stop-color="${c}"/></radialGradient>`).join('')
+  const dots = CHAKRAS.map((_, i) => { const cy = 3 * 10.6 - i * 10.6; return `<circle cx="0" cy="${cy}" r="11" fill="url(#${id}g${i})"/><circle cx="0" cy="${cy}" r="3.7" fill="url(#${id}c${i})"/>` }).join('')
+  return `<svg width="${size}" height="${size}" viewBox="-44 -44 88 88" style="overflow:visible;display:block"><defs>${defs}</defs><g fill="none" stroke="#d9cdf0" stroke-opacity=".6" stroke-width=".7">${circles}</g>${dots}</svg>`
+}
+const logo = (size, word) => `<span class="logo">${alignMark(size)}<span class="word" style="font-size:${word}px">Align</span></span>`
+
 // ---- pieces -----------------------------------------------------------------
-const divider = () => `<div class="div"><i></i><span class="mark">align ${STAR(C.gold, 18)}</span><i></i></div>`
+const divider = () => `<div class="div"><i></i>${logo(58, 40)}<i></i></div>`
 const tag = (t) => `<div class="tag">${esc(t)}</div>`
 const head = (text, accent, { maxh, maxfs = 150, minfs = 64, target = 940, cls = '' } = {}) =>
   `<div class="hd ${cls}" data-maxh="${maxh}" data-maxfs="${maxfs}" data-minfs="${minfs}" data-target="${target}">${rich(text, accent)}</div>`
@@ -162,7 +187,8 @@ const VERDICT = { true: ['true.', C.spark], misleading: ['half true.', C.gold], 
 const coverLike = (s, x, tagText) => `
   ${s.layout === 'split' && x.art2 && x.art.kind === x.art2.kind ? artBand({ kind: 'pair', a: x.art, b: x.art2 }, 900, x.glow, { d: 560 }) : artBand(x.art, 900, x.glow)}
   <div class="stack" style="bottom:92px">
-    ${tagText ? tag(tagText) : divider()}
+    ${divider()}
+    ${tagText ? tag(tagText) : ''}
     ${head(s.headline, x.accent, { maxh: s.dek || (s.layout === 'callout' && s.body) ? 320 : 400, maxfs: 150 })}
     ${deck(s.dek ?? (s.layout === 'callout' ? s.body : ''), x.accent)}
   </div>`
@@ -242,10 +268,11 @@ export function slideHtml(c, i) {
 ${fonts()}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:${W}px;height:${H}px;overflow:hidden;background:${C.floor}}
-.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;background:${C.floor};color:${C.bone};-webkit-font-smoothing:antialiased}
+.frame{position:relative;width:${W}px;height:${H}px;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% 30%, ${C.canvas} 0%, ${C.floor} 70%);color:${C.bone};-webkit-font-smoothing:antialiased}
 .band{position:absolute;left:0;right:0;top:0;overflow:hidden}
-.ph{position:absolute;background-size:cover;background-position:center;mix-blend-mode:screen;
+.ph{position:absolute;background-size:cover;background-position:center;mix-blend-mode:lighten;
   -webkit-mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 88%, transparent 100%)}
+.block{position:absolute;border-radius:50%;background:#0b0620}
 .halo{position:absolute;border-radius:50%;filter:blur(42px);mix-blend-mode:screen}
 .aura-img{position:absolute;background-size:122%;background-position:center;mix-blend-mode:screen;filter:saturate(1.25) brightness(1.05) blur(1px);
   -webkit-mask-image:radial-gradient(closest-side, #000 52%, transparent 100%);mask-image:radial-gradient(closest-side, #000 52%, transparent 100%)}
@@ -256,10 +283,12 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:${C.floor}}
 .stack{position:absolute;left:70px;right:70px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .stack.left{align-items:flex-start;text-align:left;left:64px;right:64px}
 .div{display:flex;align-items:center;gap:20px;width:100%;margin-bottom:26px}
-.div i{flex:1;height:3px;background:linear-gradient(90deg, rgba(242,199,92,0), #f2c75c)}
-.div i:last-child{background:linear-gradient(270deg, rgba(242,199,92,0), #f2c75c)}
+.div i{flex:1;height:2px;background:linear-gradient(90deg, rgba(217,205,240,0), rgba(217,205,240,.75))}
+.div i:last-child{background:linear-gradient(270deg, rgba(217,205,240,0), rgba(217,205,240,.75))}
+.logo{display:flex;align-items:center;gap:12px}
+.word{font-family:'EB Garamond',serif;font-style:italic;font-weight:500;color:${C.bone};letter-spacing:.01em;line-height:1;text-shadow:0 0 24px rgba(239,230,214,.25)}
 .mark{font:400 22px 'Space Mono',monospace;letter-spacing:.3em;color:rgba(239,230,214,.85);display:flex;gap:10px;align-items:center;text-transform:lowercase}
-.tag{font:400 26px/1 Anton;letter-spacing:.06em;text-transform:uppercase;color:${C.floor};background:${C.bone};padding:9px 16px 8px;margin-bottom:28px}
+.tag{font:400 26px/1 Anton;letter-spacing:.06em;text-transform:uppercase;color:${C.ink};background:linear-gradient(100deg,#f8edff 0%,#fff7ec 38%,#eaf4ff 72%,#ffeff7 100%);box-shadow:0 0 30px rgba(248,237,255,.35);padding:10px 20px 9px;border-radius:999px;margin-bottom:28px}
 .hd{font-family:Anton;text-transform:uppercase;color:${C.bone};line-height:.98;letter-spacing:-.005em;width:100%}
 .hd .l{display:block;white-space:nowrap}
 .hd.left{text-align:left}
@@ -279,12 +308,12 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:${C.floor}}
 .rows.numbered .nm{text-align:left}
 .tx{font:500 32px/1.25 Archivo, sans-serif;color:${C.bone}}
 .tx em{font-style:normal;color:${C.mist}}
-.chrome{position:absolute;top:52px;font:400 20px 'Space Mono',monospace;letter-spacing:.24em;color:rgba(239,230,214,.7);display:flex;gap:8px;align-items:center;z-index:5}
+.chrome{position:absolute;top:46px;font:400 20px 'Space Mono',monospace;letter-spacing:.24em;color:rgba(239,230,214,.7);display:flex;gap:8px;align-items:center;z-index:5}
 .chrome.l{left:64px}.chrome.r{right:64px;letter-spacing:.12em}
 </style></head><body><div class="frame">
 ${html}
 <div class="grain"></div>
-${cover ? '' : `<div class="chrome l">align ${STAR(C.gold, 16)}</div><div class="chrome r">${i + 1}/${total}</div>`}
+${cover ? '' : `<div class="chrome l">${logo(40, 30)}</div><div class="chrome r">${i + 1}/${total}</div>`}
 </div>
 <script>
 (async () => {
