@@ -216,7 +216,7 @@ function signOrb(sg, d) {
 function auraFace(sign, { name, meta, caption, panel = true }) {
   return ({ w, h, s }) => {
     const ph = panel ? h * PANEL : h
-    return `<div class="img" style="height:${ph}px;background:#07040f"><div class="aurafill" style="background-image:url(${aura(sign)})"></div><div class="ivig"></div>
+    return `<div class="img" style="height:${ph}px;background:#07040f"><div class="aurafill" style="background-image:url(${aura(sign)});filter:blur(${(w / 200).toFixed(1)}px) saturate(1.15)"></div><div class="ivig"></div>
       ${caption ? mono(caption, s, `position:absolute;left:${14 * s}px;bottom:${11 * s}px;color:rgba(239,230,214,.88)`) : ''}</div>
     ${panel ? namePanel({ name, meta, orb: sign, s, ph }) : ''}`
   }
@@ -267,7 +267,7 @@ function faceFor(art, x, opts = {}) {
 }
 
 // The hero card (covers and story slides): big, tilted, bleeding off the top.
-function heroScene(art, x, { w = 640, bottom = 800, rot = -4, ry = 7, cover = false, chipText } = {}) {
+function heroScene(art, x, { w = 640, cx = 540, bottom = 800, rot = -4, ry = 7, cover = false, chipText, panel = true } = {}) {
   const h = w * 1.6, top = bottom - h
   const f = foilFor(art, x, cover)
   const back = cover ? card({ w: w * 0.96, cx: 540 - w * 0.06, top: top + 24, rot: rot - 7, foil: FOIL.back(), face: backFace, z: 1, dim: 0.55 })
@@ -277,7 +277,7 @@ function heroScene(art, x, { w = 640, bottom = 800, rot = -4, ry = 7, cover = fa
   const ph = h * 0.8, hid = Math.max(0, -top - 30)
   const discY = Math.min(0.66, Math.max(0.5, (hid + ph) / 2 / ph))
   return `<div class="scene" data-bottom="${bottom}">${violetHalo(bottom - 380)}${bloom(glowCol, bottom - 380, 640, 0.5)}${back}
-    ${card({ w, top, rot, ry, glow: glowCol, ...f, cls: 'lead', face: faceFor(art, x, { chipText, discY, discK: art.k ?? 0.9 }) })}</div>`
+    ${card({ w, cx, top, rot, ry, glow: glowCol, ...f, cls: 'lead', face: faceFor(art, x, { chipText, discY, discK: art.k ?? 0.9, panel }) })}</div>`
 }
 
 // Two cards leaning together (split covers, pair art).
@@ -335,7 +335,7 @@ const LAYOUTS = {
       ${body(s.body, x.accent)}
     </div>`,
   rank: (s, c, x) => `
-    ${heroScene({ kind: 'aura', sign: s.sign }, x, { w: 460, bottom: 590, rot: s.rank % 2 ? 4 : -4, ry: s.rank % 2 ? -7 : 7 })}
+    ${heroScene({ kind: 'aura', sign: s.sign }, x, { w: 600, cx: 600, bottom: 600, rot: s.rank % 2 ? 6 : -5, ry: s.rank % 2 ? -8 : 8, panel: false })}
     <div class="stack left" style="bottom:96px">
       <div class="rank">#${esc(s.rank)}</div>
       <div class="sign" style="color:${x.signCol}" data-fitw="952">${esc(s.title ?? s.sign)}</div>
