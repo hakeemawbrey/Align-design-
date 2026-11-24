@@ -9,7 +9,10 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { launch, jsonFiles } from '../../src/render.mjs'
-import { slideHtml, W, H } from './template.mjs'
+import * as base from './template.mjs'
+// NEWS_TEMPLATE=path/to/template.mjs renders with another template (for design experiments).
+const tpl = process.env.NEWS_TEMPLATE ? await import(pathToFileURL(path.resolve(process.env.NEWS_TEMPLATE)).href) : base
+const { slideHtml, W, H } = tpl
 import { validate } from './schema.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
