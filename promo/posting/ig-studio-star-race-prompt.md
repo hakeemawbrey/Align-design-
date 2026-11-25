@@ -192,7 +192,7 @@ When you're done, show me the new Day 1 and Day 2 schedules for both accounts an
 5. **Race 1 POV - Leo** (72 s) · https://drive.google.com/file/d/1NMvbe2R2e5RMa-3-PZ90-44KkgI8mYG3/view
    Caption: If you're a Leo, this is your race. Same marble run, only following Leo. Where did your sign finish? Tell me below.
 6. **Race 1 POV - Aries** (72 s) · https://drive.google.com/file/d/1hGC-lGWXh12uw9KliH3a1F9w8kIADWi2/view
-   Caption: If you're a Aries, this is your race. Same marble run, only following Aries. Where did your sign finish? Tell me below.
+   Caption: If you're an Aries, this is your race. Same marble run, only following Aries. Where did your sign finish? Tell me below.
 7. **Race 1 POV - Pisces** (72 s) · https://drive.google.com/file/d/1Bdmm6yr-4w9u17DAHLJv_ZratL5oZOfO/view
    Caption: If you're a Pisces, this is your race. Same marble run, only following Pisces. Where did your sign finish? Tell me below.
 8. **Race 1 POV - Scorpio** (72 s) · https://drive.google.com/file/d/1Xg9ZYkcF4n1nZiw1s1IrL-JdCtfSPMJI/view
@@ -209,7 +209,7 @@ When you're done, show me the new Day 1 and Day 2 schedules for both accounts an
 12. **Race 1 POV - Gemini** (72 s) · https://drive.google.com/file/d/1Xh3QWQCOdKzhNQQdvMo9F2R-HOqxZsgv/view
    Caption: Gemini won without trying once. Black hole in, wormhole out, first place. Gemini, is this how your life goes too?
 13. **Race 1 POV - Aquarius** (72 s) · https://drive.google.com/file/d/1dX5Rb8fd9cwzpWjQb56VhPhTwYhX4-oz/view
-   Caption: If you're a Aquarius, this is your race. Same marble run, only following Aquarius. Where did your sign finish? Tell me below.
+   Caption: If you're an Aquarius, this is your race. Same marble run, only following Aquarius. Where did your sign finish? Tell me below.
 14. **Between races - Taurus** (48 s) · https://drive.google.com/file/d/1PCbuC8mrWhmhprZZE5zc6_-jq60qz8lv/view
    Caption: Taurus finished 11th in Race 1. Race 2 is a pairs race. This is how Taurus gets ready. Who should Taurus race with?
 15. **Between races - Cancer** (48 s) · https://drive.google.com/file/d/1MIQizkxrRPKG40-tvkx5p2AhQcLq9NKi/view
