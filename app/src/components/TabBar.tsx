@@ -39,8 +39,7 @@ interface Props {
   onSelect?: (t: Tab) => boolean | void
 }
 
-/** the beta has no Club */
-const TABS = (Object.keys(LABEL) as Tab[]).filter((t) => !(BETA && t === 'club'))
+const TABS = Object.keys(LABEL) as Tab[]
 
 const ROUTE: Record<Tab, ScreenId> = { deck: 'deck', matches: 'matches', club: 'club', you: 'you' }
 

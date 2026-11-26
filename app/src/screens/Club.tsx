@@ -13,6 +13,7 @@ import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { session, useSession, type ClubPost } from '../lib/session'
+import { BETA } from '../lib/beta'
 
 const SUN = SIGNS[ME.sign]
 const LIME = '#dfe36a'
@@ -132,7 +133,8 @@ export default function Club({ go }: ScreenProps) {
             margin: '0 24px', borderRadius: 16, overflow: 'hidden',
             background: 'rgba(30,18,64,0.85)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
-            <FoundersDrop owned={alignPlus} onClaim={() => { sfx.sparkle(); if (!alignPlus) go('founding') }} />
+            {/* the beta has no founding-member offer, so no pinned founders card */}
+            {!BETA && <FoundersDrop owned={alignPlus} onClaim={() => { sfx.sparkle(); if (!alignPlus) go('founding') }} />}
             <AnimatePresence initial={false}>
               {posts.map((p, i) => (
                 <motion.div key={p.id}
