@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Star Talk carousels</title>
+<style>
+@font-face { font-family: 'Space Mono'; font-weight: 400; src: url(../../app/node_modules/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-weight: 700; src: url(../../app/node_modules/@fontsource/space-mono/files/space-mono-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'EB Garamond'; font-weight: 400; src: url(../../app/node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2) format('woff2'); }
+body { margin: 0; background: #000; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1080"></canvas>
+<script type="module">
+import { render, CAROUSELS } from './draw.js'
+await Promise.all(['400 20px "Space Mono"', '700 20px "Space Mono"', '400 20px "EB Garamond"', '500 20px Inter', '600 20px Inter', '700 20px Inter'].map(f => document.fonts.load(f)))
+const cv = document.getElementById('c')
+window.renderAll = (id, q = 0.9) => {
+  const c = CAROUSELS.find(x => x.id === id), out = []
+  const n = render(cv, c, 0); out.push(cv.toDataURL('image/jpeg', q))
+  for (let i = 1; i < n; i++) { render(cv, c, i); out.push(cv.toDataURL('image/jpeg', q)) }
+  return out
+}
+window.list = () => CAROUSELS.map(c => ({ id: c.id, title: c.title, caption: c.caption }))
+window.ready = true
+</script>
+</body>
+</html>
